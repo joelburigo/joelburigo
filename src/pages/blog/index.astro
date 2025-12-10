@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro'
 import Header from '../../components/layout/Header.astro'
 import Footer from '../../components/layout/Footer.astro'
 import Container from '../../components/ui/Container.astro'
+import SearchBar from '../../components/ui/SearchBar.astro'
 import { Calendar, Clock, ArrowRight, TrendingUp } from 'lucide-react'
 
 const seo = {
@@ -63,6 +64,11 @@ const categories = [
           <p class="font-sans text-body-lg text-gray-300">
             Estratégias, frameworks e insights para transformar vendas aleatórias em previsíveis
           </p>
+
+          <!-- Search Bar -->
+          <div class="mx-auto mt-8 max-w-2xl">
+            <SearchBar placeholder="Buscar artigos sobre vendas, CRM, processos..." />
+          </div>
         </div>
       </Container>
     </section>

@@ -1,0 +1,190 @@
+---
+// Search Bar Component with Pagefind integration
+interface Props {
+  placeholder?: string
+  class?: string
+}
+
+const { 
+  placeholder = "Buscar artigos, tópicos...", 
+  class: className = "" 
+} = Astro.props
+---
+
+<div class={`search-wrapper ${className}`}>
+  <div class="relative">
+    <input
+      type="search"
+      id="search-input"
+      placeholder={placeholder}
+      class="w-full rounded-lg border-2 border-white/10 bg-dark px-4 py-3 pl-12 font-sans text-white placeholder-gray-400 transition-all focus:border-lime focus:outline-none focus:ring-2 focus:ring-lime/20"
+      autocomplete="off"
+    />
+    <svg 
+      class="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" 
+      fill="none" 
+      stroke="currentColor" 
+      viewBox="0 0 24 24"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+    </svg>
+  </div>
+
+  <!-- Search Results Dropdown -->
+  <div 
+    id="search-results" 
+    class="absolute left-0 right-0 z-50 mt-2 hidden max-h-96 overflow-y-auto rounded-lg border-2 border-white/10 bg-dark shadow-2xl"
+  >
+    <div id="search-results-content" class="p-4">
+      <!-- Results will be inserted here -->
+    </div>
+  </div>
+</div>
+
+<style>
+  .search-wrapper {
+    position: relative;
+  }
+
+  #search-results:not(.hidden) {
+    display: block;
+  }
+
+  .search-result-item {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.2s;
+    cursor: pointer;
+  }
+
+  .search-result-item:last-child {
+    border-bottom: none;
+  }
+
+  .search-result-item:hover {
+    background-color: rgba(163, 255, 63, 0.1);
+  }
+
+  .search-highlight {
+    background-color: rgba(163, 255, 63, 0.3);
+    font-weight: 600;
+  }
+</style>
+
+<script is:inline>
+  // Pagefind-powered search
+  async function initSearch() {
+    const searchInput = document.getElementById('search-input')
+    const searchResults = document.getElementById('search-results')
+    const searchResultsContent = document.getElementById('search-results-content')
+
+    if (!searchInput || !searchResults || !searchResultsContent) return
+
+    // Initialize Pagefind
+    let pagefind = null
+    
+    try {
+      // Load Pagefind dynamically at runtime
+      pagefind = await import('/pagefind/pagefind.js')
+    } catch (error) {
+      console.error('Error loading Pagefind:', error)
+      // Fallback message
+      searchResultsContent.innerHTML = `
+        <div class="text-center py-8">
+          <p class="font-sans text-gray-400">Busca temporariamente indisponível</p>
+        </div>
+      `
+      return
+    }
+
+    // Search function
+    async function performSearch(query) {
+      if (!query || query.length < 2) {
+        searchResults.classList.add('hidden')
+        return
+      }
+
+      // Show loading state
+      searchResultsContent.innerHTML = `
+        <div class="text-center py-8">
+          <p class="font-sans text-gray-400">Buscando...</p>
+        </div>
+      `
+      searchResults.classList.remove('hidden')
+
+      try {
+        // Perform Pagefind search
+        const search = await pagefind.search(query)
+        
+        if (!search.results || search.results.length === 0) {
+          searchResultsContent.innerHTML = `
+            <div class="text-center py-8">
+              <p class="font-sans text-gray-400">Nenhum resultado encontrado para "${query}"</p>
+            </div>
+          `
+          return
+        }
+
+        // Load result data (limit to 5)
+        const results = await Promise.all(
+          search.results.slice(0, 5).map((r) => r.data())
+        )
+
+        // Display results
+        searchResultsContent.innerHTML = results.map((result) => {
+          const category = result.meta?.category || 'Artigo'
+          
+          return `
+            <a href="${result.url}" class="search-result-item block">
+              <div class="mb-1">
+                <span class="inline-block rounded-full bg-lime/20 px-2 py-1 text-xs font-display font-semibold text-lime">
+                  ${category}
+                </span>
+              </div>
+              <h4 class="font-display text-h4 text-white mb-2">${result.meta?.title || 'Sem título'}</h4>
+              <p class="font-sans text-sm text-gray-300 line-clamp-2">${result.excerpt || ''}</p>
+            </a>
+          `
+        }).join('')
+
+      } catch (error) {
+        console.error('Search error:', error)
+        searchResultsContent.innerHTML = `
+          <div class="text-center py-8">
+            <p class="font-sans text-gray-400">Erro ao buscar. Tente novamente.</p>
+          </div>
+        `
+      }
+    }
+
+    // Event listeners
+    let debounceTimer
+    searchInput.addEventListener('input', (e) => {
+      clearTimeout(debounceTimer)
+      debounceTimer = setTimeout(() => {
+        performSearch(e.target.value)
+      }, 300)
+    })
+
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+      if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+        searchResults.classList.add('hidden')
+      }
+    })
+
+    // Close on Escape
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        searchResults.classList.add('hidden')
+        searchInput.blur()
+      }
+    })
+  }
+
+  // Initialize
+  initSearch()
+
+  // Reinitialize after navigation
+  document.addEventListener('astro:page-load', initSearch)
+</script>

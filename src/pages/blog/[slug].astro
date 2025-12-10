@@ -6,6 +6,8 @@ import Footer from '../../components/layout/Footer.astro'
 import Container from '../../components/ui/Container.astro'
 import { Calendar, Clock, User, ArrowLeft, Share2 } from 'lucide-react'
 
+export const prerender = true
+
 export async function getStaticPaths() {
   const blogPosts = await getCollection('blog')
   
@@ -89,21 +91,27 @@ const articleSchema = {
     <!-- Post Header -->
     <section class="bg-dark py-16">
       <Container>
-        <article class="mx-auto max-w-4xl">
+        <article class="mx-auto max-w-4xl" data-pagefind-body>
           <div class="mb-6">
-            <span class="rounded-full bg-royal-blue/20 px-4 py-2 font-display text-sm font-semibold text-royal-blue">
+            <span 
+              class="rounded-full bg-royal-blue/20 px-4 py-2 font-display text-sm font-semibold text-royal-blue"
+              data-pagefind-meta="category"
+            >
               {post.data.category}
             </span>
           </div>
 
-          <h1 class="mb-6 font-display text-display-md text-white md:text-display-lg">
+          <h1 
+            class="mb-6 font-display text-display-md text-white md:text-display-lg"
+            data-pagefind-meta="title"
+          >
             {post.data.title}
           </h1>
 
-          <div class="mb-8 flex flex-wrap items-center gap-6 border-b border-white/10 pb-6">
+          <div class="mb-8 flex flex-wrap items-center gap-6 border-b border-white/10 pb-6" data-pagefind-ignore>
             <div class="flex items-center gap-2 font-sans text-body-sm text-gray-400">
               <User className="h-4 w-4" />
-              <span>{post.data.author}</span>
+              <span data-pagefind-meta="author">{post.data.author}</span>
             </div>
             <div class="flex items-center gap-2 font-sans text-body-sm text-gray-400">
               <Calendar className="h-4 w-4" />
@@ -120,7 +128,7 @@ const articleSchema = {
           </div>
 
           <!-- Post Content from Markdown -->
-          <div class="prose-custom">
+          <div class="prose-custom" data-pagefind-body>
             <Content />
           </div>
 

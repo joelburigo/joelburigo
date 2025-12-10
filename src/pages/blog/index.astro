@@ -182,7 +182,10 @@ const categories = [
 
         {/* Load More */}
         <div class="mt-12 text-center">
-          <button class="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 font-display text-lg font-semibold text-white transition-all hover:scale-105 hover:border-lime hover:bg-lime hover:text-dark">
+          <button 
+            id="load-more-btn"
+            class="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 font-display text-lg font-semibold text-white transition-all hover:scale-105 hover:border-lime hover:bg-lime hover:text-dark"
+          >
             Carregar Mais Artigos
             <ArrowRight className="h-5 w-5" />
           </button>
@@ -249,34 +252,81 @@ const categories = [
 </style>
 
 <script>
-  // Filtro de categorias
-  const categoryButtons = document.querySelectorAll('.category-btn');
-  const postCards = document.querySelectorAll('.post-card');
+  function initBlog() {
+    const categoryButtons = document.querySelectorAll('.category-btn') as NodeListOf<HTMLButtonElement>
+    const postCards = document.querySelectorAll('.post-card') as NodeListOf<HTMLElement>
+    const loadMoreBtn = document.getElementById('load-more-btn') as HTMLButtonElement
+    
+    let postsPerPage = 6
+    let currentlyVisible = postsPerPage
 
-  // Marcar "Todos" como ativo inicialmente
-  const todosBtn = Array.from(categoryButtons).find(btn => btn.getAttribute('data-category') === 'Todos');
-  if (todosBtn) {
-    todosBtn.classList.add('active');
+    // Marcar "Todos" como ativo inicialmente
+    const todosBtn = Array.from(categoryButtons).find(btn => btn.getAttribute('data-category') === 'Todos')
+    if (todosBtn) {
+      todosBtn.classList.add('active')
+    }
+
+    // Função para mostrar/ocultar posts com base na categoria e limite
+    function filterAndShowPosts(category: string | null) {
+      let visibleCount = 0
+      
+      postCards.forEach((card, index) => {
+        const postCategory = card.getAttribute('data-category')
+        const matchesCategory = !category || category === 'Todos' || postCategory === category
+        
+        if (matchesCategory && visibleCount < currentlyVisible) {
+          card.classList.remove('hidden')
+          visibleCount++
+        } else if (!matchesCategory) {
+          card.classList.add('hidden')
+        } else {
+          card.classList.add('hidden')
+        }
+      })
+
+      // Mostrar/ocultar botão "Carregar Mais"
+      const totalMatchingPosts = Array.from(postCards).filter(card => {
+        const postCategory = card.getAttribute('data-category')
+        return !category || category === 'Todos' || postCategory === category
+      }).length
+
+      if (loadMoreBtn) {
+        loadMoreBtn.style.display = visibleCount >= totalMatchingPosts ? 'none' : 'inline-flex'
+      }
+    }
+
+    // Filtro de categorias
+    categoryButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const selectedCategory = button.getAttribute('data-category')
+
+        // Atualizar botão ativo
+        categoryButtons.forEach(btn => btn.classList.remove('active'))
+        button.classList.add('active')
+
+        // Resetar contador ao mudar categoria
+        currentlyVisible = postsPerPage
+        filterAndShowPosts(selectedCategory)
+      })
+    })
+
+    // Botão "Carregar Mais"
+    if (loadMoreBtn) {
+      loadMoreBtn.addEventListener('click', () => {
+        currentlyVisible += postsPerPage
+        const activeBtn = Array.from(categoryButtons).find(btn => btn.classList.contains('active'))
+        const selectedCategory = activeBtn?.getAttribute('data-category') || null
+        filterAndShowPosts(selectedCategory)
+      })
+    }
+
+    // Inicializar mostrando apenas os primeiros posts
+    filterAndShowPosts('Todos')
   }
 
-  categoryButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const selectedCategory = button.getAttribute('data-category');
+  // Inicializar
+  initBlog()
 
-      // Atualizar botão ativo
-      categoryButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-
-      // Filtrar posts
-      postCards.forEach(card => {
-        const postCategory = card.getAttribute('data-category');
-        
-        if (selectedCategory === 'Todos' || postCategory === selectedCategory) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-    });
-  });
+  // Reinicializar após navegação
+  document.addEventListener('astro:page-load', initBlog)
 </script>

@@ -34,9 +34,42 @@ const allPosts = await getCollection('blog')
 const relatedPosts = allPosts
   .filter((p) => p.data.category === post.data.category && p.slug !== post.slug)
   .slice(0, 3)
+
+// Schema.org - Article Structured Data
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.data.title,
+  "description": post.data.excerpt,
+  "author": {
+    "@type": "Person",
+    "name": post.data.author || "Joel Burigo",
+    "url": "https://joelburigo.com.br/sobre"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Joel Burigo",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://joelburigo.com.br/logo.png"
+    }
+  },
+  "datePublished": post.data.date.toISOString(),
+  "dateModified": post.data.date.toISOString(),
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://joelburigo.com.br/blog/${post.slug}`
+  },
+  "articleSection": post.data.category,
+  "keywords": `${post.data.category}, vendas escaláveis, Joel Burigo`,
+  "articleBody": post.data.excerpt
+}
 ---
 
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
   <Header />
   
   <main class="flex-grow">

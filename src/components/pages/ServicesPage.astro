@@ -1,50 +1,290 @@
 ---
 import Container from '../ui/Container.astro'
 import Button from '../ui/Button.astro'
+import { CheckCircle2, ArrowRight, Zap, TrendingUp, Rocket } from 'lucide-react'
 
-const steps = [
+const pacotes = [
   {
-    title: 'Discovery',
-    desc: '2 semanas de imersão no seu negócio para desenhar a estratégia.',
+    nome: 'Fundação',
+    icon: 'Zap',
+    investimento: 'R$ 3.000/mês',
+    faturamento: 'R$ 10-50k/mês',
+    foco: 'P1-P4 (base estrutural)',
+    permanencia: '3-6 meses',
+    resultado: '2-3x em vendas',
+    inclusos: [
+      'Growth CRM (5 usuários)',
+      '3 funis configurados',
+      '5 automações essenciais',
+      '2 landing pages/mês',
+      'Gestão de 1 rede social',
+      'Tráfego pago até R$ 10k/mês',
+      '4 mentorias/mês (1h cada)',
+      'Playbook comercial (10-15 páginas)',
+    ],
+    destaque: false,
   },
   {
-    title: 'Implementação',
-    desc: '6-8 semanas de configuração de CRM, funis e processos.',
+    nome: 'Aceleração',
+    icon: 'TrendingUp',
+    investimento: 'R$ 6.000/mês',
+    faturamento: 'R$ 50-200k/mês',
+    foco: 'P1-P5 (sistema completo)',
+    permanencia: '6-9 meses',
+    resultado: '3-4x em vendas',
+    inclusos: [
+      'TUDO do Fundação +',
+      'Usuários CRM ilimitados',
+      '10 automações',
+      'Lead scoring configurado',
+      '5 landing pages/mês',
+      'Gestão de 2 redes sociais',
+      '2 artigos de blog/mês (SEO)',
+      'Tráfego pago até R$ 25k/mês',
+      '6 mentorias/mês',
+      'Treinamento de equipe',
+      'Playbook comercial (30 páginas)',
+    ],
+    destaque: true,
   },
   {
-    title: 'Otimização',
-    desc: 'Acompanhamento contínuo para garantir performance.',
+    nome: 'ScaleUp',
+    icon: 'Rocket',
+    investimento: 'R$ 9.000/mês',
+    faturamento: 'R$ 100-300k/mês',
+    foco: 'Todos os 6Ps (operação autônoma)',
+    permanencia: '9-12 meses',
+    resultado: '4-5x em vendas, equipe autônoma',
+    inclusos: [
+      'TUDO do Aceleração +',
+      'Landing pages ilimitadas',
+      'Gestão de 3 redes sociais',
+      '4 artigos de blog/mês',
+      'Prospecção ativa (500 contatos/mês)',
+      'Estruturação de equipe comercial (P6)',
+      '8 mentorias/mês',
+      'WhatsApp VIP com Joel',
+      'Playbook comercial (50-80 páginas)',
+    ],
+    destaque: false,
   },
+]
+
+const diferenciais = [
+  { titulo: 'Mensal SEM Fidelidade', desc: 'Cancela quando quiser, sem multa' },
+  { titulo: 'Upgrade Livre', desc: 'Muda de pacote quando crescer' },
+  { titulo: 'CRM Incluído', desc: 'Não é custo extra, já está dentro' },
+  { titulo: 'Mão na Massa', desc: 'Nós implementamos, você aprende' },
 ]
 ---
 
 <div class="flex min-h-screen flex-col">
   <main class="flex-grow pt-20">
-    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
-      <Container>
-        <div class="hero-content mx-auto mb-16 max-w-3xl text-center">
-          <h1 class="mb-6 font-display text-display-md text-white md:text-display-lg">
+    <!-- Hero -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-dark via-dark-gray to-royal-blue py-32">
+      <div class="absolute left-0 top-0 h-96 w-96 rounded-full bg-lime/10 blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-royal-blue/10 blur-3xl"></div>
+      
+      <Container class="relative z-10">
+        <div class="mx-auto max-w-4xl text-center">
+          <span class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/20 px-6 py-2 font-display text-sm font-bold text-lime backdrop-blur-sm">
+            IMPLEMENTAÇÃO COMPLETA | DFY (DONE FOR YOU)
+          </span>
+          <h1 class="mb-6 font-display text-display-lg text-white md:text-6xl">
             Implementation Services
           </h1>
-          <p class="mb-8 font-sans text-body-lg text-gray-300">
-            Minha Equipe Implementa. Você Escala. Cansado de fazer tudo sozinho? Nós
-            implementamos todo o sistema de vendas no seu negócio.
+          <p class="mx-auto mb-4 max-w-3xl font-sans text-h3 font-semibold text-white/90">
+            Minha Equipe Implementa. Você Escala.
           </p>
+          <p class="mx-auto mb-10 max-w-2xl font-sans text-body-lg text-gray-300">
+            Cansado de fazer tudo sozinho? Implementamos todo o sistema de vendas no seu negócio enquanto você foca em vender.
+          </p>
+          
           <Button variant="primary" size="lg">
-            Solicitar Proposta
+            Solicitar Diagnóstico Gratuito
           </Button>
+          
+          <p class="mt-8 font-sans text-sm text-white/70">
+            ⚡ Mensalidade SEM fidelidade | Cancele quando quiser
+          </p>
+        </div>
+      </Container>
+    </section>
+
+    <!-- O Que Fazemos -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+      <Container>
+        <div class="mx-auto max-w-4xl text-center mb-16">
+          <h2 class="mb-6 font-display text-display-sm text-white">
+            O Que Implementamos <span class="text-lime">Por Você</span>
+          </h2>
+          <p class="font-sans text-body-lg text-gray-300">
+            Aplicamos o Framework dos 6Ps completo no seu negócio com nossa equipe especializada
+          </p>
         </div>
 
-        <div class="mb-16 grid grid-cols-1 gap-8 md:grid-cols-3">
-          {steps.map((step, i) => (
-            <div class="step-card rounded-2xl border-2 border-white/10 bg-dark-gray/50 p-8 transition-all hover:border-lime/50" style={`animation-delay: ${i * 0.1}s`}>
-              <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-lime font-display font-bold text-dark">
-                {i + 1}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="rounded-xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6">
+            <div class="mb-4 text-4xl">🎯</div>
+            <h3 class="mb-2 font-display text-h3 text-white">Posicionamento</h3>
+            <p class="font-sans text-body-sm text-gray-300">Diferencial único definido</p>
+          </div>
+          <div class="rounded-xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6">
+            <div class="mb-4 text-4xl">👥</div>
+            <h3 class="mb-2 font-display text-h3 text-white">Público</h3>
+            <p class="font-sans text-body-sm text-gray-300">ICP e personas mapeados</p>
+          </div>
+          <div class="rounded-xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6">
+            <div class="mb-4 text-4xl">📦</div>
+            <h3 class="mb-2 font-display text-h3 text-white">Produto</h3>
+            <p class="font-sans text-body-sm text-gray-300">Oferta irresistível estruturada</p>
+          </div>
+          <div class="rounded-xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6">
+            <div class="mb-4 text-4xl">⚙️</div>
+            <h3 class="mb-2 font-display text-h3 text-white">Programas</h3>
+            <p class="font-sans text-body-sm text-gray-300">CRM + funis + automações</p>
+          </div>
+          <div class="rounded-xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6">
+            <div class="mb-4 text-4xl">📋</div>
+            <h3 class="mb-2 font-display text-h3 text-white">Processos</h3>
+            <p class="font-sans text-body-sm text-gray-300">Playbook comercial completo</p>
+          </div>
+          <div class="rounded-xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6">
+            <div class="mb-4 text-4xl">👔</div>
+            <h3 class="mb-2 font-display text-h3 text-white">Pessoas</h3>
+            <p class="font-sans text-body-sm text-gray-300">Equipe treinada e pronta</p>
+          </div>
+          <div class="rounded-xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6">
+            <div class="mb-4 text-4xl">📈</div>
+            <h3 class="mb-2 font-display text-h3 text-white">Métricas</h3>
+            <p class="font-sans text-body-sm text-gray-300">Dashboard e KPIs configurados</p>
+          </div>
+          <div class="rounded-xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6">
+            <div class="mb-4 text-4xl">🚀</div>
+            <h3 class="mb-2 font-display text-h3 text-white">Tração</h3>
+            <p class="font-sans text-body-sm text-gray-300">Leads entrando todo dia</p>
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Pacotes -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+      <Container>
+        <div class="mx-auto max-w-6xl">
+          <div class="mb-16 text-center">
+            <h2 class="mb-4 font-display text-display-sm text-white">
+              Escolha Seu <span class="text-lime">Pacote</span>
+            </h2>
+            <p class="mx-auto max-w-2xl font-sans text-body-lg text-gray-300">
+              3 níveis de implementação para cada fase do seu crescimento
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+            {pacotes.map((pacote) => (
+              <div class={`rounded-2xl border-2 p-8 transition-all ${
+                pacote.destaque 
+                  ? 'border-lime bg-gradient-to-br from-lime/10 to-lime/5 shadow-2xl shadow-lime/20 scale-105' 
+                  : 'border-white/10 bg-gradient-to-br from-white/5 to-white/10 hover:border-lime/50'
+              }`}>
+                {pacote.destaque && (
+                  <div class="mb-4 inline-block rounded-full bg-lime px-4 py-1 font-display text-xs font-bold text-dark">
+                    MAIS POPULAR
+                  </div>
+                )}
+                
+                <h3 class="mb-2 font-display text-h1 text-white">{pacote.nome}</h3>
+                <p class="mb-6 font-display text-3xl font-bold text-lime">{pacote.investimento}</p>
+                
+                <div class="mb-6 space-y-2 border-b border-white/10 pb-6">
+                  <p class="font-sans text-sm text-gray-400">
+                    <span class="font-semibold text-white">Faturamento ideal:</span> {pacote.faturamento}
+                  </p>
+                  <p class="font-sans text-sm text-gray-400">
+                    <span class="font-semibold text-white">Foco:</span> {pacote.foco}
+                  </p>
+                  <p class="font-sans text-sm text-gray-400">
+                    <span class="font-semibold text-white">Permanência média:</span> {pacote.permanencia}
+                  </p>
+                  <p class="font-sans text-sm text-gray-400">
+                    <span class="font-semibold text-white">Resultado esperado:</span> {pacote.resultado}
+                  </p>
+                </div>
+
+                <ul class="mb-8 space-y-3">
+                  {pacote.inclusos.map((item) => (
+                    <li class="flex items-start gap-2">
+                      <CheckCircle2 class="h-5 w-5 flex-shrink-0 text-lime" />
+                      <span class="font-sans text-body-sm text-gray-300">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Button 
+                  variant={pacote.destaque ? 'primary' : 'outline'} 
+                  class="w-full"
+                >
+                  Solicitar {pacote.nome}
+                  <ArrowRight class="ml-2 h-4 w-4" />
+                </Button>
               </div>
-              <h3 class="mb-2 font-display text-h3 text-white">{step.title}</h3>
-              <p class="font-sans text-body text-gray-300">{step.desc}</p>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Diferenciais -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+      <Container>
+        <div class="mx-auto max-w-6xl">
+          <div class="mb-16 text-center">
+            <h2 class="mb-4 font-display text-display-sm text-white">
+              Por Que Services é <span class="text-lime">Diferente</span>
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {diferenciais.map((diff) => (
+              <div class="rounded-xl border-2 border-lime/20 bg-gradient-to-br from-lime/5 to-lime/10 p-6 text-center">
+                <h3 class="mb-2 font-display text-h3 text-white">{diff.titulo}</h3>
+                <p class="font-sans text-body-sm text-gray-300">{diff.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-12 rounded-2xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-8 text-center">
+            <p class="mb-4 font-display text-h2 text-white">
+              "Se você quer sair, é porque não estou entregando valor."
+            </p>
+            <p class="font-sans text-body text-gray-300">
+              Prefiro perder o cliente a prender quem não quer ficar. Por isso não tem fidelidade.
+            </p>
+            <p class="mt-4 font-sans text-sm text-lime">— Joel Burigo</p>
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-royal-blue via-royal-blue/90 to-dark py-24">
+      <div class="absolute left-0 top-0 h-96 w-96 rounded-full bg-lime/20 blur-3xl"></div>
+      
+      <Container class="relative z-10">
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 class="mb-6 font-display text-display-md text-white">
+            Pronto Para Escalar?
+          </h2>
+          <p class="mb-8 font-sans text-body-lg text-white/80">
+            Agende um diagnóstico gratuito de 30 minutos para identificar qual pacote é ideal para o seu momento
+          </p>
+          <Button variant="primary" size="lg">
+            Agendar Diagnóstico Gratuito
+          </Button>
+          <p class="mt-6 font-sans text-sm text-white/70">
+            📅 Vagas limitadas | Atendemos apenas 15 clientes simultaneamente
+          </p>
         </div>
       </Container>
     </section>
@@ -52,14 +292,9 @@ const steps = [
 </div>
 
 <style>
-  .hero-content {
+  section {
     opacity: 0;
     animation: fadeIn 0.6s ease-out forwards;
-  }
-
-  .step-card {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out forwards;
   }
 
   @keyframes fadeIn {
@@ -68,17 +303,6 @@ const steps = [
     }
     to {
       opacity: 1;
-    }
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
     }
   }
 </style>

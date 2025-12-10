@@ -37,17 +37,12 @@
 </div>
 
 <script>
-  import { initConsent, updateConsent } from '../../lib/analytics'
-
   function initCookieConsent() {
-    const banner = document.querySelector('[data-consent-banner]')
+    const banner = document.querySelector('[data-consent-banner]') as HTMLElement
     const acceptBtn = document.getElementById('cookie-accept')
     const rejectBtn = document.getElementById('cookie-reject')
 
     if (!banner || !acceptBtn || !rejectBtn) return
-
-    // Initialize consent mode
-    initConsent()
 
     // Check if user already made a choice
     const consent = localStorage.getItem('cookie_consent')
@@ -58,21 +53,18 @@
 
     // Accept button
     acceptBtn.addEventListener('click', () => {
-      updateConsent(true)
+      localStorage.setItem('cookie_consent', 'accepted')
       banner.classList.add('hidden')
       
-      // Trigger page view after consent
-      if (window.gtag) {
-        window.gtag('event', 'page_view')
-      }
-      if (window.fbq) {
-        window.fbq('track', 'PageView')
+      // Reload to apply consent
+      if (typeof window !== 'undefined') {
+        window.location.reload()
       }
     })
 
     // Reject button
     rejectBtn.addEventListener('click', () => {
-      updateConsent(false)
+      localStorage.setItem('cookie_consent', 'rejected')
       banner.classList.add('hidden')
     })
   }

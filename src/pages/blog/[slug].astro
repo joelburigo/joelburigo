@@ -16,6 +16,11 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props
+
+if (!post) {
+  return Astro.redirect('/blog')
+}
+
 const { Content } = await post.render()
 
 const seo = {

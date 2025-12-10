@@ -1,0 +1,179 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Container from '../components/ui/Container.astro';
+import { TrendingUp, Award } from 'lucide-react';
+
+const seo = {
+  title: 'Cases de Sucesso - Resultados Reais dos Clientes | Joel Burigo',
+  description:
+    'Veja os resultados reais de empresas que implementaram o Framework dos 6Ps. Cases de crescimento de 2x a 10x em vendas.',
+  keywords: 'cases sucesso vendas, resultados clientes, framework 6Ps, Joel Burigo',
+};
+
+const cases = [
+  {
+    empresa: 'Encontre Sua Franquia',
+    nicho: 'Consultoria de Franquias',
+    antes: 'R$ 60k/mês',
+    depois: 'R$ 1M/mês',
+    tempo: '2 anos',
+    crescimento: '16x',
+    resultado: 'De R$ 60k/mês para R$ 1 milhão/mês em 24 meses',
+    situacaoAntes:
+      'Dependia 100% de indicação. Não tinha processo documentado. Vendas inconsistentes mês a mês.',
+    solucao:
+      'Implementamos os 6Ps completos: ICP definido, prospecção ativa estruturada, CRM profissional, playbooks documentados e equipe de 5 SDRs treinados.',
+    badge: 'Destaque',
+  },
+  {
+    empresa: 'Agência de Marketing Digital',
+    nicho: 'Serviços B2B',
+    antes: 'R$ 30k/mês',
+    depois: 'R$ 120k/mês',
+    tempo: '12 meses',
+    crescimento: '4x',
+    resultado: 'De R$ 30k para R$ 120k/mês em 1 ano',
+    situacaoAntes:
+      'Vendedor solo (o próprio dono). Sem CRM. Follow-up manual por WhatsApp. Taxa de conversão de 8%.',
+    solucao:
+      'Posicionamento reformulado para nicho específico (clínicas de estética). Funil completo no CRM. Scripts de vendas. Taxa de conversão subiu para 23%.',
+  },
+  {
+    empresa: 'SaaS B2B',
+    nicho: 'Tecnologia',
+    antes: 'R$ 80k/mês',
+    depois: 'R$ 300k/mês',
+    tempo: '18 meses',
+    crescimento: '3.75x',
+    resultado: 'De R$ 80k para R$ 300k/mês em 1,5 anos',
+    situacaoAntes:
+      'Produto bom, mas vendas travadas. Ciclo de venda de 90 dias. Churn alto (12%/mês).',
+    solucao:
+      'Reposicionamento de mercado. Criação de 3 pacotes (Starter, Pro, Enterprise). Onboarding estruturado. Churn caiu para 3%/mês.',
+  },
+  {
+    empresa: 'Consultoria Financeira',
+    nicho: 'Serviços B2B',
+    antes: 'R$ 15k/mês',
+    depois: 'R$ 80k/mês',
+    tempo: '8 meses',
+    crescimento: '5.3x',
+    resultado: 'De R$ 15k para R$ 80k/mês em 8 meses',
+    situacaoAntes: 'Consultoria generalista. Sem posicionamento claro. Preço/hora muito baixo.',
+    solucao:
+      'Nicho definido (empresas de construção civil). Precificação por valor (não hora). Programa de 90 dias formatado.',
+  },
+];
+---
+
+<Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
+  <Header />
+
+  <main class="flex-grow">
+    <!-- Hero -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-32">
+      <Container>
+        <div class="mx-auto max-w-3xl text-center">
+          <div class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-2">
+            <span class="font-display text-sm font-bold text-lime">CASES</span>
+          </div>
+          <h1 class="mb-6 font-display text-display-lg text-white">
+            Resultados <span class="text-lime">Reais</span>
+          </h1>
+          <p class="mb-4 font-sans text-body-lg text-gray-300">
+            Estes são alguns dos 140 clientes que implementaram o Framework dos 6Ps e
+            transformaram vendas aleatórias em previsíveis.
+          </p>
+          <p class="font-sans text-body text-gray-400">
+            <strong class="text-white">Disclaimer:</strong> Resultados variam conforme execução, nicho
+            e momento de mercado. Não prometo fórmula mágica, prometo sistema testado.
+          </p>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Cases Grid -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+      <Container>
+        <div class="grid gap-8 lg:grid-cols-2">
+          {
+            cases.map((caso) => (
+              <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-8 backdrop-blur-sm transition-all hover:border-lime/30">
+                {caso.badge && (
+                  <div class="mb-4 inline-block rounded-full bg-lime/20 px-3 py-1">
+                    <span class="font-display text-xs font-bold text-lime">{caso.badge}</span>
+                  </div>
+                )}
+
+                <div class="mb-6">
+                  <h3 class="mb-2 font-display text-h3 text-white">{caso.empresa}</h3>
+                  <p class="font-sans text-sm text-gray-400">{caso.nicho}</p>
+                </div>
+
+                <div class="mb-6 grid grid-cols-3 gap-4 rounded-lg border border-lime/20 bg-lime/5 p-4">
+                  <div>
+                    <p class="mb-1 font-sans text-xs text-gray-400">Antes</p>
+                    <p class="font-display text-lg font-bold text-white">{caso.antes}</p>
+                  </div>
+                  <div>
+                    <p class="mb-1 font-sans text-xs text-gray-400">Depois</p>
+                    <p class="font-display text-lg font-bold text-lime">{caso.depois}</p>
+                  </div>
+                  <div>
+                    <p class="mb-1 font-sans text-xs text-gray-400">Tempo</p>
+                    <p class="font-display text-lg font-bold text-white">{caso.tempo}</p>
+                  </div>
+                </div>
+
+                <div class="mb-6 rounded-lg border border-white/10 bg-white/5 p-4">
+                  <div class="mb-2 flex items-center gap-2">
+                    <TrendingUp className="h-5 w-5 text-lime" />
+                    <span class="font-display text-h4 text-lime">{caso.crescimento}</span>
+                  </div>
+                  <p class="font-sans text-body text-gray-300">{caso.resultado}</p>
+                </div>
+
+                <div class="mb-4">
+                  <h4 class="mb-2 font-sans text-sm font-semibold text-white">
+                    Situação Antes:
+                  </h4>
+                  <p class="font-sans text-body-sm text-gray-400">{caso.situacaoAntes}</p>
+                </div>
+
+                <div>
+                  <h4 class="mb-2 font-sans text-sm font-semibold text-white">O Que Fizemos:</h4>
+                  <p class="font-sans text-body-sm text-gray-400">{caso.solucao}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="mx-auto mt-16 max-w-2xl rounded-2xl border border-lime/20 bg-lime/5 p-8 text-center">
+          <Award className="mx-auto mb-4 h-12 w-12 text-lime" />
+          <h3 class="mb-4 font-display text-h3 text-white">Quer Resultados Assim?</h3>
+          <p class="mb-6 font-sans text-body text-gray-300">
+            Escolha o formato ideal para o seu momento: educação (VSS), implementação (Services)
+            ou consultoria estratégica (Advisory).
+          </p>
+          <div class="flex flex-col justify-center gap-4 sm:flex-row">
+            <a href="/vss">
+              <button class="inline-flex h-12 w-full items-center justify-center rounded-lg bg-lime px-6 font-display font-bold text-dark transition-all hover:bg-lime/90 sm:w-auto">
+                Ver Vendas Sem Segredos
+              </button>
+            </a>
+            <a href="/contato">
+              <button class="inline-flex h-12 w-full items-center justify-center rounded-lg border-2 border-white px-6 font-display font-semibold text-white transition-all hover:bg-white/20 sm:w-auto">
+                Falar Comigo
+              </button>
+            </a>
+          </div>
+        </div>
+      </Container>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

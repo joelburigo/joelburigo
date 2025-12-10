@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Container from '../components/ui/Container.astro';
+import { Download, Image as ImageIcon, FileText, Award } from 'lucide-react';
+
+const seo = {
+  title: 'Press Kit - Joel Burigo | Material para Imprensa',
+  description:
+    'Material oficial para imprensa: biografia, fotos, logos e informações sobre Joel Burigo e o Framework dos 6Ps das Vendas Escaláveis.',
+  keywords: 'press kit, imprensa, Joel Burigo, biografia, fotos oficiais',
+};
+---
+
+<Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
+  <Header />
+
+  <main class="flex-grow">
+    <!-- Hero -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-32">
+      <Container>
+        <div class="mx-auto max-w-3xl text-center">
+          <div class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-2">
+            <span class="font-display text-sm font-bold text-lime">IMPRENSA</span>
+          </div>
+          <h1 class="mb-6 font-display text-display-lg text-white">
+            Press <span class="text-lime">Kit</span>
+          </h1>
+          <p class="font-sans text-body-lg text-gray-300">
+            Material oficial para imprensa, parceiros e eventos
+          </p>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Biografia -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+      <Container>
+        <div class="mx-auto max-w-4xl">
+          <div class="mb-12">
+            <h2 class="mb-6 font-display text-display-sm text-white">
+              Biografia <span class="text-lime">Oficial</span>
+            </h2>
+
+            <div class="space-y-6 rounded-2xl border border-white/10 bg-white/5 p-8">
+              <div>
+                <h3 class="mb-3 font-display text-h4 text-lime">Bio Curta (1 parágrafo)</h3>
+                <p class="font-sans text-body text-gray-300">
+                  Joel Burigo é especialista em vendas escaláveis para micro e pequenas empresas.
+                  Criou o Framework dos 6Ps das Vendas Escaláveis após 17 anos no mercado, 140
+                  clientes atendidos e aproximadamente R$ 1 bilhão em vendas estruturadas. Autor do
+                  programa VSS (Vendas Sem Segredos) e fundador da Growth Master.
+                </p>
+              </div>
+
+              <div>
+                <h3 class="mb-3 font-display text-h4 text-lime">Bio Longa</h3>
+                <div class="space-y-4 font-sans text-body text-gray-300">
+                  <p>
+                    Joel Burigo nasceu em Palhoça/SC, bairro Jardim Eldorado. Filho de marceneiro e
+                    vendedora de loja, cresceu com dinheiro curto mas dignidade alta.
+                  </p>
+                  <p>
+                    Aos 30 anos, quebrou sua primeira empresa após tomar calote do próprio sócio.
+                    Morou em barraco sem geladeira em Minas Gerais, trabalhou no CTE dos Correios
+                    para ter salário fixo. Juntou dinheiro, comprou mil cartões de visita e foi
+                    bater porta a porta oferecendo sites gratuitos para provar sua capacidade.
+                  </p>
+                  <p>
+                    Devagar, tijolo por tijolo, reconstruiu. Ao longo de 17 anos, atendeu 140
+                    clientes pessoalmente e estruturou aproximadamente R$ 1 bilhão em vendas.
+                    Durante esse período, percebeu um padrão devastador: 80% das micro e pequenas
+                    empresas brasileiras têm vendas aleatórias porque tratam marketing, vendas e
+                    operação como áreas isoladas.
+                  </p>
+                  <p>
+                    Essa descoberta o levou a criar o Framework dos 6Ps das Vendas Escaláveis — uma
+                    metodologia que integra Posicionamento, Público, Produto, Programas, Processos
+                    e Pessoas em um sistema único e previsível.
+                  </p>
+                  <p>
+                    Hoje, Joel ajuda empresários a transformarem vendas aleatórias em previsíveis
+                    através de três formatos: VSS (educação), Services (implementação) e Advisory
+                    (consultoria estratégica). Sua missão é democratizar o acesso a sistemas de
+                    vendas profissionais para MPEs brasileiras.
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="mb-3 font-display text-h4 text-lime">Credenciais</h3>
+                <ul class="space-y-2 font-sans text-body text-gray-300">
+                  <li>• 17 anos de experiência em vendas B2B</li>
+                  <li>• 140 clientes atendidos pessoalmente</li>
+                  <li>• ~R$ 1 bilhão em vendas estruturadas</li>
+                  <li>• Criador do Framework dos 6Ps das Vendas Escaláveis</li>
+                  <li>• Fundador da Growth Master Ltda</li>
+                  <li>
+                    • Case emblemático: Encontre Sua Franquia (R$ 60k → R$ 1M/mês em 2 anos)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fotos Oficiais -->
+          <div class="mb-12">
+            <h2 class="mb-6 font-display text-display-sm text-white">
+              Fotos <span class="text-lime">Oficiais</span>
+            </h2>
+            <div class="grid gap-6 md:grid-cols-2">
+              <div class="rounded-xl border border-white/10 bg-white/5 p-6">
+                <ImageIcon className="mb-4 h-12 w-12 text-lime" />
+                <h3 class="mb-2 font-display text-h4 text-white">Foto Profissional</h3>
+                <p class="mb-4 font-sans text-body-sm text-gray-400">
+                  Alta resolução, fundo neutro
+                </p>
+                <a
+                  href="/images/joel-burigo-vendas-sem-segredos-2.png"
+                  download
+                  class="inline-flex items-center gap-2 font-sans text-sm font-medium text-lime hover:text-lime/80"
+                >
+                  <Download className="h-4 w-4" />
+                  Download (PNG)
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Logos e Marca -->
+          <div class="mb-12">
+            <h2 class="mb-6 font-display text-display-sm text-white">
+              Logos e <span class="text-lime">Marca</span>
+            </h2>
+            <div class="rounded-xl border border-white/10 bg-white/5 p-6">
+              <h3 class="mb-4 font-display text-h4 text-white">Marca Pessoal</h3>
+              <div class="mb-4 rounded-lg bg-dark p-8 text-center">
+                <span class="font-display text-4xl font-extrabold tracking-tight text-white">
+                  JOEL <span class="text-lime">BURIGO</span>
+                </span>
+              </div>
+              <div class="space-y-2 font-sans text-body-sm text-gray-400">
+                <p>• Fonte Display: Montserrat ExtraBold</p>
+                <p>• Cor primária: #a3ff3f (Lime)</p>
+                <p>• Cor secundária: #1a1a2e (Dark)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contato Imprensa -->
+          <div class="rounded-2xl border border-lime/20 bg-lime/5 p-8">
+            <Award className="mb-4 h-12 w-12 text-lime" />
+            <h3 class="mb-4 font-display text-h3 text-white">Contato para Imprensa</h3>
+            <p class="mb-4 font-sans text-body text-gray-300">
+              Para entrevistas, parcerias ou solicitações de conteúdo, entre em contato:
+            </p>
+            <div class="space-y-2 font-sans text-body text-gray-300">
+              <p>
+                <strong class="text-white">Email:</strong> contato@joelburigo.com
+              </p>
+              <p>
+                <strong class="text-white">Website:</strong> joelburigo.com
+              </p>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

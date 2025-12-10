@@ -1,0 +1,213 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Container from '../components/ui/Container.astro';
+import { FileText, CheckCircle2, XCircle } from 'lucide-react';
+
+const seo = {
+  title: 'Termos de Uso - Joel Burigo',
+  description:
+    'Termos e condições de uso do site e serviços oferecidos por Joel Burigo / Growth Master Ltda.',
+  keywords: 'termos uso, condições, Joel Burigo, Growth Master',
+};
+---
+
+<Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
+  <Header />
+
+  <main class="flex-grow bg-gradient-to-b from-dark via-dark-gray to-dark py-32">
+    <Container>
+      <div class="mx-auto max-w-4xl">
+        <div class="mb-12 text-center">
+          <FileText className="mx-auto mb-6 h-16 w-16 text-lime" />
+          <h1 class="mb-4 font-display text-display-lg text-white">Termos de Uso</h1>
+          <p class="font-sans text-body text-gray-400">
+            Última atualização: Dezembro de 2025
+          </p>
+        </div>
+
+        <div class="space-y-8 rounded-2xl border border-white/10 bg-white/5 p-8 font-sans text-body text-gray-300">
+          <section>
+            <h2 class="mb-4 font-display text-h3 text-white">1. Aceitação dos Termos</h2>
+            <p>
+              Ao acessar e usar este site (joelburigo.com), você concorda em cumprir e estar
+              vinculado aos seguintes termos e condições de uso. Se você não concorda com
+              qualquer parte destes termos, não deve usar este site.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="mb-4 font-display text-h3 text-white">2. Sobre os Serviços</h2>
+            <p class="mb-4">
+              A Growth Master Ltda, operadora da marca JOEL BURIGO, oferece os seguintes serviços:
+            </p>
+            <ul class="list-inside list-disc space-y-2">
+              <li>
+                <strong class="text-white">VSS (Vendas Sem Segredos):</strong> Programa educacional
+                de 90 dias
+              </li>
+              <li>
+                <strong class="text-white">Services:</strong> Serviços de implementação DFY (Done
+                For You)
+              </li>
+              <li>
+                <strong class="text-white">Advisory:</strong> Consultoria estratégica executiva
+              </li>
+              <li>
+                <strong class="text-white">Conteúdo educacional:</strong> Blog, diagnósticos e materiais
+                gratuitos
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="mb-4 font-display text-h3 text-white">3. Uso do Site</h2>
+            <div class="space-y-4">
+              <div>
+                <h3 class="mb-2 flex items-center gap-2 font-sans text-body font-semibold text-white">
+                  <CheckCircle2 className="h-5 w-5 text-lime" /> Você PODE:
+                </h3>
+                <ul class="list-inside list-disc space-y-1">
+                  <li>Navegar e consumir o conteúdo do site</li>
+                  <li>Compartilhar links de artigos e páginas</li>
+                  <li>Inscrever-se em programas e serviços oferecidos</li>
+                  <li>Entrar em contato através dos formulários disponíveis</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="mb-2 flex items-center gap-2 font-sans text-body font-semibold text-white">
+                  <XCircle className="h-5 w-5 text-red-400" /> Você NÃO PODE:
+                </h3>
+                <ul class="list-inside list-disc space-y-1">
+                  <li>Copiar, reproduzir ou distribuir conteúdo sem autorização</li>
+                  <li>Usar o site para fins ilegais ou não autorizados</li>
+                  <li>Tentar acessar áreas restritas do site</li>
+                  <li>Enviar spam, malware ou conteúdo malicioso</li>
+                  <li>Fazer engenharia reversa de qualquer funcionalidade do site</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="mb-4 font-display text-h3 text-white">4. Propriedade Intelectual</h2>
+            <p>
+              Todo o conteúdo deste site, incluindo mas não limitado a textos, gráficos, logos,
+              ícones, imagens, áudio, vídeo e software, é propriedade da Growth Master Ltda ou de
+              seus fornecedores de conteúdo e protegido por leis de direitos autorais brasileiras
+              e internacionais.
+            </p>
+            <p class="mt-4">
+              <strong class="text-white">Framework dos 6Ps das Vendas Escaláveis™</strong> é marca
+              proprietária de Joel Burigo / Growth Master Ltda.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="mb-4 font-display text-h3 text-white">5. Garantias e Responsabilidades</h2>
+            <div class="space-y-4">
+              <div>
+                <h3 class="mb-2 font-sans text-body font-semibold text-white">
+                  O que GARANTIMOS:
+                </h3>
+                <ul class="list-inside list-disc space-y-1">
+                  <li>Metodologia testada e validada em 140 clientes</li>
+                  <li>Sistema estruturado com base em 17 anos de experiência</li>
+                  <li>Suporte durante o período contratado</li>
+                  <li>Política de devolução conforme descrito em cada programa</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="mb-2 font-sans text-body font-semibold text-white">
+                  O que NÃO garantimos:
+                </h3>
+                <ul class="list-inside list-disc space-y-1">
+                  <li>Resultados específicos de faturamento</li>
+                  <li>Sucesso garantido sem execução adequada</li>
+                  <li>Que a metodologia funcionará para 100% das empresas</li>
+                  <li>Enriquecimento rápido ou fórmulas mágicas</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="mb-4 font-display text-h3 text-white">6. Política de Reembolso</h2>
+            <p class="mb-4">Cada programa tem sua própria política de garantia:</p>
+            <ul class="list-inside list-disc space-y-2">
+              <li>
+                <strong class="text-white">VSS:</strong> Garantia incondicional de 7 dias + garantia
+                condicional até dia 60
+              </li>
+              <li>
+                <strong class="text-white">Services:</strong> Mensal sem fidelidade, pode cancelar
+                a qualquer momento
+              </li>
+              <li>
+                <strong class="text-white">Advisory:</strong> Garantia de satisfação conforme descrito
+                na página do serviço
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="mb-4 font-display text-h3 text-white">7. Limitação de Responsabilidade</h2>
+            <p>
+              Em nenhuma circunstância a Growth Master Ltda ou Joel Burigo serão responsáveis por
+              quaisquer danos diretos, indiretos, incidentais, especiais ou consequenciais
+              decorrentes do uso ou da incapacidade de usar este site ou os serviços oferecidos.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="mb-4 font-display text-h3 text-white">8. Links de Terceiros</h2>
+            <p>
+              Este site pode conter links para sites de terceiros. Não somos responsáveis pelo
+              conteúdo ou práticas de privacidade desses sites. O acesso a esses links é por sua
+              conta e risco.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="mb-4 font-display text-h3 text-white">9. Modificações</h2>
+            <p>
+              Reservamo-nos o direito de modificar estes termos a qualquer momento. As
+              alterações entrarão em vigor imediatamente após a publicação no site. O uso
+              continuado do site após as alterações constitui aceitação dos novos termos.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="mb-4 font-display text-h3 text-white">10. Lei Aplicável</h2>
+            <p>
+              Estes termos serão regidos e interpretados de acordo com as leis do Brasil. Qualquer
+              disputa relacionada a estes termos será submetida à jurisdição exclusiva dos
+              tribunais brasileiros.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="mb-4 font-display text-h3 text-white">11. Contato</h2>
+            <div class="space-y-2">
+              <p>
+                <strong class="text-white">Razão Social:</strong> Growth Master Ltda
+              </p>
+              <p>
+                <strong class="text-white">Email:</strong> contato@joelburigo.com
+              </p>
+              <p>
+                <strong class="text-white">Website:</strong> joelburigo.com
+              </p>
+            </div>
+            <p class="mt-4">
+              Para dúvidas sobre estes termos, entre em contato através do email acima.
+            </p>
+          </section>
+        </div>
+      </div>
+    </Container>
+  </main>
+
+  <Footer />
+</Layout>

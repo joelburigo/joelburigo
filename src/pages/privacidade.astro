@@ -1,0 +1,172 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Container from '../components/ui/Container.astro';
+import { Shield, Lock, Eye, UserCheck } from 'lucide-react';
+
+const seo = {
+  title: 'Política de Privacidade - Joel Burigo',
+  description:
+    'Política de privacidade e proteção de dados pessoais de acordo com a LGPD (Lei Geral de Proteção de Dados).',
+  keywords: 'política privacidade, LGPD, proteção dados, Joel Burigo',
+};
+---
+
+<Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
+  <Header />
+
+  <main class="flex-grow bg-gradient-to-b from-dark via-dark-gray to-dark py-32">
+    <Container>
+      <div class="mx-auto max-w-4xl">
+        <div class="mb-12 text-center">
+          <Shield className="mx-auto mb-6 h-16 w-16 text-lime" />
+          <h1 class="mb-4 font-display text-display-lg text-white">Política de Privacidade</h1>
+          <p class="font-sans text-body text-gray-400">
+            Última atualização: Dezembro de 2025
+          </p>
+        </div>
+
+        <div class="space-y-8 rounded-2xl border border-white/10 bg-white/5 p-8 font-sans text-body text-gray-300">
+          <section>
+            <h2 class="mb-4 font-display text-h3 text-white">1. Informações Gerais</h2>
+            <p>
+              A Growth Master Ltda, operadora da marca JOEL BURIGO, está comprometida em proteger a
+              privacidade e os dados pessoais de seus usuários, em conformidade com a Lei Geral de
+              Proteção de Dados (LGPD - Lei nº 13.709/2018).
+            </p>
+          </section>
+
+          <section>
+            <h2 class="mb-4 font-display text-h3 text-white">2. Dados Coletados</h2>
+            <p class="mb-4">Coletamos as seguintes informações quando você:</p>
+            <ul class="list-inside list-disc space-y-2">
+              <li>Preenche formulários de contato: nome, email, telefone, empresa</li>
+              <li>
+                Inscreve-se no VSS ou outros programas: dados cadastrais e informações de pagamento
+              </li>
+              <li>Faz diagnóstico dos 6Ps: respostas do questionário e dados de contato</li>
+              <li>
+                Navega no site: cookies, IP, páginas visitadas, tempo de navegação (dados de
+                navegação)
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="mb-4 font-display text-h3 text-white">3. Uso dos Dados</h2>
+            <p class="mb-4">Utilizamos seus dados pessoais para:</p>
+            <ul class="list-inside list-disc space-y-2">
+              <li>Responder suas solicitações de contato</li>
+              <li>Processar inscrições em programas e serviços</li>
+              <li>Enviar conteúdo educacional e newsletters (com seu consentimento)</li>
+              <li>Melhorar a experiência do usuário no site</li>
+              <li>Realizar análises estatísticas e de performance</li>
+              <li>Cumprir obrigações legais e fiscais</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="mb-4 font-display text-h3 text-white">4. Compartilhamento de Dados</h2>
+            <p class="mb-4">Seus dados podem ser compartilhados com:</p>
+            <ul class="list-inside list-disc space-y-2">
+              <li>
+                <strong class="text-white">Processadores de pagamento:</strong> para transações financeiras
+              </li>
+              <li>
+                <strong class="text-white">Ferramentas de CRM:</strong> para gestão de relacionamento
+              </li>
+              <li>
+                <strong class="text-white">Plataformas de email marketing:</strong> para envio de comunicações
+                (apenas com consentimento)
+              </li>
+              <li>
+                <strong class="text-white">Autoridades legais:</strong> quando exigido por lei
+              </li>
+            </ul>
+            <p class="mt-4">
+              <strong class="text-white">Nunca vendemos ou compartilhamos seus dados com terceiros
+              para fins comerciais não relacionados aos nossos serviços.</strong>
+            </p>
+          </section>
+
+          <section>
+            <h2 class="mb-4 font-display text-h3 text-white">5. Seus Direitos (LGPD)</h2>
+            <p class="mb-4">Você tem direito a:</p>
+            <ul class="list-inside list-disc space-y-2">
+              <li>Confirmar a existência de tratamento de seus dados</li>
+              <li>Acessar seus dados pessoais</li>
+              <li>Corrigir dados incompletos, inexatos ou desatualizados</li>
+              <li>
+                Solicitar a anonimização, bloqueio ou eliminação de dados desnecessários ou
+                excessivos
+              </li>
+              <li>Solicitar a portabilidade dos dados</li>
+              <li>Revogar o consentimento a qualquer momento</li>
+              <li>
+                Opor-se ao tratamento de dados realizado com base em uma das hipóteses de
+                dispensa de consentimento
+              </li>
+            </ul>
+            <p class="mt-4">
+              Para exercer seus direitos, envie email para:{' '}
+              <strong class="text-lime">contato@joelburigo.com</strong>
+            </p>
+          </section>
+
+          <section>
+            <h2 class="mb-4 font-display text-h3 text-white">6. Cookies</h2>
+            <p>
+              Utilizamos cookies para melhorar a experiência de navegação, analisar o tráfego do
+              site e personalizar conteúdo. Você pode desativar cookies nas configurações do seu
+              navegador, mas isso pode afetar a funcionalidade do site.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="mb-4 font-display text-h3 text-white">7. Segurança</h2>
+            <p>
+              Implementamos medidas técnicas e organizacionais adequadas para proteger seus dados
+              contra acesso não autorizado, alteração, divulgação ou destruição. No entanto,
+              nenhuma transmissão pela internet é 100% segura.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="mb-4 font-display text-h3 text-white">8. Retenção de Dados</h2>
+            <p>
+              Mantemos seus dados pessoais apenas pelo tempo necessário para cumprir as
+              finalidades descritas nesta política, salvo se um período de retenção maior for
+              exigido ou permitido por lei.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="mb-4 font-display text-h3 text-white">9. Alterações nesta Política</h2>
+            <p>
+              Podemos atualizar esta Política de Privacidade periodicamente. Notificaremos sobre
+              mudanças significativas por email ou por meio de aviso no site.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="mb-4 font-display text-h3 text-white">10. Contato</h2>
+            <div class="space-y-2">
+              <p>
+                <strong class="text-white">Razão Social:</strong> Growth Master Ltda
+              </p>
+              <p>
+                <strong class="text-white">Email:</strong> contato@joelburigo.com
+              </p>
+              <p>
+                <strong class="text-white">Website:</strong> joelburigo.com
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </Container>
+  </main>
+
+  <Footer />
+</Layout>

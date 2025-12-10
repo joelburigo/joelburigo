@@ -60,8 +60,6 @@ const calculatePosition = (index: number, total: number) => {
 
 <section class="relative overflow-hidden bg-dark py-24">
   <!-- Background decoration -->
-  <div class="absolute left-0 top-0 h-96 w-96 rounded-full bg-royal-blue/5 blur-3xl"></div>
-  <div class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-lime/5 blur-3xl"></div>
 
   <Container class="relative z-10">
     <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
@@ -85,7 +83,7 @@ const calculatePosition = (index: number, total: number) => {
                 style={`animation-delay: ${delay}s`}
               >
                 <div
-                  class={`h-10 w-10 rounded-full ${p.color === 'lime' ? 'bg-lime text-dark' : 'bg-royal-blue text-white'} flex shrink-0 items-center justify-center font-bold`}
+                  class={`h-10 w-10 rounded-full ${p.color === 'lime' ? 'bg-lime text-dark' : 'bg-dark border-2 border-white text-white'} flex shrink-0 items-center justify-center font-bold`}
                 >
                   {p.id}
                 </div>
@@ -99,7 +97,6 @@ const calculatePosition = (index: number, total: number) => {
         </div>
 
         <div class="cta-card relative overflow-hidden rounded-2xl bg-lime p-8 text-dark shadow-2xl">
-          <div class="absolute right-0 top-0 h-32 w-32 -translate-y-1/2 translate-x-1/2 rounded-full bg-white opacity-20 blur-3xl"></div>
           <h3 class="relative z-10 mb-2 font-display text-h3 font-bold">
             Descubra Qual P Está Travando Seu Crescimento
           </h3>
@@ -130,7 +127,7 @@ const calculatePosition = (index: number, total: number) => {
           const delay = 0.2 + i * 0.1
           return (
             <div 
-              class={`orbital-p absolute h-24 w-24 ${p.color === 'lime' ? 'border-lime bg-lime' : 'border-royal-blue bg-royal-blue'} group z-10 flex cursor-pointer flex-col items-center justify-center rounded-full border-2 shadow-xl transition-all duration-300 hover:scale-110`}
+              class={`orbital-p absolute h-24 w-24 ${p.color === 'lime' ? 'border-lime bg-lime' : 'border-white bg-dark'} group z-10 flex cursor-pointer flex-col items-center justify-center rounded-full border-2 shadow-xl transition-all duration-300 hover:scale-110`}
               style={`left: calc(50% + ${position.x}px - 3rem); top: calc(50% + ${position.y}px - 3rem); animation-delay: ${delay}s`}
             >
               <div class={`${p.color === 'lime' ? 'text-dark' : 'text-white'} mb-1 transition-transform group-hover:scale-110`}>

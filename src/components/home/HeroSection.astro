@@ -6,7 +6,6 @@ import { Play, ChevronDown } from 'lucide-react'
 <section class="hero-section relative flex min-h-screen items-center overflow-hidden bg-dark">
   <!-- Background Elements -->
   <div class="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-5 mix-blend-overlay"></div>
-  <div class="absolute right-0 top-0 h-full w-1/2 bg-black/30"></div>
 
   <Container class="relative z-10 pb-24 pt-24">
     <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
@@ -68,18 +67,15 @@ import { Play, ChevronDown } from 'lucide-react'
             <p class="font-sans text-body-sm text-gray-300">Gerado em vendas para nossos clientes</p>
           </div>
         </div>
-
-        <!-- Decorative background blob -->
-        <div class="absolute -right-10 -top-10 -z-10 h-full w-full rounded-full bg-lime/20 blur-3xl"></div>
       </div>
     </div>
-
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator absolute inset-x-0 bottom-8 flex flex-col items-center text-gray-400">
-      <span class="mb-2 text-xs font-medium uppercase tracking-widest">Scroll para saber mais</span>
-      <ChevronDown className="h-6 w-6 animate-bounce text-lime" />
-    </div>
   </Container>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator absolute inset-x-0 bottom-8 flex flex-col items-center text-gray-400">
+    <span class="mb-2 text-xs font-medium uppercase tracking-widest">Scroll para saber mais</span>
+    <ChevronDown className="h-6 w-6 animate-bounce text-lime" />
+  </div>
 </section>
 
 <style>

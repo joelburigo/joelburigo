@@ -29,7 +29,7 @@ const fullTitle = title.includes('Joel Burigo') ? title : `${title} | Joel Burig
 ---
 
 <!doctype html>
-<html lang="pt-BR" class="dark">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -74,34 +74,16 @@ const fullTitle = title.includes('Joel Burigo') ? title : `${title} | Joel Burig
     <title>{fullTitle}</title>
     
     <!-- Analytics & Tracking -->
-    </script>
+    <GoogleTagManager />
+    <MetaPixel />
+    <VercelAnalytics />
+    
+    <!-- Structured Data -->
+    <JsonLd />
   </head>
-  <body class="bg-white dark:bg-dark text-dark dark:text-white transition-colors">
+  <body class="bg-dark text-white transition-colors">
     <GoogleTagManagerBody />
     <slot />
     <CookieConsent />
-  </body>
-</html>
-    <script is:inline>
-      // Theme initialization - prevent flash
-      const theme = (() => {
-        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-          return localStorage.getItem('theme');
-        }
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          return 'dark';
-        }
-        return 'light';
-      })();
-      
-      if (theme === 'light') {
-        document.documentElement.classList.remove('dark');
-      } else {
-        document.documentElement.classList.add('dark');
-      }
-    </script>
-  </head>
-  <body class="bg-white dark:bg-dark text-dark dark:text-white transition-colors">
-    <slot />
   </body>
 </html>

@@ -81,7 +81,7 @@ const diferenciais = [
 <div class="flex min-h-screen flex-col">
   <main class="flex-grow pt-20">
     <!-- Hero -->
-    <section class="relative overflow-hidden bg-royal-blue py-32">
+    <section class="relative overflow-hidden section-hero py-32">
       <div class="absolute left-0 top-0 h-96 w-96 rounded-full bg-lime/10 blur-3xl"></div>
       <div class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-white/5 blur-3xl"></div>
       
@@ -112,7 +112,7 @@ const diferenciais = [
     </section>
 
     <!-- O Que Fazemos -->
-    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+    <section class="section-dark py-24">
       <Container>
         <div class="mx-auto max-w-4xl text-center mb-16">
           <h2 class="mb-6 font-display text-display-sm text-white">
@@ -124,42 +124,42 @@ const diferenciais = [
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="rounded-xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6">
+          <div class="rounded-xl border-2 border-white/10 card-gradient p-6">
             <div class="mb-4 text-4xl">🎯</div>
             <h3 class="mb-2 font-display text-h3 text-white">Posicionamento</h3>
             <p class="font-sans text-body-sm text-gray-300">Diferencial único definido</p>
           </div>
-          <div class="rounded-xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6">
+          <div class="rounded-xl border-2 border-white/10 card-gradient p-6">
             <div class="mb-4 text-4xl">👥</div>
             <h3 class="mb-2 font-display text-h3 text-white">Público</h3>
             <p class="font-sans text-body-sm text-gray-300">ICP e personas mapeados</p>
           </div>
-          <div class="rounded-xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6">
+          <div class="rounded-xl border-2 border-white/10 card-gradient p-6">
             <div class="mb-4 text-4xl">📦</div>
             <h3 class="mb-2 font-display text-h3 text-white">Produto</h3>
             <p class="font-sans text-body-sm text-gray-300">Oferta irresistível estruturada</p>
           </div>
-          <div class="rounded-xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6">
+          <div class="rounded-xl border-2 border-white/10 card-gradient p-6">
             <div class="mb-4 text-4xl">⚙️</div>
             <h3 class="mb-2 font-display text-h3 text-white">Programas</h3>
             <p class="font-sans text-body-sm text-gray-300">CRM + funis + automações</p>
           </div>
-          <div class="rounded-xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6">
+          <div class="rounded-xl border-2 border-white/10 card-gradient p-6">
             <div class="mb-4 text-4xl">📋</div>
             <h3 class="mb-2 font-display text-h3 text-white">Processos</h3>
             <p class="font-sans text-body-sm text-gray-300">Playbook comercial completo</p>
           </div>
-          <div class="rounded-xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6">
+          <div class="rounded-xl border-2 border-white/10 card-gradient p-6">
             <div class="mb-4 text-4xl">👔</div>
             <h3 class="mb-2 font-display text-h3 text-white">Pessoas</h3>
             <p class="font-sans text-body-sm text-gray-300">Equipe treinada e pronta</p>
           </div>
-          <div class="rounded-xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6">
+          <div class="rounded-xl border-2 border-white/10 card-gradient p-6">
             <div class="mb-4 text-4xl">📈</div>
             <h3 class="mb-2 font-display text-h3 text-white">Métricas</h3>
             <p class="font-sans text-body-sm text-gray-300">Dashboard e KPIs configurados</p>
           </div>
-          <div class="rounded-xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6">
+          <div class="rounded-xl border-2 border-white/10 card-gradient p-6">
             <div class="mb-4 text-4xl">🚀</div>
             <h3 class="mb-2 font-display text-h3 text-white">Tração</h3>
             <p class="font-sans text-body-sm text-gray-300">Leads entrando todo dia</p>
@@ -169,9 +169,9 @@ const diferenciais = [
     </section>
 
     <!-- Pacotes -->
-    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+    <section class="section-dark py-24">
       <Container>
-        <div class="mx-auto max-w-6xl">
+        <div class="mx-auto max-w-7xl">
           <div class="mb-16 text-center">
             <h2 class="mb-4 font-display text-display-sm text-white">
               Escolha Seu <span class="text-lime">Pacote</span>
@@ -185,8 +185,8 @@ const diferenciais = [
             {pacotes.map((pacote) => (
               <div class={`rounded-2xl border-2 p-8 transition-all ${
                 pacote.destaque 
-                  ? 'border-lime bg-gradient-to-br from-lime/10 to-lime/5 shadow-2xl shadow-lime/20 scale-105' 
-                  : 'border-white/10 bg-gradient-to-br from-white/5 to-white/10 hover:border-lime/50'
+                  ? 'border-lime card-gradient-lime shadow-2xl shadow-lime/20 scale-105' 
+                  : 'border-white/10 card-gradient hover:border-lime/50'
               }`}>
                 {pacote.destaque && (
                   <div class="mb-4 inline-block rounded-full bg-lime px-4 py-1 font-display text-xs font-bold text-dark">
@@ -236,9 +236,9 @@ const diferenciais = [
     </section>
 
     <!-- Diferenciais -->
-    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+    <section class="section-dark py-24">
       <Container>
-        <div class="mx-auto max-w-6xl">
+        <div class="mx-auto max-w-7xl">
           <div class="mb-16 text-center">
             <h2 class="mb-4 font-display text-display-sm text-white">
               Por Que Services é <span class="text-lime">Diferente</span>
@@ -247,14 +247,14 @@ const diferenciais = [
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {diferenciais.map((diff) => (
-              <div class="rounded-xl border-2 border-lime/20 bg-gradient-to-br from-lime/5 to-lime/10 p-6 text-center">
+              <div class="rounded-xl border-2 border-lime/20 card-gradient-lime p-6 text-center">
                 <h3 class="mb-2 font-display text-h3 text-white">{diff.titulo}</h3>
                 <p class="font-sans text-body-sm text-gray-300">{diff.desc}</p>
               </div>
             ))}
           </div>
 
-          <div class="mt-12 rounded-2xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-8 text-center">
+          <div class="mt-12 rounded-2xl border-2 border-white/10 card-gradient p-8 text-center">
             <p class="mb-4 font-display text-h2 text-white">
               "Se você quer sair, é porque não estou entregando valor."
             </p>
@@ -268,7 +268,7 @@ const diferenciais = [
     </section>
 
     <!-- CTA Final -->
-    <section class="relative overflow-hidden bg-royal-blue py-24">
+    <section class="relative overflow-hidden section-hero py-24">
       <div class="absolute left-0 top-0 h-96 w-96 rounded-full bg-lime/20 blur-3xl"></div>
       
       <Container class="relative z-10">

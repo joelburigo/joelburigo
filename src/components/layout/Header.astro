@@ -1,7 +1,6 @@
 ---
 import Container from '../ui/Container.astro'
 import MobileMenu from './MobileMenu.astro'
-import ThemeToggle from '../ui/ThemeToggle.astro'
 import { ChevronDown } from 'lucide-react'
 
 interface Props {
@@ -40,53 +39,54 @@ const initialClasses = transparent
 
 <header id="main-header" class={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${initialClasses}`} data-transparent={transparent}>
   <Container>
-    <div class="flex items-center justify-between">
-      <!-- Logo -->
-      <a href="/" class="z-50">
+    <div class="flex items-center justify-between gap-8">
+      <!-- Logo (Left) -->
+      <a href="/" class="z-50 flex-shrink-0">
         <span class="font-display text-2xl font-extrabold tracking-tight text-white">
           JOEL <span class="text-lime">BURIGO</span>
         </span>
       </a>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden items-center space-x-8 md:flex">
-        {navLinks.map((link) => (
-          <a
-            href={link.path}
-            class="font-sans text-sm font-medium text-gray-200 transition-colors hover:text-lime"
-          >
-            {link.name}
-          </a>
-        ))}
-        
-        <!-- Dropdown "Mais" -->
-        <div class="group relative">
-          <button class="flex items-center gap-1 font-sans text-sm font-medium text-gray-200 transition-colors hover:text-lime">
-            Mais
-            <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
-          </button>
+      <!-- Desktop Nav + CTA (Right) -->
+      <div class="hidden flex-1 items-center justify-end gap-8 md:flex">
+        <nav class="flex items-center space-x-8">
+          {navLinks.map((link) => (
+            <a
+              href={link.path}
+              class="font-sans text-sm font-medium text-gray-200 transition-colors hover:text-lime"
+            >
+              {link.name}
+            </a>
+          ))}
           
-          <div class="invisible absolute right-0 top-full mt-2 w-48 rounded-lg border border-white/10 dark:border-white/10 bg-dark/98 dark:bg-dark/98 opacity-0 shadow-xl backdrop-blur-lg transition-all group-hover:visible group-hover:opacity-100">
-            {moreLinks.map((link) => (
-              <a
-                href={link.path}
-                class="block px-4 py-3 font-sans text-sm text-gray-200 transition-colors hover:bg-lime/10 hover:text-lime first:rounded-t-lg last:rounded-b-lg"
-              >
-                {link.name}
-              </a>
-            ))}
+          <!-- Dropdown "Mais" -->
+          <div class="group relative">
+            <button class="flex items-center gap-1 font-sans text-sm font-medium text-gray-200 transition-colors hover:text-lime">
+              Mais
+              <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
+            </button>
+            
+            <div class="invisible absolute right-0 top-full mt-2 w-48 rounded-lg border border-white/10 bg-dark/98 opacity-0 shadow-xl backdrop-blur-lg transition-all group-hover:visible group-hover:opacity-100">
+              {moreLinks.map((link) => (
+                <a
+                  href={link.path}
+                  class="block px-4 py-3 font-sans text-sm text-gray-200 transition-colors hover:bg-lime/10 hover:text-lime first:rounded-t-lg last:rounded-b-lg"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
-        
-        <ThemeToggle />
-        
+        </nav>
+
+        <!-- CTA Button -->
         <a href="/vss">
           <button class="inline-flex h-9 items-center justify-center rounded-lg bg-lime px-4 font-display text-sm font-bold text-dark shadow-lg shadow-lime/20 transition-all hover:bg-lime/90 focus:outline-none focus:ring-2 focus:ring-lime focus:ring-offset-2">
             Quero Escalar Vendas
           </button>
         </a>
-      </nav>
-
+      </div>
+      
       <!-- Mobile Menu Component -->
       <MobileMenu navLinks={allNavLinks} />
     </div>

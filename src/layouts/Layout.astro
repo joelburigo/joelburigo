@@ -1,12 +1,19 @@
 ---
 import '../styles/global.css'
 import { ViewTransitions } from 'astro:transitions'
+import GoogleTagManager from '../components/analytics/GoogleTagManager.astro'
+import GoogleTagManagerBody from '../components/analytics/GoogleTagManagerBody.astro'
+import MetaPixel from '../components/analytics/MetaPixel.astro'
+import JsonLd from '../components/seo/JsonLd.astro'
+import CookieConsent from '../components/analytics/CookieConsent.astro'
+import VercelAnalytics from '../components/analytics/VercelAnalytics.astro'
 
 interface Props {
   title: string
   description?: string
   ogImage?: string
   keywords?: string
+  noIndex?: boolean
 }
 
 const {
@@ -14,9 +21,11 @@ const {
   description = 'Sistema completo de vendas escaláveis para micro e pequenas empresas. Transforme vendas aleatórias em previsíveis com o Framework dos 6Ps.',
   ogImage = '/og-image.jpg',
   keywords = 'vendas escaláveis, vendas B2B, CRM, consultoria vendas, framework 6Ps, Joel Burigo',
+  noIndex = false,
 } = Astro.props
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const fullTitle = title.includes('Joel Burigo') ? title : `${title} | Joel Burigo`
 ---
 
 <!doctype html>
@@ -26,6 +35,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {noIndex && <meta name="robots" content="noindex, nofollow" />}
+    
+    <!-- Preconnect to improve performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+    
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL} />
     <ViewTransitions />
@@ -33,21 +49,39 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(ogImage, Astro.url)} />
     <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Joel Burigo - Vendas Escaláveis" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={Astro.url} />
-    <meta property="twitter:title" content={title} />
+    <meta property="twitter:title" content={fullTitle} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(ogImage, Astro.url)} />
+    <meta property="twitter:creator" content="@joelburigo" />
+
+    <!-- Additional SEO -->
+    <meta name="author" content="Joel Burigo" />
+    <meta name="copyright" content="Joel Burigo" />
+    <meta name="language" content="Portuguese" />
+    <meta name="geo.region" content="BR-SC" />
+    <meta name="geo.placename" content="Florianópolis" />
 
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{fullTitle}</title>
     
+    <!-- Analytics & Tracking -->
+    </script>
+  </head>
+  <body class="bg-white dark:bg-dark text-dark dark:text-white transition-colors">
+    <GoogleTagManagerBody />
+    <slot />
+    <CookieConsent />
+  </body>
+</html>
     <script is:inline>
       // Theme initialization - prevent flash
       const theme = (() => {

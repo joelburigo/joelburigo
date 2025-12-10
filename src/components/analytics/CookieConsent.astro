@@ -1,0 +1,85 @@
+---
+// Cookie Consent Banner Component
+// Implements Google Consent Mode v2
+---
+
+<div
+  id="cookie-consent-banner"
+  class="fixed bottom-0 left-0 right-0 z-50 hidden transform bg-dark/98 p-6 shadow-2xl backdrop-blur-lg transition-transform duration-300"
+  data-consent-banner
+>
+  <div class="container mx-auto max-w-6xl">
+    <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
+      <div class="flex-1">
+        <h3 class="mb-2 font-display text-h4 text-white">🍪 Cookies e Privacidade</h3>
+        <p class="font-sans text-body-sm text-gray-300">
+          Usamos cookies para melhorar sua experiência, personalizar conteúdo e analisar o tráfego do
+          site. Ao clicar em "Aceitar", você concorda com o uso de cookies.
+          <a href="/privacidade" class="text-lime hover:underline">Política de Privacidade</a>
+        </p>
+      </div>
+      <div class="flex gap-3">
+        <button
+          id="cookie-reject"
+          class="rounded-lg border-2 border-white/20 px-6 py-2 font-display text-sm font-semibold text-white transition-colors hover:bg-white/10"
+        >
+          Rejeitar
+        </button>
+        <button
+          id="cookie-accept"
+          class="rounded-lg bg-lime px-6 py-2 font-display text-sm font-bold text-dark transition-all hover:bg-lime/90"
+        >
+          Aceitar Todos
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { initConsent, updateConsent } from '../../lib/analytics'
+
+  function initCookieConsent() {
+    const banner = document.querySelector('[data-consent-banner]')
+    const acceptBtn = document.getElementById('cookie-accept')
+    const rejectBtn = document.getElementById('cookie-reject')
+
+    if (!banner || !acceptBtn || !rejectBtn) return
+
+    // Initialize consent mode
+    initConsent()
+
+    // Check if user already made a choice
+    const consent = localStorage.getItem('cookie_consent')
+    if (!consent) {
+      // Show banner if no choice was made
+      banner.classList.remove('hidden')
+    }
+
+    // Accept button
+    acceptBtn.addEventListener('click', () => {
+      updateConsent(true)
+      banner.classList.add('hidden')
+      
+      // Trigger page view after consent
+      if (window.gtag) {
+        window.gtag('event', 'page_view')
+      }
+      if (window.fbq) {
+        window.fbq('track', 'PageView')
+      }
+    })
+
+    // Reject button
+    rejectBtn.addEventListener('click', () => {
+      updateConsent(false)
+      banner.classList.add('hidden')
+    })
+  }
+
+  // Initialize on page load
+  initCookieConsent()
+
+  // Re-initialize after View Transitions
+  document.addEventListener('astro:page-load', initCookieConsent)
+</script>

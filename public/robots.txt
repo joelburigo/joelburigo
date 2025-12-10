@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Disallow admin/test pages
+Disallow: /design-system
+Disallow: /design-system-old
+
 Sitemap: https://joelburigo.com.br/sitemap-index.xml

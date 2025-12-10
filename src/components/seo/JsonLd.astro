@@ -1,0 +1,44 @@
+---
+interface Props {
+  type?: 'Organization' | 'Person' | 'WebSite' | 'Service' | 'Course'
+  data?: Record<string, any>
+}
+
+const { type = 'Organization', data = {} } = Astro.props
+
+const defaultOrganization = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Joel Burigo',
+  alternateName: 'Growth Master',
+  url: 'https://joelburigo.com.br',
+  logo: 'https://joelburigo.com.br/logo.png',
+  description: 'Sistema completo de vendas escaláveis para micro e pequenas empresas',
+  founder: {
+    '@type': 'Person',
+    name: 'Joel Burigo',
+    jobTitle: 'Especialista em Vendas Escaláveis',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Florianópolis',
+    addressRegion: 'SC',
+    addressCountry: 'BR',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'contato@joelburigo.com.br',
+    contactType: 'Customer Service',
+    availableLanguage: 'Portuguese',
+  },
+  sameAs: [
+    'https://www.youtube.com/@joelburigo',
+    'https://www.linkedin.com/in/joelburigo/',
+    'https://www.instagram.com/joelburigo/',
+  ],
+}
+
+const jsonLdData = type === 'Organization' ? { ...defaultOrganization, ...data } : data
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLdData)} />

@@ -1,23 +1,11 @@
 ---
 // Vercel Analytics & Speed Insights Integration
-import { inject } from '@vercel/analytics'
-import { injectSpeedInsights } from '@vercel/speed-insights'
-
 // Only inject in production
-if (import.meta.env.PROD) {
-  inject({ mode: 'production' })
-  injectSpeedInsights()
-}
 ---
 
-<!-- Vercel Analytics -->
-<script>
-  import { webVitals } from '@vercel/analytics'
-  
-  webVitals({
-    debug: false,
-    params: {
-      page: window.location.pathname,
-    },
-  })
-</script>
+{import.meta.env.PROD && (
+  <>
+    <script is:inline src="https://va.vercel-scripts.com/v1/script.debug.js" defer></script>
+    <script is:inline src="https://va.vercel-scripts.com/v1/speed-insights/script.debug.js" defer></script>
+  </>
+)}

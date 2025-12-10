@@ -27,7 +27,7 @@ const { navLinks } = Astro.props
   </button>
 
   <!-- Mobile Menu Overlay -->
-  <div class="mobile-menu absolute inset-0 top-0 hidden h-screen bg-dark px-4 pt-24 md:hidden" data-mobile-menu>
+  <div class="mobile-menu fixed inset-0 top-0 z-40 hidden h-screen w-screen bg-dark px-4 pt-24 md:hidden" data-mobile-menu>
     <nav class="flex flex-col space-y-6 text-center">
       {navLinks.map((link) => (
         <a

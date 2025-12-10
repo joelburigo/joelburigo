@@ -1,8 +1,22 @@
 ---
 import Container from '../ui/Container.astro'
 import MobileMenu from './MobileMenu.astro'
+import { ChevronDown } from 'lucide-react'
 
 const navLinks = [
+  { name: 'VSS', path: '/vss' },
+  { name: 'Services', path: '/services' },
+  { name: 'Advisory', path: '/advisory' },
+  { name: 'Diagnóstico', path: '/diagnostico' },
+]
+
+const moreLinks = [
+  { name: 'Sobre', path: '/sobre' },
+  { name: 'Blog', path: '/blog' },
+  { name: 'Contato', path: '/contato' },
+]
+
+const allNavLinks = [
   { name: 'Sobre', path: '/sobre' },
   { name: 'VSS', path: '/vss' },
   { name: 'Services', path: '/services' },
@@ -33,15 +47,35 @@ const navLinks = [
             {link.name}
           </a>
         ))}
+        
+        <!-- Dropdown "Mais" -->
+        <div class="group relative">
+          <button class="flex items-center gap-1 font-sans text-sm font-medium text-gray-200 transition-colors hover:text-lime">
+            Mais
+            <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
+          </button>
+          
+          <div class="invisible absolute right-0 top-full mt-2 w-48 rounded-lg border border-white/10 bg-dark/98 opacity-0 shadow-xl backdrop-blur-lg transition-all group-hover:visible group-hover:opacity-100">
+            {moreLinks.map((link) => (
+              <a
+                href={link.path}
+                class="block px-4 py-3 font-sans text-sm text-gray-200 transition-colors hover:bg-lime/10 hover:text-lime first:rounded-t-lg last:rounded-b-lg"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+        </div>
+        
         <a href="/vss">
           <button class="inline-flex h-9 items-center justify-center rounded-lg bg-lime px-4 font-display text-sm font-bold text-dark shadow-lg shadow-lime/20 transition-all hover:bg-lime/90 focus:outline-none focus:ring-2 focus:ring-lime focus:ring-offset-2">
-            Conhecer o Método
+            Quero Escalar Vendas
           </button>
         </a>
       </nav>
 
       <!-- Mobile Menu Component -->
-      <MobileMenu {navLinks} />
+      <MobileMenu navLinks={allNavLinks} />
     </div>
   </Container>
 </header>

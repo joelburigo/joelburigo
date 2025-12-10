@@ -37,7 +37,7 @@ const modulos = [
 const inclusos = [
   { titulo: 'Conteúdo Educacional', itens: ['15 módulos estruturados', '60 aulas em vídeo (28-32h)', 'Acesso vitalício', 'Atualizações incluídas'] },
   { titulo: 'Mentorias e Suporte', itens: ['48 sessões ao vivo', 'Semanais por 12 semanas', 'Depois quinzenais', 'Todas gravadas'] },
-  { titulo: 'Growth CRM (12 meses)', itens: ['CRM profissional completo', 'Valor: R$ 1.188/ano inclusos', 'Já configurado', 'Funis + automações prontos'] },
+  { titulo: 'Growth CRM (12 meses)', itens: ['CRM profissional completo', 'Valor: R$ 6.996/ano inclusos', 'Já configurado', 'Funis + automações prontos'] },
   { titulo: 'Templates e Recursos', itens: ['Canvas dos 6Ps', 'Scripts de vendas', 'Landing pages', 'SOPs e processos'] },
 ]
 
@@ -76,22 +76,22 @@ const resultados = [
               Quero Entrar na Próxima Turma
             </Button>
             <Button variant="outline" size="lg" class="border-white text-white hover:bg-white hover:text-royal-blue">
-              <PlayCircle class="mr-2 h-5 w-5" />
+              <PlayCircle className="mr-2 h-5 w-5" />
               Ver Apresentação
             </Button>
           </div>
           
           <div class="mt-10 flex flex-wrap items-center justify-center gap-8 text-white/90">
             <div class="flex items-center gap-2">
-              <CheckCircle2 class="h-5 w-5 text-lime" />
+              <CheckCircle2 className="h-5 w-5 text-lime" />
               <span class="font-sans text-sm">60 aulas práticas</span>
             </div>
             <div class="flex items-center gap-2">
-              <CheckCircle2 class="h-5 w-5 text-lime" />
+              <CheckCircle2 className="h-5 w-5 text-lime" />
               <span class="font-sans text-sm">CRM por 12 meses</span>
             </div>
             <div class="flex items-center gap-2">
-              <CheckCircle2 class="h-5 w-5 text-lime" />
+              <CheckCircle2 className="h-5 w-5 text-lime" />
               <span class="font-sans text-sm">48 mentorias ao vivo</span>
             </div>
           </div>
@@ -121,14 +121,14 @@ const resultados = [
             <div class="rounded-2xl border-2 border-lime/20 bg-gradient-to-br from-lime/5 to-lime/10 p-8">
               <div class="mb-6 flex items-center gap-3">
                 <div class="rounded-full bg-lime p-3">
-                  <CheckCircle2 class="h-6 w-6 text-dark" />
+                  <CheckCircle2 className="h-6 w-6 text-dark" />
                 </div>
                 <h3 class="font-display text-h2 text-white">O Que É</h3>
               </div>
               <ul class="space-y-4">
                 {oquee.map((item) => (
                   <li class="flex gap-4">
-                    <CheckCircle2 class="h-6 w-6 flex-shrink-0 text-lime" />
+                    <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-lime" />
                     <div>
                       <p class="font-display text-lg font-semibold text-white">{item.title}</p>
                       <p class="font-sans text-body text-gray-300">{item.desc}</p>
@@ -142,14 +142,14 @@ const resultados = [
             <div class="rounded-2xl border-2 border-red-500/20 bg-gradient-to-br from-red-500/5 to-red-500/10 p-8">
               <div class="mb-6 flex items-center gap-3">
                 <div class="rounded-full bg-red-500 p-3">
-                  <X class="h-6 w-6 text-white" />
+                  <X className="h-6 w-6 text-white" />
                 </div>
                 <h3 class="font-display text-h2 text-white">O Que Não É</h3>
               </div>
               <ul class="space-y-4">
                 {naoE.map((item) => (
                   <li class="flex items-start gap-3">
-                    <X class="h-6 w-6 flex-shrink-0 text-red-400" />
+                    <X className="h-6 w-6 flex-shrink-0 text-red-400" />
                     <span class="font-sans text-body text-gray-300">{item}</span>
                   </li>
                 ))}
@@ -209,7 +209,7 @@ const resultados = [
                 <ul class="space-y-3">
                   {secao.itens.map((item) => (
                     <li class="flex items-start gap-3">
-                      <CheckCircle2 class="h-5 w-5 flex-shrink-0 text-lime" />
+                      <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
                       <span class="font-sans text-body text-gray-300">{item}</span>
                     </li>
                   ))}
@@ -267,7 +267,7 @@ const resultados = [
 
           <div class="mb-12 rounded-2xl border-2 border-lime/30 bg-white/10 p-12 backdrop-blur-sm">
             <div class="mb-6">
-              <p class="mb-2 font-sans text-body text-white/80">De R$ 11.479 por apenas</p>
+              <p class="mb-2 font-sans text-body text-white/80">De R$ 17.287 por apenas</p>
               <div class="flex items-center justify-center gap-4">
                 <p class="font-display text-6xl font-bold text-lime">R$ 1.997</p>
                 <div class="text-left">
@@ -278,7 +278,7 @@ const resultados = [
             </div>
             
             <div class="mb-8 rounded-xl border border-lime/20 bg-lime/10 p-4">
-              <p class="font-display text-lg font-semibold text-lime">Economia de R$ 9.482 (83% de desconto)</p>
+              <p class="font-display text-lg font-semibold text-lime">Economia de R$ 15.290 (88% de desconto)</p>
             </div>
 
             <div class="space-y-2 text-left">
@@ -288,7 +288,7 @@ const resultados = [
               </div>
               <div class="flex justify-between border-b border-white/10 py-2">
                 <span class="font-sans text-sm text-white/80">Growth CRM (12 meses)</span>
-                <span class="font-sans text-sm text-white">R$ 1.188</span>
+                <span class="font-sans text-sm text-white">R$ 6.996</span>
               </div>
               <div class="flex justify-between border-b border-white/10 py-2">
                 <span class="font-sans text-sm text-white/80">48 mentorias ao vivo</span>
@@ -305,14 +305,12 @@ const resultados = [
             </div>
           </div>
 
-          <div class="mb-8 rounded-xl border border-white/20 bg-white/5 p-6 backdrop-blur-sm">
+            <div class="mb-8 rounded-xl border border-white/20 bg-white/5 p-6 backdrop-blur-sm">
             <p class="mb-2 font-display text-lg font-semibold text-white">✅ Garantia de 15 Dias</p>
             <p class="font-sans text-body text-white/80">
-              Se você entrar e em até 15 dias decidir que não é pra você, devolvemos 100% do seu investimento. Sem perguntas, sem burocracia.
+              Se você entrar e em até 15 dias decidir que não é pra você, devolvo 100% do seu investimento. Sem perguntas, sem burocracia.
             </p>
-          </div>
-
-          <Button variant="primary" size="lg" class="text-lg">
+          </div>          <Button variant="primary" size="lg" class="text-lg">
             Quero Garantir Minha Vaga Agora
           </Button>
         </div>
@@ -337,19 +335,19 @@ const resultados = [
             <h3 class="mb-4 font-display text-h2 text-white">Não é para você se:</h3>
             <ul class="space-y-3 font-sans text-body text-gray-300">
               <li class="flex items-start gap-2">
-                <X class="h-5 w-5 flex-shrink-0 text-red-400" />
+                <X className="h-5 w-5 flex-shrink-0 text-red-400" />
                 <span>Quer fórmula mágica sem esforço</span>
               </li>
               <li class="flex items-start gap-2">
-                <X class="h-5 w-5 flex-shrink-0 text-red-400" />
+                <X className="h-5 w-5 flex-shrink-0 text-red-400" />
                 <span>Não tem tempo para implementar</span>
               </li>
               <li class="flex items-start gap-2">
-                <X class="h-5 w-5 flex-shrink-0 text-red-400" />
+                <X className="h-5 w-5 flex-shrink-0 text-red-400" />
                 <span>Quer que eu faça tudo por você</span>
               </li>
               <li class="flex items-start gap-2">
-                <X class="h-5 w-5 flex-shrink-0 text-red-400" />
+                <X className="h-5 w-5 flex-shrink-0 text-red-400" />
                 <span>Busca resultado instantâneo</span>
               </li>
             </ul>

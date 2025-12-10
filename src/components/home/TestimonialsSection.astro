@@ -40,7 +40,7 @@ const testimonials = [
   <Container class="relative z-10">
     <div class="mx-auto mb-20 max-w-3xl text-center">
       <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-lime/30 bg-lime/10 px-4 py-2 backdrop-blur-sm">
-        <Quote class="h-4 w-4 text-lime" />
+        <Quote className="h-4 w-4 text-lime" />
         <span class="font-display text-sm font-bold text-lime">DEPOIMENTOS</span>
       </div>
       
@@ -63,12 +63,12 @@ const testimonials = [
           <div class="testimonial-card group" style={`animation-delay: ${delay}s`}>
             <div class="relative h-full overflow-hidden rounded-2xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-8 backdrop-blur-sm transition-all duration-300 hover:border-lime/50 hover:shadow-2xl hover:shadow-lime/10">
               {/* Quote icon */}
-              <Quote class="absolute right-6 top-6 h-12 w-12 text-lime/20" />
+              <Quote className="absolute right-6 top-6 h-12 w-12 text-lime/20" />
               
               {/* Stars */}
               <div class="relative z-10 mb-6 flex gap-1">
                 {Array.from({ length: t.rating }).map((_, s) => (
-                  <Star class="h-5 w-5 fill-lime text-lime" />
+                  <Star className="h-5 w-5 fill-lime text-lime" />
                 ))}
               </div>
               

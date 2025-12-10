@@ -80,7 +80,7 @@ const categories = [
           <div class="grid grid-cols-1 gap-8 p-8 lg:grid-cols-2 lg:items-center">
             <div class="aspect-video overflow-hidden rounded-xl bg-dark-gray lg:order-2">
               <div class="flex h-full items-center justify-center">
-                <TrendingUp class="h-16 w-16 text-lime/30" />
+                <TrendingUp className="h-16 w-16 text-lime/30" />
               </div>
             </div>
 
@@ -99,11 +99,11 @@ const categories = [
 
               <div class="flex items-center gap-4 font-sans text-sm text-gray-400">
                 <div class="flex items-center gap-1">
-                  <Calendar class="h-4 w-4" />
+                  <Calendar className="h-4 w-4" />
                   <span>{featuredPost.data.date.toLocaleDateString('pt-BR')}</span>
                 </div>
                 <div class="flex items-center gap-1">
-                  <Clock class="h-4 w-4" />
+                  <Clock className="h-4 w-4" />
                   <span>{featuredPost.data.readTime}</span>
                 </div>
               </div>
@@ -144,7 +144,7 @@ const categories = [
               {/* Image */}
               <div class="aspect-video overflow-hidden bg-dark-gray">
                 <div class="flex h-full items-center justify-center">
-                  <TrendingUp class="h-12 w-12 text-lime/30" />
+                  <TrendingUp className="h-12 w-12 text-lime/30" />
                 </div>
               </div>
 
@@ -155,7 +155,7 @@ const categories = [
                     {post.data.category}
                   </span>
                   <div class="flex items-center gap-1 font-sans text-xs text-gray-400">
-                    <Clock class="h-3 w-3" />
+                    <Clock className="h-3 w-3" />
                     <span>{post.data.readTime}</span>
                   </div>
                 </div>
@@ -174,7 +174,7 @@ const categories = [
                   </span>
                   <div class="flex items-center gap-2 font-display text-sm text-lime">
                     <span>Ler mais</span>
-                    <ArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-2" />
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-2" />
                   </div>
                 </div>
               </div>
@@ -186,7 +186,7 @@ const categories = [
         <div class="mt-12 text-center">
           <button class="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 font-display text-lg font-semibold text-white transition-all hover:scale-105 hover:border-lime hover:bg-lime hover:text-dark">
             Carregar Mais Artigos
-            <ArrowRight class="h-5 w-5" />
+            <ArrowRight className="h-5 w-5" />
           </button>
         </div>
       </Container>
@@ -213,7 +213,7 @@ const categories = [
             />
             <button class="inline-flex items-center justify-center gap-2 rounded-lg bg-lime px-8 py-3 font-display font-bold text-dark shadow-lg shadow-lime/20 transition-all hover:scale-105 hover:bg-lime/90">
               Assinar Newsletter
-              <ArrowRight class="h-5 w-5" />
+              <ArrowRight className="h-5 w-5" />
             </button>
           </form>
         </div>

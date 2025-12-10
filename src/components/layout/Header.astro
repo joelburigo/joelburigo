@@ -7,6 +7,7 @@ const navLinks = [
   { name: 'VSS', path: '/vss' },
   { name: 'Services', path: '/services' },
   { name: 'Advisory', path: '/advisory' },
+  { name: 'Diagnóstico', path: '/diagnostico' },
   { name: 'Blog', path: '/blog' },
   { name: 'Contato', path: '/contato' },
 ]
@@ -46,24 +47,31 @@ const navLinks = [
 </header>
 
 <script>
-  // Scroll effect
-  const header = document.getElementById('main-header')
-  
-  function handleScroll() {
-    if (window.scrollY > 10) {
-      header?.classList.add('bg-dark/95', 'py-3', 'shadow-lg', 'shadow-lime/5', 'backdrop-blur-md')
-      header?.classList.remove('bg-transparent', 'py-5')
-    } else {
-      header?.classList.remove('bg-dark/95', 'py-3', 'shadow-lg', 'shadow-lime/5', 'backdrop-blur-md')
-      header?.classList.add('bg-transparent', 'py-5')
+  // Scroll effect - Header transparente no topo, escuro ao rolar
+  function initHeaderScroll() {
+    const header = document.getElementById('main-header')
+    if (!header) return
+    
+    function handleScroll() {
+      if (window.scrollY > 50) {
+        header.classList.add('bg-dark/98', 'py-3', 'shadow-xl', 'shadow-black/20', 'backdrop-blur-lg')
+        header.classList.remove('bg-transparent', 'py-5')
+      } else {
+        header.classList.remove('bg-dark/98', 'py-3', 'shadow-xl', 'shadow-black/20', 'backdrop-blur-lg')
+        header.classList.add('bg-transparent', 'py-5')
+      }
     }
+
+    // Executar na carga
+    handleScroll()
+    
+    // Escutar scroll
+    window.addEventListener('scroll', handleScroll, { passive: true })
   }
 
-  window.addEventListener('scroll', handleScroll)
+  // Inicializar
+  initHeaderScroll()
   
-  // Re-attach on page navigation (View Transitions)
-  document.addEventListener('astro:page-load', () => {
-    const newHeader = document.getElementById('main-header')
-    window.addEventListener('scroll', handleScroll)
-  })
+  // Re-inicializar após navegação (View Transitions)
+  document.addEventListener('astro:page-load', initHeaderScroll)
 </script>

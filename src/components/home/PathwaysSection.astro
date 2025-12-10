@@ -110,7 +110,7 @@ const pathways = [
                     ? 'bg-lime/20 text-lime' 
                     : 'bg-white/10 text-white'
                 }`}>
-                  <Icon class="h-8 w-8" />
+                  <Icon className="h-8 w-8" />
                 </div>
 
                 {/* Title */}
@@ -138,7 +138,7 @@ const pathways = [
                 <ul class="mb-8 space-y-3">
                   {pathway.features.map((feature) => (
                     <li class="flex items-start gap-3 font-sans text-body-sm text-gray-300">
-                      <Check class={`h-5 w-5 flex-shrink-0 ${pathway.badge ? 'text-lime' : 'text-white/70'}`} />
+                      <Check className={`h-5 w-5 flex-shrink-0 ${pathway.badge ? 'text-lime' : 'text-white/70'}`} />
                       <span>{feature}</span>
                     </li>
                   ))}

@@ -42,7 +42,7 @@ const relatedPosts = allPosts
           href="/blog" 
           class="inline-flex items-center gap-2 font-display text-sm text-gray-400 transition-colors hover:text-lime"
         >
-          <ArrowLeft class="h-4 w-4" />
+          <ArrowLeft className="h-4 w-4" />
           Voltar para o Blog
         </a>
       </Container>
@@ -64,19 +64,19 @@ const relatedPosts = allPosts
 
           <div class="mb-8 flex flex-wrap items-center gap-6 border-b border-white/10 pb-6">
             <div class="flex items-center gap-2 font-sans text-body-sm text-gray-400">
-              <User class="h-4 w-4" />
+              <User className="h-4 w-4" />
               <span>{post.data.author}</span>
             </div>
             <div class="flex items-center gap-2 font-sans text-body-sm text-gray-400">
-              <Calendar class="h-4 w-4" />
+              <Calendar className="h-4 w-4" />
               <span>{post.data.date.toLocaleDateString('pt-BR')}</span>
             </div>
             <div class="flex items-center gap-2 font-sans text-body-sm text-gray-400">
-              <Clock class="h-4 w-4" />
+              <Clock className="h-4 w-4" />
               <span>{post.data.readTime} de leitura</span>
             </div>
             <button class="ml-auto flex items-center gap-2 font-display text-sm text-lime transition-colors hover:text-lime/80">
-              <Share2 class="h-4 w-4" />
+              <Share2 className="h-4 w-4" />
               <span>Compartilhar</span>
             </button>
           </div>

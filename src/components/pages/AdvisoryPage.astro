@@ -1,63 +1,299 @@
 ---
 import Container from '../ui/Container.astro'
 import Button from '../ui/Button.astro'
+import { CheckCircle2, Clock, Calendar, MessageSquare, Target, Zap, Award } from 'lucide-react'
 
-const benefits = [
-  '2 sessões de 90min/mês (Zoom)',
-  'Acesso direto via WhatsApp',
-  'Análise de estratégia e métricas',
+const formatos = [
+  {
+    nome: 'Sessão Estratégica Avulsa',
+    investimento: 'R$ 997',
+    duracao: '90 minutos',
+    disponibilidade: 'Máx 4 sessões/mês',
+    paraQuem: 'Desafio específico que precisa de direcionamento',
+    inclusos: [
+      '90 minutos de consultoria ao vivo',
+      'Análise profunda do desafio',
+      'Diagnóstico rápido dos 6Ps',
+      'Plano de ação (3-5 ações prioritárias)',
+      'Gravação da sessão',
+      'Relatório executivo em 24h (2-3 páginas)',
+    ],
+    exemplos: [
+      'Como me diferenciar sem competir por preço?',
+      'Devo investir R$ 20k em tráfego OU contratar vendedor?',
+      'Vou apresentar para investidor, valida minha narrativa?',
+      'Gero leads mas conversão está baixa, por quê?',
+    ],
+    destaque: false,
+  },
+  {
+    nome: 'Sprint Estratégico 30 Dias',
+    investimento: 'R$ 7.500',
+    duracao: '30 dias intensivos',
+    disponibilidade: 'Máx 3 clientes simultâneos',
+    paraQuem: 'Momento crítico que precisa de plano estruturado',
+    inclusos: [
+      '4 sessões de 90 minutos (1 por semana)',
+      'Diagnóstico profundo dos 6Ps',
+      'Plano estratégico 12 meses detalhado',
+      'Suporte via WhatsApp (24h úteis)',
+      '1 revisão de material crítico',
+      'Documento estratégico final (20-40 páginas)',
+    ],
+    semanas: [
+      { num: 1, foco: 'Diagnóstico', entrega: 'Análise completa 6Ps + Score' },
+      { num: 2, foco: 'Estratégia', entrega: 'Objetivos + Priorização' },
+      { num: 3, foco: 'Plano de Ação', entrega: 'Roadmap mês a mês' },
+      { num: 4, foco: 'Fechamento', entrega: 'Documento final + Accountability' },
+    ],
+    exemplos: [
+      'Vou abrir filial, preciso de plano',
+      'Estou migrando de consultoria para SaaS',
+      'Faturamento caiu 40%, preciso reagir',
+      'Vou levantar investimento, valida meu modelo',
+    ],
+    destaque: true,
+  },
+  {
+    nome: 'Conselho Executivo',
+    investimento: 'R$ 15.000/mês',
+    duracao: '3-6 meses',
+    disponibilidade: 'Máx 2 clientes simultâneos',
+    paraQuem: 'Empresa que precisa de conselheiro presente',
+    inclusos: [
+      '8 sessões/mês (2 por semana, 60min cada)',
+      'WhatsApp direto (resposta prioritária 4h)',
+      'Participação em até 2 reuniões críticas/mês',
+      'Revisão ilimitada de materiais estratégicos',
+      'Diagnóstico trimestral dos 6Ps',
+      'Acompanhamento executivo contínuo',
+    ],
+    exemplos: [
+      'Faturamos R$ 300k/mês, meta R$ 1M/mês em 12 meses',
+      'Empresa cresceu desordenadamente, preciso arrumar',
+      'Quero preparar empresa para venda em 18 meses',
+    ],
+    destaque: false,
+    preco_especial: 'R$ 12.500/mês (6 meses)',
+  },
+]
+
+const naoE = [
+  'Para quem quer que eu faça por ele',
+  'Para quem busca preço acessível',
+  'Para quem não tem urgência real',
+]
+
+const e = [
+  'CEO/Founder em momento crítico',
+  'Quem quer minha cabeça, não execução',
+  'Quem valoriza atalhos (17 anos de experiência)',
+  'Quem entende que tempo > dinheiro',
 ]
 ---
 
 <div class="flex min-h-screen flex-col">
   <main class="flex-grow pt-20">
-    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
-      <Container>
-        <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-          <div class="content-left">
-            <h1 class="mb-6 font-display text-display-md text-white md:text-display-lg">
+    <!-- Hero -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-dark via-dark-gray to-dark py-32">
+      <div class="absolute left-0 top-0 h-96 w-96 rounded-full bg-lime/5 blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-royal-blue/5 blur-3xl"></div>
+      
+      <Container class="relative z-10">
+        <div class="mx-auto max-w-5xl">
+          <div class="mb-12 text-center">
+            <span class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/20 px-6 py-2 font-display text-sm font-bold text-lime backdrop-blur-sm">
+              CONSULTORIA PREMIUM | POR CONVITE
+            </span>
+            <h1 class="mb-6 font-display text-display-lg text-white md:text-6xl">
               Strategic Advisory
             </h1>
-            <p class="mb-8 font-sans text-body-lg leading-relaxed text-gray-300">
-              Consultoria estratégica 1-on-1 para CEOs que precisam de um sparring partner
-              experiente. Acesso direto à minha experiência de 15 anos e R$ 1 bilhão gerado.
+            <p class="mx-auto mb-4 max-w-3xl font-sans text-h3 font-semibold text-white/90">
+              Acesso Direto ao Joel para Momentos Críticos
             </p>
+            <p class="mx-auto max-w-2xl font-sans text-body-lg text-gray-300">
+              Parceria estratégica de longo prazo ou consultoria pontual. 17 anos de experiência e ~R$ 1 bilhão em vendas estruturadas à sua disposição.
+            </p>
+          </div>
 
-            <div class="mb-8 rounded-2xl border-2 border-white/10 bg-dark-gray/50 p-6">
-              <h3 class="mb-4 font-display text-h4 text-white">O que você recebe:</h3>
+          <!-- O Que É / Não É -->
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div class="rounded-2xl border-2 border-lime/20 bg-gradient-to-br from-lime/5 to-lime/10 p-8">
+              <div class="mb-4 flex items-center gap-3">
+                <CheckCircle2 className="h-8 w-8 text-lime" />
+                <h3 class="font-display text-h2 text-white">É Para Você Se</h3>
+              </div>
               <ul class="space-y-3">
-                {benefits.map((benefit) => (
-                  <li class="flex items-center gap-2 font-sans text-body text-gray-300">
-                    <div class="h-2 w-2 rounded-full bg-lime"></div>
-                    {benefit}
+                {e.map((item) => (
+                  <li class="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
+                    <span class="font-sans text-body text-gray-300">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <Button
-              variant="primary"
-              size="lg"
-            >
-              Aplicar Agora
-            </Button>
+            <div class="rounded-2xl border-2 border-red-500/20 bg-gradient-to-br from-red-500/5 to-red-500/10 p-8">
+              <div class="mb-4 flex items-center gap-3">
+                <div class="rounded-full bg-red-500 p-2">
+                  <span class="text-xl">✕</span>
+                </div>
+                <h3 class="font-display text-h2 text-white">Não É Para Você Se</h3>
+              </div>
+              <ul class="space-y-3">
+                {naoE.map((item) => (
+                  <li class="flex items-start gap-2">
+                    <span class="text-red-400">✕</span>
+                    <span class="font-sans text-body text-gray-300">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Formatos -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+      <Container>
+        <div class="mx-auto max-w-6xl">
+          <div class="mb-16 text-center">
+            <h2 class="mb-4 font-display text-display-sm text-white">
+              3 Formatos de <span class="text-lime">Advisory</span>
+            </h2>
+            <p class="mx-auto max-w-2xl font-sans text-body-lg text-gray-300">
+              Escolha o formato ideal para o seu momento
+            </p>
           </div>
 
-          <div class="content-right relative">
-            <div class="aspect-[4/5] overflow-hidden rounded-2xl border-2 border-white/10 bg-dark-gray">
-              <img
-                src="/images/advisory-hero.jpg"
-                alt="Consultoria Estratégica"
-                class="h-full w-full object-cover"
-              />
-            </div>
-            <div class="absolute -bottom-6 -left-6 max-w-xs rounded-xl border-2 border-lime/20 bg-dark/95 p-6 shadow-xl backdrop-blur-md">
-              <p class="mb-1 font-display text-h4 text-lime">Vagas Limitadas</p>
-              <p class="font-sans text-body-sm text-gray-300">
-                Máximo 5 clientes simultâneos para garantir qualidade.
-              </p>
-            </div>
+          <div class="space-y-8">
+            {formatos.map((formato) => (
+              <div class={`rounded-2xl border-2 p-8 ${
+                formato.destaque 
+                  ? 'border-lime bg-gradient-to-br from-lime/10 to-lime/5' 
+                  : 'border-white/10 bg-gradient-to-br from-white/5 to-white/10'
+              }`}>
+                <div class="mb-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
+                  <div class="lg:col-span-2">
+                    {formato.destaque && (
+                      <div class="mb-3 inline-block rounded-full bg-lime px-4 py-1 font-display text-xs font-bold text-dark">
+                        MAIS PROCURADO
+                      </div>
+                    )}
+                    <h3 class="mb-3 font-display text-h1 text-white">{formato.nome}</h3>
+                    <p class="mb-4 font-sans text-body text-gray-300">
+                      <span class="font-semibold text-white">Para quem:</span> {formato.paraQuem}
+                    </p>
+                    <div class="flex flex-wrap gap-4 text-sm">
+                      <div class="flex items-center gap-2 font-sans text-gray-400">
+                        <Clock className="h-4 w-4 text-lime" />
+                        <span>{formato.duracao}</span>
+                      </div>
+                      <div class="flex items-center gap-2 font-sans text-gray-400">
+                        <Calendar className="h-4 w-4 text-lime" />
+                        <span>{formato.disponibilidade}</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="flex flex-col items-start justify-center lg:items-end">
+                    <p class="mb-2 font-display text-4xl font-bold text-lime">{formato.investimento}</p>
+                    {formato.preco_especial && (
+                      <p class="font-sans text-sm text-gray-400">ou {formato.preco_especial}</p>
+                    )}
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+                  <div>
+                    <h4 class="mb-4 font-display text-h3 text-white">O Que Está Incluído</h4>
+                    <ul class="space-y-2">
+                      {formato.inclusos.map((item) => (
+                        <li class="flex items-start gap-2">
+                          <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
+                          <span class="font-sans text-body-sm text-gray-300">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 class="mb-4 font-display text-h3 text-white">Exemplos de Uso</h4>
+                    <ul class="space-y-2">
+                      {formato.exemplos.map((exemplo) => (
+                        <li class="flex items-start gap-2">
+                          <MessageSquare className="h-5 w-5 flex-shrink-0 text-royal-blue" />
+                          <span class="font-sans text-body-sm italic text-gray-400">"{exemplo}"</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {formato.semanas && (
+                  <div class="mt-8 border-t border-white/10 pt-8">
+                    <h4 class="mb-4 font-display text-h3 text-white">Estrutura das 4 Semanas</h4>
+                    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+                      {formato.semanas.map((semana) => (
+                        <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+                          <div class="mb-2 flex items-center gap-2">
+                            <div class="flex h-8 w-8 items-center justify-center rounded-full bg-lime font-display font-bold text-dark">
+                              {semana.num}
+                            </div>
+                            <span class="font-display text-sm font-semibold text-lime">{semana.foco}</span>
+                          </div>
+                          <p class="font-sans text-xs text-gray-400">{semana.entrega}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <div class="mt-6">
+                  <Button variant={formato.destaque ? 'primary' : 'outline'} class="w-full lg:w-auto">
+                    Solicitar {formato.nome}
+                  </Button>
+                </div>
+              </div>
+            ))}
           </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Garantia -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-16">
+      <Container>
+        <div class="mx-auto max-w-4xl rounded-2xl border-2 border-lime/30 bg-gradient-to-br from-lime/10 to-lime/5 p-12 text-center">
+          <Award className="mx-auto mb-6 h-16 w-16 text-lime" />
+          <h3 class="mb-4 font-display text-h1 text-white">Garantia Advisory</h3>
+          <p class="mb-2 font-sans text-body-lg text-white">
+            "Se eu não agregar valor na primeira sessão, devolvo seu investimento."
+          </p>
+          <p class="font-sans text-body text-gray-300">Sem perguntas.</p>
+        </div>
+      </Container>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-royal-blue via-royal-blue/90 to-dark py-24">
+      <div class="absolute left-0 top-0 h-96 w-96 rounded-full bg-lime/20 blur-3xl"></div>
+      
+      <Container class="relative z-10">
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 class="mb-6 font-display text-display-md text-white">
+            Pronto Para Acelerar?
+          </h2>
+          <p class="mb-8 font-sans text-body-lg text-white/80">
+            Advisory é por convite ou indicação. Preencha o formulário e entraremos em contato para avaliar fit.
+          </p>
+          <Button variant="primary" size="lg">
+            Aplicar Para Advisory
+          </Button>
+          <p class="mt-6 font-sans text-sm text-white/70">
+            🔒 Vagas extremamente limitadas | Máximo 5 clientes simultâneos
+          </p>
         </div>
       </Container>
     </section>
@@ -65,35 +301,17 @@ const benefits = [
 </div>
 
 <style>
-  .content-left {
+  section {
     opacity: 0;
-    animation: fadeInLeft 0.6s ease-out forwards;
+    animation: fadeIn 0.6s ease-out forwards;
   }
 
-  .content-right {
-    opacity: 0;
-    animation: fadeInRight 0.6s ease-out 0.2s forwards;
-  }
-
-  @keyframes fadeInLeft {
+  @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateX(-20px);
     }
     to {
       opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes fadeInRight {
-    from {
-      opacity: 0;
-      transform: translateX(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
     }
   }
 </style>

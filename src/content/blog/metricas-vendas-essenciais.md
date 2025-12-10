@@ -4,6 +4,7 @@ excerpt: 'Se você não mede, não gerencia. As 7 métricas que separam vendas a
 category: 'Processos'
 date: 2025-11-30
 readTime: '12 min'
+heroImage: '/images/metricas-vendas-dashboard.png'
 ---
 
 Se você não mede, não gerencia. **Vendas previsíveis começam com métricas claras.**

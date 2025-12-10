@@ -4,6 +4,7 @@ excerpt: 'HubSpot free, Notion, planilha Excel... quando vale a pena migrar para
 category: 'CRM e Tecnologia'
 date: 2025-12-05
 readTime: '11 min'
+heroImage: '/images/crm-comparacao-free-pro.png'
 ---
 
 HubSpot gratuito, Notion, planilha Excel... **quando vale a pena migrar para um CRM profissional?**

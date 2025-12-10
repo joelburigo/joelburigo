@@ -17,6 +17,7 @@ const blogCollection = defineCollection({
     readTime: z.string(),
     author: z.string().default('Joel Burigo'),
     featured: z.boolean().default(false),
+    heroImage: z.string().optional(),
   }),
 })
 

@@ -108,6 +108,16 @@ const articleSchema = {
             {post.data.title}
           </h1>
 
+          {post.data.heroImage && (
+            <div class="mb-8 overflow-hidden rounded-2xl">
+              <img 
+                src={post.data.heroImage} 
+                alt={post.data.title}
+                class="w-full h-auto"
+              />
+            </div>
+          )}
+
           <div class="mb-8 flex flex-wrap items-center gap-6 border-b border-white/10 pb-6" data-pagefind-ignore>
             <div class="flex items-center gap-2 font-sans text-body-sm text-gray-400">
               <User className="h-4 w-4" />

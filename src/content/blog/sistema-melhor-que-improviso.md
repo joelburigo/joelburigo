@@ -4,6 +4,7 @@ excerpt: 'A diferença entre empresas que escalam e empresas que estagnam está 
 category: 'Vendas Escaláveis'
 date: 2025-12-07
 readTime: '10 min'
+heroImage: '/images/sistema-vs-improviso-vendas.png'
 ---
 
 A diferença entre empresas que escalam e empresas que estagnam está em uma palavra: **sistema**.

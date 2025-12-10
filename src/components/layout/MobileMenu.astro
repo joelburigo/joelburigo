@@ -14,14 +14,14 @@ const { navLinks } = Astro.props
 <div class="mobile-menu-wrapper">
   <!-- Mobile Menu Button -->
   <button
-    class="mobile-menu-toggle z-50 p-2 md:hidden"
+    class="mobile-menu-toggle relative z-50 p-2 md:hidden"
     aria-label="Toggle menu"
     data-menu-button
   >
     <svg class="menu-icon h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
     </svg>
-    <svg class="close-icon hidden h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg class="close-icon hidden h-6 w-6 text-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
     </svg>
   </button>

@@ -7,191 +7,241 @@ const ps = [
   {
     id: 'P1',
     name: 'Posicionamento',
+    subtitle: 'Por quê?',
     desc: 'Como você se diferencia no mercado',
+    fullDesc: 'Base estratégica que define por que você existe',
     icon: Target,
     color: 'lime',
   },
   {
     id: 'P2',
     name: 'Público',
+    subtitle: 'Pra quem?',
     desc: 'Quem é seu cliente ideal',
+    fullDesc: 'ICP bem definido = comunicação certeira',
     icon: Users,
     color: 'royal-blue',
   },
   {
     id: 'P3',
     name: 'Produto',
+    subtitle: 'O quê?',
     desc: 'Sua oferta irresistível',
+    fullDesc: 'Produto bem embalado se vende sozinho',
     icon: Package,
     color: 'lime',
   },
   {
     id: 'P4',
     name: 'Programas',
+    subtitle: 'Como vender?',
     desc: 'CRM, funis e automações',
+    fullDesc: 'Sistema para atrair e converter de forma previsível',
     icon: Layout,
     color: 'royal-blue',
   },
   {
     id: 'P5',
     name: 'Processos',
+    subtitle: 'Como operar?',
     desc: 'Documentado e escalável',
+    fullDesc: 'Garante funcionamento sem depender de uma pessoa',
     icon: FileText,
     color: 'lime',
   },
   {
     id: 'P6',
     name: 'Pessoas',
+    subtitle: 'Quem executa?',
     desc: 'Time que executa com excelência',
+    fullDesc: 'Equipe alinhada que entrega resultados',
     icon: UserCheck,
     color: 'royal-blue',
   },
 ]
-
-// Calculate positions for orbital layout
-const calculatePosition = (index: number, total: number) => {
-  const angle = index * (360 / total) * (Math.PI / 180)
-  const radius = 160
-  const x = Math.cos(angle) * radius
-  const y = Math.sin(angle) * radius
-  return { x, y }
-}
 ---
 
 <section class="relative overflow-hidden bg-dark py-24">
   <!-- Background decoration -->
 
   <Container class="relative z-10">
-    <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-      <!-- Left: Content -->
-      <div>
-        <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
-          O Framework dos <span class="text-lime">6Ps</span> das Vendas Escaláveis
-        </h2>
-        <p class="mb-8 font-sans text-body-lg text-gray-300">
-          Metodologia proprietária validada por centenas de empresas para estruturar vendas do
-          zero ao crescimento.
-        </p>
+    <!-- Header -->
+    <div class="mx-auto mb-16 max-w-3xl text-center">
+      <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
+        O Framework dos <span class="text-lime">6Ps</span> das Vendas Escaláveis
+      </h2>
+      <p class="mb-4 font-sans text-body-lg text-gray-300">
+        A jornada completa para estruturar vendas previsíveis: da estratégia à execução
+      </p>
+      <p class="font-sans text-body-md text-gray-400">
+        Metodologia proprietária validada por <strong class="text-white">140+ empresas</strong> que estruturaram vendas do zero. 
+        Cada P é uma etapa essencial que resolve um problema específico do seu negócio.
+      </p>
+    </div>
 
-        <div class="mb-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
+    <!-- Visual Flow -->
+    <div class="mb-16">
+      <!-- Flow Path -->
+      <div class="relative mx-auto max-w-6xl">
+        <!-- Connecting Line -->
+        <div class="flow-line absolute left-0 right-0 top-1/2 h-1 -translate-y-1/2 bg-gradient-to-r from-lime via-royal-blue to-lime opacity-30"></div>
+        
+        <!-- 6Ps Cards in Flow -->
+        <div class="relative grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
           {ps.map((p, i) => {
             const Icon = p.icon
-            const delay = i * 0.1
+            const delay = i * 0.15
             return (
               <div 
-                class="framework-card flex items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-4 transition-colors hover:bg-white/10"
+                class="p-card group relative"
                 style={`animation-delay: ${delay}s`}
+                data-p={p.id.toLowerCase()}
               >
-                <div
-                  class={`h-10 w-10 rounded-full ${p.color === 'lime' ? 'bg-lime text-dark' : 'bg-dark border-2 border-white text-white'} flex shrink-0 items-center justify-center font-bold`}
+                {/* Card */}
+                <div 
+                  class={`relative overflow-hidden rounded-2xl border-2 p-6 transition-all duration-300 ${
+                    p.color === 'lime' 
+                      ? 'border-lime bg-lime text-dark hover:shadow-2xl hover:shadow-lime/30' 
+                      : 'border-royal-blue bg-royal-blue text-white hover:shadow-2xl hover:shadow-royal-blue/30'
+                  } cursor-pointer hover:-translate-y-2`}
                 >
-                  {p.id}
+                  {/* Badge */}
+                  <div 
+                    class={`absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold ${
+                      p.color === 'lime' ? 'bg-dark text-lime' : 'bg-white text-royal-blue'
+                    }`}
+                  >
+                    {p.id}
+                  </div>
+
+                  {/* Icon */}
+                  <div class="mb-3 transition-transform group-hover:scale-110">
+                    <Icon size={32} strokeWidth={2} />
+                  </div>
+
+                  {/* Title */}
+                  <h3 class="mb-1 font-display text-base font-bold leading-tight">
+                    {p.name}
+                  </h3>
+
+                  {/* Subtitle */}
+                  <p class={`mb-2 font-display text-xs font-semibold uppercase tracking-wide ${
+                    p.color === 'lime' ? 'text-dark/70' : 'text-white/70'
+                  }`}>
+                    {p.subtitle}
+                  </p>
+
+                  {/* Description */}
+                  <p class={`text-sm leading-snug ${
+                    p.color === 'lime' ? 'text-dark/80' : 'text-white/80'
+                  }`}>
+                    {p.desc}
+                  </p>
+
+                  {/* Hover Tooltip */}
+                  <div 
+                    class={`tooltip absolute -bottom-20 left-1/2 z-50 w-64 -translate-x-1/2 rounded-xl border-2 p-4 opacity-0 shadow-2xl transition-all duration-300 group-hover:opacity-100 ${
+                      p.color === 'lime' 
+                        ? 'border-lime bg-dark text-white' 
+                        : 'border-royal-blue bg-dark text-white'
+                    }`}
+                  >
+                    <p class="text-sm font-medium">{p.fullDesc}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 class="font-display text-h4 font-bold text-white">{p.name}</h3>
-                  <p class="font-sans text-body-sm text-gray-400">{p.desc}</p>
-                </div>
+
+                {/* Arrow Connector (not on last) */}
+                {i < ps.length - 1 && (
+                  <div class="arrow-connector absolute -right-3 top-1/2 z-10 hidden -translate-y-1/2 lg:block">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class={p.color === 'lime' ? 'text-royal-blue' : 'text-lime'}>
+                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                )}
               </div>
             )
           })}
         </div>
-
-        <div class="cta-card relative overflow-hidden rounded-2xl bg-lime p-8 text-dark shadow-2xl">
-          <h3 class="relative z-10 mb-2 font-display text-h3 font-bold">
-            Descubra Qual P Está Travando Seu Crescimento
-          </h3>
-          <p class="relative z-10 mb-6 font-sans text-body-sm font-medium text-dark/80">
-            Faça o diagnóstico gratuito dos 6Ps e descubra onde sua empresa precisa melhorar
-          </p>
-          <a href="/diagnostico" class="relative z-10">
-            <Button variant="white" class="w-full shadow-lg sm:w-auto">
-              Fazer Diagnóstico Gratuito dos 6Ps
-            </Button>
-          </a>
-        </div>
       </div>
+    </div>
 
-      <!-- Right: Visual Diagram -->
-      <div class="diagram-container relative flex min-h-[400px] items-center justify-center">
-        <!-- Central Core -->
-        <div class="central-core absolute z-20 flex h-32 w-32 items-center justify-center rounded-full bg-lime shadow-2xl shadow-lime/50">
-          <span class="text-center text-xl font-bold leading-tight text-dark">
-            Vendas<br />Escaláveis
-          </span>
+    <!-- Context Before CTA -->
+    <div class="mx-auto mb-12 max-w-4xl">
+      <div class="rounded-2xl border-2 border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="text-center">
+            <div class="mb-2 font-display text-3xl font-bold text-lime">0 a 5</div>
+            <p class="font-sans text-sm text-gray-400">pontos por P no diagnóstico</p>
+          </div>
+          <div class="text-center">
+            <div class="mb-2 font-display text-3xl font-bold text-lime">0 a 30</div>
+            <p class="font-sans text-sm text-gray-400">score total de maturidade</p>
+          </div>
+          <div class="text-center">
+            <div class="mb-2 font-display text-3xl font-bold text-lime">90 dias</div>
+            <p class="font-sans text-sm text-gray-400">para evoluir cada nível</p>
+          </div>
         </div>
+        <p class="mt-6 text-center font-sans text-body-sm text-gray-300">
+          <strong class="text-white">80% dos problemas não são de produto, são de processo.</strong>
+          O diagnóstico identifica qual P está travando suas vendas e qual é a próxima ação prioritária.
+        </p>
+      </div>
+    </div>
 
-        <!-- Orbiting Ps -->
-        {ps.map((p, i) => {
-          const Icon = p.icon
-          const position = calculatePosition(i, ps.length)
-          const delay = 0.2 + i * 0.1
-          return (
-            <div 
-              class={`orbital-p absolute h-24 w-24 ${p.color === 'lime' ? 'border-lime bg-lime' : 'border-white bg-dark'} group z-10 flex cursor-pointer flex-col items-center justify-center rounded-full border-2 shadow-xl transition-all duration-300 hover:scale-110`}
-              style={`left: calc(50% + ${position.x}px - 3rem); top: calc(50% + ${position.y}px - 3rem); animation-delay: ${delay}s`}
-            >
-              <div class={`${p.color === 'lime' ? 'text-dark' : 'text-white'} mb-1 transition-transform group-hover:scale-110`}>
-                <Icon size={20} />
-              </div>
-              <span class={`text-xs font-bold ${p.color === 'lime' ? 'text-dark' : 'text-white'}`}>
-                {p.name}
-              </span>
-              <span class={`absolute -right-2 -top-2 h-6 w-6 ${p.color === 'lime' ? 'bg-dark text-lime' : 'bg-lime text-dark'} flex items-center justify-center rounded-full border-2 text-xs font-bold ${p.color === 'lime' ? 'border-lime' : 'border-dark'}`}>
-                {p.id}
-              </span>
-            </div>
-          )
-        })}
-
-        <!-- Connecting Circle (SVG) -->
-        <svg
-          class="pointer-events-none absolute inset-0 z-0 h-full w-full opacity-20"
-          viewBox="-200 -200 400 400"
-        >
-          <circle
-            cx="0"
-            cy="0"
-            r="160"
-            fill="none"
-            stroke="#a3ff3f"
-            stroke-width="2"
-            stroke-dasharray="8 8"
-          />
-        </svg>
+    <!-- CTA -->
+    <div class="mx-auto max-w-3xl">
+      <div class="cta-card relative overflow-hidden rounded-2xl bg-gradient-to-br from-lime to-lime/80 p-8 text-center text-dark shadow-2xl shadow-lime/30">
+        <h3 class="mb-3 font-display text-h2 font-bold">
+          Descubra Qual P Está Travando Seu Crescimento
+        </h3>
+        <p class="mb-6 font-sans text-body-lg font-medium text-dark/80">
+          Faça o diagnóstico gratuito dos 6Ps e descubra onde sua empresa precisa melhorar
+        </p>
+        <a href="/diagnostico">
+          <Button variant="white" class="shadow-lg">
+            Fazer Diagnóstico Gratuito dos 6Ps
+          </Button>
+        </a>
       </div>
     </div>
   </Container>
 </section>
 
 <style>
-  .framework-card {
+  .p-card {
     opacity: 0;
-    animation: fadeInLeft 0.6s ease-out forwards;
+    animation: cardAppear 0.6s ease-out forwards;
   }
 
   .cta-card {
     opacity: 0;
-    animation: fadeInScale 0.6s ease-out 0.6s forwards;
+    animation: fadeInScale 0.6s ease-out 0.9s forwards;
   }
 
-  .central-core {
+  .flow-line {
     opacity: 0;
-    animation: fadeInScale 0.6s ease-out 0.2s forwards;
+    animation: lineGrow 1.2s ease-out 0.3s forwards;
   }
 
-  .orbital-p {
+  .arrow-connector {
     opacity: 0;
-    animation: orbitalAppear 0.6s ease-out forwards;
+    animation: fadeIn 0.4s ease-out forwards;
+    animation-delay: inherit;
   }
 
-  @keyframes fadeInLeft {
+  .tooltip {
+    pointer-events: none;
+  }
+
+  @keyframes cardAppear {
     from {
       opacity: 0;
-      transform: translateX(-20px);
+      transform: translateY(30px) scale(0.95);
     }
     to {
       opacity: 1;
-      transform: translateX(0);
+      transform: translateY(0) scale(1);
     }
   }
 
@@ -206,14 +256,30 @@ const calculatePosition = (index: number, total: number) => {
     }
   }
 
-  @keyframes orbitalAppear {
+  @keyframes lineGrow {
     from {
       opacity: 0;
-      transform: scale(0);
+      transform: scaleX(0);
+    }
+    to {
+      opacity: 0.3;
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
     }
     to {
       opacity: 1;
-      transform: scale(1);
+    }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .tooltip {
+      display: none;
     }
   }
 </style>

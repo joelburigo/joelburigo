@@ -52,31 +52,269 @@ const resultados = [
 <div class="flex min-h-screen flex-col">
   <main class="flex-grow pt-20">
     <!-- Hero -->
-    <section class="hero-section bg-royal-blue py-24 text-white">
-      <Container>
+    <section class="relative overflow-hidden bg-gradient-to-br from-royal-blue via-royal-blue/90 to-dark py-32">
+      <div class="absolute left-0 top-0 h-96 w-96 rounded-full bg-lime/10 blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-white/5 blur-3xl"></div>
+      
+      <Container class="relative z-10">
         <div class="mx-auto max-w-4xl text-center">
-          <span class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/20 px-4 py-1.5 font-display text-sm font-bold text-lime">
-            PROGRAMA DE 90 DIAS
+          <span class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/20 px-6 py-2 font-display text-sm font-bold text-lime backdrop-blur-sm">
+            PROGRAMA DE IMPLEMENTAÇÃO | 90 DIAS
           </span>
-          <h1 class="mb-6 font-display text-display-md text-white md:text-display-lg">
+          <h1 class="mb-6 font-display text-display-lg text-white md:text-6xl lg:text-7xl">
             Vendas Sem Segredos
           </h1>
-          <p class="mx-auto mb-10 max-w-2xl font-sans text-body-lg text-blue-100">
-            Sistema Completo de Vendas Escaláveis. Transforme seu negócio de vendas aleatórias
-            para vendas previsíveis com o Framework dos 6Ps.
+          <p class="mx-auto mb-4 max-w-3xl font-sans text-h3 font-semibold text-white/90">
+            Transforme Vendas Aleatórias em Vendas Previsíveis com o Framework dos 6Ps
           </p>
+          <p class="mx-auto mb-10 max-w-2xl font-sans text-body-lg text-blue-100">
+            Sistema completo de vendas escaláveis implementado em 90 dias. CRM profissional incluído + 48 mentorias + comunidade exclusiva.
+          </p>
+          
           <div class="flex flex-col justify-center gap-4 sm:flex-row">
             <Button variant="primary" size="lg">
-              Garantir Minha Vaga
+              Quero Entrar na Próxima Turma
             </Button>
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="lg" class="border-white text-white hover:bg-white hover:text-royal-blue">
               <PlayCircle class="mr-2 h-5 w-5" />
-              Assistir Apresentação
+              Ver Apresentação
             </Button>
           </div>
-          <p class="mt-6 font-sans text-body-sm text-blue-300">
-            Próxima turma: Em breve | Vagas limitadas
+          
+          <div class="mt-10 flex flex-wrap items-center justify-center gap-8 text-white/90">
+            <div class="flex items-center gap-2">
+              <CheckCircle2 class="h-5 w-5 text-lime" />
+              <span class="font-sans text-sm">60 aulas práticas</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <CheckCircle2 class="h-5 w-5 text-lime" />
+              <span class="font-sans text-sm">CRM por 12 meses</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <CheckCircle2 class="h-5 w-5 text-lime" />
+              <span class="font-sans text-sm">48 mentorias ao vivo</span>
+            </div>
+          </div>
+          
+          <p class="mt-8 font-display text-sm font-semibold text-lime">
+            ⚡ Próxima turma em breve | Vagas limitadas a 30 alunos
           </p>
+        </div>
+      </Container>
+    </section>
+
+    <!-- O Que É / Não É -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+      <Container>
+        <div class="mx-auto max-w-6xl">
+          <div class="mb-16 text-center">
+            <h2 class="mb-4 font-display text-display-sm text-white">
+              O Que É o <span class="text-lime">VSS</span>
+            </h2>
+            <p class="mx-auto max-w-3xl font-sans text-body-lg text-gray-300">
+              Programa de implementação guiada onde você estrutura seu sistema de vendas em 90 dias usando o Framework dos 6Ps
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            <!-- O Que É -->
+            <div class="rounded-2xl border-2 border-lime/20 bg-gradient-to-br from-lime/5 to-lime/10 p-8">
+              <div class="mb-6 flex items-center gap-3">
+                <div class="rounded-full bg-lime p-3">
+                  <CheckCircle2 class="h-6 w-6 text-dark" />
+                </div>
+                <h3 class="font-display text-h2 text-white">O Que É</h3>
+              </div>
+              <ul class="space-y-4">
+                {oquee.map((item) => (
+                  <li class="flex gap-4">
+                    <CheckCircle2 class="h-6 w-6 flex-shrink-0 text-lime" />
+                    <div>
+                      <p class="font-display text-lg font-semibold text-white">{item.title}</p>
+                      <p class="font-sans text-body text-gray-300">{item.desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- O Que Não É -->
+            <div class="rounded-2xl border-2 border-red-500/20 bg-gradient-to-br from-red-500/5 to-red-500/10 p-8">
+              <div class="mb-6 flex items-center gap-3">
+                <div class="rounded-full bg-red-500 p-3">
+                  <X class="h-6 w-6 text-white" />
+                </div>
+                <h3 class="font-display text-h2 text-white">O Que Não É</h3>
+              </div>
+              <ul class="space-y-4">
+                {naoE.map((item) => (
+                  <li class="flex items-start gap-3">
+                    <X class="h-6 w-6 flex-shrink-0 text-red-400" />
+                    <span class="font-sans text-body text-gray-300">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Módulos -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+      <Container>
+        <div class="mx-auto max-w-6xl">
+          <div class="mb-16 text-center">
+            <h2 class="mb-4 font-display text-display-sm text-white">
+              15 Módulos <span class="text-lime">Estruturados</span>
+            </h2>
+            <p class="mx-auto max-w-2xl font-sans text-body-lg text-gray-300">
+              60 aulas práticas totalizando 28-32 horas de conteúdo. Cada aula entre 15-35 minutos.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {modulos.map((modulo) => (
+              <div class="group rounded-xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6 transition-all hover:border-lime/50 hover:shadow-lg hover:shadow-lime/10">
+                <div class="mb-3 flex items-center justify-between">
+                  <span class="font-display text-2xl font-bold text-lime">{modulo.num}</span>
+                  <span class="rounded-full bg-royal-blue/20 px-3 py-1 font-sans text-xs font-semibold text-royal-blue">
+                    {modulo.aulas} aulas
+                  </span>
+                </div>
+                <h4 class="font-display text-lg font-semibold text-white transition-colors group-hover:text-lime">
+                  {modulo.nome}
+                </h4>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- O Que Está Incluído -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+      <Container>
+        <div class="mx-auto max-w-6xl">
+          <div class="mb-16 text-center">
+            <h2 class="mb-4 font-display text-display-sm text-white">
+              O Que Está <span class="text-lime">Incluído</span>
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+            {inclusos.map((secao) => (
+              <div class="rounded-2xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-8">
+                <h3 class="mb-6 font-display text-h2 text-white">{secao.titulo}</h3>
+                <ul class="space-y-3">
+                  {secao.itens.map((item) => (
+                    <li class="flex items-start gap-3">
+                      <CheckCircle2 class="h-5 w-5 flex-shrink-0 text-lime" />
+                      <span class="font-sans text-body text-gray-300">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Resultados Esperados -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+      <Container>
+        <div class="mx-auto max-w-6xl">
+          <div class="mb-16 text-center">
+            <h2 class="mb-4 font-display text-display-sm text-white">
+              Resultados ao Final dos <span class="text-lime">90 Dias</span>
+            </h2>
+            <p class="mx-auto max-w-2xl font-sans text-body-lg text-gray-300">
+              O que você terá construído no seu negócio
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            {resultados.map((resultado) => (
+              <div class="grid grid-cols-1 gap-6 rounded-2xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6 md:grid-cols-3">
+                <div class="font-display text-lg font-semibold text-lime">
+                  {resultado.metrica}
+                </div>
+                <div class="rounded-lg border border-red-500/20 bg-red-500/10 p-4">
+                  <p class="mb-1 font-sans text-xs font-semibold uppercase tracking-wide text-red-400">Antes</p>
+                  <p class="font-sans text-body text-gray-300">{resultado.antes}</p>
+                </div>
+                <div class="rounded-lg border border-lime/20 bg-lime/10 p-4">
+                  <p class="mb-1 font-sans text-xs font-semibold uppercase tracking-wide text-lime">Depois</p>
+                  <p class="font-sans text-body text-white">{resultado.depois}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Investimento -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-royal-blue via-royal-blue/90 to-dark py-24">
+      <div class="absolute left-0 top-0 h-96 w-96 rounded-full bg-lime/10 blur-3xl"></div>
+      
+      <Container class="relative z-10">
+        <div class="mx-auto max-w-4xl text-center">
+          <h2 class="mb-12 font-display text-display-sm text-white">
+            Investimento
+          </h2>
+
+          <div class="mb-12 rounded-2xl border-2 border-lime/30 bg-white/10 p-12 backdrop-blur-sm">
+            <div class="mb-6">
+              <p class="mb-2 font-sans text-body text-white/80">De R$ 11.479 por apenas</p>
+              <div class="flex items-center justify-center gap-4">
+                <p class="font-display text-6xl font-bold text-lime">R$ 1.997</p>
+                <div class="text-left">
+                  <p class="font-sans text-sm text-white/80">à vista</p>
+                  <p class="font-sans text-xs text-white/60">ou 12x R$ 197</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mb-8 rounded-xl border border-lime/20 bg-lime/10 p-4">
+              <p class="font-display text-lg font-semibold text-lime">Economia de R$ 9.482 (83% de desconto)</p>
+            </div>
+
+            <div class="space-y-2 text-left">
+              <div class="flex justify-between border-b border-white/10 py-2">
+                <span class="font-sans text-sm text-white/80">15 módulos + 60 aulas</span>
+                <span class="font-sans text-sm text-white">R$ 1.997</span>
+              </div>
+              <div class="flex justify-between border-b border-white/10 py-2">
+                <span class="font-sans text-sm text-white/80">Growth CRM (12 meses)</span>
+                <span class="font-sans text-sm text-white">R$ 1.188</span>
+              </div>
+              <div class="flex justify-between border-b border-white/10 py-2">
+                <span class="font-sans text-sm text-white/80">48 mentorias ao vivo</span>
+                <span class="font-sans text-sm text-white">R$ 7.200</span>
+              </div>
+              <div class="flex justify-between border-b border-white/10 py-2">
+                <span class="font-sans text-sm text-white/80">Templates e recursos</span>
+                <span class="font-sans text-sm text-white">R$ 497</span>
+              </div>
+              <div class="flex justify-between border-b border-white/10 py-2">
+                <span class="font-sans text-sm text-white/80">Comunidade (90 dias)</span>
+                <span class="font-sans text-sm text-white">R$ 597</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-8 rounded-xl border border-white/20 bg-white/5 p-6 backdrop-blur-sm">
+            <p class="mb-2 font-display text-lg font-semibold text-white">✅ Garantia de 15 Dias</p>
+            <p class="font-sans text-body text-white/80">
+              Se você entrar e em até 15 dias decidir que não é pra você, devolvemos 100% do seu investimento. Sem perguntas, sem burocracia.
+            </p>
+          </div>
+
+          <Button variant="primary" size="lg" class="text-lg">
+            Quero Garantir Minha Vaga Agora
+          </Button>
         </div>
       </Container>
     </section>
@@ -86,18 +324,35 @@ const resultados = [
       <Container>
         <div class="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
           <div>
-            <h2 class="mb-6 font-display text-h1 text-white">O Que Está Incluído</h2>
-            <ul class="space-y-4">
-              {items.map((item) => (
-                <li class="flex items-center gap-3">
-                  <CheckCircle2 class="h-6 w-6 flex-shrink-0 text-lime" />
-                  <span class="font-sans text-body-lg text-gray-300">{item}</span>
-                </li>
-              ))}
-            </ul>
+            <h2 class="mb-6 font-display text-h1 text-white">Para Quem É o VSS</h2>
+            <div class="space-y-4 font-sans text-body-lg text-gray-300">
+              <p>✅ Dono de MPE que fatura R$ 10k-100k/mês</p>
+              <p>✅ Frustrado com vendas inconstantes</p>
+              <p>✅ Quer autonomia (não depender de agência)</p>
+              <p>✅ Disposto a implementar 2-3h/semana</p>
+              <p>✅ Valoriza sistema > improviso</p>
+            </div>
           </div>
-          <div class="flex h-80 items-center justify-center rounded-2xl border-2 border-white/10 bg-dark-gray/50 p-8">
-            <p class="font-display font-semibold text-gray-400">Preview da Plataforma</p>
+          <div class="rounded-2xl border-2 border-white/10 bg-gradient-to-br from-royal-blue/20 to-dark p-8">
+            <h3 class="mb-4 font-display text-h2 text-white">Não é para você se:</h3>
+            <ul class="space-y-3 font-sans text-body text-gray-300">
+              <li class="flex items-start gap-2">
+                <X class="h-5 w-5 flex-shrink-0 text-red-400" />
+                <span>Quer fórmula mágica sem esforço</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <X class="h-5 w-5 flex-shrink-0 text-red-400" />
+                <span>Não tem tempo para implementar</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <X class="h-5 w-5 flex-shrink-0 text-red-400" />
+                <span>Quer que eu faça tudo por você</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <X class="h-5 w-5 flex-shrink-0 text-red-400" />
+                <span>Busca resultado instantâneo</span>
+              </li>
+            </ul>
           </div>
         </div>
       </Container>

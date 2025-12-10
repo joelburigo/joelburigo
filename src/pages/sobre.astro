@@ -1,0 +1,320 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Container from '../components/ui/Container.astro';
+import { CheckCircle2, X, Award } from 'lucide-react';
+
+const seo = {
+  title: 'Sobre Joel Burigo - Especialista em Vendas Escaláveis',
+  description:
+    '17 anos estruturando vendas para micro e pequenas empresas. R$ 1 bilhão gerado, 140 clientes atendidos e o Framework dos 6Ps validado.',
+  keywords: 'Joel Burigo, vendas escaláveis, consultor vendas, framework 6Ps, especialista vendas B2B',
+};
+
+const stats = [
+  { number: '17', label: 'Anos de experiência' },
+  { number: 'R$ 1bi+', label: 'Em vendas estruturadas' },
+  { number: '140', label: 'Clientes atendidos' },
+  { number: '6Ps', label: 'Framework proprietário' },
+];
+
+const cicatrizes = [
+  'Quebrei empresa aos 30 (sei como é perder tudo)',
+  'Morei em barraco sem geladeira (sei o que é recomeçar do zero)',
+  'Bati porta a porta (sei o que é trabalho duro)',
+  'Atendi 140 clientes (sei o que funciona e o que não funciona)',
+  'Tomei calote de sócio (sei o que é ser traído)',
+];
+
+const personalidade = [
+  {
+    caracteristica: 'DIRETO',
+    significa: 'Falo a verdade sem enrolação',
+    exemplo: 'Não existe fórmula mágica. Existe trabalho + método.',
+  },
+  {
+    caracteristica: 'PARCEIRO',
+    significa: 'Não ensino de cima pra baixo. Implemento junto.',
+    exemplo: 'Vou te mostrar exatamente como eu faço.',
+  },
+  {
+    caracteristica: 'INTENSO',
+    significa: 'Energia alta, comprometido com resultado',
+    exemplo: 'Quando eu entro, eu entro pra valer.',
+  },
+  {
+    caracteristica: 'TRANSPARENTE',
+    significa: 'Conto fracassos, não só vitórias',
+    exemplo: 'Quebrei aos 30. Morei em barraco. Sei como é.',
+  },
+  {
+    caracteristica: 'RAIZ',
+    significa: 'Pés no chão, sem ostentação',
+    exemplo: 'Vim da quebrada. Meu sucesso foi suado, não herdado.',
+  },
+];
+
+const promessas = [
+  { prometo: true, texto: 'Sistema estruturado e testado' },
+  { prometo: false, texto: 'Enriquecimento rápido' },
+  { prometo: true, texto: 'Metodologia comprovada em 140 clientes' },
+  { prometo: false, texto: 'Fórmula mágica' },
+  { prometo: true, texto: 'Autonomia progressiva' },
+  { prometo: false, texto: 'Resultado sem esforço' },
+  { prometo: true, texto: 'CRM profissional incluído' },
+  { prometo: false, texto: 'Que vai ser fácil' },
+];
+---
+
+<Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
+  <Header />
+
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-b from-dark via-dark-gray to-dark py-32">
+      <div class="absolute left-0 top-0 h-96 w-96 rounded-full bg-lime/5 blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-royal-blue/5 blur-3xl"></div>
+
+      <Container class="relative z-10">
+        <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+          <!-- Left Content -->
+          <div class="order-2 lg:order-1">
+            <div
+              class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-2 backdrop-blur-sm"
+            >
+              <span class="font-display text-sm font-bold text-lime">SOBRE</span>
+            </div>
+
+            <h1 class="mb-6 font-display text-display-md text-white md:text-display-lg">
+              Da Quebrada ao{' '}
+              <span class="bg-gradient-to-r from-lime to-white bg-clip-text text-transparent">
+                R$ 1 Bilhão
+              </span>
+            </h1>
+
+            <p class="mb-6 font-sans text-body-lg text-gray-300">
+              17 anos transformando vendas aleatórias em previsíveis
+            </p>
+            <p class="mb-4 font-sans text-body text-gray-400">
+              Nasci em Palhoça/SC, bairro Jardim Eldorado — a quebrada. Pai marceneiro, mãe
+              vendedora de loja. Dinheiro curto, dignidade alta.
+            </p>
+            <p class="mb-4 font-sans text-body text-gray-400">
+              Quebrei minha primeira empresa aos 30. Tomei calote do próprio sócio. Morei em
+              barraco sem geladeira em MG. Trabalhei no CTE dos Correios para ter salário fixo.
+              Juntei dinheiro, comprei um milheiro de cartões de visita e fui bater porta a porta.
+              Fiz site de graça para provar que sabia fazer.
+            </p>
+            <p class="font-sans text-body text-gray-400">
+              Devagar, tijolo por tijolo, reconstruí. Hoje, transformo essas cicatrizes em sistema
+              replicável para MPEs que faturam R$ 10k-300k/mês.
+            </p>
+
+            <div class="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4">
+              {
+                stats.map((stat) => (
+                  <div>
+                    <p class="font-display text-3xl font-bold text-lime">{stat.number}</p>
+                    <p class="font-sans text-body-sm text-gray-400">{stat.label}</p>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+
+          <!-- Right Image -->
+          <div class="order-1 lg:order-2">
+            <div class="relative">
+              <div
+                class="aspect-[4/5] overflow-hidden rounded-2xl border-2 border-lime/20 bg-dark-gray shadow-2xl"
+              >
+                <img
+                  src="/images/joel-burigo-vendas-sem-segredos-2.png"
+                  alt="Joel Burigo"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+              <div
+                class="absolute -bottom-6 -right-6 rounded-xl border-2 border-lime/20 bg-dark/95 p-6 backdrop-blur-md"
+              >
+                <p class="font-display text-h4 text-lime">Joel Burigo</p>
+                <p class="font-sans text-body-sm text-gray-300">Especialista em Vendas Escaláveis</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Cicatrizes que Viraram Sabedoria -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+      <Container>
+        <div class="mx-auto mb-16 max-w-3xl text-center">
+          <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
+            Cicatrizes que Viraram <span class="text-lime">Sabedoria</span>
+          </h2>
+          <p class="font-sans text-body-lg text-gray-300">
+            Cada falha me ensinou algo que nenhum MBA ensina
+          </p>
+        </div>
+
+        <div class="mx-auto max-w-3xl space-y-4">
+          {
+            cicatrizes.map((cicatriz, index) => (
+              <div
+                class="flex items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-lime/30"
+                style={`animation-delay: ${index * 0.1}s; opacity: 0; animation: fadeInUp 0.6s ease-out ${index * 0.1}s forwards;`}
+              >
+                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-lime" />
+                <p class="font-sans text-body text-gray-300">{cicatriz}</p>
+              </div>
+            ))
+          }
+        </div>
+
+        <div
+          class="mx-auto mt-12 max-w-2xl rounded-2xl border border-lime/20 bg-lime/5 p-8 text-center"
+        >
+          <p class="mb-4 font-display text-h3 text-white">
+            "Depois de 17 anos e 140 clientes, percebi um padrão devastador:"
+          </p>
+          <p class="font-sans text-body-lg text-gray-300">
+            <strong class="text-lime">Marketing sozinho não funciona para pequeno empresário.</strong
+            > Leads chegam, mas não convertem porque falta CRM, processo, follow-up, proposta
+            padronizada e equipe treinada.
+          </p>
+          <p class="mt-4 font-sans text-body text-gray-400">
+            Foi isso que me fez criar os 6Ps — uma metodologia que integra Marketing + Vendas +
+            Operação em sistema único.
+          </p>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Minha Personalidade -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+      <Container>
+        <div class="mx-auto mb-16 max-w-3xl text-center">
+          <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
+            Como Eu <span class="text-lime">Trabalho</span>
+          </h2>
+          <p class="font-sans text-body-lg text-gray-300">
+            5 características que definem minha abordagem
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {
+            personalidade.map((item, index) => (
+              <div
+                class="rounded-xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6 backdrop-blur-sm transition-all hover:border-lime/30"
+                style={`animation-delay: ${index * 0.1}s; opacity: 0; animation: fadeInUp 0.6s ease-out ${index * 0.1}s forwards;`}
+              >
+                <div class="mb-4 inline-block rounded-lg bg-lime/20 px-3 py-1">
+                  <span class="font-display text-sm font-bold text-lime">
+                    {item.caracteristica}
+                  </span>
+                </div>
+                <p class="mb-3 font-sans text-body font-medium text-white">{item.significa}</p>
+                <p class="font-sans text-body-sm italic text-gray-400">"{item.exemplo}"</p>
+              </div>
+            ))
+          }
+        </div>
+      </Container>
+    </section>
+
+    <!-- O Que Prometo vs. Nunca Prometo -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+      <Container>
+        <div class="mx-auto mb-16 max-w-3xl text-center">
+          <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
+            Transparência <span class="text-lime">Total</span>
+          </h2>
+          <p class="font-sans text-body-lg text-gray-300">
+            O que você pode (e não pode) esperar de mim
+          </p>
+        </div>
+
+        <div class="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
+          {
+            promessas.map((item, index) => (
+              <div
+                class={`flex items-start gap-4 rounded-xl border p-6 backdrop-blur-sm transition-all ${
+                  item.prometo
+                    ? 'border-lime/30 bg-lime/5 hover:border-lime/50'
+                    : 'border-red-500/30 bg-red-500/5 hover:border-red-500/50'
+                }`}
+                style={`animation-delay: ${index * 0.05}s; opacity: 0; animation: fadeInUp 0.6s ease-out ${index * 0.05}s forwards;`}
+              >
+                {item.prometo ? (
+                  <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-lime" />
+                ) : (
+                  <X className="h-6 w-6 flex-shrink-0 text-red-400" />
+                )}
+                <p
+                  class={`font-sans text-body ${item.prometo ? 'text-gray-300' : 'text-gray-400'}`}
+                >
+                  {item.texto}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </Container>
+    </section>
+
+    <!-- CTA Final -->
+    <section
+      class="relative overflow-hidden bg-gradient-to-br from-dark via-dark-gray to-royal-blue py-24"
+    >
+      <div
+        class="absolute left-0 top-0 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-lime opacity-20 blur-3xl"
+      >
+      </div>
+
+      <Container class="relative z-10 text-center">
+        <Award className="mx-auto mb-6 h-16 w-16 text-lime" />
+        <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
+          Vamos Conversar?
+        </h2>
+        <p class="mx-auto mb-10 max-w-2xl font-sans text-body-lg text-gray-300">
+          Escolha o formato que melhor se adapta ao seu momento
+        </p>
+
+        <div class="flex flex-col justify-center gap-4 sm:flex-row">
+          <a href="/vss">
+            <button
+              class="inline-flex h-14 w-full items-center justify-center rounded-lg bg-lime px-8 font-display text-lg font-bold text-dark shadow-lg shadow-lime/20 transition-all hover:scale-105 hover:bg-lime/90 sm:w-auto"
+            >
+              Ver Vendas Sem Segredos
+            </button>
+          </a>
+          <a href="/contato">
+            <button
+              class="inline-flex h-14 w-full items-center justify-center rounded-lg border-2 border-white px-8 font-display text-lg font-semibold text-white transition-all hover:scale-105 hover:bg-white/20 sm:w-auto"
+            >
+              Falar Comigo
+            </button>
+          </a>
+        </div>
+      </Container>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

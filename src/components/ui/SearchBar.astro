@@ -82,19 +82,14 @@ const {
 
     // Initialize Pagefind
     let pagefind = null
+    let isDevMode = false
     
     try {
       // Load Pagefind dynamically at runtime
       pagefind = await import('/pagefind/pagefind.js')
     } catch (error) {
-      console.error('Error loading Pagefind:', error)
-      // Fallback message
-      searchResultsContent.innerHTML = `
-        <div class="text-center py-8">
-          <p class="font-sans text-gray-400">Busca temporariamente indisponível</p>
-        </div>
-      `
-      return
+      // Silently use fallback in dev mode
+      isDevMode = true
     }
 
     // Search function
@@ -113,39 +108,90 @@ const {
       searchResults.classList.remove('hidden')
 
       try {
-        // Perform Pagefind search
-        const search = await pagefind.search(query)
-        
-        if (!search.results || search.results.length === 0) {
-          searchResultsContent.innerHTML = `
-            <div class="text-center py-8">
-              <p class="font-sans text-gray-400">Nenhum resultado encontrado para "${query}"</p>
-            </div>
-          `
-          return
-        }
-
-        // Load result data (limit to 5)
-        const results = await Promise.all(
-          search.results.slice(0, 5).map((r) => r.data())
-        )
-
-        // Display results
-        searchResultsContent.innerHTML = results.map((result) => {
-          const category = result.meta?.category || 'Artigo'
+        // Use Pagefind if available (production), otherwise fallback (dev)
+        if (isDevMode) {
+          // Fallback: search in DOM (dev mode only)
+          const postCards = document.querySelectorAll('.post-card')
+          const normalizedQuery = query.toLowerCase()
           
-          return `
-            <a href="${result.url}" class="search-result-item block">
+          const results = Array.from(postCards)
+            .map(card => {
+              const title = card.querySelector('h3')?.textContent || ''
+              const excerpt = card.querySelector('p')?.textContent || ''
+              const category = card.getAttribute('data-category') || 'Artigo'
+              const href = card.getAttribute('href') || ''
+              
+              const titleMatch = title.toLowerCase().includes(normalizedQuery)
+              const excerptMatch = excerpt.toLowerCase().includes(normalizedQuery)
+              const categoryMatch = category.toLowerCase().includes(normalizedQuery)
+              
+              let score = 0
+              if (titleMatch) score += 10
+              if (excerptMatch) score += 5
+              if (categoryMatch) score += 3
+              
+              return { title, excerpt, category, href, score }
+            })
+            .filter(post => post.score > 0)
+            .sort((a, b) => b.score - a.score)
+            .slice(0, 5)
+
+          if (results.length === 0) {
+            searchResultsContent.innerHTML = `
+              <div class="text-center py-8">
+                <p class="font-sans text-gray-400">Nenhum resultado encontrado para "${query}"</p>
+              </div>
+            `
+            return
+          }
+
+          searchResultsContent.innerHTML = results.map(post => `
+            <a href="${post.href}" class="search-result-item block">
               <div class="mb-1">
                 <span class="inline-block rounded-full bg-lime/20 px-2 py-1 text-xs font-display font-semibold text-lime">
-                  ${category}
+                  ${post.category}
                 </span>
               </div>
-              <h4 class="font-display text-h4 text-white mb-2">${result.meta?.title || 'Sem título'}</h4>
-              <p class="font-sans text-sm text-gray-300 line-clamp-2">${result.excerpt || ''}</p>
+              <h4 class="font-display text-h4 text-white mb-2">${post.title}</h4>
+              <p class="font-sans text-sm text-gray-300 line-clamp-2">${post.excerpt}</p>
             </a>
-          `
-        }).join('')
+          `).join('')
+          
+        } else {
+          // Pagefind search (production)
+          const search = await pagefind.search(query)
+          
+          if (!search.results || search.results.length === 0) {
+            searchResultsContent.innerHTML = `
+              <div class="text-center py-8">
+                <p class="font-sans text-gray-400">Nenhum resultado encontrado para "${query}"</p>
+              </div>
+            `
+            return
+          }
+
+          // Load result data (limit to 5)
+          const results = await Promise.all(
+            search.results.slice(0, 5).map((r) => r.data())
+          )
+
+          // Display results
+          searchResultsContent.innerHTML = results.map((result) => {
+            const category = result.meta?.category || 'Artigo'
+            
+            return `
+              <a href="${result.url}" class="search-result-item block">
+                <div class="mb-1">
+                  <span class="inline-block rounded-full bg-lime/20 px-2 py-1 text-xs font-display font-semibold text-lime">
+                    ${category}
+                  </span>
+                </div>
+                <h4 class="font-display text-h4 text-white mb-2">${result.meta?.title || 'Sem título'}</h4>
+                <p class="font-sans text-sm text-gray-300 line-clamp-2">${result.excerpt || ''}</p>
+              </a>
+            `
+          }).join('')
+        }
 
       } catch (error) {
         console.error('Search error:', error)

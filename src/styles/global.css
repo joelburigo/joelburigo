@@ -241,11 +241,6 @@ body {
     padding-top: var(--space-section-sm);
     padding-bottom: var(--space-section-sm);
   }
-  
-  /* Gradient Background */
-  .bg-gradient-dark {
-    background: linear-gradient(to bottom, var(--color-dark), var(--color-dark-gray), var(--color-dark));
-  }
 }
 
 /* ========================================

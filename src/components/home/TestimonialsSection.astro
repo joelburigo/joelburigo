@@ -32,7 +32,7 @@ const testimonials = [
 ]
 ---
 
-<section class="relative overflow-hidden bg-gradient-to-b from-dark via-dark-gray to-dark py-32">
+<section class="relative overflow-hidden bg-dark py-32">
   <!-- Background decoration -->
   <div class="absolute left-1/4 top-0 h-96 w-96 rounded-full bg-lime/5 blur-3xl"></div>
   <div class="absolute bottom-0 right-1/4 h-96 w-96 rounded-full bg-white/5 blur-3xl"></div>
@@ -46,7 +46,7 @@ const testimonials = [
       
       <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
         O Que Dizem Sobre o{' '}
-        <span class="bg-gradient-to-r from-lime to-white bg-clip-text text-transparent">
+        <span class="text-lime">
           Método
         </span>
       </h2>
@@ -61,7 +61,7 @@ const testimonials = [
         const delay = i * 0.1
         return (
           <div class="testimonial-card group" style={`animation-delay: ${delay}s`}>
-            <div class="relative h-full overflow-hidden rounded-2xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-8 backdrop-blur-sm transition-all duration-300 hover:border-lime/50 hover:shadow-2xl hover:shadow-lime/10">
+            <div class="relative h-full overflow-hidden rounded-2xl border-2 border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:border-lime/50 hover:shadow-2xl hover:shadow-lime/10">
               {/* Quote icon */}
               <Quote className="absolute right-6 top-6 h-12 w-12 text-lime/20" />
               

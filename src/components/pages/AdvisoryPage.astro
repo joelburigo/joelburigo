@@ -95,7 +95,7 @@ const e = [
 <div class="flex min-h-screen flex-col">
   <main class="flex-grow pt-20">
     <!-- Hero -->
-    <section class="relative overflow-hidden bg-gradient-to-br from-dark via-dark-gray to-dark py-32">
+    <section class="relative overflow-hidden bg-dark py-32">
       <div class="absolute left-0 top-0 h-96 w-96 rounded-full bg-lime/5 blur-3xl"></div>
       <div class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-royal-blue/5 blur-3xl"></div>
       
@@ -118,7 +118,7 @@ const e = [
 
           <!-- O Que É / Não É -->
           <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <div class="rounded-2xl border-2 border-lime/20 card-gradient-lime p-8">
+            <div class="rounded-2xl border-2 border-lime/20 bg-lime/10 p-8">
               <div class="mb-4 flex items-center gap-3">
                 <CheckCircle2 className="h-8 w-8 text-lime" />
                 <h3 class="font-display text-h2 text-white">É Para Você Se</h3>
@@ -133,7 +133,7 @@ const e = [
               </ul>
             </div>
 
-            <div class="rounded-2xl border-2 border-red-500/20 card-gradient-danger p-8">
+            <div class="rounded-2xl border-2 border-red-500/20 bg-red-500/10 p-8">
               <div class="mb-4 flex items-center gap-3">
                 <div class="rounded-full bg-red-500 p-2">
                   <span class="text-xl">✕</span>
@@ -171,8 +171,8 @@ const e = [
             {formatos.map((formato) => (
               <div class={`rounded-2xl border-2 p-8 ${
                 formato.destaque 
-                  ? 'border-lime card-gradient-lime' 
-                  : 'border-white/10 card-gradient'
+                  ? 'border-lime bg-white/5-lime' 
+                  : 'border-white/10 bg-white/5'
               }`}>
                 <div class="mb-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
                   <div class="lg:col-span-2">
@@ -265,7 +265,7 @@ const e = [
     <!-- Garantia -->
     <section class="section-dark py-16">
       <Container>
-        <div class="mx-auto max-w-4xl rounded-2xl border-2 border-lime/30 card-gradient-lime p-12 text-center">
+        <div class="mx-auto max-w-4xl rounded-2xl border-2 border-lime/30 bg-lime/10 p-12 text-center">
           <Award className="mx-auto mb-6 h-16 w-16 text-lime" />
           <h3 class="mb-4 font-display text-h1 text-white">Garantia Advisory</h3>
           <p class="mb-2 font-sans text-body-lg text-white">
@@ -277,7 +277,7 @@ const e = [
     </section>
 
     <!-- CTA Final -->
-    <section class="relative overflow-hidden bg-gradient-to-br from-royal-blue via-royal-blue/90 to-dark py-24">
+    <section class="relative overflow-hidden bg-royal-blue py-24">
       <div class="absolute left-0 top-0 h-96 w-96 rounded-full bg-lime/20 blur-3xl"></div>
       
       <Container class="relative z-10">

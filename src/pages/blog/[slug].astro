@@ -49,7 +49,7 @@ const relatedPosts = allPosts
     </section>
 
     <!-- Post Header -->
-    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-16">
+    <section class="bg-dark py-16">
       <Container>
         <article class="mx-auto max-w-4xl">
           <div class="mb-6">
@@ -87,7 +87,7 @@ const relatedPosts = allPosts
           </div>
 
           <!-- Post Footer / CTA -->
-          <div class="mt-16 rounded-2xl border-2 border-lime/20 bg-gradient-to-br from-lime/5 to-lime/10 p-8 text-center">
+          <div class="mt-16 rounded-2xl border-2 border-lime/20 bg-lime/10 p-8 text-center">
             <h3 class="mb-4 font-display text-h2 text-white">
               Quer Implementar os 6Ps no Seu Negócio?
             </h3>
@@ -106,7 +106,7 @@ const relatedPosts = allPosts
 
     <!-- Related Posts -->
     {relatedPosts.length > 0 && (
-      <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+      <section class="bg-dark py-24">
         <Container>
           <h2 class="mb-12 text-center font-display text-display-sm text-white">
             Artigos Relacionados
@@ -116,7 +116,7 @@ const relatedPosts = allPosts
             {relatedPosts.map((relatedPost) => (
               <a
                 href={`/blog/${relatedPost.slug}`}
-                class="group flex flex-col overflow-hidden rounded-2xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6 backdrop-blur-sm transition-all hover:border-lime/50"
+                class="group flex flex-col overflow-hidden rounded-2xl border-2 border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-lime/50"
               >
                 <span class="mb-3 inline-block w-fit rounded-full bg-royal-blue/20 px-3 py-1 font-display text-xs font-semibold text-royal-blue">
                   {relatedPost.data.category}

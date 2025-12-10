@@ -72,9 +72,7 @@ const promessas = [
 
   <main class="flex-grow">
     <!-- Hero Section -->
-    <section class="relative overflow-hidden bg-gradient-to-b from-dark via-dark-gray to-dark py-32">
-      <div class="absolute left-0 top-0 h-96 w-96 rounded-full bg-lime/5 blur-3xl"></div>
-      <div class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-royal-blue/5 blur-3xl"></div>
+    <section class="relative overflow-hidden bg-dark py-32">
 
       <Container class="relative z-10">
         <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
@@ -88,7 +86,7 @@ const promessas = [
 
             <h1 class="mb-6 font-display text-display-md text-white md:text-display-lg">
               Da Quebrada ao{' '}
-              <span class="bg-gradient-to-r from-lime to-white bg-clip-text text-transparent">
+              <span class="text-lime">
                 R$ 1 Bilhão
               </span>
             </h1>
@@ -148,7 +146,7 @@ const promessas = [
     </section>
 
     <!-- Cicatrizes que Viraram Sabedoria -->
-    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+    <section class="bg-dark py-24">
       <Container>
         <div class="mx-auto mb-16 max-w-3xl text-center">
           <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
@@ -193,7 +191,7 @@ const promessas = [
     </section>
 
     <!-- Minha Personalidade -->
-    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+    <section class="bg-dark py-24">
       <Container>
         <div class="mx-auto mb-16 max-w-3xl text-center">
           <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
@@ -208,7 +206,7 @@ const promessas = [
           {
             personalidade.map((item, index) => (
               <div
-                class="rounded-xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6 backdrop-blur-sm transition-all hover:border-lime/30"
+                class="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-lime/30"
                 style={`animation-delay: ${index * 0.1}s; opacity: 0; animation: fadeInUp 0.6s ease-out ${index * 0.1}s forwards;`}
               >
                 <div class="mb-4 inline-block rounded-lg bg-lime/20 px-3 py-1">
@@ -226,7 +224,7 @@ const promessas = [
     </section>
 
     <!-- O Que Prometo vs. Nunca Prometo -->
-    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+    <section class="bg-dark py-24">
       <Container>
         <div class="mx-auto mb-16 max-w-3xl text-center">
           <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
@@ -267,12 +265,8 @@ const promessas = [
 
     <!-- CTA Final -->
     <section
-      class="relative overflow-hidden bg-gradient-to-br from-dark via-dark-gray to-royal-blue py-24"
+      class="relative overflow-hidden bg-dark py-24"
     >
-      <div
-        class="absolute left-0 top-0 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-lime opacity-20 blur-3xl"
-      >
-      </div>
 
       <Container class="relative z-10 text-center">
         <Award className="mx-auto mb-6 h-16 w-16 text-lime" />

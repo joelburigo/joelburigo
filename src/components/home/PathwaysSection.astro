@@ -68,7 +68,7 @@ const pathways = [
 ]
 ---
 
-<section class="relative overflow-hidden bg-gradient-to-b from-dark via-dark-gray to-dark py-32">
+<section class="relative overflow-hidden bg-dark py-32">
   <!-- Background decoration -->
   <div class="absolute left-0 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-lime/5 blur-3xl"></div>
   <div class="absolute right-0 top-1/4 h-96 w-96 rounded-full bg-royal-blue/5 blur-3xl"></div>
@@ -91,8 +91,8 @@ const pathways = [
           <div class="pathway-card group" style={`animation-delay: ${delay}s`}>
             <div class={`relative flex h-full flex-col overflow-hidden rounded-2xl border-2 transition-all duration-300 ${
               pathway.badge 
-                ? 'border-lime bg-gradient-to-br from-dark via-dark-gray to-dark shadow-2xl shadow-lime/20 hover:shadow-lime/30' 
-                : 'border-white/10 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm hover:border-white/20'
+                ? 'border-lime bg-dark shadow-2xl shadow-lime/20 hover:shadow-lime/30' 
+                : 'border-white/10 bg-white/5 backdrop-blur-sm hover:border-white/20'
             }`}>
               {/* Badge */}
               {pathway.badge && (

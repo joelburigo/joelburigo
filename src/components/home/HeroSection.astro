@@ -3,14 +3,10 @@ import Container from '../ui/Container.astro'
 import { Play, ChevronDown } from 'lucide-react'
 ---
 
-<section class="hero-section relative flex min-h-screen items-center overflow-hidden bg-gradient-to-br from-dark via-dark-gray to-royal-blue">
+<section class="hero-section relative flex min-h-screen items-center overflow-hidden bg-dark">
   <!-- Background Elements -->
   <div class="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-5 mix-blend-overlay"></div>
-  <div class="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-black/30 to-transparent"></div>
-
-  <!-- Animated gradient orbs -->
-  <div class="absolute left-10 top-20 h-96 w-96 animate-pulse rounded-full bg-lime/20 blur-3xl"></div>
-  <div class="absolute bottom-20 right-10 h-96 w-96 animate-pulse rounded-full bg-royal-blue/30 blur-3xl" style="animation-delay: 1s;"></div>
+  <div class="absolute right-0 top-0 h-full w-1/2 bg-black/30"></div>
 
   <Container class="relative z-10 pb-24 pt-24">
     <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
@@ -22,7 +18,7 @@ import { Play, ChevronDown } from 'lucide-react'
 
         <h1 class="font-display text-display-md text-white lg:text-display-lg">
           Transforme Vendas <span class="text-lime">Aleatórias</span> em Vendas{' '}
-          <span class="bg-gradient-to-r from-lime to-white bg-clip-text text-transparent">
+          <span class="text-lime">
             Previsíveis
           </span>
         </h1>

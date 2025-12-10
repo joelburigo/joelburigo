@@ -99,7 +99,7 @@ const cases = [
 
   <main class="flex-grow">
     <!-- Hero -->
-    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-32">
+    <section class="bg-dark-gray py-32">
       <Container>
         <div class="mx-auto max-w-3xl text-center">
           <div class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-2">
@@ -121,12 +121,12 @@ const cases = [
     </section>
 
     <!-- Cases Grid -->
-    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+    <section class="bg-dark py-24">
       <Container>
         <div class="grid gap-8 lg:grid-cols-2">
           {
             cases.map((caso) => (
-              <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-8 backdrop-blur-sm transition-all hover:border-lime/30">
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all hover:border-lime/30">
                 {caso.badge && (
                   <div class="mb-4 inline-block rounded-full bg-lime/20 px-3 py-1">
                     <span class="font-display text-xs font-bold text-lime">{caso.badge}</span>

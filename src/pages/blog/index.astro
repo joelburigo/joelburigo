@@ -45,9 +45,7 @@ const categories = [
   
   <main class="flex-grow">
     <!-- Hero Section -->
-    <section class="relative overflow-hidden bg-gradient-to-b from-dark via-dark-gray to-dark py-32">
-      <div class="absolute left-0 top-0 h-96 w-96 rounded-full bg-lime/5 blur-3xl"></div>
-      <div class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-royal-blue/5 blur-3xl"></div>
+    <section class="relative overflow-hidden bg-dark py-32">
 
       <Container class="relative z-10">
         <div class="mx-auto max-w-3xl text-center">
@@ -57,7 +55,7 @@ const categories = [
           
           <h1 class="mb-6 font-display text-display-md text-white md:text-display-lg">
             Conteúdo sobre{' '}
-            <span class="bg-gradient-to-r from-lime to-white bg-clip-text text-transparent">
+            <span class="text-lime">
               Vendas Escaláveis
             </span>
           </h1>
@@ -71,11 +69,11 @@ const categories = [
 
     <!-- Featured Post -->
     {featuredPost && (
-      <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-16">
+      <section class="bg-dark py-16">
         <Container>
           <a 
             href={`/blog/${featuredPost.slug}`}
-            class="group block overflow-hidden rounded-2xl border-2 border-lime/20 bg-gradient-to-br from-dark to-dark-gray transition-all hover:border-lime/50 hover:shadow-2xl hover:shadow-lime/20"
+            class="group block overflow-hidden rounded-2xl border-2 border-lime/20 bg-dark transition-all hover:border-lime/50 hover:shadow-2xl hover:shadow-lime/20"
           >
           <div class="grid grid-cols-1 gap-8 p-8 lg:grid-cols-2 lg:items-center">
             <div class="aspect-video overflow-hidden rounded-xl bg-dark-gray lg:order-2">
@@ -115,7 +113,7 @@ const categories = [
     )}
 
     <!-- Categories -->
-    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-8">
+    <section class="bg-dark py-8">
       <Container>
         <div class="flex flex-wrap justify-center gap-3">
           {categories.map((cat) => (
@@ -131,14 +129,14 @@ const categories = [
     </section>
 
     <!-- Posts Grid -->
-    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-16">
+    <section class="bg-dark py-16">
       <Container>
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post, index) => (
             <a
               href={`/blog/${post.slug}`}
               data-category={post.data.category}
-              class="post-card group flex flex-col overflow-hidden rounded-2xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm transition-all hover:border-lime/50 hover:shadow-xl hover:shadow-lime/10"
+              class="post-card group flex flex-col overflow-hidden rounded-2xl border-2 border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:border-lime/50 hover:shadow-xl hover:shadow-lime/10"
               style={`animation-delay: ${index * 0.1}s`}
             >
               {/* Image */}
@@ -193,8 +191,7 @@ const categories = [
     </section>
 
     <!-- Newsletter CTA -->
-    <section class="relative overflow-hidden bg-gradient-to-br from-dark via-dark-gray to-royal-blue py-24">
-      <div class="absolute left-0 top-0 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-lime opacity-20 blur-3xl"></div>
+    <section class="relative overflow-hidden bg-dark py-24">
       
       <Container class="relative z-10">
         <div class="mx-auto max-w-3xl text-center">

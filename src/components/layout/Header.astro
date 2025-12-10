@@ -59,13 +59,20 @@ const initialClasses = transparent
           ))}
           
           <!-- Dropdown "Mais" -->
-          <div class="group relative">
-            <button class="flex items-center gap-1 font-sans text-sm font-medium text-gray-200 transition-colors hover:text-lime">
+          <div class="dropdown-container relative" data-dropdown>
+            <button 
+              class="dropdown-trigger flex items-center gap-1 font-sans text-sm font-medium text-gray-200 transition-colors hover:text-lime"
+              aria-label="Mais opções"
+              data-dropdown-trigger
+            >
               Mais
-              <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
+              <ChevronDown className="h-4 w-4 transition-transform" data-dropdown-icon />
             </button>
             
-            <div class="invisible absolute right-0 top-full mt-2 w-48 rounded-lg border border-white/10 bg-dark opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100">
+            <div 
+              class="dropdown-menu invisible absolute right-0 top-full z-50 mt-2 w-48 rounded-lg border border-white/10 bg-dark opacity-0 shadow-xl transition-all"
+              data-dropdown-menu
+            >
               {moreLinks.map((link) => (
                 <a
                   href={link.path}
@@ -125,4 +132,53 @@ const initialClasses = transparent
   
   // Re-inicializar após navegação (View Transitions)
   document.addEventListener('astro:page-load', initHeaderScroll)
+
+  // Dropdown menu functionality
+  function initDropdown() {
+    const dropdown = document.querySelector('[data-dropdown]')
+    const trigger = document.querySelector('[data-dropdown-trigger]')
+    const menu = document.querySelector('[data-dropdown-menu]')
+    const icon = document.querySelector('[data-dropdown-icon]')
+
+    if (!dropdown || !trigger || !menu || !icon) return
+
+    let isOpen = false
+
+    function openMenu() {
+      isOpen = true
+      menu.classList.remove('invisible', 'opacity-0')
+      menu.classList.add('visible', 'opacity-100')
+      icon.style.transform = 'rotate(180deg)'
+    }
+
+    function closeMenu() {
+      isOpen = false
+      menu.classList.add('invisible', 'opacity-0')
+      menu.classList.remove('visible', 'opacity-100')
+      icon.style.transform = 'rotate(0deg)'
+    }
+
+    function toggleMenu(e: Event) {
+      e.preventDefault()
+      e.stopPropagation()
+      isOpen ? closeMenu() : openMenu()
+    }
+
+    // Click no trigger
+    trigger.addEventListener('click', toggleMenu)
+
+    // Hover events
+    dropdown.addEventListener('mouseenter', openMenu)
+    dropdown.addEventListener('mouseleave', closeMenu)
+
+    // Fechar ao clicar fora
+    document.addEventListener('click', (e) => {
+      if (isOpen && !dropdown.contains(e.target as Node)) {
+        closeMenu()
+      }
+    })
+  }
+
+  initDropdown()
+  document.addEventListener('astro:page-load', initDropdown)
 </script>

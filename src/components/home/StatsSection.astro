@@ -1,0 +1,72 @@
+---
+import Container from '../ui/Container.astro'
+
+const stats = [
+  {
+    value: 'R$ 1bi',
+    label: 'Gerados para clientes',
+    color: 'lime',
+  },
+  {
+    value: '500+',
+    label: 'Empresas atendidas',
+    color: 'royal-blue',
+  },
+  {
+    value: '15 anos',
+    label: 'Estruturando vendas',
+    color: 'lime',
+  },
+  {
+    value: '20+',
+    label: 'Nichos diferentes',
+    color: 'royal-blue',
+  },
+]
+---
+
+<section class="border-y-2 border-lime/20 bg-gradient-to-b from-dark via-dark-gray to-dark py-20">
+  <Container>
+    <div class="mb-12 text-center">
+      <h2 class="mb-2 font-display text-h1 text-white">Números Que Comprovam</h2>
+      <div class="mx-auto h-1 w-20 rounded-full bg-lime"></div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-8 text-center md:grid-cols-4">
+      {stats.map((stat, index) => (
+        <div 
+          class="stat-item px-4" 
+          style={`animation-delay: ${index * 0.1}s`}
+        >
+          <div class:list={[
+            'mb-2 font-display text-4xl font-extrabold md:text-5xl',
+            stat.color === 'lime' ? 'text-lime' : 'text-royal-blue'
+          ]}>
+            {stat.value}
+          </div>
+          <div class="font-sans text-sm font-medium uppercase tracking-wide text-gray-400 md:text-base">
+            {stat.label}
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>
+
+<style>
+  .stat-item {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

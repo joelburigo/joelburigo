@@ -1,0 +1,151 @@
+---
+import Container from '../ui/Container.astro'
+import { Play, ChevronDown } from 'lucide-react'
+---
+
+<section class="hero-section relative flex min-h-screen items-center overflow-hidden bg-gradient-to-br from-dark via-dark-gray to-royal-blue">
+  <!-- Background Elements -->
+  <div class="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-5 mix-blend-overlay"></div>
+  <div class="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-black/30 to-transparent"></div>
+
+  <!-- Animated gradient orbs -->
+  <div class="absolute left-10 top-20 h-96 w-96 animate-pulse rounded-full bg-lime/20 blur-3xl"></div>
+  <div class="absolute bottom-20 right-10 h-96 w-96 animate-pulse rounded-full bg-royal-blue/30 blur-3xl" style="animation-delay: 1s;"></div>
+
+  <Container class="relative z-10 pb-24 pt-24">
+    <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+      <!-- Left Content -->
+      <div class="hero-content space-y-8 text-white">
+        <div class="mb-2 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-1.5 text-sm font-display font-bold text-lime backdrop-blur-sm">
+          Para micro e pequenas empresas
+        </div>
+
+        <h1 class="font-display text-display-md text-white lg:text-display-lg">
+          Transforme Vendas <span class="text-lime">Aleatórias</span> em Vendas{' '}
+          <span class="bg-gradient-to-r from-lime to-white bg-clip-text text-transparent">
+            Previsíveis
+          </span>
+        </h1>
+
+        <p class="max-w-xl font-sans text-body-lg text-gray-300">
+          Sistema completo de vendas escaláveis. 15 anos estruturando vendas, R$ 1 bilhão gerado
+          para clientes e o Framework dos 6Ps validado.
+        </p>
+
+        <div class="flex flex-col gap-4 pt-4 sm:flex-row">
+          <a href="/vss">
+            <button class="inline-flex h-14 w-full items-center justify-center rounded-lg bg-lime px-8 font-display text-lg font-bold text-dark shadow-lg shadow-lime/20 transition-all hover:scale-105 hover:bg-lime/90 focus:outline-none focus:ring-2 focus:ring-lime focus:ring-offset-2 sm:w-auto">
+              Conhecer o Método
+            </button>
+          </a>
+          <button class="inline-flex h-14 w-full items-center justify-center gap-2 rounded-lg border-2 border-white px-8 font-display text-lg font-semibold text-white transition-all hover:scale-105 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 sm:w-auto">
+            <Play className="h-4 w-4 fill-current" />
+            Assistir Vídeo
+          </button>
+        </div>
+
+        <div class="flex items-center gap-8 pt-8 font-sans text-body-sm font-medium text-gray-400">
+          <div class="flex items-center gap-2">
+            <div class="h-2 w-2 animate-pulse rounded-full bg-lime"></div>
+            <span>Metodologia Validada</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="h-2 w-2 animate-pulse rounded-full bg-lime" style="animation-delay: 0.5s;"></div>
+            <span>+500 Empresas</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div class="hero-image relative hidden lg:block">
+        <div class="relative z-10 overflow-hidden rounded-2xl border-4 border-lime/20 shadow-2xl">
+          <img
+            src="/images/joel-burigo-vendas-sem-segredos-2.png"
+            alt="Joel Burigo, especialista em vendas"
+            class="h-auto w-full object-cover"
+            loading="eager"
+          />
+
+          <!-- Floating Badge -->
+          <div class="hero-badge absolute bottom-6 left-6 max-w-xs rounded-xl border border-lime/20 bg-dark/95 p-4 shadow-lg backdrop-blur-md">
+            <p class="font-display text-h4 text-lime">R$ 1 Bilhão+</p>
+            <p class="font-sans text-body-sm text-gray-300">Gerado em vendas para nossos clientes</p>
+          </div>
+        </div>
+
+        <!-- Decorative background blob -->
+        <div class="absolute -right-10 -top-10 -z-10 h-full w-full rounded-full bg-lime/20 blur-3xl"></div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator absolute inset-x-0 bottom-8 flex flex-col items-center text-gray-400">
+      <span class="mb-2 text-xs font-medium uppercase tracking-widest">Scroll para saber mais</span>
+      <ChevronDown class="h-6 w-6 animate-bounce text-lime" />
+    </div>
+  </Container>
+</section>
+
+<style>
+  .hero-content {
+    animation: fadeInLeft 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .hero-image {
+    animation: fadeInScale 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .hero-badge {
+    animation: fadeInUp 0.6s ease-out 0.8s forwards;
+    opacity: 0;
+  }
+
+  .scroll-indicator {
+    animation: fadeIn 1s ease-out 1.5s forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>

@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/layout/Header.astro'
+import Footer from '../components/layout/Footer.astro'
+import ServicesPage from '../components/pages/ServicesPage.astro'
+
+const seo = {
+  title: 'Implementation Services - Implementação Completa | Joel Burigo',
+  description:
+    'Minha equipe implementa todo o sistema de vendas no seu negócio. Discovery, configuração de CRM, processos documentados e time treinado em 90 dias.',
+  keywords:
+    'implementação vendas, consultoria vendas, CRM setup, processos vendas, Joel Burigo',
+}
+---
+
+<Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
+  <Header />
+  <ServicesPage />
+  <Footer />
+</Layout>

@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/layout/Header.astro'
+import Footer from '../components/layout/Footer.astro'
+import HeroSection from '../components/home/HeroSection.astro'
+import StatsSection from '../components/home/StatsSection.astro'
+import FinalCTASection from '../components/home/FinalCTASection.astro'
+import ProblemSection from '../components/home/ProblemSection.astro'
+import PathwaysSection from '../components/home/PathwaysSection.astro'
+import FrameworkSection from '../components/home/FrameworkSection.astro'
+import TestimonialsSection from '../components/home/TestimonialsSection.astro'
+
+const seo = {
+  title: 'Joel Burigo - Vendas Escaláveis | Framework dos 6Ps',
+  description:
+    'Sistema completo de vendas escaláveis para micro e pequenas empresas. Transforme vendas aleatórias em previsíveis com o Framework dos 6Ps validado por 500+ empresas.',
+  keywords:
+    'vendas escaláveis, vendas B2B, CRM, consultoria vendas, framework 6Ps, Joel Burigo, vendas sem segredos, implementation services, strategic advisory',
+}
+---
+
+<Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
+  <div class="flex min-h-screen flex-col">
+    <Header />
+    <main class="flex-grow">
+      <HeroSection />
+      <ProblemSection />
+      <PathwaysSection />
+      <FrameworkSection />
+      <StatsSection />
+      <TestimonialsSection />
+      <FinalCTASection />
+    </main>
+    <Footer />
+  </div>
+</Layout>

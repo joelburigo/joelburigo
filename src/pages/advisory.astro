@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/layout/Header.astro'
+import Footer from '../components/layout/Footer.astro'
+import AdvisoryPage from '../components/pages/AdvisoryPage.astro'
+
+const seo = {
+  title: 'Strategic Advisory - Consultoria Estratégica 1-on-1 | Joel Burigo',
+  description:
+    'Consultoria estratégica exclusiva para CEOs. Acesso direto à experiência de 15 anos e R$ 1 bilhão em vendas. Sessões mensais, WhatsApp direto e análise estratégica.',
+  keywords:
+    'consultoria estratégica, mentoria CEO, sparring partner, consultoria vendas, Joel Burigo',
+}
+---
+
+<Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
+  <Header />
+  <AdvisoryPage />
+  <Footer />
+</Layout>

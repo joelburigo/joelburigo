@@ -1,0 +1,130 @@
+---
+import Container from '../ui/Container.astro'
+import { Youtube, Linkedin, Instagram, FileText, Mail, MapPin } from 'lucide-react'
+
+const currentYear = new Date().getFullYear()
+---
+
+<footer class="border-t border-lime/20 bg-dark pb-8 pt-16 text-gray-300">
+  <Container>
+    <div class="mb-16 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+      <!-- Column 1: Brand -->
+      <div class="space-y-6">
+        <a href="/" class="block">
+          <span class="font-display text-2xl font-extrabold tracking-tight text-white">
+            JOEL <span class="text-lime">BURIGO</span>
+          </span>
+        </a>
+        <p class="max-w-xs font-sans text-body-sm leading-relaxed text-gray-400">
+          Sistema completo de vendas escaláveis para micro e pequenas empresas. Transforme
+          vendas aleatórias em previsíveis.
+        </p>
+        <div class="space-y-3 pt-2">
+          <div class="flex items-center space-x-3 text-sm">
+            <Mail className="h-4 w-4 text-lime" />
+            <span>contato@joelburigo.com.br</span>
+          </div>
+          <div class="flex items-center space-x-3 text-sm">
+            <MapPin className="h-4 w-4 text-lime" />
+            <span>Florianópolis, SC</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 2: Navigation -->
+      <div>
+        <h3 class="mb-6 font-display text-sm font-bold uppercase tracking-wide text-white">Navegação</h3>
+        <ul class="space-y-3 font-sans text-body-sm">
+          <li>
+            <a href="/#sobre" class="transition-colors hover:text-lime">Sobre</a>
+          </li>
+          <li>
+            <a href="/vss" class="transition-colors hover:text-lime">Vendas Sem Segredos</a>
+          </li>
+          <li>
+            <a href="/services" class="transition-colors hover:text-lime">Implementation Services</a>
+          </li>
+          <li>
+            <a href="/advisory" class="transition-colors hover:text-lime">Strategic Advisory</a>
+          </li>
+          <li>
+            <a href="/#contato" class="transition-colors hover:text-lime">Contato</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Content -->
+      <div>
+        <h3 class="mb-6 font-display text-sm font-bold uppercase tracking-wide text-white">Conteúdo</h3>
+        <ul class="space-y-4">
+          <li>
+            <a href="#" class="group flex items-center space-x-3 transition-colors hover:text-lime">
+              <div class="rounded-full bg-white/10 p-2 transition-colors group-hover:bg-lime group-hover:text-dark">
+                <Youtube className="h-4 w-4" />
+              </div>
+              <span class="font-sans text-body-sm">YouTube</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="group flex items-center space-x-3 transition-colors hover:text-lime">
+              <div class="rounded-full bg-white/10 p-2 transition-colors group-hover:bg-lime group-hover:text-dark">
+                <Linkedin className="h-4 w-4" />
+              </div>
+              <span class="font-sans text-body-sm">LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="group flex items-center space-x-3 transition-colors hover:text-lime">
+              <div class="rounded-full bg-white/10 p-2 transition-colors group-hover:bg-lime group-hover:text-dark">
+                <Instagram className="h-4 w-4" />
+              </div>
+              <span class="font-sans text-body-sm">Instagram</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="group flex items-center space-x-3 transition-colors hover:text-lime">
+              <div class="rounded-full bg-white/10 p-2 transition-colors group-hover:bg-lime group-hover:text-dark">
+                <FileText className="h-4 w-4" />
+              </div>
+              <span class="text-sm">Blog</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Legal & Resources -->
+      <div>
+        <h3 class="mb-6 text-sm font-bold uppercase tracking-wide text-white">
+          Recursos & Legal
+        </h3>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a href="/diagnostico" class="transition-colors hover:text-lime">
+              Checklist 6Ps Gratuito
+            </a>
+          </li>
+          <li>
+            <a href="#" class="transition-colors hover:text-lime">Cases de Sucesso</a>
+          </li>
+          <li>
+            <a href="#" class="transition-colors hover:text-lime">Press Kit</a>
+          </li>
+          <li class="pt-4 text-xs text-gray-500">CNPJ: XX.XXX.XXX/0001-XX</li>
+          <li>
+            <a href="#" class="text-xs text-gray-500 hover:text-gray-400">
+              Política de Privacidade
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-xs text-gray-500 hover:text-gray-400">Termos de Uso</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-white/10 pt-8 text-center text-sm text-gray-500">
+      <p>© {currentYear} Joel Burigo. Todos os direitos reservados.</p>
+    </div>
+  </Container>
+</footer>

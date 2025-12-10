@@ -1,0 +1,84 @@
+---
+import Container from '../ui/Container.astro'
+import Button from '../ui/Button.astro'
+
+const steps = [
+  {
+    title: 'Discovery',
+    desc: '2 semanas de imersão no seu negócio para desenhar a estratégia.',
+  },
+  {
+    title: 'Implementação',
+    desc: '6-8 semanas de configuração de CRM, funis e processos.',
+  },
+  {
+    title: 'Otimização',
+    desc: 'Acompanhamento contínuo para garantir performance.',
+  },
+]
+---
+
+<div class="flex min-h-screen flex-col">
+  <main class="flex-grow pt-20">
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+      <Container>
+        <div class="hero-content mx-auto mb-16 max-w-3xl text-center">
+          <h1 class="mb-6 font-display text-display-md text-white md:text-display-lg">
+            Implementation Services
+          </h1>
+          <p class="mb-8 font-sans text-body-lg text-gray-300">
+            Minha Equipe Implementa. Você Escala. Cansado de fazer tudo sozinho? Nós
+            implementamos todo o sistema de vendas no seu negócio.
+          </p>
+          <Button variant="primary" size="lg">
+            Solicitar Proposta
+          </Button>
+        </div>
+
+        <div class="mb-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+          {steps.map((step, i) => (
+            <div class="step-card rounded-2xl border-2 border-white/10 bg-dark-gray/50 p-8 transition-all hover:border-lime/50" style={`animation-delay: ${i * 0.1}s`}>
+              <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-lime font-display font-bold text-dark">
+                {i + 1}
+              </div>
+              <h3 class="mb-2 font-display text-h3 text-white">{step.title}</h3>
+              <p class="font-sans text-body text-gray-300">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
+  </main>
+</div>
+
+<style>
+  .hero-content {
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .step-card {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

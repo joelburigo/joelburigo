@@ -1,0 +1,132 @@
+---
+import Container from '../ui/Container.astro'
+import Card from '../ui/Card.astro'
+import Button from '../ui/Button.astro'
+import { Star, Quote } from 'lucide-react'
+
+const testimonials = [
+  {
+    quote: 'Estruturei vendas em 60 dias. Hoje tenho pipeline previsível e 150 leads por mês.',
+    author: 'João Silva',
+    role: 'CEO da Empresa X',
+    image: '/images/testimonial-1.jpg',
+    rating: 5,
+    highlight: 'Pipeline previsível',
+  },
+  {
+    quote: 'O Framework dos 6Ps transformou completamente nossa abordagem comercial. Saímos do zero para resultados consistentes.',
+    author: 'Maria Santos',
+    role: 'Fundadora Startup Y',
+    image: '/images/testimonial-2.jpg',
+    rating: 5,
+    highlight: 'Transformação completa',
+  },
+  {
+    quote: 'Saímos de vendas aleatórias para um sistema que realmente escala. O ROI foi imediato e mensurável.',
+    author: 'Pedro Costa',
+    role: 'Diretor Comercial Z',
+    image: '/images/testimonial-3.jpg',
+    rating: 5,
+    highlight: 'ROI imediato',
+  },
+]
+---
+
+<section class="relative overflow-hidden bg-gradient-to-b from-dark via-dark-gray to-dark py-32">
+  <!-- Background decoration -->
+  <div class="absolute left-1/4 top-0 h-96 w-96 rounded-full bg-lime/5 blur-3xl"></div>
+  <div class="absolute bottom-0 right-1/4 h-96 w-96 rounded-full bg-royal-blue/5 blur-3xl"></div>
+
+  <Container class="relative z-10">
+    <div class="mx-auto mb-20 max-w-3xl text-center">
+      <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-lime/30 bg-lime/10 px-4 py-2 backdrop-blur-sm">
+        <Quote class="h-4 w-4 text-lime" />
+        <span class="font-display text-sm font-bold text-lime">DEPOIMENTOS</span>
+      </div>
+      
+      <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
+        O Que Dizem Sobre o{' '}
+        <span class="bg-gradient-to-r from-lime to-white bg-clip-text text-transparent">
+          Método
+        </span>
+      </h2>
+      
+      <p class="font-sans text-body-lg text-gray-300">
+        Resultados reais de quem já transformou suas vendas
+      </p>
+    </div>
+
+    <div class="mb-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+      {testimonials.map((t, i) => {
+        const delay = i * 0.1
+        return (
+          <div class="testimonial-card group" style={`animation-delay: ${delay}s`}>
+            <div class="relative h-full overflow-hidden rounded-2xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-8 backdrop-blur-sm transition-all duration-300 hover:border-lime/50 hover:shadow-2xl hover:shadow-lime/10">
+              {/* Quote icon */}
+              <Quote class="absolute right-6 top-6 h-12 w-12 text-lime/20" />
+              
+              {/* Stars */}
+              <div class="relative z-10 mb-6 flex gap-1">
+                {Array.from({ length: t.rating }).map((_, s) => (
+                  <Star class="h-5 w-5 fill-lime text-lime" />
+                ))}
+              </div>
+              
+              {/* Highlight badge */}
+              <div class="mb-4 inline-block rounded-lg bg-lime/20 px-3 py-1">
+                <span class="text-xs font-bold text-lime">{t.highlight}</span>
+              </div>
+              
+              {/* Quote */}
+              <blockquote class="relative z-10 mb-8 text-lg leading-relaxed text-gray-200">
+                "{t.quote}"
+              </blockquote>
+              
+              {/* Author */}
+              <div class="relative z-10 flex items-center gap-4 border-t border-white/10 pt-6">
+                <div class="h-14 w-14 overflow-hidden rounded-full ring-2 ring-lime/30 ring-offset-2 ring-offset-dark">
+                  <img
+                    src={t.image}
+                    alt={t.author}
+                    class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
+                <div>
+                  <p class="font-bold text-white">{t.author}</p>
+                  <p class="text-sm text-gray-400">{t.role}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+      })}
+    </div>
+
+    <div class="text-center">
+      <Button
+        variant="outline"
+        class="!border-lime !text-lime hover:!bg-lime hover:!text-dark"
+      >
+        Ver Mais Casos de Sucesso
+      </Button>
+    </div>
+  </Container>
+</section>
+
+<style>
+  .testimonial-card {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

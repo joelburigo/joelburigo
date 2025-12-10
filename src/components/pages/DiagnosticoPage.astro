@@ -1,0 +1,106 @@
+---
+import Container from '../ui/Container.astro'
+import Card from '../ui/Card.astro'
+import Button from '../ui/Button.astro'
+---
+
+<div class="flex min-h-screen flex-col bg-gray-50">
+  <main class="flex-grow pb-20 pt-32">
+    <Container>
+      <div class="mx-auto max-w-xl">
+        <div class="header-section mb-10 text-center">
+          <h1 class="mb-4 text-3xl font-bold text-royal-blue">Diagnóstico 6Ps Gratuito</h1>
+          <p class="text-gray-600">
+            Descubra exatamente qual dos 6Ps está travando o crescimento das suas vendas.
+          </p>
+        </div>
+
+        <div class="form-section">
+          <Card className="p-8">
+            <form class="space-y-6">
+              <div>
+                <label for="name" class="mb-1 block text-sm font-medium text-gray-700">
+                  Nome Completo
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none transition-all focus:border-transparent focus:ring-2 focus:ring-lime"
+                  placeholder="Seu nome"
+                />
+              </div>
+
+              <div>
+                <label for="email" class="mb-1 block text-sm font-medium text-gray-700">
+                  Email Corporativo
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none transition-all focus:border-transparent focus:ring-2 focus:ring-lime"
+                  placeholder="seu@email.com.br"
+                />
+              </div>
+
+              <div>
+                <label for="role" class="mb-1 block text-sm font-medium text-gray-700">
+                  Cargo
+                </label>
+                <select
+                  id="role"
+                  class="w-full rounded-lg border border-gray-300 bg-white px-4 py-2 outline-none transition-all focus:border-transparent focus:ring-2 focus:ring-lime"
+                >
+                  <option value="">Selecione...</option>
+                  <option value="ceo">Sócio / CEO</option>
+                  <option value="manager">Gerente de Vendas</option>
+                  <option value="sales">Vendedor</option>
+                  <option value="other">Outro</option>
+                </select>
+              </div>
+
+              <Button variant="primary" class="w-full" size="lg">
+                Baixar Checklist Agora
+              </Button>
+
+              <p class="text-center text-xs text-gray-500">
+                Seus dados estão seguros. Não enviamos spam.
+              </p>
+            </form>
+          </Card>
+        </div>
+      </div>
+    </Container>
+  </main>
+</div>
+
+<style>
+  .header-section {
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .form-section {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out 0.2s forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

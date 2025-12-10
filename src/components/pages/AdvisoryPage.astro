@@ -1,0 +1,99 @@
+---
+import Container from '../ui/Container.astro'
+import Button from '../ui/Button.astro'
+
+const benefits = [
+  '2 sessões de 90min/mês (Zoom)',
+  'Acesso direto via WhatsApp',
+  'Análise de estratégia e métricas',
+]
+---
+
+<div class="flex min-h-screen flex-col">
+  <main class="flex-grow pt-20">
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+      <Container>
+        <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+          <div class="content-left">
+            <h1 class="mb-6 font-display text-display-md text-white md:text-display-lg">
+              Strategic Advisory
+            </h1>
+            <p class="mb-8 font-sans text-body-lg leading-relaxed text-gray-300">
+              Consultoria estratégica 1-on-1 para CEOs que precisam de um sparring partner
+              experiente. Acesso direto à minha experiência de 15 anos e R$ 1 bilhão gerado.
+            </p>
+
+            <div class="mb-8 rounded-2xl border-2 border-white/10 bg-dark-gray/50 p-6">
+              <h3 class="mb-4 font-display text-h4 text-white">O que você recebe:</h3>
+              <ul class="space-y-3">
+                {benefits.map((benefit) => (
+                  <li class="flex items-center gap-2 font-sans text-body text-gray-300">
+                    <div class="h-2 w-2 rounded-full bg-lime"></div>
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <Button
+              variant="primary"
+              size="lg"
+            >
+              Aplicar Agora
+            </Button>
+          </div>
+
+          <div class="content-right relative">
+            <div class="aspect-[4/5] overflow-hidden rounded-2xl border-2 border-white/10 bg-dark-gray">
+              <img
+                src="/images/advisory-hero.jpg"
+                alt="Consultoria Estratégica"
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div class="absolute -bottom-6 -left-6 max-w-xs rounded-xl border-2 border-lime/20 bg-dark/95 p-6 shadow-xl backdrop-blur-md">
+              <p class="mb-1 font-display text-h4 text-lime">Vagas Limitadas</p>
+              <p class="font-sans text-body-sm text-gray-300">
+                Máximo 5 clientes simultâneos para garantir qualidade.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  </main>
+</div>
+
+<style>
+  .content-left {
+    opacity: 0;
+    animation: fadeInLeft 0.6s ease-out forwards;
+  }
+
+  .content-right {
+    opacity: 0;
+    animation: fadeInRight 0.6s ease-out 0.2s forwards;
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+</style>

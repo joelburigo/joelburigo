@@ -1,0 +1,121 @@
+---
+interface NavLink {
+  name: string
+  path: string
+}
+
+interface Props {
+  navLinks: NavLink[]
+}
+
+const { navLinks } = Astro.props
+---
+
+<div class="mobile-menu-wrapper">
+  <!-- Mobile Menu Button -->
+  <button
+    class="mobile-menu-toggle z-50 p-2 md:hidden"
+    aria-label="Toggle menu"
+    data-menu-button
+  >
+    <svg class="menu-icon h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+    <svg class="close-icon hidden h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+  </button>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu absolute inset-0 top-0 hidden h-screen bg-dark px-4 pt-24 md:hidden" data-mobile-menu>
+    <nav class="flex flex-col space-y-6 text-center">
+      {navLinks.map((link) => (
+        <a
+          href={link.path}
+          class="font-display text-2xl font-bold text-white transition-colors hover:text-lime"
+          data-menu-link
+        >
+          {link.name}
+        </a>
+      ))}
+      <div class="pt-8">
+        <a href="/vss" class="block">
+          <button class="inline-flex h-14 w-full items-center justify-center rounded-lg bg-lime px-8 font-display text-lg font-bold text-dark shadow-lg shadow-lime/20 transition-all hover:bg-lime/90 focus:outline-none focus:ring-2 focus:ring-lime focus:ring-offset-2">
+            Conhecer o Método
+          </button>
+        </a>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<style>
+  .mobile-menu {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+
+  .mobile-menu.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    display: block !important;
+  }
+
+  .menu-icon,
+  .close-icon {
+    transition: opacity 0.2s ease;
+  }
+
+  .mobile-menu-toggle.active .menu-icon {
+    display: none;
+  }
+
+  .mobile-menu-toggle.active .close-icon {
+    display: block;
+  }
+</style>
+
+<script>
+  function initMobileMenu() {
+    const menuButton = document.querySelector('[data-menu-button]') as HTMLButtonElement
+    const mobileMenu = document.querySelector('[data-mobile-menu]') as HTMLDivElement
+    const menuLinks = document.querySelectorAll('[data-menu-link]')
+
+    if (!menuButton || !mobileMenu) return
+
+    function toggleMenu() {
+      const isOpen = mobileMenu.classList.contains('active')
+      
+      if (isOpen) {
+        mobileMenu.classList.remove('active')
+        menuButton.classList.remove('active')
+        document.body.style.overflow = ''
+      } else {
+        mobileMenu.classList.add('active')
+        menuButton.classList.add('active')
+        document.body.style.overflow = 'hidden'
+      }
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.remove('active')
+      menuButton.classList.remove('active')
+      document.body.style.overflow = ''
+    }
+
+    menuButton.addEventListener('click', toggleMenu)
+    
+    menuLinks.forEach(link => {
+      link.addEventListener('click', closeMenu)
+    })
+  }
+
+  // Initialize on page load
+  initMobileMenu()
+
+  // Reinitialize after view transitions
+  document.addEventListener('astro:page-load', initMobileMenu)
+</script>

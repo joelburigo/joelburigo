@@ -1,0 +1,122 @@
+---
+import Container from '../ui/Container.astro'
+import Card from '../ui/Card.astro'
+import { Dices, BrainCircuit, BarChart3, Banknote, Quote } from 'lucide-react'
+
+const problems = [
+  {
+    icon: Dices,
+    title: 'Vendas Aleatórias',
+    description: 'Não sabem de onde virá a próxima venda. Dependem de indicação e sorte para bater metas.',
+    gradient: 'from-lime/10 to-lime/5',
+  },
+  {
+    icon: BrainCircuit,
+    title: 'Tudo na Cabeça',
+    description: 'Processos não documentados. O conhecimento fica retido no dono, tornando impossível escalar.',
+    gradient: 'from-royal-blue/10 to-royal-blue/5',
+  },
+  {
+    icon: BarChart3,
+    title: 'Sem Métricas',
+    description: "Não medem nada, não otimizam nada. Decisões baseadas em 'feeling' e não em dados.",
+    gradient: 'from-lime/10 to-lime/5',
+  },
+  {
+    icon: Banknote,
+    title: 'Gastam Demais',
+    description: 'Contratam agências caras e ferramentas complexas sem estratégia, criando dependência eterna.',
+    gradient: 'from-royal-blue/10 to-royal-blue/5',
+  },
+]
+---
+
+<section class="relative overflow-hidden bg-gradient-to-b from-dark via-dark-gray to-dark py-32">
+  <!-- Background decoration -->
+  <div class="absolute left-0 top-0 h-96 w-96 rounded-full bg-lime/5 blur-3xl"></div>
+  <div class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-royal-blue/5 blur-3xl"></div>
+
+  <Container class="relative z-10">
+    <div class="mx-auto mb-16 max-w-3xl text-center">
+      <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
+        O Problema Que 80% das MPEs Enfrentam
+      </h2>
+      <p class="font-sans text-body-lg text-gray-300">
+        A maioria das empresas não tem um problema de produto. Tem um problema de processo de vendas.
+      </p>
+    </div>
+
+    <div class="mb-20 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+      {problems.map((problem, index) => {
+        const Icon = problem.icon
+        return (
+          <div class="problem-card" style={`animation-delay: ${index * 0.1}s`}>
+            <div class={`h-full rounded-2xl border-2 border-white/10 bg-gradient-to-br ${problem.gradient} p-8 backdrop-blur-sm transition-all hover:border-lime/50`}>
+              <div class="mb-6 inline-block rounded-xl bg-lime/20 p-3 shadow-lg">
+                <Icon class="h-8 w-8 text-lime" />
+              </div>
+              <h3 class="mb-3 font-display text-h3 text-white">{problem.title}</h3>
+              <p class="font-sans text-body leading-relaxed text-gray-300">{problem.description}</p>
+            </div>
+          </div>
+        )
+      })}
+    </div>
+
+    <div class="quote-section relative mx-auto max-w-4xl rounded-2xl border-2 border-lime/20 bg-gradient-to-br from-dark via-dark-gray to-dark p-8 shadow-2xl md:p-12">
+      <Quote class="absolute left-8 top-8 -z-0 h-12 w-12 text-lime/30" />
+      <blockquote class="relative z-10 text-center">
+        <p class="mb-6 text-xl font-medium italic text-white md:text-2xl">
+          "Depois de 15 anos estruturando vendas para centenas de empresas, identifiquei um padrão: vendas aleatórias não escalam."
+        </p>
+        <footer class="flex items-center justify-center gap-4">
+          <div class="h-12 w-12 overflow-hidden rounded-full bg-gray-700 ring-2 ring-lime/30">
+            <img
+              src="/images/joel-burigo-vendas-sem-segredos-2.png"
+              alt="Joel Burigo"
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <div class="text-left">
+            <cite class="block font-bold not-italic text-lime">Joel Burigo</cite>
+            <span class="text-sm text-gray-400">Especialista em Vendas Escaláveis</span>
+          </div>
+        </footer>
+      </blockquote>
+    </div>
+  </Container>
+</section>
+
+<style>
+  .problem-card {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .quote-section {
+    opacity: 0;
+    animation: fadeInScale 0.6s ease-out 0.4s forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>

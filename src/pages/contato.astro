@@ -1,0 +1,304 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/layout/Header.astro'
+import Footer from '../components/layout/Footer.astro'
+import Container from '../components/ui/Container.astro'
+import { Mail, MapPin, Clock, Send, Phone, MessageSquare } from 'lucide-react'
+
+const seo = {
+  title: 'Contato - Joel Burigo | Fale Comigo',
+  description:
+    'Entre em contato para estruturar suas vendas. Respondo pessoalmente todas as mensagens em até 24 horas.',
+  keywords: 'contato Joel Burigo, consultoria vendas, falar com especialista vendas',
+}
+
+const contactInfo = [
+  {
+    icon: Mail,
+    title: 'Email',
+    value: 'contato@joelburigo.com.br',
+    link: 'mailto:contato@joelburigo.com.br',
+  },
+  {
+    icon: Phone,
+    title: 'WhatsApp',
+    value: '(48) 99999-9999',
+    link: 'https://wa.me/5548999999999',
+  },
+  {
+    icon: MapPin,
+    title: 'Localização',
+    value: 'Florianópolis, SC - Brasil',
+    link: null,
+  },
+  {
+    icon: Clock,
+    title: 'Horário de Atendimento',
+    value: 'Seg-Sex, 9h-18h',
+    link: null,
+  },
+]
+
+const faqs = [
+  {
+    question: 'Qual o melhor caminho para mim?',
+    answer: 'Se você quer aprender: VSS. Se quer delegar: Services. Se precisa de sparring: Advisory.',
+  },
+  {
+    question: 'Quanto tempo leva para ver resultados?',
+    answer: 'VSS: 90 dias. Services: 60-90 dias. Advisory: depende da maturidade do negócio.',
+  },
+  {
+    question: 'Vocês trabalham com todos os nichos?',
+    answer: 'Sim. Já atendemos 20+ nichos diferentes. A metodologia é agnóstica ao segmento.',
+  },
+  {
+    question: 'Como funciona a garantia?',
+    answer: 'VSS tem 30 dias de garantia. Services e Advisory são sob demanda após diagnóstico.',
+  },
+]
+---
+
+<Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
+  <Header />
+  
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-b from-dark via-dark-gray to-dark py-32">
+      <div class="absolute left-0 top-0 h-96 w-96 rounded-full bg-lime/5 blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-royal-blue/5 blur-3xl"></div>
+
+      <Container class="relative z-10">
+        <div class="mx-auto max-w-3xl text-center">
+          <div class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-2 backdrop-blur-sm">
+            <span class="font-display text-sm font-bold text-lime">CONTATO</span>
+          </div>
+          
+          <h1 class="mb-6 font-display text-display-md text-white md:text-display-lg">
+            Vamos{' '}
+            <span class="bg-gradient-to-r from-lime to-white bg-clip-text text-transparent">
+              Conversar?
+            </span>
+          </h1>
+          
+          <p class="mb-10 font-sans text-body-lg text-gray-300">
+            Respondo pessoalmente todas as mensagens em até 24 horas.
+            Escolha como prefere entrar em contato.
+          </p>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Contact Cards -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+      <Container>
+        <div class="mb-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {contactInfo.map((info, index) => {
+            const Icon = info.icon
+            return (
+              <div 
+                class="contact-card rounded-2xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6 backdrop-blur-sm transition-all hover:border-lime/50"
+                style={`animation-delay: ${index * 0.1}s`}
+              >
+                <div class="mb-4 inline-block rounded-xl bg-lime/20 p-3">
+                  <Icon class="h-6 w-6 text-lime" />
+                </div>
+                <h3 class="mb-2 font-display text-h4 text-white">{info.title}</h3>
+                {info.link ? (
+                  <a 
+                    href={info.link} 
+                    class="font-sans text-body text-gray-300 transition-colors hover:text-lime"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {info.value}
+                  </a>
+                ) : (
+                  <p class="font-sans text-body text-gray-300">{info.value}</p>
+                )}
+              </div>
+            )
+          })}
+        </div>
+
+        <!-- Contact Form -->
+        <div class="mx-auto max-w-4xl">
+          <div class="rounded-2xl border-2 border-lime/20 bg-gradient-to-br from-dark to-dark-gray p-8 md:p-12">
+            <div class="mb-8 text-center">
+              <h2 class="mb-4 font-display text-display-sm text-white">
+                Envie Sua Mensagem
+              </h2>
+              <p class="font-sans text-body text-gray-300">
+                Preencha o formulário abaixo e entrarei em contato em breve
+              </p>
+            </div>
+
+            <form class="space-y-6" id="contact-form">
+              <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div>
+                  <label for="name" class="mb-2 block font-display text-sm font-semibold text-white">
+                    Nome Completo *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="w-full rounded-lg border-2 border-white/10 bg-white/5 px-4 py-3 font-sans text-body text-white placeholder-gray-500 transition-colors focus:border-lime focus:outline-none"
+                    placeholder="Seu nome"
+                  />
+                </div>
+
+                <div>
+                  <label for="email" class="mb-2 block font-display text-sm font-semibold text-white">
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full rounded-lg border-2 border-white/10 bg-white/5 px-4 py-3 font-sans text-body text-white placeholder-gray-500 transition-colors focus:border-lime focus:outline-none"
+                    placeholder="seu@email.com"
+                  />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div>
+                  <label for="phone" class="mb-2 block font-display text-sm font-semibold text-white">
+                    WhatsApp
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="w-full rounded-lg border-2 border-white/10 bg-white/5 px-4 py-3 font-sans text-body text-white placeholder-gray-500 transition-colors focus:border-lime focus:outline-none"
+                    placeholder="(48) 99999-9999"
+                  />
+                </div>
+
+                <div>
+                  <label for="subject" class="mb-2 block font-display text-sm font-semibold text-white">
+                    Assunto *
+                  </label>
+                  <select
+                    id="subject"
+                    name="subject"
+                    required
+                    class="w-full rounded-lg border-2 border-white/10 bg-white/5 px-4 py-3 font-sans text-body text-white transition-colors focus:border-lime focus:outline-none"
+                  >
+                    <option value="">Selecione...</option>
+                    <option value="vss">Vendas Sem Segredos</option>
+                    <option value="services">Implementation Services</option>
+                    <option value="advisory">Strategic Advisory</option>
+                    <option value="other">Outro Assunto</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="message" class="mb-2 block font-display text-sm font-semibold text-white">
+                  Mensagem *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows="6"
+                  class="w-full rounded-lg border-2 border-white/10 bg-white/5 px-4 py-3 font-sans text-body text-white placeholder-gray-500 transition-colors focus:border-lime focus:outline-none"
+                  placeholder="Conte-me sobre seu desafio atual..."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-lime px-8 py-4 font-display text-lg font-bold text-dark shadow-lg shadow-lime/20 transition-all hover:scale-105 hover:bg-lime/90 focus:outline-none focus:ring-2 focus:ring-lime focus:ring-offset-2 md:w-auto"
+              >
+                <Send class="h-5 w-5" />
+                Enviar Mensagem
+              </button>
+
+              <p class="font-sans text-body-sm text-gray-400">
+                * Campos obrigatórios
+              </p>
+            </form>
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+      <Container>
+        <div class="mx-auto max-w-3xl">
+          <div class="mb-12 text-center">
+            <h2 class="mb-4 font-display text-display-sm text-white">
+              Dúvidas Frequentes
+            </h2>
+            <p class="font-sans text-body-lg text-gray-300">
+              Respostas rápidas para as perguntas mais comuns
+            </p>
+          </div>
+
+          <div class="space-y-4">
+            {faqs.map((faq, index) => (
+              <div 
+                class="faq-item rounded-xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6 backdrop-blur-sm transition-all hover:border-lime/50"
+                style={`animation-delay: ${index * 0.1}s`}
+              >
+                <h3 class="mb-3 font-display text-h4 text-white">
+                  {faq.question}
+                </h3>
+                <p class="font-sans text-body text-gray-300">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement
+  
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      
+      const formData = new FormData(form)
+      const data = Object.fromEntries(formData)
+      
+      // Aqui você pode integrar com seu backend/API
+      console.log('Form data:', data)
+      
+      // Simulação de envio
+      alert('Mensagem enviada com sucesso! Retornarei em até 24 horas.')
+      form.reset()
+    })
+  }
+</script>
+
+<style>
+  .contact-card,
+  .faq-item {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

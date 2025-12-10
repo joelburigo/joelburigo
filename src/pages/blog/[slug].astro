@@ -1,0 +1,229 @@
+---
+import { getCollection } from 'astro:content'
+import Layout from '../../layouts/Layout.astro'
+import Header from '../../components/layout/Header.astro'
+import Footer from '../../components/layout/Footer.astro'
+import Container from '../../components/ui/Container.astro'
+import { Calendar, Clock, User, ArrowLeft, Share2 } from 'lucide-react'
+
+export async function getStaticPaths() {
+  const blogPosts = await getCollection('blog')
+  
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }))
+}
+
+const { post } = Astro.props
+const { Content } = await post.render()
+
+const seo = {
+  title: `${post.data.title} | Joel Burigo`,
+  description: post.data.excerpt,
+  keywords: `${post.data.category}, vendas, Joel Burigo`,
+}
+
+// Posts relacionados (busca outros posts da mesma categoria)
+const allPosts = await getCollection('blog')
+const relatedPosts = allPosts
+  .filter((p) => p.data.category === post.data.category && p.slug !== post.slug)
+  .slice(0, 3)
+---
+
+<Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
+  <Header />
+  
+  <main class="flex-grow">
+    <!-- Breadcrumb & Back -->
+    <section class="bg-dark py-6">
+      <Container>
+        <a 
+          href="/blog" 
+          class="inline-flex items-center gap-2 font-display text-sm text-gray-400 transition-colors hover:text-lime"
+        >
+          <ArrowLeft class="h-4 w-4" />
+          Voltar para o Blog
+        </a>
+      </Container>
+    </section>
+
+    <!-- Post Header -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-16">
+      <Container>
+        <article class="mx-auto max-w-4xl">
+          <div class="mb-6">
+            <span class="rounded-full bg-royal-blue/20 px-4 py-2 font-display text-sm font-semibold text-royal-blue">
+              {post.data.category}
+            </span>
+          </div>
+
+          <h1 class="mb-6 font-display text-display-md text-white md:text-display-lg">
+            {post.data.title}
+          </h1>
+
+          <div class="mb-8 flex flex-wrap items-center gap-6 border-b border-white/10 pb-6">
+            <div class="flex items-center gap-2 font-sans text-body-sm text-gray-400">
+              <User class="h-4 w-4" />
+              <span>{post.data.author}</span>
+            </div>
+            <div class="flex items-center gap-2 font-sans text-body-sm text-gray-400">
+              <Calendar class="h-4 w-4" />
+              <span>{post.data.date.toLocaleDateString('pt-BR')}</span>
+            </div>
+            <div class="flex items-center gap-2 font-sans text-body-sm text-gray-400">
+              <Clock class="h-4 w-4" />
+              <span>{post.data.readTime} de leitura</span>
+            </div>
+            <button class="ml-auto flex items-center gap-2 font-display text-sm text-lime transition-colors hover:text-lime/80">
+              <Share2 class="h-4 w-4" />
+              <span>Compartilhar</span>
+            </button>
+          </div>
+
+          <!-- Post Content from Markdown -->
+          <div class="prose-custom">
+            <Content />
+          </div>
+
+          <!-- Post Footer / CTA -->
+          <div class="mt-16 rounded-2xl border-2 border-lime/20 bg-gradient-to-br from-lime/5 to-lime/10 p-8 text-center">
+            <h3 class="mb-4 font-display text-h2 text-white">
+              Quer Implementar os 6Ps no Seu Negócio?
+            </h3>
+            <p class="mb-6 font-sans text-body-lg text-gray-300">
+              No programa Vendas Sem Segredos, você aprende e implementa o Framework completo em 90 dias.
+            </p>
+            <a href="/vss">
+              <button class="inline-flex items-center justify-center gap-2 rounded-lg bg-lime px-8 py-4 font-display text-lg font-bold text-dark shadow-lg shadow-lime/20 transition-all hover:scale-105 hover:bg-lime/90">
+                Ver Programa Completo
+              </button>
+            </a>
+          </div>
+        </article>
+      </Container>
+    </section>
+
+    <!-- Related Posts -->
+    {relatedPosts.length > 0 && (
+      <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+        <Container>
+          <h2 class="mb-12 text-center font-display text-display-sm text-white">
+            Artigos Relacionados
+          </h2>
+
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+            {relatedPosts.map((relatedPost) => (
+              <a
+                href={`/blog/${relatedPost.slug}`}
+                class="group flex flex-col overflow-hidden rounded-2xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6 backdrop-blur-sm transition-all hover:border-lime/50"
+              >
+                <span class="mb-3 inline-block w-fit rounded-full bg-royal-blue/20 px-3 py-1 font-display text-xs font-semibold text-royal-blue">
+                  {relatedPost.data.category}
+                </span>
+                <h3 class="font-display text-h4 text-white transition-colors group-hover:text-lime">
+                  {relatedPost.data.title}
+                </h3>
+              </a>
+            ))}
+          </div>
+        </Container>
+      </section>
+    )}
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .prose-custom {
+    color: #d1d5db;
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+
+  .prose-custom :global(h2) {
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  .prose-custom :global(h3) {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  .prose-custom :global(p) {
+    margin-bottom: 1.25rem;
+  }
+
+  .prose-custom :global(strong) {
+    color: white;
+    font-weight: 600;
+  }
+
+  .prose-custom :global(ul) {
+    margin: 1.5rem 0;
+    list-style-type: disc;
+    padding-left: 1.75rem;
+  }
+
+  .prose-custom :global(li) {
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-custom :global(blockquote) {
+    margin: 2.5rem 0;
+    padding-left: 1.5rem;
+    border-left: 4px solid #a3ff3f;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #e5e7eb;
+  }
+
+  .prose-custom :global(a) {
+    color: #a3ff3f;
+    text-decoration: underline;
+    transition: color 0.2s;
+  }
+
+  .prose-custom :global(a:hover) {
+    color: #8fd639;
+  }
+
+  .prose-custom :global(code) {
+    background-color: rgba(163, 255, 63, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.9em;
+    color: #a3ff3f;
+  }
+</style>
+
+<script>
+  // Share button functionality
+  const shareButton = document.querySelector('button')
+  shareButton?.addEventListener('click', async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: document.title,
+          url: window.location.href,
+        })
+      } catch (err) {
+        console.log('Error sharing:', err)
+      }
+    } else {
+      // Fallback: copy to clipboard
+      navigator.clipboard.writeText(window.location.href)
+      alert('Link copiado para área de transferência!')
+    }
+  })
+</script>

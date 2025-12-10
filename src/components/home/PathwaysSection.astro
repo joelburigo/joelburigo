@@ -1,0 +1,197 @@
+---
+import Container from '../ui/Container.astro'
+import Card from '../ui/Card.astro'
+import Button from '../ui/Button.astro'
+import { GraduationCap, Wrench, Briefcase, Check } from 'lucide-react'
+
+const pathways = [
+  {
+    icon: GraduationCap,
+    title: 'Vendas Sem Segredos',
+    subtitle: 'Quer fazer sozinho?',
+    description: 'Programa completo de 90 dias onde você aprende e implementa o sistema de vendas escaláveis no seu negócio.',
+    price: 'R$ 1.997',
+    period: 'ou 12x R$ 197',
+    features: [
+      '15 módulos práticos',
+      'CRM profissional incluído',
+      '48 mentorias ao vivo',
+      'Comunidade exclusiva',
+    ],
+    link: '/vss',
+    buttonText: 'Ver Programa Completo',
+    buttonVariant: 'primary' as const,
+    idealFor: 'Empreendedores que querem autonomia',
+    badge: 'MAIS POPULAR',
+    color: 'lime' as const,
+  },
+  {
+    icon: Wrench,
+    title: 'Implementation Services',
+    subtitle: 'Quer minha equipe implementando?',
+    description: 'Minha equipe implementa todo o sistema de vendas no seu negócio. Você foca na estratégia.',
+    price: 'Sob Consulta',
+    period: 'Projeto ou Retainer',
+    features: [
+      'CRM configurado do zero',
+      'Funis e automações',
+      'Campanhas de tráfego',
+      'Gestão completa',
+    ],
+    link: '/services',
+    buttonText: 'Solicitar Proposta',
+    buttonVariant: 'outline' as const,
+    idealFor: 'Empresas que querem delegar tudo',
+    badge: null,
+    color: 'blue' as const,
+  },
+  {
+    icon: Briefcase,
+    title: 'Strategic Advisory',
+    subtitle: 'Quer minha mente no seu negócio?',
+    description: 'Consultoria estratégica 1-on-1 para decisões críticas de crescimento e estruturação de vendas.',
+    price: 'Sob Aplicação',
+    period: 'Vagas limitadas',
+    features: [
+      'Sessões mensais 1-on-1',
+      'Acesso direto via WhatsApp',
+      'Análise de estratégia',
+      'Mínimo 6 meses',
+    ],
+    link: '/advisory',
+    buttonText: 'Aplicar Agora',
+    buttonVariant: 'outline' as const,
+    idealFor: 'CEOs que precisam de sparring partner',
+    badge: null,
+    color: 'blue' as const,
+  },
+]
+---
+
+<section class="relative overflow-hidden bg-gradient-to-b from-dark via-dark-gray to-dark py-32">
+  <!-- Background decoration -->
+  <div class="absolute left-0 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-lime/5 blur-3xl"></div>
+  <div class="absolute right-0 top-1/4 h-96 w-96 rounded-full bg-royal-blue/5 blur-3xl"></div>
+
+  <Container class="relative z-10">
+    <div class="mx-auto mb-20 max-w-3xl text-center">
+      <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
+        Escolha Seu Caminho
+      </h2>
+      <p class="font-sans text-body-lg text-gray-300">
+        Três formas de estruturar suas vendas. Mesma metodologia, níveis diferentes de envolvimento.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+      {pathways.map((pathway, index) => {
+        const Icon = pathway.icon
+        const delay = index * 0.2
+        return (
+          <div class="pathway-card group" style={`animation-delay: ${delay}s`}>
+            <div class={`relative flex h-full flex-col overflow-hidden rounded-2xl border-2 transition-all duration-300 ${
+              pathway.badge 
+                ? 'border-lime bg-gradient-to-br from-dark via-dark-gray to-dark shadow-2xl shadow-lime/20 hover:shadow-lime/30' 
+                : 'border-white/10 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm hover:border-white/20'
+            }`}>
+              {/* Badge */}
+              {pathway.badge && (
+                <div class="absolute -right-12 top-6 rotate-45 bg-lime px-12 py-1">
+                  <span class="font-display text-xs font-bold uppercase tracking-wide text-dark">
+                    {pathway.badge}
+                  </span>
+                </div>
+              )}
+
+              <div class="p-8">
+                {/* Icon */}
+                <div class={`mb-6 flex h-16 w-16 items-center justify-center rounded-2xl ${
+                  pathway.badge 
+                    ? 'bg-lime/20 text-lime' 
+                    : 'bg-white/10 text-white'
+                }`}>
+                  <Icon class="h-8 w-8" />
+                </div>
+
+                {/* Title */}
+                <h3 class="mb-4 font-display text-h2 text-white">{pathway.title}</h3>
+                
+                {/* Subtitle - DESTAQUE */}
+                <div class={`mb-6 rounded-xl p-4 ${
+                  pathway.badge 
+                    ? 'bg-lime/10 border-2 border-lime/30' 
+                    : 'bg-white/5 border-2 border-white/10'
+                }`}>
+                  <p class={`font-display text-h3 font-extrabold italic ${
+                    pathway.badge ? 'text-lime' : 'text-white'
+                  }`}>
+                    {pathway.subtitle}
+                  </p>
+                </div>
+
+                {/* Description */}
+                <p class="mb-8 font-sans text-body text-gray-300">
+                  {pathway.description}
+                </p>
+
+                {/* Features */}
+                <ul class="mb-8 space-y-3">
+                  {pathway.features.map((feature) => (
+                    <li class="flex items-start gap-3 font-sans text-body-sm text-gray-300">
+                      <Check class={`h-5 w-5 flex-shrink-0 ${pathway.badge ? 'text-lime' : 'text-white/70'}`} />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Price */}
+                <div class="mb-8 border-t border-white/10 pt-6">
+                  <p class={`font-display text-3xl font-bold ${pathway.badge ? 'text-lime' : 'text-white'}`}>
+                    {pathway.price}
+                  </p>
+                  <p class="font-sans text-body-sm text-gray-400">{pathway.period}</p>
+                </div>
+
+                {/* Button */}
+                <a href={pathway.link} class="block w-full">
+                  <Button
+                    variant={pathway.buttonVariant}
+                    class={`w-full ${
+                      pathway.badge
+                        ? '!bg-lime !text-dark hover:!bg-lime/90'
+                        : '!border-white !text-white hover:!bg-white/10'
+                    }`}
+                  >
+                    {pathway.buttonText}
+                  </Button>
+                </a>
+
+                <p class="mt-4 text-center font-sans text-xs text-gray-500">
+                  Ideal para: {pathway.idealFor}
+                </p>
+              </div>
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  </Container>
+</section>
+
+<style>
+  .pathway-card {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

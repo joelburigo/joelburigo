@@ -1,0 +1,69 @@
+---
+import Container from '../ui/Container.astro'
+import MobileMenu from './MobileMenu.astro'
+
+const navLinks = [
+  { name: 'Sobre', path: '/sobre' },
+  { name: 'VSS', path: '/vss' },
+  { name: 'Services', path: '/services' },
+  { name: 'Advisory', path: '/advisory' },
+  { name: 'Blog', path: '/blog' },
+  { name: 'Contato', path: '/contato' },
+]
+---
+
+<header id="main-header" class="fixed left-0 right-0 top-0 z-50 bg-transparent py-5 transition-all duration-300">
+  <Container>
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="z-50">
+        <span class="font-display text-2xl font-extrabold tracking-tight text-white">
+          JOEL <span class="text-lime">BURIGO</span>
+        </span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden items-center space-x-8 md:flex">
+        {navLinks.map((link) => (
+          <a
+            href={link.path}
+            class="font-sans text-sm font-medium text-gray-200 transition-colors hover:text-lime"
+          >
+            {link.name}
+          </a>
+        ))}
+        <a href="/vss">
+          <button class="inline-flex h-9 items-center justify-center rounded-lg bg-lime px-4 font-display text-sm font-bold text-dark shadow-lg shadow-lime/20 transition-all hover:bg-lime/90 focus:outline-none focus:ring-2 focus:ring-lime focus:ring-offset-2">
+            Conhecer o Método
+          </button>
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Component -->
+      <MobileMenu {navLinks} />
+    </div>
+  </Container>
+</header>
+
+<script>
+  // Scroll effect
+  const header = document.getElementById('main-header')
+  
+  function handleScroll() {
+    if (window.scrollY > 10) {
+      header?.classList.add('bg-dark/95', 'py-3', 'shadow-lg', 'shadow-lime/5', 'backdrop-blur-md')
+      header?.classList.remove('bg-transparent', 'py-5')
+    } else {
+      header?.classList.remove('bg-dark/95', 'py-3', 'shadow-lg', 'shadow-lime/5', 'backdrop-blur-md')
+      header?.classList.add('bg-transparent', 'py-5')
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll)
+  
+  // Re-attach on page navigation (View Transitions)
+  document.addEventListener('astro:page-load', () => {
+    const newHeader = document.getElementById('main-header')
+    window.addEventListener('scroll', handleScroll)
+  })
+</script>

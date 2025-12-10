@@ -1,0 +1,138 @@
+---
+import Container from '../ui/Container.astro'
+import Button from '../ui/Button.astro'
+import { CheckCircle2, PlayCircle, X, Users, BookOpen, Zap, Target, TrendingUp, Award, Clock, DollarSign } from 'lucide-react'
+
+const oquee = [
+  { icon: 'CheckCircle2', title: 'Implementação Prática', desc: '90 dias de trabalho estruturado, não só teoria' },
+  { icon: 'Zap', title: 'Sistema Completo', desc: 'CRM + funis + processos funcionando' },
+  { icon: 'Target', title: 'Funciona Sem Budget', desc: 'COM ou SEM tráfego pago, você escolhe a rota' },
+]
+
+const naoE = [
+  'Curso gravado que te abandona',
+  'Teoria sem implementação',
+  'Solução genérica para qualquer porte',
+  'Dependente de budget alto de tráfego',
+]
+
+const modulos = [
+  { num: '00', nome: 'Diagnóstico Inicial', aulas: 3 },
+  { num: '01', nome: 'Framework dos 6Ps', aulas: 4 },
+  { num: '02', nome: 'P1: Posicionamento', aulas: 5 },
+  { num: '03', nome: 'P2: Público (ICP)', aulas: 4 },
+  { num: '04', nome: 'P3: Produto/Oferta', aulas: 5 },
+  { num: '05', nome: 'P4: CRM Setup', aulas: 6 },
+  { num: '06', nome: 'Funis de Vendas', aulas: 5 },
+  { num: '07', nome: 'Automações', aulas: 4 },
+  { num: '08', nome: 'Landing Pages', aulas: 4 },
+  { num: '09', nome: 'Rota A: Tráfego Pago', aulas: 6 },
+  { num: '10', nome: 'Rota B: Prospecção Ativa', aulas: 6 },
+  { num: '11', nome: 'P5: Processos', aulas: 4 },
+  { num: '12', nome: 'P6: Pessoas', aulas: 3 },
+  { num: '13', nome: 'Métricas e KPIs', aulas: 4 },
+  { num: '14', nome: 'Otimização Contínua', aulas: 3 },
+]
+
+const inclusos = [
+  { titulo: 'Conteúdo Educacional', itens: ['15 módulos estruturados', '60 aulas em vídeo (28-32h)', 'Acesso vitalício', 'Atualizações incluídas'] },
+  { titulo: 'Mentorias e Suporte', itens: ['48 sessões ao vivo', 'Semanais por 12 semanas', 'Depois quinzenais', 'Todas gravadas'] },
+  { titulo: 'Growth CRM (12 meses)', itens: ['CRM profissional completo', 'Valor: R$ 1.188/ano inclusos', 'Já configurado', 'Funis + automações prontos'] },
+  { titulo: 'Templates e Recursos', itens: ['Canvas dos 6Ps', 'Scripts de vendas', 'Landing pages', 'SOPs e processos'] },
+]
+
+const resultados = [
+  { metrica: 'Previsibilidade', antes: 'Não sabe quanto vai faturar', depois: 'Metas claras e alcançáveis' },
+  { metrica: 'Leads', antes: 'Planilha Excel ou papel', depois: 'CRM configurado + automações' },
+  { metrica: 'Processo', antes: 'Improviso em cada venda', depois: 'Playbook comercial documentado' },
+  { metrica: 'Equipe', antes: 'Só o dono sabe vender', depois: 'Time capacitado e autônomo' },
+]
+---
+
+<div class="flex min-h-screen flex-col">
+  <main class="flex-grow pt-20">
+    <!-- Hero -->
+    <section class="hero-section bg-royal-blue py-24 text-white">
+      <Container>
+        <div class="mx-auto max-w-4xl text-center">
+          <span class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/20 px-4 py-1.5 font-display text-sm font-bold text-lime">
+            PROGRAMA DE 90 DIAS
+          </span>
+          <h1 class="mb-6 font-display text-display-md text-white md:text-display-lg">
+            Vendas Sem Segredos
+          </h1>
+          <p class="mx-auto mb-10 max-w-2xl font-sans text-body-lg text-blue-100">
+            Sistema Completo de Vendas Escaláveis. Transforme seu negócio de vendas aleatórias
+            para vendas previsíveis com o Framework dos 6Ps.
+          </p>
+          <div class="flex flex-col justify-center gap-4 sm:flex-row">
+            <Button variant="primary" size="lg">
+              Garantir Minha Vaga
+            </Button>
+            <Button variant="outline" size="lg">
+              <PlayCircle class="mr-2 h-5 w-5" />
+              Assistir Apresentação
+            </Button>
+          </div>
+          <p class="mt-6 font-sans text-body-sm text-blue-300">
+            Próxima turma: Em breve | Vagas limitadas
+          </p>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Content Preview -->
+    <section class="content-section bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+      <Container>
+        <div class="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
+          <div>
+            <h2 class="mb-6 font-display text-h1 text-white">O Que Está Incluído</h2>
+            <ul class="space-y-4">
+              {items.map((item) => (
+                <li class="flex items-center gap-3">
+                  <CheckCircle2 class="h-6 w-6 flex-shrink-0 text-lime" />
+                  <span class="font-sans text-body-lg text-gray-300">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="flex h-80 items-center justify-center rounded-2xl border-2 border-white/10 bg-dark-gray/50 p-8">
+            <p class="font-display font-semibold text-gray-400">Preview da Plataforma</p>
+          </div>
+        </div>
+      </Container>
+    </section>
+  </main>
+</div>
+
+<style>
+  .hero-section {
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .content-section {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out 0.2s forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

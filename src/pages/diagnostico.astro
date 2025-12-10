@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/layout/Header.astro'
+import Footer from '../components/layout/Footer.astro'
+import DiagnosticoPage from '../components/pages/DiagnosticoPage.astro'
+
+const seo = {
+  title: 'Diagnóstico 6Ps Gratuito - Checklist de Vendas | Joel Burigo',
+  description:
+    'Baixe gratuitamente o checklist dos 6Ps e descubra qual está travando o crescimento das suas vendas. Diagnóstico completo em 10 minutos.',
+  keywords:
+    'diagnóstico vendas, checklist vendas, avaliação vendas, framework 6Ps, auditoria vendas',
+}
+---
+
+<Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
+  <Header />
+  <DiagnosticoPage />
+  <Footer />
+</Layout>

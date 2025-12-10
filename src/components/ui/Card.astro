@@ -1,0 +1,33 @@
+---
+import { cn } from '../../lib/utils'
+
+interface Props {
+  class?: string
+  hoverEffect?: boolean
+  onClick?: string
+  as?: 'div' | 'article'
+}
+
+const { 
+  class: className = '', 
+  hoverEffect = true, 
+  onClick,
+  as = 'div'
+} = Astro.props
+
+const Component = onClick ? 'article' : as
+const isClickable = !!onClick
+---
+
+<Component
+  class:list={[
+    'card overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-all duration-200',
+    hoverEffect && 'hover:-translate-y-1 hover:shadow-lg',
+    isClickable && 'cursor-pointer',
+    className
+  ]}
+  role={isClickable ? 'button' : undefined}
+  tabindex={isClickable ? 0 : undefined}
+>
+  <slot />
+</Component>

@@ -1,0 +1,285 @@
+---
+import { getCollection } from 'astro:content'
+import Layout from '../../layouts/Layout.astro'
+import Header from '../../components/layout/Header.astro'
+import Footer from '../../components/layout/Footer.astro'
+import Container from '../../components/ui/Container.astro'
+import { Calendar, Clock, ArrowRight, TrendingUp } from 'lucide-react'
+
+const seo = {
+  title: 'Blog - Joel Burigo | Conteúdo sobre Vendas Escaláveis',
+  description:
+    'Artigos, estratégias e insights sobre vendas escaláveis, CRM, funis de vendas e o Framework dos 6Ps.',
+  keywords: 'blog vendas, vendas B2B, CRM, funis de vendas, estratégia comercial, Joel Burigo',
+}
+
+// Buscar todos os posts ordenados por data
+const allPosts = await getCollection('blog')
+const sortedPosts = allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+
+// Post em destaque (mais recente com featured: true, ou o primeiro)
+const featuredPost = sortedPosts.find((p) => p.data.featured) || sortedPosts[0]
+
+// Posts regulares (excluindo o featured)
+const posts = featuredPost ? sortedPosts.filter((p) => p.slug !== featuredPost.slug) : sortedPosts
+
+// Contagem por categoria
+const categoryCounts = allPosts.reduce((acc, post) => {
+  acc[post.data.category] = (acc[post.data.category] || 0) + 1
+  return acc
+}, {} as Record<string, number>)
+
+const categories = [
+  { name: 'Todos', count: allPosts.length },
+  { name: 'Framework 6Ps', count: categoryCounts['Framework 6Ps'] || 0 },
+  { name: 'Vendas Escaláveis', count: categoryCounts['Vendas Escaláveis'] || 0 },
+  { name: 'CRM e Tecnologia', count: categoryCounts['CRM e Tecnologia'] || 0 },
+  { name: 'Processos', count: categoryCounts['Processos'] || 0 },
+  { name: 'Casos de Sucesso', count: categoryCounts['Casos de Sucesso'] || 0 },
+  { name: 'Mentalidade', count: categoryCounts['Mentalidade'] || 0 },
+]
+---
+
+<Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
+  <Header />
+  
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-b from-dark via-dark-gray to-dark py-32">
+      <div class="absolute left-0 top-0 h-96 w-96 rounded-full bg-lime/5 blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-royal-blue/5 blur-3xl"></div>
+
+      <Container class="relative z-10">
+        <div class="mx-auto max-w-3xl text-center">
+          <div class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-2 backdrop-blur-sm">
+            <span class="font-display text-sm font-bold text-lime">BLOG</span>
+          </div>
+          
+          <h1 class="mb-6 font-display text-display-md text-white md:text-display-lg">
+            Conteúdo sobre{' '}
+            <span class="bg-gradient-to-r from-lime to-white bg-clip-text text-transparent">
+              Vendas Escaláveis
+            </span>
+          </h1>
+          
+          <p class="font-sans text-body-lg text-gray-300">
+            Estratégias, frameworks e insights para transformar vendas aleatórias em previsíveis
+          </p>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Featured Post -->
+    {featuredPost && (
+      <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-16">
+        <Container>
+          <a 
+            href={`/blog/${featuredPost.slug}`}
+            class="group block overflow-hidden rounded-2xl border-2 border-lime/20 bg-gradient-to-br from-dark to-dark-gray transition-all hover:border-lime/50 hover:shadow-2xl hover:shadow-lime/20"
+          >
+          <div class="grid grid-cols-1 gap-8 p-8 lg:grid-cols-2 lg:items-center">
+            <div class="aspect-video overflow-hidden rounded-xl bg-dark-gray lg:order-2">
+              <div class="flex h-full items-center justify-center">
+                <TrendingUp class="h-16 w-16 text-lime/30" />
+              </div>
+            </div>
+
+            <div class="lg:order-1">
+              <div class="mb-4 inline-block rounded-full bg-lime/20 px-3 py-1">
+                <span class="font-display text-xs font-bold text-lime">EM DESTAQUE</span>
+              </div>
+
+              <h2 class="mb-4 font-display text-h1 text-white transition-colors group-hover:text-lime md:text-display-sm">
+                {featuredPost.data.title}
+              </h2>
+
+              <p class="mb-4 font-sans text-body-lg text-gray-300">
+                {featuredPost.data.excerpt}
+              </p>
+
+              <div class="flex items-center gap-4 font-sans text-sm text-gray-400">
+                <div class="flex items-center gap-1">
+                  <Calendar class="h-4 w-4" />
+                  <span>{featuredPost.data.date.toLocaleDateString('pt-BR')}</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <Clock class="h-4 w-4" />
+                  <span>{featuredPost.data.readTime}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </Container>
+    </section>
+    )}
+
+    <!-- Categories -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-8">
+      <Container>
+        <div class="flex flex-wrap justify-center gap-3">
+          {categories.map((cat) => (
+            <button 
+              data-category={cat.name}
+              class="category-btn rounded-full border-2 border-white/10 bg-white/5 px-4 py-2 font-display text-sm font-semibold text-white transition-all hover:border-lime hover:bg-lime hover:text-dark"
+            >
+              {cat.name} <span class="text-gray-400">({cat.count})</span>
+            </button>
+          ))}
+        </div>
+      </Container>
+    </section>
+
+    <!-- Posts Grid -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-16">
+      <Container>
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post, index) => (
+            <a
+              href={`/blog/${post.slug}`}
+              data-category={post.data.category}
+              class="post-card group flex flex-col overflow-hidden rounded-2xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm transition-all hover:border-lime/50 hover:shadow-xl hover:shadow-lime/10"
+              style={`animation-delay: ${index * 0.1}s`}
+            >
+              {/* Image */}
+              <div class="aspect-video overflow-hidden bg-dark-gray">
+                <div class="flex h-full items-center justify-center">
+                  <TrendingUp class="h-12 w-12 text-lime/30" />
+                </div>
+              </div>
+
+              {/* Content */}
+              <div class="flex flex-1 flex-col p-6">
+                <div class="mb-3 flex items-center gap-2">
+                  <span class="rounded-full bg-royal-blue/20 px-3 py-1 font-display text-xs font-semibold text-royal-blue">
+                    {post.data.category}
+                  </span>
+                  <div class="flex items-center gap-1 font-sans text-xs text-gray-400">
+                    <Clock class="h-3 w-3" />
+                    <span>{post.data.readTime}</span>
+                  </div>
+                </div>
+
+                <h3 class="mb-3 font-display text-h3 text-white transition-colors group-hover:text-lime">
+                  {post.data.title}
+                </h3>
+
+                <p class="mb-4 flex-1 font-sans text-body text-gray-300">
+                  {post.data.excerpt}
+                </p>
+
+                <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                  <span class="font-sans text-body-sm text-gray-400">
+                    {post.data.date.toLocaleDateString('pt-BR')}
+                  </span>
+                  <div class="flex items-center gap-2 font-display text-sm text-lime">
+                    <span>Ler mais</span>
+                    <ArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-2" />
+                  </div>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        {/* Load More */}
+        <div class="mt-12 text-center">
+          <button class="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 font-display text-lg font-semibold text-white transition-all hover:scale-105 hover:border-lime hover:bg-lime hover:text-dark">
+            Carregar Mais Artigos
+            <ArrowRight class="h-5 w-5" />
+          </button>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-dark via-dark-gray to-royal-blue py-24">
+      <div class="absolute left-0 top-0 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-lime opacity-20 blur-3xl"></div>
+      
+      <Container class="relative z-10">
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
+            Receba Conteúdo Exclusivo
+          </h2>
+          <p class="mb-8 font-sans text-body-lg text-gray-300">
+            Estratégias de vendas direto no seu email. Sem spam, só conteúdo de valor.
+          </p>
+
+          <form class="flex flex-col gap-4 sm:flex-row sm:justify-center">
+            <input
+              type="email"
+              placeholder="Seu melhor email"
+              class="rounded-lg border-2 border-white/10 bg-white/5 px-6 py-3 font-sans text-body text-white placeholder-gray-500 transition-colors focus:border-lime focus:outline-none sm:w-80"
+            />
+            <button class="inline-flex items-center justify-center gap-2 rounded-lg bg-lime px-8 py-3 font-display font-bold text-dark shadow-lg shadow-lime/20 transition-all hover:scale-105 hover:bg-lime/90">
+              Assinar Newsletter
+              <ArrowRight class="h-5 w-5" />
+            </button>
+          </form>
+        </div>
+      </Container>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .post-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .post-card.hidden {
+    display: none;
+  }
+
+  .category-btn.active {
+    border-color: #a3ff3f;
+    background-color: #a3ff3f;
+    color: #020617;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+  // Filtro de categorias
+  const categoryButtons = document.querySelectorAll('.category-btn');
+  const postCards = document.querySelectorAll('.post-card');
+
+  // Marcar "Todos" como ativo inicialmente
+  const todosBtn = Array.from(categoryButtons).find(btn => btn.getAttribute('data-category') === 'Todos');
+  if (todosBtn) {
+    todosBtn.classList.add('active');
+  }
+
+  categoryButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const selectedCategory = button.getAttribute('data-category');
+
+      // Atualizar botão ativo
+      categoryButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      // Filtrar posts
+      postCards.forEach(card => {
+        const postCategory = card.getAttribute('data-category');
+        
+        if (selectedCategory === 'Todos' || postCategory === selectedCategory) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>

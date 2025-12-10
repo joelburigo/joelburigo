@@ -1,5 +1,6 @@
 ---
 import Container from '../ui/Container.astro'
+import Logo from '../ui/Logo.astro'
 import { Youtube, Linkedin, Instagram, FileText, Mail, MapPin } from 'lucide-react'
 
 const currentYear = new Date().getFullYear()
@@ -11,9 +12,7 @@ const currentYear = new Date().getFullYear()
       <!-- Column 1: Brand -->
       <div class="space-y-6">
         <a href="/" class="block">
-          <span class="font-display text-2xl font-extrabold tracking-tight text-white">
-            JOEL <span class="text-lime">BURIGO</span>
-          </span>
+          <Logo />
         </a>
         <p class="max-w-xs font-sans text-body-sm leading-relaxed text-gray-400">
           Sistema completo de vendas escaláveis para micro e pequenas empresas. Transforme

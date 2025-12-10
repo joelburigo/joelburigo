@@ -1,6 +1,7 @@
 ---
 import Container from '../ui/Container.astro'
 import MobileMenu from './MobileMenu.astro'
+import Logo from '../ui/Logo.astro'
 import { ChevronDown } from 'lucide-react'
 
 interface Props {
@@ -42,9 +43,7 @@ const initialClasses = transparent
     <div class="flex items-center justify-between gap-8">
       <!-- Logo (Left) -->
       <a href="/" class="z-50 flex-shrink-0">
-        <span class="font-display text-2xl font-extrabold tracking-tight text-white">
-          JOEL <span class="text-lime">BURIGO</span>
-        </span>
+        <Logo />
       </a>
 
       <!-- Desktop Nav + CTA (Right) -->

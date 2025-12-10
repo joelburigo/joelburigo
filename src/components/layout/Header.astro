@@ -1,7 +1,14 @@
 ---
 import Container from '../ui/Container.astro'
 import MobileMenu from './MobileMenu.astro'
+import ThemeToggle from '../ui/ThemeToggle.astro'
 import { ChevronDown } from 'lucide-react'
+
+interface Props {
+  transparent?: boolean
+}
+
+const { transparent = false } = Astro.props
 
 const navLinks = [
   { name: 'VSS', path: '/vss' },
@@ -25,9 +32,13 @@ const allNavLinks = [
   { name: 'Blog', path: '/blog' },
   { name: 'Contato', path: '/contato' },
 ]
+
+const initialClasses = transparent 
+  ? 'bg-transparent py-5' 
+  : 'bg-dark/98 py-3 shadow-xl shadow-black/20 backdrop-blur-lg'
 ---
 
-<header id="main-header" class="fixed left-0 right-0 top-0 z-50 bg-transparent py-5 transition-all duration-300">
+<header id="main-header" class={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${initialClasses}`} data-transparent={transparent}>
   <Container>
     <div class="flex items-center justify-between">
       <!-- Logo -->
@@ -55,7 +66,7 @@ const allNavLinks = [
             <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
           </button>
           
-          <div class="invisible absolute right-0 top-full mt-2 w-48 rounded-lg border border-white/10 bg-dark/98 opacity-0 shadow-xl backdrop-blur-lg transition-all group-hover:visible group-hover:opacity-100">
+          <div class="invisible absolute right-0 top-full mt-2 w-48 rounded-lg border border-white/10 dark:border-white/10 bg-dark/98 dark:bg-dark/98 opacity-0 shadow-xl backdrop-blur-lg transition-all group-hover:visible group-hover:opacity-100">
             {moreLinks.map((link) => (
               <a
                 href={link.path}
@@ -66,6 +77,8 @@ const allNavLinks = [
             ))}
           </div>
         </div>
+        
+        <ThemeToggle />
         
         <a href="/vss">
           <button class="inline-flex h-9 items-center justify-center rounded-lg bg-lime px-4 font-display text-sm font-bold text-dark shadow-lg shadow-lime/20 transition-all hover:bg-lime/90 focus:outline-none focus:ring-2 focus:ring-lime focus:ring-offset-2">
@@ -86,13 +99,18 @@ const allNavLinks = [
     const header = document.getElementById('main-header')
     if (!header) return
     
+    const isTransparent = header.dataset.transparent === 'true'
+    
     function handleScroll() {
       if (window.scrollY > 50) {
         header.classList.add('bg-dark/98', 'py-3', 'shadow-xl', 'shadow-black/20', 'backdrop-blur-lg')
         header.classList.remove('bg-transparent', 'py-5')
       } else {
-        header.classList.remove('bg-dark/98', 'py-3', 'shadow-xl', 'shadow-black/20', 'backdrop-blur-lg')
-        header.classList.add('bg-transparent', 'py-5')
+        if (isTransparent) {
+          header.classList.remove('bg-dark/98', 'py-3', 'shadow-xl', 'shadow-black/20', 'backdrop-blur-lg')
+          header.classList.add('bg-transparent', 'py-5')
+        }
+        // Se não é transparente, mantém o fundo escuro mesmo no topo
       }
     }
 

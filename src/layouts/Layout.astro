@@ -20,7 +20,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 ---
 
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -47,8 +47,27 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    
+    <script is:inline>
+      // Theme initialization - prevent flash
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      })();
+      
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
   </head>
-  <body>
+  <body class="bg-white dark:bg-dark text-dark dark:text-white transition-colors">
     <slot />
   </body>
 </html>

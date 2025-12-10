@@ -6,24 +6,32 @@ interface Props {
   hoverEffect?: boolean
   onClick?: string
   as?: 'div' | 'article'
+  variant?: 'default' | 'highlight'
 }
 
 const { 
   class: className = '', 
   hoverEffect = true, 
   onClick,
-  as = 'div'
+  as = 'div',
+  variant = 'default'
 } = Astro.props
 
 const Component = onClick ? 'article' : as
 const isClickable = !!onClick
+
+const variants = {
+  default: 'rounded-xl border-2 border-dark/10 dark:border-white/10 bg-white dark:bg-white/5 backdrop-blur-sm shadow-lg dark:shadow-none',
+  highlight: 'rounded-xl border-2 border-lime/20 dark:border-lime/20 bg-lime/5 dark:bg-lime/5',
+}
 ---
 
 <Component
   class:list={[
-    'card overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-all duration-200',
-    hoverEffect && 'hover:-translate-y-1 hover:shadow-lg',
-    isClickable && 'cursor-pointer',
+    variants[variant],
+    'p-6 transition-all duration-200',
+    hoverEffect && 'hover:border-lime/50 dark:hover:border-lime/50',
+    isClickable && 'cursor-pointer hover:-translate-y-1',
     className
   ]}
   role={isClickable ? 'button' : undefined}

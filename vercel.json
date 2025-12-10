@@ -47,12 +47,5 @@
         }
       ]
     }
-  ],
-  "redirects": [
-    {
-      "source": "/blog",
-      "destination": "/",
-      "permanent": false
-    }
   ]
 }

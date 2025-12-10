@@ -1,12 +1,68 @@
 ---
 import Container from '../ui/Container.astro'
 import Button from '../ui/Button.astro'
-import { CheckCircle2, PlayCircle, X, Users, BookOpen, Zap, Target, TrendingUp, Award, Clock, DollarSign } from 'lucide-react'
+import { CheckCircle2, PlayCircle, X, Users, BookOpen, Zap, Target, TrendingUp, Award, Clock, DollarSign, Star, Shield, Rocket, AlertCircle } from 'lucide-react'
 
 const oquee = [
   { icon: 'CheckCircle2', title: 'Implementação Prática', desc: '90 dias de trabalho estruturado, não só teoria' },
-  { icon: 'Zap', title: 'Sistema Completo', desc: 'CRM + funis + processos funcionando' },
+  { icon: 'Zap', title: 'Sistema Completo', desc: 'CRM + funis + processos + scripts funcionando' },
   { icon: 'Target', title: 'Funciona Sem Budget', desc: 'COM ou SEM tráfego pago, você escolhe a rota' },
+  { icon: 'Users', title: '48 Mentorias ao Vivo', desc: 'Toda semana por 12 semanas, depois quinzenal' },
+]
+
+const depoimentos = [
+  {
+    nome: 'Encontre Sua Franquia',
+    resultado: 'R$ 60k → R$ 1M/mês em 24 meses',
+    texto: 'Antes do VSS eu vendia só por indicação. Hoje temos 5 SDRs, CRM estruturado e processo que funciona. Escalamos 16x.',
+    avatar: '🏢'
+  },
+  {
+    nome: 'Agência de Marketing Digital',
+    resultado: 'R$ 30k → R$ 120k/mês em 12 meses',
+    texto: 'A conversão subiu de 8% para 23% depois que implementamos o funil do módulo 06. O CRM incluído valeu cada centavo.',
+    avatar: '📱'
+  },
+  {
+    nome: 'SaaS B2B',
+    resultado: 'Churn 12% → 3% em 18 meses',
+    texto: 'O módulo de Pessoas nos ensinou a contratar e treinar SDRs. Hoje o time vende sozinho, não depende mais de mim.',
+    avatar: '💻'
+  }
+]
+
+const diferenciais = [
+  { titulo: 'Validado por 140 Clientes', desc: 'Framework testado em 17 anos e R$ 1 bilhão estruturado', icon: 'Award' },
+  { titulo: 'CRM Profissional Incluído', desc: 'Growth CRM por 12 meses (valor R$ 6.996)', icon: 'Zap' },
+  { titulo: 'Comunidade Exclusiva', desc: 'Networking com outros donos implementando o sistema', icon: 'Users' },
+  { titulo: 'Mentorias Semanais', desc: '48 sessões ao vivo para tirar dúvidas e ajustar', icon: 'Target' },
+]
+
+const faq = [
+  {
+    pergunta: 'Preciso de budget para tráfego pago?',
+    resposta: 'NÃO. O VSS tem 2 rotas: Rota A (tráfego pago) e Rota B (prospecção ativa). Você escolhe a que faz sentido pro seu momento. 60% dos alunos começam com Rota B (sem gastar nada).'
+  },
+  {
+    pergunta: 'Quanto tempo por semana preciso dedicar?',
+    resposta: 'Recomendamos 2-3 horas semanais para assistir aulas + implementar. As aulas têm 15-35 minutos cada. Nas primeiras 12 semanas você terá 1 mentoria ao vivo semanal de 90 minutos.'
+  },
+  {
+    pergunta: 'Funciona para o meu nicho/segmento?',
+    resposta: 'O Framework dos 6Ps funciona para qualquer modelo B2B ou B2B2C (serviços, consultorias, agências, SaaS, franquias, etc). Já validamos em 140+ empresas de 30+ nichos diferentes.'
+  },
+  {
+    pergunta: 'Qual a diferença entre VSS e Services?',
+    resposta: 'VSS é "faça você mesmo" com mentorias. Services é "fazemos para você" (DFY). Se você quer autonomia e economia, escolha VSS. Se quer delegar tudo, escolha Services.'
+  },
+  {
+    pergunta: 'O CRM é obrigatório ou posso usar outro?',
+    resposta: 'Você PODE usar seu CRM atual (RD, HubSpot, Pipedrive, etc), mas o Growth CRM já vem configurado com os funis e automações prontos. 90% dos alunos preferem usar o incluído.'
+  },
+  {
+    pergunta: 'Qual a garantia?',
+    resposta: '15 dias de garantia incondicional. Se entrar e decidir que não é pra você, devolvemos 100% sem perguntas. Depois dos 15 dias, garantia condicional: se você implementar e não ver resultados, analisamos seu caso.'
+  }
 ]
 
 const naoE = [
@@ -97,8 +153,81 @@ const resultados = [
           </div>
           
           <p class="mt-8 font-display text-sm font-semibold text-lime">
-            ⚡ Próxima turma em breve | Vagas limitadas a 30 alunos
+            ⚡ Próxima turma em Janeiro/2026 | Restam 12 vagas de 30
           </p>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Prova Social / Depoimentos -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+      <Container>
+        <div class="mx-auto max-w-6xl">
+          <div class="mb-16 text-center">
+            <h2 class="mb-4 font-display text-display-sm text-white">
+              Resultados de Quem <span class="text-lime">Implementou</span>
+            </h2>
+            <p class="mx-auto max-w-3xl font-sans text-body-lg text-gray-300">
+              Empresas reais que saíram de vendas aleatórias para vendas previsíveis
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+            {depoimentos.map((depoimento) => (
+              <div class="rounded-2xl border-2 border-lime/20 bg-gradient-to-br from-white/5 to-white/10 p-8">
+                <div class="mb-4 flex items-center gap-4">
+                  <div class="text-4xl">{depoimento.avatar}</div>
+                  <div>
+                    <div class="mb-1 flex gap-1">
+                      <Star className="h-4 w-4 fill-lime text-lime" />
+                      <Star className="h-4 w-4 fill-lime text-lime" />
+                      <Star className="h-4 w-4 fill-lime text-lime" />
+                      <Star className="h-4 w-4 fill-lime text-lime" />
+                      <Star className="h-4 w-4 fill-lime text-lime" />
+                    </div>
+                    <p class="font-display text-sm font-semibold text-white">{depoimento.nome}</p>
+                  </div>
+                </div>
+                <p class="mb-4 font-display text-lg font-bold text-lime">{depoimento.resultado}</p>
+                <p class="font-sans text-body text-gray-300">{depoimento.texto}</p>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-12 text-center">
+            <a href="/cases" class="inline-flex items-center gap-2 font-sans text-body text-lime transition-colors hover:text-lime/80">
+              Ver Todos os Cases de Sucesso
+              <TrendingUp className="h-5 w-5" />
+            </a>
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Diferenciais -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+      <Container>
+        <div class="mx-auto max-w-6xl">
+          <div class="mb-16 text-center">
+            <h2 class="mb-4 font-display text-display-sm text-white">
+              Por Que o VSS é <span class="text-lime">Diferente</span>
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {diferenciais.map((item) => (
+              <div class="rounded-xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-8 transition-all hover:border-lime/50">
+                <div class="mb-4 flex items-center gap-4">
+                  {item.icon === 'Award' && <Award className="h-8 w-8 text-lime" />}
+                  {item.icon === 'Zap' && <Zap className="h-8 w-8 text-lime" />}
+                  {item.icon === 'Users' && <Users className="h-8 w-8 text-lime" />}
+                  {item.icon === 'Target' && <Target className="h-8 w-8 text-lime" />}
+                  <h3 class="font-display text-h3 text-white">{item.titulo}</h3>
+                </div>
+                <p class="font-sans text-body text-gray-300">{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </Container>
     </section>
@@ -154,6 +283,24 @@ const resultados = [
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+
+          <!-- Urgência e Escassez -->
+          <div class="mt-12 rounded-2xl border-2 border-lime/30 bg-gradient-to-br from-lime/10 to-lime/5 p-8">
+            <div class="flex items-start gap-4">
+              <AlertCircle className="h-8 w-8 flex-shrink-0 text-lime" />
+              <div>
+                <h3 class="mb-3 font-display text-h3 text-white">⏰ Por Que Limitamos a 30 Alunos?</h3>
+                <p class="mb-4 font-sans text-body text-gray-300">
+                  Não é estratégia de marketing. É matemática: 48 mentorias ao vivo com 30 alunos = 1.440 interações. 
+                  Se abríssemos para 100 alunos, eu não conseguiria dar atenção individual. Prefiro 30 que implementam 
+                  do que 100 que ficam perdidos.
+                </p>
+                <p class="font-sans text-body-sm text-lime">
+                  ✅ Turma atual: 18 vagas preenchidas | Restam 12 vagas
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -267,7 +414,8 @@ const resultados = [
 
           <div class="mb-12 rounded-2xl border-2 border-lime/30 bg-white/10 p-12 backdrop-blur-sm">
             <div class="mb-6">
-              <p class="mb-2 font-sans text-body text-white/80">De R$ 17.287 por apenas</p>
+              <p class="mb-2 font-sans text-body text-white/80">Valor total de tudo que está incluído:</p>
+              <p class="mb-4 font-display text-3xl font-bold text-white/60 line-through">R$ 17.287</p>
               <div class="flex items-center justify-center gap-4">
                 <p class="font-display text-6xl font-bold text-lime">R$ 1.997</p>
                 <div class="text-left">
@@ -278,80 +426,217 @@ const resultados = [
             </div>
             
             <div class="mb-8 rounded-xl border border-lime/20 bg-lime/10 p-4">
-              <p class="font-display text-lg font-semibold text-lime">Economia de R$ 15.290 (88% de desconto)</p>
+              <p class="font-display text-lg font-semibold text-lime">💰 Economia de R$ 15.290 (88% de desconto)</p>
             </div>
 
             <div class="space-y-2 text-left">
               <div class="flex justify-between border-b border-white/10 py-2">
-                <span class="font-sans text-sm text-white/80">15 módulos + 60 aulas</span>
+                <span class="font-sans text-sm text-white/80">15 módulos + 60 aulas (acesso vitalício)</span>
                 <span class="font-sans text-sm text-white">R$ 1.997</span>
               </div>
               <div class="flex justify-between border-b border-white/10 py-2">
-                <span class="font-sans text-sm text-white/80">Growth CRM (12 meses)</span>
+                <span class="font-sans text-sm text-white/80">Growth CRM completo (12 meses)</span>
                 <span class="font-sans text-sm text-white">R$ 6.996</span>
               </div>
               <div class="flex justify-between border-b border-white/10 py-2">
-                <span class="font-sans text-sm text-white/80">48 mentorias ao vivo</span>
+                <span class="font-sans text-sm text-white/80">48 mentorias ao vivo (150 min cada)</span>
                 <span class="font-sans text-sm text-white">R$ 7.200</span>
               </div>
               <div class="flex justify-between border-b border-white/10 py-2">
-                <span class="font-sans text-sm text-white/80">Templates e recursos</span>
+                <span class="font-sans text-sm text-white/80">Templates, scripts e recursos</span>
                 <span class="font-sans text-sm text-white">R$ 497</span>
               </div>
               <div class="flex justify-between border-b border-white/10 py-2">
-                <span class="font-sans text-sm text-white/80">Comunidade (90 dias)</span>
+                <span class="font-sans text-sm text-white/80">Comunidade exclusiva (90 dias)</span>
                 <span class="font-sans text-sm text-white">R$ 597</span>
+              </div>
+              <div class="flex justify-between border-t-2 border-lime/30 pt-4 text-lg font-bold">
+                <span class="font-display text-white">TOTAL</span>
+                <span class="font-display text-lime">R$ 17.287</span>
               </div>
             </div>
           </div>
 
-            <div class="mb-8 rounded-xl border border-white/20 bg-white/5 p-6 backdrop-blur-sm">
-            <p class="mb-2 font-display text-lg font-semibold text-white">✅ Garantia de 15 Dias</p>
-            <p class="font-sans text-body text-white/80">
-              Se você entrar e em até 15 dias decidir que não é pra você, devolvo 100% do seu investimento. Sem perguntas, sem burocracia.
-            </p>
-          </div>          <Button variant="primary" size="lg" class="text-lg">
+          <div class="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div class="rounded-xl border border-white/20 bg-white/5 p-6 backdrop-blur-sm">
+              <div class="mb-2 flex items-center gap-2">
+                <Shield className="h-6 w-6 text-lime" />
+                <p class="font-display text-lg font-semibold text-white">Garantia de 15 Dias</p>
+              </div>
+              <p class="font-sans text-body-sm text-white/80">
+                Se você entrar e em até 15 dias decidir que não é pra você, devolvo 100% do seu investimento. 
+                Sem perguntas, sem burocracia.
+              </p>
+            </div>
+
+            <div class="rounded-xl border border-lime/20 bg-lime/5 p-6 backdrop-blur-sm">
+              <div class="mb-2 flex items-center gap-2">
+                <Rocket className="h-6 w-6 text-lime" />
+                <p class="font-display text-lg font-semibold text-white">Bônus Exclusivos</p>
+              </div>
+              <ul class="space-y-1 font-sans text-body-sm text-white/80">
+                <li>✅ Gravação de todas as 48 mentorias</li>
+                <li>✅ Planilha de KPIs automatizada</li>
+                <li>✅ Biblioteca de objeções respondidas</li>
+              </ul>
+            </div>
+          </div>
+
+          <Button variant="primary" size="lg" class="text-lg">
             Quero Garantir Minha Vaga Agora
           </Button>
+          
+          <p class="mt-4 font-sans text-body-sm text-white/70">
+            🔒 Pagamento seguro | Suporte via WhatsApp | Acesso imediato após confirmação
+          </p>
+        </div>
+      </Container>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+      <Container>
+        <div class="mx-auto max-w-4xl">
+          <div class="mb-16 text-center">
+            <h2 class="mb-4 font-display text-display-sm text-white">
+              Perguntas <span class="text-lime">Frequentes</span>
+            </h2>
+            <p class="mx-auto max-w-2xl font-sans text-body-lg text-gray-300">
+              Tudo que você precisa saber antes de entrar
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            {faq.map((item, index) => (
+              <details class="group rounded-xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6 transition-all hover:border-lime/30">
+                <summary class="flex cursor-pointer items-start justify-between gap-4 font-display text-lg font-semibold text-white">
+                  <span>{item.pergunta}</span>
+                  <span class="text-lime transition-transform group-open:rotate-180">▼</span>
+                </summary>
+                <p class="mt-4 border-t border-white/10 pt-4 font-sans text-body text-gray-300">
+                  {item.resposta}
+                </p>
+              </details>
+            ))}
+          </div>
+
+          <div class="mt-12 rounded-2xl border-2 border-lime/30 bg-gradient-to-br from-lime/10 to-lime/5 p-8 text-center">
+            <p class="mb-4 font-display text-h3 text-white">Ainda tem dúvidas?</p>
+            <p class="mb-6 font-sans text-body text-gray-300">
+              Fale diretamente comigo pelo WhatsApp antes de se inscrever
+            </p>
+            <Button variant="outline" size="lg" class="border-lime text-lime hover:bg-lime hover:text-dark">
+              Falar com Joel no WhatsApp
+            </Button>
+          </div>
         </div>
       </Container>
     </section>
 
     <!-- Content Preview -->
-    <section class="content-section bg-gradient-to-b from-dark via-dark-gray to-dark py-24">
+    <section class="content-section bg-gradient-to-b from-dark via-royal-blue/20 to-dark py-24">
       <Container>
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 font-display text-display-sm text-white">
+            Para Quem É o <span class="text-lime">VSS</span>
+          </h2>
+        </div>
+
         <div class="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
-          <div>
-            <h2 class="mb-6 font-display text-h1 text-white">Para Quem É o VSS</h2>
-            <div class="space-y-4 font-sans text-body-lg text-gray-300">
-              <p>✅ Dono de MPE que fatura R$ 10k-100k/mês</p>
-              <p>✅ Frustrado com vendas inconstantes</p>
-              <p>✅ Quer autonomia (não depender de agência)</p>
-              <p>✅ Disposto a implementar 2-3h/semana</p>
-              <p>✅ Valoriza sistema > improviso</p>
+          <div class="rounded-2xl border-2 border-lime/20 bg-gradient-to-br from-lime/5 to-lime/10 p-8">
+            <h3 class="mb-6 font-display text-h2 text-white">✅ É para você se:</h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-lime" />
+                <div>
+                  <p class="font-display text-lg font-semibold text-white">Você fatura R$ 10k-100k/mês</p>
+                  <p class="font-sans text-body-sm text-gray-300">Micro e pequenas empresas B2B ou B2B2C</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-lime" />
+                <div>
+                  <p class="font-display text-lg font-semibold text-white">Vendas são inconstantes</p>
+                  <p class="font-sans text-body-sm text-gray-300">Alguns meses bons, outros péssimos. Você não sabe prever.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-lime" />
+                <div>
+                  <p class="font-display text-lg font-semibold text-white">Quer autonomia</p>
+                  <p class="font-sans text-body-sm text-gray-300">Cansou de depender de agência ou "guru" salvador</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-lime" />
+                <div>
+                  <p class="font-display text-lg font-semibold text-white">Pode dedicar 2-3h/semana</p>
+                  <p class="font-sans text-body-sm text-gray-300">Implementação exige trabalho. Não é mágica.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-lime" />
+                <div>
+                  <p class="font-display text-lg font-semibold text-white">Valoriza sistema > improviso</p>
+                  <p class="font-sans text-body-sm text-gray-300">Quer construir algo sustentável, não gambiarras</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="rounded-2xl border-2 border-white/10 bg-gradient-to-br from-royal-blue/20 to-dark p-8">
-            <h3 class="mb-4 font-display text-h2 text-white">Não é para você se:</h3>
-            <ul class="space-y-3 font-sans text-body text-gray-300">
-              <li class="flex items-start gap-2">
-                <X className="h-5 w-5 flex-shrink-0 text-red-400" />
-                <span>Quer fórmula mágica sem esforço</span>
+
+          <div class="rounded-2xl border-2 border-red-500/20 bg-gradient-to-br from-red-500/5 to-red-500/10 p-8">
+            <h3 class="mb-6 font-display text-h2 text-white">❌ Não é para você se:</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <X className="h-6 w-6 flex-shrink-0 text-red-400" />
+                <div>
+                  <p class="font-display text-lg font-semibold text-white">Quer fórmula mágica</p>
+                  <p class="font-sans text-body-sm text-gray-300">"Ganhe R$ 100k em 30 dias sem esforço" não existe</p>
+                </div>
               </li>
-              <li class="flex items-start gap-2">
-                <X className="h-5 w-5 flex-shrink-0 text-red-400" />
-                <span>Não tem tempo para implementar</span>
+              <li class="flex items-start gap-3">
+                <X className="h-6 w-6 flex-shrink-0 text-red-400" />
+                <div>
+                  <p class="font-display text-lg font-semibold text-white">Não tem tempo</p>
+                  <p class="font-sans text-body-sm text-gray-300">Se 2-3h/semana é impossível, VSS não vai funcionar</p>
+                </div>
               </li>
-              <li class="flex items-start gap-2">
-                <X className="h-5 w-5 flex-shrink-0 text-red-400" />
-                <span>Quer que eu faça tudo por você</span>
+              <li class="flex items-start gap-3">
+                <X className="h-6 w-6 flex-shrink-0 text-red-400" />
+                <div>
+                  <p class="font-display text-lg font-semibold text-white">Quer que eu faça tudo</p>
+                  <p class="font-sans text-body-sm text-gray-300">Para isso existe o Services (DFY). VSS é "faça você mesmo"</p>
+                </div>
               </li>
-              <li class="flex items-start gap-2">
-                <X className="h-5 w-5 flex-shrink-0 text-red-400" />
-                <span>Busca resultado instantâneo</span>
+              <li class="flex items-start gap-3">
+                <X className="h-6 w-6 flex-shrink-0 text-red-400" />
+                <div>
+                  <p class="font-display text-lg font-semibold text-white">Quer resultado instantâneo</p>
+                  <p class="font-sans text-body-sm text-gray-300">Sistema leva 90 dias para estruturar. Resultados vêm depois.</p>
+                </div>
               </li>
             </ul>
           </div>
+        </div>
+
+        <!-- CTA Final -->
+        <div class="mt-16 rounded-2xl border-2 border-lime/30 bg-gradient-to-br from-lime/10 to-lime/5 p-12 text-center">
+          <h3 class="mb-4 font-display text-h1 text-white">Pronto para Transformar Suas Vendas?</h3>
+          <p class="mx-auto mb-8 max-w-2xl font-sans text-body-lg text-gray-300">
+            Próxima turma começa em <span class="font-bold text-lime">Janeiro/2026</span>. 
+            Restam apenas <span class="font-bold text-lime">12 vagas de 30</span>.
+          </p>
+          <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <Button variant="primary" size="lg" class="text-lg">
+              Garantir Minha Vaga Agora
+            </Button>
+            <Button variant="outline" size="lg" class="border-white text-white hover:bg-white hover:text-dark">
+              Falar com Joel Antes
+            </Button>
+          </div>
+          <p class="mt-6 font-sans text-body-sm text-gray-400">
+            Garantia de 15 dias | Acesso vitalício | Suporte via WhatsApp
+          </p>
         </div>
       </Container>
     </section>

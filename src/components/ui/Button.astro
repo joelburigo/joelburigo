@@ -4,6 +4,7 @@ interface Props {
   size?: 'sm' | 'md' | 'lg'
   class?: string
   type?: 'button' | 'submit' | 'reset'
+  href?: string
   disabled?: boolean
   [key: string]: any
 }
@@ -13,6 +14,7 @@ const {
   size = 'md',
   class: className = '',
   type = 'button',
+  href,
   disabled = false,
   ...props
 } = Astro.props
@@ -36,11 +38,21 @@ const sizes = {
 const classes = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`.trim()
 ---
 
-<button
-  type={type}
-  class={classes}
-  disabled={disabled}
-  {...props}
->
-  <slot />
-</button>
+{href ? (
+  <a
+    href={href}
+    class={classes}
+    {...props}
+  >
+    <slot />
+  </a>
+) : (
+  <button
+    type={type}
+    class={classes}
+    disabled={disabled}
+    {...props}
+  >
+    <slot />
+  </button>
+)}

@@ -1,6 +1,7 @@
 ---
-// Cookie Consent Banner Component
-// Implements Google Consent Mode v2
+// Cookie Consent Banner - Simplified for GTM
+// Only pushes consent state to dataLayer
+// GTM handles Consent Mode v2 configuration
 ---
 
 <div
@@ -51,22 +52,29 @@
       banner.classList.remove('hidden')
     }
 
-    // Accept button
-    acceptBtn.addEventListener('click', () => {
-      localStorage.setItem('cookie_consent', 'accepted')
+    // Helper to push consent state to dataLayer
+    const updateConsent = (accepted: boolean) => {
+      localStorage.setItem('cookie_consent', accepted ? 'accepted' : 'rejected')
       banner.classList.add('hidden')
       
-      // Reload to apply consent
-      if (typeof window !== 'undefined') {
-        window.location.reload()
-      }
-    })
+      // Push consent state to dataLayer for GTM
+      window.dataLayer = window.dataLayer || []
+      window.dataLayer.push({
+        event: 'cookie_consent_update',
+        consent_state: accepted ? 'granted' : 'denied',
+        analytics_storage: accepted ? 'granted' : 'denied',
+        ad_storage: accepted ? 'granted' : 'denied',
+        ad_user_data: accepted ? 'granted' : 'denied',
+        ad_personalization: accepted ? 'granted' : 'denied',
+        personalization_storage: accepted ? 'granted' : 'denied',
+      })
+    }
+
+    // Accept button
+    acceptBtn.addEventListener('click', () => updateConsent(true))
 
     // Reject button
-    rejectBtn.addEventListener('click', () => {
-      localStorage.setItem('cookie_consent', 'rejected')
-      banner.classList.add('hidden')
-    })
+    rejectBtn.addEventListener('click', () => updateConsent(false))
   }
 
   // Initialize on page load

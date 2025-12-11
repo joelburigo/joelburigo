@@ -1,80 +1,21 @@
-// Modern Analytics with Consent Management and Server-Side Events
-// Based on Google Consent Mode v2 and Meta CAPI
+// Simplified Analytics Library - GTM First Approach
+// All tracking goes through dataLayer
+// GTM handles consent, pixels, and conversions
 
-interface ConsentState {
-  analytics_storage: 'granted' | 'denied'
-  ad_storage: 'granted' | 'denied'
-  ad_user_data: 'granted' | 'denied'
-  ad_personalization: 'granted' | 'denied'
-  functionality_storage: 'granted' | 'denied'
-  personalization_storage: 'granted' | 'denied'
-  security_storage: 'granted' | 'denied'
-}
-
-// Initialize consent mode BEFORE any tracking
-export const initConsent = () => {
-  if (typeof window === 'undefined') return
-
-  // Check for stored consent
-  const storedConsent = localStorage.getItem('cookie_consent')
-  const hasConsent = storedConsent === 'accepted'
-
-  // Default consent state (denied until user accepts)
-  const defaultConsent: ConsentState = {
-    analytics_storage: hasConsent ? 'granted' : 'denied',
-    ad_storage: hasConsent ? 'granted' : 'denied',
-    ad_user_data: hasConsent ? 'granted' : 'denied',
-    ad_personalization: hasConsent ? 'granted' : 'denied',
-    functionality_storage: 'granted',
-    personalization_storage: hasConsent ? 'granted' : 'denied',
-    security_storage: 'granted',
-  }
-
-  // Google Consent Mode v2
-  if (window.gtag) {
-    window.gtag('consent', 'default', defaultConsent)
-  }
-
-  // Initialize dataLayer if doesn't exist
-  window.dataLayer = window.dataLayer || []
-  window.dataLayer.push({
-    event: 'consent_initialized',
-    consent_state: defaultConsent,
-  })
-}
-
-// Update consent when user accepts/rejects
-export const updateConsent = (accepted: boolean) => {
-  if (typeof window === 'undefined') return
-
-  localStorage.setItem('cookie_consent', accepted ? 'accepted' : 'rejected')
-
-  const consentUpdate: Partial<ConsentState> = {
-    analytics_storage: accepted ? 'granted' : 'denied',
-    ad_storage: accepted ? 'granted' : 'denied',
-    ad_user_data: accepted ? 'granted' : 'denied',
-    ad_personalization: accepted ? 'granted' : 'denied',
-    personalization_storage: accepted ? 'granted' : 'denied',
-  }
-
-  if (window.gtag) {
-    window.gtag('consent', 'update', consentUpdate)
-  }
-
-  window.dataLayer?.push({
-    event: 'consent_updated',
-    consent_state: consentUpdate,
-  })
-}
-
-// Enhanced event tracking with automatic consent check
+/**
+ * Check if we can track (user consent)
+ * GTM will respect this via consent mode, but we also check client-side
+ */
 const canTrack = (): boolean => {
   if (typeof window === 'undefined') return false
   const consent = localStorage.getItem('cookie_consent')
   return consent === 'accepted'
 }
 
-// Send event to server-side API (for CAPI/Measurement Protocol)
+/**
+ * Send event to server-side API (optional for enhanced tracking)
+ * Used for Conversions API, Measurement Protocol, etc.
+ */
 const sendServerEvent = async (eventData: any) => {
   try {
     await fetch('/api/track', {
@@ -93,7 +34,10 @@ const sendServerEvent = async (eventData: any) => {
   }
 }
 
-// Modern event tracking with GA4 recommended events
+/**
+ * Core tracking function - pushes to dataLayer only
+ * GTM handles everything else (GA4, Ads, Meta Pixel, etc.)
+ */
 export const trackEvent = (
   eventName: string,
   params?: Record<string, any>,
@@ -109,28 +53,22 @@ export const trackEvent = (
     ...params,
   }
 
-  // Google Analytics 4 (via GTM dataLayer)
-  if (window.dataLayer) {
+  // Only push to dataLayer - GTM does the rest
+  if (typeof window !== 'undefined') {
+    window.dataLayer = window.dataLayer || []
     window.dataLayer.push(eventData)
   }
 
-  // Direct GA4 (if gtag is loaded)
-  if (window.gtag) {
-    window.gtag('event', eventName, params)
-  }
-
-  // Meta Pixel
-  if (window.fbq) {
-    window.fbq('track', eventName, params)
-  }
-
-  // Send to server-side (for Conversion APIs)
+  // Optional server-side tracking for enhanced conversion tracking
   if (options?.sendToServer) {
     sendServerEvent(eventData)
   }
 }
 
-// GA4 Recommended Events - E-commerce
+// ==========================================
+// GA4 Standard Events - E-commerce
+// ==========================================
+
 export const trackBeginCheckout = (params: {
   currency?: string
   value?: number
@@ -149,16 +87,6 @@ export const trackBeginCheckout = (params: {
     },
     { sendToServer: true }
   )
-
-  // Meta Pixel equivalent
-  if (window.fbq && canTrack()) {
-    window.fbq('track', 'InitiateCheckout', {
-      value: params.value,
-      currency: params.currency || 'BRL',
-      contents: params.items,
-      content_type: 'product',
-    })
-  }
 }
 
 export const trackPurchase = (params: {
@@ -176,19 +104,12 @@ export const trackPurchase = (params: {
     },
     { sendToServer: true }
   )
-
-  // Meta Pixel
-  if (window.fbq && canTrack()) {
-    window.fbq('track', 'Purchase', {
-      value: params.value,
-      currency: params.currency || 'BRL',
-      contents: params.items,
-      content_type: 'product',
-    })
-  }
 }
 
-// GA4 Recommended Events - Lead Generation
+// ==========================================
+// GA4 Standard Events - Lead Generation
+// ==========================================
+
 export const trackGenerateLead = (params: {
   form_name?: string
   form_id?: string
@@ -203,15 +124,6 @@ export const trackGenerateLead = (params: {
     },
     { sendToServer: true }
   )
-
-  // Meta Pixel
-  if (window.fbq && canTrack()) {
-    window.fbq('track', 'Lead', {
-      content_name: params.form_name || 'Lead Form',
-      value: params.value || 0,
-      currency: 'BRL',
-    })
-  }
 }
 
 export const trackFormSubmit = (params: {
@@ -219,14 +131,13 @@ export const trackFormSubmit = (params: {
   form_id?: string
   form_destination?: string
 }) => {
-  trackEvent(
-    'form_submit',
-    params,
-    { sendToServer: true }
-  )
+  trackEvent('form_submit', params, { sendToServer: true })
 }
 
-// GA4 Recommended Events - Engagement
+// ==========================================
+// GA4 Standard Events - Engagement
+// ==========================================
+
 export const trackViewItem = (params: {
   item_id: string
   item_name: string
@@ -237,17 +148,6 @@ export const trackViewItem = (params: {
     currency: 'BRL',
     ...params,
   })
-
-  // Meta Pixel
-  if (window.fbq && canTrack()) {
-    window.fbq('track', 'ViewContent', {
-      content_name: params.item_name,
-      content_ids: [params.item_id],
-      content_type: 'product',
-      value: params.value,
-      currency: 'BRL',
-    })
-  }
 }
 
 export const trackSelectContent = (params: {
@@ -270,14 +170,12 @@ export const trackFileDownload = (params: {
   file_extension?: string
   link_url?: string
 }) => {
-  trackEvent(
-    'file_download',
-    params,
-    { sendToServer: true }
-  )
+  trackEvent('file_download', params, { sendToServer: true })
 }
 
+// ==========================================
 // Custom Business Events
+// ==========================================
 export const trackVSSInterest = () => {
   trackBeginCheckout({
     currency: 'BRL',
@@ -360,14 +258,10 @@ export const trackDiagnosticoComplete = (scores: Record<string, number>) => {
     value: 0,
   })
 
-  trackEvent(
-    'diagnostico_complete',
-    {
-      tool_name: 'Diagnóstico 6Ps',
-      ...scores,
-    },
-    { sendToServer: true }
-  )
+  trackEvent('diagnostico_complete', {
+    tool_name: 'Diagnóstico 6Ps',
+    ...scores,
+  }, { sendToServer: true })
 }
 
 export const trackCTAClick = (ctaName: string, ctaLocation: string) => {
@@ -406,25 +300,27 @@ export const trackVideoComplete = (videoName: string) => {
   })
 }
 
-// Enhanced User Properties
+// ==========================================
+// User Properties & Page Tracking
+// ==========================================
+
 export const setUserProperties = (properties: Record<string, any>) => {
   if (!canTrack()) return
 
-  if (window.gtag) {
-    window.gtag('set', 'user_properties', properties)
+  if (typeof window !== 'undefined') {
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: 'user_properties_set',
+      user_properties: properties,
+    })
   }
-
-  window.dataLayer?.push({
-    event: 'user_properties_set',
-    user_properties: properties,
-  })
 }
 
-// Page view tracking with enhanced params
 export const trackPageView = (additionalParams?: Record<string, any>) => {
   if (!canTrack()) return
 
   const pageData = {
+    event: 'page_view',
     page_location: window.location.href,
     page_path: window.location.pathname,
     page_title: document.title,
@@ -432,21 +328,16 @@ export const trackPageView = (additionalParams?: Record<string, any>) => {
     ...additionalParams,
   }
 
-  if (window.gtag) {
-    window.gtag('event', 'page_view', pageData)
-  }
-
-  window.dataLayer?.push({
-    event: 'page_view',
-    ...pageData,
-  })
-
-  if (window.fbq) {
-    window.fbq('track', 'PageView')
+  if (typeof window !== 'undefined') {
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push(pageData)
   }
 }
 
-// Exception tracking
+// ==========================================
+// Diagnostics & Performance
+// ==========================================
+
 export const trackException = (error: Error, fatal: boolean = false) => {
   trackEvent('exception', {
     description: error.message,
@@ -456,7 +347,6 @@ export const trackException = (error: Error, fatal: boolean = false) => {
   })
 }
 
-// Performance tracking
 export const trackPerformance = () => {
   if (typeof window === 'undefined' || !window.performance) return
 
@@ -475,12 +365,13 @@ export const trackPerformance = () => {
   }
 }
 
-// TypeScript declarations
+// ==========================================
+// TypeScript Declarations
+// ==========================================
+
 declare global {
   interface Window {
     dataLayer: any[]
-    fbq: (...args: any[]) => void
-    gtag: (...args: any[]) => void
   }
 }
 

@@ -1,33 +1,21 @@
 ---
+// Google Tag Manager - Optimized with Partytown
+// Following Astro best practices for third-party scripts
+// https://docs.astro.build/en/guides/integrations-guide/partytown/
+
 const GTM_ID = import.meta.env.PUBLIC_GTM_ID
 ---
 
 {GTM_ID && (
   <>
-    <!-- Google Consent Mode v2 (MUST be before GTM) -->
+    <!-- Initialize dataLayer (must be inline and before GTM) -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      
-      // Default consent state (denied until user accepts)
-      gtag('consent', 'default', {
-        'analytics_storage': 'denied',
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied',
-        'functionality_storage': 'granted',
-        'personalization_storage': 'denied',
-        'security_storage': 'granted',
-        'wait_for_update': 500
-      });
-      
-      // Additional consent settings for EEA/Brazil
-      gtag('set', 'ads_data_redaction', true);
-      gtag('set', 'url_passthrough', true);
     </script>
 
-    <!-- Google Tag Manager -->
-    <script is:inline define:vars={{ GTM_ID }}>
+    <!-- Google Tag Manager with Partytown for better performance -->
+    <!-- Runs in Web Worker to keep main thread free -->
+    <script type="text/partytown" define:vars={{ GTM_ID }}>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=

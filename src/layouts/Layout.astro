@@ -3,7 +3,6 @@ import '../styles/global.css'
 import { ViewTransitions } from 'astro:transitions'
 import GoogleTagManager from '../components/analytics/GoogleTagManager.astro'
 import GoogleTagManagerBody from '../components/analytics/GoogleTagManagerBody.astro'
-import MetaPixel from '../components/analytics/MetaPixel.astro'
 import JsonLd from '../components/seo/JsonLd.astro'
 import CookieConsent from '../components/analytics/CookieConsent.astro'
 import VercelAnalytics from '../components/analytics/VercelAnalytics.astro'
@@ -80,7 +79,6 @@ const fullTitle = title.includes('Joel Burigo') ? title : `${title} | Joel Burig
     
     <!-- Analytics & Tracking -->
     <GoogleTagManager />
-    <MetaPixel />
     <VercelAnalytics />
     
     <!-- Structured Data -->

@@ -53,6 +53,76 @@ const personalidade = [
     significa: 'Pés no chão, sem ostentação',
     exemplo: 'Vim da quebrada. Meu sucesso foi suado, não herdado.',
   },
+  {
+    caracteristica: 'SISTÊMICO',
+    significa: 'Foco em sistema replicável, não tática isolada',
+    exemplo: 'Sistema > Improviso. É a base de tudo que faço.',
+  },
+];
+
+const caminhos = [
+  {
+    nome: 'Vendas Sem Segredos',
+    modelo: 'DIY (Faça Você Mesmo)',
+    investimento: 'R$ 1.997',
+    duracao: '90 dias + 12 meses de suporte',
+    paraQuem: 'MPEs que faturam R$ 10k-100k/mês',
+    momento: 'Quando você quer autonomia e tem tempo para implementar (2-3h/semana)',
+    resolve: [
+      'Vendas aleatórias e sem previsibilidade',
+      'Falta de processo estruturado',
+      'Dependência total do fundador',
+      'Não sabe por onde começar',
+    ],
+    inclui: [
+      'Framework completo dos 6Ps (15 módulos, 60 aulas)',
+      'Growth CRM profissional (12 meses inclusos)',
+      '48 mentorias em grupo (1/semana por 3 meses)',
+      'Templates, scripts e automações prontas',
+      'Comunidade exclusiva de alunos',
+    ],
+    resultado: 'Sistema estruturado funcionando, CRM operacional, primeiras vendas consistentes, autonomia total',
+  },
+  {
+    nome: 'Services',
+    modelo: 'DWY (Fazemos Junto)',
+    investimento: 'R$ 4.5k - R$ 9k/mês',
+    duracao: 'Mensal recorrente (4-12 meses)',
+    paraQuem: 'MPEs que faturam R$ 50k-300k/mês',
+    momento: 'Quando você tem budget mas não tem tempo ou quer aceleração máxima com equipe implementando',
+    resolve: [
+      'Crescimento desordenado sem estrutura',
+      'Equipe sem direção clara',
+      'Precisa escalar rápido com processo',
+      'Quer alguém fazendo junto, não sozinho',
+    ],
+    inclui: [
+      'FUNDAÇÃO (R$ 4.5k): P1-P3, CRM configurado, 3 funis, 5 automações, 2 landing pages',
+      'ACELERAÇÃO (R$ 6k): Todos 6Ps, 10 automações, tráfego pago, treinamento equipe',
+      'SCALEUP (R$ 9k): Multi-unidades, playbook completo, replicação, operação autônoma',
+    ],
+    resultado: 'Sistema implementado pela equipe, processos documentados, equipe treinada, autonomia progressiva',
+  },
+  {
+    nome: 'Advisory',
+    modelo: '1:1 Direto Comigo',
+    investimento: 'R$ 997 - R$ 15k/mês',
+    duracao: 'Pontual ou recorrente',
+    paraQuem: 'Empresas R$ 100k+/mês ou momentos críticos',
+    momento: 'Decisão estratégica importante, momento de virada, ou precisa de conselheiro presente',
+    resolve: [
+      'Decisões críticas de negócio',
+      'Momentos de transição ou crise',
+      'Quer mente estratégica, não execução',
+      'Precisa de atalho (17 anos de experiência)',
+    ],
+    inclui: [
+      'SESSÃO ESTRATÉGICA (R$ 997): 90 min, diagnóstico + plano de ação',
+      'SPRINT 30 DIAS (R$ 7.5k): 4 sessões, plano estratégico 12 meses, documento completo',
+      'CONSELHO EXECUTIVO (R$ 15k/mês): 8 sessões/mês, WhatsApp direto, acompanhamento contínuo',
+    ],
+    resultado: 'Clareza estratégica, decisões embasadas, plano de ação customizado, atalho no crescimento',
+  },
 ];
 
 const promessas = [
@@ -219,6 +289,241 @@ const promessas = [
               </div>
             ))
           }
+        </div>
+      </Container>
+    </section>
+
+    <!-- Os 3 Caminhos para Trabalhar Comigo -->
+    <section class="bg-dark py-24">
+      <Container>
+        <div class="mx-auto mb-16 max-w-3xl text-center">
+          <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
+            Os 3 Caminhos para <span class="text-lime">Trabalhar Comigo</span>
+          </h2>
+          <p class="mb-4 font-sans text-body-lg text-gray-300">
+            Todos baseados no Framework dos 6Ps das Vendas Escaláveis
+          </p>
+          <p class="font-sans text-body text-gray-400">
+            Escolha o formato que melhor se adapta ao seu momento, faturamento e disponibilidade
+          </p>
+        </div>
+
+        <!-- Framework 6Ps - Visual de Conexão -->
+        <div class="mx-auto mb-16 max-w-4xl rounded-2xl border border-lime/20 bg-lime/5 p-8">
+          <div class="mb-6 text-center">
+            <h3 class="mb-3 font-display text-h3 text-white">
+              Framework dos <span class="text-lime">6Ps das Vendas Escaláveis</span>
+            </h3>
+            <p class="font-sans text-body text-gray-300">
+              A base comum de todos os produtos e serviços
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+            {
+              ['Posicionamento', 'Público', 'Produto', 'Programas', 'Processos', 'Pessoas'].map(
+                (p, i) => (
+                  <div class="rounded-lg border border-lime/30 bg-dark/50 p-4 text-center backdrop-blur-sm">
+                    <div class="mb-2 font-display text-2xl font-bold text-lime">P{i + 1}</div>
+                    <div class="font-sans text-xs text-gray-300">{p}</div>
+                  </div>
+                )
+              )
+            }
+          </div>
+          <p class="mt-6 text-center font-sans text-body-sm italic text-gray-400">
+            "Não adianta fazer anúncio (P4) se não sabe pra quem (P2). Os Ps são sequenciais —
+            pular etapa é garantia de fracasso."
+          </p>
+        </div>
+
+        <!-- Cards dos 3 Caminhos -->
+        <div class="space-y-8">
+          {
+            caminhos.map((caminho, index) => (
+              <div
+                class="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all hover:border-lime/30"
+                style={`animation-delay: ${index * 0.15}s; opacity: 0; animation: fadeInUp 0.6s ease-out ${index * 0.15}s forwards;`}
+              >
+                <div class="grid gap-8 lg:grid-cols-3">
+                  {/* Coluna 1: Info Principal */}
+                  <div class="lg:col-span-1">
+                    <div class="mb-4 inline-block rounded-lg bg-lime/20 px-4 py-2">
+                      <span class="font-display text-sm font-bold uppercase text-lime">
+                        {caminho.modelo}
+                      </span>
+                    </div>
+                    <h3 class="mb-3 font-display text-h2 text-white">{caminho.nome}</h3>
+                    <p class="mb-4 font-display text-h4 text-lime">{caminho.investimento}</p>
+                    <p class="mb-4 font-sans text-body-sm text-gray-400">{caminho.duracao}</p>
+
+                    <div class="space-y-3">
+                      <div>
+                        <p class="mb-1 font-sans text-body-sm font-semibold text-white">
+                          Para quem:
+                        </p>
+                        <p class="font-sans text-body-sm text-gray-300">{caminho.paraQuem}</p>
+                      </div>
+                      <div>
+                        <p class="mb-1 font-sans text-body-sm font-semibold text-white">
+                          Momento ideal:
+                        </p>
+                        <p class="font-sans text-body-sm text-gray-300">{caminho.momento}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Coluna 2: O Que Resolve + Inclui */}
+                  <div class="lg:col-span-2">
+                    <div class="grid gap-6 md:grid-cols-2">
+                      {/* O Que Resolve */}
+                      <div>
+                        <h4 class="mb-3 font-display text-h4 text-white">Dores que Resolve</h4>
+                        <ul class="space-y-2">
+                          {caminho.resolve.map((item) => (
+                            <li class="flex items-start gap-2">
+                              <CheckCircle2 className="mt-1 h-4 w-4 flex-shrink-0 text-lime" />
+                              <span class="font-sans text-body-sm text-gray-300">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* O Que Inclui */}
+                      <div>
+                        <h4 class="mb-3 font-display text-h4 text-white">O Que Está Incluído</h4>
+                        <ul class="space-y-2">
+                          {caminho.inclui.map((item) => (
+                            <li class="flex items-start gap-2">
+                              <CheckCircle2 className="mt-1 h-4 w-4 flex-shrink-0 text-royal-blue" />
+                              <span class="font-sans text-body-sm text-gray-300">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* Resultado Esperado */}
+                    <div class="mt-6 rounded-lg border border-lime/20 bg-lime/5 p-4">
+                      <p class="mb-1 font-sans text-body-sm font-semibold text-lime">
+                        Resultado Esperado:
+                      </p>
+                      <p class="font-sans text-body-sm text-gray-200">{caminho.resultado}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        {/* Tabela Comparativa Rápida */}
+        <div class="mx-auto mt-16 max-w-5xl overflow-hidden rounded-2xl border border-white/10">
+          <table class="w-full">
+            <thead class="bg-white/10">
+              <tr>
+                <th class="px-6 py-4 text-left font-display text-sm font-bold text-white">
+                  Aspecto
+                </th>
+                <th class="px-6 py-4 text-left font-display text-sm font-bold text-lime">VSS</th>
+                <th class="px-6 py-4 text-left font-display text-sm font-bold text-royal-blue">
+                  Services
+                </th>
+                <th class="px-6 py-4 text-left font-display text-sm font-bold text-orange">
+                  Advisory
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/10">
+              <tr class="bg-white/5">
+                <td class="px-6 py-4 font-sans text-body-sm text-gray-300">Modelo</td>
+                <td class="px-6 py-4 font-sans text-body-sm text-gray-300">DIY (você faz)</td>
+                <td class="px-6 py-4 font-sans text-body-sm text-gray-300">DWY (fazemos junto)</td>
+                <td class="px-6 py-4 font-sans text-body-sm text-gray-300">1:1 comigo</td>
+              </tr>
+              <tr class="bg-white/5">
+                <td class="px-6 py-4 font-sans text-body-sm text-gray-300">Investimento</td>
+                <td class="px-6 py-4 font-sans text-body-sm font-semibold text-lime">R$ 1.997</td>
+                <td class="px-6 py-4 font-sans text-body-sm font-semibold text-royal-blue">
+                  R$ 4.5k-9k/mês
+                </td>
+                <td class="px-6 py-4 font-sans text-body-sm font-semibold text-orange">
+                  R$ 997-15k/mês
+                </td>
+              </tr>
+              <tr class="bg-white/5">
+                <td class="px-6 py-4 font-sans text-body-sm text-gray-300">Faturamento ideal</td>
+                <td class="px-6 py-4 font-sans text-body-sm text-gray-300">R$ 10k-100k/mês</td>
+                <td class="px-6 py-4 font-sans text-body-sm text-gray-300">R$ 50k-300k/mês</td>
+                <td class="px-6 py-4 font-sans text-body-sm text-gray-300">R$ 100k+/mês</td>
+              </tr>
+              <tr class="bg-white/5">
+                <td class="px-6 py-4 font-sans text-body-sm text-gray-300">Implementação</td>
+                <td class="px-6 py-4 font-sans text-body-sm text-gray-300">Você (2-3h/semana)</td>
+                <td class="px-6 py-4 font-sans text-body-sm text-gray-300">Equipe + você</td>
+                <td class="px-6 py-4 font-sans text-body-sm text-gray-300">Você decide</td>
+              </tr>
+              <tr class="bg-white/5">
+                <td class="px-6 py-4 font-sans text-body-sm text-gray-300">Tempo de resultado</td>
+                <td class="px-6 py-4 font-sans text-body-sm text-gray-300">90-180 dias</td>
+                <td class="px-6 py-4 font-sans text-body-sm text-gray-300">60-120 dias</td>
+                <td class="px-6 py-4 font-sans text-body-sm text-gray-300">Imediato</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        {/* Como Escolher */}
+        <div class="mx-auto mt-16 max-w-4xl rounded-2xl border border-white/10 bg-white/5 p-8">
+          <h3 class="mb-6 text-center font-display text-h3 text-white">
+            Como Escolher o <span class="text-lime">Caminho Certo?</span>
+          </h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4 rounded-lg border border-lime/20 bg-lime/5 p-4">
+              <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-lime font-display text-sm font-bold text-dark">
+                1
+              </span>
+              <div>
+                <p class="mb-1 font-sans text-body font-semibold text-white">
+                  Escolha VSS se:
+                </p>
+                <p class="font-sans text-body-sm text-gray-300">
+                  Você valoriza autonomia, tem 2-3h/semana para implementar, quer aprender o
+                  sistema e não quer depender de ninguém. Perfeito para começar estruturando
+                  sozinho.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 rounded-lg border border-royal-blue/20 bg-royal-blue/5 p-4">
+              <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-royal-blue font-display text-sm font-bold text-white">
+                2
+              </span>
+              <div>
+                <p class="mb-1 font-sans text-body font-semibold text-white">
+                  Escolha Services se:
+                </p>
+                <p class="font-sans text-body-sm text-gray-300">
+                  Você tem budget, quer aceleração máxima, precisa de equipe implementando junto, ou
+                  já faturando bem e quer escalar com processo. Ideal para crescer rápido com
+                  suporte.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 rounded-lg border border-orange/20 bg-orange/5 p-4">
+              <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-orange font-display text-sm font-bold text-dark">
+                3
+              </span>
+              <div>
+                <p class="mb-1 font-sans text-body font-semibold text-white">
+                  Escolha Advisory se:
+                </p>
+                <p class="font-sans text-body-sm text-gray-300">
+                  Você precisa de decisão estratégica crítica, está em momento de virada, quer
+                  atalho de 17 anos de experiência, ou precisa de conselheiro presente. Acesso
+                  direto a mim.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </Container>
     </section>

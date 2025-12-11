@@ -3,33 +3,7 @@ import Container from '../ui/Container.astro'
 import Card from '../ui/Card.astro'
 import Button from '../ui/Button.astro'
 import { Star, Quote } from 'lucide-react'
-
-const testimonials = [
-  {
-    quote: 'Estruturei vendas em 60 dias. Hoje tenho pipeline previsível e 150 leads por mês.',
-    author: 'João Silva',
-    role: 'CEO da Empresa X',
-    image: '/images/testimonial-1.jpg',
-    rating: 5,
-    highlight: 'Pipeline previsível',
-  },
-  {
-    quote: 'O Framework dos 6Ps transformou completamente nossa abordagem comercial. Saímos do zero para resultados consistentes.',
-    author: 'Maria Santos',
-    role: 'Fundadora Startup Y',
-    image: '/images/testimonial-2.jpg',
-    rating: 5,
-    highlight: 'Transformação completa',
-  },
-  {
-    quote: 'Saímos de vendas aleatórias para um sistema que realmente escala. O ROI foi imediato e mensurável.',
-    author: 'Pedro Costa',
-    role: 'Diretor Comercial Z',
-    image: '/images/testimonial-3.jpg',
-    rating: 5,
-    highlight: 'ROI imediato',
-  },
-]
+import { testimonials } from '../../data/testimonials'
 ---
 
 <section class="relative overflow-hidden bg-dark py-32">

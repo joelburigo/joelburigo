@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import Container from '../components/ui/Container.astro';
-import { TrendingUp, Award } from 'lucide-react';
+import { TrendingUp, Award, GraduationCap, Rocket, Zap, Target } from 'lucide-react';
 import { cases } from '../data/cases';
 
 const seo = {
@@ -43,55 +43,113 @@ const seo = {
     </section>
 
     <!-- Cases Grid -->
-    <section class="bg-dark py-24">
+    <section class="bg-dark pb-24 pt-12">
       <Container>
-        <div class="grid gap-8 lg:grid-cols-2">
+        <!-- Filtros -->
+        <div class="mb-8 flex flex-wrap justify-center gap-3">
+          <button
+            class="filter-btn rounded-full border-2 border-lime bg-lime px-6 py-2 font-display text-sm font-bold text-dark transition-all hover:bg-lime/90"
+            data-filter="all"
+          >
+            Todos os Cases
+          </button>
+          <button
+            class="filter-btn rounded-full border-2 border-white/20 bg-transparent px-6 py-2 font-display text-sm font-bold text-white transition-all hover:border-lime hover:bg-lime/10"
+            data-filter="Vendas Sem Segredos"
+          >
+            📚 Vendas Sem Segredos
+          </button>
+          <button
+            class="filter-btn rounded-full border-2 border-white/20 bg-transparent px-6 py-2 font-display text-sm font-bold text-white transition-all hover:border-blue-400 hover:bg-blue-400/10"
+            data-filter="Fundação"
+          >
+            🎯 Services - Fundação
+          </button>
+          <button
+            class="filter-btn rounded-full border-2 border-white/20 bg-transparent px-6 py-2 font-display text-sm font-bold text-white transition-all hover:border-purple-400 hover:bg-purple-400/10"
+            data-filter="Aceleração"
+          >
+            🚀 Services - Aceleração
+          </button>
+          <button
+            class="filter-btn rounded-full border-2 border-white/20 bg-transparent px-6 py-2 font-display text-sm font-bold text-white transition-all hover:border-orange-400 hover:bg-orange-400/10"
+            data-filter="ScaleUp"
+          >
+            ⚡ Services - ScaleUp
+          </button>
+        </div>
+
+        <div class="grid gap-8 lg:grid-cols-2" id="cases-grid">
           {
             cases.map((caso: any) => (
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all hover:border-lime/30">
-                {caso.badge && (
-                  <div class="mb-4 inline-block rounded-full bg-lime/20 px-3 py-1">
-                    <span class="font-display text-xs font-bold text-lime">{caso.badge}</span>
+              <div 
+                class="case-card rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all hover:border-lime/30"
+                data-produto={caso.produto}
+              >
+                <div class="mb-4 flex items-center justify-between">
+                  <div class="inline-flex items-center gap-2 rounded-full bg-lime/20 px-3 py-1">
+                    {caso.produto.includes("Vendas Sem Segredos") && (
+                      <GraduationCap className="h-4 w-4 text-lime" />
+                    )}
+                    {caso.produto.includes("Fundação") && (
+                      <Target className="h-4 w-4 text-blue-400" />
+                    )}
+                    {caso.produto.includes("Aceleração") && (
+                      <Rocket className="h-4 w-4 text-purple-400" />
+                    )}
+                    {caso.produto.includes("ScaleUp") && (
+                      <Zap className="h-4 w-4 text-orange-400" />
+                    )}
+                    <span class="font-display text-xs font-bold text-lime">{caso.produto}</span>
                   </div>
-                )}
+                  {caso.badge && (
+                    <div class="inline-block rounded-full border border-lime/30 bg-dark px-3 py-1">
+                      <span class="font-display text-xs font-bold text-lime">⭐ {caso.badge}</span>
+                    </div>
+                  )}
+                </div>
 
                 <div class="mb-6">
                   <h3 class="mb-2 font-display text-h3 text-white">{caso.empresa}</h3>
                   <p class="font-sans text-sm text-gray-400">{caso.nicho}</p>
                 </div>
 
-                <div class="mb-6 grid grid-cols-3 gap-4 rounded-lg border border-lime/20 bg-lime/5 p-4">
-                  <div>
-                    <p class="mb-1 font-sans text-xs text-gray-400">Antes</p>
-                    <p class="font-display text-lg font-bold text-white">{caso.antes}</p>
+                <div class="mb-6 space-y-3">
+                  <div class="grid grid-cols-3 gap-4 rounded-lg border border-lime/20 bg-lime/5 p-4">
+                    <div>
+                      <p class="mb-1 font-sans text-xs text-gray-400">Antes</p>
+                      <p class="font-display text-lg font-bold text-white">{caso.antes}</p>
+                    </div>
+                    <div>
+                      <p class="mb-1 font-sans text-xs text-gray-400">Depois</p>
+                      <p class="font-display text-lg font-bold text-lime">{caso.depois}</p>
+                    </div>
+                    <div>
+                      <p class="mb-1 font-sans text-xs text-gray-400">Tempo</p>
+                      <p class="font-display text-lg font-bold text-white">{caso.tempo}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p class="mb-1 font-sans text-xs text-gray-400">Depois</p>
-                    <p class="font-display text-lg font-bold text-lime">{caso.depois}</p>
-                  </div>
-                  <div>
-                    <p class="mb-1 font-sans text-xs text-gray-400">Tempo</p>
-                    <p class="font-display text-lg font-bold text-white">{caso.tempo}</p>
-                  </div>
-                </div>
 
-                <div class="mb-6 rounded-lg border border-white/10 bg-white/5 p-4">
-                  <div class="mb-2 flex items-center gap-2">
+                  <div class="flex items-center justify-center gap-3 rounded-lg border border-white/10 bg-white/5 p-3">
                     <TrendingUp className="h-5 w-5 text-lime" />
-                    <span class="font-display text-h4 text-lime">{caso.crescimento}</span>
+                    <div class="flex items-baseline gap-2">
+                      <span class="font-display text-2xl font-bold text-lime">{caso.crescimento}</span>
+                      <span class="font-sans text-sm text-gray-400">de crescimento</span>
+                    </div>
                   </div>
-                  <p class="font-sans text-body text-gray-300">{caso.resultado}</p>
                 </div>
 
-                <div class="mb-4">
-                  <h4 class="mb-2 font-sans text-sm font-semibold text-white">
-                    Situação Antes:
+                <div class="mb-4 rounded-lg border border-red-500/20 bg-red-500/5 p-4">
+                  <h4 class="mb-2 flex items-center gap-2 font-sans text-sm font-semibold text-white">
+                    <span class="text-red-400">❌</span> Situação Antes
                   </h4>
                   <p class="font-sans text-body-sm text-gray-400">{caso.situacaoAntes}</p>
                 </div>
 
-                <div>
-                  <h4 class="mb-2 font-sans text-sm font-semibold text-white">O Que Fizemos:</h4>
+                <div class="rounded-lg border border-lime/20 bg-lime/5 p-4">
+                  <h4 class="mb-2 flex items-center gap-2 font-sans text-sm font-semibold text-white">
+                    <span class="text-lime">✓</span> O Que Fizemos
+                  </h4>
                   <p class="font-sans text-body-sm text-gray-400">{caso.solucao}</p>
                 </div>
               </div>
@@ -122,6 +180,42 @@ const seo = {
       </Container>
     </section>
   </main>
+
+<script>
+  // Filtro de cases
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const caseCards = document.querySelectorAll('.case-card');
+
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
+
+      // Atualizar estado visual dos botões
+      filterButtons.forEach((btn) => {
+        if (btn === button) {
+          btn.classList.remove('border-white/20', 'bg-transparent');
+          btn.classList.add('border-lime', 'bg-lime', 'text-dark');
+        } else {
+          btn.classList.remove('border-lime', 'bg-lime', 'text-dark');
+          btn.classList.add('border-white/20', 'bg-transparent', 'text-white');
+        }
+      });
+
+      // Filtrar cards
+      caseCards.forEach((card) => {
+        const produto = card.getAttribute('data-produto');
+        
+        if (filter === 'all') {
+          card.style.display = 'block';
+        } else if (produto && produto.includes(filter)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
 
   <Footer />
 </Layout>

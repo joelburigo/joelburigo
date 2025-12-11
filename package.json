@@ -8,7 +8,10 @@
     "build": "astro build && npx pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "analyze": "node scripts/analyze-performance.js",
+    "lighthouse": "lighthouse http://localhost:4321 --view",
+    "lighthouse:prod": "lighthouse https://joelburigo.com.br --view"
   },
   "dependencies": {
     "@astrojs/partytown": "^2.1.4",

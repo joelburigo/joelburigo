@@ -49,9 +49,29 @@ export default defineConfig({
   ],
   image: {
     remotePatterns: [{ protocol: 'https' }],
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+      config: {
+        limitInputPixels: false,
+      },
+    },
   },
   compressHTML: true,
   build: {
     inlineStylesheets: 'auto',
+    assets: '_astro',
+  },
+  vite: {
+    build: {
+      cssMinify: 'lightningcss',
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'react-vendor': ['react', 'react-dom'],
+            'motion-vendor': ['framer-motion'],
+          },
+        },
+      },
+    },
   },
 })

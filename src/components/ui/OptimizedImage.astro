@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets'
+
+interface Props {
+  src: string | ImageMetadata
+  alt: string
+  width?: number
+  height?: number
+  class?: string
+  loading?: 'lazy' | 'eager'
+  fetchpriority?: 'high' | 'low' | 'auto'
+  quality?: number
+  format?: 'webp' | 'avif' | 'png' | 'jpg'
+  sizes?: string
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  class: className,
+  loading = 'lazy',
+  fetchpriority = 'auto',
+  quality = 80,
+  format = 'webp',
+  sizes,
+} = Astro.props
+---
+
+<Image
+  src={src}
+  alt={alt}
+  width={width}
+  height={height}
+  class={className}
+  loading={loading}
+  fetchpriority={fetchpriority}
+  quality={quality}
+  format={format}
+  sizes={sizes}
+  decoding="async"
+/>

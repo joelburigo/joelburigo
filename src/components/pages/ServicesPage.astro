@@ -1,6 +1,7 @@
 ---
 import Container from '../ui/Container.astro'
 import Button from '../ui/Button.astro'
+import VideoPlayer from '../ui/VideoPlayer.astro'
 import { CheckCircle2, ArrowRight, Zap, TrendingUp, Rocket } from 'lucide-react'
 
 const pacotes = [
@@ -84,27 +85,44 @@ const diferenciais = [
     <section class="relative overflow-hidden section-hero py-32">
       
       <Container class="relative z-10">
-        <div class="mx-auto max-w-4xl text-center">
-          <span class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/20 px-6 py-2 font-display text-sm font-bold text-lime backdrop-blur-sm">
-            IMPLEMENTAÇÃO COMPLETA | DFY (DONE FOR YOU)
-          </span>
-          <h1 class="mb-6 font-display text-display-lg text-white md:text-6xl">
-            Implementation Services
-          </h1>
-          <p class="mx-auto mb-4 max-w-3xl font-sans text-h3 font-semibold text-white/90">
-            Minha Equipe Implementa. Você Escala.
-          </p>
-          <p class="mx-auto mb-10 max-w-2xl font-sans text-body-lg text-gray-300">
-            Cansado de fazer tudo sozinho? Implemento todo o sistema de vendas no seu negócio enquanto você foca em vender.
-          </p>
-          
-          <Button variant="primary" size="lg">
-            Solicitar Diagnóstico Gratuito
-          </Button>
-          
-          <p class="mt-8 font-sans text-sm text-white/70">
-            ⚡ Mensalidade SEM fidelidade | Cancele quando quiser
-          </p>
+        <div class="mx-auto max-w-5xl">
+          <div class="flex flex-col gap-12">
+            <!-- Top Content -->
+            <div class="text-center">
+              <span class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/20 px-6 py-2 font-display text-sm font-bold text-lime backdrop-blur-sm">
+                IMPLEMENTAÇÃO COMPLETA | DFY (DONE FOR YOU)
+              </span>
+              <h1 class="mb-6 font-display text-display-lg text-white md:text-6xl">
+                Implementação Guiada
+              </h1>
+              <p class="mb-4 font-sans text-h3 font-semibold text-white/90">
+                Minha Equipe Implementa. Você Escala.
+              </p>
+              <p class="mb-10 font-sans text-body-lg text-gray-300">
+                Cansado de fazer tudo sozinho? Implemento todo o sistema de vendas no seu negócio enquanto você foca em vender.
+              </p>
+            </div>
+
+            <!-- Video Full Width -->
+            <div class="w-full">
+              <VideoPlayer
+                videoUrl="https://www.youtube.com/watch?v=SEU_VIDEO_SERVICES_ID"
+                title="Veja como funciona a Implementação Guiada"
+                class="w-full"
+              />
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center">
+              <Button variant="primary" size="lg">
+                Solicitar Diagnóstico Gratuito
+              </Button>
+              
+              <p class="mt-8 font-sans text-sm text-white/70 text-center">
+                ⚡ Mensalidade SEM fidelidade | Cancele quando quiser
+              </p>
+            </div>
+          </div>
         </div>
       </Container>
     </section>

@@ -1,5 +1,6 @@
 ---
 import Container from '../ui/Container.astro'
+import VideoPlayer from '../ui/VideoPlayer.astro'
 import { Play, ChevronDown } from 'lucide-react'
 ---
 
@@ -48,18 +49,19 @@ import { Play, ChevronDown } from 'lucide-react'
         </div>
       </div>
 
-      <!-- Right Image -->
+      <!-- Right Image com Vídeo -->
       <div class="hero-image relative hidden lg:block">
-        <div class="relative z-10 overflow-hidden rounded-2xl border-4 border-lime/20 shadow-2xl">
-          <img
-            src="/images/joel-burigo-vendas-sem-segredos-2.png"
-            alt="Joel Burigo, especialista em vendas"
-            class="h-auto w-full object-cover"
-            loading="eager"
+        <div class="relative">
+          <VideoPlayer
+            videoUrl="https://www.youtube.com/watch?v=SEU_VIDEO_ID"
+            thumbnail="/images/joel-burigo-vendas-sem-segredos-2.png"
+            title="Conheça Joel Burigo e o Framework dos 6Ps"
+            aspectRatio="portrait"
+            class="border-4 border-lime/20 shadow-2xl"
           />
-
+          
           <!-- Floating Badge -->
-          <div class="hero-badge absolute bottom-6 left-6 max-w-xs rounded-xl border border-lime/20 bg-dark/95 p-4 shadow-lg backdrop-blur-md">
+          <div class="hero-badge absolute bottom-6 left-6 z-20 max-w-xs rounded-xl border border-lime/20 bg-dark/95 p-4 shadow-lg backdrop-blur-md">
             <p class="font-display text-h4 text-lime">R$ 1 Bilhão+</p>
             <p class="font-sans text-body-sm text-gray-300">Gerado em vendas para nossos clientes</p>
           </div>

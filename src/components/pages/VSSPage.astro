@@ -1,6 +1,7 @@
 ---
 import Container from '../ui/Container.astro'
 import Button from '../ui/Button.astro'
+import VideoPlayer from '../ui/VideoPlayer.astro'
 import { CheckCircle2, PlayCircle, X, Users, BookOpen, Zap, Target, TrendingUp, Award, Clock, DollarSign, Star, Shield, Rocket, AlertCircle } from 'lucide-react'
 
 const oquee = [
@@ -198,48 +199,61 @@ const resultados = [
     <section class="relative overflow-hidden bg-dark py-32">
       
       <Container class="relative z-10">
-        <div class="mx-auto max-w-4xl text-center">
-          <span class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/20 px-6 py-2 font-display text-sm font-bold text-lime backdrop-blur-sm">
-            PROGRAMA DE IMPLEMENTAÇÃO | 90 DIAS
-          </span>
-          <h1 class="mb-6 font-display text-display-lg text-white md:text-6xl lg:text-7xl">
-            Vendas Sem Segredos
-          </h1>
-          <p class="mx-auto mb-4 max-w-3xl font-sans text-h3 font-semibold text-white/90">
-            Transforme Vendas Aleatórias em Vendas Previsíveis com o Framework dos 6Ps
-          </p>
-          <p class="mx-auto mb-10 max-w-2xl font-sans text-body-lg text-blue-100">
-            Sistema completo de vendas escaláveis implementado em 90 dias. CRM profissional incluído + 48 mentorias + comunidade exclusiva.
-          </p>
-          
-          <div class="flex flex-col justify-center gap-4 sm:flex-row">
-            <Button variant="primary" size="lg">
-              Quero Entrar na Próxima Turma
-            </Button>
-            <Button variant="outline" size="lg" class="border-white text-white hover:bg-white hover:text-royal-blue">
-              <PlayCircle className="mr-2 h-5 w-5" />
-              Ver Apresentação
-            </Button>
+        <div class="mx-auto max-w-5xl">
+          <div class="flex flex-col gap-12">
+            <!-- Top Content -->
+            <div class="text-center">
+              <span class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/20 px-6 py-2 font-display text-sm font-bold text-lime backdrop-blur-sm">
+                PROGRAMA DE IMPLEMENTAÇÃO | 90 DIAS
+              </span>
+              <h1 class="mb-6 font-display text-display-lg text-white md:text-6xl">
+                Vendas Sem Segredos
+              </h1>
+              <p class="mb-4 font-sans text-h3 font-semibold text-white/90">
+                Transforme Vendas Aleatórias em Vendas Previsíveis
+              </p>
+              <p class="mb-10 font-sans text-body-lg text-blue-100">
+                Sistema completo de vendas escaláveis implementado em 90 dias. CRM profissional incluído + 48 mentorias + comunidade exclusiva.
+              </p>
+            </div>
+
+            <!-- Video Full Width -->
+            <div class="w-full">
+              <VideoPlayer
+                videoUrl="https://www.youtube.com/watch?v=SEU_VIDEO_VSS_ID"
+                title="Veja como funciona o Vendas sem Segredos"
+                class="w-full"
+              />
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center">
+              <div class="flex flex-col gap-4 sm:flex-row justify-center">
+                <Button variant="primary" size="lg">
+                  Quero Entrar na Próxima Turma
+                </Button>
+              </div>
+              
+              <div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-white/90">
+                <div class="flex items-center gap-2">
+                  <CheckCircle2 className="h-5 w-5 text-lime" />
+                  <span class="font-sans text-sm">60 aulas práticas</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <CheckCircle2 className="h-5 w-5 text-lime" />
+                  <span class="font-sans text-sm">CRM por 12 meses</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <CheckCircle2 className="h-5 w-5 text-lime" />
+                  <span class="font-sans text-sm">48 mentorias ao vivo</span>
+                </div>
+              </div>
+              
+              <p class="mt-6 font-display text-sm font-semibold text-lime text-center">
+                ⚡ Próxima turma em Janeiro/2026 | Preço promocional
+              </p>
+            </div>
           </div>
-          
-          <div class="mt-10 flex flex-wrap items-center justify-center gap-8 text-white/90">
-            <div class="flex items-center gap-2">
-              <CheckCircle2 className="h-5 w-5 text-lime" />
-              <span class="font-sans text-sm">60 aulas práticas</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <CheckCircle2 className="h-5 w-5 text-lime" />
-              <span class="font-sans text-sm">CRM por 12 meses</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <CheckCircle2 className="h-5 w-5 text-lime" />
-              <span class="font-sans text-sm">48 mentorias ao vivo</span>
-            </div>
-          </div>
-          
-          <p class="mt-8 font-display text-sm font-semibold text-lime">
-            ⚡ Próxima turma em Janeiro/2026 | Preço promocional para os 100 primeiros alunos
-          </p>
         </div>
       </Container>
     </section>

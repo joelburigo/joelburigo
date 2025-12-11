@@ -1,0 +1,124 @@
+---
+import { Play } from 'lucide-react'
+
+interface Props {
+  videoUrl: string
+  thumbnail?: string
+  title?: string
+  class?: string
+  aspectRatio?: 'portrait' | 'landscape'
+}
+
+const { videoUrl, thumbnail, title = 'Assista ao vídeo', class: className = '', aspectRatio = 'landscape' } = Astro.props
+
+// Define aspect ratio style based on prop
+const aspectStyle = aspectRatio === 'portrait' ? '' : 'aspect-ratio: 16 / 9;'
+---
+
+<div class={`video-player-container relative ${className}`}>
+  <!-- Thumbnail com Overlay -->
+  <div class="video-thumbnail relative cursor-pointer overflow-hidden rounded-2xl" data-video-url={videoUrl} data-aspect={aspectRatio}>
+    <div class="relative w-full" style={aspectStyle}>
+      {thumbnail ? (
+        <img
+          src={thumbnail}
+          alt={title}
+          class={aspectRatio === 'portrait' ? 'h-full w-full object-cover transition-transform duration-300 hover:scale-105' : 'absolute inset-0 h-full w-full object-cover transition-transform duration-300 hover:scale-105'}
+        />
+      ) : (
+        <div class={aspectRatio === 'portrait' ? 'flex min-h-[400px] items-center justify-center bg-gradient-to-br from-dark to-gray-900' : 'absolute inset-0 flex items-center justify-center bg-gradient-to-br from-dark to-gray-900'}>
+          <div class="text-center">
+            <Play className="mx-auto mb-4 h-20 w-20 text-lime" />
+            <p class="font-display text-h4 text-white">{title}</p>
+          </div>
+        </div>
+      )}
+      
+      <!-- Play Button Overlay -->
+      <div class="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-[2px] transition-all duration-300 hover:bg-black/50">
+        <button class="play-button group flex h-24 w-24 items-center justify-center rounded-full bg-lime shadow-2xl shadow-lime/40 transition-all duration-300 hover:scale-110 hover:bg-lime/90 hover:shadow-lime/60">
+          <Play className="h-12 w-12 fill-dark text-dark transition-transform group-hover:scale-110" />
+        </button>
+      </div>
+
+      <!-- Badge opcional -->
+      <div class="absolute left-4 top-4 rounded-lg bg-dark/90 px-3 py-1.5 backdrop-blur-sm">
+        <span class="font-sans text-xs font-medium text-lime">▶ Assista</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Embed Inline (Hidden initially) -->
+  <div class="video-embed hidden relative w-full rounded-2xl overflow-hidden" style={aspectStyle}>
+    <iframe
+      class={aspectRatio === 'portrait' ? 'h-full w-full' : 'absolute inset-0 h-full w-full'}
+      src=""
+      title={title}
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
+
+<script>
+  function initVideoPlayers() {
+    const thumbnails = document.querySelectorAll('.video-thumbnail');
+    
+    thumbnails.forEach((thumbnail) => {
+      const container = thumbnail.closest('.video-player-container');
+      if (!container) return;
+
+      const videoEmbed = container.querySelector('.video-embed');
+      const iframe = videoEmbed?.querySelector('iframe');
+      const videoUrl = thumbnail.getAttribute('data-video-url');
+
+      if (!videoEmbed || !iframe || !videoUrl) return;
+
+      // Ao clicar no thumbnail, trocar por video
+      thumbnail.addEventListener('click', () => {
+        // Extrair ID do vídeo do YouTube ou Vimeo
+        let embedUrl = '';
+        
+        if (videoUrl.includes('youtube.com') || videoUrl.includes('youtu.be')) {
+          const videoId = videoUrl.includes('youtu.be') 
+            ? videoUrl.split('youtu.be/')[1]?.split('?')[0]
+            : new URLSearchParams(new URL(videoUrl).search).get('v');
+          embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+        } else if (videoUrl.includes('vimeo.com')) {
+          const videoId = videoUrl.split('vimeo.com/')[1]?.split('?')[0];
+          embedUrl = `https://player.vimeo.com/video/${videoId}?autoplay=1`;
+        } else {
+          // URL direta de vídeo
+          embedUrl = videoUrl;
+        }
+
+        // Ocultar thumbnail e mostrar vídeo inline
+        iframe.src = embedUrl;
+        thumbnail.classList.add('hidden');
+        videoEmbed.classList.remove('hidden');
+      });
+    });
+  }
+
+  // Inicializar
+  initVideoPlayers();
+  
+  // Reinicializar após navegação (View Transitions)
+  document.addEventListener('astro:page-load', initVideoPlayers);
+</script>
+
+<style>
+  .play-button {
+    animation: pulse-subtle 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-subtle {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(190, 242, 100, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 20px rgba(190, 242, 100, 0);
+    }
+  }
+</style>

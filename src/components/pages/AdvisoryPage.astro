@@ -1,6 +1,7 @@
 ---
 import Container from '../ui/Container.astro'
 import Button from '../ui/Button.astro'
+import VideoPlayer from '../ui/VideoPlayer.astro'
 import { CheckCircle2, Clock, Calendar, MessageSquare, Target, Zap, Award } from 'lucide-react'
 
 const formatos = [
@@ -99,20 +100,45 @@ const e = [
       
       <Container class="relative z-10">
         <div class="mx-auto max-w-5xl">
-          <div class="mb-12 text-center">
-            <span class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/20 px-6 py-2 font-display text-sm font-bold text-lime backdrop-blur-sm">
-              CONSULTORIA PREMIUM | POR CONVITE
-            </span>
-            <h1 class="mb-6 font-display text-display-lg text-white md:text-6xl">
-              Strategic Advisory
-            </h1>
-            <p class="mx-auto mb-4 max-w-3xl font-sans text-h3 font-semibold text-white/90">
-              Acesso Direto ao Joel para Momentos Críticos
-            </p>
-            <p class="mx-auto max-w-2xl font-sans text-body-lg text-gray-300">
-              Parceria estratégica de longo prazo ou consultoria pontual. 17 anos de experiência e ~R$ 1 bilhão em vendas estruturadas à sua disposição.
-            </p>
+          <div class="flex flex-col gap-12">
+            <!-- Top Content -->
+            <div class="text-center">
+              <span class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/20 px-6 py-2 font-display text-sm font-bold text-lime backdrop-blur-sm">
+                CONSULTORIA PREMIUM | POR CONVITE
+              </span>
+              <h1 class="mb-6 font-display text-display-lg text-white md:text-6xl">
+                Conselho Estratégico
+              </h1>
+              <p class="mb-4 font-sans text-h3 font-semibold text-white/90">
+                Acesso Direto ao Joel para Momentos Críticos
+              </p>
+              <p class="mb-10 font-sans text-body-lg text-gray-300">
+                Parceria estratégica de longo prazo ou consultoria pontual. 17 anos de experiência e ~R$ 1 bilhão em vendas estruturadas à sua disposição.
+              </p>
+            </div>
+
+            <!-- Video Full Width -->
+            <div class="w-full">
+              <VideoPlayer
+                videoUrl="https://www.youtube.com/watch?v=SEU_VIDEO_ADVISORY_ID"
+                title="Como funciona o Conselho Estratégico"
+                class="w-full"
+              />
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center">
+              <Button variant="primary" size="lg" href="/diagnostico">
+                Solicitar Sessão Estratégica
+              </Button>
+              
+              <p class="mt-8 font-sans text-sm text-white/70 text-center">
+                ⚡ Vagas limitadas | Apenas 2-4 clientes por mês
+              </p>
+            </div>
           </div>
+          
+          <div class="mt-16">
 
           <!-- O Que É / Não É -->
           <div class="grid grid-cols-1 gap-6 md:grid-cols-2">

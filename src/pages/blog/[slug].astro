@@ -1,18 +1,23 @@
 ---
-import { getCollection } from 'astro:content'
+import { getCollection, render } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
 import Header from '../../components/layout/Header.astro'
 import Footer from '../../components/layout/Footer.astro'
 import Container from '../../components/ui/Container.astro'
 import { Calendar, Clock, User, ArrowLeft, Share2 } from 'lucide-react'
+import { Image } from 'astro:assets'
 
 export const prerender = true
 
 export async function getStaticPaths() {
   const blogPosts = await getCollection('blog')
   
+  if (!blogPosts || blogPosts.length === 0) {
+    return []
+  }
+  
   return blogPosts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id.replace(/\.md$/, '') },
     props: { post },
   }))
 }
@@ -23,7 +28,7 @@ if (!post) {
   return Astro.redirect('/blog')
 }
 
-const { Content } = await post.render()
+const { Content } = await render(post)
 
 const seo = {
   title: `${post.data.title} | Joel Burigo`,
@@ -34,7 +39,7 @@ const seo = {
 // Posts relacionados (busca outros posts da mesma categoria)
 const allPosts = await getCollection('blog')
 const relatedPosts = allPosts
-  .filter((p) => p.data.category === post.data.category && p.slug !== post.slug)
+  .filter((p) => p.data.category === post.data.category && p.id !== post.id)
   .slice(0, 3)
 
 // Schema.org - Article Structured Data
@@ -110,9 +115,12 @@ const articleSchema = {
 
           {post.data.heroImage && (
             <div class="mb-8 overflow-hidden rounded-2xl">
-              <img 
+              <Image 
                 src={post.data.heroImage} 
                 alt={post.data.title}
+                width={1200}
+                height={630}
+                loading="eager"
                 class="w-full h-auto"
               />
             </div>

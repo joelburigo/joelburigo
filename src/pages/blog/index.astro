@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import { getCollection } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
 import Header from '../../components/layout/Header.astro'
@@ -22,7 +23,7 @@ const sortedPosts = allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.
 const featuredPost = sortedPosts.find((p) => p.data.featured) || sortedPosts[0]
 
 // Posts regulares (excluindo o featured)
-const posts = featuredPost ? sortedPosts.filter((p) => p.slug !== featuredPost.slug) : sortedPosts
+const posts = featuredPost ? sortedPosts.filter((p) => p.id !== featuredPost.id) : sortedPosts
 
 // Contagem por categoria
 const categoryCounts = allPosts.reduce((acc, post) => {
@@ -78,15 +79,18 @@ const categories = [
       <section class="bg-dark py-16">
         <Container>
           <a 
-            href={`/blog/${featuredPost.slug}`}
+            href={`/blog/${featuredPost.id.replace(/\.md$/, '')}`}
             class="group block overflow-hidden rounded-2xl border-2 border-lime/20 bg-dark transition-all hover:border-lime/50 hover:shadow-2xl hover:shadow-lime/20"
           >
           <div class="grid grid-cols-1 gap-8 p-8 lg:grid-cols-2 lg:items-center">
             <div class="aspect-video overflow-hidden rounded-xl bg-dark lg:order-2">
               {featuredPost.data.heroImage ? (
-                <img 
+                <Image 
                   src={featuredPost.data.heroImage} 
                   alt={featuredPost.data.title}
+                  width={800}
+                  height={450}
+                  loading="eager"
                   class="h-full w-full object-cover"
                 />
               ) : (
@@ -148,7 +152,7 @@ const categories = [
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post, index) => (
             <a
-              href={`/blog/${post.slug}`}
+              href={`/blog/${post.id.replace(/\.md$/, '')}`}
               data-category={post.data.category}
               class="post-card group flex flex-col overflow-hidden rounded-2xl border-2 border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:border-lime/50 hover:shadow-xl hover:shadow-lime/10"
               style={`animation-delay: ${index * 0.1}s`}
@@ -156,9 +160,12 @@ const categories = [
               {/* Image */}
               <div class="aspect-video overflow-hidden bg-dark">
                 {post.data.heroImage ? (
-                  <img 
+                  <Image 
                     src={post.data.heroImage} 
                     alt={post.data.title}
+                    width={600}
+                    height={338}
+                    loading="lazy"
                     class="h-full w-full object-cover transition-transform group-hover:scale-105"
                   />
                 ) : (

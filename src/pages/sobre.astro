@@ -1,8 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/layout/Header.astro';
-import Footer from '../components/layout/Footer.astro';
-import Container from '../components/ui/Container.astro';
+import { Image } from 'astro:assets'
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/layout/Header.astro'
+import Footer from '../components/layout/Footer.astro'
+import Container from '../components/ui/Container.astro'
+import joelBurigoImage from '../assets/images/joel-burigo-vendas-sem-segredos-2.png'
 import { CheckCircle2, X, Award } from 'lucide-react';
 
 const seo = {
@@ -197,9 +199,12 @@ const promessas = [
               <div
                 class="aspect-[4/5] overflow-hidden rounded-2xl border-2 border-lime/20 bg-dark shadow-2xl"
               >
-                <img
-                  src="/images/joel-burigo-vendas-sem-segredos-2.png"
-                  alt="Joel Burigo"
+                <Image
+                  src={joelBurigoImage}
+                  alt="Joel Burigo - Especialista em Vendas Escaláveis"
+                  width={800}
+                  height={1000}
+                  loading="lazy"
                   class="h-full w-full object-cover"
                 />
               </div>

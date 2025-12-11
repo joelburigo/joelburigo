@@ -4,7 +4,7 @@ excerpt: 'A diferença entre vender para "todo mundo" e vender para quem realmen
 category: 'Framework 6Ps'
 date: 2025-12-02
 readTime: '9 min'
-heroImage: '/images/icp-cliente-ideal-targeting.png'
+heroImage: '../../../assets/images/blog/icp-cliente-ideal-targeting.png'
 ---
 
 "Todo mundo" não é cliente. **Quanto mais específico seu ICP, maior sua taxa de conversão.**

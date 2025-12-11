@@ -4,7 +4,7 @@ excerpt: 'As duas rotas para gerar leads previsíveis: quando usar cada uma e co
 category: 'Vendas Escaláveis'
 date: 2025-12-01
 readTime: '11 min'
-heroImage: '/images/trafego-pago-vs-prospeccao-ativa.png'
+heroImage: '../../../assets/images/blog/trafego-pago-vs-prospeccao-ativa.png'
 ---
 
 Existe uma pergunta que TODO empresário faz: **"Eu invisto em tráfego pago ou faço prospecção ativa?"**

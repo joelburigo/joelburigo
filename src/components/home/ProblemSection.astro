@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets'
 import Container from '../ui/Container.astro'
 import Card from '../ui/Card.astro'
 import { Dices, BrainCircuit, BarChart3, Banknote, Quote } from 'lucide-react'
+import joelBurigoImage from '../../assets/images/joel-burigo-vendas-sem-segredos-2.png'
 
 const problems = [
   {
@@ -64,9 +66,12 @@ const problems = [
         </p>
         <footer class="flex items-center justify-center gap-4">
           <div class="h-12 w-12 overflow-hidden rounded-full bg-gray-700 ring-2 ring-lime/30">
-            <img
-              src="/images/joel-burigo-vendas-sem-segredos-2.png"
+            <Image
+              src={joelBurigoImage}
               alt="Joel Burigo"
+              width={48}
+              height={48}
+              loading="lazy"
               class="h-full w-full object-cover"
             />
           </div>

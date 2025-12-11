@@ -4,7 +4,7 @@ excerpt: 'Por que posicionamento claro é a base de tudo e como definir o seu em
 category: 'Framework 6Ps'
 date: 2025-12-03
 readTime: '10 min'
-heroImage: '/images/posicionamento-diferencial-mercado.png'
+heroImage: '../../../assets/images/blog/posicionamento-diferencial-mercado.png'
 ---
 
 90% das micro e pequenas empresas não sabem responder: **"Por que alguém deveria comprar de você e não do concorrente?"**

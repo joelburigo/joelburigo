@@ -4,7 +4,7 @@ excerpt: 'A verdade que ninguém te conta sobre agências e consultores que te d
 category: 'Mentalidade'
 date: 2025-12-06
 readTime: '9 min'
-heroImage: '/images/autonomia-empresarial-independencia.png'
+heroImage: '../../../assets/images/blog/autonomia-empresarial-independencia.png'
 ---
 
 A maioria das agências e consultores não quer que você aprenda. **Eles querem que você dependa deles para sempre.**

@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config'
+import { defineConfig, envField } from 'astro/config'
 import react from '@astrojs/react'
 import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
@@ -13,6 +13,25 @@ export default defineConfig({
     webAnalytics: true,
     speedInsights: true,
   }),
+  env: {
+    schema: {
+      // Public client-side variables
+      PUBLIC_GTM_ID: envField.string({ 
+        context: 'client', 
+        access: 'public',
+        optional: true 
+      }),
+      PUBLIC_FB_PIXEL_ID: envField.string({ 
+        context: 'client', 
+        access: 'public',
+        optional: true 
+      }),
+    }
+  },
+  prefetch: {
+    prefetchAll: false,
+    defaultStrategy: 'hover',
+  },
   integrations: [
     react(),
     tailwind(),

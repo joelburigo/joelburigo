@@ -1,9 +1,11 @@
 ---
 import { Play } from 'lucide-react'
+import { Image } from 'astro:assets'
+import type { ImageMetadata } from 'astro'
 
 interface Props {
   videoUrl: string
-  thumbnail?: string
+  thumbnail?: string | ImageMetadata
   title?: string
   class?: string
   aspectRatio?: 'portrait' | 'landscape'
@@ -13,6 +15,7 @@ const { videoUrl, thumbnail, title = 'Assista ao vídeo', class: className = '',
 
 // Define aspect ratio style based on prop
 const aspectStyle = aspectRatio === 'portrait' ? 'aspect-ratio: 9 / 16;' : 'aspect-ratio: 16 / 9;'
+const isImageMetadata = thumbnail && typeof thumbnail !== 'string'
 ---
 
 <div class={`video-player-container relative overflow-hidden rounded-2xl ${className}`}>
@@ -20,11 +23,20 @@ const aspectStyle = aspectRatio === 'portrait' ? 'aspect-ratio: 9 / 16;' : 'aspe
   <div class="video-thumbnail relative cursor-pointer overflow-hidden rounded-2xl" data-video-url={videoUrl} data-aspect={aspectRatio}>
     <div class="relative w-full" style={aspectStyle}>
       {thumbnail ? (
-        <img
-          src={thumbnail}
-          alt={title}
-          class={aspectRatio === 'portrait' ? 'h-full w-full object-cover transition-transform duration-300 hover:scale-105' : 'absolute inset-0 h-full w-full object-cover transition-transform duration-300 hover:scale-105'}
-        />
+        isImageMetadata ? (
+          <Image
+            src={thumbnail as ImageMetadata}
+            alt={title}
+            loading="eager"
+            class={aspectRatio === 'portrait' ? 'h-full w-full object-cover transition-transform duration-300 hover:scale-105' : 'absolute inset-0 h-full w-full object-cover transition-transform duration-300 hover:scale-105'}
+          />
+        ) : (
+          <img
+            src={thumbnail as string}
+            alt={title}
+            class={aspectRatio === 'portrait' ? 'h-full w-full object-cover transition-transform duration-300 hover:scale-105' : 'absolute inset-0 h-full w-full object-cover transition-transform duration-300 hover:scale-105'}
+          />
+        )
       ) : (
         <div class={aspectRatio === 'portrait' ? 'flex min-h-[400px] items-center justify-center bg-gradient-to-br from-dark to-gray-900' : 'absolute inset-0 flex items-center justify-center bg-gradient-to-br from-dark to-gray-900'}>
           <div class="text-center">

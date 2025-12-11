@@ -31,7 +31,7 @@ import { Play, ChevronDown } from 'lucide-react'
               Quero Escalar Vendas
             </button>
           </a>
-          <button class="inline-flex h-14 w-full items-center justify-center gap-2 rounded-lg border-2 border-white px-8 font-display text-lg font-semibold text-white transition-all hover:scale-105 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 sm:w-auto">
+          <button id="mobile-video-btn" class="inline-flex h-14 w-full items-center justify-center gap-2 rounded-lg border-2 border-white px-8 font-display text-lg font-semibold text-white transition-all hover:scale-105 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 sm:w-auto lg:hidden">
             <Play className="h-4 w-4 fill-current" />
             Assistir Vídeo
           </button>
@@ -67,6 +67,17 @@ import { Play, ChevronDown } from 'lucide-react'
           </div>
         </div>
       </div>
+
+      <!-- Mobile Video (hidden, shown when button clicked) -->
+      <div id="mobile-video-container" class="mt-8 hidden lg:hidden">
+        <VideoPlayer
+          videoUrl="https://www.youtube.com/watch?v=SEU_VIDEO_ID"
+          thumbnail="/images/joel-burigo-vendas-sem-segredos-2.png"
+          title="Conheça Joel Burigo e o Framework dos 6Ps"
+          aspectRatio="portrait"
+          class="border-4 border-lime/20 shadow-2xl"
+        />
+      </div>
     </div>
   </Container>
 
@@ -76,6 +87,23 @@ import { Play, ChevronDown } from 'lucide-react'
     <ChevronDown className="h-6 w-6 animate-bounce text-lime" />
   </div>
 </section>
+
+<script>
+  function initMobileVideo() {
+    const mobileVideoBtn = document.getElementById('mobile-video-btn');
+    const mobileVideoContainer = document.getElementById('mobile-video-container');
+
+    if (mobileVideoBtn && mobileVideoContainer) {
+      mobileVideoBtn.addEventListener('click', () => {
+        mobileVideoContainer.classList.remove('hidden');
+        mobileVideoContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    }
+  }
+
+  initMobileVideo();
+  document.addEventListener('astro:page-load', initMobileVideo);
+</script>
 
 <style>
   .hero-content {

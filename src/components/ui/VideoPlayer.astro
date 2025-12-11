@@ -12,10 +12,10 @@ interface Props {
 const { videoUrl, thumbnail, title = 'Assista ao vídeo', class: className = '', aspectRatio = 'landscape' } = Astro.props
 
 // Define aspect ratio style based on prop
-const aspectStyle = aspectRatio === 'portrait' ? '' : 'aspect-ratio: 16 / 9;'
+const aspectStyle = aspectRatio === 'portrait' ? 'aspect-ratio: 9 / 16;' : 'aspect-ratio: 16 / 9;'
 ---
 
-<div class={`video-player-container relative ${className}`}>
+<div class={`video-player-container relative overflow-hidden rounded-2xl ${className}`}>
   <!-- Thumbnail com Overlay -->
   <div class="video-thumbnail relative cursor-pointer overflow-hidden rounded-2xl" data-video-url={videoUrl} data-aspect={aspectRatio}>
     <div class="relative w-full" style={aspectStyle}>
@@ -49,9 +49,9 @@ const aspectStyle = aspectRatio === 'portrait' ? '' : 'aspect-ratio: 16 / 9;'
   </div>
 
   <!-- Video Embed Inline (Hidden initially) -->
-  <div class="video-embed hidden relative w-full rounded-2xl overflow-hidden" style={aspectStyle}>
+  <div class="video-embed hidden relative w-full overflow-hidden rounded-2xl" style={aspectStyle}>
     <iframe
-      class={aspectRatio === 'portrait' ? 'h-full w-full' : 'absolute inset-0 h-full w-full'}
+      class={aspectRatio === 'portrait' ? 'h-full w-full rounded-2xl' : 'absolute inset-0 h-full w-full rounded-2xl'}
       src=""
       title={title}
       frameborder="0"

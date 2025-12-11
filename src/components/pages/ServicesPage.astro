@@ -2,7 +2,7 @@
 import Container from '../ui/Container.astro'
 import Button from '../ui/Button.astro'
 import VideoPlayer from '../ui/VideoPlayer.astro'
-import { CheckCircle2, ArrowRight, Zap, TrendingUp, Rocket } from 'lucide-react'
+import { CheckCircle2, ArrowRight, Zap, TrendingUp, Rocket, Star, Shield, Award } from 'lucide-react'
 
 const pacotes = [
   {
@@ -76,6 +76,86 @@ const diferenciais = [
   { titulo: 'Upgrade Livre', desc: 'Muda de pacote quando crescer' },
   { titulo: 'CRM Incluído', desc: 'Não é custo extra, já está dentro' },
   { titulo: 'Mão na Massa', desc: 'Eu implemento, você aprende' },
+]
+
+const depoimentos = [
+  {
+    nome: 'Agência de Marketing Digital',
+    resultado: 'R$ 45k → R$ 180k/mês em 8 meses',
+    texto: 'Joel implementou todo o sistema de vendas enquanto eu focava em entregar para os clientes. CRM estruturado, prospecção ativa e processos documentados. Escalamos 4x.',
+    avatar: '🎨'
+  },
+  {
+    nome: 'SaaS B2B',
+    resultado: 'Churn de 12% → 3% em 5 meses',
+    texto: 'Implementação guiada transformou nosso onboarding. Funis de nutrição, automações de retenção e playbook de CS. Triplicamos LTV do cliente.',
+    avatar: '💻'
+  },
+  {
+    nome: 'Escola de Idiomas',
+    resultado: 'R$ 80k → R$ 250k/mês em 10 meses',
+    texto: 'A equipe do Joel fez tudo: tráfego, landing pages, CRM, treinamento de vendedores. Só precisei aprovar. Sistema funcionando 100% automatizado.',
+    avatar: '🎓'
+  },
+]
+
+const faseImplementacao = [
+  {
+    fase: 'Mês 1-2',
+    titulo: 'Diagnóstico e Fundação',
+    itens: [
+      'Auditoria completa dos 6Ps',
+      'Posicionamento e ICP validados',
+      'Oferta estruturada com precificação',
+      'CRM implementado e configurado',
+      'Equipe treinada no básico',
+    ]
+  },
+  {
+    fase: 'Mês 3-5',
+    titulo: 'Estruturação',
+    itens: [
+      'Funis e automações no ar',
+      'Landing pages otimizadas',
+      'Tráfego pago OU prospecção ativa',
+      'Processos comerciais documentados',
+      'Dashboard de métricas ativo',
+    ]
+  },
+  {
+    fase: 'Mês 6+',
+    titulo: 'Otimização',
+    itens: [
+      'A/B tests contínuos',
+      'Escalada de tráfego/prospecção',
+      'Expansão de equipe comercial',
+      'Refinamento de processos',
+      'Autonomia crescente',
+    ]
+  },
+]
+
+const faq = [
+  {
+    pergunta: 'Qual a diferença entre Services e VSS?',
+    resposta: 'VSS você implementa com mentorias (DIY). Services EU implemento com minha equipe (DFY). Se você quer autonomia e economia, VSS. Se quer delegar e focar no core business, Services.'
+  },
+  {
+    pergunta: 'Quanto tempo até ver resultados?',
+    resposta: 'Primeiros leads qualificados em 30-45 dias. Escala sustentável a partir do 3º-4º mês. Depende do seu segmento, budget de tráfego e nível de colaboração.'
+  },
+  {
+    pergunta: 'Posso cancelar a qualquer momento?',
+    resposta: 'SIM. Não tem fidelidade. Se você quer sair, é porque não estou entregando valor. Prefiro perder o cliente a prender quem não quer ficar.'
+  },
+  {
+    pergunta: 'Quantos clientes vocês atendem simultaneamente?',
+    resposta: 'Máximo 15 clientes ativos. Isso garante que cada cliente tem atenção adequada e implementação de qualidade. Não abrimos mais vagas do que conseguimos atender bem.'
+  },
+  {
+    pergunta: 'E se eu quiser mudar de pacote?',
+    resposta: 'Upgrade ou downgrade livre. Se sua empresa cresceu, sobe de pacote. Se reduziu faturamento, desce. Flexibilidade total para se adaptar ao seu momento.'
+  },
 ]
 ---
 
@@ -251,6 +331,79 @@ const diferenciais = [
       </Container>
     </section>
 
+    <!-- Depoimentos -->
+    <section class="bg-dark py-24">
+      <Container>
+        <div class="mx-auto max-w-7xl">
+          <div class="mb-16 text-center">
+            <h2 class="mb-4 font-display text-display-sm text-white">
+              Resultados de Quem <span class="text-lime">Delegou</span>
+            </h2>
+            <p class="mx-auto max-w-3xl font-sans text-body-lg text-gray-300">
+              Empresas que escolheram focar no negócio enquanto implementamos vendas
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+            {depoimentos.map((depoimento) => (
+              <div class="rounded-2xl border-2 border-lime/20 bg-white/5 p-8">
+                <div class="mb-4 flex items-center gap-4">
+                  <div class="text-4xl">{depoimento.avatar}</div>
+                  <div>
+                    <div class="mb-1 flex gap-1">
+                      <Star className="h-4 w-4 fill-lime text-lime" />
+                      <Star className="h-4 w-4 fill-lime text-lime" />
+                      <Star className="h-4 w-4 fill-lime text-lime" />
+                      <Star className="h-4 w-4 fill-lime text-lime" />
+                      <Star className="h-4 w-4 fill-lime text-lime" />
+                    </div>
+                    <p class="font-display text-sm font-semibold text-white">{depoimento.nome}</p>
+                  </div>
+                </div>
+                <p class="mb-4 font-display text-lg font-bold text-lime">{depoimento.resultado}</p>
+                <p class="font-sans text-body text-gray-300">{depoimento.texto}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Jornada de Implementação -->
+    <section class="bg-dark py-24">
+      <Container>
+        <div class="mx-auto max-w-7xl">
+          <div class="mb-16 text-center">
+            <h2 class="mb-4 font-display text-display-sm text-white">
+              Como Funciona a <span class="text-lime">Implementação</span>
+            </h2>
+            <p class="mx-auto max-w-3xl font-sans text-body-lg text-gray-300">
+              Processo estruturado em 3 fases. Do diagnóstico à autonomia completa.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+            {faseImplementacao.map((fase, index) => (
+              <div class="rounded-2xl border-2 border-white/10 bg-white/5 p-8">
+                <div class="mb-4 inline-block rounded-full bg-lime/20 px-4 py-2">
+                  <span class="font-display text-sm font-bold text-lime">{fase.fase}</span>
+                </div>
+                <h3 class="mb-4 font-display text-h3 text-white">{fase.titulo}</h3>
+                <ul class="space-y-3 font-sans text-body-sm text-gray-300">
+                  {fase.itens.map((item) => (
+                    <li class="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </section>
+
     <!-- Diferenciais -->
     <section class="section-dark py-24">
       <Container>
@@ -278,6 +431,42 @@ const diferenciais = [
               Prefiro perder o cliente a prender quem não quer ficar. Por isso não tem fidelidade.
             </p>
             <p class="mt-4 font-sans text-sm text-lime">— Joel Burigo</p>
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-dark py-24">
+      <Container>
+        <div class="mx-auto max-w-4xl">
+          <div class="mb-16 text-center">
+            <h2 class="mb-4 font-display text-display-sm text-white">
+              Perguntas <span class="text-lime">Frequentes</span>
+            </h2>
+          </div>
+
+          <div class="space-y-6">
+            {faq.map((item) => (
+              <details class="group rounded-xl border-2 border-white/10 bg-white/5 p-6 transition-all hover:border-lime/30">
+                <summary class="flex cursor-pointer items-start justify-between gap-4 font-display text-lg font-semibold text-white">
+                  <span>{item.pergunta}</span>
+                  <span class="text-lime transition-transform group-open:rotate-180">▼</span>
+                </summary>
+                <p class="mt-4 border-t border-white/10 pt-4 font-sans text-body text-gray-300">
+                  {item.resposta}
+                </p>
+              </details>
+            ))}
+          </div>
+
+          <div class="mt-12 rounded-2xl border-2 border-lime/30 bg-lime/10 p-8 text-center">
+            <Shield className="mx-auto mb-4 h-12 w-12 text-lime" />
+            <h3 class="mb-4 font-display text-h3 text-white">Garantia Services</h3>
+            <p class="mb-4 font-sans text-body text-gray-300">
+              30 dias de garantia. Se você não ver progresso concreto nos primeiros 30 dias, 
+              devolvemos o investimento do primeiro mês. Simples assim.
+            </p>
           </div>
         </div>
       </Container>

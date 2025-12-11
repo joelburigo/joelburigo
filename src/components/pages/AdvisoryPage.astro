@@ -2,7 +2,7 @@
 import Container from '../ui/Container.astro'
 import Button from '../ui/Button.astro'
 import VideoPlayer from '../ui/VideoPlayer.astro'
-import { CheckCircle2, Clock, Calendar, MessageSquare, Target, Zap, Award } from 'lucide-react'
+import { CheckCircle2, Clock, Calendar, MessageSquare, Target, Zap, Award, Star, Shield } from 'lucide-react'
 
 const formatos = [
   {
@@ -91,6 +91,86 @@ const e = [
   'Quem valoriza atalhos (17 anos de experiência)',
   'Quem entende que tempo > dinheiro',
 ]
+
+const depoimentos = [
+  {
+    nome: 'Founder de SaaS',
+    contexto: 'Sprint 30 dias → Captação seed',
+    texto: 'Joel validou minha tese de go-to-market em 4 sessões. Cortou 6 meses de tentativa e erro. Usei o plano estratégico dele na apresentação para investidores. Levantamos R$ 2M.',
+    avatar: '💼'
+  },
+  {
+    nome: 'CEO E-commerce',
+    contexto: 'Conselho Executivo 6 meses → Exit',
+    texto: 'Estava preparando empresa para venda. Joel estruturou todo pitch comercial, otimizou métricas e me preparou para due diligence. Exit por 8x EBITDA.',
+    avatar: '🎯'
+  },
+  {
+    nome: 'Founder Consultoria',
+    contexto: 'Sessão Avulsa → Reposicionamento',
+    texto: '90 minutos que valeram R$ 500k. Joel me mostrou que eu estava vendendo muito barato. Mudei posicionamento e aumentei ticket 3x mantendo mesma entrega.',
+    avatar: '🚀'
+  },
+]
+
+const processosAdvisory = [
+  {
+    titulo: 'Sessão Estratégica Avulsa',
+    quando: 'Desafio pontual',
+    processo: [
+      'Você envia contexto prévio (48h antes)',
+      'Sessão de 90min ao vivo (Zoom)',
+      'Diagnóstico dos 6Ps aplicado ao desafio',
+      'Plano de ação com 3-5 ações prioritárias',
+      'Relatório executivo em 24h',
+    ]
+  },
+  {
+    titulo: 'Sprint 30 Dias',
+    quando: 'Momento crítico',
+    processo: [
+      'Semana 1: Diagnóstico profundo',
+      'Semana 2: Definição estratégica',
+      'Semana 3: Plano de ação detalhado',
+      'Semana 4: Fechamento e accountability',
+      'Suporte via WhatsApp entre sessões',
+    ]
+  },
+  {
+    titulo: 'Conselho Executivo',
+    quando: 'Parceria contínua',
+    processo: [
+      '2 sessões por semana (60min cada)',
+      'WhatsApp direto (resposta em 4h)',
+      'Participação em reuniões críticas',
+      'Revisão ilimitada de materiais',
+      'Diagnóstico trimestral dos 6Ps',
+    ]
+  },
+]
+
+const faq = [
+  {
+    pergunta: 'Qual a diferença entre Advisory e Services?',
+    resposta: 'Services eu FAÇO por você (DFY). Advisory eu PENSO com você. No Services, minha equipe executa CRM, tráfego, processos. No Advisory, você tem acesso direto à minha experiência para decisões estratégicas. Se você precisa de execução, Services. Se precisa de estratégia, Advisory.'
+  },
+  {
+    pergunta: 'Advisory é realmente "por convite"?',
+    resposta: 'SIM. Só aceito clientes que (1) estão em momento crítico real, (2) valorizam tempo > dinheiro, (3) vão executar as recomendações. Não quero vender sessão de terapia empresarial. Se você só quer alguém para ouvir, não é para mim.'
+  },
+  {
+    pergunta: 'Posso começar com 1 sessão avulsa?',
+    resposta: 'SIM. Recomendo começar com sessão avulsa se você nunca trabalhou comigo. Assim você testa o fit antes de entrar em Sprint ou Conselho Executivo. 80% dos clientes de longo prazo começaram com 1 sessão.'
+  },
+  {
+    pergunta: 'Quanto tempo até ter resultado?',
+    resposta: 'Sessão avulsa: insight imediato. Sprint 30 dias: plano executável ao final. Conselho Executivo: progresso mensurável a cada 30 dias. Advisory não é "faça e apareça em 6 meses". É acompanhamento próximo com validação constante.'
+  },
+  {
+    pergunta: 'Você assina NDA?',
+    resposta: 'SIM, sempre. Confidencialidade é inegociável. Todo cliente de Advisory tem NDA assinado antes da primeira sessão. Suas informações estratégicas ficam protegidas.'
+  },
+]
 ---
 
 <div class="flex min-h-screen flex-col">
@@ -173,6 +253,77 @@ const e = [
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="bg-dark py-24">
+      <Container>
+        <div class="mx-auto max-w-7xl">
+          <div class="mb-16 text-center">
+            <h2 class="mb-4 font-display text-display-sm text-white">
+              Quem Já Usou <span class="text-lime">Advisory</span>
+            </h2>
+            <p class="mx-auto max-w-3xl font-sans text-body-lg text-gray-300">
+              Founders e CEOs que aceleraram decisões críticas
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+            {depoimentos.map((depoimento) => (
+              <div class="rounded-2xl border-2 border-lime/20 bg-white/5 p-8">
+                <div class="mb-4 flex items-center gap-4">
+                  <div class="text-4xl">{depoimento.avatar}</div>
+                  <div>
+                    <div class="mb-1 flex gap-1">
+                      <Star className="h-4 w-4 fill-lime text-lime" />
+                      <Star className="h-4 w-4 fill-lime text-lime" />
+                      <Star className="h-4 w-4 fill-lime text-lime" />
+                      <Star className="h-4 w-4 fill-lime text-lime" />
+                      <Star className="h-4 w-4 fill-lime text-lime" />
+                    </div>
+                    <p class="font-display text-sm font-semibold text-white">{depoimento.nome}</p>
+                  </div>
+                </div>
+                <p class="mb-4 font-display text-lg font-bold text-lime">{depoimento.contexto}</p>
+                <p class="font-sans text-body text-gray-300">{depoimento.texto}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Como Funciona Cada Formato -->
+    <section class="bg-dark py-24">
+      <Container>
+        <div class="mx-auto max-w-7xl">
+          <div class="mb-16 text-center">
+            <h2 class="mb-4 font-display text-display-sm text-white">
+              Como Funciona <span class="text-lime">Cada Formato</span>
+            </h2>
+            <p class="mx-auto max-w-3xl font-sans text-body-lg text-gray-300">
+              Processos estruturados para maximizar valor em cada sessão
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+            {processosAdvisory.map((proc) => (
+              <div class="rounded-2xl border-2 border-white/10 bg-white/5 p-8">
+                <h3 class="mb-2 font-display text-h2 text-white">{proc.titulo}</h3>
+                <p class="mb-6 font-sans text-sm text-lime">{proc.quando}</p>
+                <ul class="space-y-3">
+                  {proc.processo.map((passo) => (
+                    <li class="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
+                      <span class="font-sans text-body-sm text-gray-300">{passo}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </Container>
@@ -280,6 +431,33 @@ const e = [
                   </Button>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-dark py-24">
+      <Container>
+        <div class="mx-auto max-w-4xl">
+          <div class="mb-16 text-center">
+            <h2 class="mb-4 font-display text-display-sm text-white">
+              Perguntas <span class="text-lime">Frequentes</span>
+            </h2>
+          </div>
+
+          <div class="space-y-6">
+            {faq.map((item) => (
+              <details class="group rounded-xl border-2 border-white/10 bg-white/5 p-6 transition-all hover:border-lime/30">
+                <summary class="flex cursor-pointer items-start justify-between gap-4 font-display text-lg font-semibold text-white">
+                  <span>{item.pergunta}</span>
+                  <span class="text-lime transition-transform group-open:rotate-180">▼</span>
+                </summary>
+                <p class="mt-4 border-t border-white/10 pt-4 font-sans text-body text-gray-300">
+                  {item.resposta}
+                </p>
+              </details>
             ))}
           </div>
         </div>

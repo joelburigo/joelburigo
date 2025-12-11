@@ -6,7 +6,7 @@ date: 2025-12-08
 readTime: '12 min'
 author: 'Joel Burigo'
 featured: true
-heroImage: '../../../assets/images/blog/framework-6ps-vendas.png'
+heroImage: '../../assets/images/blog/framework-6ps-vendas.png'
 ---
 
 Depois de 17 anos estruturando vendas para 140 clientes, identifiquei um padrão: **80% dos problemas não são de produto, são de processo**.

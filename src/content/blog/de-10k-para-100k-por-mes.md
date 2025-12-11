@@ -4,7 +4,7 @@ excerpt: 'As 5 mudanças estruturais necessárias para sair de R$ 10k/mês para 
 category: 'Vendas Escaláveis'
 date: 2025-12-04
 readTime: '13 min'
-heroImage: '../../../assets/images/blog/crescimento-10k-100k-escalabilidade.png'
+heroImage: '../../assets/images/blog/crescimento-10k-100k-escalabilidade.png'
 ---
 
 Sair de R$ 10k/mês para R$ 100k/mês não é fazer 10x mais do mesmo. **É mudar estruturalmente como você vende.**

@@ -4,7 +4,7 @@ excerpt: 'Como quebrei minha primeira empresa aos 30, morei em barraco sem gelad
 category: 'Casos de Sucesso'
 date: 2025-11-29
 readTime: '15 min'
-heroImage: '../../../assets/images/blog/barraco-ao-milhao-transformacao.png'
+heroImage: '../../assets/images/blog/barraco-ao-milhao-transformacao.png'
 ---
 
 Essa não é história de sucesso da noite pro dia. **É história de quebra, barraco, tijolo e reconstrução.**

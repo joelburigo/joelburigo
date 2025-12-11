@@ -79,14 +79,25 @@ const { navLinks } = Astro.props
 </style>
 
 <script>
+  // Store cleanup function to prevent memory leaks
+  let cleanupMobileMenu: (() => void) | null = null
+
   function initMobileMenu() {
+    // Clean up previous listeners if they exist
+    if (cleanupMobileMenu) {
+      cleanupMobileMenu()
+    }
+
     const menuButton = document.querySelector('[data-menu-button]') as HTMLButtonElement
     const mobileMenu = document.querySelector('[data-mobile-menu]') as HTMLDivElement
     const menuLinks = document.querySelectorAll('[data-menu-link]')
 
     if (!menuButton || !mobileMenu) return
 
-    function toggleMenu() {
+    function toggleMenu(e: Event) {
+      e.preventDefault()
+      e.stopPropagation()
+      
       const isOpen = mobileMenu.classList.contains('active')
       
       if (isOpen) {
@@ -106,11 +117,21 @@ const { navLinks } = Astro.props
       document.body.style.overflow = ''
     }
 
+    // Add listeners
     menuButton.addEventListener('click', toggleMenu)
     
     menuLinks.forEach(link => {
       link.addEventListener('click', closeMenu)
     })
+
+    // Store cleanup function
+    cleanupMobileMenu = () => {
+      menuButton.removeEventListener('click', toggleMenu)
+      menuLinks.forEach(link => {
+        link.removeEventListener('click', closeMenu)
+      })
+      document.body.style.overflow = ''
+    }
   }
 
   // Initialize on page load

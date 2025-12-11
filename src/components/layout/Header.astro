@@ -102,10 +102,11 @@ const initialClasses = transparent
 <script>
   // Scroll effect - Header transparente no topo, escuro ao rolar
   function initHeaderScroll() {
-    const header = document.getElementById('main-header')
-    if (!header) return
+    const headerElement = document.getElementById('main-header')
+    if (!headerElement) return
     
-    const isTransparent = header.dataset.transparent === 'true'
+    const isTransparent = headerElement.dataset.transparent === 'true'
+    const header = headerElement // Type narrowing
     
     function handleScroll() {
       if (window.scrollY > 50) {
@@ -137,25 +138,31 @@ const initialClasses = transparent
   function initDropdown() {
     const dropdown = document.querySelector('[data-dropdown]')
     const trigger = document.querySelector('[data-dropdown-trigger]')
-    const menu = document.querySelector('[data-dropdown-menu]')
-    const icon = document.querySelector('[data-dropdown-icon]')
+    const menuElement = document.querySelector('[data-dropdown-menu]')
+    const iconElement = document.querySelector('[data-dropdown-icon]')
 
-    if (!dropdown || !trigger || !menu || !icon) return
+    if (!dropdown || !trigger || !menuElement || !iconElement) return
 
+    const menu = menuElement // Type narrowing
+    const icon = iconElement // Type narrowing
     let isOpen = false
 
     function openMenu() {
       isOpen = true
       menu.classList.remove('invisible', 'opacity-0')
       menu.classList.add('visible', 'opacity-100')
-      icon.style.transform = 'rotate(180deg)'
+      if (icon instanceof HTMLElement) {
+        icon.style.transform = 'rotate(180deg)'
+      }
     }
 
     function closeMenu() {
       isOpen = false
       menu.classList.add('invisible', 'opacity-0')
       menu.classList.remove('visible', 'opacity-100')
-      icon.style.transform = 'rotate(0deg)'
+      if (icon instanceof HTMLElement) {
+        icon.style.transform = 'rotate(0deg)'
+      }
     }
 
     function toggleMenu(e: Event) {

@@ -4,7 +4,7 @@ import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import Container from '../components/ui/Container.astro';
 import { TrendingUp, Award } from 'lucide-react';
-import { cases } from '../data/testimonials';
+import { cases } from '../data/cases';
 
 const seo = {
   title: 'Cases de Sucesso - Resultados Reais dos Clientes | Joel Burigo',
@@ -47,7 +47,7 @@ const seo = {
       <Container>
         <div class="grid gap-8 lg:grid-cols-2">
           {
-            cases.map((caso) => (
+            cases.map((caso: any) => (
               <div class="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all hover:border-lime/30">
                 {caso.badge && (
                   <div class="mb-4 inline-block rounded-full bg-lime/20 px-3 py-1">

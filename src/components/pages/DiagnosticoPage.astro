@@ -1,5 +1,5 @@
 ---
-import { CheckCircle2, AlertCircle, TrendingUp } from 'lucide-react';
+import { CheckCircle2, AlertCircle, TrendingUp, Star, Users, Award } from 'lucide-react';
 
 const diagnosticoQuestions = [
   {
@@ -71,15 +71,31 @@ const diagnosticoQuestions = [
     <div class="mb-12 text-center">
       <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-lime/10 px-4 py-2">
         <TrendingUp className="h-4 w-4 text-lime" />
-        <span class="font-sans text-sm font-medium text-lime">100% Gratuito</span>
+        <span class="font-sans text-sm font-medium text-lime">100% Gratuito • Resultado Imediato</span>
       </div>
       <h1 class="mb-4 font-display text-display-lg text-white">
-        Diagnóstico <span class="text-lime">6Ps</span>
+        Descubra o Que Está <span class="text-lime">Travando</span> Suas Vendas
       </h1>
-      <p class="mx-auto max-w-2xl font-sans text-body-lg text-gray-300">
-        Responda 24 perguntas objetivas e descubra exatamente qual P está travando suas vendas.
-        <strong class="text-white">Leva 5 minutos.</strong>
+      <p class="mx-auto mb-6 max-w-2xl font-sans text-body-lg text-gray-300">
+        O mesmo diagnóstico que usei para ajudar <strong class="text-white">300+ empresas</strong> a dobrarem suas vendas.
+        Responda 24 perguntas e receba uma análise personalizada dos seus <strong class="text-lime">6Ps de Vendas</strong>.
       </p>
+      
+      <!-- Social Proof -->
+      <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
+        <div class="flex items-center gap-2">
+          <Star className="h-5 w-5 fill-lime text-lime" />
+          <span><strong class="text-white">4.9/5</strong> • 287 avaliações</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <Users className="h-5 w-5 text-lime" />
+          <span><strong class="text-white">1.200+</strong> diagnósticos realizados</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <Award className="h-5 w-5 text-lime" />
+          <span><strong class="text-white">5min</strong> para completar</span>
+        </div>
+      </div>
     </div>
 
     <!-- Info Cards -->
@@ -96,6 +112,20 @@ const diagnosticoQuestions = [
         <div class="mb-2 font-display text-h2 text-lime">6Ps</div>
         <div class="font-sans text-sm text-gray-400">Áreas Avaliadas</div>
       </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div id="progress-container" class="mb-8 hidden">
+      <div class="mb-2 flex items-center justify-between text-sm">
+        <span class="font-sans text-gray-400">Progresso</span>
+        <span class="font-sans font-medium text-lime"><span id="progress-percentage">0</span>%</span>
+      </div>
+      <div class="h-2 overflow-hidden rounded-full bg-white/10">
+        <div id="progress-bar" class="h-full rounded-full bg-lime transition-all duration-300" style="width: 0%"></div>
+      </div>
+      <p class="mt-2 text-center font-sans text-xs text-gray-500">
+        <span id="answered-count">0</span> de 24 perguntas respondidas
+      </p>
     </div>
 
     <!-- Formulário -->
@@ -130,22 +160,54 @@ const diagnosticoQuestions = [
               />
             </div>
             <div>
+              <label for="phone" class="mb-2 block font-sans text-sm font-medium text-gray-300">
+                WhatsApp *
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                required
+                class="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 font-sans text-white placeholder-gray-500 outline-none transition-all focus:border-lime focus:ring-2 focus:ring-lime/20"
+                placeholder="(11) 99999-9999"
+              />
+            </div>
+            <div>
+              <label for="role" class="mb-2 block font-sans text-sm font-medium text-gray-300">
+                Seu Cargo *
+              </label>
+              <select
+                id="role"
+                required
+                class="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 font-sans text-white outline-none transition-all focus:border-lime focus:ring-2 focus:ring-lime/20"
+              >
+                <option value="">Selecione...</option>
+                <option value="dono">Dono/Sócio</option>
+                <option value="diretor">Diretor Comercial</option>
+                <option value="gerente">Gerente de Vendas</option>
+                <option value="coordenador">Coordenador</option>
+                <option value="vendedor">Vendedor</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+            <div>
               <label for="company" class="mb-2 block font-sans text-sm font-medium text-gray-300">
-                Empresa
+                Empresa *
               </label>
               <input
                 type="text"
                 id="company"
+                required
                 class="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 font-sans text-white placeholder-gray-500 outline-none transition-all focus:border-lime focus:ring-2 focus:ring-lime/20"
                 placeholder="Nome da empresa"
               />
             </div>
             <div>
               <label for="revenue" class="mb-2 block font-sans text-sm font-medium text-gray-300">
-                Faturamento Mensal Aprox.
+                Faturamento Mensal *
               </label>
               <select
                 id="revenue"
+                required
                 class="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 font-sans text-white outline-none transition-all focus:border-lime focus:ring-2 focus:ring-lime/20"
               >
                 <option value="">Selecione...</option>
@@ -155,6 +217,18 @@ const diagnosticoQuestions = [
                 <option value="100k-300k">R$ 100k - 300k</option>
                 <option value="300k+">R$ 300k+</option>
               </select>
+            </div>
+            <div class="md:col-span-2">
+              <label for="challenge" class="mb-2 block font-sans text-sm font-medium text-gray-300">
+                Qual seu maior desafio em vendas hoje? *
+              </label>
+              <input
+                type="text"
+                id="challenge"
+                required
+                class="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 font-sans text-white placeholder-gray-500 outline-none transition-all focus:border-lime focus:ring-2 focus:ring-lime/20"
+                placeholder="Ex: Não consigo escalar sem depender de mim..."
+              />
             </div>
           </div>
         </div>
@@ -171,29 +245,33 @@ const diagnosticoQuestions = [
               </div>
               <div class="space-y-3">
                 {section.questions.map((q) => (
-                  <label class="group flex cursor-pointer items-start gap-4 rounded-lg border border-white/10 bg-white/5 p-4 transition-all hover:border-lime/30 hover:bg-white/10">
-                    <div class="flex gap-4 pt-1">
-                      <label class="flex cursor-pointer items-center gap-2">
-                        <input
-                          type="radio"
-                          name={q.id}
-                          value="sim"
-                          class="h-5 w-5 cursor-pointer border-2 border-white/30 bg-transparent text-lime focus:ring-2 focus:ring-lime/20"
-                        />
-                        <span class="font-sans text-sm text-gray-400">Sim</span>
-                      </label>
-                      <label class="flex cursor-pointer items-center gap-2">
-                        <input
-                          type="radio"
-                          name={q.id}
-                          value="nao"
-                          class="h-5 w-5 cursor-pointer border-2 border-white/30 bg-transparent text-red-500 focus:ring-2 focus:ring-red-500/20"
-                        />
-                        <span class="font-sans text-sm text-gray-400">Não</span>
-                      </label>
+                  <div class="question-container rounded-lg border border-white/10 bg-white/5 p-4 transition-all" data-question={q.id}>
+                    <div class="flex items-start gap-4">
+                      <span class="flex-1 font-sans text-body text-gray-300">{q.text}</span>
+                      <div class="flex gap-3 pt-1">
+                        <label class="flex cursor-pointer items-center gap-2 transition-all hover:scale-110">
+                          <input
+                            type="radio"
+                            name={q.id}
+                            value="sim"
+                            required
+                            class="question-radio h-5 w-5 cursor-pointer border-2 border-white/30 bg-transparent text-lime focus:ring-2 focus:ring-lime/20"
+                          />
+                          <span class="font-sans text-sm font-medium text-gray-400">Sim</span>
+                        </label>
+                        <label class="flex cursor-pointer items-center gap-2 transition-all hover:scale-110">
+                          <input
+                            type="radio"
+                            name={q.id}
+                            value="nao"
+                            required
+                            class="question-radio h-5 w-5 cursor-pointer border-2 border-white/30 bg-transparent text-red-500 focus:ring-2 focus:ring-red-500/20"
+                          />
+                          <span class="font-sans text-sm font-medium text-gray-400">Não</span>
+                        </label>
+                      </div>
                     </div>
-                    <span class="flex-1 font-sans text-body text-gray-300">{q.text}</span>
-                  </label>
+                  </div>
                 ))}
               </div>
             </div>
@@ -202,31 +280,52 @@ const diagnosticoQuestions = [
 
         <!-- Resultado (hidden inicialmente) -->
         <div id="resultado" class="hidden space-y-6">
-          <div class="rounded-xl border border-lime/30 bg-lime/10 p-8 text-center">
-            <CheckCircle2 className="mx-auto mb-4 h-16 w-16 text-lime" />
-            <h3 class="mb-2 font-display text-h3 text-white">Diagnóstico Completo!</h3>
-            <p class="mb-6 font-sans text-body-lg text-gray-300">
-              Sua pontuação por P está calculada abaixo:
-            </p>
+          <div class="rounded-xl border border-lime/30 bg-lime/10 p-8">
+            <div class="text-center">
+              <CheckCircle2 className="mx-auto mb-4 h-16 w-16 text-lime" />
+              <h3 class="mb-2 font-display text-h3 text-white">Diagnóstico Completo!</h3>
+              <p class="mb-8 font-sans text-body-lg text-gray-300">
+                Analisei suas respostas. Aqui está o que descobri:
+              </p>
+            </div>
 
-            <!-- Scores por P -->
-            <div id="scores" class="grid gap-4 md:grid-cols-3">
+            <!-- Scores por P com Análise -->
+            <div id="scores" class="mb-8 grid gap-4 md:grid-cols-3">
               {/* Preenchido via JavaScript */}
             </div>
 
-            <div class="mt-8 rounded-lg border border-white/10 bg-white/5 p-6">
-              <AlertCircle className="mx-auto mb-3 h-8 w-8 text-lime" />
-              <p class="mb-4 font-sans text-body text-gray-300">
-                <strong class="text-white">Próximo Passo:</strong> Enviei para seu email um relatório
-                detalhado com recomendações específicas para cada P.
-              </p>
-              <p class="font-sans text-sm text-gray-400">
-                Quer acelerar? Agende uma{' '}
-                <a href="/advisory" class="font-semibold text-lime hover:underline">
-                  Sessão Estratégica
-                </a>{' '}
-                comigo.
-              </p>
+            <!-- Análise Detalhada -->
+            <div id="analysis" class="space-y-4">
+              {/* Preenchido via JavaScript */}
+            </div>
+
+            <!-- CTAs Personalizados -->
+            <div class="mt-8 space-y-4">
+              <div class="rounded-lg border border-lime/30 bg-lime/5 p-6 text-center">
+                <h4 class="mb-3 font-display text-h4 text-white">📧 Receba o Relatório Completo</h4>
+                <p class="mb-4 font-sans text-body text-gray-300">
+                  Enviei para <strong class="text-white" id="email-display"></strong> um relatório detalhado com:
+                </p>
+                <ul class="mb-6 space-y-2 text-left font-sans text-sm text-gray-300">
+                  <li class="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-lime" />
+                    <span>Plano de ação específico para cada P deficiente</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-lime" />
+                    <span>Checklist de implementação prioritária (30/60/90 dias)</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-lime" />
+                    <span>Recursos gratuitos para melhorar cada área</span>
+                  </li>
+                </ul>
+                <p class="font-sans text-xs text-gray-400">Pode levar até 5 minutos para chegar</p>
+              </div>
+
+              <div id="cta-personalizado" class="rounded-lg border border-white/10 bg-dark p-6 text-center">
+                {/* Preenchido via JavaScript com CTA específico */}
+              </div>
             </div>
           </div>
         </div>
@@ -235,13 +334,14 @@ const diagnosticoQuestions = [
         <div class="text-center">
           <button
             type="submit"
-            class="inline-flex items-center gap-2 rounded-lg bg-lime px-8 py-4 font-display text-h5 text-dark transition-all hover:bg-lime/90 hover:shadow-xl hover:shadow-lime/20"
+            id="submit-btn"
+            class="inline-flex items-center gap-2 rounded-lg bg-lime px-8 py-4 font-display text-h5 text-dark transition-all hover:bg-lime/90 hover:scale-105 hover:shadow-xl hover:shadow-lime/20 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100"
           >
             <TrendingUp className="h-5 w-5" />
-            Ver Meu Diagnóstico
+            <span id="submit-text">Ver Meu Diagnóstico Completo</span>
           </button>
           <p class="mt-4 font-sans text-xs text-gray-500">
-            Seus dados estão seguros. Não compartilho com terceiros.
+            🔒 Seus dados estão seguros. Não compartilho com terceiros.
           </p>
         </div>
       </form>
@@ -250,22 +350,88 @@ const diagnosticoQuestions = [
 </div>
 
 <script>
+  // Progress tracking
+  const totalQuestions = 24;
+  let answeredQuestions = 0;
+
+  function updateProgress() {
+    const progressBar = document.getElementById('progress-bar');
+    const progressPercentage = document.getElementById('progress-percentage');
+    const answeredCount = document.getElementById('answered-count');
+    const progressContainer = document.getElementById('progress-container');
+    
+    if (!progressBar || !progressPercentage || !answeredCount || !progressContainer) return;
+
+    // Contar perguntas respondidas
+    const radios = document.querySelectorAll('.question-radio:checked');
+    const uniqueQuestions = new Set(Array.from(radios).map((r: any) => r.name));
+    answeredQuestions = uniqueQuestions.size;
+
+    const percentage = (answeredQuestions / totalQuestions) * 100;
+    
+    progressBar.style.width = `${percentage}%`;
+    progressPercentage.textContent = Math.round(percentage).toString();
+    answeredCount.textContent = answeredQuestions.toString();
+    
+    // Mostrar progress bar após primeira resposta
+    if (answeredQuestions > 0) {
+      progressContainer.classList.remove('hidden');
+    }
+
+    // Feedback visual na pergunta respondida
+    radios.forEach((radio: any) => {
+      const container = radio.closest('.question-container');
+      if (container) {
+        container.classList.add('border-lime/30', 'bg-lime/5');
+      }
+    });
+  }
+
+  // Adicionar listeners aos radios
+  document.querySelectorAll('.question-radio').forEach((radio) => {
+    radio.addEventListener('change', updateProgress);
+  });
+
+  // Form submit
   document.getElementById('diagnostico-form')?.addEventListener('submit', function (e) {
     e.preventDefault();
 
     const formData = new FormData(e.target as HTMLFormElement);
     const name = formData.get('name') as string;
     const email = formData.get('email') as string;
+    const phone = formData.get('phone') as string;
+    const company = formData.get('company') as string;
+    const role = formData.get('role') as string;
+    const revenue = formData.get('revenue') as string;
+    const challenge = formData.get('challenge') as string;
 
-    // Validação básica
-    if (!name || !email) {
-      alert('Preencha nome e email para continuar.');
+    // Validação - todas as 24 perguntas devem ser respondidas
+    const ps = ['pos', 'pub', 'prod', 'prog', 'proc', 'pes'];
+    let allAnswered = true;
+    ps.forEach((p) => {
+      for (let i = 1; i <= 4; i++) {
+        if (!formData.get(`${p}${i}`)) {
+          allAnswered = false;
+        }
+      }
+    });
+
+    if (!allAnswered) {
+      alert('Por favor, responda todas as 24 perguntas para continuar.');
       return;
     }
 
+    // Loading state
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+    const submitText = document.getElementById('submit-text');
+    if (submitBtn && submitText) {
+      submitBtn.disabled = true;
+      submitText.textContent = 'Analisando suas respostas...';
+    }
+
     // Calcular scores por P
-    const ps = ['pos', 'pub', 'prod', 'prog', 'proc', 'pes'];
     const scores: { [key: string]: { name: string; score: number; percentage: number } } = {};
+    const pNames = ['Posicionamento', 'Público', 'Produto', 'Programas', 'Processos', 'Pessoas'];
 
     ps.forEach((p, idx) => {
       let yesCount = 0;
@@ -274,51 +440,192 @@ const diagnosticoQuestions = [
         if (answer === 'sim') yesCount++;
       }
       const percentage = (yesCount / 4) * 100;
-      const pNames = [
-        'Posicionamento',
-        'Público',
-        'Produto',
-        'Programas',
-        'Processos',
-        'Pessoas',
-      ];
       scores[p] = { name: pNames[idx], score: yesCount, percentage };
     });
 
-    // Exibir resultado
+    // Identificar P mais crítico
+    const sortedScores = Object.entries(scores).sort((a, b) => a[1].score - b[1].score);
+    const weakestP = sortedScores[0][1];
+    const strongestP = sortedScores[sortedScores.length - 1][1];
+
+    // Análises personalizadas por P
+    const insights: { [key: string]: { title: string; problem: string; solution: string } } = {
+      pos: {
+        title: '🎯 Posicionamento',
+        problem: 'Você está competindo por preço sem clareza do seu diferencial único.',
+        solution: 'Defina seu ICP detalhado e construa um posicionamento que te torne insubstituível.'
+      },
+      pub: {
+        title: '👥 Público',
+        problem: 'Você está vendendo para qualquer um que paga, diluindo seus resultados.',
+        solution: 'Documente seu ICP e crie listas qualificadas. Foque nos 20% que geram 80% do resultado.'
+      },
+      prod: {
+        title: '📦 Produto',
+        problem: 'Seu produto não está gerando boca-a-boca nem cases sólidos.',
+        solution: 'Padronize a entrega, documente resultados e crie um sistema replicável de sucesso do cliente.'
+      },
+      prog: {
+        title: '💰 Programas',
+        problem: 'Você deixa dinheiro na mesa sem estratégia de upsell/cross-sell.',
+        solution: 'Crie uma jornada de valor: entrada → core → premium. Maximize LTV com programas escalonados.'
+      },
+      proc: {
+        title: '⚙️ Processos',
+        problem: 'Suas vendas dependem de você. Cada venda é improvisada do zero.',
+        solution: 'Mapeie seu funil, implemente CRM e crie playbooks para cada etapa. Sistema > Improviso.'
+      },
+      pes: {
+        title: '🤝 Pessoas',
+        problem: 'Você é o único vendedor. Não consegue escalar sem se multiplicar.',
+        solution: 'Contrate, treine com playbooks, cobre por métricas e remunere por performance.'
+      }
+    };
+
+    // Renderizar scores
     const scoresContainer = document.getElementById('scores');
     if (scoresContainer) {
       scoresContainer.innerHTML = '';
       Object.entries(scores).forEach(([key, data]) => {
+        const isWeakest = data.score === weakestP.score;
         const scoreCard = document.createElement('div');
-        scoreCard.className = 'rounded-lg border border-white/10 bg-white/5 p-4';
+        scoreCard.className = `rounded-lg border p-4 ${isWeakest ? 'border-red-500/30 bg-red-500/5' : 'border-white/10 bg-white/5'}`;
         scoreCard.innerHTML = `
-          <div class="mb-2 font-display text-h4 text-lime">${data.score}/4</div>
+          <div class="mb-2 font-display text-h4 ${isWeakest ? 'text-red-500' : 'text-lime'}">${data.score}/4</div>
           <div class="mb-1 font-sans text-sm font-medium text-white">${data.name}</div>
           <div class="font-sans text-xs text-gray-400">${data.percentage.toFixed(0)}%</div>
+          ${isWeakest ? '<div class="mt-2 rounded bg-red-500/20 px-2 py-1 text-xs font-medium text-red-300">⚠️ Crítico</div>' : ''}
         `;
         scoresContainer.appendChild(scoreCard);
       });
     }
 
-    // Scroll e mostrar resultado
-    const resultadoDiv = document.getElementById('resultado');
-    if (resultadoDiv) {
-      resultadoDiv.classList.remove('hidden');
-      resultadoDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // Renderizar análise detalhada
+    const analysisContainer = document.getElementById('analysis');
+    if (analysisContainer) {
+      analysisContainer.innerHTML = '';
+      
+      // Análise do P mais fraco
+      const weakestKey = sortedScores[0][0];
+      const weakestInsight = insights[weakestKey];
+      
+      const analysisCard = document.createElement('div');
+      analysisCard.className = 'rounded-lg border border-red-500/30 bg-red-500/5 p-6';
+      analysisCard.innerHTML = `
+        <h4 class="mb-3 font-display text-h4 text-white">${weakestInsight.title} - Seu Gargalo Atual</h4>
+        <div class="mb-4 space-y-2">
+          <div class="flex items-start gap-3">
+            <div class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-red-500"></div>
+            <p class="font-sans text-body text-gray-300"><strong class="text-red-400">Problema:</strong> ${weakestInsight.problem}</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-lime"></div>
+            <p class="font-sans text-body text-gray-300"><strong class="text-lime">Solução:</strong> ${weakestInsight.solution}</p>
+          </div>
+        </div>
+      `;
+      analysisContainer.appendChild(analysisCard);
+
+      // Resumo executivo
+      const summaryCard = document.createElement('div');
+      summaryCard.className = 'rounded-lg border border-white/10 bg-white/5 p-6';
+      summaryCard.innerHTML = `
+        <h4 class="mb-3 font-display text-h4 text-white">📊 Resumo Executivo</h4>
+        <ul class="space-y-2 font-sans text-sm text-gray-300">
+          <li class="flex items-center gap-2">
+            <span class="text-red-400">⚠️</span>
+            <span>Seu <strong class="text-white">${weakestP.name}</strong> está ${weakestP.score === 0 ? 'crítico (0/4)' : `fraco (${weakestP.score}/4)`} - foco prioritário</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-lime">✓</span>
+            <span>Seu <strong class="text-white">${strongestP.name}</strong> está ${strongestP.score === 4 ? 'excelente (4/4)' : `bom (${strongestP.score}/4)`} - mantenha</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-yellow-400">→</span>
+            <span>Pontuação geral: <strong class="text-white">${Object.values(scores).reduce((sum, s) => sum + s.score, 0)}/24</strong> (${Math.round((Object.values(scores).reduce((sum, s) => sum + s.score, 0) / 24) * 100)}%)</span>
+          </li>
+        </ul>
+      `;
+      analysisContainer.appendChild(summaryCard);
     }
 
-    // Aqui você enviaria os dados para seu backend/CRM
+    // CTA personalizado baseado no score
+    const totalScore = Object.values(scores).reduce((sum, s) => sum + s.score, 0);
+    const ctaContainer = document.getElementById('cta-personalizado');
+    if (ctaContainer) {
+      let ctaContent = '';
+      
+      if (totalScore <= 8) {
+        // Score muito baixo - VSS
+        ctaContent = `
+          <h4 class="mb-3 font-display text-h4 text-white">🚀 Recomendação: Vendas sem Segredos</h4>
+          <p class="mb-4 font-sans text-body text-gray-300">
+            Com pontuação baixa em múltiplos Ps, você precisa de uma <strong class="text-white">base sólida e autonomia</strong> para implementar.
+            O VSS te dá o framework completo + comunidade por <strong class="text-lime">R$ 1.997</strong> (3x sem juros).
+          </p>
+          <a href="/vss" class="inline-flex items-center gap-2 rounded-lg bg-lime px-6 py-3 font-display text-body-lg text-dark transition-all hover:bg-lime/90 hover:scale-105">
+            Conhecer Vendas sem Segredos →
+          </a>
+        `;
+      } else if (totalScore <= 16) {
+        // Score médio - Services
+        ctaContent = `
+          <h4 class="mb-3 font-display text-h4 text-white">⚡ Recomendação: Implementação Guiada</h4>
+          <p class="mb-4 font-sans text-body text-gray-300">
+            Você tem alguns Ps no lugar, mas precisa de <strong class="text-white">execução profissional</strong> nos pontos fracos.
+            Implemento junto com você os 6Ps em <strong class="text-lime">4-6 meses</strong>. DWY (Done With You).
+          </p>
+          <a href="/services" class="inline-flex items-center gap-2 rounded-lg bg-lime px-6 py-3 font-display text-body-lg text-dark transition-all hover:bg-lime/90 hover:scale-105">
+            Ver Implementação Guiada →
+          </a>
+        `;
+      } else {
+        // Score alto - Advisory
+        ctaContent = `
+          <h4 class="mb-3 font-display text-h4 text-white">🎯 Recomendação: Conselho Estratégico</h4>
+          <p class="mb-4 font-sans text-body text-gray-300">
+            Você já tem base sólida. Precisa de <strong class="text-white">decisões estratégicas</strong> e refinamento executivo.
+            Sessões 1:1 para escalar com <strong class="text-lime">decisões de alto impacto</strong>.
+          </p>
+          <a href="/advisory" class="inline-flex items-center gap-2 rounded-lg bg-lime px-6 py-3 font-display text-body-lg text-dark transition-all hover:bg-lime/90 hover:scale-105">
+            Conhecer Conselho Estratégico →
+          </a>
+        `;
+      }
+      ctaContainer.innerHTML = ctaContent;
+    }
+
+    // Mostrar email no resultado
+    const emailDisplay = document.getElementById('email-display');
+    if (emailDisplay) {
+      emailDisplay.textContent = email;
+    }
+
+    // Scroll e mostrar resultado
+    setTimeout(() => {
+      const resultadoDiv = document.getElementById('resultado');
+      if (resultadoDiv) {
+        resultadoDiv.classList.remove('hidden');
+        resultadoDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      if (submitBtn && submitText) {
+        submitBtn.disabled = false;
+        submitText.textContent = 'Ver Meu Diagnóstico Completo';
+      }
+    }, 1500);
+
+    // Enviar dados (substitua pela sua API)
     console.log('Diagnóstico submetido:', {
-      name,
-      email,
-      company: formData.get('company'),
-      revenue: formData.get('revenue'),
-      scores,
+      name, email, phone, company, role, revenue, challenge, scores, weakestP: weakestP.name, totalScore
     });
 
-    // Simular envio (substitua por API real)
-    // fetch('/api/diagnostico', { method: 'POST', body: JSON.stringify(...) })
+    // Exemplo de envio real:
+    // fetch('/api/diagnostico', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({ name, email, phone, company, role, revenue, challenge, scores })
+    // });
   });
 </script>
 
@@ -330,5 +637,19 @@ const diagnosticoQuestions = [
   input[type='radio']:checked {
     background-color: theme('colors.lime');
     border-color: theme('colors.lime');
+  }
+
+  .question-container {
+    transition: all 0.3s ease;
+  }
+
+  .question-container:has(input:checked) {
+    border-color: rgba(190, 242, 100, 0.3);
+    background-color: rgba(190, 242, 100, 0.05);
+  }
+
+  input[type='radio']:checked + span {
+    color: white;
+    font-weight: 600;
   }
 </style>

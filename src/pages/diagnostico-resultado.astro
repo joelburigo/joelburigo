@@ -30,6 +30,37 @@ const seo = {
         </p>
       </div>
 
+      <!-- Aviso Importante -->
+      <div class="mb-8">
+        <div class="rounded-xl border-2 border-yellow-500/30 bg-yellow-500/5 p-6 backdrop-blur-sm">
+          <div class="mb-3 flex items-center gap-3">
+            <Target className="h-6 w-6 text-yellow-400" />
+            <h3 class="font-display text-h4 text-white">⚠️ Importante: Hierarquia dos 6Ps</h3>
+          </div>
+          <div class="grid gap-6 md:grid-cols-2">
+            <div>
+              <div class="mb-2 inline-flex items-center gap-2 rounded-full bg-lime/20 px-3 py-1">
+                <span class="font-sans text-xs font-bold text-lime">🎯 ESTRATÉGICOS (Peso Maior)</span>
+              </div>
+              <p class="mb-2 font-sans text-sm font-semibold text-white">1️⃣ Posicionamento → 2️⃣ Público → 3️⃣ Produto</p>
+              <p class="font-sans text-sm text-gray-300">Definem QUEM você é, para QUEM vende e O QUÊ oferece. Se estiverem fracos, nada mais funciona.</p>
+            </div>
+            <div>
+              <div class="mb-2 inline-flex items-center gap-2 rounded-full bg-blue-500/20 px-3 py-1">
+                <span class="font-sans text-xs font-bold text-blue-400">⚙️ TÁTICOS/OPERACIONAIS</span>
+              </div>
+              <p class="mb-2 font-sans text-sm font-semibold text-white">4️⃣ Programas → 5️⃣ Processos → 6️⃣ Pessoas</p>
+              <p class="font-sans text-sm text-gray-300">Definem COMO você vende, opera e executa. Só fazem sentido se os estratégicos estiverem sólidos.</p>
+            </div>
+          </div>
+          <div class="mt-4 rounded-lg bg-dark/50 p-4">
+            <p class="font-sans text-sm text-gray-300">
+              <strong class="text-yellow-400">⚠️ Regra de Ouro:</strong> Não adianta ter processos perfeitos se seu posicionamento é fraco. <strong class="text-white">Sempre priorize os Ps estratégicos primeiro.</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+
       <!-- Score Geral -->
       <div class="mb-12">
         <div class="rounded-2xl border border-lime/30 bg-lime/5 p-8 backdrop-blur-sm">
@@ -337,12 +368,18 @@ const seo = {
     const container = document.getElementById('ps-analysis');
     if (!container) return;
 
+    // Definir quais são estratégicos
+    const strategicPs = ['posicionamento', 'publico', 'produto'];
+
     Object.entries(scores).forEach(([key, score]) => {
       const pData = psData[key];
       const levelData = pData.levels[score];
+      const isStrategic = strategicPs.includes(key);
       
       const card = document.createElement('div');
-      card.className = 'rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-lime/30';
+      // Borda diferente para Ps estratégicos
+      const borderClass = isStrategic ? 'border-lime/30' : 'border-blue-500/20';
+      card.className = `rounded-xl border ${borderClass} bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-lime/50`;
       
       // Determinar cor baseado na pontuação
       let scoreColor = 'text-red-400';
@@ -350,13 +387,23 @@ const seo = {
       else if (score >= 2) scoreColor = 'text-yellow-400';
       else if (score >= 1) scoreColor = 'text-orange-400';
       
+      // Badge estratégico ou tático
+      const badge = isStrategic 
+        ? '<span class="inline-flex items-center gap-1 rounded-full bg-lime/20 px-2 py-0.5 text-xs font-bold text-lime">🎯 ESTRATÉGICO</span>'
+        : '<span class="inline-flex items-center gap-1 rounded-full bg-blue-500/20 px-2 py-0.5 text-xs font-bold text-blue-400">⚙️ TÁTICO</span>';
+
       card.innerHTML = `
         <div class="mb-4 flex items-start justify-between">
-          <div class="flex items-center gap-3">
-            <span class="text-3xl">${pData.icon}</span>
-            <div>
-              <h3 class="font-display text-h4 text-white">${pData.name}</h3>
-              <p class="font-sans text-sm text-gray-400">${pData.description}</p>
+          <div class="flex-1">
+            <div class="mb-2 flex items-center gap-2">
+              <span class="text-3xl">${pData.icon}</span>
+              <div class="flex-1">
+                <div class="flex items-center gap-2">
+                  <h3 class="font-display text-h4 text-white">${pData.name}</h3>
+                  ${badge}
+                </div>
+                <p class="font-sans text-sm text-gray-400">${pData.description}</p>
+              </div>
             </div>
           </div>
           <div class="text-right">
@@ -396,15 +443,25 @@ const seo = {
       .sort((a, b) => a[1] - b[1])
       .slice(0, 3); // Top 3 prioridades
 
+    // Identificar se prioridade é estratégica
+    const strategicPs = ['posicionamento', 'publico', 'produto'];
+    const hasStrategicIssue = sorted.some(([key]) => strategicPs.includes(key));
+
     container.innerHTML = `
       <p class="mb-4 font-sans text-body text-gray-300">
-        Baseado no framework dos 6Ps, recomendamos focar nesta ordem:
+        ${hasStrategicIssue 
+          ? '<strong class="text-yellow-400">⚠️ CRÍTICO:</strong> Você tem gaps nos Ps <strong class="text-white">estratégicos</strong>. Priorize-os <strong class="text-white">antes</strong> de trabalhar nos táticos/operacionais.'
+          : 'Baseado no framework dos 6Ps, recomendamos focar nesta ordem:'}
       </p>
       ${sorted.map(([key, score], index) => {
         const pData = psData[key];
+        const isStrategic = strategicPs.includes(key);
+        const urgencyBorder = isStrategic ? 'border-red-500/50' : 'border-orange-500/30';
+        const urgencyBg = isStrategic ? 'bg-red-500/10' : 'bg-orange-500/5';
+        const urgencyBadge = isStrategic ? 'bg-red-500' : 'bg-orange-500';
         return `
-          <div class="flex items-start gap-4 rounded-lg border border-red-500/30 bg-red-500/5 p-4">
-            <div class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-red-500 font-display text-lg font-bold text-white">
+          <div class="flex items-start gap-4 rounded-lg border ${urgencyBorder} ${urgencyBg} p-4">
+            <div class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full ${urgencyBadge} font-display text-lg font-bold text-white">
               ${index + 1}
             </div>
             <div class="flex-1">

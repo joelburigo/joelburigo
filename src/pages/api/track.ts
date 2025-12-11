@@ -3,10 +3,11 @@
 
 import type { APIRoute } from 'astro'
 
-const GA4_MEASUREMENT_ID = import.meta.env.PUBLIC_GA4_ID
+// Server-side only - estes IDs NÃO vão para o client
+const GA4_MEASUREMENT_ID = import.meta.env.GA4_MEASUREMENT_ID
 const GA4_API_SECRET = import.meta.env.GA4_API_SECRET
-const META_PIXEL_ID = import.meta.env.PUBLIC_META_PIXEL_ID
-const META_ACCESS_TOKEN = import.meta.env.META_CAPI_ACCESS_TOKEN
+const META_PIXEL_ID = import.meta.env.META_PIXEL_ID
+const META_ACCESS_TOKEN = import.meta.env.META_ACCESS_TOKEN
 
 // Hash user data for privacy (SHA-256)
 async function hashData(data: string): Promise<string> {

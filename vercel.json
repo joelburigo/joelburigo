@@ -3,6 +3,13 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/vss",
+      "destination": "/vendas-sem-segredos",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

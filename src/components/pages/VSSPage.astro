@@ -3,45 +3,34 @@ import Container from '../ui/Container.astro'
 import Button from '../ui/Button.astro'
 import VideoPlayer from '../ui/VideoPlayer.astro'
 import { CheckCircle2, PlayCircle, X, Users, BookOpen, Zap, Target, TrendingUp, Award, Clock, DollarSign, Star, Shield, Rocket, AlertCircle } from 'lucide-react'
+import { cases } from '../../data/cases'
+
+// Filtrar cases do VSS (6 cases exibidos, 7 disponíveis no arquivo)
+const casesVSS = cases.filter(c => c.produto === 'Vendas Sem Segredos').slice(0, 6)
+
+// Mapear cases para formato de depoimentos
+const nichoAvatars: Record<string, string> = {
+  'Estética e Beleza': '💅',
+  'Serviços Masculinos': '✂️',
+  'Varejo Feminino': '👗',
+  'Odontologia': '🦷',
+  'Serviços Jurídicos': '⚖️',
+  'Fitness Individual': '💪',
+  'Educação e Idiomas': '📚',
+}
+
+const depoimentos = casesVSS.map(c => ({
+  nome: c.empresa,
+  resultado: c.resultado,
+  texto: c.solucao.split('.')[0] + '.',
+  avatar: nichoAvatars[c.nicho] || '🏢'
+}))
 
 const oquee = [
   { icon: 'CheckCircle2', title: 'Implementação Prática', desc: '90 dias de trabalho estruturado, não só teoria' },
   { icon: 'Zap', title: 'Sistema Completo', desc: 'CRM + funis + processos + scripts funcionando' },
   { icon: 'Target', title: 'Funciona Sem Budget', desc: 'COM ou SEM tráfego pago, você escolhe a rota' },
   { icon: 'Users', title: '48 Mentorias ao Vivo', desc: 'Toda semana por 12 semanas, depois quinzenal' },
-]
-
-const depoimentos = [
-  {
-    nome: 'Encontre Sua Franquia',
-    resultado: 'R$ 60k → R$ 1M/mês em 24 meses',
-    texto: 'Antes do VSS eu vendia só por indicação. Hoje temos 5 SDRs, CRM estruturado e processo que funciona. Escalamos 16x.',
-    avatar: '🏢'
-  },
-  {
-    nome: 'Lojas Redes (Beleza & Cosméticos)',
-    resultado: '70 lojas físicas estruturadas',
-    texto: 'Com 15k SKUs e 2.800 colaboradores, usamos os 6Ps para estruturar vendas em escala. O Framework trouxe previsibilidade para expansão.',
-    avatar: '💄'
-  },
-  {
-    nome: 'Port Distribuidora',
-    resultado: '32 anos no mercado escalando',
-    texto: 'B2B e B2C com 11k SKUs, 7 lojas e 2 CDs. O VSS nos ajudou a organizar processos e treinar equipe para crescimento sustentável.',
-    avatar: '📦'
-  },
-  {
-    nome: 'Barbearia Premium',
-    resultado: 'R$ 18k → R$ 45k/mês em 8 meses',
-    texto: 'Saí de agenda caótica e WhatsApp bagunçado para CRM organizado com recorrência. Hoje sei exatamente quantos clientes vou atender.',
-    avatar: '✂️'
-  },
-  {
-    nome: 'Salão de Beleza Elegance',
-    resultado: 'R$ 25k → R$ 80k/mês em 10 meses',
-    texto: 'Implementei pacotes recorrentes e automação de follow-up. Taxa de retorno subiu de 40% para 75%. Sistema mudou o jogo.',
-    avatar: '💅'
-  }
 ]
 
 const diferenciais = [
@@ -271,7 +260,7 @@ const resultados = [
             </p>
           </div>
 
-          <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {depoimentos.map((depoimento) => (
               <div class="rounded-2xl border-2 border-lime/20 bg-white/5 p-8">
                 <div class="mb-4 flex items-center gap-4">
@@ -421,22 +410,20 @@ const resultados = [
 
           <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {modulos.map((modulo) => (
-              <details class="group rounded-xl border-2 border-white/10 bg-white/5 p-6 transition-all hover:border-lime/50 hover:shadow-lg hover:shadow-lime/10">
-                <summary class="cursor-pointer">
-                  <div class="mb-3 flex items-center justify-between">
-                    <span class="font-display text-2xl font-bold text-lime">{modulo.num}</span>
-                    <span class="rounded-full bg-white/10 px-3 py-1 font-sans text-xs font-semibold text-gray-300">
-                      {modulo.aulas} aulas
-                    </span>
-                  </div>
-                  <h4 class="font-display text-lg font-semibold text-white transition-colors group-hover:text-lime">
-                    {modulo.nome}
-                  </h4>
-                </summary>
-                <p class="mt-4 border-t border-white/10 pt-4 font-sans text-body-sm text-gray-400">
+              <div class="rounded-xl border-2 border-white/10 bg-white/5 p-6 transition-all hover:border-lime/50 hover:shadow-lg hover:shadow-lime/10">
+                <div class="mb-3 flex items-center justify-between">
+                  <span class="font-display text-2xl font-bold text-lime">{modulo.num}</span>
+                  <span class="rounded-full bg-white/10 px-3 py-1 font-sans text-xs font-semibold text-gray-300">
+                    {modulo.aulas} aulas
+                  </span>
+                </div>
+                <h4 class="mb-3 font-display text-lg font-semibold text-white">
+                  {modulo.nome}
+                </h4>
+                <p class="font-sans text-body-sm text-gray-400">
                   {modulo.desc}
                 </p>
-              </details>
+              </div>
             ))}
           </div>
         </div>

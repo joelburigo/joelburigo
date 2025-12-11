@@ -3,6 +3,10 @@ import Container from '../ui/Container.astro'
 import Button from '../ui/Button.astro'
 import VideoPlayer from '../ui/VideoPlayer.astro'
 import { CheckCircle2, ArrowRight, Zap, TrendingUp, Rocket, Star, Shield, Award } from 'lucide-react'
+import { cases } from '../../data/cases'
+
+// Filtrar cases do Services (Fundação, Aceleração, ScaleUp)
+const casesServices = cases.filter(c => c.produto.includes('Services')).slice(0, 3)
 
 const pacotes = [
   {
@@ -78,7 +82,21 @@ const diferenciais = [
   { titulo: 'Mão na Massa', desc: 'Eu implemento, você aprende' },
 ]
 
-const depoimentos = [
+// Mapear cases para formato de depoimentos
+const nichoAvatarsServices: Record<string, string> = {
+  'Serviços Contábeis': '📊',
+  'Marketing Digital': '🎨',
+  'Fisioterapia': '🏥',
+}
+
+const depoimentos = casesServices.map(c => ({
+  nome: c.empresa,
+  resultado: c.resultado,
+  texto: c.solucao.split('.').slice(0, 2).join('.') + '.',
+  avatar: nichoAvatarsServices[c.nicho] || '🏢'
+}))
+
+const OLD_depoimentos = [
   {
     nome: 'Agência de Marketing Digital',
     resultado: 'R$ 45k → R$ 180k/mês em 8 meses',

@@ -3,6 +3,10 @@ import Container from '../ui/Container.astro'
 import Button from '../ui/Button.astro'
 import VideoPlayer from '../ui/VideoPlayer.astro'
 import { CheckCircle2, Clock, Calendar, MessageSquare, Target, Zap, Award, Star, Shield } from 'lucide-react'
+import { cases } from '../../data/cases'
+
+// Filtrar cases do Advisory (Sessão, Sprint, Conselho)
+const casesAdvisory = cases.filter(c => c.produto.includes('Advisory'))
 
 const formatos = [
   {
@@ -92,7 +96,21 @@ const e = [
   'Quem entende que tempo > dinheiro',
 ]
 
-const depoimentos = [
+// Mapear cases para formato de depoimentos  
+const nichoAvatarsAdvisory: Record<string, string> = {
+  'Consultoria Empresarial': '💼',
+  'Tecnologia e Suporte TI': '💻',
+  'Clínicas Médicas (Holding)': '🏥',
+}
+
+const depoimentos = casesAdvisory.map(c => ({
+  nome: c.empresa,
+  contexto: c.resultado,
+  texto: c.solucao.split('.').slice(0, 2).join('.') + '.',
+  avatar: nichoAvatarsAdvisory[c.nicho] || '💼'
+}))
+
+const OLD_depoimentos = [
   {
     nome: 'Founder de SaaS',
     contexto: 'Sprint 30 dias → Captação seed',

@@ -19,6 +19,10 @@ const blog = defineCollection({
     author: z.string().default('Joel Burigo'),
     featured: z.boolean().default(false),
     heroImage: image().optional(),
+    // SEO Cluster Strategy
+    pillarContent: z.boolean().default(false),
+    relatedArticles: z.array(z.string()).optional(),
+    clusterKeywords: z.array(z.string()).optional(),
   }),
 })
 

@@ -4,8 +4,20 @@ excerpt: 'A diferença entre empresas que escalam e empresas que estagnam está 
 category: 'Vendas Escaláveis'
 date: 2025-12-07
 readTime: '10 min'
+author: 'Joel Burigo'
+featured: false
 heroImage: '../../assets/images/blog/sistema-vs-improviso-vendas.png'
+relatedArticles:
+  - '6ps-vendas-escalaveis-guia-completo'
+  - 'como-estruturar-vendas-do-zero'
+  - 'metricas-vendas-essenciais'
+clusterKeywords:
+  - 'sistema de vendas'
+  - 'vendas escaláveis'
+  - 'P5 processos'
 ---
+
+> **Série**: Este artigo faz parte do [Framework dos 6Ps das Vendas Escaláveis](/blog/6ps-vendas-escalaveis-guia-completo) • **P5: Processos**
 
 A diferença entre empresas que escalam e empresas que estagnam está em uma palavra: **sistema**.
 

@@ -4,8 +4,19 @@ excerpt: 'Por que posicionamento claro é a base de tudo e como definir o seu em
 category: 'Framework 6Ps'
 date: 2025-12-03
 readTime: '10 min'
+author: 'Joel Burigo'
+featured: false
 heroImage: '../../assets/images/blog/posicionamento-diferencial-mercado.png'
+relatedArticles:
+  - '6ps-vendas-escalaveis-guia-completo'
+  - 'icp-cliente-ideal-perfil'
+clusterKeywords:
+  - 'posicionamento de mercado'
+  - 'diferencial competitivo'
+  - 'P1 framework 6Ps'
 ---
+
+> **Série**: Este artigo faz parte do [Framework dos 6Ps das Vendas Escaláveis](/blog/6ps-vendas-escalaveis-guia-completo) • **P1: Posicionamento**
 
 90% das micro e pequenas empresas não sabem responder: **"Por que alguém deveria comprar de você e não do concorrente?"**
 

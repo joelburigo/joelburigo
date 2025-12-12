@@ -4,8 +4,19 @@ excerpt: 'A diferença entre vender para "todo mundo" e vender para quem realmen
 category: 'Framework 6Ps'
 date: 2025-12-02
 readTime: '9 min'
+author: 'Joel Burigo'
+featured: false
 heroImage: '../../assets/images/blog/icp-cliente-ideal-targeting.png'
+relatedArticles:
+  - '6ps-vendas-escalaveis-guia-completo'
+  - 'posicionamento-diferencial-unico'
+clusterKeywords:
+  - 'ICP cliente ideal'
+  - 'perfil cliente ideal'
+  - 'P2 framework 6Ps'
 ---
+
+> **Série**: Este artigo faz parte do [Framework dos 6Ps das Vendas Escaláveis](/blog/6ps-vendas-escalaveis-guia-completo) • **P2: Público**
 
 "Todo mundo" não é cliente. **Quanto mais específico seu ICP, maior sua taxa de conversão.**
 

@@ -1,0 +1,149 @@
+---
+import Layout from '../layouts/Layout.astro'
+import LogoStacked from '../components/ui/LogoStacked.astro'
+
+const links = [
+  {
+    emoji: '🎯',
+    title: 'DIAGNÓSTICO GRATUITO DOS 6Ps',
+    url: '/diagnostico',
+    highlight: true,
+  },
+  {
+    emoji: '🚀',
+    title: 'VSS — VENDAS SEM SEGREDOS',
+    url: '/vendas-sem-segredos',
+    highlight: true,
+  },
+  {
+    emoji: '📺',
+    title: 'YOUTUBE — Conteúdo Completo',
+    url: 'https://youtube.com/@joelburigo',
+    external: true,
+  },
+  {
+    emoji: '💼',
+    title: 'LINKEDIN — Conexão Profissional',
+    url: 'https://linkedin.com/in/joelburigo',
+    external: true,
+  },
+  {
+    emoji: '📱',
+    title: 'WHATSAPP — Fale Comigo',
+    url: 'https://wa.me/5547988217935',
+    external: true,
+  },
+  {
+    emoji: '🌐',
+    title: 'SITE COMPLETO',
+    url: '/',
+  },
+]
+---
+
+<Layout
+  title="Links"
+  description="Todos os links de Joel Burigo - Criador dos 6Ps das Vendas Escaláveis"
+  noIndex={true}
+>
+  <main class="min-h-screen bg-gradient-to-b from-dark via-dark-gray to-dark py-12 px-4">
+    <div class="max-w-2xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-8 animate-fade-in">
+        <div class="mb-6 flex justify-center">
+          <div class="w-32 h-32 rounded-full bg-lime/10 border-2 border-lime flex flex-col items-center justify-center gap-0">
+            <span class="font-display font-black text-white text-2xl tracking-tight leading-tight">JOEL</span>
+            <span class="font-display font-medium text-lime text-2xl tracking-tight leading-tight">BURIGO</span>
+          </div>
+        </div>
+        <h1 class="text-h1 font-display text-white mb-3">
+          Joel Burigo | Vendas Escaláveis
+        </h1>
+        <p class="text-body-lg text-gray-400 font-sans">
+          Criador dos 6Ps das Vendas Escaláveis
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div class="space-y-4">
+        {links.map((link, index) => (
+          <a
+            href={link.url}
+            target={link.external ? '_blank' : undefined}
+            rel={link.external ? 'noopener noreferrer' : undefined}
+            class={`
+              group block w-full p-5 rounded-2xl
+              transition-all duration-300
+              hover:scale-105 hover:-translate-y-1
+              focus:outline-none focus:ring-2 focus:ring-lime focus:ring-offset-2 focus:ring-offset-dark
+              animate-slide-up
+              ${link.highlight 
+                ? 'bg-gradient-to-r from-lime to-lime/80 text-dark shadow-lg shadow-lime/20 hover:shadow-lime/40' 
+                : 'bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-white/20'
+              }
+            `}
+            style={`animation-delay: ${index * 0.1}s`}
+          >
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <span class="text-3xl" aria-hidden="true">
+                  {link.emoji}
+                </span>
+                <span class={`font-display font-bold text-sm md:text-base ${link.highlight ? 'text-dark' : 'text-white'}`}>
+                  {link.title}
+                </span>
+              </div>
+              <svg
+                class={`w-5 h-5 transition-transform group-hover:translate-x-1 ${link.highlight ? 'text-dark/70' : 'text-white/70'}`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- Footer -->
+      <div class="text-center mt-12 text-gray-500 text-body-sm font-sans">
+        <p>© 2025 Joel Burigo. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    opacity: 0;
+    animation: slide-up 0.6s ease-out forwards;
+  }
+</style>
+</Layout>

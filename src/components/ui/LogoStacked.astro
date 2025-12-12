@@ -1,0 +1,37 @@
+---
+interface Props {
+  class?: string
+  size?: 'sm' | 'md' | 'lg' | 'xl'
+}
+
+const { class: className = '', size = 'md' } = Astro.props
+
+const sizeClasses = {
+  sm: 'w-20 h-20',
+  md: 'w-28 h-28',
+  lg: 'w-36 h-36',
+  xl: 'w-48 h-48'
+}
+
+const textSizeClasses = {
+  sm: 'text-xs',
+  md: 'text-sm',
+  lg: 'text-base',
+  xl: 'text-xl'
+}
+---
+
+<div class={`relative inline-flex items-center justify-center ${sizeClasses[size]} ${className}`}>
+  <!-- Círculo de fundo -->
+  <div class="absolute inset-0 rounded-full bg-gradient-to-br from-lime via-emerald-400 to-lime/80"></div>
+  
+  <!-- Texto empilhado -->
+  <div class="relative z-10 flex flex-col items-center justify-center leading-none">
+    <span class={`font-display font-black text-white ${textSizeClasses[size]} tracking-tight`}>
+      JOEL
+    </span>
+    <span class={`font-display font-black text-white ${textSizeClasses[size]} tracking-tight`}>
+      BURIGO
+    </span>
+  </div>
+</div>

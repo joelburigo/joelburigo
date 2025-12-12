@@ -35,9 +35,13 @@
     "@types/react-dom": "^18.2.0",
     "lightningcss": "^1.30.2",
     "pagefind": "^1.4.0",
+    "path-to-regexp": "^8.3.0",
     "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "typescript": "^5.3.0"
+  },
+  "overrides": {
+    "path-to-regexp": "^8.3.0"
   }
 }

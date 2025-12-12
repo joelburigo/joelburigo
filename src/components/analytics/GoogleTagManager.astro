@@ -1,27 +1,21 @@
 ---
-// Google Tag Manager - Optimized with Partytown
-// Following Astro best practices for third-party scripts
-// https://docs.astro.build/en/guides/integrations-guide/partytown/
-
-const GTM_ID = import.meta.env.PUBLIC_GTM_ID
+// Google Tag Manager - GTM First Strategy
+// GA4, Meta Pixel, Google Ads são configurados NO GTM
+// SEM Partytown para compatibilidade máxima com todas as tags
+const GTM_ID = import.meta.env.PUBLIC_GTM_ID || 'GTM-TWP4J6N8'
 ---
 
-{GTM_ID && (
-  <>
-    <!-- Initialize dataLayer (must be inline and before GTM) -->
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-    </script>
+<!-- Initialize dataLayer (must be inline and before GTM) -->
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+</script>
 
-    <!-- Google Tag Manager with Partytown for better performance -->
-    <!-- Runs in Web Worker to keep main thread free -->
-    <script type="text/partytown" define:vars={{ GTM_ID }}>
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer',GTM_ID);
-    </script>
-    <!-- End Google Tag Manager -->
-  </>
-)}
+<!-- Google Tag Manager -->
+<script is:inline define:vars={{ GTM_ID }}>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer',GTM_ID);
+</script>
+<!-- End Google Tag Manager -->

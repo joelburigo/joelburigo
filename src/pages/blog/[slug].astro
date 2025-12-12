@@ -65,7 +65,7 @@ const articleSchema = {
   "dateModified": post.data.date.toISOString(),
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": `https://joelburigo.com.br/blog/${post.slug}`
+    "@id": `https://joelburigo.com.br/blog/${post.id}`
   },
   "articleSection": post.data.category,
   "keywords": `${post.data.category}, vendas escaláveis, Joel Burigo`,
@@ -179,7 +179,7 @@ const articleSchema = {
           <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
             {relatedPosts.map((relatedPost) => (
               <a
-                href={`/blog/${relatedPost.slug}`}
+                href={`/blog/${relatedPost.id}`}
                 class="group flex flex-col overflow-hidden rounded-2xl border-2 border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-lime/50"
               >
                 <span class="mb-3 inline-block w-fit rounded-full bg-royal-blue/20 px-3 py-1 font-display text-xs font-semibold text-royal-blue">

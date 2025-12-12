@@ -40,7 +40,7 @@ import { Image } from 'astro:assets'
               
               {/* Stars */}
               <div class="relative z-10 mb-6 flex gap-1">
-                {Array.from({ length: t.rating }).map((_, s) => (
+                {Array.from({ length: t.rating }).map(() => (
                   <Star className="h-5 w-5 fill-lime text-lime" />
                 ))}
               </div>

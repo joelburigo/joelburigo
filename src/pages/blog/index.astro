@@ -299,7 +299,7 @@ const categories = [
     function filterAndShowPosts(category: string | null) {
       let visibleCount = 0
       
-      postCards.forEach((card, index) => {
+      postCards.forEach((card) => {
         const postCategory = card.getAttribute('data-category')
         const matchesCategory = !category || category === 'Todos' || postCategory === category
         

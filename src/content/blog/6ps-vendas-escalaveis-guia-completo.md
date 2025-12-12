@@ -7,6 +7,7 @@ readTime: '25 min'
 author: 'Joel Burigo'
 featured: true
 pillarContent: true
+heroImage: '../../assets/images/blog/6ps-vendas-escalaveis-hero.png'
 relatedArticles:
   - 'posicionamento-diferencial-unico'
   - 'icp-cliente-ideal-perfil'

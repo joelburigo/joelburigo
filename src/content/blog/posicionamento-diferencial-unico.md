@@ -6,7 +6,7 @@ date: 2025-12-03
 readTime: '22 min'
 author: 'Joel Burigo'
 featured: false
-heroImage: '../../assets/images/blog/posicionamento-diferencial-mercado.png'
+heroImage: '../../assets/images/blog/posicionamento-diferencial-unico.png'
 relatedArticles:
   - '6ps-vendas-escalaveis-guia-completo'
   - 'icp-cliente-ideal-perfil'

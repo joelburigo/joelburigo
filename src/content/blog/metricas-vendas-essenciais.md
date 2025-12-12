@@ -6,7 +6,7 @@ date: 2025-11-30
 readTime: '20 min'
 author: 'Joel Burigo'
 featured: true
-heroImage: '../../assets/images/blog/metricas-vendas-dashboard.png'
+heroImage: '../../assets/images/blog/metricas-vendas-essenciais.png'
 relatedArticles:
   - '6ps-vendas-escalaveis-guia-completo'
   - 'sistema-melhor-que-improviso'

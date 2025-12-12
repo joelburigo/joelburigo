@@ -63,7 +63,7 @@ PROMPT="$1"
 FILE_NAME="$2"
 ASPECT_RATIO="${3:-16:9}"
 IMAGE_SIZE="${4:-2K}"
-IMAGE_OUTPUT_DIR="/Users/joel/Documents/Dev/joelburigo/public/images"
+IMAGE_OUTPUT_DIR="/Users/joel/Documents/Dev/joelburigo/src/assets/images/blog"
 
 # Criar diretório de saída se não existir
 mkdir -p "$IMAGE_OUTPUT_DIR"

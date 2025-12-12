@@ -6,7 +6,7 @@ date: 2025-12-04
 readTime: '26 min'
 author: 'Joel Burigo'
 featured: true
-heroImage: '../../assets/images/blog/crescimento-10k-100k-escalabilidade.png'
+heroImage: '../../assets/images/blog/de-10k-para-100k-por-mes.png'
 relatedArticles:
   - '6ps-vendas-escalaveis-guia-completo'
   - 'sistema-melhor-que-improviso'

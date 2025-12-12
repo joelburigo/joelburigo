@@ -6,7 +6,7 @@ date: 2025-11-29
 readTime: '28 min'
 author: 'Joel Burigo'
 featured: true
-heroImage: '../../assets/images/blog/barraco-ao-milhao-transformacao.png'
+heroImage: '../../assets/images/blog/do-barraco-ao-milhao.png'
 relatedArticles:
   - '6ps-vendas-escalaveis-guia-completo'
   - 'sistema-melhor-que-improviso'

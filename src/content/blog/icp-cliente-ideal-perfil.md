@@ -6,7 +6,7 @@ date: 2025-12-02
 readTime: '25 min'
 author: 'Joel Burigo'
 featured: false
-heroImage: '../../assets/images/blog/icp-cliente-ideal-targeting.png'
+heroImage: '../../assets/images/blog/icp-cliente-ideal-perfil.png'
 relatedArticles:
   - '6ps-vendas-escalaveis-guia-completo'
   - 'posicionamento-diferencial-unico'

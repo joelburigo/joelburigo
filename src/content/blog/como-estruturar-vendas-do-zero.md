@@ -6,7 +6,7 @@ date: 2025-12-08
 readTime: '12 min'
 author: 'Joel Burigo'
 featured: true
-heroImage: '../../assets/images/blog/framework-6ps-vendas.png'
+heroImage: '../../assets/images/blog/como-estruturar-vendas-do-zero.png'
 relatedArticles:
   - '6ps-vendas-escalaveis-guia-completo'
   - 'sistema-melhor-que-improviso'

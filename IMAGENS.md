@@ -45,7 +45,7 @@ Script para gerar imagens dos artigos do blog usando Gemini AI.
 
 ## Saída
 
-Imagens são salvas em: `/Users/joel/Documents/Dev/joelburigo/public/images/`
+Imagens são salvas em: `/Users/joel/Documents/Dev/joelburigo/src/assets/images/blog/`
 
 ## Dicas de Prompt
 

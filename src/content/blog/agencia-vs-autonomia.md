@@ -6,7 +6,7 @@ date: 2025-12-06
 readTime: '22 min'
 author: 'Joel Burigo'
 featured: true
-heroImage: '../../assets/images/blog/autonomia-empresarial-independencia.png'
+heroImage: '../../assets/images/blog/agencia-vs-autonomia.png'
 relatedArticles:
   - '6ps-vendas-escalaveis-guia-completo'
   - 'sistema-melhor-que-improviso'

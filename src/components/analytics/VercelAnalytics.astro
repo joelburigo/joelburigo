@@ -1,11 +1,7 @@
 ---
 // Vercel Analytics & Speed Insights Integration
-// Only inject in production
+// Sempre carrega para funcionar em dev e prod
 ---
 
-{import.meta.env.PROD && (
-  <>
-    <script is:inline src="https://va.vercel-scripts.com/v1/script.debug.js" defer></script>
-    <script is:inline src="https://va.vercel-scripts.com/v1/speed-insights/script.debug.js" defer></script>
-  </>
-)}
+<script is:inline src="https://va.vercel-scripts.com/v1/script.js" defer></script>
+<script is:inline src="https://va.vercel-scripts.com/v1/speed-insights/script.js" defer></script>

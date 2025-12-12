@@ -1,0 +1,14 @@
+---
+// Google Ads - Conversion Tracking
+// Hardcoded para simplificar
+const GOOGLE_ADS_ID = 'AW-17800140385'
+---
+
+<!-- Google Ads (Google AdWords) Conversion Tracking -->
+<script is:inline type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`}></script>
+<script is:inline define:vars={{ GOOGLE_ADS_ID }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', GOOGLE_ADS_ID);
+</script>

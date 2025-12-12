@@ -11,124 +11,116 @@ Este site usa **GTM First** - tudo é configurado no Google Tag Manager, não no
 - Instalado no site via `GoogleTagManager.astro`
 - DataLayer inicializado corretamente
 
-### 2. Configurar GA4 no GTM
+### 2. Configurar GA4 para Navegação SPA
 
-#### Passo 1: Criar Tag GA4
-1. No GTM, vá em **Tags → New**
-2. **Tag Configuration:**
-   - Tag Type: `Google Analytics: GA4 Configuration`
-   - Measurement ID: Cole seu ID GA4 (formato: `G-XXXXXXXXXX`)
-   
-3. **Triggering:**
-   - Trigger: `Initialization - All Pages`
-   
-4. Salve como: `GA4 - Configuration`
+Você já tem a **Tag do Google** (`G-Z2XMZ448VV`) configurada! 
+Agora só precisa adicionar suporte para navegação SPA:
 
-#### Passo 2: Criar Tag de PageView
-1. No GTM, vá em **Tags → New**
-2. **Tag Configuration:**
-   - Tag Type: `Google Analytics: GA4 Event`
-   - Configuration Tag: Selecione `GA4 - Configuration`
-   - Event Name: `page_view`
-   
-3. **Triggering:**
-   - Trigger: `Custom Event`
-   - Event name: `page_view`
-   
-4. Salve como: `GA4 - Page View`
+#### Criar Acionador de SPA:
+1. No GTM, vá em **Acionadores → Novo**
+2. **Configuração do acionador:**
+   - Tipo de acionador: `Evento personalizado`
+   - Nome do evento: `page_view`
+   - Este acionador é disparado em: `Todos os eventos personalizados`
+3. Salve como: `Evento personalizado - page_view`
 
-#### Passo 3: Criar Trigger para SPA
-1. No GTM, vá em **Triggers → New**
-2. **Trigger Configuration:**
-   - Trigger Type: `Custom Event`
-   - Event name: `page_view`
-   - This trigger fires on: `All Custom Events`
-   
-3. Salve como: `Custom Event - page_view`
+#### Adicionar Acionador na Tag do Google:
+1. Abra sua **Tag do Google** existente
+2. Em **Acionamento**, clique para adicionar mais acionadores
+3. Selecione **ambos**:
+   - ✅ `Inicialização - Todas as páginas` (já tem)
+   - ✅ `Evento personalizado - page_view` (adicionar agora)
+4. Salve
 
-### 3. Configurar Consent Mode V2 (IMPORTANTE)
+**Pronto!** GA4 agora rastreia:
+- ✅ Primeiro pageview automático
+- ✅ Navegação SPA (troca de página sem reload)
 
-#### No GTM:
-1. Vá em **Admin → Container Settings**
-2. Ative **Enable Consent Overview**
+### 3. Configurar Consent Mode V2 (OPCIONAL - Avançado)
 
-#### Criar Tag de Consent Padrão:
-1. **Tags → New**
-2. **Tag Configuration:**
-   - Tag Type: `Consent Initialization - Google tags`
-   - Consent Command: `default`
-   - **Consent Settings:**
-     ```
-     ad_storage: denied
-     ad_user_data: denied
-     ad_personalization: denied
-     analytics_storage: denied
-     personalization_storage: denied
-     ```
-   - Regions: `All regions`
-   
-3. **Advanced Settings:**
-   - Tag firing priority: `999` (maior prioridade)
-   
-4. **Triggering:** `Consent Initialization - All Pages`
-5. Salve como: `Consent - Default State`
+**IMPORTANTE:** O site já gerencia cookies via `CookieConsent.astro` e envia eventos corretos ao GTM.
 
-#### Criar Trigger para Update de Consent:
-1. **Triggers → New**
-2. **Trigger Type:** `Custom Event`
-3. **Event name:** `cookie_consent_update`
+**Você tem 2 opções:**
+
+#### Opção A: Deixar como está (Mais simples) ✅
+O banner de cookies já funciona e envia `cookie_consent_update` ao dataLayer.
+GA4 e Meta Pixel só carregam após o usuário aceitar.
+
+**Não precisa fazer nada adicional!**
+
+#### Opção B: Implementar Consent Mode V2 no GTM (Avançado)
+
+**Passo 1 - Tag de Consentimento Padrão (HTML Personalizado):**
+1. **Tags → Nova**
+2. **Tipo de tag:** `HTML personalizado`
+3. Cole este código:
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  
+  // Estado padrão (tudo negado)
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'personalization_storage': 'denied'
+  });
+</script>
+```
+4. **Configurações avançadas → Prioridade de disparo:** `999`
+5. **Acionamento:** `Todas as páginas`
+6. Salve como: `Consent Mode - Default State`
+
+**Passo 2 - Criar Acionador:**
+1. **Acionadores → Novo**
+2. **Tipo:** `Evento personalizado`
+3. **Nome do evento:** `cookie_consent_update`
 4. Salve como: `Cookie Consent Update`
 
-#### Criar Tag para Atualizar Consent:
-1. **Tags → New**
-2. **Tag Configuration:**
-   - Tag Type: `Consent Initialization - Google tags`
-   - Consent Command: `update`
-   - **Built-In Variables necessárias:** Ative em `Variables`:
-     - `Event`
-     - Crie Custom Variables:
-       - Name: `dlv - consent_state`
-       - Variable Type: `Data Layer Variable`
-       - Data Layer Variable Name: `consent_state`
-   
-3. **Consent Settings (condicionais):**
-   ```
-   Se dlv - consent_state = "granted":
-     ad_storage: granted
-     ad_user_data: granted
-     ad_personalization: granted
-     analytics_storage: granted
-     personalization_storage: granted
-   ```
-   
-4. **Triggering:** `Cookie Consent Update`
-5. Salve como: `Consent - Update on Accept/Reject`
+**Passo 3 - Tag de Atualização de Consentimento:**
+1. **Tags → Nova**
+2. **Tipo de tag:** `HTML personalizado`
+3. Cole este código:
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  
+  // Pega o estado do consentimento do dataLayer
+  var consentState = {{dlv - consent_state}};
+  
+  // Atualiza baseado na escolha do usuário
+  if (consentState === 'granted') {
+    gtag('consent', 'update', {
+      'ad_storage': 'granted',
+      'ad_user_data': 'granted',
+      'ad_personalization': 'granted',
+      'analytics_storage': 'granted',
+      'personalization_storage': 'granted'
+    });
+  }
+</script>
+```
+4. **Acionamento:** `Cookie Consent Update`
+5. Salve como: `Consent Mode - Update`
 
-### 4. Configurar Meta Pixel no GTM (OPCIONAL)
+**Passo 4 - Criar Variável:**
+1. **Variáveis → Variáveis definidas pelo usuário → Nova**
+2. **Tipo:** `Variável da camada de dados`
+3. **Nome da variável da camada de dados:** `consent_state`
+4. Salve como: `dlv - consent_state`
 
-O site já tem Meta Pixel hardcoded (`693646216957142`), mas você pode gerenciar via GTM:
+**Pronto!** Consent Mode V2 configurado.
 
-1. **Tags → New**
-2. **Tag Configuration:**
-   - Tag Type: `Custom HTML`
-   - HTML:
-     ```html
-     <script>
-     !function(f,b,e,v,n,t,s)
-     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-     if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-     n.queue=[];t=b.createElement(e);t.async=!0;
-     t.src=v;s=b.getElementsByTagName(e)[0];
-     s.parentNode.insertBefore(t,s)}(window, document,'script',
-     'https://connect.facebook.net/en_US/fbevents.js');
-     fbq('init', '693646216957142');
-     fbq('track', 'PageView');
-     </script>
-     ```
-   
-3. **Triggering:** `All Pages`
-4. Salve como: `Meta Pixel - Base Code`
+### 4. Meta Pixel (✅ JÁ CONFIGURADO)
+
+O site já tem Meta Pixel hardcoded (`693646216957142`) via `MetaPixel.astro`.
+
+**Você já tem no GTM:** `Meta Pixel ID 693646216957142` como HTML personalizado.
+
+**Está perfeito assim!** Não precisa mudar nada.
 
 ### 5. Testar Tudo
 
@@ -151,28 +143,28 @@ O site já tem Meta Pixel hardcoded (`693646216957142`), mas você pode gerencia
 2. Abra seu site
 3. Clique no ícone → deve mostrar pixel ativo
 
+### 6. PublicarVisualizar** (Preview)
+2. Digite a URL do seu site
+3. Navegue pelo site
+4. Verifique no painel:
+   - ✅ Tags disparando corretamente
+   - ✅ Eventos `page_view` em cada navegação
+   - ✅ Consentimento sendo respeitado
+
+#### No GA4:
+1. Vá em **Relatórios → Tempo real**
+2. Navegue no seu site
+3. Deve aparecer em tempo real
+
+#### Meta Pixel:
+1. Instale **Meta Pixel Helper** (extensão Chrome)
+2. Abra seu site
+3. Clique no ícone → deve mostrar pixel ativo
+
 ### 6. Publicar
 
 Quando tudo estiver funcionando:
-1. No GTM, clique em **Submit**
-2. Dê um nome à versão (ex: "GA4 + Consent Mode V2 + Meta")
-3. Publique
-
-## 🔧 Troubleshooting
-
-### GA4 não rastreia pageviews no SPA?
-✅ **RESOLVIDO** - Site agora dispara `page_view` no `dataLayer` a cada troca de página
-
-### Consent Mode não funciona?
-- Verifique se criou o trigger `cookie_consent_update`
-- Confirme que a tag tem prioridade `999`
-
-### Server-side tracking?
-Configurado em `/api/track.ts`. Para ativar:
-1. Configure no `.env`:
-   ```
-   GA4_MEASUREMENT_ID=G-XXXXXXXXXX
-   GA4_API_SECRET=seu_api_secret
+1. No GTM, clique em **Enviarret
    META_ACCESS_TOKEN=seu_token
    ```
 2. Use `trackEvent(..., { sendToServer: true })` no código

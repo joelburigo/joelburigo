@@ -1,0 +1,31 @@
+---
+// Google Analytics 4 - Direct Implementation
+// Hardcoded para simplificar (não depende do GTM)
+const GA4_ID = 'G-Z2XMZ448VV'
+---
+
+<!-- Google Analytics 4 -->
+<script is:inline type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
+<script is:inline define:vars={{ GA4_ID }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', GA4_ID, {
+    page_path: window.location.pathname,
+  });
+</script>
+
+<!-- Track GA4 on SPA navigation -->
+<script>
+  function trackGA4PageView() {
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      window.gtag('event', 'page_view', {
+        page_location: window.location.href,
+        page_path: window.location.pathname,
+        page_title: document.title,
+      });
+    }
+  }
+  
+  document.addEventListener('astro:after-swap', trackGA4PageView);
+</script>

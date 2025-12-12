@@ -4,6 +4,7 @@ import Header from '../components/layout/Header.astro'
 import Footer from '../components/layout/Footer.astro'
 import Container from '../components/ui/Container.astro'
 import { Mail, MapPin, Clock, Send, Phone, MessageSquare } from 'lucide-react'
+import { contactInfo as contact, getWhatsAppLink } from '../data/contact'
 
 const seo = {
   title: 'Contato - Joel Burigo | Fale Comigo',
@@ -16,14 +17,14 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    value: 'contato@joelburigo.com.br',
-    link: 'mailto:contato@joelburigo.com.br',
+    value: contact.email.main,
+    link: contact.email.mailto,
   },
   {
     icon: Phone,
     title: 'WhatsApp',
-    value: '(48) 99999-9999',
-    link: 'https://wa.me/5548999999999',
+    value: contact.phone.display,
+    link: getWhatsAppLink('Olá Joel, gostaria de saber mais sobre suas soluções'),
   },
   {
     icon: MapPin,
@@ -34,7 +35,7 @@ const contactInfo = [
   {
     icon: Clock,
     title: 'Horário de Atendimento',
-    value: 'Seg-Sex, 9h-18h',
+    value: contact.businessHours.weekdays,
     link: null,
   },
 ]

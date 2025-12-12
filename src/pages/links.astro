@@ -1,42 +1,43 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import LogoStacked from '../components/ui/LogoStacked.astro'
+import { contactInfo, getWhatsAppLink, getSocialLink } from '../data/contact'
 
 const links = [
   {
     emoji: '🎯',
     title: 'DIAGNÓSTICO GRATUITO DOS 6Ps',
-    url: '/diagnostico',
+    url: '/diagnostico?utm_source=linktree&utm_medium=social&utm_campaign=diagnostico',
     highlight: true,
   },
   {
     emoji: '🚀',
     title: 'VSS — VENDAS SEM SEGREDOS',
-    url: '/vendas-sem-segredos',
+    url: '/vendas-sem-segredos?utm_source=linktree&utm_medium=social&utm_campaign=vss',
     highlight: true,
   },
   {
     emoji: '📺',
     title: 'YOUTUBE — Conteúdo Completo',
-    url: 'https://youtube.com/@joelburigo',
+    url: getSocialLink('youtube', { source: 'linktree', medium: 'social', campaign: 'youtube' }),
     external: true,
   },
   {
     emoji: '💼',
     title: 'LINKEDIN — Conexão Profissional',
-    url: 'https://linkedin.com/in/joelburigo',
+    url: contactInfo.social.linkedin.url,
     external: true,
   },
   {
     emoji: '📱',
     title: 'WHATSAPP — Fale Comigo',
-    url: 'https://wa.me/5547988217935',
+    url: getWhatsAppLink('Oi Joel, vim pelo seu link nas redes sociais'),
     external: true,
   },
   {
     emoji: '🌐',
     title: 'SITE COMPLETO',
-    url: '/',
+    url: '/?utm_source=linktree&utm_medium=social&utm_campaign=homepage',
   },
 ]
 ---
@@ -57,10 +58,10 @@ const links = [
           </div>
         </div>
         <h1 class="text-h1 font-display text-white mb-3">
-          Joel Burigo | Vendas Escaláveis
+          {contactInfo.company.name} | {contactInfo.company.tagline}
         </h1>
         <p class="text-body-lg text-gray-400 font-sans">
-          Criador dos 6Ps das Vendas Escaláveis
+          {contactInfo.company.description}
         </p>
       </div>
 

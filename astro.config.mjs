@@ -3,7 +3,6 @@ import react from '@astrojs/react'
 import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
 import vercel from '@astrojs/vercel'
-import partytown from '@astrojs/partytown'
 
 // https://astro.build/config
 export default defineConfig({
@@ -62,11 +61,6 @@ export default defineConfig({
       priority: 0.7,
       lastmod: new Date(),
       filter: (page) => !page.includes('/design-system'),
-    }),
-    partytown({
-      config: {
-        forward: ['dataLayer.push', 'fbq'],
-      },
     }),
   ],
   image: {

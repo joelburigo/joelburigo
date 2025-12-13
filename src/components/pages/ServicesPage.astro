@@ -97,27 +97,6 @@ const depoimentos = casesServices.map(c => ({
   avatar: nichoAvatarsServices[c.nicho] || '🏢'
 }))
 
-const OLD_depoimentos = [
-  {
-    nome: 'Agência de Marketing Digital',
-    resultado: 'R$ 45k → R$ 180k/mês em 8 meses',
-    texto: 'Joel implementou todo o sistema de vendas enquanto eu focava em entregar para os clientes. CRM estruturado, prospecção ativa e processos documentados. Escalamos 4x.',
-    avatar: '🎨'
-  },
-  {
-    nome: 'SaaS B2B',
-    resultado: 'Churn de 12% → 3% em 5 meses',
-    texto: 'Implementação guiada transformou nosso onboarding. Funis de nutrição, automações de retenção e playbook de CS. Triplicamos LTV do cliente.',
-    avatar: '💻'
-  },
-  {
-    nome: 'Escola de Idiomas',
-    resultado: 'R$ 80k → R$ 250k/mês em 10 meses',
-    texto: 'A equipe do Joel fez tudo: tráfego, landing pages, CRM, treinamento de vendedores. Só precisei aprovar. Sistema funcionando 100% automatizado.',
-    avatar: '🎓'
-  },
-]
-
 const faseImplementacao = [
   {
     fase: 'Mês 1-2',
@@ -402,7 +381,7 @@ const faq = [
           </div>
 
           <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {faseImplementacao.map((fase, index) => (
+            {faseImplementacao.map((fase) => (
               <div class="rounded-2xl border-2 border-white/10 bg-white/5 p-8">
                 <div class="mb-4 inline-block rounded-full bg-lime/20 px-4 py-2">
                   <span class="font-display text-sm font-bold text-lime">{fase.fase}</span>

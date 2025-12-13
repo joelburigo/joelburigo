@@ -1,6 +1,5 @@
 ---
 import { Image } from 'astro:assets'
-import Icons from './Icons.astro'
 
 
 interface Props {
@@ -31,10 +30,10 @@ const {
 ---
 
 <Image
-  src={src}
+  src={src as any}
   alt={alt}
-  width={width}
-  height={height}
+  width={width!}
+  height={height!}
   class={className}
   loading={loading}
   fetchpriority={fetchpriority}

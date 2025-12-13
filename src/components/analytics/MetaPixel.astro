@@ -1,5 +1,4 @@
 ---
-import Icons from './Icons.astro'
 // Meta Pixel - Facebook/Instagram Tracking
 // GTM First: Idealmente deve ser configurado NO GTM
 // Este componente é backup caso prefira hardcoded
@@ -34,8 +33,8 @@ const META_PIXEL_ID = '693646216957142'
 <!-- Track Meta Pixel on SPA navigation -->
 <script>
   function trackMetaPageView() {
-    if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
-      window.fbq('track', 'PageView');
+    if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+      (window as any).fbq('track', 'PageView');
     }
   }
   

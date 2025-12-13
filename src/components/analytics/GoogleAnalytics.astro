@@ -1,5 +1,4 @@
 ---
-import Icons from './Icons.astro'
 // Google Analytics 4 - Direct Implementation
 // Hardcoded para simplificar (não depende do GTM)
 const GA4_ID = 'G-Z2XMZ448VV'
@@ -19,8 +18,8 @@ const GA4_ID = 'G-Z2XMZ448VV'
 <!-- Track GA4 on SPA navigation -->
 <script>
   function trackGA4PageView() {
-    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-      window.gtag('event', 'page_view', {
+    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+      (window as any).gtag('event', 'page_view', {
         page_location: window.location.href,
         page_path: window.location.pathname,
         page_title: document.title,

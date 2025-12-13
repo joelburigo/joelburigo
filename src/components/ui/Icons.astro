@@ -14,6 +14,10 @@ const iconName = `lucide:${name}`
 
 // Define width e height baseado no size se fornecido
 const sizeProps = size ? { width: size, height: size } : {}
+
+// Para ícones que devem ser preenchidos (como estrelas de rating)
+const shouldBeFilled = className?.includes('fill-')
+const iconClass = shouldBeFilled ? `${className} fill-current` : className
 ---
 
-<AstroIcon name={iconName} class={className} {...sizeProps} />
+<AstroIcon name={iconName} class={iconClass} {...sizeProps} />

@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
-import { AlertTriangle, CheckCircle2, ArrowRight, Target } from 'lucide-react';
+import Icons from '../components/ui/Icons.astro';
 
 const seo = {
   title: 'Resultado do Diagnóstico 6Ps | Joel Burigo',
@@ -19,7 +19,7 @@ const seo = {
       <!-- Header do Resultado -->
       <div class="mb-12 text-center">
         <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-lime/10 px-4 py-2">
-          <CheckCircle2 className="h-4 w-4 text-lime" />
+          <Icons name="check-circle-2" class="h-4 w-4 text-lime" />
           <span class="font-sans text-sm font-medium text-lime">Diagnóstico Completo</span>
         </div>
         <h1 class="mb-4 font-display text-display-lg text-white">
@@ -34,7 +34,7 @@ const seo = {
       <div class="mb-8">
         <div class="rounded-xl border-2 border-yellow-500/30 bg-yellow-500/5 p-6 backdrop-blur-sm">
           <div class="mb-3 flex items-center gap-3">
-            <Target className="h-6 w-6 text-yellow-400" />
+            <Icons name="target" class="h-6 w-6 text-yellow-400" />
             <h3 class="font-display text-h4 text-white">⚠️ Importante: Hierarquia dos 6Ps</h3>
           </div>
           <div class="grid gap-6 md:grid-cols-2">
@@ -99,7 +99,7 @@ const seo = {
       <div class="mb-12">
         <div class="rounded-2xl border border-red-500/30 bg-red-500/5 p-8 backdrop-blur-sm">
           <div class="mb-6 flex items-center gap-3">
-            <AlertTriangle className="h-8 w-8 text-red-400" />
+            <Icons name="alert-triangle" class="h-8 w-8 text-red-400" />
             <h2 class="font-display text-h2 text-white">Suas Prioridades Imediatas</h2>
           </div>
           <div id="priorities" class="space-y-4">
@@ -112,7 +112,7 @@ const seo = {
       <div class="mb-12">
         <div class="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
           <div class="mb-6 flex items-center gap-3">
-            <Target className="h-8 w-8 text-lime" />
+            <Icons name="target" class="h-8 w-8 text-lime" />
             <h2 class="font-display text-h2 text-white">Próximos Passos</h2>
           </div>
           <div id="action-plan" class="space-y-6">
@@ -133,19 +133,19 @@ const seo = {
           </p>
           <div class="mb-6 grid gap-3 sm:grid-cols-2">
             <div class="flex items-start gap-2">
-              <CheckCircle2 className="h-5 w-5 mt-0.5 text-lime flex-shrink-0" />
+              <Icons name="check-circle-2" class="h-5 w-5 mt-0.5 text-lime flex-shrink-0" />
               <span class="font-sans text-sm text-gray-300">Framework completo dos 6Ps</span>
             </div>
             <div class="flex items-start gap-2">
-              <CheckCircle2 className="h-5 w-5 mt-0.5 text-lime flex-shrink-0" />
+              <Icons name="check-circle-2" class="h-5 w-5 mt-0.5 text-lime flex-shrink-0" />
               <span class="font-sans text-sm text-gray-300">Implementação passo a passo</span>
             </div>
             <div class="flex items-start gap-2">
-              <CheckCircle2 className="h-5 w-5 mt-0.5 text-lime flex-shrink-0" />
+              <Icons name="check-circle-2" class="h-5 w-5 mt-0.5 text-lime flex-shrink-0" />
               <span class="font-sans text-sm text-gray-300">Templates e ferramentas</span>
             </div>
             <div class="flex items-start gap-2">
-              <CheckCircle2 className="h-5 w-5 mt-0.5 text-lime flex-shrink-0" />
+              <Icons name="check-circle-2" class="h-5 w-5 mt-0.5 text-lime flex-shrink-0" />
               <span class="font-sans text-sm text-gray-300">Suporte e comunidade</span>
             </div>
           </div>
@@ -154,7 +154,7 @@ const seo = {
             class="inline-flex items-center gap-2 rounded-lg bg-lime px-8 py-4 font-sans text-lg font-bold text-dark transition-all hover:bg-lime/90 hover:scale-105 shadow-lg shadow-lime/20"
           >
             Conhecer Vendas Sem Segredos
-            <ArrowRight className="h-5 w-5" />
+            <Icons name="arrow-right" class="h-5 w-5" />
           </a>
         </div>
 
@@ -168,7 +168,7 @@ const seo = {
             class="inline-flex items-center gap-2 rounded-lg border border-white/20 px-6 py-3 font-sans font-semibold text-white transition-all hover:border-lime hover:text-lime"
           >
             Ver Serviços
-            <ArrowRight className="h-4 w-4" />
+            <Icons name="arrow-right" class="h-4 w-4" />
           </a>
         </div>
       </div>

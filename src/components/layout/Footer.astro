@@ -1,8 +1,9 @@
 ---
 import Container from '../ui/Container.astro'
 import Logo from '../ui/Logo.astro'
-import { Youtube, Linkedin, Instagram, FileText, Mail, MapPin } from 'lucide-react'
 import { contactInfo } from '../../data/contact'
+import Icons from '../ui/Icons.astro'
+
 
 const currentYear = new Date().getFullYear()
 ---
@@ -21,11 +22,11 @@ const currentYear = new Date().getFullYear()
         </p>
         <div class="space-y-3 pt-2">
           <div class="flex items-center space-x-3 text-sm">
-            <Mail className="h-4 w-4 text-lime" />
+            <Icons name="mail" class="h-4 w-4 text-lime" />
             <a href={contactInfo.email.mailto} class="hover:text-lime transition-colors">{contactInfo.email.main}</a>
           </div>
           <div class="flex items-center space-x-3 text-sm">
-            <MapPin className="h-4 w-4 text-lime" />
+            <Icons name="map-pin" class="h-4 w-4 text-lime" />
             <span>Florianópolis, SC</span>
           </div>
         </div>
@@ -60,7 +61,7 @@ const currentYear = new Date().getFullYear()
           <li>
             <a href={contactInfo.social.youtube.url} target="_blank" rel="noopener noreferrer" class="group flex items-center space-x-3 transition-colors hover:text-lime">
               <div class="rounded-full bg-white/10 p-2 transition-colors group-hover:bg-lime group-hover:text-dark">
-                <Youtube className="h-4 w-4" />
+                <Icons name="youtube" class="h-4 w-4" />
               </div>
               <span class="font-sans text-body-sm">YouTube</span>
             </a>
@@ -68,7 +69,7 @@ const currentYear = new Date().getFullYear()
           <li>
             <a href={contactInfo.social.linkedin.url} target="_blank" rel="noopener noreferrer" class="group flex items-center space-x-3 transition-colors hover:text-lime">
               <div class="rounded-full bg-white/10 p-2 transition-colors group-hover:bg-lime group-hover:text-dark">
-                <Linkedin className="h-4 w-4" />
+                <Icons name="linkedin" class="h-4 w-4" />
               </div>
               <span class="font-sans text-body-sm">LinkedIn</span>
             </a>
@@ -76,7 +77,7 @@ const currentYear = new Date().getFullYear()
           <li>
             <a href={contactInfo.social.instagram.url} target="_blank" rel="noopener noreferrer" class="group flex items-center space-x-3 transition-colors hover:text-lime">
               <div class="rounded-full bg-white/10 p-2 transition-colors group-hover:bg-lime group-hover:text-dark">
-                <Instagram className="h-4 w-4" />
+                <Icons name="instagram" class="h-4 w-4" />
               </div>
               <span class="font-sans text-body-sm">Instagram</span>
             </a>
@@ -84,7 +85,7 @@ const currentYear = new Date().getFullYear()
           <li>
             <a href="/blog" class="group flex items-center space-x-3 transition-colors hover:text-lime">
               <div class="rounded-full bg-white/10 p-2 transition-colors group-hover:bg-lime group-hover:text-dark">
-                <FileText className="h-4 w-4" />
+                <Icons name="file-text" class="h-4 w-4" />
               </div>
               <span class="text-sm">Blog</span>
             </a>

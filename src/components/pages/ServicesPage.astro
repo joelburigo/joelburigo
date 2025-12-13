@@ -2,8 +2,9 @@
 import Container from '../ui/Container.astro'
 import Button from '../ui/Button.astro'
 import VideoPlayer from '../ui/VideoPlayer.astro'
-import { CheckCircle2, ArrowRight, Zap, TrendingUp, Rocket, Star, Shield, Award } from 'lucide-react'
 import { cases } from '../../data/cases'
+import Icons from '../ui/Icons.astro'
+
 
 // Filtrar cases do Services (Fundação, Aceleração, ScaleUp)
 const casesServices = cases.filter(c => c.produto.includes('Services')).slice(0, 3)
@@ -329,7 +330,7 @@ const faq = [
                 <ul class="mb-8 space-y-3">
                   {pacote.inclusos.map((item) => (
                     <li class="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
+                      <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
                       <span class="font-sans text-body-sm text-gray-300">{item}</span>
                     </li>
                   ))}
@@ -340,7 +341,7 @@ const faq = [
                   class="w-full"
                 >
                   Solicitar {pacote.nome}
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <Icons name="arrow-right" class="ml-2 h-4 w-4" />
                 </Button>
               </div>
             ))}
@@ -369,11 +370,11 @@ const faq = [
                   <div class="text-4xl">{depoimento.avatar}</div>
                   <div>
                     <div class="mb-1 flex gap-1">
-                      <Star className="h-4 w-4 fill-lime text-lime" />
-                      <Star className="h-4 w-4 fill-lime text-lime" />
-                      <Star className="h-4 w-4 fill-lime text-lime" />
-                      <Star className="h-4 w-4 fill-lime text-lime" />
-                      <Star className="h-4 w-4 fill-lime text-lime" />
+                      <Icons name="star" class="h-4 w-4 fill-lime text-lime" />
+                      <Icons name="star" class="h-4 w-4 fill-lime text-lime" />
+                      <Icons name="star" class="h-4 w-4 fill-lime text-lime" />
+                      <Icons name="star" class="h-4 w-4 fill-lime text-lime" />
+                      <Icons name="star" class="h-4 w-4 fill-lime text-lime" />
                     </div>
                     <p class="font-display text-sm font-semibold text-white">{depoimento.nome}</p>
                   </div>
@@ -410,7 +411,7 @@ const faq = [
                 <ul class="space-y-3 font-sans text-body-sm text-gray-300">
                   {fase.itens.map((item) => (
                     <li class="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
+                      <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -479,7 +480,7 @@ const faq = [
           </div>
 
           <div class="mt-12 rounded-2xl border-2 border-lime/30 bg-lime/10 p-8 text-center">
-            <Shield className="mx-auto mb-4 h-12 w-12 text-lime" />
+            <Icons name="shield" class="mx-auto mb-4 h-12 w-12 text-lime" />
             <h3 class="mb-4 font-display text-h3 text-white">Garantia Services</h3>
             <p class="mb-4 font-sans text-body text-gray-300">
               30 dias de garantia. Se você não ver progresso concreto nos primeiros 30 dias, 

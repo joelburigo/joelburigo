@@ -4,8 +4,9 @@ import Layout from '../../layouts/Layout.astro'
 import Header from '../../components/layout/Header.astro'
 import Footer from '../../components/layout/Footer.astro'
 import Container from '../../components/ui/Container.astro'
-import { Calendar, Clock, User, ArrowLeft, Share2 } from 'lucide-react'
 import { Image } from 'astro:assets'
+import Icons from '../../components/ui/Icons.astro'
+
 
 export const prerender = true
 
@@ -87,7 +88,7 @@ const articleSchema = {
           href="/blog" 
           class="inline-flex items-center gap-2 font-display text-sm text-gray-400 transition-colors hover:text-lime"
         >
-          <ArrowLeft className="h-4 w-4" />
+          <Icons name="arrow-left" class="h-4 w-4" />
           Voltar para o Blog
         </a>
       </Container>
@@ -128,19 +129,19 @@ const articleSchema = {
 
           <div class="mb-8 flex flex-wrap items-center gap-6 border-b border-white/10 pb-6" data-pagefind-ignore>
             <div class="flex items-center gap-2 font-sans text-body-sm text-gray-400">
-              <User className="h-4 w-4" />
+              <Icons name="user" class="h-4 w-4" />
               <span data-pagefind-meta="author">{post.data.author}</span>
             </div>
             <div class="flex items-center gap-2 font-sans text-body-sm text-gray-400">
-              <Calendar className="h-4 w-4" />
+              <Icons name="calendar" class="h-4 w-4" />
               <span>{post.data.date.toLocaleDateString('pt-BR')}</span>
             </div>
             <div class="flex items-center gap-2 font-sans text-body-sm text-gray-400">
-              <Clock className="h-4 w-4" />
+              <Icons name="clock" class="h-4 w-4" />
               <span>{post.data.readTime} de leitura</span>
             </div>
             <button class="ml-auto flex items-center gap-2 font-display text-sm text-lime transition-colors hover:text-lime/80">
-              <Share2 className="h-4 w-4" />
+              <Icons name="share-2" class="h-4 w-4" />
               <span>Compartilhar</span>
             </button>
           </div>

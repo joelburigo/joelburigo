@@ -2,8 +2,9 @@
 import Container from '../ui/Container.astro'
 import Button from '../ui/Button.astro'
 import VideoPlayer from '../ui/VideoPlayer.astro'
-import { CheckCircle2, PlayCircle, X, Users, BookOpen, Zap, Target, TrendingUp, Award, Clock, DollarSign, Star, Shield, Rocket, AlertCircle } from 'lucide-react'
 import { cases } from '../../data/cases'
+import Icons from '../ui/Icons.astro'
+
 
 // Filtrar cases do VSS (6 cases exibidos, 7 disponíveis no arquivo)
 const casesVSS = cases.filter(c => c.produto === 'Vendas Sem Segredos').slice(0, 6)
@@ -225,15 +226,15 @@ const resultados = [
               
               <div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-white/90">
                 <div class="flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-lime" />
+                  <Icons name="check-circle-2" class="h-5 w-5 text-lime" />
                   <span class="font-sans text-sm">60 aulas práticas</span>
                 </div>
                 <div class="flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-lime" />
+                  <Icons name="check-circle-2" class="h-5 w-5 text-lime" />
                   <span class="font-sans text-sm">CRM por 12 meses</span>
                 </div>
                 <div class="flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-lime" />
+                  <Icons name="check-circle-2" class="h-5 w-5 text-lime" />
                   <span class="font-sans text-sm">48 mentorias ao vivo</span>
                 </div>
               </div>
@@ -267,11 +268,11 @@ const resultados = [
                   <div class="text-4xl">{depoimento.avatar}</div>
                   <div>
                     <div class="mb-1 flex gap-1">
-                      <Star className="h-4 w-4 fill-lime text-lime" />
-                      <Star className="h-4 w-4 fill-lime text-lime" />
-                      <Star className="h-4 w-4 fill-lime text-lime" />
-                      <Star className="h-4 w-4 fill-lime text-lime" />
-                      <Star className="h-4 w-4 fill-lime text-lime" />
+                      <Icons name="star" class="h-4 w-4 fill-lime text-lime" />
+                      <Icons name="star" class="h-4 w-4 fill-lime text-lime" />
+                      <Icons name="star" class="h-4 w-4 fill-lime text-lime" />
+                      <Icons name="star" class="h-4 w-4 fill-lime text-lime" />
+                      <Icons name="star" class="h-4 w-4 fill-lime text-lime" />
                     </div>
                     <p class="font-display text-sm font-semibold text-white">{depoimento.nome}</p>
                   </div>
@@ -285,7 +286,7 @@ const resultados = [
           <div class="mt-12 text-center">
             <a href="/cases" class="inline-flex items-center gap-2 font-sans text-body text-lime transition-colors hover:text-lime/80">
               Ver Todos os Cases de Sucesso
-              <TrendingUp className="h-5 w-5" />
+              <Icons name="trending-up" class="h-5 w-5" />
             </a>
           </div>
         </div>
@@ -306,10 +307,10 @@ const resultados = [
             {diferenciais.map((item) => (
               <div class="rounded-xl border-2 border-white/10 bg-white/5 p-8 transition-all hover:border-lime/50">
                 <div class="mb-4 flex items-center gap-4">
-                  {item.icon === 'Award' && <Award className="h-8 w-8 text-lime" />}
-                  {item.icon === 'Zap' && <Zap className="h-8 w-8 text-lime" />}
-                  {item.icon === 'Users' && <Users className="h-8 w-8 text-lime" />}
-                  {item.icon === 'Target' && <Target className="h-8 w-8 text-lime" />}
+                  {item.icon === 'Award' && <Icons name="award" class="h-8 w-8 text-lime" />}
+                  {item.icon === 'Zap' && <Icons name="zap" class="h-8 w-8 text-lime" />}
+                  {item.icon === 'Users' && <Icons name="users" class="h-8 w-8 text-lime" />}
+                  {item.icon === 'Target' && <Icons name="target" class="h-8 w-8 text-lime" />}
                   <h3 class="font-display text-h3 text-white">{item.titulo}</h3>
                 </div>
                 <p class="font-sans text-body text-gray-300">{item.desc}</p>
@@ -338,14 +339,14 @@ const resultados = [
             <div class="rounded-2xl border-2 border-lime/20 bg-lime/10 p-8">
               <div class="mb-6 flex items-center gap-3">
                 <div class="rounded-full bg-lime p-3">
-                  <CheckCircle2 className="h-6 w-6 text-dark" />
+                  <Icons name="check-circle-2" class="h-6 w-6 text-dark" />
                 </div>
                 <h3 class="font-display text-h2 text-white">O Que É</h3>
               </div>
               <ul class="space-y-4">
                 {oquee.map((item) => (
                   <li class="flex gap-4">
-                    <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-lime" />
+                    <Icons name="check-circle-2" class="h-6 w-6 flex-shrink-0 text-lime" />
                     <div>
                       <p class="font-display text-lg font-semibold text-white">{item.title}</p>
                       <p class="font-sans text-body text-gray-300">{item.desc}</p>
@@ -359,14 +360,14 @@ const resultados = [
             <div class="rounded-2xl border-2 border-red-500/20 bg-red-500/10 p-8">
               <div class="mb-6 flex items-center gap-3">
                 <div class="rounded-full bg-red-500 p-3">
-                  <X className="h-6 w-6 text-white" />
+                  <Icons name="x" class="h-6 w-6 text-white" />
                 </div>
                 <h3 class="font-display text-h2 text-white">O Que Não É</h3>
               </div>
               <ul class="space-y-4">
                 {naoE.map((item) => (
                   <li class="flex items-start gap-3">
-                    <X className="h-6 w-6 flex-shrink-0 text-red-400" />
+                    <Icons name="x" class="h-6 w-6 flex-shrink-0 text-red-400" />
                     <span class="font-sans text-body text-gray-300">{item}</span>
                   </li>
                 ))}
@@ -377,7 +378,7 @@ const resultados = [
           <!-- Urgência e Escassez -->
           <div class="mt-12 rounded-2xl border-2 border-lime/30 bg-lime/10 p-8">
             <div class="flex items-start gap-4">
-              <AlertCircle className="h-8 w-8 flex-shrink-0 text-lime" />
+              <Icons name="alert-circle" class="h-8 w-8 flex-shrink-0 text-lime" />
               <div>
                 <h3 class="mb-3 font-display text-h3 text-white">⏰ Por Que o Preço Sobe Depois dos 100 Primeiros?</h3>
                 <p class="mb-4 font-sans text-body text-gray-300">
@@ -451,19 +452,19 @@ const resultados = [
               <h3 class="mb-4 font-display text-h3 text-white">Fundação</h3>
               <ul class="space-y-3 font-sans text-body-sm text-gray-300">
                 <li class="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
+                  <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
                   <span>Diagnóstico completo dos 6Ps</span>
                 </li>
                 <li class="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
+                  <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
                   <span>Posicionamento e ICP definidos</span>
                 </li>
                 <li class="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
+                  <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
                   <span>Oferta estruturada e precificada</span>
                 </li>
                 <li class="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
+                  <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
                   <span>CRM configurado e pronto</span>
                 </li>
               </ul>
@@ -476,19 +477,19 @@ const resultados = [
               <h3 class="mb-4 font-display text-h3 text-white">Implementação</h3>
               <ul class="space-y-3 font-sans text-body-sm text-gray-300">
                 <li class="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
+                  <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
                   <span>Funis e automações no ar</span>
                 </li>
                 <li class="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
+                  <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
                   <span>Landing pages publicadas</span>
                 </li>
                 <li class="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
+                  <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
                   <span>Tráfego OU prospecção ativa rodando</span>
                 </li>
                 <li class="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
+                  <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
                   <span>Primeiros leads qualificados chegando</span>
                 </li>
               </ul>
@@ -501,19 +502,19 @@ const resultados = [
               <h3 class="mb-4 font-display text-h3 text-white">Escala</h3>
               <ul class="space-y-3 font-sans text-body-sm text-gray-300">
                 <li class="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
+                  <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
                   <span>Processos documentados (SOPs)</span>
                 </li>
                 <li class="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
+                  <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
                   <span>Equipe treinada ou plano de contratação</span>
                 </li>
                 <li class="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
+                  <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
                   <span>Métricas e dashboards ativos</span>
                 </li>
                 <li class="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
+                  <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
                   <span>Sistema funcionando sem você 24/7</span>
                 </li>
               </ul>
@@ -555,7 +556,7 @@ const resultados = [
                 <ul class="space-y-3">
                   {secao.itens.map((item) => (
                     <li class="flex items-start gap-3">
-                      <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
+                      <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
                       <span class="font-sans text-body text-gray-300">{item}</span>
                     </li>
                   ))}
@@ -658,7 +659,7 @@ const resultados = [
           <div class="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2">
             <div class="rounded-xl border border-white/20 bg-white/5 p-6 backdrop-blur-sm">
               <div class="mb-2 flex items-center gap-2">
-                <Shield className="h-6 w-6 text-lime" />
+                <Icons name="shield" class="h-6 w-6 text-lime" />
                 <p class="font-display text-lg font-semibold text-white">Garantia de 15 Dias</p>
               </div>
               <p class="font-sans text-body-sm text-white/80">
@@ -669,7 +670,7 @@ const resultados = [
 
             <div class="rounded-xl border border-lime/20 bg-lime/5 p-6 backdrop-blur-sm">
               <div class="mb-2 flex items-center gap-2">
-                <Rocket className="h-6 w-6 text-lime" />
+                <Icons name="rocket" class="h-6 w-6 text-lime" />
                 <p class="font-display text-lg font-semibold text-white">Bônus Exclusivos</p>
               </div>
               <ul class="space-y-1 font-sans text-body-sm text-white/80">
@@ -745,35 +746,35 @@ const resultados = [
             <h3 class="mb-6 font-display text-h2 text-white">✅ É para você se:</h3>
             <div class="space-y-4">
               <div class="flex items-start gap-3">
-                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-lime" />
+                <Icons name="check-circle-2" class="h-6 w-6 flex-shrink-0 text-lime" />
                 <div>
                   <p class="font-display text-lg font-semibold text-white">Você fatura R$ 10k-100k/mês</p>
                   <p class="font-sans text-body-sm text-gray-300">Qualquer modelo: B2B, B2C, serviços, varejo, e-commerce, etc</p>
                 </div>
               </div>
               <div class="flex items-start gap-3">
-                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-lime" />
+                <Icons name="check-circle-2" class="h-6 w-6 flex-shrink-0 text-lime" />
                 <div>
                   <p class="font-display text-lg font-semibold text-white">Vendas são inconstantes</p>
                   <p class="font-sans text-body-sm text-gray-300">Alguns meses bons, outros péssimos. Você não sabe prever.</p>
                 </div>
               </div>
               <div class="flex items-start gap-3">
-                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-lime" />
+                <Icons name="check-circle-2" class="h-6 w-6 flex-shrink-0 text-lime" />
                 <div>
                   <p class="font-display text-lg font-semibold text-white">Quer autonomia</p>
                   <p class="font-sans text-body-sm text-gray-300">Cansou de depender de agência ou "guru" salvador</p>
                 </div>
               </div>
               <div class="flex items-start gap-3">
-                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-lime" />
+                <Icons name="check-circle-2" class="h-6 w-6 flex-shrink-0 text-lime" />
                 <div>
                   <p class="font-display text-lg font-semibold text-white">Pode dedicar 2-3h/semana</p>
                   <p class="font-sans text-body-sm text-gray-300">Implementação exige trabalho. Não é mágica.</p>
                 </div>
               </div>
               <div class="flex items-start gap-3">
-                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-lime" />
+                <Icons name="check-circle-2" class="h-6 w-6 flex-shrink-0 text-lime" />
                 <div>
                   <p class="font-display text-lg font-semibold text-white">Valoriza sistema > improviso</p>
                   <p class="font-sans text-body-sm text-gray-300">Quer construir algo sustentável, não gambiarras</p>
@@ -786,28 +787,28 @@ const resultados = [
             <h3 class="mb-6 font-display text-h2 text-white">❌ Não é para você se:</h3>
             <ul class="space-y-4">
               <li class="flex items-start gap-3">
-                <X className="h-6 w-6 flex-shrink-0 text-red-400" />
+                <Icons name="x" class="h-6 w-6 flex-shrink-0 text-red-400" />
                 <div>
                   <p class="font-display text-lg font-semibold text-white">Quer fórmula mágica</p>
                   <p class="font-sans text-body-sm text-gray-300">"Ganhe R$ 100k em 30 dias sem esforço" não existe</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
-                <X className="h-6 w-6 flex-shrink-0 text-red-400" />
+                <Icons name="x" class="h-6 w-6 flex-shrink-0 text-red-400" />
                 <div>
                   <p class="font-display text-lg font-semibold text-white">Não tem tempo</p>
                   <p class="font-sans text-body-sm text-gray-300">Se 2-3h/semana é impossível, VSS não vai funcionar</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
-                <X className="h-6 w-6 flex-shrink-0 text-red-400" />
+                <Icons name="x" class="h-6 w-6 flex-shrink-0 text-red-400" />
                 <div>
                   <p class="font-display text-lg font-semibold text-white">Quer que eu faça tudo</p>
                   <p class="font-sans text-body-sm text-gray-300">Para isso existe o Services (DFY). VSS é "faça você mesmo"</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
-                <X className="h-6 w-6 flex-shrink-0 text-red-400" />
+                <Icons name="x" class="h-6 w-6 flex-shrink-0 text-red-400" />
                 <div>
                   <p class="font-display text-lg font-semibold text-white">Quer resultado instantâneo</p>
                   <p class="font-sans text-body-sm text-gray-300">Sistema leva 90 dias para estruturar. Resultados vêm depois.</p>

@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import Container from '../components/ui/Container.astro';
-import { Download, Image as ImageIcon, FileText, Award } from 'lucide-react';
+import Icons from '../components/ui/Icons.astro';
 
 const seo = {
   title: 'Press Kit - Joel Burigo | Material para Imprensa',
@@ -111,7 +111,7 @@ const seo = {
             </h2>
             <div class="grid gap-6 md:grid-cols-2">
               <div class="rounded-xl border border-white/10 bg-white/5 p-6">
-                <ImageIcon className="mb-4 h-12 w-12 text-lime" />
+                <Icons name="image" class="mb-4 h-12 w-12 text-lime" />
                 <h3 class="mb-2 font-display text-h4 text-white">Foto Profissional</h3>
                 <p class="mb-4 font-sans text-body-sm text-gray-400">
                   Alta resolução, fundo neutro
@@ -121,7 +121,7 @@ const seo = {
                   download
                   class="inline-flex items-center gap-2 font-sans text-sm font-medium text-lime hover:text-lime/80"
                 >
-                  <Download className="h-4 w-4" />
+                  <Icons name="download" class="h-4 w-4" />
                   Download (PNG)
                 </a>
               </div>
@@ -150,7 +150,7 @@ const seo = {
 
           <!-- Contato Imprensa -->
           <div class="rounded-2xl border border-lime/20 bg-lime/5 p-8">
-            <Award className="mb-4 h-12 w-12 text-lime" />
+            <Icons name="award" class="mb-4 h-12 w-12 text-lime" />
             <h3 class="mb-4 font-display text-h3 text-white">Contato para Imprensa</h3>
             <p class="mb-4 font-sans text-body text-gray-300">
               Para entrevistas, parcerias ou solicitações de conteúdo, entre em contato:

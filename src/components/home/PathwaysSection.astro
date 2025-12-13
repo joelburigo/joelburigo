@@ -1,11 +1,11 @@
 ---
 import Container from '../ui/Container.astro'
 import Button from '../ui/Button.astro'
-import { GraduationCap, Wrench, Briefcase, Check } from 'lucide-react'
+import Icons from '../ui/Icons.astro'
 
 const pathways = [
   {
-    icon: GraduationCap,
+    icon: 'graduation-cap',
     title: 'Vendas Sem Segredos',
     subtitle: 'Quer fazer sozinho?',
     description: 'Programa completo de 90 dias onde você aprende e implementa o sistema de vendas escaláveis no seu negócio.',
@@ -25,7 +25,7 @@ const pathways = [
     color: 'lime' as const,
   },
   {
-    icon: Wrench,
+    icon: 'wrench',
     title: 'Implementation Services',
     subtitle: 'Quer minha equipe implementando?',
     description: 'Minha equipe implementa todo o sistema de vendas no seu negócio. Você foca na estratégia.',
@@ -45,7 +45,7 @@ const pathways = [
     color: 'blue' as const,
   },
   {
-    icon: Briefcase,
+    icon: 'briefcase',
     title: 'Strategic Advisory',
     subtitle: 'Quer minha mente no seu negócio?',
     description: 'Consultoria estratégica 1-on-1 para decisões críticas de crescimento e estruturação de vendas.',
@@ -82,7 +82,6 @@ const pathways = [
 
     <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
       {pathways.map((pathway, index) => {
-        const Icon = pathway.icon
         const delay = index * 0.2
         return (
           <div class="pathway-card group" style={`animation-delay: ${delay}s`}>
@@ -107,7 +106,7 @@ const pathways = [
                     ? 'bg-lime/20 text-lime' 
                     : 'bg-white/10 text-white'
                 }`}>
-                  <Icon className="h-8 w-8" />
+                  <Icons name={pathway.icon} class="h-8 w-8" />
                 </div>
 
                 {/* Title */}
@@ -135,7 +134,7 @@ const pathways = [
                 <ul class="mb-8 space-y-3">
                   {pathway.features.map((feature) => (
                     <li class="flex items-start gap-3 font-sans text-body-sm text-gray-300">
-                      <Check className={`h-5 w-5 flex-shrink-0 ${pathway.badge ? 'text-lime' : 'text-white/70'}`} />
+                      <Icons name="check" class={`h-5 w-5 flex-shrink-0 ${pathway.badge ? 'text-lime' : 'text-white/70'}`} />
                       <span>{feature}</span>
                     </li>
                   ))}

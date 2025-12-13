@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import Container from '../components/ui/Container.astro';
-import { TrendingUp, Award, GraduationCap, Rocket, Zap, Target } from 'lucide-react';
+import Icons from '../components/ui/Icons.astro';
 import { cases } from '../data/cases';
 
 const seo = {
@@ -83,16 +83,16 @@ const seo = {
                 <div class="mb-4 flex items-center justify-between">
                   <div class="inline-flex items-center gap-2 rounded-full bg-lime/20 px-3 py-1">
                     {caso.produto.includes("Vendas Sem Segredos") && (
-                      <GraduationCap className="h-4 w-4 text-lime" />
+                      <Icons name="graduation-cap" class="h-4 w-4 text-lime" />
                     )}
                     {caso.produto.includes("Fundação") && (
-                      <Target className="h-4 w-4 text-blue-400" />
+                      <Icons name="target" class="h-4 w-4 text-blue-400" />
                     )}
                     {caso.produto.includes("Aceleração") && (
-                      <Rocket className="h-4 w-4 text-purple-400" />
+                      <Icons name="rocket" class="h-4 w-4 text-purple-400" />
                     )}
                     {caso.produto.includes("ScaleUp") && (
-                      <Zap className="h-4 w-4 text-orange-400" />
+                      <Icons name="zap" class="h-4 w-4 text-orange-400" />
                     )}
                     <span class="font-display text-xs font-bold text-lime">{caso.produto}</span>
                   </div>
@@ -125,7 +125,7 @@ const seo = {
                   </div>
 
                   <div class="flex items-center justify-center gap-3 rounded-lg border border-white/10 bg-white/5 p-3">
-                    <TrendingUp className="h-5 w-5 text-lime" />
+                    <Icons name="trending-up" class="h-5 w-5 text-lime" />
                     <div class="flex items-baseline gap-2">
                       <span class="font-display text-2xl font-bold text-lime">{caso.crescimento}</span>
                       <span class="font-sans text-sm text-gray-400">de crescimento</span>
@@ -152,7 +152,7 @@ const seo = {
         </div>
 
         <div class="mx-auto mt-16 max-w-2xl rounded-2xl border border-lime/20 bg-lime/5 p-8 text-center">
-          <Award className="mx-auto mb-4 h-12 w-12 text-lime" />
+          <Icons name="award" class="mx-auto mb-4 h-12 w-12 text-lime" />
           <h3 class="mb-4 font-display text-h3 text-white">Quer Resultados Assim?</h3>
           <p class="mb-6 font-sans text-body text-gray-300">
             Escolha o formato ideal para o seu momento: educação (VSS), implementação (Services)

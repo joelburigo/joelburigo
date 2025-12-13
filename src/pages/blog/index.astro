@@ -6,7 +6,8 @@ import Header from '../../components/layout/Header.astro'
 import Footer from '../../components/layout/Footer.astro'
 import Container from '../../components/ui/Container.astro'
 import SearchBar from '../../components/ui/SearchBar.astro'
-import { Calendar, Clock, ArrowRight, TrendingUp } from 'lucide-react'
+import Icons from '../../components/ui/Icons.astro'
+
 
 const seo = {
   title: 'Blog - Joel Burigo | Conteúdo sobre Vendas Escaláveis',
@@ -95,7 +96,7 @@ const categories = [
                 />
               ) : (
                 <div class="flex h-full items-center justify-center">
-                  <TrendingUp className="h-16 w-16 text-lime/30" />
+                  <Icons name="trending-up" class="h-16 w-16 text-lime/30" />
                 </div>
               )}
             </div>
@@ -115,11 +116,11 @@ const categories = [
 
               <div class="flex items-center gap-4 font-sans text-sm text-gray-400">
                 <div class="flex items-center gap-1">
-                  <Calendar className="h-4 w-4" />
+                  <Icons name="calendar" class="h-4 w-4" />
                   <span>{featuredPost.data.date.toLocaleDateString('pt-BR')}</span>
                 </div>
                 <div class="flex items-center gap-1">
-                  <Clock className="h-4 w-4" />
+                  <Icons name="clock" class="h-4 w-4" />
                   <span>{featuredPost.data.readTime}</span>
                 </div>
               </div>
@@ -170,7 +171,7 @@ const categories = [
                   />
                 ) : (
                   <div class="flex h-full items-center justify-center">
-                    <TrendingUp className="h-12 w-12 text-lime/30" />
+                    <Icons name="trending-up" class="h-12 w-12 text-lime/30" />
                   </div>
                 )}
               </div>
@@ -182,7 +183,7 @@ const categories = [
                     {post.data.category}
                   </span>
                   <div class="flex items-center gap-1 font-sans text-xs text-gray-400">
-                    <Clock className="h-3 w-3" />
+                    <Icons name="clock" class="h-3 w-3" />
                     <span>{post.data.readTime}</span>
                   </div>
                 </div>
@@ -201,7 +202,7 @@ const categories = [
                   </span>
                   <div class="flex items-center gap-2 font-display text-sm text-lime">
                     <span>Ler mais</span>
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-2" />
+                    <Icons name="arrow-right" class="h-4 w-4 transition-transform group-hover:translate-x-2" />
                   </div>
                 </div>
               </div>
@@ -216,7 +217,7 @@ const categories = [
             class="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 font-display text-lg font-semibold text-white transition-all hover:scale-105 hover:border-lime hover:bg-lime hover:text-dark"
           >
             Carregar Mais Artigos
-            <ArrowRight className="h-5 w-5" />
+            <Icons name="arrow-right" class="h-5 w-5" />
           </button>
         </div>
       </Container>
@@ -242,7 +243,7 @@ const categories = [
             />
             <button class="inline-flex items-center justify-center gap-2 rounded-lg bg-lime px-8 py-3 font-display font-bold text-dark shadow-lg shadow-lime/20 transition-all hover:scale-105 hover:bg-lime/90">
               Assinar Newsletter
-              <ArrowRight className="h-5 w-5" />
+              <Icons name="arrow-right" class="h-5 w-5" />
             </button>
           </form>
         </div>

@@ -1,7 +1,8 @@
 ---
 import Container from '../ui/Container.astro'
 import Button from '../ui/Button.astro'
-import { Target, Users, Package, Layout, FileText, UserCheck } from 'lucide-react'
+import Icons from '../ui/Icons.astro'
+
 
 const ps = [
   {
@@ -10,7 +11,7 @@ const ps = [
     subtitle: 'Por quê?',
     desc: 'Como você se diferencia no mercado',
     fullDesc: 'Base estratégica que define por que você existe',
-    icon: Target,
+    icon: 'target',
     color: 'lime',
   },
   {
@@ -19,7 +20,7 @@ const ps = [
     subtitle: 'Pra quem?',
     desc: 'Quem é seu cliente ideal',
     fullDesc: 'ICP bem definido = comunicação certeira',
-    icon: Users,
+    icon: 'users',
     color: 'royal-blue',
   },
   {
@@ -28,7 +29,7 @@ const ps = [
     subtitle: 'O quê?',
     desc: 'Sua oferta irresistível',
     fullDesc: 'Produto bem embalado se vende sozinho',
-    icon: Package,
+    icon: 'package',
     color: 'lime',
   },
   {
@@ -37,7 +38,7 @@ const ps = [
     subtitle: 'Como vender?',
     desc: 'CRM, funis e automações',
     fullDesc: 'Sistema para atrair e converter de forma previsível',
-    icon: Layout,
+    icon: 'layout',
     color: 'royal-blue',
   },
   {
@@ -46,7 +47,7 @@ const ps = [
     subtitle: 'Como operar?',
     desc: 'Documentado e escalável',
     fullDesc: 'Garante funcionamento sem depender de uma pessoa',
-    icon: FileText,
+    icon: 'file-text',
     color: 'lime',
   },
   {
@@ -55,7 +56,7 @@ const ps = [
     subtitle: 'Quem executa?',
     desc: 'Time que executa com excelência',
     fullDesc: 'Equipe alinhada que entrega resultados',
-    icon: UserCheck,
+    icon: 'user-check',
     color: 'royal-blue',
   },
 ]
@@ -89,7 +90,6 @@ const ps = [
         <!-- 6Ps Cards in Flow -->
         <div class="relative grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
           {ps.map((p, i) => {
-            const Icon = p.icon
             const delay = i * 0.15
             return (
               <div 
@@ -116,7 +116,7 @@ const ps = [
 
                   {/* Icon */}
                   <div class="mb-3 transition-transform group-hover:scale-110">
-                    <Icon size={32} strokeWidth={2} />
+                    <Icons name={p.icon} size={32} />
                   </div>
 
                   {/* Title */}

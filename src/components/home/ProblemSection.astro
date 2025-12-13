@@ -1,27 +1,27 @@
 ---
 import { Image } from 'astro:assets'
 import Container from '../ui/Container.astro'
-import { Dices, BrainCircuit, BarChart3, Banknote, Quote } from 'lucide-react'
 import joelBurigoImage from '../../assets/images/joel-burigo-vendas-sem-segredos-2.png'
+import Icons from '../ui/Icons.astro'
 
 const problems = [
   {
-    icon: Dices,
+    icon: 'dices',
     title: 'Vendas Aleatórias',
     description: 'Não sabem de onde virá a próxima venda. Dependem de indicação e sorte para bater metas.',
   },
   {
-    icon: BrainCircuit,
+    icon: 'brain-circuit',
     title: 'Tudo na Cabeça',
     description: 'Processos não documentados. O conhecimento fica retido no dono, tornando impossível escalar.',
   },
   {
-    icon: BarChart3,
+    icon: 'bar-chart-3',
     title: 'Sem Métricas',
     description: "Não medem nada, não otimizam nada. Decisões baseadas em 'feeling' e não em dados.",
   },
   {
-    icon: Banknote,
+    icon: 'banknote',
     title: 'Gastam Demais',
     description: 'Contratam agências caras e ferramentas complexas sem estratégia, criando dependência eterna.',
   },
@@ -41,24 +41,22 @@ const problems = [
     </div>
 
     <div class="mb-20 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-      {problems.map((problem, index) => {
-        const Icon = problem.icon
-        return (
+      {problems.map((problem, index) => (
           <div class="problem-card" style={`animation-delay: ${index * 0.1}s`}>
             <div class="h-full rounded-2xl border-2 border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all hover:border-lime/50">
               <div class="mb-6 inline-block rounded-xl bg-lime/20 p-3 shadow-lg">
-                <Icon className="h-8 w-8 text-lime" />
+                <Icons name={problem.icon} class="h-8 w-8 text-lime" />
               </div>
               <h3 class="mb-3 font-display text-h3 text-white">{problem.title}</h3>
               <p class="font-sans text-body leading-relaxed text-gray-300">{problem.description}</p>
             </div>
           </div>
-        )
-      })}
+        ))
+      }
     </div>
 
     <div class="quote-section relative mx-auto max-w-4xl rounded-2xl border-2 border-lime/20 bg-dark p-8 shadow-2xl md:p-12">
-      <Quote className="absolute left-8 top-8 -z-0 h-12 w-12 text-lime/30" />
+      <Icons name="quote" class="absolute left-8 top-8 -z-0 h-12 w-12 text-lime/30" />
       <blockquote class="relative z-10 text-center">
         <p class="mb-6 text-xl font-medium italic text-white md:text-2xl">
           "Depois de 17 anos estruturando vendas para 140 clientes, identifiquei um padrão: vendas aleatórias não escalam."

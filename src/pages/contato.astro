@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro'
 import Header from '../components/layout/Header.astro'
 import Footer from '../components/layout/Footer.astro'
 import Container from '../components/ui/Container.astro'
-import { Mail, MapPin, Clock, Send, Phone, MessageSquare } from 'lucide-react'
+import Icons from '../components/ui/Icons.astro'
 import { contactInfo as contact, getWhatsAppLink } from '../data/contact'
 
 const seo = {
@@ -15,25 +15,25 @@ const seo = {
 
 const contactInfo = [
   {
-    icon: Mail,
+    icon: 'mail',
     title: 'Email',
     value: contact.email.main,
     link: contact.email.mailto,
   },
   {
-    icon: Phone,
+    icon: 'phone',
     title: 'WhatsApp',
     value: contact.phone.display,
     link: getWhatsAppLink('Olá Joel, gostaria de saber mais sobre suas soluções'),
   },
   {
-    icon: MapPin,
+    icon: 'map-pin',
     title: 'Localização',
     value: 'Florianópolis, SC - Brasil',
     link: null,
   },
   {
-    icon: Clock,
+    icon: 'clock',
     title: 'Horário de Atendimento',
     value: contact.businessHours.weekdays,
     link: null,
@@ -92,15 +92,13 @@ const faqs = [
     <section class="bg-dark py-24">
       <Container>
         <div class="mb-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {contactInfo.map((info, index) => {
-            const Icon = info.icon
-            return (
+          {contactInfo.map((info, index) => (
               <div 
                 class="contact-card rounded-2xl border-2 border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-lime/50"
                 style={`animation-delay: ${index * 0.1}s`}
               >
                 <div class="mb-4 inline-block rounded-xl bg-lime/20 p-3">
-                  <Icon className="h-6 w-6 text-lime" />
+                  <Icon name={info.icon} class="h-6 w-6 text-lime" />
                 </div>
                 <h3 class="mb-2 font-display text-h4 text-white">{info.title}</h3>
                 {info.link ? (
@@ -116,7 +114,7 @@ const faqs = [
                   <p class="font-sans text-body text-gray-300">{info.value}</p>
                 )}
               </div>
-            )
+            ))
           })}
         </div>
 
@@ -214,7 +212,7 @@ const faqs = [
                 type="submit"
                 class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-lime px-8 py-4 font-display text-lg font-bold text-dark shadow-lg shadow-lime/20 transition-all hover:scale-105 hover:bg-lime/90 focus:outline-none focus:ring-2 focus:ring-lime focus:ring-offset-2 md:w-auto"
               >
-                <Send className="h-5 w-5" />
+                <Icon name="send" class="h-5 w-5" />
                 Enviar Mensagem
               </button>
 

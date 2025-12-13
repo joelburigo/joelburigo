@@ -1,16 +1,14 @@
 import { defineConfig, envField } from 'astro/config'
-import react from '@astrojs/react'
+import cloudflare from '@astrojs/cloudflare'
 import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
-import vercel from '@astrojs/vercel'
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://joelburigo.com.br',
   output: 'server', // SSR mode
-  adapter: vercel({
-    webAnalytics: true,
-    speedInsights: true,
+  adapter: cloudflare({
+    mode: 'directory',
   }),
   env: {
     schema: {
@@ -54,7 +52,6 @@ export default defineConfig({
     defaultStrategy: 'hover',
   },
   integrations: [
-    react(),
     tailwind(),
     sitemap({
       changefreq: 'weekly',
@@ -80,14 +77,6 @@ export default defineConfig({
   vite: {
     build: {
       cssMinify: 'lightningcss',
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            'react-vendor': ['react', 'react-dom'],
-            'motion-vendor': ['framer-motion'],
-          },
-        },
-      },
     },
   },
 })

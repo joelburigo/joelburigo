@@ -1,7 +1,8 @@
 ---
-import { Play } from 'lucide-react'
 import { Image } from 'astro:assets'
 import type { ImageMetadata } from 'astro'
+import Icons from './Icons.astro'
+
 
 interface Props {
   videoUrl: string
@@ -40,7 +41,7 @@ const isImageMetadata = thumbnail && typeof thumbnail !== 'string'
       ) : (
         <div class={aspectRatio === 'portrait' ? 'flex min-h-[400px] items-center justify-center bg-gradient-to-br from-dark to-gray-900' : 'absolute inset-0 flex items-center justify-center bg-gradient-to-br from-dark to-gray-900'}>
           <div class="text-center">
-            <Play className="mx-auto mb-4 h-20 w-20 text-lime" />
+            <Icons name="play" class="mx-auto mb-4 h-20 w-20 text-lime" />
             <p class="font-display text-h4 text-white">{title}</p>
           </div>
         </div>
@@ -49,7 +50,7 @@ const isImageMetadata = thumbnail && typeof thumbnail !== 'string'
       <!-- Play Button Overlay -->
       <div class="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-[2px] transition-all duration-300 hover:bg-black/50">
         <button class="play-button group flex h-24 w-24 items-center justify-center rounded-full bg-lime shadow-2xl shadow-lime/40 transition-all duration-300 hover:scale-110 hover:bg-lime/90 hover:shadow-lime/60">
-          <Play className="h-12 w-12 fill-dark text-dark transition-transform group-hover:scale-110" />
+          <Icons name="play" class="h-12 w-12 fill-dark text-dark transition-transform group-hover:scale-110" />
         </button>
       </div>
 

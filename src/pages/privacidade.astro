@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import Container from '../components/ui/Container.astro';
-import { Shield, Lock, Eye, UserCheck } from 'lucide-react';
+import Icons from '../components/ui/Icons.astro';
 
 const seo = {
   title: 'Política de Privacidade - Joel Burigo',
@@ -20,7 +20,7 @@ const seo = {
     <Container>
       <div class="mx-auto max-w-4xl">
         <div class="mb-12 text-center">
-          <Shield className="mx-auto mb-6 h-16 w-16 text-lime" />
+          <Icons name="shield" class="mx-auto mb-6 h-16 w-16 text-lime" />
           <h1 class="mb-4 font-display text-display-lg text-white">Política de Privacidade</h1>
           <p class="font-sans text-body text-gray-400">
             Última atualização: Dezembro de 2025

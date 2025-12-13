@@ -2,8 +2,9 @@
 import Container from '../ui/Container.astro'
 import Button from '../ui/Button.astro'
 import VideoPlayer from '../ui/VideoPlayer.astro'
-import { CheckCircle2, Clock, Calendar, MessageSquare, Target, Zap, Award, Star, Shield } from 'lucide-react'
 import { cases } from '../../data/cases'
+import Icons from '../ui/Icons.astro'
+
 
 // Filtrar cases do Advisory (Sessão, Sprint, Conselho)
 const casesAdvisory = cases.filter(c => c.produto.includes('Advisory'))
@@ -242,13 +243,13 @@ const faq = [
           <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div class="rounded-2xl border-2 border-lime/20 bg-lime/10 p-8">
               <div class="mb-4 flex items-center gap-3">
-                <CheckCircle2 className="h-8 w-8 text-lime" />
+                <Icons name="check-circle-2" class="h-8 w-8 text-lime" />
                 <h3 class="font-display text-h2 text-white">É Para Você Se</h3>
               </div>
               <ul class="space-y-3">
                 {e.map((item) => (
                   <li class="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
+                    <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
                     <span class="font-sans text-body text-gray-300">{item}</span>
                   </li>
                 ))}
@@ -296,11 +297,11 @@ const faq = [
                   <div class="text-4xl">{depoimento.avatar}</div>
                   <div>
                     <div class="mb-1 flex gap-1">
-                      <Star className="h-4 w-4 fill-lime text-lime" />
-                      <Star className="h-4 w-4 fill-lime text-lime" />
-                      <Star className="h-4 w-4 fill-lime text-lime" />
-                      <Star className="h-4 w-4 fill-lime text-lime" />
-                      <Star className="h-4 w-4 fill-lime text-lime" />
+                      <Icons name="star" class="h-4 w-4 fill-lime text-lime" />
+                      <Icons name="star" class="h-4 w-4 fill-lime text-lime" />
+                      <Icons name="star" class="h-4 w-4 fill-lime text-lime" />
+                      <Icons name="star" class="h-4 w-4 fill-lime text-lime" />
+                      <Icons name="star" class="h-4 w-4 fill-lime text-lime" />
                     </div>
                     <p class="font-display text-sm font-semibold text-white">{depoimento.nome}</p>
                   </div>
@@ -335,7 +336,7 @@ const faq = [
                 <ul class="space-y-3">
                   {proc.processo.map((passo) => (
                     <li class="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
+                      <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
                       <span class="font-sans text-body-sm text-gray-300">{passo}</span>
                     </li>
                   ))}
@@ -380,11 +381,11 @@ const faq = [
                     </p>
                     <div class="flex flex-wrap gap-4 text-sm">
                       <div class="flex items-center gap-2 font-sans text-gray-400">
-                        <Clock className="h-4 w-4 text-lime" />
+                        <Icons name="clock" class="h-4 w-4 text-lime" />
                         <span>{formato.duracao}</span>
                       </div>
                       <div class="flex items-center gap-2 font-sans text-gray-400">
-                        <Calendar className="h-4 w-4 text-lime" />
+                        <Icons name="calendar" class="h-4 w-4 text-lime" />
                         <span>{formato.disponibilidade}</span>
                       </div>
                     </div>
@@ -404,7 +405,7 @@ const faq = [
                     <ul class="space-y-2">
                       {formato.inclusos.map((item) => (
                         <li class="flex items-start gap-2">
-                          <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-lime" />
+                          <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
                           <span class="font-sans text-body-sm text-gray-300">{item}</span>
                         </li>
                       ))}
@@ -416,7 +417,7 @@ const faq = [
                     <ul class="space-y-2">
                       {formato.exemplos.map((exemplo) => (
                         <li class="flex items-start gap-2">
-                          <MessageSquare className="h-5 w-5 flex-shrink-0 text-royal-blue" />
+                          <Icons name="message-square" class="h-5 w-5 flex-shrink-0 text-royal-blue" />
                           <span class="font-sans text-body-sm italic text-gray-400">"{exemplo}"</span>
                         </li>
                       ))}
@@ -486,7 +487,7 @@ const faq = [
     <section class="section-dark py-16">
       <Container>
         <div class="mx-auto max-w-4xl rounded-2xl border-2 border-lime/30 bg-lime/10 p-12 text-center">
-          <Award className="mx-auto mb-6 h-16 w-16 text-lime" />
+          <Icons name="award" class="mx-auto mb-6 h-16 w-16 text-lime" />
           <h3 class="mb-4 font-display text-h1 text-white">Garantia Advisory</h3>
           <p class="mb-2 font-sans text-body-lg text-white">
             "Se eu não agregar valor na primeira sessão, devolvo seu investimento."

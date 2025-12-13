@@ -1,9 +1,10 @@
 ---
 import Container from '../ui/Container.astro'
 import Button from '../ui/Button.astro'
-import { Star, Quote } from 'lucide-react'
 import { testimonials } from '../../data/testimonials'
 import { Image } from 'astro:assets'
+import Icons from '../ui/Icons.astro'
+
 ---
 
 <section class="relative overflow-hidden bg-dark py-16 md:py-24 lg:py-32">
@@ -12,7 +13,7 @@ import { Image } from 'astro:assets'
   <Container class="relative z-10">
     <div class="mx-auto mb-20 max-w-3xl text-center">
       <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-lime/30 bg-lime/10 px-4 py-2 backdrop-blur-sm">
-        <Quote className="h-4 w-4 text-lime" />
+        <Icons name="quote" class="h-4 w-4 text-lime" />
         <span class="font-display text-sm font-bold text-lime">DEPOIMENTOS</span>
       </div>
       
@@ -35,12 +36,12 @@ import { Image } from 'astro:assets'
           <div class="testimonial-card group" style={`animation-delay: ${delay}s`}>
             <div class="relative h-full overflow-hidden rounded-2xl border-2 border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:border-lime/50 hover:shadow-2xl hover:shadow-lime/10">
               {/* Quote icon */}
-              <Quote className="absolute right-6 top-6 h-12 w-12 text-lime/20" />
+              <Icons name="quote" class="absolute right-6 top-6 h-12 w-12 text-lime/20" />
               
               {/* Stars */}
               <div class="relative z-10 mb-6 flex gap-1">
                 {Array.from({ length: t.rating }).map(() => (
-                  <Star className="h-5 w-5 fill-lime text-lime" />
+                  <Icons name="star" class="h-5 w-5 fill-lime text-lime" />
                 ))}
               </div>
               

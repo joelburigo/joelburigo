@@ -1,5 +1,5 @@
 ---
-import { TrendingUp, Users, Award } from 'lucide-react';
+import Icons from '../ui/Icons.astro'
 ---
 
 <div class="min-h-screen bg-dark pb-20 pt-32">
@@ -7,7 +7,7 @@ import { TrendingUp, Users, Award } from 'lucide-react';
     <!-- Hero -->
     <div class="mb-12 text-center">
       <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-lime/10 px-4 py-2">
-        <TrendingUp className="h-4 w-4 text-lime" />
+        <Icons name="trending-up" class="h-4 w-4 text-lime" />
         <span class="font-sans text-sm font-medium text-lime">100% Gratuito • Resultado Imediato</span>
       </div>
       <h1 class="mb-4 font-display text-display-lg text-white">
@@ -27,15 +27,15 @@ import { TrendingUp, Users, Award } from 'lucide-react';
       <!-- Social Proof -->
       <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
         <div class="flex items-center gap-2">
-          <Users className="h-5 w-5 text-lime" />
+          <Icons name="users" class="h-5 w-5 text-lime" />
           <span><strong class="text-white">140+</strong> empresas diagnosticadas</span>
         </div>
         <div class="flex items-center gap-2">
-          <Award className="h-5 w-5 text-lime" />
+          <Icons name="award" class="h-5 w-5 text-lime" />
           <span><strong class="text-white">5min</strong> para completar</span>
         </div>
         <div class="flex items-center gap-2">
-          <TrendingUp className="h-5 w-5 text-lime" />
+          <Icons name="trending-up" class="h-5 w-5 text-lime" />
           <span><strong class="text-white">Framework</strong> dos 6Ps</span>
         </div>
       </div>

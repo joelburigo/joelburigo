@@ -17,8 +17,8 @@ export const contactInfo = {
   phone: {
     display: '(48) 2398-1939',
     international: '+55 (48) 2398-1939',
-    whatsapp: '5548988217935', // Formato para wa.me (sem espaços, hífens ou parênteses)
-    whatsappLink: 'https://wa.me/5548988217935',
+    whatsapp: '554823981939', // Formato para wa.me (sem espaços, hífens ou parênteses)
+    whatsappLink: 'https://wa.me/554823981939',
   },
 
   email: {

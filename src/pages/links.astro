@@ -11,13 +11,7 @@ const links = [
     highlight: true,
   },
   {
-    emoji: '🚀',
-    title: 'VSS — VENDAS SEM SEGREDOS',
-    url: '/vendas-sem-segredos?utm_source=linktree&utm_medium=social&utm_campaign=vss',
-    highlight: true,
-  },
-  {
-    emoji: '📺',
+    emoji: '',
     title: 'YOUTUBE — Conteúdo Completo',
     url: getSocialLink('youtube', { source: 'linktree', medium: 'social', campaign: 'youtube' }),
     external: true,
@@ -64,6 +58,57 @@ const links = [
           {contactInfo.company.description}
         </p>
       </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-3 gap-4 mb-8 animate-fade-in" style="animation-delay: 0.2s">
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 text-center">
+          <div class="font-display font-bold text-2xl text-lime mb-1">17+</div>
+          <div class="text-gray-400 text-xs font-sans">Anos de Experiência</div>
+        </div>
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 text-center">
+          <div class="font-display font-bold text-2xl text-lime mb-1">R$ 1B+</div>
+          <div class="text-gray-400 text-xs font-sans">em Vendas Geradas</div>
+        </div>
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 text-center">
+          <div class="font-display font-bold text-2xl text-lime mb-1">140+</div>
+          <div class="text-gray-400 text-xs font-sans">Empresas Atendidas</div>
+        </div>
+      </div>
+
+      <!-- VSS Hero CTA -->
+      <a 
+        href="/vendas-sem-segredos?utm_source=linktree&utm_medium=social&utm_campaign=vss_hero"
+        class="group block mb-8 p-8 rounded-3xl bg-gradient-to-br from-lime via-lime/90 to-emerald-400 shadow-2xl shadow-lime/30 hover:shadow-lime/50 transition-all duration-300 hover:scale-[1.02] animate-fade-in"
+        style="animation-delay: 0.3s"
+      >
+        <div class="flex items-start justify-between mb-4">
+          <div class="bg-dark/20 backdrop-blur-sm rounded-full px-4 py-1.5">
+            <span class="font-display font-bold text-dark text-xs tracking-wide">⭐ RECOMENDADO</span>
+          </div>
+          <svg 
+            class="w-8 h-8 text-dark/70 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </div>
+        
+        <div class="mb-4">
+          <h2 class="font-display font-black text-3xl text-dark mb-2">
+            🚀 VSS — VENDAS SEM SEGREDOS
+          </h2>
+          <p class="font-sans text-dark/80 text-base leading-relaxed">
+            Sistema completo para estruturar suas vendas do zero. 
+            <span class="font-bold">6 módulos + 40 aulas práticas</span> com o método dos 6Ps das Vendas Escaláveis.
+          </p>
+        </div>
+        
+        <div class="flex items-center gap-3">
+          <span class="font-display font-bold text-dark text-lg">Acessar o programa →</span>
+        </div>
+      </a>
 
       <!-- Links -->
       <div class="space-y-4">

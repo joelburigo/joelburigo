@@ -200,11 +200,11 @@ const seo = {
         const produto = card.getAttribute('data-produto');
         
         if (filter === 'all') {
-          card.style.display = 'block';
+          (card as HTMLElement).style.display = 'block';
         } else if (produto && produto.includes(filter)) {
-          card.style.display = 'block';
+          (card as HTMLElement).style.display = 'block';
         } else {
-          card.style.display = 'none';
+          (card as HTMLElement).style.display = 'none';
         }
       });
     });

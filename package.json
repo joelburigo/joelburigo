@@ -18,12 +18,15 @@
     "@astrojs/partytown": "^2.1.4",
     "@astrojs/sitemap": "^3.6.0",
     "@astrojs/tailwind": "^6.0.2",
+    "@iconify-json/lucide": "^1.2.80",
     "astro": "^5.16.5",
+    "astro-icon": "^1.1.5",
     "clsx": "^2.1.0",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^3.4.19"
   },
   "devDependencies": {
+    "@iconify-json/heroicons": "^1.2.3",
     "lightningcss": "^1.30.2",
     "pagefind": "^1.4.0",
     "path-to-regexp": "^8.3.0",

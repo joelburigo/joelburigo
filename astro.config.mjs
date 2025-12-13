@@ -2,6 +2,7 @@ import { defineConfig, envField } from 'astro/config'
 import cloudflare from '@astrojs/cloudflare'
 import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
+import icon from 'astro-icon'
 
 // https://astro.build/config
 export default defineConfig({
@@ -59,6 +60,7 @@ export default defineConfig({
       lastmod: new Date(),
       filter: (page) => !page.includes('/design-system'),
     }),
+    icon(),
   ],
   image: {
     remotePatterns: [{ protocol: 'https' }],

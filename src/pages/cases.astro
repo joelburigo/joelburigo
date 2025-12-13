@@ -197,11 +197,11 @@ const seo = {
 
       // Filtrar cards
       caseCards.forEach((card) => {
-        const produto = card.getAttribute('data-produto');
+        const produto = card.getAttribute('data-produto') as string | null;
         
         if (filter === 'all') {
           (card as HTMLElement).style.display = 'block';
-        } else if (produto && produto.includes(filter)) {
+        } else if (produto !== null && produto.includes(filter as string)) {
           (card as HTMLElement).style.display = 'block';
         } else {
           (card as HTMLElement).style.display = 'none';

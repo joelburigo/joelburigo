@@ -5,6 +5,7 @@
 const GTM_ID = import.meta.env.PUBLIC_GTM_ID || 'GTM-TWP4J6N8'
 ---
 
+{GTM_ID && (
 <!-- Initialize dataLayer (must be inline and before GTM) -->
 <script is:inline>
   window.dataLayer = window.dataLayer || [];
@@ -19,3 +20,4 @@ const GTM_ID = import.meta.env.PUBLIC_GTM_ID || 'GTM-TWP4J6N8'
   })(window,document,'script','dataLayer',GTM_ID);
 </script>
 <!-- End Google Tag Manager -->
+)}

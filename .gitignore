@@ -33,8 +33,6 @@ pnpm-debug.log*
 # Cache
 .cache/
 .turbo/
-.vercel/
-.netlify/
 .wrangler/
 
 # Temporary files

@@ -26,18 +26,6 @@ const blog = defineCollection({
   }),
 })
 
-const depoimentos = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/depoimentos" }),
-  schema: z.object({
-    name: z.string(),
-    company: z.string(),
-    role: z.string(),
-    content: z.string(),
-    rating: z.number().min(1).max(5).optional(),
-  }),
-})
-
 export const collections = {
   blog,
-  depoimentos,
 }

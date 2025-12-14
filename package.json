@@ -3,11 +3,12 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "wrangler types && astro dev",
-    "start": "wrangler types && astro dev",
-    "build": "wrangler types && astro check && astro build && npx pagefind --site dist",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build && npx pagefind --site dist",
     "preview": "wrangler pages dev ./dist",
     "deploy": "npm run build && wrangler pages deploy ./dist",
+    "types": "wrangler types",
     "astro": "astro",
     "format": "prettier --write .",
     "analyze": "node scripts/analyze-performance.js",
@@ -28,7 +29,6 @@
     "tailwindcss": "^3.4.19"
   },
   "devDependencies": {
-    "@iconify-json/heroicons": "^1.2.3",
     "pagefind": "^1.4.0",
     "path-to-regexp": "^8.3.0",
     "prettier": "^3.7.4",

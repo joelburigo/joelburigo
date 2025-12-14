@@ -1,15 +1,11 @@
 {
-	"main": "dist/_worker.js/index.js",
-	"name": "joelburigo-site",
+	"name": "joelburigo",
   "compatibility_date": "2025-12-14",
   "compatibility_flags": [
     "nodejs_compat",
     "global_fetch_strictly_public"
   ],
-	"assets": {
-		"binding": "ASSETS",
-		"directory": "./dist"
-	},
+	"pages_build_output_dir": "./dist",
 	"observability": {
     "enabled": true
   }

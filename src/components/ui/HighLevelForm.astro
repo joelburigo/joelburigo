@@ -1,0 +1,108 @@
+---
+interface Props {
+  formId: string
+  title?: string
+  height?: string
+  class?: string
+}
+
+const { formId, height = '600px', class: className = '' } = Astro.props
+---
+
+<div 
+  class={`highlevel-form-container ${className}`}
+  data-form-id={formId}
+  style={`min-height: ${height};`}
+>
+  <div class="form-placeholder">
+    <div class="loading-spinner">
+      <svg class="animate-spin h-8 w-8 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+      <p class="mt-4 text-gray-600">Carregando formulário...</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .form-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: inherit;
+  }
+  
+  .loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .highlevel-form-loaded .form-placeholder {
+    display: none;
+  }
+</style>
+
+<script>
+  // Preconnect aos domínios do HighLevel para melhor performance
+  const preconnectLink = document.createElement('link');
+  preconnectLink.rel = 'preconnect';
+  preconnectLink.href = 'https://api.gsh.digital';
+  document.head.appendChild(preconnectLink);
+
+  // Preload do script do formulário
+  const preloadLink = document.createElement('link');
+  preloadLink.rel = 'preload';
+  preloadLink.as = 'script';
+  preloadLink.href = 'https://api.gsh.digital/js/form_embed.js';
+  document.head.appendChild(preloadLink);
+
+  function loadHighLevelForm(container: HTMLElement) {
+    const formId = container.dataset.formId;
+    if (!formId) return;
+
+    // Cria o iframe do formulário
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://api.gsh.digital/widget/form/${formId}`;
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.border = 'none';
+    iframe.setAttribute('loading', 'lazy');
+    iframe.setAttribute('title', 'Formulário de contato');
+    iframe.setAttribute('id', `inline-${formId}`);
+    iframe.setAttribute('data-layout', "{'id':'INLINE'}");
+    iframe.setAttribute('data-form-id', formId);
+    iframe.className = 'ghl-form-iframe';
+    
+    // Adiciona o iframe ao container
+    container.appendChild(iframe);
+    container.classList.add('highlevel-form-loaded');
+
+    // Carrega o script do HighLevel se ainda não foi carregado
+    if (!document.querySelector('script[src*="form_embed.js"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://api.gsh.digital/js/form_embed.js';
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }
+
+  // Usa Intersection Observer para lazy loading
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const container = entry.target as HTMLElement;
+        loadHighLevelForm(container);
+        observer.unobserve(container); // Para de observar após carregar
+      }
+    });
+  }, {
+    rootMargin: '50px' // Começa a carregar 50px antes de entrar na viewport
+  });
+
+  // Observa todos os containers de formulário
+  document.querySelectorAll('.highlevel-form-container').forEach((container) => {
+    observer.observe(container);
+  });
+</script>

@@ -1,0 +1,98 @@
+---
+interface Props {
+  formId: string
+  title?: string
+  description?: string
+  buttonText?: string
+  height?: string
+  class?: string
+}
+
+const { 
+  formId, 
+  title = 'Entre em contato',
+  description = 'Clique para abrir o formulário',
+  buttonText = 'Abrir Formulário',
+  height = '600px',
+  class: className = '' 
+} = Astro.props
+---
+
+<div 
+  class={`highlevel-form-facade ${className}`}
+  data-form-id={formId}
+  style={`min-height: ${height};`}
+>
+  <div class="form-facade-overlay">
+    <div class="facade-content">
+      <h3 class="text-2xl font-bold mb-2">{title}</h3>
+      <p class="text-gray-600 mb-6">{description}</p>
+      <button 
+        class="facade-button bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors"
+      >
+        {buttonText}
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .form-facade-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: inherit;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+    border-radius: 12px;
+    padding: 2rem;
+  }
+  
+  .facade-content {
+    text-align: center;
+    max-width: 500px;
+  }
+  
+  .facade-button {
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .highlevel-form-loaded .form-facade-overlay {
+    display: none;
+  }
+</style>
+
+<script>
+  function loadHighLevelForm(container: HTMLElement) {
+    const formId = container.dataset.formId;
+    if (!formId) return;
+
+    // Preconnect se ainda não foi feito
+    if (!document.querySelector('link[href*="leadconnectorhq.com"]')) {
+      const preconnectLink = document.createElement('link');
+      preconnectLink.rel = 'preconnect';
+      preconnectLink.href = 'https://api.leadconnectorhq.com';
+      document.head.appendChild(preconnectLink);
+    }
+
+    // Cria o iframe do formulário
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://api.leadconnectorhq.com/widget/form/${formId}`;
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.border = 'none';
+    iframe.setAttribute('title', 'Formulário de contato');
+    
+    // Adiciona o iframe ao container
+    container.appendChild(iframe);
+    container.classList.add('highlevel-form-loaded');
+  }
+
+  // Adiciona event listeners aos botões
+  document.querySelectorAll('.highlevel-form-facade').forEach((container) => {
+    const button = container.querySelector('.facade-button');
+    button?.addEventListener('click', () => {
+      loadHighLevelForm(container as HTMLElement);
+    });
+  });
+</script>

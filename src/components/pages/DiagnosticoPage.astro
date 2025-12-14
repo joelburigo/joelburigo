@@ -1,5 +1,6 @@
 ---
 import Icons from '../ui/Icons.astro'
+import HighLevelForm from '../ui/HighLevelForm.astro'
 ---
 
 <div class="min-h-screen bg-dark pb-20 pt-32">
@@ -41,31 +42,12 @@ import Icons from '../ui/Icons.astro'
       </div>
     </div>
 
-    <!-- Formulário GoHighLevel -->
+    <!-- Formulário GoHighLevel com Lazy Loading -->
     <div class="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
-      <div class="overflow-hidden">
-        <iframe
-          src="https://api.gsh.digital/widget/form/LiMgJuffsmbXgFNyyil9"
-          style="width:100%;height:1726px;border:none;"
-          id="inline-LiMgJuffsmbXgFNyyil9" 
-          data-layout="{'id':'INLINE'}"
-          data-trigger-type="alwaysShow"
-          data-trigger-value=""
-          data-activation-type="alwaysActivated"
-          data-activation-value=""
-          data-deactivation-type="neverDeactivate"
-          data-deactivation-value=""
-          data-form-name="Diagnostico 6Ps das Vendas Escalaveis"
-          data-height="1726"
-          data-layout-iframe-id="inline-LiMgJuffsmbXgFNyyil9"
-          data-form-id="LiMgJuffsmbXgFNyyil9"
-          title="Diagnostico 6Ps das Vendas Escalaveis"
-          class="ghl-form-iframe"
-        >
-        </iframe>
-      </div>
+      <HighLevelForm 
+        formId="LiMgJuffsmbXgFNyyil9"
+        height="1726px"
+      />
     </div>
   </div>
 </div>
-
-<script is:inline src="https://api.gsh.digital/js/form_embed.js"></script>

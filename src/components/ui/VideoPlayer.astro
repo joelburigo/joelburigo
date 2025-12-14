@@ -11,9 +11,10 @@ interface Props {
   class?: string
   aspectRatio?: 'portrait' | 'landscape'
   lazyLoad?: boolean
+  heroOptimized?: boolean
 }
 
-const { videoUrl, thumbnail, title = 'Assista ao vídeo', class: className = '', aspectRatio = 'landscape', lazyLoad = true } = Astro.props
+const { videoUrl, thumbnail, title = 'Assista ao vídeo', class: className = '', aspectRatio = 'landscape', lazyLoad = true, heroOptimized = false } = Astro.props
 
 // Define aspect ratio style based on prop
 const aspectStyle = aspectRatio === 'portrait' ? 'aspect-ratio: 9 / 16;' : 'aspect-ratio: 16 / 9;'
@@ -29,11 +30,11 @@ const isImageMetadata = thumbnail && typeof thumbnail !== 'string'
           <Image
             src={thumbnail as ImageMetadata}
             alt={title}
-            widths={[480, 720, 1080]}
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1080px"
+            widths={heroOptimized ? [480, 600, 800] : [480, 720, 1080]}
+            sizes={heroOptimized ? "(max-width: 1024px) 100vw, 600px" : "(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1080px"}
             loading={lazyLoad ? 'lazy' : 'eager'}
             fetchpriority={lazyLoad ? 'auto' : 'high'}
-            quality={lazyLoad ? 70 : 80}
+            quality={heroOptimized ? 75 : (lazyLoad ? 70 : 80)}
             class={aspectRatio === 'portrait' ? 'h-full w-full object-cover transition-transform duration-300 hover:scale-105' : 'absolute inset-0 h-full w-full object-cover transition-transform duration-300 hover:scale-105'}
           />
         ) : (

@@ -76,9 +76,4 @@ export default defineConfig({
     inlineStylesheets: 'auto',
     assets: '_astro',
   },
-  vite: {
-    build: {
-      cssMinify: 'lightningcss',
-    },
-  },
 })

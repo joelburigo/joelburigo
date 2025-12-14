@@ -1,0 +1,3 @@
+# Redireciona www para domínio principal
+https://www.joelburigo.com.br/* https://joelburigo.com.br/:splat 301!
+http://www.joelburigo.com.br/* https://joelburigo.com.br/:splat 301!

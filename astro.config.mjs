@@ -11,6 +11,14 @@ export default defineConfig({
   adapter: cloudflare({
     mode: 'directory',
   }),
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+      config: {
+        limitInputPixels: false,
+      }
+    }
+  },
   env: {
     schema: {
       // GTM FIRST: Site só precisa do GTM ID

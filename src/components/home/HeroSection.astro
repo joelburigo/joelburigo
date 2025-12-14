@@ -1,6 +1,7 @@
 ---
 import Container from '../ui/Container.astro'
 import VideoPlayer from '../ui/VideoPlayer.astro'
+import { Image } from 'astro:assets'
 import joelBurigoHero from '../../assets/images/joel-burigo-vendas-sem-segredos-2.png'
 import Icons from '../ui/Icons.astro'
 
@@ -39,7 +40,7 @@ import Icons from '../ui/Icons.astro'
           </button>
         </div>
 
-        <div class="flex items-center gap-8 pt-8 font-sans text-body-sm font-medium text-gray-400">
+        <div class="flex items-center gap-8 pt-8 font-sans text-body-sm font-medium text-gray-300">
           <div class="flex items-center gap-2">
             <div class="h-2 w-2 animate-pulse rounded-full bg-lime"></div>
             <span>Metodologia Validada</span>
@@ -54,12 +55,16 @@ import Icons from '../ui/Icons.astro'
       <!-- Right Image com Vídeo -->
       <div class="hero-image relative hidden lg:block">
         <div class="relative">
-          <VideoPlayer
-            videoUrl="https://www.youtube.com/watch?v=SEU_VIDEO_ID"
-            thumbnail={joelBurigoHero}
-            title="Conheça Joel Burigo e o Framework dos 6Ps"
-            aspectRatio="portrait"
-            class="border-4 border-lime/20 shadow-2xl"
+          <Image
+            src={joelBurigoHero}
+            alt="Joel Burigo - Especialista em Vendas Escaláveis"
+            width={800}
+            height={1067}
+            loading="eager"
+            fetchpriority="high"
+            quality={85}
+            format="webp"
+            class="rounded-lg border-4 border-lime/20 shadow-2xl"
           />
           
           <!-- Floating Badge -->

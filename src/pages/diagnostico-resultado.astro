@@ -69,12 +69,12 @@ const seo = {
               <h2 class="mb-2 font-display text-h2 text-white">Pontuação Geral</h2>
               <div class="mb-4">
                 <span id="score-total" class="font-display text-6xl text-lime">--</span>
-                <span class="font-display text-3xl text-gray-400">/24</span>
+                <span class="font-display text-3xl text-gray-300">/24</span>
               </div>
               <p id="maturity-level" class="mb-4 font-sans text-body-lg text-gray-300">
                 Nível: <strong class="text-lime">Calculando...</strong>
               </p>
-              <p id="maturity-description" class="font-sans text-body text-gray-400"></p>
+              <p id="maturity-description" class="font-sans text-body text-gray-300"></p>
             </div>
             
             <!-- Radar Chart Container -->
@@ -402,7 +402,7 @@ const seo = {
                   <h3 class="font-display text-h4 text-white">${pData.name}</h3>
                   ${badge}
                 </div>
-                <p class="font-sans text-sm text-gray-400">${pData.description}</p>
+                <p class="font-sans text-sm text-gray-300">${pData.description}</p>
               </div>
             </div>
           </div>
@@ -415,7 +415,7 @@ const seo = {
           <p class="font-sans text-body text-gray-300">${levelData.description}</p>
         </div>
         <div>
-          <p class="mb-2 font-sans text-sm font-semibold text-gray-400">Próximas ações:</p>
+          <p class="mb-2 font-sans text-sm font-semibold text-gray-300">Próximas ações:</p>
           <ul class="space-y-2">
             ${levelData.actions.map(action => `
               <li class="flex items-start gap-2 font-sans text-sm text-gray-300">
@@ -466,7 +466,7 @@ const seo = {
             </div>
             <div class="flex-1">
               <h4 class="mb-1 font-display text-h5 text-white">${pData.icon} ${pData.name}</h4>
-              <p class="mb-2 font-sans text-sm text-gray-400">Pontuação atual: ${score}/4 - ${pData.levels[score].name}</p>
+              <p class="mb-2 font-sans text-sm text-gray-300">Pontuação atual: ${score}/4 - ${pData.levels[score].name}</p>
               <p class="font-sans text-body text-gray-300">${pData.levels[score].description}</p>
             </div>
           </div>
@@ -493,7 +493,7 @@ const seo = {
         </p>
         ${nextLevel ? `
           <div class="mb-4 rounded-lg bg-dark/50 p-4">
-            <p class="mb-2 font-sans text-sm font-semibold text-gray-400">Meta: Chegar ao nível "${nextLevel.name}"</p>
+            <p class="mb-2 font-sans text-sm font-semibold text-gray-300">Meta: Chegar ao nível "${nextLevel.name}"</p>
             <p class="font-sans text-sm text-gray-300">${nextLevel.description}</p>
           </div>
         ` : ''}

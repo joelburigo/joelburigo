@@ -1,3 +1,2 @@
-# Redireciona www para domínio principal
-https://www.joelburigo.com.br/* https://joelburigo.com.br/:splat 301!
-http://www.joelburigo.com.br/* https://joelburigo.com.br/:splat 301!
+# Redirects são gerenciados pelo Cloudflare Custom Domains
+# www.joelburigo.com.br redirecionará automaticamente para joelburigo.com.br

@@ -42,6 +42,11 @@ const fullTitle = title.includes('Joel Burigo') ? title : `${title} | Joel Burig
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
+    <!-- Hero image preload (apenas homepage) -->
+    {Astro.url.pathname === '/' && (
+      <link rel="preload" as="image" href="/src/assets/images/joel-burigo-vendas-sem-segredos-2.png" fetchpriority="high" />
+    )}
+    
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" /></noscript>
     

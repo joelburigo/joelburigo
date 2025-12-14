@@ -38,9 +38,13 @@ const fullTitle = title.includes('Joel Burigo') ? title : `${title} | Joel Burig
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {noIndex && <meta name="robots" content="noindex, nofollow" />}
     
-    <!-- Preconnect to improve performance -->
+    <!-- Critical Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" /></noscript>
+    
+    <!-- DNS Prefetch for Analytics (carregamento posterior) -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
     <link rel="dns-prefetch" href="https://connect.facebook.net" />
@@ -88,6 +92,14 @@ const fullTitle = title.includes('Joel Burigo') ? title : `${title} | Joel Burig
     <GoogleTagManagerBody />
     <slot />
     <CookieConsent />
+    
+    <!-- Inline Critical CSS para evitar FOUC -->
+    <style>
+      /* Critical Above-the-Fold Styles */
+      body { font-family: system-ui, -apple-system, sans-serif; }
+      .font-display { font-family: 'Montserrat', system-ui, sans-serif; }
+      .font-body { font-family: 'Inter', system-ui, sans-serif; }
+    </style>
     
     <!-- Track page views on SPA navigation -->
     <script>

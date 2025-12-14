@@ -23,7 +23,7 @@ const {
   class: className,
   loading = 'lazy',
   fetchpriority = 'auto',
-  quality = 80,
+  quality = 75,
   format = 'webp',
   sizes,
 } = Astro.props
@@ -38,6 +38,7 @@ const {
   loading={loading}
   fetchpriority={fetchpriority}
   quality={quality}
+  decoding="async"
   format={format}
   sizes={sizes}
   decoding="async"

@@ -4,15 +4,36 @@
 const GA4_ID = 'G-Z2XMZ448VV'
 ---
 
-<!-- Google Analytics 4 -->
-<script is:inline type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
+<!-- Google Analytics 4 - Lazy Loaded -->
 <script is:inline define:vars={{ GA4_ID }}>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', GA4_ID, {
-    page_path: window.location.pathname,
-  });
+  (function() {
+    let gaLoaded = false;
+    
+    function initGA() {
+      if (gaLoaded) return;
+      gaLoaded = true;
+      
+      // Load gtag script
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`;
+      document.head.appendChild(script);
+      
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', GA4_ID, {
+        page_path: window.location.pathname,
+      });
+    }
+    
+    // Load after interaction or 3 seconds
+    const events = ['mousedown', 'touchstart', 'keydown', 'scroll'];
+    events.forEach(event => {
+      window.addEventListener(event, initGA, { once: true, passive: true });
+    });
+    setTimeout(initGA, 3000);
+  })();
 </script>
 
 <!-- Track GA4 on SPA navigation -->

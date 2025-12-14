@@ -24,6 +24,20 @@
 
 /images/*
   Cache-Control: public, max-age=31536000, immutable
+  Vary: Accept
+
+/_astro/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+  Vary: Accept
+  Content-Type: image/webp
+
+/_astro/*.png
+  Cache-Control: public, max-age=31536000, immutable
+  Vary: Accept
+
+/_astro/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+  Vary: Accept
 
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable

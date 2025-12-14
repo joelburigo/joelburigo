@@ -11,34 +11,8 @@ export default defineConfig({
   adapter: cloudflare({
     mode: 'directory',
   }),
-  image: {
-    service: {
-      entrypoint: 'astro/assets/services/sharp',
-      config: {
-        limitInputPixels: false,
-      }
-    }
-  },
   vite: {
     build: {
-      rollupOptions: {
-        output: {
-          manualChunks: (id) => {
-            // Separar analytics em chunk próprio
-            if (id.includes('analytics')) {
-              return 'analytics';
-            }
-            // Separar node_modules em vendor chunk
-            if (id.includes('node_modules')) {
-              return 'vendor';
-            }
-            // Separar componentes grandes
-            if (id.includes('VideoPlayer') || id.includes('HighLevelForm')) {
-              return 'components';
-            }
-          }
-        }
-      },
       chunkSizeWarningLimit: 600
     }
   },

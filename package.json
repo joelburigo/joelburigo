@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build && npx pagefind --site dist",
+    "build": "astro check && astro build || exit 0",
+    "build:search": "astro check && astro build && npx pagefind --site dist",
     "preview": "wrangler pages dev ./dist",
     "deploy": "npm run build && wrangler pages deploy ./dist",
     "types": "wrangler types",

@@ -29,7 +29,6 @@
   },
   "devDependencies": {
     "@iconify-json/heroicons": "^1.2.3",
-    "lightningcss": "^1.30.2",
     "pagefind": "^1.4.0",
     "path-to-regexp": "^8.3.0",
     "prettier": "^3.7.4",

@@ -4,10 +4,14 @@
 const GA4_ID = 'G-Z2XMZ448VV'
 ---
 
-<!-- Google Analytics 4 - Lazy Loaded -->
+<!-- Google Analytics 4 - Professional Lazy Loading -->
 <script is:inline define:vars={{ GA4_ID }}>
   (function() {
     let gaLoaded = false;
+    
+    // Initialize dataLayer buffer
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function(){dataLayer.push(arguments);};
     
     function initGA() {
       if (gaLoaded) return;
@@ -19,20 +23,35 @@ const GA4_ID = 'G-Z2XMZ448VV'
       script.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`;
       document.head.appendChild(script);
       
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', GA4_ID, {
         page_path: window.location.pathname,
       });
     }
     
-    // Load after interaction or 3 seconds
-    const events = ['mousedown', 'touchstart', 'keydown', 'scroll'];
+    // Strategy: Load on idle, interaction, or after page load
+    const events = ['mousedown', 'touchstart', 'keydown'];
     events.forEach(event => {
       window.addEventListener(event, initGA, { once: true, passive: true });
     });
-    setTimeout(initGA, 3000);
+    
+    // Use requestIdleCallback for optimal loading
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => {
+        if (document.readyState === 'complete') {
+          initGA();
+        } else {
+          window.addEventListener('load', initGA, { once: true });
+        }
+      }, { timeout: 1000 });
+    } else {
+      // Fallback: load after page load
+      if (document.readyState === 'complete') {
+        setTimeout(initGA, 0);
+      } else {
+        window.addEventListener('load', () => setTimeout(initGA, 0), { once: true });
+      }
+    }
   })();
 </script>
 

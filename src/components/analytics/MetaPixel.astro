@@ -4,17 +4,28 @@
 const META_PIXEL_ID = '693646216957142'
 ---
 
-<!-- Meta Pixel Code - Lazy Loaded -->
+<!-- Meta Pixel Code - Professional Lazy Loading -->
 <script is:inline define:vars={{ META_PIXEL_ID }}>
   (function() {
     let pixelLoaded = false;
+    const eventBuffer = [];
+    
+    // Create fbq stub to buffer events
+    window.fbq = window.fbq || function() {
+      eventBuffer.push(arguments);
+    };
+    window._fbq = window._fbq || window.fbq;
+    window.fbq.push = window.fbq;
+    window.fbq.loaded = false;
+    window.fbq.version = '2.0';
+    window.fbq.queue = [];
     
     function initMetaPixel() {
       if (pixelLoaded) return;
       pixelLoaded = true;
       
       !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      {if(f.fbq && f.fbq.loaded)return;n=f.fbq=function(){n.callMethod?
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};
       if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
       n.queue=[];t=b.createElement(e);t.async=!0;
@@ -23,15 +34,36 @@ const META_PIXEL_ID = '693646216957142'
       'https://connect.facebook.net/en_US/fbevents.js');
       
       fbq('init', META_PIXEL_ID);
+      
+      // Replay buffered events
+      eventBuffer.forEach(args => fbq.apply(null, args));
+      
       fbq('track', 'PageView');
     }
     
-    // Load after interaction or 3 seconds
-    const events = ['mousedown', 'touchstart', 'keydown', 'scroll'];
+    // Strategy: Load on idle, interaction, or after page load
+    const events = ['mousedown', 'touchstart', 'keydown'];
     events.forEach(event => {
       window.addEventListener(event, initMetaPixel, { once: true, passive: true });
     });
-    setTimeout(initMetaPixel, 3000);
+    
+    // Use requestIdleCallback for optimal loading
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => {
+        if (document.readyState === 'complete') {
+          initMetaPixel();
+        } else {
+          window.addEventListener('load', initMetaPixel, { once: true });
+        }
+      }, { timeout: 1000 });
+    } else {
+      // Fallback: load after page load
+      if (document.readyState === 'complete') {
+        setTimeout(initMetaPixel, 0);
+      } else {
+        window.addEventListener('load', () => setTimeout(initMetaPixel, 0), { once: true });
+      }
+    }
   })();
 </script>
 

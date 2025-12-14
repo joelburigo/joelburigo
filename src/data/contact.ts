@@ -64,7 +64,7 @@ export const contactInfo = {
 }
 
 // Helper functions para URLs com UTMs
-export function getWhatsAppLink(message?: string, utmParams?: { source?: string; medium?: string; campaign?: string }) {
+export function getWhatsAppLink(message?: string) {
   let url = contactInfo.phone.whatsappLink
   
   if (message) {

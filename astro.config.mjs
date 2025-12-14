@@ -69,16 +69,18 @@ export default defineConfig({
   ],
   image: {
     remotePatterns: [{ protocol: 'https' }],
-    service: {
-      entrypoint: 'astro/assets/services/sharp',
-      config: {
-        limitInputPixels: false,
-      },
-    },
   },
   compressHTML: true,
   build: {
     inlineStylesheets: 'auto',
     assets: '_astro',
+  },
+  vite: {
+    build: {
+      target: 'es2022',
+      modulePreload: { polyfill: false },
+      cssCodeSplit: true,
+      chunkSizeWarningLimit: 600,
+    },
   },
 })

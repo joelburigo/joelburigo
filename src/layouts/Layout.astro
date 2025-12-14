@@ -38,6 +38,14 @@ const fullTitle = title.includes('Joel Burigo') ? title : `${title} | Joel Burig
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {noIndex && <meta name="robots" content="noindex, nofollow" />}
     
+    <!-- Inline Critical CSS -->
+    <style>
+      body{margin:0;background:#020617;color:#fff;font-family:system-ui,-apple-system,sans-serif}
+      .font-display{font-family:'Montserrat',system-ui,sans-serif;font-weight:700}
+      .font-body{font-family:'Inter',system-ui,sans-serif}
+      *{box-sizing:border-box}
+    </style>
+    
     <!-- Critical Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

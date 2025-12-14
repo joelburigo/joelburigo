@@ -256,7 +256,7 @@ const resultados = [
             <h2 class="mb-4 font-display text-display-sm text-white">
               Resultados de Quem <span class="text-lime">Implementou</span>
             </h2>
-            <p class="mx-auto max-w-3xl font-sans text-body-lg text-gray-300">
+            <p class="mx-auto max-w-3xl font-sans text-body-lg text-gray-200">
               Empresas reais que saíram de vendas aleatórias para vendas previsíveis
             </p>
           </div>
@@ -278,7 +278,7 @@ const resultados = [
                   </div>
                 </div>
                 <p class="mb-4 font-display text-lg font-bold text-lime">{depoimento.resultado}</p>
-                <p class="font-sans text-body text-gray-300">{depoimento.texto}</p>
+                <p class="font-sans text-body text-gray-200">{depoimento.texto}</p>
               </div>
             ))}
           </div>
@@ -313,7 +313,7 @@ const resultados = [
                   {item.icon === 'Target' && <Icons name="target" class="h-8 w-8 text-lime" />}
                   <h3 class="font-display text-h3 text-white">{item.titulo}</h3>
                 </div>
-                <p class="font-sans text-body text-gray-300">{item.desc}</p>
+                <p class="font-sans text-body text-gray-200">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -329,7 +329,7 @@ const resultados = [
             <h2 class="mb-4 font-display text-display-sm text-white">
               O Que É o <span class="text-lime">VSS</span>
             </h2>
-            <p class="mx-auto max-w-3xl font-sans text-body-lg text-gray-300">
+            <p class="mx-auto max-w-3xl font-sans text-body-lg text-gray-200">
               Programa de implementação guiada onde você estrutura seu sistema de vendas em 90 dias usando o Framework dos 6Ps
             </p>
           </div>
@@ -349,7 +349,7 @@ const resultados = [
                     <Icons name="check-circle-2" class="h-6 w-6 flex-shrink-0 text-lime" />
                     <div>
                       <p class="font-display text-lg font-semibold text-white">{item.title}</p>
-                      <p class="font-sans text-body text-gray-300">{item.desc}</p>
+                      <p class="font-sans text-body text-gray-200">{item.desc}</p>
                     </div>
                   </li>
                 ))}
@@ -368,7 +368,7 @@ const resultados = [
                 {naoE.map((item) => (
                   <li class="flex items-start gap-3">
                     <Icons name="x" class="h-6 w-6 flex-shrink-0 text-red-400" />
-                    <span class="font-sans text-body text-gray-300">{item}</span>
+                    <span class="font-sans text-body text-gray-200">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -381,7 +381,7 @@ const resultados = [
               <Icons name="alert-circle" class="h-8 w-8 flex-shrink-0 text-lime" />
               <div>
                 <h3 class="mb-3 font-display text-h3 text-white">⏰ Por Que o Preço Sobe Depois dos 100 Primeiros?</h3>
-                <p class="mb-4 font-sans text-body text-gray-300">
+                <p class="mb-4 font-sans text-body text-gray-200">
                   Os 100 primeiros alunos garantem o preço de lançamento. Após isso, o investimento aumenta para 
                   refletir o valor comprovado do programa e a demanda. É a forma de recompensar quem confia e entra 
                   primeiro. Não é escassez artificial, é precificação estratégica.
@@ -404,7 +404,7 @@ const resultados = [
             <h2 class="mb-4 font-display text-display-sm text-white">
               15 Módulos <span class="text-lime">Estruturados</span>
             </h2>
-            <p class="mx-auto max-w-2xl font-sans text-body-lg text-gray-300">
+            <p class="mx-auto max-w-2xl font-sans text-body-lg text-gray-200">
               60 aulas práticas totalizando 28-32 horas de conteúdo. Cada aula entre 15-35 minutos.
             </p>
           </div>
@@ -414,7 +414,7 @@ const resultados = [
               <div class="rounded-xl border-2 border-white/10 bg-white/5 p-6 transition-all hover:border-lime/50 hover:shadow-lg hover:shadow-lime/10">
                 <div class="mb-3 flex items-center justify-between">
                   <span class="font-display text-2xl font-bold text-lime">{modulo.num}</span>
-                  <span class="rounded-full bg-white/10 px-3 py-1 font-sans text-xs font-semibold text-gray-300">
+                  <span class="rounded-full bg-white/10 px-3 py-1 font-sans text-xs font-semibold text-gray-200">
                     {modulo.aulas} aulas
                   </span>
                 </div>
@@ -439,7 +439,7 @@ const resultados = [
             <h2 class="mb-4 font-display text-display-sm text-white">
               A Jornada de <span class="text-lime">90 Dias</span>
             </h2>
-            <p class="mx-auto max-w-3xl font-sans text-body-lg text-gray-300">
+            <p class="mx-auto max-w-3xl font-sans text-body-lg text-gray-200">
               Transformação estruturada em 3 fases. Do caos à previsibilidade em 12 semanas.
             </p>
           </div>
@@ -450,7 +450,7 @@ const resultados = [
                 <span class="font-display text-sm font-bold text-lime">FASE 1: Dias 1-30</span>
               </div>
               <h3 class="mb-4 font-display text-h3 text-white">Fundação</h3>
-              <ul class="space-y-3 font-sans text-body-sm text-gray-300">
+              <ul class="space-y-3 font-sans text-body-sm text-gray-200">
                 <li class="flex items-start gap-2">
                   <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
                   <span>Diagnóstico completo dos 6Ps</span>
@@ -475,7 +475,7 @@ const resultados = [
                 <span class="font-display text-sm font-bold text-lime">FASE 2: Dias 31-60</span>
               </div>
               <h3 class="mb-4 font-display text-h3 text-white">Implementação</h3>
-              <ul class="space-y-3 font-sans text-body-sm text-gray-300">
+              <ul class="space-y-3 font-sans text-body-sm text-gray-200">
                 <li class="flex items-start gap-2">
                   <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
                   <span>Funis e automações no ar</span>
@@ -500,7 +500,7 @@ const resultados = [
                 <span class="font-display text-sm font-bold text-lime">FASE 3: Dias 61-90</span>
               </div>
               <h3 class="mb-4 font-display text-h3 text-white">Escala</h3>
-              <ul class="space-y-3 font-sans text-body-sm text-gray-300">
+              <ul class="space-y-3 font-sans text-body-sm text-gray-200">
                 <li class="flex items-start gap-2">
                   <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
                   <span>Processos documentados (SOPs)</span>
@@ -523,7 +523,7 @@ const resultados = [
 
           <div class="mt-12 rounded-2xl border-2 border-lime/30 bg-lime/10 p-8 text-center">
             <h3 class="mb-4 font-display text-h3 text-white">O Que Acontece Após os 90 Dias?</h3>
-            <p class="mx-auto mb-6 max-w-3xl font-sans text-body text-gray-300">
+            <p class="mx-auto mb-6 max-w-3xl font-sans text-body text-gray-200">
               Você não fica abandonado. Após os 90 dias intensivos, as mentorias continuam quinzenais por mais 6 meses. 
               Você terá um sistema que funciona E o suporte para otimizar continuamente. A diferença entre um aluno VSS 
               e quem compra curso é que você sai com SISTEMA FUNCIONANDO, não só conhecimento na cabeça.
@@ -557,7 +557,7 @@ const resultados = [
                   {secao.itens.map((item) => (
                     <li class="flex items-start gap-3">
                       <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
-                      <span class="font-sans text-body text-gray-300">{item}</span>
+                      <span class="font-sans text-body text-gray-200">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -576,7 +576,7 @@ const resultados = [
             <h2 class="mb-4 font-display text-display-sm text-white">
               Resultados ao Final dos <span class="text-lime">90 Dias</span>
             </h2>
-            <p class="mx-auto max-w-2xl font-sans text-body-lg text-gray-300">
+            <p class="mx-auto max-w-2xl font-sans text-body-lg text-gray-200">
               O que você terá construído no seu negócio
             </p>
           </div>
@@ -589,7 +589,7 @@ const resultados = [
                 </div>
                 <div class="rounded-lg border border-red-500/20 bg-red-500/10 p-4">
                   <p class="mb-1 font-sans text-xs font-semibold uppercase tracking-wide text-red-400">Antes</p>
-                  <p class="font-sans text-body text-gray-300">{resultado.antes}</p>
+                  <p class="font-sans text-body text-gray-200">{resultado.antes}</p>
                 </div>
                 <div class="rounded-lg border border-lime/20 bg-lime/10 p-4">
                   <p class="mb-1 font-sans text-xs font-semibold uppercase tracking-wide text-lime">Depois</p>
@@ -700,7 +700,7 @@ const resultados = [
             <h2 class="mb-4 font-display text-display-sm text-white">
               Perguntas <span class="text-lime">Frequentes</span>
             </h2>
-            <p class="mx-auto max-w-2xl font-sans text-body-lg text-gray-300">
+            <p class="mx-auto max-w-2xl font-sans text-body-lg text-gray-200">
               Tudo que você precisa saber antes de entrar
             </p>
           </div>
@@ -712,7 +712,7 @@ const resultados = [
                   <span>{item.pergunta}</span>
                   <span class="text-lime transition-transform group-open:rotate-180">▼</span>
                 </summary>
-                <p class="mt-4 border-t border-white/10 pt-4 font-sans text-body text-gray-300">
+                <p class="mt-4 border-t border-white/10 pt-4 font-sans text-body text-gray-200">
                   {item.resposta}
                 </p>
               </details>
@@ -721,7 +721,7 @@ const resultados = [
 
           <div class="mt-12 rounded-2xl border-2 border-lime/30 bg-lime/10 p-8 text-center">
             <p class="mb-4 font-display text-h3 text-white">Ainda tem dúvidas?</p>
-            <p class="mb-6 font-sans text-body text-gray-300">
+            <p class="mb-6 font-sans text-body text-gray-200">
               Fale diretamente comigo pelo WhatsApp antes de se inscrever
             </p>
             <Button variant="outline" size="lg" class="border-lime text-lime hover:bg-lime hover:text-dark">
@@ -749,35 +749,35 @@ const resultados = [
                 <Icons name="check-circle-2" class="h-6 w-6 flex-shrink-0 text-lime" />
                 <div>
                   <p class="font-display text-lg font-semibold text-white">Você fatura R$ 10k-100k/mês</p>
-                  <p class="font-sans text-body-sm text-gray-300">Qualquer modelo: B2B, B2C, serviços, varejo, e-commerce, etc</p>
+                  <p class="font-sans text-body-sm text-gray-200">Qualquer modelo: B2B, B2C, serviços, varejo, e-commerce, etc</p>
                 </div>
               </div>
               <div class="flex items-start gap-3">
                 <Icons name="check-circle-2" class="h-6 w-6 flex-shrink-0 text-lime" />
                 <div>
                   <p class="font-display text-lg font-semibold text-white">Vendas são inconstantes</p>
-                  <p class="font-sans text-body-sm text-gray-300">Alguns meses bons, outros péssimos. Você não sabe prever.</p>
+                  <p class="font-sans text-body-sm text-gray-200">Alguns meses bons, outros péssimos. Você não sabe prever.</p>
                 </div>
               </div>
               <div class="flex items-start gap-3">
                 <Icons name="check-circle-2" class="h-6 w-6 flex-shrink-0 text-lime" />
                 <div>
                   <p class="font-display text-lg font-semibold text-white">Quer autonomia</p>
-                  <p class="font-sans text-body-sm text-gray-300">Cansou de depender de agência ou "guru" salvador</p>
+                  <p class="font-sans text-body-sm text-gray-200">Cansou de depender de agência ou "guru" salvador</p>
                 </div>
               </div>
               <div class="flex items-start gap-3">
                 <Icons name="check-circle-2" class="h-6 w-6 flex-shrink-0 text-lime" />
                 <div>
                   <p class="font-display text-lg font-semibold text-white">Pode dedicar 2-3h/semana</p>
-                  <p class="font-sans text-body-sm text-gray-300">Implementação exige trabalho. Não é mágica.</p>
+                  <p class="font-sans text-body-sm text-gray-200">Implementação exige trabalho. Não é mágica.</p>
                 </div>
               </div>
               <div class="flex items-start gap-3">
                 <Icons name="check-circle-2" class="h-6 w-6 flex-shrink-0 text-lime" />
                 <div>
                   <p class="font-display text-lg font-semibold text-white">Valoriza sistema > improviso</p>
-                  <p class="font-sans text-body-sm text-gray-300">Quer construir algo sustentável, não gambiarras</p>
+                  <p class="font-sans text-body-sm text-gray-200">Quer construir algo sustentável, não gambiarras</p>
                 </div>
               </div>
             </div>
@@ -790,28 +790,28 @@ const resultados = [
                 <Icons name="x" class="h-6 w-6 flex-shrink-0 text-red-400" />
                 <div>
                   <p class="font-display text-lg font-semibold text-white">Quer fórmula mágica</p>
-                  <p class="font-sans text-body-sm text-gray-300">"Ganhe R$ 100k em 30 dias sem esforço" não existe</p>
+                  <p class="font-sans text-body-sm text-gray-200">"Ganhe R$ 100k em 30 dias sem esforço" não existe</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
                 <Icons name="x" class="h-6 w-6 flex-shrink-0 text-red-400" />
                 <div>
                   <p class="font-display text-lg font-semibold text-white">Não tem tempo</p>
-                  <p class="font-sans text-body-sm text-gray-300">Se 2-3h/semana é impossível, VSS não vai funcionar</p>
+                  <p class="font-sans text-body-sm text-gray-200">Se 2-3h/semana é impossível, VSS não vai funcionar</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
                 <Icons name="x" class="h-6 w-6 flex-shrink-0 text-red-400" />
                 <div>
                   <p class="font-display text-lg font-semibold text-white">Quer que eu faça tudo</p>
-                  <p class="font-sans text-body-sm text-gray-300">Para isso existe o Services (DFY). VSS é "faça você mesmo"</p>
+                  <p class="font-sans text-body-sm text-gray-200">Para isso existe o Services (DFY). VSS é "faça você mesmo"</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
                 <Icons name="x" class="h-6 w-6 flex-shrink-0 text-red-400" />
                 <div>
                   <p class="font-display text-lg font-semibold text-white">Quer resultado instantâneo</p>
-                  <p class="font-sans text-body-sm text-gray-300">Sistema leva 90 dias para estruturar. Resultados vêm depois.</p>
+                  <p class="font-sans text-body-sm text-gray-200">Sistema leva 90 dias para estruturar. Resultados vêm depois.</p>
                 </div>
               </li>
             </ul>
@@ -821,7 +821,7 @@ const resultados = [
         <!-- CTA Final -->
         <div class="mt-16 rounded-2xl border-2 border-lime/30 bg-lime/10 p-12 text-center">
           <h3 class="mb-4 font-display text-h1 text-white">Pronto para Transformar Suas Vendas?</h3>
-          <p class="mx-auto mb-8 max-w-2xl font-sans text-body-lg text-gray-300">
+          <p class="mx-auto mb-8 max-w-2xl font-sans text-body-lg text-gray-200">
             Garanta seu acesso com <span class="font-bold text-lime">preço de lançamento</span>. 
             Apenas <span class="font-bold text-lime">100 vagas disponíveis</span> neste investimento especial.
           </p>

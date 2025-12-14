@@ -75,7 +75,7 @@ const pathways = [
       <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
         Escolha Seu Caminho
       </h2>
-      <p class="font-sans text-body-lg text-gray-300">
+      <p class="font-sans text-body-lg text-gray-200">
         Três formas de estruturar suas vendas. Mesma metodologia, níveis diferentes de envolvimento.
       </p>
     </div>
@@ -126,14 +126,14 @@ const pathways = [
                 </div>
 
                 {/* Description */}
-                <p class="mb-8 font-sans text-body text-gray-300">
+                <p class="mb-8 font-sans text-body text-gray-200">
                   {pathway.description}
                 </p>
 
                 {/* Features */}
                 <ul class="mb-8 space-y-3">
                   {pathway.features.map((feature) => (
-                    <li class="flex items-start gap-3 font-sans text-body-sm text-gray-300">
+                    <li class="flex items-start gap-3 font-sans text-body-sm text-gray-200">
                       <Icons name="check" class={`h-5 w-5 flex-shrink-0 ${pathway.badge ? 'text-lime' : 'text-white/70'}`} />
                       <span>{feature}</span>
                     </li>

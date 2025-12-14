@@ -29,9 +29,11 @@ const isImageMetadata = thumbnail && typeof thumbnail !== 'string'
           <Image
             src={thumbnail as ImageMetadata}
             alt={title}
+            widths={[480, 720, 1080]}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1080px"
             loading={lazyLoad ? 'lazy' : 'eager'}
             fetchpriority={lazyLoad ? 'auto' : 'high'}
-            quality={lazyLoad ? 75 : 85}
+            quality={lazyLoad ? 70 : 80}
             class={aspectRatio === 'portrait' ? 'h-full w-full object-cover transition-transform duration-300 hover:scale-105' : 'absolute inset-0 h-full w-full object-cover transition-transform duration-300 hover:scale-105'}
           />
         ) : (

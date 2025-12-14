@@ -7,6 +7,7 @@ interface Props {
   alt: string
   width?: number
   height?: number
+  widths?: number[]
   class?: string
   loading?: 'lazy' | 'eager'
   fetchpriority?: 'high' | 'low' | 'auto'
@@ -20,25 +21,41 @@ const {
   alt,
   width,
   height,
+  widths,
   class: className,
   loading = 'lazy',
   fetchpriority = 'auto',
-  quality = 75,
+  quality = 70,
   format = 'webp',
   sizes,
 } = Astro.props
 ---
 
-<Image
-  src={src as any}
-  alt={alt}
-  width={width!}
-  height={height!}
-  class={className}
-  loading={loading}
-  fetchpriority={fetchpriority}
-  quality={quality}
-  decoding="async"
-  format={format}
-  sizes={sizes}
-/>
+{widths ? (
+  <Image
+    src={src as any}
+    alt={alt}
+    widths={widths}
+    class={className}
+    loading={loading}
+    fetchpriority={fetchpriority}
+    quality={quality}
+    decoding="async"
+    format={format}
+    sizes={sizes}
+  />
+) : (
+  <Image
+    src={src as any}
+    alt={alt}
+    width={width!}
+    height={height!}
+    class={className}
+    loading={loading}
+    fetchpriority={fetchpriority}
+    quality={quality}
+    decoding="async"
+    format={format}
+    sizes={sizes}
+  />
+)}

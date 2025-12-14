@@ -202,8 +202,9 @@ const promessas = [
                 <Image
                   src={joelBurigoImage}
                   alt="Joel Burigo - Especialista em Vendas Escaláveis"
-                  width={800}
-                  height={1000}
+                  widths={[400, 600, 800]}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={75}
                   loading="lazy"
                   class="h-full w-full object-cover"
                 />

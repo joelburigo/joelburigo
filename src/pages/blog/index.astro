@@ -89,8 +89,9 @@ const categories = [
                 <Image 
                   src={featuredPost.data.heroImage} 
                   alt={featuredPost.data.title}
-                  width={800}
-                  height={450}
+                  widths={[400, 600, 800]}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={70}
                   loading="eager"
                   class="h-full w-full object-cover"
                 />
@@ -164,8 +165,9 @@ const categories = [
                   <Image 
                     src={post.data.heroImage} 
                     alt={post.data.title}
-                    width={600}
-                    height={338}
+                    widths={[320, 480, 640]}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    quality={70}
                     loading="lazy"
                     class="h-full w-full object-cover transition-transform group-hover:scale-105"
                   />

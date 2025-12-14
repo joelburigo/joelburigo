@@ -119,8 +119,9 @@ const articleSchema = {
               <Image 
                 src={post.data.heroImage} 
                 alt={post.data.title}
-                width={1200}
-                height={630}
+                widths={[640, 960, 1280]}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 800px"
+                quality={75}
                 loading="eager"
                 class="w-full h-auto"
               />

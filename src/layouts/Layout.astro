@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css'
-import { ViewTransitions } from 'astro:transitions'
 import GoogleTagManager from '../components/analytics/GoogleTagManager.astro'
 import GoogleTagManagerBody from '../components/analytics/GoogleTagManagerBody.astro'
 import GoogleAnalytics from '../components/analytics/GoogleAnalytics.astro'
@@ -48,7 +47,6 @@ const fullTitle = title.includes('Joel Burigo') ? title : `${title} | Joel Burig
     
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL} />
-    <ViewTransitions />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />

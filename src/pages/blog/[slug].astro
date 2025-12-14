@@ -76,7 +76,7 @@ const articleSchema = {
 
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
   <!-- Schema.org JSON-LD -->
-  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
   <Header />
   

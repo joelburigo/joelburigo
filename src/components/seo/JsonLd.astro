@@ -41,4 +41,4 @@ const defaultOrganization = {
 const jsonLdData = type === 'Organization' ? { ...defaultOrganization, ...data } : data
 ---
 
-<script type="application/ld+json" set:html={JSON.stringify(jsonLdData)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLdData)} />

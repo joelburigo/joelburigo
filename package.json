@@ -34,7 +34,8 @@
     "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "wrangler": "^4.54.0"
   },
   "overrides": {
     "path-to-regexp": "^8.3.0"

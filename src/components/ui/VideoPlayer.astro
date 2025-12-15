@@ -35,6 +35,7 @@ const isImageMetadata = thumbnail && typeof thumbnail !== 'string'
             loading={lazyLoad ? 'lazy' : 'eager'}
             fetchpriority={lazyLoad ? 'auto' : 'high'}
             quality={heroOptimized ? 75 : (lazyLoad ? 70 : 80)}
+            format="webp"
             class={aspectRatio === 'portrait' ? 'h-full w-full object-cover transition-transform duration-300 hover:scale-105' : 'absolute inset-0 h-full w-full object-cover transition-transform duration-300 hover:scale-105'}
           />
         ) : (

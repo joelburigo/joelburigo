@@ -69,6 +69,10 @@ export default defineConfig({
   ],
   image: {
     remotePatterns: [{ protocol: 'https' }],
+    // Cloudflare Images service for runtime optimization
+    service: {
+      entrypoint: '@astrojs/cloudflare/image-service',
+    },
   },
   compressHTML: true,
   build: {

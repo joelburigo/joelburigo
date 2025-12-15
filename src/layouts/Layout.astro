@@ -38,6 +38,9 @@ const fullTitle = title.includes('Joel Burigo') ? title : `${title} | Joel Burig
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {noIndex && <meta name="robots" content="noindex, nofollow" />}
     
+    <!-- Disable Cloudflare Email Obfuscation -->
+    <meta name="cloudflare-email-obfuscation" content="off" />
+    
     <!-- Inline Critical CSS -->
     <style>
       body{margin:0;background:#020617;color:#fff;font-family:system-ui,-apple-system,sans-serif}
@@ -47,16 +50,11 @@ const fullTitle = title.includes('Joel Burigo') ? title : `${title} | Joel Burig
     </style>
     
     <!-- Critical Resource Hints -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://connect.facebook.net" />
-    <link rel="preconnect" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://connect.facebook.net" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    
-    <!-- Preload Hero Image (LCP) - Only on homepage -->
-    {Astro.url.pathname === '/' && (
-      <link rel="preload" as="image" href="/_astro/joel-burigo-vendas-sem-segredos-2.*_Z*.webp" type="image/webp" fetchpriority="high" />
-    )}
     
     <!-- Preload Fonts (async CSS) -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />

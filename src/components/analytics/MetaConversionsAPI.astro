@@ -51,11 +51,13 @@ const META_PIXEL_ID = '693646216957142'
       }).catch(err => console.error('Meta CAPI error:', err));
     }
 
-    // Track PageView
-    sendEvent('PageView');
+    // Wait for page load to avoid blocking critical path
+    function initTracking() {
+      // Track PageView
+      sendEvent('PageView');
 
-    // Track form submissions (Lead event)
-    document.addEventListener('submit', function(e) {
+      // Track form submissions (Lead event)
+      document.addEventListener('submit', function(e) {
       const form = e.target;
       if (form.tagName === 'FORM') {
         sendEvent('Lead', {
@@ -64,14 +66,22 @@ const META_PIXEL_ID = '693646216957142'
       }
     });
 
-    // Track button clicks (importantes para conversão)
-    document.addEventListener('click', function(e) {
-      const target = e.target.closest('a[href*="vendas-sem-segredos"], button[data-cta]');
-      if (target) {
+      // Track button clicks (importantes para conversão)
+      document.addEventListener('click', function(e) {
+        const target = e.target.closest('a[href*="vendas-sem-segredos"], button[data-cta]');
+        if (target) {
         sendEvent('InitiateCheckout', {
           content_name: target.textContent?.trim() || 'CTA Click',
-        });
-      }
-    });
+          });
+        }
+      });
+    }
+
+    // Execute tracking after page load (not blocking critical path)
+    if (document.readyState === 'complete') {
+      initTracking();
+    } else {
+      window.addEventListener('load', initTracking, { once: true });
+    }
   })();
 </script>

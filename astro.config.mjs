@@ -3,6 +3,7 @@ import cloudflare from '@astrojs/cloudflare'
 import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
 import icon from 'astro-icon'
+import { passthroughImageService } from 'astro/config'
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,14 +11,10 @@ export default defineConfig({
   output: 'server', // SSR mode
   adapter: cloudflare({
     mode: 'directory',
-    runtime: {
-      mode: 'local',
-      type: 'pages',
-    },
   }),
-  // Compile mode: usa Sharp no build, passthrough no runtime
+  // Passthrough: imagens já estão fisicamente otimizadas em WebP
   image: {
-    service: 'compile',
+    service: passthroughImageService(),
   },
   vite: {
     build: {

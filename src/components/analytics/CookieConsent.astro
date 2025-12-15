@@ -48,8 +48,11 @@
     // Check if user already made a choice
     const consent = localStorage.getItem('cookie_consent')
     if (!consent) {
-      // Show banner if no choice was made
-      banner.classList.remove('hidden')
+      // Delay banner display to avoid being LCP (wait for hero to load)
+      requestIdleCallback(() => {
+        banner.classList.remove('hidden')
+        banner.classList.add('translate-y-0')
+      }, { timeout: 1500 })
     }
 
     // Helper to push consent state to dataLayer

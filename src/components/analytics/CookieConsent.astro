@@ -1,7 +1,7 @@
 ---
-// Cookie Consent Banner - Simplified for GTM
-// Only pushes consent state to dataLayer
-// GTM handles Consent Mode v2 configuration
+// Cookie Consent Banner - LGPD/GDPR Compliance
+// Stores user consent preference and updates dataLayer
+// Google Analytics and Meta API respect consent state
 ---
 
 <div
@@ -73,7 +73,7 @@
         banner.style.pointerEvents = 'none'
       })
       
-      // Push consent state to dataLayer for GTM
+      // Push consent state to dataLayer for Google Analytics Consent Mode
       window.dataLayer = window.dataLayer || []
       window.dataLayer.push({
         event: 'cookie_consent_update',

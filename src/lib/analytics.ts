@@ -1,10 +1,10 @@
-// Simplified Analytics Library - GTM First Approach
-// All tracking goes through dataLayer
-// GTM handles consent, pixels, and conversions
+// Simplified Analytics Library - Direct Tracking Approach
+// All tracking uses dataLayer pattern for consistency
+// Google Analytics, Google Ads, and Meta API handle tracking
 
 /**
  * Check if we can track (user consent)
- * GTM will respect this via consent mode, but we also check client-side
+ * All analytics scripts respect this consent state
  */
 const canTrack = (): boolean => {
   if (typeof window === 'undefined') return false
@@ -35,8 +35,8 @@ const sendServerEvent = async (eventData: any) => {
 }
 
 /**
- * Core tracking function - pushes to dataLayer only
- * GTM handles everything else (GA4, Ads, Meta Pixel, etc.)
+ * Core tracking function - pushes to dataLayer for consistency
+ * Google Analytics and other scripts consume dataLayer events
  */
 export const trackEvent = (
   eventName: string,
@@ -53,7 +53,7 @@ export const trackEvent = (
     ...params,
   }
 
-  // Only push to dataLayer - GTM does the rest
+  // Push to dataLayer - Google Analytics listens to these events
   if (typeof window !== 'undefined') {
     window.dataLayer = window.dataLayer || []
     window.dataLayer.push(eventData)

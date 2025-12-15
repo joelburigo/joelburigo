@@ -100,8 +100,14 @@ import Icons from '../ui/Icons.astro'
 
     if (mobileVideoBtn && mobileVideoContainer) {
       mobileVideoBtn.addEventListener('click', () => {
-        mobileVideoContainer.classList.remove('hidden');
-        mobileVideoContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Use requestAnimationFrame to avoid forced reflow
+        requestAnimationFrame(() => {
+          mobileVideoContainer.classList.remove('hidden');
+          // Delay scrollIntoView to next frame to avoid forced reflow
+          requestAnimationFrame(() => {
+            mobileVideoContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          });
+        });
       });
     }
   }

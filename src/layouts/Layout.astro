@@ -1,7 +1,5 @@
 ---
 import '../styles/global.css'
-import GoogleTagManager from '../components/analytics/GoogleTagManager.astro'
-import GoogleTagManagerBody from '../components/analytics/GoogleTagManagerBody.astro'
 import GoogleAnalytics from '../components/analytics/GoogleAnalytics.astro'
 import GoogleAds from '../components/analytics/GoogleAds.astro'
 import MetaConversionsAPI from '../components/analytics/MetaConversionsAPI.astro'
@@ -96,16 +94,14 @@ const fullTitle = title.includes('Joel Burigo') ? title : `${title} | Joel Burig
     <title>{fullTitle}</title>
     
     <!-- Analytics & Tracking -->
-    <GoogleTagManager />
-    <GoogleAds />
     <GoogleAnalytics />
+    <GoogleAds />
     <MetaConversionsAPI />
     
     <!-- Structured Data -->
     <JsonLd />
   </head>
   <body class="bg-dark text-white transition-colors">
-    <GoogleTagManagerBody />
     <slot />
     <CookieConsent />
     

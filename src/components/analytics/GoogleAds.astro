@@ -1,14 +1,37 @@
 ---
 // Google Ads - Conversion Tracking
-// Hardcoded para simplificar
+// Lazy loaded para não bloquear critical path
 const GOOGLE_ADS_ID = 'AW-17800140385'
 ---
 
 <!-- Google Ads (Google AdWords) Conversion Tracking -->
-<script is:inline type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`}></script>
 <script is:inline define:vars={{ GOOGLE_ADS_ID }}>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', GOOGLE_ADS_ID);
+  (function() {
+    let adsLoaded = false;
+    
+    // Initialize dataLayer buffer
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function(){dataLayer.push(arguments);};
+    
+    function initGoogleAds() {
+      if (adsLoaded) return;
+      adsLoaded = true;
+      
+      // Load gtag script
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`;
+      document.head.appendChild(script);
+      
+      gtag('js', new Date());
+      gtag('config', GOOGLE_ADS_ID);
+    }
+    
+    // Strategy: Load after page complete (not blocking critical path)
+    if (document.readyState === 'complete') {
+      initGoogleAds();
+    } else {
+      window.addEventListener('load', initGoogleAds, { once: true });
+    }
+  })();
 </script>

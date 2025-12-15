@@ -6,7 +6,8 @@
 
 <div
   id="cookie-consent-banner"
-  class="fixed bottom-0 left-0 right-0 z-50 hidden transform bg-dark/98 p-6 shadow-2xl backdrop-blur-lg transition-transform duration-300"
+  class="fixed bottom-0 left-0 right-0 z-50 transform translate-y-full bg-dark/98 p-6 shadow-2xl backdrop-blur-lg transition-transform duration-300 will-change-transform"
+  style="opacity: 0; pointer-events: none;"
   data-consent-banner
 >
   <div class="container mx-auto max-w-7xl">
@@ -50,15 +51,27 @@
     if (!consent) {
       // Delay banner display to avoid being LCP (wait for hero to load)
       requestIdleCallback(() => {
-        banner.classList.remove('hidden')
-        banner.classList.add('translate-y-0')
+        // Use requestAnimationFrame to avoid forced reflow
+        requestAnimationFrame(() => {
+          banner.style.opacity = '1'
+          banner.style.pointerEvents = 'auto'
+          banner.classList.remove('translate-y-full')
+          banner.classList.add('translate-y-0')
+        })
       }, { timeout: 1500 })
     }
 
     // Helper to push consent state to dataLayer
     const updateConsent = (accepted: boolean) => {
       localStorage.setItem('cookie_consent', accepted ? 'accepted' : 'rejected')
-      banner.classList.add('hidden')
+      
+      // Animate out without forced reflow
+      requestAnimationFrame(() => {
+        banner.classList.remove('translate-y-0')
+        banner.classList.add('translate-y-full')
+        banner.style.opacity = '0'
+        banner.style.pointerEvents = 'none'
+      })
       
       // Push consent state to dataLayer for GTM
       window.dataLayer = window.dataLayer || []

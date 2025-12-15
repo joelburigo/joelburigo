@@ -127,8 +127,12 @@ const isImageMetadata = thumbnail && typeof thumbnail !== 'string'
 
         // Ocultar thumbnail e mostrar vídeo inline
         iframe.src = embedUrl;
-        thumbnail.classList.add('hidden');
-        videoEmbed.classList.remove('hidden');
+        
+        // Use requestAnimationFrame to avoid forced reflow
+        requestAnimationFrame(() => {
+          thumbnail.classList.add('hidden');
+          videoEmbed.classList.remove('hidden');
+        });
       });
     });
   }

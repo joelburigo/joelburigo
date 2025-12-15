@@ -100,21 +100,26 @@ const { navLinks } = Astro.props
       
       const isOpen = mobileMenu.classList.contains('active')
       
-      if (isOpen) {
-        mobileMenu.classList.remove('active')
-        menuButton.classList.remove('active')
-        document.body.style.overflow = ''
-      } else {
-        mobileMenu.classList.add('active')
-        menuButton.classList.add('active')
-        document.body.style.overflow = 'hidden'
-      }
+      // Use requestAnimationFrame to avoid forced reflow
+      requestAnimationFrame(() => {
+        if (isOpen) {
+          mobileMenu.classList.remove('active')
+          menuButton.classList.remove('active')
+          document.body.style.overflow = ''
+        } else {
+          mobileMenu.classList.add('active')
+          menuButton.classList.add('active')
+          document.body.style.overflow = 'hidden'
+        }
+      })
     }
 
     function closeMenu() {
-      mobileMenu.classList.remove('active')
-      menuButton.classList.remove('active')
-      document.body.style.overflow = ''
+      requestAnimationFrame(() => {
+        mobileMenu.classList.remove('active')
+        menuButton.classList.remove('active')
+        document.body.style.overflow = ''
+      })
     }
 
     // Add listeners

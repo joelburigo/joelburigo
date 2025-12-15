@@ -10,7 +10,15 @@ export default defineConfig({
   output: 'server', // SSR mode
   adapter: cloudflare({
     mode: 'directory',
+    runtime: {
+      mode: 'local',
+      type: 'pages',
+    },
   }),
+  // Compile mode: usa Sharp no build, passthrough no runtime
+  image: {
+    service: 'compile',
+  },
   vite: {
     build: {
       chunkSizeWarningLimit: 600

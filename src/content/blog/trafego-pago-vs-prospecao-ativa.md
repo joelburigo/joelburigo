@@ -6,7 +6,7 @@ date: 2025-12-01
 readTime: '24 min'
 author: 'Joel Burigo'
 featured: true
-heroImage: '../../assets/images/blog/trafego-pago-vs-prospecao-ativa.png'
+heroImage: '../../assets/images/blog/trafego-pago-vs-prospecao-ativa-1080w.webp'
 relatedArticles:
   - '6ps-vendas-escalaveis-guia-completo'
   - 'metricas-vendas-essenciais'

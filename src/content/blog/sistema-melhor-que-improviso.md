@@ -6,7 +6,7 @@ date: 2025-12-07
 readTime: '18 min'
 author: 'Joel Burigo'
 featured: true
-heroImage: '../../assets/images/blog/sistema-melhor-que-improviso.png'
+heroImage: '../../assets/images/blog/sistema-melhor-que-improviso-1080w.webp'
 relatedArticles:
   - '6ps-vendas-escalaveis-guia-completo'
   - 'como-estruturar-vendas-do-zero'

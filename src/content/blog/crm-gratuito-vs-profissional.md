@@ -6,7 +6,7 @@ date: 2025-12-05
 readTime: '21 min'
 author: 'Joel Burigo'
 featured: true
-heroImage: '../../assets/images/blog/crm-gratuito-vs-profissional.png'
+heroImage: '../../assets/images/blog/crm-gratuito-vs-profissional-1080w.webp'
 relatedArticles:
   - '6ps-vendas-escalaveis-guia-completo'
   - 'sistema-melhor-que-improviso'

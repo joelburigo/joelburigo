@@ -4,6 +4,7 @@ import GoogleTagManager from '../components/analytics/GoogleTagManager.astro'
 import GoogleTagManagerBody from '../components/analytics/GoogleTagManagerBody.astro'
 import GoogleAnalytics from '../components/analytics/GoogleAnalytics.astro'
 import GoogleAds from '../components/analytics/GoogleAds.astro'
+import MetaConversionsAPI from '../components/analytics/MetaConversionsAPI.astro'
 import JsonLd from '../components/seo/JsonLd.astro'
 import CookieConsent from '../components/analytics/CookieConsent.astro'
 
@@ -94,7 +95,7 @@ const fullTitle = title.includes('Joel Burigo') ? title : `${title} | Joel Burig
     <GoogleTagManager />
     <GoogleAds />
     <GoogleAnalytics />
-    <!-- MetaPixel removido - causava problemas de performance (API obsoleta + reflow forçado) -->
+    <MetaConversionsAPI />
     
     <!-- Structured Data -->
     <JsonLd />

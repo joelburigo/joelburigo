@@ -1,0 +1,77 @@
+---
+// Meta Conversions API - Server-Side Tracking
+// Mais confiável, privado e sem impacto de performance
+const META_PIXEL_ID = '693646216957142'
+---
+
+<!-- Meta Conversions API - Client-Side Collector -->
+<script is:inline define:vars={{ META_PIXEL_ID }}>
+  (function() {
+    // Get or create cookies for Meta tracking
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+      return null;
+    }
+
+    function setCookie(name, value, days) {
+      const d = new Date();
+      d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+      document.cookie = `${name}=${value};expires=${d.toUTCString()};path=/`;
+    }
+
+    // Get or create fbp cookie (Facebook Browser Pixel)
+    let fbp = getCookie('_fbp');
+    if (!fbp) {
+      fbp = `fb.1.${Date.now()}.${Math.random().toString(36).substring(2)}`;
+      setCookie('_fbp', fbp, 90);
+    }
+
+    // Get fbc cookie if exists (Facebook Click ID from ad)
+    const fbc = getCookie('_fbc');
+
+    // Send event to server
+    function sendEvent(eventName, customData = {}) {
+      fetch('/api/meta-conversion', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          event_name: eventName,
+          event_time: Math.floor(Date.now() / 1000),
+          event_source_url: window.location.href,
+          user_data: {
+            fbp: fbp,
+            fbc: fbc || undefined,
+          },
+          custom_data: customData,
+        }),
+      }).catch(err => console.error('Meta CAPI error:', err));
+    }
+
+    // Track PageView
+    sendEvent('PageView');
+
+    // Track form submissions (Lead event)
+    document.addEventListener('submit', function(e) {
+      const form = e.target;
+      if (form.tagName === 'FORM') {
+        sendEvent('Lead', {
+          content_name: form.getAttribute('data-form-name') || 'Contact Form',
+        });
+      }
+    });
+
+    // Track button clicks (importantes para conversão)
+    document.addEventListener('click', function(e) {
+      const target = e.target.closest('a[href*="vendas-sem-segredos"], button[data-cta]');
+      if (target) {
+        sendEvent('InitiateCheckout', {
+          content_name: target.textContent?.trim() || 'CTA Click',
+        });
+      }
+    });
+  })();
+</script>

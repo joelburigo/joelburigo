@@ -17,6 +17,9 @@
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=()
+  
+  # Disable Cloudflare Email Obfuscation (removes email-decode.min.js)
+  cf-email-obfuscation: off
 
 # Static Assets - Cache agressivo
 /fonts/*
@@ -42,9 +45,11 @@
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
 
-# HTML - Cache curto com revalidação
+# HTML - Cache curto com revalidação + Early Hints
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
+  Link: </fonts/montserrat-v25-latin-700.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
+  Link: </fonts/inter-v13-latin-regular.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
 
 # Compression Headers (já gerenciado pela Vercel, mas declarativo)
 /*.js

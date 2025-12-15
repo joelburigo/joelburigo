@@ -78,7 +78,19 @@ export default defineConfig({
   vite: {
     build: {
       target: 'es2022',
-      modulePreload: { polyfill: false },
+      rollupOptions: {
+        output: {
+          manualChunks: undefined, // Prevent too many chunks
+          inlineDynamicImports: false,
+        },
+      },
+      modulePreload: {
+        polyfill: false,
+        resolveDependencies: (filename, deps) => {
+          // Preload all dependencies eagerly
+          return deps
+        },
+      },
       cssCodeSplit: true,
       chunkSizeWarningLimit: 600,
     },

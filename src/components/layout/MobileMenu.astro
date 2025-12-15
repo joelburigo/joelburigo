@@ -6,9 +6,10 @@ interface NavLink {
 
 interface Props {
   navLinks: NavLink[]
+  secondaryLinks?: NavLink[]
 }
 
-const { navLinks } = Astro.props
+const { navLinks, secondaryLinks = [] } = Astro.props
 ---
 
 <div class="mobile-menu-wrapper">
@@ -30,6 +31,15 @@ const { navLinks } = Astro.props
   <div class="mobile-menu fixed inset-0 top-0 z-40 hidden h-screen w-screen bg-dark px-4 pt-24 md:hidden" data-mobile-menu>
     <nav class="flex flex-col space-y-6 text-center">
       {navLinks.map((link) => (
+        <a
+          href={link.path}
+          class="font-display text-2xl font-bold text-white transition-colors hover:text-lime"
+          data-menu-link
+        >
+          {link.name}
+        </a>
+      ))}
+      {secondaryLinks.map((link) => (
         <a
           href={link.path}
           class="font-display text-2xl font-bold text-white transition-colors hover:text-lime"

@@ -1,0 +1,123 @@
+---
+import { getCollection } from 'astro:content'
+import Container from '../ui/Container.astro'
+import Icons from '../ui/Icons.astro'
+import { Image } from 'astro:assets'
+
+// Buscar os 3 posts mais recentes
+const allPosts = await getCollection('blog')
+const recentPosts = allPosts
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3)
+
+// Categoria para badge color
+const categoryColors: Record<string, string> = {
+  'Framework 6Ps': 'lime',
+  'Vendas Escaláveis': 'royal-blue',
+  'CRM e Tecnologia': 'lime',
+  'Processos': 'royal-blue',
+  'Casos de Sucesso': 'lime',
+  'Mentalidade': 'royal-blue',
+}
+---
+
+<section id="blog" class="relative overflow-hidden bg-dark py-24 md:py-32">
+  <!-- Background gradients -->
+  <div class="pointer-events-none absolute inset-0 z-0">
+    <div class="absolute -left-40 top-20 h-96 w-96 rounded-full bg-lime/5 blur-3xl"></div>
+    <div class="absolute -right-40 bottom-20 h-96 w-96 rounded-full bg-royal-blue/5 blur-3xl"></div>
+  </div>
+
+  <Container class="relative z-10">
+    <!-- Header -->
+    <div class="mx-auto mb-16 max-w-3xl text-center">
+      <span class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-1.5 text-sm font-display font-bold text-lime backdrop-blur-sm">
+        CONTEÚDO GRATUITO
+      </span>
+      <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
+        Insights Sobre <span class="text-lime">Vendas Escaláveis</span>
+      </h2>
+      <p class="font-sans text-body-lg text-gray-200">
+        Estratégias, processos e histórias reais para estruturar suas vendas
+      </p>
+    </div>
+
+    <!-- Posts Grid -->
+    <div class="mb-12 grid gap-8 md:grid-cols-3">
+      {recentPosts.map((post) => {
+        const categoryColor = categoryColors[post.data.category] || 'lime'
+        const slug = post.id.replace(/\.md$/, '')
+        
+        return (
+          <a
+            href={`/blog/${slug}`}
+            class="group block overflow-hidden rounded-2xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm transition-all duration-300 hover:border-lime/50 hover:shadow-xl hover:shadow-lime/10"
+          >
+            <!-- Image -->
+            {post.data.heroImage && (
+              <div class="relative aspect-[16/10] overflow-hidden">
+                <Image
+                  src={post.data.heroImage}
+                  alt={post.data.title}
+                  width={400}
+                  height={250}
+                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+                {/* Category Badge */}
+                <div class="absolute left-4 top-4">
+                  <span class={`inline-block rounded-full px-3 py-1 text-xs font-display font-bold backdrop-blur-sm ${
+                    categoryColor === 'lime' 
+                      ? 'border border-lime/30 bg-lime/90 text-dark' 
+                      : 'border border-royal-blue/30 bg-royal-blue/90 text-white'
+                  }`}>
+                    {post.data.category}
+                  </span>
+                </div>
+              </div>
+            )}
+
+            {/* Content */}
+            <div class="p-6">
+              {/* Date */}
+              <time datetime={post.data.date.toISOString()} class="mb-3 block text-sm text-gray-400">
+                {new Intl.DateTimeFormat('pt-BR', { 
+                  day: 'numeric', 
+                  month: 'long', 
+                  year: 'numeric' 
+                }).format(post.data.date)}
+              </time>
+
+              {/* Title */}
+              <h3 class="mb-3 font-display text-xl font-bold text-white transition-colors group-hover:text-lime">
+                {post.data.title}
+              </h3>
+
+              {/* Excerpt */}
+              <p class="mb-4 line-clamp-2 font-sans text-sm text-gray-300">
+                {post.data.excerpt}
+              </p>
+
+              {/* CTA */}
+              <div class="flex items-center gap-2 font-display text-sm font-bold text-lime transition-transform group-hover:translate-x-1">
+                <span>Ler artigo</span>
+                <Icons name="arrow-right" class="h-4 w-4" />
+              </div>
+            </div>
+          </a>
+        )
+      })}
+    </div>
+
+    <!-- CTA para todos os artigos -->
+    <div class="text-center">
+      <a
+        href="/blog"
+        class="inline-flex items-center gap-2 rounded-full border border-lime/30 bg-lime/10 px-6 py-3 font-display font-bold text-lime transition-all duration-300 hover:border-lime hover:bg-lime/20 hover:shadow-lg hover:shadow-lime/20"
+      >
+        <span>Ver Todos os Artigos</span>
+        <Icons name="arrow-right" class="h-5 w-5" />
+      </a>
+    </div>
+  </Container>
+</section>

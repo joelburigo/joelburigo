@@ -11,6 +11,7 @@ const ps = [
     subtitle: 'Por quê?',
     desc: 'Como você se diferencia no mercado',
     fullDesc: 'Base estratégica que define por que você existe',
+    resultado: '40% menos objeção de preço',
     icon: 'target',
     color: 'lime',
   },
@@ -20,6 +21,7 @@ const ps = [
     subtitle: 'Pra quem?',
     desc: 'Quem é seu cliente ideal',
     fullDesc: 'ICP bem definido = comunicação certeira',
+    resultado: '60% mais conversão nos anúncios',
     icon: 'users',
     color: 'royal-blue',
   },
@@ -29,6 +31,7 @@ const ps = [
     subtitle: 'O quê?',
     desc: 'Sua oferta irresistível',
     fullDesc: 'Produto bem embalado se vende sozinho',
+    resultado: '2-3x aumento no ticket médio',
     icon: 'package',
     color: 'lime',
   },
@@ -38,6 +41,7 @@ const ps = [
     subtitle: 'Como vender?',
     desc: 'CRM, funis e automações',
     fullDesc: 'Sistema para atrair e converter de forma previsível',
+    resultado: '80% de redução em leads perdidos',
     icon: 'layout',
     color: 'royal-blue',
   },
@@ -47,6 +51,7 @@ const ps = [
     subtitle: 'Como operar?',
     desc: 'Documentado e escalável',
     fullDesc: 'Garante funcionamento sem depender de uma pessoa',
+    resultado: 'Onboarding reduzido de 3 meses para 2 semanas',
     icon: 'file-text',
     color: 'lime',
   },
@@ -56,6 +61,7 @@ const ps = [
     subtitle: 'Quem executa?',
     desc: 'Time que executa com excelência',
     fullDesc: 'Equipe alinhada que entrega resultados',
+    resultado: 'Dono sai da operação em 6-9 meses',
     icon: 'user-check',
     color: 'royal-blue',
   },
@@ -132,11 +138,23 @@ const ps = [
                   </p>
 
                   {/* Description */}
-                  <p class={`text-sm leading-snug ${
+                  <p class={`text-sm leading-snug mb-3 ${
                     p.color === 'lime' ? 'text-dark/80' : 'text-white/80'
                   }`}>
                     {p.desc}
                   </p>
+
+                  {/* Resultado */}
+                  <div class={`mt-3 pt-3 border-t ${
+                    p.color === 'lime' ? 'border-dark/20' : 'border-white/20'
+                  }`}>
+                    <p class={`text-xs font-bold flex items-center gap-1 ${
+                      p.color === 'lime' ? 'text-dark' : 'text-white'
+                    }`}>
+                      <Icons name="trending-up" class="h-3 w-3" />
+                      {p.resultado}
+                    </p>
+                  </div>
 
                   {/* Hover Tooltip */}
                   <div 

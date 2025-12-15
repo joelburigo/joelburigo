@@ -1,0 +1,50 @@
+---
+import Container from '../ui/Container.astro'
+import Icons from '../ui/Icons.astro'
+---
+
+<section class="relative overflow-hidden border-y border-white/5 bg-dark py-8 md:py-10">
+  <Container class="relative z-10">
+    <div class="flex flex-col items-center justify-center gap-6 text-center">
+      <!-- Badge -->
+      <span class="inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-1.5 text-xs font-display font-bold uppercase tracking-wider text-lime backdrop-blur-sm">
+        17 anos estruturando vendas
+      </span>
+
+      <!-- Main Credibility Line -->
+      <div class="max-w-4xl">
+        <p class="font-sans text-body-lg text-gray-200 md:text-xl">
+          <strong class="font-display text-white">Joel Burigo:</strong> 140 empresas atendidas • R$1bi+ estruturado • Criador do Framework dos 6Ps
+        </p>
+      </div>
+
+      <!-- Mini Stats Inline -->
+      <div class="flex flex-wrap items-center justify-center gap-6 text-sm md:gap-8">
+        <div class="flex items-center gap-2">
+          <Icons name="trending-up" class="h-4 w-4 text-lime" />
+          <span class="font-sans text-gray-400">R$ 1bi+ estruturado</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <Icons name="users" class="h-4 w-4 text-lime" />
+          <span class="font-sans text-gray-400">140+ clientes</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <Icons name="calendar" class="h-4 w-4 text-lime" />
+          <span class="font-sans text-gray-400">17 anos</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <Icons name="layers" class="h-4 w-4 text-lime" />
+          <span class="font-sans text-gray-400">Framework 6Ps</span>
+        </div>
+      </div>
+
+      <!-- CTA discreto -->
+      <a href="/sobre" class="group inline-flex items-center gap-2 font-sans text-sm font-medium text-lime/80 transition-colors hover:text-lime">
+        <span>Conhecer história completa</span>
+        <Icons name="arrow-right" class="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+      </a>
+    </div>
+  </Container>
+</section>
+
+

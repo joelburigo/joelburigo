@@ -3,12 +3,13 @@ import Layout from '../layouts/Layout.astro'
 import Header from '../components/layout/Header.astro'
 import Footer from '../components/layout/Footer.astro'
 import HeroSection from '../components/home/HeroSection.astro'
-import StatsSection from '../components/home/StatsSection.astro'
-import FinalCTASection from '../components/home/FinalCTASection.astro'
+import QuemSouSection from '../components/home/QuemSouSection.astro'
 import ProblemSection from '../components/home/ProblemSection.astro'
-import PathwaysSection from '../components/home/PathwaysSection.astro'
 import FrameworkSection from '../components/home/FrameworkSection.astro'
-import TestimonialsSection from '../components/home/TestimonialsSection.astro'
+import ProofSocialSection from '../components/home/ProofSocialSection.astro'
+import PathwaysSection from '../components/home/PathwaysSection.astro'
+import BlogPostsSection from '../components/home/BlogPostsSection.astro'
+import FinalCTASection from '../components/home/FinalCTASection.astro'
 
 
 const seo = {
@@ -25,11 +26,12 @@ const seo = {
     <Header />
     <main class="flex-grow">
       <HeroSection />
+      <QuemSouSection />
       <ProblemSection />
-      <PathwaysSection />
       <FrameworkSection />
-      <StatsSection />
-      <TestimonialsSection />
+      <ProofSocialSection />
+      <PathwaysSection />
+      <BlogPostsSection />
       <FinalCTASection />
     </main>
     <Footer />

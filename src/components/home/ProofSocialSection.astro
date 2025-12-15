@@ -1,0 +1,170 @@
+---
+import Container from '../ui/Container.astro'
+import Icons from '../ui/Icons.astro'
+import { cases } from '../../data/cases'
+
+const stats = [
+  {
+    value: 'R$ 1bi',
+    label: 'Gerados para clientes',
+    color: 'lime',
+  },
+  {
+    value: '140+',
+    label: 'Clientes atendidos',
+    color: 'royal-blue',
+  },
+  {
+    value: '17 anos',
+    label: 'Estruturando vendas',
+    color: 'lime',
+  },
+  {
+    value: '20+',
+    label: 'Nichos diferentes',
+    color: 'royal-blue',
+  },
+]
+
+// Filtrar os 3 primeiros cases com badge "Destaque"
+const miniCases = cases
+  .filter(c => c.badge === 'Destaque')
+  .slice(0, 3)
+  .map(c => ({
+    empresa: c.empresa,
+    nicho: c.nicho,
+    antes: c.antes,
+    depois: c.depois,
+    tempo: c.tempo,
+    destaque: c.crescimento,
+  }))
+---
+
+<section class="relative overflow-hidden bg-dark py-16 md:py-20 lg:py-24">
+  <Container class="relative z-10">
+    <!-- Header -->
+    <div class="mx-auto mb-16 max-w-3xl text-center">
+      <span class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-1.5 text-sm font-display font-bold text-lime backdrop-blur-sm">
+        RESULTADOS REAIS
+      </span>
+      <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
+        Números Que <span class="text-lime">Comprovam</span>
+      </h2>
+      <p class="font-sans text-body-lg text-gray-200">
+        140 clientes atendidos ao longo de 17 anos. Metodologia validada na prática.
+      </p>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="mb-20 grid grid-cols-2 gap-6 text-center md:grid-cols-4 md:gap-8">
+      {stats.map((stat, index) => (
+        <div 
+          class="stat-card rounded-2xl border-2 border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-lime/50"
+          style={`animation-delay: ${index * 0.1}s`}
+        >
+          <p class={`mb-2 font-display text-4xl font-bold ${stat.color === 'lime' ? 'text-lime' : 'text-royal-blue'}`}>
+            {stat.value}
+          </p>
+          <p class="font-sans text-sm text-gray-300">
+            {stat.label}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Mini Cases -->
+    <div class="mx-auto mb-16 max-w-5xl">
+      <h3 class="mb-10 text-center font-display text-h2 text-white">
+        Transformações <span class="text-lime">Reais</span>
+      </h3>
+      
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+        {miniCases.map((case_, index) => (
+          <div 
+            class="case-card group relative overflow-hidden rounded-2xl border-2 border-lime/20 bg-gradient-to-br from-white/5 to-white/[0.02] p-6 backdrop-blur-sm transition-all hover:border-lime hover:shadow-2xl hover:shadow-lime/20"
+            style={`animation-delay: ${index * 0.15}s`}
+          >
+            {/* Badge Nicho */}
+            <div class="mb-4 inline-block rounded-full bg-lime/20 px-3 py-1">
+              <span class="font-sans text-xs font-bold text-lime">{case_.nicho}</span>
+            </div>
+
+            {/* Empresa */}
+            <h4 class="mb-4 font-display text-h4 text-white">
+              {case_.empresa}
+            </h4>
+
+            {/* Antes → Depois */}
+            <div class="mb-4 space-y-2">
+              <div class="flex items-center justify-between rounded-lg bg-white/5 p-3">
+                <span class="font-sans text-sm text-gray-400">Antes:</span>
+                <span class="font-display text-lg font-bold text-white">{case_.antes}</span>
+              </div>
+              
+              <div class="flex justify-center">
+                <Icons name="arrow-down" class="h-5 w-5 animate-bounce text-lime" />
+              </div>
+
+              <div class="flex items-center justify-between rounded-lg bg-lime/20 p-3">
+                <span class="font-sans text-sm font-semibold text-dark">Depois:</span>
+                <span class="font-display text-lg font-bold text-dark">{case_.depois}</span>
+              </div>
+            </div>
+
+            {/* Destaque */}
+            <div class="border-t border-white/10 pt-4">
+              <p class="font-sans text-sm text-gray-300">
+                <span class="font-bold text-lime">{case_.destaque}</span> em {case_.tempo}
+              </p>
+            </div>
+
+            {/* Hover Effect */}
+            <div class="absolute inset-0 -z-10 bg-gradient-to-br from-lime/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* CTA Ver Mais Cases */}
+    <div class="text-center">
+      <a href="/cases" class="group inline-flex items-center gap-2 font-sans text-body-lg font-semibold text-lime transition-colors hover:text-lime/80">
+        Ver Todos os Cases de Sucesso
+        <Icons name="arrow-right" class="h-5 w-5 transition-transform group-hover:translate-x-1" />
+      </a>
+    </div>
+  </Container>
+</section>
+
+<style>
+  .stat-card {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .case-card {
+    opacity: 0;
+    animation: fadeInScale 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>

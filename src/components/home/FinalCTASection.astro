@@ -4,27 +4,97 @@ import Container from '../ui/Container.astro'
 
 <section class="relative overflow-hidden bg-dark py-16 md:py-20 lg:py-24">
 
-  <Container class="relative z-10 text-center">
-    <div class="cta-content">
-      <h2 class="mb-6 font-display text-display-sm tracking-tight text-white md:text-display-md">
-        Pronto Para Estruturar Suas Vendas?
+  <Container class="relative z-10">
+    <div class="cta-content mx-auto max-w-4xl">
+      {/* Badge */}
+      <div class="mb-6 text-center">
+        <span class="inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-1.5 text-sm font-display font-bold text-lime backdrop-blur-sm">
+          PRÓXIMO PASSO
+        </span>
+      </div>
+
+      {/* Headline */}
+      <h2 class="mb-6 text-center font-display text-display-sm tracking-tight text-white md:text-display-md">
+        Comece Pelo <span class="text-lime">Diagnóstico Gratuito</span>
       </h2>
-      <p class="mx-auto mb-10 max-w-2xl font-sans text-body-lg text-gray-200">
-        Escolha seu caminho e comece hoje mesmo a transformar vendas aleatórias em previsíveis.
+
+      {/* Subheadline */}
+      <p class="mx-auto mb-8 max-w-2xl text-center font-sans text-body-lg text-gray-200">
+        Descubra qual dos 6Ps está travando seu crescimento. Leva 10 minutos e você recebe o resultado na hora.
       </p>
 
+      {/* Benefícios em lista */}
+      <div class="mx-auto mb-10 grid max-w-2xl gap-4 text-left md:grid-cols-2">
+        <div class="flex items-start gap-3 rounded-lg border border-gray-800 bg-gray-900/50 p-4 backdrop-blur-sm">
+          <div class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-lime/20">
+            <svg class="h-4 w-4 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <div>
+            <p class="font-sans text-sm font-semibold text-white">10 minutos, resultado imediato</p>
+            <p class="mt-1 font-sans text-sm text-gray-400">Sem enrolação, direto ao ponto</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3 rounded-lg border border-gray-800 bg-gray-900/50 p-4 backdrop-blur-sm">
+          <div class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-lime/20">
+            <svg class="h-4 w-4 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <div>
+            <p class="font-sans text-sm font-semibold text-white">Identifica o gargalo real</p>
+            <p class="mt-1 font-sans text-sm text-gray-400">Para de chutar o que fazer</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3 rounded-lg border border-gray-800 bg-gray-900/50 p-4 backdrop-blur-sm">
+          <div class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-lime/20">
+            <svg class="h-4 w-4 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <div>
+            <p class="font-sans text-sm font-semibold text-white">Baseado em 140+ diagnósticos</p>
+            <p class="mt-1 font-sans text-sm text-gray-400">Testado em vários nichos e portes</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3 rounded-lg border border-gray-800 bg-gray-900/50 p-4 backdrop-blur-sm">
+          <div class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-lime/20">
+            <svg class="h-4 w-4 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <div>
+            <p class="font-sans text-sm font-semibold text-white">Completamente gratuito</p>
+            <p class="mt-1 font-sans text-sm text-gray-400">Sem cartão, sem pegadinha</p>
+          </div>
+        </div>
+      </div>
+
+      {/* CTAs */}
       <div class="flex flex-col justify-center gap-4 sm:flex-row">
-        <a href="/vendas-sem-segredos" data-astro-prefetch>
-          <button class="inline-flex h-14 w-full items-center justify-center rounded-lg bg-lime px-8 font-display text-lg font-bold text-dark shadow-lg shadow-lime/20 transition-all hover:scale-105 hover:bg-lime/90 focus:outline-none focus:ring-2 focus:ring-lime focus:ring-offset-2 sm:w-auto">
-            Vendas Sem Segredos
+        <a href="/diagnostico" data-astro-prefetch>
+          <button class="inline-flex h-14 w-full items-center justify-center gap-2 rounded-lg bg-lime px-8 font-display text-lg font-bold text-dark shadow-lg shadow-lime/20 transition-all hover:scale-105 hover:bg-lime/90 focus:outline-none focus:ring-2 focus:ring-lime focus:ring-offset-2 sm:w-auto">
+            <span>Fazer Diagnóstico Agora</span>
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
           </button>
         </a>
-        <a href="/#contato">
-          <button class="inline-flex h-14 w-full items-center justify-center rounded-lg border-2 border-white px-8 font-display text-lg font-semibold text-white transition-all hover:scale-105 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 sm:w-auto">
-            Falar com Joel
+        <a href="/vendas-sem-segredos" data-astro-prefetch>
+          <button class="inline-flex h-14 w-full items-center justify-center rounded-lg border-2 border-white px-8 font-display text-lg font-semibold text-white transition-all hover:scale-105 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 sm:w-auto">
+            Ou Conhecer o Vendas Sem Segredos
           </button>
         </a>
       </div>
+
+      {/* Micro-copy */}
+      <p class="mt-6 text-center font-sans text-sm text-gray-400">
+        Já fiz mais de 140 diagnósticos. A maioria descobre que o problema não está onde imaginava.
+      </p>
     </div>
   </Container>
 </section>

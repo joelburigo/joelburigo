@@ -1,7 +1,7 @@
 # Security Headers - PageSpeed 100
 /*
-  # Content Security Policy
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://api.gsh.digital https://stcdn.leadconnectorhq.com https://backend.leadconnectorhq.com https://www.gstatic.com https://www.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://stcdn.leadconnectorhq.com; font-src 'self' https://fonts.gstatic.com https://stcdn.leadconnectorhq.com; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://connect.facebook.net https://api.gsh.digital https://backend.leadconnectorhq.com; frame-src https://api.gsh.digital https://www.google.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' https://api.gsh.digital;
+  # Content Security Policy (GTM removido)
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://googleads.g.doubleclick.net https://connect.facebook.net https://api.gsh.digital https://stcdn.leadconnectorhq.com https://backend.leadconnectorhq.com https://www.gstatic.com https://www.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://stcdn.leadconnectorhq.com; font-src 'self' https://fonts.gstatic.com https://stcdn.leadconnectorhq.com; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://googleads.g.doubleclick.net https://connect.facebook.net https://api.gsh.digital https://backend.leadconnectorhq.com; frame-src https://api.gsh.digital https://www.google.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' https://api.gsh.digital;
   
   # HSTS - Force HTTPS
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload

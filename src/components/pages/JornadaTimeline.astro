@@ -1,0 +1,122 @@
+---
+import Container from '../ui/Container.astro';
+
+const capitulos = [
+  {
+    numero: 1,
+    periodo: '1987-2004',
+    titulo: 'As Raízes',
+    cor: 'lime',
+    descricao: 'Nasci em Palhoça/SC, Jardim Eldorado. Primeiros 7 anos na casa da minha avó, depois casa de madeira simples. <strong class="text-white">Pai marceneiro, mãe vendedora de loja.</strong> Dinheiro curto, dignidade alta.',
+    licoes: '<strong class="text-lime">Lições:</strong> Trabalho > Sorte. Improviso tem limite. Vender é sobreviver.',
+  },
+  {
+    numero: 2,
+    periodo: '2004-2010',
+    titulo: 'Primeiros Passos',
+    cor: 'royal-blue',
+    descricao: 'Comecei como freelancer. Sites, anúncios online, e-mail marketing. <strong class="text-white">Cobrava pouco, entregava muito.</strong> Aprendi fazendo. Errei fazendo. Cresci fazendo.',
+    licoes: '<strong class="text-royal-blue">Problema:</strong> Não tinha método. Vendia o que achava que o cliente precisava. Às vezes acertava. Às vezes errava feio.',
+  },
+  {
+    numero: 3,
+    periodo: '2010-2012',
+    titulo: 'A Primeira Quebra',
+    cor: 'red',
+    descricao: 'Abri empresa em Itajaí com sócio que tinha gráfica. Ele faturava no nome dele, eu ficava com prejuízo. <strong class="text-white">Tomei calote do próprio sócio. Quebrei aos 30 anos.</strong>',
+    licoes: '<strong>Lição dolorosa:</strong> Parceria sem clareza é prejuízo anunciado. Sem P1 (Posicionamento) e P6 (Pessoas), você não tem empresa. Tem bomba-relógio.',
+    licoesCor: 'text-red-400',
+  },
+  {
+    numero: 4,
+    periodo: '2012',
+    titulo: 'Fundo do Poço',
+    cor: 'gray',
+    descricao: 'Fui para Minas Gerais. <strong class="text-white">Morei em barraco sem geladeira</strong> no Paraíso das Piabas (Ribeirão das Neves). Trabalhei no CTE dos Correios (R$ 1.400/mês) colocando encomendas na esteira.',
+    descricao2: 'Juntei dinheiro. Comprei um <strong class="text-lime">milheiro de cartões de visita.</strong> Mudei para BH. Distribuí na Avenida Afonso Pena, do Pirulito da Praça Sete até o Alto. Mais de 100 empresas. Batia porta. Ouvia não. Seguia.',
+    licoes: '<strong class="text-lime">Primeira venda:</strong> Loja de roupas. Fiz proposta irrecusável: "Se não gostar, site de graça. Se gostar, R$ 500." Gostou. Pagou. Me indicou. Ali nascia o P3 (Produto).',
+  },
+  {
+    numero: 5,
+    periodo: '2012-2016',
+    titulo: 'Reconstrução',
+    cor: 'lime',
+    descricao: 'Saí do barraco. Saí do CTE. Peguei clientes maiores. <strong class="text-white">Encontre Sua Franquia: +433% faturamento.</strong> Port Informática: +250% e-commerce. Lojas Rede: +65% faturamento.',
+    licoes: '<strong class="text-lime">Realização real:</strong> Crescer empresa de R$ 40k para R$ 300k/mês. Isso sim me deixava realizado. Porque eu sei o impacto na vida do dono.',
+  },
+  {
+    numero: 6,
+    periodo: '2016-2023',
+    titulo: 'Evolução dos Métodos',
+    cor: 'royal-blue',
+    descricao: 'Criei o Método 4E (Explorar, Experimentar, Estabilizar, Expandir). <strong class="text-white">Funcionava, mas era confuso de vender.</strong> Técnico demais. Virei agência vendendo pacotes.',
+    licoes: '<strong>Percepção crítica:</strong> Estava complicando em vez de simplificar. As pessoas não querem método mágico. Querem crescer e colocar dinheiro no bolso.',
+    licoesCor: 'text-red-400',
+  },
+  {
+    numero: 7,
+    periodo: '2020-2025',
+    titulo: 'Nascimento dos 6Ps',
+    cor: 'gradient',
+    descricao: 'Depois de 17 anos, finalmente ficou simples. <strong class="text-white">Condensei tudo em 6 pilares sequenciais e replicáveis:</strong> Posicionamento → Público → Produto → Programas → Processos → Pessoas.',
+    descricao2: '<strong>É lógico. É sequencial. É aplicável.</strong> Funciona para quem tem R$ 0 de budget e quem tem R$ 100k/mês em tráfego.',
+    descricao2Cor: 'text-lime',
+    licoes: '<strong class="text-white">Hoje:</strong> VSS (Vendas Sem Segredos) democratiza os 6Ps. Services implementa com minha equipe. Advisory é acesso direto a mim.',
+  },
+];
+
+const getCorClass = (cor: string, tipo: 'bg' | 'text' | 'border') => {
+  if (cor === 'lime') return tipo === 'bg' ? 'bg-lime' : tipo === 'text' ? 'text-lime' : 'border-lime/30';
+  if (cor === 'royal-blue') return tipo === 'bg' ? 'bg-royal-blue' : tipo === 'text' ? 'text-royal-blue' : 'border-white/10';
+  if (cor === 'red') return tipo === 'bg' ? 'bg-red-500' : tipo === 'text' ? 'text-red-400' : 'border-red-500/30';
+  if (cor === 'gray') return tipo === 'bg' ? 'bg-gray-600' : tipo === 'text' ? 'text-gray-400' : 'border-white/10';
+  if (cor === 'gradient') return tipo === 'bg' ? 'bg-gradient-to-br from-lime to-royal-blue' : tipo === 'text' ? 'text-white' : 'border-lime/30';
+  return '';
+};
+---
+
+<section class="relative overflow-hidden bg-gradient-to-b from-dark via-dark/95 to-dark py-24">
+  <Container>
+    <div class="mx-auto mb-16 max-w-3xl text-center">
+      <span class="mb-4 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-1.5 text-sm font-display font-bold text-lime backdrop-blur-sm">
+        A JORNADA COMPLETA
+      </span>
+      <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
+        38 Anos em <span class="text-lime">7 Capítulos</span>
+      </h2>
+      <p class="font-sans text-body-lg text-gray-200">
+        De Palhoça ao Framework dos 6Ps
+      </p>
+    </div>
+
+    <div class="mx-auto max-w-4xl">
+      <div class="relative space-y-12">
+        {/* Linha do tempo vertical */}
+        <div class="absolute left-8 top-0 h-full w-0.5 bg-gradient-to-b from-lime via-royal-blue to-lime opacity-20"></div>
+
+        {capitulos.map((cap) => (
+          <div class="relative flex gap-6">
+            <div class={`flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full border-4 border-dark ${getCorClass(cap.cor, 'bg')} ${cap.cor === 'gradient' ? 'shadow-2xl shadow-lime/30' : 'shadow-xl'}`}>
+              <span class={`font-display text-xl font-bold ${cap.cor === 'lime' || cap.cor === 'gray' ? 'text-dark' : 'text-white'}`}>
+                {cap.numero}
+              </span>
+            </div>
+            <div class={`flex-1 rounded-2xl border ${cap.cor === 'red' ? 'border-red-500/30 bg-red-500/5' : cap.cor === 'gradient' ? 'border-2 border-lime/30 bg-gradient-to-br from-lime/10 to-royal-blue/10' : 'border-white/10 bg-white/5'} p-6 backdrop-blur-sm`}>
+              <div class="mb-2 flex items-center gap-3">
+                <span class={`rounded-full ${getCorClass(cap.cor, 'bg')}/20 px-3 py-1 font-display text-xs font-bold ${getCorClass(cap.cor, 'text')}`}>
+                  {cap.periodo}
+                </span>
+                <h3 class="font-display text-h3 text-white">{cap.titulo}</h3>
+              </div>
+              <p class="mb-3 font-sans text-body text-gray-300" set:html={cap.descricao} />
+              {cap.descricao2 && (
+                <p class={`mb-3 font-sans text-body ${cap.descricao2Cor || 'text-gray-300'}`} set:html={cap.descricao2} />
+              )}
+              <p class={`font-sans text-sm ${cap.licoesCor || 'text-gray-400'}`} set:html={cap.licoes} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>

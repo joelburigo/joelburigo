@@ -1,0 +1,98 @@
+---
+import Container from '../ui/Container.astro';
+
+const licoes = [
+  {
+    p: 'P1',
+    nome: 'Posicionamento',
+    cor: 'lime',
+    aprendizado: '<strong class="text-lime">Aprendi com a sociedade que quebrou.</strong> Sem clareza de quem você é, por que existe e o que faz diferente, você vira commodity. Fica competindo por preço. E perde.',
+    contexto: '→ Tomei calote do sócio porque não tínhamos clareza de papéis e propósito.',
+  },
+  {
+    p: 'P2',
+    nome: 'Público',
+    cor: 'royal-blue',
+    aprendizado: '<strong class="text-royal-blue">Aprendi vendendo pacotes genéricos.</strong> Se você tenta vender pra todo mundo, não vende pra ninguém. Mensagem vira generica. Oferta vira fraca. Resultado vira zero.',
+    contexto: '→ Perdi tempo e dinheiro tentando atender qualquer cliente que aparecia.',
+  },
+  {
+    p: 'P3',
+    nome: 'Produto',
+    cor: 'lime',
+    aprendizado: '<strong class="text-lime">Aprendi com o primeiro cliente da loja de roupas.</strong> "Se não gostar, site de graça. Se gostar, R$ 500." Oferta irrecusável > promessa vazia. Risco zero para ele, máxima confiança em mim.',
+    contexto: '→ Ele pagou, me indicou, e entendi que produto não é o que você entrega. É como você empacota valor + risco.',
+  },
+  {
+    p: 'P4',
+    nome: 'Programas',
+    cor: 'royal-blue',
+    aprendizado: '<strong class="text-royal-blue">Aprendi nos grandes cases (Encontre Sua Franquia, Lojas Rede).</strong> Vender sem sistema é roleta-russa. CRM + funis + automação = previsibilidade. Sem isso, você depende de sorte e talento improvisado.',
+    contexto: '→ Os cases de sucesso tinham programas estruturados. Os fracassados tinham apenas ações isoladas.',
+  },
+  {
+    p: 'P5',
+    nome: 'Processos',
+    cor: 'lime',
+    aprendizado: '<strong class="text-lime">Aprendi tentando escalar Growth Master.</strong> Sem processos documentados, você não cresce. Só repete caos em volume maior. Cada cliente virava um projeto único. Impossível replicar.',
+    contexto: '→ Percebi que minha cabeça era o gargalo. Se não estava em checklist, não acontecia.',
+  },
+  {
+    p: 'P6',
+    nome: 'Pessoas',
+    cor: 'royal-blue',
+    aprendizado: '<strong class="text-royal-blue">Aprendi no fundo do poço (e em todos os lugares depois).</strong> Empresa que depende 100% do fundador não é empresa, é emprego disfarçado. Você não pode tirar férias. Não pode ficar doente. Não pode escalar.',
+    contexto: '→ No barraco, eu era tudo: vendedor, entregador, suporte. No VSS, criei sistema para libertar donos dessa prisão.',
+  },
+];
+---
+
+<section class="relative overflow-hidden bg-gradient-to-b from-dark to-dark/95 py-24">
+  <div class="pointer-events-none absolute inset-0">
+    <div class="absolute -left-40 top-20 h-96 w-96 rounded-full bg-lime/5 blur-3xl"></div>
+    <div class="absolute -right-40 bottom-20 h-96 w-96 rounded-full bg-royal-blue/5 blur-3xl"></div>
+  </div>
+
+  <Container class="relative z-10">
+    <div class="mx-auto mb-16 max-w-3xl text-center">
+      <span class="mb-4 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-1.5 text-sm font-display font-bold text-lime backdrop-blur-sm">
+        O FRAMEWORK
+      </span>
+      <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
+        As Lições que Viraram os <span class="text-lime">6Ps</span>
+      </h2>
+      <p class="font-sans text-body-lg text-gray-200">
+        Cada P nasceu de um erro ou acerto real ao longo de 17 anos
+      </p>
+    </div>
+
+    <div class="mx-auto max-w-5xl space-y-6">
+      {licoes.map((licao) => (
+        <div class={`group rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-${licao.cor}/50 hover:bg-white/10`}>
+          <div class="flex items-start gap-4">
+            <div class={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full ${licao.cor === 'lime' ? 'bg-lime text-dark' : 'bg-royal-blue text-white'} font-display text-xl font-bold`}>
+              {licao.p}
+            </div>
+            <div class="flex-1">
+              <h3 class="mb-2 font-display text-h3 text-white">{licao.nome}</h3>
+              <p class="mb-3 font-sans text-body text-gray-300" set:html={licao.aprendizado} />
+              <p class="font-sans text-sm text-gray-400">
+                {licao.contexto}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Quote de Transição */}
+    <div class="mx-auto mt-16 max-w-3xl rounded-2xl border-2 border-lime/30 bg-gradient-to-br from-lime/10 to-transparent p-8 text-center">
+      <p class="mb-4 font-display text-h3 text-white">
+        "Cada P dos 6Ps não foi inventado. Foi <span class="text-lime">descoberto</span> na dor."
+      </p>
+      <p class="font-sans text-body text-gray-300">
+        Por isso funciona. Não é teoria de MBA. É cicatriz que virou sabedoria. É erro que virou método. É 17 anos condensados em sistema replicável.
+      </p>
+    </div>
+  </Container>
+</section>

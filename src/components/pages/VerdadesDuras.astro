@@ -1,0 +1,73 @@
+---
+import Container from '../ui/Container.astro';
+
+const verdades = [
+  {
+    numero: 1,
+    titulo: 'Improviso mata, sistema salva',
+    texto: 'Improviso funciona no começo. Mas não escala. Sistema sempre vence no longo prazo. Talento improvisado é menor que Processo mediano replicável.',
+  },
+  {
+    numero: 2,
+    titulo: 'Experiência não se compra, mas pode ser compartilhada',
+    texto: 'Você não precisa quebrar pra aprender. Pode aprender com quem já quebrou. Por isso criei o VSS: para que outros não passem pelo que passei.',
+  },
+  {
+    numero: 3,
+    titulo: 'Marketing sem vendas é hobby caro',
+    texto: 'De nada adianta ter tráfego se não tem sistema pra converter. Lead sem CRM vira custo. Visita sem follow-up vira desperdício.',
+  },
+  {
+    numero: 4,
+    titulo: 'Parceria sem clareza é prejuízo anunciado',
+    texto: 'Papéis vagos = conflito garantido. Aprendi isso perdendo R$ 50k com sócio. Nunca mais entrei em sociedade sem P1 e P6 cristalinos.',
+  },
+  {
+    numero: 5,
+    titulo: 'Sistema replicável é maior que talento improvisado',
+    texto: 'Vendedor talentoso que improvisa não escala. Sistema mediano replicável sim. Prefiro processo documentado a gênio insubstituível.',
+  },
+  {
+    numero: 6,
+    titulo: 'Ferramenta certa multiplica resultado',
+    texto: 'CRM não é luxo. É obrigação. Quem não tem CRM não tem negócio, tem bico. Por isso o VSS inclui Growth CRM profissional por 12 meses.',
+  },
+  {
+    numero: 7,
+    titulo: 'Transformação exige parceria, não transação',
+    texto: 'Cliente que você implementa junto vira evangelizador. Cliente que você vende e some vira detrator. Por isso Services é DWY (Done WITH You).',
+  },
+];
+---
+
+<section class="bg-dark py-24">
+  <Container>
+    <div class="mx-auto mb-16 max-w-3xl text-center">
+      <span class="mb-4 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-1.5 text-sm font-display font-bold text-lime backdrop-blur-sm">
+        VERDADES DURAS
+      </span>
+      <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
+        O Que Aprendi em <span class="text-lime">17 Anos</span>
+      </h2>
+      <p class="font-sans text-body-lg text-gray-200">
+        Lições que nenhum MBA ensina
+      </p>
+    </div>
+
+    <div class="mx-auto max-w-4xl space-y-4">
+      {verdades.map((verdade) => (
+        <div class="group flex items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-lime/30">
+          <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-lime/20 font-display text-lg font-bold text-lime">
+            {verdade.numero}
+          </div>
+          <div>
+            <h3 class="mb-2 font-display text-h4 text-white">{verdade.titulo}</h3>
+            <p class="font-sans text-body text-gray-300">
+              {verdade.texto}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>

@@ -44,6 +44,7 @@ export const cases: Case[] = [
       'Barbearia com 1 cadeira, agenda só por WhatsApp. Muitos buracos na agenda. Clientes só marcavam quando lembravam. Sem recorrência. Faturamento oscilava muito (R$ 8k a R$ 16k).',
     solucao:
       'Completou VSS em 90 dias. Implementou Growth CRM com agendamento online, criou pacotes mensais (corte + barba), automação de lembrete 3 dias antes, e follow-up pós-atendimento. 45% dos clientes viraram assinantes mensais. Agenda 95% ocupada.',
+    badge: 'Destaque',
   },
   {
     empresa: 'Loja Essence Moda',
@@ -58,6 +59,7 @@ export const cases: Case[] = [
       'Loja física com Instagram ativo, mas vendas só presenciais. Sem estratégia online. Clientes compravam 1x e sumiam. Sem follow-up. Muito estoque parado sem giro.',
     solucao:
       'Fez VSS e estruturou vendas online via WhatsApp Business com Growth CRM, catálogo digital, follow-up automatizado pós-compra, programa de fidelidade (10% na 5ª compra), e promoções segmentadas. Vendas online representam 40% do faturamento.',
+    badge: 'Destaque',
   },
   {
     empresa: 'Clínica Dental Care',

@@ -166,7 +166,6 @@ const beneficios = [
     const iframe = document.createElement('iframe');
     iframe.src = `https://api.gsh.digital/widget/booking/${calendarId}`;
     iframe.style.cssText = 'width: 100%; border: none; overflow: hidden; min-height: 700px;';
-    iframe.scrolling = 'no';
     iframe.id = `${calendarId}_${Date.now()}`;
     iframe.title = 'Agendar Conversa Estratégica';
 

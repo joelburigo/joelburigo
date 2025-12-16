@@ -13,11 +13,11 @@ const pacotes = [
   {
     nome: 'Fundação',
     icon: 'Zap',
-    investimento: 'R$ 3.000/mês',
+    investimento: 'R$ 4.500/mês',
     faturamento: 'R$ 10-50k/mês',
     foco: 'P1-P4 (base estrutural)',
-    permanencia: '3-6 meses',
-    resultado: '2-3x em vendas',
+    permanencia: '6-9 meses',
+    resultado: '1.5-2x em vendas',
     inclusos: [
       'Growth CRM (5 usuários)',
       '3 funis configurados',
@@ -36,8 +36,8 @@ const pacotes = [
     investimento: 'R$ 6.000/mês',
     faturamento: 'R$ 50-200k/mês',
     foco: 'P1-P5 (sistema completo)',
-    permanencia: '6-9 meses',
-    resultado: '3-4x em vendas',
+    permanencia: '9-12 meses',
+    resultado: '2-3x em vendas',
     inclusos: [
       'TUDO do Fundação +',
       'Usuários CRM ilimitados',
@@ -59,8 +59,8 @@ const pacotes = [
     investimento: 'R$ 9.000/mês',
     faturamento: 'R$ 100-300k/mês',
     foco: 'Todos os 6Ps (operação autônoma)',
-    permanencia: '9-12 meses',
-    resultado: '4-5x em vendas, equipe autônoma',
+    permanencia: '12-18 meses',
+    resultado: '3-4x em vendas, equipe autônoma',
     inclusos: [
       'TUDO do Aceleração +',
       'Landing pages ilimitadas',
@@ -148,7 +148,7 @@ const faq = [
   },
   {
     pergunta: 'Quantos clientes vocês atendem simultaneamente?',
-    resposta: 'Máximo 15 clientes ativos. Isso garante que cada cliente tem atenção adequada e implementação de qualidade. Não abrimos mais vagas do que conseguimos atender bem.'
+    resposta: 'Por enquanto, máximo 15 clientes ativos. Isso garante atenção adequada e implementação de qualidade em cada projeto. Importante: Services é um produto de transição. Quando o VSS atingir maturidade suficiente, provavelmente vamos descontinuar este serviço ou aumentar significativamente o investimento. Se você quer implementação guiada a este preço, o momento é agora.'
   },
   {
     pergunta: 'E se eu quiser mudar de pacote?',
@@ -192,9 +192,11 @@ const faq = [
 
             <!-- CTA Section -->
             <div class="text-center">
-              <Button variant="primary" size="lg">
-                Solicitar Diagnóstico Gratuito
-              </Button>
+              <a href="/agendar-services" class="inline-block">
+                <Button variant="primary" size="lg">
+                  Agendar Conversa Estratégica
+                </Button>
+              </a>
               
               <p class="mt-8 font-sans text-sm text-white/90 text-center">
                 ⚡ Mensalidade SEM fidelidade | Cancele quando quiser
@@ -315,13 +317,15 @@ const faq = [
                   ))}
                 </ul>
 
-                <Button 
-                  variant={pacote.destaque ? 'primary' : 'outline'} 
-                  class="w-full"
-                >
-                  Solicitar {pacote.nome}
-                  <Icons name="arrow-right" class="ml-2 h-4 w-4" />
-                </Button>
+                <a href="/agendar-services" class="block">
+                  <Button 
+                    variant={pacote.destaque ? 'primary' : 'outline'} 
+                    class="w-full"
+                  >
+                    Solicitar {pacote.nome}
+                    <Icons name="arrow-right" class="ml-2 h-4 w-4" />
+                  </Button>
+                </a>
               </div>
             ))}
           </div>
@@ -479,11 +483,13 @@ const faq = [
             Pronto Para Escalar?
           </h2>
           <p class="mb-8 font-sans text-body-lg text-white/80">
-            Agende um diagnóstico gratuito de 30 minutos para identificar qual pacote é ideal para o seu momento
+            Agende uma conversa estratégica de 30-45 minutos para entender qual pacote é ideal para o seu momento
           </p>
-          <Button variant="primary" size="lg">
-            Agendar Diagnóstico Gratuito
-          </Button>
+          <a href="/agendar-services" class="inline-block">
+            <Button variant="primary" size="lg">
+              Agendar Conversa Agora
+            </Button>
+          </a>
           <p class="mt-6 font-sans text-sm text-white/90">
             📅 Vagas limitadas | Atendemos apenas 15 clientes simultaneamente
           </p>

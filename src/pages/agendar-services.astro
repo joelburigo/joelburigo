@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/layout/Header.astro'
+import Footer from '../components/layout/Footer.astro'
+import Container from '../components/ui/Container.astro'
+import Icons from '../components/ui/Icons.astro'
+
+const seo = {
+  title: 'Agendar Conversa - Implementation Services | Joel Burigo',
+  description: 'Agende uma conversa estratégica para entender se Implementation Services é a solução certa para o seu negócio.',
+  keywords: 'agendar consultoria, consultoria vendas, Joel Burigo',
+}
+
+const beneficios = [
+  { icon: 'calendar', text: 'Conversa de 30-45 minutos' },
+  { icon: 'clipboard-list', text: 'Análise do seu momento atual' },
+  { icon: 'target', text: 'Recomendação personalizada' },
+  { icon: 'check-circle', text: 'Sem compromisso' },
+]
+---
+
+<Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
+  <Header />
+  
+  <main class="flex-grow bg-dark pt-24 pb-16">
+    <Container>
+      <div class="mx-auto max-w-6xl">
+        
+        <!-- Header -->
+        <div class="mb-12 text-center">
+          <span class="mb-4 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-1.5 text-sm font-display font-bold text-lime backdrop-blur-sm">
+            IMPLEMENTATION SERVICES
+          </span>
+          <h1 class="mb-6 font-display text-display-sm text-white md:text-display-md">
+            Agende uma <span class="text-lime">Conversa Estratégica</span>
+          </h1>
+          <p class="mx-auto max-w-2xl font-sans text-body-lg text-gray-200">
+            Vamos entender seu momento atual, seus desafios e verificar se Implementation Services é a solução certa para você.
+          </p>
+        </div>
+
+        <!-- Benefícios -->
+        <div class="mb-12 grid grid-cols-2 gap-4 md:grid-cols-4">
+          {beneficios.map((item) => (
+            <div class="flex flex-col items-center gap-2 rounded-xl border border-white/10 bg-white/5 p-4 text-center backdrop-blur-sm">
+              <div class="rounded-full bg-lime/20 p-2">
+                <Icons name={item.icon} class="h-5 w-5 text-lime" />
+              </div>
+              <span class="text-sm text-gray-200">{item.text}</span>
+            </div>
+          ))}
+        </div>
+
+        <!-- Calendário Embed -->
+        <div class="rounded-2xl border-2 border-lime/20 bg-white/5 p-6 backdrop-blur-sm md:p-8">
+          <div class="mb-6 text-center">
+            <h2 class="mb-2 font-display text-h2 text-white">
+              Escolha o Melhor Horário
+            </h2>
+            <p class="font-sans text-body text-gray-300">
+              Selecione data e horário que funcionam melhor para você
+            </p>
+          </div>
+
+          <!-- Espaço para Embed do Calendário do CRM -->
+          <div class="min-h-[600px] rounded-xl bg-white/5">
+            <!-- 
+              ADICIONE AQUI O EMBED DO SEU CALENDÁRIO DO CRM
+              Exemplo:
+              <iframe src="URL_DO_CALENDARIO" width="100%" height="600" frameborder="0"></iframe>
+            -->
+            <div class="flex h-[600px] flex-col items-center justify-center text-center">
+              <Icons name="calendar" class="mb-4 h-16 w-16 text-lime/50" />
+              <p class="font-sans text-body text-gray-400">
+                Adicione aqui o embed do calendário do CRM
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info Adicional -->
+        <div class="mt-8 rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+          <div class="flex items-start gap-4">
+            <div class="rounded-full bg-lime/20 p-2">
+              <Icons name="info" class="h-5 w-5 text-lime" />
+            </div>
+            <div>
+              <h3 class="mb-2 font-display text-h4 text-white">
+                O que vai acontecer na conversa?
+              </h3>
+              <ul class="space-y-2 font-sans text-body text-gray-200">
+                <li class="flex items-start gap-2">
+                  <Icons name="check" class="mt-1 h-4 w-4 shrink-0 text-lime" />
+                  <span>Vamos entender seu negócio, faturamento atual e principais desafios</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <Icons name="check" class="mt-1 h-4 w-4 shrink-0 text-lime" />
+                  <span>Avaliaremos qual pacote (Fundação, Aceleração ou ScaleUp) faz mais sentido</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <Icons name="check" class="mt-1 h-4 w-4 shrink-0 text-lime" />
+                  <span>Você vai sair com um plano claro do que precisa estruturar</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <Icons name="check" class="mt-1 h-4 w-4 shrink-0 text-lime" />
+                  <span>Se fizer sentido para ambos, definimos próximos passos</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </Container>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* Garantir que o iframe do calendário seja responsivo */
+  iframe {
+    max-width: 100%;
+  }
+</style>

@@ -109,19 +109,19 @@ const isImageMetadata = thumbnail && typeof thumbnail !== 'string'
         let embedUrl = '';
         
         if (videoUrl.includes('youtube.com') || videoUrl.includes('youtu.be')) {
-          let videoId = '';
+          let videoId: string | undefined = '';
           
           if (videoUrl.includes('youtu.be')) {
-            videoId = videoUrl.split('youtu.be/')[1]?.split('?')[0];
+            videoId = videoUrl.split('youtu.be/')[1]?.split('?')[0] ?? '';
           } else if (videoUrl.includes('/shorts/')) {
-            videoId = videoUrl.split('/shorts/')[1]?.split('?')[0];
+            videoId = videoUrl.split('/shorts/')[1]?.split('?')[0] ?? '';
           } else {
             videoId = new URLSearchParams(new URL(videoUrl).search).get('v') || '';
           }
           
           embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&enablejsapi=1`;
         } else if (videoUrl.includes('vimeo.com')) {
-          const videoId = videoUrl.split('vimeo.com/')[1]?.split('?')[0];
+          const videoId = videoUrl.split('vimeo.com/')[1]?.split('?')[0] ?? '';
           embedUrl = `https://player.vimeo.com/video/${videoId}?autoplay=1`;
         } else {
           // URL direta de vídeo

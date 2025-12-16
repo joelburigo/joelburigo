@@ -62,18 +62,17 @@ const beneficios = [
             </p>
           </div>
 
-          <!-- Espaço para Embed do Calendário do CRM -->
-          <div class="min-h-[600px] rounded-xl bg-white/5">
-            <!-- 
-              ADICIONE AQUI O EMBED DO SEU CALENDÁRIO DO CRM
-              Exemplo:
-              <iframe src="URL_DO_CALENDARIO" width="100%" height="600" frameborder="0"></iframe>
-            -->
-            <div class="flex h-[600px] flex-col items-center justify-center text-center">
-              <Icons name="calendar" class="mb-4 h-16 w-16 text-lime/50" />
-              <p class="font-sans text-body text-gray-400">
-                Adicione aqui o embed do calendário do CRM
-              </p>
+          <!-- Calendário do CRM (Lazy Load) -->
+          <div 
+            class="calendar-wrapper min-h-[700px] rounded-xl bg-white overflow-hidden"
+            data-calendar-id="0NBqf6z2SSM2gIPjjV4w"
+          >
+            <!-- Placeholder enquanto carrega -->
+            <div class="calendar-placeholder">
+              <div class="animate-pulse flex flex-col items-center justify-center h-[700px] gap-4">
+                <Icons name="calendar" class="h-16 w-16 text-lime/30" />
+                <p class="font-sans text-body text-gray-400">Carregando calendário...</p>
+              </div>
             </div>
           </div>
         </div>
@@ -117,9 +116,78 @@ const beneficios = [
   <Footer />
 </Layout>
 
+<!-- Preconnect para otimizar carregamento -->
+<link rel="preconnect" href="https://api.gsh.digital" slot="head" />
+<link rel="dns-prefetch" href="https://api.gsh.digital" slot="head" />
+
 <style>
-  /* Garantir que o iframe do calendário seja responsivo */
+  .calendar-wrapper {
+    position: relative;
+  }
+  
+  .calendar-placeholder {
+    width: 100%;
+  }
+  
+  .calendar-loaded .calendar-placeholder {
+    display: none;
+  }
+  
   iframe {
     max-width: 100%;
   }
 </style>
+
+<script>
+  // Lazy load do calendário com Intersection Observer
+  function initCalendar() {
+    const calendarWrapper = document.querySelector('.calendar-wrapper');
+    if (!calendarWrapper) return;
+
+    const calendarId = calendarWrapper.getAttribute('data-calendar-id');
+    if (!calendarId) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          loadCalendar(calendarWrapper as HTMLElement, calendarId);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: '100px' // Começa a carregar 100px antes de aparecer
+    });
+
+    observer.observe(calendarWrapper);
+  }
+
+  function loadCalendar(container: HTMLElement, calendarId: string) {
+    // Criar o iframe
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://api.gsh.digital/widget/booking/${calendarId}`;
+    iframe.style.cssText = 'width: 100%; border: none; overflow: hidden; min-height: 700px;';
+    iframe.scrolling = 'no';
+    iframe.id = `${calendarId}_${Date.now()}`;
+    iframe.title = 'Agendar Conversa Estratégica';
+
+    // Adicionar o iframe
+    container.appendChild(iframe);
+    container.classList.add('calendar-loaded');
+
+    // Carregar o script de embed
+    if (!document.querySelector('script[src*="form_embed.js"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://api.gsh.digital/js/form_embed.js';
+      script.type = 'text/javascript';
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }
+
+  // Inicializar quando o DOM estiver pronto
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCalendar);
+  } else {
+    initCalendar();
+  }
+</script>

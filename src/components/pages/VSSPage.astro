@@ -443,7 +443,7 @@ const resultados = [
                 Quero Começar Agora
               </Button>
             </a>
-            <p class="mt-4 font-sans text-sm text-gray-400">15 módulos + CRM + 48 mentorias por 12x R$ 197</p>
+            <p class="mt-4 font-sans text-sm text-gray-400">15 módulos + CRM + 48 mentorias por 12x de R$ 166,42</p>
           </div>
         </div>
       </Container>
@@ -646,7 +646,7 @@ const resultados = [
               <div class="flex flex-col items-center justify-center gap-2">
                 <p class="font-display font-bold text-lime">
                   <span class="text-xl align-top">12x</span>
-                  <span class="text-6xl"> R$ 197</span>
+                  <span class="text-6xl"> R$ 166,42</span>
                 </p>
                 <p class="font-sans text-sm text-white/80">ou R$ 1.997 à vista</p>
               </div>
@@ -709,9 +709,12 @@ const resultados = [
                 </div>
               </div>
               
-              <Button variant="primary" size="lg" class="w-full text-lg">
+              <button 
+                id="openCheckoutModal" 
+                class="inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 hover:scale-105 bg-lime hover:bg-lime/90 text-dark shadow-lg shadow-lime/20 focus:ring-lime font-bold min-h-14 py-3.5 px-8 text-lg w-full"
+              >
                 Sim, Quero Escalar Minhas Vendas
-              </Button>
+              </button>
               
               <p class="mt-4 font-sans text-body-sm text-white/90 text-center">
                 🔒 Pagamento seguro | Suporte via WhatsApp | Acesso imediato
@@ -993,4 +996,194 @@ const resultados = [
       transform: translateY(0);
     }
   }
+
+  /* Modal Checkout */
+  .checkout-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .checkout-modal.active {
+    display: flex;
+  }
+
+  .checkout-modal-content {
+    background: white;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .checkout-modal-header {
+    background: linear-gradient(135deg, #020617 0%, #1e293b 100%);
+    padding: 2rem 3rem 1.5rem 1.5rem;
+    border-bottom: 3px solid #BEF264;
+  }
+
+  .checkout-modal-header h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .checkout-modal-header .highlight {
+    color: #BEF264;
+  }
+
+  .checkout-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  .checkout-modal-close:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+  }
+
+  .checkout-iframe-container {
+    width: 100%;
+    height: 550px;
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  .checkout-modal-footer {
+    background: #f8fafc;
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+  }
+
+  .checkout-modal-footer p {
+    font-size: 0.875rem;
+    color: #475569;
+    margin: 0 0 0.75rem 0;
+    font-weight: 500;
+  }
+
+  .checkout-modal-footer img {
+    max-height: 60px;
+    margin: 0 auto;
+  }
+
+  @media (max-height: 700px) {
+    .checkout-iframe-container {
+      height: 60vh;
+    }
+  }
 </style>
+
+<!-- Modal Checkout -->
+<div id="checkoutModal" class="checkout-modal">
+  <div class="checkout-modal-content">
+    <button id="closeCheckoutModal" class="checkout-modal-close" aria-label="Fechar">×</button>
+    
+    <!-- Header -->
+    <div class="checkout-modal-header">
+      <h3>
+        🚀 Últimas <span class="highlight">100 Vagas</span> com Preço Especial
+      </h3>
+    </div>
+
+    <!-- Iframe -->
+    <div class="checkout-iframe-container">
+      <iframe
+        src="https://api.gsh.digital/widget/form/UY5sq22SQZfoIym1Udp1"
+        style="width:100%;height:100%;border:none;"
+        id="inline-UY5sq22SQZfoIym1Udp1" 
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name="Vendas Sem Segredos - Compra"
+        data-height="490"
+        data-layout-iframe-id="inline-UY5sq22SQZfoIym1Udp1"
+        data-form-id="UY5sq22SQZfoIym1Udp1"
+        title="Vendas Sem Segredos - Compra"
+      ></iframe>
+    </div>
+
+    <!-- Footer -->
+    <div class="checkout-modal-footer">
+      <p>🔒 Pagamento 100% seguro | Acesso imediato após confirmação</p>
+      <img 
+        src={hotmartSecurity.src} 
+        alt="Formas de pagamento aceitas" 
+        loading="lazy"
+      />
+    </div>
+  </div>
+</div>
+
+<script src="https://api.gsh.digital/js/form_embed.js"></script>
+
+<script>
+  // Modal Checkout Controls
+  const modal = document.getElementById('checkoutModal');
+  const openBtn = document.getElementById('openCheckoutModal');
+  const closeBtn = document.getElementById('closeCheckoutModal');
+
+  if (openBtn && modal && closeBtn) {
+    openBtn.addEventListener('click', () => {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    // Fechar ao clicar fora do modal
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Fechar com ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+</script>

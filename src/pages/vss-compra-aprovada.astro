@@ -1,0 +1,136 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Container from '../components/ui/Container.astro'
+import Button from '../components/ui/Button.astro'
+import Icons from '../components/ui/Icons.astro'
+import { contactInfo, getWhatsAppLink } from '../data/contact'
+---
+
+<Layout
+  title="Compra Aprovada - Vendas Sem Segredos | Joel Burigo"
+  description="Sua compra foi aprovada! Acesse agora o Vendas Sem Segredos e comece sua jornada de transformação."
+>
+  <main class="min-h-screen bg-dark py-12 md:py-20">
+    <Container>
+      <div class="mx-auto max-w-3xl">
+        <!-- Ícone de Sucesso -->
+        <div class="mb-8 flex justify-center">
+          <div class="flex h-24 w-24 items-center justify-center rounded-full bg-lime/20 ring-8 ring-lime/10 animate-pulse">
+            <Icons name="check-circle-2" class="h-12 w-12 text-lime" />
+          </div>
+        </div>
+
+        <!-- Título -->
+        <div class="mb-12 text-center">
+          <h1 class="mb-4 font-display text-4xl font-bold text-white md:text-5xl">
+            🎉 Compra Aprovada com Sucesso!
+          </h1>
+          <p class="font-sans text-body-lg text-gray-200">
+            Bem-vindo ao <span class="font-bold text-lime">Vendas Sem Segredos</span>
+          </p>
+        </div>
+
+        <!-- Card Principal -->
+        <div class="mb-8 rounded-2xl border-2 border-lime/30 bg-white/5 p-8 backdrop-blur-sm md:p-12">
+          <div class="mb-8 space-y-4">
+            <h2 class="font-display text-2xl font-bold text-white">Próximos Passos:</h2>
+            
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-lime/20">
+                  <span class="font-display text-lg font-bold text-lime">1</span>
+                </div>
+                <div>
+                  <h3 class="mb-2 font-display text-lg font-semibold text-white">Acesse seu e-mail</h3>
+                  <p class="font-sans text-body text-gray-200">
+                    Você receberá um e-mail com as credenciais de acesso à plataforma em até 5 minutos.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-lime/20">
+                  <span class="font-display text-lg font-bold text-lime">2</span>
+                </div>
+                <div>
+                  <h3 class="mb-2 font-display text-lg font-semibold text-white">Entre no Growth CRM</h3>
+                  <p class="font-sans text-body text-gray-200">
+                    Acesse o CRM profissional incluído no programa (valor de R$ 6.996 - 12 meses grátis).
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-lime/20">
+                  <span class="font-display text-lg font-bold text-lime">3</span>
+                </div>
+                <div>
+                  <h3 class="mb-2 font-display text-lg font-semibold text-white">Junte-se à comunidade</h3>
+                  <p class="font-sans text-body text-gray-200">
+                    Entre no grupo exclusivo de alunos e conecte-se com outros empreendedores implementando o sistema.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-lime/20">
+                  <span class="font-display text-lg font-bold text-lime">4</span>
+                </div>
+                <div>
+                  <h3 class="mb-2 font-display text-lg font-semibold text-white">Assista a primeira aula</h3>
+                  <p class="font-sans text-body text-gray-200">
+                    Comece pelo Módulo 1 - Fundação e entenda como funcionará sua jornada de 90 dias.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-col gap-4 sm:flex-row">
+            <a href={getWhatsAppLink('Olá! Acabei de comprar o Vendas Sem Segredos e gostaria de confirmar meu acesso.')} target="_blank" rel="noopener noreferrer" class="flex-1">
+              <Button variant="primary" size="lg" class="w-full">
+                Falar com Suporte
+              </Button>
+            </a>
+            <a href="/vendas-sem-segredos" class="flex-1">
+              <Button variant="outline" size="lg" class="w-full border-lime text-lime hover:bg-lime hover:text-dark">
+                Ver Detalhes do Programa
+              </Button>
+            </a>
+          </div>
+        </div>
+
+        <!-- Informações Importantes -->
+        <div class="rounded-xl border border-white/10 bg-white/5 p-6">
+          <h3 class="mb-4 font-display text-lg font-semibold text-white">📋 Informações Importantes</h3>
+          <ul class="space-y-3 font-sans text-body-sm text-gray-200">
+            <li class="flex items-start gap-2">
+              <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
+              <span>Garantia de 15 dias: Se não gostar, devolvo 100% do valor</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
+              <span>Acesso vitalício ao conteúdo: Assista no seu ritmo, sem pressa</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
+              <span>Mentorias ao vivo: Primeiras 12 semanas = semanal | Depois = quinzenal por 6 meses</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
+              <span>Suporte via WhatsApp: {contactInfo.phone.display}</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Volta para Home -->
+        <div class="mt-8 text-center">
+          <a href="/" class="inline-flex items-center gap-2 font-sans text-body text-gray-400 transition-colors hover:text-lime">
+            ← Voltar para o site
+          </a>
+        </div>
+      </div>
+    </Container>
+  </main>
+</Layout>

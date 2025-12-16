@@ -1,0 +1,156 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Container from '../components/ui/Container.astro'
+import Button from '../components/ui/Button.astro'
+import Icons from '../components/ui/Icons.astro'
+import { contactInfo, getWhatsAppLink } from '../data/contact'
+---
+
+<Layout
+  title="Análise de Crédito - Vendas Sem Segredos | Joel Burigo"
+  description="Seu pagamento está em análise de crédito. Você receberá uma resposta em breve."
+>
+  <main class="min-h-screen bg-dark py-12 md:py-20">
+    <Container>
+      <div class="mx-auto max-w-3xl">
+        <!-- Ícone de Análise -->
+        <div class="mb-8 flex justify-center">
+          <div class="flex h-24 w-24 items-center justify-center rounded-full bg-lime/20 ring-8 ring-lime/10">
+            <Icons name="search" class="h-12 w-12 text-lime animate-pulse" />
+          </div>
+        </div>
+
+        <!-- Título -->
+        <div class="mb-12 text-center">
+          <h1 class="mb-4 font-display text-4xl font-bold text-white md:text-5xl">
+            🔍 Pagamento em Análise de Crédito
+          </h1>
+          <p class="font-sans text-body-lg text-gray-200">
+            Estamos verificando as informações do seu cartão
+          </p>
+        </div>
+
+        <!-- Card Principal -->
+        <div class="mb-8 rounded-2xl border-2 border-lime/30 bg-white/5 p-8 backdrop-blur-sm md:p-12">
+          <div class="mb-8 space-y-6">
+            <div class="rounded-xl border border-lime/20 bg-lime/10 p-6">
+              <h2 class="mb-2 font-display text-xl font-bold text-white">📌 Status: Aguardando Análise</h2>
+              <p class="font-sans text-body text-gray-200">
+                Seu pedido foi registrado e está em análise pela operadora do cartão. Isso é um procedimento padrão de segurança.
+              </p>
+            </div>
+
+            <h3 class="font-display text-2xl font-bold text-white">O que está acontecendo?</h3>
+            
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-lime/20">
+                  <Icons name="shield" class="h-5 w-5 text-lime" />
+                </div>
+                <div>
+                  <h4 class="mb-2 font-display text-lg font-semibold text-white">Análise Antifraude</h4>
+                  <p class="font-sans text-body text-gray-200">
+                    A operadora do cartão está verificando se a transação é legítima. Isso protege você e nós contra fraudes.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-lime/20">
+                  <Icons name="clock" class="h-5 w-5 text-lime" />
+                </div>
+                <div>
+                  <h4 class="mb-2 font-display text-lg font-semibold text-white">Tempo de Análise</h4>
+                  <p class="font-sans text-body text-gray-200">
+                    Geralmente leva de <span class="font-bold text-lime">alguns minutos a 24 horas</span>. Em casos raros, pode demorar até 3 dias úteis.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-lime/20">
+                  <Icons name="mail" class="h-5 w-5 text-lime" />
+                </div>
+                <div>
+                  <h4 class="mb-2 font-display text-lg font-semibold text-white">Notificação</h4>
+                  <p class="font-sans text-body text-gray-200">
+                    Você receberá um e-mail assim que a análise for concluída, informando se foi <span class="font-bold text-lime">aprovada</span> ou <span class="font-bold text-red-400">recusada</span>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- O que fazer -->
+          <div class="mb-8 rounded-xl border border-white/10 bg-white/5 p-6">
+            <h3 class="mb-4 font-display text-lg font-semibold text-white">✅ O que você pode fazer</h3>
+            <ul class="space-y-3 font-sans text-body-sm text-gray-200">
+              <li class="flex items-start gap-2">
+                <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
+                <span>Aguarde a confirmação por e-mail (verifique o spam também)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
+                <span>Certifique-se de que tem limite disponível no cartão</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
+                <span>Entre em contato com o banco se a análise demorar mais de 24h</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
+                <span>Você pode tentar outro cartão ou forma de pagamento enquanto aguarda</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-col gap-4 sm:flex-row">
+            <a href={getWhatsAppLink('Olá! Meu pagamento do Vendas Sem Segredos está em análise de crédito. Gostaria de saber o status.')} target="_blank" rel="noopener noreferrer" class="flex-1">
+              <Button variant="primary" size="lg" class="w-full">
+                Falar com Suporte
+              </Button>
+            </a>
+            <a href="/vendas-sem-segredos#investimento" class="flex-1">
+              <Button variant="outline" size="lg" class="w-full border-lime text-lime hover:bg-lime hover:text-dark">
+                Tentar Outro Pagamento
+              </Button>
+            </a>
+          </div>
+        </div>
+
+        <!-- Recusado? -->
+        <div class="mb-8 rounded-xl border border-red-500/20 bg-red-500/5 p-6">
+          <h3 class="mb-4 font-display text-lg font-semibold text-white">⚠️ E se for recusado?</h3>
+          <p class="mb-4 font-sans text-body text-gray-200">
+            Se o pagamento for recusado, você pode:
+          </p>
+          <ul class="space-y-2 font-sans text-body-sm text-gray-200">
+            <li>• Tentar novamente com outro cartão</li>
+            <li>• Pagar via PIX (confirmação instantânea)</li>
+            <li>• Pagar via boleto (confirmação em 1-3 dias úteis)</li>
+            <li>• Entrar em contato conosco para resolver</li>
+          </ul>
+        </div>
+
+        <!-- Suporte -->
+        <div class="rounded-xl border border-lime/20 bg-lime/5 p-6 text-center">
+          <p class="mb-4 font-display text-lg font-semibold text-white">
+            Precisa de ajuda? Estamos aqui!
+          </p>
+          <p class="font-sans text-body text-gray-200">
+            WhatsApp: <a href={getWhatsAppLink('')} class="font-bold text-lime hover:underline" target="_blank" rel="noopener noreferrer">{contactInfo.phone.display}</a><br/>
+            E-mail: <a href={contactInfo.email.mailto} class="font-bold text-lime hover:underline">{contactInfo.email.main}</a>
+          </p>
+        </div>
+
+        <!-- Volta para Home -->
+        <div class="mt-8 text-center">
+          <a href="/" class="inline-flex items-center gap-2 font-sans text-body text-gray-400 transition-colors hover:text-lime">
+            ← Voltar para o site
+          </a>
+        </div>
+      </div>
+    </Container>
+  </main>
+</Layout>

@@ -1196,7 +1196,7 @@ O que você leva:
 - Acesso vitalício
 - Duas rotas: com OU sem budget de tráfego
 
-Investimento: R$ 1.997 à vista ou 12x R$ 197
+Investimento: R$ 1.997 à vista ou 12x de R$ 166,42
 
 Garantia: 15 dias de devolução total, sem perguntas.
 

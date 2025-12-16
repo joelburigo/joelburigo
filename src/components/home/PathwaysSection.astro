@@ -9,8 +9,9 @@ const pathways = [
     title: 'Vendas Sem Segredos',
     subtitle: 'Quer fazer sozinho?',
     description: 'Programa completo de 90 dias onde você aprende e implementa o sistema de vendas escaláveis no seu negócio.',
-    price: 'R$ 1.997',
-    period: 'ou 12x R$ 197',
+    price: '12x R$ 197',
+    priceHtml: true,
+    period: 'ou R$ 1.997 à vista',
     features: [
       '15 módulos práticos',
       'CRM profissional incluído',
@@ -38,7 +39,7 @@ const pathways = [
       'Gestão completa',
     ],
     link: '/services',
-    buttonText: 'Solicitar Proposta',
+    buttonText: 'Conhecer Serviço',
     buttonVariant: 'outline' as const,
     idealFor: 'Empresas que querem delegar tudo',
     badge: null,
@@ -58,7 +59,7 @@ const pathways = [
       'Mínimo 6 meses',
     ],
     link: '/advisory',
-    buttonText: 'Aplicar Agora',
+    buttonText: 'Ver Detalhes',
     buttonVariant: 'outline' as const,
     idealFor: 'CEOs que precisam de sparring partner',
     badge: null,
@@ -149,7 +150,13 @@ const pathways = [
                 {/* Price */}
                 <div class="mb-8 border-t border-white/10 pt-6">
                   <p class={`font-display text-3xl font-bold ${pathway.badge ? 'text-lime' : 'text-white'}`}>
-                    {pathway.price}
+                    {pathway.priceHtml ? (
+                      <>
+                        <span class="text-xl align-top">12x</span> R$ 197
+                      </>
+                    ) : (
+                      pathway.price
+                    )}
                   </p>
                   <p class="font-sans text-body-sm text-gray-400">{pathway.period}</p>
                 </div>

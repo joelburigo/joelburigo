@@ -4,6 +4,8 @@ import Button from '../ui/Button.astro'
 import VideoPlayer from '../ui/VideoPlayer.astro'
 import { cases } from '../../data/cases'
 import Icons from '../ui/Icons.astro'
+import { contactInfo, getWhatsAppLink } from '../../data/contact'
+import hotmartSecurity from '../../assets/images/hotmart-payment-security.png'
 
 
 // Filtrar cases do VSS (6 cases exibidos, 7 disponíveis no arquivo)
@@ -220,9 +222,11 @@ const resultados = [
             <!-- CTA Section -->
             <div class="text-center">
               <div class="flex flex-col gap-4 sm:flex-row justify-center">
-                <Button variant="primary" size="lg">
-                  Quero Transformar Minhas Vendas Agora
-                </Button>
+                <a href="#investimento">
+                  <Button variant="primary" size="lg">
+                    Quero Transformar Minhas Vendas Agora
+                  </Button>
+                </a>
               </div>
               
               <div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-white/90">
@@ -431,6 +435,16 @@ const resultados = [
               </div>
             ))}
           </div>
+          
+          <!-- CTA Módulos -->
+          <div class="mt-16 text-center">
+            <a href="#investimento">
+              <Button variant="primary" size="lg">
+                Quero Começar Agora
+              </Button>
+            </a>
+            <p class="mt-4 font-sans text-sm text-gray-400">15 módulos + CRM + 48 mentorias por 12x R$ 197</p>
+          </div>
         </div>
       </Container>
     </section>
@@ -539,6 +553,16 @@ const resultados = [
               <span>✅ Suporte Contínuo</span>
             </div>
           </div>
+          
+          <!-- CTA Jornada -->
+          <div class="mt-16 text-center">
+            <a href="#investimento">
+              <Button variant="primary" size="lg">
+                Começar Minha Jornada de 90 Dias
+              </Button>
+            </a>
+            <p class="mt-4 font-sans text-sm text-gray-400">Sistema completo implementado em 3 meses</p>
+          </div>
         </div>
       </Container>
     </section>
@@ -607,7 +631,7 @@ const resultados = [
     </section>
 
     <!-- Investimento -->
-    <section class="relative overflow-hidden bg-dark py-24">
+    <section id="investimento" class="relative overflow-hidden bg-dark py-24">
       
       <Container class="relative z-10">
         <div class="mx-auto max-w-4xl text-center">
@@ -619,12 +643,12 @@ const resultados = [
             <div class="mb-6">
               <p class="mb-2 font-sans text-body text-white/80">Valor total de tudo que está incluído:</p>
               <p class="mb-4 font-display text-3xl font-bold text-white/70 line-through">R$ 17.287</p>
-              <div class="flex items-center justify-center gap-4">
-                <p class="font-display text-6xl font-bold text-lime">R$ 1.997</p>
-                <div class="text-left">
-                  <p class="font-sans text-sm text-white/80">à vista</p>
-                  <p class="font-sans text-xs text-white/80">ou 12x R$ 197</p>
-                </div>
+              <div class="flex flex-col items-center justify-center gap-2">
+                <p class="font-display font-bold text-lime">
+                  <span class="text-xl align-top">12x</span>
+                  <span class="text-6xl"> R$ 197</span>
+                </p>
+                <p class="font-sans text-sm text-white/80">ou R$ 1.997 à vista</p>
               </div>
             </div>
             
@@ -632,66 +656,153 @@ const resultados = [
               <p class="font-display text-lg font-semibold text-lime">💰 Economia de R$ 15.290 (88% de desconto)</p>
             </div>
 
+            <div class="border-t border-white/20 pt-6 mb-2"></div>
+
             <div class="space-y-2 text-left">
               <div class="flex justify-between border-b border-white/10 py-2">
                 <span class="font-sans text-sm text-white/80">15 módulos + 60 aulas (acesso vitalício)</span>
-                <span class="font-sans text-sm text-white">R$ 1.997</span>
+                <span class="font-sans text-sm text-white/70 line-through">R$ 1.997</span>
               </div>
               <div class="flex justify-between border-b border-white/10 py-2">
                 <span class="font-sans text-sm text-white/80">Growth CRM completo (12 meses)</span>
-                <span class="font-sans text-sm text-white">R$ 6.996</span>
+                <span class="font-sans text-sm text-white/70 line-through">R$ 6.996</span>
               </div>
               <div class="flex justify-between border-b border-white/10 py-2">
                 <span class="font-sans text-sm text-white/80">48 mentorias ao vivo (150 min cada)</span>
-                <span class="font-sans text-sm text-white">R$ 7.200</span>
+                <span class="font-sans text-sm text-white/70 line-through">R$ 7.200</span>
               </div>
               <div class="flex justify-between border-b border-white/10 py-2">
                 <span class="font-sans text-sm text-white/80">Templates, scripts e recursos</span>
-                <span class="font-sans text-sm text-white">R$ 497</span>
+                <span class="font-sans text-sm text-white/70 line-through">R$ 497</span>
               </div>
               <div class="flex justify-between border-b border-white/10 py-2">
                 <span class="font-sans text-sm text-white/80">Comunidade exclusiva (90 dias)</span>
-                <span class="font-sans text-sm text-white">R$ 597</span>
+                <span class="font-sans text-sm text-white/70 line-through">R$ 597</span>
               </div>
               <div class="flex justify-between border-t-2 border-lime/30 pt-4 text-lg font-bold">
                 <span class="font-display text-white">TOTAL</span>
-                <span class="font-display text-lime">R$ 17.287</span>
+                <span class="font-display text-lime/70 line-through">R$ 17.287</span>
               </div>
             </div>
-          </div>
+            
+            <!-- Garantia e Bônus dentro do box -->
+            <div class="mt-8 border-t border-white/10 pt-8">
+              <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+                <div class="rounded-lg border border-white/10 bg-white/5 p-4">
+                  <div class="mb-2 flex items-center gap-2">
+                    <Icons name="shield" class="h-5 w-5 text-lime" />
+                    <p class="font-display text-base font-semibold text-white">Garantia de 15 Dias</p>
+                  </div>
+                  <p class="font-sans text-xs text-white/70">
+                    100% do investimento devolvido sem perguntas
+                  </p>
+                </div>
 
-          <div class="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2">
-            <div class="rounded-xl border border-white/20 bg-white/5 p-6 backdrop-blur-sm">
-              <div class="mb-2 flex items-center gap-2">
-                <Icons name="shield" class="h-6 w-6 text-lime" />
-                <p class="font-display text-lg font-semibold text-white">Garantia de 15 Dias</p>
+                <div class="rounded-lg border border-lime/20 bg-lime/5 p-4">
+                  <div class="mb-2 flex items-center gap-2">
+                    <Icons name="rocket" class="h-5 w-5 text-lime" />
+                    <p class="font-display text-base font-semibold text-white">Bônus Exclusivos</p>
+                  </div>
+                  <p class="font-sans text-xs text-white/70">
+                    48 gravações + Planilhas + Biblioteca de objeções
+                  </p>
+                </div>
               </div>
-              <p class="font-sans text-body-sm text-white/80">
-                Se você entrar e em até 15 dias decidir que não é pra você, devolvo 100% do seu investimento. 
-                Sem perguntas, sem burocracia.
+              
+              <Button variant="primary" size="lg" class="w-full text-lg">
+                Sim, Quero Escalar Minhas Vendas
+              </Button>
+              
+              <p class="mt-4 font-sans text-body-sm text-white/90 text-center">
+                🔒 Pagamento seguro | Suporte via WhatsApp | Acesso imediato
               </p>
-            </div>
-
-            <div class="rounded-xl border border-lime/20 bg-lime/5 p-6 backdrop-blur-sm">
-              <div class="mb-2 flex items-center gap-2">
-                <Icons name="rocket" class="h-6 w-6 text-lime" />
-                <p class="font-display text-lg font-semibold text-white">Bônus Exclusivos</p>
+              
+              <div class="mt-6 flex justify-center">
+                <div class="rounded-lg bg-white/95 px-6 py-3">
+                  <img 
+                    src={hotmartSecurity.src} 
+                    alt="Formas de pagamento aceitas - Mastercard, Visa, Hiper, American Express, Diners Club, PayPal, Boleto" 
+                    class="h-24 object-contain"
+                    loading="lazy"
+                  />
+                </div>
               </div>
-              <ul class="space-y-1 font-sans text-body-sm text-white/80">
-                <li>✅ Gravação de todas as 48 mentorias</li>
-                <li>✅ Planilha de KPIs automatizada</li>
-                <li>✅ Biblioteca de objeções respondidas</li>
-              </ul>
             </div>
           </div>
+        </div>
+      </Container>
+    </section>
 
-          <Button variant="primary" size="lg" class="text-lg">
-            Sim, Quero Escalar Minhas Vendas
-          </Button>
-          
-          <p class="mt-4 font-sans text-body-sm text-white/90">
-            🔒 Pagamento seguro | Suporte via WhatsApp | Acesso imediato após confirmação
-          </p>
+    <!-- Garantia Destacada -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-lime/10 via-dark to-dark py-20">
+      <Container>
+        <div class="mx-auto max-w-5xl">
+          <div class="relative rounded-3xl border-4 border-lime/40 bg-dark/80 p-8 backdrop-blur-sm md:p-12 lg:p-16">
+            <!-- Badge Destaque -->
+            <div class="absolute -top-6 left-1/2 -translate-x-1/2">
+              <div class="rounded-full border-4 border-lime bg-dark px-8 py-2">
+                <span class="font-display text-sm font-bold uppercase tracking-wide text-lime">Zero Risco</span>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <!-- Ícone Grande -->
+              <div class="mb-6 flex justify-center">
+                <div class="flex h-24 w-24 items-center justify-center rounded-full border-4 border-lime/30 bg-lime/10">
+                  <Icons name="shield" class="h-12 w-12 text-lime" />
+                </div>
+              </div>
+
+              <!-- Título -->
+              <h2 class="mb-4 font-display text-4xl font-bold text-white md:text-5xl">
+                Garantia <span class="text-lime">Incondicional</span> de 15 Dias
+              </h2>
+
+              <!-- Descrição -->
+              <p class="mx-auto mb-8 max-w-2xl font-sans text-body-lg text-gray-200">
+                Entre no programa. Assista as aulas. Participe das mentorias. Configure o CRM. 
+                Se em até <span class="font-bold text-lime">15 dias</span> você decidir que não é pra você, 
+                é só pedir o reembolso e eu devolvo <span class="font-bold text-lime">100% do seu investimento</span>.
+              </p>
+
+              <!-- Benefícios -->
+              <div class="mb-8 grid grid-cols-1 gap-4 md:grid-cols-3">
+                <div class="rounded-xl border border-lime/20 bg-lime/5 p-6">
+                  <p class="mb-2 font-display text-2xl font-bold text-lime">15 Dias</p>
+                  <p class="font-sans text-sm text-gray-200">Para testar tudo sem compromisso</p>
+                </div>
+                <div class="rounded-xl border border-lime/20 bg-lime/5 p-6">
+                  <p class="mb-2 font-display text-2xl font-bold text-lime">100%</p>
+                  <p class="font-sans text-sm text-gray-200">Do valor devolvido, sem perguntas</p>
+                </div>
+                <div class="rounded-xl border border-lime/20 bg-lime/5 p-6">
+                  <p class="mb-2 font-display text-2xl font-bold text-lime">Zero Burocracia</p>
+                  <p class="font-sans text-sm text-gray-200">Basta enviar um e-mail simples</p>
+                </div>
+              </div>
+
+              <!-- Explicação -->
+              <div class="mx-auto max-w-3xl rounded-2xl border border-white/10 bg-white/5 p-6">
+                <p class="font-sans text-body text-gray-200">
+                  <span class="font-bold text-white">Por que ofereço essa garantia?</span><br/>
+                  Porque sei que o sistema funciona. Mais de 140 clientes já implementaram os 6Ps e transformaram suas vendas. 
+                  Não quero seu dinheiro se você não ver valor. Simples assim.
+                </p>
+              </div>
+
+              <!-- CTA -->
+              <div class="mt-8">
+                <a href="#investimento">
+                  <Button variant="primary" size="lg" class="text-lg">
+                    Quero Testar Sem Risco Por 15 Dias
+                  </Button>
+                </a>
+                <p class="mt-4 font-sans text-sm text-gray-400">
+                  O risco é todo meu. A decisão é toda sua.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </Container>
     </section>
@@ -728,9 +839,11 @@ const resultados = [
             <p class="mb-6 font-sans text-body text-gray-200">
               Fale diretamente comigo pelo WhatsApp antes de se inscrever
             </p>
-            <Button variant="outline" size="lg" class="border-lime text-lime hover:bg-lime hover:text-dark">
-              Falar com Joel no WhatsApp
-            </Button>
+            <a href={getWhatsAppLink('Olá! Tenho dúvidas sobre o Vendas Sem Segredos')} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg" class="border-lime text-lime hover:bg-lime hover:text-dark">
+                Falar com Joel no WhatsApp
+              </Button>
+            </a>
           </div>
         </div>
       </Container>
@@ -830,12 +943,16 @@ const resultados = [
             Apenas <span class="font-bold text-lime">100 vagas disponíveis</span> neste investimento especial.
           </p>
           <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Button variant="primary" size="lg" class="text-lg">
-              Quero Escalar Agora (100 Vagas)
-            </Button>
-            <Button variant="outline" size="lg" class="border-white text-white hover:bg-white hover:text-dark">
-              Tirar Dúvidas com Joel
-            </Button>
+            <a href="#investimento">
+              <Button variant="primary" size="lg" class="text-lg">
+                Quero Escalar Agora (100 Vagas)
+              </Button>
+            </a>
+            <a href={getWhatsAppLink('Olá! Tenho dúvidas sobre o Vendas Sem Segredos')} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg" class="border-white text-white hover:bg-white hover:text-dark">
+                Tirar Dúvidas com Joel
+              </Button>
+            </a>
           </div>
           <p class="mt-6 font-sans text-body-sm text-gray-400">
             Garantia de 15 dias | Acesso vitalício | Suporte via WhatsApp

@@ -26,24 +26,26 @@ import Icons from '../ui/Icons.astro'
           Sou Joel Burigo. Criei o Framework dos 6Ps das Vendas Escaláveis depois de estruturar ~R$ 1 bilhão em vendas para micro e pequenas empresas. Não vendo curso gravado — vendo <strong class="text-white">sistema implementado</strong>.
         </p>
 
-        <div class="flex flex-col gap-4 pt-4 sm:flex-row">
-          <a href="/vendas-sem-segredos" data-astro-prefetch rel="preload">
-            <button class="inline-flex h-14 w-full items-center justify-center rounded-lg bg-lime px-8 font-display text-lg font-bold shadow-lg shadow-lime/20 transition-all hover:scale-105 hover:bg-lime/90 focus:outline-none focus:ring-2 focus:ring-lime focus:ring-offset-2 sm:w-auto" style="color: #020617;">
-              Conhecer o Vendas Sem Segredos
+        <div class="flex flex-col gap-4 pt-6 sm:flex-row sm:gap-4">
+          <a href="/vendas-sem-segredos" data-astro-prefetch rel="preload" class="w-full sm:w-auto">
+            <button class="group inline-flex h-16 w-full items-center justify-center gap-3 rounded-xl bg-lime px-10 font-display text-lg font-bold shadow-2xl shadow-lime/30 transition-all hover:scale-[1.02] hover:bg-lime/90 hover:shadow-lime/40 focus:outline-none focus:ring-2 focus:ring-lime focus:ring-offset-2 focus:ring-offset-dark sm:w-auto" style="color: #020617;">
+              <span>Conhecer VSS</span>
+              <Icons name="arrow-right" class="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </button>
           </a>
-          <a href="/diagnostico" class="sm:w-auto w-full">
-            <button class="inline-flex h-14 w-full items-center justify-center gap-2 rounded-lg border-2 border-white px-8 font-display text-lg font-semibold text-white transition-all hover:scale-105 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2">
-              Diagnóstico Gratuito
+          <a href="/diagnostico" class="w-full sm:w-auto">
+            <button class="group inline-flex h-16 w-full items-center justify-center gap-3 rounded-xl border-2 border-white/90 bg-white/5 px-10 font-display text-lg font-semibold text-white backdrop-blur-sm transition-all hover:scale-[1.02] hover:border-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-dark sm:w-auto">
+              <Icons name="clipboard-list" class="h-5 w-5" />
+              <span>Diagnóstico Gratuito</span>
             </button>
           </a>
-          <button id="mobile-video-btn" class="inline-flex h-14 w-full items-center justify-center gap-2 rounded-lg border-2 border-white/50 px-6 font-display text-base font-semibold text-white transition-all hover:scale-105 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 lg:hidden">
-            <Icons name="play" class="h-4 w-4 fill-current" />
-            Assistir
+          <button id="mobile-video-btn" class="group inline-flex h-16 w-full items-center justify-center gap-3 rounded-xl border-2 border-white/50 bg-white/5 px-8 font-display text-base font-semibold text-white backdrop-blur-sm transition-all hover:scale-[1.02] hover:border-white/70 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-dark lg:hidden">
+            <Icons name="play" class="h-5 w-5 fill-current transition-transform group-hover:scale-110" />
+            <span>Assistir Vídeo</span>
           </button>
         </div>
 
-        <div class="grid grid-cols-3 gap-4 pt-8 font-sans text-body-sm text-gray-200">
+        <div class="grid grid-cols-3 gap-4 pt-10 font-sans text-body-sm text-gray-200">
           <div class="flex flex-col items-start">
             <div class="flex items-center gap-2 mb-1">
               <div class="h-2 w-2 rounded-full bg-lime"></div>

@@ -485,7 +485,7 @@ Aqui está a timeline REAL de reconstrução:
 
 **Ano 5-17 (2013-2025):** Refinamento e expansão
 - Faturamento consolidado
-- 140 clientes estruturados
+- Mais de 140 clientes estruturados
 - ~R$ 1 bilhão em vendas processadas
 - VSS lançado em 2023
 
@@ -602,7 +602,7 @@ Let's grow.
 
 **Joel Burigo**  
 *Do barraco sem geladeira aos R$ 1 bilhão em vendas estruturadas*  
-*140 clientes • 17 anos • Cicatriz virou sabedoria*
+*Mais de 140 clientes • 17 anos • Cicatriz virou sabedoria*
 
 ---
 

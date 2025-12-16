@@ -568,7 +568,7 @@ Let's grow. Tijolo por tijolo.
 
 Joel Burigo  
 *Especialista em Vendas Escaláveis*  
-*140 clientes estruturados em 17 anos*
+*Mais de 140 clientes estruturados em 17 anos*
 
 ---
 

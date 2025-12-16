@@ -560,7 +560,7 @@ A boa notícia: CRM profissional se paga sozinho. ROI de 15-40x no primeiro ano.
 
 **Joel Burigo**  
 *R$ 85k perdidos me ensinaram: CRM profissional não é gasto, é investimento*  
-*140 clientes • 17 anos • Sistema > Improviso*
+*Mais de 140 clientes • 17 anos • Sistema > Improviso*
 
 ---
 

@@ -355,7 +355,7 @@ De R$ 10k para R$ 100k/mês é salto estrutural. Não é sobre trabalhar mais �
 
 **Joel Burigo**  
 *Levei 18 meses de R$ 10k → R$ 100k/mês. Você pode fazer em 12.*  
-*140 clientes • 17 anos • Sistema > Improviso*
+*Mais de 140 clientes • 17 anos • Sistema > Improviso*
 
 ---
 

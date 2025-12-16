@@ -64,7 +64,7 @@ Fiz as contas. E percebi algo:
 
 **A diferença:** No modelo agência, EU escalo. No modelo autonomia, ELES escalam e ME indicam.
 
-Recusei os R$ 2,7 milhões porque **prefiro 140 clientes autônomos que me amam do que 500 clientes reféns que me odeiam quando cancelam.**
+Recusei os R$ 2,7 milhões porque **prefiro mais de 140 clientes autônomos que me amam do que 500 clientes reféns que me odeiam quando cancelam.**
 
 Vamos entender por quê.
 
@@ -531,7 +531,7 @@ Let's grow (autonomamente).
 
 **Joel Burigo**  
 *Recusei R$ 2,7 milhões para ensinar autonomia*  
-*140 clientes autônomos • 17 anos • Cliente feliz indica 4*
+*Mais de 140 clientes autônomos • 17 anos • Cliente feliz indica 4*
 
 ---
 

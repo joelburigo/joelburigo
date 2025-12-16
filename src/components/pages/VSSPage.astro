@@ -34,8 +34,15 @@ const oquee = [
   { icon: 'Users', title: '48 Mentorias ao Vivo', desc: 'Toda semana por 12 semanas, depois quinzenal' },
 ]
 
+const naoE = [
+  { title: 'Curso gravado que te abandona', desc: 'VSS é mentoria ativa com 48 sessões ao vivo' },
+  { title: 'Teoria sem implementação', desc: 'Você sai com sistema funcionando, não só conhecimento' },
+  { title: 'Solução genérica para qualquer porte', desc: 'Feito especificamente para MPEs de R$10k-500k/mês' },
+  { title: 'Dependente de budget alto de tráfego', desc: 'Funciona COM ou SEM tráfego pago (Rota A ou B)' },
+]
+
 const diferenciais = [
-  { titulo: 'Validado por 140 Clientes', desc: 'Framework testado em 17 anos e R$ 1 bilhão estruturado', icon: 'Award' },
+  { titulo: 'Validado por Mais de 140 Clientes', desc: 'Framework testado em 17 anos e R$ 1 bilhão estruturado', icon: 'Award' },
   { titulo: 'CRM Profissional Incluído', desc: 'Growth CRM por 12 meses (valor R$ 6.996)', icon: 'Zap' },
   { titulo: 'Comunidade Exclusiva', desc: 'Networking com outros donos implementando o sistema', icon: 'Users' },
   { titulo: 'Mentorias Semanais', desc: '48 sessões ao vivo para tirar dúvidas e ajustar', icon: 'Target' },
@@ -68,12 +75,6 @@ const faq = [
   }
 ]
 
-const naoE = [
-  'Curso gravado que te abandona',
-  'Teoria sem implementação',
-  'Solução genérica para qualquer porte',
-  'Dependente de budget alto de tráfego',
-]
 
 const modulos = [
   { 
@@ -240,7 +241,7 @@ const resultados = [
               </div>
               
               <p class="mt-6 font-display text-sm font-semibold text-lime text-center">
-                ⚡ Vagas limitadas | Preço de lançamento ativo
+                ⚡ Preço sobe após os primeiros 100 clientes
               </p>
             </div>
           </div>
@@ -366,9 +367,12 @@ const resultados = [
               </div>
               <ul class="space-y-4">
                 {naoE.map((item) => (
-                  <li class="flex items-start gap-3">
+                  <li class="flex gap-4">
                     <Icons name="x" class="h-6 w-6 flex-shrink-0 text-red-400" />
-                    <span class="font-sans text-body text-gray-200">{item}</span>
+                    <div>
+                      <p class="font-display text-lg font-semibold text-white">{item.title}</p>
+                      <p class="font-sans text-body text-gray-200">{item.desc}</p>
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -748,7 +752,7 @@ const resultados = [
               <div class="flex items-start gap-3">
                 <Icons name="check-circle-2" class="h-6 w-6 flex-shrink-0 text-lime" />
                 <div>
-                  <p class="font-display text-lg font-semibold text-white">Você fatura R$ 10k-100k/mês</p>
+                  <p class="font-display text-lg font-semibold text-white">Você fatura a partir de R$ 10k/mês</p>
                   <p class="font-sans text-body-sm text-gray-200">Qualquer modelo: B2B, B2C, serviços, varejo, e-commerce, etc</p>
                 </div>
               </div>

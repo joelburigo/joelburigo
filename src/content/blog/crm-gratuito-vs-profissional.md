@@ -376,7 +376,7 @@ Depois de testar HubSpot, RD Station, Pipedrive, Salesforce, percebi:
 2. **Complexos:** 90% dos recursos você nunca usa
 3. **Genéricos:** Não são feitos para micro/pequenas empresas
 
-Então criei o Growth CRM especificamente para MEIs e empresas que faturam a partir de R$ 5k/mês:
+Então criei o Growth CRM especificamente para MPEs que faturam a partir de R$ 10k/mês:
 
 ### O Que Vem Configurado
 

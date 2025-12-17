@@ -1,154 +1,154 @@
-# **TEORIA DOS 6Ps DAS VENDAS ESCALÃVEIS**
+# **TEORIA DOS 6Ps DAS VENDAS ESCALÁVEIS**
 
 ## **Framework Completo para Micro e Pequenas Empresas**
 
 ---
 
-## **ðŸ“‹ ÃNDICE**
+## **📋 ÍNDICE**
 
-1. O que sÃ£o os 6Ps das Vendas EscalÃ¡veis  
+1. O que são os 6Ps das Vendas Escaláveis  
 2. Para quem serve este framework  
-3. Como usar o diagnÃ³stico  
+3. Como usar o diagnóstico  
 4. Os 6Ps Detalhados  
 5. Matriz de Maturidade Completa  
 6. Como Priorizar Melhorias  
-7. Plano de AÃ§Ã£o por NÃ­vel
+7. Plano de Ação por Nível
 
 ---
 
-## **1\. O QUE SÃƒO OS 6Ps DAS VENDAS ESCALÃVEIS**
+## **1\. O QUE SÃO OS 6Ps DAS VENDAS ESCALÁVEIS**
 
-Os 6Ps das Vendas EscalÃ¡veis Ã© um framework de diagnÃ³stico e evoluÃ§Ã£o para empresas que querem crescer de forma sustentÃ¡vel e previsÃ­vel atravÃ©s de vendas e marketing.
+Os 6Ps das Vendas Escaláveis é um framework de diagnóstico e evolução para empresas que querem crescer de forma sustentável e previsível através de vendas e marketing.
 
 **O problema que resolve:**
 
-* A maioria das empresas nÃ£o sabe vender de forma escalÃ¡vel  
-* Contratam soluÃ§Ãµes pontuais (trÃ¡fego, CRM, vendedor) sem visÃ£o sistÃªmica  
-* Crescem de forma desordenada e dependente de pessoas especÃ­ficas  
-* NÃ£o sabem por onde comeÃ§ar a melhorar
+* A maioria das empresas não sabe vender de forma escalável  
+* Contratam soluções pontuais (tráfego, CRM, vendedor) sem visão sistêmica  
+* Crescem de forma desordenada e dependente de pessoas específicas  
+* Não sabem por onde começar a melhorar
 
-**A soluÃ§Ã£o:** Um mÃ©todo simples que analisa os 6 pilares fundamentais de qualquer operaÃ§Ã£o de vendas e marketing escalÃ¡vel, mostrando exatamente onde a empresa estÃ¡ e o que precisa melhorar.
+**A solução:** Um método simples que analisa os 6 pilares fundamentais de qualquer operação de vendas e marketing escalável, mostrando exatamente onde a empresa está e o que precisa melhorar.
 
 ---
 
 ## **2\. PARA QUEM SERVE ESTE FRAMEWORK**
 
-### **âœ… Ideal para:**
+### **✅ Ideal para:**
 
-* Micro e pequenas empresas (faturamento atÃ© R$ 10M/ano)  
-* Empresas que querem crescer mas nÃ£o sabem por onde comeÃ§ar  
-* NegÃ³cios que dependem demais do fundador para vender  
-* Empresas com vendas irregulares e imprevisÃ­veis  
-* NegÃ³cios que jÃ¡ investem em marketing mas nÃ£o veem resultado
+* Micro e pequenas empresas (faturamento até R$ 10M/ano)  
+* Empresas que querem crescer mas não sabem por onde começar  
+* Negócios que dependem demais do fundador para vender  
+* Empresas com vendas irregulares e imprevisíveis  
+* Negócios que já investem em marketing mas não veem resultado
 
-### **âŒ NÃ£o Ã© para:**
+### **❌ Não é para:**
 
-* Grandes corporaÃ§Ãµes com estruturas consolidadas  
-* Empresas sem produto/serviÃ§o validado  
-* NegÃ³cios sem capacidade de entrega
+* Grandes corporações com estruturas consolidadas  
+* Empresas sem produto/serviço validado  
+* Negócios sem capacidade de entrega
 
 ---
 
-## **3\. COMO USAR O DIAGNÃ“STICO**
+## **3\. COMO USAR O DIAGNÓSTICO**
 
 ### **Passo a Passo:**
 
 **1\. Avalie cada P individualmente** (0 a 5 pontos)
 
-* Leia os critÃ©rios de cada nÃ­vel  
-* Seja honesto sobre onde sua empresa estÃ¡  
+* Leia os critérios de cada nível  
+* Seja honesto sobre onde sua empresa está  
 * Use as perguntas-guia para ajudar
 
 **2\. Calcule seu Score Total** (0 a 30 pontos)
 
 * Some os pontos dos 6Ps  
-* Identifique seu nÃ­vel geral de maturidade
+* Identifique seu nível geral de maturidade
 
 **3\. Identifique Prioridades**
 
-* Os Ps com menor pontuaÃ§Ã£o sÃ£o urgentes  
-* Mas a ordem importa: Posicionamento e PÃºblico vÃªm primeiro
+* Os Ps com menor pontuação são urgentes  
+* Mas a ordem importa: Posicionamento e Público vêm primeiro
 
-**4\. Crie seu Plano de AÃ§Ã£o**
+**4\. Crie seu Plano de Ação**
 
 * Escolha 1-2 Ps para trabalhar por vez  
-* Use os entregÃ¡veis sugeridos como guia  
+* Use os entregáveis sugeridos como guia  
 * Reavalie a cada 90 dias
 
 ---
 
 ## **4\. OS 6Ps DETALHADOS**
 
-A ordem segue a lÃ³gica da jornada de crescimento:
+A ordem segue a lógica da jornada de crescimento:
 
 ```
-POSICIONAMENTO â†’ PÃšBLICO â†’ PRODUTO â†’ PROGRAMAS â†’ PROCESSOS â†’ PESSOAS
-    (Por quÃª)      (Pra quem)   (O quÃª)     (Como vender)  (Como operar)  (Quem executa)
+POSICIONAMENTO → PÚBLICO → PRODUTO → PROGRAMAS → PROCESSOS → PESSOAS
+    (Por quê)      (Pra quem)   (O quê)     (Como vender)  (Como operar)  (Quem executa)
 ```
 
 ---
 
 ## **P1: POSICIONAMENTO**
 
-**O que Ã©:** Como sua empresa se diferencia no mercado e qual promessa Ãºnica faz ao cliente. Ã‰ a base estratÃ©gica que define por que vocÃª existe e por que alguÃ©m deveria escolher vocÃª.
+**O que é:** Como sua empresa se diferencia no mercado e qual promessa única faz ao cliente. É a base estratégica que define por que você existe e por que alguém deveria escolher você.
 
-**Por que importa:** Sem posicionamento claro, vocÃª compete por preÃ§o e vira commodity. Com posicionamento forte, vocÃª atrai o cliente certo e pode cobrar mais.
+**Por que importa:** Sem posicionamento claro, você compete por preço e vira commodity. Com posicionamento forte, você atrai o cliente certo e pode cobrar mais.
 
-**Sinais de que estÃ¡ ruim:**
+**Sinais de que está ruim:**
 
-* Clientes sÃ³ compram quando vocÃª dÃ¡ desconto  
-* "VocÃªs sÃ£o iguais aos concorrentes"  
-* VocÃª nÃ£o sabe explicar em 30 segundos o que faz de diferente  
+* Clientes só compram quando você dá desconto  
+* "Vocês são iguais aos concorrentes"  
+* Você não sabe explicar em 30 segundos o que faz de diferente  
 * Compete com dezenas de empresas parecidas
 
-**Sinais de que estÃ¡ bom:**
+**Sinais de que está bom:**
 
 * Clientes entendem seu diferencial rapidamente  
-* VocÃª consegue cobrar acima da mÃ©dia  
-* Leads qualificados chegam atÃ© vocÃª  
-* VocÃª Ã© lembrado quando surge a necessidade
+* Você consegue cobrar acima da média  
+* Leads qualificados chegam até você  
+* Você é lembrado quando surge a necessidade
 
 ---
 
-## **P2: PÃšBLICO**
+## **P2: PÚBLICO**
 
-**O que Ã©:** DefiniÃ§Ã£o clara de quem Ã© seu cliente ideal (ICP), quais sÃ£o suas dores, desejos, comportamentos e onde encontrÃ¡-lo.
+**O que é:** Definição clara de quem é seu cliente ideal (ICP), quais são suas dores, desejos, comportamentos e onde encontrá-lo.
 
-**Por que importa:** VocÃª pode ter o melhor produto do mundo, mas se estiver falando com a pessoa errada, nÃ£o vende. PÃºblico bem definido \= comunicaÃ§Ã£o certeira \= mais conversÃ£o.
+**Por que importa:** Você pode ter o melhor produto do mundo, mas se estiver falando com a pessoa errada, não vende. Público bem definido \= comunicação certeira \= mais conversão.
 
-**Sinais de que estÃ¡ ruim:**
+**Sinais de que está ruim:**
 
 * "Meu produto serve para todo mundo"  
-* Baixa taxa de conversÃ£o das campanhas  
-* Clientes que dÃ£o trabalho e nÃ£o valorizam  
-* NÃ£o sabe onde seu cliente ideal estÃ¡
+* Baixa taxa de conversão das campanhas  
+* Clientes que dão trabalho e não valorizam  
+* Não sabe onde seu cliente ideal está
 
-**Sinais de que estÃ¡ bom:**
+**Sinais de que está bom:**
 
-* VocÃª descreve seu cliente ideal com detalhes  
-* Sabe exatamente onde encontrÃ¡-lo  
+* Você descreve seu cliente ideal com detalhes  
+* Sabe exatamente onde encontrá-lo  
 * Suas campanhas atraem pessoas qualificadas  
-* Clientes dizem "parece que vocÃª leu minha mente"
+* Clientes dizem "parece que você leu minha mente"
 
 ---
 
 ## **P3: PRODUTO**
 
-**O que Ã©:** Sua oferta (produto ou serviÃ§o) bem estruturada, com proposta de valor clara, percepÃ§Ã£o de alto valor e adaptada Ã s necessidades do pÃºblico.
+**O que é:** Sua oferta (produto ou serviço) bem estruturada, com proposta de valor clara, percepção de alto valor e adaptada Ã s necessidades do público.
 
-**Por que importa:** Um produto mal "embalado" nÃ£o vende, mesmo sendo bom. Um produto bem posicionado e apresentado se vende sozinho.
+**Por que importa:** Um produto mal "embalado" não vende, mesmo sendo bom. Um produto bem posicionado e apresentado se vende sozinho.
 
-**Sinais de que estÃ¡ ruim:**
+**Sinais de que está ruim:**
 
-* Muita objeÃ§Ã£o de preÃ§o  
-* Clientes nÃ£o entendem o valor  
+* Muita objeção de preço  
+* Clientes não entendem o valor  
 * Dificuldade para explicar o que vende  
 * Produto igual ao concorrente
 
-**Sinais de que estÃ¡ bom:**
+**Sinais de que está bom:**
 
-* Clientes entendem rapidamente o benefÃ­cio  
-* Baixa resistÃªncia ao preÃ§o  
+* Clientes entendem rapidamente o benefício  
+* Baixa resistência ao preço  
 * Boca a boca positivo  
 * Produto diferenciado ou visto como superior
 
@@ -156,66 +156,66 @@ POSICIONAMENTO â†’ PÃšBLICO â†’ PRODUTO â†’ PROGRAMAS â†’ 
 
 ## **P4: PROGRAMAS**
 
-**O que Ã©:** Como vocÃª vende e entrega seu produto: modelos comerciais, funis de venda, jornada do cliente, automaÃ§Ãµes, estratÃ©gias de marketing e vendas.
+**O que é:** Como você vende e entrega seu produto: modelos comerciais, funis de venda, jornada do cliente, automações, estratégias de marketing e vendas.
 
-**Por que importa:** Ter um bom produto nÃ£o basta. VocÃª precisa de um sistema para atrair, nutrir e converter leads de forma previsÃ­vel e escalÃ¡vel.
+**Por que importa:** Ter um bom produto não basta. Você precisa de um sistema para atrair, nutrir e converter leads de forma previsível e escalável.
 
-**Sinais de que estÃ¡ ruim:**
+**Sinais de que está ruim:**
 
-* Vendas acontecem de forma aleatÃ³ria  
-* Depende de indicaÃ§Ã£o ou sorte  
-* NÃ£o tem funil de vendas estruturado  
-* Marketing e vendas nÃ£o conversam
+* Vendas acontecem de forma aleatória  
+* Depende de indicação ou sorte  
+* Não tem funil de vendas estruturado  
+* Marketing e vendas não conversam
 
-**Sinais de que estÃ¡ bom:**
+**Sinais de que está bom:**
 
-* VocÃª tem funis funcionando  
-* Leads entram de forma previsÃ­vel  
-* AutomaÃ§Ãµes economizam tempo  
-* Consegue prever faturamento do mÃªs
+* Você tem funis funcionando  
+* Leads entram de forma previsível  
+* Automações economizam tempo  
+* Consegue prever faturamento do mês
 
 ---
 
 ## **P5: PROCESSOS**
 
-**O que Ã©:** Processos documentados e repetÃ­veis para cada etapa do marketing, vendas e entrega. Ã‰ o que garante que as coisas funcionem sem depender da memÃ³ria de uma pessoa.
+**O que é:** Processos documentados e repetíveis para cada etapa do marketing, vendas e entrega. É o que garante que as coisas funcionem sem depender da memória de uma pessoa.
 
-**Por que importa:** Sem processo, vocÃª nÃ£o consegue escalar. Cada venda Ã© uma aventura, erros se repetem, novos funcionÃ¡rios demoram para produzir.
+**Por que importa:** Sem processo, você não consegue escalar. Cada venda é uma aventura, erros se repetem, novos funcionários demoram para produzir.
 
-**Sinais de que estÃ¡ ruim:**
+**Sinais de que está ruim:**
 
-* "SÃ³ fulano sabe fazer isso"  
+* "Só fulano sabe fazer isso"  
 * Erros recorrentes  
-* Cada venda Ã© diferente  
-* Nada estÃ¡ documentado
+* Cada venda é diferente  
+* Nada está documentado
 
-**Sinais de que estÃ¡ bom:**
+**Sinais de que está bom:**
 
 * Qualquer pessoa consegue seguir o processo  
 * Menos erros e retrabalho  
-* Onboarding rÃ¡pido de novos membros  
+* Onboarding rápido de novos membros  
 * Resultados consistentes
 
 ---
 
 ## **P6: PESSOAS**
 
-**O que Ã©:** Time (ou parceiros) capacitado, com papÃ©is claros e treinamento adequado para executar a estratÃ©gia de vendas e marketing.
+**O que é:** Time (ou parceiros) capacitado, com papéis claros e treinamento adequado para executar a estratégia de vendas e marketing.
 
-**Por que importa:** EstratÃ©gia sem execuÃ§Ã£o Ã© sÃ³ teoria. Pessoas certas, bem treinadas e alinhadas transformam planos em resultados.
+**Por que importa:** Estratégia sem execução é só teoria. Pessoas certas, bem treinadas e alinhadas transformam planos em resultados.
 
-**Sinais de que estÃ¡ ruim:**
+**Sinais de que está ruim:**
 
 * Tudo depende do fundador  
-* Time nÃ£o bate meta  
+* Time não bate meta  
 * Alta rotatividade  
-* Falta clareza de papÃ©is
+* Falta clareza de papéis
 
-**Sinais de que estÃ¡ bom:**
+**Sinais de que está bom:**
 
-* Time autÃ´nomo e produtivo  
-* PapÃ©is e responsabilidades claros  
-* Treinamento contÃ­nuo  
+* Time autônomo e produtivo  
+* Papéis e responsabilidades claros  
+* Treinamento contínuo  
 * Cultura de crescimento
 
 ---
@@ -224,153 +224,153 @@ POSICIONAMENTO â†’ PÃšBLICO â†’ PRODUTO â†’ PROGRAMAS â†’ 
 
 ### **ESCALA GERAL:**
 
-* **0-5 pontos:** CaÃ³tico  
+* **0-5 pontos:** Caótico  
 * **6-10 pontos:** Iniciante  
 * **11-15 pontos:** Em Desenvolvimento  
 * **16-20 pontos:** Estruturado  
-* **21-25 pontos:** AvanÃ§ado  
+* **21-25 pontos:** Avançado  
 * **26-30 pontos:** Otimizado
 
 ---
 
 ### **P1: POSICIONAMENTO**
 
-| NÃ­vel | Pontos | DescriÃ§Ã£o | CaracterÃ­sticas |
+| Nível | Pontos | Descrição | Características |
 | ----- | ----- | ----- | ----- |
-| **CaÃ³tico** | 0 | NÃ£o existe posicionamento | â€¢ Compete 100% por preÃ§o\<br\>â€¢ NÃ£o sabe explicar diferencial\<br\>â€¢ CÃ³pia o que concorrente faz |
-| **Iniciante** | 1 | Posicionamento confuso | â€¢ Tenta ser diferente mas nÃ£o fica claro\<br\>â€¢ ComunicaÃ§Ã£o genÃ©rica\<br\>â€¢ Cliente nÃ£o entende o valor |
-| **BÃ¡sico** | 2 | Posicionamento existe mas fraco | â€¢ Tem algum diferencial mas nÃ£o defende\<br\>â€¢ Pouca clareza na promessa\<br\>â€¢ Ainda compete muito por preÃ§o |
-| **IntermediÃ¡rio** | 3 | Posicionamento definido | â€¢ Diferencial claro internamente\<br\>â€¢ ComunicaÃ§Ã£o melhorando\<br\>â€¢ Alguns clientes reconhecem |
-| **AvanÃ§ado** | 4 | Posicionamento forte | â€¢ Mercado reconhece diferencial\<br\>â€¢ ComunicaÃ§Ã£o consistente\<br\>â€¢ Consegue cobrar premium |
-| **Otimizado** | 5 | Posicionamento dominante | â€¢ ReferÃªncia no nicho\<br\>â€¢ Top of mind\<br\>â€¢ Clientes vÃªm atÃ© vocÃª |
+| **Caótico** | 0 | Não existe posicionamento | • Compete 100% por preço\<br\>• Não sabe explicar diferencial\<br\>• Cópia o que concorrente faz |
+| **Iniciante** | 1 | Posicionamento confuso | • Tenta ser diferente mas não fica claro\<br\>• Comunicação genérica\<br\>• Cliente não entende o valor |
+| **Básico** | 2 | Posicionamento existe mas fraco | • Tem algum diferencial mas não defende\<br\>• Pouca clareza na promessa\<br\>• Ainda compete muito por preço |
+| **Intermediário** | 3 | Posicionamento definido | • Diferencial claro internamente\<br\>• Comunicação melhorando\<br\>• Alguns clientes reconhecem |
+| **Avançado** | 4 | Posicionamento forte | • Mercado reconhece diferencial\<br\>• Comunicação consistente\<br\>• Consegue cobrar premium |
+| **Otimizado** | 5 | Posicionamento dominante | • Referência no nicho\<br\>• Top of mind\<br\>• Clientes vêm até você |
 
 **PERGUNTAS-CHAVE:**
 
-1. VocÃª consegue explicar em 1 frase o que te diferencia da concorrÃªncia?  
-2. Seus clientes conseguem explicar por que escolheram vocÃª (alÃ©m do preÃ§o)?  
-3. VocÃª consegue cobrar mais caro que a mÃ©dia do mercado?  
-4. Quando alguÃ©m pensa na sua categoria, pensa em vocÃª?
+1. Você consegue explicar em 1 frase o que te diferencia da concorrência?  
+2. Seus clientes conseguem explicar por que escolheram você (além do preço)?  
+3. Você consegue cobrar mais caro que a média do mercado?  
+4. Quando alguém pensa na sua categoria, pensa em você?
 
-**ENTREGÃVEIS PARA EVOLUIR:**
+**ENTREGÁVEIS PARA EVOLUIR:**
 
 * \[ \] Documento de Posicionamento (Golden Circle)  
 * \[ \] Proposta de Valor clara e testada  
 * \[ \] Elevator Pitch de 30 segundos  
-* \[ \] Diferenciais tangÃ­veis documentados  
+* \[ \] Diferenciais tangíveis documentados  
 * \[ \] Promessa central da marca  
-* \[ \] Manifesto/histÃ³ria da marca
+* \[ \] Manifesto/história da marca
 
 ---
 
-### **P2: PÃšBLICO**
+### **P2: PÚBLICO**
 
-| NÃ­vel | Pontos | DescriÃ§Ã£o | CaracterÃ­sticas |
+| Nível | Pontos | Descrição | Características |
 | ----- | ----- | ----- | ----- |
-| **CaÃ³tico** | 0 | PÃºblico indefinido | â€¢ "Vendo para todo mundo"\<br\>â€¢ NÃ£o sabe quem Ã© cliente ideal\<br\>â€¢ Atende qualquer um que aparecer |
-| **Iniciante** | 1 | PÃºblico amplo demais | â€¢ Sabe o setor mas nÃ£o detalha\<br\>â€¢ Sem critÃ©rios de qualificaÃ§Ã£o\<br\>â€¢ Perde tempo com nÃ£o-clientes |
-| **BÃ¡sico** | 2 | PÃºblico segmentado superficialmente | â€¢ Tem noÃ§Ã£o de quem Ã© o pÃºblico\<br\>â€¢ Falta profundidade nas dores\<br\>â€¢ ComunicaÃ§Ã£o ainda genÃ©rica |
-| **IntermediÃ¡rio** | 3 | ICP definido | â€¢ Cliente ideal documentado\<br\>â€¢ Conhece dores principais\<br\>â€¢ Sabe onde encontrÃ¡-lo |
-| **AvanÃ§ado** | 4 | Buyer Persona completa | â€¢ Conhece profundamente o cliente\<br\>â€¢ Entende jornada de compra\<br\>â€¢ ComunicaÃ§Ã£o personalizada |
-| **Otimizado** | 5 | SegmentaÃ§Ã£o avanÃ§ada | â€¢ MÃºltiplas personas mapeadas\<br\>â€¢ Entende micro-segmentos\<br\>â€¢ Previsibilidade de comportamento |
+| **Caótico** | 0 | Público indefinido | • "Vendo para todo mundo"\<br\>• Não sabe quem é cliente ideal\<br\>• Atende qualquer um que aparecer |
+| **Iniciante** | 1 | Público amplo demais | • Sabe o setor mas não detalha\<br\>• Sem critérios de qualificação\<br\>• Perde tempo com não-clientes |
+| **Básico** | 2 | Público segmentado superficialmente | • Tem noção de quem é o público\<br\>• Falta profundidade nas dores\<br\>• Comunicação ainda genérica |
+| **Intermediário** | 3 | ICP definido | • Cliente ideal documentado\<br\>• Conhece dores principais\<br\>• Sabe onde encontrá-lo |
+| **Avançado** | 4 | Buyer Persona completa | • Conhece profundamente o cliente\<br\>• Entende jornada de compra\<br\>• Comunicação personalizada |
+| **Otimizado** | 5 | Segmentação avançada | • Múltiplas personas mapeadas\<br\>• Entende micro-segmentos\<br\>• Previsibilidade de comportamento |
 
 **PERGUNTAS-CHAVE:**
 
-1. VocÃª consegue descrever seu cliente ideal com pelo menos 10 caracterÃ­sticas?  
-2. VocÃª sabe as 3 maiores dores do seu pÃºblico?  
-3. VocÃª sabe onde seu cliente ideal passa tempo (online e offline)?  
-4. VocÃª rejeita clientes que nÃ£o se encaixam no perfil?
+1. Você consegue descrever seu cliente ideal com pelo menos 10 características?  
+2. Você sabe as 3 maiores dores do seu público?  
+3. Você sabe onde seu cliente ideal passa tempo (online e offline)?  
+4. Você rejeita clientes que não se encaixam no perfil?
 
-**ENTREGÃVEIS PARA EVOLUIR:**
+**ENTREGÁVEIS PARA EVOLUIR:**
 
 * \[ \] ICP (Ideal Customer Profile) detalhado  
 * \[ \] Buyer Persona(s) completa(s)  
 * \[ \] Mapa de Dores e Desejos  
-* \[ \] ObjeÃ§Ãµes mais comuns documentadas  
+* \[ \] Objeções mais comuns documentadas  
 * \[ \] Jornada de Compra mapeada  
-* \[ \] Lista de onde o pÃºblico estÃ¡ (canais)
+* \[ \] Lista de onde o público está (canais)
 
 ---
 
 ### **P3: PRODUTO**
 
-| NÃ­vel | Pontos | DescriÃ§Ã£o | CaracterÃ­sticas |
+| Nível | Pontos | Descrição | Características |
 | ----- | ----- | ----- | ----- |
-| **CaÃ³tico** | 0 | Produto mal estruturado | â€¢ NÃ£o tem proposta de valor clara\<br\>â€¢ Entrega confusa\<br\>â€¢ Muita objeÃ§Ã£o de preÃ§o |
-| **Iniciante** | 1 | Produto funciona mas mal apresentado | â€¢ Resolve problema mas nÃ£o mostra valor\<br\>â€¢ Embalagem ruim\<br\>â€¢ Cliente nÃ£o entende benefÃ­cio |
-| **BÃ¡sico** | 2 | Produto com valor definido | â€¢ BenefÃ­cio existe mas mal comunicado\<br\>â€¢ PreÃ§o sem estratÃ©gia\<br\>â€¢ Falta prova social |
-| **IntermediÃ¡rio** | 3 | Produto bem estruturado | â€¢ Proposta de valor clara\<br\>â€¢ PreÃ§o justificado\<br\>â€¢ Algumas provas sociais |
-| **AvanÃ§ado** | 4 | Produto otimizado | â€¢ Alto valor percebido\<br\>â€¢ Prova social forte\<br\>â€¢ ExperiÃªncia diferenciada |
-| **Otimizado** | 5 | Produto premium | â€¢ ReferÃªncia de mercado\<br\>â€¢ Clientes vendem por vocÃª\<br\>â€¢ Lista de espera ou escassez real |
+| **Caótico** | 0 | Produto mal estruturado | • Não tem proposta de valor clara\<br\>• Entrega confusa\<br\>• Muita objeção de preço |
+| **Iniciante** | 1 | Produto funciona mas mal apresentado | • Resolve problema mas não mostra valor\<br\>• Embalagem ruim\<br\>• Cliente não entende benefício |
+| **Básico** | 2 | Produto com valor definido | • Benefício existe mas mal comunicado\<br\>• Preço sem estratégia\<br\>• Falta prova social |
+| **Intermediário** | 3 | Produto bem estruturado | • Proposta de valor clara\<br\>• Preço justificado\<br\>• Algumas provas sociais |
+| **Avançado** | 4 | Produto otimizado | • Alto valor percebido\<br\>• Prova social forte\<br\>• Experiência diferenciada |
+| **Otimizado** | 5 | Produto premium | • Referência de mercado\<br\>• Clientes vendem por você\<br\>• Lista de espera ou escassez real |
 
 **PERGUNTAS-CHAVE:**
 
-1. Seu cliente entende em 10 segundos qual problema vocÃª resolve?  
-2. VocÃª tem depoimentos e casos de sucesso documentados?  
-3. Seu preÃ§o reflete o valor entregue?  
-4. Seu produto tem diferenciais claros vs. concorrÃªncia?
+1. Seu cliente entende em 10 segundos qual problema você resolve?  
+2. Você tem depoimentos e casos de sucesso documentados?  
+3. Seu preço reflete o valor entregue?  
+4. Seu produto tem diferenciais claros vs. concorrência?
 
-**ENTREGÃVEIS PARA EVOLUIR:**
+**ENTREGÁVEIS PARA EVOLUIR:**
 
 * \[ \] Proposta de Valor (Value Proposition Canvas)  
-* \[ \] Estrutura de preÃ§o e pacotes  
+* \[ \] Estrutura de preço e pacotes  
 * \[ \] Biblioteca de provas sociais (cases, depoimentos)  
 * \[ \] Garantias e redutores de risco  
 * \[ \] Diferenciais do produto documentados  
-* \[ \] Script de apresentaÃ§Ã£o do produto  
-* \[ \] FAQ com objeÃ§Ãµes tratadas
+* \[ \] Script de apresentação do produto  
+* \[ \] FAQ com objeções tratadas
 
 ---
 
 ### **P4: PROGRAMAS**
 
-| NÃ­vel | Pontos | DescriÃ§Ã£o | CaracterÃ­sticas |
+| Nível | Pontos | Descrição | Características |
 | ----- | ----- | ----- | ----- |
-| **CaÃ³tico** | 0 | Sem sistema de vendas | â€¢ Vendas aleatÃ³rias â€¢ Sem funil â€¢ Sem previsibilidade |
-| **Iniciante** | 1 | Tentativas descoordenadas | â€¢ Faz marketing mas nÃ£o converte â€¢ Vendas dependem de indicaÃ§Ã£o â€¢ Sem automaÃ§Ã£o |
-| **BÃ¡sico** | 2 | InÃ­cio de estrutura | â€¢ Algum funil funcionando â€¢ Marketing e vendas separados â€¢ AutomaÃ§Ã£o bÃ¡sica |
-| **IntermediÃ¡rio** | 3 | Funil estruturado | â€¢ Leads entram com regularidade â€¢ Funil de vendas claro â€¢ Algumas automaÃ§Ãµes |
-| **AvanÃ§ado** | 4 | Sistema de vendas robusto | â€¢ MÃºltiplos funis funcionando â€¢ AutomaÃ§Ã£o avanÃ§ada â€¢ Previsibilidade boa |
-| **Otimizado** | 5 | MÃ¡quina de vendas | â€¢ Sistema multi-canal â€¢ Totalmente automatizado â€¢ Crescimento previsÃ­vel |
+| **Caótico** | 0 | Sem sistema de vendas | • Vendas aleatórias • Sem funil • Sem previsibilidade |
+| **Iniciante** | 1 | Tentativas descoordenadas | • Faz marketing mas não converte • Vendas dependem de indicação • Sem automação |
+| **Básico** | 2 | Início de estrutura | • Algum funil funcionando • Marketing e vendas separados • Automação básica |
+| **Intermediário** | 3 | Funil estruturado | • Leads entram com regularidade • Funil de vendas claro • Algumas automações |
+| **Avançado** | 4 | Sistema de vendas robusto | • Múltiplos funis funcionando • Automação avançada • Previsibilidade boa |
+| **Otimizado** | 5 | Máquina de vendas | • Sistema multi-canal • Totalmente automatizado • Crescimento previsível |
 
 **PERGUNTAS-CHAVE:**
 
-1. VocÃª tem um funil de vendas documentado e funcionando?  
-2. Leads entram de forma previsÃ­vel todo mÃªs?  
-3. VocÃª usa automaÃ§Ãµes (e-mail, WhatsApp, CRM)?  
-4. VocÃª consegue prever o faturamento dos prÃ³ximos 30-60 dias?
+1. Você tem um funil de vendas documentado e funcionando?  
+2. Leads entram de forma previsível todo mês?  
+3. Você usa automações (e-mail, WhatsApp, CRM)?  
+4. Você consegue prever o faturamento dos próximos 30-60 dias?
 
-**ENTREGÃVEIS PARA EVOLUIR:**
+**ENTREGÁVEIS PARA EVOLUIR:**
 
 * \[ \] Funil de vendas desenhado (topo, meio, fundo)  
 * \[ \] Iscas digitais (lead magnets)  
-* \[ \] SequÃªncias de e-mail/WhatsApp automatizadas  
+* \[ \] Sequências de e-mail/WhatsApp automatizadas  
 * \[ \] CRM implementado e em uso  
-* \[ \] PÃ¡ginas de captura e vendas  
-* \[ \] Campanhas de trÃ¡fego pago estruturadas  
-* \[ \] RÃ©gua de relacionamento  
+* \[ \] Páginas de captura e vendas  
+* \[ \] Campanhas de tráfego pago estruturadas  
+* \[ \] Régua de relacionamento  
 * \[ \] Modelo de upsell/cross-sell
 
 ---
 
 ### **P5: PROCESSOS**
 
-| NÃ­vel | Pontos | DescriÃ§Ã£o | CaracterÃ­sticas |
+| Nível | Pontos | Descrição | Características |
 | ----- | ----- | ----- | ----- |
-| **CaÃ³tico** | 0 | Sem processos | â€¢ Tudo na cabeÃ§a das pessoas\<br\>â€¢ Cada venda Ã© Ãºnica\<br\>â€¢ Muitos erros |
-| **Iniciante** | 1 | Processos informais | â€¢ Tem rotina mas nÃ£o escrita\<br\>â€¢ Depende de pessoas especÃ­ficas\<br\>â€¢ Inconsistente |
-| **BÃ¡sico** | 2 | Alguns processos documentados | â€¢ Processos principais escritos\<br\>â€¢ Nem todos seguem\<br\>â€¢ Falta padronizaÃ§Ã£o |
-| **IntermediÃ¡rio** | 3 | Processos padronizados | â€¢ Principais processos documentados\<br\>â€¢ Time segue a maioria\<br\>â€¢ Melhoria contÃ­nua |
-| **AvanÃ§ado** | 4 | Processos otimizados | â€¢ Todos os processos documentados\<br\>â€¢ Time segue religiosamente\<br\>â€¢ MÃ©tricas por processo |
-| **Otimizado** | 5 | Processos de excelÃªncia | â€¢ Processos auditados e aprimorados\<br\>â€¢ Benchmarking\<br\>â€¢ Cultura de processos |
+| **Caótico** | 0 | Sem processos | • Tudo na cabeça das pessoas\<br\>• Cada venda é única\<br\>• Muitos erros |
+| **Iniciante** | 1 | Processos informais | • Tem rotina mas não escrita\<br\>• Depende de pessoas específicas\<br\>• Inconsistente |
+| **Básico** | 2 | Alguns processos documentados | • Processos principais escritos\<br\>• Nem todos seguem\<br\>• Falta padronização |
+| **Intermediário** | 3 | Processos padronizados | • Principais processos documentados\<br\>• Time segue a maioria\<br\>• Melhoria contínua |
+| **Avançado** | 4 | Processos otimizados | • Todos os processos documentados\<br\>• Time segue religiosamente\<br\>• Métricas por processo |
+| **Otimizado** | 5 | Processos de excelência | • Processos auditados e aprimorados\<br\>• Benchmarking\<br\>• Cultura de processos |
 
 **PERGUNTAS-CHAVE:**
 
-1. Seus principais processos estÃ£o documentados (vendas, marketing, entrega)?  
+1. Seus principais processos estão documentados (vendas, marketing, entrega)?  
 2. Uma pessoa nova consegue seguir o processo sozinha?  
-3. VocÃª mede os resultados de cada etapa do processo?  
-4. VocÃª revisa e melhora processos regularmente?
+3. Você mede os resultados de cada etapa do processo?  
+4. Você revisa e melhora processos regularmente?
 
-**ENTREGÃVEIS PARA EVOLUIR:**
+**ENTREGÁVEIS PARA EVOLUIR:**
 
 * \[ \] Playbook de Vendas (passo a passo)  
 * \[ \] Playbook de Marketing  
@@ -378,35 +378,35 @@ POSICIONAMENTO â†’ PÃšBLICO â†’ PRODUTO â†’ PROGRAMAS â†’ 
 * \[ \] Scripts de vendas e atendimento  
 * \[ \] Checklists operacionais  
 * \[ \] SOP (Standard Operating Procedures)  
-* \[ \] Dashboard de mÃ©tricas-chave  
-* \[ \] Ritual de revisÃ£o de processos
+* \[ \] Dashboard de métricas-chave  
+* \[ \] Ritual de revisão de processos
 
 ---
 
 ### **P6: PESSOAS**
 
-| NÃ­vel | Pontos | DescriÃ§Ã£o | CaracterÃ­sticas |
+| Nível | Pontos | Descrição | Características |
 | ----- | ----- | ----- | ----- |
-| **CaÃ³tico** | 0 | Tudo depende do fundador | â€¢ Fundador faz tudo\<br\>â€¢ Sem time\<br\>â€¢ ImpossÃ­vel escalar |
-| **Iniciante** | 1 | Time sem estrutura | â€¢ Tem pessoas mas sem clareza\<br\>â€¢ PapÃ©is confusos\<br\>â€¢ Muito retrabalho |
-| **BÃ¡sico** | 2 | PapÃ©is definidos superficialmente | â€¢ Tem organograma bÃ¡sico\<br\>â€¢ Treinamento informal\<br\>â€¢ Alta dependÃªncia |
-| **IntermediÃ¡rio** | 3 | Time estruturado | â€¢ PapÃ©is e responsabilidades claros\<br\>â€¢ Treinamento bÃ¡sico\<br\>â€¢ ComeÃ§a a desafogar fundador |
-| **AvanÃ§ado** | 4 | Time autÃ´nomo | â€¢ Time produtivo sem supervisÃ£o\<br\>â€¢ Treinamento contÃ­nuo\<br\>â€¢ Baixa rotatividade |
-| **Otimizado** | 5 | Time de alta performance | â€¢ Cultura forte\<br\>â€¢ Time se desenvolve sozinho\<br\>â€¢ AtraÃ§Ã£o de talentos |
+| **Caótico** | 0 | Tudo depende do fundador | • Fundador faz tudo\<br\>• Sem time\<br\>• Impossível escalar |
+| **Iniciante** | 1 | Time sem estrutura | • Tem pessoas mas sem clareza\<br\>• Papéis confusos\<br\>• Muito retrabalho |
+| **Básico** | 2 | Papéis definidos superficialmente | • Tem organograma básico\<br\>• Treinamento informal\<br\>• Alta dependência |
+| **Intermediário** | 3 | Time estruturado | • Papéis e responsabilidades claros\<br\>• Treinamento básico\<br\>• Começa a desafogar fundador |
+| **Avançado** | 4 | Time autônomo | • Time produtivo sem supervisão\<br\>• Treinamento contínuo\<br\>• Baixa rotatividade |
+| **Otimizado** | 5 | Time de alta performance | • Cultura forte\<br\>• Time se desenvolve sozinho\<br\>• Atração de talentos |
 
 **PERGUNTAS-CHAVE:**
 
-1. Cada pessoa do time sabe exatamente qual Ã© seu papel e responsabilidades?  
-2. VocÃª tem programa de treinamento para novas pessoas?  
-3. O negÃ³cio funciona se vocÃª ficar 2 semanas fora?  
-4. VocÃª mede a performance individual do time?
+1. Cada pessoa do time sabe exatamente qual é seu papel e responsabilidades?  
+2. Você tem programa de treinamento para novas pessoas?  
+3. O negócio funciona se você ficar 2 semanas fora?  
+4. Você mede a performance individual do time?
 
-**ENTREGÃVEIS PARA EVOLUIR:**
+**ENTREGÁVEIS PARA EVOLUIR:**
 
 * \[ \] Organograma claro  
-* \[ \] DescriÃ§Ã£o de cargos (job descriptions)  
+* \[ \] Descrição de cargos (job descriptions)  
 * \[ \] Programa de onboarding  
-* \[ \] Trilha de treinamento por funÃ§Ã£o  
+* \[ \] Trilha de treinamento por função  
 * \[ \] Metas individuais e coletivas  
 * \[ \] Ritual de 1:1 e feedback  
 * \[ \] Plano de carreira  
@@ -418,153 +418,153 @@ POSICIONAMENTO â†’ PÃšBLICO â†’ PRODUTO â†’ PROGRAMAS â†’ 
 
 ### **Regra de Ouro:**
 
-**Sempre respeite a ordem dos 6Ps. NÃ£o adianta ter processos perfeitos se seu posicionamento Ã© fraco.**
+**Sempre respeite a ordem dos 6Ps. Não adianta ter processos perfeitos se seu posicionamento é fraco.**
 
-### **Matriz de PriorizaÃ§Ã£o:**
+### **Matriz de Priorização:**
 
 ```
-URGÃŠNCIA MÃXIMA (Fazer primeiro):
-1. Se POSICIONAMENTO estÃ¡ 0-2: COMECE AQUI
-2. Se PÃšBLICO estÃ¡ 0-2: COMECE AQUI
-â†“
-URGÃŠNCIA ALTA (Fazer em seguida):
-3. Se PRODUTO estÃ¡ 0-2
-4. Se PROGRAMAS estÃ¡ 0-2
-â†“
-URGÃŠNCIA MÃ‰DIA (OtimizaÃ§Ã£o):
-5. Se PROCESSOS estÃ¡ 0-2
-6. Se PESSOAS estÃ¡ 0-2
+URGÊNCIA MÁXIMA (Fazer primeiro):
+1. Se POSICIONAMENTO está 0-2: COMECE AQUI
+2. Se PÚBLICO está 0-2: COMECE AQUI
+↓
+URGÊNCIA ALTA (Fazer em seguida):
+3. Se PRODUTO está 0-2
+4. Se PROGRAMAS está 0-2
+↓
+URGÊNCIA MÉDIA (Otimização):
+5. Se PROCESSOS está 0-2
+6. Se PESSOAS está 0-2
 ```
 
-### **LÃ³gica:**
+### **Lógica:**
 
-* **Posicionamento e PÃºblico ruins** \= vocÃª nÃ£o sabe o que vender nem para quem  
-* **Produto ruim** \= vocÃª nÃ£o converte nem vende  
-* **Programas ruins** \= vocÃª nÃ£o escala  
-* **Processos ruins** \= vocÃª nÃ£o cresce com qualidade  
-* **Pessoas ruins** \= vocÃª nÃ£o sustenta o crescimento
+* **Posicionamento e Público ruins** \= você não sabe o que vender nem para quem  
+* **Produto ruim** \= você não converte nem vende  
+* **Programas ruins** \= você não escala  
+* **Processos ruins** \= você não cresce com qualidade  
+* **Pessoas ruins** \= você não sustenta o crescimento
 
 ### **Plano de 90 dias:**
 
-1. **Dias 1-30:** Trabalhe nos 2 Ps mais crÃ­ticos (menor pontuaÃ§Ã£o)  
-2. **Dias 31-60:** Trabalhe no prÃ³ximo P crÃ­tico  
+1. **Dias 1-30:** Trabalhe nos 2 Ps mais críticos (menor pontuação)  
+2. **Dias 31-60:** Trabalhe no próximo P crítico  
 3. **Dias 61-90:** Refine e otimize os 3 primeiros  
 4. **Dia 90:** Reavalie todos os 6Ps novamente
 
 ---
 
-## **7\. PLANO DE AÃ‡ÃƒO POR NÃVEL**
+## **7\. PLANO DE AÇÃO POR NÍVEL**
 
-### **Se vocÃª estÃ¡ CAÃ“TICO (0-5 pontos):**
+### **Se você está CAÓTICO (0-5 pontos):**
 
-**Foco: SobrevivÃªncia â†’ EstruturaÃ§Ã£o BÃ¡sica**
+**Foco: Sobrevivência → Estruturação Básica**
 
 **Prioridades absolutas:**
 
-1. Definir posicionamento mÃ­nimo  
-2. Definir quem Ã© seu cliente ideal  
-3. Estruturar oferta bÃ¡sica
+1. Definir posicionamento mínimo  
+2. Definir quem é seu cliente ideal  
+3. Estruturar oferta básica
 
-**Entregas mÃ­nimas (90 dias):**
+**Entregas mínimas (90 dias):**
 
 * \[ \] Proposta de valor em 1 frase  
-* \[ \] ICP bÃ¡sico documentado  
+* \[ \] ICP básico documentado  
 * \[ \] Produto/pacote principal definido  
-* \[ \] Forma bÃ¡sica de captar leads
+* \[ \] Forma básica de captar leads
 
-**Mentalidade:** VocÃª estÃ¡ construindo a base. NÃ£o pule etapas.
+**Mentalidade:** Você está construindo a base. Não pule etapas.
 
 ---
 
-### **Se vocÃª estÃ¡ INICIANTE (6-10 pontos):**
+### **Se você está INICIANTE (6-10 pontos):**
 
-**Foco: EstruturaÃ§Ã£o BÃ¡sica â†’ Crescimento Inicial**
+**Foco: Estruturação Básica → Crescimento Inicial**
 
 **Prioridades:**
 
 1. Fortalecer posicionamento  
 2. Detalhar buyer persona  
-3. Criar funil bÃ¡sico de vendas
+3. Criar funil básico de vendas
 
-**Entregas mÃ­nimas (90 dias):**
+**Entregas mínimas (90 dias):**
 
 * \[ \] Documento de posicionamento completo  
 * \[ \] Buyer persona detalhada  
 * \[ \] Funil de vendas funcionando  
-* \[ \] Primeiras automaÃ§Ãµes  
+* \[ \] Primeiras automações  
 * \[ \] Processos principais documentados
 
-**Mentalidade:** VocÃª estÃ¡ saindo do caos. Foco em consistÃªncia.
+**Mentalidade:** Você está saindo do caos. Foco em consistência.
 
 ---
 
-### **Se vocÃª estÃ¡ EM DESENVOLVIMENTO (11-15 pontos):**
+### **Se você está EM DESENVOLVIMENTO (11-15 pontos):**
 
-**Foco: Crescimento Inicial â†’ Escala**
+**Foco: Crescimento Inicial → Escala**
 
 **Prioridades:**
 
 1. Otimizar programas de vendas  
 2. Documentar todos os processos  
-3. ComeÃ§ar a estruturar time
+3. Começar a estruturar time
 
-**Entregas mÃ­nimas (90 dias):**
+**Entregas mínimas (90 dias):**
 
-* \[ \] MÃºltiplos funis funcionando  
-* \[ \] AutomaÃ§Ãµes avanÃ§adas  
+* \[ \] Múltiplos funis funcionando  
+* \[ \] Automações avançadas  
 * \[ \] Todos os processos documentados  
 * \[ \] CRM em uso efetivo  
-* \[ \] PapÃ©is do time definidos
+* \[ \] Papéis do time definidos
 
-**Mentalidade:** VocÃª estÃ¡ crescendo. Agora precisa estruturar para nÃ£o quebrar.
+**Mentalidade:** Você está crescendo. Agora precisa estruturar para não quebrar.
 
 ---
 
-### **Se vocÃª estÃ¡ ESTRUTURADO (16-20 pontos):**
+### **Se você está ESTRUTURADO (16-20 pontos):**
 
-**Foco: Escala â†’ OtimizaÃ§Ã£o**
+**Foco: Escala → Otimização**
 
 **Prioridades:**
 
-1. Otimizar conversÃ£o  
+1. Otimizar conversão  
 2. Treinar time constantemente  
 3. Refinar processos
 
-**Entregas mÃ­nimas (90 dias):**
+**Entregas mínimas (90 dias):**
 
 * \[ \] Testes A/B rodando  
-* \[ \] Time treinado e autÃ´nomo  
-* \[ \] Processos com mÃ©tricas  
-* \[ \] Crescimento previsÃ­vel
+* \[ \] Time treinado e autônomo  
+* \[ \] Processos com métricas  
+* \[ \] Crescimento previsível
 
-**Mentalidade:** VocÃª estÃ¡ estruturado. Agora Ã© otimizar o que funciona.
+**Mentalidade:** Você está estruturado. Agora é otimizar o que funciona.
 
 ---
 
-### **Se vocÃª estÃ¡ AVANÃ‡ADO (21-25 pontos):**
+### **Se você está AVANÇADO (21-25 pontos):**
 
-**Foco: OtimizaÃ§Ã£o â†’ ExcelÃªncia**
+**Foco: Otimização → Excelência**
 
 **Prioridades:**
 
 1. Testar novos canais  
-2. Desenvolver lideranÃ§a do time  
-3. Criar sistemas de inovaÃ§Ã£o
+2. Desenvolver liderança do time  
+3. Criar sistemas de inovação
 
-**Entregas mÃ­nimas (90 dias):**
+**Entregas mínimas (90 dias):**
 
-* \[ \] Novo canal de aquisiÃ§Ã£o testado  
-* \[ \] LideranÃ§as desenvolvidas  
+* \[ \] Novo canal de aquisição testado  
+* \[ \] Lideranças desenvolvidas  
 * \[ \] Cultura forte estabelecida  
 * \[ \] Margens otimizadas
 
-**Mentalidade:** VocÃª estÃ¡ avanÃ§ado. Agora Ã© inovar e liderar mercado.
+**Mentalidade:** Você está avançado. Agora é inovar e liderar mercado.
 
 ---
 
-### **Se vocÃª estÃ¡ OTIMIZADO (26-30 pontos):**
+### **Se você está OTIMIZADO (26-30 pontos):**
 
-**Foco: ExcelÃªncia â†’ DominÃ¢ncia**
+**Foco: Excelência → Dominância**
 
 **Prioridades:**
 
@@ -572,73 +572,73 @@ URGÃŠNCIA MÃ‰DIA (OtimizaÃ§Ã£o):
 2. Criar barreiras de entrada  
 3. Expandir ou vender
 
-**Mentalidade:** VocÃª Ã© referÃªncia. Mantenha e expanda.
+**Mentalidade:** Você é referência. Mantenha e expanda.
 
 ---
 
-## **COMO APLICAR NA PRÃTICA \- PASSO A PASSO**
+## **COMO APLICAR NA PRÁTICA \- PASSO A PASSO**
 
-### **PASSO 1: DIAGNÃ“STICO (1-2 horas)**
+### **PASSO 1: DIAGNÓSTICO (1-2 horas)**
 
-1. Separe 1-2 horas sem interrupÃ§Ã£o  
-2. Leia cada P com atenÃ§Ã£o  
+1. Separe 1-2 horas sem interrupção  
+2. Leia cada P com atenção  
 3. Responda as perguntas-chave honestamente  
-4. DÃª uma nota de 0-5 para cada P  
+4. Dê uma nota de 0-5 para cada P  
 5. Calcule seu score total
 
-### **PASSO 2: ANÃLISE (30 minutos)**
+### **PASSO 2: ANÁLISE (30 minutos)**
 
-1. Identifique seu nÃ­vel geral  
-2. Marque os 2 Ps com menor pontuaÃ§Ã£o  
-3. Verifique se estÃ£o na ordem correta (nÃ£o pule etapas)  
-4. Liste os 3 principais problemas que cada P estÃ¡ causando
+1. Identifique seu nível geral  
+2. Marque os 2 Ps com menor pontuação  
+3. Verifique se estão na ordem correta (não pule etapas)  
+4. Liste os 3 principais problemas que cada P está causando
 
 ### **PASSO 3: PLANEJAMENTO (1 hora)**
 
-1. Escolha 1-2 Ps para trabalhar nos prÃ³ximos 90 dias  
-2. Selecione 3-5 entregÃ¡veis prioritÃ¡rios de cada P escolhido  
-3. Defina prazos para cada entregÃ¡vel  
+1. Escolha 1-2 Ps para trabalhar nos próximos 90 dias  
+2. Selecione 3-5 entregáveis prioritários de cada P escolhido  
+3. Defina prazos para cada entregável  
 4. Bloqueie tempo na agenda para trabalhar nisso
 
-### **PASSO 4: EXECUÃ‡ÃƒO (90 dias)**
+### **PASSO 4: EXECUÇÃO (90 dias)**
 
-1. Trabalhe 1 entregÃ¡vel por vez  
-2. NÃ£o comece o prÃ³ximo antes de terminar o anterior  
-3. Teste e valide cada mudanÃ§a  
-4. Ajuste conforme necessÃ¡rio
+1. Trabalhe 1 entregável por vez  
+2. Não comece o próximo antes de terminar o anterior  
+3. Teste e valide cada mudança  
+4. Ajuste conforme necessário
 
-### **PASSO 5: REAVALIAÃ‡ÃƒO (dia 90\)**
+### **PASSO 5: REAVALIAÇÃO (dia 90\)**
 
-1. RefaÃ§a o diagnÃ³stico completo  
-2. Compare pontuaÃ§Ã£o anterior vs. atual  
-3. Celebre as vitÃ³rias  
-4. Escolha os prÃ³ximos Ps para trabalhar
+1. Refaça o diagnóstico completo  
+2. Compare pontuação anterior vs. atual  
+3. Celebre as vitórias  
+4. Escolha os próximos Ps para trabalhar
 
 ---
 
 ## **ERROS COMUNS A EVITAR**
 
-âŒ **Pular a ordem dos Ps**
+❌ **Pular a ordem dos Ps**
 
-* NÃ£o adianta ter processos perfeitos se nÃ£o sabe para quem vende
+* Não adianta ter processos perfeitos se não sabe para quem vende
 
-âŒ **Querer fazer tudo ao mesmo tempo**
+❌ **Querer fazer tudo ao mesmo tempo**
 
 * Foco em 1-2 Ps por vez gera mais resultado
 
-âŒ **Mentir no diagnÃ³stico**
+❌ **Mentir no diagnóstico**
 
-* Seja honesto ou nÃ£o vai melhorar de verdade
+* Seja honesto ou não vai melhorar de verdade
 
-âŒ **NÃ£o documentar nada**
+❌ **Não documentar nada**
 
-* O que nÃ£o estÃ¡ escrito nÃ£o existe
+* O que não está escrito não existe
 
-âŒ **NÃ£o revisar periodicamente**
+❌ **Não revisar periodicamente**
 
-* FaÃ§a diagnÃ³stico a cada 90 dias
+* Faça diagnóstico a cada 90 dias
 
-âŒ **Copiar o que funciona para outros**
+❌ **Copiar o que funciona para outros**
 
 * Use o framework para achar SEU caminho
 
@@ -649,29 +649,29 @@ URGÃŠNCIA MÃ‰DIA (OtimizaÃ§Ã£o):
 Para cada P, mantenha:
 
 1. **Pasta digital** com todos os documentos  
-2. **Checklist** dos entregÃ¡veis  
-3. **Dashboard** com mÃ©tricas principais  
-4. **Registro** de evoluÃ§Ã£o (antes/depois)
+2. **Checklist** dos entregáveis  
+3. **Dashboard** com métricas principais  
+4. **Registro** de evolução (antes/depois)
 
 ---
 
-## **CONCLUSÃƒO**
+## **CONCLUSÃO**
 
-Os 6Ps das Vendas EscalÃ¡veis Ã© um framework prÃ¡tico para micro e pequenas empresas saÃ­rem do caos e construÃ­rem um sistema de vendas previsÃ­vel e escalÃ¡vel.
+Os 6Ps das Vendas Escaláveis é um framework prático para micro e pequenas empresas saírem do caos e construírem um sistema de vendas previsível e escalável.
 
 **Lembre-se:**
 
-* Ã‰ um processo, nÃ£o um evento  
-* Respeite a ordem (nÃ£o pule etapas)  
-* Foco Ã© melhor que dispersÃ£o  
-* ConsistÃªncia vence intensidade  
-* MeÃ§a, melhore, repita
+* É um processo, não um evento  
+* Respeite a ordem (não pule etapas)  
+* Foco é melhor que dispersão  
+* Consistência vence intensidade  
+* Meça, melhore, repita
 
-**PrÃ³ximo passo:** FaÃ§a seu diagnÃ³stico AGORA e descubra por onde comeÃ§ar.
+**Próximo passo:** Faça seu diagnóstico AGORA e descubra por onde começar.
 
 ---
 
 **Criado por:** \[Seu Nome\]  
- **Framework:** 6Ps das Vendas EscalÃ¡veis  
- **VersÃ£o:** 2.0 \- Completa  
- **Ãšltima atualizaÃ§Ã£o:** Outubro 2025
+ **Framework:** 6Ps das Vendas Escaláveis  
+ **Versão:** 2.0 \- Completa  
+ **Última atualização:** Outubro 2025

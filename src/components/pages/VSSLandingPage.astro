@@ -7,6 +7,7 @@ import joelBurigoImage from '../../assets/images/lp/vss/joel-burigo-vendas-sem-s
 import garantia15DiasImage from '../../assets/images/lp/vss/garantia-15-dias.webp'
 import growthCRMImage from '../../assets/images/lp/vss/growthcrm/GrowthCRM1.png'
 import hotmartSecurity from '../../assets/images/hotmart-payment-security.png'
+import HighLevelForm from '../ui/HighLevelForm.astro'
 
 // Benefícios principais
 const beneficios = [
@@ -1848,23 +1849,10 @@ const certificacoes = [
 
     <!-- Iframe -->
     <div class="checkout-iframe-container">
-      <iframe
-        src="https://api.gsh.digital/widget/form/UY5sq22SQZfoIym1Udp1"
-        style="width:100%;height:100%;border:none;"
-        id="inline-UY5sq22SQZfoIym1Udp1" 
-        data-layout="{'id':'INLINE'}"
-        data-trigger-type="alwaysShow"
-        data-trigger-value=""
-        data-activation-type="alwaysActivated"
-        data-activation-value=""
-        data-deactivation-type="neverDeactivate"
-        data-deactivation-value=""
-        data-form-name="Vendas Sem Segredos - Compra"
-        data-height="490"
-        data-layout-iframe-id="inline-UY5sq22SQZfoIym1Udp1"
-        data-form-id="UY5sq22SQZfoIym1Udp1"
-        title="Vendas Sem Segredos - Compra"
-      ></iframe>
+      <HighLevelForm 
+        formId="UY5sq22SQZfoIym1Udp1"
+        height="490px"
+      />
     </div>
 
     <!-- Footer -->
@@ -2112,8 +2100,6 @@ const certificacoes = [
     }
   }
 </style>
-
-<script src="https://api.gsh.digital/js/form_embed.js"></script>
 
 <script>
   // Modal Checkout Controls

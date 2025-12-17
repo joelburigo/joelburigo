@@ -6,6 +6,7 @@ import { cases } from '../../data/cases'
 import Icons from '../ui/Icons.astro'
 import { getWhatsAppLink } from '../../data/contact'
 import hotmartSecurity from '../../assets/images/hotmart-payment-security.png'
+import HighLevelForm from '../ui/HighLevelForm.astro'
 
 
 // Filtrar cases do VSS (6 cases exibidos, 7 disponíveis no arquivo)
@@ -1120,23 +1121,10 @@ const resultados = [
 
     <!-- Iframe -->
     <div class="checkout-iframe-container">
-      <iframe
-        src="https://api.gsh.digital/widget/form/UY5sq22SQZfoIym1Udp1"
-        style="width:100%;height:100%;border:none;"
-        id="inline-UY5sq22SQZfoIym1Udp1" 
-        data-layout="{'id':'INLINE'}"
-        data-trigger-type="alwaysShow"
-        data-trigger-value=""
-        data-activation-type="alwaysActivated"
-        data-activation-value=""
-        data-deactivation-type="neverDeactivate"
-        data-deactivation-value=""
-        data-form-name="Vendas Sem Segredos - Compra"
-        data-height="490"
-        data-layout-iframe-id="inline-UY5sq22SQZfoIym1Udp1"
-        data-form-id="UY5sq22SQZfoIym1Udp1"
-        title="Vendas Sem Segredos - Compra"
-      ></iframe>
+      <HighLevelForm 
+        formId="UY5sq22SQZfoIym1Udp1"
+        height="490px"
+      />
     </div>
 
     <!-- Footer -->
@@ -1150,8 +1138,6 @@ const resultados = [
     </div>
   </div>
 </div>
-
-<script src="https://api.gsh.digital/js/form_embed.js"></script>
 
 <script>
   // Modal Checkout Controls

@@ -1,12 +1,11 @@
 ---
 import Container from '../ui/Container.astro'
-import Button from '../ui/Button.astro'
-import Icons from '../ui/Icons.astro'
 import VideoPlayer from '../ui/VideoPlayer.astro'
 import { getWhatsAppLink } from '../../data/contact'
 import joelBurigoImage from '../../assets/images/lp/vss/joel-burigo-vendas-sem-segredos-.webp'
 import garantia15DiasImage from '../../assets/images/lp/vss/garantia-15-dias.webp'
 import growthCRMImage from '../../assets/images/lp/vss/growthcrm/GrowthCRM1.png'
+import hotmartSecurity from '../../assets/images/hotmart-payment-security.png'
 
 // Benefícios principais
 const beneficios = [
@@ -42,52 +41,97 @@ const beneficios = [
   }
 ]
 
-// Módulos do programa
+// Módulos do programa (15 módulos completos)
 const modulos = [
   { 
+    num: '00', 
+    nome: 'Diagnóstico Inicial',
+    aulas: 3,
+    desc: 'Mapeie o estado atual da sua empresa nos 6Ps. Identifique onde você está travado e qual P precisa de atenção imediata.'
+  },
+  { 
     num: '01', 
-    title: 'Fundamentos das Vendas Escaláveis',
-    desc: 'Bem-vindo! Conheça Joel Burigo, a missão do Vendas Sem Segredos e o framework dos 6 Ps que guia todo o programa VSS. Descubra como transformar seu negócio através de Posicionamento, Público, Produto, Programas, Processos e Pessoas.'
+    nome: 'Framework dos 6Ps',
+    aulas: 4,
+    desc: 'Entenda a visão completa do sistema. Como cada P se conecta e por que vendas sem os 6 Ps integrados nunca escalam.'
   },
   { 
     num: '02', 
-    title: 'Marketing Digital Descomplicado',
-    desc: 'Aprenda os fundamentos do marketing digital e como ele pode alavancar seu negócio no mundo online. Descubra como estruturar um processo de vendas eficiente, identificar seu público-alvo e criar produtos atraentes.'
+    nome: 'P1: Posicionamento',
+    aulas: 5,
+    desc: 'Defina seu nicho, ICP e proposta de valor clara. Saia do "atendo todo mundo" para "sou referência em X para Y".'
   },
   { 
     num: '03', 
-    title: 'Magnetize Seus Clientes',
-    desc: 'Domine a arte de criar personas e propostas de valor irresistíveis para atrair e encantar seu público-alvo. Descubra como definir seu ICP ou Buyer Person e como criar uma Proposta Única de Valor (PUV) usando o método da BIG IDEA.'
+    nome: 'P2: Público (ICP)',
+    aulas: 4,
+    desc: 'Quem é seu cliente ideal? Onde ele está? Quais dores ele tem? Como qualificar leads que realmente fecham.'
   },
   { 
     num: '04', 
-    title: 'Conquiste a Internet',
-    desc: 'Estabeleça sua presença online com uma estrutura eficiente e sólida. Aprenda a diferença entre site e loja online, explore os canais de aquisição e compreenda os níveis de consciência do cliente para maximizar seu alcance.'
+    nome: 'P3: Produto/Oferta',
+    aulas: 5,
+    desc: 'Estruture pacotes vendáveis. Precificação por valor, não por hora. Formatação de programas de 30/60/90 dias.'
   },
   { 
     num: '05', 
-    title: 'Sites, Funis & E-commerce no Growth CRM',
-    desc: 'Use o Growth CRM (nosso white-label do HighLevel) para criar sites, landing pages, funis e e-commerce — tudo sem WordPress. Construtor drag-and-drop, SEO otimizado e integração completa.'
+    nome: 'P4: CRM Setup',
+    aulas: 6,
+    desc: 'Configure seu Growth CRM do zero. Funis, campos customizados, automações. Tudo pronto para usar no mesmo dia.'
   },
   { 
     num: '06', 
-    title: 'Redes Sociais Lucrativas',
-    desc: 'Desvende os segredos de como gerar conteúdo relevante e de qualidade para seu público-alvo com a ajuda da inteligência artificial. Domine o uso das redes sociais para gerar engajamento e tráfego.'
+    nome: 'Funis de Vendas',
+    aulas: 5,
+    desc: 'Construa funis que convertem. Do lead frio ao cliente pagante. Templates prontos para adaptar ao seu negócio.'
   },
   { 
     num: '07', 
-    title: 'Google Ads',
-    desc: 'Domine o Google Ads e aprenda a criar campanhas de anúncios eficientes nas redes de pesquisa, display, YouTube e Google Shopping. Descubra como otimizar seus anúncios, escolher palavras-chave certas e utilizar remarketing.'
+    nome: 'Automações',
+    aulas: 4,
+    desc: 'Automatize follow-up, nutrição e reengajamento. Pare de perder vendas por esquecimento ou falta de tempo.'
   },
   { 
     num: '08', 
-    title: 'Facebook & Instagram Ads Estratégicos',
-    desc: 'Campanhas criativas e segmentadas, otimização e uso do Pixel para resultados superiores. Domine Meta Ads com segmentação avançada e estratégias de retargeting eficazes.'
+    nome: 'Landing Pages',
+    aulas: 4,
+    desc: 'Crie páginas de captura e vendas que convertem. Copywriting, design e integração com CRM passo a passo.'
   },
   { 
     num: '09', 
-    title: 'A Arte da Conversão',
-    desc: 'Domine a criação de landing pages que convertam visitantes em leads e aprenda a usar técnicas de copywriting persuasivas. Aprenda a capturar leads, utilizar email marketing e WhatsApp para nutrir seus potenciais clientes.'
+    nome: 'Rota A: Tráfego Pago',
+    aulas: 6,
+    desc: 'Facebook/Instagram Ads do básico ao avançado. Campanhas, públicos, criativos e otimização de ROI.'
+  },
+  { 
+    num: '10', 
+    nome: 'Rota B: Prospecção Ativa',
+    aulas: 6,
+    desc: 'Outbound sem gastar 1 real em ads. LinkedIn, email, cold call. Scripts, cadências e ferramentas práticas.'
+  },
+  { 
+    num: '11', 
+    nome: 'P5: Processos',
+    aulas: 4,
+    desc: 'Documente playbooks de vendas. SOPs, scripts, fluxos. Para que qualquer pessoa possa executar sem você.'
+  },
+  { 
+    num: '12', 
+    nome: 'P6: Pessoas',
+    aulas: 3,
+    desc: 'Como contratar, treinar e reter SDRs. Onboarding, metas, comissionamento e cultura de alta performance.'
+  },
+  { 
+    num: '13', 
+    nome: 'Métricas e KPIs',
+    aulas: 4,
+    desc: 'Quais números acompanhar? Dashboards, planilhas, análise de funil. Transforme dados em decisões.'
+  },
+  { 
+    num: '14', 
+    nome: 'Otimização Contínua',
+    aulas: 3,
+    desc: 'A/B tests, melhorias incrementais, rituais de revisão. Como manter o sistema evoluindo após os 90 dias.'
   }
 ]
 
@@ -95,8 +139,8 @@ const modulos = [
 const diferenciais = [
   { 
     emoji: '📚', 
-    title: '17 Módulos Completos',
-    desc: '17 módulos, 60+ aulas (veja a estrutura completa abaixo)'
+    title: '15 Módulos Completos',
+    desc: '15 módulos, 60 aulas práticas (veja a estrutura completa abaixo)'
   },
   { 
     emoji: '🚀', 
@@ -223,7 +267,7 @@ const faq = [
   },
   {
     q: 'Quanto mais eu preciso investir para melhorar os resultados do meu negócio?',
-    a: 'O Growth CRM já está incluído (economia de R$ 6.320/ano). Para tráfego pago, você decide quanto investir baseado no seu momento e estratégia.'
+    a: 'O Growth CRM já está incluído (economia de R$ 6.996/ano). Para tráfego pago, você decide quanto investir baseado no seu momento e estratégia.'
   },
   {
     q: 'A mentoria é adequada para todos os tipos de negócios?',
@@ -233,6 +277,108 @@ const faq = [
     q: 'Como funciona a garantia? Terei acesso a tudo nesse período?',
     a: 'Garantia de 15 dias incondicional. Você tem acesso completo e se não ficar satisfeito, devolvemos 100% do seu investimento.'
   }
+]
+
+// Prova Social - Números
+const proofNumbers = [
+  { num: '+500', label: 'Empresas Atendidas' },
+  { num: 'R$ 1Bi', label: 'Em Vendas Estruturadas' },
+  { num: '17 Anos', label: 'De Experiência' },
+  { num: '98%', label: 'Taxa de Satisfação' }
+]
+
+// Timeline 90 dias
+const timeline90Dias = [
+  { 
+    semana: 'Semanas 1-2', 
+    title: 'Diagnóstico + Setup CRM',
+    desc: 'Mapeamento dos 6Ps, configuração completa do Growth CRM com funis e automações prontas para usar.'
+  },
+  { 
+    semana: 'Semanas 3-6', 
+    title: 'Posicionamento + Público + Oferta',
+    desc: 'Defina seu nicho, ICP perfeito e estruture ofertas vendáveis com precificação por valor.'
+  },
+  { 
+    semana: 'Semanas 7-10', 
+    title: 'Processos + Funis + Automações',
+    desc: 'Documente playbooks, construa funis de conversão e automatize follow-up e nutrição.'
+  },
+  { 
+    semana: 'Semanas 11-12', 
+    title: 'Tráfego ou Prospecção',
+    desc: 'Escolha sua rota: Ads (Meta/Google) ou Outbound (LinkedIn/Email/Cold Call).'
+  }
+]
+
+// Casos de Uso por Segmento (ICP)
+const casosDeUso = [
+  {
+    segmento: 'Consultorias B2B',
+    resultado: 'De R$ 20k → R$ 80k/mês',
+    descricao: 'Estruturação de oferta escalável com posicionamento claro e processo documentado'
+  },
+  {
+    segmento: 'Infoprodutores',
+    resultado: 'Lançamento de R$ 150k',
+    descricao: 'Funil automatizado com CRM integrado, da captura ao pós-venda'
+  },
+  {
+    segmento: 'SaaS B2B',
+    resultado: 'CAC reduzido em 40%',
+    descricao: 'Prospecção ativa estruturada com qualificação automática e nutrição inteligente'
+  }
+]
+
+// Comparação Antes vs Depois
+const antesDepois = [
+  { antes: 'Vendas aleatórias', depois: 'Previsibilidade mensal' },
+  { antes: 'Sem CRM ou planilhas', depois: 'Sistema integrado profissional' },
+  { antes: 'Processo na sua cabeça', depois: 'Playbook documentado' },
+  { antes: 'Você faz tudo sozinho', depois: 'Equipe executando processos' },
+  { antes: 'Perda de leads por esquecimento', depois: 'Automação 24/7 ativa' },
+  { antes: 'Sem métricas claras', depois: 'Dashboard com KPIs em tempo real' }
+]
+
+// Bônus Exclusivos
+const bonusExclusivos = [
+  { emoji: '📦', title: 'Template Pack', desc: '50+ templates de páginas, e-mails e funis prontos' },
+  { emoji: '📝', title: 'Biblioteca de Scripts', desc: '20+ scripts de vendas testados e aprovados' },
+  { emoji: '✍️', title: 'Swipe Files de Copy', desc: '100+ exemplos de copies que convertem' },
+  { emoji: '🤝', title: 'VSS Alumni Network', desc: 'Acesso vitalício à rede de ex-alunos VSS' }
+]
+
+// Comparação: VSS vs Agência vs DIY
+const comparacaoOpcoes = [
+  {
+    opcao: 'Fazer Sozinho (DIY)',
+    tempo: '12-24 meses',
+    custo: 'R$ 0 + tempo perdido',
+    resultado: 'Inconsistente',
+    problemas: ['Tentativa e erro', 'Sem direcionamento', 'Ferramentas dispersas', 'Processos não documentados']
+  },
+  {
+    opcao: 'Contratar Agência',
+    tempo: '6-12 meses',
+    custo: 'R$ 5.000-15.000/mês',
+    resultado: 'Dependência externa',
+    problemas: ['Mínimo R$ 60k/ano', 'Você não aprende', 'Dependência contínua', 'Processo fica com eles']
+  },
+  {
+    opcao: 'VSS (Implementação Guiada)',
+    tempo: '90 dias',
+    custo: 'R$ 1.997 (único)',
+    resultado: 'Sistema próprio',
+    vantagens: ['Aprende fazendo', 'Sistema seu para sempre', 'CRM incluído 12 meses', 'Processo documentado', '48 mentorias incluídas']
+  }
+]
+
+// Certificações ao Concluir
+const certificacoes = [
+  { emoji: '🏆', item: 'Certificado Digital de Conclusão VSS' },
+  { emoji: '🎖️', item: 'Badge VSS para LinkedIn e redes sociais' },
+  { emoji: '👥', item: 'Acesso vitalício à comunidade VSS Alumni' },
+  { emoji: '💰', item: 'Preço especial Lote Fundador' }
 ]
 ---
 
@@ -285,6 +431,20 @@ const faq = [
   </Container>
 </section>
 
+<!-- Prova Social - Números Section -->
+<section class="py-12 bg-dark-gray border-y border-white/10">
+  <Container>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+      {proofNumbers.map((item) => (
+        <div class="text-center">
+          <p class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-lime mb-2">{item.num}</p>
+          <p class="font-sans text-sm md:text-base text-gray-300">{item.label}</p>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>
+
 <!-- VSL Section -->
 <section class="py-12 md:py-16 bg-dark">
   <Container>
@@ -308,7 +468,7 @@ const faq = [
       
       <div class="mt-8 text-center">
         <a href="#investimento" class="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-lime px-8 font-display text-base font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
-          Garantir Minha Vaga Agora
+          Ver Preço do Lote Fundador
         </a>
       </div>
     </div>
@@ -339,7 +499,7 @@ const faq = [
     
     <div class="text-center mt-12">
       <a href="#investimento" class="inline-flex h-16 items-center justify-center gap-2 rounded-xl bg-lime px-10 font-display text-lg font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
-        Garantir Minha Vaga Agora
+        Garantir Vaga no Lote Fundador
       </a>
     </div>
   </Container>
@@ -360,11 +520,12 @@ const faq = [
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
       {modulos.map((modulo) => (
         <div class="bg-dark-gray/50 rounded-xl p-8 hover:bg-dark-gray transition-colors border-2 border-white/10 hover:border-lime/30">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="font-display text-3xl font-bold text-lime">MÓDULO {modulo.num}</span>
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-display text-2xl font-bold text-lime">MÓDULO {modulo.num}</span>
+            <span class="inline-flex items-center rounded-full bg-lime/20 px-3 py-1 font-sans text-xs font-semibold text-lime">{modulo.aulas} aulas</span>
           </div>
-          <h3 class="font-display text-xl font-bold mb-3 text-white">{modulo.title}</h3>
-          <p class="font-sans text-gray-300">{modulo.desc}</p>
+          <h3 class="font-display text-xl font-bold mb-3 text-white">{modulo.nome}</h3>
+          <p class="font-sans text-sm text-gray-300">{modulo.desc}</p>
         </div>
       ))}
     </div>
@@ -373,7 +534,46 @@ const faq = [
       <h3 class="font-display text-xl font-bold mb-4 text-white">15 Módulos + 60 Aulas</h3>
       <p class="font-sans text-base text-gray-200 mb-6">Conteúdo completo para implementar o Framework dos 6Ps em 90 dias</p>
       <a href="#investimento" class="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-lime px-8 font-display text-base font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
-        Começar Agora
+        Ver Preço do Lote Fundador
+      </a>
+    </div>
+  </Container>
+</section>
+
+<!-- Timeline 90 Dias Section -->
+<section class="py-24 bg-dark-gray">
+  <Container>
+    <div class="max-w-4xl mx-auto text-center mb-16">
+      <h2 class="mb-4 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+        Sua Jornada nos Primeiros <span class="text-lime">90 Dias</span>
+      </h2>
+      <p class="mx-auto max-w-3xl font-sans text-lg md:text-xl text-gray-200">
+        Cronograma estruturado para implementar o sistema completo em 3 meses
+      </p>
+    </div>
+    
+    <div class="max-w-4xl mx-auto space-y-6">
+      {timeline90Dias.map((fase, index) => (
+        <div class="bg-dark rounded-xl p-8 border-2 border-white/10 hover:border-lime/30 transition-all">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 rounded-full bg-lime/20 border-2 border-lime flex items-center justify-center">
+                <span class="font-display text-2xl font-bold text-lime">{index + 1}</span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <p class="font-display text-sm font-bold text-lime mb-2">{fase.semana}</p>
+              <h3 class="font-display text-xl md:text-2xl font-bold mb-3 text-white">{fase.title}</h3>
+              <p class="font-sans text-gray-300">{fase.desc}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="text-center mt-12">
+      <a href="#investimento" class="inline-flex h-16 items-center justify-center gap-2 rounded-xl bg-lime px-10 font-display text-lg font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
+        Garantir Vaga no Lote Fundador
       </a>
     </div>
   </Container>
@@ -402,11 +602,73 @@ const faq = [
         </div>
       ))}
     </div>
+  </Container>
+</section>
+
+<!-- Casos de Uso Section -->
+<section class="py-24 bg-dark-gray">
+  <Container>
+    <div class="max-w-4xl mx-auto text-center mb-16">
+      <h2 class="mb-4 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+        Funciona Para o <span class="text-lime">Seu Segmento</span>
+      </h2>
+      <p class="mx-auto max-w-3xl font-sans text-lg md:text-xl text-gray-200">
+        Resultados reais de empresas que implementaram o VSS
+      </p>
+    </div>
     
-    <div class="text-center mt-12">
-      <a href="#investimento" class="inline-flex h-16 items-center justify-center gap-2 rounded-xl bg-lime px-10 font-display text-lg font-bold text-dark shadow-2xl shadow-lime/30 transition-all hover:scale-[1.02] hover:bg-lime/90">
-        Garantir Minha Vaga Agora
-      </a>
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {casosDeUso.map((caso) => (
+        <div class="bg-dark rounded-xl p-8 border-2 border-white/10 hover:border-lime/30 transition-all">
+          <h3 class="font-display text-2xl font-bold mb-4 text-white">{caso.segmento}</h3>
+          <p class="font-display text-3xl font-bold text-lime mb-4">{caso.resultado}</p>
+          <p class="font-sans text-gray-300">{caso.descricao}</p>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>
+
+<!-- Antes vs Depois Section -->
+<section class="py-24 bg-dark">
+  <Container>
+    <div class="max-w-4xl mx-auto text-center mb-16">
+      <h2 class="mb-4 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+        Antes vs <span class="text-lime">Depois do VSS</span>
+      </h2>
+      <p class="mx-auto max-w-3xl font-sans text-lg md:text-xl text-gray-200">
+        A transformação que você vai experimentar
+      </p>
+    </div>
+    
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-dark-gray/50 rounded-2xl overflow-hidden border-2 border-white/10">
+        <div class="grid md:grid-cols-2">
+          <div class="p-8 bg-red-900/20 border-r border-white/10">
+            <h3 class="font-display text-2xl font-bold mb-6 text-red-400 text-center">❌ Antes</h3>
+          </div>
+          <div class="p-8 bg-green-900/20">
+            <h3 class="font-display text-2xl font-bold mb-6 text-lime text-center">✅ Depois</h3>
+          </div>
+        </div>
+        
+        {antesDepois.map((item) => (
+          <div class="grid md:grid-cols-2 border-t border-white/10">
+            <div class="p-6 border-r border-white/10 bg-red-900/10">
+              <p class="font-sans text-gray-300">{item.antes}</p>
+            </div>
+            <div class="p-6 bg-green-900/10">
+              <p class="font-sans text-white font-semibold">{item.depois}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="#investimento" class="inline-flex h-16 items-center justify-center gap-2 rounded-xl bg-lime px-10 font-display text-lg font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
+          Ver Investimento do Lote Fundador
+        </a>
+      </div>
     </div>
   </Container>
 </section>
@@ -419,7 +681,7 @@ const faq = [
         Growth CRM <span class="text-lime">Incluído</span>
       </h2>
       <p class="mx-auto max-w-3xl font-sans text-lg md:text-xl text-gray-200">
-        CRM profissional completo por 12 meses (valor R$ 6.996). Já configurado com funis e automações prontos.
+        CRM profissional completo por 12 meses (<span class="line-through text-gray-400">valor R$ 6.996</span>). Já configurado com funis e automações prontos.
       </p>
     </div>
     
@@ -445,13 +707,133 @@ const faq = [
     <div class="rounded-2xl border-2 border-lime/30 bg-lime/10 p-8 md:p-12 text-center max-w-3xl mx-auto">
       <div class="mb-6">
         <p class="font-display text-sm font-bold text-lime mb-2">VALOR DA LICENÇA</p>
-        <p class="font-display text-4xl md:text-5xl font-bold text-white mb-2">R$ 583/mês</p>
+        <p class="font-display text-4xl md:text-5xl font-bold text-white mb-2"><span class="line-through text-gray-400">R$ 583/mês</span></p>
         <p class="font-sans text-lg text-gray-200 mb-1">Incluído <span class="text-lime font-bold">GRATUITAMENTE</span></p>
         <p class="font-display text-xl font-bold text-lime">Economia de R$ 6.996/ano</p>
       </div>
       <div class="mt-8">
         <a href="#investimento" class="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-lime px-8 font-display text-base font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
-          Começar Agora com CRM Incluído
+          Garantir CRM Incluído no Lote Fundador
+        </a>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- Comparação: VSS vs Agência vs DIY -->
+<section class="py-24 bg-dark-gray">
+  <Container>
+    <div class="max-w-5xl mx-auto text-center mb-16">
+      <h2 class="mb-4 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+        Por Que Não Contratar <span class="text-lime">Uma Agência?</span>
+      </h2>
+      <p class="mx-auto max-w-3xl font-sans text-lg md:text-xl text-gray-200">
+        Compare as opções e entenda por que o VSS é a melhor escolha
+      </p>
+    </div>
+    
+    <div class="max-w-6xl mx-auto overflow-x-auto">
+      <table class="w-full min-w-[800px]">
+        <thead>
+          <tr class="border-b-2 border-white/20">
+            <th class="p-4 text-left font-display text-lg text-gray-400">Critério</th>
+            <th class="p-4 text-center font-display text-lg text-gray-400">Fazer Sozinho</th>
+            <th class="p-4 text-center font-display text-lg text-gray-400">Contratar Agência</th>
+            <th class="p-4 text-center font-display text-lg text-lime bg-lime/10">VSS</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-white/10">
+          <tr class="hover:bg-white/5 transition-colors">
+            <td class="p-4 font-display font-semibold text-white">Tempo para Resultado</td>
+            <td class="p-4 text-center font-sans text-gray-300">12-24 meses</td>
+            <td class="p-4 text-center font-sans text-gray-300">6-12 meses</td>
+            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">90 dias</td>
+          </tr>
+          <tr class="hover:bg-white/5 transition-colors">
+            <td class="p-4 font-display font-semibold text-white">Investimento</td>
+            <td class="p-4 text-center font-sans text-gray-300">R$ 0<br/><span class="text-xs">(+ tempo perdido)</span></td>
+            <td class="p-4 text-center font-sans text-gray-300">R$ 5k-15k/mês<br/><span class="text-xs">(mín. R$ 60k/ano)</span></td>
+            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">R$ 1.997<br/><span class="text-xs">(pagamento único)</span></td>
+          </tr>
+          <tr class="hover:bg-white/5 transition-colors">
+            <td class="p-4 font-display font-semibold text-white">Aprendizado</td>
+            <td class="p-4 text-center font-sans text-gray-300">❌ Tentativa e erro</td>
+            <td class="p-4 text-center font-sans text-gray-300">❌ Você não aprende</td>
+            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">✅ Aprende fazendo</td>
+          </tr>
+          <tr class="hover:bg-white/5 transition-colors">
+            <td class="p-4 font-display font-semibold text-white">Propriedade do Sistema</td>
+            <td class="p-4 text-center font-sans text-gray-300">⚠️ Improvisado</td>
+            <td class="p-4 text-center font-sans text-gray-300">❌ Fica com agência</td>
+            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">✅ Seu para sempre</td>
+          </tr>
+          <tr class="hover:bg-white/5 transition-colors">
+            <td class="p-4 font-display font-semibold text-white">CRM Profissional</td>
+            <td class="p-4 text-center font-sans text-gray-300">❌ Não incluído</td>
+            <td class="p-4 text-center font-sans text-gray-300">💰 Custo extra</td>
+            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">✅ Incluído 12 meses</td>
+          </tr>
+          <tr class="hover:bg-white/5 transition-colors">
+            <td class="p-4 font-display font-semibold text-white">Suporte Contínuo</td>
+            <td class="p-4 text-center font-sans text-gray-300">❌ Sozinho</td>
+            <td class="p-4 text-center font-sans text-gray-300">✅ Enquanto pagar</td>
+            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">✅ 48 mentorias</td>
+          </tr>
+          <tr class="hover:bg-white/5 transition-colors">
+            <td class="p-4 font-display font-semibold text-white">Escalabilidade</td>
+            <td class="p-4 text-center font-sans text-gray-300">❌ Limitada</td>
+            <td class="p-4 text-center font-sans text-gray-300">⚠️ Dependente</td>
+            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">✅ Autônoma</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="max-w-4xl mx-auto mt-16">
+      <div class="grid md:grid-cols-3 gap-8">
+        {comparacaoOpcoes.map((opcao, index) => (
+          <div class={`rounded-xl p-8 border-2 transition-all ${index === 2 ? 'border-lime bg-lime/10' : 'border-white/10 bg-dark'}`}>
+            <h3 class={`font-display text-xl font-bold mb-6 ${index === 2 ? 'text-lime' : 'text-white'}`}>{opcao.opcao}</h3>
+            
+            <div class="space-y-3 mb-6">
+              <div>
+                <p class="font-sans text-xs text-gray-400 mb-1">TEMPO</p>
+                <p class="font-display font-bold text-white">{opcao.tempo}</p>
+              </div>
+              <div>
+                <p class="font-sans text-xs text-gray-400 mb-1">CUSTO</p>
+                <p class="font-display font-bold text-white">{opcao.custo}</p>
+              </div>
+              <div>
+                <p class="font-sans text-xs text-gray-400 mb-1">RESULTADO</p>
+                <p class="font-display font-bold text-white">{opcao.resultado}</p>
+              </div>
+            </div>
+            
+            {opcao.problemas && (
+              <div class="space-y-2">
+                <p class="font-sans text-xs text-red-400 font-bold mb-2">PROBLEMAS:</p>
+                {opcao.problemas.map((problema) => (
+                  <p class="font-sans text-sm text-gray-400">❌ {problema}</p>
+                ))}
+              </div>
+            )}
+            
+            {opcao.vantagens && (
+              <div class="space-y-2">
+                <p class="font-sans text-xs text-lime font-bold mb-2">VANTAGENS:</p>
+                {opcao.vantagens.map((vantagem) => (
+                  <p class="font-sans text-sm text-white">✅ {vantagem}</p>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="#investimento" class="inline-flex h-16 items-center justify-center gap-2 rounded-xl bg-lime px-10 font-display text-lg font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
+          Garantir Vaga no Lote Fundador
         </a>
       </div>
     </div>
@@ -556,16 +938,184 @@ const faq = [
           loading="lazy"
         />
       </div>
-      <h3 class="font-display text-2xl font-bold mb-4 text-white">Garantia de 15 dias</h3>
+      <h3 class="font-display text-2xl font-bold mb-4 text-white">Garantia Incondicional de 15 Dias</h3>
       <p class="font-sans text-lg mb-6 text-gray-200">
-        Se você não ficar satisfeito com o programa, devolvemos o seu dinheiro sem complicações.
+        Teste o programa completo com <span class="text-lime font-bold">RISCO ZERO</span>
       </p>
-      <p class="font-sans text-gray-200 mb-8">
-        Junte-se aos empreendedores que transformaram vendas aleatórias em vendas previsíveis
+      
+      <div class="bg-dark/50 rounded-xl p-6 mb-6 text-left space-y-3">
+        <div class="flex items-start gap-3">
+          <span class="text-lime text-xl">✓</span>
+          <p class="font-sans text-gray-200">Acesso completo a todos os 15 módulos</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-lime text-xl">✓</span>
+          <p class="font-sans text-gray-200">Participe das mentorias ao vivo</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-lime text-xl">✓</span>
+          <p class="font-sans text-gray-200">Configure seu Growth CRM</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-lime text-xl">✓</span>
+          <p class="font-sans text-gray-200">Entre na comunidade exclusiva</p>
+        </div>
+      </div>
+      
+      <p class="font-sans text-base text-gray-300 mb-8">
+        Se dentro de 15 dias você não estiver satisfeito por qualquer motivo, devolvemos <span class="text-lime font-bold">100% do seu investimento</span>. Zero burocracia, zero perguntas.
       </p>
+      
       <a href="#investimento" class="inline-flex h-16 items-center justify-center gap-2 rounded-xl bg-lime px-10 font-display text-lg font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
-        Garantir Minha Vaga
+        Garantir Vaga no Lote Fundador
       </a>
+    </div>
+  </Container>
+</section>
+
+<!-- Certificações ao Concluir Section -->
+<section class="py-24 bg-dark-gray">
+  <Container>
+    <div class="max-w-4xl mx-auto text-center mb-16">
+      <h2 class="mb-4 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+        Ao Concluir o VSS <span class="text-lime">Você Recebe</span>
+      </h2>
+      <p class="mx-auto max-w-3xl font-sans text-lg md:text-xl text-gray-200">
+        Reconhecimento oficial e benefícios vitalícios
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      {certificacoes.map((cert) => (
+        <div class="bg-dark rounded-xl p-8 border-2 border-white/10 hover:border-lime/30 transition-all">
+          <div class="flex items-start gap-4">
+            <div class="text-4xl">{cert.emoji}</div>
+            <p class="font-sans text-lg text-white pt-2">{cert.item}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="text-center mt-12 bg-lime/10 rounded-2xl p-8 max-w-2xl mx-auto border-2 border-lime/30">
+      <h3 class="font-display text-xl font-bold mb-4 text-white">
+        🎓 Seja um Profissional Certificado em Vendas Escaláveis
+      </h3>
+      <p class="font-sans text-gray-200">
+        Destaque-se no mercado com a credencial VSS e faça parte de uma comunidade exclusiva de empreendedores de alta performance.
+      </p>
+    </div>
+  </Container>
+</section>
+
+<!-- Bônus Exclusivos Section -->
+<section class="py-24 bg-dark-gray">
+  <Container>
+    <div class="max-w-4xl mx-auto text-center mb-16">
+      <h2 class="mb-4 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+        Bônus Exclusivos <span class="text-lime">Lote Fundador</span>
+      </h2>
+      <p class="mx-auto max-w-3xl font-sans text-lg md:text-xl text-gray-200">
+        Os primeiros 100 alunos recebem acesso vitalício a todos estes bônus
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
+      {bonusExclusivos.map((bonus) => (
+        <div class="bg-dark rounded-xl p-8 border-2 border-lime/30 hover:border-lime transition-all">
+          <div class="flex items-start gap-4">
+            <div class="text-4xl">{bonus.emoji}</div>
+            <div>
+              <h3 class="font-display text-xl font-bold mb-2 text-white">{bonus.title}</h3>
+              <p class="font-sans text-gray-300">{bonus.desc}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="rounded-2xl bg-lime/10 border-2 border-lime/30 p-8 text-center max-w-3xl mx-auto">
+      <p class="font-display text-2xl font-bold text-white mb-4">
+        Valor Total dos Bônus: <span class="text-lime">R$ 2.497</span>
+      </p>
+      <p class="font-sans text-lg text-gray-200">
+        🎁 Incluídos gratuitamente para os primeiros 100 alunos
+      </p>
+    </div>
+  </Container>
+</section>
+
+<!-- ROI Calculator Section -->
+<section class="py-24 bg-dark">
+  <Container>
+    <div class="max-w-4xl mx-auto text-center mb-16">
+      <h2 class="mb-4 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+        Calcule Seu <span class="text-lime">Retorno</span>
+      </h2>
+      <p class="mx-auto max-w-3xl font-sans text-lg md:text-xl text-gray-200">
+        Veja como o VSS se paga rapidamente
+      </p>
+    </div>
+    
+    <div class="max-w-3xl mx-auto">
+      <div class="bg-dark-gray/50 rounded-2xl p-8 md:p-12 border-2 border-white/10">
+        <h3 class="font-display text-2xl font-bold mb-8 text-center text-white">Simulação de ROI</h3>
+        
+        <div class="space-y-6 mb-8">
+          <div class="flex items-center justify-between p-6 bg-dark rounded-xl">
+            <div>
+              <p class="font-sans text-sm text-gray-400 mb-1">Seu ticket médio atual</p>
+              <p class="font-display text-2xl font-bold text-white">R$ 5.000</p>
+            </div>
+          </div>
+          
+          <div class="flex items-center justify-center">
+            <span class="font-display text-4xl text-lime">×</span>
+          </div>
+          
+          <div class="flex items-center justify-between p-6 bg-dark rounded-xl">
+            <div>
+              <p class="font-sans text-sm text-gray-400 mb-1">Apenas 2 clientes a mais por mês</p>
+              <p class="font-display text-2xl font-bold text-white">+2 fechamentos</p>
+            </div>
+          </div>
+          
+          <div class="flex items-center justify-center">
+            <span class="font-display text-4xl text-lime">=</span>
+          </div>
+          
+          <div class="flex items-center justify-between p-6 bg-lime/20 rounded-xl border-2 border-lime">
+            <div class="w-full text-center">
+              <p class="font-sans text-sm text-gray-300 mb-2">Faturamento extra mensal</p>
+              <p class="font-display text-4xl md:text-5xl font-bold text-lime mb-4">R$ 10.000/mês</p>
+              <p class="font-sans text-gray-200">Investimento VSS pago em menos de 1 semana</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-dark rounded-xl p-6 border-2 border-lime/30">
+          <p class="font-display text-lg font-bold text-white mb-3 text-center">📊 Projeção Anual</p>
+          <div class="grid grid-cols-2 gap-4 text-center">
+            <div>
+              <p class="font-sans text-xs text-gray-400 mb-1">FATURAMENTO EXTRA</p>
+              <p class="font-display text-2xl font-bold text-lime">R$ 120.000</p>
+            </div>
+            <div>
+              <p class="font-sans text-xs text-gray-400 mb-1">ROI DO VSS</p>
+              <p class="font-display text-2xl font-bold text-lime">6.000%</p>
+            </div>
+          </div>
+        </div>
+        
+        <p class="font-sans text-sm text-gray-400 text-center mt-6">
+          * Simulação baseada em apenas 2 clientes extras/mês com ticket médio de R$ 5.000
+        </p>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="#investimento" class="inline-flex h-16 items-center justify-center gap-2 rounded-xl bg-lime px-10 font-display text-lg font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
+          Ver Preço do Lote Fundador
+        </a>
+      </div>
     </div>
   </Container>
 </section>
@@ -573,129 +1123,155 @@ const faq = [
 <!-- Investimento Section -->
 <section id="investimento" class="py-24 bg-dark">
   <Container>
-    <div class="max-w-4xl mx-auto text-center mb-16">
+    <div class="max-w-4xl mx-auto text-center mb-12">
       <h2 class="mb-4 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
         Investimento no <span class="text-lime">VSS</span>
       </h2>
       <p class="mx-auto max-w-3xl font-sans text-lg md:text-xl text-gray-200">
-        Lote Fundador: primeiros 100 alunos garantem o preço de lançamento vitaliciamente
+        Lote Fundador: primeiros 100 alunos garantem o menor preço de entrada
       </p>
     </div>
     
-    <div class="max-w-4xl mx-auto">
-      <!-- Tabela de Valor -->
-      <div class="rounded-2xl border-2 border-white/10 bg-white/5 p-8 md:p-12 mb-12">
-        <h3 class="font-display text-2xl md:text-3xl font-bold mb-8 text-center text-white">O Que Está Incluído</h3>
+    <div class="max-w-5xl mx-auto">
+      <!-- Box Único: Lote Fundador -->
+      <div class="rounded-2xl border-2 border-lime/30 bg-gradient-to-br from-lime/10 to-lime/5 p-6 md:p-10">
+        <h3 class="font-display text-2xl md:text-3xl font-bold mb-6 text-center text-white">
+          🔥 Lote Fundador: Primeiros 100 Alunos
+        </h3>
         
-        <p class="font-sans text-lg text-center mb-8 text-gray-200">Veja o quanto você economiza com nosso programa completo:</p>
-        
-        <div class="overflow-x-auto">
-          <table class="w-full mb-8">
-            <tbody class="divide-y divide-white/10">
-              <tr>
-                <td class="py-4 pr-4">
-                  <p class="font-display font-semibold text-white">Growth CRM (12 meses)</p>
-                  <p class="font-sans text-sm text-gray-400">1 sub-conta por 12 meses</p>
-                </td>
-                <td class="py-4 px-4 text-right">
-                  <p class="font-sans text-lg text-white">R$ 6.996</p>
-                  <p class="font-sans text-sm text-gray-400">(R$ 583/mês × 12)</p>
-                </td>
-                <td class="py-4 pl-4 text-right">
-                  <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">Incluído</span>
-                </td>
-              </tr>
-              <tr>
-                <td class="py-4 pr-4">
-                  <p class="font-display font-semibold text-white">Curso "Vendas Escaláveis"</p>
-                  <p class="font-sans text-sm text-gray-400">15 módulos + 60 aulas</p>
-                </td>
-                <td class="py-4 px-4 text-right">
-                  <p class="font-sans text-lg text-white">R$ 997</p>
-                </td>
-                <td class="py-4 pl-4 text-right">
-                  <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">Incluído</span>
-                </td>
-              </tr>
-              <tr>
-                <td class="py-4 pr-4">
-                  <p class="font-display font-semibold text-white">48 Mentorias ao Vivo</p>
-                  <p class="font-sans text-sm text-gray-400">Semanais por 12 semanas</p>
-                </td>
-                <td class="py-4 px-4 text-right">
-                  <p class="font-sans text-lg text-white">R$ 2.400</p>
-                </td>
-                <td class="py-4 pl-4 text-right">
-                  <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">Incluído</span>
-                </td>
-              </tr>
-              <tr class="border-t-2 border-lime/30">
-                <td class="py-4 pr-4">
-                  <p class="font-display font-bold text-xl text-white">TOTAL</p>
-                </td>
-                <td class="py-4 px-4 text-right">
-                  <p class="font-display text-xl font-bold text-lime">≈ R$ 10.393</p>
-                </td>
-                <td class="py-4 pl-4"></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        
-        <p class="font-sans text-sm text-gray-400 text-center">*Valores baseados em ofertas equivalentes no mercado brasileiro e preço oficial do Growth CRM</p>
-      </div>
-      
-      <!-- Preço Especial -->
-      <div class="rounded-2xl border-2 border-lime/30 bg-lime/10 p-8 md:p-12 text-center mb-12">
-        <h3 class="font-display text-2xl md:text-3xl font-bold mb-6 text-white">Lote Fundador: Primeiros 100 Alunos</h3>
-        
-        <div class="mb-8">
-          <p class="font-display text-5xl md:text-6xl font-bold mb-4 text-white">12x R$ 166,42</p>
-          <p class="font-sans text-xl md:text-2xl mb-4 text-gray-200">ou R$ 1.997 à vista</p>
-          <p class="font-display text-xl font-bold text-lime">✅ Economia de 81% sobre o valor total</p>
-        </div>
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-center mb-8">
-          <div class="rounded-lg border-2 border-lime/30 bg-dark/50 p-4">
-            <p class="font-sans text-xs mb-1 text-gray-400">LOTE 1</p>
-            <p class="font-display text-lg font-bold text-lime">R$ 1.997</p>
+        <!-- Grid: Incluído + Preço lado a lado em desktop -->
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          
+          <!-- Coluna Esquerda: O que está incluído -->
+          <div class="space-y-3">
+            <h4 class="font-display text-lg font-bold mb-4 text-lime text-center md:text-left">
+              ✅ Tudo Incluído no Programa:
+            </h4>
+            
+            <div class="space-y-2">
+              <div class="flex items-start gap-3 bg-dark/30 rounded-lg p-3">
+                <span class="text-lime text-xl shrink-0">✓</span>
+                <div>
+                  <p class="font-display font-semibold text-white text-sm">Growth CRM (12 meses)</p>
+                  <p class="font-sans text-xs text-gray-400">Valor: <span class="line-through">R$ 6.996</span></p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-3 bg-dark/30 rounded-lg p-3">
+                <span class="text-lime text-xl shrink-0">✓</span>
+                <div>
+                  <p class="font-display font-semibold text-white text-sm">15 Módulos + 60 Aulas</p>
+                  <p class="font-sans text-xs text-gray-400">Valor: <span class="line-through">R$ 997</span></p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-3 bg-dark/30 rounded-lg p-3">
+                <span class="text-lime text-xl shrink-0">✓</span>
+                <div>
+                  <p class="font-display font-semibold text-white text-sm">48 Mentorias ao Vivo</p>
+                  <p class="font-sans text-xs text-gray-400">Valor: <span class="line-through">R$ 2.400</span></p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-3 bg-dark/30 rounded-lg p-3">
+                <span class="text-lime text-xl shrink-0">✓</span>
+                <div>
+                  <p class="font-display font-semibold text-white text-sm">4 Bônus Exclusivos</p>
+                  <p class="font-sans text-xs text-gray-400">Valor: <span class="line-through">R$ 2.497</span></p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-3 bg-dark/30 rounded-lg p-3">
+                <span class="text-lime text-xl shrink-0">✓</span>
+                <div>
+                  <p class="font-display font-semibold text-white text-sm">Comunidade Vitalícia</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-3 bg-dark/30 rounded-lg p-3">
+                <span class="text-lime text-xl shrink-0">✓</span>
+                <div>
+                  <p class="font-display font-semibold text-white text-sm">Garantia Incondicional 15 dias</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-dark/20 border border-white/10 rounded-lg p-3 mt-4">
+              <p class="font-sans text-xs text-gray-400 mb-1">Valor somado dos itens:</p>
+              <p class="font-sans text-sm text-gray-400 line-through">R$ 12.890</p>
+            </div>
           </div>
-          <div class="rounded-lg border-2 border-white/20 bg-white/5 p-4">
-            <p class="font-sans text-xs mb-1 text-gray-400">LOTE 2</p>
-            <p class="font-display text-lg font-bold text-white">R$ 2.497</p>
+          
+          <!-- Coluna Direita: Preço e CTA -->
+          <div class="flex flex-col justify-between">
+            <div>
+              <div class="bg-lime/20 border-2 border-lime rounded-xl px-6 py-6 mb-6 text-center">
+                <p class="font-sans text-base text-gray-400 line-through mb-3">De R$ 12.890</p>
+                <p class="font-display font-bold mb-3 text-white">
+                  <span class="text-xl md:text-2xl">12x </span>
+                  <span class="text-2xl md:text-3xl">R$</span><span class="text-5xl md:text-6xl">166,42</span>
+                </p>
+                <p class="font-sans text-xl mb-4 text-gray-200">ou <span class="text-lime font-bold text-2xl"><span class="text-lg">R$</span>1.997</span> à vista</p>
+                
+                <div class="border-t-2 border-lime/30 pt-4 mt-4">
+                  <p class="font-display text-xl font-bold text-lime mb-1">✅ Economia de 84,5%</p>
+                  <p class="font-sans text-sm text-white/90">Você economiza R$ 10.893</p>
+                </div>
+              </div>
+              
+              <div class="grid grid-cols-2 gap-3 mb-6">
+                <div class="rounded-lg border-2 border-lime/30 bg-dark/50 p-3 text-center">
+                  <p class="font-sans text-xs mb-1 text-gray-400">LOTE 1</p>
+                  <p class="font-display text-base font-bold text-lime">R$ 1.997</p>
+                </div>
+                <div class="rounded-lg border-2 border-white/20 bg-white/5 p-3 text-center">
+                  <p class="font-sans text-xs mb-1 text-gray-400">LOTE 2</p>
+                  <p class="font-display text-base font-bold text-white">R$ 2.497</p>
+                </div>
+                <div class="rounded-lg border-2 border-white/20 bg-white/5 p-3 text-center">
+                  <p class="font-sans text-xs mb-1 text-gray-400">LOTE 3</p>
+                  <p class="font-display text-base font-bold text-white">R$ 2.997</p>
+                </div>
+                <div class="rounded-lg border-2 border-white/20 bg-white/5 p-3 text-center">
+                  <p class="font-sans text-xs mb-1 text-gray-400">FINAL</p>
+                  <p class="font-display text-base font-bold text-white">R$ 3.497</p>
+                </div>
+              </div>
+              
+              <div class="rounded-lg p-4 bg-dark/40 border border-white/20 mb-6">
+                <h4 class="font-display text-sm font-bold mb-1 text-white">🔒 Vantagem dos Fundadores</h4>
+                <p class="font-sans text-xs text-gray-200">
+                  Os primeiros <span class="font-bold text-lime">100 alunos</span> garantem o menor preço de entrada: R$ 1.997 no primeiro ano.
+                </p>
+              </div>
+            </div>
+            
+            <div>
+              <button 
+                id="openCheckoutModal" 
+                class="w-full inline-flex items-center justify-center rounded-xl font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 hover:scale-105 bg-lime hover:bg-lime/90 text-dark shadow-2xl shadow-lime/50 focus:ring-lime min-h-14 py-4 px-6 text-base font-display"
+              >
+                🚀 Sim, Quero Escalar Minhas Vendas Agora
+              </button>
+              
+              <p class="mt-3 font-sans text-xs text-white/90 text-center">
+                🔒 Pagamento seguro | Acesso imediato
+              </p>
+              
+              <div class="mt-4 flex justify-center">
+                <div class="rounded-lg bg-white/95 px-4 py-2">
+                  <img 
+                    src={hotmartSecurity.src} 
+                    alt="Formas de pagamento aceitas" 
+                    class="h-16 object-contain"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="rounded-lg border-2 border-white/20 bg-white/5 p-4">
-            <p class="font-sans text-xs mb-1 text-gray-400">LOTE 3</p>
-            <p class="font-display text-lg font-bold text-white">R$ 2.997</p>
-          </div>
-          <div class="rounded-lg border-2 border-white/20 bg-white/5 p-4">
-            <p class="font-sans text-xs mb-1 text-gray-400">FINAL</p>
-            <p class="font-display text-lg font-bold text-white">R$ 3.497</p>
-          </div>
+          
         </div>
-        
-        <div class="rounded-xl p-6 mb-8 bg-dark/50 border border-white/20">
-          <h4 class="font-display text-base font-bold mb-2 text-white">🔒 Vantagem dos Fundadores</h4>
-          <p class="font-sans text-sm text-gray-200">
-            Os primeiros <span class="font-bold text-lime">100 alunos</span> congelam este preço na renovação anual. Você sempre pagará R$ 1.997/ano, mesmo quando o programa custar R$ 3.497.
-          </p>
-        </div>
-        
-        <a href="#investimento" class="inline-flex h-16 items-center justify-center gap-2 rounded-xl bg-lime px-10 font-display text-lg font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
-          Garantir Vaga por 12× R$ 166,42
-        </a>
-        
-        <p class="font-sans text-xs mt-4 text-gray-400">Pagamento 100% seguro via Hotmart</p>
-      </div>
-      
-      <!-- CTA Final -->
-      <div class="text-center rounded-2xl border-2 border-white/10 bg-white/5 p-8">
-        <p class="font-sans text-lg md:text-xl text-gray-200 mb-6">
-          ✨ Faça parte dos primeiros 100 alunos e garanta o preço de lançamento vitaliciamente
-        </p>
-        <a href="#investimento" class="inline-flex h-16 items-center justify-center gap-2 rounded-xl bg-lime px-10 font-display text-lg font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
-          Quero Garantir Minha Vaga
-        </a>
       </div>
     </div>
   </Container>
@@ -710,7 +1286,7 @@ const faq = [
       </h2>
       
       <div class="space-y-4">
-        {faq.map((item, index) => (
+        {faq.map((item) => (
           <details class="bg-dark/50 rounded-xl p-6 hover:bg-dark transition-all group border-2 border-white/10 hover:border-lime/30">
             <summary class="font-display font-bold text-lg cursor-pointer list-none flex items-center justify-between text-white">
               <span>{item.q}</span>
@@ -734,6 +1310,51 @@ const faq = [
   </Container>
 </section>
 
+<!-- Modal Checkout -->
+<div id="checkoutModal" class="checkout-modal">
+  <div class="checkout-modal-content">
+    <button id="closeCheckoutModal" class="checkout-modal-close" aria-label="Fechar">×</button>
+    
+    <!-- Header -->
+    <div class="checkout-modal-header">
+      <h3>
+        🚀 <span class="highlight">Lote Fundador</span> - Preço Especial
+      </h3>
+    </div>
+
+    <!-- Iframe -->
+    <div class="checkout-iframe-container">
+      <iframe
+        src="https://api.gsh.digital/widget/form/UY5sq22SQZfoIym1Udp1"
+        style="width:100%;height:100%;border:none;"
+        id="inline-UY5sq22SQZfoIym1Udp1" 
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name="Vendas Sem Segredos - Compra"
+        data-height="490"
+        data-layout-iframe-id="inline-UY5sq22SQZfoIym1Udp1"
+        data-form-id="UY5sq22SQZfoIym1Udp1"
+        title="Vendas Sem Segredos - Compra"
+      ></iframe>
+    </div>
+
+    <!-- Footer -->
+    <div class="checkout-modal-footer">
+      <p>🔒 Pagamento 100% seguro | Acesso imediato após confirmação</p>
+      <img 
+        src={hotmartSecurity.src} 
+        alt="Formas de pagamento aceitas" 
+        loading="lazy"
+      />
+    </div>
+  </div>
+</div>
+
 <!-- Final CTA Section -->
 <section class="py-24 bg-dark">
   <Container>
@@ -744,12 +1365,91 @@ const faq = [
       <p class="font-sans text-lg md:text-xl mb-8 text-gray-200 max-w-3xl mx-auto">
         Sistema completo implementado em 90 dias. CRM incluído + 48 mentorias ao vivo.
       </p>
+      
+      <div class="bg-dark-gray/50 rounded-2xl p-8 mb-8 border-2 border-lime/30 max-w-2xl mx-auto">
+        <p class="font-display text-2xl font-bold mb-4 text-white">
+          📦 Tudo Incluído no Lote Fundador:
+        </p>
+        <div class="grid md:grid-cols-2 gap-4 text-left">
+          <div class="flex items-center gap-2">
+            <span class="text-lime">✓</span>
+            <span class="font-sans text-sm text-gray-200">15 Módulos + 60 Aulas</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-lime">✓</span>
+            <span class="font-sans text-sm text-gray-200">48 Mentorias ao Vivo</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-lime">✓</span>
+            <span class="font-sans text-sm text-gray-200">Growth CRM 12 meses</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-lime">✓</span>
+            <span class="font-sans text-sm text-gray-200">4 Bônus Exclusivos</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-lime">✓</span>
+            <span class="font-sans text-sm text-gray-200">Comunidade Vitalícia</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-lime">✓</span>
+            <span class="font-sans text-sm text-gray-200">Garantia 15 dias</span>
+          </div>
+        </div>
+      </div>
+      
       <a href="#investimento" class="inline-flex h-16 items-center justify-center gap-2 rounded-xl bg-lime px-10 font-display text-lg font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
-        Garantir Vaga no Lote Fundador
+        🔥 Garantir Vaga no Lote Fundador Agora
       </a>
-      <p class="font-sans text-sm mt-6 text-gray-400">
-        ⚡ Preço sobe após os primeiros 100 clientes
-      </p>
+      
+      <div class="mt-6">
+        <p class="font-sans text-xs text-gray-400">
+          Preço promocional do Lote Fundador. Após 100 alunos, o valor aumenta progressivamente.
+        </p>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- Avisos Legais -->
+<section class="py-12 bg-dark-gray border-t border-white/10">
+  <Container>
+    <div class="max-w-4xl mx-auto space-y-6">
+      
+      <!-- Aviso Legal -->
+      <div class="bg-dark/20 rounded-lg border border-white/5 p-6">
+        <h3 class="font-sans text-xs font-semibold mb-3 text-gray-400 uppercase tracking-wide">Aviso Legal</h3>
+        
+        <div class="space-y-3 font-sans text-xs text-gray-500 leading-relaxed">
+          <p>
+            <strong class="text-gray-400">Informações sobre o Programa:</strong> O valor de R$ 1.997 garante acesso vitalício ao curso completo (15 módulos + 60 aulas) e à comunidade VSS Alumni. Incluso no primeiro ano: Growth CRM por 12 meses + 48 mentorias ao vivo + suporte ativo. Após o primeiro ano, a renovação é opcional e cobrada mensalmente (R$ 297/mês) para manter acesso ao CRM, mentorias ao vivo e suporte contínuo. Você pode cancelar a renovação a qualquer momento, sem multas. Seu acesso ao curso e comunidade permanece vitalício.
+          </p>
+          
+          <p>
+            <strong class="text-gray-400">Resultados:</strong> Nenhuma informação contida nesta página ou no produto, assim como qualquer referência ao desempenho passado ou potencial de uma estratégia abordada no conteúdo, não é e não deve ser interpretada como uma recomendação ou como garantia de qualquer resultado. Os resultados podem variar de acordo com a dedicação, aplicação das estratégias e contexto de cada negócio.
+          </p>
+        </div>
+      </div>
+
+      <!-- Copyright e Links -->
+      <div class="text-center pt-4 border-t border-white/10">
+        <p class="font-sans text-sm text-gray-300 mb-3">
+          <strong class="text-white">Vendas Sem Segredos LTDA</strong>, ©2026 – Todos os Direitos Reservados
+        </p>
+        <p class="font-sans text-xs text-gray-400 mb-3">
+          CNPJ: 11.785.245/0001-98
+        </p>
+        <div class="flex items-center justify-center gap-4 text-xs">
+          <a href="/termos" class="text-lime hover:text-lime/80 transition-colors">
+            Termos de Uso
+          </a>
+          <span class="text-gray-600">•</span>
+          <a href="/privacidade" class="text-lime hover:text-lime/80 transition-colors">
+            Políticas de Privacidade
+          </a>
+        </div>
+      </div>
+
     </div>
   </Container>
 </section>
@@ -758,4 +1458,149 @@ const faq = [
   details summary::-webkit-details-marker {
     display: none;
   }
+
+  /* Modal Checkout */
+  .checkout-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .checkout-modal.active {
+    display: flex;
+  }
+
+  .checkout-modal-content {
+    background: white;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .checkout-modal-header {
+    background: linear-gradient(135deg, #020617 0%, #1e293b 100%);
+    padding: 2rem 3rem 1.5rem 1.5rem;
+    border-bottom: 3px solid #a3ff3f;
+  }
+
+  .checkout-modal-header h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .checkout-modal-header .highlight {
+    color: #a3ff3f;
+  }
+
+  .checkout-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  .checkout-modal-close:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+  }
+
+  .checkout-iframe-container {
+    width: 100%;
+    height: 550px;
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  .checkout-modal-footer {
+    background: #f8fafc;
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+  }
+
+  .checkout-modal-footer p {
+    font-size: 0.875rem;
+    color: #475569;
+    margin: 0 0 0.75rem 0;
+    font-weight: 500;
+  }
+
+  .checkout-modal-footer img {
+    max-height: 60px;
+    margin: 0 auto;
+  }
+
+  @media (max-height: 700px) {
+    .checkout-iframe-container {
+      height: 60vh;
+    }
+  }
 </style>
+
+<script src="https://api.gsh.digital/js/form_embed.js"></script>
+
+<script>
+  // Modal Checkout Controls
+  const modal = document.getElementById('checkoutModal');
+  const openBtn = document.getElementById('openCheckoutModal');
+  const closeBtn = document.getElementById('closeCheckoutModal');
+
+  if (openBtn && modal && closeBtn) {
+    openBtn.addEventListener('click', () => {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    // Fechar ao clicar fora do modal
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Fechar com ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+</script>

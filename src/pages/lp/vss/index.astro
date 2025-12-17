@@ -29,12 +29,19 @@ if (!AB_TEST_CONFIG.enabled) {
 // Distribui tráfego aleatoriamente baseado na configuração
 const random = Math.random() * 100;
 let cumulative = 0;
-let selectedVersion = 'a';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+let selectedVersion: string = 'a';
 
 for (let i = 0; i < AB_TEST_CONFIG.versions.length; i++) {
-  cumulative += AB_TEST_CONFIG.distribution[i];
-  if (random < cumulative) {
-    selectedVersion = AB_TEST_CONFIG.versions[i];
+  const distributionValue = AB_TEST_CONFIG.distribution[i];
+  const versionValue = AB_TEST_CONFIG.versions[i];
+  
+  if (distributionValue !== undefined) {
+    cumulative += distributionValue;
+  }
+  
+  if (random < cumulative && versionValue !== undefined) {
+    selectedVersion = versionValue;
     break;
   }
 }

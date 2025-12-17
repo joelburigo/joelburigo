@@ -1,0 +1,46 @@
+---
+// Roteador inteligente para testes A/B
+// Distribui tráfego entre as versões ou redireciona baseado em query param
+
+const { request } = Astro;
+const url = new URL(request.url);
+const versionParam = url.searchParams.get('v');
+
+// Se houver parâmetro ?v=a ou ?v=b, redireciona para versão específica
+if (versionParam) {
+  const validVersions = ['a', 'b', 'c', 'd'];
+  if (validVersions.includes(versionParam.toLowerCase())) {
+    return Astro.redirect(`/lp/vss/${versionParam.toLowerCase()}${url.search}`);
+  }
+}
+
+// Configuração do teste A/B
+const AB_TEST_CONFIG = {
+  enabled: false, // Ative quando tiver versão B pronta
+  versions: ['a', 'b'], // Versões ativas no teste
+  distribution: [50, 50], // Porcentagem de tráfego para cada versão (deve somar 100)
+};
+
+// Se teste A/B estiver desativado, sempre vai para versão A (controle)
+if (!AB_TEST_CONFIG.enabled) {
+  return Astro.redirect(`/lp/vss/a${url.search}`);
+}
+
+// Distribui tráfego aleatoriamente baseado na configuração
+const random = Math.random() * 100;
+let cumulative = 0;
+let selectedVersion = 'a';
+
+for (let i = 0; i < AB_TEST_CONFIG.versions.length; i++) {
+  cumulative += AB_TEST_CONFIG.distribution[i];
+  if (random < cumulative) {
+    selectedVersion = AB_TEST_CONFIG.versions[i];
+    break;
+  }
+}
+
+// Redireciona para a versão selecionada mantendo query params
+return Astro.redirect(`/lp/vss/${selectedVersion}${url.search}`);
+---
+
+<!-- Este arquivo só executa o redirect, não renderiza nada -->

@@ -1,0 +1,188 @@
+---
+// Layout base para Landing Pages
+// Componente reutilizável que remove header/footer e otimiza para conversão
+
+interface Props {
+  title: string
+  description: string
+  keywords?: string
+  ogImage?: string
+  version?: string
+  product?: string
+  noIndex?: boolean
+}
+
+const {
+  title,
+  description,
+  keywords = '',
+  ogImage = '/images/joel-burigo-vendas-sem-segredos.webp',
+  version = 'a',
+  product = 'generic',
+  noIndex = false,
+} = Astro.props
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    
+    <!-- SEO -->
+    {noIndex && <meta name="robots" content="noindex, nofollow" />}
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Preconnect para performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Analytics - Data Layer -->
+    <script is:inline define:vars={{ version, product }}>
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'pageType': 'landing-page',
+        'product': product,
+        'version': version,
+        'testGroup': version === 'a' ? 'control' : 'variation'
+      });
+    </script>
+    
+    <!-- Google Analytics 4 -->
+    <!-- Adicione seu GA4 aqui -->
+    
+    <!-- Facebook Pixel -->
+    <!-- Adicione seu Pixel aqui -->
+    
+    <slot name="head" />
+  </head>
+  <body class="antialiased">
+    <!-- Slot principal para o conteúdo -->
+    <slot />
+    
+    <!-- Analytics padrão para todas as LPs -->
+    <script is:inline define:vars={{ version }}>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Track CTA clicks
+        const ctaButtons = document.querySelectorAll('a[href*="hotmart"], a[href*="checkout"], button[data-cta]');
+        ctaButtons.forEach((btn, index) => {
+          btn.addEventListener('click', () => {
+            const btnText = btn.textContent?.trim() || `CTA ${index + 1}`;
+            
+            // Google Analytics
+            if (window.gtag) {
+              gtag('event', 'cta_click', {
+                'event_category': 'engagement',
+                'event_label': btnText,
+                'version': version,
+                'value': 1
+              });
+            }
+            
+            // Facebook Pixel
+            if (window.fbq) {
+              fbq('track', 'InitiateCheckout', {
+                content_name: btnText,
+                value: 597.00,
+                currency: 'BRL'
+              });
+            }
+          });
+        });
+        
+        // Track scroll depth (25%, 50%, 75%, 100%)
+        let maxScrollDepth = 0;
+        const trackScrollMilestone = (depth) => {
+          if (depth > maxScrollDepth) {
+            maxScrollDepth = depth;
+            if (window.gtag) {
+              gtag('event', 'scroll_depth', {
+                'event_category': 'engagement',
+                'event_label': `${depth}%`,
+                'version': version,
+                'value': depth
+              });
+            }
+          }
+        };
+        
+        window.addEventListener('scroll', () => {
+          const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const scrolled = window.scrollY;
+          const percentage = Math.round((scrolled / scrollHeight) * 100);
+          
+          if (percentage >= 25 && maxScrollDepth < 25) trackScrollMilestone(25);
+          if (percentage >= 50 && maxScrollDepth < 50) trackScrollMilestone(50);
+          if (percentage >= 75 && maxScrollDepth < 75) trackScrollMilestone(75);
+          if (percentage >= 100 && maxScrollDepth < 100) trackScrollMilestone(100);
+        });
+        
+        // Track time on page
+        const startTime = Date.now();
+        window.addEventListener('beforeunload', () => {
+          const timeSpent = Math.round((Date.now() - startTime) / 1000);
+          if (window.gtag) {
+            gtag('event', 'time_on_page', {
+              'event_category': 'engagement',
+              'event_label': `${timeSpent}s`,
+              'version': version,
+              'value': timeSpent
+            });
+          }
+        });
+      });
+    </script>
+    
+    <slot name="scripts" />
+  </body>
+</html>
+
+<style is:global>
+  /* Reset básico */
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Otimizações para conversão */
+  a[href*="hotmart"],
+  a[href*="checkout"],
+  button[data-cta] {
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  /* Remove outline em foco para melhor UX */
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+</style>

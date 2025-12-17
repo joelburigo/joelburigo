@@ -1,0 +1,117 @@
+---
+// Template para criar nova versão de teste
+// Copie este arquivo e renomeie para b.astro, c.astro, etc.
+
+// IMPORTANTE: Ao criar nova versão:
+// 1. Atualize a meta tag 'version' abaixo
+// 2. Documente as mudanças no CHANGELOG.md
+// 3. Defina sua hipótese de teste
+// 4. Configure analytics para rastrear esta versão
+// 5. Ative o teste no index.astro
+
+import VSSLandingPage from '../../../components/pages/VSSLandingPage.astro'
+// OU crie um novo componente para esta versão:
+// import VSSLandingPageB from '../../../components/lp/vss/LandingPageB.astro'
+
+const seo = {
+  title: 'Transforme seu negócio com Vendas Sem Segredos | Joel Burigo',
+  description:
+    'Programa completo de aceleração: 17 módulos, mentorias semanais, Growth CRM incluído (R$ 5.964/ano grátis). Apenas R$ 597 no lançamento. Vagas limitadas!',
+  keywords:
+    'vendas sem segredos, acelerar vendas, growth crm, mentoria vendas, joel burigo, marketing digital, framework 6ps',
+}
+
+// Variável para identificar a versão nos analytics
+const VERSION = 'TEMPLATE' // Mude para 'b', 'c', etc.
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{seo.title}</title>
+    <meta name="description" content={seo.description} />
+    <meta name="keywords" content={seo.keywords} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={seo.title} />
+    <meta property="og:description" content={seo.description} />
+    <meta property="og:image" content="/images/joel-burigo-vendas-sem-segredos.webp" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={seo.title} />
+    <meta name="twitter:description" content={seo.description} />
+    <meta name="twitter:image" content="/images/joel-burigo-vendas-sem-segredos.webp" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Analytics - Google Analytics 4 -->
+    <script is:inline define:vars={{ VERSION }}>
+      // GTM Data Layer
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'pageType': 'landing-page',
+        'product': 'vss',
+        'version': VERSION.toLowerCase(),
+        'testGroup': VERSION === 'a' ? 'control' : 'variation'
+      });
+    </script>
+  </head>
+  <body class="antialiased">
+    <VSSLandingPage />
+    
+    <!-- Analytics tracking para conversão -->
+    <script is:inline define:vars={{ VERSION }}>
+      // Track CTA clicks
+      document.addEventListener('DOMContentLoaded', () => {
+        const ctaButtons = document.querySelectorAll('a[href*="hotmart"], button[data-cta]');
+        ctaButtons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            if (window.gtag) {
+              gtag('event', 'cta_click', {
+                'event_category': 'engagement',
+                'event_label': `vss_lp_version_${VERSION.toLowerCase()}`,
+                'value': 1
+              });
+            }
+            if (window.fbq) {
+              fbq('track', 'InitiateCheckout', {
+                content_name: `VSS Landing Page ${VERSION}`,
+                value: 597.00,
+                currency: 'BRL'
+              });
+            }
+          });
+        });
+        
+        // Track scroll depth
+        let scrollDepth = 0;
+        window.addEventListener('scroll', () => {
+          const currentScroll = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+          if (currentScroll > scrollDepth && currentScroll % 25 === 0) {
+            scrollDepth = currentScroll;
+            if (window.gtag) {
+              gtag('event', 'scroll_depth', {
+                'event_category': 'engagement',
+                'event_label': `${scrollDepth}%`,
+                'version': VERSION.toLowerCase(),
+                'value': scrollDepth
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+</style>

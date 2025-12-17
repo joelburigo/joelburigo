@@ -1,0 +1,134 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/layout/Header.astro'
+import Footer from '../components/layout/Footer.astro'
+import Container from '../components/ui/Container.astro'
+import Button from '../components/ui/Button.astro'
+
+const seo = {
+  title: '404 - Página Não Encontrada | Joel Burigo',
+  description: 'Ops! Esta página não existe. Vamos te redirecionar para onde tem vendas acontecendo.',
+}
+---
+
+<Layout title={seo.title} description={seo.description}>
+  <Header />
+  
+  <main class="min-h-screen bg-dark pt-16 md:pt-20">
+    <section class="flex min-h-[80vh] items-center py-12 md:py-16">
+      <Container>
+        <div class="mx-auto max-w-4xl text-center">
+          <!-- 404 Animado -->
+          <div class="mb-8">
+            <h1 class="mb-4 font-display text-9xl font-bold text-lime animate-bounce md:text-[12rem]">
+              404
+            </h1>
+            <div class="mx-auto mb-6 h-1 w-32 rounded-full bg-gradient-to-r from-transparent via-lime to-transparent"></div>
+          </div>
+
+          <!-- Mensagem Principal -->
+          <div class="mb-8">
+            <h2 class="mb-4 font-display text-3xl font-bold text-white md:text-4xl">
+              🤔 Esta página não converteu...
+            </h2>
+            <p class="mb-2 font-sans text-body-lg text-gray-200">
+              Ops! Parece que você seguiu um link quebrado.
+            </p>
+            <p class="font-sans text-body text-gray-400">
+              Ou talvez esteja procurando por aquele lead fantasma que nunca responde no WhatsApp.
+            </p>
+          </div>
+
+          <!-- Cards de Brincadeiras -->
+          <div class="mb-12 grid grid-cols-1 gap-4 md:grid-cols-3">
+            <div class="rounded-xl border border-lime/20 bg-lime/5 p-6">
+              <div class="mb-2 text-4xl">📊</div>
+              <p class="font-sans text-body-sm text-gray-300">
+                Taxa de conversão desta página: <span class="font-bold text-red-400">0%</span>
+              </p>
+            </div>
+            <div class="rounded-xl border border-lime/20 bg-lime/5 p-6">
+              <div class="mb-2 text-4xl">🎯</div>
+              <p class="font-sans text-body-sm text-gray-300">
+                Você está perdido igual vendedor sem CRM
+              </p>
+            </div>
+            <div class="rounded-xl border border-lime/20 bg-lime/5 p-6">
+              <div class="mb-2 text-4xl">💸</div>
+              <p class="font-sans text-body-sm text-gray-300">
+                Oportunidade perdida. Mas calma, ainda dá tempo!
+              </p>
+            </div>
+          </div>
+
+          <!-- Citações Engraçadas -->
+          <div class="mb-8 rounded-2xl border border-lime/30 bg-white/5 p-8">
+            <p class="mb-4 font-display text-xl italic text-white">
+              "Se você está perdido aqui, imagina seu cliente no seu funil de vendas sem processo."
+            </p>
+            <p class="font-sans text-sm text-gray-400">
+              — Joel Burigo (provavelmente)
+            </p>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button variant="primary" size="lg" href="/">
+              🏠 Voltar Para Home
+            </Button>
+            <Button variant="outline" size="lg" href="/blog" class="border-lime text-lime hover:bg-lime">
+              📚 Ver Artigos do Blog
+            </Button>
+          </div>
+
+          <!-- Mensagem Final -->
+          <div class="mt-12 rounded-xl bg-gradient-to-r from-lime/10 to-transparent p-6">
+            <p class="font-sans text-body text-gray-300">
+              <span class="font-bold text-lime">Dica de vendas:</span> Assim como esta página, leads sem follow-up também desaparecem. 
+              <a href="/vendas-sem-segredos" class="font-semibold text-lime underline hover:text-lime/80">
+                Aprenda a não perder mais nenhum
+              </a>
+            </p>
+          </div>
+
+          <!-- Status Code -->
+          <div class="mt-8">
+            <p class="font-mono text-xs text-gray-600">
+              Error Code: 404 | Page Not Found | Conversion Rate: 0%
+            </p>
+          </div>
+        </div>
+      </Container>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  h1 {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  section {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>

@@ -29,7 +29,6 @@ if (!AB_TEST_CONFIG.enabled) {
 // Distribui tráfego aleatoriamente baseado na configuração
 const random = Math.random() * 100;
 let cumulative = 0;
-let selectedVersion: string = 'a';
 
 for (let i = 0; i < AB_TEST_CONFIG.versions.length; i++) {
   const distributionValue = AB_TEST_CONFIG.distribution[i];
@@ -40,13 +39,13 @@ for (let i = 0; i < AB_TEST_CONFIG.versions.length; i++) {
   }
   
   if (random < cumulative && versionValue !== undefined) {
-    selectedVersion = versionValue;
-    break;
+    return Astro.redirect(`/lp/vss/${versionValue}${url.search}`);
   }
 }
 
-// Redireciona para a versão selecionada mantendo query params
-return Astro.redirect(`/lp/vss/${selectedVersion}${url.search}`);
+// Fallback para a primeira versão configurada, mantendo query params
+const fallbackVersion = AB_TEST_CONFIG.versions[0] ?? 'a';
+return Astro.redirect(`/lp/vss/${fallbackVersion}${url.search}`);
 ---
 
 <!-- Este arquivo só executa o redirect, não renderiza nada -->

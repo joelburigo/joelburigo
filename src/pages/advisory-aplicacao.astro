@@ -4,6 +4,7 @@ import Header from '../components/layout/Header.astro'
 import Footer from '../components/layout/Footer.astro'
 import Container from '../components/ui/Container.astro'
 import Icons from '../components/ui/Icons.astro'
+import HighLevelForm from '../components/ui/HighLevelForm.astro'
 
 const seo = {
   title: 'Aplicar Para Advisory - Sprint e Conselho Executivo | Joel Burigo',
@@ -126,19 +127,11 @@ const seo = {
           </div>
 
           <!-- Formulário -->
-          <div class="rounded-2xl border-2 border-lime/30 bg-gradient-to-b from-dark to-slate-800 p-4">
-            <div id="form-container" class="min-h-[800px]">
-              <!-- Loading State -->
-              <div id="form-loading" class="flex min-h-[800px] items-center justify-center">
-                <div class="text-center">
-                  <div class="mb-4 inline-block h-12 w-12 animate-spin rounded-full border-4 border-lime/30 border-t-lime"></div>
-                  <p class="font-sans text-body text-gray-300">Carregando formulário...</p>
-                </div>
-              </div>
-              
-              <!-- Iframe will be injected here -->
-              <div id="form-iframe-wrapper" class="hidden"></div>
-            </div>
+          <div class="rounded-2xl border-2 border-lime/30 bg-gradient-to-b from-dark to-slate-800 p-8">
+            <HighLevelForm 
+              formId="GwMlk5A2LFPxqbNJC1j2"
+              height="2042px"
+            />
           </div>
 
           <!-- Disclaimer -->
@@ -165,38 +158,6 @@ const seo = {
 
   <Footer />
 </Layout>
-
-<script>
-  // Lazy load form iframe - ATUALIZAR COM URL DO FORMULÁRIO REAL
-  document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('form-iframe-wrapper');
-    const loading = document.getElementById('form-loading');
-    
-    if (!container || !loading) return;
-
-    // Create and inject iframe
-    const iframe = document.createElement('iframe');
-    // TODO: Substituir pela URL real do formulário HighLevel para Advisory
-    iframe.src = 'https://api.gsh.digital/widget/form/SEU_FORM_ID_AQUI'; // ATUALIZAR
-    iframe.style.cssText = 'width: 100%; border: none; overflow: hidden;';
-    iframe.scrolling = 'no';
-    iframe.id = 'advisory_form_' + Date.now();
-    
-    // Show iframe when loaded
-    iframe.onload = () => {
-      loading.classList.add('hidden');
-      container.classList.remove('hidden');
-    };
-
-    container.appendChild(iframe);
-
-    // Load external script
-    const script = document.createElement('script');
-    script.src = 'https://api.gsh.digital/js/form_embed.js';
-    script.type = 'text/javascript';
-    document.body.appendChild(script);
-  });
-</script>
 
 <style>
   /* Smooth fade in animation */

@@ -406,22 +406,33 @@ const certificacoes = [
 <section class="relative overflow-hidden bg-dark text-white py-12 md:py-16 lg:py-20">
   
   <Container>
-    <div class="relative z-10 max-w-5xl mx-auto text-center">
-      <span class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/20 px-6 py-2 font-display text-sm font-bold text-lime backdrop-blur-sm">
-        PROGRAMA DE IMPLEMENTAÇÃO | 90 DIAS
-      </span>
-      
-      <h1 class="mb-6 font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
-        Vendas Sem Segredos
-      </h1>
-      
-      <p class="mb-4 font-sans text-2xl md:text-3xl font-semibold text-white/90">
-        Transforme Vendas Aleatórias em Vendas Previsíveis
-      </p>
-      
-      <p class="mb-10 font-sans text-lg md:text-xl text-blue-100 max-w-3xl mx-auto">
-        Sistema completo de vendas escaláveis implementado em 90 dias. CRM profissional incluído + 48 mentorias + comunidade exclusiva.
-      </p>
+    <div class="relative z-10 max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/20 px-6 py-2 font-display text-sm font-bold text-lime backdrop-blur-sm">
+          PROGRAMA DE IMPLEMENTAÇÃO | 90 DIAS
+        </span>
+        
+        <h1 class="mb-6 font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+          Vendas Sem Segredos
+        </h1>
+        
+        <p class="mb-4 font-sans text-2xl md:text-3xl font-semibold text-white/90">
+          Transforme Vendas Aleatórias em Vendas Previsíveis
+        </p>
+        
+        <p class="mb-8 font-sans text-lg md:text-xl text-blue-100 max-w-3xl mx-auto">
+          Sistema completo de vendas escaláveis implementado em 90 dias. CRM profissional incluído + 48 mentorias + comunidade exclusiva.
+        </p>
+      </div>
+
+      <!-- Video Player -->
+      <div class="mb-8">
+        <VideoPlayer
+          videoUrl="https://www.youtube.com/watch?v=nCf8pnEjB5M"
+          title="Veja como funciona o Vendas sem Segredos"
+          class="w-full"
+        />
+      </div>
       
       <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
         <a href="#investimento" class="inline-flex h-16 items-center justify-center gap-2 rounded-xl bg-lime px-10 font-display text-lg font-bold text-dark shadow-2xl shadow-lime/30 transition-all hover:scale-[1.02] hover:bg-lime/90 hover:shadow-lime/40">
@@ -461,36 +472,6 @@ const certificacoes = [
           <p class="font-sans text-sm md:text-base text-gray-300">{item.label}</p>
         </div>
       ))}
-    </div>
-  </Container>
-</section>
-
-<!-- VSL Section -->
-<section class="py-12 md:py-16 bg-dark">
-  <Container>
-    <div class="max-w-5xl mx-auto">
-      <div class="mb-8 text-center">
-        <h2 class="mb-4 font-display text-2xl md:text-3xl lg:text-4xl font-bold text-white">
-          Veja Como Funciona o <span class="text-lime">Vendas Sem Segredos</span>
-        </h2>
-        <p class="font-sans text-base md:text-lg text-gray-200 max-w-3xl mx-auto">
-          Descubra como transformar vendas aleatórias em vendas previsíveis em apenas 90 dias
-        </p>
-      </div>
-      
-      <div class="w-full">
-        <VideoPlayer
-          videoUrl="https://www.youtube.com/watch?v=nCf8pnEjB5M"
-          title="Veja como funciona o Vendas sem Segredos"
-          class="w-full"
-        />
-      </div>
-      
-      <div class="mt-8 text-center">
-        <a href="#investimento" class="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-lime px-8 font-display text-base font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
-          Ver Preço do Lote Fundador
-        </a>
-      </div>
     </div>
   </Container>
 </section>

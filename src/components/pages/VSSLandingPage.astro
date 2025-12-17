@@ -1,6 +1,7 @@
 ---
 import Container from '../ui/Container.astro'
 import VideoPlayer from '../ui/VideoPlayer.astro'
+import Icons from '../ui/Icons.astro'
 import { getWhatsAppLink } from '../../data/contact'
 import joelBurigoImage from '../../assets/images/lp/vss/joel-burigo-vendas-sem-segredos-.webp'
 import garantia15DiasImage from '../../assets/images/lp/vss/garantia-15-dias.webp'
@@ -10,34 +11,34 @@ import hotmartSecurity from '../../assets/images/hotmart-payment-security.png'
 // Benefícios principais
 const beneficios = [
   { 
-    emoji: '✅', 
-    title: 'Domine as redes sociais e plataformas de anúncios', 
-    desc: 'Aprenda a criar conteúdos incríveis e campanhas eficientes para atrair e engajar seus clientes ideais.' 
+    icon: 'target', 
+    title: 'Descubra Quem é Seu Cliente Ideal', 
+    desc: 'Pare de tentar vender para todo mundo. Defina exatamente quem você atende e como se posicionar no mercado.' 
   },
   { 
-    emoji: '🎯', 
-    title: 'Conquiste clientes com Inside Sales e Outbound 2.0', 
-    desc: 'Prospecção e construção de listas infalíveis para alcançar seu público-alvo com sucesso.' 
+    icon: 'package', 
+    title: 'Estruture Sua Oferta e Precifique Direito', 
+    desc: 'O que você vende, como apresentar, quanto cobrar e como fazer propostas que seus clientes dizem "sim".' 
   },
   { 
-    emoji: '📈', 
-    title: 'Crie fluxos de prospecção escaláveis', 
-    desc: 'Otimize seu processo de vendas e conquiste clientes de maneira consistente e eficiente.' 
+    icon: 'bot', 
+    title: 'Tenha um Sistema que Trabalha Para Você', 
+    desc: 'Sistema profissional para organizar clientes, enviar mensagens automáticas e criar páginas de venda. Já sai configurado.' 
   },
   { 
-    emoji: '💎', 
-    title: 'Técnicas de negociação e fechamento de negócios', 
-    desc: 'Transforme leads em clientes fiéis e apaixonados pela sua marca.' 
+    icon: 'rocket', 
+    title: 'Aprenda a Buscar Clientes e Anunciar', 
+    desc: 'Duas formas de conseguir clientes: buscar ativamente (LinkedIn, WhatsApp, ligações) ou fazer anúncios pagos.' 
   },
   { 
-    emoji: '❤️', 
-    title: 'Fidelize seus clientes com pós-venda', 
-    desc: 'Garanta a satisfação e a fidelização dos clientes, construindo relacionamentos duradouros.' 
+    icon: 'file-text', 
+    title: 'Tenha Tudo Documentado e Organizado', 
+    desc: 'Roteiros de vendas prontos, mensagens que funcionam e processos escritos. Você ou sua equipe seguem e vendem.' 
   },
   { 
-    emoji: '😊', 
-    title: 'Construa uma Máquina de Vendas Perfeita', 
-    desc: 'Integre estratégias e crie um funil poderoso para maximizar seus resultados.' 
+    icon: 'users', 
+    title: 'Monte e Treine Sua Equipe de Vendas', 
+    desc: 'Como contratar vendedores, treinar eles e acompanhar os números certos para crescer com segurança.' 
   }
 ]
 
@@ -138,32 +139,32 @@ const modulos = [
 // Diferenciais do programa
 const diferenciais = [
   { 
-    emoji: '📚', 
+    icon: 'book-open', 
     title: '15 Módulos Completos',
     desc: '15 módulos, 60 aulas práticas (veja a estrutura completa abaixo)'
   },
   { 
-    emoji: '🚀', 
+    icon: 'rocket', 
     title: 'Growth CRM',
     desc: 'Growth CRM (ferramenta all-in-one) ativado na primeira semana'
   },
   { 
-    emoji: '🎥', 
+    icon: 'video', 
     title: 'Mentorias ao Vivo',
     desc: 'Mentorias ao vivo semanais com Joel Burigo'
   },
   { 
-    emoji: '🤝', 
+    icon: 'handshake', 
     title: 'Comunidade Exclusiva',
     desc: 'Comunidade exclusiva para networking e feedback contínuo'
   },
   { 
-    emoji: '🛠️', 
+    icon: 'wrench', 
     title: 'Templates Prontos',
     desc: 'Templates plug-and-play (cadências, páginas, funis, e-mails, copys)'
   },
   { 
-    emoji: '🛡️', 
+    icon: 'shield-check', 
     title: 'Garantia Total',
     desc: 'Garantia incondicional de 15 dias'
   }
@@ -172,62 +173,62 @@ const diferenciais = [
 // Features do Growth CRM
 const crmFeatures = [
   { 
-    emoji: '🤖', 
+    icon: 'bot', 
     title: 'IA Atendendo Ligações',
     desc: 'Inteligência artificial fazendo e recebendo ligações, qualificando leads automaticamente'
   },
   { 
-    emoji: '💬', 
+    icon: 'message-circle', 
     title: 'IA em Multicanais',
     desc: 'WhatsApp, Instagram, Facebook, SMS - IA respondendo em tempo real 24/7'
   },
   { 
-    emoji: '📞', 
+    icon: 'phone', 
     title: 'Sistema de Telemarketing',
     desc: 'URA/IVA inteligente, discador automático, gravação e transcrição de chamadas'
   },
   { 
-    emoji: '🎯', 
+    icon: 'target', 
     title: 'Prospecção em Massa',
     desc: 'Extraia empresas do Google Maps, bases de dados, LinkedIn - milhares de leads'
   },
   { 
-    emoji: '🚀', 
+    icon: 'rocket', 
     title: 'Google Ads & Meta Ads',
     desc: 'Crie e gerencie campanhas direto do CRM, leads caem automaticamente no funil'
   },
   { 
-    emoji: '📊', 
+    icon: 'bar-chart', 
     title: 'Dashboard Inteligente',
     desc: 'Veja em tempo real: ligações, conversas, conversões, ROI de cada campanha'
   },
   { 
-    emoji: '🏗️', 
+    icon: 'hammer', 
     title: 'Sites & Landing Pages',
     desc: 'Construtor drag-and-drop para criar páginas de alta conversão sem programar'
   },
   { 
-    emoji: '⚡', 
+    icon: 'zap', 
     title: 'Automações Completas',
     desc: 'Sequências de email, SMS, WhatsApp automáticos baseados no comportamento'
   },
   { 
-    emoji: '📱', 
+    icon: 'smartphone', 
     title: 'Inbox Unificado',
     desc: 'Todas as conversas em um só lugar - WhatsApp, Instagram, Email, SMS, Ligações'
   },
   { 
-    emoji: '🎙️', 
+    icon: 'mic', 
     title: 'Suporte por Voz e Texto',
     desc: 'IA atende via voz (telefone) ou texto (chat), entende contexto, resolve problemas'
   },
   { 
-    emoji: '📋', 
+    icon: 'clipboard-check', 
     title: 'Qualificação Automática',
     desc: 'IA faz perguntas, qualifica leads, agenda reuniões - você só fala com quem está pronto'
   },
   { 
-    emoji: '🛍️', 
+    icon: 'shopping-cart', 
     title: 'Funis & E-commerce',
     desc: 'Funis completos, checkout, upsell, downsell - tudo em uma plataforma'
   }
@@ -259,19 +260,19 @@ const depoimentos = [
     nome: 'Ana Silva',
     nicho: 'E-commerce de Moda',
     texto: 'Depois do Vendas Sem Segredos, meu faturamento aumentou 300% em apenas 6 meses. As técnicas de Joel são revolucionárias!',
-    emoji: '👗'
+    icon: 'shirt'
   },
   {
     nome: 'Carlos Mendes',
     nicho: 'Consultoria Digital',
     texto: 'Nunca pensei que seria possível vender tanto online. O programa me ensinou do zero como construir uma máquina de vendas perfeita.',
-    emoji: '💼'
+    icon: 'briefcase'
   },
   {
     nome: 'Mariana Costa',
     nicho: 'Produtos Naturais',
     texto: 'Joel não apenas ensina, ele transforma. Saí de R$ 5 mil para R$ 50 mil por mês seguindo exatamente o que aprendi no programa VSS.',
-    emoji: '🌿'
+    icon: 'leaf'
   }
 ]
 
@@ -362,10 +363,10 @@ const antesDepois = [
 
 // Bônus Exclusivos
 const bonusExclusivos = [
-  { emoji: '📦', title: 'Template Pack', desc: '50+ templates de páginas, e-mails e funis prontos' },
-  { emoji: '📝', title: 'Biblioteca de Scripts', desc: '20+ scripts de vendas testados e aprovados' },
-  { emoji: '✍️', title: 'Swipe Files de Copy', desc: '100+ exemplos de copies que convertem' },
-  { emoji: '🤝', title: 'VSS Alumni Network', desc: 'Acesso vitalício à rede de ex-alunos VSS' }
+  { icon: 'package', title: 'Template Pack', desc: '50+ templates de páginas, e-mails e funis prontos' },
+  { icon: 'file-text', title: 'Biblioteca de Scripts', desc: '20+ scripts de vendas testados e aprovados' },
+  { icon: 'pen-tool', title: 'Swipe Files de Copy', desc: '100+ exemplos de copies que convertem' },
+  { icon: 'handshake', title: 'VSS Alumni Network', desc: 'Acesso vitalício à rede de ex-alunos VSS' }
 ]
 
 // Comparação: VSS vs Agência vs DIY
@@ -395,10 +396,10 @@ const comparacaoOpcoes = [
 
 // Certificações ao Concluir
 const certificacoes = [
-  { emoji: '🏆', item: 'Certificado Digital de Conclusão VSS' },
-  { emoji: '🎖️', item: 'Badge VSS para LinkedIn e redes sociais' },
-  { emoji: '👥', item: 'Acesso vitalício à comunidade VSS Alumni' },
-  { emoji: '💰', item: 'Preço especial Lote Fundador' }
+  { icon: 'trophy', item: 'Certificado Digital de Conclusão VSS' },
+  { icon: 'award', item: 'Badge VSS para LinkedIn e redes sociais' },
+  { icon: 'users', item: 'Acesso vitalício à comunidade VSS Alumni' },
+  { icon: 'coins', item: 'Preço especial Lote Fundador' }
 ]
 ---
 
@@ -442,21 +443,22 @@ const certificacoes = [
       
       <div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-white/90">
         <div class="flex items-center gap-2">
-          <span class="text-lime">✓</span>
+          <div class="text-lime"><Icons name="check-circle" size={18} /></div>
           <span class="font-sans text-sm">60 aulas práticas</span>
         </div>
         <div class="flex items-center gap-2">
-          <span class="text-lime">✓</span>
+          <div class="text-lime"><Icons name="check-circle" size={18} /></div>
           <span class="font-sans text-sm">CRM por 12 meses</span>
         </div>
         <div class="flex items-center gap-2">
-          <span class="text-lime">✓</span>
+          <div class="text-lime"><Icons name="check-circle" size={18} /></div>
           <span class="font-sans text-sm">48 mentorias ao vivo</span>
         </div>
       </div>
       
-      <p class="mt-6 font-display text-sm font-semibold text-lime text-center">
-        ⚡ Preço sobe após os primeiros 100 clientes
+      <p class="mt-6 font-display text-sm font-semibold text-lime text-center flex items-center justify-center gap-2">
+        <Icons name="zap" size={16} />
+        <span>Preço sobe após os primeiros 100 clientes</span>
       </p>
     </div>
   </Container>
@@ -491,7 +493,9 @@ const certificacoes = [
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
       {beneficios.map((item) => (
         <div class="rounded-xl border-2 border-white/10 bg-white/5 p-8 transition-all hover:border-lime/50 hover:shadow-lg hover:shadow-lime/10">
-          <div class="text-5xl mb-4">{item.emoji}</div>
+          <div class="mb-4 text-lime">
+            <Icons name={item.icon} size={48} />
+          </div>
           <h3 class="font-display text-lg font-semibold mb-3 text-white">{item.title}</h3>
           <p class="font-sans text-sm text-gray-300">{item.desc}</p>
         </div>
@@ -596,7 +600,9 @@ const certificacoes = [
       {diferenciais.map((item) => (
         <div class="rounded-xl border-2 border-white/10 bg-white/5 p-8 transition-all hover:border-lime/50">
           <div class="mb-4 flex items-center gap-4">
-            <div class="text-4xl">{item.emoji}</div>
+            <div class="text-lime">
+              <Icons name={item.icon} size={40} />
+            </div>
             <h3 class="font-display text-xl font-semibold text-white">{item.title}</h3>
           </div>
           <p class="font-sans text-sm text-gray-200">{item.desc}</p>
@@ -646,10 +652,16 @@ const certificacoes = [
       <div class="bg-dark/50 rounded-2xl overflow-hidden border-2 border-white/10">
         <div class="grid md:grid-cols-2">
           <div class="p-8 bg-red-900/20 border-r border-white/10">
-            <h3 class="font-display text-2xl font-bold mb-6 text-red-400 text-center">❌ Antes</h3>
+            <h3 class="font-display text-2xl font-bold mb-6 text-red-400 text-center flex items-center justify-center gap-3">
+              <Icons name="x-circle" size={28} />
+              <span>Antes</span>
+            </h3>
           </div>
           <div class="p-8 bg-green-900/20">
-            <h3 class="font-display text-2xl font-bold mb-6 text-lime text-center">✅ Depois</h3>
+            <h3 class="font-display text-2xl font-bold mb-6 text-lime text-center flex items-center justify-center gap-3">
+              <Icons name="check-circle" size={28} />
+              <span>Depois</span>
+            </h3>
           </div>
         </div>
         
@@ -711,7 +723,9 @@ const certificacoes = [
     <!-- Cards de Diferenciação -->
     <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto relative z-10">
       <div class="bg-dark/50 backdrop-blur rounded-2xl p-8 border-2 border-white/10 hover:border-lime/30 transition-all">
-        <div class="text-4xl mb-4">🎯</div>
+        <div class="mb-4 text-lime">
+          <Icons name="layers" size={40} />
+        </div>
         <h3 class="font-display text-xl font-bold mb-3 text-white">Sistema Completo</h3>
         <p class="font-sans text-gray-300 leading-relaxed">
           15 módulos + Growth CRM + templates + scripts. Não é "aprenda sozinho", é "implemente conosco".
@@ -719,7 +733,9 @@ const certificacoes = [
       </div>
       
       <div class="bg-dark/50 backdrop-blur rounded-2xl p-8 border-2 border-lime/30 hover:border-lime/50 transition-all">
-        <div class="text-4xl mb-4">🤖</div>
+        <div class="mb-4 text-lime">
+          <Icons name="bot" size={40} />
+        </div>
         <h3 class="font-display text-xl font-bold mb-3 text-white">Tecnologia Real</h3>
         <p class="font-sans text-gray-300 leading-relaxed">
           CRM com IA, automações, landing pages, funis. Você não monta, você <strong class="text-lime">recebe pronto</strong> e customiza.
@@ -727,7 +743,9 @@ const certificacoes = [
       </div>
       
       <div class="bg-dark/50 backdrop-blur rounded-2xl p-8 border-2 border-white/10 hover:border-lime/30 transition-all">
-        <div class="text-4xl mb-4">🎓</div>
+        <div class="mb-4 text-lime">
+          <Icons name="life-buoy" size={40} />
+        </div>
         <h3 class="font-display text-xl font-bold mb-3 text-white">Suporte Vitalício</h3>
         <p class="font-sans text-gray-300 leading-relaxed">
           Lives semanais, comunidade ativa, suporte técnico. Não é um curso que acaba, é um ecossistema.
@@ -737,8 +755,9 @@ const certificacoes = [
 
     <!-- CTA de Transição -->
     <div class="max-w-4xl mx-auto text-center mt-16 relative z-10">
-      <p class="font-sans text-xl md:text-2xl text-white font-semibold mb-2">
-        Veja tudo que você vai receber 👇
+      <p class="font-sans text-xl md:text-2xl text-white font-semibold mb-2 flex items-center justify-center gap-2">
+        <span>Veja tudo que você vai receber</span>
+        <Icons name="arrow-down" size={24} class="text-lime" />
       </p>
       <p class="font-sans text-gray-400 text-sm">
         (E entenda porque isto não se compara com nenhum "curso" que você já viu)
@@ -763,7 +782,9 @@ const certificacoes = [
     <div class="max-w-6xl mx-auto mb-16">
       <div class="grid md:grid-cols-3 gap-6 mb-12">
         <div class="rounded-2xl border-2 border-lime/30 bg-gradient-to-br from-lime/10 to-dark p-8">
-          <div class="text-4xl mb-4">🎯</div>
+          <div class="mb-4 text-lime">
+            <Icons name="target" size={40} />
+          </div>
           <h3 class="font-display text-xl font-bold mb-3 text-white">Imagine Isto:</h3>
           <p class="font-sans text-sm text-gray-200 leading-relaxed">
             Você acorda e vê no dashboard: <span class="text-lime font-bold">127 novos leads qualificados</span> enquanto dormia. A IA atendeu 43 ligações, respondeu 89 mensagens no WhatsApp e já agendou 12 reuniões para esta semana.
@@ -771,7 +792,9 @@ const certificacoes = [
         </div>
         
         <div class="rounded-2xl border-2 border-lime/30 bg-gradient-to-br from-lime/10 to-dark p-8">
-          <div class="text-4xl mb-4">🚀</div>
+          <div class="mb-4 text-lime">
+            <Icons name="rocket" size={40} />
+          </div>
           <h3 class="font-display text-xl font-bold mb-3 text-white">Prospecção em Massa:</h3>
           <p class="font-sans text-sm text-gray-200 leading-relaxed">
             Extrai <span class="text-lime font-bold">5.000 empresas do Google Maps</span> em segundos. A IA liga para todas, qualifica, descobre o decisor e agenda com quem tem interesse real. Você só fala com leads quentes.
@@ -779,7 +802,9 @@ const certificacoes = [
         </div>
         
         <div class="rounded-2xl border-2 border-lime/30 bg-gradient-to-br from-lime/10 to-dark p-8">
-          <div class="text-4xl mb-4">💰</div>
+          <div class="mb-4 text-lime">
+            <Icons name="trending-up" size={40} />
+          </div>
           <h3 class="font-display text-xl font-bold mb-3 text-white">Anúncios Inteligentes:</h3>
           <p class="font-sans text-sm text-gray-200 leading-relaxed">
             Cria campanha no <span class="text-lime font-bold">Google Ads e Meta</span> direto do CRM. Leads caem automáticos no funil, IA atende, qualifica e você só fecha. ROI visível em tempo real no dashboard.
@@ -807,7 +832,10 @@ const certificacoes = [
         <div class="flex items-start gap-4 bg-dark/50 rounded-xl p-6 border-l-4 border-lime">
           <div class="bg-lime text-dark rounded-full w-10 h-10 flex items-center justify-center font-bold shrink-0">1</div>
           <div>
-            <h4 class="font-display font-bold text-lg text-white mb-2">📍 Prospecção Automática</h4>
+            <h4 class="font-display font-bold text-lg text-white mb-2 flex items-center gap-2">
+              <Icons name="map-pin" size={20} class="text-lime" />
+              <span>Prospecção Automática</span>
+            </h4>
             <p class="font-sans text-sm text-gray-300">Você define o perfil ideal. O CRM extrai milhares de contatos do Google Maps, LinkedIn ou bases de dados. Em minutos você tem uma lista pronta.</p>
           </div>
         </div>
@@ -815,7 +843,10 @@ const certificacoes = [
         <div class="flex items-start gap-4 bg-dark/50 rounded-xl p-6 border-l-4 border-lime">
           <div class="bg-lime text-dark rounded-full w-10 h-10 flex items-center justify-center font-bold shrink-0">2</div>
           <div>
-            <h4 class="font-display font-bold text-lg text-white mb-2">🤖 IA Faz o Primeiro Contato</h4>
+            <h4 class="font-display font-bold text-lg text-white mb-2 flex items-center gap-2">
+              <Icons name="bot" size={20} class="text-lime" />
+              <span>IA Faz o Primeiro Contato</span>
+            </h4>
             <p class="font-sans text-sm text-gray-300">IA liga, manda WhatsApp, email ou SMS. Fala naturalmente, entende respostas, faz perguntas de qualificação. Parece um vendedor humano, mas trabalha 24/7 sem parar.</p>
           </div>
         </div>
@@ -823,7 +854,10 @@ const certificacoes = [
         <div class="flex items-start gap-4 bg-dark/50 rounded-xl p-6 border-l-4 border-lime">
           <div class="bg-lime text-dark rounded-full w-10 h-10 flex items-center justify-center font-bold shrink-0">3</div>
           <div>
-            <h4 class="font-display font-bold text-lg text-white mb-2">🎯 Qualificação Inteligente</h4>
+            <h4 class="font-display font-bold text-lg text-white mb-2 flex items-center gap-2">
+              <Icons name="target" size={20} class="text-lime" />
+              <span>Qualificação Inteligente</span>
+            </h4>
             <p class="font-sans text-sm text-gray-300">A IA descobre: orçamento, timing, autoridade, necessidade. Só agenda reunião se o lead realmente tem potencial. Seu tempo é usado apenas com oportunidades reais.</p>
           </div>
         </div>
@@ -831,7 +865,10 @@ const certificacoes = [
         <div class="flex items-start gap-4 bg-dark/50 rounded-xl p-6 border-l-4 border-lime">
           <div class="bg-lime text-dark rounded-full w-10 h-10 flex items-center justify-center font-bold shrink-0">4</div>
           <div>
-            <h4 class="font-display font-bold text-lg text-white mb-2">📊 Dashboard em Tempo Real</h4>
+            <h4 class="font-display font-bold text-lg text-white mb-2 flex items-center gap-2">
+              <Icons name="bar-chart-3" size={20} class="text-lime" />
+              <span>Dashboard em Tempo Real</span>
+            </h4>
             <p class="font-sans text-sm text-gray-300">Veja tudo: quantas ligações foram feitas, taxa de resposta no WhatsApp, conversões de cada campanha, ROI dos anúncios. Todas as métricas que importam, ao vivo.</p>
           </div>
         </div>
@@ -839,7 +876,10 @@ const certificacoes = [
         <div class="flex items-start gap-4 bg-dark/50 rounded-xl p-6 border-l-4 border-lime">
           <div class="bg-lime text-dark rounded-full w-10 h-10 flex items-center justify-center font-bold shrink-0">5</div>
           <div>
-            <h4 class="font-display font-bold text-lg text-white mb-2">💰 Você Só Fecha as Vendas</h4>
+            <h4 class="font-display font-bold text-lg text-white mb-2 flex items-center gap-2">
+              <Icons name="dollar-sign" size={20} class="text-lime" />
+              <span>Você Só Fecha as Vendas</span>
+            </h4>
             <p class="font-sans text-sm text-gray-300">Leads chegam qualificados, interessados, com orçamento. Você conversa, apresenta, fecha. O CRM faz follow-up automático, envia propostas, lembra de pagamentos.</p>
           </div>
         </div>
@@ -850,7 +890,9 @@ const certificacoes = [
     <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto mb-12">
       {crmFeatures.map((feature) => (
         <div class="rounded-xl border-2 border-white/10 bg-white/5 p-6 transition-all hover:border-lime/50 hover:bg-lime/5 text-center">
-          <div class="text-3xl mb-3">{feature.emoji}</div>
+          <div class="mb-3 text-lime mx-auto flex justify-center">
+            <Icons name={feature.icon} size={32} />
+          </div>
           <h3 class="font-display text-sm font-semibold mb-2 text-white">{feature.title}</h3>
           <p class="font-sans text-xs text-gray-300">{feature.desc}</p>
         </div>
@@ -865,42 +907,60 @@ const certificacoes = [
       
       <div class="grid md:grid-cols-2 gap-6">
         <div class="bg-dark/50 rounded-xl p-6 border border-lime/20">
-          <h4 class="font-display font-bold text-base text-lime mb-3">🌐 Anúncios + IA Atendendo</h4>
+          <h4 class="font-display font-bold text-base text-lime mb-3 flex items-center gap-2">
+            <Icons name="globe" size={18} />
+            <span>Anúncios + IA Atendendo</span>
+          </h4>
           <p class="font-sans text-sm text-gray-300 mb-3">
             Roda Google Ads e Meta Ads direto do CRM. Quando alguém clica, cai no funil automaticamente. IA responde no WhatsApp em segundos, qualifica e agenda. Sem perder nenhum lead.
           </p>
         </div>
         
         <div class="bg-dark/50 rounded-xl p-6 border border-lime/20">
-          <h4 class="font-display font-bold text-base text-lime mb-3">📞 Telemarketing Automático</h4>
+          <h4 class="font-display font-bold text-base text-lime mb-3 flex items-center gap-2">
+            <Icons name="phone-call" size={18} />
+            <span>Telemarketing Automático</span>
+          </h4>
           <p class="font-sans text-sm text-gray-300 mb-3">
             Sistema de discagem automática liga para sua lista. IA faz a abordagem inicial, qualifica interesse, descobre objeções. Quem demonstra interesse real, você assume a ligação ao vivo.
           </p>
         </div>
         
         <div class="bg-dark/50 rounded-xl p-6 border border-lime/20">
-          <h4 class="font-display font-bold text-base text-lime mb-3">🗺️ Prospecção Google Maps</h4>
+          <h4 class="font-display font-bold text-base text-lime mb-3 flex items-center gap-2">
+            <Icons name="map" size={18} />
+            <span>Prospecção Google Maps</span>
+          </h4>
           <p class="font-sans text-sm text-gray-300 mb-3">
             Busca "clínicas odontológicas em São Paulo" - extrai 5.000 contatos em minutos. IA envia mensagem personalizada para todos simultaneamente. Qualifica quem responde. Escala impossível manualmente.
           </p>
         </div>
         
         <div class="bg-dark/50 rounded-xl p-6 border border-lime/20">
-          <h4 class="font-display font-bold text-base text-lime mb-3">💬 Multicanal Unificado</h4>
+          <h4 class="font-display font-bold text-base text-lime mb-3 flex items-center gap-2">
+            <Icons name="messages-square" size={18} />
+            <span>Multicanal Unificado</span>
+          </h4>
           <p class="font-sans text-sm text-gray-300 mb-3">
             Cliente manda WhatsApp, depois liga, depois email. Tudo no mesmo histórico. IA entende o contexto completo. Você vê toda a jornada em uma tela. Atendimento personalizado em escala.
           </p>
         </div>
         
         <div class="bg-dark/50 rounded-xl p-6 border border-lime/20">
-          <h4 class="font-display font-bold text-base text-lime mb-3">🎙️ Suporte por Voz 24/7</h4>
+          <h4 class="font-display font-bold text-base text-lime mb-3 flex items-center gap-2">
+            <Icons name="mic" size={18} />
+            <span>Suporte por Voz 24/7</span>
+          </h4>
           <p class="font-sans text-sm text-gray-300 mb-3">
             Cliente liga às 3h da manhã com dúvida. IA atende com voz natural, entende o problema, acessa informações do sistema, resolve na hora. Gravação e transcrição automáticas.
           </p>
         </div>
         
         <div class="bg-dark/50 rounded-xl p-6 border border-lime/20">
-          <h4 class="font-display font-bold text-base text-lime mb-3">⚡ Automações Completas</h4>
+          <h4 class="font-display font-bold text-base text-lime mb-3 flex items-center gap-2">
+            <Icons name="zap" size={18} />
+            <span>Automações Completas</span>
+          </h4>
           <p class="font-sans text-sm text-gray-300 mb-3">
             Lead não responde em 2 dias? IA manda follow-up automático. Abriu email mas não comprou? IA liga oferecendo ajuda. Cliente aniversário? Mensagem personalizada com desconto. Tudo automático.
           </p>
@@ -929,7 +989,8 @@ const certificacoes = [
       </div>
       <div class="mt-8">
         <a href="#investimento" class="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-lime px-8 font-display text-base font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
-          🚀 Garantir Growth CRM Incluído no Lote Fundador
+          <Icons name="rocket" size={20} />
+          <span>Garantir Growth CRM Incluído no Lote Fundador</span>
         </a>
       </div>
     </div>
@@ -973,33 +1034,108 @@ const certificacoes = [
           </tr>
           <tr class="hover:bg-white/5 transition-colors">
             <td class="p-4 font-display font-semibold text-white">Aprendizado</td>
-            <td class="p-4 text-center font-sans text-gray-300">❌ Tentativa e erro</td>
-            <td class="p-4 text-center font-sans text-gray-300">❌ Você não aprende</td>
-            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">✅ Aprende fazendo</td>
+            <td class="p-4 text-center font-sans text-gray-300">
+              <div class="inline-flex items-center gap-2">
+                <Icons name="x-circle" size={16} class="text-red-400" />
+                <span>Tentativa e erro</span>
+              </div>
+            </td>
+            <td class="p-4 text-center font-sans text-gray-300">
+              <div class="inline-flex items-center gap-2">
+                <Icons name="x-circle" size={16} class="text-red-400" />
+                <span>Você não aprende</span>
+              </div>
+            </td>
+            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">
+              <div class="inline-flex items-center gap-2">
+                <Icons name="check-circle" size={16} />
+                <span>Aprende fazendo</span>
+              </div>
+            </td>
           </tr>
           <tr class="hover:bg-white/5 transition-colors">
             <td class="p-4 font-display font-semibold text-white">Propriedade do Sistema</td>
-            <td class="p-4 text-center font-sans text-gray-300">⚠️ Improvisado</td>
-            <td class="p-4 text-center font-sans text-gray-300">❌ Fica com agência</td>
-            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">✅ Seu para sempre</td>
+            <td class="p-4 text-center font-sans text-gray-300">
+              <div class="inline-flex items-center gap-2">
+                <Icons name="alert-circle" size={16} class="text-yellow-400" />
+                <span>Improvisado</span>
+              </div>
+            </td>
+            <td class="p-4 text-center font-sans text-gray-300">
+              <div class="inline-flex items-center gap-2">
+                <Icons name="x-circle" size={16} class="text-red-400" />
+                <span>Fica com agência</span>
+              </div>
+            </td>
+            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">
+              <div class="inline-flex items-center gap-2">
+                <Icons name="check-circle" size={16} />
+                <span>Seu para sempre</span>
+              </div>
+            </td>
           </tr>
           <tr class="hover:bg-white/5 transition-colors">
             <td class="p-4 font-display font-semibold text-white">CRM Profissional</td>
-            <td class="p-4 text-center font-sans text-gray-300">❌ Não incluído</td>
-            <td class="p-4 text-center font-sans text-gray-300">💰 Custo extra</td>
-            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">✅ Incluído 12 meses</td>
+            <td class="p-4 text-center font-sans text-gray-300">
+              <div class="inline-flex items-center gap-2">
+                <Icons name="x-circle" size={16} class="text-red-400" />
+                <span>Não incluído</span>
+              </div>
+            </td>
+            <td class="p-4 text-center font-sans text-gray-300">
+              <div class="inline-flex items-center gap-2">
+                <Icons name="coins" size={16} class="text-yellow-400" />
+                <span>Custo extra</span>
+              </div>
+            </td>
+            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">
+              <div class="inline-flex items-center gap-2">
+                <Icons name="check-circle" size={16} />
+                <span>Incluído 12 meses</span>
+              </div>
+            </td>
           </tr>
           <tr class="hover:bg-white/5 transition-colors">
             <td class="p-4 font-display font-semibold text-white">Suporte Contínuo</td>
-            <td class="p-4 text-center font-sans text-gray-300">❌ Sozinho</td>
-            <td class="p-4 text-center font-sans text-gray-300">✅ Enquanto pagar</td>
-            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">✅ 48 mentorias</td>
+            <td class="p-4 text-center font-sans text-gray-300">
+              <div class="inline-flex items-center gap-2">
+                <Icons name="x-circle" size={16} class="text-red-400" />
+                <span>Sozinho</span>
+              </div>
+            </td>
+            <td class="p-4 text-center font-sans text-gray-300">
+              <div class="inline-flex items-center gap-2">
+                <Icons name="check-circle" size={16} class="text-lime" />
+                <span>Enquanto pagar</span>
+              </div>
+            </td>
+            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">
+              <div class="inline-flex items-center gap-2">
+                <Icons name="check-circle" size={16} />
+                <span>48 mentorias</span>
+              </div>
+            </td>
           </tr>
           <tr class="hover:bg-white/5 transition-colors">
             <td class="p-4 font-display font-semibold text-white">Escalabilidade</td>
-            <td class="p-4 text-center font-sans text-gray-300">❌ Limitada</td>
-            <td class="p-4 text-center font-sans text-gray-300">⚠️ Dependente</td>
-            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">✅ Autônoma</td>
+            <td class="p-4 text-center font-sans text-gray-300">
+              <div class="inline-flex items-center gap-2">
+                <Icons name="x-circle" size={16} class="text-red-400" />
+                <span>Limitada</span>
+              </div>
+            </td>
+            <td class="p-4 text-center font-sans text-gray-300">
+              <div class="inline-flex items-center gap-2">
+                <Icons name="alert-circle" size={16} class="text-yellow-400" />
+                <span>Dependente</span>
+              </div>
+            </td>
+            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">
+              <div class="inline-flex items-center gap-2">
+                <Icons name="check-circle" size={16} />
+                <span>Autônoma</span>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -1030,7 +1166,10 @@ const certificacoes = [
               <div class="space-y-2">
                 <p class="font-sans text-xs text-red-400 font-bold mb-2">PROBLEMAS:</p>
                 {opcao.problemas.map((problema) => (
-                  <p class="font-sans text-sm text-gray-400">❌ {problema}</p>
+                  <p class="font-sans text-sm text-gray-400 flex items-center gap-2">
+                    <Icons name="x-circle" size={14} class="text-red-400 shrink-0" />
+                    <span>{problema}</span>
+                  </p>
                 ))}
               </div>
             )}
@@ -1039,7 +1178,10 @@ const certificacoes = [
               <div class="space-y-2">
                 <p class="font-sans text-xs text-lime font-bold mb-2">VANTAGENS:</p>
                 {opcao.vantagens.map((vantagem) => (
-                  <p class="font-sans text-sm text-white">✅ {vantagem}</p>
+                  <p class="font-sans text-sm text-white flex items-center gap-2">
+                    <Icons name="check-circle" size={14} class="text-lime shrink-0" />
+                    <span>{vantagem}</span>
+                  </p>
                 ))}
               </div>
             )}
@@ -1135,7 +1277,9 @@ const certificacoes = [
     <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
       {depoimentos.map((depo) => (
         <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 hover:bg-white/20 transition-all">
-          <div class="text-5xl mb-4 text-center">{depo.emoji}</div>
+          <div class="mb-4 text-lime flex justify-center">
+            <Icons name={depo.icon} size={48} />
+          </div>
           <p class="font-sans text-lg mb-6 italic text-gray-200">"{depo.texto}"</p>
           <div class="border-t border-white/20 pt-4">
             <p class="font-display font-bold text-white">{depo.nome}</p>
@@ -1205,7 +1349,9 @@ const certificacoes = [
       {certificacoes.map((cert) => (
         <div class="bg-dark-gray/50 rounded-xl p-8 border-2 border-white/10 hover:border-lime/30 transition-all">
           <div class="flex items-start gap-4">
-            <div class="text-4xl">{cert.emoji}</div>
+            <div class="text-lime">
+              <Icons name={cert.icon} size={40} />
+            </div>
             <p class="font-sans text-lg text-white pt-2">{cert.item}</p>
           </div>
         </div>
@@ -1213,8 +1359,9 @@ const certificacoes = [
     </div>
     
     <div class="text-center mt-12 bg-lime/10 rounded-2xl p-8 max-w-2xl mx-auto border-2 border-lime/30">
-      <h3 class="font-display text-xl font-bold mb-4 text-white">
-        🎓 Seja um Profissional Certificado em Vendas Escaláveis
+      <h3 class="font-display text-xl font-bold mb-4 text-white flex items-center justify-center gap-3">
+        <Icons name="graduation-cap" size={28} class="text-lime" />
+        <span>Seja um Profissional Certificado em Vendas Escaláveis</span>
       </h3>
       <p class="font-sans text-gray-200">
         Destaque-se no mercado com a credencial VSS e faça parte de uma comunidade exclusiva de empreendedores de alta performance.
@@ -1239,7 +1386,9 @@ const certificacoes = [
       {bonusExclusivos.map((bonus) => (
         <div class="bg-dark-gray/50 rounded-xl p-8 border-2 border-lime/30 hover:border-lime transition-all">
           <div class="flex items-start gap-4">
-            <div class="text-4xl">{bonus.emoji}</div>
+            <div class="text-lime">
+              <Icons name={bonus.icon} size={40} />
+            </div>
             <div>
               <h3 class="font-display text-xl font-bold mb-2 text-white">{bonus.title}</h3>
               <p class="font-sans text-gray-300">{bonus.desc}</p>
@@ -1254,7 +1403,10 @@ const certificacoes = [
         Valor Total dos Bônus: <span class="text-lime">R$ 2.497</span>
       </p>
       <p class="font-sans text-lg text-gray-200">
-        🎁 Incluídos gratuitamente para os primeiros 100 alunos
+        <span class="inline-flex items-center gap-2">
+          <Icons name="gift" size={16} />
+          <span>Incluídos gratuitamente para os primeiros 100 alunos</span>
+        </span>
       </p>
     </div>
   </Container>
@@ -1309,7 +1461,10 @@ const certificacoes = [
         </div>
         
         <div class="bg-dark rounded-xl p-6 border-2 border-lime/30">
-          <p class="font-display text-lg font-bold text-white mb-3 text-center">📊 Projeção Anual</p>
+          <p class="font-display text-lg font-bold text-white mb-3 text-center flex items-center justify-center gap-2">
+            <Icons name="trending-up" size={20} class="text-lime" />
+            <span>Projeção Anual</span>
+          </p>
           <div class="grid grid-cols-2 gap-4 text-center">
             <div>
               <p class="font-sans text-xs text-gray-400 mb-1">FATURAMENTO EXTRA</p>
@@ -1352,7 +1507,10 @@ const certificacoes = [
       <!-- Box Único: Lote Fundador -->
       <div class="rounded-2xl border-2 border-lime/30 bg-gradient-to-br from-lime/10 to-lime/5 p-6 md:p-10">
         <h3 class="font-display text-2xl md:text-3xl font-bold mb-6 text-center text-white">
-          🔥 Lote Fundador: Primeiros 100 Alunos
+          <span class="inline-flex items-center gap-2">
+            <Icons name="flame" size={20} />
+            <span>Lote Fundador: Primeiros 100 Alunos</span>
+          </span>
         </h3>
         
         <!-- Grid: Incluído + Preço lado a lado em desktop -->
@@ -1361,7 +1519,10 @@ const certificacoes = [
           <!-- Coluna Esquerda: O que está incluído -->
           <div class="space-y-3">
             <h4 class="font-display text-lg font-bold mb-4 text-lime text-center md:text-left">
-              ✅ Tudo Incluído no Programa:
+              <span class="inline-flex items-center gap-2">
+                <Icons name="check-circle" size={16} class="text-lime" />
+                <span>Tudo Incluído no Programa:</span>
+              </span>
             </h4>
             
             <div class="space-y-2">
@@ -1430,7 +1591,10 @@ const certificacoes = [
                 <p class="font-sans text-xl mb-4 text-gray-200">ou <span class="text-lime font-bold text-2xl"><span class="text-lg">R$</span>1.997</span> à vista</p>
                 
                 <div class="border-t-2 border-lime/30 pt-4 mt-4">
-                  <p class="font-display text-xl font-bold text-lime mb-1">✅ Economia de 84,5%</p>
+                  <p class="font-display text-xl font-bold text-lime mb-1 flex items-center justify-center gap-2">
+                    <Icons name="check-circle" size={20} />
+                    <span>Economia de 84,5%</span>
+                  </p>
                   <p class="font-sans text-sm text-white/90">Você economiza R$ 10.893</p>
                 </div>
               </div>
@@ -1455,7 +1619,10 @@ const certificacoes = [
               </div>
               
               <div class="rounded-lg p-4 bg-dark/40 border border-white/20 mb-6">
-                <h4 class="font-display text-sm font-bold mb-1 text-white">🔒 Vantagem dos Fundadores</h4>
+                <h4 class="font-display text-sm font-bold mb-1 text-white flex items-center gap-2">
+                  <Icons name="lock" size={14} />
+                  <span>Vantagem dos Fundadores</span>
+                </h4>
                 <p class="font-sans text-xs text-gray-200">
                   Os primeiros <span class="font-bold text-lime">100 alunos</span> garantem o menor preço de entrada: R$ 1.997 no primeiro ano.
                 </p>
@@ -1467,11 +1634,13 @@ const certificacoes = [
                 id="openCheckoutModal" 
                 class="w-full inline-flex items-center justify-center rounded-xl font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 hover:scale-105 bg-lime hover:bg-lime/90 text-dark shadow-2xl shadow-lime/50 focus:ring-lime min-h-14 py-4 px-6 text-base font-display"
               >
-                🚀 Sim, Quero Escalar Minhas Vendas Agora
+                <Icons name="rocket" size={20} />
+                <span>Sim, Quero Escalar Minhas Vendas Agora</span>
               </button>
               
               <p class="mt-3 font-sans text-xs text-white/90 text-center">
-                🔒 Pagamento seguro | Acesso imediato
+                <Icons name="shield-check" size={16} />
+                <span>Pagamento seguro | Acesso imediato</span>
               </p>
               
               <div class="mt-4 flex justify-center">
@@ -1516,10 +1685,11 @@ const certificacoes = [
       <div class="mt-12 text-center bg-dark/50 rounded-2xl p-8 border-2 border-lime/30">
         <h3 class="font-display text-2xl font-bold mb-4 text-white">Ainda com dúvidas?</h3>
         <p class="font-sans text-lg text-gray-300 mb-6">
-          Entre em nosso chat, chame no WhatsApp, ou fale com o Joel no Instagram <a href="https://instagram.com/joelburigo" class="text-lime hover:underline font-semibold">@joelburigo</a>. Vamos te ajudar 😉
+          Entre em nosso chat, chame no WhatsApp, ou fale com o Joel no Instagram <a href="https://instagram.com/joelburigo" class="text-lime hover:underline font-semibold">@joelburigo</a>. Vamos te ajudar!
         </p>
         <a href={getWhatsAppLink()} class="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-lime px-8 font-display text-base font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
-          📱 Quero Entrar!
+          <Icons name="smartphone" size={18} />
+          <span>Quero Entrar!</span>
         </a>
       </div>
     </div>
@@ -1534,7 +1704,11 @@ const certificacoes = [
     <!-- Header -->
     <div class="checkout-modal-header">
       <h3>
-        🚀 <span class="highlight">Lote Fundador</span> - Preço Especial
+        <span class="inline-flex items-center gap-2">
+          <Icons name="rocket" size={16} />
+          <span class="highlight">Lote Fundador</span>
+        </span>
+        <span> - Preço Especial</span>
       </h3>
     </div>
 
@@ -1561,7 +1735,10 @@ const certificacoes = [
 
     <!-- Footer -->
     <div class="checkout-modal-footer">
-      <p>🔒 Pagamento 100% seguro | Acesso imediato após confirmação</p>
+      <p class="flex items-center justify-center gap-2">
+        <Icons name="shield-check" size={16} class="text-lime" />
+        <span>Pagamento 100% seguro | Acesso imediato após confirmação</span>
+      </p>
       <img 
         src={hotmartSecurity.src} 
         alt="Formas de pagamento aceitas" 
@@ -1584,7 +1761,10 @@ const certificacoes = [
       
       <div class="bg-dark/50 rounded-2xl p-8 mb-8 border-2 border-lime/30 max-w-2xl mx-auto">
         <p class="font-display text-2xl font-bold mb-4 text-white">
-          📦 Tudo Incluído no Lote Fundador:
+          <span class="inline-flex items-center gap-2">
+            <Icons name="package" size={18} />
+            <span>Tudo Incluído no Lote Fundador:</span>
+          </span>
         </p>
         <div class="grid md:grid-cols-2 gap-4 text-left">
           <div class="flex items-center gap-2">
@@ -1615,7 +1795,8 @@ const certificacoes = [
       </div>
       
       <a href="#investimento" class="inline-flex h-16 items-center justify-center gap-2 rounded-xl bg-lime px-10 font-display text-lg font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
-        🔥 Garantir Vaga no Lote Fundador Agora
+        <Icons name="flame" size={20} />
+        <span>Garantir Vaga no Lote Fundador Agora</span>
       </a>
       
       <div class="mt-6">

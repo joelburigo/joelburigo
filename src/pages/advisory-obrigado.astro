@@ -1,0 +1,202 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/layout/Header.astro'
+import Footer from '../components/layout/Footer.astro'
+import Container from '../components/ui/Container.astro'
+import Button from '../components/ui/Button.astro'
+import Icons from '../components/ui/Icons.astro'
+import { contactInfo, getWhatsAppLink } from '../data/contact'
+
+const seo = {
+  title: 'Aplicação Recebida - Advisory | Joel Burigo',
+  description: 'Sua aplicação para Advisory foi recebida. Vamos analisar em até 24h úteis.',
+}
+---
+
+<Layout title={seo.title} description={seo.description}>
+  <Header />
+  
+  <main class="min-h-screen bg-dark pt-16 md:pt-20">
+    <section class="py-12 md:py-20">
+      <Container>
+        <div class="mx-auto max-w-3xl">
+          <!-- Ícone de Sucesso -->
+          <div class="mb-8 flex justify-center">
+            <div class="flex h-24 w-24 items-center justify-center rounded-full bg-lime/20 ring-8 ring-lime/10 animate-pulse">
+              <Icons name="check-circle-2" class="h-12 w-12 text-lime" />
+            </div>
+          </div>
+
+          <!-- Título -->
+          <div class="mb-12 text-center">
+            <h1 class="mb-4 font-display text-4xl font-bold text-white md:text-5xl">
+              ✅ Aplicação Recebida!
+            </h1>
+            <p class="font-sans text-body-lg text-gray-200">
+              Obrigado por se candidatar ao <span class="font-bold text-lime">Advisory</span>
+            </p>
+          </div>
+
+          <!-- Card Principal -->
+          <div class="mb-8 rounded-2xl border-2 border-lime/30 bg-white/5 p-8 backdrop-blur-sm md:p-12">
+            <div class="mb-8 space-y-4">
+              <h2 class="font-display text-2xl font-bold text-white">Próximos Passos:</h2>
+              
+              <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                  <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-lime/20">
+                    <span class="font-display text-lg font-bold text-lime">1</span>
+                  </div>
+                  <div>
+                    <h3 class="mb-2 font-display text-lg font-semibold text-white">Análise de Fit</h3>
+                    <p class="font-sans text-body text-gray-200">
+                      Vamos analisar sua aplicação com atenção em até <span class="font-bold text-lime">24h úteis</span>. 
+                      Avaliamos se seu momento e desafio são adequados para Advisory.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-lime/20">
+                    <span class="font-display text-lg font-bold text-lime">2</span>
+                  </div>
+                  <div>
+                    <h3 class="mb-2 font-display text-lg font-semibold text-white">Contato via WhatsApp</h3>
+                    <p class="font-sans text-body text-gray-200">
+                      Se houver fit, entraremos em contato pelo WhatsApp que você informou para agendar uma conversa inicial de 30 minutos.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-lime/20">
+                    <span class="font-display text-lg font-bold text-lime">3</span>
+                  </div>
+                  <div>
+                    <h3 class="mb-2 font-display text-lg font-semibold text-white">Alinhamento de Expectativas</h3>
+                    <p class="font-sans text-body text-gray-200">
+                      Na conversa inicial, vamos validar se faz sentido trabalharmos juntos e qual formato de Advisory (Sprint ou Conselho) se encaixa melhor.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Enquanto Isso -->
+            <div class="rounded-xl border border-lime/20 bg-lime/10 p-6">
+              <h3 class="mb-3 font-display text-lg font-semibold text-white">
+                💡 Enquanto você aguarda...
+              </h3>
+              <p class="mb-4 font-sans text-body-sm text-gray-200">
+                Faça nosso diagnóstico gratuito dos <span class="font-bold text-white">6Ps das Vendas Escaláveis</span> e 
+                descubra exatamente onde seu sistema de vendas está travando.
+              </p>
+              <Button variant="primary" size="lg" href="/diagnostico" class="w-full sm:w-auto">
+                Fazer Diagnóstico Gratuito
+              </Button>
+            </div>
+          </div>
+
+          <!-- Info Adicional -->
+          <div class="mb-8 rounded-xl border border-white/10 bg-white/5 p-6">
+            <h3 class="mb-4 font-display text-lg font-semibold text-white">ℹ️ Importante Saber</h3>
+            <ul class="space-y-3 font-sans text-body-sm text-gray-200">
+              <li class="flex items-start gap-2">
+                <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
+                <span><span class="font-bold text-white">Vagas limitadas:</span> Máximo 3 clientes no Sprint e 2 no Conselho Executivo</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
+                <span><span class="font-bold text-white">Seletivo:</span> Só aceito clientes em momento crítico real que vão executar</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
+                <span><span class="font-bold text-white">Resposta honesta:</span> Se não houver fit, vou indicar alternativas (VSS, Services, etc.)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
+                <span><span class="font-bold text-white">Sem spam:</span> Se não houver fit, não vamos ficar insistindo</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Recursos Enquanto Aguarda -->
+          <div class="mb-8 rounded-2xl border-2 border-white/10 bg-white/5 p-6 md:p-8">
+            <h3 class="mb-6 font-display text-xl font-semibold text-white">
+              📚 Recursos Gratuitos Enquanto Aguarda
+            </h3>
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <a href="/blog/6ps-vendas-escalaveis-guia-completo" class="group rounded-xl border border-white/10 bg-white/5 p-4 transition-all hover:border-lime/30 hover:bg-lime/5">
+                <div class="mb-2 flex items-center gap-2">
+                  <Icons name="book-open" class="h-5 w-5 text-lime" />
+                  <h4 class="font-display text-sm font-semibold text-white">Guia Completo dos 6Ps</h4>
+                </div>
+                <p class="font-sans text-xs text-gray-400 group-hover:text-gray-300">
+                  Framework completo para estruturar vendas
+                </p>
+              </a>
+
+              <a href="/cases" class="group rounded-xl border border-white/10 bg-white/5 p-4 transition-all hover:border-lime/30 hover:bg-lime/5">
+                <div class="mb-2 flex items-center gap-2">
+                  <Icons name="bar-chart-2" class="h-5 w-5 text-lime" />
+                  <h4 class="font-display text-sm font-semibold text-white">Cases de Sucesso</h4>
+                </div>
+                <p class="font-sans text-xs text-gray-400 group-hover:text-gray-300">
+                  Veja resultados de quem aplicou os 6Ps
+                </p>
+              </a>
+
+              <a href="/diagnostico" class="group rounded-xl border border-white/10 bg-white/5 p-4 transition-all hover:border-lime/30 hover:bg-lime/5">
+                <div class="mb-2 flex items-center gap-2">
+                  <Icons name="target" class="h-5 w-5 text-lime" />
+                  <h4 class="font-display text-sm font-semibold text-white">Diagnóstico dos 6Ps</h4>
+                </div>
+                <p class="font-sans text-xs text-gray-400 group-hover:text-gray-300">
+                  Descubra onde seu sistema trava (grátis)
+                </p>
+              </a>
+
+              <a href="/blog" class="group rounded-xl border border-white/10 bg-white/5 p-4 transition-all hover:border-lime/30 hover:bg-lime/5">
+                <div class="mb-2 flex items-center gap-2">
+                  <Icons name="file-text" class="h-5 w-5 text-lime" />
+                  <h4 class="font-display text-sm font-semibold text-white">Blog Completo</h4>
+                </div>
+                <p class="font-sans text-xs text-gray-400 group-hover:text-gray-300">
+                  +50 artigos sobre vendas e estratégia
+                </p>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contato -->
+          <div class="rounded-xl border border-lime/20 bg-lime/5 p-6 text-center">
+            <p class="mb-4 font-display text-lg font-semibold text-white">
+              Dúvidas sobre o processo?
+            </p>
+            <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <a href={getWhatsAppLink('Olá! Enviei aplicação para Advisory e tenho dúvidas sobre o processo.')} target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="sm" class="border-lime text-lime hover:bg-lime">
+                  💬 WhatsApp: {contactInfo.phone.display}
+                </Button>
+              </a>
+              <a href={contactInfo.email.mailto}>
+                <Button variant="outline" size="sm" class="border-white/30 text-white hover:bg-white/10">
+                  ✉️ {contactInfo.email.main}
+                </Button>
+              </a>
+            </div>
+          </div>
+
+          <!-- Volta para Home -->
+          <div class="mt-8 text-center">
+            <a href="/" class="inline-flex items-center gap-2 font-sans text-body text-gray-400 transition-colors hover:text-lime">
+              ← Voltar para o site
+            </a>
+          </div>
+        </div>
+      </Container>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,217 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/layout/Header.astro'
+import Footer from '../components/layout/Footer.astro'
+import Container from '../components/ui/Container.astro'
+import Icons from '../components/ui/Icons.astro'
+
+const seo = {
+  title: 'Aplicar Para Advisory - Sprint e Conselho Executivo | Joel Burigo',
+  description: 'Solicite uma análise de fit para Sprint Estratégico 30 Dias ou Conselho Executivo. Vagas extremamente limitadas.',
+  keywords: 'advisory, sprint estratégico, conselho executivo, consultoria empresarial, Joel Burigo',
+}
+---
+
+<Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
+  <Header />
+  
+  <main class="min-h-screen bg-dark pt-16 md:pt-20">
+    <section class="py-12 md:py-16">
+      <Container>
+        <div class="mx-auto max-w-5xl">
+          <!-- Header -->
+          <div class="mb-8 text-center">
+            <div class="mb-4 inline-block rounded-full bg-lime/10 px-6 py-2">
+              <span class="font-display text-sm font-bold text-lime">ADVISORY</span>
+            </div>
+            <h1 class="mb-4 font-display text-4xl font-bold text-white md:text-5xl">
+              Aplicar Para Advisory
+            </h1>
+            <p class="mx-auto max-w-2xl font-sans text-body-lg text-gray-200">
+              Preencha o formulário para análise de fit. Respondemos em até 24h úteis.
+            </p>
+          </div>
+
+          <!-- Info Cards -->
+          <div class="mb-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+            <!-- Sprint 30 Dias -->
+            <div class="rounded-2xl border-2 border-lime/30 bg-white/5 p-6">
+              <div class="mb-4 flex items-center gap-3">
+                <Icons name="zap" class="h-6 w-6 text-lime" />
+                <h3 class="font-display text-h3 text-white">Sprint Estratégico 30 Dias</h3>
+              </div>
+              <div class="mb-4 space-y-2">
+                <div class="flex items-center gap-2 font-sans text-sm text-gray-300">
+                  <Icons name="clock" class="h-4 w-4 text-lime" />
+                  <span>30 dias intensivos</span>
+                </div>
+                <div class="flex items-center gap-2 font-sans text-sm text-gray-300">
+                  <Icons name="calendar" class="h-4 w-4 text-lime" />
+                  <span>4 sessões de 90min</span>
+                </div>
+                <div class="flex items-center gap-2 font-sans text-sm text-gray-300">
+                  <Icons name="dollar-sign" class="h-4 w-4 text-lime" />
+                  <span>R$ 7.500</span>
+                </div>
+              </div>
+              <p class="font-sans text-body-sm text-gray-200">
+                Para momentos críticos que precisam de plano estruturado em 30 dias.
+              </p>
+            </div>
+
+            <!-- Conselho Executivo -->
+            <div class="rounded-2xl border-2 border-lime/30 bg-white/5 p-6">
+              <div class="mb-4 flex items-center gap-3">
+                <Icons name="users" class="h-6 w-6 text-lime" />
+                <h3 class="font-display text-h3 text-white">Conselho Executivo</h3>
+              </div>
+              <div class="mb-4 space-y-2">
+                <div class="flex items-center gap-2 font-sans text-sm text-gray-300">
+                  <Icons name="clock" class="h-4 w-4 text-lime" />
+                  <span>3-6 meses</span>
+                </div>
+                <div class="flex items-center gap-2 font-sans text-sm text-gray-300">
+                  <Icons name="calendar" class="h-4 w-4 text-lime" />
+                  <span>8 sessões/mês</span>
+                </div>
+                <div class="flex items-center gap-2 font-sans text-sm text-gray-300">
+                  <Icons name="dollar-sign" class="h-4 w-4 text-lime" />
+                  <span>R$ 15.000/mês</span>
+                </div>
+              </div>
+              <p class="font-sans text-body-sm text-gray-200">
+                Para empresas que precisam de conselheiro presente e acompanhamento executivo contínuo.
+              </p>
+            </div>
+          </div>
+
+          <!-- Processo -->
+          <div class="mb-8 rounded-2xl border-2 border-lime/30 bg-lime/10 p-6 md:p-8">
+            <h2 class="mb-6 font-display text-h2 text-white">Como Funciona</h2>
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+              <div class="flex gap-4">
+                <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-lime font-display font-bold text-dark">
+                  1
+                </div>
+                <div>
+                  <h3 class="mb-2 font-display text-lg font-semibold text-white">Você Aplica</h3>
+                  <p class="font-sans text-body-sm text-gray-200">
+                    Preenche o formulário detalhando seu desafio e momento atual
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-lime font-display font-bold text-dark">
+                  2
+                </div>
+                <div>
+                  <h3 class="mb-2 font-display text-lg font-semibold text-white">Análise de Fit</h3>
+                  <p class="font-sans text-body-sm text-gray-200">
+                    Avalio se seu momento é adequado para Advisory (24h úteis)
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-lime font-display font-bold text-dark">
+                  3
+                </div>
+                <div>
+                  <h3 class="mb-2 font-display text-lg font-semibold text-white">Conversa Inicial</h3>
+                  <p class="font-sans text-body-sm text-gray-200">
+                    Se houver fit, agendamos uma conversa de 30min para alinhar expectativas
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulário -->
+          <div class="rounded-2xl border-2 border-lime/30 bg-gradient-to-b from-dark to-slate-800 p-4">
+            <div id="form-container" class="min-h-[800px]">
+              <!-- Loading State -->
+              <div id="form-loading" class="flex min-h-[800px] items-center justify-center">
+                <div class="text-center">
+                  <div class="mb-4 inline-block h-12 w-12 animate-spin rounded-full border-4 border-lime/30 border-t-lime"></div>
+                  <p class="font-sans text-body text-gray-300">Carregando formulário...</p>
+                </div>
+              </div>
+              
+              <!-- Iframe will be injected here -->
+              <div id="form-iframe-wrapper" class="hidden"></div>
+            </div>
+          </div>
+
+          <!-- Disclaimer -->
+          <div class="mt-8 rounded-xl border border-lime/20 bg-lime/5 p-6 text-center">
+            <p class="mb-2 font-display text-lg font-semibold text-white">
+              ⚠️ Vagas Extremamente Limitadas
+            </p>
+            <p class="font-sans text-body-sm text-gray-200">
+              Máximo 3 clientes simultâneos no Sprint e 2 no Conselho Executivo.<br/>
+              Só aceito clientes que estão em momento crítico real e vão executar as recomendações.
+            </p>
+          </div>
+
+          <!-- Back Link -->
+          <div class="mt-8 text-center">
+            <a href="/advisory" class="inline-flex items-center gap-2 font-sans text-body text-gray-400 transition-colors hover:text-lime">
+              ← Voltar para Advisory
+            </a>
+          </div>
+        </div>
+      </Container>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  // Lazy load form iframe - ATUALIZAR COM URL DO FORMULÁRIO REAL
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('form-iframe-wrapper');
+    const loading = document.getElementById('form-loading');
+    
+    if (!container || !loading) return;
+
+    // Create and inject iframe
+    const iframe = document.createElement('iframe');
+    // TODO: Substituir pela URL real do formulário HighLevel para Advisory
+    iframe.src = 'https://api.gsh.digital/widget/form/SEU_FORM_ID_AQUI'; // ATUALIZAR
+    iframe.style.cssText = 'width: 100%; border: none; overflow: hidden;';
+    iframe.scrolling = 'no';
+    iframe.id = 'advisory_form_' + Date.now();
+    
+    // Show iframe when loaded
+    iframe.onload = () => {
+      loading.classList.add('hidden');
+      container.classList.remove('hidden');
+    };
+
+    container.appendChild(iframe);
+
+    // Load external script
+    const script = document.createElement('script');
+    script.src = 'https://api.gsh.digital/js/form_embed.js';
+    script.type = 'text/javascript';
+    document.body.appendChild(script);
+  });
+</script>
+
+<style>
+  /* Smooth fade in animation */
+  section {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

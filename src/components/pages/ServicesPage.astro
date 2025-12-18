@@ -38,8 +38,8 @@ const pacotes = [
     foco: 'P1-P5 (sistema completo)',
     permanencia: '9-12 meses',
     resultado: '2-3x em vendas',
+    baseDe: 'Fundação',
     inclusos: [
-      'TUDO do Fundação +',
       'Usuários CRM ilimitados',
       '10 automações',
       'Lead scoring configurado',
@@ -61,8 +61,8 @@ const pacotes = [
     foco: 'Todos os 6Ps (operação autônoma)',
     permanencia: '12-18 meses',
     resultado: '3-4x em vendas, equipe autônoma',
+    baseDe: 'Aceleração',
     inclusos: [
-      'TUDO do Aceleração +',
       'Landing pages ilimitadas',
       'Gestão de 3 redes sociais',
       '4 artigos de blog/mês',
@@ -286,7 +286,7 @@ const faq = [
               }`}>
                 {pacote.destaque && (
                   <div class="mb-4 inline-block rounded-full bg-lime px-4 py-1 font-display text-xs font-bold text-dark">
-                    MAIS POPULAR
+                    MAIS VENDIDO
                   </div>
                 )}
                 
@@ -307,6 +307,14 @@ const faq = [
                     <span class="font-semibold text-white">Resultado esperado:</span> {pacote.resultado}
                   </p>
                 </div>
+
+                {pacote.baseDe && (
+                  <div class="mb-4 rounded-lg bg-lime/20 border border-lime/30 p-3">
+                    <p class="font-sans text-xs font-semibold text-lime text-center">
+                      ✓ TUDO do {pacote.baseDe} +
+                    </p>
+                  </div>
+                )}
 
                 <ul class="mb-8 space-y-3">
                   {pacote.inclusos.map((item) => (

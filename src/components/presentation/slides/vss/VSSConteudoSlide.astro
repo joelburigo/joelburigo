@@ -40,10 +40,10 @@ import { Icon } from 'astro-icon/components'
         </div>
 
         <!-- Diferencial 4 -->
-        <div class="rounded-xl border border-white/10 bg-white/5 p-6 text-center">
-          <Icon name="lucide:handshake" class="h-12 w-12 text-lime mx-auto mb-4" />
-          <h3 class="text-lg font-bold text-white mb-2">Comunidade Exclusiva</h3>
-          <p class="text-sm text-gray-400">Comunidade exclusiva para networking e feedback contínuo</p>
+        <div class="rounded-xl border border-white/10 bg-white/5 p-6 text-center opacity-70">
+          <Icon name="lucide:handshake" class="h-10 w-10 text-lime mx-auto mb-3" />
+          <h3 class="text-base font-bold text-white mb-2">Comunidade Exclusiva</h3>
+          <p class="text-xs text-gray-400">Comunidade exclusiva para networking e feedback contínuo</p>
         </div>
 
         <!-- Diferencial 5 -->
@@ -58,40 +58,95 @@ import { Icon } from 'astro-icon/components'
           <Icon name="lucide:shield-check" class="h-12 w-12 text-lime mx-auto mb-4" />
           <h3 class="text-lg font-bold text-white mb-2">Garantia Total</h3>
           <p class="text-sm text-gray-400">Garantia incondicional de 15 dias</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pilar 4: Comunidade -->
-        <div class="rounded-2xl border-2 border-lime/30 bg-lime/5 p-8">
-          <div class="mb-6">
-            <div class="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-lime text-dark">
-              <Icon name="lucide:infinity" class="h-8 w-8" />
-            </div>
-            <h3 class="text-2xl font-bold text-white">4. Comunidade Vitalícia</h3>
-          </div>
-          <div class="space-y-3">
-            <div class="flex items-start gap-3">
-              <Icon name="lucide:check" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
-              <p class="text-gray-300">Aulas e comunidade para sempre</p>
-            </div>
-            <div class="flex items-start gap-3">
-              <Icon name="lucide:check" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
-              <p class="text-gray-300">Atualizações de conteúdo incluídas</p>
-            </div>
-            <div class="flex items-start gap-3">
-              <Icon name="lucide:check" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
-              <p class="text-gray-300">Networking com outros alunos</p>
-            </div>
-            <div class="flex items-start gap-3">
-              <Icon name="lucide:check" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
-              <p class="text-gray-300 text-xs">CRM e mentorias: renovação a partir do 2º ano</p>
-            </div>
-          </div>
         </div>
 
       </div>
 
+      <!-- Cronograma de Implementação -->
+      <div class="mt-10 rounded-2xl bg-gradient-to-br from-lime/10 via-lime/5 to-transparent border-2 border-lime/30 p-8">
+        <h3 class="text-2xl font-bold text-white mb-8 text-center">Cronograma de Implementação <span class="text-lime">(90 Dias)</span></h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Mês 1 -->
+          <div class="relative">
+            <div class="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-lime to-lime/20 rounded-full"></div>
+            <div class="pl-6">
+              <div class="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-lime text-dark text-xl font-bold shadow-lg shadow-lime/50">1</div>
+              <h4 class="text-xl font-bold text-white mb-2">Mês 1</h4>
+              <p class="text-sm font-semibold text-lime mb-3">Fundação do Sistema</p>
+              <ul class="space-y-2 text-sm text-gray-400">
+                <li class="flex items-start gap-2">
+                  <Icon name="lucide:check" class="h-4 w-4 text-lime flex-shrink-0 mt-0.5" />
+                  <span>Cliente Ideal (P1)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <Icon name="lucide:check" class="h-4 w-4 text-lime flex-shrink-0 mt-0.5" />
+                  <span>Oferta e Preço (P2)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <Icon name="lucide:check" class="h-4 w-4 text-lime flex-shrink-0 mt-0.5" />
+                  <span>CRM Configurado (P3)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Mês 2 -->
+          <div class="relative">
+            <div class="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-lime to-lime/20 rounded-full"></div>
+            <div class="pl-6">
+              <div class="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-lime text-dark text-xl font-bold shadow-lg shadow-lime/50">2</div>
+              <h4 class="text-xl font-bold text-white mb-2">Mês 2</h4>
+              <p class="text-sm font-semibold text-lime mb-3">Operação Ativa</p>
+              <ul class="space-y-2 text-sm text-gray-400">
+                <li class="flex items-start gap-2">
+                  <Icon name="lucide:check" class="h-4 w-4 text-lime flex-shrink-0 mt-0.5" />
+                  <span>Prospecção Ativa (P4)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <Icon name="lucide:check" class="h-4 w-4 text-lime flex-shrink-0 mt-0.5" />
+                  <span>Playbook Pronto (P5)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <Icon name="lucide:check" class="h-4 w-4 text-lime flex-shrink-0 mt-0.5" />
+                  <span>Primeiras vendas</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Mês 3 -->
+          <div class="relative">
+            <div class="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-lime to-lime/20 rounded-full"></div>
+            <div class="pl-6">
+              <div class="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-lime text-dark text-xl font-bold shadow-lg shadow-lime/50">3</div>
+              <h4 class="text-xl font-bold text-white mb-2">Mês 3</h4>
+              <p class="text-sm font-semibold text-lime mb-3">Escalabilidade</p>
+              <ul class="space-y-2 text-sm text-gray-400">
+                <li class="flex items-start gap-2">
+                  <Icon name="lucide:check" class="h-4 w-4 text-lime flex-shrink-0 mt-0.5" />
+                  <span>Estrutura de Time (P6)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <Icon name="lucide:check" class="h-4 w-4 text-lime flex-shrink-0 mt-0.5" />
+                  <span>Métricas e KPIs</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <Icon name="lucide:check" class="h-4 w-4 text-lime flex-shrink-0 mt-0.5" />
+                  <span>Sistema autônomo</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 text-center">
+          <div class="inline-flex items-center gap-3 rounded-full bg-lime/20 border border-lime/50 px-6 py-3">
+            <Icon name="lucide:rocket" class="h-6 w-6 text-lime" />
+            <p class="text-white font-semibold">Depois: <span class="text-lime">Sistema rodando com previsibilidade</span></p>
+          </div>
+        </div>
+      </div>
 
     </div>
   </Container>

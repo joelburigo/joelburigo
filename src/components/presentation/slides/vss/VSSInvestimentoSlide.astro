@@ -27,9 +27,11 @@ import { Icon } from 'astro-icon/components'
                 <span class="text-gray-400 text-xl line-through">De: R$ 12.890</span>
               </div>
               <div class="mb-4">
-                <div class="text-6xl font-bold text-lime">R$ 1.997</div>
+                <div class="flex items-baseline justify-center lg:justify-start gap-1">
+                  <span class="text-lg text-white">12x de R$</span>
+                  <span class="text-6xl font-bold text-lime">166,42</span>
+                </div>
               </div>
-              <p class="text-lg text-white mb-2">12x de R$ 166,42</p>
               <p class="text-gray-400 mb-6">ou à vista por R$ 1.997</p>
             </div>
 
@@ -43,28 +45,48 @@ import { Icon } from 'astro-icon/components'
 
           <!-- Right: What's Included -->
           <div>
-            <h3 class="text-xl font-bold text-white mb-6">Tudo que Está Incluso:</h3>
-            <div class="grid grid-cols-1 gap-3">
-              <div class="flex items-start gap-2">
-                <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0 mt-0.5" />
-                <p class="text-sm text-gray-200">15 módulos + 60 aulas práticas</p>
+            <h3 class="text-xl font-bold text-white mb-6">Tudo Incluído no Programa:</h3>
+            <div class="grid grid-cols-1 gap-3 mb-4">
+              <div class="flex items-center justify-between gap-3">
+                <div class="flex items-center gap-2">
+                  <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0" />
+                  <p class="text-sm text-gray-200"><strong>Growth CRM (12 meses)</strong></p>
+                </div>
+                <p class="text-sm text-gray-400 line-through whitespace-nowrap">R$ 6.996</p>
               </div>
-              <div class="flex items-start gap-2">
-                <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0 mt-0.5" />
-                <p class="text-sm text-gray-200"><strong>48 mentorias ao vivo</strong> com Joel Burigo (toda semana)</p>
+              <div class="flex items-center justify-between gap-3">
+                <div class="flex items-center gap-2">
+                  <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0" />
+                  <p class="text-sm text-gray-200"><strong>15 Módulos + 60 Aulas</strong></p>
+                </div>
+                <p class="text-sm text-gray-400 line-through whitespace-nowrap">R$ 997</p>
               </div>
-              <div class="flex items-start gap-2">
-                <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0 mt-0.5" />
-                <p class="text-sm text-gray-200"><strong>Growth CRM por 12 meses</strong> (valor R$ 6.996)</p>
+              <div class="flex items-center justify-between gap-3">
+                <div class="flex items-center gap-2">
+                  <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0" />
+                  <p class="text-sm text-gray-200"><strong>48 Mentorias ao Vivo</strong></p>
+                </div>
+                <p class="text-sm text-gray-400 line-through whitespace-nowrap">R$ 2.400</p>
               </div>
-              <div class="flex items-start gap-2">
-                <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0 mt-0.5" />
-                <p class="text-sm text-gray-200">Templates e planilhas prontos</p>
+              <div class="flex items-center justify-between gap-3">
+                <div class="flex items-center gap-2">
+                  <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0" />
+                  <p class="text-sm text-gray-200"><strong>Bônus Exclusivos</strong></p>
+                </div>
+                <p class="text-sm text-gray-400 line-through whitespace-nowrap">R$ 2.497</p>
               </div>
-              <div class="flex items-start gap-2">
-                <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0 mt-0.5" />
-                <p class="text-sm text-gray-200"><strong>Acesso vitalício</strong> às aulas e comunidade</p>
+              <div class="flex items-center gap-2">
+                <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0" />
+                <p class="text-sm text-gray-200"><strong>Comunidade Vitalícia</strong></p>
               </div>
+              <div class="flex items-center gap-2">
+                <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0" />
+                <p class="text-sm text-gray-200"><strong>Garantia Incondicional 15 dias</strong></p>
+              </div>
+            </div>
+            <div class="border-t border-white/20 pt-3">
+              <p class="text-xs text-gray-400 mb-1">Valor somado dos itens:</p>
+              <p class="text-2xl font-bold text-white">R$ 12.890</p>
             </div>
           </div>
 

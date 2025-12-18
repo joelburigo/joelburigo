@@ -7,94 +7,103 @@ import { Icon } from 'astro-icon/components'
   <Container>
     <div class="max-w-6xl mx-auto px-4">
       
-      <div class="text-center mb-8">
+      <div class="text-center mb-12">
         <h2 class="font-display text-5xl font-bold text-white mb-4">
-          Escolha Seu <span class="text-lime">Caminho</span>
+          Qual <span class="text-lime">Caminho</span> Faz Sentido?
         </h2>
         <p class="text-xl text-gray-400">
-          Baseado no que conversamos, clique na opção que mais faz sentido
+          Três formas de implementar os 6Ps na sua empresa
         </p>
       </div>
 
       <!-- Forquilha de Caminhos -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
         <!-- Caminho DIY - VSS -->
         <button 
           @click="goTo(10)"
-          class="group rounded-xl border-2 border-lime/30 bg-lime/5 p-6 text-center hover:border-lime/60 hover:bg-lime/10 transition-all cursor-pointer"
+          class="group rounded-xl border-2 border-lime/30 bg-lime/5 p-8 text-left hover:border-lime/60 hover:bg-lime/10 transition-all cursor-pointer"
         >
-          <div class="mb-4">
-            <Icon name="lucide:graduation-cap" class="h-14 w-14 text-lime mx-auto group-hover:scale-110 transition-transform" />
+          <div class="mb-6">
+            <Icon name="lucide:graduation-cap" class="h-16 w-16 text-lime group-hover:scale-110 transition-transform" />
           </div>
-          <h3 class="text-2xl font-bold text-white mb-3">Vendas Sem Segredos</h3>
-          <p class="text-sm text-gray-300 mb-4">
-            Quer aprender e implementar sozinho.<br/>
-            Tem tempo e quer autonomia.
+          
+          <h3 class="text-3xl font-bold text-white mb-4 leading-tight">Quer fazer <span class="text-lime">sozinho?</span></h3>
+          
+          <p class="text-lg text-white font-semibold mb-2">Vendas Sem Segredos</p>
+          
+          <p class="text-gray-300 mb-4 leading-relaxed">
+            Curso completo + comunidade para você implementar os 6Ps sozinho
           </p>
-          <div class="rounded-lg bg-lime/20 px-4 py-2 mb-3">
-            <span class="text-xs font-bold text-lime uppercase tracking-wider">DIY - Faça Você Mesmo</span>
-          </div>
-          <div class="flex items-center justify-center gap-2 text-lime font-semibold">
-            <span>Ver Detalhes</span>
-            <Icon name="lucide:arrow-right" class="h-5 w-5" />
+          
+          <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+            <strong class="text-gray-300">Ideal para:</strong> Empreendedor solo ou pequeno time que tem tempo para executar
+          </p>
+          
+          <div class="flex items-center gap-2 text-lime font-semibold">
+            <span>Ver Programa</span>
+            <Icon name="lucide:arrow-right" class="h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </div>
         </button>
 
         <!-- Caminho DFY - Services -->
         <button 
           @click="goTo(14)"
-          class="group rounded-xl border-2 border-blue-500/30 bg-blue-500/5 p-6 text-center hover:border-blue-500/60 hover:bg-blue-500/10 transition-all cursor-pointer"
+          class="group rounded-xl border-2 border-blue-500/30 bg-blue-500/5 p-8 text-left hover:border-blue-500/60 hover:bg-blue-500/10 transition-all cursor-pointer relative"
         >
-          <div class="mb-4">
-            <Icon name="lucide:rocket" class="h-14 w-14 text-blue-400 mx-auto group-hover:scale-110 transition-transform" />
+          <div class="absolute -top-3 right-4 rounded-full bg-blue-500 px-3 py-1">
+            <span class="text-xs font-bold text-white uppercase tracking-wider">Mais Vendido</span>
           </div>
-          <h3 class="text-2xl font-bold text-white mb-3">Services</h3>
-          <p class="text-sm text-gray-300 mb-4">
-            Tem orçamento mas não tem tempo.<br/>
-            Quer que façamos por você.
+          
+          <div class="mb-6">
+            <Icon name="lucide:rocket" class="h-16 w-16 text-blue-400 group-hover:scale-110 transition-transform" />
+          </div>
+          
+          <h3 class="text-3xl font-bold text-white mb-4 leading-tight">Quer minha equipe <span class="text-blue-400">implementando?</span></h3>
+          
+          <p class="text-lg text-white font-semibold mb-2">Services</p>
+          
+          <p class="text-gray-300 mb-4 leading-relaxed">
+            Nossa equipe implementa os 6Ps na sua empresa. Você acompanha, nós executamos.
           </p>
-          <div class="rounded-lg bg-blue-900/40 px-4 py-2 mb-3">
-            <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">DFY - Fazemos Por Você</span>
-          </div>
-          <div class="flex items-center justify-center gap-2 text-blue-400 font-semibold">
-            <span>Ver Detalhes</span>
-            <Icon name="lucide:arrow-right" class="h-5 w-5" />
+          
+          <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+            <strong class="text-gray-300">Ideal para:</strong> Empresa R$ 50k-500k/mês que não tem tempo mas tem orçamento
+          </p>
+          
+          <div class="flex items-center gap-2 text-blue-400 font-semibold">
+            <span>Ver Pacotes</span>
+            <Icon name="lucide:arrow-right" class="h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </div>
         </button>
 
         <!-- Caminho Advisory -->
         <button 
           @click="goTo(18)"
-          class="group rounded-xl border-2 border-purple-500/30 bg-purple-500/5 p-6 text-center hover:border-purple-500/60 hover:bg-purple-500/10 transition-all cursor-pointer"
+          class="group rounded-xl border-2 border-purple-500/30 bg-purple-500/5 p-8 text-left hover:border-purple-500/60 hover:bg-purple-500/10 transition-all cursor-pointer"
         >
-          <div class="mb-4">
-            <Icon name="lucide:compass" class="h-14 w-14 text-purple-400 mx-auto group-hover:scale-110 transition-transform" />
+          <div class="mb-6">
+            <Icon name="lucide:compass" class="h-16 w-16 text-purple-400 group-hover:scale-110 transition-transform" />
           </div>
-          <h3 class="text-2xl font-bold text-white mb-3">Advisory</h3>
-          <p class="text-sm text-gray-300 mb-4">
-            Já tem time e estrutura.<br/>
-            Precisa de direção estratégica.
+          
+          <h3 class="text-3xl font-bold text-white mb-4 leading-tight">Quer minha mente no seu <span class="text-purple-400">negócio?</span></h3>
+          
+          <p class="text-lg text-white font-semibold mb-2">Advisory</p>
+          
+          <p class="text-gray-300 mb-4 leading-relaxed">
+            Sessões estratégicas comigo para decisões-chave, crescimento e escala.
           </p>
-          <div class="rounded-lg bg-purple-900/40 px-4 py-2 mb-3">
-            <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">Conselho Estratégico</span>
-          </div>
-          <div class="flex items-center justify-center gap-2 text-purple-400 font-semibold">
-            <span>Ver Detalhes</span>
-            <Icon name="lucide:arrow-right" class="h-5 w-5" />
+          
+          <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+            <strong class="text-gray-300">Ideal para:</strong> Empresa estruturada (R$ 500k+/mês) que já tem time e precisa de direcionamento
+          </p>
+          
+          <div class="flex items-center gap-2 text-purple-400 font-semibold">
+            <span>Ver Formatos</span>
+            <Icon name="lucide:arrow-right" class="h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </div>
         </button>
 
-      </div>
-
-      <!-- Mensagem Final -->
-      <div class="text-center">
-        <div class="inline-block rounded-xl bg-white/5 border border-white/10 px-6 py-3">
-          <p class="text-sm text-gray-300">
-            <Icon name="lucide:mouse-pointer-click" class="inline h-4 w-4 text-lime mr-1" />
-            <strong class="text-white">Clique no caminho escolhido</strong> para ver os detalhes
-          </p>
-        </div>
       </div>
 
     </div>

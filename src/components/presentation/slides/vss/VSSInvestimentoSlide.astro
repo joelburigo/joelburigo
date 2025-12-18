@@ -16,83 +16,9 @@ import { Icon } from 'astro-icon/components'
         </p>
       </div>
 
-      <!-- Comparison First -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-        <div class="rounded-xl bg-white/5 border border-white/10 p-6">
-          <div class="mb-4 text-center">
-            <Icon name="lucide:briefcase" class="h-8 w-8 text-gray-400 mx-auto" />
-          </div>
-          <p class="text-sm text-gray-400 mb-2 text-center">Contratar Agência</p>
-          <p class="text-4xl font-bold text-white mb-1 text-center">R$ 5-15k</p>
-          <p class="text-sm text-gray-500 text-center mb-4">/mês (mínimo 12 meses)</p>
-          <div class="space-y-2">
-            <div class="flex items-start gap-2">
-              <Icon name="lucide:x" class="h-4 w-4 text-red-400 flex-shrink-0 mt-0.5" />
-              <p class="text-xs text-gray-400">Você não aprende nada</p>
-            </div>
-            <div class="flex items-start gap-2">
-              <Icon name="lucide:x" class="h-4 w-4 text-red-400 flex-shrink-0 mt-0.5" />
-              <p class="text-xs text-gray-400">Dependência contínua</p>
-            </div>
-            <div class="flex items-start gap-2">
-              <Icon name="lucide:x" class="h-4 w-4 text-red-400 flex-shrink-0 mt-0.5" />
-              <p class="text-xs text-gray-400">R$ 60-180k/ano</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="rounded-xl bg-white/5 border border-white/10 p-6">
-          <div class="mb-4 text-center">
-            <Icon name="lucide:user-plus" class="h-8 w-8 text-gray-400 mx-auto" />
-          </div>
-          <p class="text-sm text-gray-400 mb-2 text-center">Contratar SDR</p>
-          <p class="text-4xl font-bold text-white mb-1 text-center">R$ 4-8k</p>
-          <p class="text-sm text-gray-500 text-center mb-4">/mês + comissão</p>
-          <div class="space-y-2">
-            <div class="flex items-start gap-2">
-              <Icon name="lucide:x" class="h-4 w-4 text-red-400 flex-shrink-0 mt-0.5" />
-              <p class="text-xs text-gray-400">Precisa treinar (sem processo)</p>
-            </div>
-            <div class="flex items-start gap-2">
-              <Icon name="lucide:x" class="h-4 w-4 text-red-400 flex-shrink-0 mt-0.5" />
-              <p class="text-xs text-gray-400">Risco de turnover</p>
-            </div>
-            <div class="flex items-start gap-2">
-              <Icon name="lucide:x" class="h-4 w-4 text-red-400 flex-shrink-0 mt-0.5" />
-              <p class="text-xs text-gray-400">R$ 48-96k/ano mínimo</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="rounded-xl border-2 border-lime bg-gradient-to-br from-lime/10 to-lime/5 p-6 relative">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-            <div class="rounded-full bg-lime px-4 py-1">
-              <span class="text-xs font-bold text-dark uppercase">Melhor Opção</span>
-            </div>
-          </div>
-          <div class="mb-4 text-center mt-2">
-            <Icon name="lucide:graduation-cap" class="h-8 w-8 text-lime mx-auto" />
-          </div>
-          <p class="text-sm text-lime mb-2 text-center">VSS (Você Implementa)</p>
-          <p class="text-4xl font-bold text-lime mb-1 text-center">R$ 1.997</p>
-          <p class="text-sm text-gray-400 text-center mb-4">pagamento único</p>
-          <div class="space-y-2">
-            <div class="flex items-start gap-2">
-              <Icon name="lucide:check" class="h-4 w-4 text-lime flex-shrink-0 mt-0.5" />
-              <p class="text-xs text-gray-300">Você aprende e domina</p>
-            </div>
-            <div class="flex items-start gap-2">
-              <Icon name="lucide:check" class="h-4 w-4 text-lime flex-shrink-0 mt-0.5" />
-              <p class="text-xs text-gray-300">Sistema seu para sempre</p>
-            </div>
-            <div class="flex items-start gap-2">
-              <Icon name="lucide:check" class="h-4 w-4 text-lime flex-shrink-0 mt-0.5" />
-              <p class="text-xs text-gray-300">Investimento único</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <!-- Investimento VSS -->
+      <div class="rounded-2xl border-2 border-lime bg-gradient-to-br from-lime/10 to-lime/5 p-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
           <!-- Left: Price -->
           <div class="text-center lg:text-left lg:border-r lg:border-white/10 lg:pr-8">
@@ -110,7 +36,7 @@ import { Icon } from 'astro-icon/components'
 
             <div class="rounded-xl bg-dark/60 border border-lime/30 p-4">
               <p class="text-white font-semibold mb-1">
-                <Icon name="lucide:shield-check" class="inline h-5 w-5 text-lime" /> Garantia de 7 Dias
+                <Icon name="lucide:shield-check" class="inline h-5 w-5 text-lime" /> Garantia de 15 Dias
               </p>
               <p class="text-sm text-gray-400">Não gostou? Devolvo 100% do valor</p>
             </div>
@@ -122,36 +48,35 @@ import { Icon } from 'astro-icon/components'
             <div class="grid grid-cols-1 gap-3">
               <div class="flex items-start gap-2">
                 <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0 mt-0.5" />
-                <p class="text-sm text-gray-200">60+ vídeos explicando os 6Ps</p>
+                <p class="text-sm text-gray-200">15 módulos + 60 aulas práticas</p>
               </div>
               <div class="flex items-start gap-2">
                 <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0 mt-0.5" />
-                <p class="text-sm text-gray-200">Mentorias ao vivo 2x/mês por 6 meses</p>
+                <p class="text-sm text-gray-200"><strong>48 mentorias ao vivo</strong> com Joel Burigo (toda semana)</p>
               </div>
               <div class="flex items-start gap-2">
                 <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0 mt-0.5" />
-                <p class="text-sm text-gray-200">CRM completo grátis por 12 meses (valor R$ 6.996)</p>
+                <p class="text-sm text-gray-200"><strong>Growth CRM por 12 meses</strong> (valor R$ 6.996)</p>
               </div>
               <div class="flex items-start gap-2">
                 <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0 mt-0.5" />
-                <p class="text-sm text-gray-200">Templates prontos (ICP, Scripts, Funis)</p>
+                <p class="text-sm text-gray-200">Templates e planilhas prontos</p>
               </div>
               <div class="flex items-start gap-2">
                 <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0 mt-0.5" />
-                <p class="text-sm text-gray-200">Planilhas de precificação e projeção</p>
-              </div>
-              <div class="flex items-start gap-2">
-                <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0 mt-0.5" />
-                <p class="text-sm text-gray-200">Acesso vitalício + atualizações futuras</p>
-              </div>
-              <div class="flex items-start gap-2">
-                <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0 mt-0.5" />
-                <p class="text-sm text-gray-200">Comunidade exclusiva de alunos</p>
+                <p class="text-sm text-gray-200"><strong>Acesso vitalício</strong> às aulas e comunidade</p>
               </div>
             </div>
           </div>
 
         </div>
+      </div>
+
+      <!-- Aviso Renovação -->
+      <div class="rounded-xl bg-white/5 border border-white/10 p-6 mt-8">
+        <p class="text-sm text-gray-400 mb-2">
+          <Icon name="lucide:info" class="inline h-4 w-4 text-blue-400" /> <strong class="text-white">Após o 1º ano:</strong> Renovação opcional de R$ 297/mês para manter acesso ao CRM e mentorias ao vivo. Aulas e comunidade são vitalícias.
+        </p>
       </div>
 
     </div>

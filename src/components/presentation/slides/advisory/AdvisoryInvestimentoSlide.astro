@@ -1,0 +1,196 @@
+---
+import Container from '../../../ui/Container.astro'
+import { Icon } from 'astro-icon/components'
+---
+
+<div class="min-h-screen bg-dark py-20 flex items-center">
+  <Container>
+    <div class="max-w-5xl mx-auto">
+      
+      <div class="text-center mb-12">
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
+          Investimento <span class="text-purple-400">Advisory</span>
+        </h2>
+      </div>
+
+      <!-- Pricing Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        
+        <div class="rounded-2xl border-2 border-purple-500/30 bg-purple-500/5 p-8 text-center">
+          <Icon name="lucide:clock" class="h-12 w-12 text-purple-400 mx-auto mb-4" />
+          <h3 class="text-2xl font-bold text-white mb-2">Sessão</h3>
+          <div class="mb-6">
+            <div class="flex items-baseline justify-center gap-1 mb-2">
+              <span class="text-sm text-gray-400">R$</span>
+              <span class="text-6xl font-bold text-purple-400">997</span>
+            </div>
+            <div class="text-sm text-gray-400">90 minutos</div>
+          </div>
+          <div class="space-y-2 mb-6">
+            <div class="flex items-center justify-center gap-2 text-sm text-gray-300">
+              <Icon name="lucide:check" class="h-4 w-4 text-purple-400" />
+              <span>1 problema específico</span>
+            </div>
+            <div class="flex items-center justify-center gap-2 text-sm text-gray-300">
+              <Icon name="lucide:check" class="h-4 w-4 text-purple-400" />
+              <span>Plano de ação</span>
+            </div>
+            <div class="flex items-center justify-center gap-2 text-sm text-gray-300">
+              <Icon name="lucide:check" class="h-4 w-4 text-purple-400" />
+              <span>Follow-up 7 dias</span>
+            </div>
+          </div>
+          <div class="rounded-lg bg-purple-500/10 px-4 py-2 border border-purple-500/30">
+            <p class="text-xs text-purple-400 font-bold">Pontual</p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border-2 border-purple-500/50 bg-gradient-to-br from-purple-500/20 to-purple-500/5 p-8 text-center relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+            <div class="rounded-full bg-lime px-4 py-1">
+              <span class="text-xs font-bold text-dark uppercase">Mais Comum</span>
+            </div>
+          </div>
+          <Icon name="lucide:zap" class="h-12 w-12 text-purple-400 mx-auto mb-4" />
+          <h3 class="text-2xl font-bold text-white mb-2">Sprint</h3>
+          <div class="mb-6">
+            <div class="flex items-baseline justify-center gap-1 mb-2">
+              <span class="text-sm text-gray-400">R$</span>
+              <span class="text-6xl font-bold text-purple-400">7.5k</span>
+            </div>
+            <div class="text-sm text-gray-400">30 dias intensivos</div>
+          </div>
+          <div class="space-y-2 mb-6">
+            <div class="flex items-center justify-center gap-2 text-sm text-gray-300">
+              <Icon name="lucide:check" class="h-4 w-4 text-purple-400" />
+              <span>4 sessões (1/semana)</span>
+            </div>
+            <div class="flex items-center justify-center gap-2 text-sm text-gray-300">
+              <Icon name="lucide:check" class="h-4 w-4 text-purple-400" />
+              <span>WhatsApp direto</span>
+            </div>
+            <div class="flex items-center justify-center gap-2 text-sm text-gray-300">
+              <Icon name="lucide:check" class="h-4 w-4 text-purple-400" />
+              <span>Entregáveis documentados</span>
+            </div>
+          </div>
+          <div class="rounded-lg bg-purple-500/10 px-4 py-2 border border-purple-500/30">
+            <p class="text-xs text-purple-400 font-bold">Projeto Específico</p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border-2 border-purple-500/30 bg-purple-500/5 p-8 text-center">
+          <Icon name="lucide:crown" class="h-12 w-12 text-purple-400 mx-auto mb-4" />
+          <h3 class="text-2xl font-bold text-white mb-2">Conselho</h3>
+          <div class="mb-6">
+            <div class="flex items-baseline justify-center gap-1 mb-2">
+              <span class="text-sm text-gray-400">R$</span>
+              <span class="text-6xl font-bold text-purple-400">15k</span>
+            </div>
+            <div class="text-sm text-gray-400">por mês</div>
+          </div>
+          <div class="space-y-2 mb-6">
+            <div class="flex items-center justify-center gap-2 text-sm text-gray-300">
+              <Icon name="lucide:check" class="h-4 w-4 text-purple-400" />
+              <span>Acesso ilimitado</span>
+            </div>
+            <div class="flex items-center justify-center gap-2 text-sm text-gray-300">
+              <Icon name="lucide:check" class="h-4 w-4 text-purple-400" />
+              <span>2 sessões/mês</span>
+            </div>
+            <div class="flex items-center justify-center gap-2 text-sm text-gray-300">
+              <Icon name="lucide:check" class="h-4 w-4 text-purple-400" />
+              <span>Conselheiro dedicado</span>
+            </div>
+          </div>
+          <div class="rounded-lg bg-purple-500/10 px-4 py-2 border border-purple-500/30">
+            <p class="text-xs text-purple-400 font-bold">Longo Prazo</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Valor vs Preço -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        
+        <div class="rounded-xl border border-white/10 bg-white/5 p-8">
+          <h3 class="text-2xl font-bold text-white mb-6">
+            <Icon name="lucide:bar-chart-3" class="inline h-6 w-6 text-purple-400" /> Por Que Vale a Pena?
+          </h3>
+          <div class="space-y-4">
+            <div class="rounded-lg bg-purple-500/10 p-4 border border-purple-500/30">
+              <p class="text-white font-semibold mb-2">Evita Erros Caros</p>
+              <p class="text-sm text-gray-400">
+                Uma decisão errada em P2 (ICP) pode custar meses perseguindo cliente errado. 
+                R$ 997 de consultoria vs R$ 50k perdidos? Fácil.
+              </p>
+            </div>
+            <div class="rounded-lg bg-purple-500/10 p-4 border border-purple-500/30">
+              <p class="text-white font-semibold mb-2">Acelera Resultados</p>
+              <p class="text-sm text-gray-400">
+                Você levaria 6 meses testando sozinho. Com Advisory, resolve em 1 Sprint (30 dias). 
+                5 meses economizados = R$ 7.5k bem investidos.
+              </p>
+            </div>
+            <div class="rounded-lg bg-purple-500/10 p-4 border border-purple-500/30">
+              <p class="text-white font-semibold mb-2">Validação Externa</p>
+              <p class="text-sm text-gray-400">
+                Você está muito dentro do problema. Alguém de fora vê o que você não vê. 
+                140+ empresas = padrões que você não conhece.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-white/10 bg-white/5 p-8">
+          <h3 class="text-2xl font-bold text-white mb-6">
+            <Icon name="lucide:users" class="inline h-6 w-6 text-purple-400" /> Quem Já Usou
+          </h3>
+          <div class="space-y-4">
+            <div class="rounded-lg bg-white/5 p-4">
+              <p class="text-white font-semibold mb-2">CEO de SaaS B2B</p>
+              <p class="text-sm text-gray-400 mb-2">
+                "Uma sessão de 90min economizou 3 meses de teste errado no nosso P4. 
+                Mudamos o funil inteiro baseado no que o Joel mapeou."
+              </p>
+              <p class="text-xs text-gray-500">Sprint de R$ 7.5k • ROI em 2 meses</p>
+            </div>
+            <div class="rounded-lg bg-white/5 p-4">
+              <p class="text-white font-semibold mb-2">Fundadora de Agência</p>
+              <p class="text-sm text-gray-400 mb-2">
+                "Estava vendendo pra cliente errado há 2 anos. Advisory me mostrou isso em 1 hora. 
+                Mudei o ICP, faturamento subiu 40%."
+              </p>
+              <p class="text-xs text-gray-500">Sessão de R$ 997 • ROI em 1 mês</p>
+            </div>
+            <div class="rounded-lg bg-white/5 p-4">
+              <p class="text-white font-semibold mb-2">CEO de Consultoria</p>
+              <p class="text-sm text-gray-400 mb-2">
+                "Conselho mensal me mantém no caminho certo. Não tomo decisão estratégica sem validar com Joel."
+              </p>
+              <p class="text-xs text-gray-500">Conselho R$ 15k/mês • Cliente há 18 meses</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Vagas Limitadas -->
+      <div class="rounded-2xl bg-gradient-to-r from-red-500/10 via-purple-500/10 to-purple-500/5 border-2 border-purple-500/50 p-8 text-center">
+        <Icon name="lucide:alert-circle" class="h-12 w-12 text-purple-400 mx-auto mb-4" />
+        <h3 class="text-2xl font-bold text-white mb-4">Vagas Limitadas</h3>
+        <p class="text-gray-300 max-w-2xl mx-auto mb-6">
+          Conselho mensal aceita <strong class="text-white">máximo 5 clientes simultâneos</strong> 
+          (por questão de qualidade). Sprints têm fila de espera de ~15 dias. 
+          Sessões avulsas: próximas disponibilidades em 7 dias.
+        </p>
+        <div class="inline-block rounded-lg bg-purple-500/20 px-6 py-3 border border-purple-500/50">
+          <p class="text-sm text-purple-400 font-bold">
+            ⚠️ Se tem interesse em Conselho, agende Sessão exploratória primeiro
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </Container>
+</div>

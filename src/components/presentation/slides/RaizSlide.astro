@@ -1,0 +1,69 @@
+---
+import Container from '../../ui/Container.astro'
+import { Icon } from 'astro-icon/components'
+---
+
+<div class="min-h-screen bg-dark py-20 flex items-center">
+  <Container>
+    <div class="max-w-4xl mx-auto">
+      
+      <div class="text-center mb-16">
+        <h2 class="font-display text-5xl md:text-6xl font-bold text-white mb-6">
+          Por Que <span class="text-lime">Isso Acontece?</span>
+        </h2>
+      </div>
+
+      <!-- O que NÃO É -->
+      <div class="mb-12 rounded-2xl border-2 border-red-500/30 bg-red-500/5 p-8">
+        <div class="flex items-start gap-4 mb-6">
+          <Icon name="lucide:x-circle" class="h-8 w-8 text-red-500 flex-shrink-0 mt-1" />
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-4">Não é falta de...</h3>
+            <div class="space-y-3 text-lg text-gray-300">
+              <div class="flex items-center gap-3">
+                <Icon name="lucide:x" class="h-5 w-5 text-red-400" />
+                <span>Esforço (você já trabalha demais)</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <Icon name="lucide:x" class="h-5 w-5 text-red-400" />
+                <span>Talento (você já sabe vender)</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <Icon name="lucide:x" class="h-5 w-5 text-red-400" />
+                <span>Vontade (você quer crescer)</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <Icon name="lucide:x" class="h-5 w-5 text-red-400" />
+                <span>Cliente (tem mercado de sobra)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- O que É -->
+      <div class="rounded-2xl border-2 border-lime/50 bg-gradient-to-br from-lime/10 to-lime/5 p-12 text-center">
+        <Icon name="lucide:target" class="h-16 w-16 text-lime mx-auto mb-6" />
+        <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">
+          É falta de <span class="text-lime">SISTEMA</span>
+        </h3>
+        <p class="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto mb-8">
+          Vendas não é mágica. Não é dom. Não é sorte.<br/>
+          É <strong class="text-white">processo estruturado e replicável</strong>.
+        </p>
+        <div class="inline-block rounded-full bg-lime/20 px-8 py-4 border-2 border-lime/30">
+          <p class="text-lg font-bold text-lime">
+            Se não está documentado, não é um sistema. É você.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-gray-400 text-lg">
+          A boa notícia? <span class="text-white font-bold">Sistema se constrói.</span>
+        </p>
+      </div>
+
+    </div>
+  </Container>
+</div>

@@ -1,0 +1,145 @@
+---
+import Container from '../../../ui/Container.astro'
+import { Icon } from 'astro-icon/components'
+---
+
+<div class="min-h-screen bg-dark py-20 flex items-center">
+  <Container>
+    <div class="max-w-6xl mx-auto">
+      
+      <div class="text-center mb-12">
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
+          Os <span class="text-lime">4 Pilares</span> do VSS
+        </h2>
+        <p class="text-xl text-gray-400">
+          Tudo que você precisa para implementar os 6Ps com autonomia
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- Pilar 1: Conteúdo -->
+        <div class="rounded-2xl border-2 border-lime/30 bg-lime/5 p-8">
+          <div class="mb-6">
+            <div class="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-lime text-dark">
+              <Icon name="lucide:book-open" class="h-8 w-8" />
+            </div>
+            <h3 class="text-2xl font-bold text-white">1. Conteúdo Gravado</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:check" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
+              <p class="text-gray-300">60+ vídeos explicando cada P em detalhes</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:check" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
+              <p class="text-gray-300">Templates prontos (Canvas de Posicionamento, Matriz ICP, Scripts de Vendas)</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:check" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
+              <p class="text-gray-300">Planilhas de cálculo (precificação, previsão de vendas)</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:check" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
+              <p class="text-gray-300">Checklists de implementação passo a passo</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pilar 2: Mentorias -->
+        <div class="rounded-2xl border-2 border-lime/30 bg-lime/5 p-8">
+          <div class="mb-6">
+            <div class="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-lime text-dark">
+              <Icon name="lucide:users" class="h-8 w-8" />
+            </div>
+            <h3 class="text-2xl font-bold text-white">2. Mentorias Ao Vivo</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:check" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
+              <p class="text-gray-300">2 mentorias coletivas por mês (online, ao vivo)</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:check" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
+              <p class="text-gray-300">Tire dúvidas sobre sua implementação</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:check" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
+              <p class="text-gray-300">Aprenda com cases de outros alunos</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:check" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
+              <p class="text-gray-300">Gravações disponíveis se não puder participar</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pilar 3: CRM -->
+        <div class="rounded-2xl border-2 border-lime/30 bg-lime/5 p-8">
+          <div class="mb-6">
+            <div class="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-lime text-dark">
+              <Icon name="lucide:layout-dashboard" class="h-8 w-8" />
+            </div>
+            <h3 class="text-2xl font-bold text-white">3. Sistema CRM</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:check" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
+              <p class="text-gray-300">Acesso ao CRM Joel Burigo (já configurado)</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:check" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
+              <p class="text-gray-300">Funil de vendas, pipeline, automações</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:check" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
+              <p class="text-gray-300">Dashboards de performance e métricas</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:check" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
+              <p class="text-gray-300">Templates de follow-up e cadências</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pilar 4: Comunidade -->
+        <div class="rounded-2xl border-2 border-lime/30 bg-lime/5 p-8">
+          <div class="mb-6">
+            <div class="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-lime text-dark">
+              <Icon name="lucide:infinity" class="h-8 w-8" />
+            </div>
+            <h3 class="text-2xl font-bold text-white">4. Acesso Vitalício</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:check" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
+              <p class="text-gray-300">Acesso para sempre, sem mensalidade</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:check" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
+              <p class="text-gray-300">Atualizações de conteúdo incluídas</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:check" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
+              <p class="text-gray-300">Grupo exclusivo de alunos (networking)</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:check" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
+              <p class="text-gray-300">Suporte via comunidade online</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-12 text-center">
+        <div class="inline-block rounded-2xl bg-white/5 border border-white/10 px-8 py-6">
+          <p class="text-lg text-gray-300">
+            <strong class="text-lime">Tudo que você precisa</strong> para implementar os 6Ps em 6 meses
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </Container>
+</div>

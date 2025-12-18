@@ -1,0 +1,78 @@
+---
+import Container from '../../ui/Container.astro'
+import { Icon } from 'astro-icon/components'
+---
+
+<div class="min-h-screen bg-dark py-20 flex items-center">
+  <Container>
+    <div class="text-center mb-16">
+      <h2 class="font-display text-5xl md:text-6xl font-bold text-white mb-6">
+        <span class="text-lime">Funciona?</span>
+      </h2>
+      <p class="text-xl text-gray-400">
+        Mais de 140 empresas já implementaram. Aqui estão alguns resultados:
+      </p>
+    </div>
+
+    <!-- Hero Numbers -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-5xl mx-auto">
+      <div class="text-center rounded-2xl border-2 border-lime/30 bg-lime/5 p-8">
+        <div class="text-6xl font-bold text-lime mb-3">140+</div>
+        <div class="text-lg text-gray-300">Clientes Atendidos</div>
+      </div>
+      <div class="text-center rounded-2xl border-2 border-lime/30 bg-lime/5 p-8">
+        <div class="text-6xl font-bold text-lime mb-3">R$ 1Bi</div>
+        <div class="text-lg text-gray-300">Em Vendas Estruturadas</div>
+      </div>
+      <div class="text-center rounded-2xl border-2 border-lime/30 bg-lime/5 p-8">
+        <div class="text-6xl font-bold text-lime mb-3">17</div>
+        <div class="text-lg text-gray-300">Anos Validando</div>
+      </div>
+    </div>
+
+    <!-- Cases -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      
+      <div class="rounded-xl border border-white/10 bg-white/5 p-6">
+        <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-lime/20 px-3 py-1">
+          <Icon name="lucide:trending-up" class="h-4 w-4 text-lime" />
+          <span class="text-sm font-bold text-lime">+500% Crescimento</span>
+        </div>
+        <p class="text-gray-300 mb-4">
+          Empresa de tecnologia: de <strong class="text-white">R$ 50k para R$ 300k/mês</strong> em 8 meses após implementar os 6Ps.
+        </p>
+        <div class="text-xs text-gray-500 uppercase tracking-wider">SaaS B2B • São Paulo</div>
+      </div>
+
+      <div class="rounded-xl border border-white/10 bg-white/5 p-6">
+        <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-blue-500/20 px-3 py-1">
+          <Icon name="lucide:users" class="h-4 w-4 text-blue-400" />
+          <span class="text-sm font-bold text-blue-400">Time Escalado</span>
+        </div>
+        <p class="text-gray-300 mb-4">
+          Consultoria: contratou <strong class="text-white">5 vendedores novos</strong> e manteve a margem. Processos documentados permitiram crescer sem perder qualidade.
+        </p>
+        <div class="text-xs text-gray-500 uppercase tracking-wider">Consultoria • Rio de Janeiro</div>
+      </div>
+
+      <div class="rounded-xl border border-white/10 bg-white/5 p-6">
+        <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-purple-500/20 px-3 py-1">
+          <Icon name="lucide:palmtree" class="h-4 w-4 text-purple-400" />
+          <span class="text-sm font-bold text-purple-400">Liberdade</span>
+        </div>
+        <p class="text-gray-300 mb-4">
+          Agência de marketing: fundador <strong class="text-white">saiu das operações em 6 meses</strong>. Empresa rodando sem ele no dia a dia.
+        </p>
+        <div class="text-xs text-gray-500 uppercase tracking-wider">Agência • Florianópolis</div>
+      </div>
+
+    </div>
+
+    <div class="mt-16 text-center">
+      <p class="text-gray-400 text-lg">
+        Empresas reais. Resultados reais. <span class="text-white font-bold">Metodologia validada.</span>
+      </p>
+    </div>
+
+  </Container>
+</div>

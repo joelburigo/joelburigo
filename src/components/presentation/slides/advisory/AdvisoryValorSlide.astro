@@ -1,0 +1,159 @@
+---
+import Container from '../../../ui/Container.astro'
+import { Icon } from 'astro-icon/components'
+---
+
+<div class="min-h-screen bg-dark py-20 flex items-center">
+  <Container>
+    <div class="max-w-6xl mx-auto">
+      
+      <div class="text-center mb-12">
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
+          O Que um <span class="text-purple-400">Advisory</span> Entrega
+        </h2>
+        <p class="text-xl text-gray-400">
+          Clareza, direção e decisões que valem milhões
+        </p>
+      </div>
+
+      <!-- Transformação -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        
+        <!-- Antes -->
+        <div class="rounded-2xl border-2 border-red-500/30 bg-red-500/5 p-8">
+          <div class="mb-6 text-center">
+            <div class="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-500/20 text-red-400">
+              <Icon name="lucide:x-circle" class="h-10 w-10" />
+            </div>
+            <h3 class="text-2xl font-bold text-white">ANTES do Advisory</h3>
+          </div>
+          
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:alert-triangle" class="h-5 w-5 text-red-400 flex-shrink-0 mt-1" />
+              <div>
+                <p class="text-white font-semibold">Decisões no achismo</p>
+                <p class="text-sm text-gray-400">Sem dados, sem metodologia, só instinto</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:alert-triangle" class="h-5 w-5 text-red-400 flex-shrink-0 mt-1" />
+              <div>
+                <p class="text-white font-semibold">Tentativa e erro caro</p>
+                <p class="text-sm text-gray-400">Gasta R$ 50k em campanha que não converte</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:alert-triangle" class="h-5 w-5 text-red-400 flex-shrink-0 mt-1" />
+              <div>
+                <p class="text-white font-semibold">Time executando errado</p>
+                <p class="text-sm text-gray-400">Trabalha muito, resultado não vem</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:alert-triangle" class="h-5 w-5 text-red-400 flex-shrink-0 mt-1" />
+              <div>
+                <p class="text-white font-semibold">Crescimento travado</p>
+                <p class="text-sm text-gray-400">Não sabe qual o próximo passo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Depois -->
+        <div class="rounded-2xl border-2 border-purple-500/30 bg-purple-500/5 p-8">
+          <div class="mb-6 text-center">
+            <div class="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-500/20 text-purple-400">
+              <Icon name="lucide:check-circle" class="h-10 w-10" />
+            </div>
+            <h3 class="text-2xl font-bold text-white">DEPOIS do Advisory</h3>
+          </div>
+          
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:trending-up" class="h-5 w-5 text-purple-400 flex-shrink-0 mt-1" />
+              <div>
+                <p class="text-white font-semibold">Decisões embasadas</p>
+                <p class="text-sm text-gray-400">Estratégia clara validada por quem já fez</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:trending-up" class="h-5 w-5 text-purple-400 flex-shrink-0 mt-1" />
+              <div>
+                <p class="text-white font-semibold">ROI imediato</p>
+                <p class="text-sm text-gray-400">1 decisão certa economiza meses de erro</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:trending-up" class="h-5 w-5 text-purple-400 flex-shrink-0 mt-1" />
+              <div>
+                <p class="text-white font-semibold">Time alinhado e produtivo</p>
+                <p class="text-sm text-gray-400">Todos sabem o que fazer e por quê</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:trending-up" class="h-5 w-5 text-purple-400 flex-shrink-0 mt-1" />
+              <div>
+                <p class="text-white font-semibold">Roadmap definido</p>
+                <p class="text-sm text-gray-400">Próximos 6-12 meses mapeados</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Exemplos de Impacto -->
+      <div class="rounded-2xl border-2 border-purple-500/30 bg-gradient-to-r from-purple-500/10 to-purple-500/5 p-8">
+        <h3 class="text-2xl font-bold text-white mb-6 text-center">
+          Exemplos Reais de Impacto
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="rounded-xl bg-white/5 p-6">
+            <div class="text-purple-400 mb-3">
+              <Icon name="lucide:target" class="h-8 w-8 mx-auto" />
+            </div>
+            <h4 class="text-white font-bold mb-2 text-center">Reposicionamento</h4>
+            <p class="text-sm text-gray-400 text-center mb-3">
+              Empresa mudou ICP e aumentou ticket médio de R$ 5k para R$ 25k
+            </p>
+            <p class="text-lg font-bold text-purple-400 text-center">+400% ticket</p>
+          </div>
+
+          <div class="rounded-xl bg-white/5 p-6">
+            <div class="text-purple-400 mb-3">
+              <Icon name="lucide:trending-up" class="h-8 w-8 mx-auto" />
+            </div>
+            <h4 class="text-white font-bold mb-2 text-center">Otimização de Funil</h4>
+            <p class="text-sm text-gray-400 text-center mb-3">
+              Ajuste em qualificação de leads dobrou taxa de conversão
+            </p>
+            <p class="text-lg font-bold text-purple-400 text-center">2x conversão</p>
+          </div>
+
+          <div class="rounded-xl bg-white/5 p-6">
+            <div class="text-purple-400 mb-3">
+              <Icon name="lucide:users" class="h-8 w-8 mx-auto" />
+            </div>
+            <h4 class="text-white font-bold mb-2 text-center">Estrutura de Time</h4>
+            <p class="text-sm text-gray-400 text-center mb-3">
+              Redesenhou time comercial e economizou R$ 40k/mês
+            </p>
+            <p class="text-lg font-bold text-purple-400 text-center">-R$ 40k/mês</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Message -->
+      <div class="mt-8 text-center">
+        <div class="inline-block rounded-2xl bg-white/5 border border-white/10 px-8 py-6">
+          <p class="text-lg text-white">
+            <strong class="text-purple-400">Você não paga por tempo. Você paga por decisões certas.</strong><br/>
+            <span class="text-gray-400 text-base">1 sessão pode economizar 6 meses de tentativa e erro.</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </Container>
+</div>

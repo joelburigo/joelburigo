@@ -1,0 +1,159 @@
+---
+import Container from '../../../ui/Container.astro'
+import { Icon } from 'astro-icon/components'
+---
+
+<div class="min-h-screen bg-dark py-20 flex items-center">
+  <Container>
+    <div class="max-w-6xl mx-auto">
+      
+      <div class="text-center mb-12">
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
+          Investimento <span class="text-lime">VSS</span>
+        </h2>
+        <p class="text-xl text-gray-400">
+          Quanto custa ter um sistema de vendas funcionando?
+        </p>
+      </div>
+
+      <!-- Comparison First -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="rounded-xl bg-white/5 border border-white/10 p-6">
+          <div class="mb-4 text-center">
+            <Icon name="lucide:briefcase" class="h-8 w-8 text-gray-400 mx-auto" />
+          </div>
+          <p class="text-sm text-gray-400 mb-2 text-center">Contratar Agência</p>
+          <p class="text-4xl font-bold text-white mb-1 text-center">R$ 5-15k</p>
+          <p class="text-sm text-gray-500 text-center mb-4">/mês (mínimo 12 meses)</p>
+          <div class="space-y-2">
+            <div class="flex items-start gap-2">
+              <Icon name="lucide:x" class="h-4 w-4 text-red-400 flex-shrink-0 mt-0.5" />
+              <p class="text-xs text-gray-400">Você não aprende nada</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <Icon name="lucide:x" class="h-4 w-4 text-red-400 flex-shrink-0 mt-0.5" />
+              <p class="text-xs text-gray-400">Dependência contínua</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <Icon name="lucide:x" class="h-4 w-4 text-red-400 flex-shrink-0 mt-0.5" />
+              <p class="text-xs text-gray-400">R$ 60-180k/ano</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-xl bg-white/5 border border-white/10 p-6">
+          <div class="mb-4 text-center">
+            <Icon name="lucide:user-plus" class="h-8 w-8 text-gray-400 mx-auto" />
+          </div>
+          <p class="text-sm text-gray-400 mb-2 text-center">Contratar SDR</p>
+          <p class="text-4xl font-bold text-white mb-1 text-center">R$ 4-8k</p>
+          <p class="text-sm text-gray-500 text-center mb-4">/mês + comissão</p>
+          <div class="space-y-2">
+            <div class="flex items-start gap-2">
+              <Icon name="lucide:x" class="h-4 w-4 text-red-400 flex-shrink-0 mt-0.5" />
+              <p class="text-xs text-gray-400">Precisa treinar (sem processo)</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <Icon name="lucide:x" class="h-4 w-4 text-red-400 flex-shrink-0 mt-0.5" />
+              <p class="text-xs text-gray-400">Risco de turnover</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <Icon name="lucide:x" class="h-4 w-4 text-red-400 flex-shrink-0 mt-0.5" />
+              <p class="text-xs text-gray-400">R$ 48-96k/ano mínimo</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-xl border-2 border-lime bg-gradient-to-br from-lime/10 to-lime/5 p-6 relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+            <div class="rounded-full bg-lime px-4 py-1">
+              <span class="text-xs font-bold text-dark uppercase">Melhor Opção</span>
+            </div>
+          </div>
+          <div class="mb-4 text-center mt-2">
+            <Icon name="lucide:graduation-cap" class="h-8 w-8 text-lime mx-auto" />
+          </div>
+          <p class="text-sm text-lime mb-2 text-center">VSS (Você Implementa)</p>
+          <p class="text-4xl font-bold text-lime mb-1 text-center">R$ 1.997</p>
+          <p class="text-sm text-gray-400 text-center mb-4">pagamento único</p>
+          <div class="space-y-2">
+            <div class="flex items-start gap-2">
+              <Icon name="lucide:check" class="h-4 w-4 text-lime flex-shrink-0 mt-0.5" />
+              <p class="text-xs text-gray-300">Você aprende e domina</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <Icon name="lucide:check" class="h-4 w-4 text-lime flex-shrink-0 mt-0.5" />
+              <p class="text-xs text-gray-300">Sistema seu para sempre</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <Icon name="lucide:check" class="h-4 w-4 text-lime flex-shrink-0 mt-0.5" />
+              <p class="text-xs text-gray-300">Investimento único</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+          
+          <!-- Left: Price -->
+          <div class="text-center lg:text-left lg:border-r lg:border-white/10 lg:pr-8">
+            <div class="mb-6">
+              <div class="mb-2">
+                <span class="text-gray-400 text-xl line-through">De: R$ 5.997</span>
+              </div>
+              <div class="flex items-baseline gap-2 justify-center lg:justify-start mb-3">
+                <span class="text-lg text-gray-400">Por apenas</span>
+                <span class="text-6xl font-bold text-lime">R$ 1.997</span>
+              </div>
+              <p class="text-lg text-white mb-2">12x R$ 197 no cartão</p>
+              <p class="text-gray-400 mb-6">ou R$ 1.797 no Pix (10% OFF)</p>
+            </div>
+
+            <div class="rounded-xl bg-dark/60 border border-lime/30 p-4">
+              <p class="text-white font-semibold mb-1">
+                <Icon name="lucide:shield-check" class="inline h-5 w-5 text-lime" /> Garantia de 7 Dias
+              </p>
+              <p class="text-sm text-gray-400">Não gostou? Devolvo 100% do valor</p>
+            </div>
+          </div>
+
+          <!-- Right: What's Included -->
+          <div>
+            <h3 class="text-xl font-bold text-white mb-6">Tudo que Está Incluso:</h3>
+            <div class="grid grid-cols-1 gap-3">
+              <div class="flex items-start gap-2">
+                <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0 mt-0.5" />
+                <p class="text-sm text-gray-200">60+ vídeos explicando os 6Ps</p>
+              </div>
+              <div class="flex items-start gap-2">
+                <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0 mt-0.5" />
+                <p class="text-sm text-gray-200">Mentorias ao vivo 2x/mês por 6 meses</p>
+              </div>
+              <div class="flex items-start gap-2">
+                <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0 mt-0.5" />
+                <p class="text-sm text-gray-200">CRM completo grátis por 12 meses (valor R$ 6.996)</p>
+              </div>
+              <div class="flex items-start gap-2">
+                <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0 mt-0.5" />
+                <p class="text-sm text-gray-200">Templates prontos (ICP, Scripts, Funis)</p>
+              </div>
+              <div class="flex items-start gap-2">
+                <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0 mt-0.5" />
+                <p class="text-sm text-gray-200">Planilhas de precificação e projeção</p>
+              </div>
+              <div class="flex items-start gap-2">
+                <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0 mt-0.5" />
+                <p class="text-sm text-gray-200">Acesso vitalício + atualizações futuras</p>
+              </div>
+              <div class="flex items-start gap-2">
+                <Icon name="lucide:check-circle" class="h-5 w-5 text-lime flex-shrink-0 mt-0.5" />
+                <p class="text-sm text-gray-200">Comunidade exclusiva de alunos</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </Container>
+</div>

@@ -1,0 +1,99 @@
+---
+import Container from '../../../ui/Container.astro'
+import { Icon } from 'astro-icon/components'
+---
+
+<div class="min-h-screen bg-dark py-20 flex items-center">
+  <Container>
+    <div class="max-w-6xl mx-auto">
+      
+      <div class="text-center mb-12">
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
+          Como <span class="text-blue-400">Funciona</span> na Prática
+        </h2>
+        <p class="text-xl text-gray-400">
+          Em 6 meses você tem um sistema rodando sozinho
+        </p>
+      </div>
+
+      <!-- Timeline Simplificado -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        
+        <!-- Fase 1: Estruturação -->
+        <div class="rounded-xl border-2 border-blue-500/30 bg-blue-500/5 p-8 text-center">
+          <div class="mb-4 mx-auto w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center">
+            <Icon name="lucide:clipboard-check" class="h-8 w-8 text-white" />
+          </div>
+          <div class="mb-2 text-sm text-blue-400 font-bold">Mês 1-2</div>
+          <h3 class="text-xl font-bold text-white mb-3">Estruturação</h3>
+          <div class="space-y-2">
+            <p class="text-sm text-gray-300">• Diagnóstico completo dos 6Ps</p>
+            <p class="text-sm text-gray-300">• Planejamento detalhado</p>
+            <p class="text-sm text-gray-300">• Definição de ICP e oferta</p>
+            <p class="text-sm text-gray-300">• Posicionamento documentado</p>
+          </div>
+        </div>
+
+        <!-- Fase 2: Implementação -->
+        <div class="rounded-xl border-2 border-blue-500/30 bg-blue-500/5 p-8 text-center">
+          <div class="mb-4 mx-auto w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center">
+            <Icon name="lucide:settings" class="h-8 w-8 text-white" />
+          </div>
+          <div class="mb-2 text-sm text-blue-400 font-bold">Mês 3-4</div>
+          <h3 class="text-xl font-bold text-white mb-3">Implementação</h3>
+          <div class="space-y-2">
+            <p class="text-sm text-gray-300">• CRM configurado e rodando</p>
+            <p class="text-sm text-gray-300">• Funis e automações criados</p>
+            <p class="text-sm text-gray-300">• Landing pages e campanhas</p>
+            <p class="text-sm text-gray-300">• Processos documentados</p>
+          </div>
+        </div>
+
+        <!-- Fase 3: Autonomia -->
+        <div class="rounded-xl border-2 border-lime/30 bg-lime/5 p-8 text-center">
+          <div class="mb-4 mx-auto w-16 h-16 rounded-full bg-lime flex items-center justify-center">
+            <Icon name="lucide:rocket" class="h-8 w-8 text-dark" />
+          </div>
+          <div class="mb-2 text-sm text-lime font-bold">Mês 5-6</div>
+          <h3 class="text-xl font-bold text-white mb-3">Autonomia</h3>
+          <div class="space-y-2">
+            <p class="text-sm text-gray-300">• Treinamento do seu time</p>
+            <p class="text-sm text-gray-300">• Playbook comercial</p>
+            <p class="text-sm text-gray-300">• Transição completa</p>
+            <p class="text-sm text-gray-300">• Suporte de 30 dias</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Principais Diferenciais -->
+      <div class="rounded-2xl border-2 border-blue-500/30 bg-gradient-to-r from-blue-500/10 to-blue-500/5 p-8">
+        <h3 class="text-2xl font-bold text-white mb-6 text-center">Por Que Escolher Services?</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="text-center">
+            <div class="mb-3 mx-auto w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
+              <Icon name="lucide:clock" class="h-6 w-6 text-blue-400" />
+            </div>
+            <h4 class="text-white font-bold mb-2">Você Economiza Tempo</h4>
+            <p class="text-sm text-gray-400">Não precisa aprender, testar e implementar. Nós fazemos</p>
+          </div>
+          <div class="text-center">
+            <div class="mb-3 mx-auto w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
+              <Icon name="lucide:target" class="h-6 w-6 text-blue-400" />
+            </div>
+            <h4 class="text-white font-bold mb-2">Foco no Core Business</h4>
+            <p class="text-sm text-gray-400">Você cuida do negócio, nós cuidamos de vendas</p>
+          </div>
+          <div class="text-center">
+            <div class="mb-3 mx-auto w-12 h-12 rounded-full bg-lime/20 flex items-center justify-center">
+              <Icon name="lucide:trending-up" class="h-6 w-6 text-lime" />
+            </div>
+            <h4 class="text-white font-bold mb-2">Resultados Mais Rápidos</h4>
+            <p class="text-sm text-gray-400">Sistema rodando em 6 meses, não em anos</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </Container>
+</div>

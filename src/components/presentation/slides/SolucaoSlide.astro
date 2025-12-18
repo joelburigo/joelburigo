@@ -1,0 +1,112 @@
+---
+import Container from '../../ui/Container.astro'
+import { Icon } from 'astro-icon/components'
+---
+
+<div class="min-h-screen bg-dark py-20 flex items-center">
+  <Container>
+    <div class="text-center mb-12">
+      <div class="mb-4 inline-block rounded-full bg-lime/10 px-6 py-2 border border-lime/30">
+        <span class="font-display text-sm font-bold uppercase tracking-widest text-lime">A Solução</span>
+      </div>
+      <h2 class="font-display text-5xl md:text-6xl font-bold text-white mb-6">
+        Sistema de Vendas <span class="text-lime">Escaláveis</span>
+      </h2>
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+        Uma metodologia sequencial em <strong class="text-white">6 pilares estruturais</strong>
+      </p>
+    </div>
+
+    <!-- Framework Visual Simplificado -->
+    <div class="max-w-6xl mx-auto">
+      
+      <!-- Fundação -->
+      <div class="mb-8">
+        <div class="mb-4 flex items-center gap-3">
+          <div class="rounded-full bg-lime/20 px-4 py-1 border border-lime/30">
+            <span class="text-sm font-bold text-lime">FUNDAÇÃO</span>
+          </div>
+          <div class="h-px flex-grow bg-gradient-to-r from-lime/50 to-transparent"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="rounded-xl border-2 border-lime/30 bg-lime/5 p-6 text-center">
+            <div class="mb-3 text-4xl font-bold text-lime">P1</div>
+            <h3 class="text-xl font-bold text-white mb-2">Posicionamento</h3>
+            <p class="text-sm text-gray-400">Por que você existe?</p>
+          </div>
+          <div class="rounded-xl border-2 border-lime/30 bg-lime/5 p-6 text-center">
+            <div class="mb-3 text-4xl font-bold text-lime">P2</div>
+            <h3 class="text-xl font-bold text-white mb-2">Público</h3>
+            <p class="text-sm text-gray-400">Para quem você vende?</p>
+          </div>
+          <div class="rounded-xl border-2 border-lime/30 bg-lime/5 p-6 text-center">
+            <div class="mb-3 text-4xl font-bold text-lime">P3</div>
+            <h3 class="text-xl font-bold text-white mb-2">Produto</h3>
+            <p class="text-sm text-gray-400">O que você oferece?</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Operação -->
+      <div class="mb-8">
+        <div class="mb-4 flex items-center gap-3">
+          <div class="rounded-full bg-blue-900/40 px-4 py-1 border border-blue-500/30">
+            <span class="text-sm font-bold text-blue-400">OPERAÇÃO</span>
+          </div>
+          <div class="h-px flex-grow bg-gradient-to-r from-blue-500/50 to-transparent"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="rounded-xl border-2 border-blue-500/30 bg-blue-500/5 p-6 text-center">
+            <div class="mb-3 text-4xl font-bold text-blue-400">P4</div>
+            <h3 class="text-xl font-bold text-white mb-2">Programas</h3>
+            <p class="text-sm text-gray-400">Como você vende?</p>
+          </div>
+          <div class="rounded-xl border-2 border-blue-500/30 bg-blue-500/5 p-6 text-center">
+            <div class="mb-3 text-4xl font-bold text-blue-400">P5</div>
+            <h3 class="text-xl font-bold text-white mb-2">Processos</h3>
+            <p class="text-sm text-gray-400">Como você opera?</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Escala -->
+      <div>
+        <div class="mb-4 flex items-center gap-3">
+          <div class="rounded-full bg-purple-900/40 px-4 py-1 border border-purple-500/30">
+            <span class="text-sm font-bold text-purple-400">ESCALA</span>
+          </div>
+          <div class="h-px flex-grow bg-gradient-to-r from-purple-500/50 to-transparent"></div>
+        </div>
+        <div class="grid grid-cols-1 gap-6">
+          <div class="rounded-xl border-2 border-purple-500/30 bg-purple-500/5 p-6 text-center">
+            <div class="mb-3 text-4xl font-bold text-purple-400">P6</div>
+            <h3 class="text-xl font-bold text-white mb-2">Pessoas</h3>
+            <p class="text-sm text-gray-400">Quem executa?</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Fluxo -->
+    <div class="mt-12 max-w-4xl mx-auto">
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-8">
+        <p class="text-center text-gray-400 mb-6">A sequência importa:</p>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-white font-semibold">
+          <span class="text-lime">P1</span>
+          <Icon name="lucide:arrow-right" class="h-5 w-5 text-gray-600 rotate-90 md:rotate-0" />
+          <span class="text-lime">P2</span>
+          <Icon name="lucide:arrow-right" class="h-5 w-5 text-gray-600 rotate-90 md:rotate-0" />
+          <span class="text-lime">P3</span>
+          <Icon name="lucide:arrow-right" class="h-5 w-5 text-gray-600 rotate-90 md:rotate-0" />
+          <span class="text-blue-400">P4</span>
+          <Icon name="lucide:arrow-right" class="h-5 w-5 text-gray-600 rotate-90 md:rotate-0" />
+          <span class="text-blue-400">P5</span>
+          <Icon name="lucide:arrow-right" class="h-5 w-5 text-gray-600 rotate-90 md:rotate-0" />
+          <span class="text-purple-400">P6</span>
+        </div>
+      </div>
+    </div>
+
+  </Container>
+</div>

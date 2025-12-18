@@ -1,0 +1,143 @@
+---
+import Container from '../../../ui/Container.astro'
+import { Icon } from 'astro-icon/components'
+---
+
+<div class="min-h-screen bg-dark py-20 flex items-center">
+  <Container>
+    <div class="max-w-6xl mx-auto">
+      
+      <div class="text-center mb-12">
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
+          A <span class="text-lime">Transformação</span> que Você Conquista
+        </h2>
+        <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+          Não é só sobre aprender. É sobre <strong class="text-white">ter um sistema funcionando</strong>.
+        </p>
+      </div>
+
+      <!-- Before vs After -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        
+        <!-- Antes -->
+        <div class="rounded-2xl border-2 border-red-500/30 bg-red-500/5 p-8">
+          <div class="mb-6 text-center">
+            <div class="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-500/20 text-red-400">
+              <Icon name="lucide:x-circle" class="h-10 w-10" />
+            </div>
+            <h3 class="text-2xl font-bold text-white">ANTES do VSS</h3>
+          </div>
+          
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:alert-triangle" class="h-5 w-5 text-red-400 flex-shrink-0 mt-1" />
+              <div>
+                <p class="text-white font-semibold">Vendas imprevisíveis</p>
+                <p class="text-sm text-gray-400">"Mês bom, mês ruim" - sem controle</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:alert-triangle" class="h-5 w-5 text-red-400 flex-shrink-0 mt-1" />
+              <div>
+                <p class="text-white font-semibold">Desorganização total</p>
+                <p class="text-sm text-gray-400">Leads perdidos, contatos no WhatsApp, sem followup</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:alert-triangle" class="h-5 w-5 text-red-400 flex-shrink-0 mt-1" />
+              <div>
+                <p class="text-white font-semibold">Você faz tudo sozinho</p>
+                <p class="text-sm text-gray-400">Trabalha demais, não cresce</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:alert-triangle" class="h-5 w-5 text-red-400 flex-shrink-0 mt-1" />
+              <div>
+                <p class="text-white font-semibold">Vende para quem não deveria</p>
+                <p class="text-sm text-gray-400">Cliente problemático, inadimplência, dor de cabeça</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:alert-triangle" class="h-5 w-5 text-red-400 flex-shrink-0 mt-1" />
+              <div>
+                <p class="text-white font-semibold">Preço baixo demais</p>
+                <p class="text-sm text-gray-400">Trabalha muito, lucra pouco</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Depois -->
+        <div class="rounded-2xl border-2 border-lime/30 bg-lime/5 p-8">
+          <div class="mb-6 text-center">
+            <div class="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-lime/20 text-lime">
+              <Icon name="lucide:check-circle" class="h-10 w-10" />
+            </div>
+            <h3 class="text-2xl font-bold text-white">DEPOIS do VSS</h3>
+          </div>
+          
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:trending-up" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
+              <div>
+                <p class="text-white font-semibold">Previsibilidade de receita</p>
+                <p class="text-sm text-gray-400">Você sabe quantos leads precisa para bater a meta</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:trending-up" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
+              <div>
+                <p class="text-white font-semibold">Sistema organizado</p>
+                <p class="text-sm text-gray-400">CRM rodando, funis ativos, automações funcionando</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:trending-up" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
+              <div>
+                <p class="text-white font-semibold">Processos documentados</p>
+                <p class="text-sm text-gray-400">Pronto para contratar e treinar vendedores</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:trending-up" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
+              <div>
+                <p class="text-white font-semibold">ICP claro e qualificado</p>
+                <p class="text-sm text-gray-400">Recusa quem não serve, atrai quem fecha</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:trending-up" class="h-5 w-5 text-lime flex-shrink-0 mt-1" />
+              <div>
+                <p class="text-white font-semibold">Precificação justa</p>
+                <p class="text-sm text-gray-400">Cobra pelo valor, não pelo tempo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Resultados Típicos -->
+      <div class="rounded-2xl border-2 border-lime/30 bg-gradient-to-r from-lime/10 to-lime/5 p-8">
+        <h3 class="text-2xl font-bold text-white mb-6 text-center">
+          Resultados Típicos dos Alunos
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="text-center">
+            <p class="text-4xl font-bold text-lime mb-2">+150%</p>
+            <p class="text-gray-300">Aumento médio em vendas nos primeiros 6 meses</p>
+          </div>
+          <div class="text-center">
+            <p class="text-4xl font-bold text-lime mb-2">-40%</p>
+            <p class="text-gray-300">Redução de tempo gasto em vendas (mais automação)</p>
+          </div>
+          <div class="text-center">
+            <p class="text-4xl font-bold text-lime mb-2">3-5x</p>
+            <p class="text-gray-300">Multiplicação da taxa de conversão com ICP certo</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </Container>
+</div>

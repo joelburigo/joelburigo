@@ -1,0 +1,129 @@
+---
+import Container from '../../../ui/Container.astro'
+import { Icon } from 'astro-icon/components'
+---
+
+<div class="min-h-screen bg-dark py-20 flex items-center">
+  <Container>
+    <div class="max-w-6xl mx-auto">
+      
+      <div class="text-center mb-12">
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
+          Como Funcionam as <span class="text-purple-400">Sessões</span>
+        </h2>
+        <p class="text-xl text-gray-400">
+          Não é palestra. É consultoria estratégica com foco em resultados.
+        </p>
+      </div>
+
+      <!-- Formato das Sessões -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        
+        <div class="rounded-xl border border-white/10 bg-white/5 p-8">
+          <h3 class="text-2xl font-bold text-white mb-6">
+            <Icon name="lucide:list-checks" class="inline h-6 w-6 text-purple-400" /> Estrutura da Sessão
+          </h3>
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 border-2 border-purple-500 flex items-center justify-center">
+                <span class="text-purple-400 font-bold">1</span>
+              </div>
+              <div>
+                <h4 class="text-white font-semibold mb-1">Diagnóstico (20min)</h4>
+                <p class="text-sm text-gray-400">Você explica o problema, eu faço perguntas pra entender a raiz.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 border-2 border-purple-500 flex items-center justify-center">
+                <span class="text-purple-400 font-bold">2</span>
+              </div>
+              <div>
+                <h4 class="text-white font-semibold mb-1">Análise (30min)</h4>
+                <p class="text-sm text-gray-400">Eu mapeio onde estão os gargalos nos seus 6Ps e explico o porquê.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 border-2 border-purple-500 flex items-center justify-center">
+                <span class="text-purple-400 font-bold">3</span>
+              </div>
+              <div>
+                <h4 class="text-white font-semibold mb-1">Plano de Ação (30min)</h4>
+                <p class="text-sm text-gray-400">Defino as próximas ações prioritárias com você. O que fazer, como e quando.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-lime/20 border-2 border-lime flex items-center justify-center">
+                <Icon name="lucide:check" class="h-5 w-5 text-lime" />
+              </div>
+              <div>
+                <h4 class="text-white font-semibold mb-1">Entregável (10min)</h4>
+                <p class="text-sm text-gray-400">Você sai com documento escrito do que foi decidido e próximos passos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-white/10 bg-white/5 p-8">
+          <h3 class="text-2xl font-bold text-white mb-6">
+            <Icon name="lucide:target" class="inline h-6 w-6 text-purple-400" /> Tipos de Problema Que Resolvemos
+          </h3>
+          <div class="space-y-4">
+            <div class="rounded-lg bg-purple-500/10 p-4 border border-purple-500/30">
+              <p class="text-white font-semibold mb-2">Posicionamento Confuso</p>
+              <p class="text-sm text-gray-400">"Vendemos pra todo mundo mas não fechamos ninguém"</p>
+            </div>
+            <div class="rounded-lg bg-purple-500/10 p-4 border border-purple-500/30">
+              <p class="text-white font-semibold mb-2">ICP Errado</p>
+              <p class="text-sm text-gray-400">"Clientes que não pagam, pedem desconto, dão trabalho"</p>
+            </div>
+            <div class="rounded-lg bg-purple-500/10 p-4 border border-purple-500/30">
+              <p class="text-white font-semibold mb-2">Produto Sem Escopo</p>
+              <p class="text-sm text-gray-400">"Vendemos horas, não conseguimos precificar direito"</p>
+            </div>
+            <div class="rounded-lg bg-purple-500/10 p-4 border border-purple-500/30">
+              <p class="text-white font-semibold mb-2">Funil Quebrado</p>
+              <p class="text-sm text-gray-400">"Tráfego não converte, follow-up não funciona"</p>
+            </div>
+            <div class="rounded-lg bg-purple-500/10 p-4 border border-purple-500/30">
+              <p class="text-white font-semibold mb-2">Processo Inexistente</p>
+              <p class="text-sm text-gray-400">"Cada vendedor faz de um jeito, não dá pra replicar"</p>
+            </div>
+            <div class="rounded-lg bg-purple-500/10 p-4 border border-purple-500/30">
+              <p class="text-white font-semibold mb-2">Time Não Vende</p>
+              <p class="text-sm text-gray-400">"Contratei vendedor mas não fecha"</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Como Agendar -->
+      <div class="rounded-2xl bg-gradient-to-r from-purple-500/10 to-purple-500/5 border-2 border-purple-500/30 p-8">
+        <h3 class="text-2xl font-bold text-white mb-6 text-center">Como Funciona o Agendamento</h3>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div class="text-center">
+            <div class="mb-3 inline-flex items-center justify-center w-12 h-12 rounded-full bg-purple-500 text-white text-lg font-bold">1</div>
+            <p class="font-semibold text-white mb-2">Você Agenda</p>
+            <p class="text-sm text-gray-400">Escolhe data/hora disponível</p>
+          </div>
+          <div class="text-center">
+            <div class="mb-3 inline-flex items-center justify-center w-12 h-12 rounded-full bg-purple-500 text-white text-lg font-bold">2</div>
+            <p class="font-semibold text-white mb-2">Questionário Prévio</p>
+            <p class="text-sm text-gray-400">Você envia contexto antes</p>
+          </div>
+          <div class="text-center">
+            <div class="mb-3 inline-flex items-center justify-center w-12 h-12 rounded-full bg-purple-500 text-white text-lg font-bold">3</div>
+            <p class="font-semibold text-white mb-2">Sessão Ao Vivo</p>
+            <p class="text-sm text-gray-400">90 minutos de consultoria</p>
+          </div>
+          <div class="text-center">
+            <div class="mb-3 inline-flex items-center justify-center w-12 h-12 rounded-full bg-lime text-dark text-lg font-bold">✓</div>
+            <p class="font-semibold text-white mb-2">Follow-up</p>
+            <p class="text-sm text-gray-400">Documento + suporte 7 dias</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </Container>
+</div>

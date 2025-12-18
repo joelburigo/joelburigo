@@ -1,0 +1,68 @@
+---
+import Container from '../../ui/Container.astro'
+import { Icon } from 'astro-icon/components'
+---
+
+<div class="h-screen bg-dark flex items-center justify-center overflow-hidden">
+  <Container>
+    <div class="max-w-5xl mx-auto px-4">
+      
+      <div class="text-center mb-12">
+        <h2 class="font-display text-6xl font-bold text-white mb-6">
+          Por Que <span class="text-lime">Funciona?</span>
+        </h2>
+        <p class="text-2xl text-gray-400 max-w-3xl mx-auto">
+          Essa metodologia não nasceu de teoria. Nasceu de <strong class="text-white">necessidade real</strong>.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        
+        <div class="rounded-xl border-2 border-lime/30 bg-lime/5 p-6 text-center">
+          <Icon name="lucide:test-tube" class="h-12 w-12 text-lime mx-auto mb-4" />
+          <h3 class="text-xl font-bold text-white mb-2">Testado no Real</h3>
+          <p class="text-gray-400 text-sm">
+            Implementado em 140+ empresas reais. Do zero ao bilhão. Não é curso teórico.
+          </p>
+        </div>
+
+        <div class="rounded-xl border-2 border-blue-500/30 bg-blue-500/5 p-6 text-center">
+          <Icon name="lucide:shield-check" class="h-12 w-12 text-blue-400 mx-auto mb-4" />
+          <h3 class="text-xl font-bold text-white mb-2">Sistema Comprovado</h3>
+          <p class="text-gray-400 text-sm">
+            Framework documentado de 17 anos. Cada P resolve um problema específico.
+          </p>
+        </div>
+
+        <div class="rounded-xl border-2 border-purple-500/30 bg-purple-500/5 p-6 text-center">
+          <Icon name="lucide:repeat" class="h-12 w-12 text-purple-400 mx-auto mb-4" />
+          <h3 class="text-xl font-bold text-white mb-2">Replicável</h3>
+          <p class="text-gray-400 text-sm">
+            Processo passo a passo. Não depende de "feeling". Sistema {'>'} Improviso.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Garantia -->
+      <div class="rounded-2xl border-2 border-lime/30 bg-gradient-to-r from-lime/10 to-lime/5 p-8">
+        <div class="flex items-center gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-full bg-lime/20 border-2 border-lime flex items-center justify-center">
+              <Icon name="lucide:check-check" class="h-8 w-8 text-lime" />
+            </div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-2">
+              Não é mágica. É método.
+            </h3>
+            <p class="text-gray-300 text-lg">
+              Se funcionou comigo (que quebrei) e com outras 140+ empresas, <strong class="text-lime">vai funcionar com você</strong> — se você seguir o sistema.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </Container>
+</div>

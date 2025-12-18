@@ -89,7 +89,7 @@ const seo = {
     class="fixed inset-0 z-50 flex h-screen w-screen flex-col bg-dark text-white"
   >
     <!-- Progress Bar -->
-    <div class="fixed top-0 left-0 h-1 bg-lime transition-all duration-300" :style="`width: ${(currentSlide / (totalSlides - 1)) * 100}%`"></div>
+    <div class="fixed top-0 left-0 h-1 bg-lime transition-all duration-300 z-[100]" :style="`width: ${(currentSlide / (totalSlides - 1)) * 100}%`"></div>
 
     <!-- Navigation Controls (Hidden but accessible) -->
     <div class="absolute bottom-8 right-8 z-50 flex gap-4 opacity-0 hover:opacity-100 transition-opacity">

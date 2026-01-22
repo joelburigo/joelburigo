@@ -525,7 +525,7 @@ Exemplo VSS:
 
 | COMPONENTE | VALOR SEPARADO |
 |------------|----------------|
-| 15 módulos + 60 aulas | R$ 1.997 |
+| 15 módulos + 66 aulas | R$ 1.997 |
 | Growth CRM 12 meses | R$ 1.188 |
 | 48 mentorias em grupo com Joel | R$ 7.200 |
 | Templates dos 6Ps | R$ 497 |
@@ -1187,7 +1187,7 @@ Baixa o Checklist dos 6Ps, faz seu diagnóstico, e implementa por conta.
 O **VSS — Vendas Sem Segredos** é meu programa de implementação guiada dos 6Ps em 90 dias.
 
 O que você leva:
-- 15 módulos + 60 aulas práticas
+- 15 módulos + 66 aulas práticas
 - Growth CRM por 12 meses (R$ 1.188 de valor)
 - 48 mentorias em grupo comigo
 - Templates prontos dos 6Ps

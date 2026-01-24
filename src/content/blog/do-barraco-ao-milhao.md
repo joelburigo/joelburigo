@@ -1,6 +1,6 @@
 ---
-title: 'Do Barraco ao Milhão: Como Quebrei aos 30, Morei Sem Geladeira e Reconstruí Tijolo Por Tijolo'
-excerpt: 'A história real de quem quebrou, perdeu tudo, morou em barraco, e reconstruiu estruturando R$ 1 bilhão em vendas. Cicatriz virou sabedoria. Sabedoria virou sistema.'
+title: 'Do Barraco ao Milhão: Como Quebrei aos 25, Morei Sem Geladeira e Reconstruí Tijolo Por Tijolo'
+excerpt: 'A história real de quem quebrou, perdeu tudo, morou em barraco, e reconstruíu estruturando R$ 1 bilhão em vendas. Cicatriz virou sabedoria. Sabedoria virou sistema.'
 category: 'Mentalidade'
 date: 2025-11-29
 readTime: '28 min'
@@ -11,6 +11,7 @@ relatedArticles:
   - '6ps-vendas-escalaveis-guia-completo'
   - 'sistema-melhor-que-improviso'
   - 'como-estruturar-vendas-do-zero'
+  - '17-anos-estruturando-vendas-historia-completa'
 clusterKeywords:
   - 'história de superação'
   - 'empreendedorismo do zero'
@@ -679,7 +680,7 @@ Na reconstrução, fiz diferente:
 
 ## O Que Eu Faria Diferente?
 
-Se pudesse voltar no tempo e dar 1 conselho para o Joel de 30 anos quebrando:
+Se pudesse voltar no tempo e dar 1 conselho para o Joel de 25 anos quebrando:
 
 **"Estruture sistema ANTES de escalar. Improviso quebra."**
 

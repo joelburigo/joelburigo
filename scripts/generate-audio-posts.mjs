@@ -33,7 +33,7 @@ if (fs.existsSync(envPath)) {
 }
 
 const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
-const VOICE_ID = 'Qrdut83w0Cr152Yb4Xn3'; // Voz brasileira escolhida
+const VOICE_ID = 'luS7emxs7T0hCBde2NTQ'; // Premium voice - Creator tier
 
 // Diretórios
 const BLOG_DIR = path.join(__dirname, '../src/content/blog');

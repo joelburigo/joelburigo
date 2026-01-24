@@ -1,7 +1,7 @@
 ---
 title: '17 Anos Estruturando Vendas: A Trajetória Completa de Joel Burigo - Da Quebrada ao Bilhão'
 excerpt: 'A história completa e sem filtros de Joel Burigo: quebrou aos 25, morou 6 meses em barraco de R$ 300, bateu 100+ portas e estruturou ~R$ 1 bilhão em vendas. Cada erro virou aprendizado. Cada aprendizado virou os 6Ps.'
-category: 'Trajetória'
+category: 'Mentalidade'
 date: 2025-01-24
 readTime: '32 min'
 author: 'Joel Burigo'

@@ -15,7 +15,9 @@
     "optimize:images": "node scripts/optimize-images.mjs",
     "analyze": "node scripts/analyze-performance.js",
     "lighthouse": "lighthouse http://localhost:4321 --view",
-    "lighthouse:prod": "lighthouse https://joelburigo.com.br --view"
+    "lighthouse:prod": "lighthouse https://joelburigo.com.br --view",
+    "audio:generate": "node scripts/generate-audio-posts.mjs",
+    "audio:post": "node scripts/generate-audio-posts.mjs --post"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",

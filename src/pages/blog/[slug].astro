@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro'
 import Header from '../../components/layout/Header.astro'
 import Footer from '../../components/layout/Footer.astro'
 import Container from '../../components/ui/Container.astro'
+import AudioPlayer from '../../components/blog/AudioPlayer.astro'
 import { Image } from 'astro:assets'
 import Icons from '../../components/ui/Icons.astro'
 
@@ -143,6 +144,12 @@ const articleSchema = {
               <span>Compartilhar</span>
             </button>
           </div>
+
+          <!-- Audio Player -->
+          <AudioPlayer 
+            audioUrl={`/audio/blog/${post.id.replace('.md', '')}.mp3`}
+            title={post.data.title}
+          />
 
           <!-- Post Content from Markdown -->
           <div class="prose-custom" data-pagefind-body>

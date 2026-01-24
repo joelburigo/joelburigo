@@ -20,7 +20,7 @@ clusterKeywords:
 ## Índice
 
 1. [Por Que Eu Preciso Te Contar Isso](#por-que-contar)
-2. [A Quebra Que Ninguém Viu (30 Anos)](#a-quebra)
+2. [A Quebra Que Ninguém Viu (25 Anos)](#a-quebra)
 3. [O Barraco em Minas Gerais](#o-barraco)
 4. [Os Primeiros 90 Dias: Da Vergonha ao Primeiro Cliente](#primeiros-90-dias)
 5. [O Ponto de Virada](#ponto-virada)
@@ -54,9 +54,9 @@ Vamos lá.
 ---
 
 <a name="a-quebra"></a>
-## A Quebra Que Ninguém Viu (30 Anos)
+## A Quebra Que Ninguém Viu (25 Anos)
 
-Ano de 2008. Eu tinha 30 anos e achava que estava no topo.
+Março de 2012. Eu tinha 25 anos e achava que estava no topo.
 
 Empresa de consultoria em TI faturando R$ 100k/mês. Sócio "confiável". Contratos grandes. Vida boa.
 
@@ -485,7 +485,7 @@ Aqui está a timeline REAL de reconstrução:
 
 **Ano 5-17 (2013-2025):** Refinamento e expansão
 - Faturamento consolidado
-- Mais de 140 clientes estruturados
+- 140+ clientes estruturados
 - ~R$ 1 bilhão em vendas processadas
 - VSS lançado em 2023
 
@@ -494,7 +494,7 @@ Aqui está a timeline REAL de reconstrução:
 <a name="faria-diferente"></a>
 ## O Que Eu Faria Diferente
 
-Se eu pudesse voltar no tempo e dar conselhos pro Joel de 30 anos quebrando:
+Se eu pudesse voltar no tempo e dar conselhos pro Joel de 25 anos quebrando em março de 2012:
 
 ### 1. Estruturaria Sistema ANTES de Escalar
 
@@ -602,7 +602,7 @@ Let's grow.
 
 **Joel Burigo**  
 *Do barraco sem geladeira aos R$ 1 bilhão em vendas estruturadas*  
-*Mais de 140 clientes • 17 anos • Cicatriz virou sabedoria*
+*140+ clientes • 17+ anos • Cicatriz virou sabedoria*
 
 ---
 
@@ -613,9 +613,9 @@ Let's grow.
 - 🎯 [Framework Completo dos 6Ps](/blog/6ps-vendas-escalaveis-guia-completo)
 - 💪 [De R$ 10k Para R$ 100k/Mês](/blog/de-10k-para-100k-por-mes)
 
-## A Quebra (30 Anos)
+## A Quebra (25 Anos)
 
-Quebrei minha primeira empresa aos 30 anos. Tomei calote do próprio sócio. Perdi tudo.
+Quebrei minha primeira empresa aos 25 anos em março de 2012. Tomei calote do próprio sócio. Perdi tudo.
 
 Não foi "fracasso romântico" de startup. Foi fracasso doloroso, com dívida, com vergonha, com medo.
 
@@ -671,8 +671,8 @@ Na reconstrução, fiz diferente:
 
 ### Hoje
 
-- 17 anos de experiência
-- 140 clientes atendidos
+- 17+ anos de experiência
+- 140+ clientes atendidos
 - ~R$ 1 bilhão em vendas estruturadas
 - Framework dos 6Ps validado
 - VSS com centenas de alunos

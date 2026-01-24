@@ -1,6 +1,6 @@
 ---
 title: 'Como Estruturar Vendas do Zero: Guia Completo dos 6Ps'
-excerpt: 'Descubra como transformar vendas aleatórias em previsíveis usando o Framework dos 6Ps validado por mais de 140 clientes.'
+excerpt: 'Descubra como transformar vendas aleatórias em previsíveis usando o Framework dos 6Ps validado por 140+ clientes.'
 category: 'Framework 6Ps'
 date: 2025-12-08
 readTime: '12 min'
@@ -17,7 +17,7 @@ clusterKeywords:
   - 'vendas do zero'
 ---
 
-Depois de 17 anos estruturando vendas para mais de 140 clientes, identifiquei um padrão: **80% dos problemas não são de produto, são de processo**.
+Depois de 17+ anos estruturando vendas para 140+ clientes, identifiquei um padrão: **80% dos problemas não são de produto, são de processo**.
 
 A maioria das micro e pequenas empresas vive em um ciclo vicioso de vendas aleatórias. Um mês vende bem, no outro não sabe de onde virá a próxima venda. O dono vira o vendedor principal, e o negócio não escala.
 
@@ -74,4 +74,4 @@ Estruturar vendas não é rápido, mas é sistemático. No programa Vendas Sem S
 
 Estruturar vendas não é opcional se você quer escalar. É a diferença entre vender R$ 100k/mês e vender R$ 1M/mês com a mesma equipe.
 
-O Framework dos 6Ps já foi validado por mais de 140 clientes e aproximadamente R$ 1 bilhão em vendas estruturadas. Funciona porque é sistêmico, não mágico.
+O Framework dos 6Ps já foi validado por 140+ clientes e aproximadamente R$ 1 bilhão em vendas estruturadas. Funciona porque é sistêmico, não mágico.

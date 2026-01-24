@@ -155,8 +155,8 @@ async function processPost(postFile) {
     return false;
   }
   
-  // Limite de caracteres por request (ElevenLabs recomenda max 5000)
-  const maxChars = 5000;
+  // Limite de caracteres por request (Creator tier aceita até 10.000)
+  const maxChars = 10000;
   const textToConvert = content.length > maxChars 
     ? content.substring(0, maxChars) + '...' 
     : content;

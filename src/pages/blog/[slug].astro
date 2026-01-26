@@ -81,6 +81,9 @@ const articleSchema = {
 
   <Header />
   
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"></div>
+  
   <main class="flex-grow">
     <!-- Breadcrumb & Back -->
     <section class="bg-dark py-6">
@@ -98,7 +101,7 @@ const articleSchema = {
     <!-- Post Header -->
     <section class="bg-dark py-16">
       <Container>
-        <article class="mx-auto max-w-4xl" data-pagefind-body>
+        <article class="mx-auto max-w-3xl" data-pagefind-body>
           <div class="mb-6">
             <span 
               class="rounded-full bg-royal-blue/20 px-4 py-2 font-display text-sm font-semibold text-royal-blue"
@@ -138,8 +141,11 @@ const articleSchema = {
             <div class="flex items-center gap-2 font-sans text-body-sm text-gray-400">
               <Icons name="clock" class="h-4 w-4" />
               <span>{post.data.readTime} de leitura</span>
+              <div class="ml-2 h-1 w-16 overflow-hidden rounded-full bg-white/10">
+                <div class="h-full bg-lime" style="width: 0%" data-reading-progress></div>
+              </div>
             </div>
-            <button class="ml-auto flex items-center gap-2 font-display text-sm text-lime transition-colors hover:text-lime/80">
+            <button id="share-button" class="ml-auto flex items-center gap-2 font-display text-sm text-lime transition-colors hover:text-lime/80">
               <Icons name="share-2" class="h-4 w-4" />
               <span>Compartilhar</span>
             </button>
@@ -151,8 +157,16 @@ const articleSchema = {
             title={post.data.title}
           />
 
+          <!-- Table of Contents (for long articles) -->
+          <nav class="toc-container sticky top-24 hidden xl:block" aria-label="Table of contents">
+            <div class="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+              <h3 class="mb-3 font-display text-sm font-bold text-white">Neste Artigo</h3>
+              <ul class="toc-list space-y-2 text-sm"></ul>
+            </div>
+          </nav>
+
           <!-- Post Content from Markdown -->
-          <div class="prose-custom" data-pagefind-body>
+          <div class="prose-custom" data-pagefind-body id="article-content">
             <Content />
           </div>
 
@@ -202,36 +216,124 @@ const articleSchema = {
     )}
   </main>
 
+  <!-- Back to Top Button -->
+  <button 
+    id="back-to-top"
+    class="back-to-top-btn"
+    aria-label="Voltar ao topo"
+  >
+    <Icons name="arrow-up" class="h-5 w-5" />
+  </button>
+
   <Footer />
 </Layout>
 
 <style>
+  /* Reading Progress Bar */
+  .reading-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(to right, #a3ff3f, #8fd639);
+    width: 0%;
+    z-index: 9999;
+    transition: width 0.1s ease;
+  }
+
+  /* Table of Contents */
+  .toc-container {
+    position: absolute;
+    right: -300px;
+    top: 0;
+    width: 250px;
+  }
+
+  @media (min-width: 1280px) {
+    .toc-container {
+      display: block !important;
+    }
+  }
+
+  .toc-list a {
+    display: block;
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.2s;
+    padding: 0.25rem 0;
+    border-left: 2px solid transparent;
+    padding-left: 0.75rem;
+  }
+
+  .toc-list a:hover {
+    color: #a3ff3f;
+  }
+
+  .toc-list a.active {
+    color: #a3ff3f;
+    border-left-color: #a3ff3f;
+  }
+
+  /* Back to Top Button */
+  .back-to-top-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: #a3ff3f;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(163, 255, 63, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 50;
+    cursor: pointer;
+    border: none;
+  }
+
+  .back-to-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .back-to-top-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(163, 255, 63, 0.4);
+  }
+
   .prose-custom {
     color: #d1d5db;
     font-size: 1.125rem;
-    line-height: 1.8;
+    line-height: 1.9;
   }
 
   .prose-custom :global(h2) {
-    margin-top: 2.5rem;
-    margin-bottom: 1.25rem;
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
     font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
     font-weight: 700;
     color: white;
+    scroll-margin-top: 6rem;
   }
 
   .prose-custom :global(h3) {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
     color: white;
+    scroll-margin-top: 6rem;
   }
 
   .prose-custom :global(p) {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
   }
 
   .prose-custom :global(strong) {
@@ -240,27 +342,55 @@ const articleSchema = {
   }
 
   .prose-custom :global(ul) {
-    margin: 1.5rem 0;
+    margin: 2rem 0;
     list-style-type: disc;
     padding-left: 1.75rem;
   }
 
   .prose-custom :global(li) {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
   }
 
   .prose-custom :global(blockquote) {
-    margin: 2.5rem 0;
+    margin: 3rem 0;
+    padding: 1.5rem;
     padding-left: 1.5rem;
     border-left: 4px solid #a3ff3f;
-    font-size: 1.25rem;
+    background: rgba(163, 255, 63, 0.05);
+    border-radius: 0 0.5rem 0.5rem 0;
+    font-size: 1.125rem;
     font-style: italic;
     color: #e5e7eb;
+  }
+
+  /* Callout Boxes */
+  .prose-custom :global(.callout) {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border-left: 4px solid;
+  }
+
+  .prose-custom :global(.callout-info) {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: #3b82f6;
+  }
+
+  .prose-custom :global(.callout-warning) {
+    background: rgba(251, 191, 36, 0.1);
+    border-color: #fbbf24;
+  }
+
+  .prose-custom :global(.callout-success) {
+    background: rgba(163, 255, 63, 0.1);
+    border-color: #a3ff3f;
   }
 
   .prose-custom :global(a) {
     color: #a3ff3f;
     text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
     transition: color 0.2s;
   }
 
@@ -278,22 +408,148 @@ const articleSchema = {
 </style>
 
 <script>
+  // Reading Progress Bar
+  function updateReadingProgress() {
+    const article = document.getElementById('article-content');
+    const progressBar = document.querySelector('.reading-progress-bar') as HTMLElement;
+    const progressIndicator = document.querySelector('[data-reading-progress]') as HTMLElement;
+    
+    if (!article || !progressBar) return;
+    
+    const articleTop = article.offsetTop;
+    const articleHeight = article.offsetHeight;
+    const windowHeight = window.innerHeight;
+    const scrollY = window.scrollY;
+    
+    const articleStart = articleTop - windowHeight / 2;
+    const articleEnd = articleTop + articleHeight - windowHeight / 2;
+    const progress = ((scrollY - articleStart) / (articleEnd - articleStart)) * 100;
+    
+    const clampedProgress = Math.min(Math.max(progress, 0), 100);
+    progressBar.style.width = `${clampedProgress}%`;
+    if (progressIndicator) {
+      progressIndicator.style.width = `${clampedProgress}%`;
+    }
+  }
+
+  // Back to Top Button
+  function updateBackToTop() {
+    const btn = document.getElementById('back-to-top');
+    if (!btn) return;
+    
+    if (window.scrollY > 500) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  }
+
+  document.getElementById('back-to-top')?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Table of Contents
+  function buildTOC() {
+    const article = document.getElementById('article-content');
+    const tocList = document.querySelector('.toc-list');
+    if (!article || !tocList) return;
+    
+    const headings = article.querySelectorAll('h2, h3');
+    if (headings.length === 0) return;
+    
+    headings.forEach((heading, index) => {
+      const id = heading.id || `heading-${index}`;
+      if (!heading.id) heading.id = id;
+      
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = `#${id}`;
+      a.textContent = heading.textContent || '';
+      a.className = heading.tagName === 'H3' ? 'pl-4' : '';
+      
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+  }
+
+  // Highlight active TOC item
+  function updateActiveTOC() {
+    const headings = document.querySelectorAll('#article-content h2, #article-content h3');
+    const tocLinks = document.querySelectorAll('.toc-list a');
+    
+    let activeIndex = -1;
+    headings.forEach((heading, index) => {
+      const rect = heading.getBoundingClientRect();
+      if (rect.top < 200) {
+        activeIndex = index;
+      }
+    });
+    
+    tocLinks.forEach((link, index) => {
+      if (index === activeIndex) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+
   // Share button functionality
-  const shareButton = document.querySelector('button')
+  const shareButton = document.getElementById('share-button');
   shareButton?.addEventListener('click', async () => {
+    const url = window.location.href;
+    const title = document.title;
+    
     if (navigator.share) {
       try {
-        await navigator.share({
-          title: document.title,
-          url: window.location.href,
-        })
+        await navigator.share({ title, url });
       } catch (err) {
-        console.log('Error sharing:', err)
+        if ((err as Error).name !== 'AbortError') {
+          console.log('Error sharing:', err);
+        }
       }
     } else {
       // Fallback: copy to clipboard
-      navigator.clipboard.writeText(window.location.href)
-      alert('Link copiado para área de transferência!')
+      try {
+        await navigator.clipboard.writeText(url);
+        const originalText = shareButton.querySelector('span');
+        if (originalText) {
+          const backup = originalText.textContent;
+          originalText.textContent = 'Link copiado!';
+          setTimeout(() => {
+            originalText.textContent = backup;
+          }, 2000);
+        }
+      } catch (err) {
+        console.log('Error copying:', err);
+      }
     }
-  })
+  });
+
+  // Initialize everything
+  document.addEventListener('DOMContentLoaded', () => {
+    buildTOC();
+    updateReadingProgress();
+    updateBackToTop();
+    updateActiveTOC();
+  });
+
+  // Update on scroll
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateReadingProgress();
+        updateBackToTop();
+        updateActiveTOC();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
 </script>

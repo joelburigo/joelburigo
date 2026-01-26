@@ -42,6 +42,9 @@ const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const VOICE = 'onyx'; // Masculina grave - boa para português
 const MODEL = 'tts-1-hd'; // Melhor qualidade
 
+// Pricing OpenAI TTS (USD por 1M caracteres)
+const PRICE_PER_MILLION_CHARS = MODEL === 'tts-1-hd' ? 30.00 : 15.00;
+
 // Diretórios
 const BLOG_DIR = path.join(__dirname, '../src/content/blog');
 const AUDIO_OUTPUT_DIR = path.join(__dirname, '../public/audio/blog');
@@ -49,6 +52,13 @@ const AUDIO_OUTPUT_DIR = path.join(__dirname, '../public/audio/blog');
 // Criar diretório de áudio se não existir
 if (!fs.existsSync(AUDIO_OUTPUT_DIR)) {
   fs.mkdirSync(AUDIO_OUTPUT_DIR, { recursive: true });
+}
+
+/**
+ * Calcula o custo em USD baseado no número de caracteres
+ */
+function calculateCost(chars) {
+  return (chars / 1000000) * PRICE_PER_MILLION_CHARS;
 }
 
 /**
@@ -204,6 +214,7 @@ async function generateAudio(text, outputPath, postSlug) {
 
 /**
  * Processa post individual
+ * @returns {Promise<{success: boolean, cost: number}>}
  */
 async function processPost(postFile) {
   const postSlug = postFile.replace('.md', '');
@@ -213,7 +224,7 @@ async function processPost(postFile) {
   // Verifica se áudio já existe
   if (fs.existsSync(audioPath)) {
     console.log(`⏭️  Áudio já existe: ${postSlug}.mp3`);
-    return true;
+    return { success: true, cost: 0 };
   }
   
   // Extrai conteúdo
@@ -221,7 +232,7 @@ async function processPost(postFile) {
   
   if (content.length < 100) {
     console.log(`⚠️  Conteúdo muito curto, pulando: ${postSlug}`);
-    return false;
+    return { success: false, cost: 0 };
   }
   
   // Limite de caracteres por request (OpenAI tem limite de 4096)
@@ -229,8 +240,13 @@ async function processPost(postFile) {
   
   // Se texto é curto, gera diretamente
   if (content.length <= maxChars) {
+    const cost = calculateCost(content.length);
     console.log(`📝 Conteúdo: ${content.length} chars`);
-    return await generateAudio(content, audioPath, postSlug);
+    const success = await generateAudio(content, audioPath, postSlug);
+    if (success) {
+      console.log(`💰 Custo: $${cost.toFixed(4)} USD`);
+    }
+    return { success, cost: success ? cost : 0 };
   }
   
   // Post longo - divide em chunks e concatena
@@ -238,11 +254,16 @@ async function processPost(postFile) {
   const chunks = splitTextIntoChunks(content, maxChars);
   console.log(`📦 ${chunks.length} chunks gerados`);
   
+  let totalCost = 0;
+  
   // Gera áudio para cada chunk
   const tempAudioFiles = [];
   for (let i = 0; i < chunks.length; i++) {
     const chunkPath = path.join(AUDIO_OUTPUT_DIR, `${postSlug}-chunk-${i}.mp3`);
-    console.log(`\n🎙️  Gerando chunk ${i + 1}/${chunks.length} (${chunks[i].length} chars)...`);
+    const chunkCost = calculateCost(chunks[i].length);
+    totalCost += chunkCost;
+    
+    console.log(`\n🎙️  Gerando chunk ${i + 1}/${chunks.length} (${chunks[i].length} chars) - $${chunkCost.toFixed(4)}`);
     
     const success = await generateAudio(chunks[i], chunkPath, `${postSlug}-chunk-${i}`);
     if (!success) {
@@ -250,7 +271,7 @@ async function processPost(postFile) {
       tempAudioFiles.forEach(file => {
         if (fs.existsSync(file)) fs.unlinkSync(file);
       });
-      return false;
+      return { success: false, cost: 0 };
     }
     
     tempAudioFiles.push(chunkPath);
@@ -262,9 +283,10 @@ async function processPost(postFile) {
   
   if (success) {
     console.log(`✅ Áudio completo gerado: ${audioPath}`);
+    console.log(`💰 Custo total: $${totalCost.toFixed(4)} USD (${content.length} chars)`);
   }
   
-  return success;
+  return { success, cost: success ? totalCost : 0 };
 }
 
 /**
@@ -303,11 +325,16 @@ async function main() {
   
   let processed = 0;
   let errors = 0;
+  let totalCost = 0;
   
   for (const postFile of allPosts) {
-    const success = await processPost(postFile);
-    if (success) processed++;
-    else errors++;
+    const result = await processPost(postFile);
+    if (result.success) {
+      processed++;
+      totalCost += result.cost;
+    } else {
+      errors++;
+    }
     
     // Delay para evitar rate limiting
     await new Promise(resolve => setTimeout(resolve, 1000));
@@ -316,6 +343,7 @@ async function main() {
   console.log('\n=====================================');
   console.log(`✅ Processados: ${processed}`);
   console.log(`❌ Erros: ${errors}`);
+  console.log(`💰 Custo total da sessão: $${totalCost.toFixed(4)} USD`);
   console.log(`📁 Áudios salvos em: ${AUDIO_OUTPUT_DIR}`);
 }
 

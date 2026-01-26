@@ -9,11 +9,17 @@
  * Opções:
  * --all: Gera áudio para todos os posts
  * --post <slug>: Gera áudio para post específico
+ * 
+ * Requer: ffmpeg instalado para concatenar áudios longos
  */
 
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { exec } from 'child_process';
+import { promisify } from 'util';
+
+const execPromise = promisify(exec);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -85,6 +91,76 @@ function extractContentFromMarkdown(filePath) {
 }
 
 /**
+ * Divide texto em chunks menores, tentando quebrar em parágrafos/frases
+ */
+function splitTextIntoChunks(text, maxChars = 4000) {
+  const chunks = [];
+  let remainingText = text;
+  
+  while (remainingText.length > maxChars) {
+    let chunkEnd = maxChars;
+    
+    // Tenta quebrar em parágrafo duplo
+    const doubleNewline = remainingText.lastIndexOf('\n\n', maxChars);
+    if (doubleNewline > maxChars * 0.7) {
+      chunkEnd = doubleNewline + 2;
+    } else {
+      // Tenta quebrar em parágrafo simples
+      const singleNewline = remainingText.lastIndexOf('\n', maxChars);
+      if (singleNewline > maxChars * 0.7) {
+        chunkEnd = singleNewline + 1;
+      } else {
+        // Tenta quebrar em ponto final
+        const period = remainingText.lastIndexOf('. ', maxChars);
+        if (period > maxChars * 0.7) {
+          chunkEnd = period + 2;
+        }
+      }
+    }
+    
+    chunks.push(remainingText.substring(0, chunkEnd).trim());
+    remainingText = remainingText.substring(chunkEnd).trim();
+  }
+  
+  if (remainingText.length > 0) {
+    chunks.push(remainingText);
+  }
+  
+  return chunks;
+}
+
+/**
+ * Concatena múltiplos arquivos de áudio usando ffmpeg
+ */
+async function concatenateAudioFiles(inputFiles, outputPath) {
+  const tempDir = path.dirname(outputPath);
+  const listFile = path.join(tempDir, 'concat-list.txt');
+  
+  // Cria arquivo de lista para ffmpeg
+  const listContent = inputFiles.map(file => `file '${file}'`).join('\n');
+  fs.writeFileSync(listFile, listContent);
+  
+  try {
+    // Concatena usando ffmpeg
+    await execPromise(`ffmpeg -f concat -safe 0 -i "${listFile}" -c copy "${outputPath}" -y`);
+    
+    // Remove arquivo de lista e arquivos temporários
+    fs.unlinkSync(listFile);
+    inputFiles.forEach(file => fs.unlinkSync(file));
+    
+    return true;
+  } catch (error) {
+    console.error(`❌ Erro ao concatenar áudios: ${error.message}`);
+    // Limpa arquivos mesmo em caso de erro
+    if (fs.existsSync(listFile)) fs.unlinkSync(listFile);
+    inputFiles.forEach(file => {
+      if (fs.existsSync(file)) fs.unlinkSync(file);
+    });
+    return false;
+  }
+}
+
+/**
  * Gera áudio usando OpenAI TTS API
  */
 async function generateAudio(text, outputPath, postSlug) {
@@ -93,9 +169,6 @@ async function generateAudio(text, outputPath, postSlug) {
     process.exit(1);
   }
 
-  console.log(`🎙️  Gerando áudio para: ${postSlug}`);
-  console.log(`📝 Caracteres: ${text.length}`);
-  
   try {
     const response = await fetch(
       'https://api.openai.com/v1/audio/speech',
@@ -122,7 +195,6 @@ async function generateAudio(text, outputPath, postSlug) {
     const audioBuffer = await response.arrayBuffer();
     fs.writeFileSync(outputPath, Buffer.from(audioBuffer));
     
-    console.log(`✅ Áudio gerado: ${outputPath}`);
     return true;
   } catch (error) {
     console.error(`❌ Erro ao gerar áudio: ${error.message}`);
@@ -153,19 +225,46 @@ async function processPost(postFile) {
   }
   
   // Limite de caracteres por request (OpenAI tem limite de 4096)
-  const maxChars = 4090;
+  const maxChars = 4000;
   
-  // Se texto é muito grande, divide em partes
-  if (content.length > maxChars) {
-    console.log(`⚠️  Post muito longo (${content.length} chars), gerando áudio das primeiras ${maxChars} caracteres...`);
+  // Se texto é curto, gera diretamente
+  if (content.length <= maxChars) {
+    console.log(`📝 Conteúdo: ${content.length} chars`);
+    return await generateAudio(content, audioPath, postSlug);
   }
   
-  const textToConvert = content.length > maxChars 
-    ? content.substring(0, maxChars)
-    : content;
+  // Post longo - divide em chunks e concatena
+  console.log(`📚 Post muito longo (${content.length} chars), dividindo em partes...`);
+  const chunks = splitTextIntoChunks(content, maxChars);
+  console.log(`📦 ${chunks.length} chunks gerados`);
   
-  // Gera áudio
-  return await generateAudio(textToConvert, audioPath, postSlug);
+  // Gera áudio para cada chunk
+  const tempAudioFiles = [];
+  for (let i = 0; i < chunks.length; i++) {
+    const chunkPath = path.join(AUDIO_OUTPUT_DIR, `${postSlug}-chunk-${i}.mp3`);
+    console.log(`\n🎙️  Gerando chunk ${i + 1}/${chunks.length} (${chunks[i].length} chars)...`);
+    
+    const success = await generateAudio(chunks[i], chunkPath, `${postSlug}-chunk-${i}`);
+    if (!success) {
+      // Limpa chunks já gerados em caso de erro
+      tempAudioFiles.forEach(file => {
+        if (fs.existsSync(file)) fs.unlinkSync(file);
+      });
+      return false;
+    }
+    
+    tempAudioFiles.push(chunkPath);
+  }
+  
+  // Concatena todos os chunks em um único arquivo
+  console.log(`\n🔗 Concatenando ${chunks.length} partes...`);
+  const success = await concatenateAudioFiles(tempAudioFiles, audioPath);
+  
+  if (success) {
+    console.log(`✅ Áudio completo gerado: ${audioPath}`);
+  }
+  
+  return success;
 }
 
 /**

@@ -152,8 +152,8 @@ async function processPost(postFile) {
     return false;
   }
   
-  // Limite de caracteres por request (OpenAI aceita sem limite, mas vamos dividir em chunks)
-  const maxChars = 4096;
+  // Limite de caracteres por request (OpenAI tem limite de 4096)
+  const maxChars = 4090;
   
   // Se texto é muito grande, divide em partes
   if (content.length > maxChars) {
@@ -161,7 +161,7 @@ async function processPost(postFile) {
   }
   
   const textToConvert = content.length > maxChars 
-    ? content.substring(0, maxChars) + '...' 
+    ? content.substring(0, maxChars)
     : content;
   
   // Gera áudio

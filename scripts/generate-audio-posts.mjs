@@ -45,6 +45,9 @@ const MODEL = 'tts-1-hd'; // Melhor qualidade
 // Pricing OpenAI TTS (USD por 1M caracteres)
 const PRICE_PER_MILLION_CHARS = MODEL === 'tts-1-hd' ? 30.00 : 15.00;
 
+// Taxa de conversão USD para BRL (atualizar conforme necessário)
+const USD_TO_BRL = 5.50;
+
 // Diretórios
 const BLOG_DIR = path.join(__dirname, '../src/content/blog');
 const AUDIO_OUTPUT_DIR = path.join(__dirname, '../public/audio/blog');
@@ -244,7 +247,7 @@ async function processPost(postFile) {
     console.log(`📝 Conteúdo: ${content.length} chars`);
     const success = await generateAudio(content, audioPath, postSlug);
     if (success) {
-      console.log(`💰 Custo: $${cost.toFixed(4)} USD`);
+      console.log(`💰 Custo: $${cost.toFixed(4)} USD (R$ ${(cost * USD_TO_BRL).toFixed(2)})`);
     }
     return { success, cost: success ? cost : 0 };
   }
@@ -283,7 +286,7 @@ async function processPost(postFile) {
   
   if (success) {
     console.log(`✅ Áudio completo gerado: ${audioPath}`);
-    console.log(`💰 Custo total: $${totalCost.toFixed(4)} USD (${content.length} chars)`);
+    console.log(`💰 Custo total: $${totalCost.toFixed(4)} USD (R$ ${(totalCost * USD_TO_BRL).toFixed(2)}) - ${content.length} chars`);
   }
   
   return { success, cost: success ? totalCost : 0 };
@@ -343,7 +346,7 @@ async function main() {
   console.log('\n=====================================');
   console.log(`✅ Processados: ${processed}`);
   console.log(`❌ Erros: ${errors}`);
-  console.log(`💰 Custo total da sessão: $${totalCost.toFixed(4)} USD`);
+  console.log(`💰 Custo total da sessão: $${totalCost.toFixed(4)} USD (R$ ${(totalCost * USD_TO_BRL).toFixed(2)})`);
   console.log(`📁 Áudios salvos em: ${AUDIO_OUTPUT_DIR}`);
 }
 

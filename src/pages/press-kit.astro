@@ -4,6 +4,7 @@ import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import Container from '../components/ui/Container.astro';
 import Icons from '../components/ui/Icons.astro';
+import joelBurigoImage from '../assets/images/joel-burigo-vendas-sem-segredos-2.png';
 
 const seo = {
   title: 'Press Kit - Joel Burigo | Material para Imprensa',
@@ -117,7 +118,7 @@ const seo = {
                   Alta resolução, fundo neutro
                 </p>
                 <a
-                  href="/images/joel-burigo-vendas-sem-segredos-2.png"
+                  href={joelBurigoImage.src}
                   download
                   class="inline-flex items-center gap-2 font-sans text-sm font-medium text-lime hover:text-lime/80"
                 >

@@ -4,7 +4,7 @@ interface Props {
   title: string;
 }
 
-const { audioUrl, title } = Astro.props;
+const { audioUrl } = Astro.props;
 ---
 
 <div class="audio-player-wrapper my-8 rounded-2xl border-2 border-lime/20 bg-gradient-to-br from-lime/5 to-lime/10 p-6 backdrop-blur-sm">
@@ -35,7 +35,7 @@ const { audioUrl, title } = Astro.props;
           id="article-audio"
           preload="metadata"
           class="w-full"
-          controlsList="nodownload"
+          controlslist="nodownload"
         >
           <source src={audioUrl} type="audio/mpeg" />
           Seu navegador não suporta áudio HTML5.
@@ -121,9 +121,9 @@ const { audioUrl, title } = Astro.props;
   const progressBar = document.getElementById('progress-bar') as HTMLInputElement;
   const currentTimeEl = document.getElementById('current-time');
   const durationEl = document.getElementById('duration');
-  const speedSelect = document.getElementById('playback-speed') as HTMLSelectElement;
+  const speedSelect = document.getElementById('playback-speed');
 
-  if (audio && playPauseBtn && progressBar) {
+  if (audio && playPauseBtn && progressBar && speedSelect instanceof HTMLSelectElement) {
     // Play/Pause
     playPauseBtn.addEventListener('click', () => {
       if (audio.paused) {

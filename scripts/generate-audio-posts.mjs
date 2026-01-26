@@ -174,45 +174,63 @@ async function concatenateAudioFiles(inputFiles, outputPath) {
 }
 
 /**
- * Gera áudio usando OpenAI TTS API
+ * Gera áudio usando OpenAI TTS API com retry
  */
-async function generateAudio(text, outputPath, postSlug) {
+async function generateAudio(text, outputPath, postSlug, retries = 3) {
   if (!OPENAI_API_KEY) {
     console.error('❌ OPENAI_API_KEY não encontrada no .env');
     process.exit(1);
   }
 
-  try {
-    const response = await fetch(
-      'https://api.openai.com/v1/audio/speech',
-      {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${OPENAI_API_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          model: MODEL,
-          voice: VOICE,
-          input: text,
-          response_format: 'mp3'
-        })
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      const response = await fetch(
+        'https://api.openai.com/v1/audio/speech',
+        {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${OPENAI_API_KEY}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            model: MODEL,
+            voice: VOICE,
+            input: text,
+            response_format: 'mp3'
+          })
+        }
+      );
+
+      if (!response.ok) {
+        const error = await response.text();
+        
+        // Se for rate limit (429), espera mais tempo e tenta novamente
+        if (response.status === 429 && attempt < retries) {
+          const waitTime = attempt * 5000; // 5s, 10s, 15s
+          console.log(`⏳ Rate limit atingido, aguardando ${waitTime/1000}s antes de tentar novamente...`);
+          await new Promise(resolve => setTimeout(resolve, waitTime));
+          continue;
+        }
+        
+        throw new Error(`OpenAI API error: ${response.status} - ${error}`);
       }
-    );
 
-    if (!response.ok) {
-      const error = await response.text();
-      throw new Error(`OpenAI API error: ${response.status} - ${error}`);
+      const audioBuffer = await response.arrayBuffer();
+      fs.writeFileSync(outputPath, Buffer.from(audioBuffer));
+      
+      return true;
+    } catch (error) {
+      if (attempt === retries) {
+        console.error(`❌ Erro ao gerar áudio após ${retries} tentativas: ${error.message}`);
+        return false;
+      }
+      
+      console.log(`⚠️  Tentativa ${attempt} falhou, tentando novamente...`);
+      await new Promise(resolve => setTimeout(resolve, 2000));
     }
-
-    const audioBuffer = await response.arrayBuffer();
-    fs.writeFileSync(outputPath, Buffer.from(audioBuffer));
-    
-    return true;
-  } catch (error) {
-    console.error(`❌ Erro ao gerar áudio: ${error.message}`);
-    return false;
   }
+  
+  return false;
 }
 
 /**
@@ -266,20 +284,30 @@ async function processPost(postFile) {
   for (let i = 0; i < chunks.length; i++) {
     const chunkPath = path.join(AUDIO_OUTPUT_DIR, `${postSlug}-chunk-${i}.mp3`);
     const chunkCost = calculateCost(chunks[i].length);
+    
+    // Verifica se o chunk já existe
+    if (fs.existsSync(chunkPath)) {
+      console.log(`\n✓ Chunk ${i + 1}/${chunks.length} já existe, reutilizando...`);
+      tempAudioFiles.push(chunkPath);
+      continue;
+    }
+    
     totalCost += chunkCost;
     
     console.log(`\n🎙️  Gerando chunk ${i + 1}/${chunks.length} (${chunks[i].length} chars) - $${chunkCost.toFixed(4)}`);
     
     const success = await generateAudio(chunks[i], chunkPath, `${postSlug}-chunk-${i}`);
     if (!success) {
-      // Limpa chunks já gerados em caso de erro
-      tempAudioFiles.forEach(file => {
-        if (fs.existsSync(file)) fs.unlinkSync(file);
-      });
-      return { success: false, cost: 0 };
+      console.error(`❌ Falha ao gerar chunk ${i + 1}. Chunks existentes preservados para retry.`);
+      return { success: false, cost: totalCost };
     }
     
     tempAudioFiles.push(chunkPath);
+    
+    // Delay entre chunks para evitar rate limiting
+    if (i < chunks.length - 1) {
+      await new Promise(resolve => setTimeout(resolve, 1500));
+    }
   }
   
   // Concatena todos os chunks em um único arquivo

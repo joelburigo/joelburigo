@@ -224,9 +224,11 @@ async function processPost(postFile) {
   const postPath = path.join(BLOG_DIR, postFile);
   const audioPath = path.join(AUDIO_OUTPUT_DIR, `${postSlug}.mp3`);
   
+  console.log(`\n📄 Processando: ${postSlug}`);
+  
   // Verifica se áudio já existe
   if (fs.existsSync(audioPath)) {
-    console.log(`⏭️  Áudio já existe: ${postSlug}.mp3`);
+    console.log(`⏭️  Áudio já existe, pulando...`);
     return { success: true, cost: 0 };
   }
   

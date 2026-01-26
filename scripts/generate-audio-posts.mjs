@@ -143,11 +143,42 @@ function splitTextIntoChunks(text, maxChars = 4000) {
 }
 
 /**
- * Concatena múltiplos arquivos de áudio usando ffmpeg
+ * Otimiza áudio usando ffmpeg para reduzir tamanho
+ */
+async function optimizeAudio(inputPath, outputPath) {
+  try {
+    // Otimiza: reduz bitrate, normaliza volume, remove silêncios
+    await execPromise(
+      `ffmpeg -i "${inputPath}" ` +
+      `-af "silenceremove=start_periods=1:start_duration=1:start_threshold=-50dB:` +
+      `detection=peak,aformat=dblp,dynaudnorm=f=75:g=25:p=0.95" ` +
+      `-b:a 64k -ar 24000 -ac 1 "${outputPath}" -y`
+    );
+    
+    const originalSize = fs.statSync(inputPath).size;
+    const optimizedSize = fs.statSync(outputPath).size;
+    const reduction = ((1 - optimizedSize / originalSize) * 100).toFixed(1);
+    
+    console.log(`🗜️  Otimizado: ${(originalSize / 1024 / 1024).toFixed(2)}MB → ${(optimizedSize / 1024 / 1024).toFixed(2)}MB (${reduction}% menor)`);
+    
+    return true;
+  } catch (error) {
+    console.error(`❌ Erro ao otimizar áudio: ${error.message}`);
+    // Se falhar, mantém o original
+    if (fs.existsSync(inputPath) && !fs.existsSync(outputPath)) {
+      fs.copyFileSync(inputPath, outputPath);
+    }
+    return false;
+  }
+}
+
+/**
+ * Concatena múltiplos arquivos de áudio usando ffmpeg e otimiza o resultado
  */
 async function concatenateAudioFiles(inputFiles, outputPath) {
   const tempDir = path.dirname(outputPath);
   const listFile = path.join(tempDir, 'concat-list.txt');
+  const tempOutputPath = outputPath.replace('.mp3', '-temp.mp3');
   
   // Cria arquivo de lista para ffmpeg
   const listContent = inputFiles.map(file => `file '${file}'`).join('\n');
@@ -155,10 +186,14 @@ async function concatenateAudioFiles(inputFiles, outputPath) {
   
   try {
     // Concatena usando ffmpeg
-    await execPromise(`ffmpeg -f concat -safe 0 -i "${listFile}" -c copy "${outputPath}" -y`);
+    await execPromise(`ffmpeg -f concat -safe 0 -i "${listFile}" -c copy "${tempOutputPath}" -y`);
     
-    // Remove arquivo de lista e arquivos temporários
+    // Otimiza o áudio concatenado
+    await optimizeAudio(tempOutputPath, outputPath);
+    
+    // Remove arquivos temporários
     fs.unlinkSync(listFile);
+    fs.unlinkSync(tempOutputPath);
     inputFiles.forEach(file => fs.unlinkSync(file));
     
     return true;
@@ -166,6 +201,7 @@ async function concatenateAudioFiles(inputFiles, outputPath) {
     console.error(`❌ Erro ao concatenar áudios: ${error.message}`);
     // Limpa arquivos mesmo em caso de erro
     if (fs.existsSync(listFile)) fs.unlinkSync(listFile);
+    if (fs.existsSync(tempOutputPath)) fs.unlinkSync(tempOutputPath);
     inputFiles.forEach(file => {
       if (fs.existsSync(file)) fs.unlinkSync(file);
     });
@@ -265,8 +301,14 @@ async function processPost(postFile) {
   if (content.length <= maxChars) {
     const cost = calculateCost(content.length);
     console.log(`📝 Conteúdo: ${content.length} chars`);
-    const success = await generateAudio(content, audioPath, postSlug);
+    
+    const tempPath = audioPath.replace('.mp3', '-temp.mp3');
+    const success = await generateAudio(content, tempPath, postSlug);
+    
     if (success) {
+      // Otimiza o áudio gerado
+      await optimizeAudio(tempPath, audioPath);
+      fs.unlinkSync(tempPath);
       console.log(`💰 Custo: $${cost.toFixed(4)} USD (R$ ${(cost * USD_TO_BRL).toFixed(2)})`);
     }
     return { success, cost: success ? cost : 0 };

@@ -82,15 +82,15 @@ Vou mostrar cada uma. Com números. Com exemplos. Com timeline.
 <a name="minha-jornada"></a>
 ## Minha Jornada: 18 Meses de R$ 12k Para R$ 108k
 
-2010-2011. Depois de sair do barraco e reconstruir, eu estava em R$ 12k/mês.
+2012-2014. Depois de sair do barraco e reconstruir, eu estava em R$ 12k/mês.
 
 Estável. Pagando contas. Mas longe de onde queria chegar.
 
 ### A Meta Audaciosa
 
-Setembro de 2010, anotei no caderno:
+Setembro de 2012, anotei no caderno:
 
-> "Meta: R$ 100k/mês em 18 meses. Dezembro de 2012."
+> "Meta: R$ 100k/mês em 18 meses. Março de 2014."
 
 Parecia impossível. Era 8,3x mais do que eu fazia.
 
@@ -102,7 +102,7 @@ Mas eu sabia que não ia conseguir fazendo mais do mesmo.
 **Mês 7-12:** Contratei primeiro SDR e CS  
 **Mês 13-18:** Lancei tráfego pago + refinei ICP  
 
-**Resultado final:** Dezembro de 2012 = R$ 108k/mês
+**Resultado final:** Março de 2014 = R$ 108k/mês
 
 Não foi mágica. Foi estrutura.
 

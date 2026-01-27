@@ -314,7 +314,7 @@ Cada cliente novo era uma celebração silenciosa.
 
 R$ 500 aqui. R$ 800 ali. R$ 1.200 se fosse um projeto maior. Não era muito. Mas era **meu**. Era fruto de trabalho honesto. Era prova de que eu ainda era capaz.
 
-Saí do CTE dos Correios. Fui pra SOS Educação Profissional. Salário melhor. Ambiente melhor. Dignidade de volta.
+Saí do CTE dos Correios. Consegui um emprego melhor numa empresa de educação profissional. Salário melhor. Ambiente melhor. Dignidade de volta.
 
 Mas o que eu realmente queria era voltar a ser empreendedor. Só que dessa vez diferente. [Dessa vez com método](/blog/como-estruturar-vendas-do-zero). Dessa vez sem depender de sócio que some com os clientes.
 
@@ -353,6 +353,8 @@ Sorriso que iluminava a tela. Energia que você sente antes mesmo de conversar. 
 Dei like. Match. Primeira mensagem. Segunda mensagem. Terceira mensagem. E de repente, estávamos conversando como se já nos conhecêssemos há anos.
 
 **Sim, conheci minha esposa no Tinder.**
+
+14 de dezembro de 2016.
 
 E olha, se você torceu o nariz agora, relaxa. Hoje em dia é mais estranho conhecer alguém "na vida real" do que num aplicativo. E no final das contas, não importa onde você encontra a pessoa certa. Importa que você encontra.
 
@@ -681,6 +683,8 @@ Nasceu o conceito final do **VSS - Vendas Sem Segredos**.
 
 Não foi ideia repentina. Foi 17 anos de condensação. Foi transformar cada erro, cada acerto, cada case, cada falha, em um sistema replicável e acessível.
 
+E agora, março de 2026, está pronto para lançar.
+
 Eu estava olhando pra trás, pros 17 anos de jornada. Tinha estruturado vendas pra 140+ empresas. Tinha gerado aproximadamente R$ 1 bilhão em vendas ao longo desses anos.
 
 Mas esse conhecimento estava preso. Estava em consultorias caras. Estava inacessível pra maioria.
@@ -695,7 +699,7 @@ Cada P nasceu de uma lição real. Dolorosa ou vitoriosa, mas real:
 
 **P2 - Público:** Seis anos vendendo pra todo mundo (2004-2010) me ensinou que quem tenta vender pra todos não vende pra ninguém com eficiência.
 
-**P3 - Produto:** Aquele primeiro cliente da loja de roupas em 2012 - "se não gostar, de graça" - me ensinou que oferta irrecusável supera promessa vazia.
+**P3 - Produto:** Aquele primeiro cliente em 2012 quando ofereci "se não gostar, de graça" - me ensinou que oferta irrecusável supera promessa vazia.
 
 **P4 - Programas:** Os grandes cases entre 2016-2020 me ensinaram que vender sem sistema é roleta-russa. CRM + funis + automação = previsibilidade.
 

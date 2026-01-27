@@ -49,7 +49,7 @@ E levei uma quebrada de R$ 300 mil para entender isso.
 
 Deixa eu te contar o que aconteceu.
 
-Em 2011, eu tinha uma empresa de consultoria que faturava R$ 60-80k por mês. EU vendia tudo. EU atendia todo mundo. EU resolvia todos os problemas.
+Depois de reconstruir e ter uma empresa de consultoria, EU vendia tudo. EU atendia todo mundo. EU resolvia todos os problemas.
 
 Decidi contratar 2 vendedores. Peguei caras bons, com experiência, com lábia.
 

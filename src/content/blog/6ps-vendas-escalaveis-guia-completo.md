@@ -33,11 +33,11 @@ Neste guia, vou te mostrar exatamente o framework que usei para estruturar aprox
 
 Mas antes de entrar no método, deixa eu te contar de onde isso veio.
 
-Eu quebrei aos 30 anos. Tomei calote do sócio, perdi tudo, e fui parar num barraco em Minas Gerais. Sem geladeira. Sem móveis. Só um fogão velho e uma cama improvisada em cima de tijolos.
+Quebrei aos 25 anos. Tomei calote do sócio, perdi tudo, e fui parar num barraco em Minas Gerais. Sem geladeira. Sem móveis. Só um fogão velho e uma cama improvisada em cima de tijolos.
 
 Trabalhei nos Correios pra ter salário fixo. Juntei dinheiro, comprei mil cartões de visita e fui bater porta a porta em comércio de cidade pequena.
 
-Devagar, tijolo por tijolo, reconstruí. Hoje, 17 anos depois, já ajudei 140 clientes a estruturarem suas vendas. O case mais emblemático: Encontre Sua Franquia — saiu de R$ 60 mil pra R$ 1 milhão de faturamento mensal em 2 anos.
+Devagar, tijolo por tijolo, reconstruí. Hoje, 17 anos depois, já ajudei 140 clientes a estruturarem suas vendas. O case mais emblemático: uma holding de franquias — saiu de R$ 160 mil pra R$ 1 milhão de faturamento mensal em 2 anos.
 
 A metodologia que vou te ensinar aqui não é teoria de MBA. É o que aprendi batendo cabeça, errando, quebrando, e reconstruindo. Cicatriz virou sabedoria. Sabedoria virou sistema.
 
@@ -1102,7 +1102,7 @@ O contexto dele é diferente do seu. O que funciona pra ele pode não funcionar 
 
 Vou te contar um caso que me marcou.
 
-Em 2018, começei a trabalhar com a Encontre Sua Franquia, uma holding de franquias. Quando cheguei, faturavam R$ 60 mil por mês. Boa empresa, mas travada.
+Em 2018, começei a trabalhar com uma holding de franquias com mais de 1.800 franqueados. Quando cheguei, faturavam R$ 160 mil por mês. Boa empresa, mas travada.
 
 **O diagnóstico inicial:**
 

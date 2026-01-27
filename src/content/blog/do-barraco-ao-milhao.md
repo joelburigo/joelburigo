@@ -1,6 +1,6 @@
 ---
-title: '7 Erros Que Me Quebraram e 7 Princípios Que Me Reconstruíram: Lições de Quem Perdeu R$ 380k'
-excerpt: 'Quebrei aos 25 com R$ 380k em dívidas, morei em barraco de R$ 300, reconstruí tijolo por tijolo. Aqui estão os 7 erros que me derrubaram e os 7 princípios que me fizeram estruturar ~R$ 1 bilhão depois. Cicatriz virou sistema.'
+title: '7 Erros Que Me Quebraram e 7 Princípios Que Me Reconstruíram: Lições de Quem Começou do Zero'
+excerpt: 'Quebrei aos 25, morei em barraco de R$ 300, reconstruí tijolo por tijolo. Aqui estão os 7 erros que me derrubaram e os 7 princípios que me fizeram estruturar ~R$ 1 bilhão depois. Cicatriz virou sistema.'
 category: 'Mentalidade'
 date: 2025-11-29
 readTime: '22 min'
@@ -21,7 +21,7 @@ clusterKeywords:
 
 ## Índice
 
-1. [O Erro de R$ 380 Mil](#o-erro)
+1. [O Erro Que Me Quebrou](#o-erro)
 2. [Os 7 Erros Que Quebram Empresas](#sete-erros)
 3. [Os 7 Princípios de Reconstrução](#sete-principios)
 4. [A Decisão Mais Importante](#decisao)
@@ -32,9 +32,9 @@ clusterKeywords:
 ---
 
 <a name="o-erro"></a>
-## O Erro de R$ 380 Mil
+## O Erro Que Me Quebrou
 
-Março de 2012. 25 anos. R$ 380 mil em dívidas. Sócio sumiu. Empresa quebrada.
+Março de 2012. 25 anos. Quebrei. Sócio sumiu. Empresa quebrada.
 
 Morei 6 meses em barraco de R$ 300/mês sem geladeira. Trabalhei nos Correios por R$ 1.400. Bateu 100+ portas com cartões de visita.
 
@@ -183,38 +183,38 @@ Leads, conversão, CAC, LTV, ciclo de vendas, churn.
 
 Aqui está a timeline REAL de reconstrução:
 
-**Mês 1-3 (Jan-Mar 2009):** Do barraco ao primeiro cliente pago
+**Mês 1-3 (Mai-Jul 2012):** Do barraco ao primeiro cliente pago
 - Faturamento: R$ 0 → R$ 5.200/mês
 - Trabalhando 16h/dia (Correios + freelancing)
 
-**Mês 4-6 (Abr-Jun 2009):** Sites + primeiras consultorias
+**Mês 4-6 (Ago-Out 2012):** Sites + primeiras consultorias
 - Faturamento: R$ 12.000/mês
 - Saí dos Correios, foquei 100% no negócio
 
-**Mês 7-12 (Jul-Dez 2009):** Pivotei para consultoria de vendas
+**Mês 7-12 (Nov 2012-Abr 2013):** Pivotei para consultoria de vendas
 - Faturamento: R$ 22.000/mês
 - Primeiro funcionário contratado
 
-**Ano 2 (2010):** Estruturação e crescimento
+**Ano 2 (2013):** Estruturação e crescimento
 - Faturamento: R$ 40.000/mês
 - 3 funcionários
 - Primeiros processos documentados
 
-**Ano 3 (2011):** Escala e validação
+**Ano 3 (2014):** Escala e validação
 - Faturamento: R$ 65.000/mês
 - 5 funcionários
 - Framework dos 6Ps começou aqui
 
-**Ano 4 (2012):** Batida dos R$ 100k/mês
+**Ano 4 (2015):** Batida dos R$ 100k/mês
 - Faturamento: R$ 100.000/mês estável
 - 8 funcionários
 - 25 clientes atendidos
 
-**Ano 5-17 (2013-2025):** Refinamento e expansão
+**Ano 5-17 (2016-2025):** Refinamento e expansão
 - Faturamento consolidado
 - 140+ clientes estruturados
 - ~R$ 1 bilhão em vendas processadas
-- VSS lançado em 2023
+- VSS lançado em março de 2026
 
 ---
 
@@ -402,7 +402,7 @@ Na reconstrução, fiz diferente:
 - 140+ clientes atendidos
 - ~R$ 1 bilhão em vendas estruturadas
 - Framework dos 6Ps validado
-- VSS com centenas de alunos
+- VSS em lançamento
 
 ## O Que Eu Faria Diferente?
 

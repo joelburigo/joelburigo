@@ -219,23 +219,25 @@ Mas deixa eu voltar. Porque essa história não começa em 2012. Ela começa mui
 
 1987. Ponte do Imaruim, Palhoça, Santa Catarina.
 
-Nasci na casa da minha avó. Não por opção romântica, entende? Meus pais não tinham casa própria ainda. Então foi lá mesmo. Eu, meu pai, minha mãe, tudo apertado naquela casa que cheirava a café coado de manhã e serragem de madeira o dia inteiro.
+Nasci no Hospital Regional. Mas quando saí de lá, fui pra casa onde meus pais já moravam: a casa da minha avó materna. Eu, meu irmão que era quatro anos mais velho, meu pai, minha mãe, tudo apertado naquela casa que cheirava a café coado de manhã e serragem de madeira o dia inteiro.
 
 Serragem.
 
-Esse cheiro marcou minha infância toda. Porque meu bisavô tinha começado uma tradição que passaria por três gerações: marcenaria. Ele ensinou pro meu avô. Meu avô ensinou pro meu pai. E ali, na garagem da casa da minha avó, era onde a mágica acontecia.
+Esse cheiro marcou minha infância toda. Porque meu avô - pai da minha mãe - sempre trabalhou com marcenaria. Na garagem da casa dele, era onde acontecia a magia. Meu bisavô tinha começado essa tradição, passou pro meu avô, e ali, naquela garagem, era o ganha-pão da família.
 
-Não era mágica de verdade, claro. Era trabalho braçal. Pesado. Meu pai suava cada móvel. Cada mesa, cada cadeira, cada armário era feito à mão, peça por peça, erro por erro, ajuste por ajuste. Eu ficava olhando aquilo, pequeno, sentado no chão da garagem cheio de pó de madeira, vendo meu pai transformar tábuas em algo que as pessoas pagariam pra ter.
+Meu pai? Ele tentou outro caminho primeiro. Abriu um bar no centro comunitário. Cancha de bocha do lado, uns tiozinhos jogando, cerveja gelada, salgadinhos fritos.
+
+No final do dia, o que sobrava de salgadinho vinha pra casa. Pra mim e meu irmão, aquilo era festa. Coxinha quentinha, risole, pastel. Hoje, quando lembro daquilo, vejo que eram os pequenos extras que a gente celebrava. Não passávamos fome, mas também não sobravam luxos.
+
+O bar não deu certo.
+
+Foi aí que meu pai entrou na marcenaria com meu avô - seu sogro. E foi ali, pequeno, sentado no chão da garagem cheio de pó de madeira, que passei a ver meu pai e meu avô transformarem tábuas em algo que as pessoas pagariam pra ter.
+
+Não era mágica de verdade, claro. Era trabalho braçal. Pesado. Cada mesa, cada cadeira, cada armário feito à mão, peça por peça, erro por erro, ajuste por ajuste.
 
 E sabe o que eu aprendi ali, com 4, 5, 6 anos de idade?
 
-**Que nada cai do céu. Que você constrói do zero. Que improviso até funciona, mas método constrói algo que dura.**
-
-Meu pai sempre tentou empreender. Sempre. Ele tinha um bar no centro comunitário. Lembro como se fosse hoje: cancha de bocha do lado, uns tiozinhos jogando, cerveja gelada (quando tinha dinheiro pra gelar), salgadinhos fritos.
-
-No final do dia, o que sobrava de salgadinho vinha pra casa.
-
-E olha, quando você é criança, você não entende. Você só fica feliz porque tem coxinha pra comer. Mas hoje, quando lembro daquilo, eu entendo. Não sobrava quase nada. Mas o que sobrava alimentava a gente.
+**Que nada cai do céu. Que você constrói do zero. Que [improviso até funciona, mas método constrói algo que dura](/blog/sistema-melhor-que-improviso).**
 
 Meu pai não era herói. Eu sei que muita história de superação começa com "meu pai era meu maior exemplo". A minha não. Ele trabalhava, sim. Suava, sim. Mas herói? Não era. E quando eu tinha 18 anos, meus pais se separaram. E aí meu pai simplesmente... sumiu. Nenhuma ligação. Nenhum contato. Desapareceu da minha vida como se eu nunca tivesse existido.
 

@@ -2,9 +2,9 @@
 id: "P7"
 titulo: "BRANDING JOEL BURIGO"
 documento: "Parte 7 de 11"
-versao: "2.0"
+versao: "2.1"
 autor: "Joel Burigo"
-ultima_atualizacao: "2026-01-23"
+ultima_atualizacao: "2026-01-27"
 arquivo: "conteudo/parte7-branding-joel-burigo.md"
 
 objetivo: |
@@ -58,19 +58,6 @@ parte_anterior: "P6"
 - [P7.8 Vocabulário Proprietário](#p78-vocabulário-proprietário)
 - [P7.9 Os 7 Inimigos que Joel Combate](#p79-os-7-inimigos-que-joel-combate)
 - [P7.10 Movimento Máquina de Crescimento](#p710-movimento-máquina-de-crescimento)
-
----
-  - 500 palavras (artigos, blog)
-  - 300 palavras (marketing)
-  - 150 palavras (bios)
-  - 50 palavras (elevator pitch)
-
-## SEÇÃO 4: BRANDING E IDENTIDADE
-- [P7.6] Manifesto Joel Burigo
-- [P7.7] Tom de Voz e Personalidade
-- [P7.8] Vocabulário Proprietário
-- [P7.9] Os 7 Inimigos
-- [P7.10] Movimento Máquina de Crescimento
 
 ---
 
@@ -289,17 +276,17 @@ Mas se essa história vai virar livro um dia - e vai - então precisa ser verdad
 
 Cresci em comunidade. E quem cresceu em comunidade sabe: as opções que aparecem pra você nem sempre são as melhores. Às vezes são as piores. E às vezes você aceita porque parece que não tem outra.
 
-Me envolvi com o que não devia. Drogas. Ambiente errado. Gente errada.
+Ainda na adolescência, me envolvi com o que não devia. Drogas. Ambiente errado. Gente errada.
 
-Não vou romantizar dizendo que "éra só maconha" ou "todo mundo fazia". Não era e não fazia diferença. Eu estava tomando decisões que me afastavam de quem eu poderia ser. Estava cercado de gente que não tinha plano, não tinha futuro, só tinha o agora.
+Não vou romantizar dizendo que "era só maconha" ou "todo mundo fazia". Não era e não fazia diferença. Eu estava tomando decisões que me afastavam de quem eu poderia ser. Estava cercado de gente que não tinha plano, não tinha futuro, só tinha o agora.
 
 E o pior: eu estava começando a achar aquilo normal.
 
 Fiz coisas que hoje me envergonham. Não vou detalhar. Não é sobre chocar. É sobre ser honesto: eu estava virando estatística. Mais um improvável. Mais um que a quebrada engole e esquece.
 
-2009. 2010.
+Isso durou anos. Anos perdidos em escolhas erradas.
 
-Alguma coisa dentro de mim começou a incomodar.
+Até que, entre 2009 e 2010, alguma coisa dentro de mim começou a incomodar.
 
 Não foi um estalo. Não foi uma epifania. Foi tipo... uma coceira interna. Sabe quando você sente que tá no lugar errado, vivendo a vida errada, cercado das pessoas erradas, mas você tá tão imerso naquilo que parece que não tem saída?
 
@@ -357,7 +344,7 @@ Não deu.
 
 Maio de 2012.
 
-Mudei pra um barraco em Paraíso das Piabas, Ribeirão das Neves. R$ 300 de aluguel por mês.
+Mudei pra um barraco no bairro Paraíso das Piabas, cidade de Ribeirão das Neves. R$ 300 de aluguel por mês.
 
 Deixa eu te colocar lá dentro.
 
@@ -499,7 +486,7 @@ Belo Horizonte. Final de tarde. Eu estava deitado no sofá, cansado de mais um d
 
 Pra esquerda. Pra esquerda. Pra esquerda.
 
-E aí apareceu uma foto.
+E aí, no dia 14 de dezembro de 2016, apareceu uma foto.
 
 Natalia.
 
@@ -623,6 +610,8 @@ De R$ 160 mil pra R$ 1 milhão.
 Não foi sorte. Não foi timing de mercado. Não foi "ah, mas a empresa já estava crescendo".
 
 Foi **sistema replicável bem executado**.
+
+Mas quer saber uma verdade? Apesar do case de milhão ser o mais impressionante no papel, o que mais me move é outro tipo de transformação. É pegar uma empresa que fatura R$ 50 mil por mês e levar pra R$ 300 mil. Isso **muda vidas de verdade**. Muda a vida do empresário, da família dele, dos funcionários. É muito mais transformador do que tirar uma empresa de R$ 22 milhões pra R$ 40 milhões. Os grandes já têm estrutura, têm margem de erro. Os pequenos precisam de sistema pra sobreviver - e quando você entrega isso, você muda o jogo deles pra sempre.
 
 E sabe o que isso provou?
 
@@ -791,6 +780,26 @@ E eu sabia disso porque **eu vim de lá**. Eu fui aquele microempresário. Eu fu
 E pensei: **"E se eu criasse algo acessível? E se eu democratizasse acesso a vendas escaláveis?"**
 
 Essa pergunta ficou martelando na minha cabeça durante 2023 inteiro.
+
+---
+
+## Capítulo 15.5: A Perda Que Ninguém Esperava
+
+Dezembro de 2023.
+
+Natalia e eu tivemos uma perda.
+
+Não vou entrar em detalhes. Algumas dores são privadas demais. Mas preciso mencionar porque faz parte da nossa história.
+
+Quando você perde algo que ainda nem chegou a segurar nos braços, existe um luto silencioso. Um luto que a maioria das pessoas não sabe que você está vivendo. Você continua trabalhando. Continua sorrindo nas reuniões. Continua postando nas redes. Mas por dentro, tem um buraco.
+
+E a gente se apoiou. Porque é isso que parceiros de verdade fazem. Não só nos momentos de vitória, mas principalmente nos momentos de perda.
+
+Três meses depois, em março de 2024, descobrimos que estávamos grávidos de novo.
+
+Dessa vez, cada ultrassom era uma celebração. Cada batimento cardíaco era um alívio. Cada semana que passava era uma vitória.
+
+E em outubro de 2024, veio a maior vitória de todas.
 
 ---
 
@@ -977,14 +986,14 @@ Let's grow, CARALHO!
 | **Início 2012** | **QUEBRA:** Calote do sócio, empresa fechada, prejuízo total |
 | **Fev 2012** | Aceita proposta do ex-sogro para recomeçar em Minas (promessa de emprego que não existia) |
 | **13 Mar 2012** | Aniversário de 25 anos |
-| **14 Mar 2012** | Saída de SC e mudança para Belo Horizonte/MG (desespero/verginha) |
+| **14 Mar 2012** | Saída de SC e mudança para Belo Horizonte/MG (desespero/vergonha) |
 
 #### **Fase 3: Fundo do Poço (Março-Novembro 2012)**
 
 | **Data** | **Evento** |
 |----------|-----------|
 | **Mar-Mai 2012** | Casa da família da ex-namorada (conflitos, não deu certo) |
-| **Mai 2012** | Mudança para barraco em Paraíso das Piabas, Ribeirão das Neves/MG (R$ 300/mês, sem geladeira) |
+| **Mai 2012** | Mudança para barraco no bairro Paraíso das Piabas, cidade de Ribeirão das Neves/MG (R$ 300/mês, sem geladeira) |
 | **29 Mai 2012** | Início no CTE dos Correios (terceirizado, R$ 1.400/mês, 6 meses + 3 possíveis) |
 | **Mai-Nov 2012** | 6 meses no barraco: juntou dinheiro, comprou mil cartões "Joel Martins" |
 | **Nov 2012** | Mudança para Belo Horizonte (capital), bater 100+ portas Avenida Afonso Pena |
@@ -993,7 +1002,7 @@ Let's grow, CARALHO!
 
 | **Ano/Data** | **Evento** |
 |--------------|-----------|
-| **Dez 2012** | Primeiro cliente (loja de roupas): R$ 500, proposta "se não gostar, de graça" |
+| **Dez 2012** | Primeiro cliente: R$ 500, proposta "se não gostar, de graça" |
 | **2013** | Evolução: primeiro apartamento em Cachoeirinha (BH), sofá, geladeira |
 | **2013** | Saída dos Correios → SOS Educação Profissional (melhor salário) |
 | **2014** | **VIROU O JOGO:** clientes maiores, mais estrutura, mais poder de compra |
@@ -1062,7 +1071,7 @@ Cada pilar dos 6Ps nasceu de uma lição real, dolorosa ou vitoriosa:
 → **Aprendizado:** Quem tenta vender para todos não vende para ninguém.
 
 **P3 - PRODUTO** (O Quê)  
-→ **Lição:** Primeiro cliente da loja de roupas (2012): "Se não gostar, de graça"  
+→ **Lição:** Primeiro cliente (2012): "Se não gostar, de graça"  
 → **Aprendizado:** Oferta irrecusável > promessa vazia.
 
 **P4 - PROGRAMAS** (Como Vender)  
@@ -1105,31 +1114,29 @@ Cada pilar dos 6Ps nasceu de uma lição real, dolorosa ou vitoriosa:
 
 **Joel Burigo: Da Quebrada ao Bilhão**
 
-Nasci em 1987 na quebrada de Palhoça/SC. Pai marceneiro, mãe vendedora. Dinheiro curto, dignidade alta. Ali aprendi três coisas: trabalho > sorte, improviso tem limite, e vender é sobreviver.
+Nasci em 1987 na quebrada de Palhoça/SC. Pai marceneiro, mãe vendedora. Dinheiro curto, dignidade alta. Me envolvi com ambiente errado na adolescência, mas dei um basta e decidi que não seria mais um que a quebrada engole. Ali aprendi três coisas: trabalho > sorte, improviso tem limite, e vender é sobreviver.
 
-Em 2004, comecei como freelancer criando sites e fazendo marketing digital antes mesmo desses termos serem populares. Aprendi fazendo. Errei fazendo. Cresci fazendo.
+Em 2004, comecei como freelancer criando sites e fazendo marketing digital antes mesmo desses termos serem populares. Em 2010, formalizei e abri empresa em Itajaí com um sócio. Tomei calote do próprio sócio e quebrei aos 25 anos em março de 2012.
 
-Em 2010, decidi formalizar e abri uma empresa em Itajaí com um sócio. No papel, parecia bom negócio. Na prática, tomei calote do próprio sócio e quebrei aos 25 anos em março de 2012. Fiquei com o prejuízo. Ele ficou com os clientes.
+Fui pro fundo do poço. Literalmente. De maio a novembro de 2012 morei num barraco (R$ 300/mês) sem geladeira no bairro Paraíso das Piabas, cidade de Ribeirão das Neves/MG. Trabalhava no CTE dos Correios colocando encomendas na esteira por R$ 1.400/mês. Juntei dinheiro, comprei mil cartões de visita e subi a Avenida Afonso Pena em BH batendo em 100+ portas.
 
-Em março de 2012, fui pro fundo do poço. Literalmente. De maio a novembro morei num barraco (R$ 300/mês) sem geladeira em Ribeirão das Neves/MG. Trabalhava no CTE dos Correios desde 29 de maio colocando encomendas na esteira por R$ 1.400/mês. Juntei dinheiro, comprei mil cartões de visita e subi a Avenida Afonso Pena em BH batendo em 100+ portas.
+Primeiro cliente pagou R$ 500 por um site. Fiz proposta simples: "Se não gostar, te dou de graça." Gostou. Pagou. Indicou. A reconstrução começou.
 
-O primeiro cliente pagou R$ 500 por um site. Fiz uma proposta simples: "Se não gostar, te dou de graça. Se gostar, você paga." Ele gostou. Pagou. Me indicou. A reconstrução começou.
+Em 2014 virou o jogo. Em 14 de dezembro de 2016 conheci Natalia no Tinder, voltei pra Floripa depois de quase 5 anos e começamos a namorar em janeiro de 2017.
 
-Fiquei 6 meses no barraco. Em 2014 virou o jogo - clientes maiores, mais estrutura. Em dezembro de 2016 conheci Natalia (de MG), voltei pra Floripa depois de quase 5 anos e começamos a namorar em janeiro de 2017.
+Entre 2016-2020, atendi empresas grandes: ESF - Encontre Sua Franquia (de R$ 160k → R$ 1mi/mês em 2 anos, +433%), Port Informática (+250% e-commerce), Lojas Rede (+65%). Mas o que mais me move é crescer empresas pequenas de R$ 50k pra R$ 300k — isso muda vidas de verdade.
 
-Entre 2016-2020, atendi empresas como Port Informática (R$ 22mi/mês, +250% e-commerce), Lojas Rede (+65%) e ESF - Encontre Sua Franquia (de R$ 160k → R$ 1mi/mês em 2 anos, +433% faturamento). Em 2018 moramos em cobertura duplex, chegou Thor nosso cachorro, noivei na casa de praia dos meus avós na Praia do Sonho. Em 2019 criei Growth Master e OnSell (perdi ~R$ 250k, standby hoje).
+2018: cobertura duplex no Castelo/BH, Thor nosso golden, noivado na Praia do Sonho. 2019: Growth Master e OnSell (~R$ 250k perdidos, standby). 2020: pandemia, downsizing. 2021: Netlinks, mudança pra Floripa, casamento. Dezembro de 2023: tivemos uma perda. Março 2024: descobrimos nova gravidez. Outubro 2024: nasceu Davi. 2026: nasceu o VSS.
 
-Pandemia 2020 descapitalizou. Agosto 2020 downsizei. Casamento adiado de nov/2020 pra nov/2021. Janeiro 2021 virei sócio Netlinks (SEO). Setembro 2021 mudei com Natalia pra Floripa - voltando às origens reformulado. Janeiro 2023 saí da Netlinks. Outubro 2024 nasceu Davi. Dezembro 2024/janeiro 2026 nasceu o conceito do VSS.
+Condensei 17+ anos nos **6Ps das Vendas Escaláveis**: Posicionamento, Público, Produto, Programas, Processos, Pessoas. Cada P nasceu de erro ou acerto real.
 
-Foi aí que nasceram os **6Ps das Vendas Escaláveis** - condensar 17 anos em 6 pilares: Posicionamento, Público, Produto, Programas, Processos, Pessoas. Cada P nasceu de erros e acertos reais.
+Criei o **VSS (Vendas Sem Segredos)** — programa que implementa os 6Ps em 90 dias. Escalável, acessível, cria autonomia (não dependência).
 
-Hoje, após 17+ anos, 140+ clientes e ~R$ 1 bilhão em vendas estruturadas, criei o **VSS (Vendas Sem Segredos)** - programa que implementa os 6Ps em 90 dias. Escalável, acessível, cria autonomia.
-
-Moramos no sul da ilha (Ribeirão da Ilha) perto da praia. Natalia tem planos de vir pro negócio.
+Moramos no Ribeirão da Ilha, sul da ilha de Floripa. Natalia tem planos de vir pro negócio.
 
 Da quebrada ao bilhão, do bilhão ao legado.
 
-**Sistema > Improviso.**
+**Sistema > Improviso. Let's grow.**
 
 ---
 
@@ -1137,37 +1144,45 @@ Da quebrada ao bilhão, do bilhão ao legado.
 
 **Joel Burigo: 17+ Anos, 140+ Clientes, ~R$ 1 Bilhão**
 
-Nasci na quebrada de Palhoça/SC em 1987. Pai marceneiro, mãe vendedora. Comecei como freelancer em 2004 criando sites e fazendo marketing digital quando isso ainda era novidade.
+Nasci na quebrada de Palhoça/SC em 1987. Pai marceneiro, mãe vendedora. Comecei como freelancer em 2004. Em 2010, abri empresa com sócio em Itajaí. Tomei calote e quebrei aos 25 anos em março de 2012.
 
-Em 2010, abri minha primeira empresa em Itajaí. Tomei calote do sócio e quebrei aos 25 anos em março de 2012. Estava morando num barraco (R$ 300/mês) sem geladeira em MG, trabalhando nos Correios desde 29 de maio por R$ 1.400/mês.
+De maio a novembro de 2012 morei num barraco (R$ 300/mês) sem geladeira no bairro Paraíso das Piabas, Ribeirão das Neves/MG. Ganhava R$ 1.400/mês nos Correios. Juntei dinheiro, comprei mil cartões e bati em 100+ portas na Avenida Afonso Pena em BH.
 
-Juntei dinheiro, comprei mil cartões de visita e bati em 100+ portas na Avenida Afonso Pena em BH. Primeiro cliente pagou R$ 500. Fiz proposta simples: "Se não gostar, te dou de graça." Gostou. Pagou. Indicou. A reconstrução começou.
+Primeiro cliente pagou R$ 500. Proposta simples: "Se não gostar, te dou de graça." Gostou. Pagou. Indicou. Reconstrução começou.
 
-Fiquei 6 meses no barraco. Em 2014 virou o jogo. Dezembro 2016 conheci Natalia (MG), voltei pra Floripa após quase 5 anos, começamos a namorar janeiro 2017. Entre 2016-2020 trabalhei em casos grandes: ESF (+433%, de R$ 160k → R$ 1mi/mês em 2 anos), Port Informática (+250%), Lojas Rede (+65%). Mas preferia crescer pequenas de R$ 50k pra R$ 300k — muda vida.
+Em 2014 virou o jogo. Em 14 de dezembro de 2016 conheci Natalia, voltei pra Floripa após quase 5 anos. Entre 2016-2020 atendi grandes cases: ESF (+433%, R$ 160k → R$ 1mi/mês), Port Informática (+250%), Lojas Rede (+65%). Mas o que mais me move é crescer empresas pequenas de R$ 50k pra R$ 300k — isso muda vidas de verdade.
 
-2018: cobertura duplex, Thor, noivado na casa de praia dos avós. 2019: Growth Master e OnSell (~R$ 250k perda, standby). 2020: pandemia, downsizing. 2021: Netlinks, mudança pra Floripa, casamento. 2023: saída Netlinks. Out/2024: nasceu Davi. Dez/2024-Jan/2026: nasceu VSS.
+2018: cobertura duplex, Thor, noivado. 2019: Growth Master e OnSell (~R$ 250k perdidos). 2020: pandemia, downsizing. 2021: Netlinks, Floripa, casamento. Dezembro 2023: tivemos uma perda. Outubro 2024: nasceu Davi. 2026: nasceu o VSS.
 
-Condensando 17+ anos nasceram os **6Ps das Vendas Escaláveis**: Posicionamento, Público, Produto, Programas, Processos, Pessoas. Cada P de erro/acerto real.
+Condensei 17+ anos nos **6Ps das Vendas Escaláveis**: Posicionamento, Público, Produto, Programas, Processos, Pessoas. Cada P de erro ou acerto real.
 
-Hoje, 140+ clientes e ~R$ 1 bilhão estruturados, criei o **VSS (Vendas Sem Segredos)** - 6Ps em 90 dias. Escalável, acessível, autonomia.
+Criei o **VSS (Vendas Sem Segredos)** — 6Ps em 90 dias. Escalável, acessível, autonomia.
 
-Moramos Ribeirão da Ilha. Natalia tem planos de vir pro negócio.
+Moramos no Ribeirão da Ilha, Floripa. Natalia tem planos de vir pro negócio.
 
 Da quebrada ao bilhão, do bilhão ao legado.
 
-**Sistema > Improviso.**
+**Sistema > Improviso. Let's grow.**
 
 ---
 
 ### **[P7.5.3] Versão 150 Palavras** (Para bios, rodapés)
 
-Sou Joel Burigo, nasci na quebrada de Palhoça/SC em 1987, filho de marceneiro e vendedora. Comecei como freelancer em 2004, quebrei minha primeira empresa em março de 2012 (aos 25 anos) com calote do sócio, e morei 6 meses num barraco (R$ 300/mês) sem geladeira em MG ganhando R$ 1.400/mês nos Correios desde 29 de maio. Recomecei batendo 100+ portas em BH com mil cartões. Primeiro cliente pagou R$ 500. Em 2014 virou o jogo. Dezembro 2016 conheci Natalia (MG), voltei Floripa após quase 5 anos. Entre 2016-2020 trabalhei grandes cases (ESF: +433%, R$ 160k→R$ 1mi/mês), mas preferia crescer pequenas de R$ 50k pra R$ 300k — muda vidas. Condensei 17+ anos nos **6Ps das Vendas Escaláveis** e criei o **VSS (Vendas Sem Segredos)** — 6Ps em 90 dias. Hoje: 17+ anos, 140+ clientes, ~R$ 1 bilhão agregado. Sistema > Improviso.
+Joel Burigo. Nasci na quebrada de Palhoça/SC em 1987. Pai marceneiro, mãe vendedora. Freelancer desde 2004. Quebrei aos 25 anos (março 2012) com calote de sócio. Morei 6 meses num barraco sem geladeira em Ribeirão das Neves/MG, ganhando R$ 1.400/mês nos Correios.
+
+Recomecei batendo 100+ portas em BH. Primeiro cliente pagou R$ 500. Em 2014 virou o jogo. Em 14/12/2016 conheci Natalia, voltei pra Floripa. Entre 2016-2020: grandes cases (ESF: +433%, R$ 160k→R$ 1mi/mês). Mas o que mais me move é crescer pequenas de R$ 50k pra R$ 300k — muda vidas.
+
+Outubro 2024: nasceu Davi. 2026: nasceu o VSS.
+
+Condensei 17+ anos, 140+ clientes e ~R$ 1 bilhão em vendas nos **6Ps das Vendas Escaláveis**. Criei o **VSS (Vendas Sem Segredos)** — 6Ps implementados em 90 dias.
+
+**Sistema > Improviso. Let's grow.**
 
 ---
 
 ### **[P7.5.4] Versão 50 Palavras** (Elevator pitch para redes sociais)
 
-Joel Burigo. 17+ anos no mercado. 140+ clientes. ~R$ 1 bilhão em vendas estruturadas. Criei os 6Ps das Vendas Escaláveis após quebrar aos 25 anos (2012), morar 6 meses num barraco e reconstruir do zero. Hoje ajudo MPEs a transformar vendas aleatórias em previsíveis através do VSS. Sistema > Improviso.
+Joel Burigo. Quebrei aos 25, morei em barraco sem geladeira, recomecei do zero. 17+ anos depois: 140+ clientes, ~R$ 1 bilhão em vendas estruturadas. Criei os 6Ps das Vendas Escaláveis e o VSS pra ajudar MPEs a transformar vendas aleatórias em previsíveis. Sistema > Improviso. Let's grow.
 
 ---
 
@@ -1375,9 +1390,11 @@ Síntese: Joel é o mentor que não só ensina o caminho, mas pega na mão e con
 * "Opa"
 * "Bora pra cima"
 * "Let's grow"
+* "Let's grow, CARALHO!" (versão informal/autêntica)
 * "Sem enrolação"
 * "Na moral"
 * "Vamos direto ao ponto"
+* "Sistema > Improviso"
 
 ---
 

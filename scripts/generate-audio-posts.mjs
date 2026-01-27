@@ -73,8 +73,8 @@ function extractContentFromMarkdown(filePath) {
   // Remove frontmatter
   const withoutFrontmatter = content.replace(/^---\n[\s\S]*?\n---\n/, '');
   
-  // Remove índice (## Índice ... até próximo ##)
-  const withoutIndex = withoutFrontmatter.replace(/## Índice[\s\S]*?(?=\n##[^#]|\n<a name=|$)/i, '');
+  // Remove apenas a seção de índice (incluindo a lista de links)
+  const withoutIndex = withoutFrontmatter.replace(/## Índice\n\n[\s\S]*?(?=\n---\n\n#[^#])/i, '');
   
   // Remove código
   const withoutCode = withoutIndex.replace(/```[\s\S]*?```/g, '');

@@ -182,7 +182,7 @@ Nos primeiros 90 dias você **constrói a fundação sólida**. Dos 90 aos 180 d
 * ✅ Prioridades definidas   
 * ✅ Roadmap visual criado 
 
-**Vendas nesta fase:** 0 (é planejamento estratégico)
+**Resultado de vendas:** Nenhuma venda esperada (é fase de planejamento estratégico)
 
 ---
 
@@ -202,7 +202,7 @@ Nos primeiros 90 dias você **constrói a fundação sólida**. Dos 90 aos 180 d
 * ✅ Sistema pronto para capturar leads   
 * ✅ Automações básicas funcionando 
 
-**Vendas nesta fase:** 0-3 (se já tem base aquecida)
+**Resultado de vendas:** Possíveis primeiras vendas se já tem base aquecida
 
 ---
 
@@ -238,9 +238,9 @@ Nos primeiros 90 dias você **constrói a fundação sólida**. Dos 90 aos 180 d
 * ✅ **Rota B:** 20-50 conversas iniciadas via prospecção   
 * ✅ **Rota C:** Primeiros seguidores e engajamento 
 
-**Vendas nesta fase:** 3-10 vendas 
+**Resultado de vendas:** Primeiras vendas começam a acontecer
 
-*Nota: Vendas dependem do ciclo do seu negócio. B2C converte mais rápido que B2B.*
+*Nota: Volume e velocidade variam por nicho, ticket médio e ciclo de vendas. B2C converte mais rápido que B2B.*
 
 ---
 
@@ -261,7 +261,7 @@ Nos primeiros 90 dias você **constrói a fundação sólida**. Dos 90 aos 180 d
 * ✅ Follow-up automatizado ativo   
 * ✅ Tempo de resposta \< 5 minutos 
 
-**Vendas nesta fase:** 5-15 vendas adicionais
+**Resultado de vendas:** Fluxo de vendas mais consistente
 
 ---
 
@@ -283,7 +283,7 @@ Nos primeiros 90 dias você **constrói a fundação sólida**. Dos 90 aos 180 d
 * ✅ Roadmap de escala definido   
 * ✅ Processos documentados 
 
-**Vendas nesta fase:** Sistema rodando de forma previsível
+**Resultado de vendas:** Sistema validado rodando de forma previsível
 
 ---
 
@@ -319,11 +319,12 @@ Nos primeiros 90 dias você **constrói a fundação sólida**. Dos 90 aos 180 d
 * Taxa de conversão medida e melhorando  
 * Follow-up automatizado ativo
 
-✅ **Primeiras vendas confirmadas**
+✅ **Sistema validado com vendas**
 
-* **Expectativa realista:** 5-20 vendas nos 90 dias  
-* **Faturamento:** R$ 1.000 \- R$ 100.000 (varia por negócio)  
-* **Aprendizado:** O que funciona eo que não funciona 
+* **Primeiras vendas confirmadas** provando que o sistema funciona
+* **Volume varia** por nicho, ticket médio e ciclo de vendas
+* **Aprendizado:** O que funciona e o que não funciona
+* **Previsibilidade:** Você sabe quantos leads precisa para bater meta 
 
 ✅ **Clareza total sobre próximos passos**
 
@@ -355,28 +356,28 @@ Nos primeiros 90 dias você **constrói a fundação sólida**. Dos 90 aos 180 d
 │  └─ Primeiras automações ativas                                  │  
 │  RESULTADO: Sistema operacional pronto                   │  
 │                                                                                        │  
-│  📢 SEMANAS 5-8: ATRAÇÃO                                      │  
-│  ├─ ROTA A: Tráfego pago (Meta Ads)                         │  
-│  ├─ ROTA B: Prospecção ativa (LinkedIn)                    │  
-│  ├─ ROTA C: Conteúdo orgânico                                  │  
-│  └─ Primeiros leads chegando                                      │  
-│  RESULTADO: 30-100 leads | 3-10 vendas                   │  
+│  📢 SEMANAS 5-8: ATRAÇÃO                                      │
+│  ├─ ROTA A: Tráfego pago (Meta Ads)                         │
+│  ├─ ROTA B: Prospecção ativa (LinkedIn)                    │
+│  ├─ ROTA C: Conteúdo orgânico                                  │
+│  └─ Primeiros leads chegando                                      │
+│  RESULTADO: Leads qualificados | Primeiras vendas      │  
 │                                                                                        │  
-│  💰 SEMANAS 9-10: CONVERSÃO                              │  
-│  ├─ Funis otimizados                                                      │  
-│  ├─ Scripts testados                                                       │  
-│  ├─ WhatsApp integrado                                                │  
-│  └─ Follow-up automatizado                                           │  
-│  RESULTADO: Taxa conversão medida | \+5-15 vendas │  
+│  💰 SEMANAS 9-10: CONVERSÃO                              │
+│  ├─ Funis otimizados                                                      │
+│  ├─ Scripts testados                                                       │
+│  ├─ WhatsApp integrado                                                │
+│  └─ Follow-up automatizado                                           │
+│  RESULTADO: Taxa conversão medida | Fluxo consistente │  
 │                                                                                          │  
 │  📊 SEMANAS 11-13: INTEGRAÇÃO                             │  
 │  ├─ Processos documentados                                        │  
 │  ├─ Análise completa de métricas                                   │  
 │  ├─ Identificação de gargalos                                          │  
 │  └─ Plano 90-180 dias                                                     │  
-│  RESULTADO: Sistema completo funcionando               │  
-│           Pipeline previsível                                                  │  
-│           TOTAL: 5-20 vendas confirmadas                         │  
+│  RESULTADO: Sistema completo funcionando               │
+│           Pipeline previsível                                                  │
+│           Sistema validado com vendas confirmadas          │  
 │                                                                                          │  
 └─────────   ─────────────────────────┘
 
@@ -385,11 +386,11 @@ Nos primeiros 90 dias você **constrói a fundação sólida**. Dos 90 aos 180 d
 ┌────────────────────────────────────┐  
 │                      ESCALA E AUTOMAÇÃO                             │  
 ├────────────────────────────────────┤  
-│  • Automação avançada \+ Agentes de IA                           │  
-│  • Múltiplos canais funcionando simultaneamente              │  
-│  • Início da estruturação de time                                          │  
-│  • Otimização baseada em dados reais                               │  
-│  RESULTADO: 3-5x mais vendas que primeiros 90 dias    │  
+│  • Automação avançada \+ Agentes de IA                           │
+│  • Múltiplos canais funcionando simultaneamente              │
+│  • Início da estruturação de time                                          │
+│  • Otimização baseada em dados reais                               │
+│  RESULTADO: Escala e crescimento acelerado                │  
 └─────────── ─────────────────────────┘
 
 ---

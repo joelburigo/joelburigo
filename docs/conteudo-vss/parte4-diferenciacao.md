@@ -657,15 +657,15 @@ Embora os templates sejam poderosos, você sempre personaliza para sua marca:
 
 **E após 90 dias NÃO tiver:**
 
-* Sistema de vendas estruturado e funcionando  
-* CRM operacional com leads sendo capturados  
-* Pipeline com oportunidades ativas  
-* Processos documentados  
-* Pelo menos 5 vendas do novo sistema
+* Sistema de vendas estruturado e funcionando
+* CRM operacional com leads sendo capturados
+* Pipeline com oportunidades ativas
+* Processos documentados
+* Primeiras vendas confirmadas validando o sistema
 
 **Nós trabalhamos com você por mais 30 dias, sem custo adicional**, até você alcançar esses marcos.
 
-**Nota importante:** Não prometemos "X vendas" ou "Y faturamento" exatos porque isso depende de variáveis que não controlamos (seu produto, mercado, esforço).
+**Nota importante:** Não prometemos volume específico de vendas ou faturamento exato porque isso depende de variáveis como nicho, ticket médio, ciclo de vendas e esforço aplicado. Prometemos o sistema validado funcionando.
 
 Mas prometemos: **siste- Você não fica sozinho.**
 

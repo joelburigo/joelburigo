@@ -141,11 +141,11 @@ Este não é apenas um curso – é um programa completo de aceleração que com
 
 **Em 90 dias você terá:**
 
-* ✅ Sistema de vendas estruturado e operacional  
-* ✅ CRM profissional configurado  
-* ✅ Processo de atração documentado e ativo  
-* ✅ Funil de conversão funcionando  
-* ✅ Primeiras 5-20 vendas confirmadas  
+* ✅ Sistema de vendas estruturado e operacional
+* ✅ CRM profissional configurado e validado
+* ✅ Leads chegando de forma previsível
+* ✅ Pipeline de vendas funcionando
+* ✅ Primeiras vendas confirmadas (sistema validado)
 * ✅ Clareza sobre como escalar nos próximos meses
 
 **Honestidade:** 90 dias constroem uma **fundação sólida**. Escala e otimização vêm nos meses seguintes.
@@ -273,9 +273,9 @@ O VSS atende empreendedores de diversos setores:
 
 #### **[P1.3.2.1] SERVIÇOS PROFISSIONAIS**
 
-* Consultorias, agências, escritórios de advocacia, contabilidade  
-* Arquitetura, engenharia, design  
-* Clínicas médicas, odontológicas, psicológicas  
+* Consultorias, escritórios de advocacia, contabilidade
+* Arquitetura, engenharia, design
+* Clínicas médicas, odontológicas, psicológicas
 * Academias, personal trainers, nutricionistas
 
 #### **[P1.3.2.2] COMÉRCIO E VAREJO**
@@ -294,9 +294,8 @@ O VSS atende empreendedores de diversos setores:
 
 #### **[P1.3.2.4] TECNOLOGIA E INOVAÇÃO**
 
-* Desenvolvedoras de software/apps  
-* Agências digitais  
-* SaaS para MPEs  
+* Desenvolvedoras de software/apps
+* SaaS para MPEs
 * Startups em fase inicial
 
 #### **[P1.3.2.5] BELEZA E ESTÉTICA**

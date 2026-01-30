@@ -20,7 +20,7 @@ clusterKeywords:
 
 "Todo mundo" não é cliente. **Quanto mais específico seu ICP, maior sua taxa de conversão.**
 
-Parece contraintuitivo, mas funciona: nicho específico = mais vendas.
+Parece contraintuitivo, eu sei. Você pensa: "se eu estreitar, vou perder clientes." Mas é o contrário. Nicho específico = mais vendas.
 
 ## O Que é ICP?
 
@@ -498,11 +498,3 @@ Quanto mais claro seu ICP, mais fácil vender, mais alta a conversão, mais alto
 Pare de vender para "todo mundo". Comece a vender para quem realmente importa.
 
 **A riqueza está no nicho.**
-
----
-
-## Próximos Passos
-
-Agora que você definiu seu ICP, o próximo passo é estruturar sua [Oferta Irresistível](/blog/6ps-vendas-escalaveis-guia-completo#p3-produto) (P3).
-
-Quer ajuda para descobrir seu ICP e implementar os 6Ps? [Faça o Diagnóstico Gratuito](/diagnostico) em 3 minutos ou [conheça o VSS](/vendas-sem-segredos).

@@ -25,9 +25,11 @@ clusterKeywords:
 
 Você sabe quanto vai faturar mês que vem?
 
-Se você hesitou pra responder, você não está sozinho. A maioria das micro e pequenas empresas brasileiras vive de vendas aleatórias — depende de indicação, sorte ou "momento do mercado". Um mês fatura R$ 80k, no outro cai pra R$ 35k. E ninguém sabe explicar por quê.
+Se você hesitou, não tá sozinho. A maioria das micro e pequenas empresas vive de vendas aleatórias. Depende de indicação, sorte, "momento do mercado". Um mês fatura R$ 80k, no outro cai pra R$ 35k. Ninguém sabe explicar por quê.
 
-Eu sei disso porque passei 17 anos da minha vida ajudando 140 empresas a saírem desse caos. E o que descobri foi um padrão: **o problema nunca é falta de esforço. O problema é falta de SISTEMA.**
+Passei 17 anos ajudando 140 empresas a saírem desse caos. E descobri um padrão: **o problema nunca é falta de esforço. É falta de SISTEMA.**
+
+(Esforço todo mundo tem. Sistema? Poucos.)
 
 Neste guia, vou te mostrar exatamente o framework que usei para estruturar aproximadamente R$ 1 bilhão em vendas ao longo da minha carreira — os **6Ps das Vendas Escaláveis**. E mais importante: como você pode aplicar no seu negócio, independente do seu tamanho ou quanto tem pra investir em marketing.
 
@@ -1098,119 +1100,39 @@ O contexto dele é diferente do seu. O que funciona pra ele pode não funcionar 
 ---
 
 <a name="case-real"></a>
-## Case Real: Como Estruturei uma Holding de Franquias
+## Cases Reais: 6Ps em Diferentes Operações
 
-Vou te contar um caso que me marcou.
+Vou te mostrar 3 casos que marcaram minha trajetória. Cada um com desafio diferente, mas mesmo framework.
 
-Em 2018, começei a trabalhar com uma holding de franquias com mais de 1.800 franqueados. Quando cheguei, faturavam R$ 160 mil por mês. Boa empresa, mas travada.
+### Case 1: Holding de Franquias (2018-2020)
 
-**O diagnóstico inicial:**
+Mais de 1.800 franqueados. Faturavam R$ 160k/mês quando comecei. Score inicial nos 6Ps: 12/30.
 
-| P | Score | Situação |
-|---|-------|----------|
-| P1 | 2 | Posicionamento genérico. "Somos uma consultoria de franquias." Igual a todo mundo. |
-| P2 | 2 | Público amplo demais. Queriam atender todo mundo. |
-| P3 | 3 | Produto bom, mas mal apresentado. Sem stack de valor claro. |
-| P4 | 1 | Sem CRM. Sem funil. Vendas 100% indicação. |
-| P5 | 2 | Processos na cabeça do fundador. |
-| P6 | 2 | Time pequeno, sem clareza de papéis. |
-| **TOTAL** | **12/30** | **Em Desenvolvimento** |
+Aplicamos o framework completo: posicionamento único, ICP cristalino, CRM estruturado, processos documentados.
 
-**O que fizemos:**
+**Resultado em 24 meses:** R$ 1M/mês. Crescimento de 433%. Fundador deixou de ser gargalo.
 
-**Meses 1-3: P1 e P2**
-- Definimos posicionamento único: "A única consultoria de franquias que te acompanha do primeiro contato até o primeiro faturamento"
-- Definimos ICP específico: profissionais 35-50 anos, com R$ 100-500k pra investir, querendo transição de carreira
-- Criamos mensagem clara pra esse público
+### Case 2: Operação de Home Equity (2021)
 
-**Meses 4-6: P3 e P4**
-- Reestruturamos a oferta com stack de valor
-- Implementamos CRM (Pipedrive na época)
-- Criamos funil de captação: conteúdo → material gratuito → call de diagnóstico → apresentação → fechamento
-- Começamos tráfego pago no Google
+Crédito com garantia de imóveis. 8 pessoas. Leads chegavam, mas conversão era 3%. Tudo em Excel. Cada vendedor fazia "do seu jeito".
 
-**Meses 7-12: P5 e P6**
-- Documentamos todos os processos de vendas
-- Contratamos e treinamos SDRs e Closers
-- Implementamos rituais de time
-- Estruturamos cultura
+Estruturamos: CRM com pipeline específico (Análise → Avaliação → Proposta → Contrato), qualificação padronizada, follow-up automático.
 
-**Resultado:**
+**Resultado em 6 meses:** Conversão de 3% → 11%. Ticket médio +40%. Tempo de fechamento de 45 → 28 dias.
 
-| Métrica | Antes | Depois (24 meses) |
-|---------|-------|-------------------|
-| Faturamento | R$ 60k/mês | R$ 1M/mês |
-| Leads/mês | ~30 (indicação) | 500+ |
-| Taxa conversão | 5% | 12% |
-| Dependência fundador | 100% | 20% |
-| Score 6Ps | 12/30 | 24/30 |
+### Case 3: Rede de Varejo (2019)
 
-O fundador conseguiu o que queria: empresa rodando sem depender dele 100%.
+Cliente com lojas físicas. Vendas oscilavam muito. Dependência total de tráfego de loja. Sem previsibilidade.
 
-Isso é o poder dos 6Ps quando aplicados com consistência.
+Implementamos: presença digital, captação online, CRM integrando físico + digital, processo de nutrição pra quem não comprou na primeira visita.
+
+**Resultado em 12 meses:** Cresceu 65% comparado ao ano anterior. Criou canal digital que antes não existia.
 
 ---
 
-<a name="proximo-passo"></a>
-## Seu Próximo Passo
-
-Se você chegou até aqui, parabéns. A maioria desiste na metade.
-
-Agora você tem duas opções:
-
-**Opção 1: Continuar improvisando**
-
-Fechar essa página, voltar pro dia a dia, e esperar que as coisas melhorem sozinhas.
-
-Spoiler: não vão.
-
-**Opção 2: Começar a estruturar seu sistema**
-
-Aplicar os 6Ps, resolver os Ps mais fracos, e construir uma máquina de vendas que funciona.
-
-Se você escolher a opção 2, tem 3 caminhos:
+**O padrão:** Não importa o segmento. Quando os 6Ps estão alinhados, empresa cresce. Quando estão desalinhados, empresa trava.
 
 ---
-
-### Caminho 1: Fazer Sozinho (Gratuito)
-
-Baixa o Checklist dos 6Ps, faz seu diagnóstico, e implementa por conta.
-
-É possível. Vai demorar mais, vai ter tentativa e erro, mas funciona.
-
-**[BAIXAR CHECKLIST GRATUITO DOS 6Ps]**
-
----
-
-### Caminho 2: Implementar com Meu Método (R$ 1.997)
-
-O **VSS — Vendas Sem Segredos** é meu programa de implementação guiada dos 6Ps em 90 dias.
-
-O que você leva:
-- 15 módulos + 66 aulas práticas
-- Growth CRM por 12 meses (R$ 1.188 de valor)
-- 48 mentorias em grupo comigo
-- Templates prontos dos 6Ps
-- Scripts de vendas
-- Comunidade por 90 dias
-- Acesso vitalício
-- Duas rotas: com OU sem budget de tráfego
-
-Investimento: R$ 1.997 à vista ou 12x de R$ 166,42
-
-Garantia: 15 dias de devolução total, sem perguntas.
-
-**[CONHECER O VSS]**
-
----
-
-### Caminho 3: Quero Ajuda Direta (Sob Consulta)
-
-Se você prefere ter meu time implementando junto com você, ou quer minha cabeça direto no seu negócio, tenho opções personalizadas.
-
-Não é pra todo mundo. É pra quem quer acelerar e tem budget pra investir.
-
-**[FALAR COM JOEL]**
 
 ---
 
@@ -1241,31 +1163,3 @@ Let's grow.
 **P.S.:** Se esse conteúdo te ajudou, compartilha com outro empresário que precisa sair das vendas aleatórias. Esse conhecimento não pode ficar guardado.
 
 **P.P.S.:** Quer fazer o diagnóstico completo dos seus 6Ps com ferramenta interativa? Acessa [joelburigo.com.br/diagnostico] — é gratuito.
-
----
-
-## Continue Aprendendo: Guias Específicos dos 6Ps
-
-Este é o guia completo dos 6Ps. Se você quer se aprofundar em cada pilar especificamente, temos artigos detalhados:
-
-### Framework 6Ps - Artigos Complementares
-
-**Fundação (P1-P3)**
-- 📍 [Posicionamento: O P Que 90% das Empresas Ignora](/blog/posicionamento-diferencial-unico) — Como definir seu diferencial único
-- 👥 [ICP: Como Definir Seu Cliente Ideal](/blog/icp-cliente-ideal-perfil) — Pare de desperdiçar tempo com leads errados
-
-**Operação (P4-P5)**
-- 🔧 [Sistema > Improviso em Vendas](/blog/sistema-melhor-que-improviso) — Por que processos vencem talento
-- 📊 [Métricas de Vendas Essenciais](/blog/metricas-vendas-essenciais) — KPIs que realmente importam
-- 💻 [CRM Gratuito vs Profissional](/blog/crm-gratuito-vs-profissional) — Qual escolher para seu momento
-- 📈 [Tráfego Pago vs Prospecção Ativa](/blog/trafego-pago-vs-prospecao-ativa) — Qual canal priorizar
-
-**Implementação**
-- 🚀 [Como Estruturar Vendas do Zero](/blog/como-estruturar-vendas-do-zero) — Guia prático de implementação
-- 💰 [De R$ 10k para R$ 100k por Mês](/blog/de-10k-para-100k-por-mes) — Estudo de caso real
-
----
-
-### Compartilhe Este Conteúdo
-
-Se este guia foi útil, compartilhe com outro empresário que está lutando com vendas aleatórias. Conhecimento é poder multiplicado quando compartilhado.

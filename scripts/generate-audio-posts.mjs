@@ -147,10 +147,10 @@ function splitTextIntoChunks(text, maxChars = 4000) {
  */
 async function optimizeAudio(inputPath, outputPath) {
   try {
-    // Otimiza: reduz bitrate, normaliza volume, remove silêncios
+    // Otimiza: reduz bitrate, normaliza volume, remove apenas silêncios muito longos no início
     await execPromise(
       `ffmpeg -i "${inputPath}" ` +
-      `-af "silenceremove=start_periods=1:start_duration=1:start_threshold=-50dB:` +
+      `-af "silenceremove=start_periods=1:start_duration=0.1:start_threshold=-60dB:` +
       `detection=peak,aformat=dblp,dynaudnorm=f=75:g=25:p=0.95" ` +
       `-b:a 64k -ar 24000 -ac 1 "${outputPath}" -y`
     );

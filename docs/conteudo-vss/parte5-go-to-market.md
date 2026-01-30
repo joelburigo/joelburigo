@@ -1084,12 +1084,12 @@ O programa onde você implementa os 6Ps em 90 dias — junto comigo.
 
 ### O Que Você Recebe:
 
-✅ **15 módulos / 66 aulas** (28-32h de conteúdo)  
-✅ **12 mentorias 1-on-1** comigo (60 min cada)  
-✅ **CRM profissional incluído** (12 meses - valor R$ 1.188)  
-✅ **Configuração do CRM junto** (não te deixo sozinho)  
-✅ **Templates prontos** (funis, scripts, landing pages)  
-✅ **Suporte via comunidade** (90 dias)  
+✅ **15 módulos / 66 aulas** (28-32h de conteúdo)
+✅ **48 mentorias semanais em grupo** (60 min cada)
+✅ **CRM profissional incluído** (12 meses - valor R$ 1.188)
+✅ **Configuração do CRM junto** (não te deixo sozinho)
+✅ **Templates prontos** (funis, scripts, landing pages)
+✅ **Suporte via comunidade** (90 dias)
 ✅ **Garantia 15 dias** (devolução total)
 
 ### O Grande Diferencial:
@@ -1150,11 +1150,11 @@ R: Primeiras vendas estruturadas em 60-90 dias. Sistema completo funcionando em 
 **P: Eu não entendo nada de tecnologia. Consigo usar o CRM?**  
 R: Sim. Configuramos JUNTO. Você não fica sozinho.
 
-**P: Posso fazer no meu ritmo?**  
-R: As aulas sim. Mas as 12 mentorias são semanais nas primeiras 12 semanas. Estrutura existe por um motivo: funciona.
+**P: Posso fazer no meu ritmo?**
+R: As aulas sim. Mas as mentorias semanais em grupo seguem um cronograma ao longo do ano. Estrutura existe por um motivo: funciona.
 
-**P: E se eu tiver dúvidas?**  
-R: Comunidade exclusiva + 12 mentorias 1-on-1. Você não fica desamparado.
+**P: E se eu tiver dúvidas?**
+R: Comunidade exclusiva + 48 mentorias semanais em grupo. Você não fica desamparado.
 
 ---
 
@@ -1181,7 +1181,7 @@ P.S.: Sistema > Improviso. Let's grow.
 
 **Contexto:** Cliente acha R$ 1.997 caro
 
-**Resposta curta:** "Entendo. Mas compare: agência cobra R$ 3-5k/mês e não estrutura vendas. Consultoria cobra R$ 50-100k. VSS é R$ 1.997 com CRM incluído, 12 mentorias, e sistema completo. Qual é mais caro de verdade?"
+**Resposta curta:** "Entendo. Mas compare: agência cobra R$ 3-5k/mês e não estrutura vendas. Consultoria cobra R$ 50-100k. VSS é R$ 1.997 com CRM incluído, 48 mentorias semanais, e sistema completo. Qual é mais caro de verdade?"
 
 **Resposta longa:** "Vamos fazer a conta juntos:
 
@@ -1226,10 +1226,10 @@ Se a resposta for NÃO, é porque sozinho não deu certo ainda. E provavelmente 
 
 No VSS você não paga por informação. Você paga por:
 
-1. Método estruturado (ordem certa)  
-2. Implementação guiada (fazemos junto)  
-3. CRM configurado (não precisa descobrir sozinho)  
-4. Accountability (12 mentorias te empurram pra frente)
+1. Método estruturado (ordem certa)
+2. Implementação guiada (fazemos junto)
+3. CRM configurado (não precisa descobrir sozinho)
+4. Accountability (48 mentorias semanais te empurram pra frente)
 
 Informação é gratuita. Transformação tem preço."
 
@@ -1256,7 +1256,7 @@ A METODOLOGIA é universal. A IMPLEMENTAÇÃO é customizada.
 
 Atendi empresas de 6 nichos diferentes (serviços, comércio, educação, tech, beleza, food). Os 6Ps funcionaram em todos porque são sistema, não tática.
 
-Nas 12 mentorias, a gente adapta para SUA realidade específica."
+Nas mentorias semanais, a gente adapta para SUA realidade específica."
 
 ---
 
@@ -1292,7 +1292,7 @@ Me conta: o que realmente está te impedindo de dizer sim agora?"
 
 O VSS é DIFERENTE por 3 motivos:
 
-1. **Não te abandono:** 12 mentorias 1-on-1. Você não fica sozinho.
+1. **Não te abandono:** 48 mentorias semanais em grupo. Você não fica sozinho.
 
 2. **Implemento junto:** Não é 'assista e se vira'. É 'vamos fazer juntos'.
 

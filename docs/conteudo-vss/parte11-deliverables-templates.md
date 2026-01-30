@@ -411,7 +411,7 @@ Agende em: [link calendly]
 **OBJEÇÃO #1: "Está caro"**
 
 **Resposta Completa:**
-> "Entendo. Mas compare: agência cobra R$ 3-5k/mês e não estrutura vendas. Consultoria cobra R$ 50-100k. VSS é R$ 1.997 com CRM incluído, 12 mentorias, e sistema completo. Qual é mais caro de verdade?"
+> "Entendo. Mas compare: agência cobra R$ 3-5k/mês e não estrutura vendas. Consultoria cobra R$ 50-100k. VSS é R$ 1.997 com CRM incluído, 48 mentorias semanais, e sistema completo. Qual é mais caro de verdade?"
 
 **Resposta Curta:**
 > "Compare com quanto você perde por mês com vendas aleatórias. Se for mais que R$ 500, o VSS se paga em 4 meses."

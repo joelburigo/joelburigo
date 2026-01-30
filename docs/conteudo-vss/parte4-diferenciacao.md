@@ -547,7 +547,6 @@ Embora os templates sejam poderosos, você sempre personaliza para sua marca:
 | Conteúdo educacional (15 módulos, 66 aulas) | R$ 2.500 |
 | CRM profissional (12 meses) | R$ 6.000 |
 | 48 mentorias em grupo ao vivo (60 min cada, R$ 150/sessão) | R$ 7.200 |
-| 12 mentorias 1-on-1 com Joel (60 min cada, R$ 500/sessão) | R$ 6.000 |
 | Templates e automações prontas | R$ 1.500 |
 | Comunidade e networking | R$ 800 |
 | Suporte técnico (12 meses) | R$ 1.200 |
@@ -570,7 +569,6 @@ Embora os templates sejam poderosos, você sempre personaliza para sua marca:
 * ✅ 15 módulos completos (66 aulas em vídeo)
 * ✅ Growth CRM profissional por 12 meses
 * ✅ 48 mentorias em grupo ao vivo (semanais, 60 min cada)
-* ✅ 12 mentorias 1-on-1 individuais com Joel
 * ✅ Templates e automações prontos para usar
 * ✅ Acesso à comunidade exclusiva
 * ✅ Suporte técnico completo por 12 meses
@@ -672,7 +670,6 @@ Embora os templates sejam poderosos, você sempre personaliza para sua marca:
 Mas prometemos: **siste- Você não fica sozinho.**
 
 * **48 mentorias em grupo semanais:** Sessões de 60 minutos ao vivo onde você tira dúvidas, apresenta seu caso e recebe orientação direta
-* **12 mentorias 1-on-1 com Joel:** Sessões individuais para aprofundar estratégia, validar implementação e resolver desafios específicos do seu negócio
 * **Comunidade ativa:** Networking com outros alunos, troca de experiências e suporte peer-to-peer
 * **Suporte técnico:** Help desk para questões técnicas do CRM e ferramentas
 
@@ -711,8 +708,7 @@ Mas prometemos: **siste- Você não fica sozinho.**
 | **Implementação** | Junto com Joel | Fazem por você | Só diagnosticam | Você sozinho |
 | **CRM Incluído** | ✅ Sim (12 meses) | ❌ Não | ❌ Não | ❌ Não |
 | **Funciona sem budget** | ✅ Sim | ❌ Não | ❌ Não | ⚠️ Raramente |
-| **Mentorias 1-on-1** | ✅ 12 sessões | ❌ Não | ✅ Sim (poucas) | ❌ Não |
-| **Mentorias em grupo** | ✅ 48 sessões | ❌ Não | ❌ Não | ❌ Não |
+| **Mentorias semanais** | ✅ 48 sessões em grupo | ❌ Não | ✅ Sim (poucas) | ❌ Não |
 | **Metodologia proprietária** | ✅ 6Ps de Joel | ❌ Genérico | ⚠️ Varia | ❌ Genérico |
 | **Foco em MPE** | ✅ Exclusivo R$ 10-300k/mês | ❌ Grandes | ❌ Grandes | ⚠️ Qualquer um |
 | **Autonomia** | ✅ Constrói | ❌ Cria dependência | ⚠️ Depende | ✅ Total |

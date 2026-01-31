@@ -1,23 +1,35 @@
 ---
 interface Props {
-  type?: 'Organization' | 'Person' | 'WebSite' | 'Service' | 'Course'
+  type?: 'Organization' | 'Person' | 'WebSite' | 'Service' | 'Course' | 'Product' | 'WebPage' | 'FAQPage' | 'BreadcrumbList'
   data?: Record<string, any>
 }
 
 const { type = 'Organization', data = {} } = Astro.props
 
+const siteUrl = 'https://joelburigo.com.br'
+
 const defaultOrganization = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': `${siteUrl}/#organization`,
   name: 'Joel Burigo',
   alternateName: 'Growth Master',
-  url: 'https://joelburigo.com.br',
-  logo: 'https://joelburigo.com.br/logo.png',
+  url: siteUrl,
+  logo: {
+    '@type': 'ImageObject',
+    url: `${siteUrl}/images/joel-burigo-logo.webp`,
+    width: 400,
+    height: 400
+  },
+  image: `${siteUrl}/images/joel-burigo-profile.webp`,
   description: 'Sistema completo de vendas escaláveis para micro e pequenas empresas',
   founder: {
     '@type': 'Person',
+    '@id': `${siteUrl}/#person`,
     name: 'Joel Burigo',
     jobTitle: 'Especialista em Vendas Escaláveis',
+    url: `${siteUrl}/sobre`,
+    image: `${siteUrl}/images/joel-burigo-profile.webp`,
   },
   address: {
     '@type': 'PostalAddress',
@@ -38,7 +50,30 @@ const defaultOrganization = {
   ],
 }
 
-const jsonLdData = type === 'Organization' ? { ...defaultOrganization, ...data } : data
+const defaultWebSite = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${siteUrl}/#website`,
+  url: siteUrl,
+  name: 'Joel Burigo - Vendas Escaláveis',
+  description: 'Sistema completo de vendas escaláveis para micro e pequenas empresas',
+  publisher: { '@id': `${siteUrl}/#organization` },
+  inLanguage: 'pt-BR',
+}
+
+// Selecionar schema baseado no tipo
+function getJsonLdData(type: string, data: Record<string, any>) {
+  switch (type) {
+    case 'Organization':
+      return { ...defaultOrganization, ...data }
+    case 'WebSite':
+      return { ...defaultWebSite, ...data }
+    default:
+      return { '@context': 'https://schema.org', ...data }
+  }
+}
+
+const jsonLdData = getJsonLdData(type, data)
 ---
 
 <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLdData)} />

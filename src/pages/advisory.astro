@@ -4,6 +4,7 @@ import Header from '../components/layout/Header.astro'
 import Footer from '../components/layout/Footer.astro'
 import AdvisoryPage from '../components/pages/AdvisoryPage.astro'
 
+const siteUrl = 'https://joelburigo.com.br'
 
 const seo = {
   title: 'Strategic Advisory - Consultoria Estratégica 1-on-1 | Joel Burigo',
@@ -12,9 +13,62 @@ const seo = {
   keywords:
     'consultoria estratégica, mentoria CEO, sparring partner, consultoria vendas, Joel Burigo',
 }
+
+// Structured Data - Service (Advisory)
+const advisorySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Strategic Advisory',
+  description: seo.description,
+  url: `${siteUrl}/advisory`,
+  provider: {
+    '@type': 'Person',
+    name: 'Joel Burigo',
+    url: `${siteUrl}/sobre`,
+    jobTitle: 'Especialista em Vendas Escaláveis',
+  },
+  serviceType: 'Consultoria Estratégica 1-on-1',
+  areaServed: {
+    '@type': 'Country',
+    name: 'Brasil',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Modalidades Advisory',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Sprint Estratégico 30 Dias',
+          description: '4 sessões de 90 minutos em 30 dias intensivos',
+        },
+        price: '7500',
+        priceCurrency: 'BRL',
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Conselho Executivo',
+          description: 'Acompanhamento executivo contínuo de 3-6 meses',
+        },
+        price: '15000',
+        priceCurrency: 'BRL',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          price: '15000',
+          priceCurrency: 'BRL',
+          unitText: 'mês',
+        },
+      },
+    ],
+  },
+}
 ---
 
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(advisorySchema)} />
   <Header />
   <AdvisoryPage />
   <Footer />

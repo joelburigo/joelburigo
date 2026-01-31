@@ -1,8 +1,30 @@
 User-agent: *
 Allow: /
 
-# Disallow admin/test pages
+# Páginas internas/privadas
 Disallow: /design-system
-Disallow: /design-system-old
+Disallow: /apresentacao
+
+# Landing pages (não indexar)
+Disallow: /lp/
+
+# Formulários e thank you pages
+Disallow: /advisory-aplicacao
+Disallow: /advisory-obrigado
+Disallow: /diagnostico-resultado
+Disallow: /diagnostico-obrigado
+Disallow: /agendamento-sessao
+Disallow: /agendar-services
+
+# Checkout/status VSS
+Disallow: /vss-aguardando-pagamento
+Disallow: /vss-analise-credito
+Disallow: /vss-compra-aprovada
+
+# Linktree interno
+Disallow: /links
+
+# APIs
+Disallow: /api/
 
 Sitemap: https://joelburigo.com.br/sitemap-index.xml

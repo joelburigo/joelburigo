@@ -4,6 +4,7 @@ import Header from '../components/layout/Header.astro'
 import Footer from '../components/layout/Footer.astro'
 import VSSPage from '../components/pages/VSSPage.astro'
 
+const siteUrl = 'https://joelburigo.com.br'
 
 const seo = {
   title: 'Vendas Sem Segredos - Programa de 90 Dias | Joel Burigo',
@@ -12,9 +13,51 @@ const seo = {
   keywords:
     'vendas sem segredos, programa vendas, curso vendas B2B, CRM vendas, framework 6Ps, mentoria vendas',
 }
+
+// Structured Data - Course/Product
+const vssSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: 'Vendas Sem Segredos',
+  description: seo.description,
+  url: `${siteUrl}/vendas-sem-segredos`,
+  provider: {
+    '@type': 'Organization',
+    name: 'Joel Burigo',
+    url: siteUrl,
+  },
+  instructor: {
+    '@type': 'Person',
+    name: 'Joel Burigo',
+    url: `${siteUrl}/sobre`,
+  },
+  offers: {
+    '@type': 'Offer',
+    price: '1997',
+    priceCurrency: 'BRL',
+    availability: 'https://schema.org/InStock',
+    validFrom: '2024-01-01',
+  },
+  hasCourseInstance: {
+    '@type': 'CourseInstance',
+    courseMode: 'online',
+    duration: 'P90D',
+    courseWorkload: '66 aulas + 48 mentorias ao vivo',
+  },
+  educationalLevel: 'Intermediário',
+  teaches: 'Framework dos 6Ps para vendas escaláveis',
+  numberOfCredits: '15 módulos',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.9',
+    reviewCount: '140',
+    bestRating: '5',
+  },
+}
 ---
 
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(vssSchema)} />
   <Header />
   <VSSPage />
   <Footer />

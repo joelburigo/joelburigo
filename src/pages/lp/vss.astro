@@ -1,5 +1,5 @@
 ---
-import VSSLandingPage from '../../../components/pages/VSSLandingPage.astro'
+import VSSLandingPage from '../../components/pages/VSSLandingPage.astro'
 
 const seo = {
   title: 'Transforme seu negócio com Vendas Sem Segredos | Joel Burigo',
@@ -18,40 +18,39 @@ const seo = {
     <title>{seo.title}</title>
     <meta name="description" content={seo.description} />
     <meta name="keywords" content={seo.keywords} />
-    
+
+    <!-- No index - Landing page para campanhas -->
+    <meta name="robots" content="noindex, nofollow" />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={seo.title} />
     <meta property="og:description" content={seo.description} />
     <meta property="og:image" content="/images/joel-burigo-vendas-sem-segredos.webp" />
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={seo.title} />
     <meta name="twitter:description" content={seo.description} />
     <meta name="twitter:image" content="/images/joel-burigo-vendas-sem-segredos.webp" />
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    
-    <!-- Analytics - Google Analytics 4 -->
+
+    <!-- Analytics -->
     <script is:inline>
-      // GTM Data Layer
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         'pageType': 'landing-page',
-        'product': 'vss',
-        'version': 'a',
-        'testGroup': 'control'
+        'product': 'vss'
       });
     </script>
   </head>
   <body class="antialiased">
     <VSSLandingPage />
-    
-    <!-- Analytics tracking para conversão -->
+
+    <!-- Analytics tracking -->
     <script is:inline>
-      // Track CTA clicks
       document.addEventListener('DOMContentLoaded', () => {
         const ctaButtons = document.querySelectorAll('a[href*="hotmart"], button[data-cta]');
         ctaButtons.forEach(btn => {
@@ -59,20 +58,20 @@ const seo = {
             if (window.gtag) {
               gtag('event', 'cta_click', {
                 'event_category': 'engagement',
-                'event_label': 'vss_lp_version_a',
+                'event_label': 'vss_lp',
                 'value': 1
               });
             }
             if (window.fbq) {
               fbq('track', 'InitiateCheckout', {
-                content_name: 'VSS Landing Page A',
+                content_name: 'VSS Landing Page',
                 value: 597.00,
                 currency: 'BRL'
               });
             }
           });
         });
-        
+
         // Track scroll depth
         let scrollDepth = 0;
         window.addEventListener('scroll', () => {

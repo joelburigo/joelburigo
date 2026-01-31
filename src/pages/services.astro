@@ -4,6 +4,7 @@ import Header from '../components/layout/Header.astro'
 import Footer from '../components/layout/Footer.astro'
 import ServicesPage from '../components/pages/ServicesPage.astro'
 
+const siteUrl = 'https://joelburigo.com.br'
 
 const seo = {
   title: 'Implementation Services - Implementação Completa | Joel Burigo',
@@ -12,9 +13,65 @@ const seo = {
   keywords:
     'implementação vendas, consultoria vendas, CRM setup, processos vendas, Joel Burigo',
 }
+
+// Structured Data - Service
+const servicesSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Implementation Services',
+  description: seo.description,
+  url: `${siteUrl}/services`,
+  provider: {
+    '@type': 'Organization',
+    name: 'Joel Burigo',
+    url: siteUrl,
+  },
+  serviceType: 'Consultoria e Implementação de Vendas',
+  areaServed: {
+    '@type': 'Country',
+    name: 'Brasil',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Pacotes de Implementação',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Fundação',
+          description: 'Configuração inicial do sistema de vendas',
+        },
+        price: '15000',
+        priceCurrency: 'BRL',
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Aceleração',
+          description: 'Implementação completa com processos avançados',
+        },
+        price: '30000',
+        priceCurrency: 'BRL',
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'ScaleUp',
+          description: 'Estruturação completa para escala',
+        },
+        price: '50000',
+        priceCurrency: 'BRL',
+      },
+    ],
+  },
+}
 ---
 
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(servicesSchema)} />
   <Header />
   <ServicesPage />
   <Footer />

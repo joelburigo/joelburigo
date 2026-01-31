@@ -5,6 +5,7 @@ import Footer from '../components/layout/Footer.astro'
 import Container from '../components/ui/Container.astro'
 import Button from '../components/ui/Button.astro'
 import Icons from '../components/ui/Icons.astro'
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro'
 
 const seo = {
   title: 'Jornada de 90 Dias - Transforme Suas Vendas | Joel Burigo',
@@ -185,6 +186,16 @@ const resultadoConsolidado = [
 
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
   <Header />
+  <section class="bg-dark py-6">
+    <Container>
+      <Breadcrumbs
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Jornada de 90 Dias', href: '/jornada-90-dias' },
+        ]}
+      />
+    </Container>
+  </section>
   <main class="flex-grow pt-16 md:pt-20">
 
     <!-- Hero -->

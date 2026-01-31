@@ -5,6 +5,7 @@ import Footer from '../components/layout/Footer.astro';
 import Container from '../components/ui/Container.astro';
 import Icons from '../components/ui/Icons.astro';
 import { cases } from '../data/cases';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
 
 const seo = {
   title: 'Cases de Sucesso | Joel Burigo',
@@ -18,6 +19,12 @@ const seo = {
 
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
   <Header />
+
+  <section class="bg-dark py-6">
+    <Container>
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Cases', href: '/cases' }]} />
+    </Container>
+  </section>
 
   <main class="flex-grow">
     <!-- Hero -->

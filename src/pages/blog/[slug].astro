@@ -7,6 +7,7 @@ import Container from '../../components/ui/Container.astro'
 import AudioPlayer from '../../components/blog/AudioPlayer.astro'
 import { Image } from 'astro:assets'
 import Icons from '../../components/ui/Icons.astro'
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro'
 
 
 export const prerender = true
@@ -31,6 +32,7 @@ if (!post) {
 }
 
 const { Content } = await render(post)
+const postSlug = post.id.replace('.md', '')
 
 const seo = {
   title: `${post.data.title} | Joel Burigo`,
@@ -88,13 +90,22 @@ const articleSchema = {
     <!-- Breadcrumb & Back -->
     <section class="bg-dark py-6">
       <Container>
-        <a 
-          href="/blog" 
-          class="inline-flex items-center gap-2 font-display text-sm text-gray-200 transition-colors hover:text-lime"
-        >
-          <Icons name="arrow-left" class="h-4 w-4" />
-          Voltar para o Blog
-        </a>
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <Breadcrumbs
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Blog', href: '/blog' },
+              { label: post.data.title, href: `/blog/${postSlug}` },
+            ]}
+          />
+          <a 
+            href="/blog" 
+            class="inline-flex items-center gap-2 font-display text-sm text-gray-200 transition-colors hover:text-lime"
+          >
+            <Icons name="arrow-left" class="h-4 w-4" />
+            Voltar para o Blog
+          </a>
+        </div>
       </Container>
     </section>
 

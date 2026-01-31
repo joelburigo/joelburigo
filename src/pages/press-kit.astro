@@ -5,6 +5,7 @@ import Footer from '../components/layout/Footer.astro';
 import Container from '../components/ui/Container.astro';
 import Icons from '../components/ui/Icons.astro';
 import joelBurigoImage from '../assets/images/joel-burigo-vendas-sem-segredos-2.png';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
 
 const seo = {
   title: 'Press Kit - Joel Burigo | Material para Imprensa',
@@ -16,6 +17,12 @@ const seo = {
 
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
   <Header />
+
+  <section class="bg-dark py-6">
+    <Container>
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Press Kit', href: '/press-kit' }]} />
+    </Container>
+  </section>
 
   <main class="flex-grow">
     <!-- Hero -->

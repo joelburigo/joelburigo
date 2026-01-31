@@ -5,6 +5,7 @@ import Footer from '../components/layout/Footer.astro'
 import Container from '../components/ui/Container.astro'
 import Icons from '../components/ui/Icons.astro'
 import { contactInfo as contact, getWhatsAppLink } from '../data/contact'
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro'
 
 const seo = {
   title: 'Contato - Joel Burigo | Fale Comigo',
@@ -62,7 +63,13 @@ const faqs = [
 
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
   <Header />
-  
+
+  <section class="bg-dark py-6">
+    <Container>
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Contato', href: '/contato' }]} />
+    </Container>
+  </section>
+
   <main class="flex-grow">
     <!-- Hero Section -->
     <section class="relative overflow-hidden bg-dark py-32">

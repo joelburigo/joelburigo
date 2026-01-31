@@ -235,6 +235,10 @@ Implementado em: `/`, `/vendas-sem-segredos`, `/services`, `/advisory`
 
 Links internos inseridos no corpo dos 12 posts do blog, com âncoras contextuais entre pilares/satélites e páginas core (VSS, Services, Advisory, Cases, Sobre).
 
+### 4. Breadcrumbs
+
+Breadcrumbs visuais + JSON-LD implementados nas páginas internas indexáveis (core, blog, contato, diagnóstico, jornada-90-dias, press-kit, privacidade e termos).
+
 #### Páginas Core (devem linkar entre si)
 
 ```
@@ -298,7 +302,7 @@ Home ←→ Sobre ←→ VSS ←→ Services ←→ Advisory ←→ Cases
 
 - [x] Revisar meta descriptions de todas as páginas
 - [x] Implementar linkagem interna nos posts do blog
-- [ ] Criar breadcrumbs nas páginas internas
+- [x] Criar breadcrumbs nas páginas internas
 - [x] Adicionar canonical tags nas LPs
 
 ### Monitoramento

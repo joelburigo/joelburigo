@@ -9,6 +9,7 @@ import Icons from '../components/ui/Icons.astro'
 import JornadaTimeline from '../components/pages/JornadaTimeline.astro'
 import LicoesDosPps from '../components/pages/LicoesDosPps.astro'
 import VerdadesDuras from '../components/pages/VerdadesDuras.astro';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro'
 
 const seo = {
   title: 'Sobre Joel Burigo | 17 Anos Estruturando Vendas',
@@ -151,6 +152,12 @@ const promessas = [
 
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
   <Header />
+
+  <section class="bg-dark py-6">
+    <Container>
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Sobre', href: '/sobre' }]} />
+    </Container>
+  </section>
 
   <main class="flex-grow">
     <!-- Hero Section -->

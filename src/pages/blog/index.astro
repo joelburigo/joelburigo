@@ -7,6 +7,7 @@ import Footer from '../../components/layout/Footer.astro'
 import Container from '../../components/ui/Container.astro'
 import SearchBar from '../../components/ui/SearchBar.astro'
 import Icons from '../../components/ui/Icons.astro'
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro'
 
 
 const seo = {
@@ -45,6 +46,12 @@ const categories = [
 
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
   <Header />
+
+  <section class="bg-dark py-6">
+    <Container>
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }]} />
+    </Container>
+  </section>
   
   <main class="flex-grow">
     <!-- Hero Section -->

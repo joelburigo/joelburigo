@@ -1,0 +1,52 @@
+---
+import JsonLd from './JsonLd.astro'
+
+interface BreadcrumbItem {
+  label: string
+  href: string
+}
+
+interface Props {
+  items: BreadcrumbItem[]
+}
+
+const { items = [] } = Astro.props
+const siteUrl = 'https://joelburigo.com.br'
+
+const normalizedItems = items.map((item) => ({
+  ...item,
+  href: item.href.startsWith('http') ? item.href : new URL(item.href, siteUrl).toString(),
+}))
+
+const breadcrumbSchema = {
+  '@type': 'BreadcrumbList',
+  itemListElement: normalizedItems.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.label,
+    item: item.href,
+  })),
+}
+---
+
+<nav aria-label="Breadcrumb">
+  <ol class="flex flex-wrap items-center gap-2 text-sm text-gray-400">
+    {items.map((item, index) => {
+      const isLast = index === items.length - 1
+      return (
+        <li class="flex items-center gap-2">
+          {index > 0 && <span class="text-gray-600">/</span>}
+          {isLast ? (
+            <span class="text-gray-200">{item.label}</span>
+          ) : (
+            <a href={item.href} class="transition-colors hover:text-lime">
+              {item.label}
+            </a>
+          )}
+        </li>
+      )
+    })}
+  </ol>
+</nav>
+
+<JsonLd type="BreadcrumbList" data={breadcrumbSchema} />

@@ -20,6 +20,7 @@
 | `/blog` | blog/index.astro | 0.8 | Blog |
 | `/contato` | contato.astro | 0.6 | ContactPage |
 | `/diagnostico` | diagnostico.astro | 0.7 | WebApplication |
+| `/jornada-90-dias` | jornada-90-dias.astro | 0.7 | WebPage |
 
 ### Blog Posts (Indexar)
 
@@ -42,8 +43,7 @@
 
 | URL | Arquivo | Status |
 |-----|---------|--------|
-| `/lp/vss` | lp/vss.astro | ✅ noindex configurado |
-| `/jornada-90-dias` | jornada-90-dias.astro | Verificar indexação |
+| `/lp/vss` | lp/vss.astro | ✅ noindex + canonical -> `/vendas-sem-segredos` |
 
 ### Páginas Legais (Indexar, baixa prioridade)
 
@@ -294,10 +294,10 @@ Home ←→ Sobre ←→ VSS ←→ Services ←→ Advisory ←→ Cases
 
 ### Médio Prazo (Conteúdo)
 
-- [ ] Revisar meta descriptions de todas as páginas
+- [x] Revisar meta descriptions de todas as páginas
 - [ ] Implementar linkagem interna nos posts do blog
 - [ ] Criar breadcrumbs nas páginas internas
-- [ ] Adicionar canonical tags nas LPs
+- [x] Adicionar canonical tags nas LPs
 
 ### Monitoramento
 

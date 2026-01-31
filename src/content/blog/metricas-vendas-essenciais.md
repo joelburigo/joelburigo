@@ -106,7 +106,7 @@ Taxa de Conversão = (Clientes Fechados ÷ Leads Gerados) × 100
 **Por que importa:** Aumentar conversão de 10% para 15% = 50% mais faturamento COM OS MESMOS LEADS. É a alavanca mais poderosa.
 
 **Como melhorar:**
-- Qualificar melhor (só atender leads fit)
+- Qualificar melhor (definindo o [ICP cliente ideal](/blog/icp-cliente-ideal-perfil))
 - Script de vendas validado
 - Follow-up consistente
 - Tratamento de objeções documentado
@@ -456,7 +456,7 @@ Foque em melhorar 1 métrica por vez.
 
 As 7 métricas que te mostrei são as mesmas que uso em todos os clientes que estruturei ao longo de 17 anos. Funcionam porque são simples, acionáveis e focadas em RESULTADO.
 
-Comece hoje. Não precisa de ferramenta cara. Precisa de disciplina de olhar os números toda semana.
+Comece hoje. Não precisa de ferramenta cara. Precisa de disciplina de olhar os números toda semana. Se você ainda está estruturando do zero, veja [como estruturar vendas do zero](/blog/como-estruturar-vendas-do-zero). Para implementação guiada, veja [Implementation Services](/services).
 
 **O ritual que funciona:**
 - Segunda: Olhe as métricas da semana anterior

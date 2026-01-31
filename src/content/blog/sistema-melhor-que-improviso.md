@@ -397,6 +397,8 @@ Cliente que atendi em 2021. Operação de home equity (crédito com garantia de 
 - Ticket médio: +40% (qualificação melhor = cliente com imóvel melhor)
 - Tempo médio de fechamento: 45 dias → 28 dias
 
+Se quiser ver mais exemplos reais, veja os [cases de sucesso](/cases).
+
 Sistema replicável. Operação deixou de depender do "vendedor bom".
 
 (E olha, esse case é menos chamativo que aquele de holding que cresceu 433%, mas mostra o ponto: sistema funciona em operações complexas.)
@@ -413,10 +415,10 @@ Improviso é o vendedor carismático fechando na raça. Sistema é checklist, pl
 
 Eu sei disso porque quebrei em 2012 improvisando. Tudo estava na minha cabeça ou na cabeça do sócio. Quando quebrou, quebrou tudo junto.
 
-Na reconstrução, fiz diferente: documentei processos, estruturei funil, implementei CRM, criei ofertas padronizadas, defini ICP claro.
+Na reconstrução, fiz diferente: documentei processos, estruturei funil, implementei CRM, criei ofertas padronizadas, defini [ICP claro](/blog/icp-cliente-ideal-perfil).
 
 **Sistema > Improviso. Sempre foi assim. Sempre vai ser.**
 
-A escolha é sua: Continuar improvisando e ficar travado. Ou sistematizar e escalar.
+A escolha é sua: Continuar improvisando e ficar travado. Ou sistematizar e escalar. Se quiser um passo a passo, veja [como estruturar vendas do zero](/blog/como-estruturar-vendas-do-zero) ou conheça o [Vendas Sem Segredos](/vendas-sem-segredos).
 
 Let's grow. Tijolo por tijolo.

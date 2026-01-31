@@ -18,7 +18,7 @@ clusterKeywords:
 
 > **Série**: Este artigo faz parte do [Framework dos 6Ps das Vendas Escaláveis](/blog/6ps-vendas-escalaveis-guia-completo) • **P2: Público**
 
-"Todo mundo" não é cliente. **Quanto mais específico seu ICP, maior sua taxa de conversão.**
+"Todo mundo" não é cliente. **Quanto mais específico seu ICP, maior sua taxa de conversão.** E isso começa com um [posicionamento claro e diferenciado](/blog/posicionamento-diferencial-unico).
 
 Parece contraintuitivo, eu sei. Você pensa: "se eu estreitar, vou perder clientes." Mas é o contrário. Nicho específico = mais vendas.
 
@@ -493,7 +493,7 @@ Se marcou 0-3: ICP fraco. Trabalhe nisso antes de avançar.
 
 ICP não é limitar. É focar.
 
-Quanto mais claro seu ICP, mais fácil vender, mais alta a conversão, mais alto o ticket médio.
+Quanto mais claro seu ICP, mais fácil vender, mais alta a conversão, mais alto o ticket médio. Se você quer implementar o P2 dentro de um método completo, conheça o [Vendas Sem Segredos](/vendas-sem-segredos).
 
 Pare de vender para "todo mundo". Comece a vender para quem realmente importa.
 

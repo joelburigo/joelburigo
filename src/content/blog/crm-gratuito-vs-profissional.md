@@ -42,7 +42,7 @@ a: não tinha controle de nada. Tudo na cabeça, nada documentado, zero sistema.
 
 Depois de 17 anos estruturando vendas para 140+ clientes, posso afirmar: quem não tem CRM não tem negócio, tem bico.
 
-CRM não é luxo. É obrigação para quem quer escalar.
+CRM não é luxo. É obrigação para quem quer escalar — e faz parte do P4 do [Framework dos 6Ps](/blog/6ps-vendas-escalaveis-guia-completo).
 
 ---
 
@@ -384,7 +384,7 @@ Para MPEs de R$ 10k-300k/mês:
 2. **Se tem budget:** Pipedrive ou Kommo
 3. **Se quer tudo integrado:** RD Station
 
-No VSS (Vendas Sem Segredos), já entregamos CRM configurado e pronto para uso.
+No [Vendas Sem Segredos](/vendas-sem-segredos), já entregamos CRM configurado e pronto para uso.
 
 ---
 
@@ -408,7 +408,7 @@ Use este checklist para avaliar se seu CRM está cumprindo o papel:
 
 ### Gestão (Avançado)
 
-✅ Dashboard mostra métricas principais
+✅ Dashboard mostra [métricas principais de vendas](/blog/metricas-vendas-essenciais)
 ✅ Consigo prever faturamento dos próximos 30 dias
 ✅ Time inteiro usa a mesma ferramenta
 ✅ Relatórios são gerados automaticamente
@@ -449,7 +449,7 @@ CRM gratuito é ótimo para começar. Funciona nos primeiros R$ 20k/mês.
 
 Mas se você quer escalar para R$ 50k, R$ 100k, R$ 200k/mês, **você precisa de ferramenta profissional.**
 
-A boa notícia: CRM profissional se paga sozinho. ROI típico de 15-40x no primeiro ano.
+A boa notícia: CRM profissional se paga sozinho. ROI típico de 15-40x no primeiro ano. Se você quer implementação guiada do processo + CRM, veja [Implementation Services](/services).
 
 A matemática é simples:
 - CRM profissional: R$ 300-500/mês
@@ -459,4 +459,3 @@ A matemática é simples:
 **Quem não tem CRM não tem negócio, tem bico.** Sistema > Improviso. Sempre.
 
 Let's grow.
-

@@ -61,7 +61,7 @@ Tráfego pago é quando você paga plataformas (Meta Ads, Google Ads, LinkedIn A
 - Você tem budget mínimo de R$ 1.500/mês
 - Seu ticket médio é R$ 500+ (idealmente R$ 1.500+)
 - Você já tem oferta validada (vendeu pelo menos 10x)
-- Você tem CRM configurado para receber leads
+- Você tem [CRM configurado](/blog/crm-gratuito-vs-profissional) para receber leads
 - Você tem equipe/tempo para fazer follow-up
 - Seu público está nas plataformas de ads
 
@@ -112,7 +112,7 @@ Prospecção ativa (outbound) é quando VOCÊ vai atrás dos leads: LinkedIn out
 - Você não tem budget para ads
 - Você vende B2B (empresa para empresa)
 - Seu ticket médio é alto (R$ 3k+)
-- Seu ICP está em LinkedIn ou é fácil de mapear
+- Seu [ICP](/blog/icp-cliente-ideal-perfil) está em LinkedIn ou é fácil de mapear
 - Você tem tempo ou SDR para executar
 - Seu nicho é específico e identificável
 
@@ -326,6 +326,8 @@ O resultado: previsibilidade alta. Você sabe que vai ter X leads de inbound + Y
 <a name="metricas"></a>
 ## Métricas Para Acompanhar
 
+Se quiser aprofundar, veja o guia de [métricas de vendas essenciais](/blog/metricas-vendas-essenciais).
+
 ### Para Tráfego Pago
 
 | Métrica | Benchmark Saudável |
@@ -360,10 +362,10 @@ O resultado: previsibilidade alta. Você sabe que vai ter X leads de inbound + Y
 ### Se Você Vai Começar Por Prospecção Ativa
 
 **Semana 1: Preparação**
-- Defina ICP com critérios objetivos (tamanho, setor, cargo)
+- Defina ICP com critérios objetivos (tamanho, setor, cargo) — use o guia de [ICP cliente ideal](/blog/icp-cliente-ideal-perfil)
 - Crie lista de 100 empresas que se encaixam
 - Prepare template de abordagem personalizado
-- Configure CRM básico (pode ser gratuito)
+- Configure CRM básico (pode ser gratuito) — veja [CRM gratuito vs profissional](/blog/crm-gratuito-vs-profissional)
 
 **Semana 2-4: Execução**
 - Aborde 20 empresas/semana (mínimo)
@@ -376,7 +378,7 @@ O resultado: previsibilidade alta. Você sabe que vai ter X leads de inbound + Y
 ### Se Você Vai Começar Por Tráfego Pago
 
 **Semana 1: Preparação**
-- Configure CRM para receber leads
+- Configure CRM para receber leads (veja [CRM gratuito vs profissional](/blog/crm-gratuito-vs-profissional))
 - Crie landing page com oferta clara
 - Defina orçamento inicial (mínimo R$ 50/dia)
 - Prepare processo de follow-up

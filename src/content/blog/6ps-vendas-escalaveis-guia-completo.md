@@ -198,7 +198,7 @@ Esse é o objetivo. Vamos destrinchar cada P.
 <a name="p1-posicionamento"></a>
 ## P1: Posicionamento — Por Que Você Existe (e Por Que Alguém Deveria Te Escolher)
 
-Posicionamento é a BASE de tudo. É a fundação da casa. Se estiver fraco, todo o resto desmorona.
+Posicionamento é a BASE de tudo. É a fundação da casa. Se estiver fraco, todo o resto desmorona. Se você quer construir um diferencial que o cliente entenda em 30 segundos, comece pelo guia de [posicionamento e diferencial único](/blog/posicionamento-diferencial-unico).
 
 **O que é posicionamento?**
 
@@ -314,7 +314,7 @@ Se P1 é a fundação, P2 é a parede. Sem saber pra quem você vende, você ati
 
 **O que é Público?**
 
-É a definição clara de quem é seu cliente ideal — o famoso ICP (Ideal Customer Profile). Quais são as dores, desejos, comportamentos e onde encontrar essa pessoa.
+É a definição clara de quem é seu cliente ideal — o famoso ICP (Ideal Customer Profile). Quais são as dores, desejos, comportamentos e onde encontrar essa pessoa. Para um passo a passo prático, veja [como definir o ICP do cliente ideal](/blog/icp-cliente-ideal-perfil).
 
 A frase mais perigosa que existe no empreendedorismo: **"Meu produto serve pra todo mundo."**
 
@@ -582,7 +582,7 @@ Agora entramos no coração da máquina. P4 é onde a maioria dos empresários q
 
 É o SISTEMA de como você vende: CRM, funis de venda, automações, campanhas de marketing, jornada do cliente.
 
-Ter bom produto (P3) não basta. Você precisa de um sistema pra atrair, nutrir e converter leads de forma previsível.
+Ter bom produto (P3) não basta. Você precisa de um sistema pra atrair, nutrir e converter leads de forma previsível. Se a dúvida é por onde começar a atração, compare [tráfego pago vs prospecção ativa](/blog/trafego-pago-vs-prospecao-ativa).
 
 ### 5 Sinais de Que Seus Programas Estão Fracos
 
@@ -944,7 +944,7 @@ Isso acelera a curva de aprendizado dramaticamente.
 **Passo 4: Defina rituais**
 
 - **Daily (15min)**: O que fez ontem, o que faz hoje, travamentos
-- **Weekly (1h)**: Revisão de métricas, planejamento semanal
+- **Weekly (1h)**: Revisão de [métricas de vendas essenciais](/blog/metricas-vendas-essenciais), planejamento semanal
 - **Monthly (2h)**: Análise de mês, aprendizados, planejamento
 - **1:1 (30min quinzenal)**: Conversa individual, feedback, desenvolvimento
 
@@ -1144,7 +1144,7 @@ A diferença entre empresas que crescem e empresas que ficam estagnadas não é 
 
 É MÉTODO.
 
-Agora você tem o método: os 6Ps das Vendas Escaláveis.
+Agora você tem o método: os 6Ps das Vendas Escaláveis. Se quiser uma implementação guiada, o [Vendas Sem Segredos](/vendas-sem-segredos) é o caminho completo.
 
 A execução é com você.
 

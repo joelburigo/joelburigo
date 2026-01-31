@@ -298,7 +298,7 @@ Ensinar te obriga a estruturar. Estruturar te faz crescer. Ensinar multiplica im
 
 1. Liste os 3 processos mais críticos do seu negócio
 2. Documente pelo menos 1 deles
-3. Defina 5 métricas essenciais para acompanhar
+3. Defina 5 [métricas essenciais de vendas](/blog/metricas-vendas-essenciais) para acompanhar
 
 ### Este Mês
 
@@ -324,7 +324,7 @@ Se você está lendo isso e se identificou com algo da minha história, eu tenho
 
 Não vai ser mágica. Não vai ser da noite pro dia. Mas VAI acontecer.
 
-Se EU consegui sair de um barraco sem geladeira para estruturar ~R$ 1 bilhão em vendas ao longo de 17 anos, você consegue reconstruir seu negócio.
+Se EU consegui sair de um barraco sem geladeira para estruturar ~R$ 1 bilhão em vendas ao longo de 17 anos, você consegue reconstruir seu negócio. Se quiser conhecer minha trajetória completa, veja [sobre Joel Burigo](/sobre).
 
 A diferença entre quem fica no barraco e quem sai não é talento. Não é sorte. Não é dinheiro.
 

@@ -153,7 +153,7 @@ Se você cancelar hoje e ninguém da sua empresa sabe dar continuidade, você n�
 <a name="modelo-autonomia"></a>
 ## O Modelo de Autonomia (Como EU Trabalho)
 
-Meu modelo é o oposto da agência tradicional.
+Meu modelo é o oposto da agência tradicional. Se você quer implementação guiada com autonomia, veja [Implementation Services](/services).
 
 **Objetivo:** Te ensinar o sistema completo para você rodar sozinho.
 
@@ -373,7 +373,7 @@ Entendo. Mas pense assim: você vai gastar tempo de qualquer forma - ou aprenden
 
 Se você consegue usar WhatsApp e planilha, consegue aprender CRM e processo de vendas.
 
-O VSS foi desenhado para empresários, não para técnicos. Passo a passo, com suporte.
+O [Vendas Sem Segredos](/vendas-sem-segredos) foi desenhado para empresários, não para técnicos. Passo a passo, com suporte.
 
 ### "E se eu precisar de ajuda depois?"
 
@@ -382,7 +382,7 @@ Autonomia não significa ficar sozinho para sempre. Significa ter OPÇÃO.
 Depois de autônomo, você pode:
 - Continuar sozinho (zero custo)
 - Contratar consultoria pontual quando precisar
-- Expandir com Advisory para escalar mais
+- Expandir com [Advisory](/advisory) para escalar mais
 
 A diferença: você ESCOLHE quando precisa de ajuda. Não é OBRIGADO a pagar todo mês.
 
@@ -414,6 +414,8 @@ Você controla. Você escala. Você não depende de ninguém.
 - Economia de milhares por ano (vs mensalidade eterna)
 - Time que sabe executar (não depende de terceiro)
 - Paz de espírito (ninguém pode te deixar na mão)
+
+Se quiser ver resultados reais de quem implementou esse modelo, veja os [cases de sucesso](/cases).
 
 ### A Escolha É Sua
 

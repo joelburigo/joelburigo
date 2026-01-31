@@ -233,6 +233,8 @@ Implementado em: `/`, `/vendas-sem-segredos`, `/services`, `/advisory`
 
 ### 3. Linkagem Interna
 
+Links internos inseridos no corpo dos 12 posts do blog, com âncoras contextuais entre pilares/satélites e páginas core (VSS, Services, Advisory, Cases, Sobre).
+
 #### Páginas Core (devem linkar entre si)
 
 ```
@@ -295,7 +297,7 @@ Home ←→ Sobre ←→ VSS ←→ Services ←→ Advisory ←→ Cases
 ### Médio Prazo (Conteúdo)
 
 - [x] Revisar meta descriptions de todas as páginas
-- [ ] Implementar linkagem interna nos posts do blog
+- [x] Implementar linkagem interna nos posts do blog
 - [ ] Criar breadcrumbs nas páginas internas
 - [x] Adicionar canonical tags nas LPs
 

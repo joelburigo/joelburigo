@@ -60,7 +60,7 @@ Olha o que existe hoje:
 
 O que falta? Sistema completo que entregue autonomia com preço acessível.
 
-(Foi por isso que criei o VSS. Mas isso é assunto pra outro post.)
+(Foi por isso que criei o [Vendas Sem Segredos](/vendas-sem-segredos). Mas isso é assunto pra outro post.)
 
 ---
 
@@ -99,7 +99,7 @@ POSICIONAMENTO → PÚBLICO → PRODUTO → PROGRAMAS → PROCESSOS → PESSOAS
 - Qual transformação você entrega?
 - Como você quer ser lembrado?
 
-Sem posicionamento claro, você compete por preço. Com posicionamento, você cria categoria.
+Sem posicionamento claro, você compete por preço. Com posicionamento, você cria categoria. Aprofunde com o guia de [posicionamento e diferencial único](/blog/posicionamento-diferencial-unico).
 
 **Entregáveis do P1:**
 
@@ -113,7 +113,7 @@ Sem posicionamento claro, você compete por preço. Com posicionamento, você cr
 
 **Definição:** Definição cirúrgica de QUEM é seu cliente ideal.
 
-"Todo mundo" não é público. Você precisa de um ICP (Ideal Customer Profile) cristalino.
+"Todo mundo" não é público. Você precisa de um ICP (Ideal Customer Profile) cristalino — veja o passo a passo de [ICP: cliente ideal](/blog/icp-cliente-ideal-perfil).
 
 **Componentes:**
 
@@ -178,10 +178,10 @@ Sua oferta precisa ser clara, objetiva e irresistível. Não é sobre features, 
 
 **Componentes:**
 
-- CRM profissional
+- [CRM profissional](/blog/crm-gratuito-vs-profissional)
 - Funis de vendas estruturados
 - Automações de marketing
-- Canais de atração (tráfego + prospecção)
+- Canais de atração ([tráfego pago vs prospecção ativa](/blog/trafego-pago-vs-prospecao-ativa))
 - Sistema de conversão
 
 **Perguntas-chave:**
@@ -205,7 +205,7 @@ Sua oferta precisa ser clara, objetiva e irresistível. Não é sobre features, 
 
 **Definição:** Documentação de COMO operar com consistência.
 
-Se não está escrito, não existe. Processos documentados são a base da escala.
+Se não está escrito, não existe. Processos documentados são a base da escala — entenda por que [sistema > improviso](/blog/sistema-melhor-que-improviso).
 
 **Componentes:**
 
@@ -226,7 +226,7 @@ Se não está escrito, não existe. Processos documentados são a base da escala
 
 - Playbook de Vendas
 - Checklists operacionais
-- Dashboard de métricas
+- Dashboard de [métricas essenciais](/blog/metricas-vendas-essenciais)
 - Ritual de revisão semanal
 
 ---

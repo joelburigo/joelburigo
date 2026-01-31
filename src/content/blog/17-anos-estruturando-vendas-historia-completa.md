@@ -775,7 +775,7 @@ E dessa vez, enquanto construo isso, vou construir MEU próprio patrimônio junt
 
 **Da quebrada ao bilhão. Do bilhão ao legado.**
 
-Essa é minha história.
+Essa é minha história. Se quiser a versão resumida, leia [Do Barraco ao Milhão](/blog/do-barraco-ao-milhao).
 
 E se você chegou até aqui, se você leu cada palavra, se algo ressoou em você...
 

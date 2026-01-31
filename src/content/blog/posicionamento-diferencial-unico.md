@@ -89,7 +89,7 @@ Não é slogan bonito. É razão de existir.
 
 ### Pergunta 1: Para Quem Você Existe?
 
-Não pode ser "todo mundo". Precisa ser específico:
+Não pode ser "todo mundo". Precisa ser específico. Se precisar de um passo a passo para escolher o público certo, use o guia de [ICP: cliente ideal](/blog/icp-cliente-ideal-perfil):
 
 > "Eu ajudo [QUEM EXATO] a [RESOLVER QUAL PROBLEMA]."
 
@@ -412,7 +412,7 @@ Posicionamento não é perfumaria de branding. É base estratégica de TUDO.
 
 Se você pula essa etapa e vai direto para tráfego ou CRM, vai desperdiçar tempo e dinheiro. Você vai atrair os clientes errados, brigar por preço, e se frustrar.
 
-**P1 (Posicionamento) vem ANTES de tudo. Sempre.**
+**P1 (Posicionamento) vem ANTES de tudo. Sempre.** E quando terminar, avance para o P2 com o guia de [ICP cliente ideal](/blog/icp-cliente-ideal-perfil).
 
 Sem posicionamento claro, todo o resto é construir em areia movediça. Com posicionamento claro, você cria alicerce de rocha.
 

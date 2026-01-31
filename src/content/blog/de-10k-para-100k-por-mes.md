@@ -106,7 +106,7 @@ Em R$ 100k/mês, improviso quebra. Você PRECISA de sistema documentado que func
 - **Fechamento:** Script validado
 - **Onboarding:** Processo claro pós-venda
 
-Improviso mata mais empresa que crise. A maioria das MPEs não quebra por falta de mercado. Quebra por falta de sistema replicável.
+Improviso mata mais empresa que crise. A maioria das MPEs não quebra por falta de mercado. Quebra por falta de sistema replicável — veja por que [sistema > improviso](/blog/sistema-melhor-que-improviso).
 
 **Sinal de que você precisa sistematizar:** Se você tirar férias de 2 semanas, o negócio para.
 
@@ -121,7 +121,7 @@ Parece contraintuitivo, mas quanto mais específico seu público, maior seu tick
 
 ### Por Que Funciona
 
-Quem tenta vender para todos não vende para ninguém com eficiência. Quando você define ICP cristalino:
+Quem tenta vender para todos não vende para ninguém com eficiência. Quando você define ICP cristalino (veja o guia de [ICP cliente ideal](/blog/icp-cliente-ideal-perfil)):
 
 - Sua comunicação fica certeira
 - Você atrai quem tem dinheiro e problema real
@@ -165,7 +165,7 @@ Primeiro:
 <a name="mudanca-4"></a>
 ## Mudança #4: De Excel Para CRM Profissional
 
-Planilha Excel quebra em 50 leads. CRM profissional aguenta milhares.
+Planilha Excel quebra em 50 leads. [CRM profissional](/blog/crm-gratuito-vs-profissional) aguenta milhares.
 
 Sem CRM, você não consegue:
 
@@ -186,7 +186,7 @@ Quem não tem CRM não tem negócio, tem bico. CRM não é luxo — é obrigaç�
 
 Indicação é ótimo, mas não escala. Para chegar em R$ 100k/mês de forma previsível, você precisa de fonte de leads estruturada.
 
-Duas rotas funcionam:
+Duas rotas funcionam — compare em detalhe no guia de [tráfego pago vs prospecção ativa](/blog/trafego-pago-vs-prospecao-ativa):
 
 ### Rota A: Tráfego Pago
 Meta Ads, Google Ads, LinkedIn Ads.
@@ -202,7 +202,7 @@ LinkedIn outbound, email frio, cold calling. Exige tempo e consistência.
 
 **Vantagem:** Custo baixo (tempo, não dinheiro). Controle total sobre quem aborda.
 
-A boa notícia: dá para escalar com qualquer uma das duas rotas. O VSS ensina ambas porque nem todo mundo tem budget alto para tráfego pago — e isso não pode ser desculpa para não vender.
+A boa notícia: dá para escalar com qualquer uma das duas rotas. O [Vendas Sem Segredos](/vendas-sem-segredos) ensina ambas porque nem todo mundo tem budget alto para tráfego pago — e isso não pode ser desculpa para não vender.
 
 ---
 

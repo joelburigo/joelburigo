@@ -175,7 +175,15 @@ const pathways = [
                   </Button>
                 </a>
 
-                <p class="mt-4 text-center font-sans text-xs text-gray-400">
+                {/* Link para Jornada 90 dias - apenas no VSS */}
+                {pathway.badge && (
+                  <a href="/jornada-90-dias" class="mt-4 flex items-center justify-center gap-2 font-sans text-xs text-lime transition-colors hover:text-lime/80">
+                    Ver jornada detalhada dos 90 dias
+                    <Icons name="arrow-right" class="h-3 w-3" />
+                  </a>
+                )}
+
+                <p class={pathway.badge ? 'mt-2 text-center font-sans text-xs text-gray-400' : 'mt-4 text-center font-sans text-xs text-gray-400'}>
                   Ideal para: {pathway.idealFor}
                 </p>
               </div>

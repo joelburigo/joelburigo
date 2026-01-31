@@ -383,28 +383,43 @@ const resultadoConsolidado = [
             </p>
           </div>
 
-          <div class="space-y-8">
+          <!-- Timeline Visual -->
+          <div class="relative space-y-12">
+            <!-- Linha vertical conectando as fases -->
+            <div class="absolute left-8 top-8 bottom-8 w-1 bg-gradient-to-b from-lime via-lime/50 to-lime hidden md:block"></div>
             {fases.map((fase) => (
-              <div class="rounded-2xl border-2 border-white/10 bg-white/5 p-8 transition-all hover:border-lime/30">
-                <!-- Header da Fase -->
-                <div class="mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-                  <div class="flex items-center gap-4">
-                    <div class="flex h-16 w-16 items-center justify-center rounded-full bg-lime/20">
-                      {fase.icon === 'file-text' && <Icons name="file-text" class="h-8 w-8 text-lime" />}
-                      {fase.icon === 'settings' && <Icons name="settings" class="h-8 w-8 text-lime" />}
-                      {fase.icon === 'trending-up' && <Icons name="trending-up" class="h-8 w-8 text-lime" />}
-                      {fase.icon === 'zap' && <Icons name="zap" class="h-8 w-8 text-lime" />}
-                      {fase.icon === 'check-circle-2' && <Icons name="check-circle-2" class="h-8 w-8 text-lime" />}
-                    </div>
-                    <div>
-                      <p class="font-display text-sm font-semibold text-lime">{fase.semanas}</p>
-                      <h3 class="font-display text-h2 text-white">{fase.nome}</h3>
-                    </div>
-                  </div>
-                  <div class="rounded-full bg-lime/10 px-6 py-2">
-                    <p class="font-display text-sm font-bold text-lime">{fase.horas}</p>
-                  </div>
+              <div class="relative md:pl-24">
+                <!-- Círculo timeline -->
+                <div class="absolute left-4 top-8 hidden h-8 w-8 items-center justify-center rounded-full border-4 border-dark bg-lime md:flex">
+                  <div class="h-3 w-3 rounded-full bg-dark"></div>
                 </div>
+
+                <div class="group rounded-2xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/[0.02] p-8 transition-all hover:border-lime/50 hover:shadow-2xl hover:shadow-lime/10">
+                  <!-- Badge de semanas -->
+                  <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-lime/30 bg-lime/10 px-4 py-2">
+                    <Icons name="calendar" class="h-4 w-4 text-lime" />
+                    <span class="font-display text-sm font-bold text-lime">{fase.semanas}</span>
+                  </div>
+
+                  <!-- Header da Fase -->
+                  <div class="mb-6 flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                    <div class="flex items-start gap-4">
+                      <div class="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-lime/20 ring-4 ring-lime/10 transition-all group-hover:scale-110 group-hover:ring-lime/30">
+                        {fase.icon === 'file-text' && <Icons name="file-text" class="h-8 w-8 text-lime" />}
+                        {fase.icon === 'settings' && <Icons name="settings" class="h-8 w-8 text-lime" />}
+                        {fase.icon === 'trending-up' && <Icons name="trending-up" class="h-8 w-8 text-lime" />}
+                        {fase.icon === 'zap' && <Icons name="zap" class="h-8 w-8 text-lime" />}
+                        {fase.icon === 'check-circle-2' && <Icons name="check-circle-2" class="h-8 w-8 text-lime" />}
+                      </div>
+                      <div>
+                        <h3 class="mb-2 font-display text-h2 text-white">{fase.nome}</h3>
+                        <div class="flex items-center gap-2 text-gray-400">
+                          <Icons name="clock" class="h-4 w-4" />
+                          <p class="font-sans text-sm">{fase.horas}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
                 <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
                   <!-- O Que Você Faz -->
@@ -439,6 +454,7 @@ const resultadoConsolidado = [
                   <p class="font-display text-sm font-semibold text-lime">
                     💰 Vendas nesta fase: {fase.vendas}
                   </p>
+                </div>
                 </div>
               </div>
             ))}

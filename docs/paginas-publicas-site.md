@@ -312,6 +312,14 @@ Home ←→ Sobre ←→ VSS ←→ Services ←→ Advisory ←→ Cases
 - [ ] Monitorar Core Web Vitals
 - [ ] Acompanhar posições das palavras-chave principais
 
+#### Google Search Console (preencher após configuração)
+
+- Propriedade: `https://joelburigo.com.br/`
+- Método de verificação: (DNS / HTML file / Tag)
+- Sitemap enviado: `https://joelburigo.com.br/sitemap-index.xml`
+- Data da verificação:
+- Observações:
+
 ---
 
 ## Palavras-chave Alvo

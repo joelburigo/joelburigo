@@ -1077,10 +1077,10 @@ Não é teoria. São 17 anos e 140 clientes sistematizados em metodologia replic
 
 ## Apresento: VSS (Vendas Sem Segredos)
 
-O programa onde você implementa os 6Ps em 90 dias — junto comigo.
+O programa onde você implementa os 6Ps em 90 dias — com suporte da equipe dedicada.
 
-**Não é curso gravado que abandona.**  
-É parceria. Vamos fazer juntos até dar certo.
+**Não é curso gravado que abandona.**
+É parceria. Equipe faz junto com você até dar certo.
 
 ### O Que Você Recebe:
 

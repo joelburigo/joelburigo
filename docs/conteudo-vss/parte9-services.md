@@ -320,7 +320,7 @@ parte_anterior: "P8"
 
 **Dores principais:**
 - "Não tenho tempo para fazer sozinho"
-- "Preciso de alguém fazendo junto comigo"
+- "Preciso de uma equipe profissional fazendo junto"
 - "Minha equipe não sabe implementar"
 - "Quero resultado mais rápido"
 - "Orçamento não é problema, tempo é"

@@ -154,7 +154,7 @@ parte_anterior: "P10"
 ║  • 17 anos de experiência em marketing e vendas                          ║
 ║  • 140 clientes atendidos pessoalmente                                   ║
 ║  • ~R$ 1 bilhão em vendas estruturadas                                   ║
-║  • Case: Encontre Sua Franquia de R$ 60k → R$ 1M/mês em 2 anos          ║
+║  • Case: Cliente de franquias de R$ 160k → R$ 1M/mês em 2 anos         ║
 ║  • Quebrei empresa aos 30, morei em barraco, reconstruí do zero          ║
 ║                                                                          ║
 ╚══════════════════════════════════════════════════════════════════════════╝

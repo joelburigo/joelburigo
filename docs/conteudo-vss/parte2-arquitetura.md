@@ -1,7 +1,7 @@
 ---
 id: "P2"
 titulo: "ARQUITETURA DO PROGRAMA"
-documento: "Parte 2 de 11"
+documento: "Parte 2 de 13"
 versao: "1.1"
 autor: "Joel Burigo"
 ultima_atualizacao: "2026-01-23"

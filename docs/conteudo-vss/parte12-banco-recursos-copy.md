@@ -1,8 +1,69 @@
-# PARTE 12: BANCO DE RECURSOS - COPY, OBJEÇÕES E FRASES DE IMPACTO
+---
+id: "P12"
+titulo: "BANCO DE RECURSOS - COPY, OBJEÇÕES E FRASES DE IMPACTO"
+documento: "Parte 12 de 13"
+versao: "1.0"
+autor: "Joel Burigo"
+ultima_atualizacao: "2026-01-30"
+arquivo: "conteudo/parte12-banco-recursos-copy.md"
 
-**Versão:** 1.0
-**Data:** 30 de janeiro de 2026
-**Última atualização:** 30/01/2026
+objetivo: |
+  Banco de recursos reutilizável para criar materiais de marketing, vendas e comunicação:
+  - Copys e frases de impacto testadas
+  - Jargões e terminologia proprietária (6Ps)
+  - Objeções internas e externas com respostas estruturadas
+  - Transformações (antes vs depois)
+  - Diferenciais, garantias, prova social e urgência
+  - Ganchos narrativos e aplicações práticas
+
+secoes:
+  - id: "P12.1"
+    titulo: "Copys e Frases de Impacto"
+  - id: "P12.2"
+    titulo: "Jargões e Termos Técnicos Proprietários"
+  - id: "P12.3"
+    titulo: "Objeções Internas"
+  - id: "P12.4"
+    titulo: "Objeções Externas"
+  - id: "P12.5"
+    titulo: "Antes vs Depois (Transformações)"
+  - id: "P12.6"
+    titulo: "Diferenciais"
+  - id: "P12.7"
+    titulo: "Garantias e Promessas"
+  - id: "P12.8"
+    titulo: "Prova Social"
+  - id: "P12.9"
+    titulo: "Urgência e Escassez"
+  - id: "P12.10"
+    titulo: "Frases de Transição e Ganchos Narrativos"
+  - id: "P12.11"
+    titulo: "Aplicações Práticas"
+  - id: "P12.12"
+    titulo: "Índice de Referência Rápida"
+
+tags: [copy, objeções, frases-impacto, marketing, vendas, comunicação, recursos]
+dependencias: ["P1", "P5", "P7"]
+prox_parte: "P13"
+parte_anterior: "P11"
+---
+
+[← P11: Deliverables](parte11-deliverables-templates.md) | [Índice](README.md) | [P13: Scripts de Vídeos →](parte13-scripts-videos.md)
+
+## 📑 Índice desta Parte
+
+- [P12.1 Copys e Frases de Impacto](#1-copys-e-frases-de-impacto)
+- [P12.2 Jargões e Termos Técnicos](#2-jargões-e-termos-técnicos-proprietários)
+- [P12.3 Objeções Internas](#3-objeções-internas-dúvidas-que-o-cliente-não-fala)
+- [P12.4 Objeções Externas](#4-objeções-externas-o-que-o-cliente-fala)
+- [P12.5 Antes vs Depois](#5-antes-vs-depois-transformações--resultados)
+- [P12.6 Diferenciais](#6-diferenciais-o-que-torna-vss-único)
+- [P12.7 Garantias e Promessas](#7-garantias-e-promessas)
+- [P12.8 Prova Social](#8-prova-social)
+- [P12.9 Urgência e Escassez](#9-urgência-e-escassez)
+- [P12.10 Frases de Transição](#10-frases-de-transição--ganchos-narrativos)
+- [P12.11 Aplicações Práticas](#11-aplicações-práticas)
+- [P12.12 Referência Rápida](#12-índice-de-referência-rápida)
 
 ---
 

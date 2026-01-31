@@ -1,8 +1,8 @@
 # ÍNDICE DO CONTEÚDO (VSS)
 
-**Programa:** Vendas Sem Segredos  
-**Versão:** 1.1  
-**Total de Partes:** 11 | **Total de Módulos:** 15 | **Total de Aulas:** 66
+**Programa:** Vendas Sem Segredos
+**Versão:** 1.2
+**Total de Partes:** 13 | **Total de Módulos:** 15 | **Total de Aulas:** 66
 
 ---
 
@@ -167,6 +167,48 @@ Canvas, relatórios e playbooks prontos para usar.
 
 ---
 
+## PARTE 12: BANCO DE RECURSOS - COPY `[P12]`
+
+**[→ parte12-banco-recursos-copy.md](parte12-banco-recursos-copy.md)**
+
+Banco de recursos reutilizável para marketing, vendas e comunicação.
+
+- [P12.1] Copys e Frases de Impacto
+- [P12.2] Jargões e Termos Técnicos Proprietários
+- [P12.3] Objeções Internas
+- [P12.4] Objeções Externas
+- [P12.5] Antes vs Depois (Transformações)
+- [P12.6] Diferenciais
+- [P12.7] Garantias e Promessas
+- [P12.8] Prova Social
+- [P12.9] Urgência e Escassez
+- [P12.10] Frases de Transição e Ganchos Narrativos
+- [P12.11] Aplicações Práticas
+- [P12.12] Índice de Referência Rápida
+
+---
+
+## PARTE 13: SCRIPTS DE VÍDEOS `[P13]`
+
+**[→ parte13-scripts-videos.md](parte13-scripts-videos.md)**
+
+Scripts completos para vídeos de apresentação das páginas principais.
+
+- [P13.1] Script Vídeo Home
+- [P13.2] Script Vídeo VSS
+- [P13.3] Script Vídeo Services
+- [P13.4] Script Vídeo Advisory
+- [P13.5] Guidelines Gerais
+- [P13.6] Checklist de Produção
+- [P13.7] Variações e Adaptações
+- [P13.8] Scripts Auxiliares
+
+### 📂 Variante
+
+- **[Fala Pura (sem indicações técnicas)](parte13-scripts-videos-fala-pura.md)** - Versão para decorar e falar naturalmente
+
+---
+
 ## 🔍 Como Usar Este Índice
 
 ### Para **Leitores**
@@ -186,38 +228,5 @@ Canvas, relatórios e playbooks prontos para usar.
 
 ---
 
-**Última atualização:** 23 de janeiro de 2026  
-**Versão:** 1.1 (Frontmatter + Índices Linkados)
-
-## PARTE 9: SERVICES (OFERTA SECUNDÁRIA)
-
-[→ parte9-services.md](parte9-services.md)
-
-- O que é Services: Done WITH You
-- 3 Pacotes: Fundação, Aceleração e ScaleUp
-- Diferencial vs Agência Tradicional
-- Investimento e Processo de Contratação
-
----
-
-## PARTE 10: ADVISORY (OFERTA PREMIUM)
-
-[→ parte10-advisory.md](parte10-advisory.md)
-
-- O que é Advisory: Acesso Direto ao Joel
-- 3 Formatos: Sessão Avulsa, Sprint 30 Dias, Conselho Executivo
-- Garantia Incondicional e Processo de Contratação
-- Para Quem é (e para quem NÃO é)
-
----
-
-## PARTE 11: DELIVERABLES E TEMPLATES
-
-[→ parte11-deliverables-templates.md](parte11-deliverables-templates.md)
-
-- Canvas P1-P3 Preenchidos (Exemplos Joel Burigo)
-- Template: Relatório de Sessão Estratégica
-- Template: Playbook Comercial
-- SOPs Essenciais e Recursos Adicionais
-
----
+**Última atualização:** 30 de janeiro de 2026
+**Versão:** 1.2 (Adicionadas Partes 12 e 13)

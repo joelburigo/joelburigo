@@ -1,10 +1,10 @@
 ---
 id: "P11"
 titulo: "DELIVERABLES E TEMPLATES"
-documento: "Parte 11 de 11"
-versao: "1.0"
+documento: "Parte 11 de 13"
+versao: "1.1"
 autor: "Joel Burigo"
-ultima_atualizacao: "2026-01-23"
+ultima_atualizacao: "2026-01-30"
 arquivo: "conteudo/parte11-deliverables-templates.md"
 
 objetivo: |
@@ -34,11 +34,11 @@ secoes:
 
 tags: [templates, deliverables, canvas, playbook, recursos, ferramentas-práticas]
 dependencias: ["P1", "P4", "P5"]
-prox_parte: null
+prox_parte: "P12"
 parte_anterior: "P10"
 ---
 
-[← P10: Advisory](parte10-advisory.md) | [Índice](README.md)
+[← P10: Advisory](parte10-advisory.md) | [Índice](README.md) | [P12: Banco de Recursos →](parte12-banco-recursos-copy.md)
 
 ## 📑 Índice desta Parte
 

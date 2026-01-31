@@ -1,7 +1,48 @@
-# SCRIPTS DE VÍDEOS - FALA PURA (SEM INDICAÇÕES TÉCNICAS)
+---
+id: "P13-FP"
+titulo: "SCRIPTS DE VÍDEOS - FALA PURA"
+documento: "Parte 13 (Variante - Fala Pura)"
+versao: "1.0"
+autor: "Joel Burigo"
+ultima_atualizacao: "2026-01-30"
+arquivo: "conteudo/parte13-scripts-videos-fala-pura.md"
 
-**Versão:** 1.0 - Autêntica
-**Data:** 30 de janeiro de 2026
+objetivo: |
+  Versão dos scripts sem indicações técnicas de produção:
+  - Textos prontos para decorar e falar naturalmente
+  - Home, VSS, Services e Advisory
+  - Tom autêntico e direto
+  - Foco na entrega oral, não na produção
+
+secoes:
+  - id: "P13-FP.1"
+    titulo: "Script Home - Apresentação Geral"
+  - id: "P13-FP.2"
+    titulo: "Script VSS - Vendas Sem Segredos"
+  - id: "P13-FP.3"
+    titulo: "Script Services - Implementation Services"
+  - id: "P13-FP.4"
+    titulo: "Script Advisory - Strategic Advisory"
+
+tags: [scripts, vídeos, fala-pura, home, vss, services, advisory, roteiros]
+dependencias: ["P13"]
+prox_parte: null
+parte_anterior: "P12"
+relacionados:
+  - arquivo: "parte13-scripts-videos.md"
+    descricao: "Versão completa com indicações técnicas de produção"
+---
+
+[← P13: Scripts Completos](parte13-scripts-videos.md) | [Índice](README.md)
+
+## 📑 Índice desta Parte
+
+- [P13-FP.1 Script Home](#1-script-home---apresentação-geral)
+- [P13-FP.2 Script VSS](#2-script-vss---vendas-sem-segredos)
+- [P13-FP.3 Script Services](#3-script-services---implementation-services)
+- [P13-FP.4 Script Advisory](#4-script-advisory---strategic-advisory)
+
+**Versão Completa:** [Scripts com indicações técnicas](parte13-scripts-videos.md)
 
 ---
 

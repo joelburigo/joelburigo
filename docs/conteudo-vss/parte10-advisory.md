@@ -1,7 +1,7 @@
 ---
 id: "P10"
 titulo: "ADVISORY (OFERTA PREMIUM)"
-documento: "Parte 10 de 11"
+documento: "Parte 10 de 13"
 versao: "1.0"
 autor: "Joel Burigo"
 ultima_atualizacao: "2026-01-23"

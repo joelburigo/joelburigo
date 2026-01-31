@@ -1,7 +1,7 @@
 ---
 id: "P3.6"
 titulo: "FASE 6: AUTOMAÇÃO"
-documento: "Parte 3.6 de 11"
+documento: "Parte 3.6 de 13"
 versao: "1.1"
 autor: "Joel Burigo"
 ultima_atualizacao: "2026-01-23"

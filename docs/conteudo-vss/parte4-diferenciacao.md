@@ -1,7 +1,7 @@
 ---
 id: "P4"
 titulo: "DIFERENCIAÇÃO E VALOR"
-documento: "Parte 4 de 11"
+documento: "Parte 4 de 13"
 versao: "1.1"
 autor: "Joel Burigo"
 ultima_atualizacao: "2026-01-23"

@@ -1,7 +1,7 @@
 ---
 id: "P3.7"
 titulo: "FASE 7: CRESCIMENTO"
-documento: "Parte 3.7 de 11"
+documento: "Parte 3.7 de 13"
 versao: "1.1"
 autor: "Joel Burigo"
 ultima_atualizacao: "2026-01-23"

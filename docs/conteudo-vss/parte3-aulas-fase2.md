@@ -1,7 +1,7 @@
 ---
 id: "P3.2"
 titulo: "FASE 2: INFRAESTRUTURA"
-documento: "Parte 3.2 de 11"
+documento: "Parte 3.2 de 13"
 versao: "1.1"
 autor: "Joel Burigo"
 ultima_atualizacao: "2026-01-23"

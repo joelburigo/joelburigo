@@ -1,7 +1,7 @@
 ---
 id: "P8"
 titulo: "ECOSSISTEMA DE PRODUTOS"
-documento: "Parte 8 de 11"
+documento: "Parte 8 de 13"
 versao: "1.0"
 autor: "Joel Burigo"
 ultima_atualizacao: "2026-01-23"

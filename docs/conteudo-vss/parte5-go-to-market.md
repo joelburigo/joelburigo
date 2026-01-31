@@ -1,7 +1,7 @@
 ---
 id: "P5"
 titulo: "GO-TO-MARKET"
-documento: "Parte 5 de 11"
+documento: "Parte 5 de 13"
 versao: "1.1"
 autor: "Joel Burigo"
 ultima_atualizacao: "2026-01-23"

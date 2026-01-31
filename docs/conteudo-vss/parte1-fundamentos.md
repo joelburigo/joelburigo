@@ -1,7 +1,7 @@
 ---
 id: "P1"
 titulo: "FUNDAMENTOS ESTRATÉGICOS"
-documento: "Parte 1 de 11"
+documento: "Parte 1 de 13"
 versao: "1.2"
 autor: "Joel Burigo"
 ultima_atualizacao: "2026-01-23"

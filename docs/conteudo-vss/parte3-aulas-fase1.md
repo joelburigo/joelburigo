@@ -1,7 +1,7 @@
 ---
 id: "P3.1"
 titulo: "FASE 1: FUNDAMENTOS"
-documento: "Parte 3.1 de 11"
+documento: "Parte 3.1 de 13"
 versao: "1.0"
 autor: "Joel Burigo"
 ultima_atualizacao: "2026-01-23"

@@ -1,7 +1,7 @@
 ---
 id: "P3"
 titulo: "ROTEIRO COMPLETO DE AULAS"
-documento: "Parte 3 de 11"
+documento: "Parte 3 de 13"
 versao: "1.2"
 autor: "Joel Burigo"
 ultima_atualizacao: "2026-01-23"

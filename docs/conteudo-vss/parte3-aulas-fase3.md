@@ -1,7 +1,7 @@
 ---
 id: "P3.3"
 titulo: "FASE 3: ATRAÇÃO"
-documento: "Parte 3.3 de 11"
+documento: "Parte 3.3 de 13"
 versao: "1.1"
 autor: "Joel Burigo"
 ultima_atualizacao: "2026-01-23"

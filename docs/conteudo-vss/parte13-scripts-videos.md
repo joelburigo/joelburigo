@@ -1,8 +1,62 @@
-# PARTE 13: SCRIPTS DE VÍDEOS - HOME, VSS, SERVICES, ADVISORY
+---
+id: "P13"
+titulo: "SCRIPTS DE VÍDEOS - HOME, VSS, SERVICES, ADVISORY"
+documento: "Parte 13 de 13"
+versao: "1.0"
+autor: "Joel Burigo"
+ultima_atualizacao: "2026-01-30"
+arquivo: "conteudo/parte13-scripts-videos.md"
 
-**Versão:** 1.0
-**Data:** 30 de janeiro de 2026
-**Última atualização:** 30/01/2026
+objetivo: |
+  Scripts completos para vídeos de apresentação das páginas principais:
+  - Home (apresentação geral e Framework 6Ps)
+  - VSS (programa de 90 dias)
+  - Services (Implementation Services - DWY)
+  - Advisory (Strategic Advisory 1:1)
+  - Guidelines de produção e checklist
+  - Variações para diferentes formatos
+
+secoes:
+  - id: "P13.1"
+    titulo: "Script Vídeo Home"
+  - id: "P13.2"
+    titulo: "Script Vídeo VSS"
+  - id: "P13.3"
+    titulo: "Script Vídeo Services"
+  - id: "P13.4"
+    titulo: "Script Vídeo Advisory"
+  - id: "P13.5"
+    titulo: "Guidelines Gerais"
+  - id: "P13.6"
+    titulo: "Checklist de Produção"
+  - id: "P13.7"
+    titulo: "Variações e Adaptações"
+  - id: "P13.8"
+    titulo: "Scripts Auxiliares"
+
+tags: [scripts, vídeos, home, vss, services, advisory, produção, roteiros]
+dependencias: ["P7", "P8", "P12"]
+prox_parte: null
+parte_anterior: "P12"
+relacionados:
+  - arquivo: "parte13-scripts-videos-fala-pura.md"
+    descricao: "Versão sem indicações técnicas (fala pura)"
+---
+
+[← P12: Banco de Recursos](parte12-banco-recursos-copy.md) | [Índice](README.md)
+
+## 📑 Índice desta Parte
+
+- [P13.1 Script Vídeo Home](#1-script-vídeo-home)
+- [P13.2 Script Vídeo VSS](#2-script-vídeo-vss-vendas-sem-segredos)
+- [P13.3 Script Vídeo Services](#3-script-vídeo-services-implementation-services)
+- [P13.4 Script Vídeo Advisory](#4-script-vídeo-advisory-strategic-advisory)
+- [P13.5 Guidelines Gerais](#5-guidelines-gerais-para-todos-os-vídeos)
+- [P13.6 Checklist de Produção](#6-checklist-de-produção)
+- [P13.7 Variações e Adaptações](#7-variações-e-adaptações)
+- [P13.8 Scripts Auxiliares](#8-scripts-auxiliares-depoimentossocial-proof)
+
+**Versão Alternativa:** [Scripts de Fala Pura (sem indicações técnicas)](parte13-scripts-videos-fala-pura.md)
 
 ---
 

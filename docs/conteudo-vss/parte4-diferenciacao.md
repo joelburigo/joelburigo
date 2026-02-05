@@ -544,13 +544,12 @@ Embora os templates sejam poderosos, você sempre personaliza para sua marca:
 
 | Item | Valor de Mercado |
 | :---- | :---- |
-| Conteúdo educacional (15 módulos, 66 aulas) | R$ 2.500 |
-| CRM profissional (12 meses) | R$ 6.000 |
-| 48 mentorias em grupo ao vivo (60 min cada, R$ 150/sessão) | R$ 7.200 |
-| Templates e automações prontas | R$ 1.500 |
-| Comunidade e networking | R$ 800 |
-| Suporte técnico (12 meses) | R$ 1.200 |
-| **VALOR TOTAL ENTREGUE** | **R$ 25.200** |
+| Conteúdo educacional (15 módulos, 66 aulas) | R$ 1.997 |
+| CRM Growth Machine profissional (12 meses) | R$ 6.996 |
+| 48 mentorias em grupo ao vivo (semanais, R$ 150/sessão) | R$ 7.200 |
+| Templates e automações prontas | R$ 497 |
+| Comunidade exclusiva (90 dias) | R$ 597 |
+| **VALOR TOTAL ENTREGUE** | **R$ 17.287** |
 
 ---
 
@@ -559,11 +558,11 @@ Embora os templates sejam poderosos, você sempre personaliza para sua marca:
 **Investimento:**
 
 * **À vista:** R$ 1.997  
-* **Parcelado:** 12x R$ 197 (R$ 2.364 total)
+* **Parcelado:** 12x R$ 166,42
 * **Comparação:**  
-  * Valor entregue: R$ 25.200  
+  * Valor entregue: R$ 17.287  
   * Preço VSS: R$ 1.997  
-  * **Economia real: R$ 23.203 (92%)**
+  * **Economia real: R$ 15.290 (88%)**
 
 **O que está incluído:**
 * ✅ 15 módulos completos (66 aulas em vídeo)

@@ -528,17 +528,15 @@ Exemplo VSS:
 | COMPONENTE | VALOR SEPARADO |
 |------------|----------------|
 | 15 módulos + 66 aulas | R$ 1.997 |
-| Growth CRM 12 meses | R$ 1.188 |
+| Growth CRM 12 meses | R$ 6.996 |
 | 48 mentorias em grupo com Joel | R$ 7.200 |
-| Templates dos 6Ps | R$ 497 |
-| Scripts de vendas | R$ 297 |
-| Comunidade 90 dias | R$ 597 |
-| Acesso vitalício | Inestimável |
-| **VALOR TOTAL** | **R$ 11.776+** |
+| Templates e automações | R$ 497 |
+| Comunidade exclusiva (90 dias) | R$ 597 |
+| **VALOR TOTAL** | **R$ 17.287** |
 
 **Investimento real: R$ 1.997**
 
-Quando o cliente vê que está levando R$ 11k de valor por R$ 2k, a objeção de preço desaparece.
+Quando o cliente vê que está levando R$ 17k de valor por R$ 2k, a objeção de preço desaparece.
 
 **Passo 3: Defina a garantia**
 

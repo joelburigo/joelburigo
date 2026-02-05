@@ -851,17 +851,16 @@ O QUE ALUNOS ESTÃO DIZENDO
 
 VALOR REAL DO PROGRAMA
 
-Conteúdo educacional                   R$ 2.500  
-CRM profissional (12 meses)        R$ 6.000  
+Conteúdo educacional                   R$ 1.997  
+CRM Growth Machine (12 meses)   R$ 6.996  
 48 Mentorias ao vivo                     R$ 7.200  
-Templates prontos                         R$ 1.500  
-Comunidade                                  R$ 800  
-Suporte técnico                             R$ 1.200  
+Templates e automações             R$ 497  
+Comunidade exclusiva (90 dias)    R$ 597  
 ───────────────────────────────────  
-VALOR TOTAL                              R$ 19.200  
+VALOR TOTAL                              R$ 17.287  
 SEU INVESTIMENTO HOJE:       R$ 1.997  
 ───────────────────────────────────  
-ECONOMIA REAL                        R$ 17.203 (90%)
+ECONOMIA REAL                        R$ 15.290 (88%)
 
 \[BOTÃO GRANDE: QUERO GARANTIR MINHA VAGA\]
 
@@ -928,7 +927,7 @@ O objetivo é AUTONOMIA, não dependência.
 Mentorias e comunidade: Opcional (Clube VSS \- R$ 97/mês).
 
 ❓ Posso parcelar?  
-✅ Sim. 12x R$ 197 no cartão (total R$ 2.364).  
+✅ Sim. 12x R$ 166,42 no cartão.  
 Ou à vista R$ 1.997 (Pix ou cartão).
 
 **Seção 11: CTA Final**
@@ -948,7 +947,7 @@ Crescimento escalável
 A escolha é sua.
 
 \[BOTÃO GIGANTE: SIM, EU QUERO ESTRUTURAR VENDAS\]  
-Investimento: R$ 1.997 à vista ou 12x R$ 197  
+Investimento: R$ 1.997 à vista ou 12x R$ 166,42  
 Garantia: 15 dias \+ Resultado  
 \[Links de pagamento\]  
 \[Selos de segurança\]  
@@ -1003,7 +1002,7 @@ O que está incluído:
 ✅ 48 mentorias ao vivo  
 ✅ Comunidade exclusiva  
 ✅ Garantia dupla (15 dias \+ resultado)  
-Investimento: R$ 1.997 (ou 12x R$ 197\)  
+Investimento: R$ 1.997 (ou 12x R$ 166,42\)  
 Não é para todo mundo.  
 É para quem está REALMENTE comprometido em estruturar vendas.  
 Se esse é você:  
@@ -1128,10 +1127,10 @@ Se você disse SIM para 3 ou mais, o VSS é para você.
 
 ### R$ 1.997 à vista
 **ou**  
-### 12x de R$ 197 no cartão
+### 12x de R$ 166,42 no cartão
 
-**Valor se comprado separado:** R$ 11.479  
-**Economia:** R$ 9.482 (83% de desconto)
+**Valor se comprado separado:** R$ 17.287  
+**Economia:** R$ 15.290 (88% de desconto)
 
 ### Garantia 15 Dias
 
@@ -1379,7 +1378,7 @@ Faz a conta:
 
 Você está pensando em 'gastar' R$ 1.997. Eu estou pensando nos R$ 18 mil que você vai DEIXAR DE GANHAR esperando.
 
-Além disso: 12x de R$ 197. Menos de R$ 200/mês. É o preço de 1-2 horas do SEU serviço.
+Além disso: 12x de R$ 166,42. Menos de R$ 170/mês. É o preço de 1-2 horas do SEU serviço.
 
 A pergunta não é 'quando vou ter dinheiro'. É: 'quanto custa NÃO ter sistema'?"
 
@@ -1483,10 +1482,10 @@ VOCÊ: "Entendo. Em comparação com o quê?"
 VOCÊ: "Deixa eu te mostrar o valor real:  
 O investimento é R$ 1.997.  
 Mas você recebe:  
-\- CRM profissional (R$ 6k/ano) → INCLUÍDO  
+\- CRM Growth Machine (R$ 6.996/ano) → INCLUÍDO  
 \- 48 mentorias (R$ 7.200) → INCLUÍDO  
 \- Sistema completo → INCLUÍDO  
-Total de valor: R$ 19.200  
+Total de valor: R$ 17.287  
 Você paga R$ 1.997.  
 Agora, deixa eu te perguntar:  
 Quanto você PERDE por mês com vendas aleatórias?  

@@ -37,7 +37,7 @@ Mas antes de entrar no método, deixa eu te contar de onde isso veio.
 
 Quebrei aos 25 anos. Tomei calote do sócio, perdi tudo, e fui parar num barraco em Minas Gerais. Sem geladeira. Sem móveis. Só um fogão velho e uma cama improvisada em cima de tijolos.
 
-Trabalhei nos Correios pra ter salário fixo. Juntei dinheiro, comprei mil cartões de visita e fui bater porta a porta em comércio de cidade pequena.
+Trabalhei nos Correios pra ter salário fixo. Juntei dinheiro, comprei mil cartões de visita e fui bater porta a porta na Avenida Afonso Pena em Belo Horizonte.
 
 Devagar, tijolo por tijolo, reconstruí. Hoje, 17 anos depois, já ajudei 140 clientes a estruturarem suas vendas. O case mais emblemático: uma holding de franquias — saiu de R$ 160 mil pra R$ 1 milhão de faturamento mensal em 2 anos.
 
@@ -293,17 +293,17 @@ Se eles não entenderem, volta pro passo 1.
 
 **ANTES (posicionamento fraco):**
 
-"Somos uma agência de marketing digital que ajuda empresas a crescerem através de estratégias personalizadas de marketing."
+"Trabalho com crédito. Faço empréstimos e financiamentos para quem precisa de dinheiro."
 
-Problema: Genérico. Qualquer agência pode dizer isso.
+Problema: Genérico. Qualquer correspondente bancário pode dizer isso. Não gera conexão, não diferencia.
 
 **DEPOIS (posicionamento forte):**
 
-"Somos a agência de marketing especializada em clínicas odontológicas. Usamos o Método OdontoLeads que gera em média 47 novos pacientes/mês para nossos clientes. Garantimos resultado ou devolvemos o investimento."
+"Sou especialista em crédito com garantia de imóvel para empresários que precisam de capital de giro sem vender patrimônio. Taxa a partir de 0,99% ao mês, aprovação em até 7 dias úteis, e você continua morando no imóvel."
 
-Diferença: Nicho específico (clínicas odontológicas), método próprio (OdontoLeads), resultado concreto (47 pacientes/mês), garantia.
+Diferença: Nicho específico (empresários), produto claro (home equity), benefício tangível (capital sem vender patrimônio), condições concretas (taxa, prazo), objeção já resolvida (continua morando).
 
-Isso é posicionamento forte.
+Percebe como o segundo gera interesse imediato? O empresário pensa: "Esse cara entende minha situação."
 
 ---
 
@@ -391,10 +391,10 @@ Exemplo da minha persona:
 
 **RICARDO, O DONO OPERACIONAL**
 
-- 38 anos, dono de agência de marketing digital em Curitiba
+- 38 anos, dono de escritório de contabilidade em Curitiba
 - Fatura R$ 80k/mês, 5 funcionários
 - Casado, 2 filhos
-- Formado em Publicidade, empreende há 6 anos
+- Formado em Contabilidade, empreende há 6 anos
 
 **Situação:**
 - Ele é o principal vendedor da empresa
@@ -420,9 +420,9 @@ Exemplo da minha persona:
 
 **Onde encontrá-lo:**
 - LinkedIn (ativo, posta sobre negócios)
-- Instagram (segue perfis de marketing)
+- Instagram (segue perfis de gestão empresarial)
 - Eventos de empreendedorismo
-- Grupos de WhatsApp de agências
+- Grupos de WhatsApp de contadores
 
 ---
 

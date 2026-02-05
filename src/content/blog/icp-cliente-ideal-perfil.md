@@ -67,7 +67,7 @@ Liste os 5 melhores clientes que você já teve. Pergunta:
 
 Procure semelhanças entre esses 5 clientes. Exemplo:
 
-> "Meus 5 melhores clientes são donos de agências digitais, faturam R$ 50-150k/mês, têm 3-10 funcionários, e a dor principal é previsibilidade de vendas."
+> "Meus 5 melhores clientes são donos de clínicas e consultórios, faturam R$ 50-150k/mês, têm 3-10 funcionários, e a dor principal é previsibilidade de vendas."
 
 ### Passo 3: Documente Seu ICP
 
@@ -76,7 +76,7 @@ Crie um documento com:
 - **Cargo:** Dono, fundador, sócio
 - **Faturamento:** R$ X a R$ Y/mês
 - **Funcionários:** X a Y pessoas
-- **Segmento:** Agência, clínica, e-commerce, etc.
+- **Segmento:** Clínica, consultoria, e-commerce, etc.
 - **Dor principal:** Falta de previsibilidade
 - **Budget disponível:** R$ X a R$ Y
 
@@ -84,11 +84,12 @@ Crie um documento com:
 
 Para o VSS, meu ICP é:
 
-- **Quem:** Dono de micro/pequena empresa
+- **Quem:** Dono de empresa de serviço que é o principal vendedor
 - **Faturamento:** R$ 10k a R$ 300k/mês
 - **Funcionários:** 1 a 20 pessoas
-- **Dor:** Vendas aleatórias, imprevisibilidade
-- **Budget:** R$ 2k disponível para investir
+- **Segmento:** Serviços B2B (consultorias, clínicas, escritórios de advocacia/contabilidade)
+- **Dor:** Vendas aleatórias, dependência do fundador, já tentou agência e não funcionou
+- **Budget:** R$ 2k a R$ 10k disponível para investir
 
 ## ICP vs Persona: Qual a Diferença?
 
@@ -144,7 +145,7 @@ Vou te mostrar com números reais o quanto custa trabalhar sem ICP.
 
 ## Os 4 Tipos de ICP
 
-### ICP 1: Cliente Peixe Grande (Whaleha)
+### ICP 1: Cliente Peixe Grande (Whale)
 
 **Características:**
 - Alto faturamento (R$ 1M+)
@@ -161,16 +162,16 @@ Vou te mostrar com números reais o quanto custa trabalhar sem ICP.
 ### ICP 2: Cliente Médio Porte (Sweet Spot)
 
 **Características:**
-- Faturamento médio (R$ 100k-1M/mês)
-- Ciclo de venda médio (1-3 meses)
-- Ticket médio (R$ 5k-50k)
-- Decisor único (CEO/Diretor)
+- Faturamento médio (R$ 30k-300k/mês)
+- Ciclo de venda médio (1-4 semanas)
+- Ticket médio (R$ 2k-20k)
+- Decisor único (dono/fundador)
 - Relacionamento direto
 
 **Quando focar nesse ICP:**
 - Você quer previsibilidade
 - Seu produto é completo mas não complexo
-- **Este é geralmente o melhor ICP para MPEs**
+- **Este é o ICP do VSS e geralmente o melhor para quem vende para MPEs**
 
 ### ICP 3: Cliente Pequeno (Volume)
 
@@ -277,7 +278,7 @@ Crie um documento único (pode ser Google Doc) com:
 **Empresa:**
 - Faturamento: R$ 30k a R$ 300k/mês
 - Funcionários: 1 a 20 pessoas
-- Segmento: Serviços B2B (agências, consultorias, clínicas)
+- Segmento: Serviços B2B (consultorias, clínicas, escritórios)
 - Localização: Brasil todo (online)
 - Tempo de mercado: 2+ anos
 
@@ -390,7 +391,7 @@ Só porque alguém PODE comprar não significa que é seu ICP.
 
 ❌ "Atendemos MPEs de qualquer segmento"
 
-✅ "Atendemos agências de marketing digital e consultorias B2B"
+✅ "Atendemos clínicas odontológicas e consultórios médicos"
 
 ICP amplo = Marketing genérico = Conversão baixa.
 

@@ -1,5 +1,5 @@
 import { defineConfig, envField } from 'astro/config'
-import cloudflare from '@astrojs/cloudflare'
+import node from '@astrojs/node'
 import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
 import icon from 'astro-icon'
@@ -9,8 +9,8 @@ import { passthroughImageService } from 'astro/config'
 export default defineConfig({
   site: 'https://joelburigo.com.br',
   output: 'server', // SSR mode
-  adapter: cloudflare({
-    mode: 'directory',
+  adapter: node({
+    mode: 'standalone',
   }),
   // Passthrough: imagens já estão fisicamente otimizadas em WebP
   image: {
@@ -116,10 +116,6 @@ export default defineConfig({
   ],
   image: {
     remotePatterns: [{ protocol: 'https' }],
-    // Cloudflare Images service for runtime optimization
-    service: {
-      entrypoint: '@astrojs/cloudflare/image-service',
-    },
   },
   compressHTML: true,
   build: {

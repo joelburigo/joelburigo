@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",
-    "@astrojs/cloudflare": "^13.1.8",
+    "@astrojs/node": "^10.0.4",
     "@astrojs/partytown": "^2.1.6",
     "@astrojs/sitemap": "^3.7.2",
     "@astrojs/tailwind": "^6.0.2",

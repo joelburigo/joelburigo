@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Template · YouTube Thumbnail 1280×720 · Joel Burigo</title>
+<!-- Template YouTube thumb (1280×720, 16:9). 3 variantes.
+     Alto contraste, texto UPPERCASE gigante, 4-7 palavras máx. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;background:#1a1a1a;padding:40px;font-family:'Archivo',sans-serif;display:flex;gap:40px;flex-wrap:wrap}
+  .thumb-wrap{display:flex;flex-direction:column;gap:12px}
+  .lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.28em;color:#C6FF00;text-transform:uppercase}
+  .canvas-box{width:704px;height:396px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,0.5)}
+  .thumb{width:1280px;height:720px;transform:scale(0.55);transform-origin:top left;position:relative;overflow:hidden;background:#050505;color:#F5F1E8;font-family:'Archivo',sans-serif}
+  .grid-bg{position:absolute;inset:0;pointer-events:none;opacity:0.35;background-image:linear-gradient(to right,rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:80px 80px}
+  .pad{position:relative;z-index:2;height:100%;padding:48px 56px;display:flex}
+
+  /* ============ VARIANT 1 — PROVOCAÇÃO + KEYWORD ============ */
+  .t1 .left{flex:0 0 60%;display:flex;flex-direction:column;justify-content:space-between;padding-right:32px}
+  .t1 .right{flex:1;background:#0B0B0B;border:1px dashed rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.22em;color:#6B7280;text-transform:uppercase;padding:24px}
+  .t1 .big{font-family:'Archivo Black',sans-serif;font-size:140px;line-height:0.9;letter-spacing:-0.05em;text-transform:uppercase;color:#F5F1E8}
+  .t1 .big .stroke{-webkit-text-stroke:3px #F5F1E8;color:transparent}
+  .t1 .big .fire{color:#FF3B0F}
+  .t1 .topmeta{display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.22em;text-transform:uppercase;color:#FF3B0F}
+  .t1 .topmeta .ep{color:#C6FF00}
+
+  /* ============ VARIANT 2 — MEGA-NÚMERO + CONTEXTO ============ */
+  .t2 .top{flex:1;padding:32px 48px 0;position:relative}
+  .t2 .mega{position:absolute;right:-40px;bottom:-40px;font-family:'Archivo Black',sans-serif;font-size:440px;line-height:0.82;letter-spacing:-0.07em;color:#C6FF00;text-shadow:0 0 60px rgba(198,255,0,0.3)}
+  .t2 .tag{position:absolute;top:48px;left:48px;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.22em;color:#FF3B0F;text-transform:uppercase}
+  .t2 .fire-band{position:absolute;bottom:0;left:0;right:0;background:#FF3B0F;padding:32px 48px;font-family:'Archivo Black',sans-serif;font-size:46px;line-height:1.05;letter-spacing:-0.03em;text-transform:uppercase;color:#050505}
+  .t2.pad{padding:0}
+
+  /* ============ VARIANT 3 — TERMINAL + CTA OVERLAY ============ */
+  .t3 .term{flex:0 0 62%;background:#0B0B0B;border:1px solid rgba(255,255,255,0.12);display:flex;flex-direction:column}
+  .t3 .term-head{display:flex;align-items:center;gap:16px;padding:14px 20px;border-bottom:1px solid rgba(255,255,255,0.08)}
+  .t3 .lights{display:flex;gap:8px}
+  .t3 .lights i{width:14px;height:14px;border-radius:50%;display:block}
+  .t3 .lights i:nth-child(1){background:#FF3B0F}
+  .t3 .lights i:nth-child(2){background:#FFB020}
+  .t3 .lights i:nth-child(3){background:#C6FF00}
+  .t3 .t-title{font-family:'JetBrains Mono',monospace;font-size:13px;color:#6B7280;letter-spacing:0.2em;text-transform:uppercase}
+  .t3 .t-body{flex:1;padding:24px 28px;font-family:'JetBrains Mono',monospace;font-size:22px;line-height:1.7;color:#E5E5E5}
+  .t3 .t-body .c{color:#6B7280}
+  .t3 .t-body .p{color:#C6FF00}
+  .t3 .t-body .e{color:#FF3B0F}
+  .t3 .t-body .w{color:#F5F1E8}
+  .t3 .blink::after{content:'▊';margin-left:4px;color:#C6FF00;animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .t3 .over{flex:1;display:flex;flex-direction:column;justify-content:center;padding-left:40px}
+  .t3 .over h2{margin:0;font-family:'Archivo Black',sans-serif;font-size:70px;line-height:0.92;letter-spacing:-0.04em;text-transform:uppercase;color:#F5F1E8}
+  .t3 .over h2 .acid{color:#C6FF00}
+  .t3 .over .tag{margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.22em;color:#C6FF00;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<!-- VARIANT 1 — PROVOCAÇÃO + KEYWORD -->
+<div class="thumb-wrap">
+  <div class="lbl">// VARIANT 1 · PROVOCAÇÃO + KEYWORD</div>
+  <div class="canvas-box">
+  <div class="thumb t1">
+    <div class="grid-bg"></div>
+    <div class="pad">
+      <div class="left">
+        <div class="topmeta"><span>★ VÍDEO · 12 MIN</span><span class="ep">// EP. 007</span></div>
+        <div class="big">
+          TEU MARKETING<br>
+          <span class="stroke">VENDE.</span><br>
+          TUAS VENDAS<br>
+          NÃO <span class="fire">FECHAM.</span>
+        </div>
+      </div>
+      <div class="right">[ FOTO · JOEL ·<br>BLACK &amp; WHITE ·<br>ALTO CONTRASTE ]</div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- VARIANT 2 — MEGA-NÚMERO -->
+<div class="thumb-wrap">
+  <div class="lbl">// VARIANT 2 · MEGA-NÚMERO + CONTEXTO</div>
+  <div class="canvas-box">
+  <div class="thumb t2">
+    <div class="grid-bg"></div>
+    <div class="tag">// CASE REAL · ESF · ~2 ANOS</div>
+    <div class="mega">+433%</div>
+    <div class="fire-band">COMO UM CLIENTE SAIU DE R$ 160K P/ R$ 1 MI/MÊS</div>
+  </div>
+  </div>
+</div>
+
+<!-- VARIANT 3 — TERMINAL + CTA -->
+<div class="thumb-wrap">
+  <div class="lbl">// VARIANT 3 · TERMINAL / CONCEITO TÉCNICO</div>
+  <div class="canvas-box">
+  <div class="thumb t3">
+    <div class="grid-bg"></div>
+    <div class="pad">
+      <div class="term">
+        <div class="term-head">
+          <div class="lights"><i></i><i></i><i></i></div>
+          <div class="t-title">// JB_CORE · DIAGNOSTICO.SH</div>
+        </div>
+        <div class="t-body">
+<span class="c">$</span> <span class="w">joel --analyse vendas</span><br>
+<span class="c">› posicionamento...</span> <span class="p">ok</span><br>
+<span class="c">› processos...</span>      <span class="e">fail</span><br>
+<br>
+<span class="w">RESULTADO:</span> <span class="e">4/6 travados</span><span class="blink"></span>
+        </div>
+      </div>
+      <div class="over">
+        <h2>DIAGNÓSTICO<br>EM <span class="acid">10 MIN</span></h2>
+        <div class="tag">▶ VÍDEO NOVO · @JOELBURIGO</div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+</body>
+</html>

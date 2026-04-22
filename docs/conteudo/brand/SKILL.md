@@ -46,13 +46,29 @@ Services (DWY) foi descontinuado.
 
 ## File map
 
-- `README.md` — guia completo de conteúdo + visual + iconografia (lê primeiro)
+**Guias operacionais (ler nesta ordem antes de produzir peça):**
+- `ANTI_DRIFT.md` — regras duras: palavras proibidas, provas de autoridade exatas, assinaturas canônicas, vocabulário
+- `USAGE.md` — decision tree "pediu X → usa Y + copy fonte Z"
+- `EXAMPLES.md` — 8 pares BAD vs GOOD comentados
+- `README.md` — guia completo de conteúdo + visual + iconografia
+
+**Templates copiáveis (`templates/`):**
+- `templates/ig-feed.html` — IG feed 1080×1080 (4 variantes)
+- `templates/ig-story.html` — IG story 1080×1920 (4 variantes)
+- `templates/ig-carrossel.html` — IG carrossel 1080×1350 (8 slides com P1–P6)
+- `templates/linkedin.html` — LinkedIn 1200×1200 (3 variantes)
+- `templates/email.html` — Email 620px dark-safe (3 variantes)
+- `templates/slide-apresentacao.html` — Deck 1920×1080 (5 layouts)
+- `templates/yt-thumb.html` — YouTube 1280×720 (3 variantes)
+- `templates/ad-meta.html` — Meta Ads (2 VSS + 2 Advisory, feed + story)
+
+**Referências visuais e tokens:**
 - `colors_and_type.css` — todas as CSS vars (`--jb-*`) + elementos semânticos
 - `master.html` — referência canônica (composição full-page)
 - `homepage.html` — landing institucional
-- `ig_posts.html` — 8 posts Instagram (540×540)
+- `ig_posts.html` — galeria de 8 posts Instagram 540×540 (referência histórica)
 - `assets/logo.svg` · `assets/logo-mark.svg` · `assets/logo-mark-acid.svg` — brand marks
-- `preview/index.html` — galeria navegável de todos os tokens/componentes
+- `preview/index.html` — galeria navegável dos 25 cards do DS
 - `preview/*.html` — cards individuais (colors, type, spacing, components-*)
 
 Quando produzir novos artefatos, sempre `<link rel="stylesheet" href="colors_and_type.css">` (ou copia inline) pra herdar o sistema de tokens `--jb-*`.

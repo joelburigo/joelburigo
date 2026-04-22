@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Template · Anúncios Meta (FB/IG) · Joel Burigo</title>
+<!-- Template Meta Ads: 4 placements = 2 VSS (feed+story) + 2 Advisory (feed+story).
+     Cada card tem imagem + <pre> com Primary Text / Headline / Description /
+     CTA Button prontos pro Ads Manager. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;background:#1a1a1a;padding:40px;font-family:'Archivo',sans-serif;color:#F5F1E8;display:flex;flex-direction:column;gap:48px;align-items:center}
+  .card{display:flex;gap:32px;align-items:flex-start;max-width:1200px}
+  .card.vert{flex-direction:row}
+  .lbl{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.28em;color:#C6FF00;text-transform:uppercase;margin-bottom:12px}
+  .stack{display:flex;flex-direction:column}
+  .img-box{overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,0.5)}
+  .img-feed{width:540px;height:540px}
+  .img-story{width:378px;height:672px}
+  .feed-canvas{width:1080px;height:1080px;transform:scale(0.5);transform-origin:top left;position:relative;overflow:hidden;background:#050505;color:#F5F1E8}
+  .story-canvas{width:1080px;height:1920px;transform:scale(0.35);transform-origin:top left;position:relative;overflow:hidden;background:#050505;color:#F5F1E8}
+  .grid-bg{position:absolute;inset:0;pointer-events:none;opacity:0.35;background-image:linear-gradient(to right,rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:80px 80px}
+  .copy{flex:1;min-width:420px;max-width:620px}
+  .copy pre{background:#0B0B0B;border:1px solid rgba(198,255,0,0.25);padding:20px 24px;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.6;color:#E5E5E5;white-space:pre-wrap;margin:0}
+  .copy pre b{color:#C6FF00;font-weight:700}
+
+  /* ============ P1 · VSS FEED 1080×1080 ============ */
+  .p1 .sb{position:absolute;top:0;left:0;right:0;padding:36px 60px;display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:0.24em;color:#6B7280;text-transform:uppercase;z-index:3}
+  .p1 .sb b{color:#F5F1E8}
+  .p1 .sb .dot{width:12px;height:12px;background:#C6FF00;border-radius:50%;box-shadow:0 0 14px #C6FF00;display:inline-block;margin-right:12px;vertical-align:middle}
+  .p1 .body{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;padding:0 80px}
+  .p1 .big{font-family:'Archivo Black',sans-serif;font-size:130px;line-height:0.9;letter-spacing:-0.05em;text-transform:uppercase;color:#F5F1E8}
+  .p1 .big .stroke{-webkit-text-stroke:4px #F5F1E8;color:transparent}
+  .p1 .big .fire{color:#FF3B0F}
+  .p1 .subm{margin-top:32px;font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.22em;color:#6B7280;text-transform:uppercase}
+  .p1 .cta{position:absolute;bottom:80px;left:80px;font-family:'JetBrains Mono',monospace;font-size:26px;letter-spacing:0.22em;color:#C6FF00;text-transform:uppercase;font-weight:700}
+
+  /* ============ P2 · VSS STORY 1080×1920 ============ */
+  .p2{background:#FF3B0F}
+  .p2 .grid-bg{background-image:linear-gradient(to right,rgba(0,0,0,0.08) 1px,transparent 1px),linear-gradient(to bottom,rgba(0,0,0,0.08) 1px,transparent 1px);opacity:1}
+  .p2 .top{position:absolute;top:200px;left:0;right:0;padding:0 80px;font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.24em;color:rgba(5,5,5,0.7);text-transform:uppercase;z-index:3}
+  .p2 .top b{color:#050505}
+  .p2 .body{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 80px;text-align:center;color:#050505}
+  .p2 .mega{font-family:'Archivo Black',sans-serif;font-size:620px;line-height:0.85;letter-spacing:-0.06em;color:#050505;display:flex;align-items:baseline;gap:30px}
+  .p2 .mega .psbox{font-size:260px;background:#C6FF00;padding:0 24px;line-height:1.1;color:#050505}
+  .p2 .sub{margin-top:36px;font-family:'Archivo Black',sans-serif;font-size:64px;line-height:1.05;letter-spacing:-0.02em;text-transform:uppercase;color:#050505;max-width:900px}
+  .p2 .cta{position:absolute;bottom:280px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:26px;letter-spacing:0.22em;color:#050505;text-transform:uppercase;font-weight:700;z-index:3}
+
+  /* ============ P3 · ADVISORY FEED 1080×1080 ============ */
+  .p3 .radial{position:absolute;inset:0;background:radial-gradient(circle at 85% 15%,rgba(198,255,0,0.1),transparent 50%);pointer-events:none;z-index:1}
+  .p3 .sb{position:absolute;top:0;left:0;right:0;padding:36px 60px;display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:0.24em;color:#6B7280;text-transform:uppercase;z-index:3}
+  .p3 .sb b{color:#F5F1E8}
+  .p3 .body{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;padding:0 80px}
+  .p3 .eyebrow{font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.28em;color:#FF3B0F;text-transform:uppercase;margin-bottom:28px}
+  .p3 .big{font-family:'Archivo Black',sans-serif;font-size:90px;line-height:0.92;letter-spacing:-0.04em;text-transform:uppercase;color:#F5F1E8}
+  .p3 .big .stroke{-webkit-text-stroke:3px #F5F1E8;color:transparent}
+  .p3 .big .fire{background:#FF3B0F;color:#050505;padding:0 12px;display:inline-block}
+  .p3 .subm{margin-top:32px;font-family:'Archivo',sans-serif;font-size:22px;line-height:1.55;color:#A3A3A3;max-width:760px}
+  .p3 .btnbox{position:absolute;bottom:90px;left:80px}
+  .p3 .btnbox a{display:inline-block;padding:24px 40px;background:#C6FF00;color:#050505;font-family:'Archivo Black',sans-serif;font-size:24px;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;box-shadow:6px 6px 0 #FF3B0F}
+
+  /* ============ P4 · ADVISORY STORY 1080×1920 ============ */
+  .p4 .radial{position:absolute;inset:0;background:radial-gradient(circle at 20% 80%,rgba(198,255,0,0.12),transparent 50%);pointer-events:none;z-index:1}
+  .p4 .top{position:absolute;top:200px;left:0;right:0;padding:0 80px;font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.24em;color:#6B7280;text-transform:uppercase;z-index:3}
+  .p4 .body{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 80px;text-align:center}
+  .p4 .big{font-family:'Archivo Black',sans-serif;font-size:140px;line-height:0.92;letter-spacing:-0.045em;text-transform:uppercase;color:#F5F1E8}
+  .p4 .big .stroke{-webkit-text-stroke:3px #F5F1E8;color:transparent}
+  .p4 .big .acid{color:#C6FF00}
+  .p4 .chips{margin-top:72px;display:flex;flex-direction:column;gap:20px;width:700px}
+  .p4 .chip{background:#0B0B0B;border:1px solid rgba(198,255,0,0.3);padding:26px 32px;font-family:'JetBrains Mono',monospace;font-size:30px;letter-spacing:0.18em;color:#F5F1E8;text-transform:uppercase;display:flex;justify-content:space-between}
+  .p4 .chip .v{color:#C6FF00;font-weight:700}
+  .p4 .cta{position:absolute;bottom:280px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:26px;letter-spacing:0.22em;color:#C6FF00;text-transform:uppercase;font-weight:700;z-index:3}
+</style>
+</head>
+<body>
+
+<!-- =================== PLACEMENT 1 · VSS FEED =================== -->
+<div class="card">
+  <div class="stack">
+    <div class="lbl">// PLACEMENT 1 · VSS · FEED 1080×1080</div>
+    <div class="img-box img-feed">
+    <div class="feed-canvas p1">
+      <div class="grid-bg"></div>
+      <div class="sb"><span><span class="dot"></span>ANÚNCIO · VSS</span><span>// JB_CORE · 2026</span></div>
+      <div class="body">
+        <div class="big">TEU NEGÓCIO<br>DEPENDE <span class="fire">DE TI.</span></div>
+        <div class="subm">// DIAGNÓSTICO GRÁTIS · 10 MIN</div>
+      </div>
+      <div class="cta">▶ LINK NA BIO</div>
+    </div>
+    </div>
+  </div>
+  <div class="copy">
+    <div class="lbl">// CAPTION META ADS MANAGER</div>
+<pre><b>Primary Text:</b>
+Empresário, não dá pra escalar se tudo passa por ti.
+Em 10 minutos eu te mostro em qual dos 6Ps teu negócio tá travado.
+Sem venda disfarçada. Só mapeamento técnico.
+
+140 MPEs depois, o padrão se repete. Tua vez de quebrar o ciclo.
+
+<b>Headline:</b> Sistema &gt; Improviso
+<b>Description:</b> 17 anos · 140+ clientes · ~R$ 1 bilhão estruturado
+<b>CTA Button:</b> Saiba Mais
+<b>Destino:</b> joelburigo.com.br/diagnostico
+</pre>
+  </div>
+</div>
+
+<!-- =================== PLACEMENT 2 · VSS STORY =================== -->
+<div class="card">
+  <div class="stack">
+    <div class="lbl">// PLACEMENT 2 · VSS · STORY 1080×1920</div>
+    <div class="img-box img-story">
+    <div class="story-canvas p2">
+      <div class="grid-bg"></div>
+      <div class="top"><span><b>★ ANÚNCIO · VSS ·</b> FRAMEWORK 6PS</span></div>
+      <div class="body">
+        <div class="mega">6<span class="psbox">Ps</span></div>
+        <div class="sub">PERGUNTAS QUE REVELAM SE TEU NEGÓCIO É EMPRESA OU EMPREGO.</div>
+      </div>
+      <div class="cta">▶ ARRASTA PRA CIMA</div>
+    </div>
+    </div>
+  </div>
+  <div class="copy">
+    <div class="lbl">// CAPTION META ADS MANAGER</div>
+<pre><b>Primary Text:</b>
+Se tua empresa depende de tu, tu não tem empresa — tu tem emprego.
+Faz esse teste: 6 perguntas, 10 minutos. Resultado honesto.
+
+<b>Headline:</b> Ligar a Máquina
+<b>Description:</b> VSS · R$ 1.997 à vista ou 12× R$ 166,42
+<b>CTA Button:</b> Começar Agora
+<b>Destino:</b> joelburigo.com.br/vss
+</pre>
+  </div>
+</div>
+
+<!-- =================== PLACEMENT 3 · ADVISORY FEED =================== -->
+<div class="card">
+  <div class="stack">
+    <div class="lbl">// PLACEMENT 3 · ADVISORY · FEED 1080×1080</div>
+    <div class="img-box img-feed">
+    <div class="feed-canvas p3">
+      <div class="radial"></div>
+      <div class="grid-bg"></div>
+      <div class="sb"><span><span style="width:12px;height:12px;background:#C6FF00;border-radius:50%;box-shadow:0 0 14px #C6FF00;display:inline-block;margin-right:12px;vertical-align:middle"></span>ADVISORY · EXCLUSIVO</span><span>// POR INDICAÇÃO</span></div>
+      <div class="body">
+        <div class="eyebrow">// ADVISORY · SÓ PARA R$ 200K+/MÊS</div>
+        <div class="big">R$ <span class="stroke">200K/MÊS</span> E AINDA <span class="fire">DEPENDE DE TI</span> PRA FECHAR VENDA?</div>
+        <div class="subm">Conselho Executivo 1:1 com Joel Burigo. Não é consultoria. Acesso direto — por convite.</div>
+      </div>
+      <div class="btnbox"><a href="#">CONVERSAR COM JOEL →</a></div>
+    </div>
+    </div>
+  </div>
+  <div class="copy">
+    <div class="lbl">// CAPTION META ADS MANAGER</div>
+<pre><b>Primary Text:</b>
+Você já provou que sabe vender. Chegou em R$ 200k, R$ 500k, R$ 1MM/mês.
+Mas ainda não dorme em paz.
+
+Advisory é a minha mente no teu negócio — uma vez por mês,
+por trimestre, ou na semana que você precisar.
+
+5 a 10 vagas por ano. Por convite.
+
+<b>Headline:</b> Advisory — Joel Burigo
+<b>Description:</b> Sessão · Sprint 30d · Conselho Executivo
+<b>CTA Button:</b> Solicitar Convite
+<b>Destino:</b> joelburigo.com.br/advisory
+</pre>
+  </div>
+</div>
+
+<!-- =================== PLACEMENT 4 · ADVISORY STORY =================== -->
+<div class="card">
+  <div class="stack">
+    <div class="lbl">// PLACEMENT 4 · ADVISORY · STORY 1080×1920</div>
+    <div class="img-box img-story">
+    <div class="story-canvas p4">
+      <div class="radial"></div>
+      <div class="grid-bg"></div>
+      <div class="top">// ADVISORY · CONVITE · 2026</div>
+      <div class="body">
+        <div class="big">NÃO VENDO<br><span class="stroke">CONSULTORIA.</span><br>VENDO <span class="acid">ACESSO.</span></div>
+        <div class="chips">
+          <div class="chip"><span>SESSÃO</span><span class="v">R$ 997</span></div>
+          <div class="chip"><span>SPRINT 30D</span><span class="v">R$ 4.997</span></div>
+          <div class="chip"><span>CONSELHO</span><span class="v">R$ 15.000/MÊS</span></div>
+        </div>
+      </div>
+      <div class="cta">▶ LINK NA BIO · ADVISORY</div>
+    </div>
+    </div>
+  </div>
+  <div class="copy">
+    <div class="lbl">// CAPTION META ADS MANAGER</div>
+<pre><b>Primary Text:</b>
+Se você já tá em R$ 200k/mês e ainda sente que depende do próprio esforço
+pra tudo andar — Advisory resolve isso.
+
+Vagas limitadas. Convite/indicação.
+
+<b>Headline:</b> Advisory · Joel Burigo
+<b>Description:</b> Acesso direto ao Joel — 5 a 10 vagas/ano
+<b>CTA Button:</b> Solicitar Convite
+<b>Destino:</b> joelburigo.com.br/advisory
+</pre>
+  </div>
+</div>
+
+</body>
+</html>

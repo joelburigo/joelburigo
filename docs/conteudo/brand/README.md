@@ -7,13 +7,41 @@ Direção: **Terminal Growth** — tech/growth/sales brutalismo. Fogo `#FF3B0F` 
 
 ## Índice
 
+### Guias operacionais (ler nesta ordem antes de produzir peça)
+
+- [`SKILL.md`](SKILL.md) — quickstart Claude Code
+- [`ANTI_DRIFT.md`](ANTI_DRIFT.md) — **regras duras** (palavras proibidas, provas exatas, assinaturas canônicas, vocabulário)
+- [`USAGE.md`](USAGE.md) — decision tree "pediu X → usa Y"
+- [`EXAMPLES.md`](EXAMPLES.md) — 8 pares BAD vs GOOD comentados
+
+### Referências visuais
+
 - `master.html` — **referência canônica** (hero com terminal + 6Ps console + growth chart + cases + tiers + manifesto + CTA)
 - `homepage.html` — landing institucional
 - `ig_posts.html` — 8 posts Instagram (540×540) — manifesto / mega número / case / quote / 6Ps / depoimento / capa carrossel / terminal
 - `colors_and_type.css` — todos os tokens (vars CSS `--jb-*`) + elementos semânticos (fogo + acid + cyan + mono)
+
+### Templates copiáveis (`templates/`)
+
+Skeletons por canal — copie o arquivo, edite copy seguindo ANTI_DRIFT, entregue.
+
+- `templates/ig-feed.html` — Instagram feed 1080×1080 (4 variantes: manifesto · mega-número · antes/depois · citação)
+- `templates/ig-story.html` — Instagram Story 1080×1920 (4 variantes: teaser · stat · pergunta · case flash)
+- `templates/ig-carrossel.html` — Carrossel IG 1080×1350 (8 slides: capa + P1–P6 + CTA)
+- `templates/linkedin.html` — Post LinkedIn 1200×1200 (3 variantes: reflexão · case · anúncio Advisory)
+- `templates/email.html` — Email marketing 620px dark-safe (3 variantes: nurture · pitch VSS · reativação)
+- `templates/slide-apresentacao.html` — Deck 1920×1080 (5 layouts: capa · stat · 6P · case · CTA)
+- `templates/yt-thumb.html` — Thumbnail YouTube 1280×720 (3 variantes: provocação · mega-número · terminal)
+- `templates/ad-meta.html` — Anúncio Meta (2 VSS + 2 Advisory, feed + story) com caption pronta pro Ads Manager
+
+### Assets
+
 - `assets/logo.svg` — wordmark `JOEL|BURIGO`
 - `assets/logo-mark.svg` — mark "JB" quadrado (fire)
 - `assets/logo-mark-acid.svg` — variante mark acid
+
+### Preview do design system
+
 - `preview/index.html` — galeria navegável de todos os 25 cards
 - `preview/` — cards individuais:
   - **Brand:** `brand-logo.html`

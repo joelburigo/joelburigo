@@ -1,0 +1,208 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<title>Joel Burigo — IG Stories Template · Terminal Growth</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+ /* fallback tokens caso herança não carregue */
+ :root{
+   --ink:#050505; --ink-2:#0B0B0B; --cream:#F5F1E8;
+   --fire:#FF3B0F; --acid:#C6FF00; --mute:#6B7280;
+   --line:rgba(255,255,255,0.08);
+ }
+ *{box-sizing:border-box}
+ body{margin:0;background:#1a1a1a;padding:40px;display:flex;gap:28px;justify-content:center;flex-wrap:wrap;font-family:'Archivo',sans-serif;color:#F5F1E8}
+ .wrap{display:flex;flex-direction:column;align-items:center;gap:12px}
+ .rotulo{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#A3A3A3}
+ .rotulo b{color:#F5F1E8}
+
+ /* STORY 1080x1920, preview scale 0.35 → 378x672 */
+ .story{width:1080px;height:1920px;position:relative;overflow:hidden;background:var(--ink);color:var(--cream);
+        transform:scale(0.35);transform-origin:top center;margin-bottom:calc(-1920px * 0.65)}
+ .grid-bg{position:absolute;inset:0;pointer-events:none;z-index:0;opacity:0.35;
+   background-image:
+     linear-gradient(to right,rgba(255,255,255,0.04) 1px,transparent 1px),
+     linear-gradient(to bottom,rgba(255,255,255,0.04) 1px,transparent 1px);
+   background-size:80px 80px}
+ /* padding top/bottom pra respeitar UI do IG (topo ~180px, base ~240px) */
+ .pad{position:relative;z-index:2;padding:200px 80px 260px;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+
+ /* STATUS BAR topo */
+ .sb{display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.25em;text-transform:uppercase;color:var(--mute)}
+ .sb .dot{width:14px;height:14px;background:var(--acid);border-radius:50%;box-shadow:0 0 16px var(--acid);display:inline-block;margin-right:14px;vertical-align:middle;animation:pulse 1.6s ease-in-out infinite}
+ .sb b{color:var(--cream)}
+ @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+
+ /* FOOT rodapé comum */
+ .foot{font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute)}
+ .foot b{color:var(--acid)}
+
+ /* =========================================================
+    VARIANT 1 — TEASER / CAPA
+    ========================================================= */
+ .s1 .big{font-family:'Archivo Black',sans-serif;font-size:180px;line-height:0.88;letter-spacing:-0.05em;text-transform:uppercase;color:var(--cream)}
+ .s1 .big .stroke{-webkit-text-stroke:4px var(--cream);color:transparent}
+ .s1 .big .fire{color:var(--fire)}
+ .s1 .cta{font-family:'JetBrains Mono',monospace;font-size:32px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--acid);animation:pulse 1.6s ease-in-out infinite;text-align:center}
+ .s1 .foot-c{text-align:center}
+
+ /* =========================================================
+    VARIANT 2 — STAT / DADO GIGANTE
+    ========================================================= */
+ .s2{background:radial-gradient(ellipse at top right, rgba(198,255,0,0.08), var(--ink) 55%)}
+ .s2 .mega{font-family:'Archivo Black',sans-serif;font-size:520px;line-height:0.82;letter-spacing:-0.06em;color:var(--acid);text-shadow:0 0 80px rgba(198,255,0,0.25);margin-left:-20px}
+ .s2 .sub{font-family:'Archivo Black',sans-serif;font-size:64px;line-height:1.02;letter-spacing:-0.03em;text-transform:uppercase;color:var(--cream);margin-top:24px;max-width:900px}
+ .s2 .sub .fire{color:var(--fire)}
+
+ /* =========================================================
+    VARIANT 3 — PERGUNTA PROVOCATIVA + CTA
+    ========================================================= */
+ .s3{background:var(--fire);color:var(--ink)}
+ .s3 .grid-bg{background-image:linear-gradient(to right,rgba(0,0,0,0.10) 1px,transparent 1px),linear-gradient(to bottom,rgba(0,0,0,0.10) 1px,transparent 1px);opacity:1}
+ .s3 .sb{color:rgba(5,5,5,0.75)}
+ .s3 .sb b{color:var(--ink)}
+ .s3 .sb .dot{background:var(--ink);box-shadow:none;animation:none}
+ .s3 .quote{font-family:'Archivo Black',sans-serif;font-size:92px;line-height:0.98;letter-spacing:-0.035em;text-transform:uppercase;color:var(--ink)}
+ .s3 .opts{display:flex;gap:28px;margin-top:60px}
+ .s3 .btn{flex:1;font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:32px 16px;text-align:center}
+ .s3 .btn.acid{border:3px solid var(--acid);color:var(--acid);background:transparent}
+ .s3 .btn.ink{background:var(--ink);color:var(--fire)}
+ .s3 .foot-i{font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);text-align:center}
+
+ /* =========================================================
+    VARIANT 4 — CASE FLASH (antes/depois vertical)
+    ========================================================= */
+ .s4{background:linear-gradient(180deg, var(--ink-2) 0%, var(--ink) 100%)}
+ .s4 .lbl{font-family:'JetBrains Mono',monospace;font-size:28px;letter-spacing:0.28em;text-transform:uppercase}
+ .s4 .lbl.neg{color:var(--fire)}
+ .s4 .lbl.pos{color:var(--acid)}
+ .s4 .num-neg{font-family:'Archivo Black',sans-serif;font-size:150px;line-height:0.95;letter-spacing:-0.03em;text-transform:uppercase;color:#555;text-decoration:line-through;text-decoration-color:var(--fire);text-decoration-thickness:9px;margin-top:16px}
+ .s4 .num-pos{font-family:'Archivo Black',sans-serif;font-size:200px;line-height:0.92;letter-spacing:-0.04em;text-transform:uppercase;color:var(--acid);text-shadow:0 0 60px rgba(198,255,0,0.2);margin-top:16px}
+ .s4 .delta{font-family:'Archivo Black',sans-serif;font-size:90px;line-height:1;letter-spacing:-0.03em;color:var(--acid);margin-top:10px}
+ .s4 .sep{display:flex;align-items:center;gap:20px;margin:48px 0;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.25em;text-transform:uppercase;color:var(--cream)}
+ .s4 .sep::before{content:'';flex:1;height:1px;background:var(--acid)}
+ .s4 .sep::after{content:'';flex:1;height:1px;background:var(--acid)}
+ .s4 .foot-c{font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.22em;text-transform:uppercase;color:var(--acid);text-align:center}
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     VARIANT 1 — TEASER / CAPA
+     ========================================================= -->
+<div class="wrap">
+  <div class="rotulo">VARIANT 1 — <b>TEASER · CAPA</b></div>
+  <div class="story s1">
+    <div class="grid-bg"></div>
+    <div class="pad">
+      <div class="sb">
+        <span><span class="dot"></span>NOVO · ED. XX · HOJE</span>
+        <span>// JB_CORE</span>
+      </div>
+      <div class="big">
+        POST<br>
+        BONITO<br>
+        NO <span class="stroke">INSTAGRAM</span><br>
+        NÃO PAGA<br>
+        <span class="fire">BOLETO</span>
+      </div>
+      <div class="foot-c">
+        <div class="cta">▶ ARRASTA PRA CIMA</div>
+        <div class="foot" style="margin-top:28px">★ <b>@JOELBURIGO</b> · BORA PRA CIMA</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     VARIANT 2 — STAT / DADO GIGANTE
+     ========================================================= -->
+<div class="wrap">
+  <div class="rotulo">VARIANT 2 — <b>STAT · DADO GIGANTE</b></div>
+  <div class="story s2">
+    <div class="grid-bg"></div>
+    <div class="pad">
+      <div class="sb">
+        <span><span class="dot"></span>DADO · SEBRAE 2024</span>
+        <span>// ▲ ANALYSIS</span>
+      </div>
+      <div>
+        <div class="mega">60%</div>
+        <div class="sub">
+          DAS MPES FECHAM<br>
+          EM 5 ANOS.<br>
+          SEM SISTEMA, É<br>
+          QUESTÃO DE <span class="fire">TEMPO.</span>
+        </div>
+      </div>
+      <div class="foot">★ FONTE: <b>SEBRAE</b> · DADOS PÚBLICOS</div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     VARIANT 3 — PERGUNTA PROVOCATIVA + CTA
+     ========================================================= -->
+<div class="wrap">
+  <div class="rotulo">VARIANT 3 — <b>PERGUNTA · CTA</b></div>
+  <div class="story s3">
+    <div class="grid-bg"></div>
+    <div class="pad">
+      <div class="sb">
+        <span><span class="dot"></span>TESTE RÁPIDO · 10 SEG</span>
+        <span>// ● RUN</span>
+      </div>
+      <div>
+        <div class="quote">
+          TUA EMPRESA<br>
+          FUNCIONA<br>
+          QUANDO TU<br>
+          NÃO TÁ?<br>
+          OU QUANDO<br>
+          TU NÃO TÁ,<br>
+          NADA FUNCIONA?
+        </div>
+        <div class="opts">
+          <div class="btn acid">[ SIM, FUNCIONA ]</div>
+          <div class="btn ink">[ SÓ EU FAÇO ]</div>
+        </div>
+      </div>
+      <div class="foot-i">▶ RESPONDE NA CAIXINHA →</div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     VARIANT 4 — CASE FLASH (antes/depois vertical)
+     ========================================================= -->
+<div class="wrap">
+  <div class="rotulo">VARIANT 4 — <b>CASE FLASH · ANTES/DEPOIS</b></div>
+  <div class="story s4">
+    <div class="grid-bg"></div>
+    <div class="pad">
+      <div class="sb">
+        <span><span class="dot"></span>CASE · @ENCONTRESUAFRANQUIA</span>
+        <span>// VERIFIED</span>
+      </div>
+      <div>
+        <div>
+          <div class="lbl neg">// ANTES</div>
+          <div class="num-neg">R$ 160K<br>/MÊS</div>
+        </div>
+        <div class="sep">VSS · 24 MESES</div>
+        <div>
+          <div class="lbl pos">// DEPOIS</div>
+          <div class="num-pos">R$ 1 MI<br>/MÊS</div>
+          <div class="delta">+433%</div>
+        </div>
+      </div>
+      <div>
+        <div class="foot-c">▶ LINK NA BIO · DIAGNÓSTICO GRÁTIS →</div>
+        <div class="foot" style="text-align:center;margin-top:20px">★ <b>SISTEMA &gt; IMPROVISO</b> · 17+ ANOS · 140+ CLIENTES</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body></html>

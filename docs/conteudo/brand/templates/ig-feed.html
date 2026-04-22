@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Joel Burigo — IG Feed Template</title>
+<!-- Template skeleton · IG Feed 1080×1080 · Terminal Growth v3
+     Uso: copia um bloco <!-- VARIANT N --> e edita a copy seguindo ANTI_DRIFT.md.
+     Provas permitidas: 17+ anos · 140+ clientes · ~R$ 1 bilhão · case ESF (R$ 160k → R$ 1M, +433%, leads ×8,33).
+     Assinaturas canônicas: "Sistema > Improviso", "Bora pra cima", "Ligar a Máquina",
+     "Improviso mata mais empresa que crise". Sem emoji facial. Só ★ → ▶ ● ▲ ▼. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+ /* ============ VIEWER (fora do canvas) ============ */
+ *{box-sizing:border-box}
+ html,body{margin:0;background:#1a1a1a;padding:0}
+ body{padding:40px;display:flex;gap:40px;justify-content:flex-start;flex-wrap:wrap;font-family:'Archivo',sans-serif;color:#F5F1E8}
+
+ .variant{display:flex;flex-direction:column;gap:14px}
+ .variant .label{
+   font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.28em;
+   text-transform:uppercase;color:#C6FF00;display:flex;align-items:center;gap:10px
+ }
+ .variant .label::before{content:'';width:24px;height:1px;background:#C6FF00}
+
+ /* ============ CANVAS 1080×1080 (escala 0.5 pra caber na tela) ============ */
+ .post{
+   width:1080px;height:1080px;position:relative;overflow:hidden;
+   background:var(--jb-ink);color:var(--jb-cream);
+   transform:scale(0.5);transform-origin:top left;
+   box-shadow:0 20px 60px rgba(0,0,0,0.5);
+ }
+ .variant{width:540px;height:auto} /* slot respeita post escalado */
+ .variant .slot{width:540px;height:540px;overflow:hidden}
+ .post .grid-bg{
+   position:absolute;inset:0;pointer-events:none;z-index:0;opacity:0.35;
+   background-image:
+     linear-gradient(to right,rgba(255,255,255,0.04) 1px,transparent 1px),
+     linear-gradient(to bottom,rgba(255,255,255,0.04) 1px,transparent 1px);
+   background-size:80px 80px;
+ }
+ .post .pad{position:relative;z-index:2;padding:80px;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+
+ /* ============ STATUS BAR (topo) ============ */
+ .sb{display:flex;justify-content:space-between;align-items:center;
+   font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:0.25em;
+   text-transform:uppercase;color:var(--jb-fg-muted)}
+ .sb .dot{width:12px;height:12px;background:var(--jb-acid);border-radius:50%;
+   box-shadow:0 0 14px var(--jb-acid);display:inline-block;margin-right:12px;vertical-align:middle}
+ .sb b{color:var(--jb-cream)}
+
+ /* ============ FOOTER comum ============ */
+ .foot{font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.22em;
+   text-transform:uppercase;color:var(--jb-fg-muted)}
+ .foot b{color:var(--jb-acid)}
+
+ /* ===================================================
+    VARIANT 1 — MANIFESTO TIPOGRÁFICO
+    =================================================== */
+ .p1 .big{
+   font-family:'Archivo Black',sans-serif;font-size:130px;line-height:0.9;
+   letter-spacing:-0.05em;text-transform:uppercase;color:var(--jb-cream)
+ }
+ .p1 .stroke{-webkit-text-stroke:3px var(--jb-cream);color:transparent}
+ .p1 .mark{background:var(--jb-fire);color:var(--jb-ink);padding:0 16px;display:inline-block}
+ .p1 .fire{color:var(--jb-fire)}
+
+ /* ===================================================
+    VARIANT 2 — MEGA-NÚMERO + FONTE (fundo fire)
+    =================================================== */
+ .p2{background:var(--jb-fire);color:var(--jb-ink)}
+ .p2 .grid-bg{
+   background-image:
+     linear-gradient(to right,rgba(0,0,0,0.08) 1px,transparent 1px),
+     linear-gradient(to bottom,rgba(0,0,0,0.08) 1px,transparent 1px);
+   opacity:1
+ }
+ .p2 .sb{color:rgba(5,5,5,0.7)}
+ .p2 .sb b{color:var(--jb-ink)}
+ .p2 .sb .dot{background:var(--jb-ink);box-shadow:none}
+ .p2 .mega{
+   font-family:'Archivo Black',sans-serif;font-size:380px;line-height:0.82;
+   letter-spacing:-0.06em;color:var(--jb-ink);margin-left:-20px;white-space:nowrap
+ }
+ .p2 .sub{
+   font-family:'Archivo Black',sans-serif;font-size:40px;letter-spacing:-0.02em;
+   line-height:1.1;text-transform:uppercase;color:var(--jb-ink);max-width:840px;margin-top:24px
+ }
+ .p2 .foot-fire{
+   font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.22em;
+   text-transform:uppercase;color:var(--jb-ink)
+ }
+ .p2 .foot-fire .mark{background:var(--jb-ink);color:var(--jb-fire);padding:4px 12px}
+
+ /* ===================================================
+    VARIANT 3 — CASE ANTES / DEPOIS
+    =================================================== */
+ .p3 .row{display:flex;justify-content:space-between;gap:36px;margin-top:24px}
+ .p3 .cell{flex:1}
+ .p3 .lbl{
+   font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.28em;
+   text-transform:uppercase
+ }
+ .p3 .lbl.neg{color:var(--jb-fire)}
+ .p3 .lbl.pos{color:var(--jb-acid)}
+ .p3 .txt{
+   font-family:'Archivo Black',sans-serif;font-size:72px;line-height:0.95;
+   letter-spacing:-0.03em;text-transform:uppercase;margin-top:20px
+ }
+ .p3 .txt.neg{color:#555;text-decoration:line-through;
+   text-decoration-color:var(--jb-fire);text-decoration-thickness:8px}
+ .p3 .txt.pos{color:var(--jb-cream)}
+ .p3 .delta{
+   font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:0.22em;
+   color:var(--jb-acid);margin-top:14px;text-transform:uppercase
+ }
+ .p3 .headline{
+   font-family:'Archivo Black',sans-serif;font-size:86px;line-height:0.95;
+   letter-spacing:-0.04em;text-transform:uppercase;margin-top:48px;color:var(--jb-cream)
+ }
+ .p3 .headline .acid{color:var(--jb-acid)}
+ .p3 .cta{
+   font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;
+   letter-spacing:0.2em;text-transform:uppercase;color:var(--jb-acid)
+ }
+
+ /* ===================================================
+    VARIANT 4 — CITAÇÃO MANIFESTO
+    =================================================== */
+ .p4 .aspas{
+   font-family:'Archivo Black',sans-serif;font-size:360px;line-height:0.6;
+   color:var(--jb-fire);letter-spacing:-0.1em;margin-bottom:-60px
+ }
+ .p4 .quote{
+   font-family:'Archivo Black',sans-serif;font-size:92px;line-height:0.98;
+   letter-spacing:-0.035em;text-transform:uppercase;color:var(--jb-cream)
+ }
+ .p4 .quote .fire{color:var(--jb-fire)}
+ .p4 .quote .acid{color:var(--jb-acid)}
+ .p4 .quote .stroke{-webkit-text-stroke:2.5px var(--jb-cream);color:transparent}
+ .p4 .attr{
+   font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.25em;
+   color:var(--jb-fg-muted);text-transform:uppercase;display:flex;align-items:center;gap:20px
+ }
+ .p4 .attr::before{content:'';width:80px;height:1px;background:var(--jb-acid)}
+</style>
+</head>
+<body>
+
+<!-- =================================================================
+     VARIANT 1 — MANIFESTO TIPOGRÁFICO
+     Headline UPPERCASE Archivo Black ~130px · stroke + fire-mark
+     ================================================================= -->
+<div class="variant">
+  <div class="label">VARIANT 1 — MANIFESTO</div>
+  <div class="slot">
+    <div class="post p1">
+      <div class="grid-bg"></div>
+      <div class="pad">
+        <div class="sb">
+          <span><span class="dot"></span>MANIFESTO · ED. 01</span>
+          <span>// JB_CORE <b>v3.0</b></span>
+        </div>
+        <div class="big">
+          <span class="stroke">IMPROVISO</span><br>
+          MATA MAIS<br>
+          <span class="fire">EMPRESA</span><br>
+          QUE <span class="mark">CRISE</span>
+        </div>
+        <div class="foot">★ <b>SISTEMA &gt; IMPROVISO</b> · @joelburigo · BORA PRA CIMA →</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================================================================
+     VARIANT 2 — MEGA-NÚMERO + FONTE
+     Background fire · número Archivo Black ~380px em ink
+     ================================================================= -->
+<div class="variant">
+  <div class="label">VARIANT 2 — MEGA-NÚMERO</div>
+  <div class="slot">
+    <div class="post p2">
+      <div class="grid-bg"></div>
+      <div class="pad">
+        <div class="sb">
+          <span><span class="dot"></span>DADO · MPES NO BRASIL</span>
+          <span>// REV. 2026.04</span>
+        </div>
+        <div>
+          <div class="mega">60%</div>
+          <div class="sub">Das MPEs fecham em até 5 anos. A maioria morre porque nunca teve sistema — só improviso.</div>
+        </div>
+        <div class="foot-fire">★ FONTE: SEBRAE · <span class="mark">LIGA A MÁQUINA</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================================================================
+     VARIANT 3 — CASE ANTES / DEPOIS (ESF real)
+     Duas colunas: ANTES fire tachado → DEPOIS acid limpo
+     Prova: ESF · R$ 160k/mês → R$ 1 milhão/mês · +433% · leads ×8,33
+     ================================================================= -->
+<div class="variant">
+  <div class="label">VARIANT 3 — CASE ANTES/DEPOIS</div>
+  <div class="slot">
+    <div class="post p3">
+      <div class="grid-bg"></div>
+      <div class="pad">
+        <div class="sb">
+          <span><span class="dot"></span>CASE · 001 · ESF</span>
+          <span>// AUDITED</span>
+        </div>
+        <div>
+          <div class="row">
+            <div class="cell">
+              <div class="lbl neg">// ANTES</div>
+              <div class="txt neg">R$ 160k<br>/MÊS</div>
+              <div class="delta" style="color:var(--jb-fire)">▼ SEM SISTEMA</div>
+            </div>
+            <div class="cell">
+              <div class="lbl pos">// DEPOIS</div>
+              <div class="txt pos">R$ 1 MI<br>/MÊS</div>
+              <div class="delta">▲ +433% · LEADS ×8,33</div>
+            </div>
+          </div>
+          <div class="headline">VSS EM <span class="acid">24 MESES.</span><br>AGORA COM SISTEMA.</div>
+        </div>
+        <div class="cta">▶ DIAGNÓSTICO NO LINK DA BIO →</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================================================================
+     VARIANT 4 — CITAÇÃO MANIFESTO
+     Aspas gigantes fire · quote com stroke/fire/acid · attr mono
+     Assinatura canônica palavra-por-palavra.
+     ================================================================= -->
+<div class="variant">
+  <div class="label">VARIANT 4 — CITAÇÃO MANIFESTO</div>
+  <div class="slot">
+    <div class="post p4">
+      <div class="grid-bg"></div>
+      <div class="pad">
+        <div>
+          <div class="sb">
+            <span><span class="dot"></span>MANIFESTO · ED. 02</span>
+            <span>// JB_CORE</span>
+          </div>
+          <div class="aspas">"</div>
+          <div class="quote">
+            Se tua <span class="stroke">empresa</span><br>
+            depende de <span class="fire">tu,</span><br>
+            tu não tem empresa.<br>
+            Tu tem <span class="acid">emprego.</span>
+          </div>
+        </div>
+        <div class="attr">JOEL BURIGO · FRAMEWORK 6PS</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

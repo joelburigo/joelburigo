@@ -2,42 +2,46 @@
 id: "P8"
 titulo: "ECOSSISTEMA DE PRODUTOS"
 documento: "Parte 8 de 13"
-versao: "1.0"
+versao: "2.0"
 autor: "Joel Burigo"
-ultima_atualizacao: "2026-01-23"
+ultima_atualizacao: "2026-04-22"
 arquivo: "conteudo/parte8-ecossistema-produtos.md"
 
 objetivo: |
   Explicar a arquitetura completa de produtos e marcas:
   - Arquitetura de marca Joel Burigo (guarda-chuva)
-  - Os 3 caminhos: DIY, DWY e Premium
-  - Comparação completa: VSS vs Services vs Advisory
+  - Os 2 caminhos: DIY (VSS) e Premium (Advisory)
+  - Comparação completa: VSS vs Advisory
   - Jornada do cliente e modelo de receita
 
 secoes:
   - id: "P8.1"
     titulo: "Arquitetura de Marca"
   - id: "P8.2"
-    titulo: "Os 3 Caminhos: DIY, DWY e Premium"
+    titulo: "Os 2 Caminhos: DIY e Premium"
   - id: "P8.3"
     titulo: "Comparação Completa"
   - id: "P8.4"
     titulo: "Jornada do Cliente e Modelo de Receita"
 
-tags: [ecossistema, produtos, marcas, arquitetura, diy, dwy, premium]
+tags: [ecossistema, produtos, marcas, arquitetura, diy, premium, perpetuo]
 dependencias: ["P4", "P7"]
-prox_parte: "P9"
+prox_parte: "P10"
 parte_anterior: "P7"
 ---
 
-[← P7: Branding](parte7-branding-joel-burigo.md) | [Índice](README.md) | [P9: Services →](parte9-services.md)
+[← P7: Branding](parte7-branding-joel-burigo.md) | [Índice](README.md) | [P10: Advisory →](parte10-advisory.md)
 
 ## 📑 Índice desta Parte
 
 - [P8.1 Arquitetura de Marca](#p81-arquitetura-de-marca)
-- [P8.2 Os 3 Caminhos](#p82-os-3-caminhos-diy-dwy-e-premium)
+- [P8.2 Os 2 Caminhos](#p82-os-2-caminhos-diy-e-premium)
 - [P8.3 Comparação Completa](#p83-comparação-completa)
 - [P8.4 Jornada do Cliente](#p84-jornada-do-cliente-e-modelo-de-receita)
+
+---
+
+> **Nota (v2.0, 2026-04-22):** O ecossistema foi simplificado para **2 produtos perpétuos** — VSS (DIY) e Advisory (1:1). O produto **Services (DWY)** foi descontinuado; clientes com perfil antes indicado para Services agora entram em **VSS** (quando querem método e implementam com apoio das mentorias) ou **Advisory** (quando têm budget e precisam de estratégia 1:1). Ambos os produtos são perpétuos: VSS está sempre aberto (evergreen) e Advisory funciona por convite. A versão arquivada de Services está em `_archive/parte9-services.md`.
 
 ---
 
@@ -45,7 +49,7 @@ parte_anterior: "P7"
 
 ### **[P8.1.1] Visão Geral do Ecossistema**
 
-Joel Burigo é a marca principal (guarda-chuva) que oferece vendas escaláveis para micro e pequenas empresas através de múltiplos formatos de entrega.
+Joel Burigo é a marca principal (guarda-chuva) que oferece vendas escaláveis para micro e pequenas empresas através de dois formatos de entrega complementares: um produto de escala (VSS) e um produto premium 1:1 (Advisory).
 
 ```
                ┌─────────────────────────────────┐
@@ -56,26 +60,27 @@ Joel Burigo é a marca principal (guarda-chuva) que oferece vendas escaláveis p
                │   Escaláveis | Criador 6Ps      │
                └───────────────┬─────────────────┘
                                │
-               ┌───────────────┼───────────────┐
-               │               │               │
-               ▼               ▼               ▼
-        ┌──────────┐    ┌──────────┐    ┌──────────┐
-        │   VSS    │    │ SERVICES │    │ ADVISORY │
-        │  (DIY)   │    │  (DWY)   │    │ (Premium)│
-        │ PRINCIPAL│    │SECUNDÁRIO│    │EXCLUSIVO │
-        └────┬─────┘    └────┬─────┘    └────┬─────┘
-             │               │               │
-             └───────────────┼───────────────┘
-                             │
-                             ▼
+                    ┌──────────┴──────────┐
+                    │                     │
+                    ▼                     ▼
+              ┌──────────┐          ┌──────────┐
+              │   VSS    │          │ ADVISORY │
+              │  (DIY)   │          │ (Premium)│
+              │ PRINCIPAL│          │EXCLUSIVO │
+              │ Perpétuo │          │ Convite  │
+              └────┬─────┘          └────┬─────┘
+                   │                     │
+                   └──────────┬──────────┘
+                              │
+                              ▼
                     ┌─────────────────┐
                     │   GROWTH CRM    │
                     │ (Elo Tecnológico│
                     │     Comum)      │
                     └─────────────────┘
-                             │
-                             │ Razão Social:
-                             ▼
+                              │
+                              │ Razão Social:
+                              ▼
                     ┌─────────────────┐
                     │ GROWTH MASTER   │
                     │     LTDA        │
@@ -85,31 +90,30 @@ Joel Burigo é a marca principal (guarda-chuva) que oferece vendas escaláveis p
 
 **Importante:**
 - **Joel Burigo** é a marca principal (guarda-chuva)
-- **VSS, Services e Advisory** ficam embaixo de Joel Burigo
+- **VSS e Advisory** ficam embaixo de Joel Burigo
 - **Growth Master Ltda** é apenas a razão social (CNPJ)
-- **Growth CRM** é a tecnologia comum a todos os produtos
+- **Growth CRM** é a tecnologia comum aos dois produtos
 
 ---
 
-## **[P8.2] OS 3 CAMINHOS PARA TRABALHAR COM JOEL**
+## **[P8.2] OS 2 CAMINHOS PARA TRABALHAR COM JOEL**
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
 │                                                                        │
-│   "Quer fazer sozinho?"        → VSS (Vendas Sem Segredos)             │
-│                                  R$ 1.997 | DIY | 90 dias              │
-│                                  ★ PRODUTO PRINCIPAL DE ESCALA ★       │
+│   "Quer implementar              → VSS (Vendas Sem Segredos)           │
+│    com método próprio?"            R$ 1.997 | DIY | Perpétuo           │
+│                                    ★ PRODUTO PRINCIPAL DE ESCALA ★     │
+│                                    Sempre aberto (evergreen)           │
 │                                                                        │
-│   "Quer minha equipe           → JOEL BURIGO SERVICES                  │
-│    implementando?"               R$ 4.500-9.000/mês | DWY | Mensal     │
-│                                  (Secundário - pode ser descontinuado) │
-│                                                                        │
-│   "Quer minha mente            → JOEL BURIGO ADVISORY                  │
-│    no seu negócio?"              R$ 997-15.000/mês | Premium | 1:1     │
-│                                  (Exclusivo - convite/indicação)       │
+│   "Quer minha mente              → JOEL BURIGO ADVISORY                │
+│    no seu negócio?"                R$ 997-15.000/mês | Premium | 1:1   │
+│                                    (Exclusivo - convite/indicação)     │
 │                                                                        │
 └────────────────────────────────────────────────────────────────────────┘
 ```
+
+Só há dois caminhos porque a decisão do cliente passa por uma pergunta simples: **"você quer o método pra implementar com apoio em grupo (VSS), ou quer acesso direto ao Joel pra pensar junto no seu negócio (Advisory)?"**. Não existe meio-termo de serviço terceirizado — Joel não faz POR você.
 
 ### **[P8.2.1] Caminho 1: VSS (Do It Yourself)**
 
@@ -117,55 +121,39 @@ Joel Burigo é a marca principal (guarda-chuva) que oferece vendas escaláveis p
 - Empreendedor hands-on que quer autonomia
 - Tem tempo para implementar (2-3h/semana)
 - Quer aprender o sistema completo
-- Faturamento R$ 10-100k/mês
+- Faturamento R$ 10-100k/mês (ou acima, se quer método replicável antes de acesso premium)
 
 **O que recebe:**
-- Programa completo 90 dias
+- Sistema VSS Implementável (playbook + 15 vídeos-âncora, acesso vitalício)
 - Growth CRM incluído (12 meses)
-- 48 mentorias em grupo
-- Implementação guiada
+- 48 mentorias ao vivo com Joel (1/semana, rolling 12 meses a partir da compra)
+- Biblioteca evergreen de mentorias gravadas
+- Implementação guiada pela comunidade e pelas mentorias
+
+**Modelo:** perpétuo / evergreen. Aluno entra qualquer dia, primeira mentoria na próxima data do calendário semanal.
 
 **Resultado:**
 - Sistema estruturado funcionando
 - Autonomia total
-- Base para crescer sozinho
+- Base para crescer sozinho (ou evoluir pra Advisory quando fizer sentido)
 
 ---
 
-### **[P8.2.2] Caminho 2: Services (Done WITH You)**
-
-**Para quem:**
-- Tem budget mas não tem tempo para DIY
-- Quer equipe de Joel fazendo JUNTO
-- Precisa de implementação mais rápida
-- Faturamento R$ 50-300k/mês
-
-**O que recebe:**
-- Equipe implementando junto
-- Tudo configurado e funcionando
-- Equipe treinada
-- Processos documentados
-
-**Resultado:**
-- Sistema rodando em 4-12 meses
-- Equipe capacitada
-- Autonomia progressiva
-
----
-
-### **[P8.2.3] Caminho 3: Advisory (Acesso ao Joel)**
+### **[P8.2.2] Caminho 2: Advisory (Acesso ao Joel)**
 
 **Para quem:**
 - CEO/Founder em momento crítico
 - Quer estratégia, não execução
 - Valoriza atalhos e experiência
-- Faturamento R$ 200k+/mês
+- Faturamento R$ 200k+/mês (ou caso específico com budget compatível)
 
 **O que recebe:**
 - Acesso direto ao Joel
-- Consultoria estratégica
+- Consultoria estratégica 1:1
 - Visão de 17 anos de mercado
 - Decisões mais rápidas e assertivas
+
+**Modelo:** perpétuo, por convite/indicação. Não há "turma" nem janela de inscrição.
 
 **Resultado:**
 - Direcionamento claro
@@ -178,21 +166,22 @@ Joel Burigo é a marca principal (guarda-chuva) que oferece vendas escaláveis p
 
 ### **[P8.3.1] Comparativo Completo**
 
-| Aspecto | VSS | SERVICES | ADVISORY |
-|---------|-----|----------|----------|
-| **Status** | ★ PRINCIPAL | Secundário | Exclusivo |
-| **Modelo** | DIY (faça você mesmo) | DWY (faço junto com você) | 1:1 direto comigo |
-| **Investimento** | R$ 1.997 único | R$ 4.500-9.000/mês | R$ 997-15.000/mês |
-| **Para quem** | R$ 10-100k/mês | R$ 50-300k/mês | R$ 200k+/mês |
-| **Escala** | Alta (300+ alunos/ano) | Baixa (15-20 clientes) | Muito baixa (5-10) |
-| **Foco Joel** | 80% do esforço | 15% do esforço | 5% do esforço |
-| **Prazo** | 90 dias | 4-12 meses | Variável |
-| **CRM Incluído** | ✅ Sim (12 meses) | ✅ Sim (ilimitado) | ⚪ Depende |
-| **Mentorias** | 48 em grupo | 4-8/mês individuais | 1-8/mês com Joel |
-| **Implementação** | Você faz | Fazemos junto | Você decide e faz |
-| **Autonomia** | ✅ Total desde início | ✅ Progressiva | ✅ Total |
-| **Dependência** | ❌ Zero | ⚪ Temporária | ❌ Zero |
-| **Divulgação** | ✅ Site principal | ⚪ Site secundário | ❌ Convite apenas |
+| Aspecto | VSS | ADVISORY |
+|---------|-----|----------|
+| **Status** | ★ PRINCIPAL | Exclusivo |
+| **Modelo** | DIY (faça você mesmo) | 1:1 direto com Joel |
+| **Investimento** | R$ 1.997 único | R$ 997-15.000/mês |
+| **Para quem** | R$ 10-100k/mês | R$ 200k+/mês |
+| **Escala** | Alta (300+ alunos/ano) | Muito baixa (5-10) |
+| **Foco Joel** | ~90% do esforço | ~10% do esforço |
+| **Formato** | Perpétuo / evergreen | Perpétuo / convite |
+| **Prazo** | Vitalício (90 dias guiados) | Variável |
+| **CRM Incluído** | ✅ Sim (12 meses) | ⚪ Depende |
+| **Mentorias** | 48/ano em grupo com Joel | 1-8/mês com Joel |
+| **Implementação** | Você faz | Você decide e faz |
+| **Autonomia** | ✅ Total desde início | ✅ Total |
+| **Dependência** | ❌ Zero | ❌ Zero |
+| **Divulgação** | ✅ Site principal | ❌ Convite apenas |
 
 ---
 
@@ -201,16 +190,10 @@ Joel Burigo é a marca principal (guarda-chuva) que oferece vendas escaláveis p
 **Indique VSS quando:**
 - Cliente quer autonomia completa
 - Tem tempo para implementar
-- Orçamento limitado (até R$ 2k)
+- Orçamento até R$ 2k à vista
 - Quer aprender metodologia
 - Está começando a estruturar vendas
-
-**Indique Services quando:**
-- Cliente tem budget mas não tempo
-- Quer resultado mais rápido
-- Precisa de equipe capacitada
-- Faturamento já estabelecido
-- Aceita investimento mensal
+- Tem budget mas quer o método antes de contratar 1:1
 
 **Indique Advisory quando:**
 - Momento crítico específico
@@ -218,6 +201,12 @@ Joel Burigo é a marca principal (guarda-chuva) que oferece vendas escaláveis p
 - Precisa de visão externa experiente
 - Quer economizar tempo em tentativa/erro
 - Valoriza acesso direto ao especialista
+- Faturamento suporta investimento mensal recorrente
+
+**E quando o cliente "queria Services"?**
+Cliente com perfil R$ 50-300k/mês que antes entraria em Services hoje cai em uma de duas caixas:
+- **Quer o método e aceita implementar com apoio** → VSS (a comunidade + 48 mentorias ao vivo cobrem a maior parte do que Services entregava no acompanhamento)
+- **Quer estratégia 1:1 e tem budget mensal** → Advisory
 
 ---
 
@@ -227,41 +216,34 @@ Joel Burigo é a marca principal (guarda-chuva) que oferece vendas escaláveis p
 
 ```
 ESTÁGIO 1: Descoberta e Estruturação
-├─ VSS (R$ 1.997)
-│  └─ 90 dias implementando sozinho
-│     └─ Resultado: Sistema estruturado básico
+├─ VSS (R$ 1.997 — perpétuo, sempre aberto)
+│  └─ Implementação guiada + mentorias rolling 12 meses
+│     └─ Resultado: Sistema estruturado funcionando
 │
-ESTÁGIO 2: Aceleração e Escala (Opcional)
-├─ Services (R$ 4.5-9k/mês)
-│  └─ 4-12 meses com equipe
-│     └─ Resultado: Sistema otimizado + equipe treinada
-│
-ESTÁGIO 3: Momentos Críticos (Quando necessário)
-└─ Advisory (R$ 997-15k/mês)
+ESTÁGIO 2: Momentos Críticos (Quando necessário)
+└─ Advisory (R$ 997-15k/mês — por convite)
    └─ Pontual ou recorrente
-      └─ Resultado: Direcionamento estratégico
+      └─ Resultado: Direcionamento estratégico 1:1
 ```
 
-**Importante:** Não é obrigatório passar por todos os estágios. Muitos clientes fazem apenas VSS e seguem sozinhos com sucesso.
+**Importante:** Não é obrigatório passar pelos dois estágios. A maior parte dos clientes faz apenas VSS e segue sozinho com sucesso. Advisory é uma opção de evolução pra quem chega num momento específico (decisão estratégica, escala, transição de modelo) e quer pensar junto com o Joel.
 
 ---
 
 ### **[P8.4.2] Upsell e Cross-sell**
 
-**VSS → Services:**
-- Aluno VSS que cresceu rápido
-- Não tem tempo para otimizar sozinho
-- Quer escalar mas precisa de mão de obra
-
 **VSS → Advisory:**
 - Aluno VSS em momento crítico
 - Decisão estratégica importante
 - Quer validação com Joel antes de executar
+- Cresceu e precisa de sparring partner estratégico
 
-**Services → Advisory:**
-- Cliente Services em transição importante
-- Mudança de estratégia
-- Preparação para investimento/venda
+**Entrada direta em Advisory (sem VSS):**
+- Convite/indicação de aluno VSS existente
+- Indicação de rede pessoal do Joel
+- CEO que chega já com problema estratégico específico e budget compatível
+
+Não há fluxo reverso relevante: Advisory é o topo da pirâmide. Quando um cliente Advisory resolve o momento crítico, normalmente sai ou vira recorrente seletivo.
 
 ---
 
@@ -270,39 +252,24 @@ ESTÁGIO 3: Momentos Críticos (Quando necessário)
 ### **[P8.5.1] VSS - O Produto de Escala**
 
 **Promessa:**
-> "Transforme vendas aleatórias em vendas previsíveis em 90 dias"
+> "Transforme vendas aleatórias em vendas previsíveis com um sistema implementável — sem precisar maratonar curso."
 
 **Diferencial:**
 - CRM profissional incluído
 - Funciona com ou sem tráfego pago
 - Autonomia total
 - Metodologia 6Ps completa
+- Perpétuo: entra hoje, começa essa semana
 
 **Público:** MPEs R$ 10-100k/mês
 **Objetivo:** Escalar para 300+ alunos/ano
 
 ---
 
-### **[P8.5.2] Services - A Oferta Secundária**
+### **[P8.5.2] Advisory - A Oferta Premium**
 
 **Promessa:**
-> "Quando saímos, você tem: sistema funcionando, equipe treinada, autonomia total"
-
-**Diferencial:**
-- Fazemos JUNTO (não POR você)
-- Capacitamos sua equipe
-- Sem fidelidade
-- Sistema fica com você
-
-**Público:** MPEs R$ 50-300k/mês
-**Objetivo:** 15-20 clientes simultâneos (pode ser descontinuado)
-
----
-
-### **[P8.5.3] Advisory - A Oferta Premium**
-
-**Promessa:**
-> "17 anos de experiência aplicados ao seu desafio específico"
+> "17 anos de experiência aplicados ao seu desafio específico."
 
 **Diferencial:**
 - Acesso direto ao Joel
@@ -322,55 +289,49 @@ ESTÁGIO 3: Momentos Críticos (Quando necessário)
 | Produto | Preço Médio | Meta Vendas | Receita Projetada |
 |---------|-------------|-------------|-------------------|
 | VSS | R$ 1.997 | 100 alunos | R$ 199.700 |
-| Services | R$ 6.000/mês | 10 clientes x 8 meses | R$ 480.000 |
 | Advisory | R$ 7.500/sprint | 20 sprints | R$ 150.000 |
-| **TOTAL** | - | - | **R$ 829.700** |
+| **TOTAL** | - | - | **R$ 349.700** |
 
-**Foco:** 80% VSS, 15% Services, 5% Advisory
+**Foco:** ~57% VSS / ~43% Advisory em receita (projeção Ano 1 conservadora). Em esforço operacional do Joel, a proporção é ~90% VSS e ~10% Advisory — Advisory rende mais por hora, mas VSS consome quase todo o tempo recorrente (conteúdo, mentorias, comunidade).
+
+> **Nota:** números herdados da projeção original (v1.0). A linha Services (R$ 480.000 projetados) saiu; o total foi recomposto apenas subtraindo essa linha, sem reestimar VSS ou Advisory. Revisão de metas em função do perpétuo fica pra próxima iteração do plano comercial.
 
 ---
 
 ### **[P8.6.2] Estratégia de Crescimento**
 
-**Ano 1:** Validar VSS (foco total)
-**Ano 2:** Escalar VSS + manter Services
-**Ano 3:** Descontinuar Services, focar VSS + Advisory seletivo
+**Ano 1:** Validar VSS em modelo perpétuo (funil evergreen, tráfego contínuo) + Advisory seletivo por indicação
+**Ano 2:** Escalar VSS (volume de alunos, otimização de funil) + Advisory mantendo 5-10 slots ativos
+**Ano 3:** VSS como motor principal de escala + Advisory como camada premium recorrente
+
+Services não volta ao roadmap. A decisão estratégica é: **foco em escala via produto (VSS) e acesso direto premium (Advisory)**, sem operação de serviço com equipe terceirizada.
 
 ---
 
 ## **[P8.7] COMUNICAÇÃO E MARKETING POR PRODUTO**
 
-### **[P8.7.1] VSS - Marketing de Massa**
+### **[P8.7.1] VSS - Marketing de Massa (Evergreen)**
 
 **Canais:**
 - LinkedIn (orgânico + ads)
 - Instagram (conteúdo + stories)
 - YouTube (aulas gratuitas)
 - Google Ads
+- Webinar automatizado / funil evergreen
 
 **Tom:** Educativo, acessível, prático
+**Regra:** nunca comunicar "turma", "próxima abertura", "últimas vagas". A oferta está sempre aberta.
 
 ---
 
-### **[P8.7.2] Services - Marketing Direto**
-
-**Canais:**
-- Alunos VSS que cresceram
-- Indicações
-- Página específica no site
-
-**Tom:** Consultivo, parceria
-
----
-
-### **[P8.7.3] Advisory - Sem Marketing Ativo**
+### **[P8.7.2] Advisory - Sem Marketing Ativo**
 
 **Canais:**
 - Convite direto
-- Indicação de clientes
+- Indicação de alunos VSS
+- Indicação de rede pessoal
 - Não divulgado publicamente
 
 **Tom:** Exclusivo, estratégico
 
 ---
-

@@ -2,33 +2,39 @@
 id: "P5"
 titulo: "GO-TO-MARKET"
 documento: "Parte 5 de 13"
-versao: "1.1"
+versao: "2.0"
 autor: "Joel Burigo"
-ultima_atualizacao: "2026-01-23"
+ultima_atualizacao: "2026-04-22"
 arquivo: "conteudo/parte5-go-to-market.md"
 
 objetivo: |
-  Estratégia completa de lançamento e crescimento:
-  - Estratégia de lançamento com R$ 5.000
-  - Funis de vendas: CPL + modelo perpétuo
-  - Projeções financeiras ano 1
-  - Criativos, copys e roteiros de vendas
-  - Objeções e scripts de resposta
+  Estratégia completa de go-to-market em modelo perpétuo evergreen:
+  - Entrada no mercado como sistema contínuo de aquisição (não lançamento)
+  - Funil evergreen: tráfego + webinar automatizado + página sempre aberta
+  - Projeções financeiras em base MENSAL (crescimento mês a mês)
+  - Criativos, copys e roteiros de vendas evergreen
+  - Modelo de mentoria perpétua (rolling 48 semanas)
+  - Cadência de conteúdo evergreen (IG, email, anúncios)
+  - Objeções e scripts de resposta (perpétuo)
 
 secoes:
   - id: "P5.1"
-    titulo: "Estratégia de Lançamento com R$ 5.000"
+    titulo: "Estratégia de Entrada no Mercado (Evergreen)"
   - id: "P5.2"
-    titulo: "Funil de Vendas: CPL + Perpétuo"
+    titulo: "Funil Evergreen"
   - id: "P5.3"
-    titulo: "Projeções Financeiras Ano 1"
+    titulo: "Projeções Financeiras Mensais"
   - id: "P5.4"
-    titulo: "Criativos e Copys de Vendas"
+    titulo: "Criativos e Copys de Vendas (Evergreen)"
   - id: "P5.5"
     titulo: "Objeções e Scripts"
+  - id: "P5.6"
+    titulo: "Modelo de Mentoria Perpétua"
+  - id: "P5.7"
+    titulo: "Cadência de Conteúdo Evergreen"
 
-tags: [go-to-market, lançamento, funis, vendas, copys, projeções, financeiro]
-dependencias: ["P1", "P4"]
+tags: [go-to-market, evergreen, perpetuo, funil, vendas, copys, projecoes, financeiro, mentoria]
+dependencias: ["P1", "P4", "P8", "P10"]
 prox_parte: "P6"
 parte_anterior: "P4"
 ---
@@ -37,991 +43,799 @@ parte_anterior: "P4"
 
 ## 📑 Índice desta Parte
 
-- [P5.1 Estratégia de Lançamento](#p51-estratégia-de-lançamento)
-- [P5.2 Funil de Vendas](#p52-funil-de-vendas)
-- [P5.3 Projeções Financeiras](#p53-projeções-financeiras-ano-1)
-- [P5.4 Criativos e Copys](#p54-criativos-e-copys-de-vendas)
+- [P5.1 Estratégia de Entrada no Mercado (Evergreen)](#p51-estratégia-de-entrada-no-mercado-evergreen)
+- [P5.2 Funil Evergreen](#p52-funil-evergreen)
+- [P5.3 Projeções Financeiras Mensais](#p53-projeções-financeiras-mensais)
+- [P5.4 Criativos e Copys de Vendas (Evergreen)](#p54-criativos-e-copys-de-vendas-evergreen)
 - [P5.5 Objeções e Scripts](#p55-objeções-e-scripts)
+- [P5.6 Modelo de Mentoria Perpétua](#p56-modelo-de-mentoria-perpétua)
+- [P5.7 Cadência de Conteúdo Evergreen](#p57-cadência-de-conteúdo-evergreen)
 
 ---
 
-## **[P5.1] 12\. ESTRATÉGIA DE LANÇAMENTO**
+## **[P5.1] 12. ESTRATÉGIA DE ENTRADA NO MERCADO (EVERGREEN)**
 
-### **[P5.1.12.1] 12.1 Budget Inicial**
+> **Mudança estratégica:** não há "lançamento" de R$ 5.000 com carrinho que abre e fecha. VSS e Advisory são **produtos perpétuos sempre abertos**. A entrada no mercado é um **sistema de aquisição contínua** que roda todo dia, sete dias por semana.
 
-**Total disponível:** R$ 5.000
+### **[P5.1.12.1] 12.1 Premissas do Modelo Evergreen**
 
-**Alocação estratégica:**
+1. **Tráfego pago diário e perpétuo** — anúncios sempre no ar, otimizados continuamente. Não é campanha de 14 dias, é infraestrutura permanente.
+2. **Conteúdo orgânico constante** — Instagram, LinkedIn, email. Ritmo semanal estável. Construção de autoridade que nunca para (ver P5.7).
+3. **Webinar automatizado** — "masterclass evergreen" disponível em janelas rolantes (a cada pessoa que captura, conta-se 72h individuais). Não depende de evento ao vivo.
+4. **Página VSS sempre aberta** — sem "próxima turma", sem "carrinho fecha à meia-noite". Aluno entra hoje, começa hoje, e participa da **próxima mentoria semanal** (ver P5.6).
+5. **Advisory sempre aberta** — aplicação contínua, vagas limitadas por capacidade operacional (ver P8 e P10).
+6. **Urgência por valor, não por data** — copys não dizem "últimas horas"; dizem "cada semana sem sistema é perda real de receita".
 
-* **Tráfego pago:** R$ 3.500 (70%)  
-* **Ferramentas essenciais:** R$ 500 (10%)  
-* **Contingência:** R$1.000 (20%)
+### **[P5.1.12.2] 12.2 Investimento Mensal Recorrente em Ads**
 
-**Premissa:** Lean e focado. Validar antes de escalar.
+O modelo antigo previa R$ 5.000 como **campanha one-shot de lançamento** (R$ 3.500 em tráfego + R$ 500 ferramentas + R$ 1.000 contingência em 14 dias). No evergreen, esse mesmo valor é reinterpretado como **investimento mensal recorrente** em aquisição.
 
-### **[P5.1.12.2] 12.2 Modelo de Lançamento: CPL (Conteúdo \+ Lançamento)**
+**Budget mensal inicial (ordem de grandeza — base de partida, não verdade absoluta):**
 
-**Estratégia escolhida:** Ciclo de 14 dias \- conteúdo gratuito \+ evento \+ abertura de carrinho.
+| Rubrica | % do budget | Valor (ref: R$ 5.000/mês) | Observação |
+|---|---|---|---|
+| Tráfego topo de funil (captura) | 60–70% | R$ 3.000–3.500 | Meta Ads, interesse amplo, conteúdo orgânico amplificado |
+| Remarketing (quem visitou página, viu webinar, abandonou checkout) | 20–25% | R$ 1.000–1.250 | Conversão direta, Advisory upsell |
+| Testes (criativos novos, públicos novos, canais complementares) | 10–15% | R$ 500–750 | Evitar fadiga de criativo, descobrir novos canais |
+| **Total mensal** | **100%** | **R$ 5.000** | Piso. Escalável conforme ROI se estabiliza. |
 
-**Por que CPL primeiro (não perpétuo)?**
+**Escalonamento recomendado** (se ROAS se sustenta acima de 3x):
 
-✅ Validação rápida: Testa oferta e interesse em 2 semanas
+* Mês 1–3: R$ 5.000/mês (validação)
+* Mês 4–6: R$ 7.000–10.000/mês (escala inicial)
+* Mês 7–12: R$ 10.000–15.000/mês (escala controlada)
 
-✅ Urgência genuína: Carrinho fecha de verdade (não é falsa escassez)
+> **Observação:** ferramentas essenciais (R$ 300–500/mês) e contingência viram **linhas fixas no P&L mensal**, não mais "reserva de campanha".
 
-✅ Evento cria buzz: Antecipação e comunidade
+### **[P5.1.12.3] 12.3 Por Que Evergreen e Não CPL**
 
-✅ Prova social inicial: Primeiros alunos viram cases para próximos lançamentos
+O modelo CPL (lançamento com evento ao vivo + carrinho de 14 dias) tem vantagens — urgência coletiva, buzz, prova social comprimida. Mas cria dependência de picos, exige Joel ao vivo e obriga marketing a parar entre ciclos.
 
-✅ Aprendizado: Descobre objeções, ajusta oferta, melhora pitch Após 1-2 CPLs validados: Migrar para modelo perpétuo automatizado \+ CPLs trimestrais para grandes turmas.
+**Vantagens do evergreen para este projeto:**
 
-### **[P5.1.12.3] 12.3 Cronograma Detalhado do CPL (14 Dias)**
+* ✅ **Vendas todo dia.** Receita distribuída, fluxo de caixa mais previsível.
+* ✅ **Independe de Joel ao vivo no topo do funil.** Webinar gravado + emails automatizados rodam sozinhos. Joel aparece onde gera leverage (mentorias, Advisory, conteúdo orgânico).
+* ✅ **ROI por canal estabiliza.** Sem picos e vales, fica mais fácil otimizar criativos, calcular CAC real e prever alunos/mês.
+* ✅ **Compatível com mentoria rolling (P5.6).** Aluno entra qualquer dia e entra na próxima mentoria sem esperar "próxima turma".
+* ✅ **Escalável infinitamente com tráfego.** Mais budget = mais alunos, de forma linear até saturação do público.
 
-#### **FASE 1: CAPTURA (Dias 1-3)**
+**Desvantagens que aceitamos:**
 
-**Objetivo:** Capturar 200-300 leads interessados em estruturar vendas
+* Sem o pico emocional de um lançamento. Urgência precisa vir do valor da oferta e de bônus/condições rolantes, não de deadline coletivo.
+* Exige disciplina de conteúdo orgânico constante (sem "semana off pós-lançamento").
+* Webinar automatizado precisa ser realmente bom — substitui uma masterclass ao vivo sem a ajuda da presença em tempo real.
 
-**Dia 1-3:**
+### **[P5.1.12.4] 12.4 Métricas-Alvo Evergreen (Estabilizadas)**
 
-**Anúncios de Captura**
+Uma vez estabilizado o funil (tipicamente após 60–90 dias de otimização):
 
-* **Investimento:** R$ 1.000 (R$ 333/dia)
+* **CPL (custo por lead):** R$ 10–20
+* **Taxa de presença no webinar automatizado:** 30–40% dos leads capturados
+* **Taxa de conversão lead → aluno VSS:** 2–4%
+* **Taxa de upsell aluno VSS → Advisory:** 5–10% dos alunos qualificados
+* **ROAS (retorno sobre ads):** 3–6x no primeiro ciclo de 90 dias do aluno
 
-**Plataforma:**
+**Gatilhos de otimização:**
 
-* Meta Ads (Facebook \+ Instagram)
-
-**Público:**
-
-* Localização: Brasil  
-* Idade: 28-55 anos  
-* Interesses: Empreendedorismo, Marketing Digital, Vendas, Pequenas Empresas  
-* Comportamentos: Donos de pequenas empresas
-
-**Oferta:**
-
-* "Checklist Gratuito: Diagnóstico dos 6Ps das Vendas Escaláveis"
-
-**Criativos:**
-
-* **Criativo 1:** Carrossel explicando cada P (6 slides)  
-* **Criativo 2:** Vídeo curto Joel (30s) explicando problema de vendas aleatórias  
-
-Assunto: Últimas 6 horas \- Decisão
-
-\[Nome\],  
-6 horas.  
-Toda decisão tem um custo.  
-Decidir AGORA \= Sistema de vendas nos próximos 90 dias  
-Decidir DEPOIS \= Mais 60-90 dias de vendas aleatórias  
-(quanto isso custa?)  
-\[BOTÃO: DECIDIR AGORA\]  
-Joel
-
-**E-mail 9 (Tarde \- 18h):**
-
-Assunto: Últimas 2 horas \- Urgência máxima 🚨
-
-\[Nome\],  
-2 horas.  
-Não quero que você se arrependa amanhã.  
-"Ah, perdi os bônus"  
-"Ah, agora está mais caro"  
-"Ah, próxima turma só daqui 60 dias"  
-Decide AGORA.  
-\[BOTÃO ENORME: SIM, EU QUERO\]  
-Joel  
-PS: Garantia de 15 dias. Risco zero.
-
-**E-mail 10 (Noite \- 22h):**
-
-Assunto: Última chamada \- Fecha em 2 horas
-
-\[Nome\],  
-Última chamada.  
-Fecha à meia-noite.  
-Decide.  
-\[BOTÃO: GARANTIR AGORA\]  
-Joel
-
-**E-mail 11 (Noite \- 23h):**
-
-Assunto: ENCERRANDO \- 1 hora
-
-\[Nome\],  
-1 hora.  
-Última chance.  
-\[LINK GIGANTE\]  
-Joel
-
-**Anúncios Durante Carrinho Aberto (Dias 11-13):**
-
-**Budget:** R$ 500 (R$ 165/dia)
-
-**Públicos:**
-
-* Quem assistiu Masterclass (prioridade máxima)  
-* Quem visitou página de vendas mas não comprou  
-* Quem adicionou ao carrinho mas não finalizou  
-* Quem assistiu qualquer das 3 aulas
-  **Mensagens:**  
-* Dia 11: "Carrinho aberto \- Bônus expiram em 72h"  
-* Dia 12: "Últimas 24h para bônus"  
-* Dia 13 (Manhã): "Últimas horas \- Decide hoje"  
-* Dia 13 (Tarde): "URGENTE: Fecha à meia-noite"
-  **Criativos:**  
-* Countdown timer  
-* Print de depoimentos  
-* Stack de valor visual  
-* Print de "87 pessoas já garantiram"
-  **Remarketing de Carrinho Abandonado:** Se alguém adicionar ao carrinho mas não finalizar:  
-* E-mail imediato: "Vi que você estava finalizando..."  
-* WhatsApp (se tiver número): "Precisa de ajuda?"  
-* Anúncio com urgência máxima  
-  **FECHAMENTO (Meia-noite do Dia 13):**  
-* Carrinho fecha automaticamente  
-* E-mail de agradecimento para quem não comprou (adiciona lista de espera)  
-* E-mail de boas-vindas para quem comprou (onboarding imediato)  
-* Celebração interna (quantas vendas? qual ROI?)
+* CPL > R$ 25 por 2 semanas → trocar criativos, rever públicos
+* Presença no webinar < 25% → rever sequência de email, horário do countdown, thumbnail
+* Conversão webinar → venda < 2% → rever pitch, oferta, stack de valor, bônus
 
 ---
 
-### **[P5.2.12.4] 12.4 Projeção Realista do Primeiro CPL**
+## **[P5.2] 13. FUNIL EVERGREEN**
 
-**Investimento total:** R$ 3.500 em tráfego
+### **[P5.2.13.1] 13.1 Visão Geral do Funil**
 
-**Funil completo:**
+Quatro estágios em fluxo contínuo (sem início e fim de "janela"):
 
-R$ 3.500 investidos  
-    ↓  
-200-300 leads capturados (CPL: R$ 12-18)  
-    ↓  
-100-150 assistiram pelo menos 1 aula (50%)  
-    ↓  
-60-90 assistiram Masterclass (30-40%)  
-    ↓  
-6-18 vendas (10-20% dos que assistiram Masterclass)
+```
+┌────────────────────────────────────────────────────────────────┐
+│ TOPO: Tráfego orgânico + anúncios (evergreen, 24/7)            │
+│   ↓                                                            │
+│ MEIO: Captura (checklist/diagnóstico) → nutrição email → webinar automatizado │
+│   ↓                                                            │
+│ FUNDO: Página VSS sempre aberta + sequência de conversão (72h individuais) │
+│   ↓                                                            │
+│ ALUNO: Onboarding, Growth CRM, mentoria semanal, comunidade   │
+│   ↓                                                            │
+│ UPSELL: Advisory (quando aplicável — faturamento + perfil)     │
+└────────────────────────────────────────────────────────────────┘
+```
 
-**Cenários:**
+### **[P5.2.13.2] 13.2 Topo — Atração Contínua**
 
-**CONSERVADOR:**
+**Canais:**
 
-* Leads: 200  
-* Assistiram Masterclass: 60  
-* Taxa de conversão: 10%  
-* **Vendas: 6 alunos**  
-* **Faturamento: R$ 11.982**  
-* **ROI: 3,4x**
+1. **Meta Ads (Facebook + Instagram)** — principal. Captura para checklist dos 6Ps.
+2. **Google Ads** (a partir do mês 3–4) — captura de intenção ("sistema de vendas", "CRM para pequena empresa", "consultoria comercial").
+3. **Instagram orgânico** — autoridade + prova social + tráfego pra bio. Ver cadência em P5.7.
+4. **LinkedIn orgânico** — Joel postando 3–5x/semana. Público B2B qualificado.
+5. **YouTube (opcional, médio prazo)** — vídeos-âncora dos 15 módulos servem dupla função: bônus do VSS **e** conteúdo SEO evergreen.
+6. **Parcerias e indicações** — programa de afiliados de alunos VSS (a definir comissão e regras — **TBD**).
 
-**REALISTA:**
+**Oferta de captura principal:** "Checklist Gratuito: Diagnóstico dos 6Ps das Vendas Escaláveis".
 
-* Leads: 250  
-* Assistiram Masterclass: 75  
-* Taxa de conversão: 13%  
-* **Vendas: 10 alunos**  
-* **Faturamento: R$ 19.970**  
-* **ROI: 5,7x**
+**Variantes de captura para testar:**
 
-**OTIMISTA:**
+* Checklist dos 6Ps (principal)
+* Planilha de diagnóstico interativa (Google Sheets)
+* Mini-curso por email (5 dias — 1 P por dia, 6º dia convite pro webinar)
+* Aula-bônus gratuita (vídeo de 20 min)
 
-* Leads: 300  
-* Assistiram Masterclass: 90  
-* Taxa de conversão: 16%  
-* **Vendas: 14 alunos**  
-* **Faturamento: R$ 27.958**  
-* **ROI: 8x**
+### **[P5.2.13.3] 13.3 Meio — Nutrição + Webinar Automatizado**
 
-**Payback:** Imediato (na semana seguinte ao fechamento do carrinho)
+**Sequência de emails pós-captura (5–7 dias):**
 
----
+| Dia | Assunto | Objetivo |
+|---|---|---|
+| 0 (imediato) | "Seu checklist dos 6Ps está aqui 📊" | Entregar material + apresentar Joel |
+| 1 | "Por que suas vendas são aleatórias" | Diagnóstico do problema (P1 do VSS) |
+| 2 | "Os 2 tipos de empreendedor (e onde você está)" | Segmentação narrativa — criar "aha" |
+| 3 | "Convite: masterclass gratuita dos 6Ps" | Convidar pro webinar automatizado |
+| 4 | Reminder webinar (4h antes do countdown individual) | Reforço de presença |
+| 4 | "Começa em 30 min" | Última chamada pro webinar |
+| 5 | Pós-webinar: "O que você achou?" + pitch VSS | Abrir janela de conversão |
+| 6 | "A escolha que você precisa fazer essa semana" | Urgência por valor |
+| 7 | "Vou parar de te chamar" (takeaway close) | Última mensagem da sequência |
 
-### **[P5.2.12.5] 12.5 Ajustes Pós-Lançamento**
+**Webinar automatizado — estrutura (90 min):**
 
-**SE resultado abaixo do esperado (\<6 vendas):**
+1. Abertura (5 min) — autoridade Joel (17 anos, 140 clientes, R$ 1 bi gerado)
+2. Problema (15 min) — diagnóstico das vendas aleatórias
+3. Framework 6Ps (30 min) — metodologia completa, com mini-case por P
+4. Transformação (15 min) — antes/depois de alunos reais
+5. Oferta VSS (15 min) — stack de valor, bônus, garantia, preço
+6. Fechamento + FAQ em vídeo (10 min) — objeções antecipadas + CTA final
 
-**Analisar métricas:**
+**Automação de countdown individual:** cada lead que confirma presença no webinar tem seu próprio relógio de 72h após assistir. Oferta expira individualmente (bônus específicos), mas a **página VSS continua aberta depois** — só os bônus do webinar ficam reservados à janela.
 
-* CPL muito alto (\>R$ 20)? → Otimizar criativos e públicos  
-* Baixa presença nas aulas (\<40%)? → Mudar horário ou formato  
-* Baixa conversão na Masterclass (\<8%)? → Melhorar pitch/oferta  
-* Muitas objeções específicas? → Criar FAQ ou ajustar garantia
-  **Ações corretivas:**  
-* Rodar CPL 2 em 30-45 dias com ajustes  
-* Testar novos criativos  
-* Adicionar mais prova social  
-* Oferecer call individual para quem está na dúvida
-  **Não desistir:** Primeiro lançamento é sempre aprendizado. Ajuste e relance.
+### **[P5.2.13.4] 13.4 Fundo — Página VSS Sempre Aberta**
 
-**SE resultado acima do esperado (\>12 vendas):**
+**Diferenças da página em relação ao modelo CPL:**
 
-**Ações de escala:**
+| CPL (antigo) | Evergreen (novo) |
+|---|---|
+| "Turma fecha em X horas" | "Entre hoje — primeira mentoria na próxima [dia da semana fixo]" (**TBD dia/hora**) |
+| "Próxima turma em 60 dias" | "48 mentorias rolling a partir da sua entrada" |
+| Bônus expiram com carrinho | Bônus da jornada evergreen (relacionados ao webinar 72h), + bônus permanentes |
+| Countdown coletivo na página | Countdown individual (só para leads vindos do webinar, durante sua janela 72h) |
+| "Última turma deste ano" | "Entrada imediata — sistema sempre aberto" |
 
-1. Preparar onboarding em massa (e-mails automatizados, orientação inicial)  
-2. Reforçar suporte (pode precisar de ajuda externa)  
-3. Planejar CPL 2 em 45-60 dias  
-4. Começar desenvolvimento do funil perpétuo  
-5. Colher depoimentos dos primeiros alunos  
-6. Criar casos de sucesso rápidos (quick wins nas primeiras semanas)
+**Sequência de conversão pós-página (se visitou e não comprou):**
 
----
+* **D+0 (imediato):** email + anúncio de remarketing "Vi que você esteve na página…"
+* **D+1:** email de objeção ("Está em dúvida por quê?")
+* **D+2:** email de prova social (depoimento + case)
+* **D+3:** email de takeaway close
+* **D+7:** re-entrada na nutrição educacional (volta a receber conteúdo semanal de autoridade)
 
-## **[P5.2] 13\. FUNIL PERPÉTUO (MÊS 2+)**
+Não se "queima" o lead — ele volta pro topo do funil e pode converter em qualquer momento futuro.
 
-### **[P5.2.13.1] 13.1 Transição CPL → Perpétuo**
+### **[P5.2.13.5] 13.5 Upsell — Advisory**
 
-**Após 1-2 CPLs validados:** O modelo perpétuo é a evolução natural. Permite vendas contínuas sem depender de "eventos".
+Advisory é produto 1:1 de ticket alto. Não é vendido por anúncio frio. É **upsell para subconjunto qualificado de alunos VSS** e para leads orgânicos de alta intenção (ex: DM direta, indicação).
 
-**Diferenças principais:**
+**Gatilhos de upsell Advisory dentro da base VSS:**
 
-| CPL | Perpétuo |
-| :---- | :---- |
-| Evento ao vivo | Webinar gravado |
-| Carrinho abre e fecha | Carrinho sempre aberto |
-| Urgência coletiva | Urgência individual |
-| 14 dias de ciclo | Entrada contínua |
-| Escalável em turmas | Escalável infinitamente |
+1. Aluno com faturamento > R$ 50k/mês respondendo pesquisa de perfil no onboarding
+2. Aluno que pede sessão 1:1 com Joel nas mentorias (sinal de demanda por acesso privado)
+3. Aluno que concluiu Fase 1–2 do VSS e escalou a pergunta: "e agora como acelero?"
+4. Leads de conteúdo do Joel (LinkedIn, podcast) com fit de porte
 
- **Vantagens do perpétuo:**
-
-* Vendas todo dia  
-* Automação completa  
-* Menos dependente de Joel ao vivo  
-* Escalável com tráfego  
-* ROI mais previsível
-
-**Quando implementar:** Após 2 CPLs bem-sucedidos (provar que oferta funciona)
+**Oferta típica:** "Você já tem o sistema VSS rodando. Se quiser acesso direto comigo para decisões estratégicas, vamos conversar." → agenda call de 30 min de diagnóstico Advisory.
 
 ---
 
-### **[P5.2.13.2] 13.2 Estrutura do Funil Perpétuo**
+## **[P5.3] 14. PROJEÇÕES FINANCEIRAS MENSAIS**
 
-**TOPO (Anúncios):**
+### **[P5.3.14.1] 14.1 Premissas (Base de Ordem de Grandeza)**
 
-* ↓ **LANDING PAGE (Captura de lead):**  
-  * Mesmo checklist dos 6Ps  
-  * Ou ebook/guia gratuito
-* ↓ **SEQUÊNCIA DE E-MAILS (5-7 dias):**  
-  * Nutrição automática  
-  * Construir relacionamento  
-  * Educar sobre problema
-* ↓ **CONVITE PARA WEBINAR AUTOMATIZADO:**  
-  * "Parece ao vivo" mas é gravado  
-  * Countdown individual (cada pessoa tem sua data)
-* ↓ **WEBINAR (Gravação da Masterclass):**  
-  * Mesma estrutura da Masterclass ao vivo  
-  * Pitch completo  
-  * CTA múltiplos
-* ↓ **CARRINHO ABERTO (72h individuais):**  
-  * Cada lead tem 72h após assistir webinar  
-  * Sequência de e-mails de urgência  
-  * Remarketing agressivo
-* ↓ **VENDA ou LISTA DE ESPERA**
-
----
-
-### **[P5.2.13.3] 13.3 Budget Mensal do Perpétuo**
-
-**Recomendado:** R$ 5.000-10.000/mês após validação
-
-**Alocação:**
-
-* 70% em anúncios de topo (captura)  
-* 20% em remarketing (conversão)  
-* 10% em testes (novos criativos, públicos)
-
-**Métricas esperadas estabilizadas:**
-
-* CPL: R$ 10-20  
-* Taxa de conversão lead → venda: 2-4%  
-* 5-15 vendas/mês com R$ 5k de budget  
-* 10-30 vendas/mês com R$ 10k de budget
-
----
-
-## **[P5.3] 14\. PROJEÇÕES FINANCEIRAS ANO 1**
-
-### **[P5.3.14.1] 14.1 Premissas Conservadoras**
-
-**Cenários utilizados:**
-
-* Conservador: Para planejamento financeiro  
-* Realista: Mais provável de acontecer  
-* Otimista: Melhor cenário possível
+Reaproveitamos as proporções do modelo anterior, mas **recontextualizadas como crescimento mês a mês em modelo perpétuo** — sem picos de lançamento.
 
 **Premissas gerais:**
 
-* Preço médio: R$ 1.997 à vista (70%) \+ R$ 2.364 parcelado (30%) \= \~R$ 2.100 ticket médio  
-* Churn: 5% ao mês (clientes que desistem/cancelam)  
-* Taxa de conversão melhora ao longo do tempo (aprendizado)  
-* Budget aumenta gradualmente conforme válida ROI
+* **Ticket VSS:** R$ 1.997 à vista (70%) + R$ 2.364 parcelado 12x (30%) → ticket médio ponderado ~R$ 2.100
+* **Churn:** 5% ao mês (alunos ativos dentro da janela de 12 meses do programa)
+* **Taxa de conversão melhora gradualmente** conforme otimização (mês 1 é piso; mês 6+ é patamar estabilizado)
+* **Budget de tráfego aumenta gradualmente** conforme ROI se valida (ver P5.1.12.2)
+* **Services NÃO entra na projeção** (produto descontinuado — ver P8)
+* **Advisory entra como upsell** a partir do mês 3–4, com conversão conservadora
 
----
+> **Nota:** os números abaixo mantêm a ordem de grandeza do plano anterior (que projetava 219 alunos VSS no ano, ~R$ 460k receita). A diferença é que agora o crescimento é **contínuo e linear** em vez de depender de ciclos CPL. Joel deve validar o piso mensal após o primeiro trimestre real. **Os números são referência, não verdade.**
 
-### **[P5.3.14.2] 14.2 Planilha de Projeções 12 Meses**
+### **[P5.3.14.2] 14.2 Projeção Mensal — 12 Meses (VSS + Advisory)**
 
-| Mês | JAN | FEV | MAR | ABR | MAI | JUN |
-| ----- | ----- | ----- | ----- | ----- | ----- | ----- |
-| **MÉTRICAS DE TRÁFEGO E CONVERSÃO** |  |  |  |  |  |  |
-| Investimento em Tráfego (R$) | 3.500 | 3.500 | 3.500 | 5.000 | 5.000 | 5.000 |
-| Visitantes | 2.000 | 2.000 | 2.000 | 3.000 | 3.000 | 3.000 |
-| Leads | 250 | 250 | 250 | 350 | 350 | 350 |
-| Oportunidades | 25 | 25 | 30 | 40 | 45 | 50 |
-| **VENDAS E RECEITA** |  |  |  |  |  |  |
-| Vendas Novas (\#) | 6 | 8 | 10 | 12 | 15 | 18 |
-| Ticket Médio (R$) | 2.100 | 2.100 | 2.100 | 2.100 | 2.100 | 2.100 |
-| Renovações (\#) | 0 | 0 | 0 | 0 | 0 | 0 |
-| Ticket Renovação (R$) | \- | \- | \- | \- | \- | \- |
-| Receita Vendas Novas (R$) | 12.600 | 16.800 | 21.000 | 25.200 | 31.500 | 37.800 |
-| Receita Renovações (R$) | 0 | 0 | 0 | 0 | 0 | 0 |
-| **RECEITA TOTAL (R$)** | 12.600 | 16.800 | 21.000 | 25.200 | 31.500 | 37.800 |
-| **CUSTOS OPERACIONAIS** |  |  |  |  |  |  |
-| Taxa Hotmart (10,9%) | 1.373 | 1.831 | 2.289 | 2.747 | 3.434 | 4.120 |
-| Impostos (12%) | 1.512 | 2.016 | 2.520 | 3.024 | 3.780 | 4.536 |
-| CRM Mensal | 0 | 0 | 0 | 0 | 0 | 0 |
-| Suporte (Freelancer) | 0 | 0 | 500 | 500 | 500 | 500 |
-| Designer | 0 | 800 | 800 | 800 | 800 | 800 |
-| Editor de Vídeo | 0 | 500 | 500 | 500 | 500 | 500 |
-| Gestor de Tráfego | 0 | 0 | 0 | 1.500 | 1.500 | 1.500 |
-| Social Media | 0 | 0 | 800 | 800 | 800 | 800 |
-| Vendedor/Closer | 0 | 0 | 0 | 0 | 0 | 2.000 |
+**Semestre 1:**
+
+| Mês | M1 | M2 | M3 | M4 | M5 | M6 |
+|---|---|---|---|---|---|---|
+| **TRÁFEGO E FUNIL** | | | | | | |
+| Investimento Tráfego (R$) | 5.000 | 5.000 | 5.000 | 7.000 | 7.000 | 7.000 |
+| Visitantes | 2.500 | 2.500 | 2.500 | 3.500 | 3.500 | 3.500 |
+| Leads capturados | 280 | 300 | 320 | 420 | 440 | 460 |
+| Presença webinar (# pessoas) | 85 | 95 | 105 | 145 | 160 | 175 |
+| **VENDAS VSS** | | | | | | |
+| Alunos novos VSS (#) | 6 | 8 | 10 | 13 | 16 | 19 |
+| Ticket médio (R$) | 2.100 | 2.100 | 2.100 | 2.100 | 2.100 | 2.100 |
+| Receita VSS (R$) | 12.600 | 16.800 | 21.000 | 27.300 | 33.600 | 39.900 |
+| **VENDAS ADVISORY** | | | | | | |
+| Novos clientes Advisory (#) | 0 | 0 | 1 | 1 | 2 | 2 |
+| Ticket Advisory/mês (R$) | – | – | — TBD — | — TBD — | — TBD — | — TBD — |
+| Receita Advisory (R$) | 0 | 0 | ~5.000 | ~5.000 | ~10.000 | ~10.000 |
+| **RECEITA TOTAL (R$)** | 12.600 | 16.800 | 26.000 | 32.300 | 43.600 | 49.900 |
+| **CUSTOS OPERACIONAIS** | | | | | | |
+| Taxa plataforma (10,9% VSS) | 1.373 | 1.831 | 2.289 | 2.976 | 3.662 | 4.349 |
+| Impostos (~12% receita total) | 1.512 | 2.016 | 3.120 | 3.876 | 5.232 | 5.988 |
+| Tráfego (incluído acima) | — | — | — | — | — | — |
+| Ferramentas (CRM, email, hosting) | 300 | 300 | 300 | 300 | 300 | 300 |
+| Freelancers (design, vídeo, social) | 0 | 1.300 | 2.100 | 2.600 | 2.600 | 2.600 |
+| Gestor de tráfego | 0 | 0 | 0 | 1.500 | 1.500 | 1.500 |
+| Suporte | 0 | 0 | 500 | 500 | 500 | 500 |
+| Vendedor/closer Advisory | 0 | 0 | 0 | 0 | 0 | 2.000 |
+| Total custos operacionais (R$) | 3.185 | 5.447 | 8.309 | 11.752 | 13.794 | 17.237 |
+| **Total custos + tráfego (R$)** | 8.185 | 10.447 | 13.309 | 18.752 | 20.794 | 24.237 |
+| **RESULTADO** | | | | | | |
+| Lucro/Prejuízo Mensal (R$) | 4.415 | 6.353 | 12.691 | 13.548 | 22.806 | 25.663 |
+| Margem Líquida (%) | 35% | 38% | 49% | 42% | 52% | 51% |
+| Lucro Acumulado (R$) | 4.415 | 10.768 | 23.459 | 37.007 | 59.813 | 85.476 |
+| Alunos Ativos VSS (fim do mês) | 6 | 14 | 24 | 37 | 53 | 72 |
+| Clientes Advisory Ativos | 0 | 0 | 1 | 2 | 4 | 6 |
+
+**Semestre 2:**
+
+| Mês | M7 | M8 | M9 | M10 | M11 | M12 |
+|---|---|---|---|---|---|---|
+| **TRÁFEGO E FUNIL** | | | | | | |
+| Investimento Tráfego (R$) | 10.000 | 10.000 | 12.000 | 12.000 | 15.000 | 15.000 |
+| Visitantes | 5.000 | 5.000 | 6.000 | 6.000 | 7.500 | 7.500 |
+| Leads capturados | 620 | 650 | 780 | 820 | 1.020 | 1.070 |
+| Presença webinar (# pessoas) | 230 | 245 | 300 | 315 | 400 | 420 |
+| **VENDAS VSS** | | | | | | |
+| Alunos novos VSS (#) | 21 | 23 | 26 | 28 | 32 | 34 |
+| Receita VSS (R$) | 44.100 | 48.300 | 54.600 | 58.800 | 67.200 | 71.400 |
+| **VENDAS ADVISORY** | | | | | | |
+| Novos clientes Advisory (#) | 2 | 3 | 3 | 3 | 4 | 4 |
+| Receita Advisory (R$) | ~10.000 | ~15.000 | ~15.000 | ~15.000 | ~20.000 | ~20.000 |
+| **RECEITA TOTAL (R$)** | 54.100 | 63.300 | 69.600 | 73.800 | 87.200 | 91.400 |
+| **CUSTOS OPERACIONAIS** | | | | | | |
+| Taxa plataforma (10,9% VSS) | 4.807 | 5.265 | 5.951 | 6.409 | 7.325 | 7.783 |
+| Impostos (~12% receita total) | 6.492 | 7.596 | 8.352 | 8.856 | 10.464 | 10.968 |
 | Ferramentas | 300 | 300 | 300 | 300 | 300 | 300 |
-| Total Custos Fixos (R$) | 3.185 | 5.447 | 7.709 | 10.171 | 11.614 | 15.056 |
-| Total Custos (R$) | 6.685 | 8.947 | 11.209 | 15.171 | 16.614 | 20.056 |
-| **RESULTADO E ALUNOS** |  |  |  |  |  |  |
-| Lucro/Prejuízo Mensal (R$) | 5.915 | 7.853 | 9.791 | 10.029 | 14.886 | 17.744 |
-| Margem Líquida (%) | 47% | 47% | 47% | 40% | 47% | 47% |
-| Lucro Acumulado (R$) | 5.915 | 13.768 | 23.559 | 33.588 | 48.474 | 66.218 |
-| Novos Alunos no Mês | 6 | 8 | 10 | 12 | 15 | 18 |
-| Alunos Ativos (fim do mês) | 6 | 14 | 24 | 36 | 51 | 69 |
+| Freelancers | 2.600 | 2.800 | 2.800 | 2.800 | 3.000 | 3.000 |
+| Gestor de tráfego | 1.500 | 1.500 | 1.800 | 1.800 | 1.800 | 1.800 |
+| Suporte | 800 | 800 | 800 | 800 | 1.000 | 1.000 |
+| Vendedor/closer Advisory | 2.500 | 2.500 | 2.500 | 2.500 | 3.000 | 3.000 |
+| Total custos operacionais (R$) | 18.999 | 20.761 | 22.503 | 23.465 | 26.889 | 27.851 |
+| **Total custos + tráfego (R$)** | 28.999 | 30.761 | 34.503 | 35.465 | 41.889 | 42.851 |
+| **RESULTADO** | | | | | | |
+| Lucro/Prejuízo Mensal (R$) | 25.101 | 32.539 | 35.097 | 38.335 | 45.311 | 48.549 |
+| Margem Líquida (%) | 46% | 51% | 50% | 52% | 52% | 53% |
+| Lucro Acumulado (R$) | 110.577 | 143.116 | 178.213 | 216.548 | 261.859 | 310.408 |
+| Alunos Ativos VSS (fim do mês) | 90 | 109 | 130 | 152 | 177 | 202 |
+| Clientes Advisory Ativos | 8 | 11 | 13 | 15 | 18 | 21 |
 
-| Mês | JUL | AGO | SET | OUT | NOV | DEZ |
-| ----- | ----- | ----- | ----- | ----- | ----- | ----- |
-| **MÉTRICAS DE TRÁFEGO E CONVERSÃO** |  |  |  |  |  |  |
-| Investimento Tráfego (R$) | 6.000 | 6.000 | 7.000 | 7.000 | 8.000 | 8.000 |
-| Visitantes | 3.500 | 3.500 | 4.000 | 4.000 | 4.500 | 4.500 |
-| Leads | 400 | 400 | 450 | 450 | 500 | 500 |
-| Oportunidades | 55 | 60 | 65 | 70 | 75 | 80 |
-| **VENDAS E RECEITA** |  |  |  |  |  |  |
-| Vendas Novas (\#) | 20 | 22 | 24 | 26 | 28 | 30 |
-| Ticket Médio (R$) | 2.100 | 2.100 | 2.100 | 2.100 | 2.100 | 2.100 |
-| Renovações (\#) | 0 | 0 | 0 | 0 | 0 | 0 |
-| Ticket Renovação (R$) | \- | \- | \- | \- | \- | \- |
-| Receita Vendas Novas (R$) | 42.000 | 46.200 | 50.400 | 54.600 | 58.800 | 63.000 |
-| Receita Renovações (R$) | 0 | 0 | 0 | 0 | 0 | 0 |
-| **RECEITA TOTAL (R$)** | 42.000 | 46.200 | 50.400 | 54.600 | 58.800 | 63.000 |
-| **CUSTOS OPERACIONAIS** |  |  |  |  |  |  |
-| Taxa Hotmart (10,9%) | 4.578 | 5.036 | 5.494 | 5.951 | 6.409 | 6.867 |
-| Impostos (12% Simples) | 5.040 | 5.544 | 6.048 | 6.552 | 7.056 | 7.560 |
-| CRM Mensal | 0 | 0 | 0 | 0 | 0 | 0 |
-| Suporte (Freelancer) | 800 | 800 | 800 | 800 | 800 | 800 |
-| Designer | 800 | 800 | 800 | 800 | 800 | 800 |
-| Editor de Vídeo | 600 | 600 | 600 | 600 | 600 | 600 |
-| Gestor de Tráfego | 1.500 | 1.500 | 1.800 | 1.800 | 1.800 | 1.800 |
-| Social Media | 800 | 800 | 800 | 800 | 800 | 800 |
-| Vendedor/Closer | 2.500 | 2.500 | 2.500 | 2.500 | 2.500 | 2.500 |
-| Ferramentas | 300 | 300 | 300 | 300 | 300 | 300 |
-| Total Custos Fixos (R$) | 17.918 | 17.880 | 19.142 | 20.103 | 21.065 | 22.027 |
-| Total Custos (R$) | 23.918 | 23.880 | 26.142 | 27.103 | 29.065 | 30.027 |
-| **RESULTADO E ALUNOS** |  |  |  |  |  |  |
-| Lucro/Prejuízo Mensal (R$) | 18.082 | 22.320 | 24.258 | 27.497 | 29.735 | 32.973 |
-| Margem Líquida (%) | 43% | 48% | 48% | 50% | 51% | 52% |
-| Lucro Acumulado (R$) | 84.300 | 106.620 | 130.878 | 158.375 | 188.110 | 221.083 |
-| Novos Alunos no Mês | 20 | 22 | 24 | 26 | 28 | 30 |
-| Alunos Ativos (fim mês) | 89 | 111 | 135 | 161 | 189 | 219 |
+**Resumo Ano 1 (cenário conservador):**
 
 | Indicador | Valor |
-| :---- | ----: |
-| Receita Total (Ano 1\) | R$ 460.100 |
-| Custos Totais (Ano 1\) | R$ 239.017 |
-| Lucro Líquido (Ano 1\) | R$ 221.083 (48%) |
-| Total de Alunos (Ativos em Dez) | 219 |
-| Ticket Médio | R$ 2.100 |
-| Investimento em Tráfego (Ano) | R$ 69.500 |
-| ROI de Tráfego | 6,6x |
-| CAC (Custo de Aquisição de Cliente) | R$ 317 |
-| LTV (Lifetime Value) | R$ 2.100 (primeiro ano) |
-| Relação LTV : CAC | 6,6 : 1 |
+|:---|---:|
+| Receita VSS (Ano 1) | R$ 495.600 |
+| Receita Advisory (Ano 1) | ~R$ 125.000 (**depende do ticket — TBD**) |
+| Receita Total Estimada | ~R$ 620.000 |
+| Lucro Líquido (Ano 1) | ~R$ 310.000 |
+| Margem média | ~50% |
+| Alunos VSS ativos (fim Dez) | 202 |
+| Clientes Advisory ativos | 21 |
+| Ticket Médio VSS | R$ 2.100 |
+| Investimento em Tráfego (Ano) | R$ 110.000 |
+| ROI de tráfego sobre VSS | ~4,5x |
+| CAC VSS (médio ano) | ~R$ 390 |
+| LTV (12 meses, sem renovação) | R$ 2.100 |
+| Relação LTV : CAC | 5,4 : 1 |
 
----
+### **[P5.3.14.3] 14.3 Cenários Alternativos**
 
-### **[P5.3.14.3] 14.3 Análise dos Cenários**
+**REALISTA (+25% vs conservador):**
 
-**CENÁRIO CONSERVADOR (apresentado acima):**
+* ~253 alunos VSS ativos em Dez
+* ~R$ 775k receita total ano
+* ~R$ 390k lucro líquido
+* Margem ~50%
 
-* 219 alunos no ano  
-* R$ 460k faturamento  
-* R$ 221k lucro líquido  
-* Margem 48%  
-* Payback do investimento em tráfego: Imediato
+**OTIMISTA (+55% vs conservador):**
 
-**CENÁRIO REALISTA:**
+* ~313 alunos VSS ativos em Dez
+* ~R$ 960k receita total ano
+* ~R$ 500k lucro líquido
+* Margem ~52%
 
-* 280 alunos no ano (+28%)  
-* R$ 588k faturamento  
-* R$ 294k lucro líquido  
-* Margem 50%
-
-**CENÁRIO OTIMISTA:**
-
-* 350 alunos no ano (+60%)  
-* R$ 735k faturamento  
-* R$ 382k lucro líquido  
-* Margem 52%
-
-**Nota:** Cenários realista e otimista dependem de otimização constante, ampliação de canais e possível contratação de time de vendas mais cedo.
-
----
+**Nota:** cenários realista e otimista dependem de (1) CPL manter-se abaixo de R$ 15, (2) conversão webinar → venda acima de 3%, (3) Advisory ter ≥ 2 novos clientes/mês a partir do mês 6, (4) canais complementares (Google Ads, indicação) contribuírem com 15–25% dos alunos no segundo semestre.
 
 ### **[P5.3.14.4] 14.4 Observações Importantes**
 
-**Sobre o crescimento:**
+**Sobre o crescimento evergreen:**
 
-* Crescimento é gradual e sustentável  
-* Assume aprendizado e otimização contínua  
-* Budget de tráfego aumenta conforme válida ROI  
-* Contratações são feitas quando faturamento justifica
+* Crescimento é **linear e cumulativo** (não tem picos de lançamento). Cada mês parte da base do anterior.
+* Mês 1 tende a ser o mais difícil — ainda otimizando criativos, oferta, webinar. Aceitar CPL mais alto e conversão mais baixa no início.
+* A partir do mês 3–4, o funil começa a estabilizar e o ROI se torna previsível.
 
 **Sobre custos:**
 
-* Impostos: Simples Nacional 12% (Anexo III)  
-* Taxa plataforma: Hotmart 10,9% (pode usar outras com taxas menores)  
-* CRM: Incluído no programa (sem custo adicional para alunos)  
-* Team: Freelancers inicialmente, CLT conforme escala
+* Tráfego é a maior linha variável. Aumenta conforme ROI valida.
+* Impostos: Simples Nacional 12% (Anexo III). Se escalar muito, rever enquadramento.
+* Taxa plataforma (Hotmart/Kiwify/etc.): 10,9% é referência. Negociar conforme volume.
+* Freelancers entram na ordem: designer → editor de vídeo → social media → gestor de tráfego → closer.
 
 **Sobre alunos ativos:**
 
-* Churn de 5% considerado  
-* Alunos "ativos" \= dentro dos 90 dias de programa  
-* Após 90 dias, podem renovar para "Clube VSS" (recorrência) \- não modelado aqui
+* Churn 5%/mês considerado.
+* "Ativo" = dentro dos 12 meses do programa (incluindo acesso rolling às 48 mentorias).
+* Após 12 meses, opção de renovação (Clube VSS — **modelo ainda em definição, TBD**).
 
 **Riscos:**
 
-* Concentração em 1 canal (Meta Ads)  
-* Dependência de Joel (mitigado com gravações e time)  
-* Sazonalidade (vendas podem cair em Jan/Dez)
+* Concentração em 1 canal (Meta Ads) — mitigar diversificando a partir do mês 4.
+* Fadiga de criativos — rotação constante (testes no budget de 10–15%).
+* Dependência de Joel no conteúdo orgânico — mitigada com banco de conteúdo (ver P12) e cadência documentada (P5.7).
+* Sazonalidade (Dez/Jan tendem a ser mais fracos em B2B no Brasil) — compensar com ofertas de condição no Q4 e pré-venda pra Q1.
 
 ---
 
-## **[P5.4] 15\. CRIATIVOS E COPYS DE VENDAS**
+## **[P5.4] 15. CRIATIVOS E COPYS DE VENDAS (EVERGREEN)**
 
-### **[P5.4.15.1] 15.1 Linha de Comunicação Principal**
+### **[P5.4.15.1] 15.1 Linha de Comunicação Evergreen**
 
-**Tom de voz:** Direto, honesto, empático, motivador, sem exageros
+**Tom de voz:** direto, honesto, empático, motivador, sem exageros. Sem falsa escassez.
 
 **Mensagens-chave:**
 
-* "Transforme seu negócio"  
-* "Vendas previsíveis, não aleatórias"  
-* "Sistema completo, não teoria"  
-* "Com ou sem investimento em tráfego"  
-* "90 dias para estruturar"
+* "Sistema > improviso"
+* "Vendas previsíveis, não aleatórias"
+* "Playbook implementável, não mais um curso pra maratonar"
+* "Funciona com ou sem investimento em tráfego"
+* "Entre hoje — primeira mentoria na próxima [dia da semana]" (**TBD dia/hora**)
 
----
+**Gatilhos de urgência evergreen (por VALOR, não por data):**
+
+* "Cada mês sem sistema = receita deixada na mesa"
+* "Enquanto você pensa, seu concorrente já está estruturando"
+* "O custo do improviso é silencioso, mas é o mais caro"
+* "Você já pagou pela solução — só ainda não recebeu. Continua nos boletos do caos."
+
+**Gatilhos de urgência que NÃO usamos mais:**
+
+* ❌ "Últimas vagas"
+* ❌ "Turma fecha em X horas"
+* ❌ "Próxima abertura só daqui 60 dias"
+* ❌ "Bônus expiram à meia-noite" (exceto na janela 72h individual pós-webinar — aí sim, porque é real)
 
 ### **[P5.4.15.2] 15.2 Criativos Para Anúncios (Meta Ads)**
 
-#### **CRIATIVO 1: Carrossel \- "Os 6Ps das Vendas Escaláveis"**
+#### **CRIATIVO 1: Carrossel — "Os 6Ps das Vendas Escaláveis" (evergreen)**
 
-**Formato:** Carrossel (6 cards)  
-**Card 1 (Capa):**  
-\[Imagem: Empreendedor frustrado olhando planilha\]  
-SUAS VENDAS SÃO ALEATÓRIAS?  
-Descubra qual dos 6Ps está travando seu crescimento  
-\[CTA: Fazer diagnóstico gratuito\]
+**Formato:** Carrossel 6 cards.
 
-**Card 2: P1 \- Posicionamento**  
-\[Ícone: Alvo\]  
-P1: POSICIONAMENTO  
-Você sabe como é lembrado no mercado?  
-Posicionamento claro \= vendas mais fáceis
+**Card 1 (Capa):**
+> SUAS VENDAS SÃO ALEATÓRIAS?
+> Descubra qual dos 6Ps está travando seu crescimento.
+> [CTA: Fazer diagnóstico gratuito]
 
-**Card 3: P2 \- Público**  
-\[Ícone: Pessoas/Grupo\]  
-P2: PÚBLICO  
-"Vendo para qualquer um" \= Vende para ninguém  
-Cliente ideal definido \= conversão 3x maior
+**Cards 2–6:** explicação de cada P (mesma estrutura do modelo anterior — ainda faz sentido).
 
-**Card 4: P3 \- Produto**  
-\[Ícone: Caixa/Presente\]  
-P3: PRODUTO  
-Oferta irresistível ≠ Preço baixo  
-Oferta irresistível \= Alto valor percebido
+**Copy do anúncio (evergreen):**
 
-**Card 5: P4 \- Programas**  
-\[Ícone: Engrenagens\]  
-P4: PROGRAMAS  
-Vendas escaláveis precisam de sistema  
-CRM \+ Funis \+ Automações \= Crescimento previsível
-
-**Card 6: CTA Final**  
-\[Imagem: Logo VSS\]  
-BAIXE O CHECKLIST GRATUITO  
-Faça seu diagnóstico em 10 minutos e descubra seu P mais fraco  
-\[BOTÃO: QUERO O CHECKLIST\]
-
-**Copy do anúncio:**  
-80% das MPEs brasileiras vendem de forma aleatória.  
-Dependem de indicação, sorte ou "momento certo".  
-O problema? Falta de SISTEMA.  
-Os 6Ps das Vendas Escaláveis é o framework que estrutura vendas do zero.  
-✅ Posicionamento claro  
-✅ Público mapeado  
-✅ Oferta irresistível  
-✅ Programas escaláveis  
-✅ Processos documentados  
-✅ Pessoas treinadas  
-Baixe o checklist gratuito e faça seu diagnóstico agora.  
-\[LINK\]  
-\#VendasSemSegredos \#Empreendedorismo \#SistemasDeVendas
+> 80% das MPEs brasileiras vendem de forma aleatória.
+> Dependem de indicação, sorte ou "momento certo".
+> O problema? Falta de SISTEMA.
+>
+> Os 6Ps das Vendas Escaláveis é o framework que estrutura vendas do zero.
+>
+> ✅ Posicionamento claro
+> ✅ Público mapeado
+> ✅ Oferta irresistível
+> ✅ Programas escaláveis
+> ✅ Processos documentados
+> ✅ Pessoas treinadas
+>
+> Baixe o checklist gratuito e faça seu diagnóstico em 10 minutos.
+> [LINK]
+>
+> #VendasSemSegredos #Empreendedorismo #SistemasDeVendas
 
 ---
 
-#### **CRIATIVO 2: Vídeo \- "Por Que Suas Vendas São Aleatórias"**
+#### **CRIATIVO 2: Vídeo curto — "Por Que Suas Vendas São Aleatórias"**
 
-**Formato:** Vídeo vertical 9:16 (Stories/Reels) \- 30 segundos  
-**Script:**
+**Formato:** Vídeo vertical 9:16 (Reels/Stories) — 30 segundos.
 
-* \[0-5s\]  
-  * \[Joel olhando para câmera\]  
-  * "Sabe por que suas vendas são aleatórias?"  
-* \[6-10s\]  
-  * \[Texto na tela: "80% das MPEs"\]  
-  * "80% das pequenas empresas dependem de indicação ou sorte"  
-* \[11-15s\]
-  * \[Texto: "Falta SISTEMA"\]  
-  * "O problema não é falta de esforço. É falta de sistema."  
-* \[16-23s\]  
-  * \[Mostrar diagrama dos 6Ps rapidamente\]  
-  * "Os 6Ps das Vendas Escaláveis estruturam vendas do zero ao crescimento."  
-* \[24-28s  
-  * \[Joel novamente\]  
-  * "Baixa o checklist gratuito. Faça seu diagnóstico."  
-* \[29-30s\]  
-  * \[Texto: "Link na bio" ou botão CTA\]
+**Script (sem referências a lançamento):**
 
-**Copy do post:**  
-Você trabalha muito mas as vendas continuam aleatórias?  
-O problema não é esforço. É falta de SISTEMA.  
-Assista este vídeo e entenda os 6Ps das Vendas Escaláveis.  
-Depois, baixe o checklist gratuito (link abaixo).  
-👇
+* [0–5s] Joel olhando pra câmera: *"Sabe por que suas vendas são aleatórias?"*
+* [6–10s] Texto: "80% das MPEs" — *"80% das pequenas empresas dependem de indicação ou sorte."*
+* [11–15s] Texto: "Falta SISTEMA" — *"O problema não é falta de esforço. É falta de sistema."*
+* [16–23s] Diagrama 6Ps — *"Os 6Ps das Vendas Escaláveis estruturam vendas do zero ao crescimento."*
+* [24–28s] Joel — *"Baixa o checklist gratuito. Faça seu diagnóstico agora."*
+* [29–30s] Texto: "Link na bio."
+
+**Copy do post:**
+
+> Você trabalha muito mas as vendas continuam aleatórias?
+> O problema não é esforço. É falta de SISTEMA.
+> Assista este vídeo e entenda os 6Ps.
+> Depois, baixe o checklist (link na bio).
 
 ---
 
-#### **CRIATIVO 3: Imagem Estática \- "Diagnóstico Gratuito"**
+#### **CRIATIVO 3: Imagem estática — "Diagnóstico Gratuito"**
 
-**Formato:** Imagem quadrada 1080x1080
+**Formato:** 1080x1080.
 
-**Design:**  
-\[Fundo: Azul profissional\]  
-\[Topo: Logo VSS\]  
-DIAGNÓSTICO GRATUITO  
-─────────────────  
-Qual dos 6Ps está travando  
-seu crescimento?  
-\[Ícones dos 6 Ps dispostos em círculo\]  
-P1  P2  P3  
-       🎯  
-P6  P4 P5  
-✅ 10 minutos para completar  
-✅ Resultado imediato  
-✅ Plano de ação personalizado  
-\[Botão: FAZER DIAGNÓSTICO AGORA\]  
-\[Rodapé: [vendassemsegredos.com.br](http://vendassemsegredos.com.br)\]
+**Design:**
 
-**Copy:**  
-A maioria dos empreendedores não sabe qual P está travando suas vendas.  
-É posicionamento? Público? Processos?  
-Descubra agora com nosso diagnóstico gratuito dos 6Ps.  
-10 minutos. Resultado na hora. Ação imediata.  
-\[LINK\]
+* Fundo azul profissional
+* Topo: Logo VSS
+* Título: "DIAGNÓSTICO GRATUITO"
+* Subtítulo: "Qual dos 6Ps está travando seu crescimento?"
+* Ícones dos 6Ps em círculo
+* Bullets: ✅ 10 minutos ✅ Resultado imediato ✅ Plano de ação personalizado
+* CTA: "FAZER DIAGNÓSTICO AGORA"
+
+**Copy:**
+
+> A maioria dos empreendedores não sabe qual P está travando suas vendas.
+> É posicionamento? Público? Processos?
+> Descubra agora com nosso diagnóstico gratuito dos 6Ps.
+> 10 min. Resultado na hora. Ação imediata.
+> [LINK]
 
 ---
 
-#### **CRIATIVO 4: Depoimento \- "Case de Sucesso"**
+#### **CRIATIVO 4: Depoimento — "Case de Sucesso" (sempre no ar)**
 
-**Formato:** Carrossel de imagem (3 cards)
+**Formato:** Carrossel 3 cards (antes / depois / CTA).
 
-**Card 1: Antes**  
-\[Print de conversa/depoimento\]  
-"Antes do VSS:  
-Vendas aleatórias. Dependia de indicação.  
-Não sabia de onde viria a próxima venda."  
-\- João Silva, Consultoria de Marketing
+*(Estrutura igual ao modelo anterior — preservada, sem menção a turma.)*
 
-**Card 2: Depois**  
-\[Print continuação\]  
-"Depois do VSS:  
-\- CRM estruturado  
-\- 150 leads/mês  
-\- 18 vendas em 60 dias  
-\- Processo documentado"  
-\- João Silva, 60 dias após VSS
+**Copy:**
 
-**Card 3: CTA**  
-Quer resultado assim?  
-VENDAS SEM SEGREDOS  
-Sistema completo em 90 dias  
-\[BOTÃO: QUERO ESTRUTURAR VENDAS\]
+> João tinha o mesmo problema que você.
+> Antes: vendas aleatórias, dependência de indicação.
+> Depois de 60 dias no VSS: CRM rodando, 150 leads/mês, 18 vendas.
+> Resultado? Sistema previsível. Crescimento sustentável.
+>
+> **Você é o próximo? Entrada imediata, primeira mentoria na próxima [dia da semana — TBD].**
+> [LINK]
 
-**Copy:**  
-João tinha o mesmo problema que você.  
-Antes: Vendas aleatórias, dependência de indicação.  
-Depois de 60 dias no VSS: CRM rodando, 150 leads/mês, 18 vendas.  
-Resultado? Sistema previsível. Crescimento sustentável.  
-Você é o próximo?  
-\[LINK\]
+---
+
+#### **CRIATIVO 5 (novo, evergreen): "O custo do improviso"**
+
+**Formato:** Vídeo 45s ou carrossel 4 cards.
+
+**Mensagem central:**
+
+> Toda semana sem sistema custa caro. Você só não vê porque o custo é silencioso.
+>
+> — Leads que esquecem de você (porque não teve follow-up)
+> — Propostas perdidas (porque não teve script)
+> — Vendas que morrem na indecisão (porque não teve processo)
+>
+> O VSS mostra quanto isso te custa. E te dá o sistema pra parar.
+> [LINK]
+
+Substitui a lógica de "últimas horas" por "cada semana sem agir é perda real".
 
 ---
 
 ### **[P5.4.15.3] 15.3 Copies Para Landing Pages**
 
-#### **LANDING PAGE 1: Captura de Lead**
+#### **LANDING PAGE 1: Captura de Lead (evergreen)**
 
-**Headline:**  
-Descubra Qual dos 6Ps Está Impedindo Seu Crescimento
+**Headline:** Descubra Qual dos 6Ps Está Impedindo Seu Crescimento
 
-**Subheadline:**  
-Baixe o checklist gratuito e faça seu diagnóstico em 10 minutos.  
-Receba um plano de ação personalizado.
+**Subheadline:** Baixe o checklist gratuito e faça seu diagnóstico em 10 minutos. Receba um plano de ação personalizado.
 
 **Bullets de benefício:**
 
-* ✅ Identifique seu P mais fraco em 10 minutos  
-* ✅ Entenda por que suas vendas são aleatórias  
-* ✅ Receba plano de ação específico para seu negócio  
+* ✅ Identifique seu P mais fraco em 10 minutos
+* ✅ Entenda por que suas vendas são aleatórias
+* ✅ Receba plano de ação específico para seu negócio
 * ✅ 100% gratuito, sem pegadinha
 
-**Formulário:**
-
-* Nome completo  
-* E-mail  
-* WhatsApp
+**Formulário:** Nome, Email, WhatsApp.
 
 **CTA:** "BAIXAR CHECKLIST AGORA"
 
-**Rodapé:**
-
-* Prova social: "+2.000 downloads"  
-* Selo: "100% gratuito"
+**Rodapé:** "+2.000 downloads" | "100% gratuito"
 
 ---
 
-#### **LANDING PAGE 2: Página de Vendas**
+#### **LANDING PAGE 2: Página de Vendas VSS (sempre aberta)**
 
-**Seção 1: Hero**
+**Mudanças-chave em relação ao modelo anterior:**
 
-HEADLINE:
+* Seção de "Bônus de Lançamento" com countdown regressivo → REMOVIDA.
+* Substituída por **"Sua entrada imediata"**: "Entre hoje, primeira mentoria na próxima [dia — TBD]. 48 mentorias rolling a partir da sua entrada."
+* "Vagas limitadas por turma (máximo 50 alunos)" → REMOVIDO.
+* Adicionado: **"Sistema sempre aberto. Sem próxima turma. Sem esperar. Você decide quando começar."**
 
-Transforme Seu Negócio de Vendas Aleatórias  
-para Vendas Previsíveis em 90 Dias
+**Seção 1 — Hero (evergreen):**
 
-SUBHEADLINE:
+> # Transforme Vendas Aleatórias em Vendas Previsíveis em 90 Dias
+>
+> ## Com ou sem investimento em tráfego pago.
+> Entrada imediata — primeira mentoria na próxima [dia da semana — TBD].
+>
+> [BOTÃO: QUERO ESTRUTURAR MINHAS VENDAS]
 
-Sistema completo de vendas escaláveis com CRM profissional incluído  
-(funciona com ou sem investimento em tráfego pago)  
-\[Vídeo de vendas ou imagem forte\]  
-\[BOTÃO: QUERO ESTRUTURAR MINHAS VENDAS\]
+**Seção 2 — Problema/Dor:** (mesma do modelo anterior — preservada).
 
-**Seção 2: Problema/Dor**
+**Seção 3 — Solução:** (preservada, com substituição de "15 módulos + 66 aulas" por **"Sistema VSS Implementável: playbook digital + 15 vídeos-âncora + 48 mentorias ao vivo"** — ver box da Parte A no `_plano-refactor.md`).
 
-VOCÊ ESTÁ CANSADO DE:
+**Seção 4 — Como Funciona:** (preservada).
 
-❌ Vendas aleatórias (não sabe de onde vem a próxima)  
-❌ Depender de indicação ou sorte  
-❌ Trabalhar muito mas faturamento não cresce  
-❌ Leads se perdem em planilhas  
-❌ Follow-up manual (esquece, demora, falha)  
-❌ Contratar agências caras e continuar dependente  
-❌ Comprar cursos que só dão teoria sem implementação  
-Se você respondeu SIM para 3 ou mais...  
-Continue lendo.
+**Seção 5 — O Que Está Incluído (reposicionado):**
 
-**Seção 3: Solução**
+> ✅ **SISTEMA VSS IMPLEMENTÁVEL** (acesso vitalício)
+> Playbook digital navegável + 15 vídeos-âncora (um por módulo)
+> Cada aula vira ação em 15–20 minutos.
+>
+> ✅ **GROWTH CRM PROFISSIONAL** (12 meses)
+> All-in-one: Funis + Automações + Email + WhatsApp
+> Valor de mercado: R$ 6.996
+> INCLUÍDO.
+>
+> ✅ **48 MENTORIAS AO VIVO com Joel** (rolling 12 meses)
+> 1 por semana, 60 min cada.
+> Aprofundamento guiado dos 15 módulos.
+> Aluno entra qualquer dia. Ciclo temático anual que se repete.
+>
+> ✅ **BÔNUS: BIBLIOTECA EVERGREEN DE MENTORIAS GRAVADAS**
+> Todas as mentorias anteriores ficam disponíveis.
+> Você nunca "perde" a que já aconteceu.
+>
+> ✅ **COMUNIDADE EXCLUSIVA** (90 dias)
+> ✅ **TEMPLATES E AUTOMAÇÕES PRONTAS**
+> ✅ **SUPORTE TÉCNICO** (SLA 24h úteis)
+> ✅ **GARANTIA DUPLA** (15 dias incondicional + garantia de resultado)
 
-A SOLUÇÃO: VENDAS SEM SEGREDOS
+**Seção 6 — Prova Social:** (preservada).
 
-Sistema completo que transforma vendas aleatórias em vendas previsíveis.  
-Não é mais um curso teórico.  
-É um programa de IMPLEMENTAÇÃO.  
-Você não "aprende sobre vendas".  
-Você CONSTRÓI um sistema de vendas funcionando.
+**Seção 7 — Stack de Valor:** (preservada, SEM "Bônus de Lançamento — Expiram em XX horas").
 
-Em 90 dias você terá:  
-✅ Sistema estruturado (6Ps implementados)  
-✅ CRM profissional operacional  
-✅ Funis de vendas ativos  
-✅ Automações rodando 24/7  
-✅ Processo documentado  
-✅ Primeiras 5-20 vendas confirmadas
+**Seção 8 — [REMOVIDA]:** "Bônus de Lançamento" não existe mais. Se houver bônus de janela, é **apenas** para quem veio do webinar dentro das 72h individuais — e essa oferta vive no fluxo de email, não na página pública.
 
-**Seção 4: Como Funciona**
+**Seção 9 — Garantia:** (preservada).
 
-COMO FUNCIONA (Simples)
+**Seção 10 — FAQ (adaptada):**
 
-PASSO 1: Fundação (Semanas 1-2)  
-→ Diagnóstico dos 6Ps  
-→ Posicionamento \+ Público \+ Produto definidos  
-→ Plano de ação personalizado
+* "Posso começar quando?" → ✅ "Hoje. Entrada é imediata. Primeira mentoria na próxima [dia — TBD]."
+* "Quando abre próxima turma?" → ✅ "Não há turmas. Entrada contínua. Mentorias acontecem toda [dia — TBD] às [hora — TBD]."
+* "Perdi a mentoria da semana passada?" → ✅ "Todas as mentorias ficam gravadas na biblioteca evergreen. Você não perde nada."
+* Demais perguntas preservadas.
 
-PASSO 2: Infraestrutura (Semanas 3-4)  
-→ CRM configurado do zero  
-→ Site/Landing pages no ar  
-→ Automações básicas ativas
+**Seção 11 — CTA Final (evergreen):**
 
-PASSO 3: Atração (Semanas 5-8)  
-→ Tráfego pago (se tem budget) OU  
-→ Prospecção ativa gratuita  
-→ Leads chegando todo mês
-
-PASSO 4: Conversão (Semanas 9-11)  
-→ Funis otimizados  
-→ Scripts de vendas testados  
-→ Primeiras vendas confirmadas
-
-PASSO 5: Integração (Semanas 12-13)  
-→ Sistema completo funcionando  
-→ Processos documentados  
-→ Pronto para escalar
-
-RESULTADO: Sistema de vendas previsível e escalável
-
-**Seção 5: O Que Está Incluído**
-
-O QUE VOCÊ RECEBE
-
-✅ 15 MÓDULOS COMPLETOS  
-66 aulas práticas (28-32h de conteúdo)  
-Do zero ao sistema escalável  
-✅ GROWTH CRM PROFISSIONAL (12 meses)  
-All-in-one: Funis \+ Automações \+ E-mail \+ WhatsApp  
-Templates prontos para personalizar  
-Valor de mercado: R$ 6.000/ano  
-INCLUÍDO no programa  
-✅ 48 MENTORIAS AO VIVO  
-Semanais, 90 minutos cada  
-Tira dúvidas \+ Hot seats \+ Análises  
-Valor: R$ 7.200  
-✅ COMUNIDADE EXCLUSIVA  
-Network com outros empreendedores  
-Troca de experiências e parcerias  
-Suporte mútuo  
-✅ TEMPLATES E AUTOMAÇÕES PRONTAS  
-Funis pré-configurados  
-Sequências de e-mail  
-Scripts de vendas  
-Landing pages  
-Economize 40h de trabalho  
-✅ SUPORTE TÉCNICO  
-Chat e e-mail  
-Ajuda com CRM e implementação  
-SLA: 24h úteis  
-✅ GARANTIA DUPLA  
-15 dias incondicional (reembolso total)  
-\+ Garantia de resultado (se seguir tudo)
-
-*Transformações Esperadas:*\*
-
-Antes:  
-❌ Vendas no boca a boca  
-❌ Processos na cabeça do dono  
-❌ Site parado sem tráfego  
-❌ Nenhum funil, nenhuma automação  
-❌ Zero controle de métricas
-
-Depois:  
-✅ Funil ativo 24/7 gerando leads  
-✅ CRM com processos e metas claras  
-✅ Scripts que vendem sem esforço  
-✅ Canais previsíveis de aquisição  
-✅ Controle total da jornada de vendas
-
-**Seção 6: Prova Social**
-
-O QUE ALUNOS ESTÃO DIZENDO
-
-\[3-5 depoimentos com foto, nome, empresa\]  
-"Estruturei vendas em 60 dias. Hoje tenho 150 leads/mês e processo documentado. Melhor investimento que fiz."  
-\- João Silva, Consultoria de Marketing  
-"Não tinha budget para tráfego. Usei prospecção ativa gratuita. 25 vendas em 90 dias."  
-\- Maria Santos, Clínica Odontológica  
-\[Logos de empresas atendidas, se aplicável\]
-
-**Seção 7: Stack de Valor**
-
-VALOR REAL DO PROGRAMA
-
-Conteúdo educacional                   R$ 1.997  
-CRM Growth Machine (12 meses)   R$ 6.996  
-48 Mentorias ao vivo                     R$ 7.200  
-Templates e automações             R$ 497  
-Comunidade exclusiva (90 dias)    R$ 597  
-───────────────────────────────────  
-VALOR TOTAL                              R$ 17.287  
-SEU INVESTIMENTO HOJE:       R$ 1.997  
-───────────────────────────────────  
-ECONOMIA REAL                        R$ 15.290 (88%)
-
-\[BOTÃO GRANDE: QUERO GARANTIR MINHA VAGA\]
-
-**Seção 8: Bônus (se em lançamento)**
-
-BÔNUS DE LANÇAMENTO
-
-(Expiram em XX horas)  
-🎁 3 Sessões de Coaching em Grupo (R$ 900\)  
-🎁 Templates Avançados de Prospecção (R$ 300\)  
-🎁 Banco de 100+ Cases de Sucesso (R$ 500\)  
-TOTAL DE BÔNUS: R$ 1.700  
-\[Contador regressivo\]
-
-**Seção 9: Garantia**
-
-SUA GARANTIA DUPLA
-
-🛡️ 15 DIAS INCONDICIONAL  
-Teste o programa completo.  
-Se não gostar (por qualquer motivo),  
-devolvemos 100% do dinheiro.  
-Sem perguntas. Sem burocracia.
-
-🛡️ GARANTIA DE RESULTADO  
-Complete os primeiros 90 dias.  
-Implemente o que ensinamos.  
-Participe das mentorias.  
-Se não tiver sistema funcionando,  
-trabalhamos com você por mais 30 dias  
-SEM CUSTO ADICIONAL.  
-Você só tem a ganhar.  
-Risco é todo nosso.
-
-**Seção 10: FAQ**
-
-PERGUNTAS FREQUENTES
-
-❓ Funciona para meu nicho?  
-✅ Sim. VSS funciona para qualquer negócio que venda (B2B ou B2C).  
-Já temos alunos de 20+ nichos diferentes.
-
-❓ Não tenho budget para tráfego pago. Funciona pra mim?  
-✅ SIM\! O programa ensina prospecção ativa GRATUITA.  
-Você escolhe a rota: com budget ou sem budget.
-
-❓ Quanto tempo por semana preciso dedicar?  
-✅ 6-9 horas/semana em média.  
-Se você não tem esse tempo, espere ter antes de se inscrever.
-
-❓ E se eu não conseguir implementar?  
-✅ Temos mentorias semanais para destravar.  
-\+ Comunidade ativa para ajudar.  
-\+ Suporte técnico.  
-Se ainda assim não funcionar, garantia de resultado (+30 dias grátis).
-
-❓ Vocês fazem "done for you" (fazem pra mim)?  
-✅ Não. VSS é "done with you" (fazemos JUNTO).  
-Você aprende e implementa. Nós guiamos e suportamos.  
-O objetivo é AUTONOMIA, não dependência.
-
-❓ Quanto custa depois dos 12 meses?  
-✅ CRM: Você pode renovar (desconto para alunos) ou migrar para outro.  
-Mentorias e comunidade: Opcional (Clube VSS \- R$ 97/mês).
-
-❓ Posso parcelar?  
-✅ Sim. 12x R$ 166,42 no cartão.  
-Ou à vista R$ 1.997 (Pix ou cartão).
-
-**Seção 11: CTA Final**
-
-PRONTO PARA TRANSFORMAR SUAS VENDAS?
-
-Nos próximos 90 dias, você pode:  
-❌ Continuar com vendas aleatórias  
-Dependendo de sorte e indicação  
-Sem saber de onde vem a próxima venda  
-OU  
-✅ Ter um sistema estruturado  
-Leads chegando todo mês  
-Vendas previsíveis  
-Processos documentados  
-Crescimento escalável  
-A escolha é sua.
-
-\[BOTÃO GIGANTE: SIM, EU QUERO ESTRUTURAR VENDAS\]  
-Investimento: R$ 1.997 à vista ou 12x R$ 166,42  
-Garantia: 15 dias \+ Resultado  
-\[Links de pagamento\]  
-\[Selos de segurança\]  
-\[Depoimentos finais\]
-
-**Rodapé:**
-
-* Política de privacidade  
-* Termos de uso  
-* Contato: <suporte@vendassemsegredos.com.br>  
-* CNPJ, endereço, etc.
+> # PRONTO PARA TRANSFORMAR SUAS VENDAS?
+>
+> Nos próximos 90 dias, você pode:
+>
+> ❌ Continuar com vendas aleatórias
+> Dependendo de sorte e indicação
+>
+> ✅ Ter um sistema estruturado
+> Leads chegando todo mês
+> Vendas previsíveis
+> Primeira mentoria na **próxima [dia — TBD]**
+>
+> A escolha é sua. **O sistema está sempre aberto. A sua decisão, nem sempre.**
+>
+> [BOTÃO: SIM, EU QUERO ESTRUTURAR VENDAS]
+>
+> Investimento: R$ 1.997 à vista ou 12x R$ 166,42
+> Garantia: 15 dias + Resultado
 
 ---
 
-### **[P5.4.15.4] 15.4 Copys Para E-mails (Exemplos)**
+### **[P5.4.15.4] 15.4 Sequência de Email Pós-Captura (Evergreen)**
 
-#### **E-MAIL 1: Boas-Vindas (Após Captura)**
+Sequência completa que substitui os emails de lançamento do modelo anterior.
 
-Assunto: Seu checklist dos 6Ps está aqui\! 📊
+#### **EMAIL 1 — Entrega + Boas-vindas (D+0 imediato)**
 
-Oi \[Nome\]\!  
-Obrigado por baixar o Checklist dos 6Ps das Vendas Escaláveis.  
-\[BOTÃO GRANDE: BAIXAR CHECKLIST\]  
-Já fez seu diagnóstico?  
-Descobriu qual seu P mais fraco?  
-Me conta\! Responde este e-mail ou manda no WhatsApp: \[número\]  
-Ah, e nos próximos dias vou te enviar conteúdos valiosos sobre cada P.  
-Fique de olho na caixa de entrada\!  
-Joel Burigo
+**Assunto:** Seu checklist dos 6Ps está aqui 📊
 
-Criador do Vendas Sem Segredos
-
-PS: Se você quer ir além do diagnóstico e realmente ESTRUTURAR suas vendas,
-conheça o programa completo: \[link\]
-
-#### **E-MAIL 5: Oferta (Dentro de Sequência)**
-
-Assunto: Posso te ajudar?
-
-\[Nome\],  
-Nos últimos dias compartilhei com você:  
-\- Os 6Ps das Vendas Escaláveis  
-\- Por que suas vendas são aleatórias  
-\- Como estruturar um sistema previsível  
-Se você quer ajuda PRÁTICA e PERSONALIZADA para implementar isso no seu negócio,  
-eu tenho uma solução completa:  
-VENDAS SEM SEGREDOS  
-Sistema completo de vendas em 90 dias.  
-O que está incluído:  
-✅ 15 módulos (66 aulas práticas)  
-✅ CRM profissional incluído (R$ 6k/ano)  
-✅ 48 mentorias ao vivo  
-✅ Comunidade exclusiva  
-✅ Garantia dupla (15 dias \+ resultado)  
-Investimento: R$ 1.997 (ou 12x R$ 166,42\)  
-Não é para todo mundo.  
-É para quem está REALMENTE comprometido em estruturar vendas.  
-Se esse é você:  
-\[BOTÃO: QUERO SABER MAIS\]  
-Sem pressão.  
-Só se fizer sentido para você.  
-Joel  
-PS: Dúvidas? Responde este e-mail. Respondo pessoalmente.
+> Oi [Nome]!
+> Obrigado por baixar o Checklist dos 6Ps das Vendas Escaláveis.
+>
+> [BOTÃO: BAIXAR CHECKLIST]
+>
+> Já fez seu diagnóstico? Descobriu qual seu P mais fraco?
+> Me conta! Responde este email.
+>
+> Ah, nos próximos dias vou te mandar conteúdos sobre cada P. Fica de olho.
+>
+> Joel Burigo
+> Criador do Vendas Sem Segredos
+>
+> PS: Se você quiser ir além do diagnóstico e **estruturar** suas vendas de verdade, o programa completo (VSS) está aqui: [link]
 
 ---
 
-### **[P5.4.15.5] 15.5 Body Copy Completo - Sales Page VSS**
+#### **EMAIL 2 — Diagnóstico do problema (D+1)**
 
-**Exemplo de página de vendas completa pronta para uso:**
+**Assunto:** Por que suas vendas são aleatórias (não é falta de esforço)
+
+> [Nome], quero te mostrar algo.
+>
+> Quando alguém me procura dizendo "minhas vendas estão travadas", eu pergunto 3 coisas:
+> 1. Você sabe quanto vai faturar mês que vem?
+> 2. Seus processos estão documentados?
+> 3. Você tem CRM rodando?
+>
+> Se alguma resposta for NÃO, o problema é o mesmo de 80% das MPEs: **falta de sistema**.
+>
+> Amanhã te mando o próximo email — sobre os 2 tipos de empreendedor (e onde você está).
+>
+> Joel
+
+---
+
+#### **EMAIL 3 — Segmentação narrativa (D+2)**
+
+**Assunto:** Os 2 tipos de empreendedor (e onde você está)
+
+> [Nome], existem 2 tipos:
+>
+> **Tipo A:** Trabalha no negócio. Vende quando aparece oportunidade. Apaga incêndio. Não sabe prever receita.
+>
+> **Tipo B:** Trabalha NO negócio. Tem sistema de aquisição. Sabe CAC, LTV, churn. Prevê faturamento com 80% de precisão.
+>
+> Entre A e B existe uma coisa: **metodologia**.
+>
+> Os 6Ps das Vendas Escaláveis é a ponte.
+>
+> Amanhã: convite pra uma masterclass gratuita onde eu mostro os 6Ps em detalhes.
+>
+> Joel
+
+---
+
+#### **EMAIL 4 — Convite pro webinar automatizado (D+3)**
+
+**Assunto:** Masterclass gratuita: "Os 6Ps das Vendas Escaláveis" — escolha seu horário
+
+> [Nome],
+>
+> Criei uma masterclass completa de 90 min onde eu mostro:
+>
+> ✅ O framework dos 6Ps na prática
+> ✅ Como empresas de R$ 10k-300k/mês aplicam
+> ✅ 3 cases reais (antes/depois)
+> ✅ Como estruturar vendas previsíveis em 90 dias
+>
+> É 100% gratuita. Escolhe o horário que melhor encaixa pra você:
+>
+> [BOTÃO: QUERO ASSISTIR A MASTERCLASS]
+>
+> Joel
+>
+> PS: Depois de assistir, você vai ter 72h pra aproveitar uma condição especial (te explico lá dentro).
+
+---
+
+#### **EMAIL 5 — Reminder webinar (4h antes do horário escolhido)**
+
+**Assunto:** Sua masterclass começa em 4h ⏰
+
+> [Nome], a masterclass dos 6Ps começa em 4 horas.
+>
+> [LINK DE ACESSO]
+>
+> Bloqueia essa janela. 90 min que podem mudar como você vende pelos próximos 10 anos.
+>
+> Até já,
+> Joel
+
+---
+
+#### **EMAIL 6 — Pós-webinar (imediato após assistir)**
+
+**Assunto:** E aí, [Nome] — o que você achou?
+
+> [Nome], valeu por ter assistido até o final.
+>
+> Conta pra mim: qual dos 6Ps mais fez sentido pro seu negócio agora?
+>
+> Lembrete: a condição especial que mencionei (bônus exclusivos pra quem assistiu a masterclass) fica disponível por **72h a partir de agora**.
+>
+> Depois dessas 72h, o VSS continua aberto (sempre está), mas os bônus da masterclass expiram pra você.
+>
+> [BOTÃO: GARANTIR VAGA COM BÔNUS]
+>
+> Dúvida? Responde este email. Eu leio.
+>
+> Joel
+
+---
+
+#### **EMAIL 7 — Prova social (D+1 pós-webinar)**
+
+**Assunto:** Como o João saiu de "vendas aleatórias" para 18 vendas em 60 dias
+
+> [Nome], deixa eu te contar sobre o João.
+>
+> [Mini-case: antes/depois, números reais, linha do tempo.]
+>
+> O João não era diferente de você. Não tinha budget gigante. Não era expert em marketing. Só seguiu o método.
+>
+> O VSS ainda está aberto pra você, com os bônus da masterclass (faltam ~48h).
+>
+> [LINK]
+>
+> Joel
+
+---
+
+#### **EMAIL 8 — Urgência por valor (D+2 pós-webinar)**
+
+**Assunto:** O custo silencioso de adiar
+
+> [Nome], toda semana sem sistema é dinheiro deixado na mesa.
+>
+> 3 vendas extras/mês que você não fecha = R$ 3k/mês que não entram.
+> Em 6 meses: R$ 18k.
+> Em 1 ano: R$ 36k.
+>
+> O VSS custa R$ 1.997. Em 1 ano de sistema, você deixa de perder R$ 36k+.
+>
+> O ROI já se paga no primeiro trimestre.
+>
+> Faltam ~24h dos bônus da masterclass:
+> [LINK]
+>
+> Joel
+
+---
+
+#### **EMAIL 9 — Takeaway close (D+3 pós-webinar, final da janela 72h)**
+
+**Assunto:** Último email desta sequência
+
+> [Nome], esta é a última mensagem que eu te mando sobre o VSS nesta semana.
+>
+> Se fizer sentido, esse é o momento:
+> [LINK]
+>
+> Se não fizer sentido agora, sem drama. Você continua na minha lista e volta a receber conteúdo educacional semanal. Quando estiver pronto, o VSS estará aqui.
+>
+> O sistema está sempre aberto. A sua decisão, nem sempre.
+>
+> Joel
+
+---
+
+#### **EMAIL 10 — Re-entrada na nutrição (D+7 pós-webinar, se não comprou)**
+
+**Assunto:** Bora continuar aprendendo?
+
+> [Nome], semana que vem eu te mando um conteúdo novo sobre [tema rotativo: P1, P2, P3, etc.].
+>
+> Sem pressão de venda. Só conteúdo útil pra você ir estruturando seu negócio.
+>
+> Se uma hora fizer sentido voltar pra conversa sobre o VSS, o link está sempre aqui: [link].
+>
+> Joel
+
+---
+
+### **[P5.4.15.5] 15.5 Body Copy Completo — Sales Page VSS (Evergreen)**
 
 ```markdown
 # Transforme Vendas Aleatórias em Vendas Previsíveis em 90 Dias
 
-## Mesmo sem investir fortunas em tráfego pago
+## Mesmo sem investir fortunas em tráfego pago.
+## Entrada imediata — primeira mentoria na próxima [dia — TBD].
 
 Você acorda todo dia sem saber de onde vem a próxima venda?
 
@@ -1049,10 +863,9 @@ Atendi 140 empresas em 17 anos. Ajudei a gerar R$ 1 bilhão em vendas ao longo d
 
 E o padrão era sempre o mesmo:
 
-
-👉 Agência entrega leads  
-👉 Empresa não tem processo de vendas  
-👉 Leads morrem  
+👉 Agência entrega leads
+👉 Empresa não tem processo de vendas
+👉 Leads morrem
 👉 Dinheiro desperdiçado
 
 Foi aí que criei os **6Ps das Vendas Escaláveis**.
@@ -1063,52 +876,67 @@ Foi aí que criei os **6Ps das Vendas Escaláveis**.
 
 Um sistema completo que integra Marketing + Vendas + Growth:
 
-**P1 - POSICIONAMENTO** → Por quê você existe  
-**P2 - PÚBLICO** → Pra quem você serve  
-**P3 - PRODUTO** → O quê você oferece  
-**P4 - PROGRAMAS** → Como você vende (CRM, funis, marketing)  
-**P5 - PROCESSOS** → Como você opera (documentação, métricas)  
-**P6 - PESSOAS** → Quem executa  
+**P1 — POSICIONAMENTO** → Por quê você existe
+**P2 — PÚBLICO** → Pra quem você serve
+**P3 — PRODUTO** → O quê você oferece
+**P4 — PROGRAMAS** → Como você vende (CRM, funis, marketing)
+**P5 — PROCESSOS** → Como você opera (documentação, métricas)
+**P6 — PESSOAS** → Quem executa
 
 Não é teoria. São 17 anos e 140 clientes sistematizados em metodologia replicável.
 
 ---
 
-## Apresento: VSS (Vendas Sem Segredos)
+## Apresento: VSS (Vendas Sem Segredos) — Sistema VSS Implementável
 
-O programa onde você implementa os 6Ps em 90 dias — com suporte da equipe dedicada.
+O programa onde você implementa os 6Ps em 90 dias — com suporte da equipe dedicada e **48 mentorias ao vivo com o Joel ao longo de 12 meses**.
 
 **Não é curso gravado que abandona.**
-É parceria. Equipe faz junto com você até dar certo.
+É um sistema pra implementar — não mais um curso pra maratonar.
 
 ### O Que Você Recebe:
 
-✅ **15 módulos / 66 aulas** (28-32h de conteúdo)
-✅ **48 mentorias semanais em grupo** (60 min cada)
-✅ **CRM profissional incluído** (12 meses - valor R$ 1.188)
+✅ **Sistema VSS Implementável** — playbook digital + 15 vídeos-âncora (acesso vitalício)
+✅ **48 mentorias ao vivo com Joel** — 1 por semana, 60 min cada, rolling 12 meses
+✅ **Biblioteca evergreen de mentorias gravadas** — você nunca perde uma que já aconteceu
+✅ **Growth CRM profissional incluído** (12 meses — valor R$ 6.996)
 ✅ **Configuração do CRM junto** (não te deixo sozinho)
 ✅ **Templates prontos** (funis, scripts, landing pages)
-✅ **Suporte via comunidade** (90 dias)
-✅ **Garantia 15 dias** (devolução total)
+✅ **Comunidade exclusiva** (90 dias)
+✅ **Garantia 15 dias** (devolução total) + Garantia de resultado
 
 ### O Grande Diferencial:
 
 **Funciona COM ou SEM budget de tráfego.**
 
-👉 **Tem R$ 500-2k/mês para anúncios?** Vou te ensinar tráfego pago estruturado.  
+👉 **Tem R$ 500–2k/mês para anúncios?** Vou te ensinar tráfego pago estruturado.
 👉 **Não tem budget agora?** Vou te ensinar prospecção ativa gratuita (LinkedIn, Instagram, Email).
 
 **Ambos chegam no mesmo lugar: vendas previsíveis.**
 
 ---
 
+## Como Funciona a Entrada
+
+**Sistema sempre aberto.**
+
+* Você compra hoje.
+* Começa o playbook hoje.
+* Primeira mentoria ao vivo: **próxima [dia da semana fixo — TBD]** às **[hora — TBD]**.
+* 48 mentorias rolling a partir da sua entrada (12 meses).
+* Ciclo temático anual que se repete — você pega qualquer ponto da jornada e continua dali.
+
+Sem esperar "próxima turma". Sem vagas limitadas artificialmente. Sem contagem regressiva.
+
+---
+
 ## Para Quem É o VSS
 
-✅ Você fatura R$ 10k-300k/mês  
-✅ Não sabe quanto vai faturar no próximo mês  
-✅ Está cansado de improviso  
-✅ Já tentou agência/curso e frustrou  
-✅ Está disposto a trabalhar 6-9h/semana por 90 dias
+✅ Você fatura R$ 10k–300k/mês
+✅ Não sabe quanto vai faturar no próximo mês
+✅ Está cansado de improviso
+✅ Já tentou agência/curso e frustrou
+✅ Está disposto a trabalhar 6–9h/semana por 90 dias
 
 Se você disse SIM para 3 ou mais, o VSS é para você.
 
@@ -1116,21 +944,21 @@ Se você disse SIM para 3 ou mais, o VSS é para você.
 
 ## Para Quem NÃO É
 
-❌ Quem busca "fique rico rápido"  
-❌ Quem não tem tempo (mínimo 6h/semana)  
-❌ Quem quer só "consumir aulas" sem implementar  
-❌ Quem fatura acima de R$ 300k/mês (precisa de outro nível de solução)
+❌ Quem busca "fique rico rápido"
+❌ Quem não tem tempo (mínimo 6h/semana)
+❌ Quem quer só "consumir aulas" sem implementar
+❌ Quem fatura acima de R$ 300k/mês (nesse caso, considere Advisory — [link])
 
 ---
 
 ## Investimento
 
 ### R$ 1.997 à vista
-**ou**  
+**ou**
 ### 12x de R$ 166,42 no cartão
 
-**Valor se comprado separado:** R$ 17.287  
-**Economia:** R$ 15.290 (88% de desconto)
+**Valor se comprado separado:** R$ 17.287
+**Economia:** R$ 15.290 (88%)
 
 ### Garantia 15 Dias
 
@@ -1140,20 +968,23 @@ Teste o VSS por 15 dias. Se não for para você, devolvo 100% do seu dinheiro. S
 
 ## FAQ
 
-**P: Funciona mesmo sem investir em tráfego pago?**  
-R: Sim. Você aprende prospecção ativa estruturada (LinkedIn, Instagram, Email). É mais trabalhoso, mas funciona.
+**P: Quando começa?**
+R: Hoje. A entrada é imediata. Primeira mentoria na próxima [dia — TBD].
 
-**P: Quanto tempo leva para ver resultados?**  
-R: Primeiras vendas estruturadas em 60-90 dias. Sistema completo funcionando em 90 dias. Escala nos meses seguintes.
+**P: Funciona mesmo sem investir em tráfego pago?**
+R: Sim. Você aprende prospecção ativa estruturada (LinkedIn, Instagram, Email).
 
-**P: Eu não entendo nada de tecnologia. Consigo usar o CRM?**  
-R: Sim. Configuramos JUNTO. Você não fica sozinho.
+**P: E se eu perder uma mentoria?**
+R: Todas ficam gravadas na biblioteca evergreen. Você acessa quando quiser.
+
+**P: Quanto tempo leva para ver resultados?**
+R: Primeiras vendas estruturadas em 60–90 dias.
+
+**P: Eu não entendo nada de tecnologia. Consigo usar o CRM?**
+R: Sim. Configuramos JUNTO.
 
 **P: Posso fazer no meu ritmo?**
-R: As aulas sim. Mas as mentorias semanais em grupo seguem um cronograma ao longo do ano. Estrutura existe por um motivo: funciona.
-
-**P: E se eu tiver dúvidas?**
-R: Comunidade exclusiva + 48 mentorias semanais em grupo. Você não fica desamparado.
+R: O playbook sim. As mentorias acontecem em dia fixo semanal, mas todas ficam gravadas.
 
 ---
 
@@ -1161,12 +992,12 @@ R: Comunidade exclusiva + 48 mentorias semanais em grupo. Você não fica desamp
 
 [BOTÃO: QUERO ENTRAR NO VSS]
 
-Vagas limitadas por turma (máximo 50 alunos para garantir qualidade).
+**Sistema sempre aberto. Entrada imediata.**
 
 ---
 
-Joel Burigo  
-Criador dos 6Ps das Vendas Escaláveis  
+Joel Burigo
+Criador dos 6Ps das Vendas Escaláveis
 17 anos | 140 clientes | R$ 1 bilhão agregado
 
 P.S.: Sistema > Improviso. Let's grow.
@@ -1174,22 +1005,86 @@ P.S.: Sistema > Improviso. Let's grow.
 
 ---
 
-### **[P5.4.15.6] 15.6 As 12 Objeções Mais Comuns (Scripts Detalhados)**ados)**
+### **[P5.4.15.6] 15.6 Posts Para Redes Sociais (Evergreen)**
+
+#### **POST LINKEDIN — Autoridade (evergreen, sempre pode ir ao ar)**
+
+> 80% das MPEs brasileiras vendem de forma aleatória.
+> Elas dependem de:
+> → Indicação
+> → Sorte
+> → "Momento certo"
+>
+> O problema?
+> FALTA DE SISTEMA.
+>
+> Vender de forma escalável não é sorte. É processo.
+>
+> Os 6Ps das Vendas Escaláveis:
+> P1 — Posicionamento claro
+> P2 — Público mapeado
+> P3 — Oferta irresistível
+> P4 — Programas escaláveis (CRM, funis, automações)
+> P5 — Processos documentados
+> P6 — Pessoas treinadas
+>
+> Quando você tem os 6Ps estruturados:
+> → Vendas se tornam previsíveis
+> → Crescimento é sustentável
+> → Você não depende mais de sorte
+>
+> Qual seu P mais fraco hoje? Comenta aqui.
+>
+> PS: Diagnóstico gratuito nos comentários.
+>
+> #VendasSemSegredos #Empreendedorismo #MPEs
+
+---
+
+#### **POST INSTAGRAM — Engajamento (carrossel 5 slides)**
+
+**Slides:**
+
+1. "Por que suas vendas são aleatórias?"
+2. ❌ Você não tem POSICIONAMENTO claro
+3. ❌ Você não tem PÚBLICO definido
+4. ❌ Você não tem PROCESSO documentado
+5. ✅ A SOLUÇÃO: Os 6Ps das Vendas Escaláveis — Link na bio
+
+**Caption:**
+
+> Se suas vendas são aleatórias, o problema não é falta de esforço. É falta de SISTEMA.
+>
+> Os 6Ps estruturam vendas do zero.
+>
+> Diagnóstico gratuito no link da bio. 10 min. Resultado na hora.
+>
+> Qual seu P mais fraco? Comenta aqui 👇
+>
+> #VendasSemSegredos #Empreendedorismo #Vendas
+
+Para calendarização e cadência, ver **P5.7** e o arquivo `docs/conteudo/marketing/calendario.md`.
+
+---
+
+## **[P5.5] 16. OBJEÇÕES E SCRIPTS**
+
+> **Nota:** as 12 objeções preservam a essência do documento anterior. Ajustes feitos apenas onde havia menção a "turma", "próxima abertura", "valor promocional desta turma" — substituídos por linguagem evergreen equivalente.
+
+### **[P5.5.16.1] 16.1 As 12 Objeções Mais Comuns**
 
 #### **OBJEÇÃO 1: "Está caro"**
 
-**Contexto:** Cliente acha R$ 1.997 caro
+**Resposta:** "Entendo. Mas compare: agência cobra R$ 3–5k/mês e não estrutura vendas. Consultoria cobra R$ 50–100k. VSS é R$ 1.997 com CRM incluído, 48 mentorias semanais ao vivo, e sistema completo. Qual é mais caro de verdade?
 
-**Resposta curta:** "Entendo. Mas compare: agência cobra R$ 3-5k/mês e não estrutura vendas. Consultoria cobra R$ 50-100k. VSS é R$ 1.997 com CRM incluído, 48 mentorias semanais, e sistema completo. Qual é mais caro de verdade?"
+Vamos fazer a conta:
 
-**Resposta longa:** "Vamos fazer a conta juntos:
-
-* Agência por 3 meses: R$ 9-15 mil (e não estrutura vendas)  
-* CRM sozinho: R$ 1.188/ano  
-* Curso genérico: R$ 997 (sem CRM, sem suporte)  
+* Agência por 3 meses: R$ 9–15 mil (e não estrutura vendas)
+* CRM sozinho: R$ 1.188/ano
+* Curso genérico: R$ 997 (sem CRM, sem suporte)
 * VSS: R$ 1.997 (tudo incluso)
 
-Além disso: se o VSS te ajudar a fechar 3 vendas extras/mês com ticket de R$ 1.000, você já recuperou o investimento. O resto é lucro.
+Se o VSS te ajudar a fechar 3 vendas extras/mês com ticket de R$ 1.000, você já recupera o investimento na primeira semana. O resto é lucro.
 
 A pergunta não é se está caro. É: quanto custa continuar no improviso?"
 
@@ -1197,38 +1092,32 @@ A pergunta não é se está caro. É: quanto custa continuar no improviso?"
 
 #### **OBJEÇÃO 2: "Não tenho tempo"**
 
-**Contexto:** Cliente diz que não tem 6-9h/semana
+**Resposta:** "Entendo. Você está atolado apagando incêndios porque não tem sistema, certo?
 
-**Resposta:** "Entendo perfeitamente. Você está atolado apagando incêndios porque não tem sistema, certo?
+A verdade: você já gasta MAIS de 9h/semana resolvendo problemas que um sistema evitaria. Perseguindo leads que esquecem. Refazendo propostas do zero. Improvisando cada venda.
 
-Aqui está a verdade: você já gasta MAIS de 9 horas por semana resolvendo problemas que um sistema evitaria. Desperdiça tempo perseguindo leads que esquecem, refazendo propostas do zero, improvisando cada venda.
+O VSS pede 6–9h/semana por 90 dias para CONSTRUIR o sistema. Depois disso, você GANHA tempo porque o sistema roda sozinho.
 
-O VSS te pede 6-9h/semana por 90 dias para CONSTRUIR o sistema. Depois disso, você GANHA tempo porque o sistema roda sozinho.
-
-A pergunta é: você prefere continuar apagando incêndio para sempre, ou investir 90 dias para ter estrutura?"
+Prefere continuar apagando incêndio pra sempre, ou investir 90 dias pra ter estrutura?"
 
 ---
 
 #### **OBJEÇÃO 3: "Vou fazer sozinho"**
 
-**Contexto:** Cliente acha que consegue implementar sozinho
-
 **Resposta:** "Pode sim. O conhecimento está aí (YouTube, livros, blogs).
 
 Mas responde honestamente:
-
-* Você já tem CRM funcionando?  
-* Seus processos estão documentados?  
+* Você já tem CRM funcionando?
+* Seus processos estão documentados?
 * Você sabe quanto vai faturar no próximo mês?
 
-Se a resposta for NÃO, é porque sozinho não deu certo ainda. E provavelmente não vai dar nos próximos 6 meses também.
+Se a resposta for NÃO, é porque sozinho não deu certo ainda.
 
-No VSS você não paga por informação. Você paga por:
-
+No VSS você não paga por informação. Paga por:
 1. Método estruturado (ordem certa)
 2. Implementação guiada (fazemos junto)
 3. CRM configurado (não precisa descobrir sozinho)
-4. Accountability (48 mentorias semanais te empurram pra frente)
+4. Accountability (48 mentorias semanais ao vivo)
 
 Informação é gratuita. Transformação tem preço."
 
@@ -1236,331 +1125,376 @@ Informação é gratuita. Transformação tem preço."
 
 #### **OBJEÇÃO 4: "Não funciona para meu nicho"**
 
-**Contexto:** Cliente acha que seu negócio é "diferente demais"
-
 **Resposta:** "Você tem razão: seu nicho tem particularidades.
 
-Mas me diz: você precisa de:
-
-* Posicionamento claro? (P1)  
-* Conhecer seu cliente ideal? (P2)  
-* Oferta irresistível? (P3)  
-* Gerar leads previsivelmente? (P4)  
-* Converter esses leads? (P5)  
+Mas me diz — você precisa de:
+* Posicionamento claro? (P1)
+* Conhecer seu cliente ideal? (P2)
+* Oferta irresistível? (P3)
+* Gerar leads previsivelmente? (P4)
+* Converter esses leads? (P5)
 * Ter processos documentados? (P6)
 
-Se SIM, os 6Ps servem para você.
+Se SIM, os 6Ps servem pra você. A METODOLOGIA é universal. A IMPLEMENTAÇÃO é customizada.
 
-A METODOLOGIA é universal. A IMPLEMENTAÇÃO é customizada.
+Atendi empresas de 6 nichos diferentes. Os 6Ps funcionaram em todos porque são sistema, não tática.
 
-Atendi empresas de 6 nichos diferentes (serviços, comércio, educação, tech, beleza, food). Os 6Ps funcionaram em todos porque são sistema, não tática.
-
-Nas mentorias semanais, a gente adapta para SUA realidade específica."
+Nas mentorias semanais ao vivo, a gente adapta pra SUA realidade."
 
 ---
 
 #### **OBJEÇÃO 5: "Preciso pensar"**
 
-**Contexto:** Cliente está em dúvida
-
 **Resposta:** "Claro, decisão consciente é importante.
 
-Mas me deixa te fazer uma pergunta: o que EXATAMENTE você precisa pensar?
+Mas me deixa perguntar: o que EXATAMENTE você precisa pensar?
+* É sobre o investimento? Tem garantia de 15 dias.
+* É sobre o tempo? São 6–9h/semana.
+* É sobre funcionar? Existem os cases e a metodologia.
 
-* É sobre o investimento? A gente já falou que tem garantia 15 dias.  
-* É sobre o tempo? A gente já falou que são 6-9h/semana.  
-* É sobre funcionar? A gente já falou dos cases e da metodologia.
+Normalmente 'preciso pensar' é uma objeção não verbalizada. Me conta: o que realmente está te impedindo de dizer sim agora?
 
-Normalmente quando alguém diz 'preciso pensar', é porque tem uma objeção não verbalizada.
-
-Me conta: o que realmente está te impedindo de dizer sim agora?"
-
-(Aqui você destrava a objeção real)
+PS: O VSS está sempre aberto. Mas cada semana que você pensa é uma semana sem sistema. Pense — mas pense com data."
 
 ---
 
 #### **OBJEÇÃO 6: "Já tentei curso/agência antes e não deu certo"**
 
-**Contexto:** Cliente queimado por experiências passadas
-
 **Resposta:** "Te entendo 100%. E aposto que sei o que aconteceu:
 
-**Se foi curso:** Te venderam acesso a aulas gravadas e te abandonaram. Você assistiu algumas aulas, tentou implementar sozinho, travou, e desistiu. Certo?
+**Se foi curso:** te venderam aulas gravadas e te abandonaram. Você assistiu, tentou sozinho, travou, desistiu.
 
-**Se foi agência:** Eles entregaram leads mas você não tinha processo de vendas para converter. Gastou fortunas, teve Instagram bonito, mas caixa continua vazio. Certo?
+**Se foi agência:** entregaram leads mas você não tinha processo pra converter. Gastou fortunas, teve Instagram bonito, mas caixa continua vazio.
 
 O VSS é DIFERENTE por 3 motivos:
 
-1. **Não te abandono:** 48 mentorias semanais em grupo. Você não fica sozinho.
+1. **Não te abandono:** 48 mentorias ao vivo em grupo rolling 12 meses. Você nunca fica sozinho.
+2. **Implemento junto:** não é 'assista e se vira'. É 'vamos fazer juntos'.
+3. **Sistema completo:** não é só marketing OU vendas. São os dois integrados + CRM.
 
-2. **Implemento junto:** Não é 'assista e se vira'. É 'vamos fazer juntos'.
-
-3. **Sistema completo:** Não é só marketing OU vendas. São os dois integrados + CRM.
-
-Além disso: garantia 15 dias. Testa, se não for diferente do que você já tentou, pede reembolso.
-
-Mas te garanto: você nunca tentou algo assim."
+Garantia de 15 dias. Testa. Se não for diferente, pede reembolso."
 
 ---
 
 #### **OBJEÇÃO 7: "Minha empresa é muito pequena ainda"**
 
-**Contexto:** Cliente acha que é "cedo demais"
+**Resposta:** "Entendo o receio. Mas:
 
-**Resposta:** "Entendo o receio. Mas me responde:
-
-* Você já fatura mais de R$ 10 mil/mês?  
-* Você já tem clientes pagando?  
-* Você quer crescer de forma previsível (não aleatória)?
+* Você já fatura mais de R$ 10k/mês?
+* Você já tem clientes pagando?
+* Você quer crescer de forma previsível?
 
 Se SIM, não é cedo. É a HORA CERTA.
 
-Na verdade, quanto ANTES você estrutura, MELHOR. Porque:
+Quanto ANTES estrutura, MELHOR:
+1. Não precisa 'desaprender' improviso
+2. Cresce com fundação sólida
+3. Evita desperdício em táticas isoladas
 
-1. Não precisa 'desaprender' improviso (quanto maior fica, mais difícil mudar)  
-2. Cresce com fundação sólida desde o início  
-3. Evita desperdício de dinheiro em táticas isoladas
-
-Pequeno não é problema. Desorganizado é.
-
-E o VSS foi feito justamente para quem está na sua faixa: R$ 10-300k/mês. Você está NO sweet spot."
+Pequeno não é problema. Desorganizado é. O VSS foi feito pra R$ 10–300k/mês. Você está no sweet spot."
 
 ---
 
 #### **OBJEÇÃO 8: "Não tenho budget para tráfego pago"**
 
-**Contexto:** Cliente acha que precisa investir em anúncios além do VSS
-
 **Resposta:** "Perfeito. Por isso o VSS tem DUAS ROTAS:
 
-**ROTA A:** Para quem tem R$ 500-2k/mês para anúncios  
-**ROTA B:** Para quem tem R$ 0 para anúncios (prospecção gratuita)
+**ROTA A:** pra quem tem R$ 500–2k/mês pra anúncios
+**ROTA B:** pra quem tem R$ 0 (prospecção gratuita)
 
-Você escolhe qual rota seguir.
+Você escolhe.
 
 Na rota B você aprende:
-
-* Prospecção ativa no LinkedIn  
-* Estratégia de conteúdo orgânico  
-* Email frio estruturado  
+* Prospecção ativa no LinkedIn
+* Conteúdo orgânico estruturado
+* Email frio
 * Networking e parcerias
 
-**Custo: R$ 0 em anúncios.** Só tempo e trabalho.
+Custo: R$ 0 em anúncios. Só tempo e trabalho.
 
-Resultado: 5-20 conversas qualificadas por mês.
+Resultado: 5–20 conversas qualificadas/mês.
 
-É mais trabalhoso? Sim. Mas funciona? TAMBÉM.
-
-Você não precisa de R$ 20 mil em tráfego para ter vendas previsíveis. Você precisa de SISTEMA."
+Mais trabalhoso? Sim. Funciona? TAMBÉM."
 
 ---
 
 #### **OBJEÇÃO 9: "Vou esperar ter mais dinheiro"**
 
-**Contexto:** Cliente quer adiar para quando "tiver sobrando"
-
-**Resposta:** "Entendo. Mas pensa comigo:
+**Resposta:** "Entendo. Mas:
 
 **Por que você não tem 'dinheiro sobrando' hoje?**
 
-Provavelmente porque suas vendas são aleatórias. Você não sabe quanto vai faturar no próximo mês. Vive no apaga incêndio.
+Provavelmente porque suas vendas são aleatórias. O VSS resolve exatamente isso.
 
-O VSS resolve EXATAMENTE isso.
-
-Agora me diz: quanto tempo mais você vai esperar? Mais 6 meses? 1 ano?
-
-E se nesse tempo você continuar improvisando, quanto dinheiro você VAI PERDER por não ter sistema?
+Quanto tempo mais você vai esperar? 6 meses? 1 ano?
 
 Faz a conta:
+* 3 vendas extras/mês = R$ 3k/mês
+* Em 6 meses = R$ 18k
 
-* 3 vendas extras por mês = R$ 3.000  
-* Em 6 meses = R$ 18.000
+Você pensa em 'gastar' R$ 1.997. Eu penso nos R$ 18k que você vai deixar de ganhar esperando.
 
-Você está pensando em 'gastar' R$ 1.997. Eu estou pensando nos R$ 18 mil que você vai DEIXAR DE GANHAR esperando.
+12x R$ 166,42. Menos de R$ 170/mês. Preço de 1–2 horas do seu serviço.
 
-Além disso: 12x de R$ 166,42. Menos de R$ 170/mês. É o preço de 1-2 horas do SEU serviço.
-
-A pergunta não é 'quando vou ter dinheiro'. É: 'quanto custa NÃO ter sistema'?"
+A pergunta não é 'quando vou ter dinheiro'. É: 'quanto custa não ter sistema'?"
 
 ---
 
 #### **OBJEÇÃO 10: "Preciso consultar meu sócio/esposa"**
 
-**Contexto:** Cliente precisa de aprovação de terceiros
-
 **Resposta:** "Claro, decisão em conjunto é importante.
 
-Mas deixa eu te dar um conselho: quando você for conversar com ele/ela, não pergunte 'o que você acha do curso?'
+Um conselho: quando for conversar, não pergunte 'o que você acha do curso?'.
 
 Pergunte: **'A gente pode continuar mais 6 meses sem saber quanto vamos faturar no próximo mês?'**
 
-Porque o VSS não é 'mais um curso'. É a solução para o problema que vocês já têm.
+O VSS não é 'mais um curso'. É a solução pro problema que vocês já têm.
 
-Se a resposta for SIM (podemos continuar assim), então não precisa do VSS.
+Se a resposta for SIM (podemos continuar assim), não precisa do VSS.
 
-Mas se a resposta for NÃO (precisa mudar), então vocês precisam de sistema.
+Se for NÃO, vocês precisam de sistema. E aí a pergunta é: agora ou daqui 6 meses?
 
-E aí a pergunta fica: **quando?** Agora ou daqui 6 meses?
-
-Se quiser, posso fazer uma call rápida de 15 min com vocês dois para esclarecer dúvidas. Assim a decisão é bem informada."
+Posso fazer uma call rápida de 15 min com vocês dois. Decisão informada."
 
 ---
 
 #### **OBJEÇÃO 11: "Parece muito bom para ser verdade"**
 
-**Contexto:** Cliente cético por promessas passadas não cumpridas
-
 **Resposta:** "Adorei essa objeção. Significa que você já foi enganado antes e está mais esperto agora.
 
-Deixa eu ser transparente sobre o que o VSS É e o que NÃO É:
+Transparência total:
 
-**O VSS NÃO É:** 
-❌ Fórmula mágica 
-❌ Fique rico rápido 
-❌ Sistema 100% automatizado que roda sozinho 
+**O VSS NÃO É:**
+❌ Fórmula mágica
+❌ Fique rico rápido
+❌ Sistema 100% automatizado
 ❌ Solução sem esforço
 
-**O VSS É:** 
-✅ Método estruturado (6Ps) 
-✅ Implementação guiada (90 dias) 
-✅ Sistema que funciona **quando você trabalha** 
-✅ Exige 6-9h/semana de dedicação
+**O VSS É:**
+✅ Método estruturado (6Ps)
+✅ Implementação guiada (90 dias)
+✅ Sistema que funciona **quando você trabalha**
+✅ Exige 6–9h/semana
 
-Eu prometo resultado se VOCÊ fizer sua parte.
+Prometo resultado se VOCÊ fizer sua parte.
 
-Se você está procurando milagre sem esforço, o VSS não é para você.
-
-Mas se você quer método comprovado + parceria + ferramentas + suporte, o VSS é exatamente isso.
-
-E tem garantia 15 dias. Testa. Se for 'bom demais para ser verdade' de forma negativa, pede reembolso."
+Garantia 15 dias. Testa. Se for 'bom demais' de forma negativa, pede reembolso."
 
 ---
 
 #### **OBJEÇÃO 12: "Vou começar ano que vem"**
 
-**Contexto:** Cliente quer adiar para janeiro
+**Resposta:** "Entendo. Janeiro é mês de planejamento.
 
-**Resposta:** "Entendo. Janeiro é mês de planejamento, faz sentido.
-
-Mas me responde: o que vai mudar entre hoje e janeiro?
-
-* Suas vendas vão ficar mais previsíveis? Não.  
-* Você vai magicamente ter sistema? Não.  
+Mas o que muda entre hoje e janeiro?
+* Suas vendas vão ficar mais previsíveis sozinhas? Não.
+* Você vai magicamente ter sistema? Não.
 * O problema vai sumir? Não.
 
-Na verdade, vai PIORAR. Porque você vai desperdiçar mais 2-3 meses improvisando.
+Na verdade, piora. Você desperdiça mais 2–3 meses improvisando.
 
-Agora pensa no cenário alternativo:
+**Se começar hoje:**
+* Em 30 dias: P1, P2, P3 estruturados
+* Em 60 dias: CRM rodando
+* Em 90 dias: vendas previsíveis
 
-**Se você começar hoje:**
+**Se começar em janeiro:**
+* Em março: ainda estruturando
+* Em abril: ainda aprendendo
+* Em maio: ainda implementando
 
-* Em janeiro você já está com P1, P2, P3 estruturados  
-* Em fevereiro você já tem CRM rodando  
-* Em março você já tem vendas previsíveis
+Diferença: 3 meses de resultado.
 
-**Se você começar em janeiro:**
-
-* Em março você ainda está estruturando  
-* Em abril ainda está aprendendo  
-* Em maio ainda está implementando
-
-Diferença? 3 meses de resultado.
-
-Além disso: turma de janeiro provavelmente vai ter preço maior (valor promocional é SÓ para esta turma).
-
-Decisão é sua. Mas eu começaria hoje."
+O sistema está sempre aberto. Entrada imediata. **Próxima mentoria: próxima [dia — TBD]**. Decisão é sua. Mas eu começaria hoje."
 
 ---
 
-### **[P5.4.15.7] 15.7 Scripts Para Mentorias/Vendas**
+### **[P5.5.16.2] 16.2 Script de Fechamento — "Está Caro" (Detalhado)**
 
-#### **SCRIPT: Resposta a Objeção "Está Caro"**
+```
+PROSPECT: "Está caro"
+VOCÊ: "Entendo. Em comparação com o quê?"
+[OUVIR RESPOSTA]
 
-PROSPECT: "Está caro"  
-VOCÊ: "Entendo. Em comparação com o quê?"  
-\[OUVIR RESPOSTA\]  
-VOCÊ: "Deixa eu te mostrar o valor real:  
-O investimento é R$ 1.997.  
-Mas você recebe:  
-\- CRM Growth Machine (R$ 6.996/ano) → INCLUÍDO  
-\- 48 mentorias (R$ 7.200) → INCLUÍDO  
-\- Sistema completo → INCLUÍDO  
-Total de valor: R$ 17.287  
-Você paga R$ 1.997.  
-Agora, deixa eu te perguntar:  
-Quanto você PERDE por mês com vendas aleatórias?  
-Quantos leads se perdem?  
-Quanto tempo você gasta com follow-up manual?  
-Quanto você já gastou em soluções que não funcionaram?  
-Se estruturar vendas te gerar 5-10 vendas adicionais por mês,  
-quanto isso vale?  
-O investimento se paga na primeira semana.  
-Faz sentido?"  
-\[AGUARDAR RESPOSTA E AJUSTAR CONFORME NECESSÁRIO\]
+VOCÊ: "Deixa eu te mostrar o valor real.
 
----
+Investimento: R$ 1.997.
 
-### **[P5.4.15.8] 15.8 Posts Para Redes Sociais**
+Você recebe:
+- Sistema VSS Implementável (playbook + 15 vídeos-âncora) — vitalício
+- Growth CRM (R$ 6.996/ano) — INCLUÍDO
+- 48 mentorias ao vivo com Joel (R$ 7.200) — INCLUÍDO
+- Biblioteca evergreen de mentorias gravadas — INCLUÍDO
+- Templates e automações — INCLUÍDO
 
-#### **POST LINKEDIN: Autoridade**
+Total de valor: R$ 17.287
+Você paga: R$ 1.997.
 
-80% das MPEs brasileiras vendem de forma aleatória.  
-Elas dependem de:  
-→ Indicação  
-→ Sorte  
-→ "Momento certo"  
-O problema?  
-FALTA DE SISTEMA.  
-Vender de forma escalável não é sorte.  
-É processo.  
-Os 6Ps das Vendas Escaláveis:  
-P1 \- Posicionamento claro  
-P2 \- Público mapeado  
-P3 \- Oferta irresistível  
-P4 \- Programas escaláveis (CRM, funis, automações)  
-P5 \- Processos documentados  
-P6 \- Pessoas treinadas  
-Quando você tem os 6Ps estruturados:  
-→ Vendas se tornam previsíveis  
-→ Crescimento é sustentável  
-→ Você não depende mais de sorte  
-Qual seu P mais fraco hoje?  
-Comenta aqui.  
-PS: Se quiser fazer um diagnóstico completo (gratuito),
-link nos comentários.  
-\#VendasSemSegredos \#Empreendedorismo \#MPEs
+Agora pergunta:
+- Quanto você PERDE por mês com vendas aleatórias?
+- Quantos leads se perdem?
+- Quanto tempo você gasta no follow-up manual?
+
+Se estruturar vendas te gerar 5–10 vendas adicionais/mês, quanto isso vale?
+
+Sistema sempre aberto, entrada imediata, primeira mentoria próxima [dia — TBD].
+
+Faz sentido?"
+[AGUARDAR RESPOSTA]
+```
 
 ---
 
-#### **POST INSTAGRAM: Engajamento**
+## **[P5.6] 17. MODELO DE MENTORIA PERPÉTUA**
 
-\[Carrossel \- 5 slides\]  
-SLIDE 1:  
-"Por que suas vendas são aleatórias?"  
-SLIDE 2:  
-❌ Você não tem POSICIONAMENTO claro  
-(Cliente não entende o que você faz)  
-SLIDE 3:  
-❌ Você não tem PÚBLICO definido  
-("Vendo para qualquer um" \= Vende para ninguém)  
-SLIDE 4:  
-❌ Você não tem PROCESSO documentado  
-(Cada venda é única, nada é replicável)  
-SLIDE 5:  
-✅ A SOLUÇÃO: Os 6Ps das Vendas Escaláveis  
-Link na bio para diagnóstico gratuito.  
-─────  
-CAPTION:  
-Se suas vendas são aleatórias, o problema não é falta de esforço.  
-É falta de SISTEMA.  
-Os 6Ps das Vendas Escaláveis estruturam vendas do zero.  
-Fiz um diagnóstico gratuito (link na bio).  
-Demora 10 min. Resultado na hora.  
-Qual seu P mais fraco? Comenta aqui 👇  
-\#VendasSemSegredos \#Empreendedorismo \#Vendas
+### **[P5.6.17.1] 17.1 Princípios do Rolling 48**
+
+1. **48 mentorias ao vivo** com o Joel — **1 por semana**, **60 min cada**.
+2. **Rolling 12 meses a partir da compra do aluno.** O relógio começa na entrada. O aluno participa de 48 semanas seguidas (com margem de 4 semanas de flexibilidade para eventos/feriados/pausas planejadas).
+3. **Dia e horário fixo semanal.** Sugerido: **toda [dia — TBD]** às **[hora — TBD]** (BRT). **Joel precisa decidir e comunicar publicamente.**
+4. **Ciclo temático anual de 48 semanas** que se repete. Aluno que entra hoje começa no tema corrente; aluno que entra em 6 meses começa no tema daquele momento. Ao longo dos 12 meses, todos cobrem o ciclo completo — só que em ordens diferentes.
+5. **Biblioteca evergreen.** Toda mentoria é gravada e fica disponível pra todos os alunos ativos. Quem entra depois pode recuperar qualquer mentoria anterior na biblioteca.
+6. **Não há "turmas"** — há a base contínua de alunos ativos, todos acompanhando as mentorias semanais simultaneamente.
+
+### **[P5.6.17.2] 17.2 Como o Ciclo Temático Funciona**
+
+**Estrutura do ano (48 semanas):**
+
+* **Semanas 1–8** → Módulo P1 Posicionamento (8 aulas ao vivo de aprofundamento)
+* **Semanas 9–16** → Módulo P2 Público
+* **Semanas 17–24** → Módulo P3 Produto
+* **Semanas 25–32** → Módulo P4 Programas (CRM, funis, tráfego)
+* **Semanas 33–40** → Módulo P5 Processos
+* **Semanas 41–48** → Módulo P6 Pessoas
+
+*(Distribuição por módulo é exemplo — ajustar conforme profundidade real. Total obrigatório: 48 mentorias.)*
+
+**Exemplo de jornada de 2 alunos diferentes:**
+
+* **Aluno A entra na Semana 3 do ciclo:** começa no meio de P1. Acompanha até P6 (semana 48) e depois volta em P1 semanas 1–2 do ciclo seguinte. Fecha 12 meses cobrindo tudo.
+* **Aluno B entra na Semana 27:** começa em P4. Acompanha até fim. Volta em P1 no ciclo seguinte. Também cobre os 6Ps em 12 meses.
+
+**Implicação prática:** o conteúdo do playbook (estático, vitalício) serve como **eixo sequencial** que o aluno consome no próprio ritmo, enquanto a mentoria ao vivo acontece **no ponto onde o grupo todo está** naquela semana. O aluno complementa o que precisar com a biblioteca.
+
+### **[P5.6.17.3] 17.3 Estrutura Operacional de Uma Mentoria Semanal (60 min)**
+
+| Bloco | Duração | O que acontece |
+|---|---|---|
+| Abertura e check-in | 5 min | Joel cumprimenta, contextualiza o tema da semana, lembra próxima mentoria |
+| Aprofundamento do módulo | 25–30 min | Aula ao vivo aprofundando o vídeo-âncora correspondente — com exemplos práticos e cases do mês |
+| Hot seats (alunos trazem problema real) | 15–20 min | 2–3 alunos trazem dúvida específica, Joel responde no ar |
+| Q&A aberto | 10 min | Perguntas gerais via chat |
+
+Gravação vai imediatamente pra biblioteca evergreen com timestamps nos blocos.
+
+### **[P5.6.17.4] 17.4 Decisões Que o Joel Precisa Confirmar**
+
+1. **Dia da semana fixo — TBD.** Sugestão: quarta ou quinta à noite (melhor horário para empreendedor B2B).
+2. **Hora fixa — TBD.** Sugestão: 20h BRT (após expediente comercial).
+3. **Fuso para alunos fora do BR — TBD.** Comunicar sempre em BRT, sinalizar conversão pra PT-Lisboa e EST/NY.
+4. **Política de férias do Joel — TBD.** Sugestão: 2 semanas/ano sem mentoria ao vivo (janeiro e julho) — comunicadas com 60 dias de antecedência; alunos recebem conteúdo assíncrono de substituição.
+5. **Política de feriados nacionais — TBD.** Sugestão: reposição na semana seguinte ou gravação assíncrona especial.
 
 ---
 
-Nota: o **Roadmap de Implementação (Seção 16)** fica na Parte 6: [Parte 6: Execução](parte6-execucao.md).
+## **[P5.7] 18. CADÊNCIA DE CONTEÚDO EVERGREEN**
+
+> **Fonte operacional:** `docs/conteudo/marketing/calendario.md` (agenda editorial viva) + `docs/conteudo/marketing/posts/` (peças individuais).
+
+### **[P5.7.18.1] 18.1 Pilares de Conteúdo**
+
+(Replicados do calendario.md pra manter consistência.)
+
+1. **Autoridade técnica** — Framework 6Ps, cases, diagnósticos. Fonte: P1, P4.
+2. **Anti-guru / manifesto** — Os 7 inimigos, vocabulário proprietário. Fonte: P7.
+3. **Provas de resultado** — Antes/depois, transformações. Fonte: P12.5, P12.8.
+4. **Atração VSS** — 90 dias, Growth CRM, playbook implementável. Fonte: P2, P3, P4.
+5. **Atração Advisory** — Acesso direto, garantia incondicional. Fonte: P10.
+
+### **[P5.7.18.2] 18.2 Instagram — Cadência Evergreen**
+
+**Frequência sugerida:** 4–5 posts/semana (a validar). **Frequência específica final — TBD.**
+
+**Distribuição semanal recomendada:**
+
+| Dia | Formato | Pilar | Objetivo |
+|---|---|---|---|
+| Seg | Carrossel 6–8 slides | Autoridade | Entrega de valor / SEO do feed |
+| Ter | Reel 30–60s | Anti-guru / manifesto | Alcance + engajamento |
+| Qua | Post estático + legenda longa | Prova social / case | Credibilidade |
+| Qui | Reel 30–60s | Atração VSS | Tráfego pra bio/captura |
+| Sex | Carrossel ou story-highlight | Educação / processo | Nutrição |
+| Stories | 3–5/dia | Transversal | Intimidade + bastidor |
+
+**Rotação temática mensal:** um mês inteiro abordando um P dos 6Ps + recorrências de pilares 2–3–5. Ao fim de 6 meses, cobriu todos os 6Ps. Repete com ângulos novos.
+
+**Fonte de texto/copy:** banco em P12 (parte12-banco-recursos-copy.md).
+
+### **[P5.7.18.3] 18.3 Email — Cadência Evergreen**
+
+**2 tipos de envio:**
+
+1. **Sequência automatizada pós-captura (ver P5.4.15.4)** — 10 emails em ~10 dias.
+2. **Broadcast semanal pra base** — 1 email/semana (sugestão: **terça ou quinta**, **TBD**).
+
+**Temas rotativos do broadcast semanal (12 semanas = 1 trimestre):**
+
+| Semana | Tema | Fonte |
+|---|---|---|
+| 1 | Mini-reflexão sobre um P | P3 |
+| 2 | Case aluno + CTA leve VSS | P12.5 |
+| 3 | Anti-guru / manifesto | P7 |
+| 4 | Ferramenta/template | P11 |
+| 5 | Insight de mercado | P1 |
+| 6 | Pitch leve VSS | P8 |
+| 7 | Pergunta de engajamento (responde este email) | — |
+| 8 | Case aluno Advisory | P10 |
+| 9 | Mini-tutorial (CRM, email, funil) | P11 |
+| 10 | Reflexão filosófica sobre negócio | P7 |
+| 11 | Promo evergreen (bônus específico da próxima mentoria?) | — |
+| 12 | Resumo trimestral + próximos passos | — |
+
+Ciclo de 12 repete a cada trimestre, com variações de pauta.
+
+### **[P5.7.18.4] 18.4 Anúncios — Cadência Evergreen**
+
+**Ritmo de rotação de criativos:**
+
+* **Criativos ativos simultaneamente:** 8–12 (entre topo, remarketing e teste).
+* **Rotação:** a cada 2 semanas, aposentar 1–2 criativos fadigados, subir 2 novos.
+* **Teste A/B constante:** cada novo criativo entra contra o campeão atual por 5–7 dias com 10–15% do budget.
+
+**Cadência de produção criativa:**
+
+* **2 criativos novos por semana** (1 carrossel + 1 vídeo/estático). Ver responsabilidades em P5.3.14.2.
+* **Copy de anúncio:** banco em P12 serve como matéria-prima. Remix + adaptação pelo social media/copywriter.
+
+### **[P5.7.18.5] 18.5 LinkedIn — Cadência Evergreen (Joel)**
+
+**Frequência:** 3–5 posts/semana (Joel em 1ª pessoa). **Frequência específica — TBD.**
+
+**Mix por semana sugerido:**
+
+* 2 posts de autoridade técnica (framework, processo, conceito)
+* 1 post de opinião anti-guru
+* 1 post de case/prova social
+* 1 post com CTA sutil (evento, diagnóstico gratuito, link pro checklist)
+
+**Comentários:** rotina de 15 min/dia comentando em posts de público-alvo (empreendedores R$ 50k–500k/mês, consultores, agência).
+
+### **[P5.7.18.6] 18.6 Sincronização Calendário Editorial**
+
+Todo conteúdo vai para `docs/conteudo/marketing/calendario.md` e o post específico vai em `docs/conteudo/marketing/posts/YYYY-MM-DD-canal-slug.md` com frontmatter padronizado (ver convenção no próprio calendario.md).
+
+**Papel de cada arquivo:**
+
+* `calendario.md` → agenda e visão de conjunto. Fonte única de "o que sai quando onde".
+* `posts/*.md` → peças prontas pra publicação. Frontmatter declara canal, data, status, fonte (P-ID).
+* `parte12-banco-recursos-copy.md` → banco de matérias-primas (copy base, hooks, angles). Posts puxam daqui.
+* `parte13-scripts-videos.md` → scripts dos 4 vídeos principais do site (Home, VSS, Advisory, Sobre).
+
+---
+
+Nota: o **Roadmap de Implementação (Seção 19 / antiga 16)** fica na Parte 6: [Parte 6: Execução](parte6-execucao.md).
 
 ---

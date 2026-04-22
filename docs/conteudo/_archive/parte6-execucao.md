@@ -2,9 +2,9 @@
 id: "P6"
 titulo: "EXECUÇÃO E CRESCIMENTO"
 documento: "Parte 6 de 13"
-versao: "1.1"
+versao: "2.0"
 autor: "Joel Burigo"
-ultima_atualizacao: "2026-01-23"
+ultima_atualizacao: "2026-04-22"
 arquivo: "conteudo/parte6-execucao.md"
 
 objetivo: |

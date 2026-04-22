@@ -2,9 +2,9 @@
 id: "P11"
 titulo: "DELIVERABLES E TEMPLATES"
 documento: "Parte 11 de 13"
-versao: "1.1"
+versao: "2.0"
 autor: "Joel Burigo"
-ultima_atualizacao: "2026-01-30"
+ultima_atualizacao: "2026-04-22"
 arquivo: "conteudo/parte11-deliverables-templates.md"
 
 objetivo: |
@@ -365,7 +365,7 @@ Agende em: [link calendly]
 
 **PLAYBOOK COMERCIAL - [NOME DA EMPRESA]**
 
-**Versão 1.0** | **Data:** [Data] | **Responsável:** Joel Burigo Services
+**Versão 1.0** | **Data:** [Data] | **Responsável:** Joel Burigo
 
 ---
 
@@ -458,7 +458,7 @@ Agende em: [link calendly]
 - Notion (template)
 - Miro (board)
 
-**Uso:** Aluno VSS ou cliente Services preenche durante implementação
+**Uso:** Aluno VSS ou cliente Advisory preenche durante implementação
 
 ---
 
@@ -508,16 +508,7 @@ Ver detalhamento completo na seção de Advisory (Parte 10).
 
 ---
 
-### **[P11.6.2] Para Clientes Services**
-
-1. **Canvas P1-P3:** Equipe Joel preenche junto com você
-2. **Playbook Comercial:** Entregue pronto (10-80 páginas conforme pacote)
-3. **SOPs:** Criados customizados durante implementação
-4. **Relatórios:** Mensais de acompanhamento
-
----
-
-### **[P11.6.3] Para Clientes Advisory**
+### **[P11.6.2] Para Clientes Advisory**
 
 1. **Relatório Sessão:** Entregue em 24h após cada sessão
 2. **Documento Sprint:** Entregue ao final dos 30 dias

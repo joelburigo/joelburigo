@@ -2,9 +2,9 @@
 id: "P12"
 titulo: "BANCO DE RECURSOS - COPY, OBJEÇÕES E FRASES DE IMPACTO"
 documento: "Parte 12 de 13"
-versao: "1.0"
+versao: "2.0"
 autor: "Joel Burigo"
-ultima_atualizacao: "2026-01-30"
+ultima_atualizacao: "2026-04-22"
 arquivo: "conteudo/parte12-banco-recursos-copy.md"
 
 objetivo: |
@@ -144,11 +144,6 @@ Contém:
 - "48 mentorias semanais ao vivo"
 - "CRM profissional incluído"
 
-**Services (DWY):**
-- "Quando saímos, você tem: sistema funcionando, equipe treinada, autonomia total"
-- "Fazemos JUNTO, não fazemos PARA você"
-- "4-6 meses de implementação hands-on"
-
 **Advisory (1:1):**
 - "17 anos de experiência aplicados ao seu desafio específico"
 - "Acesso direto via WhatsApp para decisões críticas"
@@ -217,8 +212,8 @@ Contém:
 - Sistema integrado onde marketing alimenta vendas continuamente
 
 **Modelos de Serviço:**
-- **DIY (Do It Yourself):** Você faz sozinho (cursos tradicionais)
-- **DWY (Done With You):** Fazemos JUNTO (VSS + Services)
+- **DIY (Do It Yourself):** Você faz sozinho com mentoria guiada (VSS)
+- **Advisory (1:1):** Acesso direto ao Joel para decisões estratégicas
 - **DFY (Done For You):** ❌ Não oferecemos (cria dependência)
 
 **Vendas Escaláveis:**
@@ -311,7 +306,7 @@ Contém:
 
 **"Tenho equipe pequena, não dou conta de mais isso"**
 - Opção A: VSS (você faz com mentoria)
-- Opção B: Services (equipe faz junto com você)
+- Opção B: Advisory (acesso direto ao Joel para decisões estratégicas)
 
 **"Trabalho 14h/dia, não consigo 2h/dia adicional"**
 - Reframe: 90 dias não é para sempre
@@ -381,9 +376,6 @@ Contém:
 
 **Resposta Longa:**
 > "Entendo que você está atolado apagando incêndio. Sabe por quê? Porque não tem sistema. VSS te pede 6-9h/semana por 90 dias para CONSTRUIR o sistema. Depois, você GANHA 10-15h/semana porque não precisa mais improvisar. A pergunta é: investe agora ou continua apagando incêndio para sempre?"
-
-**Se realmente sem tempo:**
-> "Opção: Services (R$ 4.5-9k/mês). Minha equipe faz junto. Mais rápido, menos esforço seu."
 
 ---
 
@@ -563,7 +555,7 @@ Contém:
 ### Objeção #12: "Vou Começar Ano Que Vem"
 
 **Manifestação:**
-"Em janeiro eu me inscrevo" / "Deixa pra próxima turma"
+"Em janeiro eu me inscrevo" / "Deixa pra depois"
 
 **Resposta (Senso de Urgência):**
 > "Entendo. Janeiro é mês de planejamento.
@@ -587,8 +579,6 @@ Contém:
 > - Maio: Ainda implementando
 >
 > Diferença? 3 meses de resultado.
->
-> Além disso: turma de janeiro provavelmente vai ter preço maior (valor promocional é só pra essa turma).
 >
 > Decisão é sua. Mas eu começaria HOJE."
 
@@ -649,20 +639,6 @@ Contém:
 - Primeiras vendas validando o sistema
 - Bases sólidas para crescimento nos próximos 6 meses
 
-### Transformação Estendida (6-12 Meses com Services)
-
-**Adicional aos 90 dias:**
-- Crescimento de 3-5x em vendas (vs. antes)
-- Equipe autônoma (não precisa do fundador diretamente)
-- Processos otimizados com métricas
-- Múltiplas fontes de leads (pago + orgânico)
-- Marketing e vendas integrados perfeitamente
-- CRM com lead scoring e automações avançadas
-- Documentação completa (playbooks)
-- Capacidade de escalar sem caos
-- Margens otimizadas
-- Base para expandir (mais produtos, novos mercados)
-
 ### Exemplos Concretos de Cases
 
 **Case 1: Cliente do segmento de franquias (case de franquias)**
@@ -717,7 +693,7 @@ Contém:
 
 ### Diferencial #4: Implementação Guiada (Não Abandono)
 
-- **Modelo:** Done WITH You (não DFY)
+- **Modelo:** DIY com mentoria ao vivo (VSS) ou Advisory 1:1 — nunca DFY
 - **Suporte:** 48 mentorias semanais em grupo
 - **Comunidade:** Ativa, suporte peer-to-peer
 - **Suporte Técnico:** Help desk para CRM e implementação
@@ -742,7 +718,6 @@ Contém:
 ### Diferencial #7: Flexibilidade Total
 
 - **Sem Budget Tráfego?** Rota prospecção gratuita
-- **Tempo Limitado?** Services (equipe faz junto)
 - **Decisão Crítica?** Advisory (acesso direto 1:1)
 - **Não é tudo ou nada:** Escolhe o caminho que encaixa
 
@@ -917,67 +892,32 @@ E NÃO tiver em 90 dias:
 
 ## 9. URGÊNCIA E ESCASSEZ
 
-### Elementos de Urgência GENUÍNA
+### Elementos de Urgência GENUÍNA (Modelo Perpétuo)
 
-**Limite de Vagas:**
-- Máximo 50 alunos por turma
-- Para garantir qualidade de mentorias
-- Quando fecha, próxima turma é 60 dias depois
+**Agenda Limitada de Mentorias:**
+- Joel tem agenda limitada para mentorias ao vivo
+- Mentorias rodam em ciclo semanal contínuo
+- Aluno que entra hoje participa da próxima mentoria na próxima [dia da semana]
 - Não é falsa escassez, é limite operacional real
 
-**Bônus de Lançamento (Temporário):**
-Expiram em X horas (usar contador regressivo)
-
-Exemplos:
-- 3 Sessões de Coaching em Grupo (R$ 900)
-- Templates Avançados de Prospecção (R$ 300)
-- Banco de 100+ Cases de Sucesso (R$ 500)
-- Total bônus: R$ 1.700 (por 14 dias apenas)
-
-**Preço de Lançamento:**
-- R$ 1.997 (promocional)
-- Próxima turma: R$ 2.497 (estimado)
-- Economia: R$ 500 se decidir agora
-- Contador regressivo: "Preço aumenta em X horas"
-
-**Turmas Limitadas:**
-- Turma 1: 50 vagas (X vagas restantes)
-- "87 já garantiram sua vaga"
-- Percentual preenchido (75% cheio)
-- Countdown de urgência genuína
+**Custo de Oportunidade (Urgência Real):**
+- Cada mês sem sistema = vendas perdidas
+- 3 vendas extras/mês × 6 meses = R$ 18k deixados de ganhar
+- A urgência é o que você NÃO ganha esperando
 
 ### Elementos de Escassez (Honesta)
 
 **Não Usamos Escassez Falsa:**
 - ❌ Sem "Apenas 3 vagas" (quando tem infinitas)
-- ❌ Sem "Oferta expira hoje" (quando tem 6 meses)
+- ❌ Sem "Oferta expira hoje" (quando não expira)
 - ❌ Sem "Histórias de urgência fabricadas"
+- ❌ Sem "turmas" ou "lançamentos" artificiais (modelo perpétuo)
 
 **Escassez Real (Mentorias):**
 - ✅ Joel tem agenda limitada
 - ✅ Máximo X mentorias/semana
-- ✅ Quando turma fecha, realmente fecha até próxima
+- ✅ Advisory 1:1 tem agenda realmente restrita
 - ✅ Isso é autêntico e verificável
-
-### Messaging de Urgência (Sequência de E-mails)
-
-**Email #1 (Dia 1 - Captura):**
-> "Últimas 72 horas: Diagnóstico dos 6Ps está finalizando em minha agenda. Agende seu turno antes do deadline."
-
-**Email #2 (Dia 6 - Nutrição):**
-> "Vagas disponíveis: 87 pessoas já garantiram. Restam XX vagas da turma de [mês]."
-
-**Email #3 (Dia 10 - Oferta):**
-> "Preço de lançamento: R$ 1.997 (próxima turma será R$ 2.497). Economia de R$ 500 se decidir hoje."
-
-**Email #4 (Dia 12 - FOMO):**
-> "Bônus expiram em 48h. Você ainda recebe: [lista 3 bônus principais]."
-
-**Email #5 (Dia 13 - Última Chamada):**
-> "Últimas 6 horas: Carrinho fecha à meia-noite. É agora ou próxima turma."
-
-**Email #6 (Dia 14 - Final):**
-> "ENCERRANDO em 2 horas. Última chance desta turma."
 
 ---
 
@@ -1097,21 +1037,21 @@ Exemplos:
 
 ### E-mail Marketing
 
-**Sequência de Nutrição (7 dias):**
+**Sequência de Nutrição Evergreen (7 dias):**
 - **Dia 1:** Apresentação + Diagnóstico dos 6Ps
 - **Dia 2:** Dor (Vendas aleatórias custam caro)
 - **Dia 3:** História (Barraco → Reconstrução)
 - **Dia 4:** Framework (6Ps explicado)
 - **Dia 5:** Prova Social (Case case de franquias)
 - **Dia 6:** Oferta (VSS completo)
-- **Dia 7:** Urgência (Últimas vagas)
+- **Dia 7:** Convite à ação (entre hoje, primeira mentoria na próxima [dia])
 
-**Sequência de Vendas (5 dias):**
-- **Dia 1:** Oferta completa + Bônus
+**Sequência de Vendas Evergreen (5 dias):**
+- **Dia 1:** Oferta completa
 - **Dia 2:** Objeções (Preço, tempo, resultado)
 - **Dia 3:** Prova social (Depoimentos)
 - **Dia 4:** Garantias (15 dias + resultado)
-- **Dia 5:** Última chamada (Carrinho fecha)
+- **Dia 5:** Custo de oportunidade (cada mês sem sistema)
 
 ### Landing Pages
 

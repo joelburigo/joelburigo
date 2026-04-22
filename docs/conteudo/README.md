@@ -51,8 +51,7 @@ Services foi descontinuado (arquivado em `_archive/parte9-services.md`).
   Growth CRM, proposta de valor, precificação.
 - **[P5] Go-to-Market** → [partes/parte5-go-to-market.md](partes/parte5-go-to-market.md)
   **Pendente reescrita:** migrar de lançamento → perpétuo evergreen.
-- **[P6] Execução e Crescimento** → [partes/parte6-execucao.md](partes/parte6-execucao.md)
-  Roadmap, KPIs, riscos.
+- ~~**[P6] Execução e Crescimento**~~ — arquivado (era estruturado em cima de lançamento/CPL). Reescrita evergreen pendente, alinhada ao novo P5.
 
 ### Branding e ecossistema
 
@@ -90,6 +89,7 @@ Agenda única + biblioteca de posts/peças derivadas. Ver [marketing/calendario.
 
 - `parte9-services.md` — Services descontinuado
 - `parte13-scripts-videos-fala-pura.md` — consolidado em parte13-scripts-videos.md
+- `parte6-execucao.md` — baseado em lançamento/CPL; reescrita evergreen pendente
 
 Arquivos aqui são reversíveis. Após 30–60 dias sem uso, podem ser deletados definitivamente.
 

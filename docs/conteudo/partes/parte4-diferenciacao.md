@@ -2,9 +2,9 @@
 id: "P4"
 titulo: "DIFERENCIAÇÃO E VALOR"
 documento: "Parte 4 de 13"
-versao: "1.1"
+versao: "2.0"
 autor: "Joel Burigo"
-ultima_atualizacao: "2026-01-23"
+ultima_atualizacao: "2026-04-22"
 arquivo: "conteudo/parte4-diferenciacao.md"
 
 objetivo: |
@@ -415,7 +415,6 @@ Você não começa do zero. Recebe templates prontos para diversos tipos de neg�
 **EDUCAÇÃO E INFOPRODUTOS:**
 
 * Funil de webinar  
-* Funil de CPL (conteúdo \+ lançamento)  
 * Perpétuo automatizado  
 * Área de membros
 

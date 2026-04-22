@@ -1,11 +1,10 @@
 ---
-// Meta Conversions API - Server-Side Tracking
-// Mais confiável, privado e sem impacto de performance
-const META_PIXEL_ID = '693646216957142'
+import { PUBLIC_META_PIXEL_ID } from 'astro:env/client'
 ---
 
+{PUBLIC_META_PIXEL_ID && (
 <!-- Meta Conversions API - Client-Side Collector -->
-<script is:inline define:vars={{ META_PIXEL_ID }}>
+<script is:inline define:vars={{ META_PIXEL_ID: PUBLIC_META_PIXEL_ID }}>
   (function() {
     // Get or create cookies for Meta tracking
     function getCookie(name) {
@@ -85,3 +84,4 @@ const META_PIXEL_ID = '693646216957142'
     }
   })();
 </script>
+)}

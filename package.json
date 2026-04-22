@@ -29,7 +29,8 @@
     "clsx": "^2.1.0",
     "sharp": "^0.34.5",
     "tailwind-merge": "^3.5.0",
-    "tailwindcss": "^4.2.3"
+    "tailwindcss": "^4.2.3",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "pagefind": "^1.5.2",
@@ -40,6 +41,7 @@
     "typescript": "^5.9.3"
   },
   "overrides": {
-    "path-to-regexp": "^8.4.2"
+    "path-to-regexp": "^8.4.2",
+    "yaml": "^2.8.3"
   }
 }

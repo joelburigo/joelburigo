@@ -1,78 +1,66 @@
-import { defineConfig, envField } from 'astro/config'
+import { defineConfig, envField, passthroughImageService } from 'astro/config'
 import node from '@astrojs/node'
-import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
 import icon from 'astro-icon'
-import { passthroughImageService } from 'astro/config'
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://joelburigo.com.br',
-  output: 'server', // SSR mode
+  output: 'server',
   adapter: node({
     mode: 'standalone',
   }),
-  // Passthrough: imagens já estão fisicamente otimizadas em WebP
   image: {
     service: passthroughImageService(),
-  },
-  vite: {
-    build: {
-      chunkSizeWarningLimit: 600
-    }
+    remotePatterns: [{ protocol: 'https' }],
   },
   env: {
     schema: {
-      // GTM FIRST: Site só precisa do GTM ID
-      PUBLIC_GTM_ID: envField.string({ 
-        context: 'client', 
-        access: 'public',
-        optional: true 
-      }),
-      PUBLIC_SITE_URL: envField.string({ 
-        context: 'client', 
+      PUBLIC_GTM_ID: envField.string({
+        context: 'client',
         access: 'public',
         optional: true,
-        default: 'https://joelburigo.com.br'
       }),
-      // Server-side APIs (OPCIONAL - apenas para /api/track)
-      GA4_MEASUREMENT_ID: envField.string({ 
-        context: 'server', 
+      PUBLIC_SITE_URL: envField.string({
+        context: 'client',
+        access: 'public',
+        optional: true,
+        default: 'https://joelburigo.com.br',
+      }),
+      PUBLIC_META_PIXEL_ID: envField.string({
+        context: 'client',
+        access: 'public',
+        optional: true,
+      }),
+      GA4_MEASUREMENT_ID: envField.string({
+        context: 'server',
         access: 'secret',
-        optional: true 
+        optional: true,
       }),
-      GA4_API_SECRET: envField.string({ 
-        context: 'server', 
+      GA4_API_SECRET: envField.string({
+        context: 'server',
         access: 'secret',
-        optional: true 
+        optional: true,
       }),
-      META_PIXEL_ID: envField.string({ 
-        context: 'server', 
+      META_CAPI_ACCESS_TOKEN: envField.string({
+        context: 'server',
         access: 'secret',
-        optional: true 
+        optional: true,
       }),
-      META_CAPI_ACCESS_TOKEN: envField.string({ 
-        context: 'server', 
-        access: 'secret',
-        optional: true 
-      }),
-    }
+    },
   },
   prefetch: {
     prefetchAll: false,
     defaultStrategy: 'hover',
   },
   integrations: [
-    tailwind(),
     sitemap({
       changefreq: 'weekly',
-      lastmod: new Date(),
       filter: (page) => {
-        // Páginas que NÃO devem ser indexadas
         const noIndex = [
           '/design-system',
           '/apresentacao',
-          '/lp/',              // Todas as landing pages
+          '/lp/',
           '/advisory-aplicacao',
           '/advisory-obrigado',
           '/diagnostico-resultado',
@@ -86,10 +74,9 @@ export default defineConfig({
           '/404',
           '/500',
         ]
-        return !noIndex.some(pattern => page.includes(pattern))
+        return !noIndex.some((pattern) => page.includes(pattern))
       },
       serialize: (item) => {
-        // Prioridades customizadas por página
         const priorities = {
           '/': 1.0,
           '/vendas-sem-segredos/': 0.9,
@@ -114,9 +101,6 @@ export default defineConfig({
     }),
     icon(),
   ],
-  image: {
-    remotePatterns: [{ protocol: 'https' }],
-  },
   compressHTML: true,
   build: {
     inlineStylesheets: 'auto',
@@ -125,21 +109,17 @@ export default defineConfig({
   vite: {
     build: {
       target: 'es2022',
+      chunkSizeWarningLimit: 600,
       rollupOptions: {
         output: {
-          manualChunks: undefined, // Prevent too many chunks
+          manualChunks: undefined,
           inlineDynamicImports: false,
         },
       },
       modulePreload: {
         polyfill: false,
-        resolveDependencies: (filename, deps) => {
-          // Preload all dependencies eagerly
-          return deps
-        },
       },
       cssCodeSplit: true,
-      chunkSizeWarningLimit: 600,
     },
   },
 })

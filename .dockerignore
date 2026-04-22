@@ -10,9 +10,8 @@ dist/
 .vite/
 .cache/
 
-# Docs & brand (referência, não produção)
+# Docs (inclui conteudo/brand e conteudo/marketing — referência, não produção)
 docs/
-brand/
 
 # Env
 .env

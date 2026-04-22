@@ -23,7 +23,7 @@ joelburigo-site/
 │   ├── partes/        4 partes núcleo:
 │   │                  01-marca · 02-oferta · 03-programa-vss · 04-playbook-vss
 │   ├── recursos/      copy-bank · templates · scripts-videos
-│   ├── brand/         Direção visual (v3 Terminal Growth)
+│   ├── brand/         Direção visual (Terminal Growth)
 │   │                  HTML/CSS puro, tokens --jb-*, preview/index.html navegável
 │   ├── marketing/     Produção de peças (posts IG, emails, apresentações)
 │   │                  calendario.md + posts/
@@ -46,8 +46,8 @@ Services foi descontinuado (arquivado em `docs/conteudo/_archive/parte9-services
 
 ## Direção atual
 
-- **Visual:** v3 Terminal Growth — fire `#FF3B0F` + acid `#C6FF00` sobre preto `#050505`, Archivo Black + JetBrains Mono. Ver `docs/conteudo/brand/README.md`.
-- **Produção ainda usa tokens antigos** (royal-blue + lime, Montserrat + Inter). Migração progressiva pro v3 em `src/styles/global.css` está pendente.
+- **Visual:** Terminal Growth — fire `#FF3B0F` + acid `#C6FF00` sobre preto `#050505`, Archivo Black + JetBrains Mono. Ver `docs/conteudo/brand/README.md`.
+- **Produção ainda usa tokens antigos** (royal-blue + lime, Montserrat + Inter). Migração do `src/styles/global.css` pro Terminal Growth está pendente.
 
 ## Deploy
 

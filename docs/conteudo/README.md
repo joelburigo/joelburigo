@@ -14,7 +14,7 @@ docs/conteudo/
 ├── _plano-refactor.md     ← histórico do refactor 2.0
 ├── partes/                ← 4 partes núcleo
 ├── recursos/              ← copy bank + templates + scripts
-├── brand/                 ← design system (v3 Terminal Growth)
+├── brand/                 ← design system (Terminal Growth)
 ├── marketing/             ← produção de peças (posts, emails, decks)
 └── _archive/              ← versões anteriores (reversíveis)
 ```
@@ -44,7 +44,7 @@ Utilitários reutilizáveis em marketing, vendas e conteúdo.
 
 ## Marca (`brand/`)
 
-Design system v3 Terminal Growth — cores, tipografia, componentes HTML/CSS preview. Ver [brand/README.md](brand/README.md) e [brand/SKILL.md](brand/SKILL.md).
+Design system Terminal Growth — cores, tipografia, componentes HTML/CSS preview. Ver [brand/README.md](brand/README.md) e [brand/SKILL.md](brand/SKILL.md).
 
 ---
 

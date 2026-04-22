@@ -81,7 +81,7 @@ const miniCases = cases
       <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
         {miniCases.map((case_, index) => (
           <div 
-            class="case-card group relative overflow-hidden rounded-2xl border-2 border-lime/20 bg-gradient-to-br from-white/5 to-white/[0.02] p-6 backdrop-blur-sm transition-all hover:border-lime hover:shadow-2xl hover:shadow-lime/20"
+            class="case-card group relative overflow-hidden rounded-2xl border-2 border-lime/20 bg-linear-to-br from-white/5 to-white/2 p-6 backdrop-blur-sm transition-all hover:border-lime hover:shadow-2xl hover:shadow-lime/20"
             style={`animation-delay: ${index * 0.15}s`}
           >
             {/* Badge Nicho */}
@@ -119,7 +119,7 @@ const miniCases = cases
             </div>
 
             {/* Hover Effect */}
-            <div class="absolute inset-0 -z-10 bg-gradient-to-br from-lime/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+            <div class="absolute inset-0 -z-10 bg-linear-to-br from-lime/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
           </div>
         ))}
       </div>

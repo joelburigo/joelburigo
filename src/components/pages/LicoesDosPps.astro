@@ -47,7 +47,7 @@ const licoes = [
 ];
 ---
 
-<section class="relative overflow-hidden bg-gradient-to-b from-dark to-dark/95 py-24">
+<section class="relative overflow-hidden bg-linear-to-b from-dark to-dark/95 py-24">
   <div class="pointer-events-none absolute inset-0">
     <div class="absolute -left-40 top-20 h-96 w-96 rounded-full bg-lime/5 blur-3xl"></div>
     <div class="absolute -right-40 bottom-20 h-96 w-96 rounded-full bg-royal-blue/5 blur-3xl"></div>
@@ -70,7 +70,7 @@ const licoes = [
       {licoes.map((licao) => (
         <div class={`group rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-${licao.cor}/50 hover:bg-white/10`}>
           <div class="flex items-start gap-4">
-            <div class={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full ${licao.cor === 'lime' ? 'bg-lime text-dark' : 'bg-royal-blue text-white'} font-display text-xl font-bold`}>
+            <div class={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full ${licao.cor === 'lime' ? 'bg-lime text-dark' : 'bg-royal-blue text-white'} font-display text-xl font-bold`}>
               {licao.p}
             </div>
             <div class="flex-1">
@@ -86,7 +86,7 @@ const licoes = [
     </div>
 
     {/* Quote de Transição */}
-    <div class="mx-auto mt-16 max-w-3xl rounded-2xl border-2 border-lime/30 bg-gradient-to-br from-lime/10 to-transparent p-8 text-center">
+    <div class="mx-auto mt-16 max-w-3xl rounded-2xl border-2 border-lime/30 bg-linear-to-br from-lime/10 to-transparent p-8 text-center">
       <p class="mb-4 font-display text-h3 text-white">
         "Cada P dos 6Ps não foi inventado. Foi <span class="text-lime">descoberto</span> na dor."
       </p>

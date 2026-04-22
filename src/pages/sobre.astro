@@ -159,7 +159,7 @@ const promessas = [
     </Container>
   </section>
 
-  <main class="flex-grow">
+  <main class="grow">
     <!-- Hero Section -->
     <section class="relative overflow-hidden bg-dark py-32">
 
@@ -209,7 +209,7 @@ const promessas = [
           <div class="order-1 lg:order-2">
             <div class="relative">
               <div
-                class="aspect-[4/5] overflow-hidden rounded-2xl border-2 border-lime/20 bg-dark shadow-2xl"
+                class="aspect-4/5 overflow-hidden rounded-2xl border-2 border-lime/20 bg-dark shadow-2xl"
               >
                 <Image
                   src={joelBurigoImage}
@@ -252,7 +252,7 @@ const promessas = [
                 class="flex items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-lime/30"
                 style={`animation-delay: ${index * 0.1}s; opacity: 0; animation: fadeInUp 0.6s ease-out ${index * 0.1}s forwards;`}
               >
-                <Icons name="check-circle-2" class="h-6 w-6 flex-shrink-0 text-lime" />
+                <Icons name="check-circle-2" class="h-6 w-6 shrink-0 text-lime" />
                 <p class="font-sans text-body text-gray-200">{cicatriz}</p>
               </div>
             ))
@@ -279,7 +279,7 @@ const promessas = [
     </section>
 
     <!-- Propósito de Vida e Transformação -->
-    <section class="bg-gradient-to-b from-dark/50 to-dark py-24">
+    <section class="bg-linear-to-b from-dark/50 to-dark py-24">
       <Container>
         <div class="mx-auto max-w-4xl rounded-2xl border border-lime/30 bg-lime/5 p-12">
           <div class="mb-8 text-center">
@@ -451,7 +451,7 @@ const promessas = [
                         <ul class="space-y-2">
                           {caminho.resolve.map((item) => (
                             <li class="flex items-start gap-2">
-                              <Icons name="check-circle-2" class="mt-1 h-4 w-4 flex-shrink-0 text-lime" />
+                              <Icons name="check-circle-2" class="mt-1 h-4 w-4 shrink-0 text-lime" />
                               <span class="font-sans text-body-sm text-gray-200">{item}</span>
                             </li>
                           ))}
@@ -464,7 +464,7 @@ const promessas = [
                         <ul class="space-y-2">
                           {caminho.inclui.map((item) => (
                             <li class="flex items-start gap-2">
-                              <Icons name="check-circle-2" class="mt-1 h-4 w-4 flex-shrink-0 text-royal-blue" />
+                              <Icons name="check-circle-2" class="mt-1 h-4 w-4 shrink-0 text-royal-blue" />
                               <span class="font-sans text-body-sm text-gray-200">{item}</span>
                             </li>
                           ))}
@@ -549,7 +549,7 @@ const promessas = [
           </h3>
           <div class="space-y-4">
             <div class="flex items-start gap-4 rounded-lg border border-lime/20 bg-lime/5 p-4">
-              <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-lime font-display text-sm font-bold text-dark">
+              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-lime font-display text-sm font-bold text-dark">
                 1
               </span>
               <div>
@@ -564,7 +564,7 @@ const promessas = [
               </div>
             </div>
             <div class="flex items-start gap-4 rounded-lg border border-royal-blue/20 bg-royal-blue/5 p-4">
-              <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-royal-blue font-display text-sm font-bold text-white">
+              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-royal-blue font-display text-sm font-bold text-white">
                 2
               </span>
               <div>
@@ -579,7 +579,7 @@ const promessas = [
               </div>
             </div>
             <div class="flex items-start gap-4 rounded-lg border border-orange/20 bg-orange/5 p-4">
-              <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-orange font-display text-sm font-bold text-dark">
+              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange font-display text-sm font-bold text-dark">
                 3
               </span>
               <div>
@@ -622,9 +622,9 @@ const promessas = [
                 style={`animation-delay: ${index * 0.05}s; opacity: 0; animation: fadeInUp 0.6s ease-out ${index * 0.05}s forwards;`}
               >
                 {item.prometo ? (
-                  <Icons name="check-circle-2" class="h-6 w-6 flex-shrink-0 text-lime" />
+                  <Icons name="check-circle-2" class="h-6 w-6 shrink-0 text-lime" />
                 ) : (
-                  <Icons name="x" class="h-6 w-6 flex-shrink-0 text-red-400" />
+                  <Icons name="x" class="h-6 w-6 shrink-0 text-red-400" />
                 )}
                 <p
                   class={`font-sans text-body ${item.prometo ? 'text-gray-200' : 'text-gray-400'}`}
@@ -639,7 +639,7 @@ const promessas = [
     </section>
 
     <!-- CTA Final - Da Quebrada ao Legado -->
-    <section class="relative overflow-hidden bg-gradient-to-b from-dark to-dark/95 py-32">
+    <section class="relative overflow-hidden bg-linear-to-b from-dark to-dark/95 py-32">
       <div class="pointer-events-none absolute inset-0">
         <div class="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-lime/10 blur-3xl"></div>
       </div>
@@ -647,7 +647,7 @@ const promessas = [
       <Container class="relative z-10">
         <div class="mx-auto max-w-4xl text-center">
           {/* Quote Principal */}
-          <div class="mb-12 rounded-2xl border-2 border-lime/30 bg-gradient-to-br from-lime/10 to-transparent p-12">
+          <div class="mb-12 rounded-2xl border-2 border-lime/30 bg-linear-to-br from-lime/10 to-transparent p-12">
             <p class="mb-6 font-display text-h2 leading-tight text-white md:text-display-sm">
               "Aos 38 anos, percebi: a jornada nunca foi sobre <span class="text-lime">chegar</span>."
             </p>

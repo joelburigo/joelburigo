@@ -196,7 +196,7 @@ const resultadoConsolidado = [
       />
     </Container>
   </section>
-  <main class="flex-grow pt-16 md:pt-20">
+  <main class="grow pt-16 md:pt-20">
 
     <!-- Hero -->
     <section class="relative overflow-hidden bg-dark py-16 md:py-24">
@@ -256,19 +256,19 @@ const resultadoConsolidado = [
               </div>
               <ul class="space-y-3">
                 <li class="flex items-start gap-3">
-                  <Icons name="x" class="h-5 w-5 flex-shrink-0 text-red-400" />
+                  <Icons name="x" class="h-5 w-5 shrink-0 text-red-400" />
                   <span class="font-sans text-body text-gray-200">Enriquecimento rápido</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <Icons name="x" class="h-5 w-5 flex-shrink-0 text-red-400" />
+                  <Icons name="x" class="h-5 w-5 shrink-0 text-red-400" />
                   <span class="font-sans text-body text-gray-200">Sistema 100% automatizado e perfeito</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <Icons name="x" class="h-5 w-5 flex-shrink-0 text-red-400" />
+                  <Icons name="x" class="h-5 w-5 shrink-0 text-red-400" />
                   <span class="font-sans text-body text-gray-200">Crescimento exponencial imediato</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <Icons name="x" class="h-5 w-5 flex-shrink-0 text-red-400" />
+                  <Icons name="x" class="h-5 w-5 shrink-0 text-red-400" />
                   <span class="font-sans text-body text-gray-200">Fórmula mágica sem esforço</span>
                 </li>
               </ul>
@@ -278,7 +278,7 @@ const resultadoConsolidado = [
           <!-- Honestidade Brutal -->
           <div class="mt-12 rounded-2xl border-2 border-white/10 bg-white/5 p-8">
             <div class="flex items-start gap-4">
-              <Icons name="alert-circle" class="h-8 w-8 flex-shrink-0 text-lime" />
+              <Icons name="alert-circle" class="h-8 w-8 shrink-0 text-lime" />
               <div>
                 <h3 class="mb-3 font-display text-h3 text-white">💯 Honestidade Brutal</h3>
                 <p class="font-sans text-body text-gray-200">
@@ -397,7 +397,7 @@ const resultadoConsolidado = [
           <!-- Timeline Visual -->
           <div class="relative space-y-12">
             <!-- Linha vertical conectando as fases -->
-            <div class="absolute left-8 top-8 bottom-8 w-1 bg-gradient-to-b from-lime via-lime/50 to-lime hidden md:block"></div>
+            <div class="absolute left-8 top-8 bottom-8 w-1 bg-linear-to-b from-lime via-lime/50 to-lime hidden md:block"></div>
             {fases.map((fase) => (
               <div class="relative md:pl-24">
                 <!-- Círculo timeline -->
@@ -405,7 +405,7 @@ const resultadoConsolidado = [
                   <div class="h-3 w-3 rounded-full bg-dark"></div>
                 </div>
 
-                <div class="group rounded-2xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/[0.02] p-8 transition-all hover:border-lime/50 hover:shadow-2xl hover:shadow-lime/10">
+                <div class="group rounded-2xl border-2 border-white/10 bg-linear-to-br from-white/5 to-white/2 p-8 transition-all hover:border-lime/50 hover:shadow-2xl hover:shadow-lime/10">
                   <!-- Badge de semanas -->
                   <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-lime/30 bg-lime/10 px-4 py-2">
                     <Icons name="calendar" class="h-4 w-4 text-lime" />
@@ -415,7 +415,7 @@ const resultadoConsolidado = [
                   <!-- Header da Fase -->
                   <div class="mb-6 flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                     <div class="flex items-start gap-4">
-                      <div class="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-lime/20 ring-4 ring-lime/10 transition-all group-hover:scale-110 group-hover:ring-lime/30">
+                      <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-lime/20 ring-4 ring-lime/10 transition-all group-hover:scale-110 group-hover:ring-lime/30">
                         {fase.icon === 'file-text' && <Icons name="file-text" class="h-8 w-8 text-lime" />}
                         {fase.icon === 'settings' && <Icons name="settings" class="h-8 w-8 text-lime" />}
                         {fase.icon === 'trending-up' && <Icons name="trending-up" class="h-8 w-8 text-lime" />}
@@ -439,7 +439,7 @@ const resultadoConsolidado = [
                     <ul class="space-y-2">
                       {fase.atividades.map((atividade) => (
                         <li class="flex items-start gap-2">
-                          <Icons name="arrow-right" class="h-5 w-5 flex-shrink-0 text-lime" />
+                          <Icons name="arrow-right" class="h-5 w-5 shrink-0 text-lime" />
                           <span class="font-sans text-body-sm text-gray-200">{atividade}</span>
                         </li>
                       ))}
@@ -452,7 +452,7 @@ const resultadoConsolidado = [
                     <ul class="space-y-2">
                       {fase.resultados.map((resultado) => (
                         <li class="flex items-start gap-2">
-                          <Icons name="check-circle-2" class="h-5 w-5 flex-shrink-0 text-lime" />
+                          <Icons name="check-circle-2" class="h-5 w-5 shrink-0 text-lime" />
                           <span class="font-sans text-body-sm text-gray-200">{resultado}</span>
                         </li>
                       ))}
@@ -502,7 +502,7 @@ const resultadoConsolidado = [
                 <ul class="space-y-2">
                   {item.itens.map((subitem) => (
                     <li class="flex items-start gap-2">
-                      <Icons name="check-circle-2" class="h-4 w-4 flex-shrink-0 text-lime" />
+                      <Icons name="check-circle-2" class="h-4 w-4 shrink-0 text-lime" />
                       <span class="font-sans text-body-sm text-gray-200">{subitem}</span>
                     </li>
                   ))}
@@ -543,7 +543,7 @@ const resultadoConsolidado = [
     <section class="bg-dark py-24">
       <Container>
         <div class="mx-auto max-w-5xl">
-          <div class="rounded-2xl border-2 border-lime/30 bg-gradient-to-br from-lime/20 to-lime/5 p-12">
+          <div class="rounded-2xl border-2 border-lime/30 bg-linear-to-br from-lime/20 to-lime/5 p-12">
             <div class="text-center">
               <div class="mb-6 flex justify-center">
                 <div class="rounded-full bg-lime p-4">
@@ -580,7 +580,7 @@ const resultadoConsolidado = [
     </section>
 
     <!-- CTA Final -->
-    <section class="relative overflow-hidden bg-gradient-to-br from-lime/10 via-dark to-dark py-24">
+    <section class="relative overflow-hidden bg-linear-to-br from-lime/10 via-dark to-dark py-24">
       <Container>
         <div class="mx-auto max-w-5xl">
           <div class="rounded-3xl border-4 border-lime/40 bg-dark/80 p-12 text-center backdrop-blur-sm">

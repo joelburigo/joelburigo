@@ -41,7 +41,7 @@ const isImageMetadata = thumbnail && typeof thumbnail !== 'string'
           />
         )
       ) : (
-        <div class={aspectRatio === 'portrait' ? 'flex min-h-[400px] items-center justify-center bg-gradient-to-br from-dark to-gray-900' : 'absolute inset-0 flex items-center justify-center bg-gradient-to-br from-dark to-gray-900'}>
+        <div class={aspectRatio === 'portrait' ? 'flex min-h-[400px] items-center justify-center bg-linear-to-br from-dark to-gray-900' : 'absolute inset-0 flex items-center justify-center bg-linear-to-br from-dark to-gray-900'}>
           <div class="text-center">
             <Icons name="play" class="mx-auto mb-4 h-20 w-20 text-lime" />
             <p class="font-display text-h4 text-white">{title}</p>

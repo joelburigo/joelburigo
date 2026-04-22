@@ -70,12 +70,12 @@ const getCorClass = (cor: string, tipo: 'bg' | 'text' | 'border') => {
   if (cor === 'royal-blue') return tipo === 'bg' ? 'bg-royal-blue' : tipo === 'text' ? 'text-royal-blue' : 'border-white/10';
   if (cor === 'red') return tipo === 'bg' ? 'bg-red-500' : tipo === 'text' ? 'text-red-400' : 'border-red-500/30';
   if (cor === 'gray') return tipo === 'bg' ? 'bg-gray-600' : tipo === 'text' ? 'text-gray-400' : 'border-white/10';
-  if (cor === 'gradient') return tipo === 'bg' ? 'bg-gradient-to-br from-lime to-royal-blue' : tipo === 'text' ? 'text-white' : 'border-lime/30';
+  if (cor === 'gradient') return tipo === 'bg' ? 'bg-linear-to-br from-lime to-royal-blue' : tipo === 'text' ? 'text-white' : 'border-lime/30';
   return '';
 };
 ---
 
-<section class="relative overflow-hidden bg-gradient-to-b from-dark via-dark/95 to-dark py-24">
+<section class="relative overflow-hidden bg-linear-to-b from-dark via-dark/95 to-dark py-24">
   <Container>
     <div class="mx-auto mb-16 max-w-3xl text-center">
       <span class="mb-4 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-1.5 text-sm font-display font-bold text-lime backdrop-blur-sm">
@@ -92,16 +92,16 @@ const getCorClass = (cor: string, tipo: 'bg' | 'text' | 'border') => {
     <div class="mx-auto max-w-4xl">
       <div class="relative space-y-12">
         {/* Linha do tempo vertical */}
-        <div class="absolute left-8 top-0 h-full w-0.5 bg-gradient-to-b from-lime via-royal-blue to-lime opacity-20"></div>
+        <div class="absolute left-8 top-0 h-full w-0.5 bg-linear-to-b from-lime via-royal-blue to-lime opacity-20"></div>
 
         {capitulos.map((cap) => (
           <div class="relative flex gap-6">
-            <div class={`flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full border-4 border-dark ${getCorClass(cap.cor, 'bg')} ${cap.cor === 'gradient' ? 'shadow-2xl shadow-lime/30' : 'shadow-xl'}`}>
+            <div class={`flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-4 border-dark ${getCorClass(cap.cor, 'bg')} ${cap.cor === 'gradient' ? 'shadow-2xl shadow-lime/30' : 'shadow-xl'}`}>
               <span class={`font-display text-xl font-bold ${cap.cor === 'lime' || cap.cor === 'gray' ? 'text-dark' : 'text-white'}`}>
                 {cap.numero}
               </span>
             </div>
-            <div class={`flex-1 rounded-2xl border ${cap.cor === 'red' ? 'border-red-500/30 bg-red-500/5' : cap.cor === 'gradient' ? 'border-2 border-lime/30 bg-gradient-to-br from-lime/10 to-royal-blue/10' : 'border-white/10 bg-white/5'} p-6 backdrop-blur-sm`}>
+            <div class={`flex-1 rounded-2xl border ${cap.cor === 'red' ? 'border-red-500/30 bg-red-500/5' : cap.cor === 'gradient' ? 'border-2 border-lime/30 bg-linear-to-br from-lime/10 to-royal-blue/10' : 'border-white/10 bg-white/5'} p-6 backdrop-blur-sm`}>
               <div class="mb-2 flex items-center gap-3">
                 <span class={`rounded-full ${getCorClass(cap.cor, 'bg')}/20 px-3 py-1 font-display text-xs font-bold ${getCorClass(cap.cor, 'text')}`}>
                   {cap.periodo}

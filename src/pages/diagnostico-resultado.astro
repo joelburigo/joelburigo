@@ -123,7 +123,7 @@ const seo = {
 
       <!-- CTAs -->
       <div class="grid gap-6 lg:grid-cols-3">
-        <div class="lg:col-span-2 rounded-xl border-2 border-lime bg-gradient-to-br from-lime/10 to-lime/5 p-8 backdrop-blur-sm">
+        <div class="lg:col-span-2 rounded-xl border-2 border-lime bg-linear-to-br from-lime/10 to-lime/5 p-8 backdrop-blur-sm">
           <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-lime px-3 py-1">
             <span class="font-sans text-xs font-bold text-dark">🔥 RECOMENDADO</span>
           </div>
@@ -133,19 +133,19 @@ const seo = {
           </p>
           <div class="mb-6 grid gap-3 sm:grid-cols-2">
             <div class="flex items-start gap-2">
-              <Icons name="check-circle-2" class="h-5 w-5 mt-0.5 text-lime flex-shrink-0" />
+              <Icons name="check-circle-2" class="h-5 w-5 mt-0.5 text-lime shrink-0" />
               <span class="font-sans text-sm text-gray-200">Framework completo dos 6Ps</span>
             </div>
             <div class="flex items-start gap-2">
-              <Icons name="check-circle-2" class="h-5 w-5 mt-0.5 text-lime flex-shrink-0" />
+              <Icons name="check-circle-2" class="h-5 w-5 mt-0.5 text-lime shrink-0" />
               <span class="font-sans text-sm text-gray-200">Implementação passo a passo</span>
             </div>
             <div class="flex items-start gap-2">
-              <Icons name="check-circle-2" class="h-5 w-5 mt-0.5 text-lime flex-shrink-0" />
+              <Icons name="check-circle-2" class="h-5 w-5 mt-0.5 text-lime shrink-0" />
               <span class="font-sans text-sm text-gray-200">Templates e ferramentas</span>
             </div>
             <div class="flex items-start gap-2">
-              <Icons name="check-circle-2" class="h-5 w-5 mt-0.5 text-lime flex-shrink-0" />
+              <Icons name="check-circle-2" class="h-5 w-5 mt-0.5 text-lime shrink-0" />
               <span class="font-sans text-sm text-gray-200">Suporte e comunidade</span>
             </div>
           </div>
@@ -419,7 +419,7 @@ const seo = {
           <ul class="space-y-2">
             ${levelData.actions.map(action => `
               <li class="flex items-start gap-2 font-sans text-sm text-gray-200">
-                <svg class="mt-1 h-4 w-4 flex-shrink-0 text-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="mt-1 h-4 w-4 shrink-0 text-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>
                 <span>${action}</span>
@@ -461,7 +461,7 @@ const seo = {
         const urgencyBadge = isStrategic ? 'bg-red-500' : 'bg-orange-500';
         return `
           <div class="flex items-start gap-4 rounded-lg border ${urgencyBorder} ${urgencyBg} p-4">
-            <div class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full ${urgencyBadge} font-display text-lg font-bold text-white">
+            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${urgencyBadge} font-display text-lg font-bold text-white">
               ${index + 1}
             </div>
             <div class="flex-1">

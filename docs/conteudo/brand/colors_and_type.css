@@ -1,5 +1,5 @@
 /* =============================================================
-   JOEL BURIGO — v3 "TERMINAL GROWTH" — Tech / Sales / Growth
+   JOEL BURIGO — "TERMINAL GROWTH" — Tech / Sales / Growth
    Cor-sinal dupla: fogo #FF3B0F + acid #C6FF00 sobre preto puro.
    DNA terminal: grid overlay, mono ticker, glitch, status bars.
    Sistema > improviso.
@@ -9,8 +9,8 @@
 
 :root {
   /* ---------- SURFACES ---------- */
-  --jb-ink:          #050505;   /* base v3: preto puro */
-  --jb-ink-2:        #0B0B0B;   /* cards v3 (terminal) */
+  --jb-ink:          #050505;   /* base: preto puro */
+  --jb-ink-2:        #0B0B0B;   /* cards (terminal) */
   --jb-ink-3:        #121212;   /* cards elevados */
   --jb-hair:         rgba(255, 255, 255, 0.08);
   --jb-hair-strong:  rgba(255, 255, 255, 0.16);
@@ -24,7 +24,7 @@
   --jb-fg-muted:     #6B7280;
 
   /* ---------- ACCENT — FOGO (alerta/urgência) ---------- */
-  --jb-fire:         #FF3B0F;   /* laranja-fogo v3, cor-sinal primária */
+  --jb-fire:         #FF3B0F;   /* laranja-fogo, cor-sinal primária */
   --jb-fire-hot:     #FF6A3D;   /* hover */
   --jb-fire-deep:    #D93D12;   /* pressed / deep */
   --jb-fire-soft:    rgba(255, 59, 15, 0.12);

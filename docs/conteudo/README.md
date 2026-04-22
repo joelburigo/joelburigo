@@ -1,7 +1,8 @@
-# ÍNDICE DO CONTEÚDO (Joel Burigo)
+# Conteúdo — Joel Burigo
 
-**Escopo:** fonte da verdade do ecossistema Joel Burigo — produtos (VSS + Advisory), branding, marca, marketing.
-**Versão:** 2.0 (refactor em andamento — ver `_plano-refactor.md`)
+**Fonte única** do ecossistema Joel Burigo: estratégia, oferta, programa, marca e marketing.
+
+**Versão:** 2.0 — refactor concluído (Opção A: 4 partes núcleo + recursos).
 
 ---
 
@@ -9,97 +10,84 @@
 
 ```
 docs/conteudo/
-├── README.md                    ← este arquivo
-├── _plano-refactor.md           ← WIP: plano do refactor atual
-├── partes/                      ← textos (estratégia, playbook, branding, copy)
-├── brand/                       ← design system (colors, type, HTML previews)
-├── marketing/                   ← produção de posts IG, emails, apresentações
-│   ├── calendario.md
-│   └── posts/
-└── _archive/                    ← desativados reversíveis
+├── README.md              ← este arquivo
+├── _plano-refactor.md     ← histórico do refactor 2.0
+├── partes/                ← 4 partes núcleo
+├── recursos/              ← copy bank + templates + scripts
+├── brand/                 ← design system (v3 Terminal Growth)
+├── marketing/             ← produção de peças (posts, emails, decks)
+└── _archive/              ← versões anteriores (reversíveis)
 ```
+
+---
+
+## Partes núcleo (`partes/`)
+
+| # | Arquivo | Conteúdo | Substitui |
+|---|---|---|---|
+| **01** | [01-marca.md](partes/01-marca.md) | Branding Joel Burigo: história, manifesto, tom de voz, vocabulário, os 7 inimigos, movimento Máquina de Crescimento | P7 |
+| **02** | [02-oferta.md](partes/02-oferta.md) | Ecossistema completo — VSS (R$ 1.997 perpétuo) + Advisory (R$ 997–15.000/mês). Visão, formatos, jornada, projeções, marketing por produto | P8 + P10 |
+| **03** | [03-programa-vss.md](partes/03-programa-vss.md) | Programa VSS — visão estratégica, Framework 6Ps, arquitetura 15 módulos / 90 dias, Growth CRM como diferencial, garantia | P1 + P2 + P4 |
+| **04** | [04-playbook-vss.md](partes/04-playbook-vss.md) | Playbook implementável — 7 fases, 15 módulos, 66 destravamentos práticos (15-20 min cada) | P3 (8 arquivos) |
+
+---
+
+## Recursos (`recursos/`)
+
+Utilitários reutilizáveis em marketing, vendas e conteúdo.
+
+- [copy-bank.md](recursos/copy-bank.md) — frases, jargões, objeções, transformações, urgência, prova social *(ex-P12)*
+- [templates.md](recursos/templates.md) — canvas, relatórios, playbooks comerciais *(ex-P11)*
+- [scripts-videos.md](recursos/scripts-videos.md) — scripts de vídeo das páginas principais *(ex-P13)*
+
+---
+
+## Marca (`brand/`)
+
+Design system v3 Terminal Growth — cores, tipografia, componentes HTML/CSS preview. Ver [brand/README.md](brand/README.md) e [brand/SKILL.md](brand/SKILL.md).
+
+---
+
+## Marketing (`marketing/`)
+
+- [calendario.md](marketing/calendario.md) — agenda editorial única
+- `posts/` — peças produzidas (1 arquivo por peça, frontmatter define canal)
 
 ---
 
 ## Produtos ativos
 
-| Produto | Modelo | Status |
-|---------|--------|--------|
-| **VSS — Vendas Sem Segredos** | DIY perpétuo (playbook + mentorias ao vivo rolling) | Principal |
-| **Advisory** | 1:1 com Joel | Exclusivo |
+| Produto | Modelo | Investimento | Para quem |
+|---|---|---|---|
+| **VSS** | DIY perpétuo (playbook + mentorias ao vivo + Growth CRM) | R$ 1.997 (12x R$ 166,42) | Faturamento R$ 10–100k/mês |
+| **Advisory** | 1:1 com Joel — Sessão / Sprint / Conselho | R$ 997 – R$ 15.000/mês | Faturamento R$ 200k+/mês |
 
-Services foi descontinuado (arquivado em `_archive/parte9-services.md`).
-
----
-
-## Partes ativas (`partes/`)
-
-### Fundação
-
-- **[P1] Fundamentos Estratégicos** → [partes/parte1-fundamentos.md](partes/parte1-fundamentos.md)
-  Visão, metodologia 6Ps, público-alvo.
-- **[P2] Arquitetura do Programa** → [partes/parte2-arquitetura.md](partes/parte2-arquitetura.md)
-  15 módulos, jornada de 90 dias.
-
-### Programa VSS
-
-- **[P3] Playbook VSS** → a consolidar em `partes/parte3-playbook-vss.md` (hoje fragmentado em 8 arquivos `parte3-*.md` — ver `_plano-refactor.md`).
-
-### Diferenciação e GTM
-
-- **[P4] Diferenciação e Valor** → [partes/parte4-diferenciacao.md](partes/parte4-diferenciacao.md)
-  Growth CRM, proposta de valor, precificação.
-- **[P5] Go-to-Market** → [partes/parte5-go-to-market.md](partes/parte5-go-to-market.md)
-  **Pendente reescrita:** migrar de lançamento → perpétuo evergreen.
-- ~~**[P6] Execução e Crescimento**~~ — arquivado (era estruturado em cima de lançamento/CPL). Reescrita evergreen pendente, alinhada ao novo P5.
-
-### Branding e ecossistema
-
-- **[P7] Branding Joel Burigo** → [partes/parte7-branding-joel-burigo.md](partes/parte7-branding-joel-burigo.md)
-  História, manifesto, tom de voz, vocabulário.
-- **[P8] Ecossistema de Produtos** → [partes/parte8-ecossistema-produtos.md](partes/parte8-ecossistema-produtos.md)
-  **Pendente reescrita:** 2 produtos (VSS + Advisory), sem Services.
-- **[P10] Advisory** → [partes/parte10-advisory.md](partes/parte10-advisory.md)
-  Oferta premium, acesso direto.
-
-### Recursos
-
-- **[P11] Deliverables e Templates** → [partes/parte11-deliverables-templates.md](partes/parte11-deliverables-templates.md)
-  Canvas, relatórios, playbooks.
-- **[P12] Banco de Recursos — Copy** → [partes/parte12-banco-recursos-copy.md](partes/parte12-banco-recursos-copy.md)
-  Copys, jargões, objeções, provas sociais.
-- **[P13] Scripts de Vídeos** → [partes/parte13-scripts-videos.md](partes/parte13-scripts-videos.md)
-  Scripts das páginas principais (Home, VSS, Advisory).
+Services foi descontinuado (`_archive/parte9-services.md`).
 
 ---
 
-## `brand/` — Design System
+## `_archive/`
 
-Assets visuais e protótipos HTML do ecossistema. Ver [brand/README.md](brand/README.md) e [brand/SKILL.md](brand/SKILL.md).
+Versões anteriores preservadas:
 
----
+- `parte1-fundamentos.md`, `parte2-arquitetura.md`, `parte4-diferenciacao.md` — consolidados em `partes/03-programa-vss.md`
+- `parte3-aulas-fase[1-7].md` + `parte3-roteiro-aulas.md` — consolidados em `partes/04-playbook-vss.md`
+- `parte5-go-to-market.md` — GTM evergreen reescrito; depois descontinuado da estrutura núcleo
+- `parte6-execucao.md` — baseado em lançamento; reescrita evergreen pendente quando necessário
+- `parte8-ecossistema-produtos.md`, `parte10-advisory.md` — consolidados em `partes/02-oferta.md`
+- `parte9-services.md` — produto descontinuado
+- `parte13-scripts-videos-fala-pura.md` — duplicata consolidada
 
-## `marketing/` — Produção de peças
-
-Agenda única + biblioteca de posts/peças derivadas. Ver [marketing/calendario.md](marketing/calendario.md).
-
----
-
-## `_archive/` — Arquivados
-
-- `parte9-services.md` — Services descontinuado
-- `parte13-scripts-videos-fala-pura.md` — consolidado em parte13-scripts-videos.md
-- `parte6-execucao.md` — baseado em lançamento/CPL; reescrita evergreen pendente
-
-Arquivos aqui são reversíveis. Após 30–60 dias sem uso, podem ser deletados definitivamente.
+Reversíveis. Após 30–60 dias sem uso, podem ser deletados.
 
 ---
 
 ## Como usar
 
-**Leitura:** abrir a Parte desejada em `partes/`.
-**Referência em peças de marketing:** usar o ID (`P1`, `P7.6`, `P12.1`) em `marketing/posts/*.md`.
-**Edição:** manter IDs de seção consistentes e frontmatter atualizado.
+- **Para entender a oferta:** comece em `partes/02-oferta.md`
+- **Para entender o programa VSS por dentro:** `partes/03-programa-vss.md` + `partes/04-playbook-vss.md`
+- **Para escrever copy/posts:** puxe de `recursos/copy-bank.md` + `partes/01-marca.md` (tom, vocabulário)
+- **Para produzir peças:** use `marketing/calendario.md` + nomeação `marketing/posts/`
 
 ---
 

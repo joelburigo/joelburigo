@@ -20,13 +20,14 @@ Site pessoal do Joel Burigo (Astro SSR). Categoria: **interno**.
 ```
 joelburigo-site/
 ├── docs/conteudo/     ← Fonte única: estratégia, copy, marca, marketing
-│   ├── partes/        13 partes markdown (estratégia, playbook, branding, copy)
-│   │                  P7 branding · P12 banco de copy · P13 scripts de vídeos
+│   ├── partes/        4 partes núcleo:
+│   │                  01-marca · 02-oferta · 03-programa-vss · 04-playbook-vss
+│   ├── recursos/      copy-bank · templates · scripts-videos
 │   ├── brand/         Direção visual (v3 Terminal Growth)
 │   │                  HTML/CSS puro, tokens --jb-*, preview/index.html navegável
 │   ├── marketing/     Produção de peças (posts IG, emails, apresentações)
 │   │                  calendario.md + posts/
-│   └── _archive/      Desativados reversíveis (ex: Services)
+│   └── _archive/      Desativados reversíveis (ex: Services, GTM lançamento)
 └── src/               ← Produção Astro (o que é servido em joelburigo.com.br)
     ├── data/          cases.ts · contact.ts · testimonials.ts
     ├── pages/         páginas do site

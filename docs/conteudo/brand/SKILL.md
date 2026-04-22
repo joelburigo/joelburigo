@@ -12,7 +12,7 @@ If the user invokes this skill without any other guidance, ask them what they wa
 
 ## Quick reference
 
-- **Direction:** v3 Terminal Growth — tech/growth/sales brutalismo.
+- **Direction:** Terminal Growth — tech/growth/sales brutalismo.
 - **Palette — 5 tokens-core:** `#050505` ink · `#0B0B0B` ink-2 · `#F5F1E8` cream · `#FF3B0F` fire (urgência, alerta, CTA) · `#C6FF00` acid (growth, sucesso, tech). Terciário `#00E0FF` cyan pra dados ao vivo. Mute `#6B7280`.
 - **Sistema bicolor de acento:** fogo pra urgência, acid pra growth. Nunca 3 acentos no mesmo viewport — fire + acid é o par.
 - **Type:** Archivo Black (display, UPPERCASE, -0.035 a -0.045em tracking) · Archivo 400–800 (body/UI) · JetBrains Mono (ticker, byline, status, terminal code).
@@ -47,9 +47,9 @@ If the user invokes this skill without any other guidance, ask them what they wa
 
 - `README.md` — guia completo de conteúdo + visual + iconografia (lê primeiro)
 - `colors_and_type.css` — todas as CSS vars (`--jb-*`) + elementos semânticos
-- `v3_terminal_growth.html` — proposta master v3 (referência canônica)
-- `homepage.html` — landing institucional aplicando v3
-- `ig_posts.html` — 8 posts Instagram (540×540) aplicando v3
+- `master.html` — referência canônica (composição full-page)
+- `homepage.html` — landing institucional
+- `ig_posts.html` — 8 posts Instagram (540×540)
 - `assets/logo.svg` · `assets/logo-mark.svg` · `assets/logo-mark-acid.svg` — brand marks
 - `preview/index.html` — galeria navegável de todos os tokens/componentes
 - `preview/*.html` — cards individuais (colors, type, spacing, components-*)

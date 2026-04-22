@@ -485,7 +485,7 @@ parte_anterior: "P9"
 **Perfil:**
 - ❌ Quer que eu execute por ele
 - ❌ Não tem urgência real
-- ❌ Fatura menos de R$ 200k/mês (vá para VSS ou Services)
+- ❌ Fatura menos de R$ 200k/mês (vá para VSS)
 - ❌ Busca preço baixo
 - ❌ Não aceita feedback direto
 - ❌ Não vai executar as recomendações

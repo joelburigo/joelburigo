@@ -1,14 +1,14 @@
 # Joel Burigo — Design System
 
 **Especialista em vendas escaláveis para MPEs brasileiras. Criador do Framework 6Ps das Vendas Escaláveis.**
-Direção v3: **Terminal Growth** — tech/growth/sales brutalismo. Fogo `#FF3B0F` (urgência) + acid `#C6FF00` (growth) sobre preto puro `#050505` + cream `#F5F1E8`. DNA de terminal de trading encontra empreendedor da quebrada.
+Direção: **Terminal Growth** — tech/growth/sales brutalismo. Fogo `#FF3B0F` (urgência) + acid `#C6FF00` (growth) sobre preto puro `#050505` + cream `#F5F1E8`. DNA de terminal de trading encontra empreendedor da quebrada.
 
 ---
 
 ## Índice
 
-- `v3_terminal_growth.html` — **proposta master v3** (hero com terminal + 6Ps console + growth chart + cases + tiers + manifesto + CTA)
-- `homepage.html` — landing institucional, aplicando v3
+- `master.html` — **referência canônica** (hero com terminal + 6Ps console + growth chart + cases + tiers + manifesto + CTA)
+- `homepage.html` — landing institucional
 - `ig_posts.html` — 8 posts Instagram (540×540) — manifesto / mega número / case / quote / 6Ps / depoimento / capa carrossel / terminal
 - `colors_and_type.css` — todos os tokens (vars CSS `--jb-*`) + elementos semânticos (fogo + acid + cyan + mono)
 - `assets/logo.svg` — wordmark `JOEL|BURIGO`
@@ -21,7 +21,7 @@ Direção v3: **Terminal Growth** — tech/growth/sales brutalismo. Fogo `#FF3B0
   - **Type:** `type-display.html` (stroke+glitch) · `type-body.html` · `type-mono.html`
   - **Spacing:** `spacing-scale.html` · `spacing-radii.html` · `spacing-shadows.html`
   - **Components base:** `components-buttons.html` · `components-badges.html` · `components-cards.html` · `components-inputs.html` · `components-6ps.html` · `components-stats.html` · `components-navbar.html`
-  - **Components v3-assinatura:** `components-terminal.html` · `components-ticker.html` · `components-statusbar.html` · `components-eyebrow.html` · `components-section-head.html` · `components-case-slab.html` · `components-manifesto.html` · `components-chart.html`
+  - **Components assinatura:** `components-terminal.html` · `components-ticker.html` · `components-statusbar.html` · `components-eyebrow.html` · `components-section-head.html` · `components-case-slab.html` · `components-manifesto.html` · `components-chart.html`
 
 ---
 
@@ -74,7 +74,7 @@ Direção v3: **Terminal Growth** — tech/growth/sales brutalismo. Fogo `#FF3B0
 
 ## VISUAL FOUNDATIONS
 
-**Cores v3** — 5 tokens-core:
+**Cores** — 5 tokens-core:
 - `--jb-ink` `#050505` (base, preto absoluto)
 - `--jb-ink-2` `#0B0B0B` (cards/terminal)
 - `--jb-cream` `#F5F1E8` (foreground quente)
@@ -85,7 +85,7 @@ O sistema é **bicolor de acento**: fogo pra urgência/marketing, acid pra growt
 
 **Tipografia** — Archivo Black (display, condensada brutalista), Archivo 400–800 (body/UI), JetBrains Mono (ticker, byline, status, terminal). Tracking apertado (-0.035 a -0.045em) nos displays. Mono carrega toda a micro-copy técnica — é o "sotaque" do sistema.
 
-**Stroke-text** — pedaços de títulos em `-webkit-text-stroke: 2px cream; color: transparent` pra criar ritmo visual (ver hero v3, manifesto).
+**Stroke-text** — pedaços de títulos em `-webkit-text-stroke: 2px cream; color: transparent` pra criar ritmo visual (ver hero do master, manifesto).
 
 **Backgrounds** — preto planos + **grid overlay** 80px fixo (opacidade 0.35) como DNA do sistema. Noise 6% opcional pra texturizar. Sem gradientes chapados; só radial sutil no hero.
 
@@ -114,7 +114,7 @@ Nunca softglow exceto dot pulse (`0 0 10px acid`).
 
 **Layout rules** — grids com borda externa 1px e divisores internos 1px (sem gap). `max-width: 1360px` container. Section head: kicker mono acid `// 01_FRAMEWORK` · título H2 gigante · meta mono à direita. Hair-separators de 1px cream-translúcido.
 
-**Glitch** — efeito RGB shift nos heros (clip-path 48% top/bottom, translate ±3px, cores fogo/cyan). Uso cirúrgico — 1 palavra por página. Ver `v3_terminal_growth.html`.
+**Glitch** — efeito RGB shift nos heros (clip-path 48% top/bottom, translate ±3px, cores fogo/cyan). Uso cirúrgico — 1 palavra por página. Ver `master.html`.
 
 **Imagery vibe** — quando houver foto do Joel: b&w alto contraste, grain sutil, nunca colorizada. Possível overlay scanline ou grid.
 

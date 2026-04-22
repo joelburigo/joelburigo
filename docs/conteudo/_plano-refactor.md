@@ -1,22 +1,59 @@
 ---
 name: Plano de Refactor VSS + Conteúdo
-description: Plano de trabalho em andamento — reposicionamento VSS (sem gravar 66 aulas), consolidação de /docs/conteudo, 2 produtos perpétuos (VSS + Advisory), mudança para modelo perpétuo, centralização de /brand dentro de /conteudo
-status: em execução — etapas 1-5 concluídas; próximas: consolidar P3, reescrever P5 e P8, aplicar box Investimento no site
+description: Refactor 2.0 concluído — Opção A (4 partes núcleo + recursos), 2 produtos perpétuos (VSS + Advisory), centralização /brand em /conteudo, box Investimento aplicado no site, GTM/execução de lançamento arquivados
+status: CONCLUÍDO — 2026-04-22
 data: 2026-04-22
 ---
 
+## Resultado final
+
+```
+docs/conteudo/
+├── partes/        01-marca · 02-oferta · 03-programa-vss · 04-playbook-vss
+├── recursos/      copy-bank · templates · scripts-videos
+├── brand/         design system v3 Terminal Growth
+├── marketing/     calendario.md + posts/
+└── _archive/      14 arquivos preservados (reversíveis)
+```
+
 ## Progresso
 
-- [x] **1. Estrutura de pastas criada** — `_archive/`, `partes/`, `marketing/`, `marketing/posts/`
-- [x] **2. Arquivados:** `parte9-services.md`, `parte13-scripts-videos-fala-pura.md`
-- [x] **3. Movido:** todos os `parte*.md` ativos → `partes/`
-- [x] **4. Movido:** `/brand/` → `/docs/conteudo/brand/`
-- [x] **5. Criado:** `marketing/calendario.md` + `marketing/posts/.gitkeep`
-- [x] **6. README.md atualizado** refletindo nova estrutura e produtos (VSS + Advisory)
-- [ ] **7. Consolidar P3:** ler 8 arquivos `parte3-*.md` em `partes/` e escrever `parte3-playbook-vss.md`, validar, arquivar originais
-- [ ] **8. Reescrever P8** (2 produtos) e **P5** (perpétuo)
-- [ ] **9. Revisões pontuais** P4, P6, P11, P12 (remover menções Services/lançamento)
-- [ ] **10. Aplicar box "Investimento"** nos componentes Astro
+### Fase 1 — Estrutura (concluída)
+- [x] Estrutura de pastas criada
+- [x] `/brand/` movido para `/docs/conteudo/brand/`
+- [x] `marketing/calendario.md` + `marketing/posts/` criados
+- [x] `parte*.md` ativos movidos para `partes/`
+
+### Fase 2 — Reescritas e consolidações (concluída via 5 agents paralelos)
+- [x] **P3 consolidado** → `04-playbook-vss.md` (8 arquivos viraram 1, 86 KB / 1959 linhas, 66 destravamentos práticos)
+- [x] **P8 reescrito** → 2 produtos (VSS + Advisory), Services removido
+- [x] **P5 reescrito** → GTM evergreen perpétuo (depois descontinuado/arquivado a pedido)
+- [x] **P4/P6/P11/P12 limpos** — Services e linguagem de lançamento removidos
+- [x] **Box Investimento aplicado** em `VSSPage.astro`, `VSSLandingPage.astro`, `VSSInvestimentoSlide.astro` — `npx astro check` 0 errors
+
+### Fase 3 — Consolidação Opção A (concluída)
+- [x] **02-oferta.md** ← merge P8 + P10 (546 linhas, dedup eliminada)
+- [x] **03-programa-vss.md** ← merge P1 + P2 + P4 (1026 linhas, ~58% redução por dedup, substância preservada)
+- [x] **01-marca.md** ← rename P7
+- [x] **04-playbook-vss.md** ← rename do consolidado
+- [x] **recursos/** criado: `copy-bank.md` (P12), `templates.md` (P11), `scripts-videos.md` (P13)
+- [x] **P5 arquivado** (a pedido, não entrou no núcleo)
+- [x] **P10 fix:** menção residual a Services removida (linha 488)
+- [x] **README.md, CLAUDE.md, .dockerignore** atualizados
+
+## Pendências de revisão (não bloqueantes)
+
+Itens que os agents flagged pra você confirmar quando quiser:
+
+1. **02-oferta.md** — proporção VSS/Advisory esforço (~90/10) vs receita (~57/43); meta "300+ alunos/ano VSS" no modelo perpétuo.
+2. **03-programa-vss.md** — 2 notas inline `> _Nota: precisa confirmação_` em 03.5.3 (% beta + taxa esperada 70%+); "60 vs 66 aulas" ajustado para "~66".
+3. **Site:** "Lote Fundador: primeiros 100 alunos" em VSSLandingPage (linguagem de lançamento residual); menções a "Services" no FAQ do VSSPage; "Economia 84,5%" vs "88%" inconsistente entre as 2 páginas.
+4. **P6 (execução)** arquivado por ser todo lançamento/CPL — reescrita evergreen pendente quando fizer sentido.
+5. **TBDs no P5 arquivado** — caso reaproveite alguma parte: dia/hora mentoria semanal, fuso, política de férias/feriados, ticket Advisory exato, modelo Clube VSS pós-12 meses.
+
+## Sobre o `_archive/`
+
+14 arquivos preservados via `git mv` (histórico Git intacto). Após 30–60 dias sem uso, podem ser deletados definitivamente.
 
 ---
 

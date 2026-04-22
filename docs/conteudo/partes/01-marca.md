@@ -1,69 +1,33 @@
 ---
-id: "P7"
-titulo: "BRANDING JOEL BURIGO"
-documento: "Parte 7 de 13"
+name: Marca Joel Burigo — História, Manifesto e Identidade
+description: Branding Joel Burigo — história (1987–2026), propósito, posicionamento de autoridade, manifesto, tom de voz, vocabulário proprietário, os 7 inimigos que Joel combate e o movimento Máquina de Crescimento.
+id: "01"
 versao: "2.1"
-autor: "Joel Burigo"
-ultima_atualizacao: "2026-01-27"
-arquivo: "conteudo/parte7-branding-joel-burigo.md"
-
-objetivo: |
-  Estabelecer e documentar a marca pessoal de Joel Burigo:
-  - Apresentar história completa e autêntica de Joel
-  - Consolidar posicionamento como autoridade
-  - Documentar metodologia proprietária (6Ps) e origem
-  - Criar conexão emocional através da jornada pessoal
-  - Diferenciar marca Joel Burigo (guarda-chuva) do produto VSS
-  - Fornecer templates práticos para todos os canais
-
-secoes:
-  - id: "P7.1"
-    titulo: "Quem é Joel Burigo"
-  - id: "P7.2"
-    titulo: "Propósito e Missão de Vida"
-  - id: "P7.3"
-    titulo: "Posicionamento de Autoridade"
-  - id: "P7.4"
-    titulo: "História de Origem Expandida (1987-2026)"
-  - id: "P7.5"
-    titulo: "Versões Adaptadas da História"
-  - id: "P7.6"
-    titulo: "Manifesto Joel Burigo"
-  - id: "P7.7"
-    titulo: "Tom de Voz e Personalidade"
-  - id: "P7.8"
-    titulo: "Vocabulário Proprietário"
-  - id: "P7.9"
-    titulo: "Os 7 Inimigos que Joel Combate"
-  - id: "P7.10"
-    titulo: "Movimento Máquina de Crescimento"
-
-tags: [branding, pessoal, história, autoridade, identidade, manifesto, tom-voz]
-dependencias: ["P1"]
-prox_parte: "P8"
-parte_anterior: "P6"
+autor: Joel Burigo
+atualizado: "2026-04-22"
+tags: [marca, branding, história, autoridade, identidade, manifesto, tom-voz, vocabulario]
 ---
 
-[← P6: Execução](parte6-execucao.md) | [Índice](README.md) | [P8: Ecossistema →](parte8-ecossistema-produtos.md)
+# Marca Joel Burigo
 
-## 📑 Índice desta Parte
+## Índice
 
-- [P7.1 Quem é Joel Burigo](#p71-quem-é-joel-burigo)
-- [P7.2 Propósito e Missão de Vida](#p72-propósito-e-missão-de-vida)
-- [P7.3 Posicionamento de Autoridade](#p73-posicionamento-de-autoridade)
-- [P7.4 História de Origem Expandida](#p74-história-de-origem-expandida)
-- [P7.5 Versões Adaptadas da História](#p75-versões-adaptadas-da-história)
-- [P7.6 Manifesto Joel Burigo](#p76-manifesto-joel-burigo)
-- [P7.7 Tom de Voz e Personalidade](#p77-tom-de-voz-e-personalidade)
-- [P7.8 Vocabulário Proprietário](#p78-vocabulário-proprietário)
-- [P7.9 Os 7 Inimigos que Joel Combate](#p79-os-7-inimigos-que-joel-combate)
-- [P7.10 Movimento Máquina de Crescimento](#p710-movimento-máquina-de-crescimento)
+- [01.1 Quem é Joel Burigo](#011-quem-é-joel-burigo)
+- [01.2 Propósito e Missão de Vida](#012-propósito-e-missão-de-vida)
+- [01.3 Posicionamento de Autoridade](#013-posicionamento-de-autoridade)
+- [01.4 História de Origem Expandida](#014-história-de-origem-expandida)
+- [01.5 Versões Adaptadas da História](#015-versões-adaptadas-da-história)
+- [01.6 Manifesto Joel Burigo](#016-manifesto-joel-burigo)
+- [01.7 Tom de Voz e Personalidade](#017-tom-de-voz-e-personalidade)
+- [01.8 Vocabulário Proprietário](#018-vocabulário-proprietário)
+- [01.9 Os 7 Inimigos que Joel Combate](#019-os-7-inimigos-que-joel-combate)
+- [01.10 Movimento Máquina de Crescimento](#0110-movimento-máquina-de-crescimento)
 
 ---
 
-# SEÇÃO 1: QUEM É JOEL BURIGO
+## SEÇÃO 1: QUEM É JOEL BURIGO
 
-## **[P7.1] QUEM É JOEL BURIGO**
+## **[01.1] QUEM É JOEL BURIGO**
 
 Joel Burigo é o especialista brasileiro em vendas escaláveis para micro e pequenas empresas, criador do Framework dos 6Ps das Vendas Escaláveis - metodologia proprietária que integra Marketing + Vendas + Growth em sistema único e replicável.
 
@@ -96,7 +60,7 @@ Joel Burigo é o especialista brasileiro em vendas escaláveis para micro e pequ
 
 ---
 
-## **[P7.2] PROPÓSITO E MISSÃO DE VIDA**
+## **[01.2] PROPÓSITO E MISSÃO DE VIDA**
 
 **Por Que Joel Existe:**
 
@@ -138,7 +102,7 @@ Democratizar vendas escaláveis para milhares de micro e pequenas empresas brasi
 
 ---
 
-## **[P7.3] POSICIONAMENTO DE AUTORIDADE**
+## **[01.3] POSICIONAMENTO DE AUTORIDADE**
 
 **Autoridade principal:**
 
@@ -184,7 +148,7 @@ Micro e pequenas empresas que faturam R$ 10k-300k/mês e querem transformar vend
 
 # SEÇÃO 2: HISTÓRIA COMPLETA
 
-## **[P7.4] HISTÓRIA DE ORIGEM EXPANDIDA**
+## **[01.4] HISTÓRIA DE ORIGEM EXPANDIDA**
 
 ### **DA QUEBRADA AO BILHÃO: A HISTÓRIA QUE NINGUÉM ME PEDIU PRA CONTAR (MAS QUE PRECISA SER CONTADA)**
 
@@ -1108,9 +1072,9 @@ Cada pilar dos 6Ps nasceu de uma lição real, dolorosa ou vitoriosa:
 
 # SEÇÃO 3: VERSÕES REDUZIDAS
 
-## **[P7.5] VERSÕES ADAPTADAS DA HISTÓRIA**
+## **[01.5] VERSÕES ADAPTADAS DA HISTÓRIA**
 
-### **[P7.5.1] Versão 500 Palavras** (Para artigos, blog, Sobre Nós)
+### **[01.5.1] Versão 500 Palavras** (Para artigos, blog, Sobre Nós)
 
 **Joel Burigo: Da Quebrada ao Bilhão**
 
@@ -1140,7 +1104,7 @@ Da quebrada ao bilhão, do bilhão ao legado.
 
 ---
 
-### **[P7.5.2] Versão 300 Palavras** (Para marketing, apresentações)
+### **[01.5.2] Versão 300 Palavras** (Para marketing, apresentações)
 
 **Joel Burigo: 17+ Anos, 140+ Clientes, ~R$ 1 Bilhão**
 
@@ -1166,7 +1130,7 @@ Da quebrada ao bilhão, do bilhão ao legado.
 
 ---
 
-### **[P7.5.3] Versão 150 Palavras** (Para bios, rodapés)
+### **[01.5.3] Versão 150 Palavras** (Para bios, rodapés)
 
 Joel Burigo. Nasci na quebrada de Palhoça/SC em 1987. Pai marceneiro, mãe vendedora. Freelancer desde 2004. Quebrei aos 25 anos (março 2012) com calote de sócio. Morei 6 meses num barraco sem geladeira em Ribeirão das Neves/MG, ganhando R$ 1.400/mês nos Correios.
 
@@ -1180,7 +1144,7 @@ Condensei 17+ anos, 140+ clientes e ~R$ 1 bilhão em vendas nos **6Ps das Vendas
 
 ---
 
-### **[P7.5.4] Versão 50 Palavras** (Elevator pitch para redes sociais)
+### **[01.5.4] Versão 50 Palavras** (Elevator pitch para redes sociais)
 
 Joel Burigo. Quebrei aos 25, morei em barraco sem geladeira, recomecei do zero. 17+ anos depois: 140+ clientes, ~R$ 1 bilhão em vendas estruturadas. Criei os 6Ps das Vendas Escaláveis e o VSS pra ajudar MPEs a transformar vendas aleatórias em previsíveis. Sistema > Improviso. Let's grow.
 
@@ -1188,7 +1152,7 @@ Joel Burigo. Quebrei aos 25, morei em barraco sem geladeira, recomecei do zero. 
 
 # SEÇÃO 4: BRANDING E IDENTIDADE
 
-## **[P7.6] MANIFESTO JOEL BURIGO**
+## **[01.6] MANIFESTO JOEL BURIGO**
 
 **O QUE JOEL BURIGO DEFENDE**
 
@@ -1263,7 +1227,7 @@ Bora pra cima. Let's grow.
 
 ---
 
-## **[P7.7] TOM DE VOZ E PERSONALIDADE**
+## **[01.7] TOM DE VOZ E PERSONALIDADE**
 
 **Arquétipos de Marca:**
 
@@ -1356,7 +1320,7 @@ Síntese: Joel é o mentor que não só ensina o caminho, mas pega na mão e con
 
 ---
 
-## **[P7.8] VOCABULÁRIO PROPRIETÁRIO**
+## **[01.8] VOCABULÁRIO PROPRIETÁRIO**
 
 **Termos Core da Marca Joel Burigo:**
 
@@ -1398,7 +1362,7 @@ Síntese: Joel é o mentor que não só ensina o caminho, mas pega na mão e con
 
 ---
 
-## **[P7.9] OS 7 INIMIGOS QUE JOEL COMBATE**
+## **[01.9] OS 7 INIMIGOS QUE JOEL COMBATE**
 
 1. **O Improviso Que Mata** - Empresas que vivem no "vamos ver o que acontece". Sem processo documentado. "Dá um jeito" é o método.
 
@@ -1416,7 +1380,7 @@ Síntese: Joel é o mentor que não só ensina o caminho, mas pega na mão e con
 
 ---
 
-## **[P7.10] MOVIMENTO MÁQUINA DE CRESCIMENTO**
+## **[01.10] MOVIMENTO MÁQUINA DE CRESCIMENTO**
 
 **O Que É:**
 

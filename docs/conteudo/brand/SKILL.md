@@ -30,13 +30,14 @@ If the user invokes this skill without any other guidance, ask them what they wa
 - **Provas:** 17+ anos · 140+ clientes · ~R$ 1 bilhão em vendas estruturadas · Framework 6Ps testado.
 - **Localização:** Ribeirão da Ilha, Florianópolis/SC. Lat. -27.59 · Lng. -48.55.
 
-## Produtos (arquitetura 3 caminhos)
+## Produtos (arquitetura 2 caminhos)
 
 | Nome | Tipo | Público (fat/mês) | Investimento |
 |---|---|---|---|
-| **VSS — Vendas Sem Segredos** | DIY · programa 6Ps em 90 dias | R$ 10-100k | R$ 1.997 à vista ou 12× R$ 166,42 |
-| **Services** | DWY · equipe implementa junto (Fundação · Aceleração · ScaleUp) | R$ 50-300k | R$ 4.500-9.000/mês |
-| **Advisory** | Premium · acesso direto ao Joel (Sessão · Sprint 30d · Conselho) | R$ 200k+ | R$ 997-15.000/mês |
+| **VSS — Vendas Sem Segredos** ★ principal | DIY · programa 6Ps em 90 dias · perpétuo | R$ 10–100k | R$ 1.997 à vista ou 12× R$ 166,42 |
+| **Advisory** · exclusivo | Premium 1:1 com Joel (Sessão · Sprint 30d · Conselho) · convite | R$ 200k+ | R$ 997–15.000/mês |
+
+Services (DWY) foi descontinuado.
 
 ## Iconography & tech overlays
 
@@ -58,4 +59,12 @@ Quando produzir novos artefatos, sempre `<link rel="stylesheet" href="colors_and
 
 ## Fonte canônica de conteúdo
 
-Textos, cases, histórias e copy oficial vivem em `~/Documents/Dev/joelburigo-site/docs/conteudo/` (13 partes, incluindo P7 branding + P12 banco de copy). Sempre verifica lá antes de inventar copy.
+Textos, cases, histórias e copy oficial vivem em `docs/conteudo/` (4 partes núcleo + recursos). Antes de escrever qualquer peça, leia obrigatoriamente:
+
+1. `partes/01-marca.md` — voz, manifesto, vocabulário proprietário, 7 inimigos
+2. `recursos/copy-bank.md` — frases canônicas, objeções, transformações, urgência
+3. `brand/ANTI_DRIFT.md` — o que Claude Code NÃO pode fazer (palavras proibidas, invenção de cases, etc.)
+4. `brand/USAGE.md` — qual template usar pra cada tipo de pedido
+5. `brand/EXAMPLES.md` — 5-7 exemplos de output bom vs ruim
+
+Nunca inventar número, case, cliente, nicho ou frase de assinatura que não esteja nessas fontes.

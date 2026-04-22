@@ -1,62 +1,24 @@
 ---
-id: "P13"
-titulo: "SCRIPTS DE VÍDEOS - HOME, VSS, SERVICES, ADVISORY"
-documento: "Parte 13 de 13"
-versao: "1.0"
-autor: "Joel Burigo"
-ultima_atualizacao: "2026-01-30"
-arquivo: "conteudo/parte13-scripts-videos.md"
-
-objetivo: |
-  Scripts completos para vídeos de apresentação das páginas principais:
-  - Home (apresentação geral e Framework 6Ps)
-  - VSS (programa de 90 dias)
-  - Services (Implementation Services - DWY)
-  - Advisory (Strategic Advisory 1:1)
-  - Guidelines de produção e checklist
-  - Variações para diferentes formatos
-
-secoes:
-  - id: "P13.1"
-    titulo: "Script Vídeo Home"
-  - id: "P13.2"
-    titulo: "Script Vídeo VSS"
-  - id: "P13.3"
-    titulo: "Script Vídeo Services"
-  - id: "P13.4"
-    titulo: "Script Vídeo Advisory"
-  - id: "P13.5"
-    titulo: "Guidelines Gerais"
-  - id: "P13.6"
-    titulo: "Checklist de Produção"
-  - id: "P13.7"
-    titulo: "Variações e Adaptações"
-  - id: "P13.8"
-    titulo: "Scripts Auxiliares"
-
-tags: [scripts, vídeos, home, vss, services, advisory, produção, roteiros]
-dependencias: ["P7", "P8", "P12"]
-prox_parte: null
-parte_anterior: "P12"
-relacionados:
-  - arquivo: "parte13-scripts-videos-fala-pura.md"
-    descricao: "Versão sem indicações técnicas (fala pura)"
+name: Scripts de Vídeos — Home, VSS, Advisory
+description: Scripts completos para vídeos de apresentação das páginas principais (Home, VSS, Advisory). Recurso de produção audiovisual.
+id: "recursos/scripts-videos"
+versao: "3.0"
+autor: Joel Burigo
+atualizado: "2026-04-22"
+tags: [scripts, videos, home, vss, advisory, producao]
 ---
 
-[← P12: Banco de Recursos](parte12-banco-recursos-copy.md) | [Índice](README.md)
+# Scripts de Vídeos
 
-## 📑 Índice desta Parte
+## Índice
 
-- [P13.1 Script Vídeo Home](#1-script-vídeo-home)
-- [P13.2 Script Vídeo VSS](#2-script-vídeo-vss-vendas-sem-segredos)
-- [P13.3 Script Vídeo Services](#3-script-vídeo-services-implementation-services)
-- [P13.4 Script Vídeo Advisory](#4-script-vídeo-advisory-strategic-advisory)
-- [P13.5 Guidelines Gerais](#5-guidelines-gerais-para-todos-os-vídeos)
-- [P13.6 Checklist de Produção](#6-checklist-de-produção)
-- [P13.7 Variações e Adaptações](#7-variações-e-adaptações)
-- [P13.8 Scripts Auxiliares](#8-scripts-auxiliares-depoimentossocial-proof)
-
-**Versão Alternativa:** [Scripts de Fala Pura (sem indicações técnicas)](parte13-scripts-videos-fala-pura.md)
+- [1 Script Vídeo Home](#1-script-vídeo-home)
+- [2 Script Vídeo VSS](#2-script-vídeo-vss-vendas-sem-segredos)
+- [3 Script Vídeo Advisory](#3-script-vídeo-advisory-strategic-advisory)
+- [4 Guidelines Gerais](#4-guidelines-gerais-para-todos-os-vídeos)
+- [5 Checklist de Produção](#5-checklist-de-produção)
+- [6 Variações e Adaptações](#6-variações-e-adaptações)
+- [7 Scripts Auxiliares](#7-scripts-auxiliares-depoimentossocial-proof)
 
 ---
 
@@ -64,8 +26,7 @@ relacionados:
 
 Scripts completos para vídeos de apresentação das páginas principais:
 - ✅ **Home** - Apresentação geral de Joel Burigo e Framework 6Ps
-- ✅ **VSS** - Vendas Sem Segredos (programa de 90 dias)
-- ✅ **Services** - Implementation Services (DWY)
+- ✅ **VSS** - Vendas Sem Segredos (programa perpétuo, R$ 1.997)
 - ✅ **Advisory** - Strategic Advisory (1:1)
 
 **Estrutura de cada script:**
@@ -84,7 +45,7 @@ Scripts completos para vídeos de apresentação das páginas principais:
 ## 1. SCRIPT VÍDEO HOME
 
 **Duração:** 3-4 minutos
-**Objetivo:** Apresentar Joel Burigo, Framework 6Ps e os 3 caminhos de trabalho
+**Objetivo:** Apresentar Joel Burigo, Framework 6Ps e os 2 caminhos de trabalho
 **Tom:** Direto, honesto, sem firulas, inspirador
 
 ---
@@ -173,25 +134,20 @@ Scripts completos para vídeos de apresentação das páginas principais:
 
 ---
 
-**[02:30 - 03:20] OS 3 CAMINHOS**
+**[02:30 - 03:20] OS 2 CAMINHOS**
 
 **JOEL:**
-> "Tenho 3 formas de te ajudar. Você escolhe o que faz sentido pro seu momento:"
+> "Tenho 2 formas de te ajudar. Você escolhe o que faz sentido pro seu momento:"
 
-**VISUAL:** Split screen com 3 caminhos lado a lado
-
-**JOEL:**
-> "**1. Vendas Sem Segredos** — Você quer fazer sozinho? Te ensino os 6Ps em 90 dias. Você implementa no seu negócio com minha mentoria semanal ao vivo. CRM profissional incluído. R$ 1.997. É DIY com suporte."
-
-**VISUAL:** Card com "VSS - R$ 1.997" + ícones (aulas, mentorias, CRM)
+**VISUAL:** Split screen com 2 caminhos lado a lado
 
 **JOEL:**
-> "**2. Services** — Quer minha equipe fazendo JUNTO com você? Implementamos os 6Ps enquanto você aprende. Configuramos CRM, criamos funis, rodamos campanhas. Done WITH You. 4 a 6 meses. Sob consulta."
+> "**1. Vendas Sem Segredos.** Você quer implementar com autonomia? Te ensino os 6Ps com playbook digital, vídeos-âncora e mentoria semanal ao vivo. Growth CRM profissional incluído. R$ 1.997, acesso vitalício. É implementação guiada."
 
-**VISUAL:** Card com "Services - Sob Consulta" + ícones (equipe, implementação)
+**VISUAL:** Card com "VSS - R$ 1.997" + ícones (playbook, mentorias, CRM)
 
 **JOEL:**
-> "**3. Advisory** — Quer acesso direto a mim? Sessões mensais 1-on-1 pra decisões críticas. WhatsApp direto comigo. Minha mente aplicada no SEU negócio. Vagas limitadas. Sob aplicação."
+> "**2. Advisory.** Já tem empresa rodando e quer acesso direto a mim? Sessões mensais 1-on-1 pra decisões críticas. WhatsApp direto comigo. Minha mente aplicada no SEU negócio. Vagas limitadas. Sob aplicação."
 
 **VISUAL:** Card com "Advisory - Sob Aplicação" + ícones (1:1, WhatsApp)
 
@@ -200,9 +156,9 @@ Scripts completos para vídeos de apresentação das páginas principais:
 **[03:20 - 03:50] CTA**
 
 **JOEL:**
-> "A escolha é sua. Quer autonomia? VSS. Quer delegar? Services. Quer sparring estratégico? Advisory."
+> "A escolha é sua. Quer autonomia com método? VSS. Já tem base e quer sparring estratégico? Advisory."
 
-**VISUAL:** Os 3 cards permanecem na tela
+**VISUAL:** Os 2 cards permanecem na tela
 
 **JOEL:**
 > "Mas uma coisa eu te garanto: daqui 90 dias você vai estar 90 dias mais perto de ter um sistema. Ou 90 dias mais distante. Não tem meio termo."
@@ -214,7 +170,7 @@ Scripts completos para vídeos de apresentação das páginas principais:
 
 **VISUAL:**
 - Logo Joel Burigo
-- Texto: "Escolha seu caminho" + botões clicáveis (VSS, Services, Advisory)
+- Texto: "Escolha seu caminho" + botões clicáveis (VSS, Advisory)
 - Rodapé: joelburigo.com
 
 ---
@@ -244,7 +200,7 @@ Scripts completos para vídeos de apresentação das páginas principais:
 ## 2. SCRIPT VÍDEO VSS (VENDAS SEM SEGREDOS)
 
 **Duração:** 4-5 minutos
-**Objetivo:** Vender o programa VSS (90 dias, mentorias, CRM)
+**Objetivo:** Vender o programa VSS (perpétuo, mentorias, CRM)
 **Tom:** Educativo, transparente, inspirador
 
 ---
@@ -301,9 +257,9 @@ Scripts completos para vídeos de apresentação das páginas principais:
 **[01:00 - 01:30] SOLUÇÃO: VSS**
 
 **JOEL:**
-> "**Vendas Sem Segredos** é o programa de 90 dias onde você estrutura seu sistema de vendas completo. Não é curso. Não é agência. É implementação guiada."
+> "**Vendas Sem Segredos** é o programa onde você estrutura seu sistema de vendas completo. Não é curso. Não é agência. É implementação guiada — com playbook digital, vídeos-âncora e mentoria semanal ao vivo."
 
-**VISUAL:** Logo VSS + texto "90 DIAS PARA ESTRUTURAR"
+**VISUAL:** Logo VSS + texto "SISTEMA IMPLEMENTÁVEL"
 
 **JOEL:**
 > "Baseado no Framework dos 6Ps que criei em 17 anos. Te ensino. Você implementa. Eu te guio toda semana."
@@ -320,24 +276,24 @@ Scripts completos para vídeos de apresentação das páginas principais:
 **VISUAL:** Lista aparece item por item
 
 **JOEL:**
-> "**1. 15 módulos práticos.** 66 aulas em vídeo. Acesso vitalício. Do posicionamento à escala.
+> "**1. Sistema VSS Implementável.** Playbook digital navegável + 15 vídeos-âncora (um por módulo). Acesso vitalício. Do posicionamento à escala.
 >
-> **2. Growth CRM profissional.** 12 meses inclusos. Valor: R$ 6 mil. Configuramos JUNTO. Funis prontos, automações rodando.
+> **2. Growth CRM profissional.** 12 meses inclusos. Valor: R$ 6.996. Configuramos JUNTO. Funis prontos, automações rodando.
 >
-> **3. 48 mentorias ao vivo.** Semanais. 60 minutos cada. Grupo pequeno. Tira dúvida, resolve trava, destrava implementação.
+> **3. 48 mentorias ao vivo com Joel.** Semanais. 60 minutos cada. Grupo pequeno. Aprofundamento guiado dos 15 módulos. Tira dúvida, resolve trava, destrava implementação.
 >
-> **4. Comunidade exclusiva.** Outros donos implementando junto. Networking. Suporte peer-to-peer.
+> **4. Comunidade exclusiva (90 dias).** Outros donos implementando junto. Networking. Suporte peer-to-peer.
 >
-> **5. Templates e recursos.** Scripts de vendas, SOPs, canvas dos 6Ps, planilhas."
+> **5. Templates, scripts e recursos.** Scripts de vendas, SOPs, canvas dos 6Ps, planilhas."
 
 **VISUAL:** Cada item com ícone ilustrativo
 
 ---
 
-**[02:30 - 03:15] JORNADA DE 90 DIAS**
+**[02:30 - 03:15] JORNADA DE 90 DIAS (FUNDAÇÃO)**
 
 **JOEL:**
-> "Vou ser honesto: 90 dias é fundação. Não é milagre. É trabalho estruturado."
+> "Vou ser honesto: os primeiros 90 dias são a fundação. Não é milagre. É trabalho estruturado."
 
 **VISUAL:** Timeline de 90 dias dividida em 5 fases
 
@@ -355,7 +311,7 @@ Scripts completos para vídeos de apresentação das páginas principais:
 **VISUAL:** Cada fase com checklist de entregas
 
 **JOEL:**
-> "No final: você tem SISTEMA, não teoria."
+> "No final: você tem SISTEMA, não teoria. E segue com mentoria semanal ao longo dos 12 meses."
 
 ---
 
@@ -381,7 +337,7 @@ Scripts completos para vídeos de apresentação das páginas principais:
 **[03:45 - 04:15] INVESTIMENTO**
 
 **JOEL:**
-> "Investimento: R$ 1.997 à vista. Ou 12x de R$ 166."
+> "Investimento: R$ 1.997 à vista. Ou 12x de R$ 166. Acesso vitalício."
 
 **VISUAL:** Preço destaque na tela: "12x R$ 166,42"
 
@@ -415,7 +371,7 @@ Scripts completos para vídeos de apresentação das páginas principais:
 **[04:40 - 05:00] CTA FINAL**
 
 **JOEL:**
-> "Vendas Sem Segredos. 90 dias pra estruturar. Sistema que funciona quando você trabalha."
+> "Vendas Sem Segredos. Sistema que funciona quando você trabalha."
 
 **VISUAL:** Joel olhando direto pra câmera
 
@@ -455,204 +411,7 @@ Scripts completos para vídeos de apresentação das páginas principais:
 
 ---
 
-## 3. SCRIPT VÍDEO SERVICES (IMPLEMENTATION SERVICES)
-
-**Duração:** 3-4 minutos
-**Objetivo:** Vender Services (DWY - Done With You)
-**Tom:** Profissional, parceria, resultados
-
----
-
-### ROTEIRO COMPLETO
-
-**[00:00 - 00:08] GANCHO**
-
-**VISUAL:** Joel em pé, escritório ao fundo, expressão séria
-
-**JOEL:**
-> "Você não tem tempo pra implementar sozinho. Ou não quer arriscar fazer errado. Entendo perfeitamente."
-
-**VISUAL:** Pessoa sobrecarregada, múltiplas telas, estresse
-
----
-
-**[00:08 - 00:35] PROBLEMA ESPECÍFICO**
-
-**JOEL:**
-> "Talvez você já saiba que precisa de sistema. Já tentou fazer sozinho, mas travou. Ou sua equipe é pequena demais. Ou você simplesmente quer que seja feito CERTO da primeira vez."
-
-**VISUAL:**
-- Tentativa frustrada de configurar CRM
-- Equipe confusa olhando planilha
-- Relógio passando rápido (tempo perdido)
-
-**JOEL:**
-> "VSS é ótimo pra quem quer autonomia. Mas e se você quiser resultado MAIS RÁPIDO, com menos esforço seu?"
-
----
-
-**[00:35 - 01:00] SOLUÇÃO: SERVICES**
-
-**JOEL:**
-> "**Implementation Services.** Minha equipe FAZ junto com você. Não fazemos PARA você. Fazemos COM você."
-
-**VISUAL:** Logo "Services" + texto "DONE WITH YOU"
-
-**JOEL:**
-> "A diferença é simples: ao invés de você assistir aula e implementar sozinho, minha equipe coloca a mão na massa junto contigo. Configuramos seu CRM. Criamos seus funis. Rodamos suas campanhas. Treinamos sua equipe."
-
-**VISUAL:**
-- Equipe trabalhando junto (reunião Zoom)
-- Tela de CRM sendo configurada
-- Dashboard de métricas
-
----
-
-**[01:00 - 02:00] COMO FUNCIONA**
-
-**JOEL:**
-> "Processo de 4 a 6 meses. Dividido em 3 fases:"
-
-**VISUAL:** Timeline com 3 fases
-
-**JOEL:**
-> "**Fase 1: Diagnóstico e Estratégia (Mês 1)**
->
-> Auditoria completa dos seus 6Ps. Mapeamos tudo que está funcionando, tudo que está quebrado. Criamos o plano de implementação personalizado. Definimos metas realistas."
-
-**VISUAL:** Checklist de diagnóstico, gráficos de análise
-
-**JOEL:**
-> "**Fase 2: Implementação Hands-On (Meses 2-4)**
->
-> Aqui é where the magic happens. Configuramos seu CRM do zero. Criamos landing pages e funis. Escrevemos scripts de vendas. Treinamos sua equipe. Rodamos campanhas de tráfego ou prospecção. Tudo junto com você, não sozinho."
-
-**VISUAL:**
-- Time trabalhando (split screen: equipe Joel + cliente)
-- CRM sendo preenchido
-- Anúncios rodando
-- Equipe sendo treinada
-
-**JOEL:**
-> "**Fase 3: Otimização e Autonomia (Meses 5-6)**
->
-> Ajustamos o que precisa. Otimizamos taxas de conversão. Documentamos TUDO. Preparamos sua equipe pra rodar sozinha. Quando saímos, você tem: sistema funcionando, equipe treinada, autonomia total."
-
-**VISUAL:**
-- Gráficos de melhoria
-- Documentos/SOPs
-- Equipe trabalhando sem Joel
-
----
-
-**[02:00 - 02:30] O QUE ESTÁ INCLUÍDO**
-
-**JOEL:**
-> "No pacote completo você recebe:"
-
-**VISUAL:** Lista com checkboxes
-
-**JOEL:**
-> "✅ **Diagnóstico completo dos 6Ps**
-> ✅ **Configuração total do CRM** (funis, automações, integrações)
-> ✅ **Criação de landing pages e funis**
-> ✅ **Campanhas de tráfego gerenciadas** (Meta, Google) ou **prospecção ativa estruturada**
-> ✅ **Scripts de vendas profissionais**
-> ✅ **Treinamento completo da equipe**
-> ✅ **Documentação de processos (SOPs)**
-> ✅ **Dashboard executivo com métricas**
-> ✅ **Reuniões semanais de acompanhamento**
-> ✅ **Suporte técnico contínuo**"
-
-**VISUAL:** Cada item aparece com ícone ilustrativo
-
----
-
-**[02:30 - 03:00] RESULTADOS ESPERADOS**
-
-**JOEL:**
-> "Resultado típico em 6 meses: crescimento de 3 a 5 vezes. Previsibilidade total. Equipe autônoma. Sistema documentado."
-
-**VISUAL:** Gráfico de crescimento (antes vs depois)
-
-**JOEL:**
-> "Case exemplo: Case de franquias saiu de R$ 160 mil pra R$ 1 milhão por mês em 2 anos com esse modelo. Não é mágica. É método + execução."
-
-**VISUAL:**
-- Logo Case de franquias
-- Números: R$ 160k → R$ 1M
-- Timeline de 2 anos
-
----
-
-**[03:00 - 03:30] INVESTIMENTO E PROCESSO**
-
-**JOEL:**
-> "Investimento: sob consulta. Varia conforme tamanho da operação, complexidade, objetivos."
-
-**VISUAL:** Texto: "Investimento: Sob Consulta"
-
-**JOEL:**
-> "Modelo de projeto (4-6 meses) ou retainer mensal. Você escolhe o que faz mais sentido."
-
-**VISUAL:** Dois modelos lado a lado: "Projeto" vs "Retainer"
-
-**JOEL:**
-> "Vagas limitadas. Atendemos máximo 5 clientes por vez pra garantir qualidade."
-
-**VISUAL:** Badge: "VAGAS LIMITADAS - 5 clientes/vez"
-
----
-
-**[03:30 - 04:00] CTA FINAL**
-
-**JOEL:**
-> "Implementation Services. Fazemos JUNTO. Você aprende, sua equipe aprende, e quando saímos, você tem autonomia total."
-
-**VISUAL:** Joel olhando pra câmera
-
-**JOEL:**
-> "Se você quer resultado mais rápido, com menos risco de erro, e com equipe profissional executando, esse é o caminho."
-
-**VISUAL:** Checklist de quem é ideal:
-- ✅ Fatura R$ 100k+/mês
-- ✅ Tem equipe (mesmo que pequena)
-- ✅ Quer delegar implementação
-- ✅ Valoriza velocidade + qualidade
-
-**JOEL:**
-> "Primeiro passo: agende uma análise estratégica de 45 minutos comigo. Vamos ver se faz sentido trabalharmos juntos. Bora?"
-
-**VISUAL:**
-- Logo "Services"
-- Botão: "AGENDAR ANÁLISE ESTRATÉGICA"
-- Rodapé: "Sob Consulta | Vagas Limitadas | joelburigo.com/services"
-
----
-
-### NOTAS DE PRODUÇÃO
-
-**Locação:**
-- Ambiente mais corporativo
-- Pode mostrar equipe trabalhando (b-roll)
-- Sala de reunião ou escritório moderno
-
-**Edição:**
-- Tom mais profissional
-- B-roll de equipe trabalhando, reuniões Zoom, dashboards
-- Animações de processos (diagrama de fluxo)
-- Depoimentos de clientes corporativos (se tiver)
-- Música de fundo confiante, corporativa
-
-**Tom de Voz:**
-- Profissional mas acessível
-- Parceria (não hierarquia)
-- Confiança em resultados
-- Seletividade (não é pra todos)
-
----
-
-## 4. SCRIPT VÍDEO ADVISORY (STRATEGIC ADVISORY)
+## 3. SCRIPT VÍDEO ADVISORY (STRATEGIC ADVISORY)
 
 **Duração:** 2-3 minutos
 **Objetivo:** Vender Advisory (sessões 1:1, acesso direto)
@@ -750,7 +509,7 @@ Scripts completos para vídeos de apresentação das páginas principais:
 **VISUAL:** Cada item com checkmark
 
 **JOEL:**
-> "Se você ainda está estruturando do zero, VSS ou Services fazem mais sentido. Advisory é pra quem já tem base e quer ESCALAR com clareza."
+> "Se você ainda está estruturando do zero, VSS faz mais sentido. Advisory é pra quem já tem base e quer ESCALAR com clareza."
 
 ---
 
@@ -813,7 +572,7 @@ Scripts completos para vídeos de apresentação das páginas principais:
 
 ---
 
-## 5. GUIDELINES GERAIS PARA TODOS OS VÍDEOS
+## 4. GUIDELINES GERAIS PARA TODOS OS VÍDEOS
 
 ### Elementos Visuais Recorrentes
 
@@ -874,7 +633,6 @@ Scripts completos para vídeos de apresentação das páginas principais:
 **Duração Ideal:**
 - Home: 3-4 min
 - VSS: 4-5 min
-- Services: 3-4 min
 - Advisory: 2-3 min
 
 **Legendas:**
@@ -889,7 +647,7 @@ Scripts completos para vídeos de apresentação das páginas principais:
 
 ---
 
-## 6. CHECKLIST DE PRODUÇÃO
+## 5. CHECKLIST DE PRODUÇÃO
 
 ### Pré-Produção
 
@@ -922,7 +680,7 @@ Scripts completos para vídeos de apresentação das páginas principais:
 - [ ] Exportar em múltiplos formatos (16:9, 1:1, 9:16)
 - [ ] Revisão final (assistir 2x, corrigir erros)
 
-### Pós-Lançamento
+### Pós-Publicação
 
 - [ ] Upload otimizado (título, descrição, tags)
 - [ ] Thumbnail customizado (alta conversão)
@@ -932,7 +690,7 @@ Scripts completos para vídeos de apresentação das páginas principais:
 
 ---
 
-## 7. VARIAÇÕES E ADAPTAÇÕES
+## 6. VARIAÇÕES E ADAPTAÇÕES
 
 ### Versão Curta (60 segundos - Anúncios Pagos)
 
@@ -946,9 +704,9 @@ Scripts completos para vídeos de apresentação das páginas principais:
 **Exemplo VSS (60s):**
 > [0-5s] "Você sabe de onde vem a próxima venda?"
 > [5-15s] "80% das MPEs improvisam. Resultado? Mês bom, mês ruim, sem previsibilidade."
-> [15-35s] "Vendas Sem Segredos: 90 dias pra estruturar sistema completo. CRM incluído. 48 mentorias."
+> [15-35s] "Vendas Sem Segredos: sistema implementável com playbook + 48 mentorias ao vivo. CRM profissional incluído."
 > [35-50s] "Caso real: R$ 160k pra R$ 1 milhão/mês em 2 anos."
-> [50-60s] "R$ 1.997. Garantia 15 dias. Link abaixo."
+> [50-60s] "R$ 1.997, acesso vitalício. Garantia 15 dias. Link abaixo."
 
 ### Versão Longa (8-10 minutos - YouTube/Blog)
 
@@ -961,7 +719,7 @@ Adicionar:
 
 ---
 
-## 8. SCRIPTS AUXILIARES (DEPOIMENTOS/SOCIAL PROOF)
+## 7. SCRIPTS AUXILIARES (DEPOIMENTOS/SOCIAL PROOF)
 
 ### Template de Depoimento em Vídeo
 
@@ -995,11 +753,10 @@ Adicionar:
 **Preciso de script para:**
 - Homepage geral → Seção 1
 - Vender VSS → Seção 2
-- Vender Services → Seção 3
-- Vender Advisory → Seção 4
-- Anúncio curto (60s) → Seção 7 (Versão Curta)
-- Depoimento de cliente → Seção 8
-- Checklist de produção → Seção 6
+- Vender Advisory → Seção 3
+- Anúncio curto (60s) → Seção 6 (Versão Curta)
+- Depoimento de cliente → Seção 7
+- Checklist de produção → Seção 5
 
 ---
 
@@ -1007,7 +764,7 @@ Adicionar:
 
 Este documento contém:
 
-✅ **4 scripts completos** (Home, VSS, Services, Advisory)
+✅ **3 scripts completos** (Home, VSS, Advisory)
 ✅ **Duração otimizada** (2-5 minutos cada)
 ✅ **Visual cues detalhados** (o que mostrar na tela)
 ✅ **Tom de voz específico** (como Joel deve falar)
@@ -1022,12 +779,12 @@ Este documento contém:
 2. Agendar gravação
 3. Preparar B-roll
 4. Editar conforme guidelines
-5. Lançar e monitorar métricas
+5. Publicar e monitorar métricas
 
 ---
 
-**Documento:** Parte 13 - Scripts de Vídeos
+**Documento:** Scripts de Vídeos
 **Status:** PRONTO PARA PRODUÇÃO
-**Versão:** 1.0
-**Última Atualização:** 30/01/2026
-**Scripts Completos:** Home | VSS | Services | Advisory
+**Versão:** 3.0
+**Última Atualização:** 2026-04-22
+**Scripts Completos:** Home | VSS | Advisory

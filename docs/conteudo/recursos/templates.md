@@ -1,59 +1,30 @@
 ---
-id: "P11"
-titulo: "DELIVERABLES E TEMPLATES"
-documento: "Parte 11 de 13"
-versao: "2.0"
-autor: "Joel Burigo"
-ultima_atualizacao: "2026-04-22"
-arquivo: "conteudo/parte11-deliverables-templates.md"
-
-objetivo: |
-  Fornecer templates prontos e deliverables práticos:
-  - Canvas P1: Posicionamento (exemplo preenchido)
-  - Template: Relatório de Sessão Estratégica (Advisory)
-  - Template: Playbook Comercial com estrutura completa
-  - Documentos estratégicos reutilizáveis
-  - Guia de uso dos templates
-
-secoes:
-  - id: "P11.1"
-    titulo: "Canvas P1: Posicionamento"
-    subsecoes:
-      - id: "P11.1.1"
-        titulo: "Exemplo Joel Burigo Preenchido"
-  - id: "P11.2"
-    titulo: "Template: Relatório de Sessão Estratégica"
-  - id: "P11.3"
-    titulo: "Template: Playbook Comercial"
-  - id: "P11.4"
-    titulo: "Recursos Adicionais"
-  - id: "P11.5"
-    titulo: "Documentos Estratégicos Advisory"
-  - id: "P11.6"
-    titulo: "Como Usar Estes Templates"
-
-tags: [templates, deliverables, canvas, playbook, recursos, ferramentas-práticas]
-dependencias: ["P1", "P4", "P5"]
-prox_parte: "P12"
-parte_anterior: "P10"
+name: Templates e Deliverables
+description: Templates prontos e entregáveis práticos — Canvas Posicionamento, Relatório de Sessão Estratégica (Advisory), Playbook Comercial, documentos Advisory, guia de uso.
+id: "recursos/templates"
+versao: "3.0"
+depende_de: ["02", "03"]
+autor: Joel Burigo
+atualizado: "2026-04-22"
+tags: [templates, deliverables, canvas, playbook, recursos, ferramentas-praticas]
 ---
 
-[← P10: Advisory](parte10-advisory.md) | [Índice](README.md) | [P12: Banco de Recursos →](parte12-banco-recursos-copy.md)
+# Templates
 
-## 📑 Índice desta Parte
+## Índice
 
-- [P11.1 Canvas P1: Posicionamento](#p111-canvas-p1-posicionamento)
-- [P11.2 Template: Relatório Estratégico](#p112-template-relatório-de-sessão-estratégica)
-- [P11.3 Template: Playbook Comercial](#p113-template-playbook-comercial)
-- [P11.4 Recursos Adicionais](#p114-recursos-adicionais)
-- [P11.5 Documentos Estratégicos](#p115-documentos-estratégicos-advisory)
-- [P11.6 Como Usar os Templates](#p116-como-usar-estes-templates)
+- [1 Canvas P1: Posicionamento](#1-canvas-p1-posicionamento)
+- [2 Template: Relatório Estratégico](#2-template-relatório-de-sessão-estratégica)
+- [3 Template: Playbook Comercial](#3-template-playbook-comercial)
+- [4 Recursos Adicionais](#4-recursos-adicionais)
+- [5 Documentos Estratégicos](#5-documentos-estratégicos-advisory)
+- [6 Como Usar os Templates](#6-como-usar-estes-templates)
 
 ---
 
-## **[P11.1] CANVAS P1: POSICIONAMENTO**
+## **[1] CANVAS P1: POSICIONAMENTO**
 
-### **[P11.1.1] Exemplo Joel Burigo Preenchido**
+### **[1.1] Exemplo Joel Burigo Preenchido**
 
 ```
 ╔══════════════════════════════════════════════════════════════════════════╗
@@ -162,9 +133,9 @@ parte_anterior: "P10"
 
 ---
 
-## **[P11.2] TEMPLATE: RELATÓRIO DE SESSÃO ESTRATÉGICA (ADVISORY)**
+## **[2] TEMPLATE: RELATÓRIO DE SESSÃO ESTRATÉGICA (ADVISORY)**
 
-### **[P11.2.1] Estrutura Completa**
+### **[2.1] Estrutura Completa**
 
 ```
 ═══════════════════════════════════════════════════════════════════════════
@@ -359,9 +330,9 @@ Agende em: [link calendly]
 
 ---
 
-## **[P11.3] TEMPLATE: PLAYBOOK COMERCIAL (ESTRUTURA)**
+## **[3] TEMPLATE: PLAYBOOK COMERCIAL (ESTRUTURA)**
 
-### **[P11.3.1] Índice do Playbook**
+### **[3.1] Índice do Playbook**
 
 **PLAYBOOK COMERCIAL - [NOME DA EMPRESA]**
 
@@ -404,7 +375,7 @@ Agende em: [link calendly]
 
 ---
 
-### **[P11.3.2] Exemplo de Seção: Scripts de Objeções**
+### **[3.2] Exemplo de Seção: Scripts de Objeções**
 
 **3.5 SCRIPT DE TRATAMENTO DE OBJEÇÕES**
 
@@ -438,9 +409,9 @@ Agende em: [link calendly]
 
 ---
 
-## **[P11.4] RECURSOS ADICIONAIS**
+## **[4] RECURSOS ADICIONAIS**
 
-### **[P11.4.1] Diagnóstico dos 6Ps (Checklist)**
+### **[4.1] Diagnóstico dos 6Ps (Checklist)**
 
 **Ferramenta:** Planilha de Diagnóstico Rápido
 
@@ -450,7 +421,7 @@ Agende em: [link calendly]
 
 ---
 
-### **[P11.4.2] Canvas dos 6Ps (Em Branco)**
+### **[4.2] Canvas dos 6Ps (Em Branco)**
 
 **Formatos disponíveis:**
 - PDF editável
@@ -462,7 +433,7 @@ Agende em: [link calendly]
 
 ---
 
-### **[P11.4.3] SOPs Essenciais**
+### **[4.3] SOPs Essenciais**
 
 **Lista de SOPs Padrão:**
 
@@ -481,9 +452,9 @@ Agende em: [link calendly]
 
 ---
 
-## **[P11.5] DOCUMENTOS ESTRATÉGICOS ADVISORY**
+## **[5] DOCUMENTOS ESTRATÉGICOS ADVISORY**
 
-### **[P11.5.1] Índice do Documento Sprint 30 Dias**
+### **[5.1] Índice do Documento Sprint 30 Dias**
 
 Ver detalhamento completo na seção de Advisory (Parte 10).
 
@@ -497,9 +468,9 @@ Ver detalhamento completo na seção de Advisory (Parte 10).
 
 ---
 
-## **[P11.6] COMO USAR ESTES TEMPLATES**
+## **[6] COMO USAR ESTES TEMPLATES**
 
-### **[P11.6.1] Para Alunos VSS**
+### **[6.1] Para Alunos VSS**
 
 1. **Canvas P1-P3:** Preencher durante Fase 1 (Semanas 1-4)
 2. **Diagnóstico 6Ps:** Fazer no início e reavaliar a cada 90 dias
@@ -508,7 +479,7 @@ Ver detalhamento completo na seção de Advisory (Parte 10).
 
 ---
 
-### **[P11.6.2] Para Clientes Advisory**
+### **[6.2] Para Clientes Advisory**
 
 1. **Relatório Sessão:** Entregue em 24h após cada sessão
 2. **Documento Sprint:** Entregue ao final dos 30 dias

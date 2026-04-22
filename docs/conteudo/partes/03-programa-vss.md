@@ -3,7 +3,6 @@ name: Programa VSS — Fundamentos, Arquitetura e Valor
 description: Documento único do programa VSS. Visão estratégica + Framework 6Ps + arquitetura 15 módulos / 90 dias + diferenciação (Growth CRM, valor, precificação, garantia).
 id: "03"
 versao: "1.0"
-substitui: ["P1", "P2", "P4"]
 atualizado: "2026-04-22"
 autor: Joel Burigo
 tags: [programa, vss, 6ps, arquitetura, growth-crm, valor, garantia]

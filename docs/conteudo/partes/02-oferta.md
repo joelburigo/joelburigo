@@ -3,7 +3,6 @@ name: A Oferta — Ecossistema VSS + Advisory
 description: Documento único da oferta. 2 produtos perpétuos — VSS (DIY, R$ 1.997) e Advisory (1:1 com Joel). Como se encaixam, jornada do cliente, projeções e marketing por produto.
 id: "02"
 versao: "1.0"
-substitui: ["P8", "P10"]
 autor: "Joel Burigo"
 atualizado: "2026-04-22"
 tags: [oferta, ecossistema, produtos, vss, advisory, perpetuo, diy, premium]

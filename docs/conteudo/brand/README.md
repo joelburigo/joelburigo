@@ -55,10 +55,11 @@ Direção: **Terminal Growth** — tech/growth/sales brutalismo. Fogo `#FF3B0F` 
 - **Growth CRM** — plataforma all-in-one proprietária (CRM + funis + automação + landing pages).
 - **Vendas Escaláveis** — não "vendas" — vendas que crescem sem você trabalhar 3× mais.
 
-**Produtos (arquitetura 3 caminhos):**
-- **VSS — Vendas Sem Segredos** (DIY) · 6Ps em 90 dias · R$ 1.997 à vista ou 12× R$ 166,42 · público R$ 10-100k/mês
-- **Services** (DWY) · Fundação · Aceleração · ScaleUp · R$ 4.500-9.000/mês · público R$ 50-300k/mês
-- **Advisory** (Premium 1:1) · Sessão · Sprint 30d · Conselho Executivo · R$ 997-15.000/mês · público R$ 200k+/mês
+**Produtos (arquitetura 2 caminhos):**
+- **VSS — Vendas Sem Segredos** (DIY · principal) · 6Ps em 90 dias · R$ 1.997 à vista ou 12× R$ 166,42 · público R$ 10–100k/mês · divulgação aberta
+- **Advisory** (Premium 1:1 · exclusivo) · Sessão · Sprint 30d · Conselho Executivo · R$ 997–15.000/mês · público R$ 200k+/mês · convite/indicação
+
+Não existe meio-termo (serviço terceirizado). *Services (DWY) foi descontinuado — arquivado em `docs/conteudo/_archive/parte9-services.md`.*
 
 **Provas de autoridade:** 17+ anos · 140+ clientes atendidos · ~R$ 1 bilhão em vendas estruturadas · Framework 6Ps testado em todas.
 
@@ -137,7 +138,16 @@ Nunca softglow exceto dot pulse (`0 0 10px acid`).
 
 ## Fonte canônica de conteúdo
 
-Copy, cases, histórias e manifesto vivem em `~/Documents/Dev/joelburigo-site/docs/conteudo/` (13 partes):
-- P1 Fundamentos · P4 Diferenciação · P7 Branding (história completa + manifesto + tom de voz + vocabulário) · P8 Ecossistema (3 produtos) · P12 Banco de copy · P13 Scripts de vídeos.
+Copy, cases, histórias e manifesto vivem em `docs/conteudo/` — estrutura pós-refactor 2.0 (4 partes núcleo + recursos):
 
-Sempre verificar essa fonte antes de inventar copy.
+| Fonte | O que tem |
+|---|---|
+| `partes/01-marca.md` | História Joel · manifesto · tom de voz · vocabulário · 7 inimigos · movimento Máquina de Crescimento |
+| `partes/02-oferta.md` | 2 produtos (VSS + Advisory) · jornada · projeções · marketing por produto |
+| `partes/03-programa-vss.md` | Framework 6Ps · arquitetura dos 15 módulos · 90 dias · Growth CRM · garantia |
+| `partes/04-playbook-vss.md` | Playbook implementável · 7 fases · 66 destravamentos |
+| `recursos/copy-bank.md` | **Frases canônicas · objeções · transformações · urgência · prova social** |
+| `recursos/scripts-videos.md` | Scripts de vídeo das páginas principais |
+| `recursos/templates.md` | Canvas · relatórios · playbooks comerciais |
+
+**Antes de inventar copy, leia sempre:** `01-marca.md` (voz + vocabulário) + `recursos/copy-bank.md` (frases prontas) + este README (regras visuais). Para regras anti-erro-LLM: `ANTI_DRIFT.md`. Para decisão de template por canal: `USAGE.md`. Para exemplos bons vs ruins: `EXAMPLES.md`.

@@ -1,13 +1,15 @@
 ---
 name: Playbook VSS — Sistema Implementável
 description: Playbook digital do programa VSS — 7 fases, 15 módulos, 66 destravamentos práticos. Sistema escrito + 15 vídeos-âncora + mentorias ao vivo.
-id: P3
-versao: 2.0
-depende_de: [P1, P2]
-atualizado: 2026-04-22
+id: "04"
+versao: "1.0"
+depende_de: ["02", "03"]
+autor: Joel Burigo
+atualizado: "2026-04-22"
+tags: [playbook, vss, implementacao, modulos, destravamentos, sistema]
 ---
 
-# [P3] Playbook VSS — Sistema Implementável
+# Playbook VSS — Sistema Implementável
 
 ## Como usar este playbook
 
@@ -56,7 +58,7 @@ O playbook comporta execução em 90 dias (Fases 1-5) com as Fases 6-7 como dest
 
 > **Objetivo da fase:** estratégia 100% documentada, diagnóstico completo dos 6Ps, posicionamento definido, público mapeado, oferta estruturada.
 
-### [P3.M1] Módulo 1: O Sistema VSS e os 6Ps
+### [04.M1] Módulo 1: O Sistema VSS e os 6Ps
 
 **6 destravamentos | Tempo-alvo: ~2h30 de execução**
 
@@ -64,7 +66,7 @@ Big idea do módulo: **vender mais não é sorte — é sistema.** Antes de qual
 
 ---
 
-#### [P3.M1.A1] Destravamento 1: Ativar sua conta e entrar na comunidade
+#### [04.M1.A1] Destravamento 1: Ativar sua conta e entrar na comunidade
 
 **Tempo:** 15 min
 **Você precisa de:** e-mail de acesso, foto/bio básica.
@@ -80,7 +82,7 @@ Big idea do módulo: **vender mais não é sorte — é sistema.** Antes de qual
 
 ---
 
-#### [P3.M1.A2] Destravamento 2: Entender a missão do VSS e os 3 erros caros
+#### [04.M1.A2] Destravamento 2: Entender a missão do VSS e os 3 erros caros
 
 **Tempo:** 15 min (leitura + reflexão)
 **Ação:** Leia o bloco de contexto abaixo e anote, no seu próprio documento, qual dos 3 erros clássicos você já cometeu.
@@ -97,7 +99,7 @@ Missão do VSS: **democratizar vendas escaláveis** — autonomia > dependência
 
 ---
 
-#### [P3.M1.A3] Destravamento 3: Estudar o framework dos 6Ps (seu GPS estratégico)
+#### [04.M1.A3] Destravamento 3: Estudar o framework dos 6Ps (seu GPS estratégico)
 
 **Tempo:** 30-35 min
 **Ação:** Leia o mapa dos 6Ps abaixo — uma vez rápido pra visão geral, uma vez devagar anotando a pergunta-chave de cada P.
@@ -120,7 +122,7 @@ Lógica da ordem: Por quê → Para quem → O quê → Como vender → Como ope
 
 ---
 
-#### [P3.M1.A4] Destravamento 4: Diagnóstico — preencher o Canvas 6Ps do seu negócio
+#### [04.M1.A4] Destravamento 4: Diagnóstico — preencher o Canvas 6Ps do seu negócio
 
 **Tempo:** 25-30 min
 **Você precisa de:** template **Canvas 6Ps + Plano 90 Dias MVP** (entregável #1).
@@ -143,7 +145,7 @@ Interpretando o resultado:
 
 ---
 
-#### [P3.M1.A5] Destravamento 5: Mapear sua Máquina de Vendas Integrada
+#### [04.M1.A5] Destravamento 5: Mapear sua Máquina de Vendas Integrada
 
 **Tempo:** 20 min
 **Ação:** Desenhe no papel (ou num doc) o ciclo virtuoso da sua máquina de vendas:
@@ -169,7 +171,7 @@ Conectando 6Ps com a Máquina:
 
 ---
 
-#### [P3.M1.A6] Destravamento 6: Montar seu Plano de Ação 90 Dias
+#### [04.M1.A6] Destravamento 6: Montar seu Plano de Ação 90 Dias
 
 **Tempo:** 25 min
 **Você precisa de:** a segunda metade do template Canvas 6Ps + Plano 90 Dias MVP (entregável #1).
@@ -191,7 +193,7 @@ Expectativa realista em 90 dias: fundação sólida (não perfeição), 5-20 ven
 
 ---
 
-### [P3.M2] Módulo 2: P1 + P2 — Posicionamento e Público
+### [04.M2] Módulo 2: P1 + P2 — Posicionamento e Público
 
 **5 destravamentos | Tempo-alvo: ~2h de execução**
 
@@ -199,7 +201,7 @@ Big idea: **se você tenta agradar todo mundo, não agrada ninguém.** Posiciona
 
 ---
 
-#### [P3.M2.A1] Destravamento 7: Definir seu Posicionamento (P1)
+#### [04.M2.A1] Destravamento 7: Definir seu Posicionamento (P1)
 
 **Tempo:** 25 min
 **Você precisa de:** template **Canvas Posicionamento + PUV MVP** (entregável #2).
@@ -223,7 +225,7 @@ Se seu posicionamento soa genérico — reescreva. Posicionamento não é slogan
 
 ---
 
-#### [P3.M2.A2] Destravamento 8: Criar sua PUV (Proposta Única de Valor)
+#### [04.M2.A2] Destravamento 8: Criar sua PUV (Proposta Única de Valor)
 
 **Tempo:** 30 min
 **Ação:** Use o framework PUV em 4 partes:
@@ -252,7 +254,7 @@ Validação (não pule):
 
 ---
 
-#### [P3.M2.A3] Destravamento 9: Definir seu Público (P2) — ICP vs. Persona
+#### [04.M2.A3] Destravamento 9: Definir seu Público (P2) — ICP vs. Persona
 
 **Tempo:** 25 min
 **Você precisa de:** **Template de Persona VSS** (entregável #3).
@@ -272,7 +274,7 @@ Validação (não pule):
 
 ---
 
-#### [P3.M2.A4] Destravamento 10: Construir sua Persona #1 do zero (com entrevistas reais)
+#### [04.M2.A4] Destravamento 10: Construir sua Persona #1 do zero (com entrevistas reais)
 
 **Tempo:** 30-45 min (inclui entrevistar 3 clientes)
 **Ação:**
@@ -294,7 +296,7 @@ Se fizer sentido, replique (mais rápido e superficial) pra Persona #2 e #3. Foc
 
 ---
 
-#### [P3.M2.A5] Destravamento 11: Criar sua Big Idea (mensagem memorável)
+#### [04.M2.A5] Destravamento 11: Criar sua Big Idea (mensagem memorável)
 
 **Tempo:** 20 min
 **Ação:**
@@ -317,7 +319,7 @@ Exemplos famosos: "Think Different" (Apple), "Just Do It" (Nike), "Te Dá Asas" 
 
 ---
 
-### [P3.M3] Módulo 3: P3 — Produto e Precificação
+### [04.M3] Módulo 3: P3 — Produto e Precificação
 
 **4 destravamentos | Tempo-alvo: ~1h40 de execução**
 
@@ -325,7 +327,7 @@ Big idea: **produto certo pra pessoa certa na hora certa = vendas fáceis.** Se 
 
 ---
 
-#### [P3.M3.A1] Destravamento 12: Avaliar seu Product-Market Fit (PMF)
+#### [04.M3.A1] Destravamento 12: Avaliar seu Product-Market Fit (PMF)
 
 **Tempo:** 25 min
 **Ação:** Responda honestamente — seu produto dá sinais de PMF?
@@ -349,7 +351,7 @@ Se não há fit: **mude o produto OU o público**. Não insista em vender algo q
 
 ---
 
-#### [P3.M3.A2] Destravamento 13: Estruturar sua Oferta Irresistível (value stacking)
+#### [04.M3.A2] Destravamento 13: Estruturar sua Oferta Irresistível (value stacking)
 
 **Tempo:** 30 min
 **Você precisa de:** **Canvas Oferta + Precificação MVP** (entregável #4).
@@ -379,7 +381,7 @@ Teste final: leia sua oferta em voz alta. **Se você mesmo se empolgaria, é boa
 
 ---
 
-#### [P3.M3.A3] Destravamento 14: Precificar estrategicamente (não pelo custo)
+#### [04.M3.A3] Destravamento 14: Precificar estrategicamente (não pelo custo)
 
 **Tempo:** 25 min
 **Ação:** Evite os 3 erros fatais — (1) basear só em custo, (2) copiar concorrência, (3) subvalorizar.
@@ -410,7 +412,7 @@ Quando aumentar: a cada 10-20 clientes novos. Cliente antigo mantém preço anti
 
 ---
 
-#### [P3.M3.A4] Destravamento 15: Definir suas Metas e KPIs Essenciais
+#### [04.M3.A4] Destravamento 15: Definir suas Metas e KPIs Essenciais
 
 **Tempo:** 20 min
 **Ação:** Defina para cada área:
@@ -449,7 +451,7 @@ Exemplo de metas 30-60-90 dias (ajuste pra sua realidade):
 
 > **Objetivo da fase:** CRM configurado e alimentado, automações básicas funcionando, landing pages publicadas, presença digital profissional.
 
-### [P3.M4] Módulo 4: Domine o Growth CRM
+### [04.M4] Módulo 4: Domine o Growth CRM
 
 **5 destravamentos | Tempo-alvo: ~2h10**
 
@@ -457,7 +459,7 @@ Big idea: **o CRM não é ferramenta. É o sistema nervoso da sua operação de 
 
 ---
 
-#### [P3.M4.A1] Destravamento 16: Fazer login e tour no Growth CRM
+#### [04.M4.A1] Destravamento 16: Fazer login e tour no Growth CRM
 
 **Tempo:** 15 min
 **Ação:**
@@ -470,7 +472,7 @@ Big idea: **o CRM não é ferramenta. É o sistema nervoso da sua operação de 
 
 ---
 
-#### [P3.M4.A2] Destravamento 17: Setup inicial — configurar CRM do zero
+#### [04.M4.A2] Destravamento 17: Setup inicial — configurar CRM do zero
 
 **Tempo:** 30 min + 2-3h de execução guiada
 **Você precisa de:** **Checklist Setup CRM Completo** (entregável #5), logo da empresa, dados de acesso de e-mail/Google/Meta.
@@ -490,7 +492,7 @@ Big idea: **o CRM não é ferramenta. É o sistema nervoso da sua operação de 
 
 ---
 
-#### [P3.M4.A3] Destravamento 18: Diferenciar Contato, Lead, Oportunidade — e gerenciar na prática
+#### [04.M4.A3] Destravamento 18: Diferenciar Contato, Lead, Oportunidade — e gerenciar na prática
 
 **Tempo:** 25 min
 **Ação:** Entenda a hierarquia:
@@ -513,7 +515,7 @@ Boas práticas diárias (inegociáveis):
 
 ---
 
-#### [P3.M4.A4] Destravamento 19: Importar sua base atual
+#### [04.M4.A4] Destravamento 19: Importar sua base atual
 
 **Tempo:** 20 min (mais dependendo do tamanho da base)
 **Ação:**
@@ -529,7 +531,7 @@ Boas práticas diárias (inegociáveis):
 
 ---
 
-#### [P3.M4.A5] Destravamento 20: Configurar suas primeiras 2 automações
+#### [04.M4.A5] Destravamento 20: Configurar suas primeiras 2 automações
 
 **Tempo:** 30 min
 **Ação:** Crie e ative no CRM:
@@ -557,7 +559,7 @@ Boas práticas diárias (inegociáveis):
 
 ---
 
-### [P3.M5] Módulo 5: Presença Digital Profissional
+### [04.M5] Módulo 5: Presença Digital Profissional
 
 **4 destravamentos | Tempo-alvo: ~1h35**
 
@@ -565,7 +567,7 @@ Big idea: **presença digital profissional não é luxo. É obrigação.** Clien
 
 ---
 
-#### [P3.M5.A1] Destravamento 21: Decidir o MVP da sua presença digital
+#### [04.M5.A1] Destravamento 21: Decidir o MVP da sua presença digital
 
 **Tempo:** 15 min
 **Ação:** Entenda o que você **NÃO precisa** (site de 20 páginas, blog com 100 artigos, design super elaborado) e o que você **PRECISA**:
@@ -587,7 +589,7 @@ Você vai criar dentro do próprio Growth CRM (builder integrado, drag and drop,
 
 ---
 
-#### [P3.M5.A2] Destravamento 22: Criar e publicar sua landing page
+#### [04.M5.A2] Destravamento 22: Criar e publicar sua landing page
 
 **Tempo:** 35 min (+ tempo pra comprar domínio se ainda não tem)
 **Ação:**
@@ -609,7 +611,7 @@ Você vai criar dentro do próprio Growth CRM (builder integrado, drag and drop,
 
 ---
 
-#### [P3.M5.A3] Destravamento 23: Criar perfil no Google Meu Negócio + SEO local básico
+#### [04.M5.A3] Destravamento 23: Criar perfil no Google Meu Negócio + SEO local básico
 
 **Tempo:** 25 min
 **Você precisa de:** **Checklist GMB + SEO Local** (entregável #6).
@@ -631,7 +633,7 @@ Monitore no painel GMB: visualizações, ligações, pedidos de direção.
 
 ---
 
-#### [P3.M5.A4] Destravamento 24: Otimizar seus perfis sociais (vitrine)
+#### [04.M5.A4] Destravamento 24: Otimizar seus perfis sociais (vitrine)
 
 **Tempo:** 20 min
 **Você precisa de:** **Kit Otimização Perfis** (entregável #7).
@@ -653,7 +655,7 @@ Monitore no painel GMB: visualizações, ligações, pedidos de direção.
 
 > **Objetivo da fase:** gerar leads qualificados de forma consistente, seja por tráfego orgânico, pago ou prospecção ativa.
 
-### [P3.M6] Módulo 6: Tráfego Orgânico
+### [04.M6] Módulo 6: Tráfego Orgânico
 
 **4 destravamentos | Tempo-alvo: ~1h35**
 
@@ -661,7 +663,7 @@ Big idea: **conteúdo constrói autoridade. Autoridade gera vendas.** Orgânico 
 
 ---
 
-#### [P3.M6.A1] Destravamento 25: Definir sua estratégia de marketing de conteúdo
+#### [04.M6.A1] Destravamento 25: Definir sua estratégia de marketing de conteúdo
 
 **Tempo:** 20 min
 **Ação:** Escolha 1 plataforma e comprometa-se com frequência mínima.
@@ -689,7 +691,7 @@ Frequências ideais:
 
 ---
 
-#### [P3.M6.A2] Destravamento 26: Fazer SEO on-page básico no seu site
+#### [04.M6.A2] Destravamento 26: Fazer SEO on-page básico no seu site
 
 **Tempo:** 25 min (+ tempo de criação de conteúdo depois)
 **Ação:**
@@ -717,7 +719,7 @@ Frequências ideais:
 
 ---
 
-#### [P3.M6.A3] Destravamento 27: Estratégia orgânica de Instagram + LinkedIn
+#### [04.M6.A3] Destravamento 27: Estratégia orgânica de Instagram + LinkedIn
 
 **Tempo:** 30 min
 **Ação:** Aplique a estratégia por rede:
@@ -749,7 +751,7 @@ Métricas que importam: alcance, saves/compartilhamentos, comentários engajados
 
 ---
 
-#### [P3.M6.A4] Destravamento 28: Montar seu calendário de conteúdo mensal
+#### [04.M6.A4] Destravamento 28: Montar seu calendário de conteúdo mensal
 
 **Tempo:** 20 min (+ 1 dia por semana pra criar em batch)
 **Ação:** Monte um calendário de 4 semanas por tema:
@@ -770,7 +772,7 @@ Ferramentas: planilha Google (simples), Trello (visual), Notion (completo), Buff
 
 ---
 
-### [P3.M7] Módulo 7: Tráfego Pago (para quem tem budget)
+### [04.M7] Módulo 7: Tráfego Pago (para quem tem budget)
 
 **4 destravamentos | Tempo-alvo: ~1h35**
 
@@ -780,7 +782,7 @@ Big idea: **tráfego pago não é mágica. É ciência com investimento.** Só i
 
 ---
 
-#### [P3.M7.A1] Destravamento 29: Avaliar se você está pronto pra tráfego pago
+#### [04.M7.A1] Destravamento 29: Avaliar se você está pronto pra tráfego pago
 
 **Tempo:** 20 min
 **Você precisa de:** **Checklist "Pronto Para Tráfego Pago"** (entregável #8).
@@ -808,7 +810,7 @@ Budget realista:
 
 ---
 
-#### [P3.M7.A2] Destravamento 30: Ativar sua primeira campanha Meta Ads
+#### [04.M7.A2] Destravamento 30: Ativar sua primeira campanha Meta Ads
 
 **Tempo:** 30 min
 **Você precisa de:** **Guia Meta Ads Completo** (entregável #9).
@@ -830,7 +832,7 @@ Budget realista:
 
 ---
 
-#### [P3.M7.A3] Destravamento 31: Ativar Google Ads (busca + display)
+#### [04.M7.A3] Destravamento 31: Ativar Google Ads (busca + display)
 
 **Tempo:** 25 min
 **Ação:**
@@ -848,7 +850,7 @@ Métricas: CPC, CTR, Índice de Qualidade (1-10), conversões, custo por convers
 
 ---
 
-#### [P3.M7.A4] Destravamento 32: Otimizar e escalar campanhas
+#### [04.M7.A4] Destravamento 32: Otimizar e escalar campanhas
 
 **Tempo:** 20 min (+ análise semanal recorrente)
 **Ação:** Regra básica — espere mínimo 7 dias e 50 conversões antes de otimizar. Análise **semanal**, não diária.
@@ -873,7 +875,7 @@ Escalando (aumentando budget):
 
 ---
 
-### [P3.M8] Módulo 8: Prospecção Ativa Gratuita
+### [04.M8] Módulo 8: Prospecção Ativa Gratuita
 
 **5 destravamentos | Tempo-alvo: ~2h05**
 
@@ -881,7 +883,7 @@ Big idea: **se você não tem dinheiro, tem que ter tempo e coragem.** Prospecç
 
 ---
 
-#### [P3.M8.A1] Destravamento 33: Decidir se você vai prospectar ativamente
+#### [04.M8.A1] Destravamento 33: Decidir se você vai prospectar ativamente
 
 **Tempo:** 20 min
 **Ação:** Avalie o fit — prospecção ativa faz sentido se:
@@ -905,7 +907,7 @@ Mindset correto: jogo de números. **100 abordagens = 10 respostas = 1-3 vendas.
 
 ---
 
-#### [P3.M8.A2] Destravamento 34: Construir sua lista de 100+ prospects qualificados
+#### [04.M8.A2] Destravamento 34: Construir sua lista de 100+ prospects qualificados
 
 **Tempo:** 30 min (+ tempo de pesquisa na semana)
 **Ação:**
@@ -922,7 +924,7 @@ Mindset correto: jogo de números. **100 abordagens = 10 respostas = 1-3 vendas.
 
 ---
 
-#### [P3.M8.A3] Destravamento 35: Prospectar no LinkedIn + Instagram
+#### [04.M8.A3] Destravamento 35: Prospectar no LinkedIn + Instagram
 
 **Tempo:** 30 min + execução diária
 **Você precisa de:** **5 Scripts LinkedIn** (entregável #10).
@@ -955,7 +957,7 @@ Mindset correto: jogo de números. **100 abordagens = 10 respostas = 1-3 vendas.
 
 ---
 
-#### [P3.M8.A4] Destravamento 36: Cold email + WhatsApp ético
+#### [04.M8.A4] Destravamento 36: Cold email + WhatsApp ético
 
 **Tempo:** 30 min + execução
 **Você precisa de:** **6 Scripts WhatsApp** (entregável #11).
@@ -995,7 +997,7 @@ Ferramentas: Lemlist, Mailshake (e-mail), Apollo.io (e-mail + LinkedIn), Reply.i
 
 ---
 
-#### [P3.M8.A5] Destravamento 37: Configurar cadência multicanal de 15 dias
+#### [04.M8.A5] Destravamento 37: Configurar cadência multicanal de 15 dias
 
 **Tempo:** 25 min
 **Você precisa de:** **2 Cadências Multicanal** (entregável #12) — B2B (LinkedIn+Email) e B2C (Instagram+WhatsApp).
@@ -1028,7 +1030,7 @@ Métricas de prospecção:
 
 > **Objetivo da fase:** converter leads em clientes através de funis estruturados e técnicas de fechamento.
 
-### [P3.M9] Módulo 9: Funis de Conversão
+### [04.M9] Módulo 9: Funis de Conversão
 
 **4 destravamentos | Tempo-alvo: ~1h35**
 
@@ -1036,7 +1038,7 @@ Big idea: **funil não é linear. É sistema que filtra e qualifica.** Taxas rea
 
 ---
 
-#### [P3.M9.A1] Destravamento 38: Desenhar seu funil de vendas completo
+#### [04.M9.A1] Destravamento 38: Desenhar seu funil de vendas completo
 
 **Tempo:** 20 min
 **Você precisa de:** **Diagrama Funil Visual** (entregável #13).
@@ -1071,7 +1073,7 @@ Taxas realistas:
 
 ---
 
-#### [P3.M9.A2] Destravamento 39: Criar sua landing page de alta conversão
+#### [04.M9.A2] Destravamento 39: Criar sua landing page de alta conversão
 
 **Tempo:** 35 min
 **Ação:** Construa a LP com estrutura de 8 seções:
@@ -1096,7 +1098,7 @@ Construção no CRM: builder drag-and-drop, mobile-first (teste no celular), for
 
 ---
 
-#### [P3.M9.A3] Destravamento 40: Configurar sequência de nutrição por e-mail (7 dias)
+#### [04.M9.A3] Destravamento 40: Configurar sequência de nutrição por e-mail (7 dias)
 
 **Tempo:** 25-45 min
 **Você precisa de:** **3 Sequências Email** (entregável #14) — Boas-vindas (3), Vendas (7), Pós-compra (4).
@@ -1119,7 +1121,7 @@ Configure delays, teste deliverability (não cair em spam). Métricas: abertura 
 
 ---
 
-#### [P3.M9.A4] Destravamento 41: Integrar WhatsApp ao CRM (canal #1 no Brasil)
+#### [04.M9.A4] Destravamento 41: Integrar WhatsApp ao CRM (canal #1 no Brasil)
 
 **Tempo:** 20 min
 **Ação:**
@@ -1138,7 +1140,7 @@ Boas práticas: horário comercial, nada de áudio pra quem não conhece, vídeo
 
 ---
 
-### [P3.M10] Módulo 10: Fechamento e Pós-Venda
+### [04.M10] Módulo 10: Fechamento e Pós-Venda
 
 **5 destravamentos | Tempo-alvo: ~2h10**
 
@@ -1146,7 +1148,7 @@ Big idea: **perguntas certas = vendas certas.** Qualificação + script + tratam
 
 ---
 
-#### [P3.M10.A1] Destravamento 42: Qualificar leads com BANT + SPIN
+#### [04.M10.A1] Destravamento 42: Qualificar leads com BANT + SPIN
 
 **Tempo:** 25 min
 **Você precisa de:** **Questionário BANT + Roteiro SPIN** (entregável #15) — 40 perguntas.
@@ -1174,7 +1176,7 @@ Big idea: **perguntas certas = vendas certas.** Qualificação + script + tratam
 
 ---
 
-#### [P3.M10.A2] Destravamento 43: Implementar scripts de atendimento que convertem
+#### [04.M10.A2] Destravamento 43: Implementar scripts de atendimento que convertem
 
 **Tempo:** 30 min + prática real
 **Você precisa de:** **3 Scripts Vendas Core** (entregável #16) — WhatsApp B2C, Ligação/Reunião B2B, Presencial.
@@ -1202,7 +1204,7 @@ Big idea: **perguntas certas = vendas certas.** Qualificação + script + tratam
 
 ---
 
-#### [P3.M10.A3] Destravamento 44: Montar seu banco de respostas pras 7 objeções mais comuns
+#### [04.M10.A3] Destravamento 44: Montar seu banco de respostas pras 7 objeções mais comuns
 
 **Tempo:** 30 min
 **Você precisa de:** **Banco 25 Objeções + Respostas** (entregável #17).
@@ -1235,7 +1237,7 @@ Quando desistir: 3 vezes mesma objeção → desistir. Sem fit claro (budget/aut
 
 ---
 
-#### [P3.M10.A4] Destravamento 45: Aplicar 5 técnicas de fechamento
+#### [04.M10.A4] Destravamento 45: Aplicar 5 técnicas de fechamento
 
 **Tempo:** 25 min + prática real
 **Você precisa de:** **5 Técnicas Fechamento** (entregável #18).
@@ -1256,7 +1258,7 @@ Evite: pressão excessiva, desconto desesperado, mentir sobre urgência, insisti
 
 ---
 
-#### [P3.M10.A5] Destravamento 46: Configurar pós-venda + programa de indicações
+#### [04.M10.A5] Destravamento 46: Configurar pós-venda + programa de indicações
 
 **Tempo:** 20 min
 **Você precisa de:** **Checklist Onboarding 30 Dias** (entregável #19) + **Sistema Indicações** (entregável #20).
@@ -1287,7 +1289,7 @@ Métricas: NPS (de 0-10, você indicaria?), churn, LTV, taxa de indicação.
 
 > **Objetivo da fase:** integrar todos os componentes em um sistema coeso e escalável.
 
-### [P3.M11] Módulo 11: P4 + P5 — Sistema Integrado
+### [04.M11] Módulo 11: P4 + P5 — Sistema Integrado
 
 **4 destravamentos | Tempo-alvo: ~1h35**
 
@@ -1295,7 +1297,7 @@ Big idea: **sistema integrado = nada se perde, tudo funciona.** Chegou a hora de
 
 ---
 
-#### [P3.M11.A1] Destravamento 47: Validar integração completa (checklist P4)
+#### [04.M11.A1] Destravamento 47: Validar integração completa (checklist P4)
 
 **Tempo:** 25 min
 **Você precisa de:** **Checklist Integração Completa** (entregável #21) — 30 itens.
@@ -1320,7 +1322,7 @@ ABORDAGEM → REUNIÃO → FECHAMENTO → PÓS-VENDA (onboarding + indicação)
 
 ---
 
-#### [P3.M11.A2] Destravamento 48: Documentar seus 5 processos essenciais (P5)
+#### [04.M11.A2] Destravamento 48: Documentar seus 5 processos essenciais (P5)
 
 **Tempo:** 30 min + tempo de redação
 **Você precisa de:** **3 SOPs Essenciais** (entregável #22) + Template SOP.
@@ -1355,7 +1357,7 @@ Onde guardar: Google Drive, Notion (melhor), Wiki, CRM (processos de vendas). Ac
 
 ---
 
-#### [P3.M11.A3] Destravamento 49: Montar seu dashboard executivo unificado
+#### [04.M11.A3] Destravamento 49: Montar seu dashboard executivo unificado
 
 **Tempo:** 25 min
 **Ação:** Configure dashboard no CRM com métricas essenciais de 5 áreas:
@@ -1378,7 +1380,7 @@ Onde guardar: Google Drive, Notion (melhor), Wiki, CRM (processos de vendas). Ac
 
 ---
 
-#### [P3.M11.A4] Destravamento 50: Avaliar se você está pronto pra escalar
+#### [04.M11.A4] Destravamento 50: Avaliar se você está pronto pra escalar
 
 **Tempo:** 20 min
 **Você precisa de:** **Checklist "Pronto Para Escalar"** (entregável #23) + **Plano 90-180 Dias** (entregável #24).
@@ -1409,7 +1411,7 @@ Próximos 90 dias (escala): aumentar budget 20-50%, contratar primeiro vendedor/
 
 > **Objetivo da fase (pós-90 dias):** automatizar processos e implementar IA pra escalar operações sem aumentar custos proporcionalmente.
 
-### [P3.M12] Módulo 12: Automações Avançadas
+### [04.M12] Módulo 12: Automações Avançadas
 
 **4 destravamentos | Tempo-alvo: ~1h35**
 
@@ -1417,7 +1419,7 @@ Big idea: **automação avançada = inteligência operacional.** Básica é 1 ga
 
 ---
 
-#### [P3.M12.A1] Destravamento 51: Configurar 3 workflows complexos essenciais
+#### [04.M12.A1] Destravamento 51: Configurar 3 workflows complexos essenciais
 
 **Tempo:** 25 min por workflow
 **Ação:** Monte no CRM os 3 workflows críticos:
@@ -1447,7 +1449,7 @@ Erros comuns: workflow muito complexo, não testar antes de ativar, esquecer sa�
 
 ---
 
-#### [P3.M12.A2] Destravamento 52: Implementar segmentação comportamental + lead scoring
+#### [04.M12.A2] Destravamento 52: Implementar segmentação comportamental + lead scoring
 
 **Tempo:** 25 min
 **Ação:** Segmente por AÇÕES, não só demografia.
@@ -1472,7 +1474,7 @@ Configurar no CRM: tags automáticas por comportamento, **lead scoring** (pontua
 
 ---
 
-#### [P3.M12.A3] Destravamento 53: Configurar recuperação de carrinho abandonado + upsell
+#### [04.M12.A3] Destravamento 53: Configurar recuperação de carrinho abandonado + upsell
 
 **Tempo:** 25 min
 **Você precisa de:** **Sequência Recuperação Carrinho** (entregável #25) — 3 e-mails (1h, 24h, 72h).
@@ -1493,7 +1495,7 @@ Configurar no CRM: tags automáticas por comportamento, **lead scoring** (pontua
 
 ---
 
-#### [P3.M12.A4] Destravamento 54: Criar 4 réguas de relacionamento inteligentes
+#### [04.M12.A4] Destravamento 54: Criar 4 réguas de relacionamento inteligentes
 
 **Tempo:** 20 min
 **Você precisa de:** **Régua Relacionamento Base** (entregável #26).
@@ -1513,7 +1515,7 @@ Configurar no CRM: tags automáticas por comportamento, **lead scoring** (pontua
 
 ---
 
-### [P3.M13] Módulo 13: Agentes de IA Conversacional
+### [04.M13] Módulo 13: Agentes de IA Conversacional
 
 **4 destravamentos | Tempo-alvo: ~1h30**
 
@@ -1521,7 +1523,7 @@ Big idea: **IA não substitui humano. Filtra pra que o humano foque no que impor
 
 ---
 
-#### [P3.M13.A1] Destravamento 55: Mapear onde IA faz sentido no seu VSS
+#### [04.M13.A1] Destravamento 55: Mapear onde IA faz sentido no seu VSS
 
 **Tempo:** 20 min
 **Ação:** Identifique casos de uso:
@@ -1542,7 +1544,7 @@ Big idea: **IA não substitui humano. Filtra pra que o humano foque no que impor
 
 ---
 
-#### [P3.M13.A2] Destravamento 56: Configurar agente de IA no WhatsApp 24/7
+#### [04.M13.A2] Destravamento 56: Configurar agente de IA no WhatsApp 24/7
 
 **Tempo:** 30 min (+ tempo de treino)
 **Ação:**
@@ -1569,7 +1571,7 @@ Big idea: **IA não substitui humano. Filtra pra que o humano foque no que impor
 
 ---
 
-#### [P3.M13.A3] Destravamento 57: Configurar handoff inteligente (IA → humano)
+#### [04.M13.A3] Destravamento 57: Configurar handoff inteligente (IA → humano)
 
 **Tempo:** 20 min
 **Ação:** Handoff crítico — transição ruim = cliente irritado; boa = cliente nem percebe.
@@ -1601,7 +1603,7 @@ Configurar no CRM: regras claras de handoff, notificação instantânea, histór
 
 ---
 
-#### [P3.M13.A4] Destravamento 58: Treinar e otimizar seu agente (ritual semanal)
+#### [04.M13.A4] Destravamento 58: Treinar e otimizar seu agente (ritual semanal)
 
 **Tempo:** 30 min/semana recorrente
 **Ação:** IA não é "configure e esqueça". Agende ritual semanal (30 min toda sexta):
@@ -1638,7 +1640,7 @@ Configurar no CRM: regras claras de handoff, notificação instantânea, histór
 
 > **Objetivo da fase (pós-90 dias):** consolidar resultados, otimizar performance e preparar escala.
 
-### [P3.M14] Módulo 14: Analytics e Melhoria Contínua
+### [04.M14] Módulo 14: Analytics e Melhoria Contínua
 
 **4 destravamentos | Tempo-alvo: ~1h30**
 
@@ -1646,7 +1648,7 @@ Big idea: **meça o que importa. Melhore o que mede.**
 
 ---
 
-#### [P3.M14.A1] Destravamento 59: Separar métricas de vaidade de métricas de negócio
+#### [04.M14.A1] Destravamento 59: Separar métricas de vaidade de métricas de negócio
 
 **Tempo:** 25 min
 **Ação:** Elimine as de vaidade (curtidas, seguidores, impressões, pageviews) e foque nas de negócio.
@@ -1688,7 +1690,7 @@ Calcule em planilha/CRM/GA. Atualize semanalmente.
 
 ---
 
-#### [P3.M14.A2] Destravamento 60: Rodar seu primeiro teste A/B estruturado
+#### [04.M14.A2] Destravamento 60: Rodar seu primeiro teste A/B estruturado
 
 **Tempo:** 25 min (+ 7-14 dias de execução)
 **Você precisa de:** **Guia Testes A/B** (entregável #27) + **Template Documentação Testes** (entregável #28).
@@ -1714,7 +1716,7 @@ Ferramentas: Google Optimize (grátis), VWO, Optimizely (pagos), nativos do Meta
 
 ---
 
-#### [P3.M14.A3] Destravamento 61: Fazer análise de coorte + prevenção de churn
+#### [04.M14.A3] Destravamento 61: Fazer análise de coorte + prevenção de churn
 
 **Tempo:** 20 min
 **Ação:** Coorte = grupo de clientes que começaram no mesmo período. Acompanhe ao longo do tempo.
@@ -1747,7 +1749,7 @@ Calcular LTV com coorte: ticket × retenção média. Use pra calcular quanto po
 
 ---
 
-#### [P3.M14.A4] Destravamento 62: Implementar cultura data-driven com rituais
+#### [04.M14.A4] Destravamento 62: Implementar cultura data-driven com rituais
 
 **Tempo:** 20 min
 **Você precisa de:** **Checklist Decisões Data-Driven** (entregável #29).
@@ -1782,7 +1784,7 @@ Ferramentas: Google Analytics, CRM, planilhas, dashboard unificado, Slack/WhatsA
 
 ---
 
-### [P3.M15] Módulo 15: P6 + Próximos Passos
+### [04.M15] Módulo 15: P6 + Próximos Passos
 
 **4 destravamentos | Tempo-alvo: ~1h30**
 
@@ -1790,7 +1792,7 @@ Big idea: **contratar errado custa 3x o salário. Contratar certo multiplica res
 
 ---
 
-#### [P3.M15.A1] Destravamento 63: Mapear sua estrutura de time (P6) por estágio
+#### [04.M15.A1] Destravamento 63: Mapear sua estrutura de time (P6) por estágio
 
 **Tempo:** 25 min
 **Você precisa de:** **Organograma Atual + Futuro** (entregável #30) — 4 estágios.
@@ -1829,7 +1831,7 @@ Big idea: **contratar errado custa 3x o salário. Contratar certo multiplica res
 
 ---
 
-#### [P3.M15.A2] Destravamento 64: Montar programa de onboarding de 30 dias
+#### [04.M15.A2] Destravamento 64: Montar programa de onboarding de 30 dias
 
 **Tempo:** 25 min
 **Você precisa de:** **3 Job Descriptions Core** (entregável #31) — SDR, Closer, CS + **Checklist Onboarding Time** (entregável #32).
@@ -1864,7 +1866,7 @@ Big idea: **contratar errado custa 3x o salário. Contratar certo multiplica res
 
 ---
 
-#### [P3.M15.A3] Destravamento 65: Escrever seu Plano 180-365 dias
+#### [04.M15.A3] Destravamento 65: Escrever seu Plano 180-365 dias
 
 **Tempo:** 25 min
 **Ação:** Recapitule a jornada (fundação de 90 dias feita) e escreva os dois blocos:
@@ -1888,7 +1890,7 @@ Big idea: **contratar errado custa 3x o salário. Contratar certo multiplica res
 
 ---
 
-#### [P3.M15.A4] Destravamento 66: Entrar (ou aprofundar) na Comunidade VSS
+#### [04.M15.A4] Destravamento 66: Entrar (ou aprofundar) na Comunidade VSS
 
 **Tempo:** 15 min
 **Você precisa de:** **Guia Comunidade VSS** (entregável #33) — como participar, eventos, networking, suporte contínuo.
@@ -1913,7 +1915,7 @@ A comunidade VSS + mentorias semanais é onde o playbook vira prática. O conte�
 Parabéns — você chegou ao fim dos 66 destravamentos. Na prática, a maioria dos alunos implementa as **Fases 1-5 em 90 dias** e usa as **Fases 6-7 como aprofundamento dos meses 4-12**.
 
 **Próximos passos recomendados:**
-1. Revise o seu **Canvas 6Ps** (P3.M1.A4) a cada 90 dias.
+1. Revise o seu **Canvas 6Ps** (04.M1.A4) a cada 90 dias.
 2. Atualize seu **Plano 90-180-365 dias** trimestralmente.
 3. Traga para as **mentorias ao vivo semanais** qualquer destravamento onde você travou.
 4. Participe da **Comunidade VSS** — lá o playbook ganha vida.

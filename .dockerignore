@@ -1,0 +1,36 @@
+# Git
+.git/
+.github/
+.gitignore
+
+# Deps & build artifacts
+node_modules/
+dist/
+.astro/
+.vite/
+.cache/
+
+# Docs & brand (referência, não produção)
+docs/
+brand/
+
+# Env
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Misc
+*.md
+!README.md

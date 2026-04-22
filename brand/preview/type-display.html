@@ -1,0 +1,37 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+ body{margin:0;padding:24px;background:#050505;color:#F5F1E8;font-family:'Archivo',sans-serif}
+ .lab{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.25em;color:#C6FF00;text-transform:uppercase;margin-bottom:10px}
+ .big{font-family:'Archivo Black',sans-serif;font-size:86px;line-height:0.88;letter-spacing:-0.045em;text-transform:uppercase;color:#F5F1E8}
+ .big .fire{color:#FF3B0F}
+ .big .acid{color:#C6FF00}
+ .big .stroke{-webkit-text-stroke:2px #F5F1E8;color:transparent}
+ .row{display:flex;flex-direction:column;gap:32px}
+ .small{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#6B7280;text-transform:uppercase;margin-top:8px}
+
+ /* glitch demo */
+ .glitch{position:relative;display:inline-block}
+ .glitch::before,.glitch::after{content:attr(data-t);position:absolute;inset:0;pointer-events:none}
+ .glitch::before{color:#FF3B0F;mix-blend-mode:screen;transform:translate(3px,0);clip-path:polygon(0 0,100% 0,100% 48%,0 48%);animation:g1 3s infinite}
+ .glitch::after{color:#00E0FF;mix-blend-mode:screen;transform:translate(-3px,0);clip-path:polygon(0 52%,100% 52%,100% 100%,0 100%);animation:g2 3.2s infinite}
+ @keyframes g1{0%,92%,100%{transform:translate(3px,0)}94%{transform:translate(6px,-2px)}96%{transform:translate(-2px,1px)}}
+ @keyframes g2{0%,92%,100%{transform:translate(-3px,0)}94%{transform:translate(-6px,2px)}96%{transform:translate(2px,-1px)}}
+</style></head><body>
+<div class="row">
+  <div>
+    <div class="lab">// H1 · ARCHIVO BLACK · 86/88/-0.045</div>
+    <div class="big">Bora <span class="fire">estruturar?</span></div>
+    <div class="small">// MAIN DISPLAY — USE PRA HERO/CAPA</div>
+  </div>
+  <div>
+    <div class="lab">// H1 · STROKE + ACID</div>
+    <div class="big">Vender é <span class="stroke">código.</span><br>Não <span class="acid">sorte.</span></div>
+    <div class="small">// PEDAÇOS EM OUTLINE CRIAM RITMO — NUNCA LINHA INTEIRA</div>
+  </div>
+  <div>
+    <div class="lab">// H1 · GLITCH CIRÚRGICO (1 PALAVRA)</div>
+    <div class="big"><span class="glitch" data-t="SISTEMA">SISTEMA</span> &gt; IMPROVISO</div>
+    <div class="small">// RGB SHIFT FIRE + CYAN · USO MÁXIMO 1×/PÁGINA</div>
+  </div>
+</div>
+</body></html>

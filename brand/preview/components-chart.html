@@ -1,0 +1,48 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+ body{margin:0;padding:32px;background:#050505;color:#F5F1E8;font-family:'Archivo',sans-serif}
+ .chart{background:#0B0B0B;border:1px solid rgba(255,255,255,0.08);padding:24px;position:relative;overflow:hidden;max-width:680px}
+ .head{display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#6B7280;text-transform:uppercase;margin-bottom:18px}
+ .head .now{color:#C6FF00;display:flex;align-items:center;gap:6px}
+ .head .dotG{width:7px;height:7px;background:#C6FF00;border-radius:50%;animation:pulse 1.5s infinite;box-shadow:0 0 8px #C6FF00}
+ @keyframes pulse{50%{opacity:0.3}}
+ .big{font-family:'Archivo Black',sans-serif;font-size:60px;line-height:0.95;letter-spacing:-0.04em;color:#F5F1E8}
+ .big .delta{color:#C6FF00;font-size:22px;font-family:'JetBrains Mono',monospace;font-weight:700;margin-left:14px;vertical-align:middle}
+ .big .lbl{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:#6B7280;letter-spacing:0.22em;margin-top:8px;text-transform:uppercase}
+ .svg{margin-top:22px}
+ .foot{display:flex;justify-content:space-between;margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:10px;color:#6B7280;letter-spacing:0.16em;text-transform:uppercase}
+</style></head><body>
+<div class="chart">
+  <div class="head">
+    <span>// REVENUE · Q1 → Q4</span>
+    <span class="now"><span class="dotG"></span> AO VIVO</span>
+  </div>
+  <div class="big">+247%<span class="delta">vs. baseline</span><span class="lbl">// média pós-implementação 6Ps</span></div>
+  <svg class="svg" viewBox="0 0 600 200" width="100%" height="200">
+    <defs>
+      <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0%" stop-color="#C6FF00" stop-opacity="0.4"/>
+        <stop offset="100%" stop-color="#C6FF00" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <g stroke="rgba(255,255,255,0.05)" stroke-width="1">
+      <line x1="0" y1="50" x2="600" y2="50"/>
+      <line x1="0" y1="100" x2="600" y2="100"/>
+      <line x1="0" y1="150" x2="600" y2="150"/>
+    </g>
+    <path d="M0,160 L100,150 L200,155 L300,145 L400,150 L500,148 L600,142" stroke="#6B7280" stroke-width="1.5" fill="none" stroke-dasharray="4 4"/>
+    <path d="M0,160 L80,140 L160,130 L240,100 L320,80 L400,55 L480,40 L600,20" stroke="#C6FF00" stroke-width="2.5" fill="none"/>
+    <path d="M0,160 L80,140 L160,130 L240,100 L320,80 L400,55 L480,40 L600,20 L600,200 L0,200 Z" fill="url(#g1)"/>
+    <g fill="#C6FF00">
+      <circle cx="80" cy="140" r="3"/><circle cx="160" cy="130" r="3"/><circle cx="240" cy="100" r="3"/>
+      <circle cx="320" cy="80" r="3"/><circle cx="400" cy="55" r="3"/><circle cx="480" cy="40" r="3"/>
+      <circle cx="600" cy="20" r="5" stroke="#C6FF00" fill="#050505" stroke-width="2"/>
+    </g>
+    <line x1="400" y1="0" x2="400" y2="200" stroke="#FF3B0F" stroke-width="1" stroke-dasharray="2 4" opacity="0.6"/>
+    <text x="406" y="14" fill="#FF3B0F" font-family="JetBrains Mono" font-size="10" letter-spacing="0.1em">6PS ATIVADO</text>
+  </svg>
+  <div class="foot">
+    <span>JAN'25</span><span>ABR'25</span><span>JUL'25</span><span>OUT'25</span><span>JAN'26 ●</span>
+  </div>
+</div>
+</body></html>

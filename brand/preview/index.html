@@ -1,0 +1,249 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<title>Joel Burigo — Design System Preview</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+ * { box-sizing: border-box; }
+ body { margin: 0; min-height: 100vh; }
+
+ .grid-bg { position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.35;
+   background-image: linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+   background-size: 80px 80px; }
+
+ .topbar { display: flex; justify-content: space-between; align-items: center; padding: 10px 40px;
+   font-family: var(--jb-ff-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+   color: var(--jb-fg-muted); border-bottom: 1px solid var(--jb-hair); position: relative; z-index: 3; }
+ .topbar .dot { width: 7px; height: 7px; background: var(--jb-acid); border-radius: 50%; box-shadow: 0 0 10px var(--jb-acid); animation: pulse 1.6s infinite; display: inline-block; margin-right: 8px; vertical-align: middle; }
+ @keyframes pulse { 50% { opacity: 0.3; } }
+ .topbar b { color: var(--jb-cream); }
+ .topbar .left { display: flex; gap: 24px; }
+
+ .hero { padding: 64px 40px 48px; position: relative; z-index: 2; max-width: 1440px; margin: 0 auto; }
+ .kicker { font-family: var(--jb-ff-mono); font-size: 12px; letter-spacing: 0.28em; color: var(--jb-acid); text-transform: uppercase; }
+ .h { font-family: var(--jb-ff-display); font-size: clamp(56px, 7vw, 108px); line-height: 0.88; letter-spacing: -0.045em; text-transform: uppercase; margin-top: 18px; color: var(--jb-cream); }
+ .h .fire { color: var(--jb-fire); } .h .acid { color: var(--jb-acid); }
+ .lede { font-family: var(--jb-ff-body); color: #BFBFBF; font-size: 17px; line-height: 1.55; max-width: 640px; margin-top: 22px; }
+ .lede b { color: var(--jb-cream); }
+
+ .section { padding: 48px 40px; max-width: 1440px; margin: 0 auto; position: relative; z-index: 2; }
+ .section-head { display: flex; align-items: baseline; gap: 24px; border-bottom: 1px solid var(--jb-hair); padding-bottom: 16px; margin-bottom: 28px; }
+ .section-num { font-family: var(--jb-ff-mono); font-size: 13px; color: var(--jb-acid); letter-spacing: 0.28em; text-transform: uppercase; }
+ .section-t { font-family: var(--jb-ff-display); font-size: 32px; letter-spacing: -0.03em; text-transform: uppercase; flex: 1; color: var(--jb-cream); }
+ .section-meta { font-family: var(--jb-ff-mono); font-size: 10px; color: var(--jb-fg-muted); letter-spacing: 0.22em; text-transform: uppercase; }
+
+ .grid { display: grid; gap: 20px; }
+ .grid.g-2 { grid-template-columns: repeat(2, 1fr); }
+ .grid.g-3 { grid-template-columns: repeat(3, 1fr); }
+ .grid.g-4 { grid-template-columns: repeat(4, 1fr); }
+
+ .card { background: var(--jb-ink-2); border: 1px solid var(--jb-hair); display: flex; flex-direction: column; overflow: hidden; transition: all 180ms; text-decoration: none; position: relative; }
+ .card:hover { border-color: var(--jb-acid); transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--jb-acid); }
+ .card .lbl { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; border-bottom: 1px solid var(--jb-hair); font-family: var(--jb-ff-mono); font-size: 10px; letter-spacing: 0.22em; color: var(--jb-fg-muted); text-transform: uppercase; background: #0A0A0A; }
+ .card .lbl b { color: var(--jb-cream); font-weight: 700; }
+ .card .lbl .arr { color: var(--jb-acid); font-family: var(--jb-ff-mono); }
+ .card .frame { position: relative; width: 100%; background: var(--jb-ink); }
+ .card iframe { width: 200%; height: 200%; transform: scale(0.5); transform-origin: top left; border: 0; display: block; pointer-events: none; }
+ .card.h-sm .frame { height: 200px; }
+ .card.h-md .frame { height: 300px; }
+ .card.h-lg .frame { height: 420px; }
+ .card.h-xl .frame { height: 560px; }
+
+ .foot { padding: 64px 40px 40px; border-top: 1px solid var(--jb-hair); margin-top: 64px; position: relative; z-index: 2; max-width: 1440px; margin-left: auto; margin-right: auto; }
+ .foot .legal { font-family: var(--jb-ff-mono); font-size: 10px; color: var(--jb-fg-muted); letter-spacing: 0.22em; text-transform: uppercase; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+
+<div class="topbar">
+  <div class="left">
+    <span><span class="dot"></span>SYS ONLINE</span>
+    <span>// JB_CORE <b>v3.0</b></span>
+    <span>// DESIGN SYSTEM · PREVIEW INDEX</span>
+  </div>
+  <div>
+    <span>REV. 2026.04 · <b>25 TOKENS</b></span>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="kicker">// DESIGN SYSTEM · v3 TERMINAL GROWTH</div>
+  <h1 class="h">JB_CORE · <span class="fire">FIRE</span> +<br><span class="acid">ACID.</span> SISTEMA &gt; IMPROVISO.</h1>
+  <p class="lede">Índice navegável de <b>25 cards</b> cobrindo cores, tipografia, espaçamento, brand e componentes-assinatura v3. Clique em qualquer card pra abrir em tela cheia.</p>
+</section>
+
+<!-- BRAND -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-num">// 01_BRAND</div>
+    <h2 class="section-t">Logo &amp; marks</h2>
+    <div class="section-meta">WORDMARK · MARK FIRE · MARK ACID</div>
+  </div>
+  <div class="grid g-3">
+    <a class="card h-sm" href="brand-logo.html" target="_blank">
+      <div class="lbl"><span>// <b>BRAND-LOGO</b></span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="brand-logo.html"></iframe></div>
+    </a>
+  </div>
+</section>
+
+<!-- COLORS -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-num">// 02_COLORS</div>
+    <h2 class="section-t">Paleta 5-core + acentos</h2>
+    <div class="section-meta">CORE · ACCENTS (FIRE+ACID+CYAN) · NEUTRALS</div>
+  </div>
+  <div class="grid g-3">
+    <a class="card h-sm" href="colors-core.html" target="_blank">
+      <div class="lbl"><span>// <b>COLORS-CORE</b></span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="colors-core.html"></iframe></div>
+    </a>
+    <a class="card h-sm" href="colors-accents.html" target="_blank">
+      <div class="lbl"><span>// <b>COLORS-ACCENTS</b></span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="colors-accents.html"></iframe></div>
+    </a>
+    <a class="card h-sm" href="colors-neutrals.html" target="_blank">
+      <div class="lbl"><span>// <b>COLORS-NEUTRALS</b></span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="colors-neutrals.html"></iframe></div>
+    </a>
+  </div>
+</section>
+
+<!-- TYPE -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-num">// 03_TYPE</div>
+    <h2 class="section-t">Hierarquia tipográfica</h2>
+    <div class="section-meta">DISPLAY · BODY · MONO</div>
+  </div>
+  <div class="grid g-3">
+    <a class="card h-md" href="type-display.html" target="_blank">
+      <div class="lbl"><span>// <b>TYPE-DISPLAY</b> · stroke + glitch</span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="type-display.html"></iframe></div>
+    </a>
+    <a class="card h-md" href="type-body.html" target="_blank">
+      <div class="lbl"><span>// <b>TYPE-BODY</b></span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="type-body.html"></iframe></div>
+    </a>
+    <a class="card h-md" href="type-mono.html" target="_blank">
+      <div class="lbl"><span>// <b>TYPE-MONO</b> · sotaque</span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="type-mono.html"></iframe></div>
+    </a>
+  </div>
+</section>
+
+<!-- SPACING -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-num">// 04_SPACING</div>
+    <h2 class="section-t">Escala, radii, sombras</h2>
+    <div class="section-meta">OFFSET DUROS · CANTOS 0 · ESCALA 4→64</div>
+  </div>
+  <div class="grid g-3">
+    <a class="card h-sm" href="spacing-scale.html" target="_blank">
+      <div class="lbl"><span>// <b>SPACING-SCALE</b></span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="spacing-scale.html"></iframe></div>
+    </a>
+    <a class="card h-sm" href="spacing-radii.html" target="_blank">
+      <div class="lbl"><span>// <b>SPACING-RADII</b></span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="spacing-radii.html"></iframe></div>
+    </a>
+    <a class="card h-sm" href="spacing-shadows.html" target="_blank">
+      <div class="lbl"><span>// <b>SPACING-SHADOWS</b></span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="spacing-shadows.html"></iframe></div>
+    </a>
+  </div>
+</section>
+
+<!-- COMPONENTS BASE -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-num">// 05_COMPONENTS</div>
+    <h2 class="section-t">Componentes base</h2>
+    <div class="section-meta">BUTTONS · BADGES · CARDS · INPUTS · STATS · 6PS · NAV</div>
+  </div>
+  <div class="grid g-2">
+    <a class="card h-md" href="components-buttons.html" target="_blank">
+      <div class="lbl"><span>// <b>BUTTONS</b> · cta + fire + ghost</span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="components-buttons.html"></iframe></div>
+    </a>
+    <a class="card h-md" href="components-badges.html" target="_blank">
+      <div class="lbl"><span>// <b>BADGES</b> · chips fire + acid</span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="components-badges.html"></iframe></div>
+    </a>
+    <a class="card h-md" href="components-cards.html" target="_blank">
+      <div class="lbl"><span>// <b>CARDS</b> · base + feat acid</span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="components-cards.html"></iframe></div>
+    </a>
+    <a class="card h-md" href="components-inputs.html" target="_blank">
+      <div class="lbl"><span>// <b>INPUTS</b> · dropdown acid</span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="components-inputs.html"></iframe></div>
+    </a>
+    <a class="card h-md" href="components-stats.html" target="_blank">
+      <div class="lbl"><span>// <b>STATS</b> · units acid</span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="components-stats.html"></iframe></div>
+    </a>
+    <a class="card h-lg" href="components-6ps.html" target="_blank">
+      <div class="lbl"><span>// <b>6PS</b> · hover acid glow</span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="components-6ps.html"></iframe></div>
+    </a>
+    <a class="card h-lg" href="components-navbar.html" target="_blank" style="grid-column:span 2">
+      <div class="lbl"><span>// <b>NAVBAR</b> · topbar + ticker + nav sticky</span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="components-navbar.html"></iframe></div>
+    </a>
+  </div>
+</section>
+
+<!-- COMPONENTS V3-ASSINATURA -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-num">// 06_V3 SIGNATURES</div>
+    <h2 class="section-t">DNA <span style="color:var(--jb-acid)">Terminal Growth</span></h2>
+    <div class="section-meta">TERMINAL · TICKER · STATUSBAR · EYEBROW · SECTION · CASES · MANIFESTO · CHART</div>
+  </div>
+  <div class="grid g-2">
+    <a class="card h-lg" href="components-terminal.html" target="_blank">
+      <div class="lbl"><span>// <b>TERMINAL</b> · diagnóstico.sh</span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="components-terminal.html"></iframe></div>
+    </a>
+    <a class="card h-md" href="components-ticker.html" target="_blank">
+      <div class="lbl"><span>// <b>TICKER</b> · fire + em acid</span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="components-ticker.html"></iframe></div>
+    </a>
+    <a class="card h-sm" href="components-statusbar.html" target="_blank">
+      <div class="lbl"><span>// <b>STATUSBAR</b> · clock ao vivo</span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="components-statusbar.html"></iframe></div>
+    </a>
+    <a class="card h-sm" href="components-eyebrow.html" target="_blank">
+      <div class="lbl"><span>// <b>EYEBROW</b> · acid + fire</span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="components-eyebrow.html"></iframe></div>
+    </a>
+    <a class="card h-md" href="components-section-head.html" target="_blank" style="grid-column:span 2">
+      <div class="lbl"><span>// <b>SECTION-HEAD</b> · kicker + H2 + meta</span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="components-section-head.html"></iframe></div>
+    </a>
+    <a class="card h-lg" href="components-case-slab.html" target="_blank">
+      <div class="lbl"><span>// <b>CASE-SLAB</b> · grid 3×</span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="components-case-slab.html"></iframe></div>
+    </a>
+    <a class="card h-lg" href="components-manifesto.html" target="_blank">
+      <div class="lbl"><span>// <b>MANIFESTO</b> · quote + watermark</span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="components-manifesto.html"></iframe></div>
+    </a>
+    <a class="card h-xl" href="components-chart.html" target="_blank" style="grid-column:span 2">
+      <div class="lbl"><span>// <b>CHART</b> · revenue + spike 6Ps</span><span class="arr">→</span></div>
+      <div class="frame"><iframe src="components-chart.html"></iframe></div>
+    </a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="legal">
+    <span>© 2026 · JOEL BURIGO</span>
+    <span>JB_CORE v3.0 · REV. 2026.04</span>
+    <span>SISTEMA &gt; IMPROVISO</span>
+  </div>
+</footer>
+
+</body></html>

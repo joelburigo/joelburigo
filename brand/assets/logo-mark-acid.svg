@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="JB mark acid">
+  <title>JB</title>
+  <rect width="128" height="128" fill="#C6FF00"/>
+  <text x="64" y="94"
+        font-family="'Archivo Black', 'Archivo', system-ui, sans-serif"
+        font-weight="900"
+        font-size="82"
+        fill="#050505"
+        text-anchor="middle"
+        letter-spacing="-3">JB</text>
+</svg>

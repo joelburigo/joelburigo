@@ -1,0 +1,54 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+ body{margin:0;padding:32px;background:#050505;color:#F5F1E8;font-family:'Archivo',sans-serif}
+ .term{background:#0B0B0B;border:1px solid rgba(255,255,255,0.08);position:relative;overflow:hidden;max-width:540px;box-shadow:0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(255,59,15,0.08) inset}
+ .term-head{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.08);background:#0A0A0A}
+ .lights{display:flex;gap:6px}
+ .lights i{width:10px;height:10px;border-radius:50%;display:block}
+ .lights i:nth-child(1){background:#FF3B0F}
+ .lights i:nth-child(2){background:#FFB020}
+ .lights i:nth-child(3){background:#C6FF00}
+ .title{font-family:'JetBrains Mono',monospace;font-size:10px;color:#6B7280;letter-spacing:0.22em;text-transform:uppercase}
+ .body{padding:22px;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.75;color:#E5E5E5}
+ .body .c{color:#6B7280}
+ .body .p{color:#C6FF00}
+ .body .e{color:#FF3B0F}
+ .body .y{color:#FFB020}
+ .body .w{color:#F5F1E8}
+ .blink::after{content:'▊';margin-left:2px;color:#C6FF00;animation:blink 1s steps(1) infinite}
+ @keyframes blink{50%{opacity:0}}
+ .stats{border-top:1px solid rgba(255,255,255,0.08);padding:16px 22px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+ .stat{display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:11px}
+ .stat .k{color:#6B7280;letter-spacing:0.18em;text-transform:uppercase}
+ .stat .v{color:#F5F1E8;font-weight:700}
+ .up{color:#C6FF00}
+ .down{color:#FF3B0F}
+ .cap{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#6B7280;text-transform:uppercase;margin-top:14px}
+</style></head><body>
+<div class="term">
+  <div class="term-head">
+    <div class="lights"><i></i><i></i><i></i></div>
+    <div class="title">// JB_CORE · DIAGNÓSTICO.sh</div>
+    <div class="title" style="color:#C6FF00">● RUNNING</div>
+  </div>
+  <div class="body">
+<span class="c">$</span> <span class="w">joel --diagnose --mpe</span><br>
+<span class="c">› analisando posicionamento...</span> <span class="p">ok</span><br>
+<span class="c">› mapeando público (ICP)...</span>   <span class="p">ok</span><br>
+<span class="c">› validando produto/oferta...</span> <span class="y">warn</span><br>
+<span class="c">› checando programas (mkt)...</span> <span class="e">fail</span><br>
+<span class="c">› auditando processos (CRM)...</span>  <span class="e">fail</span><br>
+<span class="c">› avaliando pessoas (time)...</span>   <span class="y">warn</span><br>
+<br>
+<span class="w">RESULTADO:</span> <span class="e">2/6 Ps travados.</span><br>
+<span class="w">AÇÃO:</span> <span class="p">agendar_call()</span><span class="blink"></span>
+  </div>
+  <div class="stats">
+    <div class="stat"><span class="k">Pipeline</span><span class="v">R$ 180k <span class="up">▲</span></span></div>
+    <div class="stat"><span class="k">Win Rate</span><span class="v">12% <span class="down">▼</span></span></div>
+    <div class="stat"><span class="k">Ciclo</span><span class="v">42d <span class="down">▼</span></span></div>
+    <div class="stat"><span class="k">LTV/CAC</span><span class="v">1.8× <span class="down">▼</span></span></div>
+  </div>
+</div>
+<div class="cap">// TERMINAL WINDOW · CHROME MACOS (FIRE/YELLOW/ACID) · MONO CODE · BLINK CURSOR · DEEP SHADOW + INSET FIRE GLOW</div>
+</body></html>

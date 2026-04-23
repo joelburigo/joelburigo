@@ -50,7 +50,9 @@ Services (DWY) foi descontinuado.
 - `ANTI_DRIFT.md` — regras duras: palavras proibidas, provas de autoridade exatas, assinaturas canônicas, vocabulário
 - `USAGE.md` — decision tree "pediu X → usa Y + copy fonte Z"
 - `EXAMPLES.md` — 8 pares BAD vs GOOD comentados
-- `README.md` — guia completo de conteúdo + visual + iconografia
+- `MOBILE.md` — safe zones, breakpoints, adaptações por device
+- `MIGRATION.md` — checklist pra migrar produção `src/` (sessão dedicada)
+- `README.md` — guia completo de conteúdo + visual + iconografia + escalas (cores, type, spacing, contraste)
 
 **Templates copiáveis (`templates/`):**
 - `templates/ig-feed.html` — IG feed 1080×1080 (4 variantes)

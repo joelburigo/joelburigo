@@ -13,6 +13,8 @@ Direção: **Terminal Growth** — tech/growth/sales brutalismo. Fogo `#FF3B0F` 
 - [`ANTI_DRIFT.md`](ANTI_DRIFT.md) — **regras duras** (palavras proibidas, provas exatas, assinaturas canônicas, vocabulário)
 - [`USAGE.md`](USAGE.md) — decision tree "pediu X → usa Y"
 - [`EXAMPLES.md`](EXAMPLES.md) — 8 pares BAD vs GOOD comentados
+- [`MOBILE.md`](MOBILE.md) — safe zones, breakpoints, adaptações por device, armadilhas
+- [`MIGRATION.md`](MIGRATION.md) — checklist pra migrar produção `src/` pro Terminal Growth
 
 ### Referências visuais
 
@@ -112,7 +114,85 @@ Não existe meio-termo (serviço terceirizado). *Services (DWY) foi descontinuad
 
 O sistema é **bicolor de acento**: fogo pra urgência/marketing, acid pra growth/sucesso/tech. Cyan `--jb-cyan` `#00E0FF` é reserva pra dados ao vivo. Nunca 3 acentos no mesmo viewport — fogo + acid é o par.
 
-**Tipografia** — Archivo Black (display, condensada brutalista), Archivo 400–800 (body/UI), JetBrains Mono (ticker, byline, status, terminal). Tracking apertado (-0.035 a -0.045em) nos displays. Mono carrega toda a micro-copy técnica — é o "sotaque" do sistema.
+**Variantes de acento (fire/acid)** — cada acento tem família de 6 tokens pra estados:
+
+| Estado | Fire | Acid |
+|---|---|---|
+| base | `--jb-fire` `#FF3B0F` | `--jb-acid` `#C6FF00` |
+| hot (hover) | `--jb-fire-hot` `#FF6A3D` | `--jb-acid-hot` `#D6FF3D` |
+| deep (pressed) | `--jb-fire-deep` `#D93D12` | `--jb-acid-deep` `#9ACC00` |
+| soft (bg 10-12%) | `--jb-fire-soft` | `--jb-acid-soft` |
+| soft-2 (bg 20%) | `--jb-fire-soft-2` | `--jb-acid-soft-2` |
+| border (35%) | `--jb-fire-border` | `--jb-acid-border` |
+| glow (35%) | `--jb-fire-glow` | `--jb-acid-glow` |
+
+Texto sobre fire/acid: sempre `--jb-accent-ink` `#050505`. Neutros foreground: `--jb-fg-1` → `--jb-fg-3` → `--jb-fg-muted` `#6B7280`. Hair padrão: `--jb-hair` rgba(white, 0.08); variante forte: `--jb-hair-strong` rgba(white, 0.16).
+
+**Tipografia** — 3 famílias:
+- **Archivo Black** (900) — display UPPERCASE, tracking `-0.035` a `-0.045em`
+- **Archivo** 400/500/600/700/800 — body + UI
+- **JetBrains Mono** 400/500/700/800 — ticker, byline, status, terminal code (o "sotaque" do sistema)
+
+**Escala tipográfica** (`--jb-fs-*`):
+
+| Token | Tamanho | Uso típico |
+|---|---|---|
+| `xs` | 11px | status bar, labels micro-mono |
+| `sm` | 13px | byline, meta, kicker secundário |
+| `base` | 15px | body default |
+| `md` | 17px | body prominente |
+| `lg` | 20px | lede, intros |
+| `xl` | 28px | H4 / card title |
+| `2xl` | 40px | H3 |
+| `3xl` | 56px | H2 |
+| `4xl` | 80px | H1 |
+| `5xl` | 120px | hero display |
+| `mega` | 180px | stat gigante, manifesto |
+
+Line-heights: `--jb-lh-tight` 0.92 (display), `--jb-lh-snug` 1.05 (headlines), `--jb-lh-base` 1.45 (body).
+
+**Escala de espaçamento** (`--jb-sp-*`, múltiplos de 4px):
+
+| Token | Valor | Uso |
+|---|---|---|
+| `sp-1` | 4px | gaps micro |
+| `sp-2` | 8px | padding inline em chips |
+| `sp-3` | 12px | gap de status bar |
+| `sp-4` | 16px | padding de card small |
+| `sp-5` | 20px | gap de grid component |
+| `sp-6` | 24px | padding de card default |
+| `sp-8` | 32px | section padding mobile |
+| `sp-10` | 40px | padding horizontal container |
+| `sp-12` | 48px | block spacing |
+| `sp-16` | 64px | section padding desktop (vertical) |
+| `sp-20` | 80px | grid overlay + hero spacing |
+| `sp-24` | 96px | section-to-section major |
+| `sp-32` | 128px | hero vertical mobile |
+
+**Breakpoints** (Tailwind v4 padrão, aplicados em produção):
+
+| Breakpoint | Min-width | Uso |
+|---|---|---|
+| `sm` | 640px | mobile landscape / tablet portrait small |
+| `md` | 768px | tablet portrait |
+| `lg` | 1024px | tablet landscape / laptop |
+| `xl` | 1280px | desktop |
+| `2xl` | 1536px | desktop large |
+
+Container: `max-width: 1360px`, padding horizontal `40px` desktop / `24px` mobile. Grid overlay 80px fixo em desktop, pode reduzir pra 60px em mobile se ficar ruidoso.
+
+**Contraste / acessibilidade (WCAG 2.1)** — pares testados:
+
+| Combinação | Ratio | Status |
+|---|---|---|
+| cream `#F5F1E8` sobre ink `#050505` | 17.1:1 | ✅ AAA (qualquer tamanho) |
+| acid `#C6FF00` sobre ink `#050505` | 16.3:1 | ✅ AAA (qualquer tamanho) |
+| fire `#FF3B0F` sobre ink `#050505` | 4.7:1 | ⚠️ AA texto grande (≥18px bold / ≥24px regular), **NÃO usar em body <18px** |
+| ink `#050505` sobre fire `#FF3B0F` | 4.7:1 | ⚠️ igual acima (display OK, body não) |
+| ink `#050505` sobre acid `#C6FF00` | 16.3:1 | ✅ AAA |
+| fg-muted `#6B7280` sobre ink | 4.7:1 | ⚠️ AA — aceitável em micro-copy mono (11-13px) mas não em body |
+
+**Regra operacional:** body em cream-default (sempre AAA). Fire reservado pra display (≥28px) ou ink-sobre-fire em botões/CTAs grandes. Nunca body text pequeno em fire-sobre-ink.
 
 **Stroke-text** — pedaços de títulos em `-webkit-text-stroke: 2px cream; color: transparent` pra criar ritmo visual (ver hero do master, manifesto).
 

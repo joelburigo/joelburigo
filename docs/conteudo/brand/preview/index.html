@@ -1,4 +1,5 @@
 <!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Joel Burigo — Design System Preview</title>
 <link rel="stylesheet" href="../colors_and_type.css">
 <style>
@@ -49,6 +50,32 @@
 
  .foot { padding: 64px 40px 40px; border-top: 1px solid var(--jb-hair); margin-top: 64px; position: relative; z-index: 2; max-width: 1440px; margin-left: auto; margin-right: auto; }
  .foot .legal { font-family: var(--jb-ff-mono); font-size: 10px; color: var(--jb-fg-muted); letter-spacing: 0.22em; text-transform: uppercase; display: flex; justify-content: space-between; }
+
+ /* ========================= MOBILE (< 640px) ========================= */
+ @media (max-width: 640px){
+   .topbar { padding: 10px 20px; font-size: 10px; letter-spacing: 0.15em; }
+   .topbar .left { gap: 12px; flex-wrap: wrap; }
+   .hero { padding: 40px 20px 32px; }
+   .lede { font-size: 15px; }
+   .section { padding: 32px 20px; }
+   .section-head { flex-wrap: wrap; gap: 8px; padding-bottom: 12px; margin-bottom: 20px; }
+   .section-t { font-size: 24px; flex: 1 1 100%; }
+   .section-meta { font-size: 9px; }
+   .grid.g-2, .grid.g-3, .grid.g-4 { grid-template-columns: 1fr; gap: 16px; }
+   .card.h-sm .frame { height: 160px; }
+   .card.h-md .frame { height: 220px; }
+   .card.h-lg .frame { height: 300px; }
+   .card.h-xl .frame { height: 400px; }
+   .foot { padding: 40px 20px 24px; margin-top: 40px; }
+   .foot .legal { flex-direction: column; gap: 8px; }
+   .grid-bg { background-size: 60px 60px; opacity: 0.25; }
+ }
+
+ /* ========================= TABLET (640-1024px) ========================= */
+ @media (min-width: 641px) and (max-width: 1024px){
+   .grid.g-4 { grid-template-columns: repeat(2, 1fr); }
+   .grid.g-3 { grid-template-columns: repeat(2, 1fr); }
+ }
 </style>
 </head>
 <body>

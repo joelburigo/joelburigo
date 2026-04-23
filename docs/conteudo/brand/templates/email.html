@@ -2,8 +2,11 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
 <title>Template · Email 620px · Joel Burigo</title>
-<!-- Template email marketing (largura 620px, dark-mode-safe).
+<!-- Template email marketing (620px desktop · 100% mobile, dark-mode-safe).
      3 variantes: nurture, pitch VSS, reativação.
      IMPORTANTE: dentro do bloco do email, usar inline styles com valores
      literais (não var()). CSS no <head> é só pro preview. -->
@@ -18,6 +21,26 @@
   .subject{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.15em;color:#F5F1E8;background:#0B0B0B;border:1px solid rgba(255,255,255,0.08);padding:12px 16px;max-width:620px;width:100%;box-sizing:border-box;margin-bottom:16px}
   .subject b{color:#FF3B0F}
   .email{width:620px;max-width:100%}
+
+  /* Responsivo mobile (Gmail/Apple Mail/Outlook iOS suportam @media) */
+  @media only screen and (max-width:620px){
+    body{padding:16px 0 !important}
+    .stack{gap:32px !important}
+    .label,.subject{max-width:100% !important;padding-left:16px !important;padding-right:16px !important}
+    .email{width:100% !important}
+    .email td[data-mbl-pad]{padding:24px 20px !important}
+    .email td[data-mbl-pad-hero]{padding:32px 20px 16px !important}
+    .email td[data-mbl-pad-cta]{padding:16px 20px 28px !important}
+    .email td[data-mbl-pad-body]{padding:12px 20px !important;font-size:15px !important;line-height:1.55 !important}
+    .email h1[data-mbl-h1]{font-size:28px !important;line-height:1.08 !important}
+    .email h1[data-mbl-h1-big]{font-size:34px !important;line-height:1.05 !important}
+    .email [data-mbl-btn]{padding:0 20px !important;font-size:13px !important;height:44px !important;line-height:44px !important}
+  }
+
+  /* Dark mode (iOS Mail / Apple Mail / alguns clientes) */
+  @media (prefers-color-scheme: dark){
+    .email{background:#050505 !important}
+  }
 </style>
 </head>
 <body>
@@ -29,33 +52,33 @@
   <div class="subject"><b>Assunto:</b> Improviso mata mais empresa que crise</div>
   <table class="email" width="620" cellpadding="0" cellspacing="0" border="0" style="background:#050505;border-collapse:collapse">
     <!-- Header -->
-    <tr><td style="padding:28px 32px;border-bottom:1px solid rgba(255,255,255,0.08)">
+    <tr><td data-mbl-pad style="padding:28px 32px;border-bottom:1px solid rgba(255,255,255,0.08)">
       <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
         <td style="font-family:'Archivo Black',sans-serif;color:#F5F1E8;font-size:18px;letter-spacing:-0.02em;text-transform:uppercase">JOEL BURIGO</td>
         <td align="right" style="font-family:'JetBrains Mono',monospace;color:#6B7280;font-size:10px;letter-spacing:0.22em;text-transform:uppercase">// JB_CORE · REV. 2026.04</td>
       </tr></table>
     </td></tr>
     <!-- Hero -->
-    <tr><td style="padding:44px 32px 20px">
+    <tr><td data-mbl-pad-hero style="padding:44px 32px 20px">
       <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.28em;color:#C6FF00;text-transform:uppercase;margin-bottom:16px">// OBSERVAÇÃO · ED. SEMANAL</div>
-      <h1 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:36px;line-height:1.05;letter-spacing:-0.03em;text-transform:uppercase;color:#F5F1E8">O PROBLEMA NUNCA É <span style="color:#FF3B0F">MARKETING</span>.</h1>
+      <h1 data-mbl-h1 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:36px;line-height:1.05;letter-spacing:-0.03em;text-transform:uppercase;color:#F5F1E8">O PROBLEMA NUNCA É <span style="color:#FF3B0F">MARKETING</span>.</h1>
     </td></tr>
     <!-- Body -->
-    <tr><td style="padding:16px 32px;font-family:'Archivo',sans-serif;font-size:16px;line-height:1.6;color:#E5E5E5">
+    <tr><td data-mbl-pad-body style="padding:16px 32px;font-family:'Archivo',sans-serif;font-size:16px;line-height:1.6;color:#E5E5E5">
       <p style="margin:0 0 16px">Dono liga desesperado: "meu marketing não tá vendendo". Eu abro o funil. Campanhas rodando, leads entrando. Mas nada fecha.</p>
       <p style="margin:0 0 16px">O que tá quebrado? <b style="color:#F5F1E8">Vendas</b>. Sem processo, sem CRM, sem follow-up. Marketing empurra, vendas perde. Aí o dono demite a agência e contrata outra. Ciclo repete.</p>
       <p style="margin:0 0 16px">140+ MPEs depois, o padrão não muda. Quando vendas está quebrada, nenhum marketing salva. Por isso os 6Ps começam em P1 (Posicionamento) e terminam em P6 (Pessoas). Marketing é P4 — a meio caminho. Sem P1, P2, P3, P5 e P6 funcionando, P4 é desperdício de dinheiro.</p>
     </td></tr>
     <!-- CTA -->
-    <tr><td style="padding:20px 32px 36px">
+    <tr><td data-mbl-pad-cta style="padding:20px 32px 36px">
       <table cellpadding="0" cellspacing="0" border="0"><tr>
         <td style="background:#FF3B0F;padding:0" height="48">
-          <a href="https://joelburigo.com.br/vss" style="display:block;padding:0 28px;font-family:'Archivo Black',sans-serif;font-size:14px;letter-spacing:0.12em;color:#050505;text-decoration:none;line-height:48px;text-transform:uppercase">VER VSS COMPLETO →</a>
+          <a href="https://joelburigo.com.br/vss" data-mbl-btn style="display:block;padding:0 28px;font-family:'Archivo Black',sans-serif;font-size:14px;letter-spacing:0.12em;color:#050505;text-decoration:none;line-height:48px;text-transform:uppercase">VER VSS COMPLETO →</a>
         </td>
       </tr></table>
     </td></tr>
     <!-- Footer -->
-    <tr><td style="padding:24px 32px;border-top:1px solid rgba(255,255,255,0.08);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#6B7280;text-transform:uppercase;line-height:1.7">
+    <tr><td data-mbl-pad style="padding:24px 32px;border-top:1px solid rgba(255,255,255,0.08);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#6B7280;text-transform:uppercase;line-height:1.7">
       ★ SISTEMA &gt; IMPROVISO · @JOELBURIGO<br>
       Você está recebendo porque cadastrou em joelburigo.com.br.<br>
       <a href="#" style="color:#C6FF00;text-decoration:underline">Cancelar inscrição</a>
@@ -68,20 +91,20 @@
   <div class="label">// VARIANT 2 · PITCH VSS (conversão)</div>
   <div class="subject"><b>Assunto:</b> Os 6Ps que viraram ~R$ 1 bilhão em vendas</div>
   <table class="email" width="620" cellpadding="0" cellspacing="0" border="0" style="background:#050505;border-collapse:collapse">
-    <tr><td style="padding:28px 32px;border-bottom:1px solid rgba(255,255,255,0.08)">
+    <tr><td data-mbl-pad style="padding:28px 32px;border-bottom:1px solid rgba(255,255,255,0.08)">
       <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
         <td style="font-family:'Archivo Black',sans-serif;color:#F5F1E8;font-size:18px;letter-spacing:-0.02em;text-transform:uppercase">JOEL BURIGO</td>
         <td align="right" style="font-family:'JetBrains Mono',monospace;color:#6B7280;font-size:10px;letter-spacing:0.22em;text-transform:uppercase">// VSS · PITCH</td>
       </tr></table>
     </td></tr>
-    <tr><td style="padding:44px 32px 20px">
-      <h1 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:42px;line-height:1.02;letter-spacing:-0.035em;text-transform:uppercase;color:#F5F1E8">
+    <tr><td data-mbl-pad-hero style="padding:44px 32px 20px">
+      <h1 data-mbl-h1-big style="margin:0;font-family:'Archivo Black',sans-serif;font-size:42px;line-height:1.02;letter-spacing:-0.035em;text-transform:uppercase;color:#F5F1E8">
         <span style="color:#C6FF00">140+ MPES.</span><br>
         <span style="color:#F5F1E8">17 ANOS.</span><br>
         <span style="color:#FF3B0F">UM ÚNICO PLAYBOOK.</span>
       </h1>
     </td></tr>
-    <tr><td style="padding:16px 32px;font-family:'Archivo',sans-serif;font-size:16px;line-height:1.6;color:#E5E5E5">
+    <tr><td data-mbl-pad-body style="padding:16px 32px;font-family:'Archivo',sans-serif;font-size:16px;line-height:1.6;color:#E5E5E5">
       <p style="margin:0 0 20px">Depois de estruturar vendas pra 140+ MPEs em 17 anos — do barbeiro ao SaaS — eu notei que as mesmas 6 perguntas travam 100% dos negócios que não crescem:</p>
       <ul style="margin:0 0 20px;padding-left:0;list-style:none;font-family:'JetBrains Mono',monospace;font-size:14px;line-height:2;color:#F5F1E8">
         <li><span style="color:#C6FF00">P1 ·</span> Quem você é pro mercado?</li>
@@ -94,14 +117,14 @@
       <p style="margin:0 0 16px">Se tua resposta pra qualquer uma é "depende", teu negócio depende da sorte.</p>
       <p style="margin:0 0 16px"><b style="color:#F5F1E8">VSS é o playbook</b> — 90 dias, mentorias ao vivo, Growth CRM incluído 12 meses.<br>R$ 1.997 à vista ou 12× R$ 166,42.</p>
     </td></tr>
-    <tr><td style="padding:20px 32px 36px">
+    <tr><td data-mbl-pad-cta style="padding:20px 32px 36px">
       <table cellpadding="0" cellspacing="0" border="0"><tr>
         <td style="background:#FF3B0F;padding:0" height="48">
-          <a href="https://joelburigo.com.br/vss" style="display:block;padding:0 28px;font-family:'Archivo Black',sans-serif;font-size:14px;letter-spacing:0.12em;color:#050505;text-decoration:none;line-height:48px;text-transform:uppercase">LIGAR A MÁQUINA →</a>
+          <a href="https://joelburigo.com.br/vss" data-mbl-btn style="display:block;padding:0 28px;font-family:'Archivo Black',sans-serif;font-size:14px;letter-spacing:0.12em;color:#050505;text-decoration:none;line-height:48px;text-transform:uppercase">LIGAR A MÁQUINA →</a>
         </td>
       </tr></table>
     </td></tr>
-    <tr><td style="padding:24px 32px;border-top:1px solid rgba(255,255,255,0.08);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#6B7280;text-transform:uppercase;line-height:1.7">
+    <tr><td data-mbl-pad style="padding:24px 32px;border-top:1px solid rgba(255,255,255,0.08);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#6B7280;text-transform:uppercase;line-height:1.7">
       ★ SISTEMA &gt; IMPROVISO · BORA PRA CIMA<br>
       <a href="#" style="color:#C6FF00;text-decoration:underline">Cancelar inscrição</a>
     </td></tr>
@@ -113,28 +136,28 @@
   <div class="label">// VARIANT 3 · REATIVAÇÃO (lead frio)</div>
   <div class="subject"><b>Assunto:</b> Ainda perdendo dinheiro ou já estruturou?</div>
   <table class="email" width="620" cellpadding="0" cellspacing="0" border="0" style="background:#050505;border-collapse:collapse">
-    <tr><td style="padding:28px 32px;border-bottom:1px solid rgba(255,255,255,0.08)">
+    <tr><td data-mbl-pad style="padding:28px 32px;border-bottom:1px solid rgba(255,255,255,0.08)">
       <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
         <td style="font-family:'Archivo Black',sans-serif;color:#F5F1E8;font-size:18px;letter-spacing:-0.02em;text-transform:uppercase">JOEL BURIGO</td>
         <td align="right" style="font-family:'JetBrains Mono',monospace;color:#6B7280;font-size:10px;letter-spacing:0.22em;text-transform:uppercase">// REATIVAÇÃO</td>
       </tr></table>
     </td></tr>
-    <tr><td style="padding:44px 32px 20px">
-      <h1 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:40px;line-height:1.05;letter-spacing:-0.03em;text-transform:uppercase;color:#F5F1E8">VOCÊ SE INSCREVEU EM <span style="color:#C6FF00">DIAGNÓSTICO GRÁTIS</span> · NÃO APARECEU.</h1>
+    <tr><td data-mbl-pad-hero style="padding:44px 32px 20px">
+      <h1 data-mbl-h1 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:40px;line-height:1.05;letter-spacing:-0.03em;text-transform:uppercase;color:#F5F1E8">VOCÊ SE INSCREVEU EM <span style="color:#C6FF00">DIAGNÓSTICO GRÁTIS</span> · NÃO APARECEU.</h1>
     </td></tr>
-    <tr><td style="padding:16px 32px;font-family:'Archivo',sans-serif;font-size:16px;line-height:1.6;color:#E5E5E5">
+    <tr><td data-mbl-pad-body style="padding:16px 32px;font-family:'Archivo',sans-serif;font-size:16px;line-height:1.6;color:#E5E5E5">
       <p style="margin:0 0 16px">Faz alguns meses que você entrou na lista. Eu sei — empresário não tem tempo. Maior ironia da vida. Mas se ainda tá lendo meu email, é porque aquela dor não passou.</p>
       <p style="margin:0 0 16px">A oferta é a mesma: <b style="color:#F5F1E8">10 minutos de diagnóstico gratuito</b>. Não é pitch disfarçado. É uma conversa objetiva onde eu mapeio em qual dos 6Ps tá o gargalo.</p>
       <p style="margin:0 0 16px">Link abaixo. Se não for pra você, basta cancelar inscrição — sem ressentimento.</p>
     </td></tr>
-    <tr><td style="padding:20px 32px 36px">
+    <tr><td data-mbl-pad-cta style="padding:20px 32px 36px">
       <table cellpadding="0" cellspacing="0" border="0"><tr>
         <td style="background:#C6FF00;padding:0" height="48">
-          <a href="https://joelburigo.com.br/diagnostico" style="display:block;padding:0 28px;font-family:'Archivo Black',sans-serif;font-size:14px;letter-spacing:0.12em;color:#050505;text-decoration:none;line-height:48px;text-transform:uppercase">AGENDAR 10 MIN →</a>
+          <a href="https://joelburigo.com.br/diagnostico" data-mbl-btn style="display:block;padding:0 28px;font-family:'Archivo Black',sans-serif;font-size:14px;letter-spacing:0.12em;color:#050505;text-decoration:none;line-height:48px;text-transform:uppercase">AGENDAR 10 MIN →</a>
         </td>
       </tr></table>
     </td></tr>
-    <tr><td style="padding:24px 32px;border-top:1px solid rgba(255,255,255,0.08);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#6B7280;text-transform:uppercase;line-height:1.7">
+    <tr><td data-mbl-pad style="padding:24px 32px;border-top:1px solid rgba(255,255,255,0.08);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#6B7280;text-transform:uppercase;line-height:1.7">
       ★ 17+ ANOS · 140+ CLIENTES · ~R$ 1 BILHÃO<br>
       <a href="#" style="color:#C6FF00;text-decoration:underline">Cancelar inscrição</a>
     </td></tr>

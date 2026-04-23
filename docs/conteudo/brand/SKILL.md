@@ -42,7 +42,7 @@ Services (DWY) foi descontinuado.
 ## Iconography & tech overlays
 
 - Unicode `★` `→` `▶` `●` `▲ ▼` `//`. Lucide via CDN pra conjunto amplo. Proibido emoji facial.
-- Tech overlays: "JB_CORE v3.0", "REV. 2026.04", "SYS ONLINE", coordenadas Floripa, clock ao vivo. Dá densidade e autoridade técnica.
+- Tech overlays: "@joelburigo", "EST. 2008", "SYS ONLINE", coordenadas Floripa, clock ao vivo. Dá densidade e autoridade técnica.
 
 ## File map
 

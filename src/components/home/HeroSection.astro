@@ -2,23 +2,6 @@
 import Container from '../ui/Container.astro'
 ---
 
-<!-- Status bar topo (Terminal Growth) -->
-<div class="status-bar-top">
-  <div class="sb-left">
-    <span class="dot-live" aria-hidden="true"></span>
-    <span>SYS ONLINE</span>
-    <span class="sb-sep">·</span>
-    <span>JB_CORE v3.0</span>
-    <span class="sb-sep hide-sm">·</span>
-    <span class="hide-sm">REV. 2026.04</span>
-  </div>
-  <div class="sb-right hide-sm">
-    <span>FLORIANÓPOLIS/SC</span>
-    <span class="sb-sep">·</span>
-    <span>-27.59 / -48.55</span>
-  </div>
-</div>
-
 <section class="hero-section relative overflow-hidden bg-ink">
   <!-- Grid overlay assinatura -->
   <div class="grid-overlay"></div>
@@ -107,28 +90,6 @@ import Container from '../ui/Container.astro'
 </section>
 
 <style>
-  .status-bar-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--jb-fg-muted);
-    padding: 10px 24px;
-    border-bottom: 1px solid var(--jb-hair);
-    background: var(--jb-ink);
-    position: relative;
-    z-index: 5;
-  }
-  .sb-left, .sb-right { display: inline-flex; align-items: center; gap: 10px; }
-  .sb-sep { opacity: 0.5; }
-  @media (min-width: 768px) {
-    .status-bar-top { padding: 10px 40px; }
-  }
-
   .hero-section {
     position: relative;
     min-height: 92vh;

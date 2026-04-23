@@ -13,6 +13,9 @@ dist/
 .env.*.local
 .vercel
 
+# Cloudflare tunnel
+.cloudflared.token
+
 # IDE
 .vscode/
 .idea/

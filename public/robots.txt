@@ -14,7 +14,6 @@ Disallow: /advisory-obrigado
 Disallow: /diagnostico-resultado
 Disallow: /diagnostico-obrigado
 Disallow: /agendamento-sessao
-Disallow: /agendar-services
 
 # Checkout/status VSS
 Disallow: /vss-aguardando-pagamento

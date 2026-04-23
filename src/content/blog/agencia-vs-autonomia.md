@@ -153,7 +153,7 @@ Se você cancelar hoje e ninguém da sua empresa sabe dar continuidade, você n�
 <a name="modelo-autonomia"></a>
 ## O Modelo de Autonomia (Como EU Trabalho)
 
-Meu modelo é o oposto da agência tradicional. Se você quer implementação guiada com autonomia, veja [Implementation Services](/services).
+Meu modelo é o oposto da agência tradicional. Se você quer método guiado para implementar com autonomia, veja [Vendas Sem Segredos](/vendas-sem-segredos).
 
 **Objetivo:** Te ensinar o sistema completo para você rodar sozinho.
 

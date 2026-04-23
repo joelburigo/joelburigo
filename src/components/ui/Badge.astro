@@ -1,19 +1,22 @@
 ---
 interface Props {
-  variant?: 'primary' | 'secondary' | 'accent' | 'outline'
+  variant?: 'primary' | 'fire' | 'outline' | 'mute' | 'live'
   class?: string
 }
 
 const { variant = 'primary', class: className = '' } = Astro.props
 
+// Terminal Growth badges — mono uppercase tracking wide.
 const variants = {
-  primary: 'bg-lime/20 text-lime dark:bg-lime/20 dark:text-lime',
-  secondary: 'bg-royal-blue/20 text-royal-blue dark:bg-royal-blue/20 dark:text-royal-blue',
-  accent: 'bg-white/10 text-white dark:bg-white/10 dark:text-white',
-  outline: 'border-2 border-lime text-lime dark:border-lime dark:text-lime',
+  primary: 'bg-[color:var(--jb-acid-soft)] text-[color:var(--jb-acid)] border border-[color:var(--jb-acid-border)]',
+  fire: 'bg-[color:var(--jb-fire-soft)] text-[color:var(--jb-fire)] border border-[color:var(--jb-fire-border)]',
+  outline: 'border border-[color:var(--jb-hair-strong)] text-[color:var(--jb-cream)]',
+  mute: 'text-[color:var(--jb-fg-muted)] border border-[color:var(--jb-hair)]',
+  live: 'bg-[color:var(--jb-acid-soft)] text-[color:var(--jb-acid)] border border-[color:var(--jb-acid-border)]',
 }
 ---
 
-<span class={`inline-block rounded-full px-4 py-2 font-display font-bold text-sm ${variants[variant]} ${className}`}>
+<span class={`inline-flex items-center gap-2 px-3 py-1.5 rounded-none font-mono text-[11px] uppercase tracking-[0.22em] font-bold ${variants[variant]} ${className}`}>
+  {variant === 'live' && <span class="dot-live"></span>}
   <slot />
 </span>

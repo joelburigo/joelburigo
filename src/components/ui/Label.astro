@@ -5,17 +5,17 @@ interface Props {
   class?: string
 }
 
-const { 
+const {
   for: htmlFor,
   required = false,
-  class: className = ''
+  class: className = '',
 } = Astro.props
 ---
 
-<label 
+<label
   for={htmlFor}
-  class={`block font-sans text-sm font-medium text-dark dark:text-white mb-2 ${className}`}
+  class={`block font-mono text-[11px] uppercase tracking-[0.22em] font-bold text-[color:var(--jb-fg-muted)] mb-2 ${className}`}
 >
   <slot />
-  {required && <span class="text-lime">*</span>}
+  {required && <span class="text-[color:var(--jb-fire)]">*</span>}
 </label>

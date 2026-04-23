@@ -66,12 +66,6 @@ const seo = {
             📚 Vendas Sem Segredos
           </button>
           <button
-            class="filter-btn rounded-full border-2 border-white/20 bg-transparent px-6 py-2 font-display text-sm font-bold text-white transition-all hover:border-blue-400 hover:bg-blue-400/10"
-            data-filter="Services"
-          >
-            🎯 Services
-          </button>
-          <button
             class="filter-btn rounded-full border-2 border-white/20 bg-transparent px-6 py-2 font-display text-sm font-bold text-white transition-all hover:border-yellow-400 hover:bg-yellow-400/10"
             data-filter="Advisory"
           >
@@ -91,14 +85,8 @@ const seo = {
                     {caso.produto.includes("Vendas Sem Segredos") && (
                       <Icons name="graduation-cap" class="h-4 w-4 text-lime" />
                     )}
-                    {caso.produto.includes("Fundação") && (
-                      <Icons name="target" class="h-4 w-4 text-blue-400" />
-                    )}
-                    {caso.produto.includes("Aceleração") && (
-                      <Icons name="rocket" class="h-4 w-4 text-purple-400" />
-                    )}
-                    {caso.produto.includes("ScaleUp") && (
-                      <Icons name="zap" class="h-4 w-4 text-orange-400" />
+                    {caso.produto.includes("Advisory") && (
+                      <Icons name="briefcase" class="h-4 w-4 text-purple-400" />
                     )}
                     <span class="font-display text-xs font-bold text-lime">{caso.produto}</span>
                   </div>
@@ -161,8 +149,7 @@ const seo = {
           <Icons name="award" class="mx-auto mb-4 h-12 w-12 text-lime" />
           <h3 class="mb-4 font-display text-h3 text-white">Quer Resultados Assim?</h3>
           <p class="mb-6 font-sans text-body text-gray-200">
-            Escolha o formato ideal para o seu momento: educação (VSS), implementação (Services)
-            ou consultoria estratégica (Advisory).
+            Escolha o formato ideal para o seu momento: método DIY (VSS) ou consultoria estratégica 1:1 (Advisory).
           </p>
           <div class="flex flex-col justify-center gap-4 sm:flex-row">
             <a href="/vendas-sem-segredos">

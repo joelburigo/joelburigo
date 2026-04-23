@@ -39,24 +39,27 @@ const fullTitle = title.includes('Joel Burigo') ? title : `${title} | Joel Burig
     <!-- Disable Cloudflare Email Obfuscation -->
     <meta name="cloudflare-email-obfuscation" content="off" />
     
-    <!-- Inline Critical CSS -->
+    <!-- Inline Critical CSS (Terminal Growth) -->
     <style>
-      body{margin:0;background:#020617;color:#fff;font-family:system-ui,-apple-system,sans-serif}
-      .font-display{font-family:'Montserrat',system-ui,sans-serif;font-weight:700}
-      .font-body{font-family:'Inter',system-ui,sans-serif}
+      body{margin:0;background:#050505;color:#F5F1E8;font-family:'Archivo',system-ui,-apple-system,sans-serif}
+      .font-display{font-family:'Archivo Black',system-ui,sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:-0.035em}
+      .font-body{font-family:'Archivo',system-ui,sans-serif}
+      .font-mono{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace}
       *{box-sizing:border-box}
     </style>
-    
+
+    <meta name="theme-color" content="#050505" />
+
     <!-- Critical Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://connect.facebook.net" />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    
-    <!-- Preload Fonts (async CSS) -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" /></noscript>
+
+    <!-- Preload Fonts (Terminal Growth — Archivo Black + Archivo + JetBrains Mono) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" /></noscript>
     
     <!-- DNS Prefetch for Analytics (carregamento posterior) -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
@@ -101,16 +104,16 @@ const fullTitle = title.includes('Joel Burigo') ? title : `${title} | Joel Burig
     <!-- Structured Data -->
     <JsonLd />
   </head>
-  <body class="bg-dark text-white transition-colors">
+  <body class="bg-ink text-cream transition-colors">
     <slot />
     <CookieConsent />
-    
-    <!-- Inline Critical CSS para evitar FOUC -->
+
+    <!-- Inline Critical CSS para evitar FOUC (Terminal Growth) -->
     <style>
-      /* Critical Above-the-Fold Styles */
-      body { font-family: system-ui, -apple-system, sans-serif; }
-      .font-display { font-family: 'Montserrat', system-ui, sans-serif; }
-      .font-body { font-family: 'Inter', system-ui, sans-serif; }
+      body { font-family: 'Archivo', system-ui, -apple-system, sans-serif; }
+      .font-display { font-family: 'Archivo Black', system-ui, sans-serif; text-transform: uppercase; letter-spacing: -0.035em; font-weight: 900; }
+      .font-body { font-family: 'Archivo', system-ui, sans-serif; }
+      .font-mono { font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; }
     </style>
     
     <!-- Track page views on SPA navigation -->

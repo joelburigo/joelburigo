@@ -1,6 +1,6 @@
 ---
 interface Props {
-  type?: 'text' | 'email' | 'tel' | 'number'
+  type?: 'text' | 'email' | 'tel' | 'number' | 'url'
   placeholder?: string
   name: string
   id?: string
@@ -8,13 +8,13 @@ interface Props {
   class?: string
 }
 
-const { 
+const {
   type = 'text',
   placeholder,
   name,
   id,
   required = false,
-  class: className = ''
+  class: className = '',
 } = Astro.props
 ---
 
@@ -24,5 +24,5 @@ const {
   id={id || name}
   placeholder={placeholder}
   required={required}
-  class={`w-full px-4 py-3 rounded-lg bg-white dark:bg-white/5 border-2 border-gray-200 dark:border-white/10 text-dark dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-400 focus:border-lime dark:focus:border-lime focus:outline-none transition-colors ${className}`}
+  class={`w-full px-4 py-3 rounded-none bg-[color:var(--jb-ink-2)] border border-[color:var(--jb-hair)] text-[color:var(--jb-cream)] placeholder:text-[color:var(--jb-fg-muted)] focus:border-[color:var(--jb-acid)] focus:outline-none focus:ring-1 focus:ring-[color:var(--jb-acid)] transition-colors duration-[var(--jb-dur)] text-base ${className}`}
 />

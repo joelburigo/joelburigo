@@ -201,27 +201,6 @@ export const trackVSSInterest = () => {
   )
 }
 
-export const trackServicesInterest = (packageName?: string) => {
-  const value = packageName === 'fundacao' ? 3000 : packageName === 'aceleracao' ? 6000 : 9000
-
-  trackViewItem({
-    item_id: `services_${packageName || 'unknown'}`,
-    item_name: `Implementation Services - ${packageName || 'Unknown'}`,
-    value,
-    item_category: 'services',
-  })
-
-  trackEvent(
-    'services_interest',
-    {
-      service_package: packageName,
-      value,
-      currency: 'BRL',
-    },
-    { sendToServer: true }
-  )
-}
-
 export const trackAdvisoryInterest = (format?: string) => {
   const value =
     format === 'avulso' ? 997 : format === 'sprint' ? 7500 : format === 'conselho' ? 15000 : 0

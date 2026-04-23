@@ -1,214 +1,250 @@
 ---
 import Container from '../ui/Container.astro'
-import Button from '../ui/Button.astro'
-import Icons from '../ui/Icons.astro'
 
 const pathways = [
   {
-    icon: 'graduation-cap',
-    title: 'Vendas Sem Segredos',
-    subtitle: 'Quer fazer sozinho?',
-    description: 'Você aprende os 6Ps em 90 dias. Implementa no seu negócio com mentorias em grupo e suporte da equipe.',
-    price: '12x R$ 166,42',
-    priceHtml: true,
-    period: 'ou R$ 1.997 à vista',
-    features: [
-      '15 módulos práticos',
-      'CRM profissional incluído',
-      '48 mentorias ao vivo',
+    tag: 'PRODUTO PRINCIPAL',
+    title: 'VSS — Vendas Sem Segredos',
+    subtitle: 'Quer implementar com método próprio?',
+    description:
+      'DIY perpétuo. Você recebe o Framework 6Ps completo, 15 módulos, 48 mentorias ao vivo com Joel no ano e Growth CRM incluso. Implementa com autonomia em 90 dias guiados.',
+    price: '12× R$ 166,42',
+    priceNote: 'ou R$ 1.997 à vista · acesso vitalício',
+    bullets: [
+      '15 módulos implementáveis (90 dias)',
+      '48 mentorias ao vivo com Joel · 1/semana',
+      'Growth CRM incluído (12 meses)',
       'Comunidade exclusiva',
     ],
     link: '/vendas-sem-segredos',
-    buttonText: 'Ver Programa Completo',
-    buttonVariant: 'primary' as const,
-    idealFor: 'Empreendedores que querem autonomia',
-    badge: 'MAIS POPULAR',
-    color: 'lime' as const,
+    cta: 'Ver VSS completo',
+    ideal: 'MPE R$ 10–100k/mês · hands-on',
+    feat: true,
   },
   {
-    icon: 'wrench',
-    title: 'Services (DWY)',
-    subtitle: 'Quer minha equipe fazendo junto?',
-    description: 'Minha equipe faz JUNTO com você. Implementamos os 6Ps enquanto você aprende.',
-    price: 'Sob Consulta',
-    period: 'Projeto ou Retainer',
-    features: [
-      'CRM configurado do zero',
-      'Funis e automações',
-      'Campanhas de tráfego',
-      'Gestão completa',
-    ],
-    link: '/services',
-    buttonText: 'Conhecer Serviço',
-    buttonVariant: 'outline' as const,
-    idealFor: 'Empresas que querem delegar tudo',
-    badge: null,
-    color: 'blue' as const,
-  },
-  {
-    icon: 'briefcase',
-    title: 'Advisory 1:1',
-    subtitle: 'Quer acesso direto a mim?',
-    description: 'Sessões mensais 1:1 pra decisões críticas. Acesso direto no WhatsApp. Minha mente no seu negócio.',
-    price: 'Sob Aplicação',
-    period: 'Vagas limitadas',
-    features: [
-      'Sessões mensais 1-on-1',
-      'Acesso direto via WhatsApp',
-      'Análise de estratégia',
-      'Mínimo 6 meses',
+    tag: 'EXCLUSIVO · POR CONVITE',
+    title: 'Advisory — Acesso direto ao Joel',
+    subtitle: 'Quer minha mente no seu negócio?',
+    description:
+      'Premium 1:1. Três formatos: Sessão avulsa, Sprint 30 dias ou Conselho Executivo. Acesso WhatsApp prioritário. Não faço por você — decido com você.',
+    price: 'R$ 997–15.000/mês',
+    priceNote: 'sessão, sprint ou conselho · avaliação prévia',
+    bullets: [
+      'Sessão Estratégica · R$ 997 · 90 min',
+      'Sprint 30 dias · R$ 7.500 · 4 sessões',
+      'Conselho Executivo · R$ 12.500–15k/mês',
+      'Garantia: 1ª sessão ou reembolso',
     ],
     link: '/advisory',
-    buttonText: 'Ver Detalhes',
-    buttonVariant: 'outline' as const,
-    idealFor: 'CEOs que precisam de sparring partner',
-    badge: null,
-    color: 'blue' as const,
+    cta: 'Solicitar Advisory',
+    ideal: 'R$ 200k+/mês · momento crítico',
+    feat: false,
   },
 ]
 ---
 
-<section class="relative overflow-hidden bg-dark py-16 md:py-24 lg:py-32">
-  <!-- Background decoration -->
+<section class="pathways-section section bg-ink relative overflow-hidden">
+  <div class="grid-overlay"></div>
 
   <Container class="relative z-10">
-    <div class="mx-auto mb-20 max-w-3xl text-center">
-      <span class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-1.5 text-sm font-display font-bold text-lime backdrop-blur-sm">
-        OS 3 CAMINHOS
-      </span>
-      <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
-        Como Posso <span class="text-lime">Te Ajudar</span>
+    <!-- Section head -->
+    <div class="section-head">
+      <div class="kicker">// 04_CAMINHOS</div>
+      <div class="mono section-head-meta">2 FORMAS DE TRABALHAR COMIGO</div>
+    </div>
+    <div class="hair-divider"></div>
+
+    <!-- Intro -->
+    <div class="pw-intro">
+      <h2 class="pw-title">
+        DOIS <span class="stroke-text">CAMINHOS</span>.<br />
+        <span class="text-acid">ZERO</span> MEIO-TERMO.
       </h2>
-      <p class="mb-4 font-sans text-body-lg text-gray-200">
-        Três formas de trabalhar comigo. Todas baseadas nos 6Ps.
-      </p>
-      <p class="font-sans text-body text-gray-400">
-        Escolhe o formato que faz mais sentido pro seu momento e faturamento
+      <p class="pw-lede">
+        Ou você pega o método e implementa com apoio em grupo (VSS). Ou você quer acesso direto pra decidir junto comigo (Advisory). Não existe terceirização — eu não faço POR você.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
-      {pathways.map((pathway, index) => {
-        const delay = index * 0.2
-        return (
-          <div class="pathway-card group" style={`animation-delay: ${delay}s`}>
-            <div class={`relative flex h-full flex-col overflow-hidden rounded-2xl border-2 transition-all duration-300 ${
-              pathway.badge 
-                ? 'border-lime bg-dark shadow-2xl shadow-lime/20 hover:shadow-lime/30' 
-                : 'border-white/10 bg-white/5 backdrop-blur-sm hover:border-white/20'
-            }`}>
-              {/* Badge */}
-              {pathway.badge && (
-                <div class="absolute -right-12 top-6 rotate-45 bg-lime px-12 py-1">
-                  <span class="font-display text-xs font-bold uppercase tracking-wide text-dark">
-                    {pathway.badge}
-                  </span>
-                </div>
-              )}
+    <!-- Grid 2 caminhos -->
+    <div class="pw-grid">
+      {pathways.map((p) => (
+        <article class={p.feat ? 'card-feat pw-card pw-card-feat' : 'card pw-card'}>
+          {p.feat && <div class="pw-ribbon">★ PRINCIPAL</div>}
 
-              <div class="p-8">
-                {/* Icon */}
-                <div class={`mb-6 flex h-16 w-16 items-center justify-center rounded-2xl ${
-                  pathway.badge 
-                    ? 'bg-lime/20 text-lime' 
-                    : 'bg-white/10 text-white'
-                }`}>
-                  <Icons name={pathway.icon} class="h-8 w-8" />
-                </div>
+          <div class="pw-tag mono">{p.tag}</div>
+          <h3 class="pw-card-title">{p.title}</h3>
+          <p class="pw-subtitle">{p.subtitle}</p>
+          <p class="pw-desc">{p.description}</p>
 
-                {/* Title */}
-                <h3 class="mb-4 font-display text-h2 text-white">{pathway.title}</h3>
-                
-                {/* Subtitle - DESTAQUE */}
-                <div class={`mb-6 rounded-xl p-4 ${
-                  pathway.badge 
-                    ? 'bg-lime/10 border-2 border-lime/30' 
-                    : 'bg-white/5 border-2 border-white/10'
-                }`}>
-                  <p class={`font-display text-h3 font-extrabold italic ${
-                    pathway.badge ? 'text-lime' : 'text-white'
-                  }`}>
-                    {pathway.subtitle}
-                  </p>
-                </div>
+          <ul class="pw-bullets">
+            {p.bullets.map((b) => (
+              <li class="pw-bullet">
+                <span class="pw-check" aria-hidden="true">▶</span>
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
 
-                {/* Description */}
-                <p class="mb-8 font-sans text-body text-gray-200">
-                  {pathway.description}
-                </p>
-
-                {/* Features */}
-                <ul class="mb-8 space-y-3">
-                  {pathway.features.map((feature) => (
-                    <li class="flex items-start gap-3 font-sans text-body-sm text-gray-200">
-                      <Icons name="check" class={`h-5 w-5 shrink-0 ${pathway.badge ? 'text-lime' : 'text-white/90'}`} />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Price */}
-                <div class="mb-8 border-t border-white/10 pt-6">
-                  <p class={`font-display text-3xl font-bold ${pathway.badge ? 'text-lime' : 'text-white'}`}>
-                    {pathway.priceHtml ? (
-                      <>
-                        <span class="text-xl align-top">12x</span> R$ 166,42
-                      </>
-                    ) : (
-                      pathway.price
-                    )}
-                  </p>
-                  <p class="font-sans text-body-sm text-gray-400">{pathway.period}</p>
-                </div>
-
-                {/* Button */}
-                <a href={pathway.link} class="block w-full">
-                  <Button
-                    variant={pathway.buttonVariant}
-                    class={`w-full ${
-                      pathway.badge
-                        ? '!bg-lime !text-dark hover:!bg-lime/90'
-                        : 'border-white! text-white! hover:bg-white/10!'
-                    }`}
-                  >
-                    {pathway.buttonText}
-                  </Button>
-                </a>
-
-                {/* Link para Jornada 90 dias - apenas no VSS */}
-                {pathway.badge && (
-                  <a href="/jornada-90-dias" class="mt-4 flex items-center justify-center gap-2 font-sans text-xs text-lime transition-colors hover:text-lime/80">
-                    Ver jornada detalhada dos 90 dias
-                    <Icons name="arrow-right" class="h-3 w-3" />
-                  </a>
-                )}
-
-                <p class={pathway.badge ? 'mt-2 text-center font-sans text-xs text-gray-400' : 'mt-4 text-center font-sans text-xs text-gray-400'}>
-                  Ideal para: {pathway.idealFor}
-                </p>
-              </div>
-            </div>
+          <div class="pw-price-wrap">
+            <div class={p.feat ? 'pw-price text-acid' : 'pw-price text-cream'}>{p.price}</div>
+            <div class="pw-price-note mono">{p.priceNote}</div>
           </div>
-        )
-      })}
+
+          <a href={p.link} class={p.feat ? 'btn-primary pw-cta' : 'btn-secondary pw-cta'}>
+            <span>{p.cta}</span>
+            <span aria-hidden="true">→</span>
+          </a>
+
+          <div class="pw-ideal mono">Pra quem: <span class="text-cream">{p.ideal}</span></div>
+        </article>
+      ))}
     </div>
   </Container>
 </section>
 
 <style>
-  .pathway-card {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out forwards;
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .section-head-meta { font-size: 11px; color: var(--jb-fg-muted); }
+
+  .pw-intro {
+    padding-top: clamp(2rem, 4vw, 3rem);
+    padding-bottom: clamp(2rem, 4vw, 3rem);
+    max-width: 960px;
+  }
+  .pw-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    line-height: 0.92;
+    font-size: clamp(2.25rem, 6vw, 4rem);
+    color: var(--jb-cream);
+    margin: 0 0 1.5rem 0;
+  }
+  .pw-lede {
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    line-height: 1.6;
+    color: var(--jb-cream);
+    text-transform: none;
+    margin: 0;
+    max-width: 60ch;
   }
 
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .pw-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
+  @media (min-width: 900px) { .pw-grid { grid-template-columns: 1fr 1fr; } }
+
+  .pw-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    position: relative;
+  }
+  .pw-card-feat { position: relative; }
+  .pw-ribbon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--jb-acid);
+    color: var(--jb-ink);
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    padding: 6px 14px;
+  }
+
+  .pw-tag {
+    font-size: 11px;
+    color: var(--jb-acid);
+    letter-spacing: 0.24em;
+    margin-bottom: 0.25rem;
+  }
+  .pw-card-feat .pw-tag { color: var(--jb-acid); }
+
+  .pw-card-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    font-size: clamp(1.5rem, 3vw, 2.125rem);
+    line-height: 1.05;
+    color: var(--jb-cream);
+    margin: 0;
+  }
+
+  .pw-subtitle {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    font-size: 1rem;
+    color: var(--jb-fire);
+    margin: 0;
+  }
+  .pw-card-feat .pw-subtitle { color: var(--jb-acid); }
+
+  .pw-desc {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--jb-fg-2);
+    margin: 0;
+    text-transform: none;
+  }
+
+  .pw-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-top: 1px solid var(--jb-hair);
+    border-bottom: 1px solid var(--jb-hair);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .pw-bullet {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    color: var(--jb-cream);
+    text-transform: none;
+    line-height: 1.45;
+  }
+  .pw-check { color: var(--jb-acid); font-size: 12px; margin-top: 2px; flex-shrink: 0; }
+
+  .pw-price-wrap { display: flex; flex-direction: column; gap: 0.25rem; padding-top: 0.5rem; }
+  .pw-price {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .pw-price-note { font-size: 11px; color: var(--jb-fg-muted); letter-spacing: 0.16em; }
+
+  .pw-cta { align-self: flex-start; margin-top: 0.5rem; }
+  .pw-ideal {
+    font-size: 11px;
+    color: var(--jb-fg-muted);
+    letter-spacing: 0.18em;
+    padding-top: 0.5rem;
+  }
+  .pw-ideal .text-cream { letter-spacing: 0.1em; }
 </style>

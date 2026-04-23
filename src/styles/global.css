@@ -1,65 +1,92 @@
 /* ========================================
-   JOEL BURIGO - DESIGN SYSTEM
+   JOEL BURIGO — TERMINAL GROWTH
+   Design system em produção (migrado de royal-blue/lime → fire/acid)
+   Fonte canônica: docs/conteudo/brand/colors_and_type.css
    ======================================== */
 
 @import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
 
 /* ========================================
-   THEME TOKENS (Tailwind v4)
+   THEME TOKENS (Tailwind v4 — geram utilities automáticas)
    ======================================== */
 
 @theme {
-  /* Brand Colors */
-  --color-royal-blue: #1d4ed8;
-  --color-lime: #a3ff3f;
+  /* Accent — FIRE (urgência, alerta, CTA primário) */
+  --color-fire: #FF3B0F;
+  --color-fire-hot: #FF6A3D;
+  --color-fire-deep: #D93D12;
 
-  /* Dark Mode Palette */
-  --color-dark: #020617;
-  --color-dark-gray: #111827;
+  /* Accent — ACID (growth, sucesso, tech) */
+  --color-acid: #C6FF00;
+  --color-acid-hot: #D6FF3D;
+  --color-acid-deep: #9ACC00;
 
-  /* Light Mode Palette */
-  --color-light-gray: #e5e7eb;
-  --color-off-white: #f9fafb;
+  /* Accent — CYAN (dados ao vivo, reserva) */
+  --color-cyan: #00E0FF;
+
+  /* Surfaces */
+  --color-ink: #050505;
+  --color-ink-2: #0B0B0B;
+  --color-ink-3: #121212;
+
+  /* Foreground */
+  --color-cream: #F5F1E8;
+  --color-cream-dim: #E8E2D4;
+  --color-fg-2: #E5E5E5;
+  --color-fg-3: #A3A3A3;
+  --color-fg-muted: #6B7280;
+
+  /* Legacy aliases — durante migração, mantêm classes antigas funcionando.
+     Remover depois de auditoria completa (fase post-migration). */
+  --color-royal-blue: var(--color-fire);
+  --color-lime: var(--color-acid);
+  --color-dark: var(--color-ink);
+  --color-dark-gray: var(--color-ink-2);
+  --color-light-gray: var(--color-fg-3);
+  --color-off-white: var(--color-cream);
 
   /* Fonts */
-  --font-display: 'Montserrat', sans-serif;
-  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Archivo Black', system-ui, sans-serif;
+  --font-sans: 'Archivo', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
 
-  /* Font Sizes (text-*) */
-  --text-display-lg: 3.5rem;
-  --text-display-lg--line-height: 1.1;
-  --text-display-lg--letter-spacing: -0.02em;
-  --text-display-lg--font-weight: 800;
+  /* Type scale — Terminal Growth (--jb-fs-*) */
+  --text-display-lg: 5rem;        /* 80px — hero H1 */
+  --text-display-lg--line-height: 0.9;
+  --text-display-lg--letter-spacing: -0.045em;
+  --text-display-lg--font-weight: 900;
 
-  --text-display-md: 3rem;
-  --text-display-md--line-height: 1.1;
-  --text-display-md--letter-spacing: -0.02em;
-  --text-display-md--font-weight: 800;
+  --text-display-md: 3.5rem;      /* 56px — H2 */
+  --text-display-md--line-height: 0.92;
+  --text-display-md--letter-spacing: -0.04em;
+  --text-display-md--font-weight: 900;
 
-  --text-display-sm: 2.5rem;
-  --text-display-sm--line-height: 1.2;
-  --text-display-sm--letter-spacing: -0.01em;
-  --text-display-sm--font-weight: 800;
+  --text-display-sm: 2.5rem;      /* 40px — H3 */
+  --text-display-sm--line-height: 1.0;
+  --text-display-sm--letter-spacing: -0.035em;
+  --text-display-sm--font-weight: 900;
 
   --text-h1: 2.25rem;
-  --text-h1--line-height: 1.2;
-  --text-h1--letter-spacing: -0.01em;
-  --text-h1--font-weight: 700;
+  --text-h1--line-height: 1.1;
+  --text-h1--letter-spacing: -0.03em;
+  --text-h1--font-weight: 900;
 
-  --text-h2: 1.875rem;
-  --text-h2--line-height: 1.3;
-  --text-h2--font-weight: 700;
+  --text-h2: 1.75rem;
+  --text-h2--line-height: 1.15;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h2--font-weight: 900;
 
   --text-h3: 1.5rem;
-  --text-h3--line-height: 1.4;
-  --text-h3--font-weight: 600;
+  --text-h3--line-height: 1.25;
+  --text-h3--font-weight: 700;
 
   --text-h4: 1.25rem;
-  --text-h4--line-height: 1.4;
-  --text-h4--font-weight: 600;
+  --text-h4--line-height: 1.3;
+  --text-h4--font-weight: 700;
 
   --text-body-lg: 1.125rem;
-  --text-body-lg--line-height: 1.7;
+  --text-body-lg--line-height: 1.55;
 
   --text-body: 1rem;
   --text-body--line-height: 1.6;
@@ -67,58 +94,97 @@
   --text-body-sm: 0.875rem;
   --text-body-sm--line-height: 1.5;
 
-  --text-label: 0.875rem;
+  --text-label: 0.75rem;
   --text-label--line-height: 1.25;
+  --text-label--letter-spacing: 0.22em;
   --text-label--font-weight: 500;
-  --text-label--letter-spacing: 0.025em;
 
-  --text-caption: 0.75rem;
+  --text-caption: 0.6875rem;     /* 11px — mono micro-copy */
   --text-caption--line-height: 1.25;
+  --text-caption--letter-spacing: 0.24em;
 
-  /* Custom Spacing Scale */
-  --spacing-section: 6rem;
-  --spacing-section-sm: 4rem;
-  --spacing-content: 2rem;
-  --spacing-element: 1rem;
+  /* Spacing scale (--jb-sp-*, múltiplos de 4px) */
+  --spacing-section: 6rem;        /* 96px */
+  --spacing-section-sm: 4rem;     /* 64px */
+  --spacing-content: 2rem;        /* 32px */
+  --spacing-element: 1rem;        /* 16px */
 
-  /* Custom Animations */
-  --animate-bounce-slow: bounce 3s infinite;
-  --animate-fade-in: fadeIn 0.6s ease-out;
-  --animate-slide-up: slideUp 0.6s ease-out;
+  /* Animations — brutalist easing */
+  --animate-fade-in: fadeIn 180ms cubic-bezier(0.2, 0.9, 0.2, 1);
+  --animate-slide-up: slideUp 180ms cubic-bezier(0.2, 0.9, 0.2, 1);
+  --animate-pulse-slow: pulse 1.6s infinite;
 }
 
 /* ========================================
-   CSS CUSTOM PROPERTIES (runtime tokens)
+   CSS CUSTOM PROPERTIES (runtime tokens + --jb-* aliases)
    ======================================== */
 
 :root {
-  /* Semantic Colors */
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #d1d5db;
-  --color-text-tertiary: #9ca3af;
-  --color-bg-primary: var(--color-dark);
-  --color-bg-secondary: var(--color-dark-gray);
-  --color-border: rgba(255, 255, 255, 0.1);
+  /* Namespaced aliases — uso direto via var(--jb-*) em componentes.
+     Compatível 1:1 com docs/conteudo/brand/colors_and_type.css */
+  --jb-ink: #050505;
+  --jb-ink-2: #0B0B0B;
+  --jb-ink-3: #121212;
+  --jb-cream: #F5F1E8;
+  --jb-cream-dim: #E8E2D4;
+  --jb-fg-1: #FFFFFF;
+  --jb-fg-2: #E5E5E5;
+  --jb-fg-3: #A3A3A3;
+  --jb-fg-muted: #6B7280;
+  --jb-fire: #FF3B0F;
+  --jb-fire-hot: #FF6A3D;
+  --jb-fire-deep: #D93D12;
+  --jb-fire-soft: rgba(255, 59, 15, 0.12);
+  --jb-fire-soft-2: rgba(255, 59, 15, 0.20);
+  --jb-fire-border: rgba(255, 59, 15, 0.35);
+  --jb-fire-glow: rgba(255, 59, 15, 0.35);
+  --jb-acid: #C6FF00;
+  --jb-acid-hot: #D6FF3D;
+  --jb-acid-deep: #9ACC00;
+  --jb-acid-soft: rgba(198, 255, 0, 0.10);
+  --jb-acid-soft-2: rgba(198, 255, 0, 0.20);
+  --jb-acid-border: rgba(198, 255, 0, 0.35);
+  --jb-acid-glow: rgba(198, 255, 0, 0.35);
+  --jb-cyan: #00E0FF;
+  --jb-accent-ink: #050505;
+  --jb-hair: rgba(255, 255, 255, 0.08);
+  --jb-hair-strong: rgba(255, 255, 255, 0.16);
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
-  --shadow-glow-lime: 0 0 30px rgba(163, 255, 63, 0.2);
-  --shadow-glow-blue: 0 0 30px rgba(29, 78, 216, 0.2);
+  /* Semantic (used by existing components) */
+  --color-text-primary: var(--jb-cream);
+  --color-text-secondary: var(--jb-fg-2);
+  --color-text-tertiary: var(--jb-fg-3);
+  --color-bg-primary: var(--jb-ink);
+  --color-bg-secondary: var(--jb-ink-2);
+  --color-border: var(--jb-hair);
 
-  /* Borders */
-  --border-radius-sm: 0.5rem;
-  --border-radius-md: 0.75rem;
-  --border-radius-lg: 1rem;
-  --border-radius-xl: 1.5rem;
-  --border-radius-2xl: 2rem;
+  /* Shadows (brutalist — só offset duros, sem blur exceto dot pulse) */
+  --shadow-sm: 2px 2px 0 var(--jb-hair-strong);
+  --shadow-md: 4px 4px 0 var(--jb-fire);
+  --shadow-lg: 6px 6px 0 var(--jb-acid);
+  --shadow-xl: 8px 8px 0 var(--jb-fire);
+  --shadow-terminal: 0 40px 80px rgba(0, 0, 0, 0.6);
+  /* Legacy aliases — manter até purga */
+  --shadow-glow-lime: var(--shadow-md);
+  --shadow-glow-blue: var(--shadow-lg);
+
+  /* Borders (radius 0 é assinatura brutalist) */
+  --border-radius-sm: 0;
+  --border-radius-md: 0;
+  --border-radius-lg: 0;
+  --border-radius-xl: 0;
+  --border-radius-2xl: 0;
 
   /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-base: 300ms ease;
-  --transition-slow: 500ms ease;
+  --jb-dur: 180ms;
+  --jb-ease: cubic-bezier(0.2, 0.9, 0.2, 1);
+  --transition-fast: 120ms var(--jb-ease);
+  --transition-base: var(--jb-dur) var(--jb-ease);
+  --transition-slow: 320ms var(--jb-ease);
+
+  /* Layout */
+  --jb-container-max: 1360px;
+  --jb-grid-size: 80px;
 }
 
 /* ========================================
@@ -130,11 +196,38 @@ html {
 }
 
 body {
+  margin: 0;
+  background: var(--jb-ink);
+  color: var(--jb-cream);
   font-family: var(--font-sans);
-  background-color: var(--color-bg-primary);
-  color: var(--color-text-primary);
+  font-size: 15px;
+  line-height: 1.45;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+}
+
+::selection {
+  background: var(--jb-acid);
+  color: var(--jb-ink);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: var(--font-display);
+  color: var(--jb-cream);
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+p { margin: 0; color: var(--jb-fg-2); }
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-base);
 }
 
 /* ========================================
@@ -145,117 +238,158 @@ body {
   .text-display-lg {
     font-family: var(--font-display);
     font-size: var(--text-display-lg);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.045em;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 
   .text-display-md {
     font-family: var(--font-display);
     font-size: var(--text-display-md);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    font-weight: 800;
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 
   .text-display-sm {
     font-family: var(--font-display);
     font-size: var(--text-display-sm);
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.035em;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 
-  .heading-1 {
-    font-family: var(--font-display);
-    font-size: var(--text-h1);
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-    font-weight: 700;
+  .heading-1 { font-family: var(--font-display); font-size: var(--text-h1); line-height: 1.1; letter-spacing: -0.03em; font-weight: 900; text-transform: uppercase; }
+  .heading-2 { font-family: var(--font-display); font-size: var(--text-h2); line-height: 1.15; letter-spacing: -0.02em; font-weight: 900; text-transform: uppercase; }
+  .heading-3 { font-family: var(--font-display); font-size: var(--text-h3); line-height: 1.25; font-weight: 700; text-transform: uppercase; }
+  .heading-4 { font-family: var(--font-display); font-size: var(--text-h4); line-height: 1.3; font-weight: 700; text-transform: uppercase; }
+
+  .body-lg { font-family: var(--font-sans); font-size: var(--text-body-lg); line-height: 1.55; }
+  .body { font-family: var(--font-sans); font-size: var(--text-body); line-height: 1.6; }
+  .body-sm { font-family: var(--font-sans); font-size: var(--text-body-sm); line-height: 1.5; }
+
+  .mono {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--jb-fg-muted);
   }
 
-  .heading-2 {
-    font-family: var(--font-display);
-    font-size: var(--text-h2);
-    line-height: 1.3;
-    font-weight: 700;
+  .kicker {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    color: var(--jb-acid);
+    text-transform: uppercase;
   }
 
-  .heading-3 {
-    font-family: var(--font-display);
-    font-size: var(--text-h3);
-    line-height: 1.4;
-    font-weight: 600;
-  }
-
-  .heading-4 {
-    font-family: var(--font-display);
-    font-size: var(--text-h4);
-    line-height: 1.4;
-    font-weight: 600;
-  }
-
-  .body-lg {
-    font-family: var(--font-sans);
-    font-size: var(--text-body-lg);
-    line-height: 1.7;
-  }
-
-  .body {
-    font-family: var(--font-sans);
-    font-size: var(--text-body);
-    line-height: 1.6;
-  }
-
-  .body-sm {
-    font-family: var(--font-sans);
-    font-size: var(--text-body-sm);
-    line-height: 1.5;
-  }
+  /* ========================================
+     SIGNATURE COMPONENTS (brutalist)
+     ======================================== */
 
   .card {
-    background: var(--color-bg-secondary);
-    border: 2px solid var(--color-border);
-    border-radius: var(--border-radius-xl);
+    background: var(--jb-ink-2);
+    border: 1px solid var(--jb-hair);
+    border-radius: 0;
     padding: 2rem;
     transition: all var(--transition-base);
   }
 
   .card:hover {
-    border-color: var(--color-lime);
-    box-shadow: var(--shadow-glow-lime);
+    border-color: var(--jb-fire);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--jb-fire);
+  }
+
+  .card-feat {
+    background: linear-gradient(180deg, rgba(198, 255, 0, 0.06), var(--jb-ink-2));
+    border: 1px solid var(--jb-acid-border);
+  }
+
+  .card-feat:hover {
+    border-color: var(--jb-acid);
+    box-shadow: 6px 6px 0 var(--jb-acid);
   }
 
   .btn-primary {
-    background: var(--color-lime);
-    color: var(--color-dark);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--jb-acid);
+    color: var(--jb-ink);
     font-family: var(--font-display);
-    font-weight: 700;
-    padding: 1rem 2rem;
-    border-radius: var(--border-radius-lg);
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 0.875rem 1.75rem;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 4px 4px 0 var(--jb-fire);
     transition: all var(--transition-base);
-    box-shadow: var(--shadow-glow-lime);
+    cursor: pointer;
   }
 
   .btn-primary:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 40px rgba(163, 255, 63, 0.3);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--jb-fire);
+  }
+
+  .btn-primary:active {
+    transform: translate(0, 0);
+    box-shadow: 2px 2px 0 var(--jb-fire);
+  }
+
+  .btn-fire {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--jb-fire);
+    color: var(--jb-ink);
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 0.875rem 1.75rem;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 4px 4px 0 var(--jb-acid);
+    transition: all var(--transition-base);
+    cursor: pointer;
+  }
+
+  .btn-fire:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--jb-acid);
   }
 
   .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     background: transparent;
-    color: var(--color-text-primary);
-    border: 2px solid var(--color-text-primary);
+    color: var(--jb-cream);
     font-family: var(--font-display);
-    font-weight: 600;
-    padding: 1rem 2rem;
-    border-radius: var(--border-radius-lg);
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 0.875rem 1.75rem;
+    border: 1px solid var(--jb-cream);
+    border-radius: 0;
     transition: all var(--transition-base);
+    cursor: pointer;
   }
 
   .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: scale(1.05);
+    background: rgba(245, 241, 232, 0.06);
+    border-color: var(--jb-acid);
+    color: var(--jb-acid);
   }
 
   .section {
@@ -267,10 +401,57 @@ body {
     padding-top: var(--spacing-section-sm);
     padding-bottom: var(--spacing-section-sm);
   }
+
+  /* ========================================
+     SIGNATURE UTILITIES
+     ======================================== */
+
+  .stroke-text {
+    -webkit-text-stroke: 2px var(--jb-cream);
+    color: transparent;
+  }
+
+  .grid-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: var(--jb-grid-size) var(--jb-grid-size);
+  }
+
+  .dot-live {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: var(--jb-acid);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--jb-acid);
+    animation: pulse 1.6s infinite;
+  }
+
+  .status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--jb-fg-muted);
+    padding: 10px 40px;
+    border-bottom: 1px solid var(--jb-hair);
+  }
+
+  .hair-divider {
+    border-top: 1px solid var(--jb-hair);
+  }
 }
 
 /* ========================================
-   CUSTOM SCROLLBAR
+   SCROLLBAR (acid accent)
    ======================================== */
 
 ::-webkit-scrollbar {
@@ -278,16 +459,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-dark-gray);
+  background: var(--jb-ink-2);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(163, 255, 63, 0.3);
-  border-radius: 5px;
+  background: var(--jb-acid-border);
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(163, 255, 63, 0.5);
+  background: var(--jb-acid);
 }
 
 /* ========================================
@@ -295,43 +476,52 @@ body {
    ======================================== */
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  50% { opacity: 0.3; }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ========================================
+   MOBILE ADJUSTMENTS
+   ======================================== */
+
+@media (max-width: 640px) {
+  :root {
+    --spacing-section: 4rem;
+    --spacing-section-sm: 2.5rem;
+    --jb-grid-size: 60px;
   }
-  to {
-    opacity: 1;
-    transform: scale(1);
+
+  .status-bar {
+    padding: 10px 20px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+  }
+
+  /* iOS anti-autozoom em inputs */
+  input, textarea, select {
+    font-size: 16px !important;
   }
 }

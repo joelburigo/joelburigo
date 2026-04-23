@@ -6,6 +6,6 @@ interface Props {
 const { class: className = '' } = Astro.props
 ---
 
-<span class={`font-display text-2xl tracking-tight ${className}`}>
-  <span class="font-black text-white">JOEL</span><span class="font-medium text-lime">BURIGO</span>
+<span class={`font-display inline-flex items-baseline text-xl tracking-[-0.04em] ${className}`}>
+  <span class="text-[color:var(--jb-cream)]">JOEL</span><span class="text-[color:var(--jb-fg-muted)] mx-1">|</span><span class="text-[color:var(--jb-fire)]">BURIGO</span>
 </span>

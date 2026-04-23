@@ -5,34 +5,42 @@ interface Props {
   hoverEffect?: boolean
   onClick?: string
   as?: 'div' | 'article'
-  variant?: 'default' | 'highlight'
+  variant?: 'default' | 'feat'
 }
 
-const { 
-  class: className = '', 
-  hoverEffect = true, 
+const {
+  class: className = '',
+  hoverEffect = true,
   onClick,
   as = 'div',
-  variant = 'default'
+  variant = 'default',
 } = Astro.props
 
 const Component = onClick ? 'article' : as
 const isClickable = !!onClick
 
-const variants: Record<string, string> = {
-  default: 'rounded-xl border-2 border-dark/10 dark:border-white/10 bg-white dark:bg-white/5 backdrop-blur-sm shadow-lg dark:shadow-none',
-  highlight: 'rounded-xl border-2 border-lime/20 dark:border-lime/20 bg-lime/5 dark:bg-lime/5',
+// Terminal Growth — brutalist cards.
+// default: ink-2 bg + hair border, hover fire offset
+// feat:    acid-border + gradient bg (pro destaque, ex: VSS na PathwaysSection)
+const baseClasses = 'p-6 sm:p-8 transition-all duration-[var(--jb-dur)]'
+const variantClasses: Record<string, string> = {
+  default: 'bg-[color:var(--jb-ink-2)] border border-[color:var(--jb-hair)]',
+  feat: 'border border-[color:var(--jb-acid-border)]',
 }
+const featStyle = variant === 'feat'
+  ? 'background: linear-gradient(180deg, rgba(198,255,0,0.06), var(--jb-ink-2));'
+  : ''
+const hoverClasses = hoverEffect
+  ? (variant === 'feat'
+      ? 'hover:border-[color:var(--jb-acid)] hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[6px_6px_0_var(--jb-acid)]'
+      : 'hover:border-[color:var(--jb-fire)] hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[6px_6px_0_var(--jb-fire)]')
+  : ''
+const clickableClasses = isClickable ? 'cursor-pointer' : ''
 ---
 
 <Component
-  class:list={[
-    variants[variant],
-    'p-6 transition-all duration-200',
-    hoverEffect && 'hover:border-lime/50 dark:hover:border-lime/50',
-    isClickable && 'cursor-pointer hover:-translate-y-1',
-    className
-  ]}
+  class:list={[baseClasses, variantClasses[variant], hoverClasses, clickableClasses, className]}
+  style={featStyle}
   role={isClickable ? 'button' : undefined}
   tabindex={isClickable ? 0 : undefined}
 >

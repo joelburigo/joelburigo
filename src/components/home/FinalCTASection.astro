@@ -2,117 +2,181 @@
 import Container from '../ui/Container.astro'
 ---
 
-<section class="relative overflow-hidden bg-dark py-16 md:py-20 lg:py-24">
+<section class="final-cta-section relative overflow-hidden">
+  <!-- Fundo fire + grid sutil -->
+  <div class="fcta-grid-overlay"></div>
 
   <Container class="relative z-10">
-    <div class="cta-content mx-auto max-w-4xl">
-      {/* Badge */}
-      <div class="mb-6 text-center">
-        <span class="inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-1.5 text-sm font-display font-bold text-lime backdrop-blur-sm">
-          PRÓXIMO PASSO
-        </span>
+    <div class="fcta-wrap">
+      <!-- Kicker -->
+      <div class="fcta-kicker mono">
+        // PRÓXIMO PASSO · DIAGNÓSTICO 10 MIN
       </div>
 
-      {/* Headline */}
-      <h2 class="mb-6 text-center font-display text-display-sm tracking-tight text-white md:text-display-md">
-        Comece Pelo <span class="text-lime">Diagnóstico Gratuito</span>
+      <!-- Headline gigante -->
+      <h2 class="fcta-title">
+        LIGAR A<br />
+        <span class="fcta-title-stroke">MÁQUINA?</span>
       </h2>
 
-      {/* Subheadline */}
-      <p class="mx-auto mb-8 max-w-2xl text-center font-sans text-body-lg text-gray-200">
-        Descubra qual dos 6Ps está travando seu crescimento. Leva 10 minutos e você recebe o resultado na hora.
+      <!-- Lede -->
+      <p class="fcta-lede">
+        Diagnóstico grátis dos 6Ps. 10 minutos. Descobre qual P tá travando o crescimento — e qual é a próxima ação prioritária. <strong>Sem enrolação.</strong>
       </p>
 
-      {/* Benefícios em lista */}
-      <div class="mx-auto mb-10 grid max-w-2xl gap-4 text-left md:grid-cols-2">
-        <div class="flex items-start gap-3 rounded-lg border border-gray-800 bg-gray-900/50 p-4 backdrop-blur-sm">
-          <div class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-lime/20">
-            <svg class="h-4 w-4 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-          </div>
-          <div>
-            <p class="font-sans text-sm font-semibold text-white">10 minutos, resultado imediato</p>
-            <p class="mt-1 font-sans text-sm text-gray-400">Sem enrolação, direto ao ponto</p>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-3 rounded-lg border border-gray-800 bg-gray-900/50 p-4 backdrop-blur-sm">
-          <div class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-lime/20">
-            <svg class="h-4 w-4 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-          </div>
-          <div>
-            <p class="font-sans text-sm font-semibold text-white">Identifica o gargalo real</p>
-            <p class="mt-1 font-sans text-sm text-gray-400">Para de chutar o que fazer</p>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-3 rounded-lg border border-gray-800 bg-gray-900/50 p-4 backdrop-blur-sm">
-          <div class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-lime/20">
-            <svg class="h-4 w-4 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-          </div>
-          <div>
-            <p class="font-sans text-sm font-semibold text-white">Baseado em 140+ diagnósticos</p>
-            <p class="mt-1 font-sans text-sm text-gray-400">Testado em vários nichos e portes</p>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-3 rounded-lg border border-gray-800 bg-gray-900/50 p-4 backdrop-blur-sm">
-          <div class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-lime/20">
-            <svg class="h-4 w-4 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-          </div>
-          <div>
-            <p class="font-sans text-sm font-semibold text-white">Completamente gratuito</p>
-            <p class="mt-1 font-sans text-sm text-gray-400">Sem cartão, sem pegadinha</p>
-          </div>
-        </div>
-      </div>
-
-      {/* CTAs */}
-      <div class="flex flex-col justify-center gap-4 sm:flex-row">
-        <a href="/diagnostico" data-astro-prefetch>
-          <button class="inline-flex h-14 w-full items-center justify-center gap-2 rounded-lg bg-lime px-8 font-display text-lg font-bold text-dark shadow-lg shadow-lime/20 transition-all hover:scale-105 hover:bg-lime/90 focus:outline-none focus:ring-2 focus:ring-lime focus:ring-offset-2 sm:w-auto">
-            <span>Fazer Diagnóstico Agora</span>
-            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-            </svg>
-          </button>
+      <!-- CTAs -->
+      <div class="fcta-ctas">
+        <a href="/diagnostico" class="fcta-btn-primary" data-astro-prefetch>
+          <span>Fazer diagnóstico agora</span>
+          <span aria-hidden="true">→</span>
         </a>
-        <a href="/vendas-sem-segredos" data-astro-prefetch>
-          <button class="inline-flex h-14 w-full items-center justify-center rounded-lg border-2 border-white px-8 font-display text-lg font-semibold text-white transition-all hover:scale-105 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 sm:w-auto">
-            Ou Conhecer o Vendas Sem Segredos
-          </button>
+        <a href="/vendas-sem-segredos" class="fcta-btn-secondary" data-astro-prefetch>
+          <span>Ou ver o VSS</span>
+          <span aria-hidden="true">→</span>
         </a>
       </div>
 
-      {/* Micro-copy */}
-      <p class="mt-6 text-center font-sans text-sm text-gray-400">
-        Já fiz centenas de diagnósticos. 9 em cada 10 descobrem que o problema não é onde achavam. Bora descobrir?
-      </p>
+      <!-- Assinatura -->
+      <div class="fcta-signature">
+        <span>BORA PRA CIMA.</span>
+        <span class="fcta-sep">·</span>
+        <span>LET'S GROW.</span>
+      </div>
     </div>
   </Container>
 </section>
 
 <style>
-  .cta-content {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out forwards;
+  .final-cta-section {
+    background: var(--jb-fire);
+    padding-top: clamp(4rem, 10vw, 7rem);
+    padding-bottom: clamp(4rem, 10vw, 7rem);
+    color: var(--jb-ink);
   }
 
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .fcta-grid-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.15;
+    background-image:
+      linear-gradient(to right, rgba(5, 5, 5, 0.35) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(5, 5, 5, 0.35) 1px, transparent 1px);
+    background-size: 80px 80px;
   }
+
+  .fcta-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+    align-items: center;
+  }
+
+  .fcta-kicker {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--jb-ink);
+    text-transform: uppercase;
+    display: inline-block;
+    border: 1px solid rgba(5, 5, 5, 0.4);
+    padding: 8px 16px;
+  }
+
+  .fcta-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    line-height: 0.85;
+    font-size: clamp(3.5rem, 14vw, 10rem);
+    color: var(--jb-ink);
+    margin: 0;
+  }
+  .fcta-title-stroke {
+    -webkit-text-stroke: 3px var(--jb-ink);
+    color: transparent;
+    display: block;
+  }
+
+  .fcta-lede {
+    font-family: var(--font-sans);
+    font-size: clamp(1.125rem, 1.8vw, 1.375rem);
+    line-height: 1.5;
+    color: var(--jb-ink);
+    text-transform: none;
+    margin: 0;
+    max-width: 55ch;
+    font-weight: 500;
+  }
+  .fcta-lede strong { font-weight: 900; }
+
+  .fcta-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding-top: 0.5rem;
+  }
+
+  .fcta-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--jb-ink);
+    color: var(--jb-acid);
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 1rem 2rem;
+    min-height: 56px;
+    border: 0;
+    box-shadow: 4px 4px 0 var(--jb-acid);
+    transition: all var(--transition-base);
+  }
+  .fcta-btn-primary:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--jb-acid);
+  }
+
+  .fcta-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--jb-ink);
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 1rem 2rem;
+    min-height: 56px;
+    border: 2px solid var(--jb-ink);
+    transition: all var(--transition-base);
+  }
+  .fcta-btn-secondary:hover {
+    background: var(--jb-ink);
+    color: var(--jb-acid);
+  }
+
+  .fcta-signature {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    color: var(--jb-ink);
+    text-transform: uppercase;
+    padding-top: 0.5rem;
+    display: inline-flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-weight: 700;
+  }
+  .fcta-sep { opacity: 0.6; }
 </style>

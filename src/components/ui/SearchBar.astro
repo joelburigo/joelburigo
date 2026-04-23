@@ -1,13 +1,12 @@
 ---
-// Search Bar Component with Pagefind integration
 interface Props {
   placeholder?: string
   class?: string
 }
 
-const { 
-  placeholder = "Buscar artigos, tópicos...", 
-  class: className = "" 
+const {
+  placeholder = 'Buscar artigos, tópicos...',
+  class: className = '',
 } = Astro.props
 ---
 
@@ -17,13 +16,13 @@ const {
       type="search"
       id="search-input"
       placeholder={placeholder}
-      class="w-full rounded-lg border-2 border-white/10 bg-dark px-4 py-3 pl-12 font-sans text-white placeholder-gray-400 transition-all focus:border-lime focus:outline-none focus:ring-2 focus:ring-lime/20"
+      class="w-full rounded-none border border-[color:var(--jb-hair)] bg-[color:var(--jb-ink-2)] px-4 py-3 pl-12 font-sans text-base text-[color:var(--jb-cream)] placeholder:text-[color:var(--jb-fg-muted)] transition-all duration-[var(--jb-dur)] focus:border-[color:var(--jb-acid)] focus:outline-none focus:ring-1 focus:ring-[color:var(--jb-acid)]"
       autocomplete="off"
     />
-    <svg 
-      class="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" 
-      fill="none" 
-      stroke="currentColor" 
+    <svg
+      class="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-[color:var(--jb-fg-muted)]"
+      fill="none"
+      stroke="currentColor"
       viewBox="0 0 24 24"
     >
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
@@ -31,9 +30,10 @@ const {
   </div>
 
   <!-- Search Results Dropdown -->
-  <div 
-    id="search-results" 
-    class="absolute left-0 right-0 z-50 mt-2 hidden max-h-96 overflow-y-auto rounded-lg border-2 border-white/10 bg-dark shadow-2xl"
+  <div
+    id="search-results"
+    class="absolute left-0 right-0 z-50 mt-2 hidden max-h-96 overflow-y-auto rounded-none border border-[color:var(--jb-hair-strong)] bg-[color:var(--jb-ink-2)]"
+    style="box-shadow: 4px 4px 0 var(--jb-acid);"
   >
     <div id="search-results-content" class="p-4">
       <!-- Results will be inserted here -->
@@ -42,184 +42,150 @@ const {
 </div>
 
 <style>
-  .search-wrapper {
-    position: relative;
-  }
-
-  #search-results:not(.hidden) {
-    display: block;
-  }
+  .search-wrapper { position: relative; }
+  #search-results:not(.hidden) { display: block; }
 
   .search-result-item {
     padding: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: background-color 0.2s;
+    border-bottom: 1px solid var(--jb-hair);
+    transition: background-color var(--jb-dur) var(--jb-ease);
     cursor: pointer;
   }
-
-  .search-result-item:last-child {
-    border-bottom: none;
-  }
-
-  .search-result-item:hover {
-    background-color: rgba(163, 255, 63, 0.1);
-  }
+  .search-result-item:last-child { border-bottom: none; }
+  .search-result-item:hover { background-color: var(--jb-acid-soft); }
 
   .search-highlight {
-    background-color: rgba(163, 255, 63, 0.3);
-    font-weight: 600;
+    background-color: var(--jb-acid-soft-2);
+    color: var(--jb-cream);
+    font-weight: 700;
   }
 </style>
 
 <script is:inline>
-  // Pagefind-powered search
   async function initSearch() {
     const searchInput = document.getElementById('search-input')
     const searchResults = document.getElementById('search-results')
     const searchResultsContent = document.getElementById('search-results-content')
-
     if (!searchInput || !searchResults || !searchResultsContent) return
 
-    // Initialize Pagefind
     let pagefind = null
     let isDevMode = false
-    
     try {
-      // Load Pagefind dynamically at runtime
       pagefind = await import('/pagefind/pagefind.js')
-    } catch (error) {
-      // Silently use fallback in dev mode
+    } catch {
       isDevMode = true
     }
 
-    // Search function
     async function performSearch(query) {
       if (!query || query.length < 2) {
         searchResults.classList.add('hidden')
         return
       }
 
-      // Show loading state
       searchResultsContent.innerHTML = `
         <div class="text-center py-8">
-          <p class="font-sans text-gray-400">Buscando...</p>
+          <p class="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">// BUSCANDO...</p>
         </div>
       `
       searchResults.classList.remove('hidden')
 
       try {
-        // Use Pagefind if available (production), otherwise fallback (dev)
         if (isDevMode) {
-          // Fallback: search in DOM (dev mode only)
           const postCards = document.querySelectorAll('.post-card')
           const normalizedQuery = query.toLowerCase()
-          
           const results = Array.from(postCards)
-            .map(card => {
+            .map((card) => {
               const title = card.querySelector('h3')?.textContent || ''
               const excerpt = card.querySelector('p')?.textContent || ''
               const category = card.getAttribute('data-category') || 'Artigo'
               const href = card.getAttribute('href') || ''
-              
               const titleMatch = title.toLowerCase().includes(normalizedQuery)
               const excerptMatch = excerpt.toLowerCase().includes(normalizedQuery)
               const categoryMatch = category.toLowerCase().includes(normalizedQuery)
-              
               let score = 0
               if (titleMatch) score += 10
               if (excerptMatch) score += 5
               if (categoryMatch) score += 3
-              
               return { title, excerpt, category, href, score }
             })
-            .filter(post => post.score > 0)
+            .filter((p) => p.score > 0)
             .sort((a, b) => b.score - a.score)
             .slice(0, 5)
 
           if (results.length === 0) {
             searchResultsContent.innerHTML = `
               <div class="text-center py-8">
-                <p class="font-sans text-gray-400">Nenhum resultado encontrado para "${query}"</p>
+                <p class="font-sans text-[color:var(--jb-fg-3)]">Nenhum resultado para "${query}"</p>
               </div>
             `
             return
           }
 
-          searchResultsContent.innerHTML = results.map(post => `
+          searchResultsContent.innerHTML = results
+            .map(
+              (post) => `
             <a href="${post.href}" class="search-result-item block">
-              <div class="mb-1">
-                <span class="inline-block rounded-full bg-lime/20 px-2 py-1 text-xs font-display font-semibold text-lime">
+              <div class="mb-2">
+                <span class="inline-block px-2 py-1 text-[11px] font-mono uppercase tracking-[0.22em] font-bold border border-[color:var(--jb-acid-border)] text-[color:var(--jb-acid)]">
                   ${post.category}
                 </span>
               </div>
-              <h4 class="font-display text-h4 text-white mb-2">${post.title}</h4>
-              <p class="font-sans text-sm text-gray-200 line-clamp-2">${post.excerpt}</p>
+              <h4 class="font-display text-lg uppercase text-[color:var(--jb-cream)] mb-2 tracking-tight">${post.title}</h4>
+              <p class="font-sans text-sm text-[color:var(--jb-fg-2)] line-clamp-2">${post.excerpt}</p>
             </a>
-          `).join('')
-          
+          `
+            )
+            .join('')
         } else {
-          // Pagefind search (production)
           const search = await pagefind.search(query)
-          
           if (!search.results || search.results.length === 0) {
             searchResultsContent.innerHTML = `
               <div class="text-center py-8">
-                <p class="font-sans text-gray-400">Nenhum resultado encontrado para "${query}"</p>
+                <p class="font-sans text-[color:var(--jb-fg-3)]">Nenhum resultado para "${query}"</p>
               </div>
             `
             return
           }
-
-          // Load result data (limit to 5)
-          const results = await Promise.all(
-            search.results.slice(0, 5).map((r) => r.data())
-          )
-
-          // Display results
-          searchResultsContent.innerHTML = results.map((result) => {
-            const category = result.meta?.category || 'Artigo'
-            
-            return `
+          const results = await Promise.all(search.results.slice(0, 5).map((r) => r.data()))
+          searchResultsContent.innerHTML = results
+            .map((result) => {
+              const category = result.meta?.category || 'Artigo'
+              return `
               <a href="${result.url}" class="search-result-item block">
-                <div class="mb-1">
-                  <span class="inline-block rounded-full bg-lime/20 px-2 py-1 text-xs font-display font-semibold text-lime">
+                <div class="mb-2">
+                  <span class="inline-block px-2 py-1 text-[11px] font-mono uppercase tracking-[0.22em] font-bold border border-[color:var(--jb-acid-border)] text-[color:var(--jb-acid)]">
                     ${category}
                   </span>
                 </div>
-                <h4 class="font-display text-h4 text-white mb-2">${result.meta?.title || 'Sem título'}</h4>
-                <p class="font-sans text-sm text-gray-200 line-clamp-2">${result.excerpt || ''}</p>
+                <h4 class="font-display text-lg uppercase text-[color:var(--jb-cream)] mb-2 tracking-tight">${result.meta?.title || 'Sem título'}</h4>
+                <p class="font-sans text-sm text-[color:var(--jb-fg-2)] line-clamp-2">${result.excerpt || ''}</p>
               </a>
             `
-          }).join('')
+            })
+            .join('')
         }
-
       } catch (error) {
         console.error('Search error:', error)
         searchResultsContent.innerHTML = `
           <div class="text-center py-8">
-            <p class="font-sans text-gray-400">Erro ao buscar. Tente novamente.</p>
+            <p class="font-sans text-[color:var(--jb-fg-3)]">Erro ao buscar. Tente novamente.</p>
           </div>
         `
       }
     }
 
-    // Event listeners
     let debounceTimer
     searchInput.addEventListener('input', (e) => {
       clearTimeout(debounceTimer)
-      debounceTimer = setTimeout(() => {
-        performSearch(e.target.value)
-      }, 300)
+      debounceTimer = setTimeout(() => performSearch(e.target.value), 300)
     })
 
-    // Close on click outside
     document.addEventListener('click', (e) => {
       if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
         searchResults.classList.add('hidden')
       }
     })
 
-    // Close on Escape
     searchInput.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         searchResults.classList.add('hidden')
@@ -228,9 +194,6 @@ const {
     })
   }
 
-  // Initialize
   initSearch()
-
-  // Reinitialize after navigation
   document.addEventListener('astro:page-load', initSearch)
 </script>

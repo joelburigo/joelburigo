@@ -1,138 +1,218 @@
 ---
-import { Image } from 'astro:assets'
 import Container from '../ui/Container.astro'
-import joelBurigoImage from '../../assets/images/joel-burigo-vendas-sem-segredos-2-480w.webp'
-import Icons from '../ui/Icons.astro'
 
-const problems = [
+const enemies = [
   {
-    icon: 'dices',
-    title: 'Vendas Aleatórias',
-    description: 'Não sabem de onde virá a próxima venda. Dependem de indicação e sorte para bater metas.',
+    id: '01',
+    name: 'O Improviso Que Mata',
+    desc: 'Empresas que vivem no "vamos ver o que acontece". Sem processo documentado. "Dá um jeito" é o método.',
   },
   {
-    icon: 'brain-circuit',
-    title: 'Tudo na Cabeça',
-    description: 'Processos não documentados. O conhecimento fica retido no dono, tornando impossível escalar.',
+    id: '02',
+    name: 'Agências Amadoras',
+    desc: 'Cobram R$ 3–5k/mês pra postar no Instagram, mas não estruturam conversão.',
   },
   {
-    icon: 'bar-chart-3',
-    title: 'Sem Métricas',
-    description: "Não medem nada, não otimizam nada. Decisões baseadas em 'feeling' e não em dados.",
+    id: '03',
+    name: 'Consultores Engomados',
+    desc: 'Cobram R$ 50–100k, entregam PowerPoint de 200 slides e somem.',
   },
   {
-    icon: 'banknote',
-    title: 'Gastam Demais',
-    description: 'Contratam agências caras e ferramentas complexas sem estratégia, criando dependência eterna.',
+    id: '04',
+    name: 'Gurus de Promessa Vazia',
+    desc: '"Fique milionário em 6 meses", "fórmula secreta", "aperte um botão". Vendem ilusão.',
+  },
+  {
+    id: '05',
+    name: 'CRMs Complexos e Caros',
+    desc: 'R$ 500–2.000/mês, exigem analista dedicado, travam mais que ajudam.',
+  },
+  {
+    id: '06',
+    name: 'Marketing de Vaidade',
+    desc: 'Foca em likes, engajamento, alcance. Ignora ROI, conversão, faturamento.',
+  },
+  {
+    id: '07',
+    name: 'Dependência de Budget Alto',
+    desc: '"Só funciona com R$ 20k/mês em anúncio". Exclui quem tá começando.',
   },
 ]
 ---
 
-<section class="relative overflow-hidden bg-dark py-16 md:py-24 lg:py-32">
+<section class="problem-section section bg-ink relative overflow-hidden">
+  <div class="grid-overlay"></div>
 
   <Container class="relative z-10">
-    <div class="mx-auto mb-16 max-w-3xl text-center">
-      <span class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-1.5 text-sm font-display font-bold text-lime backdrop-blur-sm">
-        O DIAGNÓSTICO
-      </span>
-      <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
-        A Real: 8 em Cada 10 Empresas <span class="text-lime">Não Sabem Quanto Vão Faturar Mês Que Vem</span>
+    <!-- Section head -->
+    <div class="section-head">
+      <div class="kicker">// 01_DIAGNÓSTICO</div>
+      <div class="mono section-head-meta text-fire">● GARGALOS DETECTADOS</div>
+    </div>
+    <div class="hair-divider"></div>
+
+    <!-- Manchete -->
+    <div class="problem-intro">
+      <h2 class="problem-title">
+        <span class="text-fire">8 EM CADA 10</span> EMPRESAS<br />
+        NÃO SABEM QUANTO<br />
+        VÃO <span class="stroke-text">FATURAR</span> MÊS QUE VEM.
       </h2>
-      <p class="mb-4 font-sans text-body-lg text-gray-200">
-        Na moral: a maioria não tem problema de produto. Tem problema de <strong class="text-white">sistema de vendas</strong>.
-      </p>
-      <p class="font-sans text-body text-gray-400">
-        Reconhece alguma dessas situações?
+      <p class="problem-lede">
+        Na moral: a maioria não tem problema de produto. Tem problema de <strong class="text-cream">sistema de vendas</strong>. Improviso mata mais empresa que crise. Abaixo, os 7 inimigos que eu combato todo dia.
       </p>
     </div>
 
-    <div class="mb-20 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-      {problems.map((problem, index) => (
-          <div class="problem-card" style={`animation-delay: ${index * 0.1}s`}>
-            <div class="h-full rounded-2xl border-2 border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all hover:border-lime/50">
-              <div class="mb-6 inline-block rounded-xl bg-lime/20 p-3 shadow-lg">
-                <Icons name={problem.icon} class="h-8 w-8 text-lime" />
-              </div>
-              <h3 class="mb-3 font-display text-h3 text-white">{problem.title}</h3>
-              <p class="font-sans text-body leading-relaxed text-gray-200">{problem.description}</p>
-            </div>
-          </div>
-        ))
-      }
+    <!-- Grid dos 7 inimigos -->
+    <div class="enemies-grid">
+      {enemies.map((e) => (
+        <article class="enemy-card">
+          <div class="enemy-num">{e.id}</div>
+          <h3 class="enemy-name">{e.name}</h3>
+          <p class="enemy-desc">{e.desc}</p>
+        </article>
+      ))}
     </div>
 
-    <!-- Mini História -->
-    <div class="mb-16 mx-auto max-w-4xl">
-      <div class="rounded-2xl border-2 border-white/10 bg-white/5 p-8 md:p-10">
-        <Icons name="alert-circle" class="mb-4 h-10 w-10 text-lime" />
-        <p class="mb-4 font-sans text-body-lg text-gray-200 leading-relaxed">
-          Conheci o Ricardo, dono de uma distribuidora de bebidas que faturava R$ 45k/mês. <strong class="text-white">Perdeu 3 bares que eram clientes fixos</strong> e outros 2 já tinham avisado que iam trocar de fornecedor — o faturamento caiu pra R$ 18k. Me ligou desesperado: "Joel, não sei quanto vou faturar mês que vem".
+    <!-- Quote -->
+    <aside class="problem-quote">
+      <div class="quote-mark">"</div>
+      <blockquote>
+        <p class="quote-text">
+          Depois de 17 anos e 140+ clientes descobri um padrão:
+          <span class="text-acid">vendas aleatórias não escalam. Ponto.</span>
+          Por isso criei os 6Ps. <span class="text-fire">Sistema &gt; Improviso.</span>
         </p>
-        <p class="font-sans text-body text-gray-300">
-          O problema? Ele dependia 100% de indicação. <strong class="text-white">Não tinha sistema.</strong> Sem sistema, não tem previsibilidade. Sem previsibilidade, não tem escala.
-        </p>
-      </div>
-    </div>
-
-    <!-- Quote com Transição -->
-    <div class="quote-section relative mx-auto max-w-4xl rounded-2xl border-2 border-lime/20 bg-dark p-8 shadow-2xl md:p-12">
-      <Icons name="quote" class="absolute left-8 top-8 z-0 h-12 w-12 text-lime/30" />
-      <blockquote class="relative z-10 text-center">
-        <p class="mb-4 text-xl font-medium italic text-white md:text-2xl">
-          "Depois de 17+ anos e 140+ clientes, descobri um padrão: <span class="text-lime">vendas aleatórias não escalam. Ponto.</span>"
-        </p>
-        <p class="mb-6 font-sans text-body text-gray-300">
-          Por isso criei os 6Ps. Sistema > Improviso.
-        </p>
-        <footer class="flex items-center justify-center gap-4">
-          <div class="h-12 w-12 overflow-hidden rounded-full bg-gray-700 ring-2 ring-lime/30">
-            <Image
-              src={joelBurigoImage}
-              alt="Joel Burigo"
-              loading="lazy"
-              class="h-full w-full object-cover"
-            />
-          </div>
-          <div class="text-left">
-            <cite class="block font-bold not-italic text-lime">Joel Burigo</cite>
-            <span class="text-sm text-gray-400">Criador do Framework dos 6Ps</span>
-          </div>
+        <footer class="quote-foot">
+          <span class="mono">— JOEL BURIGO · CRIADOR DO FRAMEWORK 6PS</span>
         </footer>
       </blockquote>
-    </div>
+    </aside>
   </Container>
 </section>
 
 <style>
-  .problem-card {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out forwards;
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .section-head-meta { font-size: 11px; }
+
+  .problem-intro {
+    padding-top: clamp(2rem, 4vw, 3rem);
+    padding-bottom: clamp(2rem, 4vw, 3rem);
+    max-width: 960px;
   }
 
-  .quote-section {
-    opacity: 0;
-    animation: fadeInScale 0.6s ease-out 0.4s forwards;
+  .problem-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    line-height: 0.92;
+    font-size: clamp(2.25rem, 6.5vw, 4.5rem);
+    color: var(--jb-cream);
+    margin: 0 0 1.5rem 0;
   }
 
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .problem-lede {
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    line-height: 1.6;
+    color: var(--jb-cream);
+    text-transform: none;
+    margin: 0;
+    max-width: 60ch;
+  }
+  .problem-lede strong { font-weight: 700; }
+
+  .enemies-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: var(--jb-hair);
+    border: 1px solid var(--jb-hair);
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+  }
+  @media (min-width: 640px) { .enemies-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .enemies-grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .enemy-card {
+    background: var(--jb-ink-2);
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: background var(--transition-base);
+    position: relative;
+    min-height: 240px;
+  }
+  .enemy-card:hover {
+    background: var(--jb-ink-3);
+  }
+  .enemy-card:hover .enemy-num { color: var(--jb-fire); }
+
+  .enemy-num {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 5vw, 4rem);
+    font-weight: 900;
+    color: rgba(245, 241, 232, 0.12);
+    letter-spacing: -0.04em;
+    line-height: 0.85;
+    transition: color var(--transition-base);
   }
 
-  @keyframes fadeInScale {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
+  .enemy-name {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    font-size: 1.0625rem;
+    color: var(--jb-cream);
+    line-height: 1.15;
+    margin: 0;
   }
+
+  .enemy-desc {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--jb-fg-2);
+    margin: 0;
+    text-transform: none;
+  }
+
+  .problem-quote {
+    position: relative;
+    background: var(--jb-ink-2);
+    border: 1px solid var(--jb-acid-border);
+    padding: clamp(2rem, 4vw, 3rem);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .quote-mark {
+    position: absolute;
+    top: 0;
+    left: clamp(1rem, 3vw, 2rem);
+    transform: translateY(-60%);
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 12vw, 9rem);
+    color: var(--jb-fire);
+    line-height: 1;
+  }
+  .quote-text {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    font-size: clamp(1.25rem, 3vw, 2rem);
+    line-height: 1.1;
+    color: var(--jb-cream);
+    margin: 0 0 1.25rem 0;
+  }
+  .quote-foot { margin-top: 1.5rem; }
 </style>

@@ -307,8 +307,8 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: var(--jb-acid);
-    color: var(--jb-ink);
+    background: var(--jb-acid) !important;
+    color: var(--jb-ink) !important;
     font-family: var(--font-display);
     font-size: 0.875rem;
     letter-spacing: 0.08em;
@@ -336,8 +336,8 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: var(--jb-fire);
-    color: var(--jb-ink);
+    background: var(--jb-fire) !important;
+    color: var(--jb-ink) !important;
     font-family: var(--font-display);
     font-size: 0.875rem;
     letter-spacing: 0.08em;
@@ -361,7 +361,7 @@ a {
     align-items: center;
     gap: 0.5rem;
     background: transparent;
-    color: var(--jb-cream);
+    color: var(--jb-cream) !important;
     font-family: var(--font-display);
     font-size: 0.875rem;
     letter-spacing: 0.08em;
@@ -377,7 +377,7 @@ a {
   .btn-secondary:hover {
     background: rgba(245, 241, 232, 0.06);
     border-color: var(--jb-acid);
-    color: var(--jb-acid);
+    color: var(--jb-acid) !important;
   }
 
   .section {

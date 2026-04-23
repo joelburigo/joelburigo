@@ -2,166 +2,234 @@
 import Container from '../ui/Container.astro'
 import Logo from '../ui/Logo.astro'
 import { contactInfo } from '../../data/contact'
-import Icons from '../ui/Icons.astro'
-
 
 const currentYear = new Date().getFullYear()
 ---
 
-<footer class="border-t border-lime/20 bg-dark pb-8 pt-16 text-gray-200">
+<footer class="relative border-t border-[color:var(--jb-hair)] bg-[color:var(--jb-ink)] text-[color:var(--jb-cream)]">
+  <div class="grid-overlay" aria-hidden="true"></div>
+
   <Container>
-    <div class="mb-16 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
-      <!-- Column 1: Brand -->
-      <div class="space-y-6">
-        <a href="/" class="block">
+    {/* Kicker + meta */}
+    <div class="relative flex items-center justify-between border-b border-[color:var(--jb-hair)] py-4 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">
+      <div class="flex items-center gap-3">
+        <span class="dot-live"></span>
+        <span class="text-[color:var(--jb-acid)]">// SYS_FOOTER</span>
+        <span class="text-[color:var(--jb-hair-strong)] hidden sm:inline">·</span>
+        <span class="hidden sm:inline">JB_CORE v3.0</span>
+      </div>
+      <span class="hidden md:inline">REV. 2026.04</span>
+    </div>
+
+    {/* Grid 4 colunas */}
+    <div class="relative grid grid-cols-1 gap-10 py-16 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+      {/* Col 1 — Marca */}
+      <div class="space-y-5 lg:pr-6">
+        <a href="/" class="inline-block" aria-label="Joel Burigo · Home">
           <Logo />
         </a>
-        <p class="max-w-xs font-sans text-body-sm leading-relaxed text-gray-400">
-          Sistema completo de vendas escaláveis para micro e pequenas empresas. Transforme
-          vendas aleatórias em previsíveis.
+        <p class="font-display text-xl uppercase leading-[0.95] tracking-[-0.03em] text-[color:var(--jb-cream)]">
+          Sistema <span class="text-[color:var(--jb-fire)]">&gt;</span> Improviso
         </p>
-        <div class="space-y-3 pt-2">
-          <div class="flex items-center space-x-3 text-sm">
-            <Icons name="mail" class="h-4 w-4 text-lime" />
-            <a href={contactInfo.email.mailto} class="hover:text-lime transition-colors">{contactInfo.email.main}</a>
+        <p class="max-w-xs font-sans text-[13px] leading-relaxed text-[color:var(--jb-fg-3)]">
+          Framework 6Ps das Vendas Escaláveis. 140+ MPEs · 17+ anos · ~R$1 bilhão em vendas estruturadas.
+        </p>
+        <p class="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">
+          ★ Ribeirão da Ilha · Florianópolis/SC
+        </p>
+      </div>
+
+      {/* Col 2 — Produtos */}
+      <div>
+        <h3 class="mb-6 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-acid)]">
+          // Produtos
+        </h3>
+        <ul class="space-y-3 font-mono text-[13px] uppercase tracking-[0.22em]">
+          <li>
+            <a
+              href="/vendas-sem-segredos"
+              class="jb-foot-link inline-flex items-center gap-2 text-[color:var(--jb-cream)] transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]"
+            >
+              <span>VSS</span>
+              <span class="text-[color:var(--jb-fg-muted)] normal-case tracking-normal">vendas sem segredos</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/advisory"
+              data-astro-prefetch
+              class="jb-foot-link inline-flex items-center gap-2 text-[color:var(--jb-cream)] transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]"
+            >
+              <span>Advisory</span>
+              <span class="text-[color:var(--jb-fg-muted)] normal-case tracking-normal">1:1 com Joel</span>
+            </a>
+          </li>
+          <li class="pt-2">
+            <a
+              href="/diagnostico"
+              class="jb-foot-link inline-flex items-center gap-2 text-[color:var(--jb-fire)] transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]"
+            >
+              <span>Diagnóstico</span>
+              <span class="font-mono">→</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      {/* Col 3 — Recursos */}
+      <div>
+        <h3 class="mb-6 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-acid)]">
+          // Recursos
+        </h3>
+        <ul class="space-y-3 font-mono text-[13px] uppercase tracking-[0.22em]">
+          <li>
+            <a href="/blog" class="jb-foot-link text-[color:var(--jb-cream)] transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]">Blog</a>
+          </li>
+          <li>
+            <a href="/cases" class="jb-foot-link text-[color:var(--jb-cream)] transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]">Cases</a>
+          </li>
+          <li>
+            <a href="/sobre" class="jb-foot-link text-[color:var(--jb-cream)] transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]">Sobre</a>
+          </li>
+          <li>
+            <a href="/contato" class="jb-foot-link text-[color:var(--jb-cream)] transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]">Contato</a>
+          </li>
+        </ul>
+      </div>
+
+      {/* Col 4 — Social + Email */}
+      <div>
+        <h3 class="mb-6 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-acid)]">
+          // Conexão
+        </h3>
+        <ul class="space-y-3 font-mono text-[13px] uppercase tracking-[0.22em]">
+          <li>
+            <a
+              href={contactInfo.social.instagram.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="jb-foot-link inline-flex items-center gap-2 text-[color:var(--jb-cream)] transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]"
+            >
+              <span>Instagram</span>
+              <span class="font-mono text-[color:var(--jb-fg-muted)]">→</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href={contactInfo.social.linkedin.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="jb-foot-link inline-flex items-center gap-2 text-[color:var(--jb-cream)] transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]"
+            >
+              <span>LinkedIn</span>
+              <span class="font-mono text-[color:var(--jb-fg-muted)]">→</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href={contactInfo.social.youtube.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="jb-foot-link inline-flex items-center gap-2 text-[color:var(--jb-cream)] transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]"
+            >
+              <span>YouTube</span>
+              <span class="font-mono text-[color:var(--jb-fg-muted)]">→</span>
+            </a>
+          </li>
+          <li class="pt-4">
+            <a
+              href={contactInfo.email.mailto}
+              class="jb-foot-link inline-block text-[color:var(--jb-fg-3)] normal-case tracking-normal transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]"
+            >
+              {contactInfo.email.main}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    {/* Aviso legal colapsável */}
+    <div class="relative border-t border-[color:var(--jb-hair)] py-8">
+      <details class="group mx-auto max-w-4xl">
+        <summary class="flex cursor-pointer list-none items-center justify-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)] transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]">
+          <span>// Aviso legal e isenção de responsabilidade</span>
+          <span class="text-[color:var(--jb-acid)] transition-transform duration-[var(--jb-dur)] group-open:rotate-180">▼</span>
+        </summary>
+        <div class="mt-6 space-y-4 font-sans text-[12px] leading-relaxed text-[color:var(--jb-fg-muted)]">
+          <div>
+            <p class="mb-1 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-3)]">Resultados e desempenho</p>
+            <p>As informações, estratégias e metodologias apresentadas neste site são baseadas na experiência de Joel Burigo e sua equipe ao longo de 17+ anos com empresas B2B e B2C. Todo o conteúdo é fornecido exclusivamente para fins educacionais.</p>
           </div>
-          <div class="flex items-center space-x-3 text-sm">
-            <Icons name="map-pin" class="h-4 w-4 text-lime" />
-            <span>Florianópolis, SC</span>
+          <div>
+            <p class="mb-1 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-3)]">Sem garantia de resultados</p>
+            <p>Os cases e resultados apresentados não constituem garantia de que você alcançará os mesmos resultados. Cada negócio é único e o desempenho depende de dedicação, contexto de mercado, recursos e execução. Resultados passados não garantem resultados futuros.</p>
           </div>
+          <div>
+            <p class="mb-1 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-3)]">Esforço requerido</p>
+            <p>O sucesso requer trabalho consistente, disciplina e correta implementação. Sistema &gt; Improviso — não existe fórmula mágica.</p>
+          </div>
+          <div>
+            <p class="mb-1 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-3)]">Responsabilidade</p>
+            <p>Ao utilizar este site e os serviços oferecidos, você é o único responsável pelos resultados. Growth Master LTDA e Joel Burigo não se responsabilizam por perdas ou prejuízos decorrentes da aplicação das informações fornecidas.</p>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    {/* Linha final — coordenadas + legal + assinatura */}
+    <div class="relative border-t border-[color:var(--jb-hair)] py-6">
+      <div class="flex flex-col gap-3 font-mono text-[10px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)] md:flex-row md:items-center md:justify-between">
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+          <span>FLORIANÓPOLIS/SC</span>
+          <span class="text-[color:var(--jb-hair-strong)]">·</span>
+          <span class="text-[color:var(--jb-acid)]">-27.59</span>
+          <span class="text-[color:var(--jb-hair-strong)]">·</span>
+          <span class="text-[color:var(--jb-acid)]">-48.55</span>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+          <span>© {currentYear} Growth Master LTDA</span>
+          <span class="text-[color:var(--jb-hair-strong)]">·</span>
+          <span>CNPJ {contactInfo.company.cnpj}</span>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
+          <a href="/privacidade" class="transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]">Privacidade</a>
+          <a href="/termos" class="transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]">Termos</a>
         </div>
       </div>
 
-      <!-- Column 2: Navigation -->
-      <div>
-        <h3 class="mb-6 font-display text-sm font-bold uppercase tracking-wide text-white">Navegação</h3>
-        <ul class="space-y-3 font-sans text-body-sm">
-          <li>
-            <a href="/sobre" class="transition-colors hover:text-lime">Sobre</a>
-          </li>
-          <li>
-            <a href="/vendas-sem-segredos" class="transition-colors hover:text-lime">Vendas Sem Segredos</a>
-          </li>
-          <li>
-            <a href="/advisory" data-astro-prefetch class="transition-colors hover:text-lime">Strategic Advisory</a>
-          </li>
-          <li>
-            <a href="/contato" data-astro-prefetch class="transition-colors hover:text-lime">Contato</a>
-          </li>
-        </ul>
+      <div class="mt-6 text-center font-mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--jb-fg-muted)]">
+        <span class="text-[color:var(--jb-acid)]">★</span>
+        <span>SISTEMA</span>
+        <span class="text-[color:var(--jb-fire)]">&gt;</span>
+        <span>IMPROVISO</span>
+        <span class="text-[color:var(--jb-hair-strong)]">·</span>
+        <span>JB_CORE v3.0</span>
+        <span class="text-[color:var(--jb-hair-strong)]">·</span>
+        <span>REV. 2026.04</span>
       </div>
-
-      <!-- Column 3: Content -->
-      <div>
-        <h3 class="mb-6 font-display text-sm font-bold uppercase tracking-wide text-white">Conteúdo</h3>
-        <ul class="space-y-4">
-          <li>
-            <a href={contactInfo.social.youtube.url} target="_blank" rel="noopener noreferrer" class="group flex items-center space-x-3 transition-colors hover:text-lime">
-              <div class="rounded-full bg-white/10 p-2 transition-colors group-hover:bg-lime group-hover:text-dark">
-                <Icons name="youtube" class="h-4 w-4" />
-              </div>
-              <span class="font-sans text-body-sm">YouTube</span>
-            </a>
-          </li>
-          <li>
-            <a href={contactInfo.social.linkedin.url} target="_blank" rel="noopener noreferrer" class="group flex items-center space-x-3 transition-colors hover:text-lime">
-              <div class="rounded-full bg-white/10 p-2 transition-colors group-hover:bg-lime group-hover:text-dark">
-                <Icons name="linkedin" class="h-4 w-4" />
-              </div>
-              <span class="font-sans text-body-sm">LinkedIn</span>
-            </a>
-          </li>
-          <li>
-            <a href={contactInfo.social.instagram.url} target="_blank" rel="noopener noreferrer" class="group flex items-center space-x-3 transition-colors hover:text-lime">
-              <div class="rounded-full bg-white/10 p-2 transition-colors group-hover:bg-lime group-hover:text-dark">
-                <Icons name="instagram" class="h-4 w-4" />
-              </div>
-              <span class="font-sans text-body-sm">Instagram</span>
-            </a>
-          </li>
-          <li>
-            <a href="/blog" class="group flex items-center space-x-3 transition-colors hover:text-lime">
-              <div class="rounded-full bg-white/10 p-2 transition-colors group-hover:bg-lime group-hover:text-dark">
-                <Icons name="file-text" class="h-4 w-4" />
-              </div>
-              <span class="text-sm">Blog</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Column 4: Legal & Resources -->
-      <div>
-        <h3 class="mb-6 text-sm font-bold uppercase tracking-wide text-white">
-          Recursos & Legal
-        </h3>
-        <ul class="space-y-3 text-sm">
-          <li>
-            <a href="/diagnostico" class="transition-colors hover:text-lime">
-              Diagnóstico Gratuito
-            </a>
-          </li>
-          <li>
-            <a href="/jornada-90-dias" class="transition-colors hover:text-lime">
-              Jornada de 90 Dias
-            </a>
-          </li>
-          <li>
-            <a href="/cases" class="transition-colors hover:text-lime">Cases de Sucesso</a>
-          </li>
-          <li>
-            <a href="/press-kit" class="transition-colors hover:text-lime">Press Kit</a>
-          </li>
-          <li class="pt-4 text-xs text-gray-400">CNPJ: 11.785.245/0001-98</li>
-          <li>
-            <a href="/privacidade" class="text-xs text-gray-400 hover:text-gray-300">
-              Política de Privacidade
-            </a>
-          </li>
-          <li>
-            <a href="/termos" class="text-xs text-gray-400 hover:text-gray-300">Termos de Uso</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Aviso Legal -->
-    <div class="border-t border-white/10 pt-8 pb-8">
-      <div class="max-w-4xl mx-auto">
-        <details class="group">
-          <summary class="cursor-pointer text-xs font-semibold text-gray-400 uppercase tracking-wide mb-4 hover:text-gray-300 transition-colors list-none flex items-center justify-center gap-2">
-            <span>Aviso Legal e Isenção de Responsabilidade</span>
-            <span class="text-lime group-open:rotate-180 transition-transform">▼</span>
-          </summary>
-          
-          <div class="space-y-4 text-xs text-gray-500 leading-relaxed">
-            <div>
-              <p class="font-semibold text-gray-400 mb-2">Sobre Resultados e Desempenho</p>
-              <p>As informações, estratégias e metodologias apresentadas neste site são baseadas na experiência de Joel Burigo e sua equipe ao longo de 17 anos atuando com empresas B2B e B2C. Todo o conteúdo é fornecido exclusivamente para fins educacionais.</p>
-            </div>
-            
-            <div>
-              <p class="font-semibold text-gray-400 mb-2">Não Garantimos Resultados Específicos</p>
-              <p>Os casos de sucesso e resultados apresentados não constituem garantia de que você alcançará os mesmos resultados. Cada negócio é único e os resultados dependem de múltiplos fatores: dedicação, aplicação das estratégias, contexto de mercado, recursos disponíveis e condições econômicas. Resultados passados não garantem resultados futuros.</p>
-            </div>
-            
-            <div>
-              <p class="font-semibold text-gray-400 mb-2">Esforço Requerido</p>
-              <p>O sucesso requer trabalho consistente, disciplina e correta implementação das estratégias. Não existe fórmula mágica para o sucesso em vendas.</p>
-            </div>
-            
-            <div>
-              <p class="font-semibold text-gray-400 mb-2">Responsabilidade</p>
-              <p>Ao utilizar este site e nossos serviços, você é o único responsável pelos resultados obtidos. Growth Master LTDA e Joel Burigo não se responsabilizam por perdas ou prejuízos decorrentes da aplicação das informações fornecidas.</p>
-            </div>
-          </div>
-        </details>
-      </div>
-    </div>
-
-    <!-- Bottom Bar -->
-    <div class="border-t border-white/10 pt-8 text-center text-sm text-gray-400">
-      <p>© {currentYear} Growth Master LTDA. Todos os direitos reservados.</p>
     </div>
   </Container>
 </footer>
+
+<style>
+  /* Underline acid nos links mono do footer */
+  .jb-foot-link {
+    position: relative;
+  }
+  .jb-foot-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    background: var(--jb-acid);
+    transition: width var(--jb-dur) var(--jb-ease);
+  }
+  .jb-foot-link:hover::after,
+  .jb-foot-link:focus-visible::after {
+    width: 100%;
+  }
+</style>

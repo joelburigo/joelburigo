@@ -1,122 +1,207 @@
 ---
 import Container from '../ui/Container.astro';
 
-const capitulos = [
+// Jornada VSS — 7 fases, 15 módulos, 66 destravamentos.
+// Fonte: docs/conteudo/partes/04-playbook-vss.md (tabela linha 42–52)
+// + 03-programa-vss §03.3 e §03.2
+const fases = [
   {
-    numero: 1,
-    periodo: '1987-2004',
-    titulo: 'As Raízes',
-    cor: 'lime',
-    descricao: 'Nasci em Palhoça/SC, Jardim Eldorado. Primeiros 7 anos na casa da minha avó, depois casa de madeira simples. <strong class="text-white">Pai marceneiro, mãe vendedora de loja.</strong> Dinheiro curto, dignidade alta.',
-    licoes: '<strong class="text-lime">Lições:</strong> Trabalho > Sorte. Improviso tem limite. Vender é sobreviver.',
+    numero: '01',
+    nome: 'Fundamentos',
+    janela: '0–30 DIAS',
+    modulos: 'M1–M3 · 15 destravamentos',
+    objetivo: 'Estratégia 100% documentada. Diagnóstico completo dos 6Ps. Posicionamento, público e oferta estruturados.',
+    destravamentos: [
+      'Ativar conta e entrar na comunidade',
+      'Estudar Framework dos 6Ps (seu GPS)',
+      'Preencher Canvas 6Ps do seu negócio',
+      'Definir P1 — Posicionamento + PUV + Big Idea',
+      'Construir Persona #1 com entrevistas reais',
+      'Estruturar oferta irresistível (value stacking)',
+    ],
+    acento: 'acid',
   },
   {
-    numero: 2,
-    periodo: '2004-2010',
-    titulo: 'Primeiros Passos',
-    cor: 'royal-blue',
-    descricao: 'Comecei como freelancer. Sites, anúncios online, e-mail marketing. <strong class="text-white">Cobrava pouco, entregava muito.</strong> Aprendi fazendo. Errei fazendo. Cresci fazendo.',
-    licoes: '<strong class="text-royal-blue">Problema:</strong> Não tinha método. Vendia o que achava que o cliente precisava. Às vezes acertava. Às vezes errava feio.',
+    numero: '02',
+    nome: 'Infraestrutura',
+    janela: '30–45 DIAS',
+    modulos: 'M4–M5 · 9 destravamentos',
+    objetivo: 'Growth CRM configurado. Landing page ativa. Presença digital profissional no ar — fundação tecnológica pronta pra receber lead.',
+    destravamentos: [
+      'Setup inicial do Growth CRM',
+      'Importar sua base atual',
+      'Configurar primeiras 2 automações',
+      'Criar e publicar landing page',
+      'Google Meu Negócio + SEO local básico',
+      'Otimizar perfis sociais (vitrine)',
+    ],
+    acento: 'fire',
   },
   {
-    numero: 3,
-    periodo: '2010-2012',
-    titulo: 'A Primeira Quebra',
-    cor: 'red',
-    descricao: 'Abri empresa em Itajaí com sócio que tinha gráfica. Ele faturava no nome dele, eu ficava com prejuízo. <strong class="text-white">Tomei calote do próprio sócio. Quebrei aos 30 anos.</strong>',
-    licoes: '<strong>Lição dolorosa:</strong> Parceria sem clareza é prejuízo anunciado. Sem P1 (Posicionamento) e P6 (Pessoas), você não tem empresa. Tem bomba-relógio.',
-    licoesCor: 'text-red-400',
+    numero: '03',
+    nome: 'Atração',
+    janela: '45–75 DIAS',
+    modulos: 'M6–M8 · 13 destravamentos',
+    objetivo: 'Canais de aquisição ligados — tráfego orgânico, pago (se tiver budget) ou prospecção ativa gratuita. Leads entrando previsivelmente.',
+    destravamentos: [
+      'Definir estratégia de marketing de conteúdo',
+      'SEO on-page básico no seu site',
+      'Estratégia orgânica de Instagram + LinkedIn',
+      'Ativar primeira campanha Meta Ads (opcional)',
+      'Construir lista de 100+ prospects qualificados',
+      'Cadência multicanal de 15 dias',
+    ],
+    acento: 'acid',
   },
   {
-    numero: 4,
-    periodo: '2012',
-    titulo: 'Fundo do Poço',
-    cor: 'gray',
-    descricao: 'Fui para Minas Gerais. <strong class="text-white">Morei em barraco sem geladeira</strong> no Paraíso das Piabas (Ribeirão das Neves). Trabalhei no CTE dos Correios (R$ 1.400/mês) colocando encomendas na esteira.',
-    descricao2: 'Juntei dinheiro. Comprei um <strong class="text-lime">milheiro de cartões de visita.</strong> Mudei para BH. Distribuí na Avenida Afonso Pena, do Pirulito da Praça Sete até o Alto. Mais de 100 empresas. Batia porta. Ouvia não. Seguia.',
-    licoes: '<strong class="text-lime">Primeira venda:</strong> Loja de roupas. Fiz proposta irrecusável: "Se não gostar, site de graça. Se gostar, R$ 500." Gostou. Pagou. Me indicou. Ali nascia o P3 (Produto).',
+    numero: '04',
+    nome: 'Conversão',
+    janela: '75–90 DIAS',
+    modulos: 'M9–M10 · 9 destravamentos',
+    objetivo: 'Funil de vendas desenhado. Scripts que convertem. Banco de objeções. Pós-venda e indicações rodando. A Máquina começa a girar.',
+    destravamentos: [
+      'Desenhar funil de vendas completo',
+      'Landing page de alta conversão',
+      'Sequência de nutrição por e-mail (7 dias)',
+      'Integrar WhatsApp ao CRM',
+      'Qualificar leads com BANT + SPIN',
+      'Banco de respostas pras 7 objeções mais comuns',
+      'Pós-venda + programa de indicações',
+    ],
+    acento: 'fire',
   },
   {
-    numero: 5,
-    periodo: '2012-2016',
-    titulo: 'Reconstrução',
-    cor: 'lime',
-    descricao: 'Saí do barraco. Saí do CTE. Peguei clientes maiores. <strong class="text-white">Encontre Sua Franquia: +433% faturamento.</strong> Port Informática: +250% e-commerce. Lojas Rede: +65% faturamento.',
-    licoes: '<strong class="text-lime">Realização real:</strong> Crescer empresa de R$ 40k para R$ 300k/mês. Isso sim me deixava realizado. Porque eu sei o impacto na vida do dono.',
+    numero: '05',
+    nome: 'Sistema',
+    janela: '90 DIAS · MARCO',
+    modulos: 'M11 · 4 destravamentos',
+    objetivo: 'Os 6Ps integrados. 5 processos essenciais documentados (P5). Dashboard executivo único. Máquina de Crescimento ligada.',
+    destravamentos: [
+      'Validar integração completa (checklist P4)',
+      'Documentar 5 processos essenciais (P5)',
+      'Montar dashboard executivo unificado',
+      'Avaliar se você está pronto pra escalar',
+    ],
+    acento: 'acid',
+    marco: true,
   },
   {
-    numero: 6,
-    periodo: '2016-2023',
-    titulo: 'Evolução dos Métodos',
-    cor: 'royal-blue',
-    descricao: 'Criei o Método 4E (Explorar, Experimentar, Estabilizar, Expandir). <strong class="text-white">Funcionava, mas era confuso de vender.</strong> Técnico demais. Virei agência vendendo pacotes.',
-    licoes: '<strong>Percepção crítica:</strong> Estava complicando em vez de simplificar. As pessoas não querem método mágico. Querem crescer e colocar dinheiro no bolso.',
-    licoesCor: 'text-red-400',
+    numero: '06',
+    nome: 'Automação',
+    janela: 'PÓS-90 DIAS',
+    modulos: 'M12–M13 · 8 destravamentos',
+    objetivo: 'Automações avançadas e agentes de IA. Sistema roda 24/7 sem depender da sua presença. Você sai da operação e entra na estratégia.',
+    destravamentos: [
+      '3 workflows complexos essenciais',
+      'Segmentação comportamental + lead scoring',
+      'Recuperação de carrinho + upsell',
+      '4 réguas de relacionamento inteligentes',
+      'Agente de IA no WhatsApp 24/7',
+      'Handoff inteligente (IA → humano)',
+    ],
+    acento: 'fire',
   },
   {
-    numero: 7,
-    periodo: '2020-2025',
-    titulo: 'Nascimento dos 6Ps',
-    cor: 'gradient',
-    descricao: 'Depois de 17 anos, finalmente ficou simples. <strong class="text-white">Condensei tudo em 6 pilares sequenciais e replicáveis:</strong> Posicionamento → Público → Produto → Programas → Processos → Pessoas.',
-    descricao2: '<strong>É lógico. É sequencial. É aplicável.</strong> Funciona para quem tem R$ 0 de budget e quem tem R$ 100k/mês em tráfego.',
-    descricao2Cor: 'text-lime',
-    licoes: '<strong class="text-white">Hoje:</strong> VSS (Vendas Sem Segredos) democratiza os 6Ps. Advisory é acesso direto a mim pra decisões críticas.',
+    numero: '07',
+    nome: 'Crescimento',
+    janela: 'PÓS-90 DIAS',
+    modulos: 'M14–M15 · 8 destravamentos',
+    objetivo: 'Cultura data-driven. P6 — Pessoas estruturado por estágio. Plano 180–365 dias. De Vendas Aleatórias para Vendas Previsíveis.',
+    destravamentos: [
+      'Separar métricas de vaidade de métricas de negócio',
+      'Rodar primeiro teste A/B estruturado',
+      'Análise de coorte + prevenção de churn',
+      'Mapear estrutura de time (P6) por estágio',
+      'Programa de onboarding de 30 dias',
+      'Escrever Plano 180–365 dias',
+    ],
+    acento: 'acid',
   },
 ];
-
-const getCorClass = (cor: string, tipo: 'bg' | 'text' | 'border') => {
-  if (cor === 'lime') return tipo === 'bg' ? 'bg-lime' : tipo === 'text' ? 'text-lime' : 'border-lime/30';
-  if (cor === 'royal-blue') return tipo === 'bg' ? 'bg-royal-blue' : tipo === 'text' ? 'text-royal-blue' : 'border-white/10';
-  if (cor === 'red') return tipo === 'bg' ? 'bg-red-500' : tipo === 'text' ? 'text-red-400' : 'border-red-500/30';
-  if (cor === 'gray') return tipo === 'bg' ? 'bg-gray-600' : tipo === 'text' ? 'text-gray-400' : 'border-white/10';
-  if (cor === 'gradient') return tipo === 'bg' ? 'bg-linear-to-br from-lime to-royal-blue' : tipo === 'text' ? 'text-white' : 'border-lime/30';
-  return '';
-};
 ---
 
-<section class="relative overflow-hidden bg-linear-to-b from-dark via-dark/95 to-dark py-24">
+<section class="relative overflow-hidden bg-ink py-24">
+  <div class="grid-overlay"></div>
+
   <Container>
-    <div class="mx-auto mb-16 max-w-3xl text-center">
-      <span class="mb-4 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-1.5 text-sm font-display font-bold text-lime backdrop-blur-sm">
-        A JORNADA COMPLETA
-      </span>
-      <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
-        38 Anos em <span class="text-lime">7 Capítulos</span>
+    <!-- Section head -->
+    <div class="mx-auto mb-16 max-w-3xl">
+      <div class="kicker mb-4">// JORNADA · 90 DIAS GUIADOS + PERPÉTUO</div>
+      <h2 class="mb-6 font-display text-cream" style="font-size: clamp(2rem, 5vw, 3.5rem); line-height: 0.92; letter-spacing: -0.04em; text-transform: uppercase;">
+        <span class="text-acid">7 fases</span>. 15 módulos. <span class="stroke-text">66 destravamentos</span>.
       </h2>
-      <p class="font-sans text-body-lg text-gray-200">
-        De Palhoça ao Framework dos 6Ps
+      <p class="font-sans text-cream/70" style="font-size: clamp(1rem, 2vw, 1.25rem); line-height: 1.5;">
+        De vendas aleatórias para vendas previsíveis. Cada destravamento é uma ação de 15–20 minutos com entregável tangível. Não é curso pra maratonar — é sistema pra implementar. 90 dias de execução, não 7 dias de milagre.
       </p>
     </div>
 
-    <div class="mx-auto max-w-4xl">
-      <div class="relative space-y-12">
-        {/* Linha do tempo vertical */}
-        <div class="absolute left-8 top-0 h-full w-0.5 bg-linear-to-b from-lime via-royal-blue to-lime opacity-20"></div>
-
-        {capitulos.map((cap) => (
-          <div class="relative flex gap-6">
-            <div class={`flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-4 border-dark ${getCorClass(cap.cor, 'bg')} ${cap.cor === 'gradient' ? 'shadow-2xl shadow-lime/30' : 'shadow-xl'}`}>
-              <span class={`font-display text-xl font-bold ${cap.cor === 'lime' || cap.cor === 'gray' ? 'text-dark' : 'text-white'}`}>
-                {cap.numero}
-              </span>
-            </div>
-            <div class={`flex-1 rounded-2xl border ${cap.cor === 'red' ? 'border-red-500/30 bg-red-500/5' : cap.cor === 'gradient' ? 'border-2 border-lime/30 bg-linear-to-br from-lime/10 to-royal-blue/10' : 'border-white/10 bg-white/5'} p-6 backdrop-blur-sm`}>
-              <div class="mb-2 flex items-center gap-3">
-                <span class={`rounded-full ${getCorClass(cap.cor, 'bg')}/20 px-3 py-1 font-display text-xs font-bold ${getCorClass(cap.cor, 'text')}`}>
-                  {cap.periodo}
-                </span>
-                <h3 class="font-display text-h3 text-white">{cap.titulo}</h3>
-              </div>
-              <p class="mb-3 font-sans text-body text-gray-300" set:html={cap.descricao} />
-              {cap.descricao2 && (
-                <p class={`mb-3 font-sans text-body ${cap.descricao2Cor || 'text-gray-300'}`} set:html={cap.descricao2} />
-              )}
-              <p class={`font-sans text-sm ${cap.licoesCor || 'text-gray-400'}`} set:html={cap.licoes} />
-            </div>
-          </div>
-        ))}
+    <!-- Status bar de progresso -->
+    <div class="mx-auto mb-12 max-w-5xl border border-white/10 bg-ink-2 p-4">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <span class="dot-live"></span>
+          <span class="mono text-acid">SYS ONLINE · VSS_CORE v3.0</span>
+        </div>
+        <div class="mono text-fg-muted">FASES 1–5 · 90 DIAS · FASES 6–7 · PERPÉTUO</div>
       </div>
+    </div>
+
+    <!-- Timeline vertical -->
+    <div class="mx-auto max-w-5xl">
+      {fases.map((f, i) => {
+        const acentoColor = f.acento === 'acid' ? 'var(--jb-acid)' : 'var(--jb-fire)';
+        return (
+          <article class="relative grid gap-6 border-t border-white/10 py-10 md:grid-cols-[200px_1fr] md:gap-10 md:py-14" style={i === fases.length - 1 ? 'border-bottom: 1px solid var(--jb-hair);' : ''}>
+            <!-- Coluna numeral -->
+            <div class="flex flex-col">
+              <div class="font-display" style={`color: ${acentoColor}; font-size: clamp(4rem, 10vw, 7rem); line-height: 0.9; letter-spacing: -0.045em; font-weight: 900;`}>
+                {f.numero}
+              </div>
+              <div class="mono mt-2">// {f.janela}</div>
+              <div class="mono mt-1 text-fg-muted" style="font-size: 0.65rem;">{f.modulos}</div>
+              {f.marco && (
+                <div class="mt-3 inline-flex w-fit items-center gap-2 border border-acid bg-acid px-2 py-1" style="color: var(--jb-ink);">
+                  <span class="font-display" style="font-size: 0.65rem; letter-spacing: 0.15em;">★ MARCO 90D</span>
+                </div>
+              )}
+            </div>
+            <!-- Conteúdo -->
+            <div class="min-w-0">
+              <h3 class="mb-4 font-display text-cream" style="font-size: clamp(1.5rem, 3.5vw, 2.25rem); line-height: 1; letter-spacing: -0.035em; text-transform: uppercase;">
+                Fase {f.numero} — {f.nome}
+              </h3>
+              <p class="mb-6 font-sans text-cream/85" style="font-size: clamp(1rem, 1.8vw, 1.125rem); line-height: 1.55;">
+                {f.objetivo}
+              </p>
+              <div class="border border-white/10 bg-ink-2 p-5 md:p-6">
+                <div class="mono mb-3" style={`color: ${acentoColor};`}>// destravamentos-chave</div>
+                <ul class="grid gap-2 md:grid-cols-2">
+                  {f.destravamentos.map((d) => (
+                    <li class="flex items-start gap-2 font-sans text-cream/80" style="font-size: 0.9rem; line-height: 1.45;">
+                      <span style={`color: ${acentoColor};`}>▶</span>
+                      <span>{d}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+
+    <!-- Fechamento -->
+    <div class="mx-auto mt-16 max-w-4xl border-l-4 border-acid bg-ink-2 p-8 md:p-10">
+      <div class="kicker mb-4">// RESULTADO AO FIM DAS 7 FASES</div>
+      <p class="mb-4 font-display text-cream" style="font-size: clamp(1.5rem, 3vw, 2.25rem); line-height: 1.05; letter-spacing: -0.035em; text-transform: uppercase;">
+        <span class="text-acid">Máquina de Crescimento</span> ligada. Sistema rodando. Dono desafogado.
+      </p>
+      <p class="font-sans text-cream/80" style="font-size: 1rem; line-height: 1.55;">
+        De vendas aleatórias para vendas previsíveis. 6Ps integrados, CRM operacional, funis ativos, processos documentados, time autônomo. Não é milagre — é método aplicado com disciplina em 140+ empresas.
+      </p>
+      <p class="mt-6 font-display text-fire" style="font-size: 1.25rem; letter-spacing: -0.02em; text-transform: uppercase;">
+        Sistema > Improviso. Bora pra cima.
+      </p>
     </div>
   </Container>
 </section>

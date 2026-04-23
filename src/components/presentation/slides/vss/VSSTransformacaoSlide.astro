@@ -1,84 +1,182 @@
 ---
-import Container from '../../../ui/Container.astro'
-import { Icon } from 'astro-icon/components'
+// Slide 12 · VSS Transformação — Case ESF como promessa de transformação (antes → depois)
+import SlideShell from '../../SlideShell.astro'
 ---
 
-<div class="h-screen bg-dark py-8 flex items-center overflow-y-auto">
-  <Container>
-    <div class="max-w-6xl mx-auto">
-      
-      <div class="text-center mb-10">
-        <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-4">
-          Antes vs Depois do <span class="text-lime">VSS</span>
-        </h2>
-        <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-          A transformação que você vai experimentar
-        </p>
-      </div>
-
-      <!-- Before vs After -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        
-        <!-- Antes -->
-        <div class="rounded-2xl border-2 border-red-500/30 bg-red-500/5 p-8">
-          <div class="mb-6 flex items-center justify-center gap-3">
-            <Icon name="lucide:x-circle" class="h-10 w-10 text-red-400" />
-            <h3 class="text-3xl font-bold text-white">Antes</h3>
-          </div>
-          
-          <div class="space-y-4">
-            <div class="rounded-lg bg-dark/40 p-4">
-              <p class="text-white font-semibold">Vendas aleatórias</p>
-            </div>
-            <div class="rounded-lg bg-dark/40 p-4">
-              <p class="text-white font-semibold">Sem CRM ou planilhas</p>
-            </div>
-            <div class="rounded-lg bg-dark/40 p-4">
-              <p class="text-white font-semibold">Processo na sua cabeça</p>
-            </div>
-            <div class="rounded-lg bg-dark/40 p-4">
-              <p class="text-white font-semibold">Você faz tudo sozinho</p>
-            </div>
-            <div class="rounded-lg bg-dark/40 p-4">
-              <p class="text-white font-semibold">Perda de leads por esquecimento</p>
-            </div>
-            <div class="rounded-lg bg-dark/40 p-4">
-              <p class="text-white font-semibold">Sem métricas claras</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Depois -->
-        <div class="rounded-2xl border-2 border-lime/30 bg-lime/5 p-8">
-          <div class="mb-6 flex items-center justify-center gap-3">
-            <Icon name="lucide:check-circle" class="h-10 w-10 text-lime" />
-            <h3 class="text-3xl font-bold text-white">Depois</h3>
-          </div>
-          
-          <div class="space-y-4">
-            <div class="rounded-lg bg-dark/40 p-4 border-l-4 border-lime">
-              <p class="text-white font-semibold">Previsibilidade mensal</p>
-            </div>
-            <div class="rounded-lg bg-dark/40 p-4 border-l-4 border-lime">
-              <p class="text-white font-semibold">Sistema integrado profissional</p>
-            </div>
-            <div class="rounded-lg bg-dark/40 p-4 border-l-4 border-lime">
-              <p class="text-white font-semibold">Playbook documentado</p>
-            </div>
-            <div class="rounded-lg bg-dark/40 p-4 border-l-4 border-lime">
-              <p class="text-white font-semibold">Equipe executando processos</p>
-            </div>
-            <div class="rounded-lg bg-dark/40 p-4 border-l-4 border-lime">
-              <p class="text-white font-semibold">Automação 24/7 ativa</p>
-            </div>
-            <div class="rounded-lg bg-dark/40 p-4 border-l-4 border-lime">
-              <p class="text-white font-semibold">Dashboard com KPIs em tempo real</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
+<SlideShell
+  variant="default"
+  sbLeft="VSS · TRANSFORMAÇÃO REAL"
+  sbRight="// CASE ESF · 2018-2020"
+  navLeft="★ MESMO PLAYBOOK · DENTRO DO VSS"
+  navRight="13 / 19 · → INVESTIMENTO"
+>
+  <div class="vt-wrap">
+    <div class="vt-head">
+      <div class="vt-kicker">// ANTES → DEPOIS</div>
+      <h2 class="vt-h2">
+        <span class="stroke-text">DE VENDAS</span> ALEATÓRIAS<br />
+        PARA VENDAS <span class="acid">PREVISÍVEIS.</span>
+      </h2>
     </div>
-  </Container>
-</div>
+
+    <div class="vt-flip">
+      <div class="vt-col neg">
+        <div class="vt-tag">// ANTES DO SISTEMA</div>
+        <div class="vt-v">R$ 160K<br />/MÊS</div>
+        <ul class="vt-bullets neg">
+          <li>Faturamento oscilando mês a mês</li>
+          <li>Tráfego pago sem funil estruturado</li>
+          <li>Venda dependente do fundador</li>
+          <li>Sem previsibilidade de pipeline</li>
+        </ul>
+      </div>
+
+      <div class="vt-arrow">→</div>
+
+      <div class="vt-col pos">
+        <div class="vt-tag">// DEPOIS DOS 6PS</div>
+        <div class="vt-v">R$ 1 <em>MILHÃO</em><br />/MÊS</div>
+        <ul class="vt-bullets pos">
+          <li>Faturamento previsível com range</li>
+          <li>Máquina integrada: P4 + P5 rodando</li>
+          <li>Time executando playbook</li>
+          <li>+433% em 24 meses · leads ×8,33</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="vt-results">
+      <span class="vt-chip"><b>+433%</b> FATURAMENTO</span>
+      <span class="vt-chip"><b>×8,33</b> LEADS</span>
+      <span class="vt-chip"><b>1.800+</b> FRANQUEADOS</span>
+      <span class="vt-chip vt-chip-acid">★ 24 MESES · AUDITED</span>
+    </div>
+
+    <p class="vt-foot">
+      <b>Não é fórmula mágica.</b> É o mesmo playbook que rodou na ESF, Port (+250%), Lojas Rede (+65%) — e em consultoria VSS típica 90d (R$ 50k → R$ 80-120k/mês · +60% a +140%).
+    </p>
+  </div>
+</SlideShell>
+
+<style>
+  .vt-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 28px;
+    height: 100%;
+  }
+  .vt-kicker {
+    font-family: var(--font-mono);
+    font-size: clamp(12px, 1vw, 16px);
+    letter-spacing: 0.32em;
+    color: var(--jb-acid);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .vt-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 82px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    text-transform: uppercase;
+    color: var(--jb-cream);
+    margin: 0;
+  }
+  .vt-h2 .acid { color: var(--jb-acid); }
+
+  .vt-flip {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+  .vt-col {
+    background: var(--jb-ink-2);
+    border: 1px solid var(--jb-hair);
+    padding: 28px 28px 24px;
+  }
+  .vt-col.neg { border-color: var(--jb-fire-border); }
+  .vt-col.pos { border-color: var(--jb-acid-border); }
+  .vt-tag {
+    font-family: var(--font-mono);
+    font-size: clamp(11px, 0.9vw, 14px);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .vt-col.neg .vt-tag { color: var(--jb-fire); }
+  .vt-col.pos .vt-tag { color: var(--jb-acid); }
+
+  .vt-v {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 5.5vw, 96px);
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+    text-transform: uppercase;
+  }
+  .vt-col.neg .vt-v {
+    color: var(--jb-fg-muted);
+    text-decoration: line-through;
+    text-decoration-color: var(--jb-fire);
+    text-decoration-thickness: 5px;
+  }
+  .vt-col.pos .vt-v { color: var(--jb-cream); }
+  .vt-col.pos .vt-v em { font-style: normal; color: var(--jb-acid); }
+
+  .vt-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .vt-bullets li {
+    font-family: var(--font-sans);
+    font-size: clamp(12px, 0.95vw, 15px);
+    line-height: 1.45;
+    color: var(--jb-fg-2);
+    padding-left: 18px;
+    position: relative;
+  }
+  .vt-bullets.neg li::before { content: '▼'; position: absolute; left: 0; color: var(--jb-fire); font-size: 0.75em; }
+  .vt-bullets.pos li::before { content: '▲'; position: absolute; left: 0; color: var(--jb-acid); font-size: 0.75em; }
+
+  .vt-arrow {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5vw, 88px);
+    color: var(--jb-fire);
+    line-height: 1;
+    text-align: center;
+  }
+
+  .vt-results {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .vt-chip {
+    font-family: var(--font-mono);
+    font-size: clamp(11px, 0.85vw, 13px);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    border: 1px solid var(--jb-hair);
+    color: var(--jb-cream);
+  }
+  .vt-chip b { color: var(--jb-acid); margin-right: 6px; font-family: var(--font-display); }
+  .vt-chip-acid { border-color: var(--jb-acid); color: var(--jb-acid); }
+
+  .vt-foot {
+    font-size: clamp(12px, 1vw, 16px);
+    line-height: 1.5;
+    color: var(--jb-fg-3);
+  }
+  .vt-foot b { color: var(--jb-cream); }
+
+  @media (max-width: 1024px) {
+    .vt-flip { grid-template-columns: 1fr; }
+    .vt-arrow { transform: rotate(90deg); }
+  }
+</style>

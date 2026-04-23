@@ -1,82 +1,174 @@
 ---
-import Container from '../../ui/Container.astro'
-import { Icon } from 'astro-icon/components'
+// Slide 18 · CTA Final — "Ligar a Máquina?" · fechamento
+import SlideShell from '../SlideShell.astro'
 ---
 
-<div class="h-screen bg-dark flex items-center justify-center overflow-hidden">
-  <Container>
-    <div class="max-w-4xl mx-auto text-center px-4">
-      
-      <div class="mb-8">
-        <div class="mb-6 inline-flex items-center justify-center w-20 h-20 rounded-full bg-lime/20 border-2 border-lime">
-          <Icon name="lucide:check-circle-2" class="h-10 w-10 text-lime" />
-        </div>
-        <h2 class="font-display text-5xl md:text-6xl font-bold text-white mb-6">
-          Vamos <span class="text-lime">Fechar</span>?
-        </h2>
-        <p class="text-2xl text-gray-300 max-w-2xl mx-auto mb-8">
-          Você viu como funciona. Está pronto para estruturar suas vendas de verdade?
-        </p>
-      </div>
+<SlideShell
+  variant="default"
+  sbLeft="PRÓXIMO PASSO · DECIDIR"
+  sbRight="// 19 / 19 · FECHAMENTO"
+  navLeft="★ SISTEMA &gt; IMPROVISO · BORA PRA CIMA"
+  navRight="@JOELBURIGO.COM.BR"
+  navAcid={false}
+>
+  <div class="cta-radial"></div>
 
-      <!-- Main CTA -->
-      <div class="rounded-3xl border-2 border-lime/50 bg-linear-to-br from-lime/10 to-lime/5 p-10 mb-8">
-        <h3 class="text-3xl font-bold text-white mb-4">
-          Próximo Passo: <span class="text-lime">Começar Agora</span>
-        </h3>
-        <p class="text-lg text-gray-300 mb-8 max-w-xl mx-auto">
-          Já conversamos, você já sabe o que precisa. Vamos agendar e começar.
-        </p>
-        
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a 
-            href="#" 
-            class="inline-flex items-center gap-3 bg-lime text-dark px-10 py-5 rounded-full text-xl font-bold hover:bg-lime/90 transition-all hover:scale-105"
-          >
-            <Icon name="lucide:calendar-check" class="h-6 w-6" />
-            Agendar Kickoff
-          </a>
-          <a 
-            href="/contato" 
-            class="inline-flex items-center gap-3 bg-white/10 text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-white/20 transition-all border-2 border-white/20"
-          >
-            <Icon name="lucide:message-circle" class="h-6 w-6" />
-            Tirar Dúvidas
-          </a>
-        </div>
-      </div>
+  <div class="cta-wrap">
+    <div class="cta-kicker">// DECIDIR AGORA</div>
+    <h1 class="cta-h1">
+      LIGAR A<br />
+      <span class="fire">MÁQUINA?</span>
+    </h1>
+    <p class="cta-sub">
+      Você viu o sistema. Viu os cases. Viu o método.<br />
+      Agora é só decidir qual caminho faz sentido <b>pra ti.</b>
+    </p>
 
-      <!-- Garantias -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-        <div class="rounded-xl bg-white/5 border border-white/10 p-5">
-          <Icon name="lucide:shield-check" class="h-8 w-8 text-lime mx-auto mb-3" />
-          <p class="text-sm text-white font-semibold mb-1">Garantia de Resultado</p>
-          <p class="text-xs text-gray-400">Se não funcionar, ajustamos até funcionar</p>
-        </div>
-        <div class="rounded-xl bg-white/5 border border-white/10 p-5">
-          <Icon name="lucide:headphones" class="h-8 w-8 text-lime mx-auto mb-3" />
-          <p class="text-sm text-white font-semibold mb-1">Suporte Direto</p>
-          <p class="text-xs text-gray-400">WhatsApp direto comigo durante todo processo</p>
-        </div>
-        <div class="rounded-xl bg-white/5 border border-white/10 p-5">
-          <Icon name="lucide:clock" class="h-8 w-8 text-lime mx-auto mb-3" />
-          <p class="text-sm text-white font-semibold mb-1">Vagas Limitadas</p>
-          <p class="text-xs text-gray-400">Atendo poucos clientes por vez para garantir qualidade</p>
-        </div>
-      </div>
-
-      <!-- Final Push -->
-      <div class="rounded-2xl bg-linear-to-r from-red-500/10 via-orange-500/10 to-lime/10 border-2 border-lime/30 p-6">
-        <p class="text-lg text-white font-semibold mb-2">
-          <Icon name="lucide:alert-circle" class="inline h-5 w-5 text-orange-400 mr-2" />
-          A decisão é simples:
-        </p>
-        <p class="text-gray-300">
-          Ou você continua com vendas inconsistentes, dependendo só de você e sem sistema...
-          <strong class="text-white">ou estrutura isso agora</strong> e libera sua empresa para crescer de verdade.
-        </p>
-      </div>
-
+    <div class="cta-prices">
+      <span class="cta-chip cta-chip-acid">★ VSS · R$ 1.997 À VISTA OU 12× R$ 166,42</span>
+      <span class="cta-chip cta-chip-fire">★ ADVISORY · POR CONVITE</span>
     </div>
-  </Container>
-</div>
+
+    <div class="cta-btns">
+      <a href="/vendas-sem-segredos" class="cta-btn cta-btn-primary">
+        VER VSS COMPLETO →
+      </a>
+      <a href="/advisory" class="cta-btn cta-btn-secondary">
+        FALAR COM JOEL (ADVISORY) →
+      </a>
+    </div>
+
+    <div class="cta-foot">
+      <div class="cta-foot-t">
+        Daqui 90 dias você estará <b>90 dias mais perto</b> do sistema.<br />
+        Ou <b>90 dias mais longe.</b> Escolhe.
+      </div>
+      <div class="cta-sign">
+        ★ SISTEMA &gt; IMPROVISO · BORA PRA CIMA · LET'S GROW
+      </div>
+    </div>
+  </div>
+</SlideShell>
+
+<style>
+  .cta-radial {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 85% 20%, rgba(198, 255, 0, 0.12), transparent 55%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .cta-wrap {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding: 0 60px;
+  }
+  .cta-kicker {
+    font-family: var(--font-mono);
+    font-size: clamp(12px, 1vw, 18px);
+    letter-spacing: 0.32em;
+    color: var(--jb-acid);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .cta-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(72px, 11vw, 200px);
+    line-height: 0.88;
+    letter-spacing: -0.055em;
+    text-transform: uppercase;
+    color: var(--jb-cream);
+    margin: 0;
+  }
+  .cta-h1 .fire { color: var(--jb-fire); }
+  .cta-sub {
+    margin-top: 32px;
+    font-size: clamp(14px, 1.4vw, 24px);
+    line-height: 1.5;
+    color: var(--jb-fg-3);
+    max-width: 1000px;
+  }
+  .cta-sub b { color: var(--jb-cream); }
+
+  .cta-prices {
+    margin-top: 32px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cta-chip {
+    font-family: var(--font-mono);
+    font-size: clamp(11px, 1vw, 14px);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    border: 1px solid;
+    font-weight: 700;
+  }
+  .cta-chip-acid { color: var(--jb-acid); border-color: var(--jb-acid); }
+  .cta-chip-fire { color: var(--jb-fire); border-color: var(--jb-fire); }
+
+  .cta-btns {
+    margin-top: 36px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cta-btn {
+    font-family: var(--font-display);
+    font-size: clamp(14px, 1.3vw, 20px);
+    letter-spacing: 0.12em;
+    padding: 20px 32px;
+    text-transform: uppercase;
+    transition: transform var(--jb-dur) var(--jb-ease), box-shadow var(--jb-dur) var(--jb-ease);
+  }
+  .cta-btn-primary {
+    background: var(--jb-fire);
+    color: var(--jb-ink);
+    box-shadow: 6px 6px 0 var(--jb-acid);
+  }
+  .cta-btn-primary:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0 var(--jb-acid);
+  }
+  .cta-btn-secondary {
+    background: transparent;
+    color: var(--jb-cream);
+    border: 2px solid var(--jb-cream);
+  }
+  .cta-btn-secondary:hover {
+    border-color: var(--jb-acid);
+    color: var(--jb-acid);
+  }
+
+  .cta-foot {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+  .cta-foot-t {
+    font-size: clamp(13px, 1.1vw, 18px);
+    line-height: 1.5;
+    color: var(--jb-fg-3);
+    max-width: 700px;
+  }
+  .cta-foot-t b { color: var(--jb-cream); }
+  .cta-sign {
+    font-family: var(--font-mono);
+    font-size: clamp(11px, 0.9vw, 13px);
+    letter-spacing: 0.28em;
+    color: var(--jb-fg-muted);
+    text-transform: uppercase;
+  }
+</style>

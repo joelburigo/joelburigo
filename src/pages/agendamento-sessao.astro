@@ -3,159 +3,132 @@ import Layout from '../layouts/Layout.astro'
 import Header from '../components/layout/Header.astro'
 import Footer from '../components/layout/Footer.astro'
 import Container from '../components/ui/Container.astro'
-import Icons from '../components/ui/Icons.astro'
 
 const seo = {
-  title: '📅 Agendar Sessão Estratégica - Advisory | Joel Burigo',
-  description: 'Agende sua sessão estratégica de 90 minutos. Diagnóstico dos 6Ps e plano de ação com 3-5 ações prioritárias. R$ 997.',
-  keywords: 'sessão estratégica, consultoria empresarial, advisory, Joel Burigo, agendamento',
+  title: 'Agendar Sessão Estratégica — Advisory | Joel Burigo',
+  description: 'Sessão estratégica 1:1 de 90 min. Diagnóstico 6Ps + plano de ação com 3-5 prioridades. R$ 997.',
+  keywords: 'sessão estratégica, advisory, Joel Burigo, agendamento',
 }
 ---
 
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords} noIndex={true}>
   <Header />
-  
-  <main class="min-h-screen bg-dark pt-16 md:pt-20">
-    <section class="py-12 md:py-16">
-      <Container>
+
+  <main class="relative overflow-hidden bg-ink pt-20">
+    <div class="grid-overlay"></div>
+
+    <Container class="relative z-10">
+      <section class="py-16 md:py-24">
         <div class="mx-auto max-w-5xl">
-          <!-- Header -->
-          <div class="mb-8 text-center">
-            <div class="mb-4 inline-block rounded-full bg-lime/10 px-6 py-2">
-              <span class="font-display text-sm font-bold text-lime">ADVISORY</span>
-            </div>
-            <h1 class="mb-4 font-display text-4xl font-bold text-white md:text-5xl">
-              📅 Agendar Sessão Estratégica
+          <!-- Hero -->
+          <div class="mb-12">
+            <div class="kicker mb-6">// ADVISORY · SESSÃO · 90_MIN · R$ 997</div>
+            <h1 class="tg-display">
+              Agendar <span class="text-acid">Sessão.</span>
             </h1>
-            <p class="mx-auto max-w-2xl font-sans text-body-lg text-gray-200">
-              Escolha o melhor horário para sua sessão de 90 minutos
+            <p class="mt-6 max-w-2xl font-sans text-lg text-[color:var(--jb-cream)]">
+              Escolhe o melhor horário pra tua sessão estratégica de 90 minutos. Máximo 4 sessões/mês na agenda.
             </p>
           </div>
 
-          <!-- Info Cards -->
-          <div class="mb-8 grid grid-cols-1 gap-4 md:grid-cols-3">
-            <div class="rounded-xl border border-lime/20 bg-lime/5 p-4 text-center">
-              <Icons name="clock" class="mx-auto mb-2 h-6 w-6 text-lime" />
-              <p class="mb-1 font-display text-sm font-semibold text-white">Duração</p>
-              <p class="font-sans text-xs text-gray-300">90 minutos</p>
+          <!-- Info cards -->
+          <div class="mb-10 grid gap-6 md:grid-cols-3">
+            <div class="card">
+              <div class="kicker mb-3">// DURAÇÃO</div>
+              <div class="font-display text-3xl text-[color:var(--jb-cream)]">90 min</div>
             </div>
-            <div class="rounded-xl border border-lime/20 bg-lime/5 p-4 text-center">
-              <Icons name="calendar" class="mx-auto mb-2 h-6 w-6 text-lime" />
-              <p class="mb-1 font-display text-sm font-semibold text-white">Disponibilidade</p>
-              <p class="font-sans text-xs text-gray-300">Máx 4 sessões/mês</p>
+            <div class="card">
+              <div class="kicker mb-3">// DISPONIBILIDADE</div>
+              <div class="font-display text-3xl text-[color:var(--jb-cream)]">4/mês</div>
             </div>
-            <div class="rounded-xl border border-lime/20 bg-lime/5 p-4 text-center">
-              <Icons name="dollar-sign" class="mx-auto mb-2 h-6 w-6 text-lime" />
-              <p class="mb-1 font-display text-sm font-semibold text-white">Investimento</p>
-              <p class="font-sans text-xs text-gray-300">R$ 997</p>
+            <div class="card" style="border-color: var(--jb-acid-border);">
+              <div class="kicker mb-3" style="color: var(--jb-acid);">// INVESTIMENTO</div>
+              <div class="font-display text-3xl text-acid">R$ 997</div>
             </div>
           </div>
 
-          <!-- O Que Está Incluído -->
-          <div class="mb-8 rounded-2xl border-2 border-lime/30 bg-white/5 p-6 md:p-8">
-            <h2 class="mb-4 font-display text-h2 text-white">O Que Está Incluído</h2>
-            <ul class="grid grid-cols-1 gap-3 md:grid-cols-2">
-              <li class="flex items-start gap-2">
-                <Icons name="check-circle-2" class="h-5 w-5 shrink-0 text-lime" />
-                <span class="font-sans text-body-sm text-gray-200">90 minutos de consultoria ao vivo</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <Icons name="check-circle-2" class="h-5 w-5 shrink-0 text-lime" />
-                <span class="font-sans text-body-sm text-gray-200">Análise profunda do desafio</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <Icons name="check-circle-2" class="h-5 w-5 shrink-0 text-lime" />
-                <span class="font-sans text-body-sm text-gray-200">Diagnóstico rápido dos 6Ps</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <Icons name="check-circle-2" class="h-5 w-5 shrink-0 text-lime" />
-                <span class="font-sans text-body-sm text-gray-200">Plano de ação (3-5 ações prioritárias)</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <Icons name="check-circle-2" class="h-5 w-5 shrink-0 text-lime" />
-                <span class="font-sans text-body-sm text-gray-200">Gravação da sessão</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <Icons name="check-circle-2" class="h-5 w-5 shrink-0 text-lime" />
-                <span class="font-sans text-body-sm text-gray-200">Relatório executivo em 24h (2-3 páginas)</span>
-              </li>
+          <!-- Incluído -->
+          <div class="mb-10 border border-[color:var(--jb-acid-border)] bg-[color:var(--jb-ink-2)] p-8">
+            <div class="kicker mb-4" style="color: var(--jb-acid);">// INCLUÍDO</div>
+            <ul class="grid gap-3 md:grid-cols-2">
+              {[
+                '90 minutos de consultoria ao vivo 1:1',
+                'Análise profunda do desafio atual',
+                'Diagnóstico rápido dos 6Ps',
+                'Plano de ação (3-5 ações prioritárias)',
+                'Gravação da sessão',
+                'Relatório executivo em 24h (2-3 páginas)',
+              ].map((item) => (
+                <li class="flex items-start gap-3 font-sans text-[color:var(--jb-fg-2)]">
+                  <span class="mt-[3px] shrink-0 text-acid">▶</span>
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <!-- Booking Widget -->
-          <div class="rounded-2xl border-2 border-lime/30 bg-linear-to-b from-dark to-slate-800 p-4">
+          <!-- Booking widget -->
+          <div class="border border-[color:var(--jb-hair)] bg-[color:var(--jb-ink-2)] p-4">
+            <div class="kicker mb-4 px-2 pt-2">// CALENDÁRIO · ESCOLHA_HORÁRIO</div>
             <div id="booking-container" class="min-h-[600px]">
-              <!-- Loading State -->
               <div id="booking-loading" class="flex min-h-[600px] items-center justify-center">
                 <div class="text-center">
-                  <div class="mb-4 inline-block h-12 w-12 animate-spin rounded-full border-4 border-lime/30 border-t-lime"></div>
-                  <p class="font-sans text-body text-gray-300">Carregando calendário...</p>
+                  <div class="mb-4 inline-block h-10 w-10 animate-spin border-2 border-[color:var(--jb-hair)] border-t-[color:var(--jb-acid)]"></div>
+                  <p class="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">
+                    Carregando calendário...
+                  </p>
                 </div>
               </div>
-              
-              <!-- Iframe will be injected here -->
               <div id="booking-iframe-wrapper" class="hidden"></div>
             </div>
           </div>
 
-          <!-- Back Link -->
-          <div class="mt-8 text-center">
-            <a href="/advisory" class="inline-flex items-center gap-2 font-sans text-body text-gray-400 transition-colors hover:text-lime">
-              ← Voltar para Advisory
+          <!-- Voltar -->
+          <div class="mt-10">
+            <a href="/advisory" class="font-mono text-[12px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-3)] hover:text-acid">
+              ← Voltar pra Advisory
             </a>
           </div>
         </div>
-      </Container>
-    </section>
+      </section>
+    </Container>
   </main>
 
   <Footer />
 </Layout>
 
 <script>
-  // Lazy load booking iframe
   document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('booking-iframe-wrapper');
-    const loading = document.getElementById('booking-loading');
-    
-    if (!container || !loading) return;
+    const container = document.getElementById('booking-iframe-wrapper')
+    const loading = document.getElementById('booking-loading')
+    if (!container || !loading) return
 
-    // Create and inject iframe
-    const iframe = document.createElement('iframe');
-    iframe.src = 'https://api.gsh.digital/widget/booking/IxxmHsXDAkSzsx3C6SyE';
-    iframe.style.cssText = 'width: 100%; border: none; overflow: hidden; min-height: 600px;';
-    iframe.id = 'IxxmHsXDAkSzsx3C6SyE_' + Date.now();
-    
-    // Show iframe when loaded
+    const iframe = document.createElement('iframe')
+    iframe.src = 'https://api.gsh.digital/widget/booking/IxxmHsXDAkSzsx3C6SyE'
+    iframe.style.cssText = 'width: 100%; border: none; overflow: hidden; min-height: 600px;'
+    iframe.id = 'IxxmHsXDAkSzsx3C6SyE_' + Date.now()
     iframe.onload = () => {
-      loading.classList.add('hidden');
-      container.classList.remove('hidden');
-    };
+      loading.classList.add('hidden')
+      container.classList.remove('hidden')
+    }
+    container.appendChild(iframe)
 
-    container.appendChild(iframe);
-
-    // Load external script
-    const script = document.createElement('script');
-    script.src = 'https://api.gsh.digital/js/form_embed.js';
-    script.type = 'text/javascript';
-    document.body.appendChild(script);
-  });
+    const script = document.createElement('script')
+    script.src = 'https://api.gsh.digital/js/form_embed.js'
+    script.type = 'text/javascript'
+    document.body.appendChild(script)
+  })
 </script>
 
 <style>
-  /* Smooth fade in animation */
-  section {
-    animation: fadeIn 0.6s ease-out;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .tg-display {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.045em;
+    line-height: 0.92;
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    color: var(--jb-cream);
+    margin: 0;
   }
 </style>

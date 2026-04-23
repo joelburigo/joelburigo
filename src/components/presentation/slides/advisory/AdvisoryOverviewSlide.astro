@@ -1,209 +1,232 @@
 ---
-import Container from '../../../ui/Container.astro'
-import { Icon } from 'astro-icon/components'
+// Slide 14 · Advisory Overview — Hero premium (por convite)
+import SlideShell from '../../SlideShell.astro'
 ---
 
-<div class="h-screen bg-dark py-12 flex items-start overflow-y-auto">
-  <Container>
-    <div class="max-w-6xl mx-auto">
-      
-      <div class="text-center mb-8">
-        <div class="mb-3 inline-block rounded-full bg-purple-900/40 px-6 py-2 border border-purple-500/30">
-          <span class="font-display text-sm font-bold uppercase tracking-widest text-purple-400">Trilha Advisory</span>
-        </div>
-        <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-4">
-          <span class="text-purple-400">Conselho</span> Estratégico
-        </h2>
-        <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-          Para CEOs e decisores que precisam de direção, não de execução
-        </p>
+<SlideShell
+  variant="default"
+  sbLeft="ADVISORY · ACESSO DIRETO AO JOEL"
+  sbRight="// ★ POR CONVITE · R$ 200K+/MÊS"
+  navLeft="★ 17+ ANOS APLICADOS AO TEU DESAFIO"
+  navRight="15 / 19 · → FORMATOS"
+>
+  <div class="ao-radial"></div>
+
+  <div class="ao-wrap">
+    <div class="ao-left">
+      <div class="ao-badge">★ POR CONVITE</div>
+      <div class="ao-kicker">// R$ 200K+/MÊS · EXCLUSIVO</div>
+      <h1 class="ao-h1">
+        <span class="stroke-text">JOEL BURIGO</span><br />
+        <span class="acid">ADVISORY</span>
+      </h1>
+      <p class="ao-tag">1:1 · CONSELHO ESTRATÉGICO · NÃO É EXECUÇÃO</p>
+      <p class="ao-sub">
+        Acesso direto a mim pra momentos críticos ou parceria de longo prazo.<br />
+        <b>Eu não faço por você. Oriento quem decide — pra você fazer certo.</b>
+      </p>
+
+      <div class="ao-criteria">
+        <div class="ao-crit-t">// PRA QUEM É</div>
+        <ul>
+          <li>CEO/Founder em momento crítico de decisão</li>
+          <li>Empresa já estruturada · time próprio</li>
+          <li>Valoriza atalho de 17+ anos &gt; executar sozinho</li>
+          <li>Entende que tempo &gt; dinheiro</li>
+        </ul>
       </div>
-
-      <!-- Para Quem É -->
-      <div class="mb-8 rounded-2xl border-2 border-purple-500/30 bg-purple-500/5 p-6">
-        <h3 class="text-xl font-bold text-white mb-4 text-center">
-          <Icon name="lucide:target" class="inline h-5 w-5 text-purple-400" /> Para Quem É
-        </h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="flex items-start gap-3">
-            <Icon name="lucide:check-circle" class="h-6 w-6 text-purple-400 shrink-0 mt-1" />
-            <div>
-              <p class="text-white font-semibold mb-1">Você é CEO/Decisor</p>
-              <p class="text-sm text-gray-400">Empresa já estruturada, time próprio</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-3">
-            <Icon name="lucide:check-circle" class="h-6 w-6 text-purple-400 shrink-0 mt-1" />
-            <div>
-              <p class="text-white font-semibold mb-1">Você precisa de direção</p>
-              <p class="text-sm text-gray-400">Decisões estratégicas, não tarefas</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-3">
-            <Icon name="lucide:check-circle" class="h-6 w-6 text-purple-400 shrink-0 mt-1" />
-            <div>
-              <p class="text-white font-semibold mb-1">Seu faturamento</p>
-              <p class="text-sm text-gray-400">Acima de R$ 500k/mês</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3 Formatos -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        
-        <!-- Sessão -->
-        <div class="rounded-xl border-2 border-purple-500/30 bg-purple-500/5 p-5">
-          <div class="mb-4">
-            <div class="mb-3 inline-flex items-center justify-center w-14 h-14 rounded-full bg-purple-500/20 border-2 border-purple-500/50">
-              <Icon name="lucide:clock" class="h-7 w-7 text-purple-400" />
-            </div>
-            <h3 class="text-xl font-bold text-white mb-1">Sessão</h3>
-            <p class="text-xs text-gray-400 mb-3">Pontual, para resolver 1 problema</p>
-            <div class="flex items-baseline gap-1">
-              <span class="text-sm text-gray-400">R$</span>
-              <span class="text-4xl font-bold text-purple-400">997</span>
-            </div>
-            <div class="text-xs text-gray-400 mt-1">por sessão</div>
-          </div>
-          <div class="space-y-2 mb-4">
-            <div class="flex items-start gap-2">
-              <Icon name="lucide:check" class="h-5 w-5 text-purple-400 shrink-0 mt-0.5" />
-              <p class="text-sm text-gray-300">90 minutos de consultoria</p>
-            </div>
-            <div class="flex items-start gap-2">
-              <Icon name="lucide:check" class="h-5 w-5 text-purple-400 shrink-0 mt-0.5" />
-              <p class="text-sm text-gray-300">Análise de 1 problema específico</p>
-            </div>
-            <div class="flex items-start gap-2">
-              <Icon name="lucide:check" class="h-5 w-5 text-purple-400 shrink-0 mt-0.5" />
-              <p class="text-sm text-gray-300">Plano de ação documentado</p>
-            </div>
-            <div class="flex items-start gap-2">
-              <Icon name="lucide:check" class="h-5 w-5 text-purple-400 shrink-0 mt-0.5" />
-              <p class="text-sm text-gray-300">Follow-up via e-mail (7 dias)</p>
-            </div>
-          </div>
-          <div class="rounded-lg bg-white/5 px-4 py-3 border border-white/10">
-            <p class="text-xs text-gray-400">
-              <strong class="text-white">Ideal para:</strong> Decisão pontual, validação de estratégia
-            </p>
-          </div>
-        </div>
-
-        <!-- Sprint -->
-        <div class="rounded-xl border-2 border-purple-500/50 bg-purple-500/10 p-5 relative">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-            <div class="rounded-full bg-lime px-4 py-1">
-              <span class="text-xs font-bold text-dark uppercase tracking-wider">Popular</span>
-            </div>
-          </div>
-          <div class="mb-4">
-            <div class="mb-3 inline-flex items-center justify-center w-14 h-14 rounded-full bg-purple-500/20 border-2 border-purple-500/50">
-              <Icon name="lucide:zap" class="h-7 w-7 text-purple-400" />
-            </div>
-            <h3 class="text-xl font-bold text-white mb-1">Sprint</h3>
-            <p class="text-xs text-gray-400 mb-3">Intensivo de 30 dias</p>
-            <div class="flex items-baseline gap-1">
-              <span class="text-sm text-gray-400">R$</span>
-              <span class="text-4xl font-bold text-purple-400">7.500</span>
-            </div>
-            <div class="text-xs text-gray-400 mt-1">pagamento único</div>
-          </div>
-          <div class="space-y-2 mb-4">
-            <div class="flex items-start gap-2">
-              <Icon name="lucide:check" class="h-5 w-5 text-purple-400 shrink-0 mt-0.5" />
-              <p class="text-sm text-gray-300">4 sessões (1 por semana)</p>
-            </div>
-            <div class="flex items-start gap-2">
-              <Icon name="lucide:check" class="h-5 w-5 text-purple-400 shrink-0 mt-0.5" />
-              <p class="text-sm text-gray-300">Análise profunda de 1 dos 6Ps</p>
-            </div>
-            <div class="flex items-start gap-2">
-              <Icon name="lucide:check" class="h-5 w-5 text-purple-400 shrink-0 mt-0.5" />
-              <p class="text-sm text-gray-300">WhatsApp direto durante 30 dias</p>
-            </div>
-            <div class="flex items-start gap-2">
-              <Icon name="lucide:check" class="h-5 w-5 text-purple-400 shrink-0 mt-0.5" />
-              <p class="text-sm text-gray-300">Entregáveis: playbook + templates</p>
-            </div>
-          </div>
-          <div class="rounded-lg bg-white/5 px-4 py-3 border border-white/10">
-            <p class="text-xs text-gray-400">
-              <strong class="text-white">Ideal para:</strong> Resolver 1 P específico rapidamente
-            </p>
-          </div>
-        </div>
-
-        <!-- Conselho -->
-        <div class="rounded-xl border-2 border-purple-500/30 bg-purple-500/5 p-5">
-          <div class="mb-4">
-            <div class="mb-3 inline-flex items-center justify-center w-14 h-14 rounded-full bg-purple-500/20 border-2 border-purple-500/50">
-              <Icon name="lucide:crown" class="h-7 w-7 text-purple-400" />
-            </div>
-            <h3 class="text-xl font-bold text-white mb-1">Conselho</h3>
-            <p class="text-xs text-gray-400 mb-3">Ongoing, longo prazo</p>
-            <div class="flex items-baseline gap-1">
-              <span class="text-sm text-gray-400">R$</span>
-              <span class="text-4xl font-bold text-purple-400">15k</span>
-            </div>
-            <div class="text-xs text-gray-400 mt-1">por mês</div>
-          </div>
-          <div class="space-y-2 mb-4">
-            <div class="flex items-start gap-2">
-              <Icon name="lucide:check" class="h-5 w-5 text-purple-400 shrink-0 mt-0.5" />
-              <p class="text-sm text-gray-300">8 sessões/mês (2 por semana, 60min cada)</p>
-            </div>
-            <div class="flex items-start gap-2">
-              <Icon name="lucide:check" class="h-5 w-5 text-purple-400 shrink-0 mt-0.5" />
-              <p class="text-sm text-gray-300">WhatsApp direto (resposta prioritária 4h)</p>
-            </div>
-            <div class="flex items-start gap-2">
-              <Icon name="lucide:check" class="h-5 w-5 text-purple-400 shrink-0 mt-0.5" />
-              <p class="text-sm text-gray-300">Participação em até 2 reuniões críticas/mês</p>
-            </div>
-            <div class="flex items-start gap-2">
-              <Icon name="lucide:check" class="h-5 w-5 text-purple-400 shrink-0 mt-0.5" />
-              <p class="text-sm text-gray-300">Revisão ilimitada de materiais estratégicos</p>
-            </div>
-          </div>
-          <div class="rounded-lg bg-white/5 px-4 py-3 border border-white/10">
-            <p class="text-xs text-gray-400">
-              <strong class="text-white">Ideal para:</strong> CEO que quer conselheiro dedicado
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- O Que NÃO É -->
-      <div class="rounded-2xl bg-linear-to-r from-purple-500/10 to-purple-500/5 border-2 border-purple-500/30 p-6">
-        <h3 class="text-xl font-bold text-white mb-4 text-center">O Que Advisory NÃO É</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="flex items-start gap-3">
-            <Icon name="lucide:x-circle" class="h-6 w-6 text-red-400 shrink-0 mt-1" />
-            <div>
-              <p class="text-white font-semibold mb-1">Não é Execução</p>
-              <p class="text-sm text-gray-400">Nós não fazemos por você. Orientamos você a fazer certo — execução é sempre do cliente ou do time dele.</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-3">
-            <Icon name="lucide:x-circle" class="h-6 w-6 text-red-400 shrink-0 mt-1" />
-            <div>
-              <p class="text-white font-semibold mb-1">Não é Treinamento</p>
-              <p class="text-sm text-gray-400">Não é para aprender do zero. É para decisões estratégicas. (Para aprender, veja VSS)</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-3">
-            <Icon name="lucide:x-circle" class="h-6 w-6 text-red-400 shrink-0 mt-1" />
-            <div>
-              <p class="text-white font-semibold mb-1">Não é Barato</p>
-              <p class="text-sm text-gray-400">É investimento para quem já fatura bem e quer escalar mais rápido com menos erro.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </Container>
-</div>
+
+    <div class="ao-right">
+      <div class="ao-not-card">
+        <div class="ao-not-t">// O QUE ADVISORY NÃO É</div>
+        <div class="ao-not-row">
+          <span class="x">✕</span>
+          <div>
+            <b>Não é execução.</b>
+            Não fazemos por você. Orientamos você a fazer certo.
+          </div>
+        </div>
+        <div class="ao-not-row">
+          <span class="x">✕</span>
+          <div>
+            <b>Não é treinamento.</b>
+            Pra aprender o sistema do zero, o caminho é VSS.
+          </div>
+        </div>
+        <div class="ao-not-row">
+          <span class="x">✕</span>
+          <div>
+            <b>Não é barato.</b>
+            É investimento pra quem já fatura e quer escalar com menos erro.
+          </div>
+        </div>
+      </div>
+
+      <div class="ao-access">
+        <div class="ao-access-t">// COMO ACESSAR</div>
+        <div class="ao-access-row">▶ Indicação de cliente atual</div>
+        <div class="ao-access-row">▶ Convite direto do Joel</div>
+        <div class="ao-access-row">▶ Solicitação via e-mail (sujeito a avaliação)</div>
+      </div>
+    </div>
+  </div>
+</SlideShell>
+
+<style>
+  .ao-radial {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 85% 15%, rgba(198, 255, 0, 0.1), transparent 55%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .ao-wrap {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+    height: 100%;
+  }
+  .ao-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: var(--jb-acid);
+    border: 1px solid var(--jb-acid);
+    padding: 6px 10px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .ao-kicker {
+    font-family: var(--font-mono);
+    font-size: clamp(12px, 1vw, 16px);
+    letter-spacing: 0.32em;
+    color: var(--jb-acid);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .ao-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(56px, 7.5vw, 150px);
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: var(--jb-cream);
+    margin: 0;
+  }
+  .ao-h1 .acid { color: var(--jb-acid); }
+  .ao-tag {
+    margin-top: 18px;
+    font-family: var(--font-mono);
+    font-size: clamp(12px, 1vw, 16px);
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--jb-cream);
+  }
+  .ao-sub {
+    margin-top: 18px;
+    font-size: clamp(13px, 1.1vw, 18px);
+    line-height: 1.5;
+    color: var(--jb-fg-3);
+    max-width: 720px;
+  }
+  .ao-sub b { color: var(--jb-cream); }
+
+  .ao-criteria {
+    margin-top: 28px;
+  }
+  .ao-crit-t {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    color: var(--jb-acid);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .ao-criteria ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .ao-criteria li {
+    font-size: clamp(12px, 1vw, 15px);
+    line-height: 1.45;
+    color: var(--jb-fg-2);
+    padding-left: 18px;
+    position: relative;
+  }
+  .ao-criteria li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: var(--jb-acid);
+    font-size: 0.75em;
+  }
+
+  .ao-not-card {
+    background: var(--jb-ink-2);
+    border: 1px solid var(--jb-fire-border);
+    padding: 28px 28px 24px;
+    margin-bottom: 20px;
+  }
+  .ao-not-t {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    color: var(--jb-fire);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .ao-not-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-top: 1px solid var(--jb-hair);
+    font-size: clamp(12px, 0.95vw, 15px);
+    line-height: 1.45;
+    color: var(--jb-fg-3);
+  }
+  .ao-not-row:first-of-type { border-top: 0; padding-top: 0; }
+  .ao-not-row b { color: var(--jb-cream); }
+  .ao-not-row .x {
+    color: var(--jb-fire);
+    font-family: var(--font-display);
+    font-size: 20px;
+    line-height: 1;
+    margin-top: 2px;
+  }
+
+  .ao-access {
+    background: linear-gradient(180deg, rgba(198, 255, 0, 0.06), var(--jb-ink-2));
+    border: 1px solid var(--jb-acid-border);
+    padding: 20px 24px;
+  }
+  .ao-access-t {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    color: var(--jb-acid);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .ao-access-row {
+    font-family: var(--font-mono);
+    font-size: clamp(11px, 0.85vw, 13px);
+    letter-spacing: 0.12em;
+    color: var(--jb-cream);
+    padding: 6px 0;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 1024px) {
+    .ao-wrap { grid-template-columns: 1fr; overflow-y: auto; gap: 32px; align-content: start; }
+  }
+</style>

@@ -1,0 +1,166 @@
+---
+// SlideShell — chrome compartilhado entre slides (Terminal Growth v3).
+// Fornece: grid-overlay, status-bar topo (sbLeft/sbRight), nav rodapé (navLeft/navRight).
+// Suporta variantes: default (ink) | fire | acid
+// Uso:
+//   <SlideShell variant="default" sbLeft="DADO · 2024" sbRight="// ▲" navLeft="JB" navRight="02/19">
+//     <conteúdo aqui>
+//   </SlideShell>
+
+interface Props {
+  variant?: 'default' | 'fire' | 'acid';
+  sbLeft?: string;
+  sbRight?: string;
+  navLeft?: string;
+  navRight?: string;
+  live?: boolean; // mostrar dot-live na status-bar
+  navAcid?: boolean; // navRight em acid
+}
+
+const {
+  variant = 'default',
+  sbLeft = '',
+  sbRight = '',
+  navLeft = '',
+  navRight = '',
+  live = true,
+  navAcid = true,
+} = Astro.props;
+---
+
+<section class:list={['slide-shell', `slide-${variant}`]}>
+  <div class="shell-grid"></div>
+  <slot name="bg" />
+
+  {(sbLeft || sbRight) && (
+    <div class="shell-sb">
+      <span class="shell-sb-left">
+        {live && <span class="shell-dot"></span>}
+        {sbLeft}
+      </span>
+      <span>{sbRight}</span>
+    </div>
+  )}
+
+  <div class="shell-body">
+    <slot />
+  </div>
+
+  {(navLeft || navRight) && (
+    <div class="shell-nav">
+      <span>{navLeft}</span>
+      <span class:list={{ 'shell-acid': navAcid }}>{navRight}</span>
+    </div>
+  )}
+</section>
+
+<style>
+  .slide-shell {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--jb-ink);
+    color: var(--jb-cream);
+    font-family: var(--font-sans);
+  }
+  .slide-fire {
+    background: var(--jb-fire);
+    color: var(--jb-ink);
+  }
+  .slide-acid {
+    background: var(--jb-acid);
+    color: var(--jb-ink);
+  }
+
+  .shell-grid {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+    z-index: 0;
+  }
+  .slide-fire .shell-grid,
+  .slide-acid .shell-grid {
+    opacity: 1;
+    background-image:
+      linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  }
+
+  .shell-sb {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    padding: 22px 60px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.24em;
+    color: var(--jb-fg-muted);
+    text-transform: uppercase;
+    z-index: 4;
+  }
+  .slide-fire .shell-sb,
+  .slide-acid .shell-sb {
+    color: rgba(5, 5, 5, 0.7);
+  }
+  .shell-sb-left { display: inline-flex; align-items: center; gap: 12px; }
+  .shell-dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: var(--jb-acid);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--jb-acid);
+    animation: pulse 1.6s infinite;
+  }
+  .slide-fire .shell-dot, .slide-acid .shell-dot {
+    background: var(--jb-ink);
+    box-shadow: none;
+  }
+
+  .shell-nav {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 22px 60px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    color: var(--jb-fg-muted);
+    text-transform: uppercase;
+    border-top: 1px solid var(--jb-hair);
+    z-index: 4;
+  }
+  .slide-fire .shell-nav, .slide-acid .shell-nav {
+    color: rgba(5, 5, 5, 0.7);
+    border-top-color: rgba(0, 0, 0, 0.12);
+  }
+  .shell-acid { color: var(--jb-acid); }
+  .slide-fire .shell-acid, .slide-acid .shell-acid { color: var(--jb-ink); }
+
+  .shell-body {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 60px;
+  }
+
+  @media (max-width: 768px) {
+    .shell-sb, .shell-nav {
+      padding: 12px 16px;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+    }
+    .shell-body {
+      padding: 60px 20px;
+    }
+  }
+</style>

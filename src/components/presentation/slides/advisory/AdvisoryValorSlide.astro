@@ -1,159 +1,148 @@
 ---
-import Container from '../../../ui/Container.astro'
-import { Icon } from 'astro-icon/components'
+// Slide 16 · Advisory Valor — Frase-bandeira + valor do acesso 1:1
+import SlideShell from '../../SlideShell.astro'
 ---
 
-<div class="h-screen bg-dark py-12 flex items-start overflow-y-auto">
-  <Container>
-    <div class="max-w-6xl mx-auto">
-      
-      <div class="text-center mb-8">
-        <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-4">
-          O Que um <span class="text-purple-400">Advisory</span> Entrega
-        </h2>
-        <p class="text-xl text-gray-400">
-          Clareza, direção e decisões que valem milhões
-        </p>
-      </div>
-
-      <!-- Transformação -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-        
-        <!-- Antes -->
-        <div class="rounded-2xl border-2 border-red-500/30 bg-red-500/5 p-8">
-          <div class="mb-6 text-center">
-            <div class="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-500/20 text-red-400">
-              <Icon name="lucide:x-circle" class="h-10 w-10" />
-            </div>
-            <h3 class="text-2xl font-bold text-white">ANTES do Advisory</h3>
-          </div>
-          
-          <div class="space-y-4">
-            <div class="flex items-start gap-3">
-              <Icon name="lucide:alert-triangle" class="h-5 w-5 text-red-400 shrink-0 mt-1" />
-              <div>
-                <p class="text-white font-semibold">Decisões no achismo</p>
-                <p class="text-sm text-gray-400">Sem dados, sem metodologia, só instinto</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <Icon name="lucide:alert-triangle" class="h-5 w-5 text-red-400 shrink-0 mt-1" />
-              <div>
-                <p class="text-white font-semibold">Tentativa e erro caro</p>
-                <p class="text-sm text-gray-400">Gasta R$ 50k em campanha que não converte</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <Icon name="lucide:alert-triangle" class="h-5 w-5 text-red-400 shrink-0 mt-1" />
-              <div>
-                <p class="text-white font-semibold">Time executando errado</p>
-                <p class="text-sm text-gray-400">Trabalha muito, resultado não vem</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <Icon name="lucide:alert-triangle" class="h-5 w-5 text-red-400 shrink-0 mt-1" />
-              <div>
-                <p class="text-white font-semibold">Crescimento travado</p>
-                <p class="text-sm text-gray-400">Não sabe qual o próximo passo</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Depois -->
-        <div class="rounded-2xl border-2 border-purple-500/30 bg-purple-500/5 p-8">
-          <div class="mb-6 text-center">
-            <div class="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-500/20 text-purple-400">
-              <Icon name="lucide:check-circle" class="h-10 w-10" />
-            </div>
-            <h3 class="text-2xl font-bold text-white">DEPOIS do Advisory</h3>
-          </div>
-          
-          <div class="space-y-4">
-            <div class="flex items-start gap-3">
-              <Icon name="lucide:trending-up" class="h-5 w-5 text-purple-400 shrink-0 mt-1" />
-              <div>
-                <p class="text-white font-semibold">Decisões embasadas</p>
-                <p class="text-sm text-gray-400">Estratégia clara validada por quem já fez</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <Icon name="lucide:trending-up" class="h-5 w-5 text-purple-400 shrink-0 mt-1" />
-              <div>
-                <p class="text-white font-semibold">ROI imediato</p>
-                <p class="text-sm text-gray-400">1 decisão certa economiza meses de erro</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <Icon name="lucide:trending-up" class="h-5 w-5 text-purple-400 shrink-0 mt-1" />
-              <div>
-                <p class="text-white font-semibold">Time alinhado e produtivo</p>
-                <p class="text-sm text-gray-400">Todos sabem o que fazer e por quê</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <Icon name="lucide:trending-up" class="h-5 w-5 text-purple-400 shrink-0 mt-1" />
-              <div>
-                <p class="text-white font-semibold">Roadmap definido</p>
-                <p class="text-sm text-gray-400">Próximos 6-12 meses mapeados</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Exemplos de Impacto -->
-      <div class="rounded-2xl border-2 border-purple-500/30 bg-linear-to-r from-purple-500/10 to-purple-500/5 p-6">
-        <h3 class="text-xl font-bold text-white mb-4 text-center">
-          Exemplos Reais de Impacto
-        </h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="rounded-xl bg-white/5 p-6">
-            <div class="text-purple-400 mb-3">
-              <Icon name="lucide:target" class="h-8 w-8 mx-auto" />
-            </div>
-            <h4 class="text-white font-bold mb-2 text-center">Reposicionamento</h4>
-            <p class="text-sm text-gray-400 text-center mb-3">
-              Empresa mudou ICP e aumentou ticket médio de R$ 5k para R$ 25k
-            </p>
-            <p class="text-lg font-bold text-purple-400 text-center">+400% ticket</p>
-          </div>
-
-          <div class="rounded-xl bg-white/5 p-6">
-            <div class="text-purple-400 mb-3">
-              <Icon name="lucide:trending-up" class="h-8 w-8 mx-auto" />
-            </div>
-            <h4 class="text-white font-bold mb-2 text-center">Otimização de Funil</h4>
-            <p class="text-sm text-gray-400 text-center mb-3">
-              Ajuste em qualificação de leads dobrou taxa de conversão
-            </p>
-            <p class="text-lg font-bold text-purple-400 text-center">2x conversão</p>
-          </div>
-
-          <div class="rounded-xl bg-white/5 p-6">
-            <div class="text-purple-400 mb-3">
-              <Icon name="lucide:users" class="h-8 w-8 mx-auto" />
-            </div>
-            <h4 class="text-white font-bold mb-2 text-center">Estrutura de Time</h4>
-            <p class="text-sm text-gray-400 text-center mb-3">
-              Redesenhou time comercial e economizou R$ 40k/mês
-            </p>
-            <p class="text-lg font-bold text-purple-400 text-center">-R$ 40k/mês</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bottom Message -->
-      <div class="mt-6 text-center">
-        <div class="inline-block rounded-2xl bg-white/5 border border-white/10 px-6 py-4">
-          <p class="text-lg text-white">
-            <strong class="text-purple-400">Você não paga por tempo. Você paga por decisões certas.</strong><br/>
-            <span class="text-gray-400 text-base">1 sessão pode economizar 6 meses de tentativa e erro.</span>
-          </p>
-        </div>
-      </div>
-
+<SlideShell
+  variant="default"
+  sbLeft="ADVISORY · VALOR DO ACESSO"
+  sbRight="// ★ FRASE-BANDEIRA"
+  navLeft="★ TEMPO > DINHEIRO · ATALHO DE 17+ ANOS"
+  navRight="17 / 19 · → INVESTIMENTO"
+>
+  <div class="av-wrap">
+    <div class="av-flag">
+      <div class="av-kicker">// FRASE-BANDEIRA · JOEL BURIGO</div>
+      <blockquote class="av-quote">
+        "Se tua empresa <span class="fire">depende de tu,</span><br />
+        tu não tem empresa —<br />
+        <span class="acid">tu tem emprego."</span>
+      </blockquote>
+      <div class="av-author">— JOEL BURIGO · P6 PESSOAS</div>
     </div>
-  </Container>
-</div>
+
+    <div class="av-values">
+      <div class="av-val">
+        <div class="av-val-v">17+</div>
+        <div class="av-val-l">// ANOS DE CICATRIZ</div>
+        <div class="av-val-d">Quebrei, reconstruí 2×, sistematizei. Você pula a curva de erro.</div>
+      </div>
+      <div class="av-val">
+        <div class="av-val-v">140+</div>
+        <div class="av-val-l">// EMPRESAS ESTRUTURADAS</div>
+        <div class="av-val-d">Nicho que você tá hoje, provavelmente já passou pela minha mesa.</div>
+      </div>
+      <div class="av-val">
+        <div class="av-val-v">~R$ 1bi</div>
+        <div class="av-val-l">// EM VENDAS AGREGADAS</div>
+        <div class="av-val-d">Framework testado em B2B, B2C, D2C, SaaS, varejo, serviço.</div>
+      </div>
+    </div>
+
+    <div class="av-foot">
+      <div class="av-foot-t">// O QUE VOCÊ COMPRA</div>
+      <p>
+        <b>Não é execução.</b> É clareza pra decidir melhor e mais rápido.<br />
+        Uma decisão estratégica certa vale 10× o investimento.
+        Uma errada custa meses de faturamento.
+      </p>
+    </div>
+  </div>
+</SlideShell>
+
+<style>
+  .av-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    height: 100%;
+  }
+  .av-flag {
+    border-left: 6px solid var(--jb-fire);
+    padding-left: 32px;
+  }
+  .av-kicker {
+    font-family: var(--font-mono);
+    font-size: clamp(12px, 1vw, 16px);
+    letter-spacing: 0.32em;
+    color: var(--jb-acid);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .av-quote {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5.5vw, 94px);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--jb-cream);
+  }
+  .av-quote .fire { color: var(--jb-fire); }
+  .av-quote .acid { color: var(--jb-acid); }
+  .av-author {
+    margin-top: 22px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    color: var(--jb-fg-muted);
+    text-transform: uppercase;
+  }
+
+  .av-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .av-val {
+    background: var(--jb-ink-2);
+    border: 1px solid var(--jb-hair);
+    padding: 24px 22px;
+  }
+  .av-val-v {
+    font-family: var(--font-display);
+    font-size: clamp(38px, 4vw, 72px);
+    color: var(--jb-acid);
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+  }
+  .av-val-l {
+    margin-top: 10px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--jb-cream);
+    text-transform: uppercase;
+  }
+  .av-val-d {
+    margin-top: 10px;
+    font-size: clamp(11px, 0.9vw, 14px);
+    line-height: 1.5;
+    color: var(--jb-fg-3);
+  }
+
+  .av-foot {
+    background: linear-gradient(180deg, rgba(255, 59, 15, 0.06), var(--jb-ink-2));
+    border-left: 4px solid var(--jb-fire);
+    padding: 20px 24px;
+  }
+  .av-foot-t {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: var(--jb-fire);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .av-foot p {
+    font-size: clamp(13px, 1.05vw, 17px);
+    line-height: 1.5;
+    color: var(--jb-fg-2);
+  }
+  .av-foot b { color: var(--jb-cream); }
+
+  @media (max-width: 1024px) {
+    .av-values { grid-template-columns: 1fr; }
+  }
+</style>

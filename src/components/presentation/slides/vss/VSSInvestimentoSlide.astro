@@ -1,108 +1,195 @@
 ---
-import Container from '../../../ui/Container.astro'
-import { Icon } from 'astro-icon/components'
+// Slide 13 · VSS Investimento — pricing, stack, garantia, CTA
+import SlideShell from '../../SlideShell.astro'
+
+const stack = [
+  { item: 'Sistema VSS Implementável · 15 vídeos-âncora · vitalício', val: 'R$ 1.997' },
+  { item: 'Growth CRM completo · 12 meses', val: 'R$ 6.996' },
+  { item: '48 mentorias ao vivo com Joel · rolling 12m', val: 'R$ 7.200' },
+  { item: 'Templates, scripts e recursos', val: 'R$ 497' },
+  { item: 'Comunidade exclusiva · 90 dias', val: 'R$ 597' },
+]
 ---
 
-<div class="h-screen bg-dark py-8 flex items-center overflow-y-auto">
-  <Container>
-    <div class="max-w-6xl mx-auto">
-      
-      <div class="text-center mb-12">
-        <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
-          Investimento <span class="text-lime">VSS</span>
-        </h2>
-        <p class="text-xl text-gray-400">
-          Quanto custa ter um sistema de vendas funcionando?
-        </p>
-      </div>
+<SlideShell
+  variant="default"
+  sbLeft="VSS · INVESTIMENTO"
+  sbRight="// ★ DECISÃO"
+  navLeft="★ BORA PRA CIMA · LET'S GROW"
+  navRight="14 / 19 · → CTA FINAL"
+>
+  <div class="vi-wrap">
+    <div class="vi-left">
+      <div class="vi-kicker">// STACK EMPILHADA</div>
+      <h2 class="vi-h2">
+        <span class="stroke-text">R$ 17.287</span><br />
+        EM VALOR.
+      </h2>
 
-      <!-- Investimento VSS -->
-      <div class="rounded-2xl border-2 border-lime bg-linear-to-br from-lime/10 to-lime/5 p-10">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          
-          <!-- Left: Price -->
-          <div class="text-center lg:text-left lg:border-r lg:border-white/10 lg:pr-8">
-            <div class="mb-6">
-              <div class="mb-2">
-                <span class="text-gray-400 text-xl line-through">De: R$ 17.287</span>
-              </div>
-              <div class="mb-4">
-                <div class="flex items-baseline justify-center lg:justify-start gap-1">
-                  <span class="text-lg text-white">12x de R$</span>
-                  <span class="text-6xl font-bold text-lime">166,42</span>
-                </div>
-              </div>
-              <p class="text-gray-400 mb-6">ou à vista por R$ 1.997</p>
-            </div>
+      <table class="vi-table">
+        {stack.map((s) => (
+          <tr>
+            <td>{s.item}</td>
+            <td>{s.val}</td>
+          </tr>
+        ))}
+        <tr class="vi-sum">
+          <td>TOTAL EMPILHADO</td>
+          <td>R$ 17.287</td>
+        </tr>
+      </table>
+    </div>
 
-            <div class="rounded-xl bg-dark/60 border border-lime/30 p-4">
-              <p class="text-white font-semibold mb-1">
-                <Icon name="lucide:shield-check" class="inline h-5 w-5 text-lime" /> Garantia de 15 Dias
-              </p>
-              <p class="text-sm text-gray-400">Não gostou? Devolvo 100% do valor</p>
-            </div>
-          </div>
+    <div class="vi-right">
+      <div class="vi-price-card">
+        <div class="vi-price-tag">// VOCÊ PAGA</div>
+        <div class="vi-price">R$ 1.997</div>
+        <div class="vi-price-alt">ou 12× R$ 166,42</div>
 
-          <!-- Right: What's Included -->
-          <div>
-            <h3 class="text-xl font-bold text-white mb-6">Tudo Incluído no Programa:</h3>
-            <div class="grid grid-cols-1 gap-3 mb-4">
-              <div class="flex items-center justify-between gap-3">
-                <div class="flex items-center gap-2">
-                  <Icon name="lucide:check-circle" class="h-5 w-5 text-lime shrink-0" />
-                  <p class="text-sm text-gray-200"><strong>Growth CRM (12 meses)</strong></p>
-                </div>
-                <p class="text-sm text-gray-400 line-through whitespace-nowrap">R$ 6.996</p>
-              </div>
-              <div class="flex items-center justify-between gap-3">
-                <div class="flex items-center gap-2">
-                  <Icon name="lucide:check-circle" class="h-5 w-5 text-lime shrink-0" />
-                  <p class="text-sm text-gray-200"><strong>Sistema VSS Implementável</strong> (playbook + 15 vídeos-âncora + vitalício)</p>
-                </div>
-                <p class="text-sm text-gray-400 line-through whitespace-nowrap">R$ 1.997</p>
-              </div>
-              <div class="flex items-center justify-between gap-3">
-                <div class="flex items-center gap-2">
-                  <Icon name="lucide:check-circle" class="h-5 w-5 text-lime shrink-0" />
-                  <p class="text-sm text-gray-200"><strong>48 Mentorias ao Vivo com Joel</strong> (1/semana, 60 min — aprofundamento dos 15 módulos)</p>
-                </div>
-                <p class="text-sm text-gray-400 line-through whitespace-nowrap">R$ 7.200</p>
-              </div>
-              <div class="flex items-center justify-between gap-3">
-                <div class="flex items-center gap-2">
-                  <Icon name="lucide:check-circle" class="h-5 w-5 text-lime shrink-0" />
-                  <p class="text-sm text-gray-200"><strong>Templates e Recursos</strong></p>
-                </div>
-                <p class="text-sm text-gray-400 line-through whitespace-nowrap">R$ 497</p>
-              </div>
-              <div class="flex items-center justify-between gap-3">
-                <div class="flex items-center gap-2">
-                  <Icon name="lucide:check-circle" class="h-5 w-5 text-lime shrink-0" />
-                  <p class="text-sm text-gray-200"><strong>Comunidade Exclusiva (90 dias)</strong></p>
-                </div>
-                <p class="text-sm text-gray-400 line-through whitespace-nowrap">R$ 597</p>
-              </div>
-              <div class="flex items-center gap-2">
-                <Icon name="lucide:check-circle" class="h-5 w-5 text-lime shrink-0" />
-                <p class="text-sm text-gray-200"><strong>Garantia Incondicional 15 dias</strong></p>
-              </div>
-            </div>
-            <div class="border-t border-white/20 pt-3">
-              <p class="text-xs text-gray-400 mb-1">Valor somado dos itens:</p>
-              <p class="text-2xl font-bold text-white">R$ 17.287</p>
-            </div>
-          </div>
+        <div class="vi-badges">
+          <div class="vi-badge">★ 7 DIAS · GARANTIA INCONDICIONAL</div>
+          <div class="vi-badge">★ ACESSO VITALÍCIO AO PLAYBOOK</div>
+          <div class="vi-badge">★ PRIMEIRA MENTORIA · PRÓXIMA SEMANA</div>
+        </div>
 
+        <a href="/vendas-sem-segredos" class="vi-cta">
+          LIGAR A MÁQUINA →
+        </a>
+
+        <div class="vi-foot">
+          Daqui 90 dias você estará 90 dias mais perto do sistema.<br />
+          Ou 90 dias mais longe. <b>Escolhe.</b>
         </div>
       </div>
-
-      <!-- Aviso Renovação -->
-      <div class="rounded-xl bg-white/5 border border-white/10 p-6 mt-8">
-        <p class="text-sm text-gray-400 mb-2">
-          <Icon name="lucide:info" class="inline h-4 w-4 text-blue-400" /> <strong class="text-white">Após o 1º ano:</strong> Renovação opcional de R$ 297/mês para manter acesso ao CRM e mentorias ao vivo. Aulas e comunidade são vitalícias.
-        </p>
-      </div>
-
     </div>
-  </Container>
-</div>
+  </div>
+</SlideShell>
+
+<style>
+  .vi-wrap {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    height: 100%;
+  }
+  .vi-kicker {
+    font-family: var(--font-mono);
+    font-size: clamp(12px, 1vw, 16px);
+    letter-spacing: 0.32em;
+    color: var(--jb-acid);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .vi-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(44px, 6vw, 100px);
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: var(--jb-cream);
+    margin: 0 0 28px;
+  }
+
+  .vi-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-mono);
+    font-size: clamp(11px, 0.9vw, 14px);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .vi-table td {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--jb-hair);
+    color: var(--jb-fg-2);
+  }
+  .vi-table td:last-child {
+    text-align: right;
+    color: var(--jb-cream);
+    font-weight: 700;
+  }
+  .vi-sum td {
+    padding-top: 16px;
+    border-bottom: 0;
+    color: var(--jb-acid) !important;
+    font-family: var(--font-display);
+    font-size: clamp(15px, 1.3vw, 20px);
+    letter-spacing: 0;
+  }
+
+  .vi-price-card {
+    background: linear-gradient(180deg, rgba(198, 255, 0, 0.08), var(--jb-ink-2));
+    border: 2px solid var(--jb-acid);
+    padding: 40px 36px;
+    box-shadow: 10px 10px 0 var(--jb-fire);
+  }
+  .vi-price-tag {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.28em;
+    color: var(--jb-acid);
+    text-transform: uppercase;
+  }
+  .vi-price {
+    margin-top: 8px;
+    font-family: var(--font-display);
+    font-size: clamp(64px, 7vw, 130px);
+    letter-spacing: -0.05em;
+    color: var(--jb-cream);
+    line-height: 0.95;
+  }
+  .vi-price-alt {
+    margin-top: 4px;
+    font-family: var(--font-mono);
+    font-size: 15px;
+    letter-spacing: 0.2em;
+    color: var(--jb-fg-3);
+    text-transform: uppercase;
+  }
+  .vi-badges {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .vi-badge {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--jb-fg-2);
+    text-transform: uppercase;
+    padding: 8px 12px;
+    border: 1px dashed var(--jb-hair-strong);
+  }
+  .vi-cta {
+    display: block;
+    margin-top: 24px;
+    background: var(--jb-fire);
+    color: var(--jb-ink);
+    font-family: var(--font-display);
+    font-size: clamp(16px, 1.4vw, 22px);
+    letter-spacing: 0.12em;
+    padding: 20px 24px;
+    text-align: center;
+    text-transform: uppercase;
+    box-shadow: 6px 6px 0 var(--jb-acid);
+    transition: transform var(--jb-dur) var(--jb-ease), box-shadow var(--jb-dur) var(--jb-ease);
+  }
+  .vi-cta:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0 var(--jb-acid);
+  }
+  .vi-foot {
+    margin-top: 20px;
+    font-size: clamp(12px, 1vw, 15px);
+    line-height: 1.5;
+    color: var(--jb-fg-3);
+    text-align: center;
+  }
+  .vi-foot b { color: var(--jb-cream); }
+
+  @media (max-width: 1024px) {
+    .vi-wrap { grid-template-columns: 1fr; overflow-y: auto; }
+  }
+</style>

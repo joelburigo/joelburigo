@@ -3,163 +3,87 @@ import Layout from '../layouts/Layout.astro'
 import Header from '../components/layout/Header.astro'
 import Footer from '../components/layout/Footer.astro'
 import Container from '../components/ui/Container.astro'
-import Button from '../components/ui/Button.astro'
-import { contactInfo, getWhatsAppLink } from '../data/contact'
-
-const seo = {
-  title: '500 - Erro no Servidor | Joel Burigo',
-  description: 'Algo deu errado. Mas diferente de um funil quebrado, vamos resolver isso rápido.',
-}
+import { getWhatsAppLink } from '../data/contact'
 ---
 
-<Layout title={seo.title} description={seo.description}>
+<Layout
+  title="500 — Gargalo detectado | Joel Burigo"
+  description="Erro no servidor. Gargalo detectado. Volta pra home enquanto a gente resolve."
+  noIndex={true}
+>
   <Header />
-  
-  <main class="min-h-screen bg-dark pt-16 md:pt-20">
-    <section class="flex min-h-[80vh] items-center py-12 md:py-16">
-      <Container>
-        <div class="mx-auto max-w-4xl text-center">
-          <!-- 500 Animado -->
-          <div class="mb-8">
-            <h1 class="mb-4 font-display text-9xl font-bold text-red-500 md:text-[12rem]">
-              500
-            </h1>
-            <div class="mx-auto mb-6 h-1 w-32 rounded-full bg-linear-to-r from-transparent via-red-500 to-transparent"></div>
-          </div>
 
-          <!-- Mensagem Principal -->
-          <div class="mb-8">
-            <h2 class="mb-4 font-display text-3xl font-bold text-white md:text-4xl">
-              🔥 Houston, temos um problema...
-            </h2>
-            <p class="mb-2 font-sans text-body-lg text-gray-200">
-              Algo deu errado no servidor. Mas calma, não é o fim do mundo.
-            </p>
-            <p class="font-sans text-body text-gray-400">
-              É tipo quando seu CRM trava no meio da apresentação para o investidor.
-            </p>
-          </div>
+  <main class="relative overflow-hidden bg-ink pt-20">
+    <div class="grid-overlay"></div>
 
-          <!-- Cards de Diagnóstico Engraçado -->
-          <div class="mb-12 grid grid-cols-1 gap-4 md:grid-cols-3">
-            <div class="rounded-xl border border-red-500/20 bg-red-500/5 p-6">
-              <div class="mb-2 text-4xl">⚠️</div>
-              <p class="font-sans text-body-sm font-semibold text-white">Diagnóstico dos 6Ps:</p>
-              <p class="mt-1 font-sans text-xs text-gray-400">
-                Processo: ❌ Quebrado<br/>
-                Servidor: ❌ Em pânico
-              </p>
-            </div>
-            <div class="rounded-xl border border-red-500/20 bg-red-500/5 p-6">
-              <div class="mb-2 text-4xl">🚨</div>
-              <p class="font-sans text-body-sm font-semibold text-white">Status do Pipeline:</p>
-              <p class="mt-1 font-sans text-xs text-gray-400">
-                Lead: Você<br/>
-                Etapa: Página de Erro<br/>
-                Ação: Suporte Urgente
-              </p>
-            </div>
-            <div class="rounded-xl border border-red-500/20 bg-red-500/5 p-6">
-              <div class="mb-2 text-4xl">🔧</div>
-              <p class="font-sans text-body-sm font-semibold text-white">Tempo de Recuperação:</p>
-              <p class="mt-1 font-sans text-xs text-gray-400">
-                Mais rápido que você responder aquele e-mail do "pensando aqui"
-              </p>
-            </div>
-          </div>
+    <Container class="relative z-10">
+      <section class="flex min-h-[80vh] items-center py-16 md:py-24">
+        <div class="mx-auto w-full max-w-3xl">
+          <!-- Kicker mono -->
+          <div class="kicker mb-6" style="color: var(--jb-fire);">// ERROR · 500 · GARGALO_DETECTADO</div>
 
-          <!-- Citação -->
-          <div class="mb-8 rounded-2xl border border-red-500/30 bg-white/5 p-8">
-            <p class="mb-4 font-display text-xl italic text-white">
-              "Erro 500? É quando você percebe que deveria ter documentado o processo."
-            </p>
-            <p class="font-sans text-sm text-gray-400">
-              — Todo Dev (e vendedor) já passou por isso
-            </p>
-          </div>
+          <!-- Display gigante -->
+          <h1 class="err-display">
+            <span class="stroke-text">500:</span>
+            <span class="block text-fire">GARGALO DETECTADO.</span>
+          </h1>
+
+          <!-- Copy -->
+          <p class="mt-8 max-w-2xl font-sans text-[color:var(--jb-cream)] text-lg leading-relaxed">
+            Algo travou no servidor. Acontece — com pipeline também. A diferença é que aqui tem processo pra consertar.
+          </p>
+          <p class="mt-3 max-w-2xl font-sans text-[color:var(--jb-fg-3)] leading-relaxed">
+            Volta pra home. Se persistir, manda mensagem que a gente resolve.
+          </p>
 
           <!-- CTAs -->
-          <div class="mb-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button variant="primary" size="lg" href="/">
-              🏠 Voltar Para Home
-            </Button>
-            <a href={getWhatsAppLink('Encontrei um erro 500 no site. Pode ajudar?')} target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" size="lg" class="border-lime text-lime hover:bg-lime">
-                💬 Reportar Problema
-              </Button>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="/" class="btn-primary min-h-[48px]" data-astro-prefetch>
+              <span>Voltar pra home</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a
+              href={getWhatsAppLink('Encontrei um erro 500 no site joelburigo.com.br. Pode ajudar?')}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary min-h-[48px]"
+            >
+              <span>Reportar no WhatsApp</span>
+              <span aria-hidden="true">→</span>
             </a>
           </div>
 
-          <!-- Piada Final -->
-          <div class="mb-8 rounded-xl bg-linear-to-r from-red-500/10 to-transparent p-6">
-            <p class="mb-3 font-sans text-body-sm text-gray-300">
-              <span class="font-bold text-red-400">Curiosidade:</span> A diferença entre um erro 500 e um vendedor sem follow-up?
-            </p>
-            <p class="font-sans text-body-sm text-white">
-              Nenhuma. Os dois perdem o cliente. 
-              <a href="/vendas-sem-segredos" class="font-semibold text-lime underline hover:text-lime/80">
-                Mas você não precisa ser esse vendedor →
-              </a>
-            </p>
+          <!-- Diagnóstico terminal-like -->
+          <div class="mt-12 border border-[color:var(--jb-hair)] bg-[color:var(--jb-ink-2)] p-6 font-mono text-[13px] leading-[1.8] text-[color:var(--jb-cream)]">
+            <div><span class="text-acid">$</span> scanning_system --status</div>
+            <div class="text-[color:var(--jb-fg-muted)]">&gt; running diagnostic...</div>
+            <div><span class="text-fire">●</span> SERVER · 500 · TEMPORARY</div>
+            <div><span class="text-acid">▶</span> RETRY · disponível</div>
+            <div><span class="text-acid">▶</span> SUPPORT · online</div>
+            <div class="text-[color:var(--jb-fg-muted)]">&gt; recomendação: voltar pra home</div>
           </div>
 
-          <!-- Ações Alternativas -->
-          <div class="rounded-2xl border-2 border-lime/30 bg-lime/10 p-6">
-            <h3 class="mb-4 font-display text-lg font-semibold text-white">Enquanto a gente resolve isso, que tal:</h3>
-            <div class="flex flex-wrap justify-center gap-3">
-              <a href="/blog" class="rounded-lg bg-white/10 px-4 py-2 font-sans text-sm text-white transition-colors hover:bg-white/20">
-                📚 Ler o Blog
-              </a>
-              <a href="/cases" class="rounded-lg bg-white/10 px-4 py-2 font-sans text-sm text-white transition-colors hover:bg-white/20">
-                📊 Ver Cases
-              </a>
-              <a href="/diagnostico" class="rounded-lg bg-white/10 px-4 py-2 font-sans text-sm text-white transition-colors hover:bg-white/20">
-                🎯 Fazer Diagnóstico
-              </a>
-              <a href={contactInfo.email.mailto} class="rounded-lg bg-white/10 px-4 py-2 font-sans text-sm text-white transition-colors hover:bg-white/20">
-                ✉️ Enviar E-mail
-              </a>
-            </div>
-          </div>
-
-          <!-- Status Code -->
-          <div class="mt-8">
-            <p class="font-mono text-xs text-gray-600">
-              Error Code: 500 | Internal Server Error | SLA: Resolvendo ASAP
-            </p>
+          <!-- Status line -->
+          <div class="mt-8 border-t border-[color:var(--jb-hair)] pt-6 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">
+            <span class="text-fire">●</span>&nbsp; STATUS: 500 · INTERNAL_ERROR · SLA: ASAP
           </div>
         </div>
-      </Container>
-    </section>
+      </section>
+    </Container>
   </main>
 
   <Footer />
 </Layout>
 
 <style>
-  @keyframes pulse {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.5;
-    }
-  }
-
-  h1 {
-    animation: pulse 2s ease-in-out infinite;
-  }
-
-  section {
-    animation: fadeIn 0.6s ease-out;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+  .err-display {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.045em;
+    line-height: 0.9;
+    font-size: clamp(2.5rem, 9vw, 6rem);
+    color: var(--jb-cream);
+    margin: 0;
   }
 </style>

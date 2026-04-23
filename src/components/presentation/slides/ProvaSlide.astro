@@ -1,78 +1,163 @@
 ---
-import Container from '../../ui/Container.astro'
-import { Icon } from 'astro-icon/components'
+// Slide 7 · PROVA — Case ESF (layout case canônico)
+import SlideShell from '../SlideShell.astro'
 ---
 
-<div class="h-screen bg-dark py-8 flex items-center overflow-y-auto">
-  <Container>
-    <div class="text-center mb-16">
-      <h2 class="font-display text-5xl md:text-6xl font-bold text-white mb-6">
-        Veja <span class="text-lime">Funcionando</span>
-      </h2>
-      <p class="text-xl text-gray-400">
-        Mais de 140 empresas já implementaram. Resultados reais:
-      </p>
+<SlideShell
+  variant="default"
+  sbLeft="CASE · ESF · 2018–2020 · AUDITED"
+  sbRight="// +433%"
+  navLeft="★ O MESMO PLAYBOOK DENTRO DO VSS"
+  navRight="08 / 19 · → PRÓXIMO"
+>
+  <div class="prova-wrap">
+    <div class="prova-name">
+      <span class="stroke-text">ESF ·</span> ENCONTRE SUA FRANQUIA
     </div>
 
-    <!-- Hero Numbers -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-5xl mx-auto">
-      <div class="text-center rounded-2xl border-2 border-lime/30 bg-lime/5 p-8">
-        <div class="text-6xl font-bold text-lime mb-3">140+</div>
-        <div class="text-lg text-gray-300">Clientes Atendidos</div>
+    <div class="prova-row">
+      <div class="prova-col neg">
+        <div class="prova-tag">// ANTES</div>
+        <div class="prova-v">R$ 160K<br />/MÊS</div>
       </div>
-      <div class="text-center rounded-2xl border-2 border-lime/30 bg-lime/5 p-8">
-        <div class="text-6xl font-bold text-lime mb-3">R$ 1Bi</div>
-        <div class="text-lg text-gray-300">Em Vendas Estruturadas</div>
-      </div>
-      <div class="text-center rounded-2xl border-2 border-lime/30 bg-lime/5 p-8">
-        <div class="text-6xl font-bold text-lime mb-3">17</div>
-        <div class="text-lg text-gray-300">Anos Validando</div>
+      <div class="prova-arrow">→</div>
+      <div class="prova-col pos">
+        <div class="prova-tag">// DEPOIS</div>
+        <div class="prova-v">R$ 1 <em>MILHÃO</em>/MÊS</div>
+        <div class="prova-timeline">2018 ──────── 2020</div>
       </div>
     </div>
 
-    <!-- Cases -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      
-      <div class="rounded-xl border border-white/10 bg-white/5 p-6">
-        <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-lime/20 px-3 py-1">
-          <Icon name="lucide:trending-up" class="h-4 w-4 text-lime" />
-          <span class="text-sm font-bold text-lime">+500% Crescimento</span>
-        </div>
-        <p class="text-gray-300 mb-4">
-          Empresa de tecnologia: de <strong class="text-white">R$ 50k para R$ 300k/mês</strong> em 8 meses após implementar os 6Ps.
-        </p>
-        <div class="text-xs text-gray-500 uppercase tracking-wider">SaaS B2B • São Paulo</div>
+    <div class="prova-metrics">
+      <div class="m">
+        <div class="mv">+433%</div>
+        <div class="ml">// FATURAMENTO</div>
       </div>
-
-      <div class="rounded-xl border border-white/10 bg-white/5 p-6">
-        <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-blue-500/20 px-3 py-1">
-          <Icon name="lucide:users" class="h-4 w-4 text-blue-400" />
-          <span class="text-sm font-bold text-blue-400">Time Escalado</span>
-        </div>
-        <p class="text-gray-300 mb-4">
-          Consultoria: contratou <strong class="text-white">5 vendedores novos</strong> e manteve a margem. Processos documentados permitiram crescer sem perder qualidade.
-        </p>
-        <div class="text-xs text-gray-500 uppercase tracking-wider">Consultoria • Rio de Janeiro</div>
+      <div class="m">
+        <div class="mv">×8,33</div>
+        <div class="ml">// LEADS/MÊS</div>
       </div>
-
-      <div class="rounded-xl border border-white/10 bg-white/5 p-6">
-        <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-purple-500/20 px-3 py-1">
-          <Icon name="lucide:palmtree" class="h-4 w-4 text-purple-400" />
-          <span class="text-sm font-bold text-purple-400">Liberdade</span>
-        </div>
-        <p class="text-gray-300 mb-4">
-          Agência de marketing: fundador <strong class="text-white">saiu das operações em 6 meses</strong>. Empresa rodando sem ele no dia a dia.
-        </p>
-        <div class="text-xs text-gray-500 uppercase tracking-wider">Agência • Florianópolis</div>
+      <div class="m">
+        <div class="mv">1.800+</div>
+        <div class="ml">// FRANQUEADOS</div>
       </div>
-
     </div>
 
-    <div class="mt-16 text-center">
-      <p class="text-gray-400 text-lg">
-        Empresas reais. Resultados reais. <span class="text-white font-bold">Metodologia validada.</span>
-      </p>
+    <div class="prova-quote">
+      <span class="q-bar"></span>
+      <span>
+        "De <b>vendas aleatórias</b> para <b>vendas previsíveis.</b>
+        Framework 6Ps aplicado passo a passo — sem mágica, só método."
+      </span>
     </div>
+  </div>
+</SlideShell>
 
-  </Container>
-</div>
+<style>
+  .prova-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    height: 100%;
+  }
+  .prova-name {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4.5vw, 78px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    text-transform: uppercase;
+    color: var(--jb-cream);
+  }
+  .prova-row {
+    display: flex;
+    gap: 40px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
+  .prova-col { flex: 1; min-width: 260px; }
+  .prova-tag {
+    font-family: var(--font-mono);
+    font-size: clamp(12px, 1vw, 18px);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .prova-col.neg .prova-tag { color: var(--jb-fire); }
+  .prova-col.pos .prova-tag { color: var(--jb-acid); }
+  .prova-v {
+    font-family: var(--font-display);
+    font-size: clamp(56px, 6.5vw, 118px);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+  }
+  .prova-col.neg .prova-v {
+    color: var(--jb-fg-muted);
+    text-decoration: line-through;
+    text-decoration-color: var(--jb-fire);
+    text-decoration-thickness: 6px;
+  }
+  .prova-col.pos .prova-v { color: var(--jb-cream); }
+  .prova-col.pos .prova-v em { font-style: normal; color: var(--jb-acid); }
+  .prova-timeline {
+    margin-top: 12px;
+    font-family: var(--font-mono);
+    font-size: clamp(12px, 1vw, 20px);
+    letter-spacing: 0.22em;
+    color: var(--jb-fg-muted);
+    text-transform: uppercase;
+  }
+  .prova-arrow {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5vw, 100px);
+    color: var(--jb-fire);
+    align-self: center;
+    line-height: 1;
+  }
+
+  .prova-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .prova-metrics .m {
+    background: var(--jb-ink-2);
+    border: 1px solid var(--jb-hair);
+    padding: 28px 24px;
+  }
+  .prova-metrics .mv {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4.5vw, 74px);
+    letter-spacing: -0.03em;
+    color: var(--jb-acid);
+    line-height: 0.95;
+  }
+  .prova-metrics .ml {
+    margin-top: 10px;
+    font-family: var(--font-mono);
+    font-size: clamp(10px, 0.8vw, 13px);
+    letter-spacing: 0.22em;
+    color: var(--jb-fg-muted);
+    text-transform: uppercase;
+  }
+
+  .prova-quote {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px 24px;
+    background: var(--jb-ink-2);
+    border-left: 4px solid var(--jb-acid);
+    font-size: clamp(13px, 1.2vw, 20px);
+    line-height: 1.5;
+    color: var(--jb-fg-2);
+  }
+  .prova-quote b { color: var(--jb-cream); }
+  .q-bar { display: none; }
+
+  @media (max-width: 1024px) {
+    .prova-arrow { transform: rotate(90deg); }
+    .prova-metrics { grid-template-columns: 1fr; }
+  }
+</style>

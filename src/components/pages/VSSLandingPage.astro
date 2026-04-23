@@ -1,2144 +1,376 @@
 ---
 import Container from '../ui/Container.astro'
-import VideoPlayer from '../ui/VideoPlayer.astro'
-import Icons from '../ui/Icons.astro'
-import { getWhatsAppLink } from '../../data/contact'
-import joelBurigoImage from '../../assets/images/lp/vss/joel-burigo-vendas-sem-segredos-.webp'
-import garantia15DiasImage from '../../assets/images/lp/vss/garantia-15-dias.webp'
-import growthCRMImage from '../../assets/images/lp/vss/growthcrm/GrowthCRM1.png'
-import hotmartSecurity from '../../assets/images/hotmart-payment-security.png'
-import HighLevelForm from '../ui/HighLevelForm.astro'
 
-// Benefícios principais
+// VSS Landing Page · /lp/vss
+// Fonte: 02-oferta.md §02.2 + 03-programa-vss.md + 04-playbook-vss.md + recursos/copy-bank.md
+// Tom: conversão direta, provocador, growth/executável. Preço R$ 1.997 ou 12× R$ 166,42.
+
 const beneficios = [
-  { 
-    icon: 'target', 
-    title: 'Descubra Quem é Seu Cliente Ideal', 
-    desc: 'Pare de tentar vender para todo mundo. Defina exatamente quem você atende e como se posicionar no mercado.' 
-  },
-  { 
-    icon: 'package', 
-    title: 'Estruture Sua Oferta e Precifique Direito', 
-    desc: 'O que você vende, como apresentar, quanto cobrar e como fazer propostas que seus clientes dizem "sim".' 
-  },
-  { 
-    icon: 'bot', 
-    title: 'Tenha um Sistema que Trabalha Para Você', 
-    desc: 'Sistema profissional para organizar clientes, enviar mensagens automáticas e criar páginas de venda. Já sai configurado.' 
-  },
-  { 
-    icon: 'rocket', 
-    title: 'Aprenda a Buscar Clientes e Anunciar', 
-    desc: 'Duas formas de conseguir clientes: buscar ativamente (LinkedIn, WhatsApp, ligações) ou fazer anúncios pagos.' 
-  },
-  { 
-    icon: 'file-text', 
-    title: 'Tenha Tudo Documentado e Organizado', 
-    desc: 'Roteiros de vendas prontos, mensagens que funcionam e processos escritos. Você ou sua equipe seguem e vendem.' 
-  },
-  { 
-    icon: 'users', 
-    title: 'Monte e Treine Sua Equipe de Vendas', 
-    desc: 'Como contratar vendedores, treinar eles e acompanhar os números certos para crescer com segurança.' 
-  }
+  { titulo: 'P1 Posicionamento', desc: 'Sua PUV e Big Idea prontas. Cliente entende em 10s por que você, e não o concorrente.' },
+  { titulo: 'P2 Público', desc: 'ICP cirúrgico + persona + mapa de dores. Mensagem certa pro cliente certo, no canal certo.' },
+  { titulo: 'P3 Produto', desc: 'Oferta empilhada, precificação por valor, banco de provas. Sem objeção constante de preço.' },
+  { titulo: 'P4 Programas', desc: 'Growth CRM montado + funis + automação. Funciona com tráfego pago OU prospecção gratuita.' },
+  { titulo: 'P5 Processos', desc: '5 playbooks essenciais documentados + dashboard unificado. Pessoa nova segue sozinha.' },
+  { titulo: 'P6 Pessoas', desc: 'Estrutura de time por estágio + onboarding 30d. Negócio sobrevive 2 semanas sem você.' },
 ]
 
-// Módulos do programa (15 módulos completos)
-const modulos = [
-  { 
-    num: '01', 
-    nome: 'O Sistema VSS e os 6Ps',
-    aulas: 6,
-    desc: 'Bem-vindo ao VSS, conheça Joel Burigo, entenda o Framework dos 6Ps, faça seu diagnóstico completo, compreenda a Máquina de Vendas e monte seu plano de 90 dias.'
-  },
-  { 
-    num: '02', 
-    nome: 'P1 + P2: Posicionamento e Público',
-    aulas: 5,
-    desc: 'Defina seu posicionamento único, crie sua PUV, mapeie seu público ideal, construa personas detalhadas e desenvolva sua Big Idea memorável.'
-  },
-  { 
-    num: '03', 
-    nome: 'P3: Produto e Precificação',
-    aulas: 4,
-    desc: 'Estruture ofertas irresistíveis, empilhe valor, defina precificação estratégica por valor e estabeleça metas e KPIs essenciais.'
-  },
-  { 
-    num: '04', 
-    nome: 'Domine o Growth CRM',
-    aulas: 5,
-    desc: 'Configure seu Growth CRM do zero, organize contatos e leads, importe sua base atual e crie suas primeiras automações e notificações.'
-  },
-  { 
-    num: '05', 
-    nome: 'Presença Digital Profissional',
-    aulas: 4,
-    desc: 'Construa sua casa digital, crie site/landing pages no CRM, configure Google Meu Negócio + SEO local e otimize redes sociais como vitrine.'
-  },
-  { 
-    num: '06', 
-    nome: 'Tráfego Orgânico',
-    aulas: 4,
-    desc: 'Domine marketing de conteúdo, SEO prático, redes sociais orgânicas (Instagram + LinkedIn) e crie seu calendário editorial estruturado.'
-  },
-  { 
-    num: '07', 
-    nome: 'Tráfego Pago',
-    aulas: 4,
-    desc: 'Fundamentos de tráfego pago, primeira campanha Meta Ads, Google Ads (busca e display) e técnicas de otimização e escala.'
-  },
-  { 
-    num: '08', 
-    nome: 'Prospecção Ativa Gratuita',
-    aulas: 5,
-    desc: 'Alternativa sem budget: construa listas de prospects, use LinkedIn + Instagram para prospecção, domine cold email e WhatsApp ético, e implemente cadências multicanal.'
-  },
-  { 
-    num: '09', 
-    nome: 'Funis de Conversão',
-    aulas: 4,
-    desc: 'Anatomia de funis de vendas, landing pages de alta conversão, nutrição de leads por email e integração de WhatsApp ao CRM.'
-  },
-  { 
-    num: '10', 
-    nome: 'Fechamento e Pós-Venda',
-    aulas: 5,
-    desc: 'Qualificação de leads (BANT/SPIN), scripts de atendimento que convertem, tratamento de objeções, técnicas de fechamento e programa de indicações.'
-  },
-  { 
-    num: '11', 
-    nome: 'P4 + P5: Sistema Integrado',
-    aulas: 4,
-    desc: 'Checklist de integração completa, processos documentados (SOPs), dashboard executivo unificado e preparação para escalar.'
-  },
-  { 
-    num: '12', 
-    nome: 'Automações Avançadas',
-    aulas: 4,
-    desc: 'Workflows complexos, segmentação comportamental automática, recuperação de carrinho e upsell, e réguas de relacionamento inteligentes.'
-  },
-  { 
-    num: '13', 
-    nome: 'Agentes de IA Conversacional',
-    aulas: 4,
-    desc: 'Entenda agentes de IA, configure agente de WhatsApp 24/7, implemente handoff inteligente (IA → Humano) e treine seu agente para otimizar resultados.'
-  },
-  { 
-    num: '14', 
-    nome: 'Analytics e Melhoria Contínua',
-    aulas: 4,
-    desc: 'Métricas que realmente importam, testes A/B e otimização, análise de coorte e churn, e construção de cultura data-driven.'
-  },
-  { 
-    num: '15', 
-    nome: 'P6 + Próximos Passos',
-    aulas: 4,
-    desc: 'Pessoas e equipe de alta performance, contratação e treinamento de time, plano de 180-365 dias e integração à comunidade VSS.'
-  }
+const paraQuem = [
+  'MPE com R$ 10–100k/mês que quer previsibilidade',
+  'Empreendedor que já pagou curso/agência e não viu resultado',
+  'Quem tem talento de venda mas não tem sistema',
+  'Quem entende que esforço + método > fórmula mágica',
 ]
 
-// Diferenciais do programa
-const diferenciais = [
-  { 
-    icon: 'book-open', 
-    title: '15 Módulos Completos',
-    desc: '15 módulos (playbook + vídeos-âncora) cobrindo todo o framework dos 6Ps'
-  },
-  { 
-    icon: 'rocket', 
-    title: 'Growth CRM',
-    desc: 'Growth CRM (ferramenta all-in-one) ativado na primeira semana'
-  },
-  { 
-    icon: 'video', 
-    title: 'Mentorias ao Vivo',
-    desc: 'Mentorias ao vivo semanais com Joel Burigo'
-  },
-  { 
-    icon: 'handshake', 
-    title: 'Comunidade Exclusiva',
-    desc: 'Comunidade exclusiva para networking e feedback contínuo'
-  },
-  { 
-    icon: 'wrench', 
-    title: 'Templates Prontos',
-    desc: 'Templates plug-and-play (cadências, páginas, funis, e-mails, copys)'
-  },
-  { 
-    icon: 'shield-check', 
-    title: 'Garantia Total',
-    desc: 'Garantia incondicional de 15 dias'
-  }
+const naoEPara = [
+  'Quem quer que alguém faça por você',
+  'Quem busca enriquecimento rápido',
+  'Quem não tem 6–9h/semana nas primeiras fases',
+  'Quem não aceita feedback direto',
 ]
 
-// Features do Growth CRM
-const crmFeatures = [
-  { 
-    icon: 'bot', 
-    title: 'IA Atendendo Ligações',
-    desc: 'Inteligência artificial fazendo e recebendo ligações, qualificando leads automaticamente'
-  },
-  { 
-    icon: 'message-circle', 
-    title: 'IA em Multicanais',
-    desc: 'WhatsApp, Instagram, Facebook, SMS - IA respondendo em tempo real 24/7'
-  },
-  { 
-    icon: 'phone', 
-    title: 'Sistema de Telemarketing',
-    desc: 'URA/IVA inteligente, discador automático, gravação e transcrição de chamadas'
-  },
-  { 
-    icon: 'target', 
-    title: 'Prospecção em Massa',
-    desc: 'Extraia empresas do Google Maps, bases de dados, LinkedIn - milhares de leads'
-  },
-  { 
-    icon: 'rocket', 
-    title: 'Google Ads & Meta Ads',
-    desc: 'Crie e gerencie campanhas direto do CRM, leads caem automaticamente no funil'
-  },
-  { 
-    icon: 'bar-chart', 
-    title: 'Dashboard Inteligente',
-    desc: 'Veja em tempo real: ligações, conversas, conversões, ROI de cada campanha'
-  },
-  { 
-    icon: 'hammer', 
-    title: 'Sites & Landing Pages',
-    desc: 'Construtor drag-and-drop para criar páginas de alta conversão sem programar'
-  },
-  { 
-    icon: 'zap', 
-    title: 'Automações Completas',
-    desc: 'Sequências de email, SMS, WhatsApp automáticos baseados no comportamento'
-  },
-  { 
-    icon: 'smartphone', 
-    title: 'Inbox Unificado',
-    desc: 'Todas as conversas em um só lugar - WhatsApp, Instagram, Email, SMS, Ligações'
-  },
-  { 
-    icon: 'mic', 
-    title: 'Suporte por Voz e Texto',
-    desc: 'IA atende via voz (telefone) ou texto (chat), entende contexto, resolve problemas'
-  },
-  { 
-    icon: 'clipboard-check', 
-    title: 'Qualificação Automática',
-    desc: 'IA faz perguntas, qualifica leads, agenda reuniões - você só fala com quem está pronto'
-  },
-  { 
-    icon: 'shopping-cart', 
-    title: 'Funis & E-commerce',
-    desc: 'Funis completos, checkout, upsell, downsell - tudo em uma plataforma'
-  }
-]
-
-// Sistema de apoio
-const apoioItems = [
+const objecoes = [
   {
-    title: 'SUPORTE ATIVO DA EQUIPE VSS',
-    desc: 'Todas as suas dúvidas nas aulas do programa são respondidas pela equipe especializada para garantir que você nunca fique travado.'
+    q: 'R$ 1.997 está caro pra mim agora.',
+    a: 'Você não paga R$ 1.997 — você recupera em 1 venda adicional de R$ 500. Stack empilhada: R$ 17.287. E tem 12× R$ 166,42 no cartão. A pergunta real é: quanto custa continuar improvisando mais 12 meses?',
   },
   {
-    title: 'MENTORIAS ESTRATÉGICAS TODA SEMANA',
-    desc: 'Encontros semanais ao vivo com o Joel e outros membros da comunidade, onde você pode tirar dúvidas, trocar experiências e acelerar resultados.'
+    q: 'Não tenho tempo. Agenda caótica.',
+    a: 'Você já gasta mais tempo improvisando. 6–9h/semana nas primeiras fases. Depois das 90 dias, o sistema passa a rodar por você. É investimento de tempo, não gasto.',
   },
   {
-    title: 'GRUPO EXCLUSIVO COM APOIO 24 HORAS POR DIA',
-    desc: 'Faça parte de uma comunidade ativa de empresários onde a regra é clara: todos se ajudam, compartilham vitórias e superam desafios juntos.'
+    q: 'Meu nicho é diferente. Não vai funcionar.',
+    a: 'Framework testado em 20+ nichos — consultoria, advocacia, clínicas, academias, e-commerce, B2B, cursos, SaaS, estética, restaurantes. Os 6Ps são universais. A implementação é customizada.',
   },
   {
-    title: 'NETWORK E OPORTUNIDADES DE NEGÓCIO',
-    desc: 'Conexão direta com outros membros da comunidade VSS para contratar, ser contratado e trocar experiências práticas do dia a dia.'
-  }
-]
-
-// Depoimentos
-const depoimentos = [
-  {
-    nome: 'Ana Silva',
-    nicho: 'E-commerce de Moda',
-    texto: 'Depois do Vendas Sem Segredos, meu faturamento aumentou 300% em apenas 6 meses. As técnicas de Joel são revolucionárias!',
-    icon: 'shirt'
+    q: 'Já tentei curso/agência e não deu.',
+    a: 'A diferença é implementação guiada — 48 mentorias ao vivo com o Joel (rolling 12 meses) + comunidade. Não é curso pra maratonar e esquecer. É sistema pra implementar junto.',
   },
   {
-    nome: 'Carlos Mendes',
-    nicho: 'Consultoria Digital',
-    texto: 'Nunca pensei que seria possível vender tanto online. O programa me ensinou do zero como construir uma máquina de vendas perfeita.',
-    icon: 'briefcase'
+    q: 'Não tenho budget pra tráfego pago.',
+    a: 'VSS funciona com OU sem tráfego pago. Módulo 8 inteiro é prospecção ativa gratuita (LinkedIn, Instagram, cold email ético). Validado em clientes com R$ 0 de budget.',
   },
   {
-    nome: 'Mariana Costa',
-    nicho: 'Produtos Naturais',
-    texto: 'Joel não apenas ensina, ele transforma. Saí de R$ 5 mil para R$ 50 mil por mês seguindo exatamente o que aprendi no programa VSS.',
-    icon: 'leaf'
-  }
-]
-
-// FAQ
-const faq = [
-  {
-    q: 'O VSS é 100% online? Como funciona o acesso?',
-    a: 'Sim, é 100% online. Você recebe acesso imediato ao Sistema VSS Implementável — playbook digital navegável com os 15 módulos e vídeos-âncora curtos (um por módulo) — além de participar das 48 mentorias ao vivo com o Joel. Estude no seu ritmo, de qualquer lugar.'
+    q: 'E se não for pra mim?',
+    a: '15 dias de garantia incondicional. Testa, não se adaptou — reembolso 100%. Sem perguntas, sem fricção. Risco zero.',
   },
-  {
-    q: 'Quanto tempo leva para ver resultados?',
-    a: 'O programa é estruturado para 90 dias. Nas primeiras 2 semanas você já configura o CRM e faz o diagnóstico. Entre 30-60 dias você implementa os processos e começa a ver as primeiras vendas estruturadas. Aos 90 dias, você tem um sistema completo rodando.'
-  },
-  {
-    q: 'Preciso investir em tráfego pago para funcionar?',
-    a: 'Não! O VSS funciona com OU sem tráfego pago. Se você tem budget, ensinamos Meta Ads e Google Ads. Se não tem, ensinamos prospecção ativa gratuita (LinkedIn, Instagram, email, cold call). Você escolhe a rota que faz sentido para o seu momento.'
-  },
-  {
-    q: 'O Growth CRM está realmente incluído? Por quanto tempo?',
-    a: 'Sim! 12 meses de Growth CRM estão inclusos no programa (valor de R$ 6.996/ano). Você sai da primeira semana com o CRM já configurado, funis montados e automações rodando. Após 12 meses, você decide se continua usando ou não.'
-  },
-  {
-    q: 'Posso tirar dúvidas com o Joel ou com a equipe?',
-    a: 'Você terá suporte ativo da equipe especializada VSS durante todo o programa. Dúvidas podem ser tiradas nas mentorias ao vivo semanais (48 mentorias no ano) e no grupo exclusivo com suporte diário. O Joel participa das mentorias estratégicas e está presente na comunidade.'
-  },
-  {
-    q: 'O VSS funciona para o meu tipo de negócio?',
-    a: 'O framework dos 6Ps funciona para qualquer negócio B2B ou B2C com ticket acima de R$ 300. Já ajudamos consultorias, clínicas de saúde, escolas, e-commerce, SaaS, franquias, imobiliárias e mais de 20 outros segmentos. Se você vende para outras empresas ou consumidores finais, funciona.'
-  },
-  {
-    q: 'Preciso de conhecimento técnico ou equipe?',
-    a: 'Não precisa de conhecimento técnico. O programa ensina tudo do zero, passo a passo. Você pode implementar sozinho ou com uma pequena equipe. No módulo P6 (Pessoas) ensinamos como contratar e treinar vendedores quando você estiver pronto para escalar.'
-  },
-  {
-    q: 'Como funciona a garantia incondicional de 15 dias?',
-    a: 'Você tem 15 dias para acessar todo o conteúdo, configurar o CRM e avaliar se o programa faz sentido para você. Se não ficar satisfeito por qualquer motivo, devolvemos 100% do seu investimento, sem perguntas ou burocracia.'
-  },
-  {
-    q: 'Quando começam as aulas e mentorias?',
-    a: 'O acesso à plataforma é imediato após a compra. As mentorias ao vivo acontecem toda semana (calendário disponível na área de membros). Todas as mentorias ficam gravadas caso você não possa participar ao vivo.'
-  },
-  {
-    q: 'Qual a diferença entre o VSS e uma consultoria tradicional?',
-    a: 'Consultoria cobra R$ 5-15k/mês e você fica dependente dela. No VSS, por R$ 1.997 você aprende o sistema completo, recebe as ferramentas e ganha autonomia para implementar e escalar sozinho. Você constrói o ativo dentro da sua empresa.'
-  },
-  {
-    q: 'O preço de R$ 1.997 vai subir?',
-    a: 'Sim. Este é o preço do Lote Fundador para os primeiros 100 alunos. Depois sobe para R$ 2.497 (Lote 2), R$ 2.997 (Lote 3) e R$ 3.497 (preço final). Quanto antes entrar, maior a economia.'
-  },
-  {
-    q: 'Posso parcelar o investimento?',
-    a: 'Sim! Você pode parcelar em até 12x de R$ 166,42 no cartão de crédito ou pagar R$ 1.997 à vista (sem juros). O acesso é liberado imediatamente, independente da forma de pagamento.'
-  },
-  {
-    q: 'O que acontece depois dos 90 dias?',
-    a: 'Depois dos 90 dias você terá um sistema de vendas rodando e métricas para otimizar. O acesso ao conteúdo e à comunidade é vitalício. Você continua recebendo atualizações, pode rever as aulas quantas vezes quiser e participar da comunidade de Operadores VSS para sempre.'
-  },
-  {
-    q: 'Vou conseguir acompanhar trabalhando no meu negócio?',
-    a: 'Sim. O programa foi desenhado para quem está na operação. As aulas são objetivas (10-20 min cada) e você implementa no seu próprio negócio enquanto aprende. Recomendamos dedicar 5-8 horas por semana durante os 90 dias.'
-  },
-  {
-    q: 'E se eu já uso outro CRM?',
-    a: 'Você pode continuar usando seu CRM atual e aplicar os conceitos, mas recomendamos testar o Growth CRM (já está pago por 12 meses). Muitos alunos migram porque ele já vem configurado com tudo que ensinamos no programa. A decisão é sua.'
-  }
-]
-
-// Prova Social - Números
-const proofNumbers = [
-  { num: '140+', label: 'Empresas Atendidas' },
-  { num: '~R$1bi', label: 'Estruturado' },
-  { num: '17+ Anos', label: 'De Experiência' },
-  { num: '98%', label: 'Taxa de Satisfação' }
-]
-
-// Timeline 90 dias
-const timeline90Dias = [
-  { 
-    semana: 'Semanas 1-2', 
-    title: 'Diagnóstico + Setup CRM',
-    desc: 'Mapeamento dos 6Ps, configuração completa do Growth CRM com funis e automações prontas para usar.'
-  },
-  { 
-    semana: 'Semanas 3-6', 
-    title: 'Posicionamento + Público + Oferta',
-    desc: 'Defina seu nicho, ICP perfeito e estruture ofertas vendáveis com precificação por valor.'
-  },
-  { 
-    semana: 'Semanas 7-10', 
-    title: 'Processos + Funis + Automações',
-    desc: 'Documente playbooks, construa funis de conversão e automatize follow-up e nutrição.'
-  },
-  { 
-    semana: 'Semanas 11-12', 
-    title: 'Tráfego ou Prospecção',
-    desc: 'Escolha sua rota: Ads (Meta/Google) ou Outbound (LinkedIn/Email/Cold Call).'
-  }
-]
-
-// Casos de Uso por Segmento (ICP) - Cases reais do VSS
-const casosDeUso = [
-  {
-    segmento: 'Barbearia Estilo Urbano',
-    resultado: 'De R$ 12k → R$ 28k/mês',
-    descricao: 'Serviços Masculinos. Growth CRM + agendamento online + pacotes mensais. 45% viraram assinantes, agenda 95% ocupada.'
-  },
-  {
-    segmento: 'Clínica Dental Care',
-    resultado: 'De R$ 28k → R$ 62k/mês',
-    descricao: 'Odontologia. Estruturou oferta clara, scripts de venda, Growth CRM. Ticket médio subiu 85%.'
-  },
-  {
-    segmento: 'Escola de Inglês FluenTalk',
-    resultado: 'De R$ 24k → R$ 58k/mês',
-    descricao: 'Educação. Funil completo com landing + CRM + automação. Conversão 10% → 28%, churn 25% → 8%.'
-  }
-]
-
-// Comparação Antes vs Depois
-const antesDepois = [
-  { antes: 'Vendas aleatórias', depois: 'Previsibilidade mensal' },
-  { antes: 'Sem CRM ou planilhas', depois: 'Sistema integrado profissional' },
-  { antes: 'Processo na sua cabeça', depois: 'Playbook documentado' },
-  { antes: 'Você faz tudo sozinho', depois: 'Equipe executando processos' },
-  { antes: 'Perda de leads por esquecimento', depois: 'Automação 24/7 ativa' },
-  { antes: 'Sem métricas claras', depois: 'Dashboard com KPIs em tempo real' }
-]
-
-// Bônus Exclusivos
-// const bonusExclusivos = [
-//   { icon: 'package', title: 'Template Pack', desc: 'Templates de páginas, e-mails e funis prontos para usar' },
-//   { icon: 'file-text', title: 'Biblioteca de Scripts', desc: 'Scripts de vendas testados e aprovados para diferentes situações' },
-//   { icon: 'pen-tool', title: 'Swipe Files de Copy', desc: 'Exemplos de copies que convertem para você se inspirar' },
-//   { icon: 'handshake', title: 'VSS Network', desc: 'Acesso vitalício à rede de Operadores VSS' }
-// ]
-
-// Comparação: VSS vs Agência vs DIY
-const comparacaoOpcoes = [
-  {
-    opcao: 'Fazer Sozinho (DIY)',
-    tempo: '12-24 meses',
-    custo: 'R$ 0 + tempo perdido',
-    resultado: 'Inconsistente',
-    problemas: ['Tentativa e erro', 'Sem direcionamento', 'Ferramentas dispersas', 'Processos não documentados']
-  },
-  {
-    opcao: 'Contratar Agência',
-    tempo: '6-12 meses',
-    custo: 'R$ 5.000-15.000/mês',
-    resultado: 'Dependência externa',
-    problemas: ['Mínimo R$ 60k/ano', 'Você não aprende', 'Dependência contínua', 'Processo fica com eles']
-  },
-  {
-    opcao: 'VSS (Implementação Guiada)',
-    tempo: '90 dias',
-    custo: 'R$ 1.997 (único)',
-    resultado: 'Sistema próprio',
-    vantagens: ['Aprende fazendo', 'Sistema seu para sempre', 'CRM incluído 12 meses', 'Processo documentado', '48 mentorias incluídas']
-  }
-]
-
-// Certificações ao Concluir
-const certificacoes = [
-  { icon: 'trophy', item: 'Certificado Digital de Conclusão VSS' },
-  { icon: 'award', item: 'Badge VSS para LinkedIn e redes sociais' },
-  { icon: 'users', item: 'Acesso vitalício à comunidade VSS' },
-  { icon: 'coins', item: 'Preço especial Lote Fundador' }
 ]
 ---
 
-<!-- Hero Section -->
-<section class="relative overflow-hidden bg-dark text-white py-12 md:py-16 lg:py-20">
-  
+<!-- HERO -->
+<section class="relative overflow-hidden bg-ink pb-20 pt-32 md:pt-36">
+  <div class="grid-overlay"></div>
+  <div class="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full" style="background: radial-gradient(circle, rgba(198,255,0,0.1), transparent 70%);"></div>
+
   <Container>
-    <div class="relative z-10 max-w-6xl mx-auto">
-      <div class="text-center mb-12">
-        <span class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/20 px-6 py-2 font-display text-sm font-bold text-lime backdrop-blur-sm">
-          PROGRAMA DE IMPLEMENTAÇÃO | 90 DIAS
-        </span>
-        
-        <h1 class="mb-6 font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
-          Vendas Sem Segredos
-        </h1>
-        
-        <p class="mb-4 font-sans text-2xl md:text-3xl font-semibold text-white/90">
-          Transforme Vendas Aleatórias em Vendas Previsíveis
-        </p>
-        
-        <p class="mb-8 font-sans text-lg md:text-xl text-blue-100 max-w-3xl mx-auto">
-          Sistema completo de vendas escaláveis implementado em 90 dias. CRM profissional incluído + 48 mentorias + comunidade exclusiva.
-        </p>
+    <!-- Status bar -->
+    <div class="mb-8 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="dot-live"></span>
+        <span class="mono text-acid">SYS ONLINE · VSS v3.0 · VAGAS SEMPRE ABERTAS</span>
       </div>
+      <div class="mono text-fg-muted">REV. 2026.04 · FLORIANÓPOLIS/SC</div>
+    </div>
 
-      <!-- Video Player -->
-      <div class="mb-8">
-        <VideoPlayer
-          videoUrl="https://www.youtube.com/watch?v=nCf8pnEjB5M"
-          title="Veja como funciona o Vendas sem Segredos"
-          class="w-full"
-        />
-      </div>
-      
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-        <a href="#investimento" class="inline-flex h-16 items-center justify-center gap-2 rounded-xl bg-lime px-10 font-display text-lg font-bold text-dark shadow-2xl shadow-lime/30 transition-all hover:scale-[1.02] hover:bg-lime/90 hover:shadow-lime/40">
-          Quero Transformar Minhas Vendas Agora
-        </a>
-      </div>
-      
-      <div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-white/90">
-        <div class="flex items-center gap-2">
-          <div class="text-lime"><Icons name="check-circle" size={18} /></div>
-          <span class="font-sans text-sm">15 módulos (playbook + vídeos-âncora)</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <div class="text-lime"><Icons name="check-circle" size={18} /></div>
-          <span class="font-sans text-sm">CRM por 12 meses</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <div class="text-lime"><Icons name="check-circle" size={18} /></div>
-          <span class="font-sans text-sm">48 mentorias ao vivo</span>
-        </div>
-      </div>
-      
-      <p class="mt-6 font-display text-sm font-semibold text-lime text-center flex items-center justify-center gap-2">
-        <Icons name="zap" size={16} />
-        <span>Preço sobe após os primeiros 100 clientes</span>
+    <div class="mx-auto max-w-5xl">
+      <div class="kicker mb-5">// VSS · VENDAS SEM SEGREDOS · DIY · R$ 1.997</div>
+      <h1 class="mb-8 font-display text-cream" style="font-size: clamp(2.5rem, 7vw, 5.5rem); line-height: 0.9; letter-spacing: -0.045em; text-transform: uppercase;">
+        Transforma vendas <span class="text-fire">aleatórias</span> em vendas <span class="text-acid">previsíveis</span> — em <span class="stroke-text">90 dias</span>.
+      </h1>
+      <p class="mb-10 font-sans text-cream/85" style="font-size: clamp(1.125rem, 2.2vw, 1.4rem); line-height: 1.5; max-width: 48rem;">
+        Sem maratonar curso. Sem contratar agência que entrega post bonito sem resultado. <strong class="text-cream">O método 6Ps condensado em 7 fases · 15 módulos · 66 destravamentos executáveis</strong> — já testado em 140+ empresas e 20+ nichos, com ou sem budget de tráfego.
       </p>
-    </div>
-  </Container>
-</section>
 
-<!-- Prova Social - Números Section -->
-<section class="py-12 bg-dark border-y border-white/10">
-  <Container>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-      {proofNumbers.map((item) => (
-        <div class="text-center">
-          <p class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-lime mb-2">{item.num}</p>
-          <p class="font-sans text-sm md:text-base text-gray-300">{item.label}</p>
-        </div>
-      ))}
-    </div>
-  </Container>
-</section>
-
-<!-- Benefícios Section -->
-<section class="py-24 bg-dark">
-  <Container>
-    <div class="max-w-4xl mx-auto text-center mb-16">
-      <h2 class="mb-4 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-        O Que Você Vai <span class="text-lime">Dominar</span>
-      </h2>
-      <p class="mx-auto max-w-3xl font-sans text-lg md:text-xl text-gray-200">
-        Habilidades práticas para transformar vendas aleatórias em vendas previsíveis
-      </p>
-    </div>
-    
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      {beneficios.map((item) => (
-        <div class="rounded-xl border-2 border-white/10 bg-white/5 p-8 transition-all hover:border-lime/50 hover:shadow-lg hover:shadow-lime/10">
-          <div class="mb-4 text-lime">
-            <Icons name={item.icon} size={48} />
-          </div>
-          <h3 class="font-display text-lg font-semibold mb-3 text-white">{item.title}</h3>
-          <p class="font-sans text-sm text-gray-300">{item.desc}</p>
-        </div>
-      ))}
-    </div>
-    
-    <div class="text-center mt-12">
-      <a href="#investimento" class="inline-flex h-16 items-center justify-center gap-2 rounded-xl bg-lime px-10 font-display text-lg font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
-        Quero Dominar Essas Habilidades
-      </a>
-    </div>
-  </Container>
-</section>
-
-<!-- Módulos Section -->
-<section id="modulos" class="py-24 bg-dark">
-  <Container>
-    <div class="max-w-4xl mx-auto text-center mb-16">
-      <h2 class="mb-4 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-        15 Módulos <span class="text-lime">Estruturados</span>
-      </h2>
-      <p class="mx-auto max-w-2xl font-sans text-lg md:text-xl text-gray-200">
-        Playbook digital navegável + 15 vídeos-âncora (um por módulo). Cada aula vira ação em 15–20 minutos.
-      </p>
-    </div>
-    
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      {modulos.map((modulo) => (
-        <div class="bg-dark/50 rounded-xl p-8 hover:bg-dark transition-colors border-2 border-white/10 hover:border-lime/30">
-          <div class="flex items-center justify-between mb-4">
-            <span class="font-display text-2xl font-bold text-lime">MÓDULO {modulo.num}</span>
-            <span class="inline-flex items-center rounded-full bg-lime/20 px-3 py-1 font-sans text-xs font-semibold text-lime">{modulo.aulas} aulas</span>
-          </div>
-          <h3 class="font-display text-xl font-bold mb-3 text-white">{modulo.nome}</h3>
-          <p class="font-sans text-sm text-gray-300">{modulo.desc}</p>
-        </div>
-      ))}
-    </div>
-    
-    <div class="text-center mt-12 p-8 rounded-2xl max-w-2xl mx-auto border-2 border-lime/30 bg-lime/10">
-      <h3 class="font-display text-xl font-bold mb-4 text-white">Sistema VSS Implementável</h3>
-      <p class="font-sans text-base text-gray-200 mb-6">Não é curso, é um sistema: playbook digital, 15 vídeos-âncora e 48 mentorias ao vivo pra implementar o Framework dos 6Ps e levar seu negócio para outro patamar em 90 dias</p>
-      <a href="#investimento" class="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-lime px-8 font-display text-base font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
-        Quero Acesso ao Conteúdo Completo
-      </a>
-    </div>
-  </Container>
-</section>
-
-<!-- Timeline 90 Dias Section -->
-<section class="py-24 bg-dark">
-  <Container>
-    <div class="max-w-4xl mx-auto text-center mb-16">
-      <h2 class="mb-4 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-        Sua Jornada nos Primeiros <span class="text-lime">90 Dias</span>
-      </h2>
-      <p class="mx-auto max-w-3xl font-sans text-lg md:text-xl text-gray-200">
-        Cronograma estruturado para implementar o sistema completo em 3 meses
-      </p>
-    </div>
-    
-    <div class="max-w-4xl mx-auto space-y-6">
-      {timeline90Dias.map((fase, index) => (
-        <div class="bg-dark-gray/50 rounded-xl p-8 border-2 border-white/10 hover:border-lime/30 transition-all">
-          <div class="flex items-start gap-6">
-            <div class="shrink-0">
-              <div class="w-16 h-16 rounded-full bg-lime/20 border-2 border-lime flex items-center justify-center">
-                <span class="font-display text-2xl font-bold text-lime">{index + 1}</span>
-              </div>
-            </div>
-            <div class="flex-1">
-              <p class="font-display text-sm font-bold text-lime mb-2">{fase.semana}</p>
-              <h3 class="font-display text-xl md:text-2xl font-bold mb-3 text-white">{fase.title}</h3>
-              <p class="font-sans text-gray-300">{fase.desc}</p>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-    
-    <div class="text-center mt-12">
-      <a href="#investimento" class="inline-flex h-16 items-center justify-center gap-2 rounded-xl bg-lime px-10 font-display text-lg font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
-        Começar Minha Jornada de 90 Dias
-      </a>
-    </div>
-  </Container>
-</section>
-
-<!-- Diferenciais Section -->
-<section class="py-24 bg-dark">
-  <Container>
-    <div class="max-w-4xl mx-auto text-center mb-16">
-      <h2 class="mb-4 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-        Por Que o VSS é <span class="text-lime">Diferente</span>
-      </h2>
-      <p class="mx-auto max-w-3xl font-sans text-lg md:text-xl text-gray-200">
-        Não é um curso gravado que te abandona. É implementação guiada com suporte ativo.
-      </p>
-    </div>
-    
-    <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-      {diferenciais.map((item) => (
-        <div class="rounded-xl border-2 border-white/10 bg-white/5 p-8 transition-all hover:border-lime/50">
-          <div class="mb-4 flex items-center gap-4">
-            <div class="text-lime">
-              <Icons name={item.icon} size={40} />
-            </div>
-            <h3 class="font-display text-xl font-semibold text-white">{item.title}</h3>
-          </div>
-          <p class="font-sans text-sm text-gray-200">{item.desc}</p>
-        </div>
-      ))}
-    </div>
-  </Container>
-</section>
-
-<!-- Casos de Uso Section -->
-<section class="py-24 bg-dark">
-  <Container>
-    <div class="max-w-4xl mx-auto text-center mb-16">
-      <h2 class="mb-4 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-        Funciona Para o <span class="text-lime">Seu Segmento</span>
-      </h2>
-      <p class="mx-auto max-w-3xl font-sans text-lg md:text-xl text-gray-200">
-        Resultados reais de empresas que implementaram o VSS
-      </p>
-    </div>
-    
-    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
-      {casosDeUso.map((caso) => (
-        <div class="bg-dark-gray/50 rounded-xl p-8 border-2 border-white/10 hover:border-lime/30 transition-all">
-          <h3 class="font-display text-2xl font-bold mb-4 text-white">{caso.segmento}</h3>
-          <p class="font-display text-3xl font-bold text-lime mb-4">{caso.resultado}</p>
-          <p class="font-sans text-gray-300">{caso.descricao}</p>
-        </div>
-      ))}
-    </div>
-
-    <!-- Segmentos que Funcionam -->
-    <div class="max-w-5xl mx-auto">
-      <div class="bg-lime/5 rounded-2xl p-8 md:p-12 border-2 border-lime/20">
-        <h3 class="font-display text-2xl md:text-3xl font-bold text-white text-center mb-8">
-          Segmentos Onde o VSS <span class="text-lime">Mais Funciona</span>
-        </h3>
-        
-        <div class="grid md:grid-cols-2 gap-6 mb-8">
-          <div class="bg-dark/50 rounded-xl p-6 border border-lime/30">
-            <div class="flex items-start gap-3">
-              <div class="text-lime mt-1">
-                <Icons name="check-circle" size={20} />
-              </div>
-              <div>
-                <h4 class="font-display font-bold text-white mb-1">Serviços de Alto Valor</h4>
-                <p class="font-sans text-sm text-gray-300">Consultorias, escritórios, clínicas</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-dark/50 rounded-xl p-6 border border-lime/30">
-            <div class="flex items-start gap-3">
-              <div class="text-lime mt-1">
-                <Icons name="check-circle" size={20} />
-              </div>
-              <div>
-                <h4 class="font-display font-bold text-white mb-1">Saúde e Bem-Estar</h4>
-                <p class="font-sans text-sm text-gray-300">Clínicas, estéticas, academias, nutricionistas</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-dark/50 rounded-xl p-6 border border-lime/30">
-            <div class="flex items-start gap-3">
-              <div class="text-lime mt-1">
-                <Icons name="check-circle" size={20} />
-              </div>
-              <div>
-                <h4 class="font-display font-bold text-white mb-1">Educação</h4>
-                <p class="font-sans text-sm text-gray-300">Escolas, cursos, treinamentos, coaching</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-dark/50 rounded-xl p-6 border border-lime/30">
-            <div class="flex items-start gap-3">
-              <div class="text-lime mt-1">
-                <Icons name="check-circle" size={20} />
-              </div>
-              <div>
-                <h4 class="font-display font-bold text-white mb-1">Comércio Local</h4>
-                <p class="font-sans text-sm text-gray-300">Lojas, restaurantes, salões, barbearias</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-dark/50 rounded-xl p-6 border border-lime/30">
-            <div class="flex items-start gap-3">
-              <div class="text-lime mt-1">
-                <Icons name="check-circle" size={20} />
-              </div>
-              <div>
-                <h4 class="font-display font-bold text-white mb-1">Imobiliário e Construção</h4>
-                <p class="font-sans text-sm text-gray-300">Corretoras, construtoras, arquitetura</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-dark/50 rounded-xl p-6 border border-lime/30">
-            <div class="flex items-start gap-3">
-              <div class="text-lime mt-1">
-                <Icons name="check-circle" size={20} />
-              </div>
-              <div>
-                <h4 class="font-display font-bold text-white mb-1">Tecnologia e SaaS</h4>
-                <p class="font-sans text-sm text-gray-300">Software, apps, plataformas digitais</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-dark/50 rounded-xl p-6 border border-lime/30">
-            <div class="flex items-start gap-3">
-              <div class="text-lime mt-1">
-                <Icons name="check-circle" size={20} />
-              </div>
-              <div>
-                <h4 class="font-display font-bold text-white mb-1">Serviços Financeiros</h4>
-                <p class="font-sans text-sm text-gray-300">Correspondentes bancários, seguros, crédito</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-dark/50 rounded-xl p-6 border border-lime/30">
-            <div class="flex items-start gap-3">
-              <div class="text-lime mt-1">
-                <Icons name="check-circle" size={20} />
-              </div>
-              <div>
-                <h4 class="font-display font-bold text-white mb-1">Franquias e Redes</h4>
-                <p class="font-sans text-sm text-gray-300">Expansão de franquias, redes de lojas</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="text-center pt-6 border-t border-white/10">
-          <p class="font-sans text-gray-200 mb-2">
-            <span class="font-bold text-white">Seu segmento não está aqui?</span>
-          </p>
-          <p class="font-sans text-gray-300">
-            O VSS funciona para qualquer negócio que venda para outras empresas (B2B) ou consumidores finais (B2C) com ticket acima de R$ 300. Se você tem um produto ou serviço que resolve uma dor real, o sistema funciona.
-          </p>
-        </div>
-      </div>
-    </div>
-  </Container>
-</section>
-
-<!-- Antes vs Depois Section -->
-<section class="py-24 bg-dark">
-  <Container>
-    <div class="max-w-4xl mx-auto text-center mb-16">
-      <h2 class="mb-4 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-        Antes vs <span class="text-lime">Depois do VSS</span>
-      </h2>
-      <p class="mx-auto max-w-3xl font-sans text-lg md:text-xl text-gray-200">
-        A transformação que você vai experimentar
-      </p>
-    </div>
-    
-    <div class="max-w-4xl mx-auto">
-      <div class="bg-dark/50 rounded-2xl overflow-hidden border-2 border-white/10">
-        <div class="grid md:grid-cols-2">
-          <div class="p-8 bg-red-900/20 border-r border-white/10">
-            <h3 class="font-display text-2xl font-bold mb-6 text-red-400 text-center flex items-center justify-center gap-3">
-              <Icons name="x-circle" size={28} />
-              <span>Antes</span>
-            </h3>
-          </div>
-          <div class="p-8 bg-green-900/20">
-            <h3 class="font-display text-2xl font-bold mb-6 text-lime text-center flex items-center justify-center gap-3">
-              <Icons name="check-circle" size={28} />
-              <span>Depois</span>
-            </h3>
-          </div>
-        </div>
-        
-        {antesDepois.map((item) => (
-          <div class="grid md:grid-cols-2 border-t border-white/10">
-            <div class="p-6 border-r border-white/10 bg-red-900/10">
-              <p class="font-sans text-gray-300">{item.antes}</p>
-            </div>
-            <div class="p-6 bg-green-900/10">
-              <p class="font-sans text-white font-semibold">{item.depois}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-      
-      <div class="text-center mt-12">
-        <a href="#investimento" class="inline-flex h-16 items-center justify-center gap-2 rounded-xl bg-lime px-10 font-display text-lg font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
-          Quero Esta Transformação
-        </a>
-      </div>
-    </div>
-  </Container>
-</section>
-
-<!-- Não é Apenas um Cursinho Section -->
-<section class="py-24 bg-dark relative overflow-hidden">
-  <!-- Background decoration -->
-  <div class="absolute inset-0 opacity-5">
-    <div class="absolute top-0 left-1/4 w-96 h-96 bg-lime rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-lime rounded-full blur-3xl"></div>
-  </div>
-  
-  <Container>
-    <div class="max-w-5xl mx-auto text-center mb-16 relative z-10">
-      <div class="inline-block mb-6 px-6 py-3 bg-lime/10 border-2 border-lime/30 rounded-full">
-        <span class="font-sans text-lime font-semibold text-sm uppercase tracking-wider">Pare de Se Enganar</span>
-      </div>
-      
-      <h2 class="mb-6 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-        Você <span class="italic">ainda</span> acha que isto é apenas<br/>
-        <span class="text-lime">mais um cursinho online?</span>
-      </h2>
-      
-      <div class="mx-auto max-w-3xl space-y-6">
-        <p class="font-sans text-xl md:text-2xl text-gray-200 leading-relaxed font-medium">
-          Vendas Sem Segredos não é um curso onde você assiste aulas e torce para funcionar.
-        </p>
-        
-        <p class="font-sans text-lg md:text-xl text-gray-300 leading-relaxed">
-          É um <strong class="text-white">programa completo de implementação</strong> que te entrega sistema, ferramentas, CRM profissional, suporte técnico, mentoria ao vivo e a metodologia validada pelos <strong class="text-lime">~R$ 1 bilhão</strong> que já estruturamos para 140+ empresas.
-        </p>
-        
-        <p class="font-sans text-lg md:text-xl text-gray-300 leading-relaxed">
-          Enquanto outros vendem teoria em PDF, você sai daqui com seu <strong class="text-white">processo comercial operando</strong>, CRM configurado com automações rodando, equipe treinada e previsibilidade de receita nos próximos 90 dias.
-        </p>
-      </div>
-    </div>
-
-    <!-- Cards de Diferenciação -->
-    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto relative z-10">
-      <div class="bg-dark/50 backdrop-blur rounded-2xl p-8 border-2 border-white/10 hover:border-lime/30 transition-all">
-        <div class="mb-4 text-lime">
-          <Icons name="layers" size={40} />
-        </div>
-        <h3 class="font-display text-xl font-bold mb-3 text-white">Sistema Completo</h3>
-        <p class="font-sans text-gray-300 leading-relaxed">
-          15 módulos + Growth CRM + templates + scripts. Não é "aprenda sozinho", é "implemente conosco".
-        </p>
-      </div>
-      
-      <div class="bg-dark/50 backdrop-blur rounded-2xl p-8 border-2 border-lime/30 hover:border-lime/50 transition-all">
-        <div class="mb-4 text-lime">
-          <Icons name="bot" size={40} />
-        </div>
-        <h3 class="font-display text-xl font-bold mb-3 text-white">Tecnologia Real</h3>
-        <p class="font-sans text-gray-300 leading-relaxed">
-          CRM com IA, automações, landing pages, funis. Você não monta, você <strong class="text-lime">recebe pronto</strong> e customiza.
-        </p>
-      </div>
-      
-      <div class="bg-dark/50 backdrop-blur rounded-2xl p-8 border-2 border-white/10 hover:border-lime/30 transition-all">
-        <div class="mb-4 text-lime">
-          <Icons name="life-buoy" size={40} />
-        </div>
-        <h3 class="font-display text-xl font-bold mb-3 text-white">Suporte Vitalício</h3>
-        <p class="font-sans text-gray-300 leading-relaxed">
-          Lives semanais, comunidade ativa, suporte técnico. Não é um curso que acaba, é um ecossistema.
-        </p>
-      </div>
-    </div>
-
-    <!-- CTA de Transição -->
-    <div class="max-w-4xl mx-auto text-center mt-16 relative z-10">
-      <p class="font-sans text-xl md:text-2xl text-white font-semibold mb-2 flex items-center justify-center gap-2">
-        <span>Veja tudo que você vai receber</span>
-        <Icons name="arrow-down" size={24} class="text-lime" />
-      </p>
-      <p class="font-sans text-gray-400 text-sm">
-        (E entenda porque isto não se compara com nenhum "curso" que você já viu)
-      </p>
-    </div>
-  </Container>
-</section>
-
-<!-- Growth CRM Section -->
-<section class="py-24 bg-dark">
-  <Container>
-    <div class="max-w-4xl mx-auto text-center mb-12">
-      <h2 class="mb-4 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-        Growth CRM <span class="text-lime">Incluído</span>
-      </h2>
-      <p class="mx-auto max-w-3xl font-sans text-lg md:text-xl text-gray-200">
-        A plataforma all-in-one mais poderosa do mercado (<span class="line-through text-gray-400">valor R$ 6.996/ano</span>). IA trabalhando para você 24/7.
-      </p>
-    </div>
-    
-    <!-- Scenarios Imaginativos -->
-    <div class="max-w-6xl mx-auto mb-16">
-      <div class="grid md:grid-cols-3 gap-6 mb-12">
-        <div class="rounded-2xl border-2 border-lime/30 bg-linear-to-br from-lime/10 to-dark p-8">
-          <div class="mb-4 text-lime">
-            <Icons name="target" size={40} />
-          </div>
-          <h3 class="font-display text-xl font-bold mb-3 text-white">Imagine Isto:</h3>
-          <p class="font-sans text-sm text-gray-200 leading-relaxed">
-            Você acorda e vê no dashboard: <span class="text-lime font-bold">127 novos leads qualificados</span> enquanto dormia. A IA atendeu 43 ligações, respondeu 89 mensagens no WhatsApp e já agendou 12 reuniões para esta semana.
-          </p>
-        </div>
-        
-        <div class="rounded-2xl border-2 border-lime/30 bg-linear-to-br from-lime/10 to-dark p-8">
-          <div class="mb-4 text-lime">
-            <Icons name="rocket" size={40} />
-          </div>
-          <h3 class="font-display text-xl font-bold mb-3 text-white">Prospecção em Massa:</h3>
-          <p class="font-sans text-sm text-gray-200 leading-relaxed">
-            Extrai <span class="text-lime font-bold">5.000 empresas do Google Maps</span> em segundos. A IA liga para todas, qualifica, descobre o decisor e agenda com quem tem interesse real. Você só fala com leads quentes.
-          </p>
-        </div>
-        
-        <div class="rounded-2xl border-2 border-lime/30 bg-linear-to-br from-lime/10 to-dark p-8">
-          <div class="mb-4 text-lime">
-            <Icons name="trending-up" size={40} />
-          </div>
-          <h3 class="font-display text-xl font-bold mb-3 text-white">Anúncios Inteligentes:</h3>
-          <p class="font-sans text-sm text-gray-200 leading-relaxed">
-            Cria campanha no <span class="text-lime font-bold">Google Ads e Meta</span> direto do CRM. Leads caem automáticos no funil, IA atende, qualifica e você só fecha. ROI visível em tempo real no dashboard.
-          </p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="mb-12 rounded-2xl overflow-hidden shadow-2xl max-w-5xl mx-auto border-2 border-lime/20">
-      <img 
-        src={growthCRMImage.src}
-        alt="Growth CRM Dashboard"
-        class="w-full h-auto"
-        loading="lazy"
-      />
-    </div>
-    
-    <!-- Fluxo Visual: Do Zero ao Cliente -->
-    <div class="max-w-5xl mx-auto mb-16">
-      <h3 class="font-display text-2xl md:text-3xl font-bold mb-8 text-center text-white">
-        Como Funciona na <span class="text-lime">Prática</span>
-      </h3>
-      
-      <div class="space-y-4">
-        <div class="flex items-start gap-4 bg-dark/50 rounded-xl p-6 border-l-4 border-lime">
-          <div class="bg-lime text-dark rounded-full w-10 h-10 flex items-center justify-center font-bold shrink-0">1</div>
+      <!-- Bloco preço + CTA -->
+      <div class="mb-10 border-2 border-acid p-8" style="background: linear-gradient(180deg, rgba(198,255,0,0.1), rgba(198,255,0,0.02));">
+        <div class="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
           <div>
-            <h4 class="font-display font-bold text-lg text-white mb-2 flex items-center gap-2">
-              <Icons name="map-pin" size={20} class="text-lime" />
-              <span>Prospecção Automática</span>
-            </h4>
-            <p class="font-sans text-sm text-gray-300">Você define o perfil ideal. O CRM extrai milhares de contatos do Google Maps, LinkedIn ou bases de dados. Em minutos você tem uma lista pronta.</p>
-          </div>
-        </div>
-        
-        <div class="flex items-start gap-4 bg-dark/50 rounded-xl p-6 border-l-4 border-lime">
-          <div class="bg-lime text-dark rounded-full w-10 h-10 flex items-center justify-center font-bold shrink-0">2</div>
-          <div>
-            <h4 class="font-display font-bold text-lg text-white mb-2 flex items-center gap-2">
-              <Icons name="bot" size={20} class="text-lime" />
-              <span>IA Faz o Primeiro Contato</span>
-            </h4>
-            <p class="font-sans text-sm text-gray-300">IA liga, manda WhatsApp, email ou SMS. Fala naturalmente, entende respostas, faz perguntas de qualificação. Parece um vendedor humano, mas trabalha 24/7 sem parar.</p>
-          </div>
-        </div>
-        
-        <div class="flex items-start gap-4 bg-dark/50 rounded-xl p-6 border-l-4 border-lime">
-          <div class="bg-lime text-dark rounded-full w-10 h-10 flex items-center justify-center font-bold shrink-0">3</div>
-          <div>
-            <h4 class="font-display font-bold text-lg text-white mb-2 flex items-center gap-2">
-              <Icons name="target" size={20} class="text-lime" />
-              <span>Qualificação Inteligente</span>
-            </h4>
-            <p class="font-sans text-sm text-gray-300">A IA descobre: orçamento, timing, autoridade, necessidade. Só agenda reunião se o lead realmente tem potencial. Seu tempo é usado apenas com oportunidades reais.</p>
-          </div>
-        </div>
-        
-        <div class="flex items-start gap-4 bg-dark/50 rounded-xl p-6 border-l-4 border-lime">
-          <div class="bg-lime text-dark rounded-full w-10 h-10 flex items-center justify-center font-bold shrink-0">4</div>
-          <div>
-            <h4 class="font-display font-bold text-lg text-white mb-2 flex items-center gap-2">
-              <Icons name="bar-chart-3" size={20} class="text-lime" />
-              <span>Dashboard em Tempo Real</span>
-            </h4>
-            <p class="font-sans text-sm text-gray-300">Veja tudo: quantas ligações foram feitas, taxa de resposta no WhatsApp, conversões de cada campanha, ROI dos anúncios. Todas as métricas que importam, ao vivo.</p>
-          </div>
-        </div>
-        
-        <div class="flex items-start gap-4 bg-dark/50 rounded-xl p-6 border-l-4 border-lime">
-          <div class="bg-lime text-dark rounded-full w-10 h-10 flex items-center justify-center font-bold shrink-0">5</div>
-          <div>
-            <h4 class="font-display font-bold text-lg text-white mb-2 flex items-center gap-2">
-              <Icons name="dollar-sign" size={20} class="text-lime" />
-              <span>Você Só Fecha as Vendas</span>
-            </h4>
-            <p class="font-sans text-sm text-gray-300">Leads chegam qualificados, interessados, com orçamento. Você conversa, apresenta, fecha. O CRM faz follow-up automático, envia propostas, lembra de pagamentos.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- 12 Features em Grid -->
-    <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto mb-12">
-      {crmFeatures.map((feature) => (
-        <div class="rounded-xl border-2 border-white/10 bg-white/5 p-6 transition-all hover:border-lime/50 hover:bg-lime/5 text-center">
-          <div class="mb-3 text-lime mx-auto flex justify-center">
-            <Icons name={feature.icon} size={32} />
-          </div>
-          <h3 class="font-display text-sm font-semibold mb-2 text-white">{feature.title}</h3>
-          <p class="font-sans text-xs text-gray-300">{feature.desc}</p>
-        </div>
-      ))}
-    </div>
-    
-    <!-- Casos de Uso Específicos -->
-    <div class="max-w-5xl mx-auto mb-16">
-      <h3 class="font-display text-2xl md:text-3xl font-bold mb-8 text-center text-white">
-        Tudo Que Você Pode Fazer <span class="text-lime">(Sozinho!)</span>
-      </h3>
-      
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-dark/50 rounded-xl p-6 border border-lime/20">
-          <h4 class="font-display font-bold text-base text-lime mb-3 flex items-center gap-2">
-            <Icons name="globe" size={18} />
-            <span>Anúncios + IA Atendendo</span>
-          </h4>
-          <p class="font-sans text-sm text-gray-300 mb-3">
-            Roda Google Ads e Meta Ads direto do CRM. Quando alguém clica, cai no funil automaticamente. IA responde no WhatsApp em segundos, qualifica e agenda. Sem perder nenhum lead.
-          </p>
-        </div>
-        
-        <div class="bg-dark/50 rounded-xl p-6 border border-lime/20">
-          <h4 class="font-display font-bold text-base text-lime mb-3 flex items-center gap-2">
-            <Icons name="phone-call" size={18} />
-            <span>Telemarketing Automático</span>
-          </h4>
-          <p class="font-sans text-sm text-gray-300 mb-3">
-            Sistema de discagem automática liga para sua lista. IA faz a abordagem inicial, qualifica interesse, descobre objeções. Quem demonstra interesse real, você assume a ligação ao vivo.
-          </p>
-        </div>
-        
-        <div class="bg-dark/50 rounded-xl p-6 border border-lime/20">
-          <h4 class="font-display font-bold text-base text-lime mb-3 flex items-center gap-2">
-            <Icons name="map" size={18} />
-            <span>Prospecção Google Maps</span>
-          </h4>
-          <p class="font-sans text-sm text-gray-300 mb-3">
-            Busca "clínicas odontológicas em São Paulo" - extrai 5.000 contatos em minutos. IA envia mensagem personalizada para todos simultaneamente. Qualifica quem responde. Escala impossível manualmente.
-          </p>
-        </div>
-        
-        <div class="bg-dark/50 rounded-xl p-6 border border-lime/20">
-          <h4 class="font-display font-bold text-base text-lime mb-3 flex items-center gap-2">
-            <Icons name="messages-square" size={18} />
-            <span>Multicanal Unificado</span>
-          </h4>
-          <p class="font-sans text-sm text-gray-300 mb-3">
-            Cliente manda WhatsApp, depois liga, depois email. Tudo no mesmo histórico. IA entende o contexto completo. Você vê toda a jornada em uma tela. Atendimento personalizado em escala.
-          </p>
-        </div>
-        
-        <div class="bg-dark/50 rounded-xl p-6 border border-lime/20">
-          <h4 class="font-display font-bold text-base text-lime mb-3 flex items-center gap-2">
-            <Icons name="mic" size={18} />
-            <span>Suporte por Voz 24/7</span>
-          </h4>
-          <p class="font-sans text-sm text-gray-300 mb-3">
-            Cliente liga às 3h da manhã com dúvida. IA atende com voz natural, entende o problema, acessa informações do sistema, resolve na hora. Gravação e transcrição automáticas.
-          </p>
-        </div>
-        
-        <div class="bg-dark/50 rounded-xl p-6 border border-lime/20">
-          <h4 class="font-display font-bold text-base text-lime mb-3 flex items-center gap-2">
-            <Icons name="zap" size={18} />
-            <span>Automações Completas</span>
-          </h4>
-          <p class="font-sans text-sm text-gray-300 mb-3">
-            Lead não responde em 2 dias? IA manda follow-up automático. Abriu email mas não comprou? IA liga oferecendo ajuda. Cliente aniversário? Mensagem personalizada com desconto. Tudo automático.
-          </p>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Box de Valor -->
-    <div class="rounded-2xl border-2 border-lime/30 bg-lime/10 p-8 md:p-12 text-center max-w-3xl mx-auto">
-      <div class="mb-6">
-        <p class="font-display text-sm font-bold text-lime mb-2">VALOR DA LICENÇA PROFISSIONAL</p>
-        <p class="font-display text-4xl md:text-5xl font-bold text-white mb-2"><span class="line-through text-gray-400">R$ 583/mês</span></p>
-        <p class="font-sans text-lg text-gray-200 mb-1">Incluído <span class="text-lime font-bold">GRATUITAMENTE</span> por 12 meses</p>
-        <p class="font-display text-xl font-bold text-lime">Economia de R$ 6.996 no primeiro ano</p>
-      </div>
-      <div class="bg-dark/40 rounded-xl p-6 mb-6">
-        <p class="font-sans text-sm text-white mb-2">
-          <span class="text-lime font-bold">Plataforma completa incluída no VSS:</span>
-        </p>
-        <p class="font-sans text-xs text-gray-300">
-          Agentes de IA* • Ligações e chamadas* • WhatsApp Business* • Extração de leads • Anúncios Google & Meta • Sites & Landing Pages • Funis completos • Automações avançadas • Integrações nativas • Suporte técnico
-        </p>
-      </div>
-      <div class="mt-8">
-        <a href="#investimento" class="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-lime px-8 font-display text-base font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
-          <Icons name="rocket" size={20} />
-          <span>Quero o Growth CRM Incluso</span>
-        </a>
-      </div>
-    </div>
-  </Container>
-</section>
-
-<!-- Comparação: VSS vs Agência vs DIY -->
-<section class="py-24 bg-dark">
-  <Container>
-    <div class="max-w-5xl mx-auto text-center mb-16">
-      <h2 class="mb-4 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-        Por Que Não Contratar <span class="text-lime">Uma Agência?</span>
-      </h2>
-      <p class="mx-auto max-w-3xl font-sans text-lg md:text-xl text-gray-200">
-        Compare as opções e entenda por que o VSS é a melhor escolha
-      </p>
-    </div>
-    
-    <div class="max-w-6xl mx-auto overflow-x-auto">
-      <table class="w-full min-w-[800px]">
-        <thead>
-          <tr class="border-b-2 border-white/20">
-            <th class="p-4 text-left font-display text-lg text-gray-400">Critério</th>
-            <th class="p-4 text-center font-display text-lg text-gray-400">Fazer Sozinho</th>
-            <th class="p-4 text-center font-display text-lg text-gray-400">Contratar Agência</th>
-            <th class="p-4 text-center font-display text-lg text-lime bg-lime/10">VSS</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-white/10">
-          <tr class="hover:bg-white/5 transition-colors">
-            <td class="p-4 font-display font-semibold text-white">Tempo para Resultado</td>
-            <td class="p-4 text-center font-sans text-gray-300">12-24 meses</td>
-            <td class="p-4 text-center font-sans text-gray-300">6-12 meses</td>
-            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">90 dias</td>
-          </tr>
-          <tr class="hover:bg-white/5 transition-colors">
-            <td class="p-4 font-display font-semibold text-white">Investimento</td>
-            <td class="p-4 text-center font-sans text-gray-300">R$ 0<br/><span class="text-xs">(+ tempo perdido)</span></td>
-            <td class="p-4 text-center font-sans text-gray-300">R$ 5k-15k/mês<br/><span class="text-xs">(mín. R$ 60k/ano)</span></td>
-            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">R$ 1.997<br/><span class="text-xs">(pagamento único)</span></td>
-          </tr>
-          <tr class="hover:bg-white/5 transition-colors">
-            <td class="p-4 font-display font-semibold text-white">Aprendizado</td>
-            <td class="p-4 text-center font-sans text-gray-300">
-              <div class="inline-flex items-center gap-2">
-                <Icons name="x-circle" size={16} class="text-red-400" />
-                <span>Tentativa e erro</span>
-              </div>
-            </td>
-            <td class="p-4 text-center font-sans text-gray-300">
-              <div class="inline-flex items-center gap-2">
-                <Icons name="x-circle" size={16} class="text-red-400" />
-                <span>Você não aprende</span>
-              </div>
-            </td>
-            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">
-              <div class="inline-flex items-center gap-2">
-                <Icons name="check-circle" size={16} />
-                <span>Aprende fazendo</span>
-              </div>
-            </td>
-          </tr>
-          <tr class="hover:bg-white/5 transition-colors">
-            <td class="p-4 font-display font-semibold text-white">Propriedade do Sistema</td>
-            <td class="p-4 text-center font-sans text-gray-300">
-              <div class="inline-flex items-center gap-2">
-                <Icons name="alert-circle" size={16} class="text-yellow-400" />
-                <span>Improvisado</span>
-              </div>
-            </td>
-            <td class="p-4 text-center font-sans text-gray-300">
-              <div class="inline-flex items-center gap-2">
-                <Icons name="x-circle" size={16} class="text-red-400" />
-                <span>Fica com agência</span>
-              </div>
-            </td>
-            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">
-              <div class="inline-flex items-center gap-2">
-                <Icons name="check-circle" size={16} />
-                <span>Seu para sempre</span>
-              </div>
-            </td>
-          </tr>
-          <tr class="hover:bg-white/5 transition-colors">
-            <td class="p-4 font-display font-semibold text-white">CRM Profissional</td>
-            <td class="p-4 text-center font-sans text-gray-300">
-              <div class="inline-flex items-center gap-2">
-                <Icons name="x-circle" size={16} class="text-red-400" />
-                <span>Não incluído</span>
-              </div>
-            </td>
-            <td class="p-4 text-center font-sans text-gray-300">
-              <div class="inline-flex items-center gap-2">
-                <Icons name="coins" size={16} class="text-yellow-400" />
-                <span>Custo extra</span>
-              </div>
-            </td>
-            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">
-              <div class="inline-flex items-center gap-2">
-                <Icons name="check-circle" size={16} />
-                <span>Incluído 12 meses</span>
-              </div>
-            </td>
-          </tr>
-          <tr class="hover:bg-white/5 transition-colors">
-            <td class="p-4 font-display font-semibold text-white">Suporte Contínuo</td>
-            <td class="p-4 text-center font-sans text-gray-300">
-              <div class="inline-flex items-center gap-2">
-                <Icons name="x-circle" size={16} class="text-red-400" />
-                <span>Sozinho</span>
-              </div>
-            </td>
-            <td class="p-4 text-center font-sans text-gray-300">
-              <div class="inline-flex items-center gap-2">
-                <Icons name="check-circle" size={16} class="text-lime" />
-                <span>Enquanto pagar</span>
-              </div>
-            </td>
-            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">
-              <div class="inline-flex items-center gap-2">
-                <Icons name="check-circle" size={16} />
-                <span>48 mentorias</span>
-              </div>
-            </td>
-          </tr>
-          <tr class="hover:bg-white/5 transition-colors">
-            <td class="p-4 font-display font-semibold text-white">Escalabilidade</td>
-            <td class="p-4 text-center font-sans text-gray-300">
-              <div class="inline-flex items-center gap-2">
-                <Icons name="x-circle" size={16} class="text-red-400" />
-                <span>Limitada</span>
-              </div>
-            </td>
-            <td class="p-4 text-center font-sans text-gray-300">
-              <div class="inline-flex items-center gap-2">
-                <Icons name="alert-circle" size={16} class="text-yellow-400" />
-                <span>Dependente</span>
-              </div>
-            </td>
-            <td class="p-4 text-center font-sans text-lime font-bold bg-lime/5">
-              <div class="inline-flex items-center gap-2">
-                <Icons name="check-circle" size={16} />
-                <span>Autônoma</span>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    
-    <div class="max-w-4xl mx-auto mt-16">
-      <div class="grid md:grid-cols-3 gap-8">
-        {comparacaoOpcoes.map((opcao, index) => (
-          <div class={`rounded-xl p-8 border-2 transition-all ${index === 2 ? 'border-lime bg-lime/10' : 'border-white/10 bg-dark-gray/50'}`}>
-            <h3 class={`font-display text-xl font-bold mb-6 ${index === 2 ? 'text-lime' : 'text-white'}`}>{opcao.opcao}</h3>
-            
-            <div class="space-y-3 mb-6">
-              <div>
-                <p class="font-sans text-xs text-gray-400 mb-1">TEMPO</p>
-                <p class="font-display font-bold text-white">{opcao.tempo}</p>
-              </div>
-              <div>
-                <p class="font-sans text-xs text-gray-400 mb-1">CUSTO</p>
-                <p class="font-display font-bold text-white">{opcao.custo}</p>
-              </div>
-              <div>
-                <p class="font-sans text-xs text-gray-400 mb-1">RESULTADO</p>
-                <p class="font-display font-bold text-white">{opcao.resultado}</p>
-              </div>
-            </div>
-            
-            {opcao.problemas && (
-              <div class="space-y-2">
-                <p class="font-sans text-xs text-red-400 font-bold mb-2">PROBLEMAS:</p>
-                {opcao.problemas.map((problema) => (
-                  <p class="font-sans text-sm text-gray-400 flex items-center gap-2">
-                    <Icons name="x-circle" size={14} class="text-red-400 shrink-0" />
-                    <span>{problema}</span>
-                  </p>
-                ))}
-              </div>
-            )}
-            
-            {opcao.vantagens && (
-              <div class="space-y-2">
-                <p class="font-sans text-xs text-lime font-bold mb-2">VANTAGENS:</p>
-                {opcao.vantagens.map((vantagem) => (
-                  <p class="font-sans text-sm text-white flex items-center gap-2">
-                    <Icons name="check-circle" size={14} class="text-lime shrink-0" />
-                    <span>{vantagem}</span>
-                  </p>
-                ))}
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-      
-      <div class="text-center mt-12">
-        <a href="#investimento" class="inline-flex h-16 items-center justify-center gap-2 rounded-xl bg-lime px-10 font-display text-lg font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
-          Escolher a Melhor Opção: VSS
-        </a>
-      </div>
-    </div>
-  </Container>
-</section>
-
-<!-- Quem é Joel Section -->
-<section class="py-24 bg-dark">
-  <Container>
-    <div class="max-w-4xl mx-auto text-center mb-12">
-      <h2 class="mb-4 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-        Quem Criou o <span class="text-lime">VSS</span>
-      </h2>
-    </div>
-    
-    <div class="max-w-5xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="order-2 md:order-1">
-          <h3 class="font-display text-2xl md:text-3xl font-bold mb-6 text-white">Joel Burigo</h3>
-          <div class="space-y-4 font-sans text-base md:text-lg text-gray-200">
-            <p>
-              Criei o Framework dos 6Ps das Vendas Escaláveis depois de estruturar ~R$ 1 bilhão em vendas para 140+ clientes ao longo de 17+ anos.
-            </p>
-            <p>
-              O VSS não é um curso gravado comum. É um programa de implementação guiada onde você estrutura seu sistema de vendas em 90 dias com mentoria ativa.
-            </p>
-            <p>
-              Não vendo teoria — vendo sistema implementado. Você sai com CRM configurado, processos documentados e equipe treinada.
-            </p>
-          </div>
-        </div>
-        
-        <div class="order-1 md:order-2">
-          <div class="rounded-2xl overflow-hidden shadow-2xl">
-            <img 
-              src={joelBurigoImage.src}
-              alt="Joel Burigo - Fundador do Vendas Sem Segredos"
-              class="w-full h-auto"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </Container>
-</section>
-
-<!-- Sistema de Apoio Section -->
-<section class="py-24 bg-dark">
-  <Container>
-    <div class="max-w-4xl mx-auto text-center mb-16">
-      <h2 class="mb-4 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-        <span class="text-lime">Sozinho Nunca Mais</span>
-      </h2>
-      <p class="mx-auto max-w-3xl font-sans text-lg md:text-xl text-gray-200">
-        Suporte ativo da equipe, mentorias semanais e comunidade colaborativa em todas as etapas.
-      </p>
-    </div>
-    
-    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-      {apoioItems.map((item) => (
-        <div class="bg-dark/50 rounded-xl p-8 hover:bg-dark transition-all border-2 border-white/10 hover:border-lime/30">
-          <h3 class="font-display text-xl font-bold mb-4 text-lime">{item.title}</h3>
-          <p class="font-sans text-gray-300">{item.desc}</p>
-        </div>
-      ))}
-    </div>
-  </Container>
-</section>
-
-<!-- Depoimentos Section -->
-<section class="py-24 bg-dark">
-  <Container>
-    <div class="max-w-4xl mx-auto text-center mb-16">
-      <h2 class="mb-4 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-        Resultados de Quem <span class="text-lime">Implementou</span>
-      </h2>
-      <p class="mx-auto max-w-3xl font-sans text-lg md:text-xl text-gray-200">
-        Empresas reais que saíram de vendas aleatórias para vendas previsíveis
-      </p>
-    </div>
-    
-    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
-      {depoimentos.map((depo) => (
-        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 hover:bg-white/20 transition-all">
-          <div class="mb-4 text-lime flex justify-center">
-            <Icons name={depo.icon} size={48} />
-          </div>
-          <p class="font-sans text-lg mb-6 italic text-gray-200">"{depo.texto}"</p>
-          <div class="border-t border-white/20 pt-4">
-            <p class="font-display font-bold text-white">{depo.nome}</p>
-            <p class="font-sans text-sm text-gray-300">{depo.nicho}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-    
-    <div class="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto border-2 border-lime/20">
-      <div class="mb-6">
-        <img 
-          src={garantia15DiasImage.src}
-          alt="Garantia de 15 dias"
-          class="w-32 h-auto mx-auto"
-          loading="lazy"
-        />
-      </div>
-      <h3 class="font-display text-2xl font-bold mb-4 text-white">Garantia Incondicional de 15 Dias</h3>
-      <p class="font-sans text-lg mb-6 text-gray-200">
-        Teste o programa completo com <span class="text-lime font-bold">RISCO ZERO</span>
-      </p>
-      
-      <div class="bg-dark/50 rounded-xl p-6 mb-6 text-left space-y-3">
-        <div class="flex items-start gap-3">
-          <span class="text-lime text-xl">✓</span>
-          <p class="font-sans text-gray-200">Acesso completo a todos os 15 módulos</p>
-        </div>
-        <div class="flex items-start gap-3">
-          <span class="text-lime text-xl">✓</span>
-          <p class="font-sans text-gray-200">Participe das mentorias ao vivo</p>
-        </div>
-        <div class="flex items-start gap-3">
-          <span class="text-lime text-xl">✓</span>
-          <p class="font-sans text-gray-200">Configure seu Growth CRM</p>
-        </div>
-        <div class="flex items-start gap-3">
-          <span class="text-lime text-xl">✓</span>
-          <p class="font-sans text-gray-200">Entre na comunidade exclusiva</p>
-        </div>
-      </div>
-      
-      <p class="font-sans text-base text-gray-300 mb-8">
-        Se dentro de 15 dias você não estiver satisfeito por qualquer motivo, devolvemos <span class="text-lime font-bold">100% do seu investimento</span>. Zero burocracia, zero perguntas.
-      </p>
-      
-      <a href="#investimento" class="inline-flex h-16 items-center justify-center gap-2 rounded-xl bg-lime px-10 font-display text-lg font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
-        Testar Sem Risco Por 15 Dias
-      </a>
-    </div>
-  </Container>
-</section>
-
-<!-- Certificações ao Concluir Section -->
-<section class="py-24 bg-dark">
-  <Container>
-    <div class="max-w-4xl mx-auto text-center mb-16">
-      <h2 class="mb-4 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-        Ao Concluir o VSS <span class="text-lime">Você Recebe</span>
-      </h2>
-      <p class="mx-auto max-w-3xl font-sans text-lg md:text-xl text-gray-200">
-        Reconhecimento oficial e benefícios vitalícios
-      </p>
-    </div>
-    
-    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-      {certificacoes.map((cert) => (
-        <div class="bg-dark-gray/50 rounded-xl p-8 border-2 border-white/10 hover:border-lime/30 transition-all">
-          <div class="flex items-start gap-4">
-            <div class="text-lime">
-              <Icons name={cert.icon} size={40} />
-            </div>
-            <p class="font-sans text-lg text-white pt-2">{cert.item}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-    
-    <div class="text-center mt-12 bg-lime/10 rounded-2xl p-8 max-w-2xl mx-auto border-2 border-lime/30">
-      <h3 class="font-display text-xl font-bold mb-4 text-white flex items-center justify-center gap-3">
-        <Icons name="graduation-cap" size={28} class="text-lime" />
-        <span>Seja um Profissional Certificado em Vendas Escaláveis</span>
-      </h3>
-      <p class="font-sans text-gray-200">
-        Destaque-se no mercado com a credencial VSS e faça parte de uma comunidade exclusiva de empreendedores de alta performance.
-      </p>
-    </div>
-  </Container>
-</section>
-
-<!-- ROI Calculator Section -->
-<section class="py-24 bg-dark">
-  <Container>
-    <div class="max-w-4xl mx-auto text-center mb-16">
-      <h2 class="mb-4 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-        Veja Um Exemplo de <span class="text-lime">Como Se Paga</span>
-      </h2>
-      <p class="mx-auto max-w-3xl font-sans text-lg md:text-xl text-gray-200">
-        Simulação conservadora mostra como o investimento retorna rapidamente
-      </p>
-    </div>
-    
-    <div class="max-w-3xl mx-auto">
-      <div class="bg-dark-gray/50 rounded-2xl p-8 md:p-12 border-2 border-lime/30">
-        <h3 class="font-display text-2xl font-bold mb-4 text-center text-white">Exemplo: Ticket de R$ 5.000</h3>
-        <p class="font-sans text-gray-300 text-center mb-8">Veja o retorno com apenas 2 clientes extras por mês</p>
-        
-        <div class="space-y-6 mb-8">
-          <!-- Ticket Médio -->
-          <div class="p-6 bg-white/5 rounded-xl border-2 border-white/20">
-            <p class="font-sans text-sm text-gray-300 mb-2">Seu ticket médio</p>
-            <p class="font-display text-3xl font-bold text-white">R$ 5.000</p>
-          </div>
-          
-          <div class="flex items-center justify-center">
-            <span class="font-display text-4xl text-lime">×</span>
-          </div>
-          
-          <!-- Clientes Extras -->
-          <div class="p-6 bg-white/5 rounded-xl border-2 border-white/20">
-            <p class="font-sans text-sm text-gray-300 mb-2">Apenas 2 clientes a mais por mês</p>
-            <p class="font-display text-3xl font-bold text-white">+2 fechamentos</p>
-          </div>
-          
-          <div class="flex items-center justify-center">
-            <span class="font-display text-4xl text-lime">=</span>
-          </div>
-          
-          <!-- Resultado Mensal -->
-          <div class="p-8 bg-linear-to-br from-lime/20 to-lime/10 rounded-xl border-2 border-lime shadow-lg shadow-lime/20">
-            <div class="text-center">
-              <p class="font-sans text-sm text-gray-200 mb-2">Faturamento Extra Mensal</p>
-              <p class="font-display text-4xl md:text-5xl font-bold text-lime mb-4">R$ 10.000/mês</p>
-              <p class="font-sans text-white">
-                Investimento VSS pago em <span class="font-bold text-lime">menos de 1 semana</span>
-              </p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Projeção Anual -->
-        <div class="bg-white/5 rounded-xl p-6 border-2 border-lime/30">
-          <p class="font-display text-lg font-bold text-white mb-4 text-center flex items-center justify-center gap-2">
-            <Icons name="trending-up" size={20} class="text-lime" />
-            <span>Projeção Anual</span>
-          </p>
-          <div class="grid grid-cols-2 gap-6 text-center">
-            <div class="p-4 bg-dark/50 rounded-lg">
-              <p class="font-sans text-xs text-gray-400 mb-2">FATURAMENTO EXTRA</p>
-              <p class="font-display text-2xl md:text-3xl font-bold text-lime">R$ 120.000</p>
-            </div>
-            <div class="p-4 bg-dark/50 rounded-lg">
-              <p class="font-sans text-xs text-gray-400 mb-2">ROI DO VSS</p>
-              <p class="font-display text-2xl md:text-3xl font-bold text-lime">6.000%</p>
-            </div>
-          </div>
-        </div>
-        
-        <p class="font-sans text-sm text-gray-400 text-center mt-6 italic">
-          * Simulação conservadora baseada em apenas 2 clientes extras por mês
-        </p>
-      </div>
-      
-      <div class="text-center mt-12">
-        <a href="#investimento" class="inline-flex h-16 items-center justify-center gap-2 rounded-xl bg-lime px-10 font-display text-lg font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
-          Quero Este Retorno no Meu Negócio
-        </a>
-      </div>
-    </div>
-  </Container>
-</section>
-
-<!-- Investimento Section -->
-<section class="py-16 md:py-20 bg-dark">
-  <Container>
-    <div class="max-w-4xl mx-auto text-center mb-8">
-      <h2 class="mb-3 font-display text-3xl md:text-4xl font-bold text-white">
-        Investimento no <span class="text-lime">VSS</span>
-      </h2>
-      <p class="mx-auto mb-4 max-w-3xl font-display text-lg md:text-xl font-bold text-white">
-        Um sistema pra implementar — não mais um curso pra maratonar.
-      </p>
-      <p class="mx-auto mb-4 max-w-3xl font-sans text-base md:text-lg text-gray-200">
-        Playbook digital navegável, 15 vídeos-âncora (um por módulo) e 48 mentorias ao vivo com o Joel. Cada aula vira ação em 15–20 minutos, direto no seu negócio.
-      </p>
-      <p class="mx-auto max-w-3xl font-sans text-base md:text-lg text-gray-200">
-        Lote Fundador: primeiros 100 alunos garantem o menor preço de entrada
-      </p>
-    </div>
-    
-    <div class="max-w-5xl mx-auto">
-      <!-- Box Único: Lote Fundador -->
-      <div class="rounded-2xl border border-white/10 bg-dark-gray/80 backdrop-blur-sm p-6 md:p-8">
-        <h3 class="font-display text-xl md:text-2xl font-bold mb-4 text-center text-white">
-          <span class="inline-flex items-center gap-2">
-            <Icons name="flame" size={20} />
-            <span>Lote Fundador: Primeiros 100 Alunos</span>
-          </span>
-        </h3>
-        
-        <!-- Grid: Incluído + Preço lado a lado em desktop -->
-        <div class="grid md:grid-cols-2 gap-6 mb-6">
-          
-          <!-- Coluna Esquerda: O que está incluído -->
-          <div class="space-y-2">
-            <h4 class="font-display text-base font-bold mb-3 text-white text-center md:text-left">
-              <span class="inline-flex items-center gap-2">
-                <Icons name="package" size={16} class="text-lime" />
-                <span>Tudo Incluído no Programa:</span>
+            <div class="mono mb-2 text-acid">// INVESTIMENTO ÚNICO · ACESSO VITALÍCIO</div>
+            <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+              <span class="font-display text-acid" style="font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1; letter-spacing: -0.045em;">
+                R$ 1.997
               </span>
-            </h4>
-            
-            <div class="space-y-1.5">
-              <div class="flex items-start gap-3 bg-white/5 hover:bg-white/10 rounded-lg p-2.5 transition-colors border border-white/5">
-                <div class="w-8 h-8 rounded-lg bg-lime/10 flex items-center justify-center shrink-0">
-                  <Icons name="database" size={16} class="text-lime" />
-                </div>
-                <div>
-                  <p class="font-display font-semibold text-white text-sm">Growth CRM (12 meses)</p>
-                  <p class="font-sans text-xs text-gray-400">Valor: <span class="line-through">R$ 6.996</span></p>
-                </div>
-              </div>
-              
-              <div class="flex items-start gap-3 bg-white/5 hover:bg-white/10 rounded-lg p-2.5 transition-colors border border-white/5">
-                <div class="w-8 h-8 rounded-lg bg-lime/10 flex items-center justify-center shrink-0">
-                  <Icons name="book-open" size={16} class="text-lime" />
-                </div>
-                <div>
-                  <p class="font-display font-semibold text-white text-sm">Sistema VSS Implementável</p>
-                  <p class="font-sans text-xs text-gray-400">Playbook digital + 15 vídeos-âncora + acesso vitalício — <span class="line-through">R$ 1.997</span></p>
-                </div>
-              </div>
-              
-              <div class="flex items-start gap-3 bg-white/5 hover:bg-white/10 rounded-lg p-2.5 transition-colors border border-white/5">
-                <div class="w-8 h-8 rounded-lg bg-lime/10 flex items-center justify-center shrink-0">
-                  <Icons name="video" size={16} class="text-lime" />
-                </div>
-                <div>
-                  <p class="font-display font-semibold text-white text-sm">48 Mentorias ao Vivo com Joel</p>
-                  <p class="font-sans text-xs text-gray-400">1/semana, 60 min — aprofundamento dos 15 módulos — <span class="line-through">R$ 7.200</span></p>
-                </div>
-              </div>
-              
-              <div class="flex items-start gap-3 bg-white/5 hover:bg-white/10 rounded-lg p-2.5 transition-colors border border-white/5">
-                <div class="w-8 h-8 rounded-lg bg-lime/10 flex items-center justify-center shrink-0">
-                  <Icons name="gift" size={16} class="text-lime" />
-                </div>
-                <div>
-                  <p class="font-display font-semibold text-white text-sm">Templates e Recursos</p>
-                  <p class="font-sans text-xs text-gray-400">Valor: <span class="line-through">R$ 497</span></p>
-                </div>
-              </div>
-              
-              <div class="flex items-start gap-3 bg-white/5 hover:bg-white/10 rounded-lg p-2.5 transition-colors border border-white/5">
-                <div class="w-8 h-8 rounded-lg bg-lime/10 flex items-center justify-center shrink-0">
-                  <Icons name="users" size={16} class="text-lime" />
-                </div>
-                <div>
-                  <p class="font-display font-semibold text-white text-sm">Comunidade Exclusiva (90 dias)</p>
-                  <p class="font-sans text-xs text-gray-400">Valor: <span class="line-through">R$ 597</span></p>
-                </div>
-              </div>
-              
-              <div class="flex items-start gap-3 bg-white/5 hover:bg-white/10 rounded-lg p-2.5 transition-colors border border-white/5">
-                <div class="w-8 h-8 rounded-lg bg-lime/10 flex items-center justify-center shrink-0">
-                  <Icons name="shield-check" size={16} class="text-lime" />
-                </div>
-                <div>
-                  <p class="font-display font-semibold text-white text-sm">Garantia Incondicional 15 dias</p>
-                </div>
-              </div>
+              <span class="font-display text-cream/80" style="font-size: 1.15rem; letter-spacing: -0.02em;">
+                à vista
+              </span>
             </div>
-            
-            <div class="bg-dark/20 border border-white/10 rounded-lg p-3 mt-4">
-              <p class="font-sans text-xs text-gray-400 mb-1">Valor somado dos itens:</p>
-              <p class="font-sans text-sm text-gray-400 line-through">R$ 17.287</p>
+            <div class="mt-2 font-sans text-cream/85" style="font-size: 1rem;">
+              ou <strong class="text-cream">12× de R$ 166,42</strong> no cartão · stack empilhada <span class="line-through text-fg-muted">R$ 17.287</span>
             </div>
           </div>
-          
-          <!-- Coluna Direita: Preço e CTA -->
-          <div class="flex flex-col justify-between">
-            <div>
-              <div id="investimento" class="scroll-mt-24 bg-linear-to-br from-white/10 to-white/5 border-2 border-lime/30 rounded-xl px-5 py-6 mb-4 text-center relative overflow-hidden shadow-xl shadow-lime/10">
-                <div class="absolute top-0 right-0 w-40 h-40 bg-lime/20 rounded-full blur-3xl"></div>
-                <div class="absolute bottom-0 left-0 w-40 h-40 bg-lime/10 rounded-full blur-3xl"></div>
-                <div class="relative z-10">
-                  <p class="font-sans text-sm text-gray-400 line-through mb-3">De R$ 17.287</p>
-                  <div class="mb-4">
-                    <p class="font-display font-bold text-white">
-                      <span class="text-base md:text-lg text-gray-300">12x de apenas </span>
-                    </p>
-                    <p class="font-display font-bold text-white drop-shadow-[0_0_20px_rgba(163,255,63,0.3)]">
-                      <span class="text-2xl md:text-3xl">R$</span><span class="text-5xl md:text-6xl lg:text-7xl text-lime">166,42</span>
-                    </p>
-                  </div>
-                  
-                  <div class="bg-dark/40 rounded-lg px-4 py-3 mb-3 border border-lime/20">
-                    <p class="font-sans text-sm text-gray-300 mb-1">ou à vista por</p>
-                    <p class="font-display font-bold text-3xl md:text-4xl text-lime drop-shadow-[0_0_15px_rgba(163,255,63,0.3)]">
-                      R$ 1.997
-                    </p>
-                  </div>
-                  
-                  <div class="border-t border-white/10 pt-3 mt-3">
-                    <div class="inline-flex items-center gap-2 bg-lime/20 rounded-full px-4 py-1.5 mb-1">
-                      <Icons name="trending-down" size={16} class="text-lime" />
-                      <span class="font-display text-base font-bold text-lime">Economia de 84,5%</span>
-                    </div>
-                    <p class="font-sans text-xs text-gray-400">Você economiza R$ 10.893</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="bg-dark/60 rounded-xl p-3 mb-4 border border-white/10">
-                <div class="grid grid-cols-2 gap-3">
-                  <div class="rounded-lg bg-lime/10 border border-lime/30 p-3 text-center">
-                    <p class="font-sans text-xs mb-1 text-lime font-semibold">LOTE 1 • ATUAL</p>
-                    <p class="font-display text-lg font-bold text-white">R$ 1.997</p>
-                  </div>
-                  <div class="rounded-lg bg-white/5 border border-white/10 p-3 text-center">
-                    <p class="font-sans text-xs mb-1 text-gray-400">PREÇO FINAL</p>
-                    <p class="font-display text-lg font-bold text-gray-300">R$ 3.497</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="rounded-lg p-3 bg-white/5 border border-white/10 mb-4">
-                <h4 class="font-display text-sm font-bold mb-1 text-white flex items-center gap-2">
-                  <Icons name="lock" size={14} />
-                  <span>Vantagem dos Fundadores</span>
-                </h4>
-                <p class="font-sans text-xs text-gray-200">
-                  Os primeiros <span class="font-bold text-lime">100 alunos</span> garantem o menor preço de entrada: R$ 1.997 no primeiro ano.
-                </p>
-              </div>
-            </div>
-            
-            <div>
-              <button 
-                id="openCheckoutModal" 
-                class="w-full inline-flex items-center justify-center gap-3 rounded-xl font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 hover:scale-105 bg-lime hover:bg-lime/90 text-dark shadow-2xl shadow-lime/50 focus:ring-lime py-5 px-8 text-lg md:text-xl font-display"
-              >
-                <Icons name="shopping-cart" size={24} />
-                <span>Garantir Minha Vaga Por R$ 1.997</span>
-              </button>
-              
-              <p class="mt-4 font-sans text-sm text-white/90 text-center flex items-center justify-center gap-2">
-                <Icons name="shield-check" size={16} class="text-lime" />
-                <span>Pagamento 100% seguro • Acesso imediato</span>
-              </p>
-              
-              <div class="mt-4 flex justify-center">
-                <div class="rounded-lg bg-white/95 px-4 py-2">
-                  <img 
-                    src={hotmartSecurity.src} 
-                    alt="Formas de pagamento aceitas" 
-                    class="h-12 object-contain"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          
+          <a href="#checkout" class="btn-primary" style="font-size: 1rem; padding: 1.25rem 2rem;">
+            Começar agora →
+          </a>
         </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-6 mono">
+        <span class="flex items-center gap-2"><span class="text-acid">★</span> GARANTIA 15 DIAS</span>
+        <span class="flex items-center gap-2"><span class="text-acid">★</span> GROWTH CRM INCLUÍDO</span>
+        <span class="flex items-center gap-2"><span class="text-acid">★</span> 48 MENTORIAS AO VIVO</span>
       </div>
     </div>
   </Container>
 </section>
 
-<!-- FAQ Section -->
-<section class="py-24 bg-dark">
+<!-- DOR: SINAIS QUE TE CONVENCEM -->
+<section class="relative bg-ink-2 py-20">
   <Container>
-    <div class="max-w-4xl mx-auto">
-      <h2 class="font-display text-3xl md:text-4xl font-bold mb-12 text-center text-white">
-        Perguntas <span class="text-lime">Frequentes</span>
+    <div class="mx-auto max-w-4xl">
+      <div class="kicker mb-4" style="color: var(--jb-fire);">// RECONHECE ALGUM DISSO?</div>
+      <h2 class="mb-10 font-display text-cream" style="font-size: clamp(1.75rem, 4.5vw, 3rem); line-height: 0.95; letter-spacing: -0.035em; text-transform: uppercase;">
+        Se <span class="text-fire">2 ou mais</span> aparecem na sua semana — tua Máquina está <span class="text-fire">parada</span>.
       </h2>
-      
-      <div class="space-y-4">
-        {faq.map((item) => (
-          <details class="bg-dark/50 rounded-xl p-6 hover:bg-dark transition-all group border-2 border-white/10 hover:border-lime/30">
-            <summary class="font-display font-bold text-lg cursor-pointer list-none flex items-center justify-between text-white">
-              <span>{item.q}</span>
-              <span class="text-lime text-2xl group-open:rotate-45 transition-transform">+</span>
-            </summary>
-            <p class="font-sans mt-4 text-gray-300 pl-4 border-l-4 border-lime">{item.a}</p>
-          </details>
+
+      <div class="grid gap-0 border border-white/10 sm:grid-cols-2">
+        {[
+          'Acorda sem saber quanto vai faturar no próximo mês',
+          'Lead vira planilha, papel, memória ou Post-it',
+          'Follow-up depende de lembrar (e você esquece)',
+          'Venda "por acaso" — mês bom, mês ruim, sem padrão',
+          'Marketing posta bonito, vendas não acompanha',
+          'Empresa só funciona quando você está lá',
+          'Já pagou agência que sumiu sem entregar',
+          'Cliente objeta preço porque não vê valor',
+        ].map((dor, i) => (
+          <div class="flex items-start gap-3 p-5" style={`border-right: ${i % 2 === 0 ? '1px solid var(--jb-hair)' : '0'}; border-top: ${i > 1 ? '1px solid var(--jb-hair)' : '0'};`}>
+            <span class="mt-1 inline-block h-2 w-2 shrink-0 bg-fire"></span>
+            <span class="font-sans text-cream/85" style="font-size: 0.95rem; line-height: 1.45;">{dor}</span>
+          </div>
         ))}
       </div>
-      
-      <div class="mt-12 text-center bg-dark/50 rounded-2xl p-8 border-2 border-lime/30">
-        <h3 class="font-display text-2xl font-bold mb-4 text-white">Ainda com dúvidas?</h3>
-        <p class="font-sans text-lg text-gray-300 mb-6">
-          Fale diretamente com o Joel no Instagram <a href="https://instagram.com/joelburigo" target="_blank" rel="noopener noreferrer" class="text-lime hover:underline font-semibold">@joelburigo</a> ou tire suas dúvidas pelo WhatsApp. Estamos aqui para ajudar!
+
+      <div class="mt-10 border-l-4 border-fire bg-fire/5 p-6">
+        <p class="font-display text-cream" style="font-size: clamp(1.25rem, 2.5vw, 1.75rem); line-height: 1.05; letter-spacing: -0.025em; text-transform: uppercase;">
+          Improviso <span class="text-fire">mata mais empresa</span> que crise. Marketing sem vendas é <span class="text-fire">hobby caro</span>.
         </p>
-        <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer" class="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-lime px-8 font-display text-base font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90">
-          <Icons name="message-circle" size={18} />
-          <span>Chamar no WhatsApp</span>
-        </a>
       </div>
     </div>
   </Container>
 </section>
 
-<!-- Modal Checkout -->
-<div id="checkoutModal" class="checkout-modal">
-  <div class="checkout-modal-content">
-    <button id="closeCheckoutModal" class="checkout-modal-close" aria-label="Fechar">×</button>
-    
-    <!-- Header -->
-    <div class="checkout-modal-header">
-      <h3>
-        <span class="inline-flex items-center gap-2">
-          <Icons name="rocket" size={16} />
-          <span class="highlight">Lote Fundador</span>
-        </span>
-        <span> - Preço Especial</span>
-      </h3>
-    </div>
-
-    <!-- Iframe -->
-    <div class="checkout-iframe-container">
-      <HighLevelForm 
-        formId="UY5sq22SQZfoIym1Udp1"
-        height="490px"
-      />
-    </div>
-
-    <!-- Footer -->
-    <div class="checkout-modal-footer">
-      <p class="flex items-center justify-center gap-2">
-        <Icons name="shield-check" size={16} class="text-lime" />
-        <span>Pagamento 100% seguro | Acesso imediato após confirmação</span>
-      </p>
-      <img 
-        src={hotmartSecurity.src} 
-        alt="Formas de pagamento aceitas" 
-        loading="lazy"
-      />
-    </div>
-  </div>
-</div>
-
-<!-- Final CTA Section -->
-<section class="py-24 bg-dark">
+<!-- SOLUÇÃO: 6PS -->
+<section class="relative overflow-hidden bg-ink py-24">
+  <div class="grid-overlay"></div>
   <Container>
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="mb-6 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-        Cara, Já Não Sei Mais Como Te <span class="text-lime">Convencer</span>
+    <div class="mx-auto mb-14 max-w-3xl">
+      <div class="kicker mb-4">// O MÉTODO</div>
+      <h2 class="mb-6 font-display text-cream" style="font-size: clamp(2rem, 5vw, 3.5rem); line-height: 0.92; letter-spacing: -0.04em; text-transform: uppercase;">
+        Os <span class="text-acid">6Ps das Vendas Escaláveis</span>
       </h2>
-      
-      <div class="bg-dark/50 rounded-2xl p-8 md:p-10 mb-8 border-2 border-lime/30 max-w-3xl mx-auto">
-        <p class="font-sans text-base md:text-lg text-gray-200 mb-6 leading-relaxed">
-          Eu dei <span class="font-bold text-lime">110% de mim</span> neste programa e nesta página.
-        </p>
-        
-        <p class="font-sans text-base md:text-lg text-gray-200 mb-6 leading-relaxed">
-          Você viu o <span class="text-white font-semibold">Framework dos 6Ps completo</span>, entendeu como funciona a <span class="text-white font-semibold">jornada de 90 dias</span>, conheceu o <span class="text-white font-semibold">Sistema VSS Implementável</span> (playbook + 15 vídeos-âncora), sabe que tem <span class="text-white font-semibold">48 mentorias ao vivo</span> no ano, que o <span class="text-white font-semibold">Growth CRM profissional</span> (que vale R$ 6.996) já está incluso, e ainda por cima viu que funciona <span class="text-white font-semibold">com ou sem tráfego pago</span>.
-        </p>
-        
-        <p class="font-sans text-base md:text-lg text-gray-200 mb-6 leading-relaxed">
-          E se tudo isso não bastasse: você tem <span class="font-bold text-lime">15 dias</span> para:
-        </p>
-        
-        <div class="bg-white/5 rounded-xl p-6 mb-6">
-          <div class="space-y-3 text-left">
-            <div class="flex items-start gap-3">
-              <span class="text-lime text-xl shrink-0">✓</span>
-              <span class="font-sans text-sm md:text-base text-gray-200">Usar o CRM completo e configurar seu funil</span>
+      <p class="font-sans text-cream/70" style="font-size: 1.125rem; line-height: 1.55;">
+        Framework condensado de 17+ anos e 140+ empresas. Sequência importa: P1 → P2 → P3 → P4 → P5 → P6. Fraqueza em um compromete todos os seguintes.
+      </p>
+    </div>
+
+    <div class="grid gap-0 border border-white/10 sm:grid-cols-2 lg:grid-cols-3">
+      {beneficios.map((b, i) => (
+        <article class="p-8" style={`border-right: ${(i + 1) % 3 === 0 ? '0' : '1px solid var(--jb-hair)'}; border-bottom: ${i < beneficios.length - 3 ? '1px solid var(--jb-hair)' : '0'};`}>
+          <div class="font-display text-acid" style="font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 900;">
+            {b.titulo}
+          </div>
+          <p class="mt-4 font-sans text-cream/85" style="font-size: 0.95rem; line-height: 1.55;">
+            {b.desc}
+          </p>
+        </article>
+      ))}
+    </div>
+  </Container>
+</section>
+
+<!-- STACK -->
+<section class="relative bg-ink-2 py-24">
+  <Container>
+    <div class="mx-auto max-w-4xl">
+      <div class="mb-12">
+        <div class="kicker mb-4">// O QUE VOCÊ LEVA</div>
+        <h2 class="font-display text-cream" style="font-size: clamp(1.75rem, 4.5vw, 3rem); line-height: 0.95; letter-spacing: -0.035em; text-transform: uppercase;">
+          Stack empilhada: <span class="stroke-text">R$ 17.287</span>.<br />Investimento: <span class="text-acid">R$ 1.997</span>.
+        </h2>
+      </div>
+
+      <div class="border border-white/10">
+        {[
+          ['Sistema VSS Implementável · playbook + 15 vídeos-âncora · acesso vitalício', 'R$ 1.997'],
+          ['Growth CRM completo · 12 meses incluídos', 'R$ 6.996'],
+          ['48 mentorias ao vivo com Joel · rolling 12 meses', 'R$ 7.200'],
+          ['Templates, scripts e biblioteca de objeções', 'R$ 497'],
+          ['Comunidade exclusiva · 90 dias', 'R$ 597'],
+        ].map(([item, valor], i) => (
+          <div class="grid grid-cols-[1fr_auto] gap-4 p-5 md:p-6" style={`border-top: ${i === 0 ? '0' : '1px solid var(--jb-hair)'};`}>
+            <div class="font-sans text-cream" style="font-size: 0.95rem; line-height: 1.4;">
+              <span class="mono mr-2 text-acid">▶</span>{item}
             </div>
-            <div class="flex items-start gap-3">
-              <span class="text-lime text-xl shrink-0">✓</span>
-              <span class="font-sans text-sm md:text-base text-gray-200">Ver todas as aulas e módulos</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <span class="text-lime text-xl shrink-0">✓</span>
-              <span class="font-sans text-sm md:text-base text-gray-200">Participar da comunidade e conhecer outros Operadores</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <span class="text-lime text-xl shrink-0">✓</span>
-              <span class="font-sans text-sm md:text-base text-gray-200">Assistir as mentorias ao vivo</span>
+            <div class="font-display text-acid" style="font-size: 1rem; white-space: nowrap; letter-spacing: -0.01em;">
+              {valor}
             </div>
           </div>
+        ))}
+        <div class="grid grid-cols-[1fr_auto] gap-4 p-5 md:p-6" style="border-top: 1px solid var(--jb-hair); background: rgba(198,255,0,0.06);">
+          <div class="font-display text-cream" style="font-size: 1rem; text-transform: uppercase;">Total empilhado</div>
+          <div class="font-display text-cream" style="font-size: 1.25rem;">R$ 17.287</div>
         </div>
-        
-        <p class="font-sans text-base md:text-lg text-gray-200 mb-8 leading-relaxed">
-          E <span class="font-bold text-lime">ainda assim</span>, se você olhar para tudo isso e decidir que não é para você, eu <span class="text-white font-semibold">devolvo seu dinheiro sem perguntas</span>. Sem burocracia, sem enrolação.
-        </p>
-        
-        <div class="border-t-2 border-lime/30 pt-6">
-          <p class="font-display text-xl md:text-2xl font-bold text-white mb-4">
-            Sinceramente, o que você tem a perder?
-          </p>
-          <p class="font-sans text-base md:text-lg text-gray-300">
-            O único risco real aqui é <span class="text-lime font-semibold">não fazer nada</span> e continuar com vendas aleatórias mais 6 meses, 1 ano, 2 anos...
-          </p>
+        <div class="grid grid-cols-[1fr_auto] gap-4 p-5 md:p-6" style="border-top: 2px solid var(--jb-acid); background: rgba(198,255,0,0.12);">
+          <div class="font-display text-cream" style="font-size: 1.25rem; text-transform: uppercase;">Você paga</div>
+          <div class="font-display text-acid" style="font-size: 2rem; letter-spacing: -0.035em;">R$ 1.997</div>
         </div>
-      </div>
-      
-      <a href="#investimento" class="inline-flex h-16 items-center justify-center gap-2 rounded-xl bg-lime px-10 font-display text-lg font-bold text-dark shadow-2xl shadow-lime/50 transition-all hover:scale-[1.02] hover:bg-lime/90 mb-4">
-        <Icons name="rocket" size={20} />
-        <span>Sim, Quero Transformar Minhas Vendas Agora</span>
-      </a>
-      
-      <div class="mt-6">
-        <p class="font-sans text-sm text-gray-400">
-          Lote Fundador: <span class="text-lime font-semibold">R$ 1.997</span> para os primeiros 100 alunos<br/>
-          Depois sobe para R$ 2.497 → R$ 2.997 → R$ 3.497
-        </p>
       </div>
     </div>
   </Container>
 </section>
 
-<!-- Avisos Legais -->
-<section class="py-12 bg-dark border-t border-white/10">
+<!-- CASE ESF (prova social pesada) -->
+<section class="relative overflow-hidden bg-ink py-24">
+  <div class="grid-overlay"></div>
   <Container>
-    <div class="max-w-4xl mx-auto space-y-6">
-      
-      <!-- Aviso Legal -->
-      <div class="bg-dark/20 rounded-lg border border-white/5 p-6">
-        <h3 class="font-sans text-xs font-semibold mb-3 text-gray-400 uppercase tracking-wide">Aviso Legal</h3>
-        
-        <div class="space-y-3 font-sans text-xs text-gray-500 leading-relaxed">
-          <p>
-            <strong class="text-gray-400">Informações sobre o Programa:</strong> O valor de R$ 1.997 garante acesso vitalício ao Sistema VSS Implementável (playbook digital + 15 vídeos-âncora) e à comunidade VSS. Incluso no primeiro ano: Growth CRM por 12 meses + 48 mentorias ao vivo + suporte ativo. Após o primeiro ano, a renovação é opcional e cobrada mensalmente (R$ 297/mês) para manter acesso ao CRM, mentorias ao vivo e suporte contínuo. Você pode cancelar a renovação a qualquer momento, sem multas. Seu acesso ao curso e comunidade permanece vitalício.
-          </p>
-          <p>
-            <strong class="text-gray-400">Recursos Pay-as-you-go:</strong> A licença do Growth CRM inclui acesso a todas as funcionalidades da plataforma. Recursos de comunicação e IA (agentes de IA, ligações telefônicas, SMS e WhatsApp) funcionam sob modelo de pagamento por uso (pay-as-you-go), sendo cobrados conforme consumo efetivo. Isso mantém seus custos proporcionais ao crescimento do negócio.
-          </p>
-          
-          <p>
-            <strong class="text-gray-400">Resultados:</strong> Nenhuma informação contida nesta página ou no produto, assim como qualquer referência ao desempenho passado ou potencial de uma estratégia abordada no conteúdo, não é e não deve ser interpretada como uma recomendação ou como garantia de qualquer resultado. Os resultados podem variar de acordo com a dedicação, aplicação das estratégias e contexto de cada negócio.
-          </p>
+    <div class="mx-auto max-w-5xl border border-white/10" style="background: linear-gradient(180deg, rgba(198,255,0,0.05), #0B0B0B);">
+      <div class="p-8 md:p-12">
+        <div class="kicker mb-5">// CASE ESF · ENCONTRE SUA FRANQUIA · 2018–2020</div>
+        <div class="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
+          <div>
+            <h3 class="mb-4 font-display text-cream" style="font-size: clamp(1.75rem, 4vw, 2.5rem); line-height: 1; letter-spacing: -0.035em; text-transform: uppercase;">
+              De <span class="text-fire">R$ 160k/mês</span> → <span class="text-acid">R$ 1 milhão/mês</span>
+            </h3>
+            <p class="font-sans text-cream/85" style="font-size: 1.05rem; line-height: 1.55;">
+              Os mesmos 6Ps aplicados numa holding de franquias durante 2 anos. Resultado: <strong class="text-cream">+433% de faturamento</strong>, leads <strong class="text-cream">×8,33</strong>, rede chegou a <strong class="text-cream">1.800+ franqueados</strong>. Não é outlier — é método aplicado com disciplina.
+            </p>
+          </div>
+          <div class="border-l border-white/10 pl-8 text-right">
+            <div class="font-display text-acid" style="font-size: 4rem; line-height: 0.9; letter-spacing: -0.045em;">+433%</div>
+            <div class="mono mt-2 text-fg-muted">faturamento</div>
+          </div>
         </div>
       </div>
-
-      <!-- Copyright e Links -->
-      <div class="text-center pt-4 border-t border-white/10">
-        <p class="font-sans text-sm text-gray-300 mb-3">
-          <strong class="text-white">Vendas Sem Segredos LTDA</strong>, ©2026 – Todos os Direitos Reservados
-        </p>
-        <p class="font-sans text-xs text-gray-400 mb-3">
-          CNPJ: 11.785.245/0001-98
-        </p>
-        <div class="flex items-center justify-center gap-4 text-xs">
-          <a href="/termos" class="text-lime hover:text-lime/80 transition-colors">
-            Termos de Uso
-          </a>
-          <span class="text-gray-600">•</span>
-          <a href="/privacidade" class="text-lime hover:text-lime/80 transition-colors">
-            Políticas de Privacidade
-          </a>
-        </div>
-      </div>
-
     </div>
   </Container>
 </section>
 
-<style>
-  details summary::-webkit-details-marker {
-    display: none;
-  }
+<!-- PARA QUEM / NÃO É PRA -->
+<section class="relative bg-ink-2 py-24">
+  <Container>
+    <div class="mx-auto max-w-5xl">
+      <div class="mb-12">
+        <div class="kicker mb-4">// FIT</div>
+        <h2 class="font-display text-cream" style="font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 0.95; letter-spacing: -0.035em; text-transform: uppercase;">
+          VSS <span class="text-acid">é pra você</span>. VSS <span class="text-fire">não é pra você</span>.
+        </h2>
+      </div>
 
-  /* Modal Checkout */
-  .checkout-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 9999;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-  }
+      <div class="grid gap-0 border border-white/10 md:grid-cols-2">
+        <div class="border-b border-white/10 p-8 md:border-b-0 md:border-r" style="background: linear-gradient(180deg, rgba(198,255,0,0.04), transparent);">
+          <div class="mono mb-5 text-acid">▲ é pra você se</div>
+          <ul class="space-y-4">
+            {paraQuem.map((item) => (
+              <li class="flex items-start gap-3 font-sans text-cream" style="font-size: 1rem; line-height: 1.45;">
+                <span class="text-acid">✓</span><span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="p-8" style="background: linear-gradient(180deg, rgba(255,59,15,0.04), transparent);">
+          <div class="mono mb-5 text-fire">▼ NÃO é pra você se</div>
+          <ul class="space-y-4">
+            {naoEPara.map((item) => (
+              <li class="flex items-start gap-3 font-sans text-cream/80" style="font-size: 1rem; line-height: 1.45;">
+                <span class="text-fire">✗</span><span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
 
-  .checkout-modal.active {
-    display: flex;
-  }
+<!-- OBJEÇÕES -->
+<section class="relative overflow-hidden bg-ink py-24">
+  <div class="grid-overlay"></div>
+  <Container>
+    <div class="mx-auto mb-14 max-w-3xl">
+      <div class="kicker mb-4">// OBJEÇÕES</div>
+      <h2 class="mb-6 font-display text-cream" style="font-size: clamp(1.75rem, 4.5vw, 3rem); line-height: 0.95; letter-spacing: -0.035em; text-transform: uppercase;">
+        As 6 perguntas que <span class="text-acid">todo mundo</span> faz
+      </h2>
+    </div>
 
-  .checkout-modal-content {
-    background: white;
-    border-radius: 16px;
-    width: 100%;
-    max-width: 600px;
-    max-height: 90vh;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-  }
+    <div class="mx-auto max-w-5xl border border-white/10">
+      {objecoes.map((o, i) => (
+        <details class="group" style={`border-top: ${i === 0 ? '0' : '1px solid var(--jb-hair)'};`}>
+          <summary class="flex cursor-pointer items-center justify-between gap-4 p-6 font-display text-cream md:p-8" style="font-size: clamp(1rem, 2vw, 1.15rem); letter-spacing: -0.02em; text-transform: uppercase; list-style: none;">
+            <span>{o.q}</span>
+            <span class="text-acid group-open:rotate-45" style="transition: transform 180ms;">+</span>
+          </summary>
+          <div class="px-6 pb-6 md:px-8 md:pb-8">
+            <p class="font-sans text-cream/85" style="font-size: 1rem; line-height: 1.55;">{o.a}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </Container>
+</section>
 
-  .checkout-modal-header {
-    background: linear-gradient(135deg, #020617 0%, #1e293b 100%);
-    padding: 2rem 3rem 1.5rem 1.5rem;
-    border-bottom: 3px solid #a3ff3f;
-  }
+<!-- GARANTIA -->
+<section class="relative bg-ink-2 py-20">
+  <Container>
+    <div class="mx-auto max-w-4xl border-2 border-acid p-10 md:p-14" style="background: linear-gradient(180deg, rgba(198,255,0,0.08), #0B0B0B);">
+      <div class="kicker mb-5">// GARANTIA INCONDICIONAL 15 DIAS</div>
+      <h2 class="mb-5 font-display text-cream" style="font-size: clamp(1.75rem, 4vw, 2.5rem); line-height: 1; letter-spacing: -0.035em; text-transform: uppercase;">
+        Testou e não se adaptou? <span class="text-acid">Reembolso 100%.</span> Sem fricção.
+      </h2>
+      <p class="font-sans text-cream/85" style="font-size: 1.05rem; line-height: 1.55;">
+        15 dias corridos. Avisa e em 48h o valor volta pro teu cartão. Sem formulário de 30 campos, sem ligação de retenção, sem ninguém tentando te fazer desistir de desistir. O risco é 100% nosso — porque o método já foi testado em 140+ empresas. Não tem por que ser diferente com você.
+      </p>
+    </div>
+  </Container>
+</section>
 
-  .checkout-modal-header h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-    margin: 0;
-    line-height: 1.3;
-  }
+<!-- CHECKOUT / CTA FINAL -->
+<section id="checkout" class="relative overflow-hidden bg-ink py-24">
+  <div class="grid-overlay"></div>
+  <Container>
+    <div class="mx-auto max-w-4xl">
+      <div class="mb-8">
+        <div class="kicker mb-4">// CHECKOUT · ÚLTIMO PASSO</div>
+        <h2 class="mb-5 font-display text-cream" style="font-size: clamp(2rem, 5.5vw, 3.75rem); line-height: 0.92; letter-spacing: -0.04em; text-transform: uppercase;">
+          Daqui <span class="text-acid">90 dias</span> você estará <span class="text-acid">90 dias mais perto</span> do sistema.
+          <br />Ou 90 dias mais <span class="text-fire">distante</span>. <span class="stroke-text">Escolhe.</span>
+        </h2>
+        <p class="font-sans text-cream/85" style="font-size: 1.125rem; line-height: 1.55;">
+          Não há fórmula mágica. Há método. Bora pra cima.
+        </p>
+      </div>
 
-  .checkout-modal-header .highlight {
-    color: #a3ff3f;
-  }
+      <div class="border-2 border-acid p-8 md:p-10" style="background: linear-gradient(180deg, rgba(198,255,0,0.1), #0B0B0B);">
+        <div class="mb-8 grid gap-6 md:grid-cols-2">
+          <div>
+            <div class="mono mb-2 text-acid">// À VISTA</div>
+            <div class="font-display text-acid" style="font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1; letter-spacing: -0.045em;">
+              R$ 1.997
+            </div>
+            <div class="mono mt-1 text-fg-muted">PIX OU CARTÃO</div>
+          </div>
+          <div>
+            <div class="mono mb-2 text-acid">// PARCELADO</div>
+            <div class="font-display text-cream" style="font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1; letter-spacing: -0.045em;">
+              12× <span class="text-acid">R$ 166,42</span>
+            </div>
+            <div class="mono mt-1 text-fg-muted">NO CARTÃO</div>
+          </div>
+        </div>
 
-  .checkout-modal-close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    transition: all 0.2s;
-    font-size: 24px;
-    line-height: 1;
-  }
+        <a href="https://pay.hotmart.com/" class="btn-primary" style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 1.5rem 2rem;">
+          Entrar no VSS agora →
+        </a>
 
-  .checkout-modal-close:hover {
-    background: rgba(0, 0, 0, 0.7);
-    transform: scale(1.1);
-  }
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mono text-fg-muted">
+          <span>★ GARANTIA 15 DIAS</span>
+          <span>★ ACESSO IMEDIATO</span>
+          <span>★ PAGAMENTO SEGURO HOTMART</span>
+        </div>
+      </div>
 
-  .checkout-iframe-container {
-    width: 100%;
-    height: 550px;
-    overflow-y: auto;
-    flex: 1;
-  }
-
-  .checkout-modal-footer {
-    background: #f8fafc;
-    padding: 1.25rem 1.5rem;
-    border-top: 1px solid #e2e8f0;
-    text-align: center;
-  }
-
-  .checkout-modal-footer p {
-    font-size: 0.875rem;
-    color: #475569;
-    margin: 0 0 0.75rem 0;
-    font-weight: 500;
-  }
-
-  .checkout-modal-footer img {
-    max-height: 60px;
-    margin: 0 auto;
-  }
-
-  @media (max-height: 700px) {
-    .checkout-iframe-container {
-      height: 60vh;
-    }
-  }
-</style>
-
-<script>
-  // Modal Checkout Controls
-  const modal = document.getElementById('checkoutModal');
-  const openBtn = document.getElementById('openCheckoutModal');
-  const closeBtn = document.getElementById('closeCheckoutModal');
-
-  if (openBtn && modal && closeBtn) {
-    openBtn.addEventListener('click', () => {
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-
-    closeBtn.addEventListener('click', () => {
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-    });
-
-    // Fechar ao clicar fora do modal
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
-
-    // Fechar com ESC
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('active')) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
-  }
-</script>
+      <p class="mt-10 text-center mono text-fg-muted">
+        SISTEMA &gt; IMPROVISO · SEMPRE ABERTO · JB_CORE v3.0 · FLORIANÓPOLIS/SC
+      </p>
+    </div>
+  </Container>
+</section>

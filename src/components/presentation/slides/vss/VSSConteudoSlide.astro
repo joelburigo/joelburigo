@@ -1,153 +1,178 @@
 ---
-import Container from '../../../ui/Container.astro'
-import { Icon } from 'astro-icon/components'
+// Slide 11 · VSS Conteúdo — 15 módulos / 7 fases / 66 destravamentos
+import SlideShell from '../../SlideShell.astro'
+
+const fases = [
+  { n: 'F1', t: 'FUNDAÇÃO', d: 'Posicionamento e público · P1-P2' },
+  { n: 'F2', t: 'OFERTA', d: 'Produto e pricing · P3' },
+  { n: 'F3', t: 'MARKETING', d: 'Geração de demanda · P4' },
+  { n: 'F4', t: 'VENDAS', d: 'Conversão e funil · P4' },
+  { n: 'F5', t: 'OPERAÇÃO', d: 'SOPs e processos · P5' },
+  { n: 'F6', t: 'TIME', d: 'Pessoas e cultura · P6' },
+  { n: 'F7', t: 'ESCALA', d: 'Crescimento previsível' },
+]
 ---
 
-<div class="h-screen bg-dark py-8 flex items-center overflow-y-auto">
-  <Container>
-    <div class="max-w-6xl mx-auto">
-      
-      <div class="text-center mb-10">
-        <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-4">
-          Por Que o VSS é <span class="text-lime">Diferente</span>
-        </h2>
-        <p class="text-xl text-gray-400">
-          Não é um curso gravado que te abandona. É implementação guiada com suporte ativo.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <!-- Diferencial 1 -->
-        <div class="rounded-xl border border-white/10 bg-white/5 p-6 text-center">
-          <Icon name="lucide:book-open" class="h-12 w-12 text-lime mx-auto mb-4" />
-          <h3 class="text-lg font-bold text-white mb-2">15 Módulos Completos</h3>
-          <p class="text-sm text-gray-400">15 módulos, 66 aulas práticas cobrindo todo o framework dos 6Ps</p>
-        </div>
-
-        <!-- Diferencial 2 -->
-        <div class="rounded-xl border border-white/10 bg-white/5 p-6 text-center">
-          <Icon name="lucide:rocket" class="h-12 w-12 text-lime mx-auto mb-4" />
-          <h3 class="text-lg font-bold text-white mb-2">Growth CRM</h3>
-          <p class="text-sm text-gray-400">Growth CRM (ferramenta all-in-one) ativado na primeira semana</p>
-        </div>
-
-        <!-- Diferencial 3 -->
-        <div class="rounded-xl border border-white/10 bg-white/5 p-6 text-center">
-          <Icon name="lucide:video" class="h-12 w-12 text-lime mx-auto mb-4" />
-          <h3 class="text-lg font-bold text-white mb-2">Mentorias ao Vivo</h3>
-          <p class="text-sm text-gray-400">Mentorias ao vivo semanais com Joel Burigo</p>
-        </div>
-
-        <!-- Diferencial 4 -->
-        <div class="rounded-xl border border-white/10 bg-white/5 p-6 text-center opacity-70">
-          <Icon name="lucide:handshake" class="h-10 w-10 text-lime mx-auto mb-3" />
-          <h3 class="text-base font-bold text-white mb-2">Comunidade Exclusiva</h3>
-          <p class="text-xs text-gray-400">Comunidade exclusiva para networking e feedback contínuo</p>
-        </div>
-
-        <!-- Diferencial 5 -->
-        <div class="rounded-xl border border-white/10 bg-white/5 p-6 text-center">
-          <Icon name="lucide:wrench" class="h-12 w-12 text-lime mx-auto mb-4" />
-          <h3 class="text-lg font-bold text-white mb-2">Templates Prontos</h3>
-          <p class="text-sm text-gray-400">Templates plug-and-play (cadências, páginas, funis, e-mails, copys)</p>
-        </div>
-
-        <!-- Diferencial 6 -->
-        <div class="rounded-xl border border-white/10 bg-white/5 p-6 text-center">
-          <Icon name="lucide:shield-check" class="h-12 w-12 text-lime mx-auto mb-4" />
-          <h3 class="text-lg font-bold text-white mb-2">Garantia Total</h3>
-          <p class="text-sm text-gray-400">Garantia incondicional de 15 dias</p>
-        </div>
-
-      </div>
-
-      <!-- Cronograma de Implementação -->
-      <div class="mt-10 rounded-2xl bg-linear-to-br from-lime/10 via-lime/5 to-transparent border-2 border-lime/30 p-8">
-        <h3 class="text-2xl font-bold text-white mb-8 text-center">Cronograma de Implementação <span class="text-lime">(90 Dias)</span></h3>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Mês 1 -->
-          <div class="relative">
-            <div class="absolute -left-4 top-0 w-1 h-full bg-linear-to-b from-lime to-lime/20 rounded-full"></div>
-            <div class="pl-6">
-              <div class="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-lime text-dark text-xl font-bold shadow-lg shadow-lime/50">1</div>
-              <h4 class="text-xl font-bold text-white mb-2">Mês 1</h4>
-              <p class="text-sm font-semibold text-lime mb-3">Fundação do Sistema</p>
-              <ul class="space-y-2 text-sm text-gray-400">
-                <li class="flex items-start gap-2">
-                  <Icon name="lucide:check" class="h-4 w-4 text-lime shrink-0 mt-0.5" />
-                  <span>Cliente Ideal (P1)</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <Icon name="lucide:check" class="h-4 w-4 text-lime shrink-0 mt-0.5" />
-                  <span>Oferta e Preço (P2)</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <Icon name="lucide:check" class="h-4 w-4 text-lime shrink-0 mt-0.5" />
-                  <span>CRM Configurado (P3)</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Mês 2 -->
-          <div class="relative">
-            <div class="absolute -left-4 top-0 w-1 h-full bg-linear-to-b from-lime to-lime/20 rounded-full"></div>
-            <div class="pl-6">
-              <div class="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-lime text-dark text-xl font-bold shadow-lg shadow-lime/50">2</div>
-              <h4 class="text-xl font-bold text-white mb-2">Mês 2</h4>
-              <p class="text-sm font-semibold text-lime mb-3">Operação Ativa</p>
-              <ul class="space-y-2 text-sm text-gray-400">
-                <li class="flex items-start gap-2">
-                  <Icon name="lucide:check" class="h-4 w-4 text-lime shrink-0 mt-0.5" />
-                  <span>Prospecção Ativa (P4)</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <Icon name="lucide:check" class="h-4 w-4 text-lime shrink-0 mt-0.5" />
-                  <span>Playbook Pronto (P5)</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <Icon name="lucide:check" class="h-4 w-4 text-lime shrink-0 mt-0.5" />
-                  <span>Primeiras vendas</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Mês 3 -->
-          <div class="relative">
-            <div class="absolute -left-4 top-0 w-1 h-full bg-linear-to-b from-lime to-lime/20 rounded-full"></div>
-            <div class="pl-6">
-              <div class="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-lime text-dark text-xl font-bold shadow-lg shadow-lime/50">3</div>
-              <h4 class="text-xl font-bold text-white mb-2">Mês 3</h4>
-              <p class="text-sm font-semibold text-lime mb-3">Escalabilidade</p>
-              <ul class="space-y-2 text-sm text-gray-400">
-                <li class="flex items-start gap-2">
-                  <Icon name="lucide:check" class="h-4 w-4 text-lime shrink-0 mt-0.5" />
-                  <span>Estrutura de Time (P6)</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <Icon name="lucide:check" class="h-4 w-4 text-lime shrink-0 mt-0.5" />
-                  <span>Métricas e KPIs</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <Icon name="lucide:check" class="h-4 w-4 text-lime shrink-0 mt-0.5" />
-                  <span>Sistema autônomo</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-8 text-center">
-          <div class="inline-flex items-center gap-3 rounded-full bg-lime/20 border border-lime/50 px-6 py-3">
-            <Icon name="lucide:rocket" class="h-6 w-6 text-lime" />
-            <p class="text-white font-semibold">Depois: <span class="text-lime">Sistema rodando com previsibilidade</span></p>
-          </div>
-        </div>
-      </div>
-
+<SlideShell
+  variant="default"
+  sbLeft="VSS · ARQUITETURA DO PROGRAMA"
+  sbRight="// 15 · 7 · 66"
+  navLeft="★ CADA DESTRAVAMENTO = UMA ENGRENAGEM"
+  navRight="12 / 19 · → TRANSFORMAÇÃO"
+>
+  <div class="vc-wrap">
+    <div class="vc-head">
+      <div class="vc-kicker">// O QUE ESTÁ DENTRO</div>
+      <h2 class="vc-h2">
+        <span class="stroke-text">15</span> MÓDULOS ·
+        <span class="acid">7</span> FASES ·<br />
+        <span class="fire">66</span> DESTRAVAMENTOS
+      </h2>
+      <p class="vc-sub">
+        Playbook sequenciado. Cada fase destrava a próxima.<br />
+        <b>Não é curso pra assistir. É sistema pra implementar.</b>
+      </p>
     </div>
-  </Container>
-</div>
+
+    <div class="vc-grid">
+      {fases.map((f) => (
+        <div class="vc-card">
+          <div class="vc-n">{f.n}</div>
+          <div class="vc-t">{f.t}</div>
+          <div class="vc-d">{f.d}</div>
+        </div>
+      ))}
+    </div>
+
+    <div class="vc-stats">
+      <div class="vc-stat">
+        <div class="vc-sv">90<span>dias</span></div>
+        <div class="vc-sl">// PRAZO GUIADO</div>
+      </div>
+      <div class="vc-stat">
+        <div class="vc-sv">48<span>/ano</span></div>
+        <div class="vc-sl">// MENTORIAS AO VIVO</div>
+      </div>
+      <div class="vc-stat">
+        <div class="vc-sv">12<span>meses</span></div>
+        <div class="vc-sl">// GROWTH CRM INCLUÍDO</div>
+      </div>
+    </div>
+  </div>
+</SlideShell>
+
+<style>
+  .vc-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    height: 100%;
+  }
+  .vc-kicker {
+    font-family: var(--font-mono);
+    font-size: clamp(12px, 1vw, 16px);
+    letter-spacing: 0.32em;
+    color: var(--jb-acid);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .vc-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 82px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    text-transform: uppercase;
+    color: var(--jb-cream);
+    margin: 0;
+  }
+  .vc-h2 .acid { color: var(--jb-acid); }
+  .vc-h2 .fire { color: var(--jb-fire); }
+  .vc-sub {
+    margin-top: 14px;
+    font-size: clamp(13px, 1.1vw, 18px);
+    line-height: 1.5;
+    color: var(--jb-fg-3);
+    max-width: 800px;
+  }
+  .vc-sub b { color: var(--jb-cream); }
+
+  .vc-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+  }
+  .vc-card {
+    background: var(--jb-ink-2);
+    border: 1px solid var(--jb-hair);
+    padding: 20px 16px;
+    text-align: center;
+  }
+  .vc-n {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 2.4vw, 42px);
+    color: var(--jb-acid);
+    letter-spacing: -0.04em;
+    line-height: 0.9;
+  }
+  .vc-t {
+    margin-top: 10px;
+    font-family: var(--font-display);
+    font-size: clamp(13px, 1vw, 16px);
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--jb-cream);
+  }
+  .vc-d {
+    margin-top: 8px;
+    font-family: var(--font-mono);
+    font-size: clamp(9px, 0.7vw, 11px);
+    letter-spacing: 0.16em;
+    color: var(--jb-fg-muted);
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  .vc-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .vc-stat {
+    border-left: 3px solid var(--jb-acid);
+    padding: 14px 20px;
+    background: var(--jb-ink-2);
+  }
+  .vc-sv {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 3.5vw, 58px);
+    color: var(--jb-cream);
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+  }
+  .vc-sv span {
+    font-family: var(--font-mono);
+    font-size: clamp(11px, 0.9vw, 14px);
+    letter-spacing: 0.22em;
+    color: var(--jb-fg-muted);
+    margin-left: 6px;
+    vertical-align: baseline;
+  }
+  .vc-sl {
+    margin-top: 4px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--jb-fg-muted);
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 1024px) {
+    .vc-grid { grid-template-columns: repeat(3, 1fr); }
+    .vc-stats { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .vc-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

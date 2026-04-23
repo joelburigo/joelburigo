@@ -1,137 +1,120 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import Header from '../components/layout/Header.astro'
+import Footer from '../components/layout/Footer.astro'
 import Container from '../components/ui/Container.astro'
-import Button from '../components/ui/Button.astro'
-import Icons from '../components/ui/Icons.astro'
-import { contactInfo, getWhatsAppLink } from '../data/contact'
+import { getWhatsAppLink } from '../data/contact'
 ---
 
 <Layout
-  title="Compra Aprovada - Vendas Sem Segredos | Joel Burigo"
-  description="Sua compra foi aprovada! Acesse agora o Vendas Sem Segredos e comece sua jornada de transformação."
+  title="Compra aprovada — VSS | Joel Burigo"
+  description="Sua compra foi aprovada. Hora de ligar a Máquina."
   noIndex={true}
 >
-  <main class="min-h-screen bg-dark py-12 md:py-20">
-    <Container>
-      <div class="mx-auto max-w-3xl">
-        <!-- Ícone de Sucesso -->
-        <div class="mb-8 flex justify-center">
-          <div class="flex h-24 w-24 items-center justify-center rounded-full bg-lime/20 ring-8 ring-lime/10 animate-pulse">
-            <Icons name="check-circle-2" class="h-12 w-12 text-lime" />
-          </div>
-        </div>
+  <Header />
 
-        <!-- Título -->
-        <div class="mb-12 text-center">
-          <h1 class="mb-4 font-display text-4xl font-bold text-white md:text-5xl">
-            🎉 Bem-Vindo ao VSS!
-          </h1>
-          <p class="font-sans text-body-lg text-gray-200">
-            Sua compra foi aprovada. Agora vamos estruturar suas vendas de verdade. <span class="font-bold text-lime">Bora começar?</span>
-          </p>
-        </div>
+  <main class="relative overflow-hidden bg-ink pt-20">
+    <div class="grid-overlay"></div>
 
-        <!-- Card Principal -->
-        <div class="mb-8 rounded-2xl border-2 border-lime/30 bg-white/5 p-8 backdrop-blur-sm md:p-12">
-          <div class="mb-8 space-y-4">
-            <h2 class="font-display text-2xl font-bold text-white">Próximos Passos (Leva 5 minutos):</h2>
-            
-            <div class="space-y-6">
-              <div class="flex items-start gap-4">
-                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-lime/20">
-                  <span class="font-display text-lg font-bold text-lime">1</span>
-                </div>
-                <div>
-                  <h3 class="mb-2 font-display text-lg font-semibold text-white">Acesse seu e-mail</h3>
-                  <p class="font-sans text-body text-gray-200">
-                    Você receberá um e-mail com as credenciais de acesso à plataforma em até 5 minutos.
-                  </p>
-                </div>
-              </div>
+    <Container class="relative z-10">
+      <section class="py-16 md:py-24">
+        <div class="mx-auto max-w-4xl">
+          <!-- Kicker -->
+          <div class="kicker mb-6">// VSS · STATUS: APROVADO · ACESSO_LIBERADO</div>
 
-              <div class="flex items-start gap-4">
-                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-lime/20">
-                  <span class="font-display text-lg font-bold text-lime">2</span>
-                </div>
-                <div>
-                  <h3 class="mb-2 font-display text-lg font-semibold text-white">Entre no Growth CRM</h3>
-                  <p class="font-sans text-body text-gray-200">
-                    Acesse o CRM profissional incluído no programa (valor de R$ 6.996 - 12 meses grátis).
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4">
-                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-lime/20">
-                  <span class="font-display text-lg font-bold text-lime">3</span>
-                </div>
-                <div>
-                  <h3 class="mb-2 font-display text-lg font-semibold text-white">Junte-se à comunidade</h3>
-                  <p class="font-sans text-body text-gray-200">
-                    Entre no grupo exclusivo de alunos e conecte-se com outros empreendedores implementando o sistema.
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4">
-                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-lime/20">
-                  <span class="font-display text-lg font-bold text-lime">4</span>
-                </div>
-                <div>
-                  <h3 class="mb-2 font-display text-lg font-semibold text-white">Assista a primeira aula</h3>
-                  <p class="font-sans text-body text-gray-200">
-                    Comece pelo Módulo 1 - Fundação e entenda como funcionará sua jornada de 90 dias.
-                  </p>
-                </div>
-              </div>
+          <!-- Stat hero -->
+          <div class="grid gap-8 md:grid-cols-[auto_1fr] md:items-end">
+            <div class="stat-mega text-acid">+90d</div>
+            <div>
+              <h1 class="stat-display">
+                <span class="block">BEM-VINDO AO</span>
+                <span class="block text-fire">VSS.</span>
+              </h1>
+              <p class="mt-4 font-sans text-lg text-[color:var(--jb-cream)]">
+                Compra aprovada. Em até 5 minutos você recebe acesso por email. Agora é execução.
+              </p>
             </div>
           </div>
 
-          <!-- CTAs -->
-          <div class="flex flex-col gap-4 sm:flex-row">
-            <a href={getWhatsAppLink('Olá! Acabei de comprar o Vendas Sem Segredos e gostaria de confirmar meu acesso.')} target="_blank" rel="noopener noreferrer" class="flex-1">
-              <Button variant="primary" size="lg" class="w-full">
-                Falar com Suporte
-              </Button>
+          <!-- Próximos passos -->
+          <div class="mt-12 border border-[color:var(--jb-acid-border)] bg-[color:var(--jb-ink-2)] p-8">
+            <div class="kicker mb-6" style="color: var(--jb-acid);">// PRÓXIMOS PASSOS · 5_MIN</div>
+            <ol class="space-y-6">
+              {[
+                { n: '01', title: 'Checa seu email', body: 'Credenciais de acesso chegam em até 5 minutos. Verifica também a pasta de spam.' },
+                { n: '02', title: 'Entra no Growth CRM', body: 'Ativa o CRM profissional incluso (R$ 6.996 de valor, 12 meses inclusos no VSS).' },
+                { n: '03', title: 'Entra na comunidade', body: 'Acesso ao grupo exclusivo de alunos. Conecta com quem já está implementando.' },
+                { n: '04', title: 'Assiste o módulo 1', body: 'Fundação dos 6Ps. 90 dias começam aqui. Sem enrolação.' },
+              ].map((step) => (
+                <li class="flex items-start gap-5">
+                  <div class="shrink-0 font-mono text-sm font-bold text-acid" style="letter-spacing: 0.1em;">{step.n}</div>
+                  <div>
+                    <h3 class="heading-4 mb-1 text-[color:var(--jb-cream)]">{step.title}</h3>
+                    <p class="font-sans text-[color:var(--jb-fg-2)]">{step.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          <!-- Info -->
+          <div class="mt-8 grid gap-6 sm:grid-cols-2">
+            <div class="card">
+              <div class="kicker mb-3">// GARANTIA · 15_DIAS</div>
+              <p class="font-sans text-[color:var(--jb-fg-2)]">
+                Se não gostar, devolvo 100% do valor. Sem perguntas. Sem drama.
+              </p>
+            </div>
+            <div class="card">
+              <div class="kicker mb-3">// ACESSO · VITALÍCIO</div>
+              <p class="font-sans text-[color:var(--jb-fg-2)]">
+                Conteúdo no seu ritmo. 48 mentorias ao vivo semanais em grupo com Joel.
+              </p>
+            </div>
+          </div>
+
+          <!-- CTA suporte -->
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a
+              href={getWhatsAppLink('Olá! Comprei o Vendas Sem Segredos e gostaria de confirmar meu acesso.')}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary min-h-[48px]"
+            >
+              <span>Falar com suporte</span>
+              <span aria-hidden="true">→</span>
             </a>
-            <a href="/vendas-sem-segredos" class="flex-1">
-              <Button variant="outline" size="lg" class="w-full border-lime text-lime hover:bg-lime hover:text-dark">
-                Ver Detalhes do Programa
-              </Button>
-            </a>
+            <a href="/" class="btn-secondary min-h-[48px]">Voltar pra home</a>
+          </div>
+
+          <!-- Assinatura -->
+          <div class="mt-12 border-t border-[color:var(--jb-hair)] pt-8 font-mono text-[11px] uppercase tracking-[0.28em] text-[color:var(--jb-fg-muted)]">
+            <span class="text-acid">★</span>&nbsp;&nbsp;SISTEMA <span class="text-fire">&gt;</span> IMPROVISO · LET'S GROW
           </div>
         </div>
-
-        <!-- Informações Importantes -->
-        <div class="rounded-xl border border-white/10 bg-white/5 p-6">
-          <h3 class="mb-4 font-display text-lg font-semibold text-white">📋 Informações Importantes</h3>
-          <ul class="space-y-3 font-sans text-body-sm text-gray-200">
-            <li class="flex items-start gap-2">
-              <Icons name="check-circle-2" class="h-5 w-5 shrink-0 text-lime" />
-              <span>Garantia de 15 dias: Se não gostar, devolvo 100% do valor</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <Icons name="check-circle-2" class="h-5 w-5 shrink-0 text-lime" />
-              <span>Acesso vitalício ao conteúdo: Assista no seu ritmo, sem pressa</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <Icons name="check-circle-2" class="h-5 w-5 shrink-0 text-lime" />
-              <span>Mentorias ao vivo: 48 sessões semanais de 60 minutos com Joel Burigo</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <Icons name="check-circle-2" class="h-5 w-5 shrink-0 text-lime" />
-              <span>Suporte via WhatsApp: {contactInfo.phone.display}</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Volta para Home -->
-        <div class="mt-8 text-center">
-          <a href="/" class="inline-flex items-center gap-2 font-sans text-body text-gray-400 transition-colors hover:text-lime">
-            ← Voltar para o site
-          </a>
-        </div>
-      </div>
+      </section>
     </Container>
   </main>
+
+  <Footer />
 </Layout>
+
+<style>
+  .stat-mega {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(3.5rem, 10vw, 7rem);
+    letter-spacing: -0.045em;
+    line-height: 1;
+  }
+  .stat-display {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    line-height: 0.92;
+    font-size: clamp(2rem, 5.5vw, 3.5rem);
+    color: var(--jb-cream);
+    margin: 0;
+  }
+</style>

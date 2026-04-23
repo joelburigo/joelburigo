@@ -1,5 +1,9 @@
 # MIGRATION — Producao `src/` → Terminal Growth
 
+> **✅ EXECUTADA EM 2026-04-22** (branch `feat/terminal-growth-migration`). Merge pra `main` + push pendente de aprovação. Commits: `4da2d7ff` (fundação + remoção Services) · `1ae8437b` (blog + robots) · `148c4078` (páginas + slides + LP). Este doc permanece como registro histórico + referência caso migração precise ser repetida.
+
+---
+
 > Checklist executavel pra migrar o site joelburigo.com.br dos tokens legados (royal-blue + lime, Montserrat + Inter, radius suave, soft glows) pro design system **Terminal Growth** (fire + acid, Archivo Black + Archivo + JetBrains Mono, radius 0, brutalist hard-offset shadows). **Estimativa: 3-4h em sessao dedicada.** Nao prometa "migracao sem quebrar" — ha ~78 arquivos tocando lime, 75 tocando font-display, 824 ocorrencias de rounded/shadow-. Risco real de regressao visual em ate 15% das paginas sem validacao manual.
 
 ---

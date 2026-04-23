@@ -88,7 +88,7 @@ Só depois abrir template. Não chutar formato.
 O site em `src/` é produção — servido em `joelburigo.com.br`. Regras:
 
 - Seguir `CLAUDE.md` da raiz do projeto (Astro SSR + Tailwind v4, Node 22).
-- **O design system `brand/` ainda NÃO foi migrado pro `src/styles/global.css`.** Produção ainda usa tokens antigos (royal-blue + lime, Montserrat + Inter). Migração pro Terminal Growth (fire `#FF3B0F` + acid `#C6FF00`, Archivo Black + JetBrains Mono) está pendente.
+- **Produção em Terminal Growth desde 2026-04-22** — `src/styles/global.css` tem os tokens `--jb-*` (fire, acid, ink, cream) e classes utility (`.card`, `.btn-primary`, `.btn-fire`, `.btn-secondary`, `.grid-overlay`, `.stroke-text`, `.dot-live`, `.kicker`, `.mono`). Tailwind v4 auto-gera `bg-fire`, `text-acid`, etc a partir do `@theme`.
 - Se pedido de landing envolve "aplicar o novo visual", confirmar escopo (migração parcial seção por seção) antes de mexer em `global.css`.
 - Dados canônicos em `src/data/cases.ts`, `src/data/contact.ts`, `src/data/testimonials.ts` — editar lá, não hardcodar em componente.
 - Deploy automático: `git push main` → GH Actions → GHCR → Watchtower em ≤60s. Não precisa rodar script de deploy.

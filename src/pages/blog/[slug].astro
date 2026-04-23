@@ -14,11 +14,11 @@ export const prerender = true
 
 export async function getStaticPaths() {
   const blogPosts = await getCollection('blog')
-  
+
   if (!blogPosts || blogPosts.length === 0) {
     return []
   }
-  
+
   return blogPosts.map((post) => ({
     params: { slug: post.id.replace(/\.md$/, '') },
     props: { post },
@@ -45,6 +45,11 @@ const allPosts = await getCollection('blog')
 const relatedPosts = allPosts
   .filter((p) => p.data.category === post.data.category && p.id !== post.id)
   .slice(0, 3)
+
+// Data formatada pro kicker
+const dateFormatted = post.data.date
+  .toLocaleDateString('pt-BR')
+  .replace(/\//g, '.')
 
 // Schema.org - Article Structured Data
 const articleSchema = {
@@ -82,13 +87,13 @@ const articleSchema = {
   <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
   <Header />
-  
+
   <!-- Reading Progress Bar -->
   <div class="reading-progress-bar"></div>
-  
+
   <main class="grow">
     <!-- Breadcrumb & Back -->
-    <section class="bg-dark pt-20 pb-6">
+    <section class="bg-ink pt-20 pb-6">
       <Container>
         <div class="flex flex-wrap items-center justify-between gap-4">
           <Breadcrumbs
@@ -98,43 +103,45 @@ const articleSchema = {
               { label: post.data.title, href: `/blog/${postSlug}` },
             ]}
           />
-          <a 
-            href="/blog" 
-            class="inline-flex items-center gap-2 font-display text-sm text-gray-200 transition-colors hover:text-lime"
+          <a
+            href="/blog"
+            class="back-link"
           >
             <Icons name="arrow-left" class="h-4 w-4" />
-            Voltar para o Blog
+            <span>Voltar para o arquivo</span>
           </a>
         </div>
       </Container>
     </section>
 
     <!-- Post Header -->
-    <section class="bg-dark py-16">
-      <Container>
+    <section class="relative overflow-hidden bg-ink py-12 md:py-16">
+      <div class="grid-overlay"></div>
+
+      <Container class="relative z-10">
         <div class="relative mx-auto flex max-w-7xl gap-12">
           <!-- Main Article -->
           <article class="mx-auto w-full max-w-3xl" data-pagefind-body>
             <div class="mb-6">
-              <span 
-                class="rounded-full bg-royal-blue/20 px-4 py-2 font-display text-sm font-semibold text-royal-blue"
+              <span
+                class="post-kicker kicker"
                 data-pagefind-meta="category"
               >
-                {post.data.category}
+                // POST · {dateFormatted} · {post.data.category}
               </span>
             </div>
 
-            <h1 
-              class="mb-6 font-display text-display-md text-white md:text-display-lg"
+            <h1
+              class="post-hero-title"
               data-pagefind-meta="title"
             >
               {post.data.title}
             </h1>
 
             {post.data.heroImage && (
-              <div class="mb-8 overflow-hidden rounded-2xl">
-                <Image 
-                  src={post.data.heroImage} 
+              <div class="post-hero-image">
+                <Image
+                  src={post.data.heroImage}
                   alt={post.data.title}
                   loading="eager"
                   class="w-full h-auto"
@@ -142,30 +149,30 @@ const articleSchema = {
               </div>
             )}
 
-            <div class="mb-8 flex flex-wrap items-center gap-6 border-b border-white/10 pb-6" data-pagefind-ignore>
-              <div class="flex items-center gap-2 font-sans text-body-sm text-gray-400">
-                <Icons name="user" class="h-4 w-4" />
+            <div class="post-meta-bar" data-pagefind-ignore>
+              <div class="meta-item mono">
+                <Icons name="user" class="h-3.5 w-3.5" />
                 <span data-pagefind-meta="author">{post.data.author}</span>
               </div>
-              <div class="flex items-center gap-2 font-sans text-body-sm text-gray-400">
-                <Icons name="calendar" class="h-4 w-4" />
+              <div class="meta-item mono">
+                <Icons name="calendar" class="h-3.5 w-3.5" />
                 <span>{post.data.date.toLocaleDateString('pt-BR')}</span>
               </div>
-              <div class="flex items-center gap-2 font-sans text-body-sm text-gray-400">
-                <Icons name="clock" class="h-4 w-4" />
-                <span>{post.data.readTime} de leitura</span>
-                <div class="ml-2 h-1 w-16 overflow-hidden rounded-full bg-white/10">
-                  <div class="h-full bg-lime" style="width: 0%" data-reading-progress></div>
+              <div class="meta-item mono">
+                <Icons name="clock" class="h-3.5 w-3.5" />
+                <span>{post.data.readTime}</span>
+                <div class="ml-2 h-[3px] w-16 overflow-hidden bg-[color:var(--jb-hair-strong)]">
+                  <div class="h-full bg-acid" style="width: 0%" data-reading-progress></div>
                 </div>
               </div>
-              <button id="share-button" class="ml-auto flex items-center gap-2 font-display text-sm text-lime transition-colors hover:text-lime/80">
-                <Icons name="share-2" class="h-4 w-4" />
+              <button id="share-button" class="share-btn mono">
+                <Icons name="share-2" class="h-3.5 w-3.5" />
                 <span>Compartilhar</span>
               </button>
             </div>
 
             <!-- Audio Player -->
-            <AudioPlayer 
+            <AudioPlayer
               audioUrl={`/audio/blog/${post.id.replace('.md', '')}.mp3`}
               title={post.data.title}
             />
@@ -176,27 +183,34 @@ const articleSchema = {
             </div>
 
             <!-- Post Footer / CTA -->
-            <div class="mt-16 rounded-2xl border-2 border-lime/20 bg-lime/10 p-8 text-center">
-              <h3 class="mb-4 font-display text-h2 text-white">
-                Quer Implementar os 6Ps no Seu Negócio?
+            <div class="post-cta">
+              <div class="kicker mb-3">// PRÓXIMO PASSO</div>
+              <h3 class="post-cta-title">
+                QUER LIGAR A MÁQUINA<br />
+                <span class="text-fire">NO SEU NEGÓCIO?</span>
               </h3>
-              <p class="mb-6 font-sans text-body-lg text-gray-200">
-                No programa Vendas Sem Segredos, você aprende e implementa o Framework completo em 90 dias.
+              <p class="post-cta-lede">
+                No <strong>VSS — Vendas Sem Segredos</strong>, você implementa o Framework 6Ps completo em 90 dias. DIY perpétuo, R$ 1.997. Sem enrolação.
               </p>
-              <a href="/vendas-sem-segredos">
-                <button class="inline-flex items-center justify-center gap-2 rounded-lg bg-lime px-8 py-4 font-display text-lg font-bold text-dark shadow-lg shadow-lime/20 transition-all hover:scale-105 hover:bg-lime/90">
-                  Ver Programa Completo
-                </button>
-              </a>
+              <div class="post-cta-actions">
+                <a href="/vendas-sem-segredos" class="btn-primary">
+                  <span>Ver VSS completo</span>
+                  <span aria-hidden="true">→</span>
+                </a>
+                <a href="/blog" class="btn-secondary">
+                  <span>Ler mais posts</span>
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
             </div>
           </article>
 
           <!-- Table of Contents (sidebar) -->
           <aside class="toc-sidebar hidden xl:block">
             <nav class="toc-container" aria-label="Table of contents">
-              <div class="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
-                <h3 class="mb-3 font-display text-sm font-bold text-white">Neste Artigo</h3>
-                <ul class="toc-list space-y-2 text-sm"></ul>
+              <div class="toc-panel">
+                <div class="kicker toc-header">// NESTE ARTIGO</div>
+                <ul class="toc-list"></ul>
               </div>
             </nav>
           </aside>
@@ -206,24 +220,30 @@ const articleSchema = {
 
     <!-- Related Posts -->
     {relatedPosts.length > 0 && (
-      <section class="bg-dark py-24">
+      <section class="bg-ink py-20 md:py-24">
         <Container>
-          <h2 class="mb-12 text-center font-display text-display-sm text-white">
-            Artigos Relacionados
-          </h2>
+          <div class="section-head mb-4">
+            <div class="kicker">// MAIS SOBRE {post.data.category.toUpperCase()}</div>
+            <div class="mono section-head-meta">POSTS RELACIONADOS</div>
+          </div>
+          <div class="hair-divider mb-8"></div>
 
-          <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5">
             {relatedPosts.map((relatedPost) => (
               <a
-                href={`/blog/${relatedPost.id}`}
-                class="group flex flex-col overflow-hidden rounded-2xl border-2 border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-lime/50"
+                href={`/blog/${relatedPost.id.replace(/\.md$/, '')}`}
+                class="related-card group"
               >
-                <span class="mb-3 inline-block w-fit rounded-full bg-royal-blue/20 px-3 py-1 font-display text-xs font-semibold text-royal-blue">
-                  {relatedPost.data.category}
-                </span>
-                <h3 class="font-display text-h4 text-white transition-colors group-hover:text-lime">
-                  {relatedPost.data.title}
-                </h3>
+                <div class="related-body">
+                  <span class="related-category mono">// {relatedPost.data.category}</span>
+                  <h3 class="related-title">
+                    {relatedPost.data.title}
+                  </h3>
+                  <div class="related-read">
+                    <span>Ler artigo</span>
+                    <span aria-hidden="true">→</span>
+                  </div>
+                </div>
               </a>
             ))}
           </div>
@@ -233,7 +253,7 @@ const articleSchema = {
   </main>
 
   <!-- Back to Top Button -->
-  <button 
+  <button
     id="back-to-top"
     class="back-to-top-btn"
     aria-label="Voltar ao topo"
@@ -251,10 +271,199 @@ const articleSchema = {
     top: 0;
     left: 0;
     height: 3px;
-    background: linear-gradient(to right, #a3ff3f, #8fd639);
+    background: var(--jb-acid);
     width: 0%;
     z-index: 9999;
     transition: width 0.1s ease;
+  }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--jb-fg-2);
+    transition: color var(--transition-base);
+    min-height: 44px;
+  }
+  .back-link:hover { color: var(--jb-acid); }
+
+  /* Post hero */
+  .post-kicker {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--jb-acid);
+  }
+
+  .post-hero-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.045em;
+    line-height: 0.92;
+    font-size: clamp(2rem, 6.5vw, 4.5rem);
+    color: var(--jb-cream);
+    margin: 0 0 2rem 0;
+  }
+
+  .post-hero-image {
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border: 1px solid var(--jb-hair);
+  }
+
+  /* Meta bar */
+  .post-meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--jb-hair);
+  }
+  .meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--jb-fg-muted);
+  }
+  .share-btn {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: 1px solid var(--jb-hair);
+    border-radius: 0;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--jb-acid);
+    padding: 0.5rem 0.875rem;
+    min-height: 44px;
+    cursor: pointer;
+    transition: all var(--transition-base);
+  }
+  .share-btn:hover {
+    border-color: var(--jb-acid);
+    background: var(--jb-acid-soft);
+  }
+
+  /* Post CTA */
+  .post-cta {
+    margin-top: 4rem;
+    padding: clamp(1.75rem, 4vw, 2.5rem);
+    background: linear-gradient(180deg, rgba(198, 255, 0, 0.06), var(--jb-ink-2));
+    border: 1px solid var(--jb-acid-border);
+  }
+  .post-cta-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.035em;
+    line-height: 0.95;
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    color: var(--jb-cream);
+    margin: 0 0 1rem 0;
+  }
+  .post-cta-lede {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--jb-cream);
+    text-transform: none;
+    margin: 0 0 1.75rem 0;
+    max-width: 52ch;
+  }
+  .post-cta-lede strong {
+    color: var(--jb-acid);
+    font-weight: 700;
+  }
+  .post-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  /* Section head + hair */
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .section-head-meta { font-size: 11px; color: var(--jb-fg-muted); }
+  .hair-divider { border-top: 1px solid var(--jb-hair); }
+
+  /* Related cards */
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--jb-ink-2);
+    border: 1px solid var(--jb-hair);
+    border-radius: 0;
+    text-decoration: none;
+    color: inherit;
+    transition: all var(--transition-base);
+    min-height: 180px;
+  }
+  .related-card:hover {
+    border-color: var(--jb-fire);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 var(--jb-fire);
+  }
+  .related-card:hover .related-title { color: var(--jb-acid); }
+
+  .related-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+  }
+  .related-category {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--jb-acid);
+    text-transform: uppercase;
+  }
+  .related-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    font-size: 1.125rem;
+    line-height: 1.2;
+    color: var(--jb-cream);
+    margin: 0;
+    transition: color var(--transition-base);
+  }
+  .related-read {
+    margin-top: auto;
+    padding-top: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--jb-acid);
   }
 
   /* Table of Contents */
@@ -270,32 +479,59 @@ const articleSchema = {
     overflow-y: auto;
   }
 
+  .toc-panel {
+    background: var(--jb-ink-2);
+    border: 1px solid var(--jb-hair);
+    padding: 1.25rem;
+  }
+
+  .toc-header {
+    margin-bottom: 0.875rem;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    color: var(--jb-acid);
+    text-transform: uppercase;
+  }
+
+  .toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
   .toc-container::-webkit-scrollbar {
     width: 4px;
   }
 
   .toc-container::-webkit-scrollbar-thumb {
-    background: rgba(163, 255, 63, 0.3);
-    border-radius: 2px;
+    background: var(--jb-acid-border);
+    border-radius: 0;
   }
 
   .toc-list a {
     display: block;
-    color: #9ca3af;
+    color: var(--jb-fg-3);
     text-decoration: none;
     transition: color 0.2s;
-    padding: 0.25rem 0;
+    padding: 0.375rem 0;
     border-left: 2px solid transparent;
     padding-left: 0.75rem;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    line-height: 1.4;
   }
 
   .toc-list a:hover {
-    color: #a3ff3f;
+    color: var(--jb-acid);
   }
 
   .toc-list a.active {
-    color: #a3ff3f;
-    border-left-color: #a3ff3f;
+    color: var(--jb-acid);
+    border-left-color: var(--jb-acid);
   }
 
   /* Back to Top Button */
@@ -305,13 +541,13 @@ const articleSchema = {
     right: 2rem;
     width: 3rem;
     height: 3rem;
-    border-radius: 50%;
-    background: #a3ff3f;
-    color: #0f172a;
+    border-radius: 0;
+    background: var(--jb-acid);
+    color: var(--jb-ink);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(163, 255, 63, 0.3);
+    box-shadow: 4px 4px 0 var(--jb-fire);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
@@ -326,108 +562,198 @@ const articleSchema = {
   }
 
   .back-to-top-btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(163, 255, 63, 0.4);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--jb-fire);
   }
 
+  /* Prose / Markdown content */
   .prose-custom {
-    color: #d1d5db;
-    font-size: 1.125rem;
-    line-height: 1.9;
+    color: var(--jb-cream);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.75;
   }
 
   .prose-custom :global(h2) {
     margin-top: 3.5rem;
     margin-bottom: 1.5rem;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: white;
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: var(--jb-cream);
     scroll-margin-top: 6rem;
   }
 
   .prose-custom :global(h3) {
     margin-top: 2.5rem;
-    margin-bottom: 1.25rem;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: white;
+    margin-bottom: 1.125rem;
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--jb-cream);
     scroll-margin-top: 6rem;
+  }
+
+  .prose-custom :global(h4) {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--jb-cream);
   }
 
   .prose-custom :global(p) {
     margin-bottom: 1.5rem;
+    color: var(--jb-cream);
   }
 
   .prose-custom :global(strong) {
-    color: white;
-    font-weight: 600;
+    color: var(--jb-fg-1);
+    font-weight: 700;
   }
 
-  .prose-custom :global(ul) {
-    margin: 2rem 0;
-    list-style-type: disc;
-    padding-left: 1.75rem;
+  .prose-custom :global(em) {
+    color: var(--jb-cream);
+    font-style: italic;
   }
+
+  .prose-custom :global(ul),
+  .prose-custom :global(ol) {
+    margin: 1.75rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .prose-custom :global(ul) { list-style-type: none; }
+  .prose-custom :global(ul li) {
+    position: relative;
+    padding-left: 1.25rem;
+  }
+  .prose-custom :global(ul li::before) {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    top: 0.15em;
+    color: var(--jb-acid);
+    font-size: 0.65em;
+  }
+  .prose-custom :global(ol) { list-style-type: decimal; color: var(--jb-acid); }
+  .prose-custom :global(ol li) { color: var(--jb-cream); padding-left: 0.5rem; }
 
   .prose-custom :global(li) {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.65;
   }
 
   .prose-custom :global(blockquote) {
-    margin: 3rem 0;
-    padding: 1.5rem;
-    padding-left: 1.5rem;
-    border-left: 4px solid #a3ff3f;
-    background: rgba(163, 255, 63, 0.05);
-    border-radius: 0 0.5rem 0.5rem 0;
-    font-size: 1.125rem;
-    font-style: italic;
-    color: #e5e7eb;
+    margin: 2.5rem 0;
+    padding: 1.5rem 1.75rem;
+    border-left: 3px solid var(--jb-acid);
+    background: var(--jb-acid-soft);
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: var(--jb-cream);
+  }
+  .prose-custom :global(blockquote p) {
+    margin: 0;
+    color: var(--jb-cream);
   }
 
   /* Callout Boxes */
   .prose-custom :global(.callout) {
     margin: 2rem 0;
     padding: 1.5rem;
-    border-radius: 0.75rem;
-    border-left: 4px solid;
+    border-left: 3px solid;
+    background: var(--jb-ink-2);
+    font-family: var(--font-sans);
   }
 
   .prose-custom :global(.callout-info) {
-    background: rgba(59, 130, 246, 0.1);
-    border-color: #3b82f6;
+    border-color: var(--jb-cyan);
+    background: rgba(0, 224, 255, 0.06);
   }
 
   .prose-custom :global(.callout-warning) {
-    background: rgba(251, 191, 36, 0.1);
-    border-color: #fbbf24;
+    border-color: var(--jb-fire);
+    background: var(--jb-fire-soft);
   }
 
   .prose-custom :global(.callout-success) {
-    background: rgba(163, 255, 63, 0.1);
-    border-color: #a3ff3f;
+    border-color: var(--jb-acid);
+    background: var(--jb-acid-soft);
   }
 
   .prose-custom :global(a) {
-    color: #a3ff3f;
+    color: var(--jb-acid);
     text-decoration: underline;
     text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
+    text-underline-offset: 3px;
     transition: color 0.2s;
   }
 
   .prose-custom :global(a:hover) {
-    color: #8fd639;
+    color: var(--jb-acid-hot);
+    text-decoration-thickness: 2px;
   }
 
   .prose-custom :global(code) {
-    background-color: rgba(163, 255, 63, 0.1);
-    padding: 0.2rem 0.4rem;
-    border-radius: 0.25rem;
-    font-size: 0.9em;
-    color: #a3ff3f;
+    background-color: var(--jb-acid-soft);
+    padding: 0.15rem 0.4rem;
+    border-radius: 0;
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    color: var(--jb-acid);
+    border: 1px solid var(--jb-acid-border);
+  }
+
+  .prose-custom :global(pre) {
+    margin: 2rem 0;
+    padding: 1.25rem 1.5rem;
+    background: var(--jb-ink-2);
+    border: 1px solid var(--jb-hair);
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+  .prose-custom :global(pre code) {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: var(--jb-cream);
+  }
+
+  .prose-custom :global(img) {
+    margin: 2rem 0;
+    border: 1px solid var(--jb-hair);
+    max-width: 100%;
+    height: auto;
+  }
+
+  .prose-custom :global(hr) {
+    margin: 3rem 0;
+    border: none;
+    border-top: 1px solid var(--jb-hair);
+  }
+
+  /* Mobile tweaks */
+  @media (max-width: 640px) {
+    .back-to-top-btn {
+      bottom: 1.25rem;
+      right: 1.25rem;
+    }
+    .share-btn { margin-left: 0; }
   }
 </style>
 
@@ -437,18 +763,18 @@ const articleSchema = {
     const article = document.getElementById('article-content');
     const progressBar = document.querySelector('.reading-progress-bar') as HTMLElement;
     const progressIndicator = document.querySelector('[data-reading-progress]') as HTMLElement;
-    
+
     if (!article || !progressBar) return;
-    
+
     const articleTop = article.offsetTop;
     const articleHeight = article.offsetHeight;
     const windowHeight = window.innerHeight;
     const scrollY = window.scrollY;
-    
+
     const articleStart = articleTop - windowHeight / 2;
     const articleEnd = articleTop + articleHeight - windowHeight / 2;
     const progress = ((scrollY - articleStart) / (articleEnd - articleStart)) * 100;
-    
+
     const clampedProgress = Math.min(Math.max(progress, 0), 100);
     progressBar.style.width = `${clampedProgress}%`;
     if (progressIndicator) {
@@ -460,7 +786,7 @@ const articleSchema = {
   function updateBackToTop() {
     const btn = document.getElementById('back-to-top');
     if (!btn) return;
-    
+
     if (window.scrollY > 500) {
       btn.classList.add('visible');
     } else {
@@ -477,24 +803,24 @@ const articleSchema = {
     const article = document.getElementById('article-content');
     const tocList = document.querySelector('.toc-list');
     if (!article || !tocList) return;
-    
+
     const headings = article.querySelectorAll('h2');
     if (headings.length === 0) return;
-    
+
     headings.forEach((heading, index) => {
       const id = heading.id || `heading-${index}`;
       if (!heading.id) heading.id = id;
-      
+
       const li = document.createElement('li');
       const a = document.createElement('a');
       a.href = `#${id}`;
       a.textContent = heading.textContent || '';
-      
+
       a.addEventListener('click', (e) => {
         e.preventDefault();
         heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
-      
+
       li.appendChild(a);
       tocList.appendChild(li);
     });
@@ -504,7 +830,7 @@ const articleSchema = {
   function updateActiveTOC() {
     const headings = document.querySelectorAll('#article-content h2');
     const tocLinks = document.querySelectorAll('.toc-list a');
-    
+
     let activeIndex = -1;
     headings.forEach((heading, index) => {
       const rect = heading.getBoundingClientRect();
@@ -512,7 +838,7 @@ const articleSchema = {
         activeIndex = index;
       }
     });
-    
+
     tocLinks.forEach((link, index) => {
       if (index === activeIndex) {
         link.classList.add('active');
@@ -527,7 +853,7 @@ const articleSchema = {
   shareButton?.addEventListener('click', async () => {
     const url = window.location.href;
     const title = document.title;
-    
+
     if (navigator.share) {
       try {
         await navigator.share({ title, url });
@@ -543,7 +869,7 @@ const articleSchema = {
         const originalText = shareButton.querySelector('span');
         if (originalText) {
           const backup = originalText.textContent;
-          originalText.textContent = 'Link copiado!';
+          originalText.textContent = 'Link copiado';
           setTimeout(() => {
             originalText.textContent = backup;
           }, 2000);

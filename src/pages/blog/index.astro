@@ -47,35 +47,32 @@ const categories = [
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
   <Header />
 
-  <section class="bg-dark pt-20 pb-6">
+  <section class="bg-ink pt-20 pb-6">
     <Container>
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }]} />
     </Container>
   </section>
-  
+
   <main class="grow">
     <!-- Hero Section -->
-    <section class="relative overflow-hidden bg-dark py-32">
+    <section class="relative overflow-hidden bg-ink py-24 md:py-32">
+      <div class="grid-overlay"></div>
 
       <Container class="relative z-10">
-        <div class="mx-auto max-w-3xl text-center">
-          <div class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-2 backdrop-blur-sm">
-            <span class="font-display text-sm font-bold text-lime">BLOG</span>
-          </div>
-          
-          <h1 class="mb-6 font-display text-display-md text-white md:text-display-lg">
-            Conteúdo sobre{' '}
-            <span class="text-lime">
-              Vendas Escaláveis
-            </span>
+        <div class="mx-auto max-w-3xl">
+          <div class="kicker mb-6">// ARQUIVO · VENDAS ESCALÁVEIS</div>
+
+          <h1 class="blog-hero-title">
+            CONTEÚDO SOBRE<br />
+            <span class="stroke-text">VENDAS</span> ESCALÁVEIS.
           </h1>
-          
-          <p class="font-sans text-body-lg text-gray-200">
-            Estratégias, frameworks e insights para transformar vendas aleatórias em previsíveis
+
+          <p class="blog-hero-lede">
+            Estratégia, processo e cicatriz real. Sistema &gt; Improviso — aqui é onde você aprende a ligar a máquina.
           </p>
 
           <!-- Search Bar -->
-          <div class="mx-auto mt-8 max-w-2xl">
+          <div class="mt-8 max-w-2xl">
             <SearchBar placeholder="Buscar artigos sobre vendas, CRM, processos..." />
           </div>
         </div>
@@ -84,68 +81,79 @@ const categories = [
 
     <!-- Featured Post -->
     {featuredPost && (
-      <section class="bg-dark py-16">
+      <section class="bg-ink py-12 md:py-16">
         <Container>
-          <a 
-            href={`/blog/${featuredPost.id.replace(/\.md$/, '')}`}
-            class="group block overflow-hidden rounded-2xl border-2 border-lime/20 bg-dark transition-all hover:border-lime/50 hover:shadow-2xl hover:shadow-lime/20"
-          >
-          <div class="grid grid-cols-1 gap-8 p-8 lg:grid-cols-2 lg:items-center">
-            <div class="aspect-video overflow-hidden rounded-xl bg-dark lg:order-2">
-              {featuredPost.data.heroImage ? (
-                <Image 
-                  src={featuredPost.data.heroImage} 
-                  alt={featuredPost.data.title}
-                  loading="eager"
-                  class="h-full w-full object-cover"
-                />
-              ) : (
-                <div class="flex h-full items-center justify-center">
-                  <Icons name="trending-up" class="h-16 w-16 text-lime/30" />
-                </div>
-              )}
-            </div>
-
-            <div class="lg:order-1">
-              <div class="mb-4 inline-block rounded-full bg-lime/20 px-3 py-1">
-                <span class="font-display text-xs font-bold text-lime">EM DESTAQUE</span>
-              </div>
-
-              <h2 class="mb-4 font-display text-h1 text-white transition-colors group-hover:text-lime md:text-display-sm">
-                {featuredPost.data.title}
-              </h2>
-
-              <p class="mb-4 font-sans text-body-lg text-gray-200">
-                {featuredPost.data.excerpt}
-              </p>
-
-              <div class="flex items-center gap-4 font-sans text-sm text-gray-400">
-                <div class="flex items-center gap-1">
-                  <Icons name="calendar" class="h-4 w-4" />
-                  <span>{featuredPost.data.date.toLocaleDateString('pt-BR')}</span>
-                </div>
-                <div class="flex items-center gap-1">
-                  <Icons name="clock" class="h-4 w-4" />
-                  <span>{featuredPost.data.readTime}</span>
-                </div>
-              </div>
-            </div>
+          <div class="section-head mb-4">
+            <div class="kicker">// EM DESTAQUE</div>
+            <div class="mono section-head-meta">LEITURA RECOMENDADA</div>
           </div>
-        </a>
-      </Container>
-    </section>
+          <div class="hair-divider mb-8"></div>
+
+          <a
+            href={`/blog/${featuredPost.id.replace(/\.md$/, '')}`}
+            class="featured-card group block"
+          >
+            <div class="grid grid-cols-1 gap-8 p-6 md:p-8 lg:grid-cols-2 lg:items-center">
+              <div class="aspect-video overflow-hidden bg-ink lg:order-2">
+                {featuredPost.data.heroImage ? (
+                  <Image
+                    src={featuredPost.data.heroImage}
+                    alt={featuredPost.data.title}
+                    loading="eager"
+                    class="featured-img h-full w-full object-cover"
+                  />
+                ) : (
+                  <div class="flex h-full items-center justify-center border border-[color:var(--jb-hair)]">
+                    <Icons name="trending-up" class="h-16 w-16 text-acid/40" />
+                  </div>
+                )}
+              </div>
+
+              <div class="lg:order-1">
+                <div class="kicker mb-4">// POST · {featuredPost.data.date.toLocaleDateString('pt-BR').replace(/\//g, '.')} · {featuredPost.data.category}</div>
+
+                <h2 class="featured-title">
+                  {featuredPost.data.title}
+                </h2>
+
+                <p class="featured-excerpt">
+                  {featuredPost.data.excerpt}
+                </p>
+
+                <div class="featured-meta mono">
+                  <span class="inline-flex items-center gap-2">
+                    <Icons name="clock" class="h-3 w-3" />
+                    <span>{featuredPost.data.readTime}</span>
+                  </span>
+                  <span aria-hidden="true">·</span>
+                  <span class="featured-read">
+                    Ler artigo <span aria-hidden="true">→</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </Container>
+      </section>
     )}
 
     <!-- Categories -->
-    <section class="bg-dark py-8">
+    <section class="bg-ink py-8">
       <Container>
-        <div class="flex flex-wrap justify-center gap-3">
+        <div class="section-head mb-4">
+          <div class="kicker">// FILTRAR</div>
+          <div class="mono section-head-meta">CATEGORIAS</div>
+        </div>
+        <div class="hair-divider mb-6"></div>
+
+        <div class="flex flex-wrap gap-2">
           {categories.map((cat) => (
-            <button 
+            <button
               data-category={cat.name}
-              class="category-btn rounded-full border-2 border-white/10 bg-white/5 px-4 py-2 font-display text-sm font-semibold text-white transition-all hover:border-lime hover:bg-lime hover:text-dark"
+              class="category-btn"
             >
-              {cat.name} <span class="text-gray-400">({cat.count})</span>
+              <span class="cat-name">{cat.name}</span>
+              <span class="cat-count">({cat.count})</span>
             </button>
           ))}
         </div>
@@ -153,60 +161,58 @@ const categories = [
     </section>
 
     <!-- Posts Grid -->
-    <section class="bg-dark py-16">
+    <section class="bg-ink py-12 md:py-16">
       <Container>
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div class="section-head mb-4">
+          <div class="kicker">// TODOS OS POSTS</div>
+          <div class="mono section-head-meta">{posts.length} ARTIGOS · ARQUIVO COMPLETO</div>
+        </div>
+        <div class="hair-divider mb-8"></div>
+
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 md:gap-5">
           {posts.map((post, index) => (
             <a
               href={`/blog/${post.id.replace(/\.md$/, '')}`}
               data-category={post.data.category}
-              class="post-card group flex flex-col overflow-hidden rounded-2xl border-2 border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:border-lime/50 hover:shadow-xl hover:shadow-lime/10"
-              style={`animation-delay: ${index * 0.1}s`}
+              class="post-card group"
+              style={`animation-delay: ${index * 0.06}s`}
             >
               {/* Image */}
-              <div class="aspect-video overflow-hidden bg-dark">
+              <div class="post-thumb">
                 {post.data.heroImage ? (
-                  <Image 
-                    src={post.data.heroImage} 
+                  <Image
+                    src={post.data.heroImage}
                     alt={post.data.title}
                     loading="lazy"
-                    class="h-full w-full object-cover transition-transform group-hover:scale-105"
+                    class="post-thumb-img"
                   />
                 ) : (
                   <div class="flex h-full items-center justify-center">
-                    <Icons name="trending-up" class="h-12 w-12 text-lime/30" />
+                    <Icons name="trending-up" class="h-12 w-12 text-acid/40" />
                   </div>
                 )}
+                <div class="post-category mono">// {post.data.category}</div>
               </div>
 
               {/* Content */}
-              <div class="flex flex-1 flex-col p-6">
-                <div class="mb-3 flex items-center gap-2">
-                  <span class="rounded-full bg-royal-blue/20 px-3 py-1 font-display text-xs font-semibold text-royal-blue">
-                    {post.data.category}
-                  </span>
-                  <div class="flex items-center gap-1 font-sans text-xs text-gray-400">
-                    <Icons name="clock" class="h-3 w-3" />
-                    <span>{post.data.readTime}</span>
-                  </div>
-                </div>
+              <div class="post-body">
+                <time datetime={post.data.date.toISOString()} class="post-date mono">
+                  {post.data.date.toLocaleDateString('pt-BR').replace(/\//g, '.')}
+                  <span class="mx-1" aria-hidden="true">·</span>
+                  {post.data.readTime}
+                </time>
 
-                <h3 class="mb-3 font-display text-h3 text-white transition-colors group-hover:text-lime">
+                <h3 class="post-title">
                   {post.data.title}
                 </h3>
 
-                <p class="mb-4 flex-1 font-sans text-body text-gray-200">
+                <p class="post-excerpt">
                   {post.data.excerpt}
                 </p>
 
-                <div class="flex items-center justify-between border-t border-white/10 pt-4">
-                  <span class="font-sans text-body-sm text-gray-400">
-                    {post.data.date.toLocaleDateString('pt-BR')}
-                  </span>
-                  <div class="flex items-center gap-2 font-display text-sm text-lime">
-                    <span>Ler mais</span>
-                    <Icons name="arrow-right" class="h-4 w-4 transition-transform group-hover:translate-x-2" />
-                  </div>
+                <div class="post-read">
+                  <span>Ler artigo</span>
+                  <span aria-hidden="true">→</span>
                 </div>
               </div>
             </a>
@@ -215,38 +221,43 @@ const categories = [
 
         {/* Load More */}
         <div class="mt-12 text-center">
-          <button 
+          <button
             id="load-more-btn"
-            class="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 font-display text-lg font-semibold text-white transition-all hover:scale-105 hover:border-lime hover:bg-lime hover:text-dark"
+            class="btn-secondary"
           >
-            Carregar Mais Artigos
-            <Icons name="arrow-right" class="h-5 w-5" />
+            <span>Carregar mais artigos</span>
+            <span aria-hidden="true">→</span>
           </button>
         </div>
       </Container>
     </section>
 
     <!-- Newsletter CTA -->
-    <section class="relative overflow-hidden bg-dark py-24">
-      
+    <section class="relative overflow-hidden bg-ink py-20 md:py-24">
+      <div class="grid-overlay"></div>
+
       <Container class="relative z-10">
-        <div class="mx-auto max-w-3xl text-center">
-          <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
-            Receba Conteúdo Exclusivo
+        <div class="newsletter-card">
+          <div class="kicker mb-4">// NEWSLETTER · SEM SPAM</div>
+
+          <h2 class="newsletter-title">
+            RECEBA CONTEÚDO<br />
+            <span class="text-fire">EXCLUSIVO.</span>
           </h2>
-          <p class="mb-8 font-sans text-body-lg text-gray-200">
-            Estratégias de vendas direto no seu email. Sem spam, só conteúdo de valor.
+
+          <p class="newsletter-lede">
+            Estratégias de vendas direto no seu email. Zero filler, zero post bonito — só o que funciona na operação real.
           </p>
 
-          <form class="flex flex-col gap-4 sm:flex-row sm:justify-center">
+          <form class="newsletter-form">
             <input
               type="email"
-              placeholder="Seu melhor email"
-              class="rounded-lg border-2 border-white/10 bg-white/5 px-6 py-3 font-sans text-body text-white placeholder-gray-500 transition-colors focus:border-lime focus:outline-none sm:w-80"
+              placeholder="seu@email.com"
+              class="newsletter-input"
             />
-            <button class="inline-flex items-center justify-center gap-2 rounded-lg bg-lime px-8 py-3 font-display font-bold text-dark shadow-lg shadow-lime/20 transition-all hover:scale-105 hover:bg-lime/90">
-              Assinar Newsletter
-              <Icons name="arrow-right" class="h-5 w-5" />
+            <button class="btn-primary">
+              <span>Assinar</span>
+              <span aria-hidden="true">→</span>
             </button>
           </form>
         </div>
@@ -258,24 +269,296 @@ const categories = [
 </Layout>
 
 <style>
-  .post-card {
-    animation: fadeInUp 0.6s ease-out forwards;
+  /* Hero */
+  .blog-hero-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.045em;
+    line-height: 0.92;
+    font-size: clamp(2.25rem, 7vw, 5rem);
+    color: var(--jb-cream);
+    margin: 0 0 1.5rem 0;
   }
+  .blog-hero-lede {
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    line-height: 1.6;
+    color: var(--jb-cream);
+    text-transform: none;
+    margin: 0;
+    max-width: 60ch;
+  }
+
+  /* Section head helpers (reuse pattern from BlogPostsSection) */
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .section-head-meta { font-size: 11px; color: var(--jb-fg-muted); }
+  .hair-divider { border-top: 1px solid var(--jb-hair); }
+
+  /* Featured card */
+  .featured-card {
+    background: linear-gradient(180deg, rgba(198, 255, 0, 0.06), var(--jb-ink-2));
+    border: 1px solid var(--jb-acid-border);
+    border-radius: 0;
+    text-decoration: none;
+    color: inherit;
+    transition: all var(--transition-base);
+    display: block;
+  }
+  .featured-card:hover {
+    border-color: var(--jb-acid);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--jb-acid);
+  }
+  :global(.featured-img) {
+    transition: transform var(--transition-slow);
+    filter: grayscale(40%) contrast(1.05);
+  }
+  .featured-card:hover :global(.featured-img) { transform: scale(1.03); filter: grayscale(0%); }
+
+  .featured-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    line-height: 1.0;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    color: var(--jb-cream);
+    margin: 0 0 1rem 0;
+    transition: color var(--transition-base);
+  }
+  .featured-card:hover .featured-title { color: var(--jb-acid); }
+
+  .featured-excerpt {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--jb-cream);
+    text-transform: none;
+    margin: 0 0 1.25rem 0;
+    max-width: 52ch;
+  }
+
+  .featured-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--jb-fg-muted);
+    text-transform: uppercase;
+    flex-wrap: wrap;
+  }
+  .featured-read {
+    color: var(--jb-acid);
+    font-weight: 700;
+  }
+
+  /* Category buttons */
+  .category-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--jb-fg-2);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--jb-hair);
+    border-radius: 0;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    min-height: 44px;
+  }
+  .category-btn:hover {
+    border-color: var(--jb-acid);
+    color: var(--jb-acid);
+  }
+  .category-btn.active {
+    background: var(--jb-acid);
+    border-color: var(--jb-acid);
+    color: var(--jb-ink);
+  }
+  .category-btn.active .cat-count { color: var(--jb-ink); opacity: 0.7; }
+  .cat-count { color: var(--jb-fg-muted); }
+
+  /* Post card (mirror BlogPostsSection) */
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--jb-ink-2);
+    border: 1px solid var(--jb-hair);
+    border-radius: 0;
+    text-decoration: none;
+    color: inherit;
+    transition: all var(--transition-base);
+    position: relative;
+    animation: fadeInUp 0.5s ease-out backwards;
+  }
+  .post-card:hover {
+    border-color: var(--jb-fire);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 var(--jb-fire);
+  }
+  .post-card:hover .post-title { color: var(--jb-acid); }
+  .post-card:hover :global(.post-thumb-img) { transform: scale(1.04); filter: grayscale(0%); }
 
   .post-card.hidden {
     display: none;
   }
 
-  .category-btn.active {
-    border-color: #a3ff3f;
-    background-color: #a3ff3f;
-    color: #020617;
+  .post-thumb {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--jb-ink);
+    border-bottom: 1px solid var(--jb-hair);
+  }
+  :global(.post-thumb-img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(60%) contrast(1.05);
+    transition: transform var(--transition-slow), filter var(--transition-slow);
+  }
+
+  .post-category {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    background: var(--jb-ink);
+    color: var(--jb-acid);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    padding: 4px 8px;
+    border: 1px solid var(--jb-acid-border);
+    text-transform: uppercase;
+  }
+
+  .post-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+  }
+
+  .post-date {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--jb-fg-muted);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  .post-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    font-size: 1.125rem;
+    line-height: 1.15;
+    color: var(--jb-cream);
+    margin: 0;
+    transition: color var(--transition-base);
+  }
+
+  .post-excerpt {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--jb-fg-2);
+    margin: 0;
+    text-transform: none;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .post-read {
+    margin-top: auto;
+    padding-top: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--jb-acid);
+  }
+
+  /* Newsletter card */
+  .newsletter-card {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 3.5rem);
+    background: var(--jb-ink-2);
+    border: 1px solid var(--jb-hair-strong);
+    text-align: left;
+  }
+  .newsletter-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    line-height: 0.92;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--jb-cream);
+    margin: 0 0 1.25rem 0;
+  }
+  .newsletter-lede {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    color: var(--jb-cream);
+    text-transform: none;
+    margin: 0 0 2rem 0;
+    max-width: 52ch;
+  }
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  @media (min-width: 640px) {
+    .newsletter-form { flex-direction: row; }
+  }
+  .newsletter-input {
+    flex: 1;
+    background: var(--jb-ink);
+    border: 1px solid var(--jb-hair);
+    color: var(--jb-cream);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    padding: 0.875rem 1rem;
+    border-radius: 0;
+    min-height: 44px;
+    transition: border-color var(--transition-base);
+  }
+  .newsletter-input::placeholder { color: var(--jb-fg-muted); }
+  .newsletter-input:focus {
+    outline: none;
+    border-color: var(--jb-acid);
   }
 
   @keyframes fadeInUp {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(16px);
     }
     to {
       opacity: 1;
@@ -289,7 +572,7 @@ const categories = [
     const categoryButtons = document.querySelectorAll('.category-btn') as NodeListOf<HTMLButtonElement>
     const postCards = document.querySelectorAll('.post-card') as NodeListOf<HTMLElement>
     const loadMoreBtn = document.getElementById('load-more-btn') as HTMLButtonElement
-    
+
     let postsPerPage = 6
     let currentlyVisible = postsPerPage
 
@@ -302,11 +585,11 @@ const categories = [
     // Função para mostrar/ocultar posts com base na categoria e limite
     function filterAndShowPosts(category: string | null) {
       let visibleCount = 0
-      
+
       postCards.forEach((card) => {
         const postCategory = card.getAttribute('data-category')
         const matchesCategory = !category || category === 'Todos' || postCategory === category
-        
+
         if (matchesCategory && visibleCount < currentlyVisible) {
           card.classList.remove('hidden')
           visibleCount++

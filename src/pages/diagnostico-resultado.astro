@@ -163,7 +163,7 @@ const seo = {
   const psData = {
     posicionamento: {
       name: 'Posicionamento',
-      icon: '🎯',
+      icon: 'P1',
       description: 'Como sua empresa se diferencia no mercado',
       levels: {
         0: { name: 'Caótico', description: 'Compete 100% por preço, sem diferencial claro', actions: ['Defina sua promessa única de valor', 'Mapeie seus diferenciais tangíveis', 'Crie seu elevator pitch'] },
@@ -175,7 +175,7 @@ const seo = {
     },
     publico: {
       name: 'Público',
-      icon: '👥',
+      icon: 'P2',
       description: 'Clareza sobre seu cliente ideal',
       levels: {
         0: { name: 'Caótico', description: 'Vende para qualquer um', actions: ['Defina seu ICP (Ideal Customer Profile)', 'Liste características demográficas', 'Identifique padrões nos melhores clientes'] },
@@ -187,7 +187,7 @@ const seo = {
     },
     produto: {
       name: 'Produto',
-      icon: '📦',
+      icon: 'P3',
       description: 'Sua oferta estruturada e com valor claro',
       levels: {
         0: { name: 'Caótico', description: 'Proposta de valor confusa', actions: ['Estruture sua oferta', 'Defina benefícios tangíveis', 'Estabeleça precificação baseada em valor'] },
@@ -199,7 +199,7 @@ const seo = {
     },
     programas: {
       name: 'Programas',
-      icon: '💰',
+      icon: 'P4',
       description: 'Como você vende e entrega',
       levels: {
         0: { name: 'Caótico', description: 'Vendas aleatórias', actions: ['Mapeie seu funil atual', 'Defina etapas de venda', 'Crie sequência de follow-up'] },
@@ -211,7 +211,7 @@ const seo = {
     },
     processos: {
       name: 'Processos',
-      icon: '⚙️',
+      icon: 'P5',
       description: 'Operação documentada e replicável',
       levels: {
         0: { name: 'Caótico', description: 'Nada documentado', actions: ['Liste processos críticos', 'Documente passo a passo', 'Crie checklists'] },
@@ -223,7 +223,7 @@ const seo = {
     },
     pessoas: {
       name: 'Pessoas',
-      icon: '🤝',
+      icon: 'P6',
       description: 'Time capacitado e alinhado',
       levels: {
         0: { name: 'Caótico', description: 'Tudo depende do fundador', actions: ['Mapeie funções críticas', 'Contrate primeiro vendedor', 'Defina papéis e responsabilidades'] },
@@ -356,8 +356,8 @@ const seo = {
       
       const card = document.createElement('div');
       // Borda diferente para Ps estratégicos
-      const borderClass = isStrategic ? 'border-lime/30' : 'border-blue-500/20';
-      card.className = `rounded-xl border ${borderClass} bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-lime/50`;
+      const borderClass = isStrategic ? 'border-[color:var(--jb-acid-border)]' : 'border-blue-500/20';
+      card.className = `rounded-xl border ${borderClass} bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-[color:var(--jb-acid)]`;
       
       // Determinar cor baseado na pontuação
       let scoreColor = 'text-red-400';
@@ -367,8 +367,8 @@ const seo = {
       
       // Badge estratégico ou tático
       const badge = isStrategic 
-        ? '<span class="inline-flex items-center gap-1 rounded-full bg-lime/20 px-2 py-0.5 text-xs font-bold text-acid">🎯 ESTRATÉGICO</span>'
-        : '<span class="inline-flex items-center gap-1 rounded-full bg-blue-500/20 px-2 py-0.5 text-xs font-bold text-blue-400">⚙️ TÁTICO</span>';
+        ? '<span class="inline-flex items-center gap-1 rounded-full bg-[color:var(--jb-acid-soft-2)] px-2 py-0.5 text-xs font-bold text-acid">★ESTRATÉGICO</span>'
+        : '<span class="inline-flex items-center gap-1 rounded-full bg-blue-500/20 px-2 py-0.5 text-xs font-bold text-blue-400">//TÁTICO</span>';
 
       card.innerHTML = `
         <div class="mb-4 flex items-start justify-between">
@@ -389,7 +389,7 @@ const seo = {
             <div class="font-sans text-xs text-gray-400">${levelData.name}</div>
           </div>
         </div>
-        <div class="mb-4 rounded-lg bg-dark/50 p-4">
+        <div class="mb-4 rounded-lg bg-[color:var(--jb-ink)]/60 p-4">
           <p class="font-sans text-body text-gray-200">${levelData.description}</p>
         </div>
         <div>
@@ -428,7 +428,7 @@ const seo = {
     container.innerHTML = `
       <p class="mb-4 font-sans text-body text-gray-200">
         ${hasStrategicIssue 
-          ? '<strong class="text-yellow-400">⚠️ CRÍTICO:</strong> Você tem gaps nos Ps <strong class="text-white">estratégicos</strong>. Priorize-os <strong class="text-white">antes</strong> de trabalhar nos táticos/operacionais.'
+          ? '<strong class="text-yellow-400">▲CRÍTICO:</strong> Você tem gaps nos Ps <strong class="text-white">estratégicos</strong>. Priorize-os <strong class="text-white">antes</strong> de trabalhar nos táticos/operacionais.'
           : 'Baseado no framework dos 6Ps, recomendamos focar nesta ordem:'}
       </p>
       ${sorted.map(([key, score], index) => {
@@ -464,13 +464,13 @@ const seo = {
     const nextLevel = weakest[1] < 4 ? pData.levels[weakest[1] + 1] : null;
 
     container.innerHTML = `
-      <div class="rounded-lg border border-lime/30 bg-lime/5 p-6">
-        <h3 class="mb-3 font-display text-h4 text-white">🎯 Foco Principal: ${pData.name}</h3>
+      <div class="rounded-lg border border-[color:var(--jb-acid-border)] bg-[color:var(--jb-acid-soft)] p-6">
+        <h3 class="mb-3 font-display text-h4 text-white">★Foco Principal: ${pData.name}</h3>
         <p class="mb-4 font-sans text-body text-gray-200">
           Este é seu gargalo crítico. Ao melhorar ${pData.name.toLowerCase()}, você destrará crescimento em toda operação.
         </p>
         ${nextLevel ? `
-          <div class="mb-4 rounded-lg bg-dark/50 p-4">
+          <div class="mb-4 rounded-lg bg-[color:var(--jb-ink)]/60 p-4">
             <p class="mb-2 font-sans text-sm font-semibold text-gray-200">Meta: Chegar ao nível "${nextLevel.name}"</p>
             <p class="font-sans text-sm text-gray-200">${nextLevel.description}</p>
           </div>
@@ -479,7 +479,7 @@ const seo = {
           <p class="mb-3 font-sans text-sm font-semibold text-white">Checklist de 30 dias:</p>
           ${currentLevel.actions.map((action, idx) => `
             <label class="mb-2 flex items-start gap-3 cursor-pointer group">
-              <input type="checkbox" class="mt-1 h-5 w-5 rounded border-white/20 bg-white/10 text-acid focus:ring-2 focus:ring-lime/20">
+              <input type="checkbox" class="mt-1 h-5 w-5 rounded border-white/20 bg-white/10 text-acid focus:ring-2 focus:ring-[color:var(--jb-acid-border)]">
               <span class="font-sans text-body text-gray-200 group-hover:text-white transition-colors">${action}</span>
             </label>
           `).join('')}

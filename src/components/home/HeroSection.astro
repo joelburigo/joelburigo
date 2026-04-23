@@ -1,198 +1,255 @@
 ---
 import Container from '../ui/Container.astro'
-import VideoPlayer from '../ui/VideoPlayer.astro'
-import joelBurigoHero from '../../assets/images/joel-burigo-vendas-sem-segredos-2-800w.webp'
-import Icons from '../ui/Icons.astro'
-
 ---
 
-<section class="hero-section relative flex min-h-screen items-center overflow-hidden bg-dark">
-  <Container class="relative z-10 pb-16 pt-16 md:pb-24 md:pt-24">
-    <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+<section class="hero-section relative overflow-hidden bg-ink">
+  <!-- Grid overlay assinatura -->
+  <div class="grid-overlay"></div>
+
+  <!-- Radial glow sutil (hero only) -->
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <Container class="relative z-10">
+    <div class="hero-grid">
       <!-- Left Content -->
-      <div class="hero-content space-y-8 text-white">
-        <div class="mb-2 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-1.5 text-sm font-display font-bold text-lime backdrop-blur-sm">
-          17+ anos estruturando vendas
+      <div class="hero-content">
+        <!-- Kicker mono -->
+        <div class="kicker hero-kicker">
+          // FRAMEWORK 6PS · 17+ ANOS · 140+ MPES
         </div>
 
-        <h1 class="font-display text-display-md text-white lg:text-display-lg">
-          Suas Vendas Estão <span class="text-lime">Quebradas?</span> Vou Te Mostrar{' '}
-          <span class="text-lime">
-            Como Arrumar
-          </span>
+        <!-- H1 brutalist em 3 linhas -->
+        <h1 class="hero-h1">
+          <span class="line-1">VENDAS</span>
+          <span class="line-2"><span class="stroke-text">PREVISÍVEIS</span> PRA QUEM</span>
+          <span class="line-3">CANSOU DE <span class="text-fire">IMPROVISO</span>.</span>
         </h1>
 
-        <p class="max-w-xl font-sans text-body-lg text-gray-200">
-          E aí, sou Joel Burigo. <a href="/sobre" class="text-lime hover:underline">Quebrei aos 25 e reconstruí do zero</a>. 17+ anos depois: ~R$ 1 bilhão estruturado em vendas para 140+ empresas. Criei os 6Ps pra você parar de improvisar e começar a <strong class="text-white">escalar de verdade</strong>.
+        <!-- Lede -->
+        <p class="hero-lede">
+          17 anos estruturando vendas escaláveis pra MPE. <strong class="text-cream">140+ clientes</strong>. <strong class="text-cream">~R$ 1 bilhão</strong> em vendas estruturadas. Framework 6Ps. Zero fórmula mágica.
         </p>
 
-        <div class="flex flex-col gap-4 pt-6 sm:flex-row sm:gap-4">
-          <a href="/vendas-sem-segredos" data-astro-prefetch rel="preload" class="w-full sm:w-auto">
-            <button class="group inline-flex h-16 w-full items-center justify-center gap-3 rounded-xl bg-lime px-10 font-display text-lg font-bold shadow-2xl shadow-lime/30 transition-all hover:scale-[1.02] hover:bg-lime/90 hover:shadow-lime/40 focus:outline-none focus:ring-2 focus:ring-lime focus:ring-offset-2 focus:ring-offset-dark sm:w-auto" style="color: #020617;">
-              <span>Bora Estruturar? 🚀</span>
-              <Icons name="arrow-right" class="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </button>
+        <!-- CTAs -->
+        <div class="hero-ctas">
+          <a href="/vendas-sem-segredos" class="btn-primary" data-astro-prefetch>
+            <span>Ver VSS completo</span>
+            <span aria-hidden="true">→</span>
           </a>
-          <a href="/diagnostico" class="w-full sm:w-auto">
-            <button class="group inline-flex h-16 w-full items-center justify-center gap-3 rounded-xl border-2 border-white/90 bg-white/5 px-10 font-display text-lg font-semibold text-white backdrop-blur-sm transition-all hover:scale-[1.02] hover:border-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-dark sm:w-auto">
-              <Icons name="clipboard-list" class="h-5 w-5" />
-              <span>Diagnóstico Gratuito</span>
-            </button>
+          <a href="/contato" class="btn-secondary">
+            <span>Falar com Joel (Advisory)</span>
+            <span aria-hidden="true">→</span>
           </a>
-          <button id="mobile-video-btn" class="group inline-flex h-16 w-full items-center justify-center gap-3 rounded-xl border-2 border-white/50 bg-white/5 px-8 font-display text-base font-semibold text-white backdrop-blur-sm transition-all hover:scale-[1.02] hover:border-white/70 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-dark lg:hidden">
-            <Icons name="play" class="h-5 w-5 fill-current transition-transform group-hover:scale-110" />
-            <span>Assistir Vídeo</span>
-          </button>
         </div>
 
-        <div class="grid grid-cols-3 gap-4 pt-10 font-sans text-body-sm text-gray-200">
-          <div class="flex flex-col items-start">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="h-2 w-2 rounded-full bg-lime"></div>
-              <span class="font-display text-h4 text-lime">~R$1bi</span>
-            </div>
-            <span class="text-xs text-gray-400">Estruturado</span>
+        <!-- Assinatura -->
+        <div class="hero-signature mono">
+          <span class="text-acid">★</span>&nbsp;&nbsp;SISTEMA <span class="text-fire">&gt;</span> IMPROVISO
+        </div>
+
+        <!-- Stats rápidos -->
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num text-acid">~R$ 1BI</div>
+            <div class="hero-stat-label">Estruturado</div>
           </div>
-          <div class="flex flex-col items-start">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="h-2 w-2 rounded-full bg-lime" style="animation-delay: 0.2s;"></div>
-              <span class="font-display text-h4 text-lime">140+</span>
-            </div>
-            <span class="text-xs text-gray-400">Clientes</span>
+          <div class="hero-stat">
+            <div class="hero-stat-num text-acid">140+</div>
+            <div class="hero-stat-label">Clientes</div>
           </div>
-          <div class="flex flex-col items-start">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="h-2 w-2 rounded-full bg-lime" style="animation-delay: 0.4s;"></div>
-              <span class="font-display text-h4 text-lime">17+</span>
-            </div>
-            <span class="text-xs text-gray-400">Anos</span>
+          <div class="hero-stat">
+            <div class="hero-stat-num text-acid">17+</div>
+            <div class="hero-stat-label">Anos</div>
           </div>
         </div>
       </div>
 
-      <!-- Right Image com Vídeo -->
-      <div class="hero-image relative hidden lg:block">
-        <div class="relative">
-          <VideoPlayer
-            videoUrl="https://www.youtube.com/shorts/nuZUgV1sk64"
-            thumbnail={joelBurigoHero}
-            title="Conheça Joel Burigo e o Framework dos 6Ps"
-            lazyLoad={false}
-            aspectRatio="portrait"
-            class="border-4 border-lime/20 shadow-2xl"
-          />
-          
-          <!-- Floating Badge -->
-          <div class="hero-badge absolute bottom-6 left-6 z-20 max-w-xs rounded-xl border border-lime/20 bg-dark/95 p-4 shadow-lg backdrop-blur-md">
-            <p class="font-display text-h4 text-lime">~R$ 1 Bilhão</p>
-            <p class="font-sans text-body-sm text-gray-200">Estruturado em vendas ao longo de 17+ anos</p>
-          </div>
+      <!-- Right: Terminal mock -->
+      <aside class="hero-terminal" aria-hidden="true">
+        <div class="term-chrome">
+          <span class="term-dot" style="background: var(--jb-fire);"></span>
+          <span class="term-dot" style="background: #FFB800;"></span>
+          <span class="term-dot" style="background: var(--jb-acid);"></span>
+          <span class="term-title">jb_core — diagnóstico.exe</span>
         </div>
-      </div>
-
-      <!-- Mobile Video (hidden, shown when button clicked) -->
-      <div id="mobile-video-container" class="mt-8 hidden lg:hidden">
-        <VideoPlayer
-          videoUrl="https://www.youtube.com/shorts/nuZUgV1sk64"
-          thumbnail={joelBurigoHero}
-          title="Conheça Joel Burigo e o Framework dos 6Ps"
-          aspectRatio="portrait"
-          class="border-4 border-lime/20 shadow-2xl"
-        />
-      </div>
+        <div class="term-body">
+          <div class="term-line"><span class="term-prompt">$</span> ./executar_diagnostico --6ps</div>
+          <div class="term-line term-dim">&gt; scanning P1 posicionamento...</div>
+          <div class="term-line"><span class="text-acid">▶</span> P1 · OK</div>
+          <div class="term-line"><span class="text-acid">▶</span> P2 · OK</div>
+          <div class="term-line"><span class="text-fire">●</span> P3 · GARGALO DETECTADO</div>
+          <div class="term-line"><span class="text-fire">●</span> P4 · GARGALO DETECTADO</div>
+          <div class="term-line"><span class="text-acid">▶</span> P5 · OK</div>
+          <div class="term-line"><span class="text-acid">▶</span> P6 · OK</div>
+          <div class="term-line term-dim">&gt; score: 18/30</div>
+          <div class="term-line"><span class="term-prompt">$</span> ligar_maquina<span class="term-cursor">_</span></div>
+        </div>
+      </aside>
     </div>
   </Container>
-
-  <!-- Scroll Indicator -->
-  <div class="scroll-indicator absolute inset-x-0 bottom-8 flex flex-col items-center text-gray-400">
-    <span class="mb-2 text-xs font-medium uppercase tracking-widest">Scroll para saber mais</span>
-    <Icons name="chevron-down" class="h-6 w-6 animate-bounce text-lime" />
-  </div>
 </section>
 
-<script>
-  function initMobileVideo() {
-    const mobileVideoBtn = document.getElementById('mobile-video-btn');
-    const mobileVideoContainer = document.getElementById('mobile-video-container');
-
-    if (mobileVideoBtn && mobileVideoContainer) {
-      mobileVideoBtn.addEventListener('click', () => {
-        // Use requestAnimationFrame to avoid forced reflow
-        requestAnimationFrame(() => {
-          mobileVideoContainer.classList.remove('hidden');
-          // Delay scrollIntoView to next frame to avoid forced reflow
-          requestAnimationFrame(() => {
-            mobileVideoContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          });
-        });
-      });
-    }
-  }
-
-  initMobileVideo();
-  document.addEventListener('astro:page-load', initMobileVideo);
-</script>
-
 <style>
-  .hero-content {
-    animation: fadeInLeft 0.8s ease-out forwards;
-    opacity: 0;
+  .hero-section {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    padding-top: clamp(3rem, 8vh, 6rem);
+    padding-bottom: clamp(3rem, 8vh, 6rem);
   }
 
-  .hero-image {
-    animation: fadeInScale 0.8s ease-out 0.2s forwards;
-    opacity: 0;
+  .hero-glow {
+    position: absolute;
+    top: -15%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    max-width: 700px;
+    max-height: 700px;
+    background: radial-gradient(circle, rgba(255, 59, 15, 0.12), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
   }
 
-  .hero-badge {
-    animation: fadeInUp 0.6s ease-out 0.8s forwards;
-    opacity: 0;
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+  @media (min-width: 1024px) {
+    .hero-grid { grid-template-columns: 1.3fr 1fr; }
   }
 
-  .scroll-indicator {
-    animation: fadeIn 1s ease-out 1.5s forwards;
-    opacity: 0;
+  .hero-content { display: flex; flex-direction: column; gap: clamp(1.25rem, 2.5vw, 2rem); }
+
+  .hero-kicker {
+    color: var(--jb-acid);
+    display: inline-block;
+    font-size: clamp(10px, 1.4vw, 12px);
   }
 
-  @keyframes fadeInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
+  .hero-h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.045em;
+    line-height: 0.92;
+    font-size: clamp(2.75rem, 8vw, 5.5rem);
+    color: var(--jb-cream);
+    margin: 0;
+  }
+  .hero-h1 .line-1, .hero-h1 .line-2, .hero-h1 .line-3 { display: block; }
+
+  .hero-lede {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: clamp(1rem, 1.6vw, 1.125rem);
+    line-height: 1.55;
+    color: var(--jb-cream);
+    max-width: 40ch;
+    text-transform: none;
+  }
+  .hero-lede strong { font-weight: 700; }
+
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 0.5rem;
+  }
+  .hero-ctas a { min-height: 48px; }
+
+  .hero-signature {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: var(--jb-fg-muted);
+    text-transform: uppercase;
+    padding-top: 0.5rem;
   }
 
-  @keyframes fadeInScale {
-    from {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--jb-hair);
+    border: 1px solid var(--jb-hair);
+    margin-top: 0.5rem;
+  }
+  .hero-stat {
+    background: var(--jb-ink);
+    padding: 1rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .hero-stat-num {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .hero-stat-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--jb-fg-muted);
   }
 
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  /* Terminal window */
+  .hero-terminal {
+    background: var(--jb-ink-2);
+    border: 1px solid var(--jb-hair);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+    display: none;
+  }
+  @media (min-width: 1024px) {
+    .hero-terminal { display: block; }
   }
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+  .term-chrome {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--jb-hair);
+  }
+  .term-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .term-title {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--jb-fg-muted);
+    letter-spacing: 0.12em;
+    margin-left: auto;
+    text-transform: lowercase;
+  }
+  .term-body {
+    padding: 20px 18px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--jb-cream);
+  }
+  .term-line { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .term-dim { color: var(--jb-fg-muted); }
+  .term-prompt { color: var(--jb-acid); font-weight: 700; }
+  .term-cursor {
+    display: inline-block;
+    color: var(--jb-acid);
+    animation: blink 1s infinite;
+  }
+
+  .hide-sm { display: none; }
+  @media (min-width: 640px) {
+    .hide-sm { display: inline; }
   }
 </style>

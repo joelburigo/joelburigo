@@ -3,457 +3,322 @@ import Layout from '../layouts/Layout.astro'
 import Header from '../components/layout/Header.astro'
 import Footer from '../components/layout/Footer.astro'
 import Container from '../components/ui/Container.astro'
-import Button from '../components/ui/Button.astro'
-import Icons from '../components/ui/Icons.astro'
 import Breadcrumbs from '../components/seo/Breadcrumbs.astro'
 
 const seo = {
-  title: 'Jornada de 90 Dias - Transforme Suas Vendas | Joel Burigo',
-  description:
-    'Descubra em detalhes como funciona a jornada de 90 dias do programa Vendas Sem Segredos. Do caos à previsibilidade em 13 semanas.',
-  keywords:
-    'jornada 90 dias, transformação vendas, sistema vendas, framework 6Ps, vendas estruturadas',
+  title: 'Jornada de 90 Dias — VSS | Joel Burigo',
+  description: 'Do caos à previsibilidade em 13 semanas. Como funciona a jornada de 90 dias do VSS.',
+  keywords: 'jornada 90 dias, VSS, framework 6Ps, vendas estruturadas',
 }
 
 const fases = [
   {
-    semanas: 'Semanas 1-2',
-    nome: 'Fundamentos',
-    icon: 'file-text',
-    cor: 'lime',
+    semanas: '01-02',
+    nome: 'FUNDAMENTOS',
     horas: '6-8h/semana',
     atividades: [
       'Diagnóstico completo dos 6Ps',
       'Define posicionamento, público, produto',
-      'Cria plano de ação 90 dias'
+      'Cria plano de ação 90 dias',
     ],
     resultados: [
-      'Clareza absoluta de onde está e para onde vai',
+      'Clareza de onde está e pra onde vai',
       'Documentos estratégicos prontos',
       'Prioridades definidas',
-      'Roadmap visual criado'
+      'Roadmap visual criado',
     ],
-    vendas: 'Nenhuma venda esperada (fase de planejamento)'
+    vendas: 'Nenhuma venda esperada (fase de planejamento)',
   },
   {
-    semanas: 'Semanas 3-4',
-    nome: 'Infraestrutura',
-    icon: 'settings',
-    cor: 'lime',
+    semanas: '03-04',
+    nome: 'INFRAESTRUTURA',
     horas: '8-10h/semana',
     atividades: [
-      'Configura CRM completo do zero',
-      'Cria site ou landing page profissional',
-      'Importa base de contatos existente',
-      'Configura primeiras automações'
+      'Configura Growth CRM do zero',
+      'Cria site ou landing page',
+      'Importa base de contatos',
+      'Configura primeiras automações',
     ],
     resultados: [
       'CRM 100% operacional',
-      'Presença digital profissional no ar',
-      'Sistema pronto para capturar leads',
-      'Automações básicas funcionando'
+      'Presença digital no ar',
+      'Sistema pronto pra capturar leads',
+      'Automações básicas funcionando',
     ],
-    vendas: 'Possíveis primeiras vendas se já tem base aquecida'
+    vendas: 'Possíveis primeiras vendas se já tem base aquecida',
   },
   {
-    semanas: 'Semanas 5-8',
-    nome: 'Atração',
-    icon: 'trending-up',
-    cor: 'lime',
+    semanas: '05-08',
+    nome: 'ATRAÇÃO',
     horas: '6-10h/semana',
     atividades: [
-      'ROTA A: Campanhas de tráfego pago (se tem budget)',
-      'ROTA B: Prospecção ativa no LinkedIn (sem budget)',
+      'ROTA A: Tráfego pago (se tem budget)',
+      'ROTA B: Prospecção LinkedIn (sem budget)',
       'ROTA C: Conteúdo orgânico (todos fazem)',
-      'Primeiros leads chegando'
+      'Primeiros leads chegando',
     ],
     resultados: [
       'Rota A: 30-100 leads via tráfego',
       'Rota B: 20-50 conversas via prospecção',
       'Rota C: Primeiros seguidores e engajamento',
-      'Sistema de atração funcionando'
+      'Sistema de atração funcionando',
     ],
-    vendas: 'Primeiras vendas começam a acontecer'
+    vendas: 'Primeiras vendas começam a acontecer',
   },
   {
-    semanas: 'Semanas 9-10',
-    nome: 'Conversão',
-    icon: 'zap',
-    cor: 'lime',
+    semanas: '09-10',
+    nome: 'CONVERSÃO',
     horas: '5-7h/semana',
     atividades: [
       'Otimiza funis de conversão',
-      'Implementa scripts de vendas testados',
+      'Implementa scripts testados',
       'Configura automações de nutrição',
-      'Integra WhatsApp para atendimento',
-      'Documenta objeções e respostas'
+      'Integra WhatsApp pra atendimento',
+      'Documenta objeções e respostas',
     ],
     resultados: [
       'Taxa de conversão melhorando',
       'Processo de vendas documentado',
       'Follow-up automatizado ativo',
-      'Tempo de resposta < 5 minutos'
+      'Tempo de resposta < 5 minutos',
     ],
-    vendas: 'Fluxo de vendas mais consistente'
+    vendas: 'Fluxo de vendas mais consistente',
   },
   {
-    semanas: 'Semanas 11-13',
-    nome: 'Integração',
-    icon: 'check-circle-2',
-    cor: 'lime',
+    semanas: '11-13',
+    nome: 'INTEGRAÇÃO',
     horas: '4-6h/semana',
     atividades: [
       'Documenta todos os processos',
       'Analisa métricas dos 90 dias',
       'Identifica gargalos',
-      'Cria plano para próximos 90 dias',
-      'Implementa melhorias'
+      'Cria plano pros próximos 90 dias',
+      'Implementa melhorias',
     ],
     resultados: [
-      'Sistema completo integrado e funcionando',
-      'Métricas claras (CPL, CAC, LTV, taxa conversão)',
+      'Sistema integrado funcionando',
+      'Métricas claras (CPL, CAC, LTV, conversão)',
       'Gargalos identificados',
       'Roadmap de escala definido',
-      'Processos documentados'
+      'Processos documentados',
     ],
-    vendas: 'Sistema rodando de forma previsível'
-  }
+    vendas: 'Sistema rodando de forma previsível',
+  },
 ]
 
 const resultadoConsolidado = [
   {
     titulo: 'Fundação Estratégica Sólida',
-    icon: 'target',
     itens: [
       '6Ps definidos e documentados',
       'Posicionamento claro e diferenciado',
       'Público-alvo mapeado cirurgicamente',
-      'Oferta irresistível estruturada'
-    ]
+      'Oferta estruturada',
+    ],
   },
   {
     titulo: 'Infraestrutura Profissional',
-    icon: 'settings',
     itens: [
-      'CRM completo configurado e operacional',
-      'Site/landing pages publicados',
+      'Growth CRM configurado e operacional',
+      'Site / landing pages publicados',
       'Funis de vendas ativos',
-      'Automações rodando 24/7'
-    ]
+      'Automações rodando 24/7',
+    ],
   },
   {
     titulo: 'Sistema de Atração Funcionando',
-    icon: 'trending-up',
     itens: [
       'Tráfego pago estruturado OU',
       'Prospecção ativa consistente OU',
       'Crescimento orgânico planejado',
-      'Leads chegando todo mês'
-    ]
+      'Leads chegando todo mês',
+    ],
   },
   {
     titulo: 'Processo de Conversão Otimizado',
-    icon: 'zap',
     itens: [
-      'Scripts de vendas testados e ajustados',
+      'Scripts testados e ajustados',
       'Objeções mapeadas e respondidas',
-      'Taxa de conversão medida e melhorando',
-      'Follow-up automatizado ativo'
-    ]
+      'Taxa de conversão medida',
+      'Follow-up automatizado ativo',
+    ],
   },
   {
     titulo: 'Sistema Validado com Vendas',
-    icon: 'check-circle-2',
     itens: [
-      'Primeiras vendas confirmadas provando que o sistema funciona',
-      'Volume varia por nicho, ticket médio e ciclo de vendas',
-      'Aprendizado: O que funciona e o que não funciona',
-      'Previsibilidade: Você sabe quantos leads precisa para bater meta'
-    ]
+      'Primeiras vendas confirmadas',
+      'Volume varia por nicho, ticket e ciclo',
+      'O que funciona e o que não funciona',
+      'Previsibilidade: quantos leads pra bater meta',
+    ],
   },
   {
-    titulo: 'Clareza Total Sobre Próximos Passos',
-    icon: 'map',
+    titulo: 'Clareza Sobre Próximos Passos',
     itens: [
-      'Métricas documentadas e entendidas',
+      'Métricas documentadas',
       'Pontos fortes e fracos identificados',
       'Plano de escala 90-180 dias pronto',
-      'Confiança para continuar crescendo'
-    ]
-  }
+      'Confiança pra continuar crescendo',
+    ],
+  },
 ]
 ---
 
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
   <Header />
-  <section class="bg-dark pt-20 pb-6">
+
+  <section class="bg-ink pt-20 pb-6">
     <Container>
-      <Breadcrumbs
-        items={[
-          { label: 'Home', href: '/' },
-          { label: 'Jornada de 90 Dias', href: '/jornada-90-dias' },
-        ]}
-      />
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Jornada 90 Dias', href: '/jornada-90-dias' }]} />
     </Container>
   </section>
-  <main class="grow pt-16 md:pt-20">
 
-    <!-- Hero -->
-    <section class="relative overflow-hidden bg-dark py-16 md:py-24">
-      <Container class="relative z-10">
-        <div class="mx-auto max-w-4xl text-center">
-          <span class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/20 px-6 py-2 font-display text-sm font-bold text-lime backdrop-blur-sm">
-            A TRANSFORMAÇÃO EM DETALHES
-          </span>
-          <h1 class="mb-6 font-display text-display-lg text-white md:text-6xl">
-            A Jornada de <span class="text-lime">90 Dias</span>
+  <main class="relative overflow-hidden bg-ink">
+    <div class="grid-overlay"></div>
+
+    <Container class="relative z-10">
+      <!-- Hero -->
+      <section class="py-16 md:py-24">
+        <div class="mx-auto max-w-5xl">
+          <div class="kicker mb-6">// VSS · JORNADA · 90_DIAS · 13_SEMANAS</div>
+          <h1 class="tg-display">
+            Do caos à <span class="text-acid">previsibilidade.</span>
           </h1>
-          <p class="mb-8 font-sans text-h3 font-semibold text-white/90">
-            Do Caos à Previsibilidade em 13 Semanas
-          </p>
-          <p class="mx-auto max-w-3xl font-sans text-body-lg text-blue-100">
-            Descubra em detalhes o que acontece em cada semana do programa Vendas Sem Segredos.
-            Sem promessas vazias. Sem fórmulas mágicas. Apenas um sistema estruturado que funciona.
+          <p class="mt-6 max-w-2xl font-sans text-lg text-[color:var(--jb-cream)]">
+            Em 13 semanas, teu sistema de vendas sai do aleatório e vira uma máquina com processo. Zero promessa vazia. Zero fórmula mágica. Método estruturado que funciona em quem executa.
           </p>
         </div>
-      </Container>
-    </section>
+      </section>
 
-    <!-- Premissa Central -->
-    <section class="bg-dark py-24">
-      <Container>
-        <div class="mx-auto max-w-7xl">
-          <div class="mb-16 text-center">
-            <h2 class="mb-4 font-display text-display-sm text-white">
-              O Que Você Pode <span class="text-lime">Esperar</span>
-            </h2>
-          </div>
-
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            <!-- O Que Prometemos -->
-            <div class="rounded-2xl border-2 border-lime/20 bg-lime/10 p-8">
-              <div class="mb-6 flex items-center gap-3">
-                <div class="rounded-full bg-lime p-3">
-                  <Icons name="check-circle-2" class="h-6 w-6 text-dark" />
-                </div>
-                <h3 class="font-display text-h2 text-white">O Que Prometemos</h3>
-              </div>
-              <div class="rounded-xl border border-lime/20 bg-lime/5 p-6">
-                <p class="font-sans text-body-lg text-white">
-                  Em 90 dias (13 semanas), você terá um <span class="font-bold text-lime">sistema de vendas estruturado e funcionando</span>,
-                  com primeiras vendas confirmadas e clareza total sobre como escalar.
-                </p>
-              </div>
+      <!-- Premissa Central -->
+      <section class="pb-16">
+        <div class="mx-auto max-w-6xl">
+          <div class="kicker mb-6">// PREMISSA_CENTRAL · O_QUE_ESPERAR</div>
+          <div class="grid gap-6 md:grid-cols-2">
+            <div class="border border-[color:var(--jb-acid-border)] bg-[color:var(--jb-ink-2)] p-8" style="background: linear-gradient(180deg, rgba(198,255,0,0.06), var(--jb-ink-2));">
+              <div class="kicker mb-3" style="color: var(--jb-acid);">// PROMETEMOS</div>
+              <p class="font-sans text-lg text-[color:var(--jb-cream)] leading-relaxed">
+                Em 90 dias você tem um <strong class="text-acid">sistema de vendas estruturado e funcionando</strong>, com primeiras vendas confirmadas e clareza de como escalar.
+              </p>
             </div>
-
-            <!-- O Que NÃO Prometemos -->
-            <div class="rounded-2xl border-2 border-red-500/20 bg-red-500/10 p-8">
-              <div class="mb-6 flex items-center gap-3">
-                <div class="rounded-full bg-red-500 p-3">
-                  <Icons name="x" class="h-6 w-6 text-white" />
-                </div>
-                <h3 class="font-display text-h2 text-white">O Que NÃO Prometemos</h3>
-              </div>
-              <ul class="space-y-3">
-                <li class="flex items-start gap-3">
-                  <Icons name="x" class="h-5 w-5 shrink-0 text-red-400" />
-                  <span class="font-sans text-body text-gray-200">Enriquecimento rápido</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <Icons name="x" class="h-5 w-5 shrink-0 text-red-400" />
-                  <span class="font-sans text-body text-gray-200">Sistema 100% automatizado e perfeito</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <Icons name="x" class="h-5 w-5 shrink-0 text-red-400" />
-                  <span class="font-sans text-body text-gray-200">Crescimento exponencial imediato</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <Icons name="x" class="h-5 w-5 shrink-0 text-red-400" />
-                  <span class="font-sans text-body text-gray-200">Fórmula mágica sem esforço</span>
-                </li>
+            <div class="border border-[color:var(--jb-fire-border)] bg-[color:var(--jb-ink-2)] p-8">
+              <div class="kicker mb-3" style="color: var(--jb-fire);">// NÃO_PROMETEMOS</div>
+              <ul class="space-y-2 font-sans text-[color:var(--jb-fg-2)]">
+                <li><span class="text-fire">●</span>&nbsp; Enriquecimento rápido</li>
+                <li><span class="text-fire">●</span>&nbsp; Sistema 100% automatizado e perfeito</li>
+                <li><span class="text-fire">●</span>&nbsp; Crescimento exponencial imediato</li>
+                <li><span class="text-fire">●</span>&nbsp; Fórmula mágica sem esforço</li>
               </ul>
             </div>
           </div>
 
-          <!-- Honestidade Brutal -->
-          <div class="mt-12 rounded-2xl border-2 border-white/10 bg-white/5 p-8">
-            <div class="flex items-start gap-4">
-              <Icons name="alert-circle" class="h-8 w-8 shrink-0 text-lime" />
-              <div>
-                <h3 class="mb-3 font-display text-h3 text-white">💯 Honestidade Brutal</h3>
-                <p class="font-sans text-body text-gray-200">
-                  Nos primeiros 90 dias você <span class="font-bold text-white">constrói a fundação sólida</span>.
-                  Dos 90 aos 180 dias você <span class="font-bold text-white">escala e otimiza</span>.
-                  É uma jornada de construção, não mágica instantânea.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Container>
-    </section>
-
-    <!-- Investimento de Tempo -->
-    <section class="bg-dark py-24">
-      <Container>
-        <div class="mx-auto max-w-5xl">
-          <div class="mb-16 text-center">
-            <h2 class="mb-4 font-display text-display-sm text-white">
-              Investimento de <span class="text-lime">Tempo Real</span>
-            </h2>
-            <p class="mx-auto max-w-2xl font-sans text-body-lg text-gray-200">
-              Este programa exige dedicação real. Veja quanto tempo você precisa dedicar por semana.
-            </p>
-          </div>
-
-          <!-- Tabela de Horas -->
-          <div class="overflow-hidden rounded-2xl border-2 border-white/10">
-            <div class="overflow-x-auto">
-              <table class="w-full">
-                <thead class="bg-lime/10">
-                  <tr>
-                    <th class="px-6 py-4 text-left font-display text-sm font-bold text-white">Semanas</th>
-                    <th class="px-6 py-4 text-left font-display text-sm font-bold text-white">Fase</th>
-                    <th class="px-6 py-4 text-left font-display text-sm font-bold text-white">Horas/Semana</th>
-                    <th class="px-6 py-4 text-left font-display text-sm font-bold text-white">Atividades</th>
-                  </tr>
-                </thead>
-                <tbody class="bg-white/5">
-                  <tr class="border-t border-white/10">
-                    <td class="px-6 py-4 font-sans text-body text-white">1-2</td>
-                    <td class="px-6 py-4 font-sans text-body text-white">Fundamentos</td>
-                    <td class="px-6 py-4 font-display text-body font-semibold text-lime">6-8h</td>
-                    <td class="px-6 py-4 font-sans text-body-sm text-gray-200">Aulas + Diagnóstico + Planejamento</td>
-                  </tr>
-                  <tr class="border-t border-white/10">
-                    <td class="px-6 py-4 font-sans text-body text-white">3-4</td>
-                    <td class="px-6 py-4 font-sans text-body text-white">Infraestrutura</td>
-                    <td class="px-6 py-4 font-display text-body font-semibold text-lime">8-10h</td>
-                    <td class="px-6 py-4 font-sans text-body-sm text-gray-200">Aulas + Setup CRM + Site</td>
-                  </tr>
-                  <tr class="border-t border-white/10">
-                    <td class="px-6 py-4 font-sans text-body text-white">5-8</td>
-                    <td class="px-6 py-4 font-sans text-body text-white">Atração</td>
-                    <td class="px-6 py-4 font-display text-body font-semibold text-lime">6-10h</td>
-                    <td class="px-6 py-4 font-sans text-body-sm text-gray-200">Aulas + Conteúdo/Tráfego/Prospecção</td>
-                  </tr>
-                  <tr class="border-t border-white/10">
-                    <td class="px-6 py-4 font-sans text-body text-white">9-10</td>
-                    <td class="px-6 py-4 font-sans text-body text-white">Conversão</td>
-                    <td class="px-6 py-4 font-display text-body font-semibold text-lime">5-7h</td>
-                    <td class="px-6 py-4 font-sans text-body-sm text-gray-200">Aulas + Funis + Scripts</td>
-                  </tr>
-                  <tr class="border-t border-white/10">
-                    <td class="px-6 py-4 font-sans text-body text-white">11-13</td>
-                    <td class="px-6 py-4 font-sans text-body text-white">Integração</td>
-                    <td class="px-6 py-4 font-display text-body font-semibold text-lime">4-6h</td>
-                    <td class="px-6 py-4 font-sans text-body-sm text-gray-200">Aulas + Documentação + Análise</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- Média e Opções -->
-          <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
-            <div class="rounded-xl border border-lime/20 bg-lime/10 p-6 text-center">
-              <p class="mb-2 font-display text-3xl font-bold text-lime">6-9h</p>
-              <p class="font-sans text-sm text-gray-200">Média por semana</p>
-            </div>
-            <div class="rounded-xl border border-white/10 bg-white/5 p-6 text-center">
-              <p class="mb-2 font-display text-lg font-semibold text-white">1-2h/dia</p>
-              <p class="font-sans text-sm text-gray-200">Durante a semana</p>
-            </div>
-            <div class="rounded-xl border border-white/10 bg-white/5 p-6 text-center">
-              <p class="mb-2 font-display text-lg font-semibold text-white">Sábado ou Domingo</p>
-              <p class="font-sans text-sm text-gray-200">6-9h de manhã/tarde</p>
-            </div>
-          </div>
-
-          <!-- Mensagem -->
-          <div class="mt-8 rounded-2xl border-2 border-lime/30 bg-lime/10 p-6">
-            <p class="text-center font-sans text-body text-gray-200">
-              <span class="font-bold text-white">Se você não tem 6-9h/semana</span> para investir no futuro do seu negócio,
-              espere ter esse tempo antes de se inscrever. <span class="font-bold text-white">Mas se você tem, os resultados compensam.</span>
+          <!-- Honestidade brutal -->
+          <div class="mt-6 border-l-2 border-acid bg-[color:var(--jb-ink-2)] p-6">
+            <div class="kicker mb-2" style="color: var(--jb-acid);">// HONESTIDADE_BRUTAL</div>
+            <p class="font-sans text-[color:var(--jb-cream)]">
+              Nos primeiros 90 dias você <strong>constrói a fundação</strong>. Dos 90 aos 180 você <strong>escala e otimiza</strong>. É jornada de construção, não milagre instantâneo.
             </p>
           </div>
         </div>
-      </Container>
-    </section>
+      </section>
 
-    <!-- As 5 Fases -->
-    <section class="bg-dark py-24">
-      <Container>
-        <div class="mx-auto max-w-7xl">
-          <div class="mb-16 text-center">
-            <h2 class="mb-4 font-display text-display-sm text-white">
-              As <span class="text-lime">5 Fases</span> da Jornada
-            </h2>
-            <p class="mx-auto max-w-2xl font-sans text-body-lg text-gray-200">
-              Cada fase tem objetivos claros, atividades específicas e resultados mensuráveis
-            </p>
+      <!-- Investimento de tempo -->
+      <section class="pb-16">
+        <div class="mx-auto max-w-6xl">
+          <div class="kicker mb-6">// INVESTIMENTO_DE_TEMPO · REAL</div>
+          <h2 class="heading-2 mb-8 text-[color:var(--jb-cream)]">Quanto tempo você precisa dedicar</h2>
+
+          <!-- Tabela -->
+          <div class="overflow-x-auto border border-[color:var(--jb-hair)] bg-[color:var(--jb-ink-2)]">
+            <table class="w-full">
+              <thead class="bg-[color:var(--jb-ink)] border-b border-[color:var(--jb-hair)]">
+                <tr>
+                  <th class="px-6 py-4 text-left font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">Semanas</th>
+                  <th class="px-6 py-4 text-left font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">Fase</th>
+                  <th class="px-6 py-4 text-left font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">Horas/Sem</th>
+                  <th class="px-6 py-4 text-left font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">Atividades</th>
+                </tr>
+              </thead>
+              <tbody>
+                {fases.map((f, i) => (
+                  <tr class={i > 0 ? 'border-t border-[color:var(--jb-hair)]' : ''}>
+                    <td class="px-6 py-4 font-mono text-sm text-[color:var(--jb-cream)]">{f.semanas}</td>
+                    <td class="px-6 py-4 font-display text-sm text-[color:var(--jb-cream)]">{f.nome}</td>
+                    <td class="px-6 py-4 font-display text-acid">{f.horas}</td>
+                    <td class="px-6 py-4 font-sans text-sm text-[color:var(--jb-fg-2)]">{f.atividades[0]}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
 
-          <!-- Timeline Visual -->
-          <div class="relative space-y-12">
-            <!-- Linha vertical conectando as fases -->
-            <div class="absolute left-8 top-8 bottom-8 w-1 bg-linear-to-b from-lime via-lime/50 to-lime hidden md:block"></div>
-            {fases.map((fase) => (
-              <div class="relative md:pl-24">
-                <!-- Círculo timeline -->
-                <div class="absolute left-4 top-8 hidden h-8 w-8 items-center justify-center rounded-full border-4 border-dark bg-lime md:flex">
-                  <div class="h-3 w-3 rounded-full bg-dark"></div>
+          <!-- Média -->
+          <div class="mt-8 grid gap-px border border-[color:var(--jb-hair)] bg-[color:var(--jb-hair)] md:grid-cols-3">
+            <div class="bg-[color:var(--jb-ink-2)] p-6">
+              <div class="kicker mb-2">// MÉDIA</div>
+              <div class="font-display text-3xl text-acid">6-9h</div>
+              <div class="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">por semana</div>
+            </div>
+            <div class="bg-[color:var(--jb-ink-2)] p-6">
+              <div class="kicker mb-2">// DIÁRIO</div>
+              <div class="font-display text-3xl text-[color:var(--jb-cream)]">1-2h</div>
+              <div class="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">durante a semana</div>
+            </div>
+            <div class="bg-[color:var(--jb-ink-2)] p-6">
+              <div class="kicker mb-2">// FIM_DE_SEMANA</div>
+              <div class="font-display text-3xl text-[color:var(--jb-cream)]">6-9h</div>
+              <div class="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">sábado ou domingo</div>
+            </div>
+          </div>
+
+          <div class="mt-6 border-l-2 border-fire bg-[color:var(--jb-ink-2)] p-5">
+            <p class="font-sans text-[color:var(--jb-cream)]">
+              <strong>Se não tem 6-9h/semana</strong> pra investir no futuro do negócio, espera ter antes de entrar. <strong>Mas se tem, compensa.</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- As 5 Fases -->
+      <section class="pb-16">
+        <div class="mx-auto max-w-6xl">
+          <div class="kicker mb-6">// AS_5_FASES · TIMELINE</div>
+          <h2 class="heading-2 mb-10 text-[color:var(--jb-cream)]">As 5 fases da jornada</h2>
+
+          <div class="space-y-8">
+            {fases.map((fase, idx) => (
+              <article class="border border-[color:var(--jb-hair)] bg-[color:var(--jb-ink-2)] p-6 md:p-8 transition-all duration-[var(--jb-dur)] hover:border-[color:var(--jb-acid)] hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[6px_6px_0_var(--jb-acid)]">
+                <!-- Header -->
+                <div class="mb-6 flex flex-wrap items-baseline justify-between gap-3 border-b border-[color:var(--jb-hair)] pb-5">
+                  <div>
+                    <div class="kicker mb-1" style="color: var(--jb-acid);">// FASE_{String(idx + 1).padStart(2, '0')} · SEMANAS_{fase.semanas}</div>
+                    <h3 class="heading-2 text-[color:var(--jb-cream)]">{fase.nome}</h3>
+                  </div>
+                  <div class="border border-[color:var(--jb-acid-border)] bg-[color:var(--jb-acid-soft)] px-4 py-2">
+                    <div class="font-mono text-[11px] uppercase tracking-[0.22em] text-acid">{fase.horas}</div>
+                  </div>
                 </div>
 
-                <div class="group rounded-2xl border-2 border-white/10 bg-linear-to-br from-white/5 to-white/2 p-8 transition-all hover:border-lime/50 hover:shadow-2xl hover:shadow-lime/10">
-                  <!-- Badge de semanas -->
-                  <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-lime/30 bg-lime/10 px-4 py-2">
-                    <Icons name="calendar" class="h-4 w-4 text-lime" />
-                    <span class="font-display text-sm font-bold text-lime">{fase.semanas}</span>
-                  </div>
-
-                  <!-- Header da Fase -->
-                  <div class="mb-6 flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-                    <div class="flex items-start gap-4">
-                      <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-lime/20 ring-4 ring-lime/10 transition-all group-hover:scale-110 group-hover:ring-lime/30">
-                        {fase.icon === 'file-text' && <Icons name="file-text" class="h-8 w-8 text-lime" />}
-                        {fase.icon === 'settings' && <Icons name="settings" class="h-8 w-8 text-lime" />}
-                        {fase.icon === 'trending-up' && <Icons name="trending-up" class="h-8 w-8 text-lime" />}
-                        {fase.icon === 'zap' && <Icons name="zap" class="h-8 w-8 text-lime" />}
-                        {fase.icon === 'check-circle-2' && <Icons name="check-circle-2" class="h-8 w-8 text-lime" />}
-                      </div>
-                      <div>
-                        <h3 class="mb-2 font-display text-h2 text-white">{fase.nome}</h3>
-                        <div class="flex items-center gap-2 text-gray-400">
-                          <Icons name="clock" class="h-4 w-4" />
-                          <p class="font-sans text-sm">{fase.horas}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-                  <!-- O Que Você Faz -->
+                <!-- Grid -->
+                <div class="grid gap-6 lg:grid-cols-2">
                   <div>
-                    <h4 class="mb-4 font-display text-lg font-semibold text-white">O Que Você Faz:</h4>
+                    <div class="kicker mb-3">// O_QUE_VOCÊ_FAZ</div>
                     <ul class="space-y-2">
-                      {fase.atividades.map((atividade) => (
-                        <li class="flex items-start gap-2">
-                          <Icons name="arrow-right" class="h-5 w-5 shrink-0 text-lime" />
-                          <span class="font-sans text-body-sm text-gray-200">{atividade}</span>
+                      {fase.atividades.map((a) => (
+                        <li class="flex items-start gap-3 font-sans text-sm text-[color:var(--jb-fg-2)]">
+                          <span class="mt-[3px] shrink-0 text-acid">▶</span>
+                          <span>{a}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
-
-                  <!-- Resultado Esperado -->
                   <div>
-                    <h4 class="mb-4 font-display text-lg font-semibold text-white">Resultado Esperado:</h4>
+                    <div class="kicker mb-3" style="color: var(--jb-acid);">// RESULTADO_ESPERADO</div>
                     <ul class="space-y-2">
-                      {fase.resultados.map((resultado) => (
-                        <li class="flex items-start gap-2">
-                          <Icons name="check-circle-2" class="h-5 w-5 shrink-0 text-lime" />
-                          <span class="font-sans text-body-sm text-gray-200">{resultado}</span>
+                      {fase.resultados.map((r) => (
+                        <li class="flex items-start gap-3 font-sans text-sm text-[color:var(--jb-fg-2)]">
+                          <span class="mt-[3px] shrink-0 text-acid">●</span>
+                          <span>{r}</span>
                         </li>
                       ))}
                     </ul>
@@ -461,49 +326,30 @@ const resultadoConsolidado = [
                 </div>
 
                 <!-- Vendas -->
-                <div class="mt-6 rounded-xl border border-lime/20 bg-lime/10 p-4">
-                  <p class="font-display text-sm font-semibold text-lime">
-                    💰 Vendas nesta fase: {fase.vendas}
-                  </p>
+                <div class="mt-6 border-l-2 border-fire bg-[color:var(--jb-ink)] p-4 font-mono text-sm text-[color:var(--jb-cream)]">
+                  <span class="text-fire">●</span>&nbsp; VENDAS_NESTA_FASE: {fase.vendas}
                 </div>
-                </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
-      </Container>
-    </section>
+      </section>
 
-    <!-- Resultado Consolidado -->
-    <section class="bg-dark py-24">
-      <Container>
-        <div class="mx-auto max-w-7xl">
-          <div class="mb-16 text-center">
-            <h2 class="mb-4 font-display text-display-sm text-white">
-              Ao Final dos <span class="text-lime">90 Dias</span>
-            </h2>
-            <p class="mx-auto max-w-2xl font-sans text-body-lg text-gray-200">
-              O que você terá construído no seu negócio
-            </p>
-          </div>
+      <!-- Resultado Consolidado -->
+      <section class="pb-16">
+        <div class="mx-auto max-w-6xl">
+          <div class="kicker mb-6">// AO_FINAL_DOS_90_DIAS</div>
+          <h2 class="heading-2 mb-10 text-[color:var(--jb-cream)]">O que você vai ter construído</h2>
 
-          <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {resultadoConsolidado.map((item) => (
-              <div class="rounded-2xl border-2 border-white/10 bg-white/5 p-8 transition-all hover:border-lime/30">
-                <div class="mb-4 flex items-center gap-3">
-                  {item.icon === 'target' && <Icons name="target" class="h-8 w-8 text-lime" />}
-                  {item.icon === 'settings' && <Icons name="settings" class="h-8 w-8 text-lime" />}
-                  {item.icon === 'trending-up' && <Icons name="trending-up" class="h-8 w-8 text-lime" />}
-                  {item.icon === 'zap' && <Icons name="zap" class="h-8 w-8 text-lime" />}
-                  {item.icon === 'check-circle-2' && <Icons name="check-circle-2" class="h-8 w-8 text-lime" />}
-                  {item.icon === 'map' && <Icons name="map" class="h-8 w-8 text-lime" />}
-                </div>
-                <h3 class="mb-4 font-display text-h3 text-white">{item.titulo}</h3>
+              <div class="card">
+                <h3 class="heading-4 mb-4 text-[color:var(--jb-cream)]">{item.titulo}</h3>
                 <ul class="space-y-2">
-                  {item.itens.map((subitem) => (
-                    <li class="flex items-start gap-2">
-                      <Icons name="check-circle-2" class="h-4 w-4 shrink-0 text-lime" />
-                      <span class="font-sans text-body-sm text-gray-200">{subitem}</span>
+                  {item.itens.map((sub) => (
+                    <li class="flex items-start gap-3 font-sans text-sm text-[color:var(--jb-fg-2)]">
+                      <span class="mt-[3px] shrink-0 text-acid">▶</span>
+                      <span>{sub}</span>
                     </li>
                   ))}
                 </ul>
@@ -512,114 +358,112 @@ const resultadoConsolidado = [
           </div>
 
           <!-- Expectativas Realistas -->
-          <div class="mt-12 rounded-2xl border-2 border-lime/30 bg-lime/10 p-8">
-            <div class="text-center">
-              <h3 class="mb-4 font-display text-h2 text-white">📊 O Que Você Terá ao Final</h3>
-              <div class="mx-auto max-w-3xl space-y-4">
-                <div class="rounded-xl border border-lime/20 bg-lime/5 p-6">
-                  <p class="mb-2 font-display text-2xl font-bold text-lime">Sistema Validado</p>
-                  <p class="font-sans text-body text-gray-200">Primeiras vendas confirmadas provando que funciona</p>
-                </div>
-                <div class="rounded-xl border border-lime/20 bg-lime/5 p-6">
-                  <p class="mb-2 font-display text-2xl font-bold text-lime">Pipeline Previsível</p>
-                  <p class="font-sans text-body text-gray-200">Você sabe quantos leads precisa para bater sua meta</p>
-                </div>
-                <div class="rounded-xl border border-lime/20 bg-lime/5 p-6">
-                  <p class="mb-2 font-display text-2xl font-bold text-lime">Autonomia</p>
-                  <p class="font-sans text-body text-gray-200">Processos documentados e sistema replicável</p>
-                </div>
-                <p class="font-sans text-body-sm text-gray-200">
-                  <span class="font-bold text-white">Nota:</span> Volume e velocidade variam por nicho, ticket médio e ciclo de vendas.
-                  O importante não é o número absoluto, mas ter um <span class="font-bold text-white">sistema previsível funcionando</span>.
-                </p>
+          <div class="mt-10 border border-[color:var(--jb-acid-border)] bg-[color:var(--jb-ink-2)] p-8" style="background: linear-gradient(180deg, rgba(198,255,0,0.06), var(--jb-ink-2));">
+            <div class="kicker mb-4" style="color: var(--jb-acid);">// O_QUE_VOCÊ_TERÁ · CONCRETAMENTE</div>
+            <div class="mx-auto max-w-3xl space-y-4">
+              <div class="border-l-2 border-acid bg-[color:var(--jb-ink)] p-5">
+                <div class="font-display text-acid">SISTEMA VALIDADO</div>
+                <p class="mt-1 font-sans text-[color:var(--jb-fg-2)]">Primeiras vendas confirmadas provando que funciona.</p>
               </div>
-            </div>
-          </div>
-        </div>
-      </Container>
-    </section>
-
-    <!-- Próximos 90 Dias -->
-    <section class="bg-dark py-24">
-      <Container>
-        <div class="mx-auto max-w-5xl">
-          <div class="rounded-2xl border-2 border-lime/30 bg-linear-to-br from-lime/20 to-lime/5 p-12">
-            <div class="text-center">
-              <div class="mb-6 flex justify-center">
-                <div class="rounded-full bg-lime p-4">
-                  <Icons name="rocket" class="h-12 w-12 text-dark" />
-                </div>
+              <div class="border-l-2 border-acid bg-[color:var(--jb-ink)] p-5">
+                <div class="font-display text-acid">PIPELINE PREVISÍVEL</div>
+                <p class="mt-1 font-sans text-[color:var(--jb-fg-2)]">Você sabe quantos leads precisa pra bater meta.</p>
               </div>
-              <h2 class="mb-4 font-display text-display-sm text-white">
-                E Depois dos <span class="text-lime">90 Dias?</span>
-              </h2>
-              <p class="mx-auto mb-8 max-w-2xl font-sans text-body-lg text-gray-200">
-                O programa continua para você evoluir e otimizar seu sistema
-              </p>
-              <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-                <div class="rounded-xl border border-lime/20 bg-dark/50 p-4">
-                  <p class="font-display text-sm font-semibold text-lime">Automação Avançada</p>
-                </div>
-                <div class="rounded-xl border border-lime/20 bg-dark/50 p-4">
-                  <p class="font-display text-sm font-semibold text-lime">Múltiplos Canais</p>
-                </div>
-                <div class="rounded-xl border border-lime/20 bg-dark/50 p-4">
-                  <p class="font-display text-sm font-semibold text-lime">Estruturação de Time</p>
-                </div>
-                <div class="rounded-xl border border-lime/20 bg-dark/50 p-4">
-                  <p class="font-display text-sm font-semibold text-lime">Otimização com Dados</p>
-                </div>
+              <div class="border-l-2 border-acid bg-[color:var(--jb-ink)] p-5">
+                <div class="font-display text-acid">AUTONOMIA</div>
+                <p class="mt-1 font-sans text-[color:var(--jb-fg-2)]">Processos documentados e sistema replicável.</p>
               </div>
-              <p class="mt-8 font-display text-h3 text-lime">
-                Resultado: Escala e crescimento acelerado
+              <p class="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">
+                NOTA: volume varia por nicho, ticket e ciclo. O importante é ter <strong class="text-[color:var(--jb-cream)]">sistema previsível rodando</strong>.
               </p>
             </div>
           </div>
         </div>
-      </Container>
-    </section>
+      </section>
 
-    <!-- CTA Final -->
-    <section class="relative overflow-hidden bg-linear-to-br from-lime/10 via-dark to-dark py-24">
-      <Container>
+      <!-- Próximos 90 Dias -->
+      <section class="pb-16">
         <div class="mx-auto max-w-5xl">
-          <div class="rounded-3xl border-4 border-lime/40 bg-dark/80 p-12 text-center backdrop-blur-sm">
-            <h2 class="mb-4 font-display text-display-sm text-white">
-              Pronto Para Começar Sua <span class="text-lime">Jornada?</span>
+          <div class="border border-[color:var(--jb-fire-border)] bg-[color:var(--jb-ink-2)] p-8 md:p-12">
+            <div class="kicker mb-4" style="color: var(--jb-fire);">// APÓS_OS_90_DIAS · ESCALA</div>
+            <h2 class="heading-2 mb-6 text-[color:var(--jb-cream)]">E depois dos 90 dias?</h2>
+            <p class="mb-6 font-sans text-[color:var(--jb-fg-2)]">
+              O programa continua pra você evoluir e otimizar o sistema. Acesso vitalício ao conteúdo.
+            </p>
+            <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+              {['Automação avançada', 'Múltiplos canais', 'Estruturação de time', 'Otimização com dados'].map((item) => (
+                <div class="border border-[color:var(--jb-hair)] bg-[color:var(--jb-ink)] p-4">
+                  <div class="font-mono text-[11px] uppercase tracking-[0.22em] text-acid">▶ {item}</div>
+                </div>
+              ))}
+            </div>
+            <p class="mt-6 font-display text-xl text-acid">
+              RESULTADO: escala e crescimento acelerado.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Final -->
+      <section class="pb-16 md:pb-24">
+        <div class="mx-auto max-w-5xl">
+          <div class="border border-[color:var(--jb-acid-border)] bg-[color:var(--jb-ink-2)] p-8 md:p-12" style="background: linear-gradient(180deg, rgba(198,255,0,0.06), var(--jb-ink-2));">
+            <div class="kicker mb-4" style="color: var(--jb-acid);">// PRONTO_PRA_COMEÇAR?</div>
+            <h2 class="heading-2 mb-4 text-[color:var(--jb-cream)]">
+              Agora você sabe o que acontece. Sem surpresa, sem promessa vazia.
             </h2>
-            <p class="mx-auto mb-8 max-w-2xl font-sans text-body-lg text-gray-200">
-              Agora você sabe exatamente o que vai acontecer nos próximos 90 dias.
-              Sem surpresas, sem promessas vazias. Apenas trabalho estruturado que gera resultados.
+            <p class="mb-8 font-sans text-[color:var(--jb-fg-2)]">
+              Apenas trabalho estruturado que gera resultado em quem executa.
             </p>
 
-            <div class="mb-8 grid grid-cols-1 gap-4 md:grid-cols-3">
-              <div class="rounded-xl border border-lime/20 bg-lime/10 p-6">
-                <p class="mb-2 font-display text-2xl font-bold text-lime">15 Módulos</p>
-                <p class="font-sans text-sm text-gray-200">66 aulas práticas</p>
+            <div class="mb-8 grid gap-px border border-[color:var(--jb-hair)] bg-[color:var(--jb-hair)] md:grid-cols-3">
+              <div class="bg-[color:var(--jb-ink)] p-5">
+                <div class="font-display text-2xl text-acid">15 MÓDULOS</div>
+                <div class="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">66 aulas práticas</div>
               </div>
-              <div class="rounded-xl border border-lime/20 bg-lime/10 p-6">
-                <p class="mb-2 font-display text-2xl font-bold text-lime">48 Mentorias</p>
-                <p class="font-sans text-sm text-gray-200">Semanais em grupo</p>
+              <div class="bg-[color:var(--jb-ink)] p-5">
+                <div class="font-display text-2xl text-acid">48 MENTORIAS</div>
+                <div class="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">semanais em grupo</div>
               </div>
-              <div class="rounded-xl border border-lime/20 bg-lime/10 p-6">
-                <p class="mb-2 font-display text-2xl font-bold text-lime">CRM Incluído</p>
-                <p class="font-sans text-sm text-gray-200">12 meses grátis</p>
+              <div class="bg-[color:var(--jb-ink)] p-5">
+                <div class="font-display text-2xl text-acid">CRM INCLUSO</div>
+                <div class="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">12 meses grátis</div>
               </div>
             </div>
 
-            <a href="/vendas-sem-segredos">
-              <Button variant="primary" size="lg" class="text-lg">
-                Quero Começar Minha Jornada de 90 Dias
-              </Button>
-            </a>
-            <p class="mt-4 font-sans text-sm text-gray-400">
-              Garantia de 15 dias | Acesso vitalício | 12x de R$ 166,42
+            <div class="flex flex-wrap gap-4">
+              <a href="/vendas-sem-segredos" class="btn-primary min-h-[48px]" data-astro-prefetch>
+                <span>Começar minha jornada</span>
+                <span aria-hidden="true">→</span>
+              </a>
+              <a href="/diagnostico" class="btn-secondary min-h-[48px]">Diagnóstico grátis</a>
+            </div>
+
+            <p class="mt-4 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">
+              <span class="text-acid">●</span>&nbsp; 15 DIAS DE GARANTIA · ACESSO VITALÍCIO · 12× R$ 166,42
             </p>
+
+            <div class="mt-8 border-t border-[color:var(--jb-hair)] pt-6 font-mono text-[11px] uppercase tracking-[0.28em] text-[color:var(--jb-fg-muted)]">
+              <span class="text-acid">★</span>&nbsp;&nbsp;SISTEMA <span class="text-fire">&gt;</span> IMPROVISO · LET'S GROW
+            </div>
           </div>
         </div>
-      </Container>
-    </section>
-
+      </section>
+    </Container>
   </main>
+
   <Footer />
 </Layout>
+
+<style>
+  .tg-display {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.045em;
+    line-height: 0.92;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    color: var(--jb-cream);
+    margin: 0;
+  }
+</style>

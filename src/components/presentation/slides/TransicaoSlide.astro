@@ -1,111 +1,227 @@
 ---
-import Container from '../../ui/Container.astro'
-import { Icon } from 'astro-icon/components'
+// Slide 9 · TRANSIÇÃO — Forquilha de caminhos (VSS DIY ou Advisory 1:1)
+import SlideShell from '../SlideShell.astro'
 ---
 
-<div class="h-screen bg-dark flex items-center justify-center overflow-hidden">
-  <Container>
-    <div class="max-w-6xl mx-auto px-4">
-      
-      <div class="text-center mb-12">
-        <h2 class="font-display text-5xl font-bold text-white mb-4">
-          Qual <span class="text-lime">Caminho</span> Faz Sentido?
-        </h2>
-        <p class="text-xl text-gray-400">
-          Três formas de implementar os 6Ps na sua empresa
-        </p>
-      </div>
-
-      <!-- Forquilha de Caminhos -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <!-- Caminho DIY - VSS -->
-        <button 
-          @click="goTo(10)"
-          class="group rounded-xl border-2 border-lime/30 bg-lime/5 p-8 text-left hover:border-lime/60 hover:bg-lime/10 transition-all cursor-pointer relative"
-        >
-          <div class="absolute -top-3 right-4 rounded-full bg-lime px-3 py-1">
-            <span class="text-xs font-bold text-dark uppercase tracking-wider">Mais Vendido</span>
-          </div>
-          
-          <div class="mb-6">
-            <Icon name="lucide:graduation-cap" class="h-16 w-16 text-lime group-hover:scale-110 transition-transform" />
-          </div>
-          
-          <h3 class="text-3xl font-bold text-white mb-4 leading-tight">Quer fazer <span class="text-lime">sozinho?</span></h3>
-          
-          <p class="text-lg text-white font-semibold mb-2">Vendas Sem Segredos</p>
-          
-          <p class="text-gray-300 mb-4 leading-relaxed">
-            Curso completo + comunidade para você implementar os 6Ps sozinho
-          </p>
-          
-          <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-            <strong class="text-gray-300">Ideal para:</strong> Empreendedor solo ou pequeno time que tem tempo para executar
-          </p>
-          
-          <div class="flex items-center gap-2 text-lime font-semibold">
-            <span>Ver Programa</span>
-            <Icon name="lucide:arrow-right" class="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </div>
-        </button>
-
-        <!-- Caminho DFY - Services -->
-        <button 
-          @click="goTo(14)"
-          class="group rounded-xl border-2 border-blue-500/30 bg-blue-500/5 p-8 text-left hover:border-blue-500/60 hover:bg-blue-500/10 transition-all cursor-pointer"
-        >
-          <div class="mb-6">
-            <Icon name="lucide:rocket" class="h-16 w-16 text-blue-400 group-hover:scale-110 transition-transform" />
-          </div>
-          
-          <h3 class="text-3xl font-bold text-white mb-4 leading-tight">Quer minha equipe <span class="text-blue-400">implementando?</span></h3>
-          
-          <p class="text-lg text-white font-semibold mb-2">Services</p>
-          
-          <p class="text-gray-300 mb-4 leading-relaxed">
-            Nossa equipe implementa os 6Ps na sua empresa. Você acompanha, nós executamos.
-          </p>
-          
-          <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-            <strong class="text-gray-300">Ideal para:</strong> Empresa R$ 50k-500k/mês que não tem tempo mas tem orçamento
-          </p>
-          
-          <div class="flex items-center gap-2 text-blue-400 font-semibold">
-            <span>Ver Pacotes</span>
-            <Icon name="lucide:arrow-right" class="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </div>
-        </button>
-
-        <!-- Caminho Advisory -->
-        <button 
-          @click="goTo(18)"
-          class="group rounded-xl border-2 border-purple-500/30 bg-purple-500/5 p-8 text-left hover:border-purple-500/60 hover:bg-purple-500/10 transition-all cursor-pointer"
-        >
-          <div class="mb-6">
-            <Icon name="lucide:compass" class="h-16 w-16 text-purple-400 group-hover:scale-110 transition-transform" />
-          </div>
-          
-          <h3 class="text-3xl font-bold text-white mb-4 leading-tight">Quer minha mente no seu <span class="text-purple-400">negócio?</span></h3>
-          
-          <p class="text-lg text-white font-semibold mb-2">Advisory</p>
-          
-          <p class="text-gray-300 mb-4 leading-relaxed">
-            Sessões estratégicas comigo para decisões-chave, crescimento e escala.
-          </p>
-          
-          <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-            <strong class="text-gray-300">Ideal para:</strong> Empresa estruturada (R$ 500k+/mês) que já tem time e precisa de direcionamento
-          </p>
-          
-          <div class="flex items-center gap-2 text-purple-400 font-semibold">
-            <span>Ver Formatos</span>
-            <Icon name="lucide:arrow-right" class="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </div>
-        </button>
-
-      </div>
-
+<SlideShell
+  variant="default"
+  sbLeft="DECISÃO · QUAL CAMINHO?"
+  sbRight="// ▶ FORQUILHA"
+  navLeft="★ DOIS JEITOS DE LIGAR A MÁQUINA"
+  navRight="10 / 19 · ESCOLHA UM →"
+  navAcid={false}
+>
+  <div class="trans-wrap">
+    <div class="trans-head">
+      <div class="trans-kicker">// DUAS ROTAS · MESMO FRAMEWORK</div>
+      <h2 class="trans-h2">
+        QUAL CAMINHO<br />
+        <span class="fire">FAZ SENTIDO</span> <span class="acid">PRA TI?</span>
+      </h2>
     </div>
-  </Container>
-</div>
+
+    <div class="trans-fork">
+      <!-- VSS (DIY) -->
+      <button
+        class="trans-card trans-vss"
+        @click="goTo(10)"
+        type="button"
+      >
+        <div class="trans-badge trans-badge-acid">★ PRINCIPAL</div>
+        <div class="trans-label">// VSS · DIY PERPÉTUO</div>
+        <div class="trans-q">
+          Quer fazer<br />
+          <span class="acid">sozinho?</span>
+        </div>
+        <div class="trans-name">VENDAS SEM SEGREDOS</div>
+        <p class="trans-desc">
+          Playbook completo + 48 mentorias/ano + Growth CRM.
+          Você executa, eu oriento. <b>Autonomia total em 90 dias.</b>
+        </p>
+        <ul class="trans-bullets">
+          <li>R$ 10-100k/mês · empreendedor hands-on</li>
+          <li>2-3h/semana pra executar</li>
+          <li>Quer aprender o sistema completo</li>
+        </ul>
+        <div class="trans-cta trans-cta-acid">VER VSS →</div>
+      </button>
+
+      <!-- Advisory (1:1) -->
+      <button
+        class="trans-card trans-adv"
+        @click="goTo(14)"
+        type="button"
+      >
+        <div class="trans-badge trans-badge-fire">★ POR CONVITE</div>
+        <div class="trans-label">// ADVISORY · 1:1</div>
+        <div class="trans-q">
+          Quer minha<br />
+          <span class="fire">cabeça</span> no negócio?
+        </div>
+        <div class="trans-name">JOEL BURIGO ADVISORY</div>
+        <p class="trans-desc">
+          Acesso direto a 17+ anos de experiência aplicados ao teu desafio.
+          <b>Eu não executo, eu oriento quem decide.</b>
+        </p>
+        <ul class="trans-bullets">
+          <li>CEO/Founder · R$ 200k+/mês</li>
+          <li>Momento crítico ou decisão estratégica</li>
+          <li>Valoriza atalho de experiência</li>
+        </ul>
+        <div class="trans-cta trans-cta-fire">VER ADVISORY →</div>
+      </button>
+    </div>
+  </div>
+</SlideShell>
+
+<style>
+  .trans-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    height: 100%;
+  }
+  .trans-kicker {
+    font-family: var(--font-mono);
+    font-size: clamp(12px, 1vw, 16px);
+    letter-spacing: 0.32em;
+    color: var(--jb-acid);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .trans-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5.5vw, 92px);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--jb-cream);
+    margin: 0;
+  }
+  .trans-h2 .fire { color: var(--jb-fire); }
+  .trans-h2 .acid { color: var(--jb-acid); }
+
+  .trans-fork {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .trans-card {
+    text-align: left;
+    background: var(--jb-ink-2);
+    border: 1px solid var(--jb-hair);
+    padding: 32px 32px 28px;
+    cursor: pointer;
+    position: relative;
+    transition: transform var(--jb-dur) var(--jb-ease), box-shadow var(--jb-dur) var(--jb-ease), border-color var(--jb-dur) var(--jb-ease);
+    font-family: var(--font-sans);
+    color: var(--jb-cream);
+  }
+  .trans-card:hover {
+    transform: translate(-2px, -2px);
+  }
+  .trans-vss { border-color: var(--jb-acid-border); }
+  .trans-vss:hover {
+    border-color: var(--jb-acid);
+    box-shadow: 6px 6px 0 var(--jb-acid);
+  }
+  .trans-adv { border-color: var(--jb-fire-border); }
+  .trans-adv:hover {
+    border-color: var(--jb-fire);
+    box-shadow: 6px 6px 0 var(--jb-fire);
+  }
+
+  .trans-badge {
+    position: absolute;
+    top: -12px;
+    right: 24px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    background: var(--jb-ink);
+    font-weight: 700;
+  }
+  .trans-badge-acid { color: var(--jb-acid); border: 1px solid var(--jb-acid); }
+  .trans-badge-fire { color: var(--jb-fire); border: 1px solid var(--jb-fire); }
+
+  .trans-label {
+    font-family: var(--font-mono);
+    font-size: clamp(11px, 0.85vw, 14px);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--jb-fg-muted);
+    margin-bottom: 18px;
+  }
+
+  .trans-q {
+    font-family: var(--font-display);
+    font-size: clamp(34px, 4vw, 66px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    color: var(--jb-cream);
+  }
+  .trans-q .fire { color: var(--jb-fire); }
+  .trans-q .acid { color: var(--jb-acid); }
+
+  .trans-name {
+    margin-top: 16px;
+    font-family: var(--font-mono);
+    font-size: clamp(13px, 1vw, 16px);
+    letter-spacing: 0.22em;
+    color: var(--jb-cream);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .trans-desc {
+    margin-top: 14px;
+    font-size: clamp(13px, 1vw, 17px);
+    line-height: 1.5;
+    color: var(--jb-fg-3);
+  }
+  .trans-desc b { color: var(--jb-cream); }
+
+  .trans-bullets {
+    margin: 18px 0 24px;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .trans-bullets li {
+    font-family: var(--font-mono);
+    font-size: clamp(10px, 0.78vw, 12px);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--jb-fg-muted);
+    padding-left: 16px;
+    position: relative;
+  }
+  .trans-bullets li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: var(--jb-cream);
+  }
+
+  .trans-cta {
+    font-family: var(--font-display);
+    font-size: clamp(13px, 1vw, 16px);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    display: inline-block;
+  }
+  .trans-cta-acid { background: var(--jb-acid); color: var(--jb-ink); box-shadow: 4px 4px 0 var(--jb-fire); }
+  .trans-cta-fire { background: var(--jb-fire); color: var(--jb-ink); box-shadow: 4px 4px 0 var(--jb-acid); }
+
+  @media (max-width: 1024px) {
+    .trans-fork { grid-template-columns: 1fr; }
+  }
+</style>

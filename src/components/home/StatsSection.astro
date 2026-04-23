@@ -2,71 +2,115 @@
 import Container from '../ui/Container.astro'
 
 const stats = [
-  {
-    value: 'R$ 1bi',
-    label: 'Gerados para clientes',
-    color: 'lime',
-  },
-  {
-    value: '140+',
-    label: 'Clientes atendidos',
-    color: 'royal-blue',
-  },
-  {
-    value: '17 anos',
-    label: 'Estruturando vendas',
-    color: 'lime',
-  },
-  {
-    value: '20+',
-    label: 'Nichos diferentes',
-    color: 'royal-blue',
-  },
+  { value: '17+', label: 'Anos estruturando vendas', accent: 'acid' },
+  { value: '140+', label: 'Clientes atendidos', accent: 'fire' },
+  { value: '~R$ 1BI', label: 'Em vendas estruturadas', accent: 'acid' },
+  { value: '20+', label: 'Nichos validados', accent: 'fire' },
 ]
 ---
 
-<section class="border-y-2 border-lime/20 bg-dark py-20">
-  <Container>
-    <div class="mb-12 text-center">
-      <h2 class="mb-2 font-display text-h1 text-white">Números Que Comprovam</h2>
-      <div class="mx-auto h-1 w-20 rounded-full bg-lime"></div>
-    </div>
+<section class="stats-section relative overflow-hidden bg-ink">
+  <div class="grid-overlay"></div>
 
-    <div class="grid grid-cols-2 gap-8 text-center md:grid-cols-4">
-      {stats.map((stat, index) => (
-        <div 
-          class="stat-item px-4" 
-          style={`animation-delay: ${index * 0.1}s`}
-        >
-          <div class:list={[
-            'mb-2 font-display text-4xl font-extrabold md:text-5xl',
-            stat.color === 'lime' ? 'text-lime' : 'text-royal-blue'
-          ]}>
-            {stat.value}
+  <Container class="relative z-10">
+    <!-- Ticker de assinatura no topo -->
+    <div class="stats-head">
+      <div class="kicker">// 05_NÚMEROS</div>
+      <div class="mono stats-head-meta">
+        <span class="dot-live"></span>&nbsp;&nbsp;DADOS AGREGADOS · 2008→2026
+      </div>
+    </div>
+    <div class="hair-divider"></div>
+
+    <!-- Stats gigantes -->
+    <div class="stats-grid">
+      {stats.map((s) => (
+        <div class="stat-block">
+          <div class={`stat-value ${s.accent === 'acid' ? 'text-acid' : 'text-fire'}`}>
+            {s.value}
           </div>
-          <div class="font-sans text-sm font-medium uppercase tracking-wide text-gray-400 md:text-base">
-            {stat.label}
-          </div>
+          <div class="stat-label mono">{s.label}</div>
         </div>
       ))}
+    </div>
+
+    <!-- Assinatura -->
+    <div class="stats-signature">
+      <span class="mono">
+        <span class="text-acid">★</span>&nbsp;&nbsp;DA QUEBRADA AO BILHÃO · SEM ENROLAÇÃO
+      </span>
     </div>
   </Container>
 </section>
 
 <style>
-  .stat-item {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out forwards;
+  .stats-section {
+    padding-top: clamp(3rem, 6vw, 5rem);
+    padding-bottom: clamp(3rem, 6vw, 5rem);
+    border-top: 1px solid var(--jb-hair);
+    border-bottom: 1px solid var(--jb-hair);
   }
 
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .stats-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .stats-head-meta {
+    font-size: 11px;
+    color: var(--jb-fg-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--jb-hair);
+    border: 1px solid var(--jb-hair);
+    margin: clamp(2rem, 4vw, 3rem) 0;
+  }
+  @media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .stat-block {
+    background: var(--jb-ink);
+    padding: clamp(1.75rem, 4vw, 3rem) clamp(1rem, 2vw, 1.5rem);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    min-height: 180px;
+    justify-content: center;
+    transition: background var(--transition-base);
+  }
+  .stat-block:hover { background: var(--jb-ink-2); }
+
+  .stat-value {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(3rem, 8vw, 6rem);
+    letter-spacing: -0.05em;
+    line-height: 0.85;
+    word-break: break-word;
+  }
+
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--jb-fg-muted);
+    line-height: 1.3;
+  }
+
+  .stats-signature {
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 0.28em;
   }
 </style>

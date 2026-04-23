@@ -1,6 +1,6 @@
 ---
 interface Props {
-  variant?: 'primary' | 'secondary' | 'outline' | 'white' | 'ghost'
+  variant?: 'primary' | 'fire' | 'secondary' | 'outline' | 'ghost'
   size?: 'sm' | 'md' | 'lg'
   class?: string
   type?: 'button' | 'submit' | 'reset'
@@ -19,40 +19,43 @@ const {
   ...props
 } = Astro.props
 
-const baseStyles = 'inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 hover:scale-105'
+// Terminal Growth — brutalist buttons.
+// primary  = acid bg + fire shadow (CTA principal)
+// fire     = fire bg + acid shadow (CTA alto-impacto)
+// secondary= outline cream, hover acid
+// outline  = hair border, hover bg rgba cream
+// ghost    = text only, underline acid on hover
+const baseStyles =
+  'inline-flex items-center justify-center gap-2 font-display uppercase tracking-[0.08em] font-black rounded-none transition-all duration-[var(--jb-dur)] focus:outline-none focus:ring-2 focus:ring-[color:var(--jb-acid)] focus:ring-offset-2 focus:ring-offset-[color:var(--jb-ink)] disabled:opacity-50 disabled:cursor-not-allowed'
 
 const variants = {
-  primary: 'bg-lime hover:bg-lime/90 text-dark shadow-lg shadow-lime/20 focus:ring-lime font-bold',
-  secondary: 'bg-dark hover:bg-dark/80 text-white border-2 border-white focus:ring-white shadow-lg',
-  outline: 'border-2 border-white text-white hover:bg-white/10 focus:ring-white',
-  white: 'bg-white text-dark hover:bg-gray-100 focus:ring-white shadow-lg',
-  ghost: 'text-gray-600 hover:bg-gray-100 hover:text-gray-900',
+  primary:
+    'bg-[color:var(--jb-acid)] text-[color:var(--jb-ink)] shadow-[4px_4px_0_var(--jb-fire)] hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[6px_6px_0_var(--jb-fire)] active:translate-x-0 active:translate-y-0 active:shadow-[2px_2px_0_var(--jb-fire)]',
+  fire:
+    'bg-[color:var(--jb-fire)] text-[color:var(--jb-ink)] shadow-[4px_4px_0_var(--jb-acid)] hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[6px_6px_0_var(--jb-acid)] active:translate-x-0 active:translate-y-0 active:shadow-[2px_2px_0_var(--jb-acid)]',
+  secondary:
+    'bg-transparent text-[color:var(--jb-cream)] border border-[color:var(--jb-cream)] hover:bg-[color:var(--jb-cream)]/6 hover:border-[color:var(--jb-acid)] hover:text-[color:var(--jb-acid)]',
+  outline:
+    'bg-transparent text-[color:var(--jb-cream)] border border-[color:var(--jb-hair-strong)] hover:border-[color:var(--jb-cream)]',
+  ghost:
+    'bg-transparent text-[color:var(--jb-cream)] hover:text-[color:var(--jb-acid)] hover:underline underline-offset-4',
 }
 
 const sizes = {
-  sm: 'min-h-9 py-2 px-4 text-sm',
-  md: 'min-h-11 py-2.5 px-6 text-base',
-  lg: 'min-h-14 py-3.5 px-8 text-lg',
+  sm: 'min-h-9 py-2 px-4 text-xs',
+  md: 'min-h-11 py-3 px-7 text-sm',
+  lg: 'min-h-14 py-4 px-9 text-base',
 }
 
 const classes = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`.trim()
 ---
 
 {href ? (
-  <a
-    href={href}
-    class={classes}
-    {...props}
-  >
+  <a href={href} class={classes} {...props}>
     <slot />
   </a>
 ) : (
-  <button
-    type={type}
-    class={classes}
-    disabled={disabled}
-    {...props}
-  >
+  <button type={type} class={classes} disabled={disabled} {...props}>
     <slot />
   </button>
 )}

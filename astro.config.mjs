@@ -10,6 +10,10 @@ export default defineConfig({
   adapter: node({
     mode: 'standalone',
   }),
+  redirects: {
+    '/services': '/vendas-sem-segredos',
+    '/agendar-services': '/advisory',
+  },
   image: {
     service: passthroughImageService(),
     remotePatterns: [{ protocol: 'https' }],
@@ -66,7 +70,6 @@ export default defineConfig({
           '/diagnostico-resultado',
           '/diagnostico-obrigado',
           '/agendamento-sessao',
-          '/agendar-services',
           '/vss-aguardando-pagamento',
           '/vss-analise-credito',
           '/vss-compra-aprovada',
@@ -80,7 +83,6 @@ export default defineConfig({
         const priorities = {
           '/': 1.0,
           '/vendas-sem-segredos/': 0.9,
-          '/services/': 0.9,
           '/advisory/': 0.9,
           '/sobre/': 0.8,
           '/cases/': 0.8,

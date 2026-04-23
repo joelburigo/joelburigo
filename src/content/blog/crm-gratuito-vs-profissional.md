@@ -449,7 +449,7 @@ CRM gratuito é ótimo para começar. Funciona nos primeiros R$ 20k/mês.
 
 Mas se você quer escalar para R$ 50k, R$ 100k, R$ 200k/mês, **você precisa de ferramenta profissional.**
 
-A boa notícia: CRM profissional se paga sozinho. ROI típico de 15-40x no primeiro ano. Se você quer implementação guiada do processo + CRM, veja [Implementation Services](/services).
+A boa notícia: CRM profissional se paga sozinho. ROI típico de 15-40x no primeiro ano. Se você quer método guiado pra implementar processo + CRM com autonomia, veja [Vendas Sem Segredos](/vendas-sem-segredos) — já vem com Growth CRM incluso por 12 meses.
 
 A matemática é simples:
 - CRM profissional: R$ 300-500/mês

@@ -1,112 +1,121 @@
 ---
-import Container from '../../ui/Container.astro'
-import { Icon } from 'astro-icon/components'
+// Slide 3 · SOLUÇÃO — Apresentação dos 6Ps como framework
+import SlideShell from '../SlideShell.astro'
 ---
 
-<div class="h-screen bg-dark py-8 flex items-center overflow-y-auto">
-  <Container>
-    <div class="text-center mb-8">
-      <div class="mb-3 inline-block rounded-full bg-lime/10 px-6 py-2 border border-lime/30">
-        <span class="font-display text-sm font-bold uppercase tracking-widest text-lime">A Solução</span>
-      </div>
-      <h2 class="font-display text-5xl md:text-6xl font-bold text-white mb-4">
-        Sistema de Vendas <span class="text-lime">Escaláveis</span>
-      </h2>
-      <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-        Uma metodologia sequencial em <strong class="text-white">6 pilares estruturais</strong>
-      </p>
+<SlideShell
+  variant="default"
+  sbLeft="FRAMEWORK · 6PS DAS VENDAS ESCALÁVEIS"
+  sbRight="// ▶ SOLUÇÃO"
+  navLeft="★ TESTADO EM 140+ CLIENTES · ~R$ 1 BILHÃO"
+  navRight="04 / 19 · → PRÓXIMO"
+>
+  <div class="sol-wrap">
+    <div class="sol-kicker">// METODOLOGIA PROPRIETÁRIA</div>
+    <h1 class="sol-h1">
+      <span class="stroke-text">6PS</span><br />
+      <span class="fire">DAS VENDAS</span><br />
+      <span class="acid">ESCALÁVEIS</span>
+    </h1>
+    <p class="sol-sub">
+      Marketing + Vendas + Growth integrados em <b>sistema replicável</b>.<br />
+      Cada P nasceu de cicatriz real — erro ou acerto, nunca teoria.
+    </p>
+
+    <div class="sol-pills">
+      <div class="pill"><b>P1</b> Posicionamento</div>
+      <div class="pill"><b>P2</b> Público</div>
+      <div class="pill"><b>P3</b> Produto</div>
+      <div class="pill pill-op"><b>P4</b> Programas</div>
+      <div class="pill pill-op"><b>P5</b> Processos</div>
+      <div class="pill pill-op"><b>P6</b> Pessoas</div>
     </div>
 
-    <!-- Framework Visual Simplificado -->
-    <div class="max-w-6xl mx-auto">
-      
-      <!-- Fundação -->
-      <div class="mb-6">
-        <div class="mb-4 flex items-center gap-3">
-          <div class="rounded-full bg-lime/20 px-4 py-1 border border-lime/30">
-            <span class="text-sm font-bold text-lime">FUNDAÇÃO</span>
-          </div>
-          <div class="h-px grow bg-linear-to-r from-lime/50 to-transparent"></div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="rounded-xl border-2 border-lime/30 bg-lime/5 p-6 text-center">
-            <div class="mb-3 text-4xl font-bold text-lime">P1</div>
-            <h3 class="text-xl font-bold text-white mb-2">Posicionamento</h3>
-            <p class="text-sm text-gray-400">Por que você existe?</p>
-          </div>
-          <div class="rounded-xl border-2 border-lime/30 bg-lime/5 p-6 text-center">
-            <div class="mb-3 text-4xl font-bold text-lime">P2</div>
-            <h3 class="text-xl font-bold text-white mb-2">Público</h3>
-            <p class="text-sm text-gray-400">Para quem você vende?</p>
-          </div>
-          <div class="rounded-xl border-2 border-lime/30 bg-lime/5 p-6 text-center">
-            <div class="mb-3 text-4xl font-bold text-lime">P3</div>
-            <h3 class="text-xl font-bold text-white mb-2">Produto</h3>
-            <p class="text-sm text-gray-400">O que você oferece?</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Operação -->
-      <div class="mb-6">
-        <div class="mb-4 flex items-center gap-3">
-          <div class="rounded-full bg-blue-900/40 px-4 py-1 border border-blue-500/30">
-            <span class="text-sm font-bold text-blue-400">OPERAÇÃO</span>
-          </div>
-          <div class="h-px grow bg-linear-to-r from-blue-500/50 to-transparent"></div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="rounded-xl border-2 border-blue-500/30 bg-blue-500/5 p-6 text-center">
-            <div class="mb-3 text-4xl font-bold text-blue-400">P4</div>
-            <h3 class="text-xl font-bold text-white mb-2">Programas</h3>
-            <p class="text-sm text-gray-400">Como você vende?</p>
-          </div>
-          <div class="rounded-xl border-2 border-blue-500/30 bg-blue-500/5 p-6 text-center">
-            <div class="mb-3 text-4xl font-bold text-blue-400">P5</div>
-            <h3 class="text-xl font-bold text-white mb-2">Processos</h3>
-            <p class="text-sm text-gray-400">Como você opera?</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Escala -->
-      <div>
-        <div class="mb-4 flex items-center gap-3">
-          <div class="rounded-full bg-purple-900/40 px-4 py-1 border border-purple-500/30">
-            <span class="text-sm font-bold text-purple-400">ESCALA</span>
-          </div>
-          <div class="h-px grow bg-linear-to-r from-purple-500/50 to-transparent"></div>
-        </div>
-        <div class="grid grid-cols-1 gap-6">
-          <div class="rounded-xl border-2 border-purple-500/30 bg-purple-500/5 p-6 text-center">
-            <div class="mb-3 text-4xl font-bold text-purple-400">P6</div>
-            <h3 class="text-xl font-bold text-white mb-2">Pessoas</h3>
-            <p class="text-sm text-gray-400">Quem executa?</p>
-          </div>
-        </div>
-      </div>
-
+    <div class="sol-legend">
+      <span class="lg lg-fd">▲ P1-P3 · FUNDAÇÃO</span>
+      <span class="lg lg-op">▼ P4-P6 · OPERAÇÃO &amp; ESCALA</span>
     </div>
+  </div>
+</SlideShell>
 
-    <!-- Fluxo -->
-    <div class="mt-8 max-w-4xl mx-auto">
-      <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
-        <p class="text-center text-gray-400 mb-4">A sequência importa:</p>
-        <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-white font-semibold">
-          <span class="text-lime">P1</span>
-          <Icon name="lucide:arrow-right" class="h-5 w-5 text-gray-600 rotate-90 md:rotate-0" />
-          <span class="text-lime">P2</span>
-          <Icon name="lucide:arrow-right" class="h-5 w-5 text-gray-600 rotate-90 md:rotate-0" />
-          <span class="text-lime">P3</span>
-          <Icon name="lucide:arrow-right" class="h-5 w-5 text-gray-600 rotate-90 md:rotate-0" />
-          <span class="text-blue-400">P4</span>
-          <Icon name="lucide:arrow-right" class="h-5 w-5 text-gray-600 rotate-90 md:rotate-0" />
-          <span class="text-blue-400">P5</span>
-          <Icon name="lucide:arrow-right" class="h-5 w-5 text-gray-600 rotate-90 md:rotate-0" />
-          <span class="text-purple-400">P6</span>
-        </div>
-      </div>
-    </div>
+<style>
+  .sol-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .sol-kicker {
+    font-family: var(--font-mono);
+    font-size: clamp(12px, 1vw, 18px);
+    letter-spacing: 0.32em;
+    color: var(--jb-acid);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .sol-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(52px, 9vw, 170px);
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: var(--jb-cream);
+    margin: 0;
+  }
+  .sol-h1 .fire { color: var(--jb-fire); }
+  .sol-h1 .acid { color: var(--jb-acid); }
+  .sol-sub {
+    margin-top: 32px;
+    font-size: clamp(14px, 1.4vw, 24px);
+    line-height: 1.5;
+    color: var(--jb-fg-3);
+    max-width: 900px;
+  }
+  .sol-sub b { color: var(--jb-cream); }
 
-  </Container>
-</div>
+  .sol-pills {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+  }
+  .pill {
+    background: var(--jb-ink-2);
+    border: 1px solid var(--jb-acid-border);
+    padding: 16px 18px;
+    font-family: var(--font-display);
+    font-size: clamp(12px, 1vw, 18px);
+    text-transform: uppercase;
+    color: var(--jb-cream);
+    letter-spacing: -0.01em;
+  }
+  .pill b {
+    color: var(--jb-acid);
+    font-family: var(--font-display);
+    margin-right: 10px;
+  }
+  .pill-op { border-color: var(--jb-fire-border); }
+  .pill-op b { color: var(--jb-fire); }
+
+  .sol-legend {
+    margin-top: 24px;
+    display: flex;
+    gap: 32px;
+    font-family: var(--font-mono);
+    font-size: clamp(10px, 0.8vw, 13px);
+    letter-spacing: 0.28em;
+    color: var(--jb-fg-muted);
+    text-transform: uppercase;
+  }
+  .lg-fd { color: var(--jb-acid); }
+  .lg-op { color: var(--jb-fire); }
+
+  @media (max-width: 1024px) {
+    .sol-pills { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .sol-pills { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

@@ -1,87 +1,61 @@
 ---
-import Container from '../../ui/Container.astro'
-import { Icon } from 'astro-icon/components'
+// Slide 1 · PROBLEMA — Stat gigante fire (60% MPEs fecham em 5 anos)
+import SlideShell from '../SlideShell.astro'
 ---
 
-<div class="h-screen bg-dark py-8 flex items-center overflow-y-auto">
-  <Container>
-    <div class="text-center mb-16">
-      <h2 class="font-display text-6xl md:text-7xl font-bold text-white mb-8">
-        Suas Vendas Estão <span class="text-gray-400">Quebradas</span>
-      </h2>
-      <p class="text-2xl text-gray-400 max-w-3xl mx-auto">
-        E você sabe disso. Vê todo dia.
-      </p>
+<SlideShell
+  variant="fire"
+  sbLeft="DADO · SEBRAE 2024"
+  sbRight="// ▲ MERCADO"
+  navLeft="★ FONTE: SEBRAE · ANUÁRIO 2024"
+  navRight="02 / 19 · → PRÓXIMO"
+  navAcid={false}
+>
+  <div class="prob-wrap">
+    <div class="prob-mega">60%</div>
+    <div class="prob-sub">
+      Das MPEs fecham em até 5 anos.<br />
+      A maioria não quebra por falta de mercado — quebra por falta de sistema.
     </div>
+    <p class="prob-assin">
+      ★ IMPROVISO MATA MAIS EMPRESA QUE CRISE
+    </p>
+  </div>
+</SlideShell>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-      
-      <!-- Problema 1 -->
-      <div class="relative overflow-hidden rounded-2xl border-2 border-gray-700/50 bg-gray-900/50 p-8 backdrop-blur-sm">
-        <div class="absolute -right-8 -top-8 text-9xl opacity-5">📉</div>
-        <div class="relative">
-          <div class="mb-4 inline-flex items-center justify-center rounded-full bg-gray-800/50 p-4">
-            <Icon name="lucide:trending-down" class="h-8 w-8 text-gray-400" />
-          </div>
-          <h3 class="mb-3 text-2xl font-bold text-white">Montanha-Russa</h3>
-          <p class="text-gray-300 leading-relaxed">
-            Mês bom, mês ruim. Vendas inconsistentes que não te deixam dormir. 
-            Você nunca sabe se vai bater a meta ou quebrar.
-          </p>
-        </div>
-      </div>
-
-      <!-- Problema 2 -->
-      <div class="relative overflow-hidden rounded-2xl border-2 border-lime/30 bg-lime/5 p-8 backdrop-blur-sm">
-        <div class="absolute -right-8 -top-8 text-9xl opacity-5">🔗</div>
-        <div class="relative">
-          <div class="mb-4 inline-flex items-center justify-center rounded-full bg-lime/20 p-4">
-            <Icon name="lucide:user-x" class="h-8 w-8 text-lime" />
-          </div>
-          <h3 class="mb-3 text-2xl font-bold text-white">Você é o Gargalo</h3>
-          <p class="text-gray-300 leading-relaxed">
-            Nada funciona sem você. Precisa aprovar tudo, fazer tudo. 
-            Férias? Impossível. A empresa para quando você para.
-          </p>
-        </div>
-      </div>
-
-      <!-- Problema 3 -->
-      <div class="relative overflow-hidden rounded-2xl border-2 border-blue-500/30 bg-blue-500/5 p-8 backdrop-blur-sm">
-        <div class="absolute -right-8 -top-8 text-9xl opacity-5">🎲</div>
-        <div class="relative">
-          <div class="mb-4 inline-flex items-center justify-center rounded-full bg-blue-500/20 p-4">
-            <Icon name="lucide:shuffle" class="h-8 w-8 text-blue-500" />
-          </div>
-          <h3 class="mb-3 text-2xl font-bold text-white">Cada Um Vende Diferente</h3>
-          <p class="text-gray-300 leading-relaxed">
-            Não tem padrão. Um vendedor faz de um jeito, outro de outro. 
-            É loteria se vai fechar ou não.
-          </p>
-        </div>
-      </div>
-
-      <!-- Problema 4 -->
-      <div class="relative overflow-hidden rounded-2xl border-2 border-purple-500/30 bg-purple-500/5 p-8 backdrop-blur-sm">
-        <div class="absolute -right-8 -top-8 text-9xl opacity-5">💸</div>
-        <div class="relative">
-          <div class="mb-4 inline-flex items-center justify-center rounded-full bg-purple-500/20 p-4">
-            <Icon name="lucide:alert-circle" class="h-8 w-8 text-purple-500" />
-          </div>
-          <h3 class="mb-3 text-2xl font-bold text-white">Cliente Errado</h3>
-          <p class="text-gray-300 leading-relaxed">
-            Muito esforço pra vender, pouco retorno. Cliente que pede desconto, 
-            atrasa, reclama. Você trabalha muito mas lucra pouco.
-          </p>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="mt-16 text-center">
-      <p class="text-xl text-gray-400">
-        Reconheceu algum? <span class="text-white font-bold">Não é sua culpa.</span>
-      </p>
-    </div>
-  </Container>
-</div>
+<style>
+  .prob-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    color: var(--jb-ink);
+  }
+  .prob-mega {
+    font-family: var(--font-display);
+    font-size: clamp(160px, 28vw, 500px);
+    line-height: 0.85;
+    letter-spacing: -0.07em;
+    color: var(--jb-ink);
+  }
+  .prob-sub {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 3vw, 50px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: var(--jb-ink);
+    max-width: 1400px;
+    margin-top: 16px;
+  }
+  .prob-assin {
+    margin-top: 32px;
+    font-family: var(--font-mono);
+    font-size: clamp(12px, 1.2vw, 18px);
+    letter-spacing: 0.28em;
+    color: var(--jb-ink);
+    font-weight: 700;
+  }
+</style>

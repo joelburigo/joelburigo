@@ -456,7 +456,7 @@ Foque em melhorar 1 métrica por vez.
 
 As 7 métricas que te mostrei são as mesmas que uso em todos os clientes que estruturei ao longo de 17 anos. Funcionam porque são simples, acionáveis e focadas em RESULTADO.
 
-Comece hoje. Não precisa de ferramenta cara. Precisa de disciplina de olhar os números toda semana. Se você ainda está estruturando do zero, veja [como estruturar vendas do zero](/blog/como-estruturar-vendas-do-zero). Para implementação guiada, veja [Implementation Services](/services).
+Comece hoje. Não precisa de ferramenta cara. Precisa de disciplina de olhar os números toda semana. Se você ainda está estruturando do zero, veja [como estruturar vendas do zero](/blog/como-estruturar-vendas-do-zero). Para implementar o sistema completo com autonomia, veja [Vendas Sem Segredos](/vendas-sem-segredos).
 
 **O ritual que funciona:**
 - Segunda: Olhe as métricas da semana anterior

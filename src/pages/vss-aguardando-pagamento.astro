@@ -1,139 +1,118 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import Header from '../components/layout/Header.astro'
+import Footer from '../components/layout/Footer.astro'
 import Container from '../components/ui/Container.astro'
-import Button from '../components/ui/Button.astro'
-import Icons from '../components/ui/Icons.astro'
 import { contactInfo, getWhatsAppLink } from '../data/contact'
 ---
 
 <Layout
-  title="Aguardando Pagamento - Vendas Sem Segredos | Joel Burigo"
-  description="Estamos aguardando a confirmação do seu pagamento. Você receberá acesso assim que for confirmado."
+  title="Aguardando pagamento — VSS | Joel Burigo"
+  description="Pedido registrado. Aguardando confirmação do pagamento."
   noIndex={true}
 >
-  <main class="min-h-screen bg-dark py-12 md:py-20">
-    <Container>
-      <div class="mx-auto max-w-3xl">
-        <!-- Ícone de Aguardando -->
-        <div class="mb-8 flex justify-center">
-          <div class="flex h-24 w-24 items-center justify-center rounded-full bg-lime/20 ring-8 ring-lime/10">
-            <Icons name="clock" class="h-12 w-12 text-lime animate-pulse" />
-          </div>
-        </div>
+  <Header />
 
-        <!-- Título -->
-        <div class="mb-12 text-center">
-          <h1 class="mb-4 font-display text-4xl font-bold text-white md:text-5xl">
-            ⏳ Aguardando Confirmação do Pagamento
+  <main class="relative overflow-hidden bg-ink pt-20">
+    <div class="grid-overlay"></div>
+
+    <Container class="relative z-10">
+      <section class="py-16 md:py-24">
+        <div class="mx-auto max-w-4xl">
+          <!-- Kicker -->
+          <div class="kicker mb-6" style="color: var(--jb-fire);">// VSS · STATUS: PENDING · AGUARDANDO_PAGAMENTO</div>
+
+          <h1 class="status-display">
+            <span class="stroke-text">PEDIDO</span>
+            <span class="block">REGISTRADO.</span>
           </h1>
-          <p class="font-sans text-body-lg text-gray-200">
-            Seu pedido foi registrado com sucesso!
+
+          <p class="mt-8 max-w-2xl font-sans text-lg text-[color:var(--jb-cream)]">
+            Assim que o pagamento for confirmado, você recebe acesso por email em até 5 minutos.
           </p>
-        </div>
 
-        <!-- Card Principal -->
-        <div class="mb-8 rounded-2xl border-2 border-lime/30 bg-white/5 p-8 backdrop-blur-sm md:p-12">
-          <div class="mb-8 space-y-6">
-            <div class="rounded-xl border border-lime/20 bg-lime/10 p-6">
-              <h2 class="mb-2 font-display text-xl font-bold text-white">📌 Status: Aguardando Pagamento</h2>
-              <p class="font-sans text-body text-gray-200">
-                Assim que o pagamento for confirmado, você receberá um e-mail com as instruções de acesso.
-              </p>
+          <!-- Status terminal -->
+          <div class="mt-10 border border-[color:var(--jb-hair)] bg-[color:var(--jb-ink-2)] p-6 font-mono text-[13px] leading-[1.8] text-[color:var(--jb-cream)]">
+            <div><span class="text-acid">$</span> waiting_for_payment.exe</div>
+            <div class="text-[color:var(--jb-fg-muted)]">&gt; monitoring payment gateway...</div>
+            <div><span class="text-fire">●</span> PIX · confirmação &lt; 5min</div>
+            <div><span class="text-fire">●</span> BOLETO · 1 a 3 dias úteis</div>
+            <div><span class="text-acid">▶</span> EMAIL · enviado na confirmação</div>
+          </div>
+
+          <!-- Métodos -->
+          <div class="mt-10 grid gap-6 md:grid-cols-3">
+            <div class="card">
+              <div class="kicker mb-3">// PIX</div>
+              <h3 class="heading-4 mb-2 text-[color:var(--jb-cream)]">Instantâneo</h3>
+              <p class="font-sans text-[color:var(--jb-fg-2)]">Acesso liberado em até 5 minutos após confirmação.</p>
             </div>
-
-            <h3 class="font-display text-2xl font-bold text-white">O que acontece agora?</h3>
-            
-            <div class="space-y-6">
-              <div class="flex items-start gap-4">
-                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-lime/20">
-                  <Icons name="credit-card" class="h-5 w-5 text-lime" />
-                </div>
-                <div>
-                  <h4 class="mb-2 font-display text-lg font-semibold text-white">PIX</h4>
-                  <p class="font-sans text-body text-gray-200">
-                    Confirmação <span class="font-bold text-lime">instantânea</span>. Você receberá acesso em até 5 minutos após o pagamento.
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4">
-                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-lime/20">
-                  <Icons name="file-text" class="h-5 w-5 text-lime" />
-                </div>
-                <div>
-                  <h4 class="mb-2 font-display text-lg font-semibold text-white">Boleto Bancário</h4>
-                  <p class="font-sans text-body text-gray-200">
-                    Confirmação em <span class="font-bold text-lime">1 a 3 dias úteis</span> após o pagamento. Você receberá acesso assim que o banco confirmar.
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4">
-                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-lime/20">
-                  <Icons name="mail" class="h-5 w-5 text-lime" />
-                </div>
-                <div>
-                  <h4 class="mb-2 font-display text-lg font-semibold text-white">E-mail de Confirmação</h4>
-                  <p class="font-sans text-body text-gray-200">
-                    Verifique sua caixa de entrada (e spam) pelo e-mail com o assunto "Acesso ao Vendas Sem Segredos".
-                  </p>
-                </div>
-              </div>
+            <div class="card">
+              <div class="kicker mb-3">// BOLETO</div>
+              <h3 class="heading-4 mb-2 text-[color:var(--jb-cream)]">1-3 dias úteis</h3>
+              <p class="font-sans text-[color:var(--jb-fg-2)]">Acesso liberado quando o banco confirmar o pagamento.</p>
             </div>
+            <div class="card">
+              <div class="kicker mb-3">// EMAIL</div>
+              <h3 class="heading-4 mb-2 text-[color:var(--jb-cream)]">Confirmação</h3>
+              <p class="font-sans text-[color:var(--jb-fg-2)]">Assunto: "Acesso ao Vendas Sem Segredos". Olha também o spam.</p>
+            </div>
+          </div>
+
+          <!-- FAQ curto -->
+          <div class="mt-12 border-t border-[color:var(--jb-hair)] pt-8">
+            <div class="kicker mb-6">// PERGUNTAS · FREQUENTES</div>
+            <dl class="space-y-5">
+              <div>
+                <dt class="font-sans font-bold text-[color:var(--jb-cream)]">Não recebi código PIX ou boleto</dt>
+                <dd class="mt-1 font-sans text-[color:var(--jb-fg-2)]">Olha a pasta de spam. Se não chegar, manda mensagem no WhatsApp abaixo.</dd>
+              </div>
+              <div>
+                <dt class="font-sans font-bold text-[color:var(--jb-cream)]">Paguei e ainda não recebi acesso</dt>
+                <dd class="mt-1 font-sans text-[color:var(--jb-fg-2)]">PIX até 5 min. Boleto até 3 dias úteis. Se passar, fala com a gente.</dd>
+              </div>
+              <div>
+                <dt class="font-sans font-bold text-[color:var(--jb-cream)]">Posso cancelar?</dt>
+                <dd class="mt-1 font-sans text-[color:var(--jb-fg-2)]">Pode. Garantia de 15 dias incondicional — devolve 100% sem perguntas.</dd>
+              </div>
+            </dl>
           </div>
 
           <!-- CTAs -->
-          <div class="flex flex-col gap-4 sm:flex-row">
-            <a href={getWhatsAppLink('Olá! Fiz uma compra do Vendas Sem Segredos e gostaria de confirmar o status do meu pagamento.')} target="_blank" rel="noopener noreferrer" class="flex-1">
-              <Button variant="primary" size="lg" class="w-full">
-                Falar com Suporte
-              </Button>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a
+              href={getWhatsAppLink('Olá! Fiz uma compra do Vendas Sem Segredos e gostaria de confirmar o status do pagamento.')}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary min-h-[48px]"
+            >
+              <span>Falar com suporte</span>
+              <span aria-hidden="true">→</span>
             </a>
-            <a href="/vendas-sem-segredos" class="flex-1">
-              <Button variant="outline" size="lg" class="w-full border-lime text-lime hover:bg-lime hover:text-dark">
-                Ver Detalhes do Programa
-              </Button>
-            </a>
+            <a href="/vendas-sem-segredos" class="btn-secondary min-h-[48px]">Ver detalhes do VSS</a>
+          </div>
+
+          <!-- Rodapé contato -->
+          <div class="mt-12 border-t border-[color:var(--jb-hair)] pt-6 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">
+            WHATSAPP: {contactInfo.phone.display} &nbsp;·&nbsp; EMAIL: {contactInfo.email.main}
           </div>
         </div>
-
-        <!-- Dúvidas -->
-        <div class="mb-8 rounded-xl border border-white/10 bg-white/5 p-6">
-          <h3 class="mb-4 font-display text-lg font-semibold text-white">❓ Dúvidas Frequentes</h3>
-          <div class="space-y-4 font-sans text-body-sm text-gray-200">
-            <div>
-              <p class="mb-1 font-semibold text-white">Não recebi o código PIX/boleto</p>
-              <p>Verifique sua caixa de spam ou entre em contato conosco via WhatsApp.</p>
-            </div>
-            <div>
-              <p class="mb-1 font-semibold text-white">Já paguei, mas não recebi acesso</p>
-              <p>PIX: aguarde até 5 minutos. Boleto: até 3 dias úteis. Se passar disso, fale conosco.</p>
-            </div>
-            <div>
-              <p class="mb-1 font-semibold text-white">Posso cancelar?</p>
-              <p>Sim! Mesmo após o pagamento você tem 15 dias de garantia para pedir reembolso.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Suporte -->
-        <div class="rounded-xl border border-lime/20 bg-lime/5 p-6 text-center">
-          <p class="mb-4 font-display text-lg font-semibold text-white">
-            Precisa de ajuda? Estamos aqui!
-          </p>
-          <p class="font-sans text-body text-gray-200">
-            WhatsApp: <a href={getWhatsAppLink('')} class="font-bold text-lime hover:underline" target="_blank" rel="noopener noreferrer">{contactInfo.phone.display}</a><br/>
-            E-mail: <a href={contactInfo.email.mailto} class="font-bold text-lime hover:underline">{contactInfo.email.main}</a>
-          </p>
-        </div>
-
-        <!-- Volta para Home -->
-        <div class="mt-8 text-center">
-          <a href="/" class="inline-flex items-center gap-2 font-sans text-body text-gray-400 transition-colors hover:text-lime">
-            ← Voltar para o site
-          </a>
-        </div>
-      </div>
+      </section>
     </Container>
   </main>
+
+  <Footer />
 </Layout>
+
+<style>
+  .status-display {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.045em;
+    line-height: 0.92;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    color: var(--jb-cream);
+    margin: 0;
+  }
+</style>

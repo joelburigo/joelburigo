@@ -1,141 +1,155 @@
 ---
-import Container from '../../ui/Container.astro'
-import { Icon } from 'astro-icon/components'
+// Slide 8 · DESCOBERTA — Diagnóstico dos 6Ps (antes vs depois)
+import SlideShell from '../SlideShell.astro'
 ---
 
-<div class="h-screen bg-dark flex items-center justify-center overflow-hidden">
-  <Container>
-    <div class="max-w-5xl mx-auto">
-      
-      <div class="text-center mb-8">
-        <div class="mb-4 inline-block rounded-full bg-lime/20 px-6 py-2 border border-lime/30">
-          <span class="font-display text-sm font-bold uppercase tracking-widest text-lime">Vamos Conversar</span>
-        </div>
-        <h2 class="font-display text-5xl font-bold text-white mb-4">
-          Conte-me Sobre <span class="text-lime">Sua Situação</span>
-        </h2>
-        <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-          Para recomendar o melhor caminho, preciso entender onde você está agora
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-        
-        <!-- Perguntas Lado Esquerdo -->
-        <div class="space-y-4">
-          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
-            <div class="flex items-start gap-3">
-              <div class="shrink-0 w-7 h-7 rounded-full bg-lime/20 border border-lime flex items-center justify-center">
-                <span class="text-lime text-xs font-bold">1</span>
-              </div>
-              <div>
-                <h3 class="text-white font-semibold text-sm mb-1">Qual dor você mais sente todos os dias?</h3>
-                <p class="text-xs text-gray-400">Vendas inconsistentes? Você é o gargalo? Sem padrão? Cliente ruim?</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
-            <div class="flex items-start gap-3">
-              <div class="shrink-0 w-7 h-7 rounded-full bg-lime/20 border border-lime flex items-center justify-center">
-                <span class="text-lime text-xs font-bold">2</span>
-              </div>
-              <div>
-                <h3 class="text-white font-semibold text-sm mb-1">Se continuar assim por mais 1 ano, o que acontece?</h3>
-                <p class="text-xs text-gray-400">Com a empresa? Com sua saúde mental? Com sua família?</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
-            <div class="flex items-start gap-3">
-              <div class="shrink-0 w-7 h-7 rounded-full bg-lime/20 border border-lime flex items-center justify-center">
-                <span class="text-lime text-xs font-bold">3</span>
-              </div>
-              <div>
-                <h3 class="text-white font-semibold text-sm mb-1">Quanto fatura hoje? Quanto quer em 12 meses?</h3>
-                <p class="text-xs text-gray-400">Se bater essa meta, o que muda na sua vida?</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
-            <div class="flex items-start gap-3">
-              <div class="shrink-0 w-7 h-7 rounded-full bg-lime/20 border border-lime flex items-center justify-center">
-                <span class="text-lime text-xs font-bold">4</span>
-              </div>
-              <div>
-                <h3 class="text-white font-semibold text-sm mb-1">De 0 a 10: quanto controla suas vendas hoje?</h3>
-                <p class="text-xs text-gray-400">Sabe exatamente CAC, LTV, conversão e previsibilidade?</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Perguntas Lado Direito -->
-        <div class="space-y-4">
-          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
-            <div class="flex items-start gap-3">
-              <div class="shrink-0 w-7 h-7 rounded-full bg-lime/20 border border-lime flex items-center justify-center">
-                <span class="text-lime text-xs font-bold">5</span>
-              </div>
-              <div>
-                <h3 class="text-white font-semibold text-sm mb-1">Consegue tirar férias sem a empresa parar?</h3>
-                <p class="text-xs text-gray-400">Tem time estruturado ou tudo depende de você?</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
-            <div class="flex items-start gap-3">
-              <div class="shrink-0 w-7 h-7 rounded-full bg-lime/20 border border-lime flex items-center justify-center">
-                <span class="text-lime text-xs font-bold">6</span>
-              </div>
-              <div>
-                <h3 class="text-white font-semibold text-sm mb-1">Quer acelerar esse processo ou vai no improviso?</h3>
-                <p class="text-xs text-gray-400">Quanto tempo está disposto a perder testando sozinho?</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
-            <div class="flex items-start gap-3">
-              <div class="shrink-0 w-7 h-7 rounded-full bg-lime/20 border border-lime flex items-center justify-center">
-                <span class="text-lime text-xs font-bold">7</span>
-              </div>
-              <div>
-                <h3 class="text-white font-semibold text-sm mb-1">Tem budget para investir em estrutura agora?</h3>
-                <p class="text-xs text-gray-400">R$2k, R$5k ou R$10k+/mês para resolver isso de vez?</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
-            <div class="flex items-start gap-3">
-              <div class="shrink-0 w-7 h-7 rounded-full bg-lime/20 border border-lime flex items-center justify-center">
-                <span class="text-lime text-xs font-bold">8</span>
-              </div>
-              <div>
-                <h3 class="text-white font-semibold text-sm mb-1">O que está faltando para você crescer?</h3>
-                <p class="text-xs text-gray-400">Conhecimento? Execução? Direcionamento estratégico?</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Bottom Message -->
-      <div class="text-center rounded-2xl bg-linear-to-r from-lime/10 to-lime/5 border-2 border-lime/30 p-6">
-        <Icon name="lucide:lightbulb" class="h-10 w-10 text-lime mx-auto mb-3" />
-        <p class="text-lg text-white font-semibold mb-2">
-          Não existe resposta certa ou errada
-        </p>
-        <p class="text-sm text-gray-400">
-          Seja honesto sobre sua situação atual. Isso me ajuda a recomendar o caminho mais adequado para você.
-        </p>
-      </div>
-
+<SlideShell
+  variant="default"
+  sbLeft="DIAGNÓSTICO · ONDE VOCÊ ESTÁ?"
+  sbRight="// ▶ DESCOBERTA"
+  navLeft="★ 90 DIAS VOCÊ ESTARÁ 90 DIAS MAIS PERTO DO SISTEMA. OU 90 MAIS LONGE."
+  navRight="09 / 19 · → DECIDIR"
+>
+  <div class="desc-wrap">
+    <div class="desc-head">
+      <div class="desc-kicker">// AUTOAVALIAÇÃO · 6PS</div>
+      <h2 class="desc-h2">
+        <span class="stroke-text">ONDE VOCÊ</span><br />
+        <span class="fire">ESTÁ AGORA?</span>
+      </h2>
     </div>
-  </Container>
-</div>
+
+    <div class="desc-compare">
+      <div class="desc-col desc-before">
+        <div class="desc-label">// CAÓTICO · IMPROVISO</div>
+        <ul>
+          <li>Faturamento imprevisível mês a mês</li>
+          <li>Marketing rodando sem sistema de conversão</li>
+          <li>Sem CRM ou CRM caro que ninguém usa</li>
+          <li>Processos na cabeça do fundador</li>
+          <li>Cada venda depende de quem atende</li>
+          <li>Improviso como método oficial</li>
+        </ul>
+      </div>
+
+      <div class="desc-arrow">→</div>
+
+      <div class="desc-col desc-after">
+        <div class="desc-label">// SISTÊMICO · PREVISÍVEL</div>
+        <ul>
+          <li>Faturamento previsível com range de referência</li>
+          <li>Máquina de Crescimento rodando integrada</li>
+          <li>Growth CRM com funis e automação</li>
+          <li>SOPs documentados e replicáveis</li>
+          <li>Time executa sem depender do dono</li>
+          <li>Sistema &gt; Improviso</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="desc-foot">
+      Se mais de <b>3 itens da esquerda</b> te descrevem hoje — tu tem um problema de <b>sistema</b>, não de mercado.
+    </p>
+  </div>
+</SlideShell>
+
+<style>
+  .desc-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    height: 100%;
+  }
+  .desc-kicker {
+    font-family: var(--font-mono);
+    font-size: clamp(12px, 1vw, 16px);
+    letter-spacing: 0.32em;
+    color: var(--jb-acid);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .desc-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(42px, 6vw, 100px);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--jb-cream);
+    margin: 0;
+  }
+  .desc-h2 .fire { color: var(--jb-fire); }
+
+  .desc-compare {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 32px;
+    align-items: stretch;
+  }
+  .desc-col {
+    background: var(--jb-ink-2);
+    border: 1px solid var(--jb-hair);
+    padding: 28px 28px 32px;
+  }
+  .desc-before { border-color: var(--jb-fire-border); }
+  .desc-after { border-color: var(--jb-acid-border); }
+  .desc-label {
+    font-family: var(--font-mono);
+    font-size: clamp(11px, 0.9vw, 14px);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .desc-before .desc-label { color: var(--jb-fire); }
+  .desc-after .desc-label { color: var(--jb-acid); }
+
+  .desc-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .desc-col li {
+    font-size: clamp(12px, 1vw, 17px);
+    line-height: 1.5;
+    color: var(--jb-fg-2);
+    padding-left: 22px;
+    position: relative;
+  }
+  .desc-before li::before {
+    content: '▼';
+    color: var(--jb-fire);
+    position: absolute;
+    left: 0;
+    font-size: 0.75em;
+  }
+  .desc-after li::before {
+    content: '▲';
+    color: var(--jb-acid);
+    position: absolute;
+    left: 0;
+    font-size: 0.75em;
+  }
+
+  .desc-arrow {
+    align-self: center;
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5vw, 88px);
+    color: var(--jb-cream);
+    line-height: 1;
+  }
+
+  .desc-foot {
+    font-size: clamp(13px, 1.1vw, 18px);
+    line-height: 1.5;
+    color: var(--jb-fg-3);
+  }
+  .desc-foot b { color: var(--jb-cream); }
+
+  @media (max-width: 1024px) {
+    .desc-compare { grid-template-columns: 1fr; }
+    .desc-arrow { transform: rotate(90deg); justify-self: center; }
+  }
+</style>

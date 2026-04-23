@@ -1,483 +1,167 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import Header from '../components/layout/Header.astro'
+import Footer from '../components/layout/Footer.astro'
+import Container from '../components/ui/Container.astro'
 
+// Design system canônico vive em docs/conteudo/brand/
+// Esta página é apenas um wayfinder pra referências externas.
+const seo = {
+  title: 'Design System | Joel Burigo',
+  description: 'Design system canônico do Joel Burigo — Terminal Growth v3.',
+  noIndex: true,
+}
+
+const references = [
+  {
+    label: '// BRAND · README',
+    title: 'Foundations + voice',
+    path: 'docs/conteudo/brand/README.md',
+    href: 'https://github.com/joelburigo/joelburigo-site/blob/main/docs/conteudo/brand/README.md',
+    external: true,
+  },
+  {
+    label: '// BRAND · ANTI_DRIFT',
+    title: 'Regras duras (palavras, provas, assinaturas)',
+    path: 'docs/conteudo/brand/ANTI_DRIFT.md',
+    href: 'https://github.com/joelburigo/joelburigo-site/blob/main/docs/conteudo/brand/ANTI_DRIFT.md',
+    external: true,
+  },
+  {
+    label: '// BRAND · MASTER.HTML',
+    title: 'Referência visual canônica',
+    path: 'docs/conteudo/brand/master.html',
+    href: 'https://github.com/joelburigo/joelburigo-site/blob/main/docs/conteudo/brand/master.html',
+    external: true,
+  },
+  {
+    label: '// STYLES · GLOBAL.CSS',
+    title: 'Tokens Terminal Growth em produção',
+    path: 'src/styles/global.css',
+    href: 'https://github.com/joelburigo/joelburigo-site/blob/main/src/styles/global.css',
+    external: true,
+  },
+]
 ---
 
-<Layout 
-  title="Design System - Joel Burigo" 
-  description="Sistema de design e componentes padronizados"
->
-  <div class="min-h-screen bg-dark py-24">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <!-- Header -->
-      <div class="mb-16 text-center">
-        <h1 class="font-display text-display-lg text-white mb-4">
-          Design System
-        </h1>
-        <p class="font-sans text-body-lg text-gray-200">
-          Sistema simplificado: 2 fontes, 4 tamanhos, 2 temas
-        </p>
-      </div>
+<Layout title={seo.title} description={seo.description} noIndex={seo.noIndex}>
+  <Header />
 
-      <!-- Typography -->
-      <section class="mb-24">
-        <h2 class="font-display text-h1 text-white mb-8 border-b border-white/10 pb-4">
-          📝 Tipografia
-        </h2>
-        
-        <div class="space-y-8">
-          <div class="rounded-xl border-2 border-white/10 bg-white/5 p-6">
-            <p class="text-sm text-gray-400 mb-2 font-mono">font-display text-[48px] md:text-[72px]</p>
-            <h1 class="font-display text-[48px] md:text-[72px] leading-tight text-white">
-              Display - Hero Principal
-            </h1>
-            <p class="mt-2 text-sm text-gray-400">Uso: Hero sections, primeira impressão</p>
+  <main class="relative overflow-hidden bg-ink pt-20">
+    <div class="grid-overlay"></div>
+
+    <Container class="relative z-10">
+      <section class="py-16 md:py-24">
+        <div class="mx-auto max-w-4xl">
+          <div class="kicker mb-6">// @joelburigo · TERMINAL GROWTH · EST. 2008</div>
+          <h1 class="ds-display">
+            Design <span class="text-acid">System.</span>
+          </h1>
+          <p class="mt-6 max-w-2xl font-sans text-lg text-[color:var(--jb-cream)]">
+            O design system canônico vive em <code class="font-mono text-acid">docs/conteudo/brand/</code>.
+            Esta página é apenas o wayfinder pras referências.
+          </p>
+
+          <!-- Paleta resumo -->
+          <div class="mt-12">
+            <div class="kicker mb-4">// PALETA · BICOLOR_DE_ACENTO</div>
+            <div class="grid gap-px border border-[color:var(--jb-hair)] bg-[color:var(--jb-hair)] md:grid-cols-5">
+              <div class="bg-[#050505] p-6 text-[color:var(--jb-cream)]">
+                <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-[color:var(--jb-fg-muted)]">INK</div>
+                <div class="font-display text-lg mt-2">#050505</div>
+              </div>
+              <div class="bg-[#0B0B0B] p-6 text-[color:var(--jb-cream)]">
+                <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-[color:var(--jb-fg-muted)]">INK-2</div>
+                <div class="font-display text-lg mt-2">#0B0B0B</div>
+              </div>
+              <div class="bg-[#F5F1E8] p-6 text-[#050505]">
+                <div class="font-mono text-[10px] uppercase tracking-[0.2em]">CREAM</div>
+                <div class="font-display text-lg mt-2">#F5F1E8</div>
+              </div>
+              <div class="bg-[#FF3B0F] p-6 text-[#050505]">
+                <div class="font-mono text-[10px] uppercase tracking-[0.2em]">FIRE</div>
+                <div class="font-display text-lg mt-2">#FF3B0F</div>
+              </div>
+              <div class="bg-[#C6FF00] p-6 text-[#050505]">
+                <div class="font-mono text-[10px] uppercase tracking-[0.2em]">ACID</div>
+                <div class="font-display text-lg mt-2">#C6FF00</div>
+              </div>
+            </div>
           </div>
-          
-          <div class="rounded-xl border-2 border-white/10 bg-white/5 p-6">
-            <p class="text-sm text-gray-400 mb-2 font-mono">font-display text-[36px] md:text-[48px]</p>
-            <h2 class="font-display text-[36px] md:text-[48px] leading-tight text-white">
-              H1 - Títulos de Seção
-            </h2>
-            <p class="mt-2 text-sm text-gray-400">Uso: Títulos principais de cada seção</p>
+
+          <!-- Tipografia resumo -->
+          <div class="mt-12">
+            <div class="kicker mb-4">// TIPOGRAFIA · 3_FAMÍLIAS</div>
+            <div class="space-y-4 border border-[color:var(--jb-hair)] bg-[color:var(--jb-ink-2)] p-6">
+              <div>
+                <div class="kicker mb-2">// DISPLAY · ARCHIVO_BLACK</div>
+                <div class="font-display text-4xl text-[color:var(--jb-cream)]">ABC 123 áéí</div>
+              </div>
+              <div class="border-t border-[color:var(--jb-hair)] pt-4">
+                <div class="kicker mb-2">// BODY · ARCHIVO_400-900</div>
+                <div class="font-sans text-lg text-[color:var(--jb-cream)]">The quick brown fox jumps over the lazy dog.</div>
+              </div>
+              <div class="border-t border-[color:var(--jb-hair)] pt-4">
+                <div class="kicker mb-2">// MONO · JETBRAINS_MONO</div>
+                <div class="font-mono text-base text-[color:var(--jb-acid)]">$ ./executar_diagnostico --6ps</div>
+              </div>
+            </div>
           </div>
-          
-          <div class="rounded-xl border-2 border-white/10 bg-white/5 p-6">
-            <p class="text-sm text-gray-400 mb-2 font-mono">font-display text-[24px] md:text-[32px]</p>
-            <h3 class="font-display text-[24px] md:text-[32px] leading-tight text-white">
-              H2 - Subtítulos e Cards
-            </h3>
-            <p class="mt-2 text-sm text-gray-400">Uso: Cards, boxes, subtítulos</p>
+
+          <!-- Referências -->
+          <div class="mt-12">
+            <div class="kicker mb-4">// REFERÊNCIAS · CANÔNICAS</div>
+            <div class="space-y-3">
+              {references.map((ref) => (
+                <a
+                  href={ref.href}
+                  target={ref.external ? '_blank' : undefined}
+                  rel={ref.external ? 'noopener noreferrer' : undefined}
+                  class="group block border border-[color:var(--jb-hair)] bg-[color:var(--jb-ink-2)] p-5 transition-all duration-[var(--jb-dur)] hover:border-[color:var(--jb-acid)] hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[6px_6px_0_var(--jb-acid)]"
+                >
+                  <div class="flex items-center justify-between gap-4">
+                    <div>
+                      <div class="kicker mb-1">{ref.label}</div>
+                      <div class="font-display text-[color:var(--jb-cream)]">{ref.title}</div>
+                      <code class="mt-1 block font-mono text-[11px] text-[color:var(--jb-fg-muted)]">{ref.path}</code>
+                    </div>
+                    <span class="font-mono text-xl text-acid transition-transform group-hover:translate-x-1">→</span>
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
-          
-          <div class="rounded-xl border-2 border-white/10 bg-white/5 p-6">
-            <p class="text-sm text-gray-400 mb-2 font-mono">font-sans text-[16px] md:text-[18px]</p>
-            <p class="font-sans text-[16px] md:text-[18px] leading-relaxed text-gray-200">
-              Body - Todo texto corrido. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+          <!-- Nota -->
+          <div class="mt-12 border-l-2 border-fire bg-[color:var(--jb-ink-2)] p-6">
+            <div class="kicker mb-2" style="color: var(--jb-fire);">// NOTA</div>
+            <p class="font-sans text-[color:var(--jb-cream)]">
+              Design system canônico vive em <code class="font-mono text-acid">docs/conteudo/brand/</code>. Preview navegável em <code class="font-mono text-acid">docs/conteudo/brand/preview/index.html</code>.
+              Em produção, tokens <code class="font-mono text-acid">--jb-*</code> ficam em <code class="font-mono text-acid">src/styles/global.css</code>.
             </p>
-            <p class="mt-4 font-sans text-[16px] md:text-[18px] font-medium leading-relaxed text-white">
-              Body Medium - Para destacar textos importantes sem usar heading.
-            </p>
+          </div>
+
+          <!-- Assinatura -->
+          <div class="mt-12 border-t border-[color:var(--jb-hair)] pt-8 font-mono text-[11px] uppercase tracking-[0.28em] text-[color:var(--jb-fg-muted)]">
+            <span class="text-acid">★</span>&nbsp;&nbsp;SISTEMA <span class="text-fire">&gt;</span> IMPROVISO · @joelburigo
           </div>
         </div>
       </section>
+    </Container>
+  </main>
 
-      <!-- Colors -->
-      <section class="mb-24">
-        <h2 class="font-display text-h1 text-white mb-8 border-b border-white/10 pb-4">
-          🎨 Paleta de Cores
-        </h2>
-        
-        <div class="grid lg:grid-cols-2 gap-8">
-          <!-- Dark Theme -->
-          <div class="rounded-xl border-2 border-white/10 bg-dark p-8">
-            <h3 class="font-display text-[24px] text-white mb-6">Dark Mode (Atual)</h3>
-            <div class="space-y-4">
-              <div class="flex items-center justify-between rounded-lg bg-dark p-4 border border-white/10">
-                <div>
-                  <p class="font-sans text-white font-medium">Background</p>
-                  <p class="font-mono text-xs text-gray-400">#020617</p>
-                </div>
-                <div class="h-12 w-12 rounded-lg bg-dark border-2 border-white/20"></div>
-              </div>
-              <div class="flex items-center justify-between rounded-lg bg-lime p-4">
-                <div>
-                  <p class="font-sans text-dark font-medium">Primary (Lime)</p>
-                  <p class="font-mono text-xs text-dark/60">#a3ff3f</p>
-                </div>
-                <div class="h-12 w-12 rounded-lg bg-lime border-2 border-dark"></div>
-              </div>
-              <div class="flex items-center justify-between rounded-lg bg-royal-blue p-4">
-                <div>
-                  <p class="font-sans text-white font-medium">Accent (Royal Blue)</p>
-                  <p class="font-mono text-xs text-white/60">#1d4ed8</p>
-                </div>
-                <div class="h-12 w-12 rounded-lg bg-royal-blue border-2 border-white/20"></div>
-              </div>
-              <div class="flex items-center justify-between rounded-lg bg-white/5 p-4 border border-white/10">
-                <div>
-                  <p class="font-sans text-white font-medium">Text Primary</p>
-                  <p class="font-mono text-xs text-gray-400">#ffffff</p>
-                </div>
-                <div class="h-12 w-12 rounded-lg bg-white"></div>
-              </div>
-              <div class="flex items-center justify-between rounded-lg bg-white/5 p-4 border border-white/10">
-                <div>
-                  <p class="font-sans text-gray-200 font-medium">Text Secondary</p>
-                  <p class="font-mono text-xs text-gray-400">#d1d5db</p>
-                </div>
-                <div class="h-12 w-12 rounded-lg bg-gray-300"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Light Theme -->
-          <div class="rounded-xl border-2 border-dark/10 bg-white p-8">
-            <h3 class="font-display text-[24px] text-dark mb-6">Light Mode (Novo)</h3>
-            <div class="space-y-4">
-              <div class="flex items-center justify-between rounded-lg bg-white p-4 border-2 border-dark/10">
-                <div>
-                  <p class="font-sans text-dark font-medium">Background</p>
-                  <p class="font-mono text-xs text-gray-600">#ffffff</p>
-                </div>
-                <div class="h-12 w-12 rounded-lg bg-white border-2 border-dark/20"></div>
-              </div>
-              <div class="flex items-center justify-between rounded-lg bg-lime p-4">
-                <div>
-                  <p class="font-sans text-dark font-medium">Primary (Lime)</p>
-                  <p class="font-mono text-xs text-dark/60">#a3ff3f</p>
-                </div>
-                <div class="h-12 w-12 rounded-lg bg-lime border-2 border-dark/20"></div>
-              </div>
-              <div class="flex items-center justify-between rounded-lg bg-royal-blue p-4">
-                <div>
-                  <p class="font-sans text-white font-medium">Accent (Royal Blue)</p>
-                  <p class="font-mono text-xs text-white/60">#1d4ed8</p>
-                </div>
-                <div class="h-12 w-12 rounded-lg bg-royal-blue border-2 border-white"></div>
-              </div>
-              <div class="flex items-center justify-between rounded-lg bg-gray-100 p-4 border border-dark/10">
-                <div>
-                  <p class="font-sans text-dark font-medium">Text Primary</p>
-                  <p class="font-mono text-xs text-gray-600">#020617</p>
-                </div>
-                <div class="h-12 w-12 rounded-lg bg-dark"></div>
-              </div>
-              <div class="flex items-center justify-between rounded-lg bg-gray-100 p-4 border border-dark/10">
-                <div>
-                  <p class="font-sans text-gray-700 font-medium">Text Secondary</p>
-                  <p class="font-mono text-xs text-gray-600">#374151</p>
-                </div>
-                <div class="h-12 w-12 rounded-lg bg-gray-700"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Buttons -->
-      <section class="mb-24">
-        <h2 class="font-display text-h1 text-white mb-8 border-b border-white/10 pb-4">
-          🔘 Botões
-        </h2>
-        
-        <div class="grid lg:grid-cols-2 gap-8">
-          <!-- Dark Theme Buttons -->
-          <div class="rounded-xl border-2 border-white/10 bg-dark p-8 lg:p-12">
-            <h3 class="font-display text-[24px] text-white mb-6">Dark Mode</h3>
-            <div class="space-y-6 max-w-xl">
-              <div>
-                <p class="text-sm text-gray-400 mb-3">Primary CTA</p>
-                <button class="bg-lime text-dark font-display font-bold px-8 py-4 rounded-lg hover:scale-105 transition-all shadow-lg shadow-lime/20 w-full">
-                  Quero Escalar Vendas
-                </button>
-              </div>
-              
-              <div>
-                <p class="text-sm text-gray-400 mb-3">Secondary</p>
-                <button class="border-2 border-white text-white font-display font-semibold px-8 py-4 rounded-lg hover:bg-white/10 transition-all w-full">
-                  Saiba Mais
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Light Theme Buttons -->
-          <div class="rounded-xl border-2 border-dark/10 bg-white p-8 lg:p-12">
-            <h3 class="font-display text-[24px] text-dark mb-6">Light Mode</h3>
-            <div class="space-y-6 max-w-xl">
-              <div>
-                <p class="text-sm text-gray-600 mb-3">Primary CTA</p>
-                <button class="bg-lime text-dark font-display font-bold px-8 py-4 rounded-lg hover:scale-105 transition-all shadow-lg shadow-lime/20 w-full">
-                  Quero Escalar Vendas
-                </button>
-              </div>
-              
-              <div>
-                <p class="text-sm text-gray-600 mb-3">Secondary</p>
-                <button class="border-2 border-dark text-dark font-display font-semibold px-8 py-4 rounded-lg hover:bg-dark/10 transition-all w-full">
-                  Saiba Mais
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Cards -->
-      <section class="mb-24">
-        <h2 class="font-display text-h1 text-white mb-8 border-b border-white/10 pb-4">
-          🎴 Cards
-        </h2>
-        
-        <div class="grid lg:grid-cols-2 gap-8">
-          <!-- Dark Cards -->
-          <div class="rounded-xl border-2 border-white/10 bg-dark p-8 lg:p-12">
-            <h3 class="font-display text-[24px] text-white mb-6">Dark Mode</h3>
-            <div class="space-y-6">
-              <div class="rounded-xl border-2 border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-lime/50">
-                <h4 class="font-display text-[24px] text-white mb-3">Card Padrão</h4>
-                <p class="font-sans text-[16px] text-gray-200">
-                  Border sutil, background translúcido. Hover com borda lime.
-                </p>
-              </div>
-
-              <div class="rounded-xl border-2 border-lime/20 bg-lime/5 p-6">
-                <h4 class="font-display text-[24px] text-white mb-3">Card Destaque</h4>
-                <p class="font-sans text-[16px] text-gray-200">
-                  Background lime sutil para informações importantes.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Light Cards -->
-          <div class="rounded-xl border-2 border-dark/10 bg-white p-8 lg:p-12">
-            <h3 class="font-display text-[24px] text-dark mb-6">Light Mode</h3>
-            <div class="space-y-6">
-              <div class="rounded-xl border-2 border-dark/10 bg-white p-6 shadow-lg transition-all hover:border-lime/50 hover:shadow-xl">
-                <h4 class="font-display text-[24px] text-dark mb-3">Card Padrão</h4>
-                <p class="font-sans text-[16px] text-gray-700">
-                  Background branco, shadow sutil. Hover com borda lime.
-                </p>
-              </div>
-
-              <div class="rounded-xl border-2 border-lime/20 bg-lime/5 p-6">
-                <h4 class="font-display text-[24px] text-dark mb-3">Card Destaque</h4>
-                <p class="font-sans text-[16px] text-gray-700">
-                  Background lime sutil para informações importantes.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Badges -->
-      <section class="mb-24">
-        <h2 class="font-display text-h1 text-white mb-8 border-b border-white/10 pb-4">
-          🏷️ Badges
-        </h2>
-        
-        <div class="grid lg:grid-cols-2 gap-8">
-          <!-- Dark Theme Badges -->
-          <div class="rounded-xl border-2 border-white/10 bg-dark p-8 lg:p-12">
-            <h3 class="font-display text-[24px] text-white mb-6">Dark Mode</h3>
-            <div class="flex flex-wrap gap-4">
-              <span class="inline-block rounded-full bg-lime/20 px-4 py-2 font-display font-bold text-lime text-sm">
-                MAIS POPULAR
-              </span>
-              <span class="inline-block rounded-full bg-royal-blue/20 px-4 py-2 font-display font-semibold text-royal-blue text-sm">
-                NOVO
-              </span>
-              <span class="inline-block rounded-full bg-white/10 px-4 py-2 font-display font-medium text-white text-sm">
-                EM BREVE
-              </span>
-              <span class="inline-block rounded-full border-2 border-lime px-4 py-2 font-display font-bold text-lime text-sm">
-                DESTAQUE
-              </span>
-            </div>
-          </div>
-
-          <!-- Light Theme Badges -->
-          <div class="rounded-xl border-2 border-dark/10 bg-white p-8 lg:p-12">
-            <h3 class="font-display text-[24px] text-dark mb-6">Light Mode</h3>
-            <div class="flex flex-wrap gap-4">
-              <span class="inline-block rounded-full bg-lime/20 px-4 py-2 font-display font-bold text-dark text-sm">
-                MAIS POPULAR
-              </span>
-              <span class="inline-block rounded-full bg-royal-blue/20 px-4 py-2 font-display font-semibold text-royal-blue text-sm">
-                NOVO
-              </span>
-              <span class="inline-block rounded-full bg-gray-100 px-4 py-2 font-display font-medium text-gray-700 text-sm">
-                EM BREVE
-              </span>
-              <span class="inline-block rounded-full border-2 border-lime px-4 py-2 font-display font-bold text-dark text-sm">
-                DESTAQUE
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Forms -->
-      <section class="mb-24">
-        <h2 class="font-display text-h1 text-white mb-8 border-b border-white/10 pb-4">
-          📝 Formulários
-        </h2>
-        
-        <div class="grid lg:grid-cols-2 gap-8">
-          <!-- Dark Theme Forms -->
-          <div class="rounded-xl border-2 border-white/10 bg-dark p-8 lg:p-12">
-            <h3 class="font-display text-[24px] text-white mb-6">Dark Mode</h3>
-            <div class="space-y-6 max-w-xl">
-              <div>
-                <label class="block font-sans text-sm font-medium text-white mb-2">
-                  Nome Completo
-                </label>
-                <input 
-                  type="text" 
-                  placeholder="Digite seu nome"
-                  class="w-full px-4 py-3 rounded-lg bg-white/5 border-2 border-white/10 text-white placeholder:text-gray-400 focus:border-lime focus:outline-none transition-colors"
-                />
-              </div>
-
-              <div>
-                <label class="block font-sans text-sm font-medium text-white mb-2">
-                  Email
-                </label>
-                <input 
-                  type="email" 
-                  placeholder="seu@email.com"
-                  class="w-full px-4 py-3 rounded-lg bg-white/5 border-2 border-white/10 text-white placeholder:text-gray-400 focus:border-lime focus:outline-none transition-colors"
-                />
-              </div>
-
-              <div>
-                <label class="block font-sans text-sm font-medium text-white mb-2">
-                  Mensagem
-                </label>
-                <textarea 
-                  placeholder="Conte-nos sobre seu negócio"
-                  rows="4"
-                  class="w-full px-4 py-3 rounded-lg bg-white/5 border-2 border-white/10 text-white placeholder:text-gray-400 focus:border-lime focus:outline-none transition-colors resize-none"
-                ></textarea>
-              </div>
-
-              <div class="flex items-center gap-3">
-                <input 
-                  type="checkbox" 
-                  id="terms-dark"
-                  class="h-5 w-5 rounded border-2 border-white/10 bg-white/5 text-lime focus:ring-lime focus:ring-2"
-                />
-                <label for="terms-dark" class="font-sans text-sm text-gray-200">
-                  Aceito os termos e condições
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <!-- Light Theme Forms -->
-          <div class="rounded-xl border-2 border-dark/10 bg-white p-8 lg:p-12">
-            <h3 class="font-display text-[24px] text-dark mb-6">Light Mode</h3>
-            <div class="space-y-6 max-w-xl">
-              <div>
-                <label class="block font-sans text-sm font-medium text-dark mb-2">
-                  Nome Completo
-                </label>
-                <input 
-                  type="text" 
-                  placeholder="Digite seu nome"
-                  class="w-full px-4 py-3 rounded-lg bg-white border-2 border-gray-200 text-dark placeholder:text-gray-400 focus:border-lime focus:outline-none transition-colors"
-                />
-              </div>
-
-              <div>
-                <label class="block font-sans text-sm font-medium text-dark mb-2">
-                  Email
-                </label>
-                <input 
-                  type="email" 
-                  placeholder="seu@email.com"
-                  class="w-full px-4 py-3 rounded-lg bg-white border-2 border-gray-200 text-dark placeholder:text-gray-400 focus:border-lime focus:outline-none transition-colors"
-                />
-              </div>
-
-              <div>
-                <label class="block font-sans text-sm font-medium text-dark mb-2">
-                  Mensagem
-                </label>
-                <textarea 
-                  placeholder="Conte-nos sobre seu negócio"
-                  rows="4"
-                  class="w-full px-4 py-3 rounded-lg bg-white border-2 border-gray-200 text-dark placeholder:text-gray-400 focus:border-lime focus:outline-none transition-colors resize-none"
-                ></textarea>
-              </div>
-
-              <div class="flex items-center gap-3">
-                <input 
-                  type="checkbox" 
-                  id="terms-light"
-                  class="h-5 w-5 rounded border-2 border-gray-200 bg-white text-lime focus:ring-lime focus:ring-2"
-                />
-                <label for="terms-light" class="font-sans text-sm text-gray-700">
-                  Aceito os termos e condições
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Brand Application Example -->
-      <section class="mb-24">
-        <h2 class="font-display text-h1 text-white mb-8 border-b border-white/10 pb-4">
-          🎨 Exemplo de Aplicação
-        </h2>
-        
-        <div class="grid lg:grid-cols-2 gap-8">
-          <!-- Dark Theme Example -->
-          <div class="rounded-xl border-2 border-white/10 bg-dark p-8 lg:p-12">
-            <h3 class="font-display text-[24px] text-white mb-6">Dark Mode</h3>
-            <div class="mb-8">
-              <span class="inline-block bg-lime/10 text-lime px-4 py-2 rounded-full font-sans text-sm mb-4">
-                Novo Programa
-              </span>
-              <h4 class="font-display text-[36px] text-white mb-4 leading-tight">
-                Escale suas vendas em 90 dias
-              </h4>
-              <p class="font-sans text-[16px] text-gray-200 mb-6 leading-relaxed">
-                Método validado com mais de 140 empresas que faturaram R$ 1 bilhão em vendas.
-              </p>
-              <div class="flex flex-col gap-3">
-                <button class="bg-lime text-dark font-display font-bold px-6 py-3 rounded-lg hover:scale-105 transition-all shadow-lg shadow-lime/20 w-full">
-                  Começar Agora
-                </button>
-                <button class="border-2 border-white text-white font-display font-semibold px-6 py-3 rounded-lg hover:bg-white/10 transition-all w-full">
-                  Saiba Mais
-                </button>
-              </div>
-            </div>
-            <div class="rounded-lg border-2 border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-              <h5 class="font-display text-[20px] text-white mb-3">Resultados Comprovados</h5>
-              <p class="font-sans text-[14px] text-gray-200">
-                Empresas B2B e B2C alcançando crescimento sustentável através do Método VSS.
-              </p>
-            </div>
-          </div>
-
-          <!-- Light Theme Example -->
-          <div class="rounded-xl border-2 border-dark/10 bg-white p-8 lg:p-12">
-            <h3 class="font-display text-[24px] text-dark mb-6">Light Mode</h3>
-            <div class="mb-8">
-              <span class="inline-block bg-lime/10 text-dark px-4 py-2 rounded-full font-sans text-sm mb-4">
-                Novo Programa
-              </span>
-              <h4 class="font-display text-[36px] text-dark mb-4 leading-tight">
-                Escale suas vendas em 90 dias
-              </h4>
-              <p class="font-sans text-[16px] text-gray-700 mb-6 leading-relaxed">
-                Método validado com mais de 140 empresas que faturaram R$ 1 bilhão em vendas.
-              </p>
-              <div class="flex flex-col gap-3">
-                <button class="bg-lime text-dark font-display font-bold px-6 py-3 rounded-lg hover:scale-105 transition-all shadow-lg shadow-lime/20 w-full">
-                  Começar Agora
-                </button>
-                <button class="border-2 border-dark text-dark font-display font-semibold px-6 py-3 rounded-lg hover:bg-dark/10 transition-all w-full">
-                  Saiba Mais
-                </button>
-              </div>
-            </div>
-            <div class="rounded-lg border-2 border-dark/10 bg-white p-6 shadow-lg">
-              <h5 class="font-display text-[20px] text-dark mb-3">Resultados Comprovados</h5>
-              <p class="font-sans text-[14px] text-gray-700">
-                Empresas B2B e B2C alcançando crescimento sustentável através do Método VSS.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
+  <Footer />
 </Layout>
+
+<style>
+  .ds-display {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.045em;
+    line-height: 0.92;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    color: var(--jb-cream);
+    margin: 0;
+  }
+</style>

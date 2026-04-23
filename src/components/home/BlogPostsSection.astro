@@ -1,107 +1,77 @@
 ---
 import { getCollection } from 'astro:content'
 import Container from '../ui/Container.astro'
-import Icons from '../ui/Icons.astro'
 import { Image } from 'astro:assets'
 
-// Buscar os 3 posts mais recentes
+// 3 posts mais recentes
 const allPosts = await getCollection('blog')
 const recentPosts = allPosts
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 3)
-
-// Categoria para badge color
-const categoryColors: Record<string, string> = {
-  'Framework 6Ps': 'lime',
-  'Vendas Escaláveis': 'royal-blue',
-  'CRM e Tecnologia': 'lime',
-  'Processos': 'royal-blue',
-  'Casos de Sucesso': 'lime',
-  'Mentalidade': 'royal-blue',
-}
 ---
 
-<section id="blog" class="relative overflow-hidden bg-dark py-24 md:py-32">
-  <!-- Background gradients -->
-  <div class="pointer-events-none absolute inset-0 z-0">
-    <div class="absolute -left-40 top-20 h-96 w-96 rounded-full bg-lime/5 blur-3xl"></div>
-    <div class="absolute -right-40 bottom-20 h-96 w-96 rounded-full bg-royal-blue/5 blur-3xl"></div>
-  </div>
+<section id="blog" class="blog-section section bg-ink relative overflow-hidden">
+  <div class="grid-overlay"></div>
 
   <Container class="relative z-10">
-    <!-- Header -->
-    <div class="mx-auto mb-16 max-w-3xl text-center">
-      <span class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-1.5 text-sm font-display font-bold text-lime backdrop-blur-sm">
-        CONTEÚDO GRATUITO
-      </span>
-      <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
-        Insights Sobre <span class="text-lime">Vendas Escaláveis</span>
+    <!-- Section head -->
+    <div class="section-head">
+      <div class="kicker">// 07_ARQUIVO</div>
+      <div class="mono section-head-meta">PUBLICAÇÕES RECENTES · VENDAS ESCALÁVEIS</div>
+    </div>
+    <div class="hair-divider"></div>
+
+    <!-- Intro -->
+    <div class="blog-intro">
+      <h2 class="blog-title">
+        INSIGHTS SOBRE<br />
+        <span class="stroke-text">VENDAS</span> ESCALÁVEIS.
       </h2>
-      <p class="font-sans text-body-lg text-gray-200">
-        Estratégias, processos e histórias reais para estruturar suas vendas
+      <p class="blog-lede">
+        Estratégia, processo e cicatriz real. Nada de post bonito sem substância — post bonito no Instagram não paga boleto.
       </p>
     </div>
 
-    <!-- Posts Grid -->
-    <div class="mb-12 grid gap-8 md:grid-cols-3">
+    <!-- Posts grid -->
+    <div class="blog-grid">
       {recentPosts.map((post) => {
-        const categoryColor = categoryColors[post.data.category] || 'lime'
         const slug = post.id.replace(/\.md$/, '')
-        
         return (
           <a
             href={`/blog/${slug}`}
-            class="group block overflow-hidden rounded-2xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm transition-all duration-300 hover:border-lime/50 hover:shadow-xl hover:shadow-lime/10"
+            class="blog-card"
+            data-astro-prefetch
           >
-            <!-- Image -->
             {post.data.heroImage && (
-              <div class="relative aspect-16/10 overflow-hidden">
+              <div class="blog-thumb">
                 <Image
                   src={post.data.heroImage}
                   alt={post.data.title}
-                  width={400}
-                  height={250}
-                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={640}
+                  height={400}
                   loading="lazy"
+                  class="blog-thumb-img"
                 />
-                {/* Category Badge */}
-                <div class="absolute left-4 top-4">
-                  <span class={`inline-block rounded-full px-3 py-1 text-xs font-display font-bold backdrop-blur-sm ${
-                    categoryColor === 'lime' 
-                      ? 'border border-lime/30 bg-lime/90 text-dark' 
-                      : 'border border-royal-blue/30 bg-royal-blue/90 text-white'
-                  }`}>
-                    {post.data.category}
-                  </span>
-                </div>
+                <div class="blog-category mono">// {post.data.category}</div>
               </div>
             )}
 
-            {/* Content */}
-            <div class="p-6">
-              {/* Date */}
-              <time datetime={post.data.date.toISOString()} class="mb-3 block text-sm text-gray-400">
-                {new Intl.DateTimeFormat('pt-BR', { 
-                  day: 'numeric', 
-                  month: 'long', 
-                  year: 'numeric' 
-                }).format(post.data.date)}
+            <div class="blog-body">
+              <time datetime={post.data.date.toISOString()} class="blog-date mono">
+                {new Intl.DateTimeFormat('pt-BR', {
+                  day: '2-digit',
+                  month: '2-digit',
+                  year: 'numeric',
+                }).format(post.data.date).replace(/\//g, '.')}
               </time>
 
-              {/* Title */}
-              <h3 class="mb-3 font-display text-xl font-bold text-white transition-colors group-hover:text-lime">
-                {post.data.title}
-              </h3>
+              <h3 class="blog-post-title">{post.data.title}</h3>
 
-              {/* Excerpt */}
-              <p class="mb-4 line-clamp-2 font-sans text-sm text-gray-300">
-                {post.data.excerpt}
-              </p>
+              <p class="blog-excerpt">{post.data.excerpt}</p>
 
-              {/* CTA */}
-              <div class="flex items-center gap-2 font-display text-sm font-bold text-lime transition-transform group-hover:translate-x-1">
+              <div class="blog-read">
                 <span>Ler artigo</span>
-                <Icons name="arrow-right" class="h-4 w-4" />
+                <span aria-hidden="true">→</span>
               </div>
             </div>
           </a>
@@ -109,15 +79,161 @@ const categoryColors: Record<string, string> = {
       })}
     </div>
 
-    <!-- CTA para todos os artigos -->
-    <div class="text-center">
-      <a
-        href="/blog"
-        class="inline-flex items-center gap-2 rounded-full border border-lime/30 bg-lime/10 px-6 py-3 font-display font-bold text-lime transition-all duration-300 hover:border-lime hover:bg-lime/20 hover:shadow-lg hover:shadow-lime/20"
-      >
-        <span>Ver Todos os Artigos</span>
-        <Icons name="arrow-right" class="h-5 w-5" />
+    <div class="blog-footer">
+      <a href="/blog" class="btn-secondary">
+        <span>Ver arquivo completo</span>
+        <span aria-hidden="true">→</span>
       </a>
     </div>
   </Container>
 </section>
+
+<style>
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .section-head-meta { font-size: 11px; color: var(--jb-fg-muted); }
+
+  .blog-intro {
+    padding-top: clamp(2rem, 4vw, 3rem);
+    padding-bottom: clamp(2rem, 4vw, 3rem);
+    max-width: 960px;
+  }
+  .blog-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    line-height: 0.92;
+    font-size: clamp(2rem, 5.5vw, 3.75rem);
+    color: var(--jb-cream);
+    margin: 0 0 1.25rem 0;
+  }
+  .blog-lede {
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    line-height: 1.6;
+    color: var(--jb-cream);
+    text-transform: none;
+    margin: 0;
+    max-width: 52ch;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+  @media (min-width: 768px) { .blog-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } }
+
+  .blog-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--jb-ink-2);
+    border: 1px solid var(--jb-hair);
+    border-radius: 0;
+    text-decoration: none;
+    color: inherit;
+    transition: all var(--transition-base);
+    position: relative;
+  }
+  .blog-card:hover {
+    border-color: var(--jb-fire);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 var(--jb-fire);
+  }
+  .blog-card:hover .blog-thumb-img { transform: scale(1.04); }
+  .blog-card:hover .blog-post-title { color: var(--jb-acid); }
+
+  .blog-thumb {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--jb-ink);
+    border-bottom: 1px solid var(--jb-hair);
+  }
+  :global(.blog-thumb-img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(60%) contrast(1.05);
+    transition: transform var(--transition-slow);
+  }
+  .blog-category {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    background: var(--jb-ink);
+    color: var(--jb-acid);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    padding: 4px 8px;
+    border: 1px solid var(--jb-acid-border);
+  }
+
+  .blog-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+  }
+
+  .blog-date {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--jb-fg-muted);
+    letter-spacing: 0.22em;
+  }
+
+  .blog-post-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    font-size: 1.125rem;
+    line-height: 1.15;
+    color: var(--jb-cream);
+    margin: 0;
+    transition: color var(--transition-base);
+  }
+
+  .blog-excerpt {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--jb-fg-2);
+    margin: 0;
+    text-transform: none;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .blog-read {
+    margin-top: auto;
+    padding-top: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--jb-acid);
+  }
+
+  .blog-footer {
+    display: flex;
+    justify-content: center;
+  }
+</style>

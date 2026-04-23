@@ -1,6 +1,7 @@
 ---
-// Layout base para Landing Pages
-// Componente reutilizável que remove header/footer e otimiza para conversão
+// Layout base para Landing Pages (Terminal Growth)
+// Remove header/footer e otimiza para conversão.
+import '../../styles/global.css'
 
 interface Props {
   title: string
@@ -50,9 +51,13 @@ const {
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     
+    <meta name="theme-color" content="#050505" />
+
     <!-- Preconnect para performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" /></noscript>
     
     <!-- Analytics - Data Layer -->
     <script is:inline define:vars={{ version, product }}>
@@ -73,7 +78,7 @@ const {
     
     <slot name="head" />
   </head>
-  <body class="antialiased">
+  <body class="antialiased bg-ink text-cream">
     <!-- Slot principal para o conteúdo -->
     <slot />
     

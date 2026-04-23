@@ -30,16 +30,16 @@ const breadcrumbSchema = {
 ---
 
 <nav aria-label="Breadcrumb">
-  <ol class="flex flex-wrap items-center gap-2 text-sm text-gray-400">
+  <ol class="flex flex-wrap items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">
     {items.map((item, index) => {
       const isLast = index === items.length - 1
       return (
         <li class="flex items-center gap-2">
-          {index > 0 && <span class="text-gray-600">/</span>}
+          {index > 0 && <span class="text-[color:var(--jb-fg-muted)]">/</span>}
           {isLast ? (
-            <span class="text-gray-200">{item.label}</span>
+            <span class="text-[color:var(--jb-cream)]">{item.label}</span>
           ) : (
-            <a href={item.href} class="transition-colors hover:text-lime">
+            <a href={item.href} class="transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]">
               {item.label}
             </a>
           )}

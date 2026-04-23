@@ -5,101 +5,157 @@ import Logo from '../ui/Logo.astro'
 
 interface Props {
   transparent?: boolean
+  /** Exibe a status bar decorativa acima do header. */
+  showStatusBar?: boolean
 }
 
-const { transparent = false } = Astro.props
+const { transparent = false, showStatusBar = true } = Astro.props
 
+// Terminal Growth: apenas 2 produtos (VSS + Advisory). Services removido.
 const navLinks = [
-  { name: 'Vendas sem Segredos', path: '/vendas-sem-segredos' },
-  { name: 'Implementação Guiada', path: '/services' },
-  { name: 'Conselho Estratégico', path: '/advisory' },
-]
-
-const secondaryLinks = [
-  { name: 'Sobre', path: '/sobre' },
+  { name: 'VSS', path: '/vendas-sem-segredos' },
+  { name: 'Advisory', path: '/advisory' },
   { name: 'Blog', path: '/blog' },
 ]
 
-const initialClasses = transparent 
-  ? 'bg-transparent py-5' 
-  : 'bg-dark/98 py-3 shadow-xl shadow-black/20 backdrop-blur-lg'
+// Secundários ficam apenas no mobile menu (mantém o header desktop enxuto).
+const secondaryLinks = [
+  { name: 'Sobre', path: '/sobre' },
+  { name: 'Cases', path: '/cases' },
+  { name: 'Contato', path: '/contato' },
+]
+
+const headerBgClasses = transparent
+  ? 'bg-transparent'
+  : 'bg-[color:var(--jb-ink)]/90 backdrop-blur-md'
 ---
 
-<header id="main-header" class={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${initialClasses}`} data-transparent={transparent}>
+<header
+  id="main-header"
+  class={`sticky left-0 right-0 top-0 z-50 transition-colors duration-[var(--jb-dur)] border-b border-[color:var(--jb-hair)] ${headerBgClasses}`}
+  data-transparent={transparent}
+>
+  {showStatusBar && (
+    <div class="hidden md:flex items-center justify-between border-b border-[color:var(--jb-hair)] px-10 py-2 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">
+      <div class="flex items-center gap-3">
+        <span class="dot-live"></span>
+        <span>SYS ONLINE</span>
+        <span class="text-[color:var(--jb-hair-strong)]">·</span>
+        <span>@joelburigo</span>
+        <span class="text-[color:var(--jb-hair-strong)]">·</span>
+        <span>EST. 2008</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span>FLORIANÓPOLIS/SC</span>
+        <span class="text-[color:var(--jb-hair-strong)]">·</span>
+        <span id="jb-clock" class="text-[color:var(--jb-acid)]">--:--:-- BRT</span>
+      </div>
+    </div>
+  )}
+
   <Container>
-    <div class="relative flex items-center justify-between md:justify-start">
-      <!-- Logo (Left) -->
-      <a href="/" class="z-50 shrink-0">
+    <div class="relative flex items-center justify-between py-4 md:py-5">
+      {/* Logo (esquerda) */}
+      <a href="/" class="z-50 shrink-0" aria-label="Joel Burigo · Home">
         <Logo />
       </a>
 
-      <!-- Nav Center (Absolute) - Desktop only -->
-      <nav class="absolute left-1/2 hidden -translate-x-1/2 items-center space-x-8 md:flex">
+      {/* Nav central (desktop) */}
+      <nav class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 md:flex">
         {navLinks.map((link) => (
           <a
             href={link.path}
-            class="font-sans text-sm font-medium text-gray-200 transition-colors hover:text-lime"
+            class="jb-nav-link font-mono text-[12px] font-semibold uppercase tracking-[0.22em] text-[color:var(--jb-cream)] transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]"
           >
             {link.name}
           </a>
         ))}
       </nav>
 
-      <!-- Secondary Links + CTA Right - Desktop only -->
+      {/* CTA primária (desktop) */}
       <div class="ml-auto hidden items-center gap-6 md:flex">
-        {secondaryLinks.map((link) => (
-          <a
-            href={link.path}
-            class="font-sans text-sm font-medium text-gray-200 transition-colors hover:text-lime"
-          >
-            {link.name}
-          </a>
-        ))}
-        <a href="/diagnostico" data-astro-prefetch>
-          <button class="inline-flex h-9 items-center justify-center rounded-lg bg-lime px-4 font-display text-sm font-bold text-dark shadow-lg shadow-lime/20 transition-all hover:bg-lime/90 focus:outline-none focus:ring-2 focus:ring-lime focus:ring-offset-2">
-            Diagnóstico Gratuito
-          </button>
+        <a
+          href="/diagnostico"
+          data-astro-prefetch
+          class="btn-primary min-h-[44px]"
+        >
+          Diagnóstico <span class="font-mono">→</span>
         </a>
       </div>
-      
-      <!-- Mobile Menu Component - Mobile only (right side) -->
+
+      {/* Mobile menu (mobile) */}
       <MobileMenu navLinks={navLinks} secondaryLinks={secondaryLinks} />
     </div>
   </Container>
 </header>
 
+<style>
+  /* Underline acid expandindo 0 → 100% em 180ms */
+  .jb-nav-link {
+    position: relative;
+    padding: 4px 0;
+  }
+  .jb-nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: var(--jb-acid);
+    transition: width var(--jb-dur) var(--jb-ease);
+  }
+  .jb-nav-link:hover::after,
+  .jb-nav-link:focus-visible::after {
+    width: 100%;
+  }
+</style>
+
 <script>
-  // Scroll effect - Header transparente no topo, escuro ao rolar
+  // Scroll: reforço da opacidade do fundo quando rola (mesmo em modo transparente).
   function initHeaderScroll() {
     const headerElement = document.getElementById('main-header')
     if (!headerElement) return
-    
     const isTransparent = headerElement.dataset.transparent === 'true'
-    const header = headerElement // Type narrowing
-    
+    const scrolledClasses = ['bg-[color:var(--jb-ink)]/95', 'backdrop-blur-md']
+    const topTransparentClasses = ['bg-transparent']
+
     function handleScroll() {
-      if (window.scrollY > 50) {
-        header.classList.add('bg-dark/98', 'py-3', 'shadow-xl', 'shadow-black/20', 'backdrop-blur-lg')
-        header.classList.remove('bg-transparent', 'py-5')
-      } else {
-        if (isTransparent) {
-          header.classList.remove('bg-dark/98', 'py-3', 'shadow-xl', 'shadow-black/20', 'backdrop-blur-lg')
-          header.classList.add('bg-transparent', 'py-5')
-        }
-        // Se não é transparente, mantém o fundo escuro mesmo no topo
+      if (window.scrollY > 40) {
+        scrolledClasses.forEach((c) => headerElement!.classList.add(c))
+        topTransparentClasses.forEach((c) => headerElement!.classList.remove(c))
+      } else if (isTransparent) {
+        scrolledClasses.forEach((c) => headerElement!.classList.remove(c))
+        topTransparentClasses.forEach((c) => headerElement!.classList.add(c))
       }
     }
 
-    // Executar na carga
     handleScroll()
-    
-    // Escutar scroll
     window.addEventListener('scroll', handleScroll, { passive: true })
   }
 
-  // Inicializar
+  // Clock ao vivo da status bar
+  function initClock() {
+    const el = document.getElementById('jb-clock')
+    if (!el) return
+    const tick = () => {
+      const d = new Date()
+      const hh = String(d.getHours()).padStart(2, '0')
+      const mm = String(d.getMinutes()).padStart(2, '0')
+      const ss = String(d.getSeconds()).padStart(2, '0')
+      el.textContent = `${hh}:${mm}:${ss} BRT`
+    }
+    tick()
+    // Limpa intervalo anterior se existir (Astro View Transitions)
+    const w = window as unknown as { __jbClockId?: number }
+    if (w.__jbClockId) clearInterval(w.__jbClockId)
+    w.__jbClockId = window.setInterval(tick, 1000)
+  }
+
   initHeaderScroll()
-  
-  // Re-inicializar após navegação (View Transitions)
-  document.addEventListener('astro:page-load', initHeaderScroll)
+  initClock()
+  document.addEventListener('astro:page-load', () => {
+    initHeaderScroll()
+    initClock()
+  })
 </script>

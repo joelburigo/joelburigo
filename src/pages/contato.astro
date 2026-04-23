@@ -3,60 +3,54 @@ import Layout from '../layouts/Layout.astro'
 import Header from '../components/layout/Header.astro'
 import Footer from '../components/layout/Footer.astro'
 import Container from '../components/ui/Container.astro'
-import Icons from '../components/ui/Icons.astro'
-import { contactInfo as contact, getWhatsAppLink } from '../data/contact'
 import Breadcrumbs from '../components/seo/Breadcrumbs.astro'
+import { contactInfo as contact, getWhatsAppLink } from '../data/contact'
 
 const seo = {
-  title: 'Contato - Joel Burigo | Fale Comigo',
-  description:
-    'Entre em contato para estruturar suas vendas. Respondo pessoalmente todas as mensagens em até 24 horas.',
-  keywords: 'contato Joel Burigo, consultoria vendas, falar com especialista vendas',
+  title: 'Contato | Joel Burigo',
+  description: 'Fala direto comigo. Respondo pessoalmente em até 24 horas.',
+  keywords: 'contato Joel Burigo, consultoria vendas, falar com Joel',
 }
 
-const contactInfo = [
+const channels = [
   {
-    icon: 'mail',
-    title: 'Email',
+    label: 'EMAIL',
     value: contact.email.main,
-    link: contact.email.mailto,
+    href: contact.email.mailto,
   },
   {
-    icon: 'phone',
-    title: 'WhatsApp',
+    label: 'WHATSAPP',
     value: contact.phone.display,
-    link: getWhatsAppLink('Olá Joel, gostaria de saber mais sobre suas soluções'),
+    href: getWhatsAppLink('Olá Joel, gostaria de saber mais sobre as soluções'),
   },
   {
-    icon: 'map-pin',
-    title: 'Localização',
-    value: 'Florianópolis, SC - Brasil',
-    link: null,
+    label: 'LOCALIZAÇÃO',
+    value: 'Ribeirão da Ilha, Florianópolis/SC',
+    href: null,
   },
   {
-    icon: 'clock',
-    title: 'Horário de Atendimento',
+    label: 'ATENDIMENTO',
     value: contact.businessHours.weekdays,
-    link: null,
+    href: null,
   },
 ]
 
 const faqs = [
   {
-    question: 'Qual o melhor caminho pra mim?',
-    answer: 'Quer aprender e fazer? VSS. Quer minha equipe fazendo junto? Services. Precisa de sparring direto comigo? Advisory.',
+    q: 'Qual o melhor caminho pra mim?',
+    a: 'Quer o método completo pra implementar com autonomia? VSS. Precisa de acesso direto pra decisões estratégicas? Advisory.',
   },
   {
-    question: 'Quanto tempo até eu ver resultado?',
-    answer: 'VSS: 90 dias você já tá rodando. Services: 60-90 dias implementando. Advisory: depende de onde você tá hoje.',
+    q: 'Quanto tempo até ver resultado?',
+    a: 'VSS: 90 dias você já tá rodando. Advisory: depende do formato e de onde tu tá hoje.',
   },
   {
-    question: 'Trabalha com qualquer nicho?',
-    answer: 'Sim. Já estruturei vendas em 30+ nichos diferentes. A metodologia dos 6Ps funciona em todos.',
+    q: 'Trabalha com qualquer nicho?',
+    a: 'Já estruturei vendas em 20+ nichos diferentes. Metodologia 6Ps testada em 140+ empresas.',
   },
   {
-    question: 'Tem garantia?',
-    answer: 'VSS tem 15 dias incondicional. Services e Advisory eu avalio no diagnóstico se consigo te ajudar.',
+    q: 'Tem garantia?',
+    a: 'VSS tem 15 dias incondicional. Advisory tem garantia de satisfação na primeira sessão.',
   },
 ]
 ---
@@ -64,96 +58,80 @@ const faqs = [
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
   <Header />
 
-  <section class="bg-dark pt-20 pb-6">
+  <section class="bg-ink pt-20 pb-6">
     <Container>
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Contato', href: '/contato' }]} />
     </Container>
   </section>
 
-  <main class="grow">
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden bg-dark py-32">
+  <main class="relative overflow-hidden bg-ink">
+    <div class="grid-overlay"></div>
 
-      <Container class="relative z-10">
-        <div class="mx-auto max-w-3xl text-center">
-          <div class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-2 backdrop-blur-sm">
-            <span class="font-display text-sm font-bold text-lime">CONTATO</span>
-          </div>
-          
-          <h1 class="mb-6 font-display text-display-md text-white md:text-display-lg">
-            Bora{' '}
-            <span class="text-lime">
-              Conversar?
-            </span>
+    <Container class="relative z-10">
+      <!-- Hero -->
+      <section class="py-16 md:py-24">
+        <div class="mx-auto max-w-4xl">
+          <div class="kicker mb-6">// CONTATO · DIRETO · 24H_RESPONSE</div>
+          <h1 class="tg-display">
+            Quer <span class="text-fire">ligar a Máquina</span>?
           </h1>
-          
-          <p class="mb-10 font-sans text-body-lg text-gray-200">
-            Respondo pessoalmente em até 24h. Manda mensagem no canal que você preferir.
+          <p class="mt-6 max-w-2xl font-sans text-lg text-[color:var(--jb-cream)]">
+            Respondo pessoalmente em até 24h. Manda mensagem no canal que preferir.
+          </p>
+          <p class="mt-3 max-w-2xl font-mono text-[12px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">
+            <span class="text-acid">●</span>&nbsp; FLORIANÓPOLIS/SC &nbsp;·&nbsp; -27.59 / -48.55
           </p>
         </div>
-      </Container>
-    </section>
+      </section>
 
-    <!-- Contact Cards -->
-    <section class="bg-dark py-24">
-      <Container>
-        <div class="mb-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {contactInfo.map((info, index) => (
-              <div 
-                class="contact-card rounded-2xl border-2 border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-lime/50"
-                style={`animation-delay: ${index * 0.1}s`}
-              >
-                <div class="mb-4 inline-block rounded-xl bg-lime/20 p-3">
-                  <Icons name={info.icon} class="h-6 w-6 text-lime" />
-                </div>
-                <h3 class="mb-2 font-display text-h4 text-white">{info.title}</h3>
-                {info.link ? (
-                  <a 
-                    href={info.link} 
-                    class="font-sans text-body text-gray-200 transition-colors hover:text-lime"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {info.value}
+      <!-- Canais -->
+      <section class="pb-16">
+        <div class="mx-auto max-w-5xl">
+          <div class="kicker mb-6">// CANAIS · DISPONÍVEIS</div>
+          <div class="grid gap-0 border border-[color:var(--jb-hair)] bg-[color:var(--jb-ink-2)] md:grid-cols-2 lg:grid-cols-4">
+            {channels.map((c, i) => (
+              <div class={`border-[color:var(--jb-hair)] p-6 ${i < 3 ? 'border-b md:border-b-0 md:border-r' : ''} ${i < 2 ? 'md:border-r lg:border-r' : ''} ${i === 1 ? 'md:border-r-0 lg:border-r' : ''}`}>
+                <div class="kicker mb-3">// {c.label}</div>
+                {c.href ? (
+                  <a href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel={c.href.startsWith('http') ? 'noopener noreferrer' : undefined} class="block font-sans text-[color:var(--jb-cream)] transition-colors hover:text-acid">
+                    {c.value}
                   </a>
                 ) : (
-                  <p class="font-sans text-body text-gray-200">{info.value}</p>
+                  <div class="font-sans text-[color:var(--jb-cream)]">{c.value}</div>
                 )}
               </div>
-            ))
-          })}
+            ))}
+          </div>
         </div>
+      </section>
 
-        <!-- Contact Form -->
+      <!-- Formulário -->
+      <section class="pb-16 md:pb-24">
         <div class="mx-auto max-w-4xl">
-          <div class="rounded-2xl border-2 border-lime/20 bg-dark p-8 md:p-12">
-            <div class="mb-8 text-center">
-              <h2 class="mb-4 font-display text-display-sm text-white">
-                Envie Sua Mensagem
-              </h2>
-              <p class="font-sans text-body text-gray-200">
-                Preencha o formulário abaixo e entrarei em contato em breve
-              </p>
-            </div>
+          <div class="kicker mb-6">// FORMULÁRIO · DIRETO</div>
+          <div class="border border-[color:var(--jb-acid-border)] bg-[color:var(--jb-ink-2)] p-6 md:p-10">
+            <h2 class="heading-2 mb-3 text-[color:var(--jb-cream)]">Manda sua mensagem</h2>
+            <p class="mb-8 font-sans text-[color:var(--jb-fg-2)]">
+              Conta teu desafio atual. Quanto mais detalhe, melhor a resposta.
+            </p>
 
             <form class="space-y-6" id="contact-form">
-              <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div class="grid gap-6 md:grid-cols-2">
                 <div>
-                  <label for="name" class="mb-2 block font-display text-sm font-semibold text-white">
-                    Nome Completo *
+                  <label for="name" class="mb-2 block font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-3)]">
+                    Nome *
                   </label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     required
-                    class="w-full rounded-lg border-2 border-white/10 bg-white/5 px-4 py-3 font-sans text-body text-white placeholder-gray-500 transition-colors focus:border-lime focus:outline-none"
-                    placeholder="Seu nome"
+                    class="w-full border border-[color:var(--jb-hair-strong)] bg-[color:var(--jb-ink)] px-4 py-3 font-sans text-[color:var(--jb-cream)] placeholder:text-[color:var(--jb-fg-muted)] transition-colors focus:border-[color:var(--jb-acid)] focus:outline-none"
+                    placeholder="Seu nome completo"
                   />
                 </div>
-
                 <div>
-                  <label for="email" class="mb-2 block font-display text-sm font-semibold text-white">
+                  <label for="email" class="mb-2 block font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-3)]">
                     Email *
                   </label>
                   <input
@@ -161,47 +139,44 @@ const faqs = [
                     id="email"
                     name="email"
                     required
-                    class="w-full rounded-lg border-2 border-white/10 bg-white/5 px-4 py-3 font-sans text-body text-white placeholder-gray-500 transition-colors focus:border-lime focus:outline-none"
+                    class="w-full border border-[color:var(--jb-hair-strong)] bg-[color:var(--jb-ink)] px-4 py-3 font-sans text-[color:var(--jb-cream)] placeholder:text-[color:var(--jb-fg-muted)] transition-colors focus:border-[color:var(--jb-acid)] focus:outline-none"
                     placeholder="seu@email.com"
                   />
                 </div>
               </div>
-
-              <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div class="grid gap-6 md:grid-cols-2">
                 <div>
-                  <label for="phone" class="mb-2 block font-display text-sm font-semibold text-white">
+                  <label for="phone" class="mb-2 block font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-3)]">
                     WhatsApp
                   </label>
                   <input
                     type="tel"
                     id="phone"
                     name="phone"
-                    class="w-full rounded-lg border-2 border-white/10 bg-white/5 px-4 py-3 font-sans text-body text-white placeholder-gray-500 transition-colors focus:border-lime focus:outline-none"
+                    class="w-full border border-[color:var(--jb-hair-strong)] bg-[color:var(--jb-ink)] px-4 py-3 font-sans text-[color:var(--jb-cream)] placeholder:text-[color:var(--jb-fg-muted)] transition-colors focus:border-[color:var(--jb-acid)] focus:outline-none"
                     placeholder="(48) 99999-9999"
                   />
                 </div>
-
                 <div>
-                  <label for="subject" class="mb-2 block font-display text-sm font-semibold text-white">
+                  <label for="subject" class="mb-2 block font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-3)]">
                     Assunto *
                   </label>
                   <select
                     id="subject"
                     name="subject"
                     required
-                    class="w-full rounded-lg border-2 border-white/10 bg-white/5 px-4 py-3 font-sans text-body text-white transition-colors focus:border-lime focus:outline-none"
+                    class="w-full border border-[color:var(--jb-hair-strong)] bg-[color:var(--jb-ink)] px-4 py-3 font-sans text-[color:var(--jb-cream)] transition-colors focus:border-[color:var(--jb-acid)] focus:outline-none"
                   >
                     <option value="">Selecione...</option>
-                    <option value="vss">Vendas Sem Segredos</option>
-                    <option value="services">Implementation Services</option>
-                    <option value="advisory">Strategic Advisory</option>
-                    <option value="other">Outro Assunto</option>
+                    <option value="vss">Vendas Sem Segredos (VSS)</option>
+                    <option value="advisory">Advisory</option>
+                    <option value="imprensa">Imprensa / Palestra</option>
+                    <option value="other">Outro</option>
                   </select>
                 </div>
               </div>
-
               <div>
-                <label for="message" class="mb-2 block font-display text-sm font-semibold text-white">
+                <label for="message" class="mb-2 block font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-3)]">
                   Mensagem *
                 </label>
                 <textarea
@@ -209,59 +184,39 @@ const faqs = [
                   name="message"
                   required
                   rows="6"
-                  class="w-full rounded-lg border-2 border-white/10 bg-white/5 px-4 py-3 font-sans text-body text-white placeholder-gray-500 transition-colors focus:border-lime focus:outline-none"
-                  placeholder="Conte-me sobre seu desafio atual..."
+                  class="w-full border border-[color:var(--jb-hair-strong)] bg-[color:var(--jb-ink)] px-4 py-3 font-sans text-[color:var(--jb-cream)] placeholder:text-[color:var(--jb-fg-muted)] transition-colors focus:border-[color:var(--jb-acid)] focus:outline-none"
+                  placeholder="Conta teu desafio atual, faturamento, momento da empresa..."
                 ></textarea>
               </div>
 
-              <button
-                type="submit"
-                class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-lime px-8 py-4 font-display text-lg font-bold text-dark shadow-lg shadow-lime/20 transition-all hover:scale-105 hover:bg-lime/90 focus:outline-none focus:ring-2 focus:ring-lime focus:ring-offset-2 md:w-auto"
-              >
-                <Icons name="send" class="h-5 w-5" />
-                Enviar Mensagem
+              <button type="submit" class="btn-primary min-h-[48px]">
+                <span>Enviar mensagem</span>
+                <span aria-hidden="true">→</span>
               </button>
-
-              <p class="font-sans text-body-sm text-gray-400">
+              <p class="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">
                 * Campos obrigatórios
               </p>
             </form>
           </div>
         </div>
-      </Container>
-    </section>
+      </section>
 
-    <!-- FAQ Section -->
-    <section class="bg-dark py-24">
-      <Container>
+      <!-- FAQ -->
+      <section class="pb-16 md:pb-24">
         <div class="mx-auto max-w-3xl">
-          <div class="mb-12 text-center">
-            <h2 class="mb-4 font-display text-display-sm text-white">
-              Dúvidas Frequentes
-            </h2>
-            <p class="font-sans text-body-lg text-gray-200">
-              Respostas rápidas para as perguntas mais comuns
-            </p>
-          </div>
-
-          <div class="space-y-4">
-            {faqs.map((faq, index) => (
-              <div 
-                class="faq-item rounded-xl border-2 border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-lime/50"
-                style={`animation-delay: ${index * 0.1}s`}
-              >
-                <h3 class="mb-3 font-display text-h4 text-white">
-                  {faq.question}
-                </h3>
-                <p class="font-sans text-body text-gray-200">
-                  {faq.answer}
-                </p>
+          <div class="kicker mb-6">// FAQ · DÚVIDAS_COMUNS</div>
+          <h2 class="heading-2 mb-10 text-[color:var(--jb-cream)]">Perguntas frequentes</h2>
+          <div class="space-y-0 border border-[color:var(--jb-hair)] bg-[color:var(--jb-ink-2)]">
+            {faqs.map((faq, i) => (
+              <div class={`p-6 md:p-8 ${i > 0 ? 'border-t border-[color:var(--jb-hair)]' : ''}`}>
+                <h3 class="heading-4 mb-3 text-[color:var(--jb-cream)]">{faq.q}</h3>
+                <p class="font-sans text-[color:var(--jb-fg-2)]">{faq.a}</p>
               </div>
             ))}
           </div>
         </div>
-      </Container>
-    </section>
+      </section>
+    </Container>
   </main>
 
   <Footer />
@@ -269,39 +224,27 @@ const faqs = [
 
 <script>
   const form = document.getElementById('contact-form') as HTMLFormElement
-  
   if (form) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault()
-      
       const formData = new FormData(form)
       const data = Object.fromEntries(formData)
-      
-      // Aqui você pode integrar com seu backend/API
       console.log('Form data:', data)
-      
-      // Simulação de envio
-      alert('Mensagem enviada com sucesso! Retornarei em até 24 horas.')
+      alert('Mensagem enviada. Retorno em até 24h.')
       form.reset()
     })
   }
 </script>
 
 <style>
-  .contact-card,
-  .faq-item {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out forwards;
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .tg-display {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.045em;
+    line-height: 0.92;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    color: var(--jb-cream);
+    margin: 0;
   }
 </style>

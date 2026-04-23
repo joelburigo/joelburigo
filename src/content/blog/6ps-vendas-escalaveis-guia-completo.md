@@ -527,9 +527,9 @@ Exemplo VSS:
 
 | COMPONENTE | VALOR SEPARADO |
 |------------|----------------|
-| 15 módulos + 66 aulas | R$ 1.997 |
+| Sistema VSS Implementável (playbook + 15 vídeos-âncora, vitalício) | R$ 1.997 |
 | Growth CRM 12 meses | R$ 6.996 |
-| 48 mentorias em grupo com Joel | R$ 7.200 |
+| 48 mentorias ao vivo com Joel (1/semana, 60 min) | R$ 7.200 |
 | Templates e automações | R$ 497 |
 | Comunidade exclusiva (90 dias) | R$ 597 |
 | **VALOR TOTAL** | **R$ 17.287** |
@@ -564,9 +564,8 @@ Urgência falsa = perde credibilidade.
 Urgência real = acelera decisão.
 
 Urgências reais:
-- Turmas com vagas limitadas (mentorias têm capacidade)
-- Preço de lançamento (depois aumenta)
-- Bônus por tempo limitado
+- Capacidade de acompanhamento ao vivo (grupos com limite pra manter qualidade)
+- Bônus por tempo limitado em ações específicas
 - Realidade do mercado ("cada mês com vendas aleatórias = dinheiro perdido")
 
 ---

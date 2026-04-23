@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import Header from '../components/layout/Header.astro'
 import Footer from '../components/layout/Footer.astro'
-import DiagnosticoPage from '../components/pages/DiagnosticoPage.astro'
+import DiagnosticoPage from '../components/sections/DiagnosticoPage.astro'
 import Breadcrumbs from '../components/seo/Breadcrumbs.astro'
 import Container from '../components/ui/Container.astro'
 
@@ -18,7 +18,7 @@ const seo = {
 
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
   <Header />
-  <section class="bg-dark pt-20 pb-6">
+  <section class="bg-ink pt-20 pb-6">
     <Container>
       <Breadcrumbs
         items={[

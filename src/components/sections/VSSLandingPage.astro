@@ -1,0 +1,376 @@
+---
+import Container from '../ui/Container.astro'
+
+// VSS Landing Page · /lp/vss
+// Fonte: 02-oferta.md §02.2 + 03-programa-vss.md + 04-playbook-vss.md + recursos/copy-bank.md
+// Tom: conversão direta, provocador, growth/executável. Preço R$ 1.997 ou 12× R$ 166,42.
+
+const beneficios = [
+  { titulo: 'P1 Posicionamento', desc: 'Sua PUV e Big Idea prontas. Cliente entende em 10s por que você, e não o concorrente.' },
+  { titulo: 'P2 Público', desc: 'ICP cirúrgico + persona + mapa de dores. Mensagem certa pro cliente certo, no canal certo.' },
+  { titulo: 'P3 Produto', desc: 'Oferta empilhada, precificação por valor, banco de provas. Sem objeção constante de preço.' },
+  { titulo: 'P4 Programas', desc: 'Growth CRM montado + funis + automação. Funciona com tráfego pago OU prospecção gratuita.' },
+  { titulo: 'P5 Processos', desc: '5 playbooks essenciais documentados + dashboard unificado. Pessoa nova segue sozinha.' },
+  { titulo: 'P6 Pessoas', desc: 'Estrutura de time por estágio + onboarding 30d. Negócio sobrevive 2 semanas sem você.' },
+]
+
+const paraQuem = [
+  'MPE com R$ 10–100k/mês que quer previsibilidade',
+  'Empreendedor que já pagou curso/agência e não viu resultado',
+  'Quem tem talento de venda mas não tem sistema',
+  'Quem entende que esforço + método > fórmula mágica',
+]
+
+const naoEPara = [
+  'Quem quer que alguém faça por você',
+  'Quem busca enriquecimento rápido',
+  'Quem não tem 6–9h/semana nas primeiras fases',
+  'Quem não aceita feedback direto',
+]
+
+const objecoes = [
+  {
+    q: 'R$ 1.997 está caro pra mim agora.',
+    a: 'Você não paga R$ 1.997 — você recupera em 1 venda adicional de R$ 500. Stack empilhada: R$ 17.287. E tem 12× R$ 166,42 no cartão. A pergunta real é: quanto custa continuar improvisando mais 12 meses?',
+  },
+  {
+    q: 'Não tenho tempo. Agenda caótica.',
+    a: 'Você já gasta mais tempo improvisando. 6–9h/semana nas primeiras fases. Depois das 90 dias, o sistema passa a rodar por você. É investimento de tempo, não gasto.',
+  },
+  {
+    q: 'Meu nicho é diferente. Não vai funcionar.',
+    a: 'Framework testado em 20+ nichos — consultoria, advocacia, clínicas, academias, e-commerce, B2B, cursos, SaaS, estética, restaurantes. Os 6Ps são universais. A implementação é customizada.',
+  },
+  {
+    q: 'Já tentei curso/agência e não deu.',
+    a: 'A diferença é implementação guiada — 48 mentorias ao vivo com o Joel (rolling 12 meses) + comunidade. Não é curso pra maratonar e esquecer. É sistema pra implementar junto.',
+  },
+  {
+    q: 'Não tenho budget pra tráfego pago.',
+    a: 'VSS funciona com OU sem tráfego pago. Módulo 8 inteiro é prospecção ativa gratuita (LinkedIn, Instagram, cold email ético). Validado em clientes com R$ 0 de budget.',
+  },
+  {
+    q: 'E se não for pra mim?',
+    a: '15 dias de garantia incondicional. Testa, não se adaptou — reembolso 100%. Sem perguntas, sem fricção. Risco zero.',
+  },
+]
+---
+
+<!-- HERO -->
+<section class="relative overflow-hidden bg-ink pb-20 pt-32 md:pt-36">
+  <div class="grid-overlay"></div>
+  <div class="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full" style="background: radial-gradient(circle, rgba(198,255,0,0.1), transparent 70%);"></div>
+
+  <Container>
+    <!-- Status bar -->
+    <div class="mb-8 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="dot-live"></span>
+        <span class="mono text-acid">SYS ONLINE · VSS v3.0 · VAGAS SEMPRE ABERTAS</span>
+      </div>
+      <div class="mono text-fg-muted">EST. 2008 · FLORIANÓPOLIS/SC</div>
+    </div>
+
+    <div class="mx-auto max-w-5xl">
+      <div class="kicker mb-5">// VSS · VENDAS SEM SEGREDOS · DIY · R$ 1.997</div>
+      <h1 class="mb-8 font-display text-cream" style="font-size: clamp(2.5rem, 7vw, 5.5rem); line-height: 0.9; letter-spacing: -0.045em; text-transform: uppercase;">
+        Transforma vendas <span class="text-fire">aleatórias</span> em vendas <span class="text-acid">previsíveis</span> — em <span class="stroke-text">90 dias</span>.
+      </h1>
+      <p class="mb-10 font-sans text-cream/85" style="font-size: clamp(1.125rem, 2.2vw, 1.4rem); line-height: 1.5; max-width: 48rem;">
+        Sem maratonar curso. Sem contratar agência que entrega post bonito sem resultado. <strong class="text-cream">O método 6Ps condensado em 7 fases · 15 módulos · 66 destravamentos executáveis</strong> — já testado em 140+ empresas e 20+ nichos, com ou sem budget de tráfego.
+      </p>
+
+      <!-- Bloco preço + CTA -->
+      <div class="mb-10 border-2 border-acid p-8" style="background: linear-gradient(180deg, rgba(198,255,0,0.1), rgba(198,255,0,0.02));">
+        <div class="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+          <div>
+            <div class="mono mb-2 text-acid">// INVESTIMENTO ÚNICO · ACESSO VITALÍCIO</div>
+            <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+              <span class="font-display text-acid" style="font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1; letter-spacing: -0.045em;">
+                R$ 1.997
+              </span>
+              <span class="font-display text-cream/80" style="font-size: 1.15rem; letter-spacing: -0.02em;">
+                à vista
+              </span>
+            </div>
+            <div class="mt-2 font-sans text-cream/85" style="font-size: 1rem;">
+              ou <strong class="text-cream">12× de R$ 166,42</strong> no cartão · stack empilhada <span class="line-through text-fg-muted">R$ 17.287</span>
+            </div>
+          </div>
+          <a href="#checkout" class="btn-primary" style="font-size: 1rem; padding: 1.25rem 2rem;">
+            Começar agora →
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-6 mono">
+        <span class="flex items-center gap-2"><span class="text-acid">★</span> GARANTIA 15 DIAS</span>
+        <span class="flex items-center gap-2"><span class="text-acid">★</span> GROWTH CRM INCLUÍDO</span>
+        <span class="flex items-center gap-2"><span class="text-acid">★</span> 48 MENTORIAS AO VIVO</span>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- DOR: SINAIS QUE TE CONVENCEM -->
+<section class="relative bg-ink-2 py-20">
+  <Container>
+    <div class="mx-auto max-w-4xl">
+      <div class="kicker mb-4" style="color: var(--jb-fire);">// RECONHECE ALGUM DISSO?</div>
+      <h2 class="mb-10 font-display text-cream" style="font-size: clamp(1.75rem, 4.5vw, 3rem); line-height: 0.95; letter-spacing: -0.035em; text-transform: uppercase;">
+        Se <span class="text-fire">2 ou mais</span> aparecem na sua semana — tua Máquina está <span class="text-fire">parada</span>.
+      </h2>
+
+      <div class="grid gap-0 border border-white/10 sm:grid-cols-2">
+        {[
+          'Acorda sem saber quanto vai faturar no próximo mês',
+          'Lead vira planilha, papel, memória ou Post-it',
+          'Follow-up depende de lembrar (e você esquece)',
+          'Venda "por acaso" — mês bom, mês ruim, sem padrão',
+          'Marketing posta bonito, vendas não acompanha',
+          'Empresa só funciona quando você está lá',
+          'Já pagou agência que sumiu sem entregar',
+          'Cliente objeta preço porque não vê valor',
+        ].map((dor, i) => (
+          <div class="flex items-start gap-3 p-5" style={`border-right: ${i % 2 === 0 ? '1px solid var(--jb-hair)' : '0'}; border-top: ${i > 1 ? '1px solid var(--jb-hair)' : '0'};`}>
+            <span class="mt-1 inline-block h-2 w-2 shrink-0 bg-fire"></span>
+            <span class="font-sans text-cream/85" style="font-size: 0.95rem; line-height: 1.45;">{dor}</span>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-10 border-l-4 border-fire bg-fire/5 p-6">
+        <p class="font-display text-cream" style="font-size: clamp(1.25rem, 2.5vw, 1.75rem); line-height: 1.05; letter-spacing: -0.025em; text-transform: uppercase;">
+          Improviso <span class="text-fire">mata mais empresa</span> que crise. Marketing sem vendas é <span class="text-fire">hobby caro</span>.
+        </p>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- SOLUÇÃO: 6PS -->
+<section class="relative overflow-hidden bg-ink py-24">
+  <div class="grid-overlay"></div>
+  <Container>
+    <div class="mx-auto mb-14 max-w-3xl">
+      <div class="kicker mb-4">// O MÉTODO</div>
+      <h2 class="mb-6 font-display text-cream" style="font-size: clamp(2rem, 5vw, 3.5rem); line-height: 0.92; letter-spacing: -0.04em; text-transform: uppercase;">
+        Os <span class="text-acid">6Ps das Vendas Escaláveis</span>
+      </h2>
+      <p class="font-sans text-cream/70" style="font-size: 1.125rem; line-height: 1.55;">
+        Framework condensado de 17+ anos e 140+ empresas. Sequência importa: P1 → P2 → P3 → P4 → P5 → P6. Fraqueza em um compromete todos os seguintes.
+      </p>
+    </div>
+
+    <div class="grid gap-0 border border-white/10 sm:grid-cols-2 lg:grid-cols-3">
+      {beneficios.map((b, i) => (
+        <article class="p-8" style={`border-right: ${(i + 1) % 3 === 0 ? '0' : '1px solid var(--jb-hair)'}; border-bottom: ${i < beneficios.length - 3 ? '1px solid var(--jb-hair)' : '0'};`}>
+          <div class="font-display text-acid" style="font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 900;">
+            {b.titulo}
+          </div>
+          <p class="mt-4 font-sans text-cream/85" style="font-size: 0.95rem; line-height: 1.55;">
+            {b.desc}
+          </p>
+        </article>
+      ))}
+    </div>
+  </Container>
+</section>
+
+<!-- STACK -->
+<section class="relative bg-ink-2 py-24">
+  <Container>
+    <div class="mx-auto max-w-4xl">
+      <div class="mb-12">
+        <div class="kicker mb-4">// O QUE VOCÊ LEVA</div>
+        <h2 class="font-display text-cream" style="font-size: clamp(1.75rem, 4.5vw, 3rem); line-height: 0.95; letter-spacing: -0.035em; text-transform: uppercase;">
+          Stack empilhada: <span class="stroke-text">R$ 17.287</span>.<br />Investimento: <span class="text-acid">R$ 1.997</span>.
+        </h2>
+      </div>
+
+      <div class="border border-white/10">
+        {[
+          ['Sistema VSS Implementável · playbook + 15 vídeos-âncora · acesso vitalício', 'R$ 1.997'],
+          ['Growth CRM completo · 12 meses incluídos', 'R$ 6.996'],
+          ['48 mentorias ao vivo com Joel · rolling 12 meses', 'R$ 7.200'],
+          ['Templates, scripts e biblioteca de objeções', 'R$ 497'],
+          ['Comunidade exclusiva · 90 dias', 'R$ 597'],
+        ].map(([item, valor], i) => (
+          <div class="grid grid-cols-[1fr_auto] gap-4 p-5 md:p-6" style={`border-top: ${i === 0 ? '0' : '1px solid var(--jb-hair)'};`}>
+            <div class="font-sans text-cream" style="font-size: 0.95rem; line-height: 1.4;">
+              <span class="mono mr-2 text-acid">▶</span>{item}
+            </div>
+            <div class="font-display text-acid" style="font-size: 1rem; white-space: nowrap; letter-spacing: -0.01em;">
+              {valor}
+            </div>
+          </div>
+        ))}
+        <div class="grid grid-cols-[1fr_auto] gap-4 p-5 md:p-6" style="border-top: 1px solid var(--jb-hair); background: rgba(198,255,0,0.06);">
+          <div class="font-display text-cream" style="font-size: 1rem; text-transform: uppercase;">Total empilhado</div>
+          <div class="font-display text-cream" style="font-size: 1.25rem;">R$ 17.287</div>
+        </div>
+        <div class="grid grid-cols-[1fr_auto] gap-4 p-5 md:p-6" style="border-top: 2px solid var(--jb-acid); background: rgba(198,255,0,0.12);">
+          <div class="font-display text-cream" style="font-size: 1.25rem; text-transform: uppercase;">Você paga</div>
+          <div class="font-display text-acid" style="font-size: 2rem; letter-spacing: -0.035em;">R$ 1.997</div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- CASE ESF (prova social pesada) -->
+<section class="relative overflow-hidden bg-ink py-24">
+  <div class="grid-overlay"></div>
+  <Container>
+    <div class="mx-auto max-w-5xl border border-white/10" style="background: linear-gradient(180deg, rgba(198,255,0,0.05), #0B0B0B);">
+      <div class="p-8 md:p-12">
+        <div class="kicker mb-5">// CASE ESF · ENCONTRE SUA FRANQUIA · 2018–2020</div>
+        <div class="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
+          <div>
+            <h3 class="mb-4 font-display text-cream" style="font-size: clamp(1.75rem, 4vw, 2.5rem); line-height: 1; letter-spacing: -0.035em; text-transform: uppercase;">
+              De <span class="text-fire">R$ 160k/mês</span> → <span class="text-acid">R$ 1 milhão/mês</span>
+            </h3>
+            <p class="font-sans text-cream/85" style="font-size: 1.05rem; line-height: 1.55;">
+              Os mesmos 6Ps aplicados numa holding de franquias durante 2 anos. Resultado: <strong class="text-cream">+433% de faturamento</strong>, leads <strong class="text-cream">×8,33</strong>, rede chegou a <strong class="text-cream">1.800+ franqueados</strong>. Não é outlier — é método aplicado com disciplina.
+            </p>
+          </div>
+          <div class="border-l border-white/10 pl-8 text-right">
+            <div class="font-display text-acid" style="font-size: 4rem; line-height: 0.9; letter-spacing: -0.045em;">+433%</div>
+            <div class="mono mt-2 text-fg-muted">faturamento</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- PARA QUEM / NÃO É PRA -->
+<section class="relative bg-ink-2 py-24">
+  <Container>
+    <div class="mx-auto max-w-5xl">
+      <div class="mb-12">
+        <div class="kicker mb-4">// FIT</div>
+        <h2 class="font-display text-cream" style="font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 0.95; letter-spacing: -0.035em; text-transform: uppercase;">
+          VSS <span class="text-acid">é pra você</span>. VSS <span class="text-fire">não é pra você</span>.
+        </h2>
+      </div>
+
+      <div class="grid gap-0 border border-white/10 md:grid-cols-2">
+        <div class="border-b border-white/10 p-8 md:border-b-0 md:border-r" style="background: linear-gradient(180deg, rgba(198,255,0,0.04), transparent);">
+          <div class="mono mb-5 text-acid">▲ é pra você se</div>
+          <ul class="space-y-4">
+            {paraQuem.map((item) => (
+              <li class="flex items-start gap-3 font-sans text-cream" style="font-size: 1rem; line-height: 1.45;">
+                <span class="text-acid">✓</span><span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="p-8" style="background: linear-gradient(180deg, rgba(255,59,15,0.04), transparent);">
+          <div class="mono mb-5 text-fire">▼ NÃO é pra você se</div>
+          <ul class="space-y-4">
+            {naoEPara.map((item) => (
+              <li class="flex items-start gap-3 font-sans text-cream/80" style="font-size: 1rem; line-height: 1.45;">
+                <span class="text-fire">✗</span><span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- OBJEÇÕES -->
+<section class="relative overflow-hidden bg-ink py-24">
+  <div class="grid-overlay"></div>
+  <Container>
+    <div class="mx-auto mb-14 max-w-3xl">
+      <div class="kicker mb-4">// OBJEÇÕES</div>
+      <h2 class="mb-6 font-display text-cream" style="font-size: clamp(1.75rem, 4.5vw, 3rem); line-height: 0.95; letter-spacing: -0.035em; text-transform: uppercase;">
+        As 6 perguntas que <span class="text-acid">todo mundo</span> faz
+      </h2>
+    </div>
+
+    <div class="mx-auto max-w-5xl border border-white/10">
+      {objecoes.map((o, i) => (
+        <details class="group" style={`border-top: ${i === 0 ? '0' : '1px solid var(--jb-hair)'};`}>
+          <summary class="flex cursor-pointer items-center justify-between gap-4 p-6 font-display text-cream md:p-8" style="font-size: clamp(1rem, 2vw, 1.15rem); letter-spacing: -0.02em; text-transform: uppercase; list-style: none;">
+            <span>{o.q}</span>
+            <span class="text-acid group-open:rotate-45" style="transition: transform 180ms;">+</span>
+          </summary>
+          <div class="px-6 pb-6 md:px-8 md:pb-8">
+            <p class="font-sans text-cream/85" style="font-size: 1rem; line-height: 1.55;">{o.a}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </Container>
+</section>
+
+<!-- GARANTIA -->
+<section class="relative bg-ink-2 py-20">
+  <Container>
+    <div class="mx-auto max-w-4xl border-2 border-acid p-10 md:p-14" style="background: linear-gradient(180deg, rgba(198,255,0,0.08), #0B0B0B);">
+      <div class="kicker mb-5">// GARANTIA INCONDICIONAL 15 DIAS</div>
+      <h2 class="mb-5 font-display text-cream" style="font-size: clamp(1.75rem, 4vw, 2.5rem); line-height: 1; letter-spacing: -0.035em; text-transform: uppercase;">
+        Testou e não se adaptou? <span class="text-acid">Reembolso 100%.</span> Sem fricção.
+      </h2>
+      <p class="font-sans text-cream/85" style="font-size: 1.05rem; line-height: 1.55;">
+        15 dias corridos. Avisa e em 48h o valor volta pro teu cartão. Sem formulário de 30 campos, sem ligação de retenção, sem ninguém tentando te fazer desistir de desistir. O risco é 100% nosso — porque o método já foi testado em 140+ empresas. Não tem por que ser diferente com você.
+      </p>
+    </div>
+  </Container>
+</section>
+
+<!-- CHECKOUT / CTA FINAL -->
+<section id="checkout" class="relative overflow-hidden bg-ink py-24">
+  <div class="grid-overlay"></div>
+  <Container>
+    <div class="mx-auto max-w-4xl">
+      <div class="mb-8">
+        <div class="kicker mb-4">// CHECKOUT · ÚLTIMO PASSO</div>
+        <h2 class="mb-5 font-display text-cream" style="font-size: clamp(2rem, 5.5vw, 3.75rem); line-height: 0.92; letter-spacing: -0.04em; text-transform: uppercase;">
+          Daqui <span class="text-acid">90 dias</span> você estará <span class="text-acid">90 dias mais perto</span> do sistema.
+          <br />Ou 90 dias mais <span class="text-fire">distante</span>. <span class="stroke-text">Escolhe.</span>
+        </h2>
+        <p class="font-sans text-cream/85" style="font-size: 1.125rem; line-height: 1.55;">
+          Não há fórmula mágica. Há método. Bora pra cima.
+        </p>
+      </div>
+
+      <div class="border-2 border-acid p-8 md:p-10" style="background: linear-gradient(180deg, rgba(198,255,0,0.1), #0B0B0B);">
+        <div class="mb-8 grid gap-6 md:grid-cols-2">
+          <div>
+            <div class="mono mb-2 text-acid">// À VISTA</div>
+            <div class="font-display text-acid" style="font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1; letter-spacing: -0.045em;">
+              R$ 1.997
+            </div>
+            <div class="mono mt-1 text-fg-muted">PIX OU CARTÃO</div>
+          </div>
+          <div>
+            <div class="mono mb-2 text-acid">// PARCELADO</div>
+            <div class="font-display text-cream" style="font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1; letter-spacing: -0.045em;">
+              12× <span class="text-acid">R$ 166,42</span>
+            </div>
+            <div class="mono mt-1 text-fg-muted">NO CARTÃO</div>
+          </div>
+        </div>
+
+        <a href="https://pay.hotmart.com/" class="btn-primary" style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 1.5rem 2rem;">
+          Entrar no VSS agora →
+        </a>
+
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mono text-fg-muted">
+          <span>★ GARANTIA 15 DIAS</span>
+          <span>★ ACESSO IMEDIATO</span>
+          <span>★ PAGAMENTO SEGURO HOTMART</span>
+        </div>
+      </div>
+
+      <p class="mt-10 text-center mono text-fg-muted">
+        SISTEMA &gt; IMPROVISO · SEMPRE ABERTO · @joelburigo · FLORIANÓPOLIS/SC
+      </p>
+    </div>
+  </Container>
+</section>

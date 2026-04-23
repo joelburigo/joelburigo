@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import Header from '../components/layout/Header.astro'
 import Footer from '../components/layout/Footer.astro'
-import VSSPage from '../components/pages/VSSPage.astro'
+import VSSPage from '../components/sections/VSSPage.astro'
 import Breadcrumbs from '../components/seo/Breadcrumbs.astro'
 import Container from '../components/ui/Container.astro'
 
@@ -61,7 +61,7 @@ const vssSchema = {
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(vssSchema)} />
   <Header />
-  <section class="bg-dark pt-20 pb-6">
+  <section class="bg-ink pt-20 pb-6">
     <Container>
       <Breadcrumbs
         items={[

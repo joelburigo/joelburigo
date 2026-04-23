@@ -126,7 +126,7 @@ Site em `src/` usa Tailwind v4 com breakpoints padrão:
 - **Grid 6Ps:** 1 coluna até `sm`, 2 colunas `md`–`lg`, 3 colunas `lg+` (ou 6×1 linear em desktop xl+)
 - **Tabelas de preço (VSS / Advisory):** cards empilhados verticalmente até `md`; side-by-side a partir de `md`. Destaque (acid border + gradient bg) mantém em ambos
 - **Ticker:** velocidade `38s` desktop, `28s` mobile (percurso menor) — e diminuir `font-size` de 18px → 14px em `<sm`
-- **Status bar topo:** esconder em `<sm` (fica ruído em tela pequena) ou reduzir pra 1 única linha centralizada com só `JB_CORE · SYS ONLINE`
+- **Status bar topo:** esconder em `<sm` (fica ruído em tela pequena) ou reduzir pra 1 única linha centralizada com só `@joelburigo · SYS ONLINE`
 - **Font-sizes display:** usar `clamp()` ancorado em tokens `--jb-fs-*`:
   - H1 hero: `clamp(56px, 9vw, 160px)`
   - H2 section: `clamp(40px, 6vw, 96px)`

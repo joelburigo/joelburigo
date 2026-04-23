@@ -4,739 +4,366 @@ import Layout from '../layouts/Layout.astro'
 import Header from '../components/layout/Header.astro'
 import Footer from '../components/layout/Footer.astro'
 import Container from '../components/ui/Container.astro'
-import joelBurigoImage from '../assets/images/joel-burigo-vendas-sem-segredos-2-1200w.webp'
-import Icons from '../components/ui/Icons.astro'
-import JornadaTimeline from '../components/pages/JornadaTimeline.astro'
-import LicoesDosPps from '../components/pages/LicoesDosPps.astro'
-import VerdadesDuras from '../components/pages/VerdadesDuras.astro';
 import Breadcrumbs from '../components/seo/Breadcrumbs.astro'
+import JornadaTimeline from '../components/sections/JornadaTimeline.astro'
+import LicoesDosPps from '../components/sections/LicoesDosPps.astro'
+import VerdadesDuras from '../components/sections/VerdadesDuras.astro'
+import joelBurigoImage from '../assets/images/joel-burigo-vendas-sem-segredos-2-1200w.webp'
 
 const seo = {
-  title: 'Sobre Joel Burigo | 17 Anos Estruturando Vendas',
-  description:
-    'De barraco em 2012 a 140+ clientes. Conheça a história e o Framework 6Ps.',
-  keywords: 'Joel Burigo, vendas escaláveis, framework 6Ps, consultor vendas, história empreendedorismo, estruturação vendas MPEs',
-};
+  title: 'Sobre | Joel Burigo',
+  description: 'De barraco em 2012 a 140+ clientes. Da quebrada ao bilhão. Manifesto + história + Framework 6Ps.',
+  keywords: 'Joel Burigo, história, Framework 6Ps, vendas escaláveis, consultor vendas',
+}
 
-const stats = [
-  { number: '17+', label: 'Anos de experiência' },
-  { number: '~R$ 1bi', label: 'Em vendas estruturadas' },
-  { number: '140+', label: 'Clientes atendidos' },
-  { number: '6Ps', label: 'Framework proprietário' },
-];
+// 6Ps (ordem fixa)
+const ps6 = [
+  { n: 'P1', nome: 'POSICIONAMENTO' },
+  { n: 'P2', nome: 'PÚBLICO' },
+  { n: 'P3', nome: 'PRODUTO' },
+  { n: 'P4', nome: 'PROGRAMAS' },
+  { n: 'P5', nome: 'PROCESSOS' },
+  { n: 'P6', nome: 'PESSOAS' },
+]
 
-const cicatrizes = [
-  'Quebrei empresa aos 25 anos em março de 2012 (sei como é perder tudo)',
-  'Morei 6 meses num barraco de R$ 300 sem geladeira em MG (sei o que é recomeçar do zero)',
-  'Trabalhei nos Correios por R$ 1.400/mês colocando encomendas na esteira (sei o que é humilhação temporária)',
-  'Bati em 100+ portas com um milheiro de cartões de visita (sei o que é trabalho duro)',
-  'Atendi 140+ clientes ao longo de 17 anos (sei o que funciona e o que não funciona)',
-  'Tomei calote do próprio sócio (sei o que é ser traído e reconstruir)',
-];
+// 7 inimigos da Máquina (fonte: 01-marca §01.9)
+const inimigos = [
+  { n: '01', titulo: 'IMPROVISO', descricao: 'Vendas aleatórias, sem processo, dependendo de sorte ou da agenda do dia.' },
+  { n: '02', titulo: 'FÓRMULA MÁGICA', descricao: 'Promessa de atalho. "Passo a passo fácil". Não há fórmula. Há método.' },
+  { n: '03', titulo: 'MARKETING SEM VENDAS', descricao: 'Post bonito no Instagram não paga boleto. Marketing sem vendas é hobby caro.' },
+  { n: '04', titulo: 'DEPENDÊNCIA DO FUNDADOR', descricao: 'Se tua empresa depende de tu, tu não tem empresa — tu tem emprego.' },
+  { n: '05', titulo: 'CRM VAZIO', descricao: 'Ferramenta no lugar errado, processo no lugar nenhum. Leads entram e somem.' },
+  { n: '06', titulo: 'TÁTICA SEM SISTEMA', descricao: 'Anúncio sem funil, funil sem script, script sem follow-up. Peça solta não escala.' },
+  { n: '07', titulo: 'MOTIVACIONAL VAZIO', descricao: '"Você consegue!". Fica o discurso, some a execução. Sem sistema, motivação é placebo.' },
+]
 
+// 6 valores da personalidade (derivados de 01-marca)
 const personalidade = [
-  {
-    caracteristica: 'DIRETO',
-    significa: 'Falo a verdade sem enrolação',
-    exemplo: 'Não existe fórmula mágica. Existe trabalho + método.',
-    valor: 'Transparência Brutal',
-  },
-  {
-    caracteristica: 'PARCEIRO',
-    significa: 'Implemento junto, não ensino de cima pra baixo',
-    exemplo: 'Vou te mostrar exatamente como eu faço.',
-    valor: 'Execução > Teoria',
-  },
-  {
-    caracteristica: 'INTENSO',
-    significa: 'Energia alta, comprometido com resultado real',
-    exemplo: 'Quando eu entro, eu entro pra valer.',
-    valor: 'Dignidade do Trabalho',
-  },
-  {
-    caracteristica: 'TRANSPARENTE',
-    significa: 'Conto fracassos, não só vitórias',
-    exemplo: 'Quebrei aos 25. Morei em barraco. Sei como é.',
-    valor: 'Transparência Brutal',
-  },
-  {
-    caracteristica: 'SISTEMÁTICO',
-    significa: 'Foco em sistema replicável, não tática isolada',
-    exemplo: 'Sistema > Improviso. É a base de tudo que faço.',
-    valor: 'Sistema > Improviso',
-  },
-  {
-    caracteristica: 'ACESSÍVEL',
-    significa: 'Metodologia profissional ao alcance de MPEs',
-    exemplo: 'Ferramentas e métodos devem estar ao alcance de quem vem de baixo.',
-    valor: 'Acessibilidade',
-  },
-];
+  { carac: 'DIRETO', significa: 'Fala a verdade sem enrolação.', exemplo: 'Não há fórmula mágica. Há método.' },
+  { carac: 'PARCEIRO', significa: 'Implementa junto, não ensina de cima pra baixo.', exemplo: 'Vem comigo. Mostro exatamente como faço.' },
+  { carac: 'INTENSO', significa: 'Energia alta, comprometido com resultado real.', exemplo: 'Quando eu entro, eu entro pra valer.' },
+  { carac: 'TRANSPARENTE', significa: 'Conta fracassos, não só vitórias.', exemplo: 'Quebrei aos 25. Morei em barraco. Sei como é.' },
+  { carac: 'SISTEMÁTICO', significa: 'Foco em sistema replicável, não tática isolada.', exemplo: 'Sistema > Improviso. Base de tudo.' },
+  { carac: 'ACESSÍVEL', significa: 'Metodologia profissional ao alcance de MPE.', exemplo: 'Ferramentas e método ao alcance de quem vem de baixo.' },
+]
 
-const caminhos = [
-  {
-    nome: 'Vendas Sem Segredos',
-    modelo: 'DIY (Faça Você Mesmo)',
-    investimento: 'R$ 1.997',
-    duracao: '90 dias + 12 meses de suporte',
-    paraQuem: 'MPEs que faturam a partir de R$ 10k/mês',
-    momento: 'Quando você quer autonomia e tem tempo para implementar (2-3h/semana)',
-    resolve: [
-      'Vendas aleatórias e sem previsibilidade',
-      'Falta de processo estruturado',
-      'Dependência total do fundador',
-      'Não sabe por onde começar',
-    ],
-    inclui: [
-      'Framework completo dos 6Ps (15 módulos, 66 aulas)',
-      'Growth CRM profissional (12 meses inclusos)',
-      '48 mentorias ao vivo (60 min cada)',
-      'Templates, scripts e automações prontas',
-      'Comunidade exclusiva de alunos',
-    ],
-    resultado: 'Sistema estruturado funcionando, CRM operacional, primeiras vendas consistentes, autonomia total',
-  },
-  {
-    nome: 'Services',
-    modelo: 'DWY (Fazemos JUNTO)',
-    investimento: 'R$ 4.5k - R$ 9k/mês',
-    duracao: 'Mensal sem fidelidade',
-    paraQuem: 'MPEs que faturam R$ 50k-300k/mês',
-    momento: 'Quando você tem budget mas não tem tempo, ou quer aceleração máxima com equipe implementando',
-    resolve: [
-      'Crescimento desordenado sem estrutura',
-      'Equipe sem direção clara',
-      'Precisa escalar rápido com processo',
-      'Quer alguém fazendo junto, não sozinho',
-    ],
-    inclui: [
-      'FUNDAÇÃO (R$ 4.5k): P1-P3, CRM configurado, 3 funis, 5 automações, 2 landing pages',
-      'ACELERAÇÃO (R$ 6k): Todos 6Ps, 10 automações, tráfego pago, treinamento equipe',
-      'SCALEUP (R$ 9k): Multi-unidades, playbook completo, replicação, operação autônoma',
-    ],
-    resultado: 'Sistema implementado pela equipe, processos documentados, equipe treinada, autonomia progressiva',
-  },
-  {
-    nome: 'Advisory',
-    modelo: '1:1 Direto Comigo',
-    investimento: 'R$ 997 - R$ 15k/mês',
-    duracao: 'Pontual ou recorrente',
-    paraQuem: 'Empresas R$ 100k+/mês ou momentos críticos',
-    momento: 'Decisão estratégica importante, momento de virada, ou quer minha cabeça (não execução)',
-    resolve: [
-      'Decisões críticas de negócio',
-      'Momentos de transição ou crise',
-      'Quer mente estratégica, não execução',
-      'Valoriza atalhos (17 anos de experiência)',
-    ],
-    inclui: [
-      'SESSÃO ESTRATÉGICA (R$ 997): 90 min, diagnóstico + plano de ação',
-      'SPRINT 30 DIAS (R$ 7.5k): 4 sessões, plano estratégico 12 meses, documento completo',
-      'CONSELHO EXECUTIVO (R$ 15k/mês): 8 sessões/mês, WhatsApp direto, acompanhamento contínuo',
-    ],
-    resultado: 'Clareza estratégica, decisões embasadas, plano de ação customizado, atalho no crescimento',
-  },
-];
+// Stats canônicos (ANTI_DRIFT §4.1)
+const stats = [
+  { num: '17+', label: 'Anos' },
+  { num: '140+', label: 'Clientes' },
+  { num: '~R$1BI', label: 'Estruturado' },
+  { num: '20+', label: 'Nichos' },
+]
 
-const promessas = [
-  { prometo: true, texto: 'Sistema estruturado e testado' },
-  { prometo: false, texto: 'Enriquecimento rápido' },
-  { prometo: true, texto: 'Metodologia comprovada em mais de 140 clientes' },
-  { prometo: false, texto: 'Fórmula mágica' },
-  { prometo: true, texto: 'Autonomia progressiva' },
-  { prometo: false, texto: 'Resultado sem esforço' },
-  { prometo: true, texto: 'CRM profissional incluído' },
-  { prometo: false, texto: 'Que vai ser fácil' },
-];
+// Cicatrizes (fonte bio)
+const cicatrizes = [
+  'Quebrou empresa aos 25 anos em março/2012 (calote de sócio)',
+  'Morou 6 meses em barraco de R$ 300 sem geladeira em Ribeirão das Neves/MG',
+  'Trabalhou nos Correios por R$ 1.400/mês enquanto reconstruía',
+  'Bateu em 100+ portas com um milheiro de cartões de visita em BH',
+  'Atendeu 140+ clientes ao longo de 17+ anos — sabe o que funciona e o que não funciona',
+  'Reconstruiu 2×: quebra em 2012 e perda de ~R$ 250k em 2019 (Growth Master/OnSell)',
+]
 ---
 
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
   <Header />
 
-  <section class="bg-dark pt-20 pb-6">
+  <section class="bg-ink pt-20 pb-6">
     <Container>
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Sobre', href: '/sobre' }]} />
     </Container>
   </section>
 
-  <main class="grow">
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden bg-dark py-32">
+  <main class="relative overflow-hidden bg-ink">
+    <div class="grid-overlay"></div>
 
-      <Container class="relative z-10">
-        <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-          <!-- Left Content -->
-          <div class="order-2 lg:order-1">
-            <div
-              class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-2 backdrop-blur-sm"
-            >
-              <span class="font-display text-sm font-bold text-lime">MINHA HISTÓRIA</span>
-            </div>
-
-            <h1 class="mb-6 font-display text-display-md text-white md:text-display-lg">
-              Do Barraco ao <span class="text-lime">Bilhão</span>
+    <Container class="relative z-10">
+      <!-- Hero -->
+      <section class="py-16 md:py-24">
+        <div class="grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-center">
+          <div>
+            <div class="kicker mb-6">// JOEL_BURIGO · 1987-PRESENTE · RIBEIRÃO_DA_ILHA/SC</div>
+            <h1 class="sobre-display">
+              <span class="block">Da quebrada</span>
+              <span class="block"><span class="stroke-text">ao</span> <span class="text-acid">bilhão.</span></span>
             </h1>
-
-            <p class="mb-6 font-sans text-body-lg text-gray-200">
-              Maio de 2012. Barraco de R$ 300. Sem geladeira. Cama em cima de tijolos.
+            <p class="mt-8 max-w-xl font-sans text-lg text-[color:var(--jb-cream)] leading-relaxed">
+              Março/2012. Barraco de R$ 300 em Ribeirão das Neves/MG. Sem geladeira. Cama em tijolos.
             </p>
-            <p class="mb-4 font-sans text-body text-gray-300">
-              Tinha 25 anos e achava que tinha perdido tudo. <strong class="text-white">Tomei calote do próprio sócio</strong> e quebrei minha primeira empresa. Estava em Ribeirão das Neves/MG trabalhando nos Correios por R$ 1.400/mês colocando encomendas na esteira.
+            <p class="mt-4 max-w-xl font-sans text-[color:var(--jb-fg-2)] leading-relaxed">
+              25 anos, calote do próprio sócio, primeira empresa quebrada. Nos Correios por R$ 1.400/mês colocando encomenda na esteira. Seis meses ali. Juntei cada centavo, comprei um milheiro de cartão de visita e bati em 100+ portas subindo a Afonso Pena em BH.
             </p>
-            <p class="mb-4 font-sans text-body text-gray-300">
-              <strong class="text-white">Fiquei 6 meses naquele barraco.</strong> Juntei cada centavo. Comprei um milheiro de cartões de visita. Subi a Avenida Afonso Pena em BH e bati em mais de 100 portas. O primeiro cliente pagou R$ 500 por um site. A reconstrução começou.
+            <p class="mt-4 max-w-xl font-sans text-[color:var(--jb-fg-2)] leading-relaxed">
+              Hoje, 17+ anos depois, cicatriz virou metodologia testada em <strong class="text-[color:var(--jb-cream)]">140+ empresas</strong> e <strong class="text-[color:var(--jb-cream)]">~R$ 1 bilhão</strong> em vendas estruturadas.
             </p>
-            <p class="mb-4 font-sans text-body text-gray-300">
-              <strong class="text-white">Hoje, 17 anos depois,</strong> transformei essas cicatrizes em metodologia testada em 140+ empresas e ~R$ 1 bilhão em vendas estruturadas. Não vendo promessa de enriquecimento rápido. Vendo o que funciona de verdade.
+            <p class="mt-4 max-w-xl font-mono text-[13px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-3)]">
+              <span class="text-acid">●</span>&nbsp; NASCIDO 1987 · PALHOÇA/SC · JARDIM_ELDORADO
             </p>
-            <p class="font-sans text-body text-gray-400">
-              Nasci em 1987 no Jardim Eldorado, Palhoça/SC — a quebrada. Pai marceneiro, mãe vendedora. Aprendi que trabalho supera sorte. Que improviso tem limite. E que sistema replicável vence no longo prazo.
-            </p>
-
-            <div class="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4">
-              {
-                stats.map((stat) => (
-                  <div>
-                    <p class="font-display text-3xl font-bold text-lime">{stat.number}</p>
-                    <p class="font-sans text-body-sm text-gray-400">{stat.label}</p>
-                  </div>
-                ))
-              }
-            </div>
           </div>
 
-          <!-- Right Image -->
-          <div class="order-1 lg:order-2">
-            <div class="relative">
-              <div
-                class="aspect-4/5 overflow-hidden rounded-2xl border-2 border-lime/20 bg-dark shadow-2xl"
-              >
-                <Image
-                  src={joelBurigoImage}
-                  alt="Joel Burigo - Especialista em Vendas Escaláveis"
-                  loading="lazy"
-                  class="h-full w-full object-cover"
-                />
-              </div>
-              <div
-                class="absolute -bottom-6 -right-6 rounded-xl border-2 border-lime/20 bg-dark/95 p-6 backdrop-blur-md"
-              >
-                <p class="font-display text-h4 text-lime">Joel Burigo</p>
-                <p class="font-sans text-body-sm text-gray-200">Especialista em Vendas Escaláveis</p>
+          <!-- Foto -->
+          <aside>
+            <div class="border border-[color:var(--jb-acid-border)] bg-[color:var(--jb-ink-2)] overflow-hidden">
+              <Image
+                src={joelBurigoImage}
+                alt="Joel Burigo — especialista em Vendas Escaláveis"
+                loading="lazy"
+                class="w-full h-auto grayscale contrast-110"
+              />
+              <div class="p-5 border-t border-[color:var(--jb-hair)]">
+                <div class="kicker mb-2" style="color: var(--jb-acid);">// JOEL_BURIGO</div>
+                <p class="font-display text-lg text-[color:var(--jb-cream)]">
+                  Vendas Escaláveis · Framework 6Ps
+                </p>
               </div>
             </div>
+          </aside>
+        </div>
+
+        <!-- Stats -->
+        <div class="mt-16 grid grid-cols-2 gap-px border border-[color:var(--jb-hair)] bg-[color:var(--jb-hair)] md:grid-cols-4">
+          {stats.map((s) => (
+            <div class="bg-[color:var(--jb-ink)] p-6">
+              <div class="font-display text-3xl md:text-4xl text-acid">{s.num}</div>
+              <div class="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Manifesto -->
+      <section class="pb-16">
+        <div class="border border-[color:var(--jb-fire-border)] bg-[color:var(--jb-ink-2)] p-8 md:p-12">
+          <div class="kicker mb-6" style="color: var(--jb-fire);">// MANIFESTO · DA_QUEBRADA_AO_BILHÃO</div>
+          <div class="space-y-6 font-sans text-lg text-[color:var(--jb-cream)] leading-relaxed">
+            <p>
+              Eu acredito em <strong>sistema &gt; improviso</strong>.
+            </p>
+            <p>
+              Acredito que <em>marketing sem vendas é hobby caro</em> — e que <em>post bonito no Instagram não paga boleto</em>.
+            </p>
+            <p>
+              Acredito que <strong>improviso mata mais empresa que crise</strong> e que quem constrói sistema replicável vence no longo prazo.
+            </p>
+            <p>
+              Acredito que metodologia profissional deveria estar ao alcance de quem vem de baixo — não trancada em consultoria de R$ 50-100k.
+            </p>
+            <p class="font-display text-2xl md:text-3xl text-acid">
+              "SE TUA EMPRESA DEPENDE DE TU, TU NÃO TEM EMPRESA — TU TEM EMPREGO."
+            </p>
           </div>
         </div>
-      </Container>
-    </section>
+      </section>
+    </Container>
 
-    <!-- A Jornada Completa (Timeline) -->
+    <!-- Jornada Timeline (componente migrado) -->
     <JornadaTimeline />
 
-    <!-- Cicatrizes que Viraram Sabedoria -->
-    <section class="bg-dark py-24">
-      <Container>
-        <div class="mx-auto mb-16 max-w-3xl text-center">
-          <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
-            Cicatrizes que Viraram <span class="text-lime">Sabedoria</span>
+    <Container class="relative z-10">
+      <!-- Cicatrizes -->
+      <section class="py-16">
+        <div class="mx-auto max-w-5xl">
+          <div class="kicker mb-6">// CICATRIZES · QUE_VIRARAM_SABEDORIA</div>
+          <h2 class="heading-2 mb-10 text-[color:var(--jb-cream)]">
+            Cada falha ensinou algo que nenhum MBA ensina.
           </h2>
-          <p class="font-sans text-body-lg text-gray-200">
-            Cada falha me ensinou algo que nenhum MBA ensina
-          </p>
-        </div>
+          <ul class="space-y-0 border border-[color:var(--jb-hair)] bg-[color:var(--jb-ink-2)]">
+            {cicatrizes.map((c, i) => (
+              <li class={`flex items-start gap-5 p-6 ${i > 0 ? 'border-t border-[color:var(--jb-hair)]' : ''}`}>
+                <div class="font-mono text-sm font-bold text-acid shrink-0" style="letter-spacing: 0.1em;">{String(i + 1).padStart(2, '0')}</div>
+                <p class="font-sans text-[color:var(--jb-fg-2)]">{c}</p>
+              </li>
+            ))}
+          </ul>
 
-        <div class="mx-auto max-w-3xl space-y-4">
-          {
-            cicatrizes.map((cicatriz, index) => (
-              <div
-                class="flex items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-lime/30"
-                style={`animation-delay: ${index * 0.1}s; opacity: 0; animation: fadeInUp 0.6s ease-out ${index * 0.1}s forwards;`}
-              >
-                <Icons name="check-circle-2" class="h-6 w-6 shrink-0 text-lime" />
-                <p class="font-sans text-body text-gray-200">{cicatriz}</p>
-              </div>
-            ))
-          }
-        </div>
-
-        <div
-          class="mx-auto mt-12 max-w-2xl rounded-2xl border border-lime/20 bg-lime/5 p-8 text-center"
-        >
-          <p class="mb-4 font-display text-h3 text-white">
-            "Depois de 17 anos e mais de 140 clientes, percebi o padrão:"
-          </p>
-          <p class="mb-4 font-sans text-body-lg text-gray-200">
-            <strong class="text-lime">Improviso mata mais empresa que crise.</strong> A maioria das MPEs não quebra por falta de mercado. Quebra por falta de sistema replicável. Marketing sozinho não funciona — leads chegam mas não convertem porque falta CRM, processo, follow-up, proposta padronizada.
-          </p>
-          <p class="font-sans text-body text-gray-300">
-            Foi isso que me fez criar os <strong class="text-white">6Ps das Vendas Escaláveis</strong> — metodologia que integra Marketing + Vendas + Operação em sistema único. Cada P nasceu de um erro ou acerto real. Nada de teoria. Só o que funciona.
-          </p>
-          <p class="mt-4 font-sans text-body-sm italic text-gray-400">
-            Em dezembro 2024, olhando pro Davi (meu filho) dormindo, decidi: esse conhecimento não pode ficar trancado em consultorias de R$ 50-100k. Nasceu o VSS.
-          </p>
-        </div>
-      </Container>
-    </section>
-
-    <!-- Propósito de Vida e Transformação -->
-    <section class="bg-linear-to-b from-dark/50 to-dark py-24">
-      <Container>
-        <div class="mx-auto max-w-4xl rounded-2xl border border-lime/30 bg-lime/5 p-12">
-          <div class="mb-8 text-center">
-            <p class="mb-4 font-display text-h3 text-lime">POR QUE EU FAÇO ISSO</p>
-            <h2 class="font-display text-display-sm text-white">
-              Transformar Vidas através do <span class="text-lime">Empreendedorismo Estruturado</span>
-            </h2>
-          </div>
-
-          <div class="space-y-6 text-center">
-            <p class="font-sans text-body-lg text-gray-200">
-              <strong class="text-white">Não é o empreendedorismo de discurso motivacional vazio.</strong> É aquele que gera empregos reais, sustenta famílias, movimenta economia local e prova que sistema supera talento improvisado.
+          <!-- Insight -->
+          <div class="mt-10 border-l-2 border-fire bg-[color:var(--jb-ink-2)] p-6 md:p-8">
+            <div class="kicker mb-3" style="color: var(--jb-fire);">// INSIGHT · O_PADRÃO_DEPOIS_DE_17_ANOS</div>
+            <p class="font-display text-2xl text-[color:var(--jb-cream)] mb-4">
+              "IMPROVISO MATA MAIS EMPRESA QUE CRISE."
             </p>
-
-            <p class="font-sans text-body text-gray-300">
-              Eu existo pra que empreendedores brasileiros — especialmente os que vêm de baixo — tenham acesso às mesmas ferramentas e metodologias que empresas consolidadas têm, sem precisar pagar R$ 50-100k em consultoria.
+            <p class="font-sans text-[color:var(--jb-fg-2)] leading-relaxed">
+              A maioria das MPEs brasileiras não quebra por falta de mercado. Quebra por falta de sistema replicável. Marketing sozinho não converte — leads chegam mas não viram venda porque falta CRM, processo, follow-up, proposta padronizada.
             </p>
-
-            <p class="font-sans text-body text-gray-300">
-              Cada empresa que estruturo não só vende mais. <strong class="text-white">Contrata mais pessoas</strong> (empregos diretos). <strong class="text-white">Compra de fornecedores</strong> (empregos indiretos). <strong class="text-white">Prova que vencer vindo da quebrada é possível.</strong>
-            </p>
-
-            <div class="my-8 border-t border-lime/20 pt-8">
-              <p class="mb-6 font-sans text-body text-gray-200">
-                Meus <strong class="text-white">valores inegociáveis</strong>:
-              </p>
-              <div class="space-y-3">
-                <p class="font-sans text-body text-gray-300"><strong class="text-lime">Sistema > Improviso</strong> — Empreendedorismo sério precisa de método replicável, não sorte.</p>
-                <p class="font-sans text-body text-gray-300"><strong class="text-lime">Transparência Brutal</strong> — Falar a verdade mesmo quando dói. Sem promessas vazias.</p>
-                <p class="font-sans text-body text-gray-300"><strong class="text-lime">Execução > Teoria</strong> — Implementar junto, não só diagnosticar e sumir.</p>
-                <p class="font-sans text-body text-gray-300"><strong class="text-lime">Acessibilidade</strong> — Ferramentas profissionais ao alcance de quem vem de baixo.</p>
-                <p class="font-sans text-body text-gray-300"><strong class="text-lime">Dignidade do Trabalho</strong> — Resultado vem de esforço + método, não atalho mágico.</p>
-              </div>
-            </div>
-
-            <p class="pt-6 font-sans text-body-lg italic text-lime">
-              "Se você está lendo isso, não precisa passar pelo que passei. Pode aprender com minhas cicatrizes e construir mais rápido."
+            <p class="mt-3 font-sans text-[color:var(--jb-fg-2)]">
+              Foi isso que fez nascer os <strong class="text-[color:var(--jb-cream)]">6Ps das Vendas Escaláveis</strong> — metodologia que integra Marketing + Vendas + Operação num sistema único. Cada P nasceu de erro ou acerto real.
             </p>
           </div>
         </div>
-      </Container>
-    </section>
+      </section>
 
-    <!-- As Lições que Viraram os 6Ps -->
+      <!-- 6Ps -->
+      <section class="pb-16">
+        <div class="mx-auto max-w-6xl">
+          <div class="kicker mb-6">// FRAMEWORK · 6PS_DAS_VENDAS_ESCALÁVEIS</div>
+          <h2 class="heading-2 mb-10 text-[color:var(--jb-cream)]">
+            Os 6Ps são sequenciais. Pular etapa é garantia de falha.
+          </h2>
+          <div class="grid gap-px border border-[color:var(--jb-hair)] bg-[color:var(--jb-hair)] grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+            {ps6.map((p) => (
+              <div class="bg-[color:var(--jb-ink-2)] p-5">
+                <div class="font-display text-2xl text-acid">{p.n}</div>
+                <div class="mt-2 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-cream)]">{p.nome}</div>
+              </div>
+            ))}
+          </div>
+          <p class="mt-4 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">
+            <span class="text-acid">●</span>&nbsp; POSICIONAMENTO → PÚBLICO → PRODUTO → PROGRAMAS → PROCESSOS → PESSOAS
+          </p>
+        </div>
+      </section>
+    </Container>
+
+    <!-- Lições dos 6Ps (componente migrado) -->
     <LicoesDosPps />
 
-    <!-- As 7 Verdades Duras -->
+    <!-- 7 Verdades (componente migrado — mapeia os inimigos) -->
     <VerdadesDuras />
 
-    <!-- Minha Personalidade -->
-    <section class="bg-dark py-24">
-      <Container>
-        <div class="mx-auto mb-16 max-w-3xl text-center">
-          <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
-            Como Eu <span class="text-lime">Trabalho</span>
+    <Container class="relative z-10">
+      <!-- Os 7 Inimigos (data local, mais direto) -->
+      <section class="py-16">
+        <div class="mx-auto max-w-5xl">
+          <div class="kicker mb-6">// OS_7_INIMIGOS · DA_MÁQUINA_DE_CRESCIMENTO</div>
+          <h2 class="heading-2 mb-10 text-[color:var(--jb-cream)]">
+            O que impede MPE de escalar.
           </h2>
-          <p class="font-sans text-body-lg text-gray-200">
-            6 características que definem minha abordagem
-          </p>
-        </div>
-
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {
-            personalidade.map((item, index) => (
-              <div
-                class="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-lime/30"
-                style={`animation-delay: ${index * 0.1}s; opacity: 0; animation: fadeInUp 0.6s ease-out ${index * 0.1}s forwards;`}
-              >
-                <div class="mb-4 inline-block rounded-lg bg-lime/20 px-3 py-1">
-                  <span class="font-display text-sm font-bold text-lime">
-                    {item.caracteristica}
-                  </span>
+          <div class="grid gap-0 border border-[color:var(--jb-hair)] bg-[color:var(--jb-ink-2)] md:grid-cols-2">
+            {inimigos.map((i, idx) => (
+              <article class={`p-6 ${idx % 2 === 0 && idx < inimigos.length - 1 ? 'md:border-r md:border-[color:var(--jb-hair)]' : ''} ${idx >= 2 ? 'border-t border-[color:var(--jb-hair)]' : ''} ${idx === 1 ? 'border-t md:border-t-0 border-[color:var(--jb-hair)]' : ''}`}>
+                <div class="flex items-baseline gap-3 mb-2">
+                  <span class="font-mono text-sm font-bold text-fire" style="letter-spacing: 0.1em;">#{i.n}</span>
+                  <h3 class="heading-4 text-[color:var(--jb-cream)]">{i.titulo}</h3>
                 </div>
-                <p class="mb-3 font-sans text-body font-medium text-white">{item.significa}</p>
-                <p class="mb-3 font-sans text-body-sm italic text-gray-400">"{item.exemplo}"</p>
-                <p class="font-sans text-body-xs text-lime/80">💪 Valor: {item.valor}</p>
-              </div>
-            ))
-          }
+                <p class="font-sans text-sm text-[color:var(--jb-fg-2)] leading-relaxed">{i.descricao}</p>
+              </article>
+            ))}
+          </div>
         </div>
-      </Container>
-    </section>
+      </section>
 
-    <!-- Os 3 Caminhos para Trabalhar Comigo -->
-    <section class="bg-dark py-24">
-      <Container>
-        <div class="mx-auto mb-16 max-w-3xl text-center">
-          <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
-            Os 3 Caminhos para <span class="text-lime">Trabalhar Comigo</span>
+      <!-- Personalidade -->
+      <section class="pb-16">
+        <div class="mx-auto max-w-6xl">
+          <div class="kicker mb-6">// COMO_EU_TRABALHO · 6_CARACTERÍSTICAS</div>
+          <h2 class="heading-2 mb-10 text-[color:var(--jb-cream)]">
+            Como eu trabalho.
           </h2>
-          <p class="mb-4 font-sans text-body-lg text-gray-200">
-            Todos baseados no Framework dos 6Ps das Vendas Escaláveis
-          </p>
-          <p class="font-sans text-body text-gray-400">
-            Escolha o formato que melhor se adapta ao seu momento, faturamento e disponibilidade
-          </p>
-        </div>
-
-        <!-- Framework 6Ps - Visual de Conexão -->
-        <div class="mx-auto mb-16 max-w-4xl rounded-2xl border border-lime/20 bg-lime/5 p-8">
-          <div class="mb-6 text-center">
-            <h3 class="mb-3 font-display text-h3 text-white">
-              Framework dos <span class="text-lime">6Ps das Vendas Escaláveis</span>
-            </h3>
-            <p class="font-sans text-body text-gray-200">
-              A base comum de todos os produtos e serviços
-            </p>
-          </div>
-          <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
-            {
-              ['Posicionamento', 'Público', 'Produto', 'Programas', 'Processos', 'Pessoas'].map(
-                (p, i) => (
-                  <div class="rounded-lg border border-lime/30 bg-dark/50 p-4 text-center backdrop-blur-sm">
-                    <div class="mb-2 font-display text-2xl font-bold text-lime">P{i + 1}</div>
-                    <div class="font-sans text-xs text-gray-200">{p}</div>
-                  </div>
-                )
-              )
-            }
-          </div>
-          <p class="mt-6 text-center font-sans text-body-sm italic text-gray-400">
-            "Não adianta fazer anúncio (P4) se não sabe pra quem (P2). Os Ps são sequenciais —
-            pular etapa é garantia de fracasso."
-          </p>
-        </div>
-
-        <!-- Cards dos 3 Caminhos -->
-        <div class="space-y-8">
-          {
-            caminhos.map((caminho, index) => (
-              <div
-                class="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all hover:border-lime/30"
-                style={`animation-delay: ${index * 0.15}s; opacity: 0; animation: fadeInUp 0.6s ease-out ${index * 0.15}s forwards;`}
-              >
-                <div class="grid gap-8 lg:grid-cols-3">
-                  {/* Coluna 1: Info Principal */}
-                  <div class="lg:col-span-1">
-                    <div class="mb-4 inline-block rounded-lg bg-lime/20 px-4 py-2">
-                      <span class="font-display text-sm font-bold uppercase text-lime">
-                        {caminho.modelo}
-                      </span>
-                    </div>
-                    <h3 class="mb-3 font-display text-h2 text-white">{caminho.nome}</h3>
-                    <p class="mb-4 font-display text-h4 text-lime">{caminho.investimento}</p>
-                    <p class="mb-4 font-sans text-body-sm text-gray-400">{caminho.duracao}</p>
-
-                    <div class="space-y-3">
-                      <div>
-                        <p class="mb-1 font-sans text-body-sm font-semibold text-white">
-                          Para quem:
-                        </p>
-                        <p class="font-sans text-body-sm text-gray-200">{caminho.paraQuem}</p>
-                      </div>
-                      <div>
-                        <p class="mb-1 font-sans text-body-sm font-semibold text-white">
-                          Momento ideal:
-                        </p>
-                        <p class="font-sans text-body-sm text-gray-200">{caminho.momento}</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Coluna 2: O Que Resolve + Inclui */}
-                  <div class="lg:col-span-2">
-                    <div class="grid gap-6 md:grid-cols-2">
-                      {/* O Que Resolve */}
-                      <div>
-                        <h4 class="mb-3 font-display text-h4 text-white">Dores que Resolve</h4>
-                        <ul class="space-y-2">
-                          {caminho.resolve.map((item) => (
-                            <li class="flex items-start gap-2">
-                              <Icons name="check-circle-2" class="mt-1 h-4 w-4 shrink-0 text-lime" />
-                              <span class="font-sans text-body-sm text-gray-200">{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* O Que Inclui */}
-                      <div>
-                        <h4 class="mb-3 font-display text-h4 text-white">O Que Está Incluído</h4>
-                        <ul class="space-y-2">
-                          {caminho.inclui.map((item) => (
-                            <li class="flex items-start gap-2">
-                              <Icons name="check-circle-2" class="mt-1 h-4 w-4 shrink-0 text-royal-blue" />
-                              <span class="font-sans text-body-sm text-gray-200">{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-
-                    {/* Resultado Esperado */}
-                    <div class="mt-6 rounded-lg border border-lime/20 bg-lime/5 p-4">
-                      <p class="mb-1 font-sans text-body-sm font-semibold text-lime">
-                        Resultado Esperado:
-                      </p>
-                      <p class="font-sans text-body-sm text-gray-200">{caminho.resultado}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))
-          }
-        </div>
-
-        {/* Tabela Comparativa Rápida */}
-        <div class="mx-auto mt-16 max-w-5xl overflow-hidden rounded-2xl border border-white/10">
-          <table class="w-full">
-            <thead class="bg-white/10">
-              <tr>
-                <th class="px-6 py-4 text-left font-display text-sm font-bold text-white">
-                  Aspecto
-                </th>
-                <th class="px-6 py-4 text-left font-display text-sm font-bold text-lime">VSS</th>
-                <th class="px-6 py-4 text-left font-display text-sm font-bold text-royal-blue">
-                  Services
-                </th>
-                <th class="px-6 py-4 text-left font-display text-sm font-bold text-orange">
-                  Advisory
-                </th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-white/10">
-              <tr class="bg-white/5">
-                <td class="px-6 py-4 font-sans text-body-sm text-gray-200">Modelo</td>
-                <td class="px-6 py-4 font-sans text-body-sm text-gray-200">DIY (você faz)</td>
-                <td class="px-6 py-4 font-sans text-body-sm text-gray-200">DWY (fazemos junto)</td>
-                <td class="px-6 py-4 font-sans text-body-sm text-gray-200">1:1 comigo</td>
-              </tr>
-              <tr class="bg-white/5">
-                <td class="px-6 py-4 font-sans text-body-sm text-gray-200">Investimento</td>
-                <td class="px-6 py-4 font-sans text-body-sm font-semibold text-lime">R$ 1.997</td>
-                <td class="px-6 py-4 font-sans text-body-sm font-semibold text-royal-blue">
-                  R$ 4.5k-9k/mês
-                </td>
-                <td class="px-6 py-4 font-sans text-body-sm font-semibold text-orange">
-                  R$ 997-15k/mês
-                </td>
-              </tr>
-              <tr class="bg-white/5">
-                <td class="px-6 py-4 font-sans text-body-sm text-gray-200">Faturamento ideal</td>
-                <td class="px-6 py-4 font-sans text-body-sm text-gray-200">A partir de R$ 10k/mês</td>
-                <td class="px-6 py-4 font-sans text-body-sm text-gray-200">R$ 50k-300k/mês</td>
-                <td class="px-6 py-4 font-sans text-body-sm text-gray-200">R$ 100k+/mês</td>
-              </tr>
-              <tr class="bg-white/5">
-                <td class="px-6 py-4 font-sans text-body-sm text-gray-200">Implementação</td>
-                <td class="px-6 py-4 font-sans text-body-sm text-gray-200">Você (2-3h/semana)</td>
-                <td class="px-6 py-4 font-sans text-body-sm text-gray-200">Equipe + você</td>
-                <td class="px-6 py-4 font-sans text-body-sm text-gray-200">Você decide</td>
-              </tr>
-              <tr class="bg-white/5">
-                <td class="px-6 py-4 font-sans text-body-sm text-gray-200">Tempo de resultado</td>
-                <td class="px-6 py-4 font-sans text-body-sm text-gray-200">90-180 dias</td>
-                <td class="px-6 py-4 font-sans text-body-sm text-gray-200">60-120 dias</td>
-                <td class="px-6 py-4 font-sans text-body-sm text-gray-200">Imediato</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        {/* Como Escolher */}
-        <div class="mx-auto mt-16 max-w-4xl rounded-2xl border border-white/10 bg-white/5 p-8">
-          <h3 class="mb-6 text-center font-display text-h3 text-white">
-            Como Escolher o <span class="text-lime">Caminho Certo?</span>
-          </h3>
-          <div class="space-y-4">
-            <div class="flex items-start gap-4 rounded-lg border border-lime/20 bg-lime/5 p-4">
-              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-lime font-display text-sm font-bold text-dark">
-                1
-              </span>
-              <div>
-                <p class="mb-1 font-sans text-body font-semibold text-white">
-                  Escolha VSS se:
-                </p>
-                <p class="font-sans text-body-sm text-gray-200">
-                  Você valoriza autonomia, tem 2-3h/semana para implementar, quer aprender o
-                  sistema e não quer depender de ninguém. Perfeito para começar estruturando
-                  sozinho.
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {personalidade.map((item) => (
+              <div class="card">
+                <div class="kicker mb-3" style="color: var(--jb-acid);">// {item.carac}</div>
+                <p class="font-sans text-[color:var(--jb-cream)] mb-3 font-bold">{item.significa}</p>
+                <p class="font-mono text-sm text-[color:var(--jb-fg-2)] border-l-2 border-[color:var(--jb-hair-strong)] pl-3">
+                  "{item.exemplo}"
                 </p>
               </div>
-            </div>
-            <div class="flex items-start gap-4 rounded-lg border border-royal-blue/20 bg-royal-blue/5 p-4">
-              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-royal-blue font-display text-sm font-bold text-white">
-                2
-              </span>
-              <div>
-                <p class="mb-1 font-sans text-body font-semibold text-white">
-                  Escolha Services se:
-                </p>
-                <p class="font-sans text-body-sm text-gray-200">
-                  Você tem budget, quer aceleração máxima, precisa de equipe implementando junto, ou
-                  já faturando bem e quer escalar com processo. Ideal para crescer rápido com
-                  suporte.
-                </p>
-              </div>
-            </div>
-            <div class="flex items-start gap-4 rounded-lg border border-orange/20 bg-orange/5 p-4">
-              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange font-display text-sm font-bold text-dark">
-                3
-              </span>
-              <div>
-                <p class="mb-1 font-sans text-body font-semibold text-white">
-                  Escolha Advisory se:
-                </p>
-                <p class="font-sans text-body-sm text-gray-200">
-                  Você precisa de decisão estratégica crítica, está em momento de virada, quer
-                  atalho de 17 anos de experiência, ou precisa de conselheiro presente. Acesso
-                  direto a mim.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
-      </Container>
-    </section>
+      </section>
 
-    <!-- O Que Prometo vs. Nunca Prometo -->
-    <section class="bg-dark py-24">
-      <Container>
-        <div class="mx-auto mb-16 max-w-3xl text-center">
-          <h2 class="mb-6 font-display text-display-sm text-white md:text-display-md">
-            Transparência <span class="text-lime">Total</span>
+      <!-- 2 Caminhos -->
+      <section class="pb-16">
+        <div class="mx-auto max-w-6xl">
+          <div class="kicker mb-6">// 2_CAMINHOS · PRA_TRABALHAR_COMIGO</div>
+          <h2 class="heading-2 mb-10 text-[color:var(--jb-cream)]">
+            Dois caminhos. Escolhe o que faz sentido pro teu momento.
           </h2>
-          <p class="font-sans text-body-lg text-gray-200">
-            O que você pode (e não pode) esperar de mim
-          </p>
-        </div>
 
-        <div class="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
-          {
-            promessas.map((item, index) => (
-              <div
-                class={`flex items-start gap-4 rounded-xl border p-6 backdrop-blur-sm transition-all ${
-                  item.prometo
-                    ? 'border-lime/30 bg-lime/5 hover:border-lime/50'
-                    : 'border-red-500/30 bg-red-500/5 hover:border-red-500/50'
-                }`}
-                style={`animation-delay: ${index * 0.05}s; opacity: 0; animation: fadeInUp 0.6s ease-out ${index * 0.05}s forwards;`}
-              >
-                {item.prometo ? (
-                  <Icons name="check-circle-2" class="h-6 w-6 shrink-0 text-lime" />
-                ) : (
-                  <Icons name="x" class="h-6 w-6 shrink-0 text-red-400" />
-                )}
-                <p
-                  class={`font-sans text-body ${item.prometo ? 'text-gray-200' : 'text-gray-400'}`}
-                >
-                  {item.texto}
-                </p>
-              </div>
-            ))
-          }
-        </div>
-      </Container>
-    </section>
+          <div class="grid gap-6 md:grid-cols-2">
+            <!-- VSS -->
+            <article class="border border-[color:var(--jb-acid-border)] bg-[color:var(--jb-ink-2)] p-8" style="background: linear-gradient(180deg, rgba(198,255,0,0.06), var(--jb-ink-2));">
+              <div class="kicker mb-3" style="color: var(--jb-acid);">// DIY · PERPÉTUO · PRINCIPAL</div>
+              <h3 class="heading-2 mb-2 text-[color:var(--jb-cream)]">VENDAS SEM SEGREDOS</h3>
+              <div class="font-display text-3xl text-acid mb-6">R$ 1.997</div>
+              <ul class="space-y-2 font-sans text-sm text-[color:var(--jb-fg-2)]">
+                <li><span class="text-acid">▶</span> Pra MPE faturando R$ 10-100k/mês</li>
+                <li><span class="text-acid">▶</span> 90 dias guiados + acesso vitalício</li>
+                <li><span class="text-acid">▶</span> 15 módulos, 66 aulas práticas</li>
+                <li><span class="text-acid">▶</span> Growth CRM incluso (12 meses)</li>
+                <li><span class="text-acid">▶</span> 48 mentorias ao vivo semanais</li>
+                <li><span class="text-acid">▶</span> Garantia 15 dias incondicional</li>
+              </ul>
+              <a href="/vendas-sem-segredos" class="btn-primary mt-8 min-h-[44px]" data-astro-prefetch>
+                <span>Conhecer VSS</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </article>
 
-    <!-- CTA Final - Da Quebrada ao Legado -->
-    <section class="relative overflow-hidden bg-linear-to-b from-dark to-dark/95 py-32">
-      <div class="pointer-events-none absolute inset-0">
-        <div class="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-lime/10 blur-3xl"></div>
-      </div>
-
-      <Container class="relative z-10">
-        <div class="mx-auto max-w-4xl text-center">
-          {/* Quote Principal */}
-          <div class="mb-12 rounded-2xl border-2 border-lime/30 bg-linear-to-br from-lime/10 to-transparent p-12">
-            <p class="mb-6 font-display text-h2 leading-tight text-white md:text-display-sm">
-              "Aos 38 anos, percebi: a jornada nunca foi sobre <span class="text-lime">chegar</span>."
-            </p>
-            <p class="font-sans text-body-lg text-gray-200">
-              Foi sempre sobre <strong class="text-lime">construir o caminho para que outros possam seguir</strong> sem precisar sofrer o que eu sofri.
-            </p>
+            <!-- Advisory -->
+            <article class="border border-[color:var(--jb-fire-border)] bg-[color:var(--jb-ink-2)] p-8">
+              <div class="kicker mb-3" style="color: var(--jb-fire);">// 1:1 · EXCLUSIVO · CONVITE</div>
+              <h3 class="heading-2 mb-2 text-[color:var(--jb-cream)]">ADVISORY</h3>
+              <div class="font-display text-3xl text-fire mb-6">R$ 997-15.000/mês</div>
+              <ul class="space-y-2 font-sans text-sm text-[color:var(--jb-fg-2)]">
+                <li><span class="text-fire">●</span> Pra empresas R$ 200k+/mês</li>
+                <li><span class="text-fire">●</span> Sessão (R$ 997 · 90 min)</li>
+                <li><span class="text-fire">●</span> Sprint 30 dias (R$ 7.500)</li>
+                <li><span class="text-fire">●</span> Conselho Executivo (R$ 15.000/mês)</li>
+                <li><span class="text-fire">●</span> Vagas extremamente limitadas</li>
+                <li><span class="text-fire">●</span> Acesso direto comigo</li>
+              </ul>
+              <a href="/advisory" class="btn-fire mt-8 min-h-[44px]" data-astro-prefetch>
+                <span>Aplicar pra Advisory</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </article>
           </div>
+        </div>
+      </section>
 
-          {/* Estatísticas Finais */}
-          <div class="mb-12 grid grid-cols-2 gap-6 md:grid-cols-4">
-            <div class="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-              <p class="mb-1 font-display text-3xl font-bold text-lime">1987</p>
-              <p class="font-sans text-sm text-gray-400">Nascido na quebrada</p>
-            </div>
-            <div class="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-              <p class="mb-1 font-display text-3xl font-bold text-lime">17+</p>
-              <p class="font-sans text-sm text-gray-400">Anos estruturando vendas</p>
-            </div>
-            <div class="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-              <p class="mb-1 font-display text-3xl font-bold text-lime">140+</p>
-              <p class="font-sans text-sm text-gray-400">Clientes atendidos</p>
-            </div>
-            <div class="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-              <p class="mb-1 font-display text-3xl font-bold text-lime">~R$1bi</p>
-              <p class="font-sans text-sm text-gray-400">Em vendas estruturadas</p>
-            </div>
-          </div>
-
-          {/* Mensagem de Legado */}
-          <div class="mb-10">
-            <h2 class="mb-4 font-display text-display-sm text-white md:text-display-md">
-              Da Quebrada ao <span class="text-lime">Legado</span>
+      <!-- CTA Final -->
+      <section class="pb-16 md:pb-24">
+        <div class="mx-auto max-w-5xl">
+          <div class="border border-[color:var(--jb-hair)] bg-[color:var(--jb-ink-2)] p-8 md:p-12">
+            <div class="kicker mb-4">// LEGADO · DA_QUEBRADA_AO_LEGADO</div>
+            <h2 class="heading-1 mb-6 text-[color:var(--jb-cream)]">
+              Meu filho Davi (10/10/2024) nunca vai saber o que é barraco sem geladeira.
             </h2>
-            <p class="mx-auto max-w-2xl font-sans text-body-lg text-white">
-              <strong class="text-lime">Sistema > Improviso.</strong> <strong class="text-lime">Parceria > Transação.</strong> <strong class="text-lime">Autonomia > Dependência.</strong>
+            <p class="font-sans text-lg text-[color:var(--jb-fg-2)] leading-relaxed mb-6">
+              Mas vai saber o que é dignidade do trabalho. Vai saber que sistema supera improviso. Vai saber que da quebrada pro bilhão tem um caminho — e esse caminho tem nome: <strong class="text-acid">metodologia</strong>.
             </p>
-            <p class="mx-auto mt-4 max-w-2xl font-sans text-body text-gray-300">
-              Quando olho pro Davi dormindo, penso: ele nunca vai saber o que é barraco sem geladeira. Nunca vai saber o que é tomar calote de sócio e ficar sem nada. Mas vai saber o que é dignidade do trabalho. Vai saber que sistema supera improviso. Vai saber que da quebrada pro bilhão tem um caminho — e esse caminho tem nome: <strong class="text-lime">metodologia</strong>.
+            <p class="font-sans text-[color:var(--jb-fg-2)] leading-relaxed">
+              Meu legado é simples: ajudar empreendedor brasileiro — especialmente quem vem de baixo — a estruturar vendas sem precisar passar pelo sofrimento que eu passei.
             </p>
-            <p class="mx-auto mt-4 max-w-2xl font-sans text-body text-gray-300">
-              Minha jornada não foi sobre acumular prêmios ou troféus. Foi sobre sistematizar cada erro em lição, cada fracasso em oportunidade de servir melhor. Hoje, meu legado é simples: <strong class="text-white">ajudar empreendedores brasileiros — especialmente os que vêm de baixo — a estruturar vendas escaláveis sem precisar passar pelo sofrimento que passei.</strong>
-            </p>
-          </div>
 
-          {/* CTAs */}
-          <div class="flex flex-col justify-center gap-4 sm:flex-row">
-            <a href="/vendas-sem-segredos">
-              <button class="inline-flex h-14 w-full items-center justify-center gap-2 rounded-lg bg-lime px-8 font-display text-lg font-bold text-dark shadow-lg shadow-lime/20 transition-all hover:scale-105 hover:bg-lime/90 sm:w-auto">
-                <span>Conhecer o VSS</span>
-                <Icons name="arrow-right" class="h-5 w-5" />
-              </button>
-            </a>
-            <a href="/diagnostico">
-              <button class="inline-flex h-14 w-full items-center justify-center rounded-lg border-2 border-lime px-8 font-display text-lg font-semibold text-lime transition-all hover:scale-105 hover:bg-lime/10 sm:w-auto">
-                Diagnóstico Gratuito
-              </button>
-            </a>
-          </div>
+            <div class="mt-10 flex flex-wrap gap-4">
+              <a href="/vendas-sem-segredos" class="btn-primary min-h-[48px]" data-astro-prefetch>
+                <span>Conhecer VSS</span>
+                <span aria-hidden="true">→</span>
+              </a>
+              <a href="/diagnostico" class="btn-secondary min-h-[48px]">Diagnóstico grátis</a>
+            </div>
 
-          {/* Assinatura */}
-          <div class="mt-12 border-t border-white/10 pt-8">
-            <p class="font-display text-h4 text-white">Joel Burigo</p>
-            <p class="mt-2 font-sans text-body-sm text-gray-300">
-              Especialista em Vendas Escaláveis • Criador dos 6Ps • Mentor Executor
-            </p>
-            <p class="mt-4 font-sans text-body-sm text-lime">
-              "A jornada é sobre construir o caminho para que outros possam seguir."
-            </p>
-            <p class="mt-2 font-sans text-body-xs italic text-gray-400">
-              Bora pra cima. Let's grow.
-            </p>
+            <div class="mt-10 border-t border-[color:var(--jb-hair)] pt-6">
+              <div class="font-display text-lg text-[color:var(--jb-cream)]">JOEL BURIGO</div>
+              <div class="mt-1 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">
+                ESPECIALISTA EM VENDAS ESCALÁVEIS · CRIADOR DOS 6PS · RIBEIRÃO DA ILHA/SC
+              </div>
+              <div class="mt-4 font-mono text-[11px] uppercase tracking-[0.28em] text-[color:var(--jb-fg-muted)]">
+                <span class="text-acid">★</span>&nbsp;&nbsp;SISTEMA <span class="text-fire">&gt;</span> IMPROVISO · BORA PRA CIMA · LET'S GROW
+              </div>
+            </div>
           </div>
         </div>
-      </Container>
-    </section>
+      </section>
+    </Container>
   </main>
 
   <Footer />
 </Layout>
 
 <style>
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .sobre-display {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.045em;
+    line-height: 0.92;
+    font-size: clamp(2.75rem, 9vw, 6rem);
+    color: var(--jb-cream);
+    margin: 0;
   }
 </style>

@@ -31,8 +31,10 @@ joelburigo-site/
 └── src/               ← Produção Astro (o que é servido em joelburigo.com.br)
     ├── data/          cases.ts · contact.ts · testimonials.ts
     ├── pages/         páginas do site
-    ├── components/    componentes reutilizáveis
-    └── styles/        global.css (Tailwind v4 @theme)
+    ├── components/    ui/ (primitives) · layout/ (Header/Footer/MobileMenu)
+    │                  · home/ (10 sections) · sections/ (7 feature composites)
+    │                  · presentation/ (slides deck) · blog/ · analytics/ · seo/ · lp/
+    └── styles/        global.css (Tailwind v4 @theme + Terminal Growth tokens)
 ```
 
 Antes de criar copy ou componente, **consulte `docs/conteudo/README.md`** (índice único de conteúdo + marca). Não invente tom, vocabulário ou cases.
@@ -46,8 +48,9 @@ Services foi descontinuado (arquivado em `docs/conteudo/_archive/parte9-services
 
 ## Direção atual
 
-- **Visual:** Terminal Growth — fire `#FF3B0F` + acid `#C6FF00` sobre preto `#050505`, Archivo Black + JetBrains Mono. Ver `docs/conteudo/brand/README.md`.
-- **Produção ainda usa tokens antigos** (royal-blue + lime, Montserrat + Inter). Migração do `src/styles/global.css` pro Terminal Growth está pendente.
+- **Visual:** Terminal Growth — fire `#FF3B0F` + acid `#C6FF00` sobre preto `#050505`, Archivo Black + Archivo + JetBrains Mono. Radius 0, brutalist shadows offset. Ver `docs/conteudo/brand/README.md`.
+- **Produção migrada em 2026-04-22** (branch `feat/terminal-growth-migration`). Tokens `--jb-*` em `src/styles/global.css`. Aliases legados (royal-blue, lime, color-dark, Montserrat, Inter) removidos/alias-mapeados pra fire/acid/ink/Archivo.
+- **Antes de gerar peça** (post, email, slide, anúncio, landing): ler `docs/conteudo/brand/ANTI_DRIFT.md` + `USAGE.md`. Templates copiáveis em `docs/conteudo/brand/templates/`.
 
 ## Deploy
 

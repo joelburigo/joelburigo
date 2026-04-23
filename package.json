@@ -15,7 +15,8 @@
     "lighthouse": "lighthouse http://localhost:4321 --view",
     "lighthouse:prod": "lighthouse https://joelburigo.com.br --view",
     "audio:generate": "node scripts/generate-audio-posts.mjs",
-    "audio:post": "node scripts/generate-audio-posts.mjs --post"
+    "audio:post": "node scripts/generate-audio-posts.mjs --post",
+    "tunnel": "test -f .cloudflared.token || (echo 'Falta .cloudflared.token (gitignored). Cole o token do tunnel joelburigo-dev.'; exit 1) && cloudflared tunnel run --token \"$(cat .cloudflared.token)\""
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",
@@ -35,6 +36,7 @@
   "devDependencies": {
     "pagefind": "^1.5.2",
     "path-to-regexp": "^8.4.2",
+    "playwright": "^1.59.1",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",

@@ -1,0 +1,207 @@
+---
+import Container from '../ui/Container.astro';
+
+// Jornada VSS — 7 fases, 15 módulos, 66 destravamentos.
+// Fonte: docs/conteudo/partes/04-playbook-vss.md (tabela linha 42–52)
+// + 03-programa-vss §03.3 e §03.2
+const fases = [
+  {
+    numero: '01',
+    nome: 'Fundamentos',
+    janela: '0–30 DIAS',
+    modulos: 'M1–M3 · 15 destravamentos',
+    objetivo: 'Estratégia 100% documentada. Diagnóstico completo dos 6Ps. Posicionamento, público e oferta estruturados.',
+    destravamentos: [
+      'Ativar conta e entrar na comunidade',
+      'Estudar Framework dos 6Ps (seu GPS)',
+      'Preencher Canvas 6Ps do seu negócio',
+      'Definir P1 — Posicionamento + PUV + Big Idea',
+      'Construir Persona #1 com entrevistas reais',
+      'Estruturar oferta irresistível (value stacking)',
+    ],
+    acento: 'acid',
+  },
+  {
+    numero: '02',
+    nome: 'Infraestrutura',
+    janela: '30–45 DIAS',
+    modulos: 'M4–M5 · 9 destravamentos',
+    objetivo: 'Growth CRM configurado. Landing page ativa. Presença digital profissional no ar — fundação tecnológica pronta pra receber lead.',
+    destravamentos: [
+      'Setup inicial do Growth CRM',
+      'Importar sua base atual',
+      'Configurar primeiras 2 automações',
+      'Criar e publicar landing page',
+      'Google Meu Negócio + SEO local básico',
+      'Otimizar perfis sociais (vitrine)',
+    ],
+    acento: 'fire',
+  },
+  {
+    numero: '03',
+    nome: 'Atração',
+    janela: '45–75 DIAS',
+    modulos: 'M6–M8 · 13 destravamentos',
+    objetivo: 'Canais de aquisição ligados — tráfego orgânico, pago (se tiver budget) ou prospecção ativa gratuita. Leads entrando previsivelmente.',
+    destravamentos: [
+      'Definir estratégia de marketing de conteúdo',
+      'SEO on-page básico no seu site',
+      'Estratégia orgânica de Instagram + LinkedIn',
+      'Ativar primeira campanha Meta Ads (opcional)',
+      'Construir lista de 100+ prospects qualificados',
+      'Cadência multicanal de 15 dias',
+    ],
+    acento: 'acid',
+  },
+  {
+    numero: '04',
+    nome: 'Conversão',
+    janela: '75–90 DIAS',
+    modulos: 'M9–M10 · 9 destravamentos',
+    objetivo: 'Funil de vendas desenhado. Scripts que convertem. Banco de objeções. Pós-venda e indicações rodando. A Máquina começa a girar.',
+    destravamentos: [
+      'Desenhar funil de vendas completo',
+      'Landing page de alta conversão',
+      'Sequência de nutrição por e-mail (7 dias)',
+      'Integrar WhatsApp ao CRM',
+      'Qualificar leads com BANT + SPIN',
+      'Banco de respostas pras 7 objeções mais comuns',
+      'Pós-venda + programa de indicações',
+    ],
+    acento: 'fire',
+  },
+  {
+    numero: '05',
+    nome: 'Sistema',
+    janela: '90 DIAS · MARCO',
+    modulos: 'M11 · 4 destravamentos',
+    objetivo: 'Os 6Ps integrados. 5 processos essenciais documentados (P5). Dashboard executivo único. Máquina de Crescimento ligada.',
+    destravamentos: [
+      'Validar integração completa (checklist P4)',
+      'Documentar 5 processos essenciais (P5)',
+      'Montar dashboard executivo unificado',
+      'Avaliar se você está pronto pra escalar',
+    ],
+    acento: 'acid',
+    marco: true,
+  },
+  {
+    numero: '06',
+    nome: 'Automação',
+    janela: 'PÓS-90 DIAS',
+    modulos: 'M12–M13 · 8 destravamentos',
+    objetivo: 'Automações avançadas e agentes de IA. Sistema roda 24/7 sem depender da sua presença. Você sai da operação e entra na estratégia.',
+    destravamentos: [
+      '3 workflows complexos essenciais',
+      'Segmentação comportamental + lead scoring',
+      'Recuperação de carrinho + upsell',
+      '4 réguas de relacionamento inteligentes',
+      'Agente de IA no WhatsApp 24/7',
+      'Handoff inteligente (IA → humano)',
+    ],
+    acento: 'fire',
+  },
+  {
+    numero: '07',
+    nome: 'Crescimento',
+    janela: 'PÓS-90 DIAS',
+    modulos: 'M14–M15 · 8 destravamentos',
+    objetivo: 'Cultura data-driven. P6 — Pessoas estruturado por estágio. Plano 180–365 dias. De Vendas Aleatórias para Vendas Previsíveis.',
+    destravamentos: [
+      'Separar métricas de vaidade de métricas de negócio',
+      'Rodar primeiro teste A/B estruturado',
+      'Análise de coorte + prevenção de churn',
+      'Mapear estrutura de time (P6) por estágio',
+      'Programa de onboarding de 30 dias',
+      'Escrever Plano 180–365 dias',
+    ],
+    acento: 'acid',
+  },
+];
+---
+
+<section class="relative overflow-hidden bg-ink py-24">
+  <div class="grid-overlay"></div>
+
+  <Container>
+    <!-- Section head -->
+    <div class="mx-auto mb-16 max-w-3xl">
+      <div class="kicker mb-4">// JORNADA · 90 DIAS GUIADOS + PERPÉTUO</div>
+      <h2 class="mb-6 font-display text-cream" style="font-size: clamp(2rem, 5vw, 3.5rem); line-height: 0.92; letter-spacing: -0.04em; text-transform: uppercase;">
+        <span class="text-acid">7 fases</span>. 15 módulos. <span class="stroke-text">66 destravamentos</span>.
+      </h2>
+      <p class="font-sans text-cream/70" style="font-size: clamp(1rem, 2vw, 1.25rem); line-height: 1.5;">
+        De vendas aleatórias para vendas previsíveis. Cada destravamento é uma ação de 15–20 minutos com entregável tangível. Não é curso pra maratonar — é sistema pra implementar. 90 dias de execução, não 7 dias de milagre.
+      </p>
+    </div>
+
+    <!-- Status bar de progresso -->
+    <div class="mx-auto mb-12 max-w-5xl border border-white/10 bg-ink-2 p-4">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <span class="dot-live"></span>
+          <span class="mono text-acid">SYS ONLINE · VSS_CORE v3.0</span>
+        </div>
+        <div class="mono text-fg-muted">FASES 1–5 · 90 DIAS · FASES 6–7 · PERPÉTUO</div>
+      </div>
+    </div>
+
+    <!-- Timeline vertical -->
+    <div class="mx-auto max-w-5xl">
+      {fases.map((f, i) => {
+        const acentoColor = f.acento === 'acid' ? 'var(--jb-acid)' : 'var(--jb-fire)';
+        return (
+          <article class="relative grid gap-6 border-t border-white/10 py-10 md:grid-cols-[200px_1fr] md:gap-10 md:py-14" style={i === fases.length - 1 ? 'border-bottom: 1px solid var(--jb-hair);' : ''}>
+            <!-- Coluna numeral -->
+            <div class="flex flex-col">
+              <div class="font-display" style={`color: ${acentoColor}; font-size: clamp(4rem, 10vw, 7rem); line-height: 0.9; letter-spacing: -0.045em; font-weight: 900;`}>
+                {f.numero}
+              </div>
+              <div class="mono mt-2">// {f.janela}</div>
+              <div class="mono mt-1 text-fg-muted" style="font-size: 0.65rem;">{f.modulos}</div>
+              {f.marco && (
+                <div class="mt-3 inline-flex w-fit items-center gap-2 border border-acid bg-acid px-2 py-1" style="color: var(--jb-ink);">
+                  <span class="font-display" style="font-size: 0.65rem; letter-spacing: 0.15em;">★ MARCO 90D</span>
+                </div>
+              )}
+            </div>
+            <!-- Conteúdo -->
+            <div class="min-w-0">
+              <h3 class="mb-4 font-display text-cream" style="font-size: clamp(1.5rem, 3.5vw, 2.25rem); line-height: 1; letter-spacing: -0.035em; text-transform: uppercase;">
+                Fase {f.numero} — {f.nome}
+              </h3>
+              <p class="mb-6 font-sans text-cream/85" style="font-size: clamp(1rem, 1.8vw, 1.125rem); line-height: 1.55;">
+                {f.objetivo}
+              </p>
+              <div class="border border-white/10 bg-ink-2 p-5 md:p-6">
+                <div class="mono mb-3" style={`color: ${acentoColor};`}>// destravamentos-chave</div>
+                <ul class="grid gap-2 md:grid-cols-2">
+                  {f.destravamentos.map((d) => (
+                    <li class="flex items-start gap-2 font-sans text-cream/80" style="font-size: 0.9rem; line-height: 1.45;">
+                      <span style={`color: ${acentoColor};`}>▶</span>
+                      <span>{d}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+
+    <!-- Fechamento -->
+    <div class="mx-auto mt-16 max-w-4xl border-l-4 border-acid bg-ink-2 p-8 md:p-10">
+      <div class="kicker mb-4">// RESULTADO AO FIM DAS 7 FASES</div>
+      <p class="mb-4 font-display text-cream" style="font-size: clamp(1.5rem, 3vw, 2.25rem); line-height: 1.05; letter-spacing: -0.035em; text-transform: uppercase;">
+        <span class="text-acid">Máquina de Crescimento</span> ligada. Sistema rodando. Dono desafogado.
+      </p>
+      <p class="font-sans text-cream/80" style="font-size: 1rem; line-height: 1.55;">
+        De vendas aleatórias para vendas previsíveis. 6Ps integrados, CRM operacional, funis ativos, processos documentados, time autônomo. Não é milagre — é método aplicado com disciplina em 140+ empresas.
+      </p>
+      <p class="mt-6 font-display text-fire" style="font-size: 1.25rem; letter-spacing: -0.02em; text-transform: uppercase;">
+        Sistema > Improviso. Bora pra cima.
+      </p>
+    </div>
+  </Container>
+</section>

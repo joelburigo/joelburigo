@@ -1,19 +1,19 @@
 ---
 interface Props {
-  audioUrl: string;
-  title: string;
+  audioUrl: string
+  title: string
 }
 
-const { audioUrl } = Astro.props;
+const { audioUrl } = Astro.props
 ---
 
-<div class="audio-player-wrapper my-8 rounded-2xl border-2 border-lime/20 bg-linear-to-br from-lime/5 to-lime/10 p-6 backdrop-blur-sm">
+<div class="audio-player-wrapper my-8 rounded-none border border-[color:var(--jb-acid-border)] bg-[color:var(--jb-ink-2)] p-6" style="background: linear-gradient(180deg, rgba(198,255,0,0.04), var(--jb-ink-2));">
   <div class="flex items-start gap-4">
     <!-- Icon -->
     <div class="shrink-0">
-      <div class="flex h-12 w-12 items-center justify-center rounded-full bg-lime/20">
-        <svg class="h-6 w-6 text-lime" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+      <div class="flex h-12 w-12 items-center justify-center rounded-none bg-[color:var(--jb-acid-soft)] border border-[color:var(--jb-acid-border)]">
+        <svg class="h-6 w-6 text-[color:var(--jb-acid)]" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
         </svg>
       </div>
     </div>
@@ -21,45 +21,41 @@ const { audioUrl } = Astro.props;
     <!-- Content -->
     <div class="grow">
       <div class="mb-3">
-        <h3 class="font-display text-lg font-bold text-white mb-1">
-          🎧 Ouça este artigo
+        <div class="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-acid)] mb-1">
+          // ÁUDIO · NARRAÇÃO IA
+        </div>
+        <h3 class="font-display text-lg uppercase tracking-tight text-[color:var(--jb-cream)] mb-1">
+          Ouça este artigo
         </h3>
-        <p class="text-sm text-gray-300">
-          Narração por IA com voz natural em português
+        <p class="text-sm text-[color:var(--jb-fg-3)]">
+          Voz natural em português
         </p>
       </div>
 
       <!-- Audio Player -->
       <div class="audio-controls">
-        <audio 
-          id="article-audio"
-          preload="metadata"
-          class="w-full"
-          controlslist="nodownload"
-        >
+        <audio id="article-audio" preload="metadata" class="w-full" controlslist="nodownload">
           <source src={audioUrl} type="audio/mpeg" />
           Seu navegador não suporta áudio HTML5.
         </audio>
 
-        <!-- Custom Controls -->
         <div class="mt-3 flex items-center gap-3">
           <button
             id="play-pause-btn"
-            class="flex h-10 w-10 items-center justify-center rounded-full bg-lime transition-all hover:scale-105 hover:bg-lime/90"
+            class="flex h-10 w-10 items-center justify-center rounded-none bg-[color:var(--jb-acid)] transition-all hover:-translate-x-[1px] hover:-translate-y-[1px]"
             aria-label="Play/Pause"
-            style="color: #020617;"
+            style="color: #050505; box-shadow: 2px 2px 0 var(--jb-fire);"
           >
             <svg id="play-icon" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z"/>
+              <path d="M8 5v14l11-7z" />
             </svg>
             <svg id="pause-icon" class="h-5 w-5 hidden" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+              <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
             </svg>
           </button>
 
-          <!-- Progress Bar -->
           <div class="grow">
-            <div class="mb-1 flex justify-between text-xs text-gray-400">
+            <div class="mb-1 flex justify-between font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--jb-fg-muted)]">
               <span id="current-time">0:00</span>
               <span id="duration">0:00</span>
             </div>
@@ -69,21 +65,20 @@ const { audioUrl } = Astro.props;
               min="0"
               max="100"
               value="0"
-              class="h-2 w-full cursor-pointer appearance-none rounded-full bg-gray-700"
-              style="background: linear-gradient(to right, #84CC16 0%, #84CC16 0%, #374151 0%, #374151 100%);"
+              class="h-1.5 w-full cursor-pointer appearance-none bg-[color:var(--jb-hair-strong)]"
+              style="background: linear-gradient(to right, #C6FF00 0%, #C6FF00 0%, #1a1a1a 0%, #1a1a1a 100%);"
             />
           </div>
 
-          <!-- Speed Control -->
           <select
             id="playback-speed"
-            class="rounded-lg border border-gray-600 bg-gray-800 px-2 py-1 text-sm text-gray-200 transition-colors hover:border-lime focus:border-lime focus:outline-none"
+            class="rounded-none border border-[color:var(--jb-hair)] bg-[color:var(--jb-ink)] px-2 py-1 font-mono text-xs text-[color:var(--jb-cream)] transition-colors hover:border-[color:var(--jb-acid)] focus:border-[color:var(--jb-acid)] focus:outline-none"
           >
-            <option value="0.75">0.75x</option>
-            <option value="1" selected>1x</option>
-            <option value="1.25">1.25x</option>
-            <option value="1.5">1.5x</option>
-            <option value="2">2x</option>
+            <option value="0.75">0.75×</option>
+            <option value="1" selected>1×</option>
+            <option value="1.25">1.25×</option>
+            <option value="1.5">1.5×</option>
+            <option value="2">2×</option>
           </select>
         </div>
       </div>
@@ -95,91 +90,78 @@ const { audioUrl } = Astro.props;
   #progress-bar::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: #84CC16;
+    width: 14px;
+    height: 14px;
+    border-radius: 0;
+    background: #C6FF00;
     cursor: pointer;
-    border: 2px solid #020617;
+    border: 2px solid #050505;
   }
-
   #progress-bar::-moz-range-thumb {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: #84CC16;
+    width: 14px;
+    height: 14px;
+    border-radius: 0;
+    background: #C6FF00;
     cursor: pointer;
-    border: 2px solid #020617;
+    border: 2px solid #050505;
   }
 </style>
 
 <script>
-  const audio = document.getElementById('article-audio') as HTMLAudioElement;
-  const playPauseBtn = document.getElementById('play-pause-btn');
-  const playIcon = document.getElementById('play-icon');
-  const pauseIcon = document.getElementById('pause-icon');
-  const progressBar = document.getElementById('progress-bar') as HTMLInputElement;
-  const currentTimeEl = document.getElementById('current-time');
-  const durationEl = document.getElementById('duration');
-  const speedSelect = document.getElementById('playback-speed');
+  const audio = document.getElementById('article-audio') as HTMLAudioElement
+  const playPauseBtn = document.getElementById('play-pause-btn')
+  const playIcon = document.getElementById('play-icon')
+  const pauseIcon = document.getElementById('pause-icon')
+  const progressBar = document.getElementById('progress-bar') as HTMLInputElement
+  const currentTimeEl = document.getElementById('current-time')
+  const durationEl = document.getElementById('duration')
+  const speedSelect = document.getElementById('playback-speed')
 
   if (audio && playPauseBtn && progressBar && speedSelect instanceof HTMLSelectElement) {
-    // Play/Pause
     playPauseBtn.addEventListener('click', () => {
       if (audio.paused) {
-        audio.play();
-        playIcon?.classList.add('hidden');
-        pauseIcon?.classList.remove('hidden');
+        audio.play()
+        playIcon?.classList.add('hidden')
+        pauseIcon?.classList.remove('hidden')
       } else {
-        audio.pause();
-        playIcon?.classList.remove('hidden');
-        pauseIcon?.classList.add('hidden');
+        audio.pause()
+        playIcon?.classList.remove('hidden')
+        pauseIcon?.classList.add('hidden')
       }
-    });
+    })
 
-    // Update progress bar
     audio.addEventListener('timeupdate', () => {
       if (audio.duration) {
-        const progress = (audio.currentTime / audio.duration) * 100;
-        progressBar.value = progress.toString();
-        progressBar.style.background = `linear-gradient(to right, #84CC16 0%, #84CC16 ${progress}%, #374151 ${progress}%, #374151 100%)`;
-        
-        if (currentTimeEl) {
-          currentTimeEl.textContent = formatTime(audio.currentTime);
-        }
+        const progress = (audio.currentTime / audio.duration) * 100
+        progressBar.value = progress.toString()
+        progressBar.style.background = `linear-gradient(to right, #C6FF00 0%, #C6FF00 ${progress}%, #1a1a1a ${progress}%, #1a1a1a 100%)`
+        if (currentTimeEl) currentTimeEl.textContent = formatTime(audio.currentTime)
       }
-    });
+    })
 
-    // Duration loaded
     audio.addEventListener('loadedmetadata', () => {
-      if (durationEl) {
-        durationEl.textContent = formatTime(audio.duration);
-      }
-    });
+      if (durationEl) durationEl.textContent = formatTime(audio.duration)
+    })
 
-    // Seek
     progressBar.addEventListener('input', () => {
       if (audio.duration) {
-        const time = (parseFloat(progressBar.value) / 100) * audio.duration;
-        audio.currentTime = time;
+        audio.currentTime = (parseFloat(progressBar.value) / 100) * audio.duration
       }
-    });
+    })
 
-    // Speed control
     speedSelect?.addEventListener('change', () => {
-      audio.playbackRate = parseFloat(speedSelect.value);
-    });
+      audio.playbackRate = parseFloat(speedSelect.value)
+    })
 
-    // Reset on end
     audio.addEventListener('ended', () => {
-      playIcon?.classList.remove('hidden');
-      pauseIcon?.classList.add('hidden');
-    });
+      playIcon?.classList.remove('hidden')
+      pauseIcon?.classList.add('hidden')
+    })
   }
 
   function formatTime(seconds: number): string {
-    const mins = Math.floor(seconds / 60);
-    const secs = Math.floor(seconds % 60);
-    return `${mins}:${secs.toString().padStart(2, '0')}`;
+    const mins = Math.floor(seconds / 60)
+    const secs = Math.floor(seconds % 60)
+    return `${mins}:${secs.toString().padStart(2, '0')}`
   }
 </script>

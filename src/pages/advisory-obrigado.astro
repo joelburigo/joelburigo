@@ -3,200 +3,135 @@ import Layout from '../layouts/Layout.astro'
 import Header from '../components/layout/Header.astro'
 import Footer from '../components/layout/Footer.astro'
 import Container from '../components/ui/Container.astro'
-import Button from '../components/ui/Button.astro'
-import Icons from '../components/ui/Icons.astro'
 import { contactInfo, getWhatsAppLink } from '../data/contact'
 
 const seo = {
-  title: 'Aplicação Recebida - Advisory | Joel Burigo',
-  description: 'Sua aplicação para Advisory foi recebida. Vamos analisar em até 24h úteis.',
+  title: 'Aplicação recebida — Advisory | Joel Burigo',
+  description: 'Sua aplicação para Advisory foi recebida. Análise de fit em até 24h úteis.',
 }
 ---
 
 <Layout title={seo.title} description={seo.description} noIndex={true}>
   <Header />
-  
-  <main class="min-h-screen bg-dark pt-16 md:pt-20">
-    <section class="py-12 md:py-20">
-      <Container>
-        <div class="mx-auto max-w-3xl">
-          <!-- Ícone de Sucesso -->
-          <div class="mb-8 flex justify-center">
-            <div class="flex h-24 w-24 items-center justify-center rounded-full bg-lime/20 ring-8 ring-lime/10 animate-pulse">
-              <Icons name="check-circle-2" class="h-12 w-12 text-lime" />
-            </div>
+
+  <main class="relative overflow-hidden bg-ink pt-20">
+    <div class="grid-overlay"></div>
+
+    <Container class="relative z-10">
+      <section class="py-16 md:py-24">
+        <div class="mx-auto max-w-4xl">
+          <!-- Kicker -->
+          <div class="kicker mb-6">// ADVISORY · STATUS: RECEBIDO · ANÁLISE_FIT_EM_ANDAMENTO</div>
+
+          <h1 class="tg-display">
+            <span class="stroke-text">APLICAÇÃO</span>
+            <span class="block text-acid">RECEBIDA.</span>
+          </h1>
+
+          <p class="mt-8 max-w-2xl font-sans text-lg text-[color:var(--jb-cream)]">
+            Obrigado por se candidatar. Analiso pessoalmente em até <strong class="text-acid">24h úteis</strong> se o momento da sua empresa faz sentido pra Advisory.
+          </p>
+
+          <!-- Próximos passos -->
+          <div class="mt-12 border border-[color:var(--jb-acid-border)] bg-[color:var(--jb-ink-2)] p-8">
+            <div class="kicker mb-6" style="color: var(--jb-acid);">// PRÓXIMOS_PASSOS</div>
+            <ol class="space-y-6">
+              {[
+                { n: '01', title: 'Análise de fit (24h úteis)', body: 'Leio a aplicação e avalio se o momento atual e o desafio são adequados pra Advisory. Honestidade brutal: se não for, indico alternativa.' },
+                { n: '02', title: 'Contato via WhatsApp', body: 'Se tiver fit, chamo no WhatsApp que você informou pra agendar conversa inicial de 30 minutos.' },
+                { n: '03', title: 'Alinhamento', body: 'Na conversa validamos expectativa e definimos qual formato faz mais sentido: Sessão, Sprint ou Conselho Executivo.' },
+              ].map((step) => (
+                <li class="flex items-start gap-5">
+                  <div class="shrink-0 font-mono text-sm font-bold text-acid" style="letter-spacing: 0.1em;">{step.n}</div>
+                  <div>
+                    <h3 class="heading-4 mb-1 text-[color:var(--jb-cream)]">{step.title}</h3>
+                    <p class="font-sans text-[color:var(--jb-fg-2)]">{step.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
 
-          <!-- Título -->
-          <div class="mb-12 text-center">
-            <h1 class="mb-4 font-display text-4xl font-bold text-white md:text-5xl">
-              ✅ Aplicação Recebida!
-            </h1>
-            <p class="font-sans text-body-lg text-gray-200">
-              Obrigado por se candidatar ao <span class="font-bold text-lime">Advisory</span>
-            </p>
-          </div>
-
-          <!-- Card Principal -->
-          <div class="mb-8 rounded-2xl border-2 border-lime/30 bg-white/5 p-8 backdrop-blur-sm md:p-12">
-            <div class="mb-8 space-y-4">
-              <h2 class="font-display text-2xl font-bold text-white">Próximos Passos:</h2>
-              
-              <div class="space-y-6">
-                <div class="flex items-start gap-4">
-                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-lime/20">
-                    <span class="font-display text-lg font-bold text-lime">1</span>
-                  </div>
-                  <div>
-                    <h3 class="mb-2 font-display text-lg font-semibold text-white">Análise de Fit</h3>
-                    <p class="font-sans text-body text-gray-200">
-                      Vamos analisar sua aplicação com atenção em até <span class="font-bold text-lime">24h úteis</span>. 
-                      Avaliamos se seu momento e desafio são adequados para Advisory.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="flex items-start gap-4">
-                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-lime/20">
-                    <span class="font-display text-lg font-bold text-lime">2</span>
-                  </div>
-                  <div>
-                    <h3 class="mb-2 font-display text-lg font-semibold text-white">Contato via WhatsApp</h3>
-                    <p class="font-sans text-body text-gray-200">
-                      Se houver fit, entraremos em contato pelo WhatsApp que você informou para agendar uma conversa inicial de 30 minutos.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="flex items-start gap-4">
-                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-lime/20">
-                    <span class="font-display text-lg font-bold text-lime">3</span>
-                  </div>
-                  <div>
-                    <h3 class="mb-2 font-display text-lg font-semibold text-white">Alinhamento de Expectativas</h3>
-                    <p class="font-sans text-body text-gray-200">
-                      Na conversa inicial, vamos validar se faz sentido trabalharmos juntos e qual formato de Advisory (Sprint ou Conselho) se encaixa melhor.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Enquanto Isso -->
-            <div class="rounded-xl border border-lime/20 bg-lime/10 p-6">
-              <h3 class="mb-3 font-display text-lg font-semibold text-white">
-                💡 Enquanto você aguarda...
-              </h3>
-              <p class="mb-4 font-sans text-body-sm text-gray-200">
-                Faça nosso diagnóstico gratuito dos <span class="font-bold text-white">6Ps das Vendas Escaláveis</span> e 
-                descubra exatamente onde seu sistema de vendas está travando.
+          <!-- Importantes -->
+          <div class="mt-8 grid gap-6 md:grid-cols-2">
+            <div class="card">
+              <div class="kicker mb-3">// VAGAS · LIMITADAS</div>
+              <p class="font-sans text-[color:var(--jb-fg-2)]">
+                Máximo 3 clientes no Sprint simultâneo e 2 no Conselho Executivo. É sério.
               </p>
-              <Button variant="primary" size="lg" href="/diagnostico" class="w-full sm:w-auto">
-                Fazer Diagnóstico Gratuito
-              </Button>
+            </div>
+            <div class="card">
+              <div class="kicker mb-3">// RESPOSTA · HONESTA</div>
+              <p class="font-sans text-[color:var(--jb-fg-2)]">
+                Se não houver fit, indico VSS ou recursos gratuitos. Sem empurrar venda forçada.
+              </p>
             </div>
           </div>
 
-          <!-- Info Adicional -->
-          <div class="mb-8 rounded-xl border border-white/10 bg-white/5 p-6">
-            <h3 class="mb-4 font-display text-lg font-semibold text-white">ℹ️ Importante Saber</h3>
-            <ul class="space-y-3 font-sans text-body-sm text-gray-200">
-              <li class="flex items-start gap-2">
-                <Icons name="check-circle-2" class="h-5 w-5 shrink-0 text-lime" />
-                <span><span class="font-bold text-white">Vagas limitadas:</span> Máximo 3 clientes no Sprint e 2 no Conselho Executivo</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <Icons name="check-circle-2" class="h-5 w-5 shrink-0 text-lime" />
-                <span><span class="font-bold text-white">Seletivo:</span> Só aceito clientes em momento crítico real que vão executar</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <Icons name="check-circle-2" class="h-5 w-5 shrink-0 text-lime" />
-                <span><span class="font-bold text-white">Resposta honesta:</span> Se não houver fit, vou indicar alternativas (VSS, Services, etc.)</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <Icons name="check-circle-2" class="h-5 w-5 shrink-0 text-lime" />
-                <span><span class="font-bold text-white">Sem spam:</span> Se não houver fit, não vamos ficar insistindo</span>
-              </li>
-            </ul>
+          <!-- Enquanto aguarda -->
+          <div class="mt-10 border-t border-[color:var(--jb-hair)] pt-8">
+            <div class="kicker mb-4">// ENQUANTO_AGUARDA</div>
+            <p class="mb-4 font-sans text-[color:var(--jb-cream)]">
+              Faz o diagnóstico gratuito dos 6Ps e descobre onde teu sistema de vendas está travando.
+            </p>
+            <a href="/diagnostico" class="btn-primary min-h-[48px]">
+              <span>Diagnóstico grátis · 10 min</span>
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
 
-          <!-- Recursos Enquanto Aguarda -->
-          <div class="mb-8 rounded-2xl border-2 border-white/10 bg-white/5 p-6 md:p-8">
-            <h3 class="mb-6 font-display text-xl font-semibold text-white">
-              📚 Recursos Gratuitos Enquanto Aguarda
-            </h3>
-            <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-              <a href="/blog/6ps-vendas-escalaveis-guia-completo" class="group rounded-xl border border-white/10 bg-white/5 p-4 transition-all hover:border-lime/30 hover:bg-lime/5">
-                <div class="mb-2 flex items-center gap-2">
-                  <Icons name="book-open" class="h-5 w-5 text-lime" />
-                  <h4 class="font-display text-sm font-semibold text-white">Guia Completo dos 6Ps</h4>
-                </div>
-                <p class="font-sans text-xs text-gray-400 group-hover:text-gray-300">
-                  Framework completo para estruturar vendas
-                </p>
-              </a>
-
-              <a href="/cases" class="group rounded-xl border border-white/10 bg-white/5 p-4 transition-all hover:border-lime/30 hover:bg-lime/5">
-                <div class="mb-2 flex items-center gap-2">
-                  <Icons name="bar-chart-2" class="h-5 w-5 text-lime" />
-                  <h4 class="font-display text-sm font-semibold text-white">Cases de Sucesso</h4>
-                </div>
-                <p class="font-sans text-xs text-gray-400 group-hover:text-gray-300">
-                  Veja resultados de quem aplicou os 6Ps
-                </p>
-              </a>
-
-              <a href="/diagnostico" class="group rounded-xl border border-white/10 bg-white/5 p-4 transition-all hover:border-lime/30 hover:bg-lime/5">
-                <div class="mb-2 flex items-center gap-2">
-                  <Icons name="target" class="h-5 w-5 text-lime" />
-                  <h4 class="font-display text-sm font-semibold text-white">Diagnóstico dos 6Ps</h4>
-                </div>
-                <p class="font-sans text-xs text-gray-400 group-hover:text-gray-300">
-                  Descubra onde seu sistema trava (grátis)
-                </p>
-              </a>
-
-              <a href="/blog" class="group rounded-xl border border-white/10 bg-white/5 p-4 transition-all hover:border-lime/30 hover:bg-lime/5">
-                <div class="mb-2 flex items-center gap-2">
-                  <Icons name="file-text" class="h-5 w-5 text-lime" />
-                  <h4 class="font-display text-sm font-semibold text-white">Blog Completo</h4>
-                </div>
-                <p class="font-sans text-xs text-gray-400 group-hover:text-gray-300">
-                  +50 artigos sobre vendas e estratégia
-                </p>
-              </a>
-            </div>
+          <!-- Recursos -->
+          <div class="mt-12 grid gap-3 sm:grid-cols-2">
+            <a href="/blog" class="card group flex items-center justify-between">
+              <div>
+                <div class="kicker mb-1">// BLOG</div>
+                <div class="font-display text-[color:var(--jb-cream)]">+50 artigos</div>
+              </div>
+              <span class="text-acid text-xl">→</span>
+            </a>
+            <a href="/cases" class="card group flex items-center justify-between">
+              <div>
+                <div class="kicker mb-1">// CASES</div>
+                <div class="font-display text-[color:var(--jb-cream)]">Resultados reais</div>
+              </div>
+              <span class="text-acid text-xl">→</span>
+            </a>
           </div>
 
           <!-- Contato -->
-          <div class="rounded-xl border border-lime/20 bg-lime/5 p-6 text-center">
-            <p class="mb-4 font-display text-lg font-semibold text-white">
-              Dúvidas sobre o processo?
-            </p>
-            <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <a href={getWhatsAppLink('Olá! Enviei aplicação para Advisory e tenho dúvidas sobre o processo.')} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="sm" class="border-lime text-lime hover:bg-lime">
-                  💬 WhatsApp: {contactInfo.phone.display}
-                </Button>
-              </a>
-              <a href={contactInfo.email.mailto}>
-                <Button variant="outline" size="sm" class="border-white/30 text-white hover:bg-white/10">
-                  ✉️ {contactInfo.email.main}
-                </Button>
-              </a>
-            </div>
+          <div class="mt-12 flex flex-wrap gap-4">
+            <a
+              href={getWhatsAppLink('Olá! Enviei aplicação pra Advisory e tenho dúvidas sobre o processo.')}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary min-h-[48px]"
+            >
+              WhatsApp: {contactInfo.phone.display}
+            </a>
+            <a href="/advisory" class="btn-secondary min-h-[48px]">Voltar pra Advisory</a>
           </div>
 
-          <!-- Volta para Home -->
-          <div class="mt-8 text-center">
-            <a href="/" class="inline-flex items-center gap-2 font-sans text-body text-gray-400 transition-colors hover:text-lime">
-              ← Voltar para o site
-            </a>
+          <!-- Assinatura -->
+          <div class="mt-12 border-t border-[color:var(--jb-hair)] pt-8 font-mono text-[11px] uppercase tracking-[0.28em] text-[color:var(--jb-fg-muted)]">
+            <span class="text-acid">★</span>&nbsp;&nbsp;SISTEMA <span class="text-fire">&gt;</span> IMPROVISO · BORA PRA CIMA
           </div>
         </div>
-      </Container>
-    </section>
+      </section>
+    </Container>
   </main>
 
   <Footer />
 </Layout>
+
+<style>
+  .tg-display {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.045em;
+    line-height: 0.92;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    color: var(--jb-cream);
+    margin: 0;
+  }
+</style>

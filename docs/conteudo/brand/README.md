@@ -99,7 +99,7 @@ Não existe meio-termo (serviço terceirizado). *Services (DWY) foi descontinuad
 
 **Números como elemento gráfico:** `+247%`, `R$1BI`, `17+`, `140+`, `2,3×`, `433%` — sempre GIGANTES, em fogo (alerta) ou acid (growth).
 
-**Tech overlays:** "JB_CORE v3.0", "REV. 2026.04", "SYS ONLINE", coordenadas de Floripa, clock ao vivo. Dá densidade e autoridade técnica.
+**Tech overlays:** "@joelburigo", "EST. 2008", "SYS ONLINE", coordenadas de Floripa, clock ao vivo. Dá densidade e autoridade técnica.
 
 ---
 
@@ -202,7 +202,7 @@ Container: `max-width: 1360px`, padding horizontal `40px` desktop / `24px` mobil
 
 **Terminal window** — card com chrome macOS (3 lights: fire/yellow/acid), mono code, cursor piscando em acid. Use pra mostrar diagnóstico, processo, pipeline.
 
-**Status bar topo** — mono 11px, dot acid pulsante, "SYS ONLINE · JB_CORE v3.0 · REV. 2026.04 · FLORIANÓPOLIS/SC · CLOCK".
+**Status bar topo** — mono 11px, dot acid pulsante, "SYS ONLINE · @joelburigo · EST. 2008 · FLORIANÓPOLIS/SC · CLOCK".
 
 **Animação** — `180ms` `cubic-bezier(0.2, 0.9, 0.2, 1)`. Ticker 38s. Dot acid pulse 1.6s. Terminal blink 1s. Hover CTA primário: `translate(-2px,-2px)` + sombra offset dura (4/6/8px) em cor oposta (fire→acid, acid→fire). Glitch 3s nos títulos-herói (sutil).
 

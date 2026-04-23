@@ -1,5 +1,6 @@
 ---
-import VSSLandingPage from '../../components/pages/VSSLandingPage.astro'
+import '../../styles/global.css'
+import VSSLandingPage from '../../components/sections/VSSLandingPage.astro'
 
 const seo = {
   title: 'Transforme seu negócio com Vendas Sem Segredos | Joel Burigo',
@@ -35,8 +36,15 @@ const seo = {
     <meta name="twitter:description" content={seo.description} />
     <meta name="twitter:image" content="/images/joel-burigo-vendas-sem-segredos.webp" />
 
+    <meta name="theme-color" content="#050505" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fonts Terminal Growth -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <!-- Analytics -->
     <script is:inline>
@@ -47,7 +55,7 @@ const seo = {
       });
     </script>
   </head>
-  <body class="antialiased">
+  <body class="antialiased bg-ink text-cream">
     <VSSLandingPage />
 
     <!-- Analytics tracking -->

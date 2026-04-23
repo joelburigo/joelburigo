@@ -1,181 +1,178 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/layout/Header.astro';
-import Footer from '../components/layout/Footer.astro';
-import Container from '../components/ui/Container.astro';
-import Icons from '../components/ui/Icons.astro';
-import joelBurigoImage from '../assets/images/joel-burigo-vendas-sem-segredos-2.png';
-import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/layout/Header.astro'
+import Footer from '../components/layout/Footer.astro'
+import Container from '../components/ui/Container.astro'
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro'
+import { Image } from 'astro:assets'
+import joelBurigoImage from '../assets/images/joel-burigo-vendas-sem-segredos-2.png'
 
 const seo = {
-  title: 'Press Kit - Joel Burigo | Material para Imprensa',
-  description:
-    'Material oficial para imprensa: biografia, fotos, logos e informações sobre Joel Burigo e o Framework dos 6Ps das Vendas Escaláveis.',
+  title: 'Press Kit | Joel Burigo',
+  description: 'Material oficial pra imprensa: biografia, fotos, logos e dados sobre Joel Burigo e o Framework 6Ps.',
   keywords: 'press kit, imprensa, Joel Burigo, biografia, fotos oficiais',
-};
+}
 ---
 
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
   <Header />
 
-  <section class="bg-dark pt-20 pb-6">
+  <section class="bg-ink pt-20 pb-6">
     <Container>
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Press Kit', href: '/press-kit' }]} />
     </Container>
   </section>
 
-  <main class="grow">
-    <!-- Hero -->
-    <section class="bg-dark py-32">
-      <Container>
-        <div class="mx-auto max-w-3xl text-center">
-          <div class="mb-6 inline-block rounded-full border border-lime/30 bg-lime/10 px-4 py-2">
-            <span class="font-display text-sm font-bold text-lime">IMPRENSA</span>
+  <main class="relative overflow-hidden bg-ink">
+    <div class="grid-overlay"></div>
+
+    <Container class="relative z-10">
+      <!-- Hero -->
+      <section class="py-16 md:py-24">
+        <div class="mx-auto max-w-5xl grid gap-12 md:grid-cols-[1fr_auto] items-end">
+          <div>
+            <div class="kicker mb-6">// IMPRENSA · PRESS_KIT · JOEL_BURIGO</div>
+            <h1 class="tg-display">
+              Press <span class="text-acid">Kit.</span>
+            </h1>
+            <p class="mt-6 max-w-2xl font-sans text-lg text-[color:var(--jb-cream)]">
+              Material oficial pra imprensa, parceiros e eventos. Bio curta, bio longa, foto, credenciais e contato pra entrevistas.
+            </p>
           </div>
-          <h1 class="mb-6 font-display text-display-lg text-white">
-            Press <span class="text-lime">Kit</span>
-          </h1>
-          <p class="font-sans text-body-lg text-gray-200">
-            Material oficial para imprensa, parceiros e eventos
-          </p>
+          <div class="grid grid-cols-3 gap-px bg-[color:var(--jb-hair)] border border-[color:var(--jb-hair)]">
+            <div class="bg-ink p-4">
+              <div class="font-display text-2xl text-acid">17+</div>
+              <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-[color:var(--jb-fg-muted)]">anos</div>
+            </div>
+            <div class="bg-ink p-4">
+              <div class="font-display text-2xl text-acid">140+</div>
+              <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-[color:var(--jb-fg-muted)]">clientes</div>
+            </div>
+            <div class="bg-ink p-4">
+              <div class="font-display text-2xl text-acid">~R$1BI</div>
+              <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-[color:var(--jb-fg-muted)]">estruturado</div>
+            </div>
+          </div>
         </div>
-      </Container>
-    </section>
+      </section>
 
-    <!-- Biografia -->
-    <section class="bg-dark py-24">
-      <Container>
-        <div class="mx-auto max-w-4xl">
-          <div class="mb-12">
-            <h2 class="mb-6 font-display text-display-sm text-white">
-              Biografia <span class="text-lime">Oficial</span>
-            </h2>
+      <!-- Bio + Foto -->
+      <section class="pb-16">
+        <div class="mx-auto max-w-6xl grid gap-8 lg:grid-cols-[2fr_1fr]">
+          <!-- Bios -->
+          <div class="space-y-8">
+            <div class="border border-[color:var(--jb-hair)] bg-[color:var(--jb-ink-2)] p-8">
+              <div class="kicker mb-4">// BIO · CURTA · 1_PARÁGRAFO</div>
+              <p class="font-sans text-[color:var(--jb-cream)] leading-relaxed">
+                Joel Burigo é especialista em Vendas Escaláveis pra micro e pequenas empresas. Criador do Framework 6Ps das Vendas Escaláveis, com 17+ anos de experiência, 140+ clientes atendidos pessoalmente e ~R$ 1 bilhão em vendas estruturadas. Autor do programa VSS (Vendas Sem Segredos) e fundador da Growth Master.
+              </p>
+            </div>
 
-            <div class="space-y-6 rounded-2xl border border-white/10 bg-white/5 p-8">
-              <div>
-                <h3 class="mb-3 font-display text-h4 text-lime">Bio Curta (1 parágrafo)</h3>
-                <p class="font-sans text-body text-gray-200">
-                  Joel Burigo é especialista em vendas escaláveis para micro e pequenas empresas.
-                  Criou o Framework dos 6Ps das Vendas Escaláveis após 17 anos no mercado, 140
-                  clientes atendidos e aproximadamente R$ 1 bilhão em vendas estruturadas. Autor do
-                  programa VSS (Vendas Sem Segredos) e fundador da Growth Master.
+            <div class="border border-[color:var(--jb-hair)] bg-[color:var(--jb-ink-2)] p-8">
+              <div class="kicker mb-4">// BIO · LONGA</div>
+              <div class="space-y-4 font-sans text-[color:var(--jb-fg-2)] leading-relaxed">
+                <p>
+                  Joel Burigo nasceu em 1987 em Palhoça/SC, bairro Jardim Eldorado. Filho de marceneiro e vendedora. Cresceu com dinheiro curto e dignidade alta.
+                </p>
+                <p>
+                  Em março de 2012, aos 25 anos, quebrou a primeira empresa após calote do próprio sócio. Morou 6 meses em barraco de R$ 300 sem geladeira em Ribeirão das Neves/MG. Trabalhou nos Correios por R$ 1.400/mês pra ter salário fixo. Juntou cada centavo, comprou um milheiro de cartões de visita e bateu em 100+ portas subindo a Afonso Pena em BH.
+                </p>
+                <p>
+                  Tijolo por tijolo, reconstruiu. Ao longo de 17+ anos atendeu 140+ clientes pessoalmente e estruturou ~R$ 1 bilhão em vendas. Durante esse percurso, identificou um padrão: a maioria das MPEs brasileiras tem vendas aleatórias porque trata Marketing, Vendas e Operação como áreas isoladas.
+                </p>
+                <p>
+                  Dessa descoberta nasceu o <strong class="text-[color:var(--jb-cream)]">Framework 6Ps das Vendas Escaláveis</strong> — metodologia que integra Posicionamento, Público, Produto, Programas, Processos e Pessoas em um sistema único e previsível.
+                </p>
+                <p>
+                  Hoje mora em Ribeirão da Ilha, Florianópolis, casado com Natalia desde 2021 e pai do Davi (2024). Ajuda empreendedores brasileiros a transformar vendas aleatórias em previsíveis via dois caminhos: VSS (DIY perpétuo, R$ 1.997) e Advisory (1:1 exclusivo).
                 </p>
               </div>
+            </div>
 
-              <div>
-                <h3 class="mb-3 font-display text-h4 text-lime">Bio Longa</h3>
-                <div class="space-y-4 font-sans text-body text-gray-200">
-                  <p>
-                    Joel Burigo nasceu em Palhoça/SC, bairro Jardim Eldorado. Filho de marceneiro e
-                    vendedora de loja, cresceu com dinheiro curto mas dignidade alta.
-                  </p>
-                  <p>
-                    Aos 30 anos, quebrou sua primeira empresa após tomar calote do próprio sócio.
-                    Morou em barraco sem geladeira em Minas Gerais, trabalhou no CTE dos Correios
-                    para ter salário fixo. Juntou dinheiro, comprou mil cartões de visita e foi
-                    bater porta a porta oferecendo sites gratuitos para provar sua capacidade.
-                  </p>
-                  <p>
-                    Devagar, tijolo por tijolo, reconstruiu. Ao longo de 17 anos, atendeu 140
-                    clientes pessoalmente e estruturou aproximadamente R$ 1 bilhão em vendas.
-                    Durante esse período, percebeu um padrão devastador: 80% das micro e pequenas
-                    empresas brasileiras têm vendas aleatórias porque tratam marketing, vendas e
-                    operação como áreas isoladas.
-                  </p>
-                  <p>
-                    Essa descoberta o levou a criar o Framework dos 6Ps das Vendas Escaláveis — uma
-                    metodologia que integra Posicionamento, Público, Produto, Programas, Processos
-                    e Pessoas em um sistema único e previsível.
-                  </p>
-                  <p>
-                    Hoje, Joel ajuda empresários a transformarem vendas aleatórias em previsíveis
-                    através de três formatos: VSS (educação), Services (implementação) e Advisory
-                    (consultoria estratégica). Sua missão é democratizar o acesso a sistemas de
-                    vendas profissionais para MPEs brasileiras.
-                  </p>
-                </div>
-              </div>
-
-              <div>
-                <h3 class="mb-3 font-display text-h4 text-lime">Credenciais</h3>
-                <ul class="space-y-2 font-sans text-body text-gray-200">
-                  <li>• 17 anos de experiência em vendas B2B</li>
-                  <li>• Mais de 140 clientes atendidos pessoalmente</li>
-                  <li>• ~R$ 1 bilhão em vendas estruturadas</li>
-                  <li>• Criador do Framework dos 6Ps das Vendas Escaláveis</li>
-                  <li>• Fundador da Growth Master Ltda</li>
-                  <li>
-                    • Case emblemático: Encontre Sua Franquia (R$ 60k → R$ 1M/mês em 2 anos)
-                  </li>
-                </ul>
-              </div>
+            <div class="border border-[color:var(--jb-hair)] bg-[color:var(--jb-ink-2)] p-8">
+              <div class="kicker mb-4">// CREDENCIAIS</div>
+              <ul class="space-y-2 font-sans text-[color:var(--jb-fg-2)]">
+                <li><span class="text-acid">▶</span>&nbsp; 17+ anos estruturando vendas B2B</li>
+                <li><span class="text-acid">▶</span>&nbsp; 140+ clientes atendidos pessoalmente</li>
+                <li><span class="text-acid">▶</span>&nbsp; ~R$ 1 bilhão em vendas estruturadas</li>
+                <li><span class="text-acid">▶</span>&nbsp; Criador do Framework 6Ps das Vendas Escaláveis</li>
+                <li><span class="text-acid">▶</span>&nbsp; Fundador da Growth Master Ltda</li>
+                <li><span class="text-acid">▶</span>&nbsp; Case: Encontre Sua Franquia (R$ 160k → R$ 1M/mês · +433% · 2018-2020)</li>
+                <li><span class="text-acid">▶</span>&nbsp; 20+ nichos validados</li>
+              </ul>
             </div>
           </div>
 
-          <!-- Fotos Oficiais -->
-          <div class="mb-12">
-            <h2 class="mb-6 font-display text-display-sm text-white">
-              Fotos <span class="text-lime">Oficiais</span>
-            </h2>
-            <div class="grid gap-6 md:grid-cols-2">
-              <div class="rounded-xl border border-white/10 bg-white/5 p-6">
-                <Icons name="image" class="mb-4 h-12 w-12 text-lime" />
-                <h3 class="mb-2 font-display text-h4 text-white">Foto Profissional</h3>
-                <p class="mb-4 font-sans text-body-sm text-gray-200">
-                  Alta resolução, fundo neutro
+          <!-- Foto -->
+          <aside class="space-y-6">
+            <div class="border border-[color:var(--jb-acid-border)] bg-[color:var(--jb-ink-2)] overflow-hidden">
+              <Image
+                src={joelBurigoImage}
+                alt="Joel Burigo — retrato oficial"
+                loading="lazy"
+                class="w-full h-auto grayscale contrast-110"
+              />
+              <div class="p-4 border-t border-[color:var(--jb-hair)]">
+                <div class="kicker mb-2" style="color: var(--jb-acid);">// FOTO · OFICIAL</div>
+                <p class="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-2)]">
+                  Alta resolução · B&amp;W
                 </p>
-                <a
-                  href={joelBurigoImage.src}
-                  download
-                  class="inline-flex items-center gap-2 font-sans text-sm font-medium text-lime hover:text-lime/80"
-                >
-                  <Icons name="download" class="h-4 w-4" />
-                  Download (PNG)
+                <a href={joelBurigoImage.src} download class="mt-3 inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.22em] text-acid hover:underline">
+                  Download PNG <span>→</span>
                 </a>
               </div>
             </div>
-          </div>
 
-          <!-- Logos e Marca -->
-          <div class="mb-12">
-            <h2 class="mb-6 font-display text-display-sm text-white">
-              Logos e <span class="text-lime">Marca</span>
-            </h2>
-            <div class="rounded-xl border border-white/10 bg-white/5 p-6">
-              <h3 class="mb-4 font-display text-h4 text-white">Marca Pessoal</h3>
-              <div class="mb-4 rounded-lg bg-dark p-8 text-center">
-                <span class="font-display text-4xl font-extrabold tracking-tight text-white">
-                  JOEL <span class="text-lime">BURIGO</span>
+            <div class="card">
+              <div class="kicker mb-3">// MARCA · WORDMARK</div>
+              <div class="bg-ink p-6 text-center border border-[color:var(--jb-hair)]">
+                <span class="font-display text-2xl text-[color:var(--jb-cream)] tracking-tight">
+                  JOEL<span class="text-fire">|</span>BURIGO
                 </span>
               </div>
-              <div class="space-y-2 font-sans text-body-sm text-gray-200">
-                <p>• Fonte Display: Montserrat ExtraBold</p>
-                <p>• Cor primária: #a3ff3f (Lime)</p>
-                <p>• Cor secundária: #1a1a2e (Dark)</p>
-              </div>
+              <ul class="mt-4 space-y-1 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-2)]">
+                <li>▶ Archivo Black</li>
+                <li>▶ Fire #FF3B0F</li>
+                <li>▶ Acid #C6FF00</li>
+                <li>▶ Ink #050505</li>
+              </ul>
             </div>
-          </div>
+          </aside>
+        </div>
+      </section>
 
-          <!-- Contato Imprensa -->
-          <div class="rounded-2xl border border-lime/20 bg-lime/5 p-8">
-            <Icons name="award" class="mb-4 h-12 w-12 text-lime" />
-            <h3 class="mb-4 font-display text-h3 text-white">Contato para Imprensa</h3>
-            <p class="mb-4 font-sans text-body text-gray-200">
-              Para entrevistas, parcerias ou solicitações de conteúdo, entre em contato:
+      <!-- Contato imprensa -->
+      <section class="pb-16 md:pb-24">
+        <div class="mx-auto max-w-4xl">
+          <div class="border border-[color:var(--jb-acid-border)] bg-[color:var(--jb-ink-2)] p-8 md:p-10">
+            <div class="kicker mb-4" style="color: var(--jb-acid);">// CONTATO · IMPRENSA</div>
+            <h3 class="heading-2 mb-4 text-[color:var(--jb-cream)]">Entrevistas, palestras e parcerias</h3>
+            <p class="mb-6 font-sans text-[color:var(--jb-fg-2)]">
+              Pra solicitações de conteúdo, entrevistas e palestras, chama direto nos canais abaixo.
             </p>
-            <div class="space-y-2 font-sans text-body text-gray-200">
-              <p>
-                <strong class="text-white">Email:</strong> contato@joelburigo.com.br
-              </p>
-              <p>
-                <strong class="text-white">Website:</strong> joelburigo.com
-              </p>
-            </div>
+            <ul class="space-y-2 font-sans text-[color:var(--jb-cream)]">
+              <li><span class="kicker">// EMAIL</span> &nbsp; contato@joelburigo.com.br</li>
+              <li><span class="kicker">// WEBSITE</span> &nbsp; joelburigo.com.br</li>
+              <li><span class="kicker">// LOCALIZAÇÃO</span> &nbsp; Ribeirão da Ilha, Florianópolis/SC</li>
+            </ul>
           </div>
         </div>
-      </Container>
-    </section>
+      </section>
+    </Container>
   </main>
 
   <Footer />
 </Layout>
+
+<style>
+  .tg-display {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.045em;
+    line-height: 0.92;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    color: var(--jb-cream);
+    margin: 0;
+  }
+</style>

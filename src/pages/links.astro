@@ -2,194 +2,157 @@
 import Layout from '../layouts/Layout.astro'
 import { contactInfo, getWhatsAppLink, getSocialLink } from '../data/contact'
 
-
 const links = [
   {
-    emoji: '🎯',
-    title: 'DIAGNÓSTICO GRATUITO DOS 6Ps',
-    url: '/diagnostico?utm_source=linktree&utm_medium=social&utm_campaign=diagnostico',
-    highlight: true,
+    kicker: '// DIAGNÓSTICO',
+    title: 'DIAGNÓSTICO 6PS · GRÁTIS',
+    body: '10 min · descobre onde teu sistema trava',
+    href: '/diagnostico?utm_source=linktree&utm_medium=social&utm_campaign=diagnostico',
+    featured: true,
   },
   {
-    emoji: '',
-    title: 'YOUTUBE — Conteúdo Completo',
-    url: getSocialLink('youtube', { source: 'linktree', medium: 'social', campaign: 'youtube' }),
+    kicker: '// VSS',
+    title: 'VENDAS SEM SEGREDOS',
+    body: 'DIY perpétuo · 90 dias · R$ 1.997',
+    href: '/vendas-sem-segredos?utm_source=linktree&utm_medium=social&utm_campaign=vss',
+    featured: true,
+  },
+  {
+    kicker: '// ADVISORY',
+    title: 'ADVISORY · 1:1 COMIGO',
+    body: 'Sessão · Sprint · Conselho',
+    href: '/advisory?utm_source=linktree&utm_medium=social&utm_campaign=advisory',
+  },
+  {
+    kicker: '// YOUTUBE',
+    title: 'YOUTUBE · CONTEÚDO COMPLETO',
+    body: 'Playlists e aulas gratuitas',
+    href: getSocialLink('youtube', { source: 'linktree', medium: 'social', campaign: 'youtube' }),
     external: true,
   },
   {
-    emoji: '💼',
-    title: 'LINKEDIN — Conexão Profissional',
-    url: contactInfo.social.linkedin.url,
+    kicker: '// LINKEDIN',
+    title: 'LINKEDIN · B2B',
+    body: 'Artigos e reflexões semanais',
+    href: contactInfo.social.linkedin.url,
     external: true,
   },
   {
-    emoji: '📱',
-    title: 'WHATSAPP — Fale Comigo',
-    url: getWhatsAppLink('Oi Joel, vim pelo seu link nas redes sociais'),
+    kicker: '// INSTAGRAM',
+    title: 'INSTAGRAM · @JOELBURIGO',
+    body: 'Bastidor + posts de execução',
+    href: 'https://instagram.com/joelburigo',
     external: true,
   },
   {
-    emoji: '🌐',
-    title: 'SITE COMPLETO',
-    url: '/?utm_source=linktree&utm_medium=social&utm_campaign=homepage',
+    kicker: '// WHATSAPP',
+    title: 'FALAR COMIGO',
+    body: 'Resposta pessoal em até 24h',
+    href: getWhatsAppLink('Oi Joel, vim pelo link nas redes'),
+    external: true,
+  },
+  {
+    kicker: '// BLOG',
+    title: 'BLOG · +50 ARTIGOS',
+    body: 'Framework, cases, execução',
+    href: '/blog?utm_source=linktree&utm_medium=social&utm_campaign=blog',
   },
 ]
 ---
 
 <Layout
-  title="Links"
-  description="Todos os links de Joel Burigo - Criador dos 6Ps das Vendas Escaláveis"
+  title="Links — Joel Burigo"
+  description="Todos os canais oficiais de Joel Burigo · criador dos 6Ps das Vendas Escaláveis"
   noIndex={true}
 >
-  <main class="min-h-screen bg-linear-to-b from-dark via-dark-gray to-dark py-12 px-4">
-    <div class="max-w-2xl mx-auto">
-      <!-- Header -->
-      <div class="text-center mb-8 animate-fade-in">
-        <div class="mb-6 flex justify-center">
-          <div class="w-32 h-32 rounded-full bg-lime/10 border-2 border-lime flex flex-col items-center justify-center gap-0">
-            <span class="font-display font-black text-white text-2xl tracking-tight leading-tight">JOEL</span>
-            <span class="font-display font-medium text-lime text-2xl tracking-tight leading-tight">BURIGO</span>
-          </div>
-        </div>
-        <h1 class="text-h1 font-display text-white mb-3">
-          {contactInfo.company.name} | {contactInfo.company.tagline}
-        </h1>
-        <p class="text-body-lg text-gray-400 font-sans">
-          {contactInfo.company.description}
-        </p>
+  <main class="relative min-h-screen overflow-hidden bg-ink">
+    <div class="grid-overlay"></div>
+
+    <!-- Status bar topo -->
+    <div class="relative z-10 flex items-center justify-between border-b border-[color:var(--jb-hair)] px-5 py-3 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">
+      <div class="flex items-center gap-3">
+        <span class="dot-live"></span>
+        <span>SYS ONLINE</span>
+        <span class="text-[color:var(--jb-hair-strong)] hidden sm:inline">·</span>
+        <span class="hidden sm:inline">FLORIANÓPOLIS/SC</span>
       </div>
+      <div>JB_LINKS v3.0</div>
+    </div>
+
+    <div class="relative z-10 mx-auto max-w-xl px-5 py-12 md:py-16">
+      <!-- Header -->
+      <header class="mb-10 text-center">
+        <!-- Logo mark -->
+        <div class="mx-auto mb-6 inline-flex h-24 w-24 items-center justify-center border border-[color:var(--jb-fire-border)] bg-[color:var(--jb-ink-2)]">
+          <span class="font-display text-2xl tracking-tight">
+            <span class="text-[color:var(--jb-cream)]">JB</span>
+          </span>
+        </div>
+
+        <div class="kicker mb-4">// JOEL_BURIGO · 17+ ANOS · 140+ MPES</div>
+        <h1 class="heading-1 mb-3 text-[color:var(--jb-cream)]">
+          JOEL<span class="text-fire">|</span>BURIGO
+        </h1>
+        <p class="font-sans text-[color:var(--jb-fg-2)]">
+          Vendas Escaláveis pra MPE.<br/>Framework 6Ps. Zero fórmula mágica.
+        </p>
+      </header>
 
       <!-- Stats -->
-      <div class="grid grid-cols-3 gap-4 mb-8 animate-fade-in" style="animation-delay: 0.2s">
-        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 text-center">
-          <div class="font-display font-bold text-2xl text-lime mb-1">17+</div>
-          <div class="text-gray-400 text-xs font-sans">Anos de Experiência</div>
+      <div class="mb-10 grid grid-cols-3 gap-px border border-[color:var(--jb-hair)] bg-[color:var(--jb-hair)]">
+        <div class="bg-[color:var(--jb-ink-2)] p-4 text-center">
+          <div class="font-display text-xl text-acid">17+</div>
+          <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-[color:var(--jb-fg-muted)]">anos</div>
         </div>
-        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 text-center">
-          <div class="font-display font-bold text-2xl text-lime mb-1">R$ 1B+</div>
-          <div class="text-gray-400 text-xs font-sans">em Vendas Geradas</div>
+        <div class="bg-[color:var(--jb-ink-2)] p-4 text-center">
+          <div class="font-display text-xl text-acid">~R$1BI</div>
+          <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-[color:var(--jb-fg-muted)]">estruturado</div>
         </div>
-        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 text-center">
-          <div class="font-display font-bold text-2xl text-lime mb-1">140+</div>
-          <div class="text-gray-400 text-xs font-sans">Empresas Atendidas</div>
+        <div class="bg-[color:var(--jb-ink-2)] p-4 text-center">
+          <div class="font-display text-xl text-acid">140+</div>
+          <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-[color:var(--jb-fg-muted)]">clientes</div>
         </div>
       </div>
 
-      <!-- VSS Hero CTA -->
-      <a 
-        href="/vendas-sem-segredos?utm_source=linktree&utm_medium=social&utm_campaign=vss_hero"
-        class="group block mb-8 p-8 rounded-3xl bg-linear-to-br from-lime via-lime/90 to-emerald-400 shadow-2xl shadow-lime/30 hover:shadow-lime/50 transition-all duration-300 hover:scale-[1.02] animate-fade-in"
-        style="animation-delay: 0.3s"
-      >
-        <div class="flex items-start justify-between mb-4">
-          <div class="bg-dark/20 backdrop-blur-sm rounded-full px-4 py-1.5">
-            <span class="font-display font-bold text-dark text-xs tracking-wide">⭐ RECOMENDADO</span>
-          </div>
-          <svg 
-            class="w-8 h-8 text-dark/70 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-          </svg>
-        </div>
-        
-        <div class="mb-4">
-          <h2 class="font-display font-black text-3xl text-dark mb-2">
-            🚀 VSS — VENDAS SEM SEGREDOS
-          </h2>
-          <p class="font-sans text-dark/80 text-base leading-relaxed">
-            Sistema completo para estruturar suas vendas do zero. 
-            <span class="font-bold">6 módulos + 40 aulas práticas</span> com o método dos 6Ps das Vendas Escaláveis.
-          </p>
-        </div>
-        
-        <div class="flex items-center gap-3">
-          <span class="font-display font-bold text-dark text-lg">Acessar o programa →</span>
-        </div>
-      </a>
-
       <!-- Links -->
-      <div class="space-y-4">
-        {links.map((link, index) => (
+      <div class="space-y-3">
+        {links.map((link) => (
           <a
-            href={link.url}
+            href={link.href}
             target={link.external ? '_blank' : undefined}
             rel={link.external ? 'noopener noreferrer' : undefined}
-            class={`
-              group block w-full p-5 rounded-2xl
-              transition-all duration-300
-              hover:scale-105 hover:-translate-y-1
-              focus:outline-none focus:ring-2 focus:ring-lime focus:ring-offset-2 focus:ring-offset-dark
-              animate-slide-up
-              ${link.highlight 
-                ? 'bg-linear-to-r from-lime to-lime/80 text-dark shadow-lg shadow-lime/20 hover:shadow-lime/40' 
-                : 'bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-white/20'
-              }
-            `}
-            style={`animation-delay: ${index * 0.1}s`}
+            class={`group block border ${link.featured ? 'border-[color:var(--jb-acid-border)]' : 'border-[color:var(--jb-hair)]'} bg-[color:var(--jb-ink-2)] p-5 transition-all duration-[var(--jb-dur)] hover:-translate-x-[2px] hover:-translate-y-[2px] ${link.featured ? 'hover:shadow-[6px_6px_0_var(--jb-acid)] hover:border-[color:var(--jb-acid)]' : 'hover:shadow-[6px_6px_0_var(--jb-fire)] hover:border-[color:var(--jb-fire)]'}`}
+            style={link.featured ? 'background: linear-gradient(180deg, rgba(198,255,0,0.06), var(--jb-ink-2));' : ''}
           >
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-4">
-                <span class="text-3xl" aria-hidden="true">
-                  {link.emoji}
-                </span>
-                <span class={`font-display font-bold text-sm md:text-base ${link.highlight ? 'text-dark' : 'text-white'}`}>
+            <div class="flex items-center justify-between gap-4">
+              <div class="flex-1 min-w-0">
+                <div class={`font-mono text-[11px] uppercase tracking-[0.22em] ${link.featured ? 'text-acid' : 'text-[color:var(--jb-fg-muted)]'}`}>
+                  {link.kicker}
+                </div>
+                <div class="mt-1 font-display text-base text-[color:var(--jb-cream)]">
                   {link.title}
-                </span>
+                </div>
+                <div class="mt-1 font-sans text-sm text-[color:var(--jb-fg-3)]">
+                  {link.body}
+                </div>
               </div>
-              <svg
-                class={`w-5 h-5 transition-transform group-hover:translate-x-1 ${link.highlight ? 'text-dark/80' : 'text-white/90'}`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
+              <span class={`font-mono text-xl ${link.featured ? 'text-acid' : 'text-[color:var(--jb-fg-3)]'} transition-transform group-hover:translate-x-1`}>
+                →
+              </span>
             </div>
           </a>
         ))}
       </div>
 
-      <!-- Footer -->
-      <div class="text-center mt-12 text-gray-400 text-body-sm font-sans">
-        <p>© 2025 Joel Burigo. Todos os direitos reservados.</p>
-      </div>
+      <!-- Assinatura -->
+      <footer class="mt-12 border-t border-[color:var(--jb-hair)] pt-8 text-center">
+        <div class="mb-3 font-mono text-[11px] uppercase tracking-[0.28em] text-[color:var(--jb-fg-muted)]">
+          <span class="text-acid">★</span>&nbsp;&nbsp;SISTEMA <span class="text-fire">&gt;</span> IMPROVISO
+        </div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-[color:var(--jb-fg-muted)]">
+          © 2026 Joel Burigo · Growth Master Ltda
+        </p>
+      </footer>
     </div>
   </main>
-</Layout>
-
-<style>
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes slide-up {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fade-in {
-    animation: fade-in 0.6s ease-out forwards;
-  }
-
-  .animate-slide-up {
-    opacity: 0;
-    animation: slide-up 0.6s ease-out forwards;
-  }
-</style>
 </Layout>

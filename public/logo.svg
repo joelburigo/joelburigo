@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 88" role="img" aria-label="Joel Burigo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 88" role="img" aria-label="Joel Burigo">
   <title>Joel Burigo</title>
   <style>
     .joel { font-family: 'Archivo Black', 'Archivo', system-ui, sans-serif; font-weight: 900; fill: #F5F1E8; letter-spacing: -2.4px; }
     .burigo { font-family: 'Archivo', system-ui, sans-serif; font-weight: 500; fill: #FF3B0F; letter-spacing: -2.4px; }
   </style>
   <text x="0" y="70" class="joel" font-size="78">JOEL</text>
-  <text x="215" y="70" class="burigo" font-size="78">BURIGO</text>
+  <text x="188" y="70" class="burigo" font-size="78">BURIGO</text>
 </svg>

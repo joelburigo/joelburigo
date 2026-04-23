@@ -109,6 +109,9 @@ export default defineConfig({
     assets: '_astro',
   },
   vite: {
+    server: {
+      allowedHosts: ['dev.joelburigo.com.br'],
+    },
     build: {
       target: 'es2022',
       chunkSizeWarningLimit: 600,

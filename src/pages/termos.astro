@@ -115,19 +115,14 @@ const sections = [
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
   <Header />
 
-  <section class="bg-ink pt-6 pb-0">
-    <Container>
-      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Termos', href: '/termos' }]} />
-    </Container>
-  </section>
-
   <main class="relative overflow-hidden bg-ink pb-20">
     <div class="grid-overlay"></div>
 
     <Container class="relative z-10">
-      <article class="mx-auto max-w-3xl py-12 md:py-16">
+      <article class="mx-auto max-w-3xl pt-10 pb-12 md:pt-14 md:pb-16">
         <!-- Hero -->
         <header class="mb-12 border-b border-[color:var(--jb-hair)] pb-8">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Termos', href: '/termos' }]} class="mb-5" />
           <div class="kicker mb-4">// LEGAL · TERMOS_DE_USO</div>
           <h1 class="legal-h1">Termos de Uso</h1>
           <p class="mt-4 font-mono text-[12px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">

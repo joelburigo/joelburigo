@@ -58,19 +58,14 @@ const faqs = [
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
   <Header />
 
-  <section class="bg-ink pt-6 pb-0">
-    <Container>
-      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Contato', href: '/contato' }]} />
-    </Container>
-  </section>
-
   <main class="relative overflow-hidden bg-ink">
     <div class="grid-overlay"></div>
 
     <Container class="relative z-10">
       <!-- Hero -->
-      <section class="py-16 md:py-24">
+      <section class="pt-10 pb-16 md:pt-14 md:pb-24">
         <div class="mx-auto max-w-4xl">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Contato', href: '/contato' }]} class="mb-5" />
           <div class="kicker mb-6">// CONTATO · DIRETO · 24H_RESPONSE</div>
           <h1 class="tg-display">
             Quer <span class="text-fire">ligar a Máquina</span>?

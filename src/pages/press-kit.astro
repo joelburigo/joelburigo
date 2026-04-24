@@ -17,18 +17,15 @@ const seo = {
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
   <Header />
 
-  <section class="bg-ink pt-6 pb-0">
-    <Container>
-      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Press Kit', href: '/press-kit' }]} />
-    </Container>
-  </section>
-
   <main class="relative overflow-hidden bg-ink">
     <div class="grid-overlay"></div>
 
     <Container class="relative z-10">
       <!-- Hero -->
-      <section class="py-16 md:py-24">
+      <section class="pt-10 pb-16 md:pt-14 md:pb-24">
+        <div class="mx-auto max-w-5xl">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Press Kit', href: '/press-kit' }]} class="mb-6" />
+        </div>
         <div class="mx-auto max-w-5xl grid gap-12 md:grid-cols-[1fr_auto] items-end">
           <div>
             <div class="kicker mb-6">// IMPRENSA · PRESS_KIT · JOEL_BURIGO</div>

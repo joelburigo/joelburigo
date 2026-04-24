@@ -16,19 +16,14 @@ const seo = {
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
   <Header />
 
-  <section class="bg-ink pt-6 pb-0">
-    <Container>
-      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Cases', href: '/cases' }]} />
-    </Container>
-  </section>
-
   <main class="relative overflow-hidden bg-ink">
     <div class="grid-overlay"></div>
 
     <Container class="relative z-10">
       <!-- Hero -->
-      <section class="py-16 md:py-24">
+      <section class="pt-10 pb-16 md:pt-14 md:pb-24">
         <div class="mx-auto max-w-5xl">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Cases', href: '/cases' }]} class="mb-5" />
           <div class="kicker mb-6">// CASES · RESULTADOS_REAIS · 140+_MPES</div>
           <h1 class="tg-display">
             Resultados <span class="text-acid">reais.</span>

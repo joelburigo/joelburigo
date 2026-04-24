@@ -1,6 +1,6 @@
 ---
 title: '17 Anos Estruturando Vendas: Da Quebrada ao Bilhão - A História Completa'
-excerpt: 'A jornada completa de Joel Burigo: do barraco sem geladeira aos ~R$ 1 bilhão em vendas estruturadas. 17 anos, 140+ empresas, cada erro transformado em metodologia. Esta é a história crua de como os 6Ps nasceram da dor e viraram legado.'
+excerpt: 'A jornada completa de Joel Burigo: do barraco sem geladeira aos ~R$ 1 bilhão em vendas estruturadas como estimativa agregada. 17 anos, 140+ empresas, cada erro até os 6Ps formalizados em 2025. Esta é a história crua de como prática virou método.'
 category: 'Mentalidade'
 date: 2026-01-26
 readTime: '35 min'
@@ -39,7 +39,7 @@ clusterKeywords:
   - [Capítulo 14: A Volta Pra Casa](#capítulo-14-a-volta-pra-casa)
   - [Capítulo 15: A Pergunta Que Não Calava](#capítulo-15-a-pergunta-que-não-calava)
   - [Capítulo 16: Davi](#capítulo-16-davi)
-  - [Capítulo 17: O Nascimento do VSS](#capítulo-17-o-nascimento-do-vss)
+  - [Capítulo 17: O Nascimento dos 6Ps e do VSS](#capítulo-17-o-nascimento-dos-6ps-e-do-vss)
   - [Capítulo 18: O Legado](#capítulo-18-o-legado)
 
 ---
@@ -428,7 +428,7 @@ Cada elemento que eu via em consultorias - posicionamento, público, produto, pr
 
 Não inventei nada disso da noite pro dia. Foi condensação de 13 anos errando, acertando, testando, ajustando. Mas naquele dia, pela primeira vez, ficou **cristalino** o conceito.
 
-Fechei o livro. Respirei fundo. E soube que tinha acabado de ter o insight que ia mudar não só minha carreira, mas a vida de centenas de empresas que eu ainda nem conhecia.
+Fechei o livro. Respirei fundo. E soube que tinha acabado de ter o insight que ia mudar não só minha carreira, mas a vida de empresas que eu ainda nem conhecia.
 
 ---
 
@@ -597,7 +597,7 @@ Mas **o quê**?
 
 2023 foi um ano de reflexão profunda.
 
-Eu tinha 17 anos de experiência. Tinha atendido mais de 140 clientes. Tinha participado da geração de aproximadamente R$ 1 bilhão em vendas ao longo desses anos. Tinha desenvolvido uma metodologia proprietária que funcionava.
+Eu tinha 17 anos de experiência. Tinha atendido mais de 140 clientes. Tinha participado da estruturação de ~R$ 1 bilhão em vendas como estimativa agregada ao longo desses anos. Tinha desenvolvido uma metodologia proprietária que funcionava.
 
 E aqui vai uma verdade que precisa ser dita:
 
@@ -675,17 +675,17 @@ Olhei pro Davi dormindo. Olhei pra Natalia. E soube exatamente o que eu precisav
 
 ---
 
-## Capítulo 17: O Nascimento do VSS
+## Capítulo 17: O Nascimento dos 6Ps e do VSS
 
-Dezembro de 2024. Janeiro de 2026.
+2025. Depois, janeiro de 2026.
 
-Nasceu o conceito final do **VSS - Vendas Sem Segredos**.
+Em 2025, eu dei nome e estrutura formal ao que já aplicava há anos sem chamar de 6Ps.
+
+Em 2026, comecei a lançar tudo de forma pública: os **6Ps das Vendas Escaláveis**, o **VSS - Vendas Sem Segredos** e a reestruturação da marca em torno de **Joel Burigo**.
 
 Não foi ideia repentina. Foi 17 anos de condensação. Foi transformar cada erro, cada acerto, cada case, cada falha, em um sistema replicável e acessível.
 
-E agora, março de 2026, está pronto para lançar.
-
-Eu estava olhando pra trás, pros 17 anos de jornada. Tinha estruturado vendas pra 140+ empresas. Tinha gerado aproximadamente R$ 1 bilhão em vendas ao longo desses anos.
+Eu estava olhando pra trás, pros 17 anos de jornada. Tinha estruturado vendas pra 140+ empresas. Tinha uma estimativa agregada de ~R$ 1 bilhão em vendas estruturadas ao longo desses anos.
 
 Mas esse conhecimento estava preso. Estava em consultorias caras. Estava inacessível pra maioria.
 
@@ -693,7 +693,7 @@ E foi aí que percebi: eu não precisava inventar nada novo. Eu precisava estrut
 
 **Condensei tudo nos [6Ps das Vendas Escaláveis](/blog/6ps-vendas-escalaveis-guia-completo).**
 
-Cada P nasceu de uma lição real. Dolorosa ou vitoriosa, mas real:
+A base de cada P nasceu de uma lição real. Dolorosa ou vitoriosa, mas real:
 
 **P1 - Posicionamento:** Aquela sociedade que quebrou em março de 2012 me ensinou que sem clareza você vira commodity e atrai sócio errado.
 
@@ -707,7 +707,7 @@ Cada P nasceu de uma lição real. Dolorosa ou vitoriosa, mas real:
 
 **P6 - Pessoas:** O fundo do poço no barraco em 2012 me ensinou que empresa que depende 100% do fundador não é empresa, é emprego disfarçado.
 
-Cada P nasceu de erro real. De acerto real. De sangue, suor e lágrima. Não era teoria de livro. Era metodologia de rua construída ao longo de 17 anos e finalmente estruturada em framework formal.
+Cada P veio de erro real. De acerto real. De sangue, suor e lágrima. Não era teoria de livro. Era metodologia de rua aplicada ao longo de 17+ anos e finalmente nomeada e estruturada como framework formal em 2025.
 
 **Não é curso. Não é consultoria tradicional. Não é agência.**
 
@@ -789,7 +789,7 @@ Esses mudam o jogo.
 
 Não só pra eles. Mas pra todos que vêm depois.
 
-E eu tô aqui, 17 anos depois de ter começado como freelancer, 13 anos depois do barraco sem geladeira, com 140+ clientes atendidos e aproximadamente R$ 1 bilhão em vendas estruturadas...
+E eu tô aqui, 17 anos depois de ter começado como freelancer, 13 anos depois do barraco sem geladeira, com 140+ clientes atendidos e ~R$ 1 bilhão em vendas estruturadas como estimativa agregada...
 
 Pra te dizer uma coisa:
 

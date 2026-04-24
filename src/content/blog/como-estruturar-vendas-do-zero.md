@@ -1,6 +1,6 @@
 ---
 title: 'Como Estruturar Vendas do Zero: Guia Completo dos 6Ps'
-excerpt: 'Descubra como transformar vendas aleatórias em previsíveis usando o Framework dos 6Ps validado por 140+ clientes.'
+excerpt: 'Descubra como transformar vendas aleatórias em previsíveis usando os 6Ps, framework condensado em 2025 a partir de 140+ clientes.'
 category: 'Framework 6Ps'
 date: 2025-12-08
 readTime: '18 min'
@@ -67,7 +67,7 @@ O que falta? Sistema completo que entregue autonomia com preço acessível.
 <a name="o-que-e-framework"></a>
 ## O Que é o Framework dos 6Ps?
 
-O Framework dos 6Ps é uma metodologia proprietária que desenvolvi após anos de tentativa e erro. São 6 pilares que, quando bem estruturados, transformam vendas aleatórias em previsíveis.
+O Framework dos 6Ps é uma metodologia proprietária que condensei em 2025 depois de anos de tentativa, erro e aplicação prática. São 6 pilares que, quando bem estruturados, transformam vendas aleatórias em previsíveis.
 
 A ordem importa. Cada P é um pilar. Fraqueza em um compromete todos os seguintes.
 
@@ -498,7 +498,7 @@ Não. Você pode começar com ferramentas gratuitas (CRM básico, prospecção a
 
 Estruturar vendas não é opcional se você quer escalar. É a diferença entre vender R$ 100k/mês e vender R$ 1M/mês com a mesma equipe.
 
-O Framework dos 6Ps já foi validado por 140+ clientes e aproximadamente R$ 1 bilhão em vendas estruturadas. Funciona porque é sistêmico, não mágico.
+A base dos 6Ps já foi aplicada em 140+ clientes e ~R$ 1 bilhão em vendas estruturadas como estimativa agregada. Funciona porque é sistêmico, não mágico.
 
 **Não há fórmula mágica. Há método. E você pode dominar cada etapa dele.**
 

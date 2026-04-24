@@ -1,6 +1,6 @@
 ---
 title: 'Os 6Ps das Vendas Escaláveis: O Guia Definitivo para Transformar Vendas Aleatórias em Vendas Previsíveis'
-excerpt: 'Descubra o framework completo dos 6Ps que estruturou aproximadamente R$ 1 bilhão em vendas para 140 empresas em 17 anos. Sistema > Improviso. Sempre.'
+excerpt: 'Descubra os 6Ps formalizados em 2025 a partir de 17+ anos estruturando vendas em 140 empresas. Sistema > Improviso. Sempre.'
 category: 'Framework 6Ps'
 date: 2025-12-12
 readTime: '25 min'
@@ -31,7 +31,7 @@ Passei 17 anos ajudando 140 empresas a saírem desse caos. E descobri um padrão
 
 (Esforço todo mundo tem. Sistema? Poucos.)
 
-Neste guia, vou te mostrar exatamente o framework que usei para estruturar aproximadamente R$ 1 bilhão em vendas ao longo da minha carreira — os **6Ps das Vendas Escaláveis**. E mais importante: como você pode aplicar no seu negócio, independente do seu tamanho ou quanto tem pra investir em marketing.
+Neste guia, vou te mostrar o framework que condensei em 2025 a partir do que eu já aplicava há anos para ajudar a estruturar ~R$ 1 bilhão em vendas como estimativa agregada — os **6Ps das Vendas Escaláveis**. E mais importante: como você pode aplicar no seu negócio, independente do seu tamanho ou quanto tem pra investir em marketing.
 
 Mas antes de entrar no método, deixa eu te contar de onde isso veio.
 
@@ -136,16 +136,16 @@ Olha o que existe hoje pra micro e pequeno empresário:
 
 O que falta no mercado: **um sistema integrado que você implementa, aprende, e fica autônomo.**
 
-Foi por isso que criei os 6Ps.
+Foi por isso que, em 2025, dei nome e estrutura formal aos 6Ps.
 
 ---
 
 <a name="o-que-sao-os-6ps-das-vendas-escalaveis"></a>
 ## O Que São os 6Ps das Vendas Escaláveis
 
-Os 6Ps das Vendas Escaláveis é o framework que desenvolvi ao longo de 17 anos para diagnosticar e evoluir operações de vendas em micro e pequenas empresas.
+Os 6Ps das Vendas Escaláveis é o framework que condensei em 2025 a partir de 17+ anos diagnosticando e evoluindo operações de vendas em micro e pequenas empresas.
 
-Não é teoria. É o que apliquei em 140 clientes reais. É o que me permitiu ajudar a estruturar R$ 1 bilhão em vendas.
+A base não é teoria. É o que apliquei, ainda sem esse nome formal, em 140 clientes reais. É o que me permitiu ajudar a estruturar ~R$ 1 bilhão em vendas como estimativa agregada.
 
 O framework integra Marketing + Vendas + Operação em um sistema único. Porque a verdade é:
 
@@ -265,7 +265,7 @@ Você tem 30 segundos. O que diz?
 
 Meu pitch:
 
-*"Sou Joel Burigo, especialista em vendas escaláveis. Criei os 6Ps das Vendas Escaláveis — metodologia que estruturou R$ 1 bilhão em vendas em 17 anos. Transformo MPEs de vendas aleatórias para vendas previsíveis em 90 dias. Funciona com ou sem budget de tráfego."*
+*"Sou Joel Burigo, especialista em vendas escaláveis. Condensei 17+ anos nos 6Ps das Vendas Escaláveis — metodologia que nasce de ~R$ 1 bilhão em vendas estruturadas como estimativa agregada. Transformo MPEs de vendas aleatórias para vendas previsíveis em 90 dias. Funciona com ou sem budget de tráfego."*
 
 Escreve o seu. Decora. Treina no espelho.
 

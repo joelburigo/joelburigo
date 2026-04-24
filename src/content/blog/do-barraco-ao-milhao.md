@@ -1,6 +1,6 @@
 ---
 title: '7 Erros Que Me Quebraram e 7 Princípios Que Me Reconstruíram: Lições de Quem Começou do Zero'
-excerpt: 'Quebrei aos 25, morei em barraco de R$ 300, reconstruí tijolo por tijolo. Aqui estão os 7 erros que me derrubaram e os 7 princípios que me fizeram estruturar ~R$ 1 bilhão depois. Cicatriz virou sistema.'
+excerpt: 'Quebrei aos 25, morei em barraco de R$ 300, reconstruí tijolo por tijolo. Aqui estão os 7 erros que me derrubaram e os 7 princípios que me fizeram estruturar ~R$ 1 bilhão como estimativa agregada. Cicatriz virou sistema.'
 category: 'Mentalidade'
 date: 2025-11-29
 readTime: '18 min'
@@ -42,7 +42,7 @@ De maio a novembro de 2012, morei num barraco de R$ 300/mês sem geladeira no ba
 
 Juntei dinheiro, comprei mil cartões de visita e bati em mais de 100 portas na Avenida Afonso Pena em Belo Horizonte. Em dezembro de 2012, consegui meu primeiro cliente: R$ 500 por um site. Minha proposta? "Se não gostar, te dou de graça."
 
-Reconstruí tijolo por tijolo. Hoje: ~R$ 1 bilhão em vendas estruturadas ao longo de 17+ anos, 140+ clientes atendidos.
+Reconstruí tijolo por tijolo. Hoje: ~R$ 1 bilhão em vendas estruturadas como estimativa agregada ao longo de 17+ anos, 140+ clientes atendidos.
 
 **Não vou recontar a história completa aqui** (já fiz isso em [17 Anos Estruturando Vendas](/blog/17-anos-estruturando-vendas-historia-completa)).
 
@@ -50,7 +50,7 @@ Este post é diferente: **vou te mostrar exatamente quais erros me quebraram e q
 
 Se você está lutando, quebrou, ou tem medo de quebrar — esses 7 erros e 7 princípios vão te poupar anos de sofrimento.
 
-Cicatriz virou sabedoria. Sabedoria virou sistema. Sistema virou os [6Ps das Vendas Escaláveis](/blog/6ps-vendas-escalaveis-guia-completo).
+Cicatriz virou sabedoria. Sabedoria virou sistema. Em 2025, esse sistema ganhou nome e estrutura: [6Ps das Vendas Escaláveis](/blog/6ps-vendas-escalaveis-guia-completo).
 
 ---
 
@@ -201,7 +201,7 @@ Bati em mais de 100 portas na Avenida Afonso Pena. A maioria disse não. Uma dis
 
 Reinvesti em aprendizado: cursos, livros, mentorias.
 
-Em 27 de julho de 2017, depois de uma reunião tensa com cliente que faturava R$ 22 milhões/mês, comprei uma sequência de livros sobre marketing, vendas e neuromarketing. As peças se encaixaram. Ali nasceu o insight que virou os 6Ps.
+Em 27 de julho de 2017, depois de uma reunião tensa com cliente que faturava R$ 22 milhões/mês, comprei uma sequência de livros sobre marketing, vendas e neuromarketing. As peças se encaixaram. Ali nasceu o insight que anos depois eu condensaria nos 6Ps.
 
 **Resultado:** Aprendi rápido. Implementei rápido. Cresci rápido. O investimento em conhecimento sempre volta multiplicado.
 
@@ -248,11 +248,11 @@ Leads, conversão, CAC, LTV, ciclo de vendas, churn, ticket médio.
 
 **14 de Dezembro 2016:** Conheci Natalia no Tinder. Oito dias depois, voltei pra Florianópolis pela primeira vez em quase 5 anos.
 
-**27 de Julho 2017:** O insight que mudou tudo. Lendo livros sobre marketing e vendas, as peças se encaixaram. Nasceu o conceito que virou os 6Ps.
+**27 de Julho 2017:** O insight que mudou tudo. Lendo livros sobre marketing e vendas, as peças se encaixaram. Nasceu o conceito que, em 2025, eu formalizaria como 6Ps.
 
 **Maio 2018 - 2020:** Case de holding de franquias. De R$ 160k/mês para R$ 1 milhão/mês. Crescimento de 433%. Sistema funcionando.
 
-**2026:** Nasceu o VSS (Vendas Sem Segredos). 17+ anos condensados em metodologia acessível para MPEs.
+**2026:** VSS (Vendas Sem Segredos) em lançamento. 17+ anos condensados em metodologia acessível para MPEs.
 
 ---
 
@@ -324,7 +324,7 @@ Se você está lendo isso e se identificou com algo da minha história, eu tenho
 
 Não vai ser mágica. Não vai ser da noite pro dia. Mas VAI acontecer.
 
-Se EU consegui sair de um barraco sem geladeira para estruturar ~R$ 1 bilhão em vendas ao longo de 17 anos, você consegue reconstruir seu negócio. Se quiser conhecer minha trajetória completa, veja [sobre Joel Burigo](/sobre).
+Se EU consegui sair de um barraco sem geladeira para estruturar ~R$ 1 bilhão em vendas como estimativa agregada ao longo de 17 anos, você consegue reconstruir seu negócio. Se quiser conhecer minha trajetória completa, veja [sobre Joel Burigo](/sobre).
 
 A diferença entre quem fica no barraco e quem sai não é talento. Não é sorte. Não é dinheiro.
 
@@ -340,7 +340,7 @@ Pior porque doeu. Muito. De um jeito que você não esquece nunca. O silêncio d
 
 Melhor porque me ensinou que **improviso não escala. Sistema escala.**
 
-Cada erro virou lição. Cada lição virou princípio. Cada princípio virou parte do Framework dos 6Ps.
+Cada erro virou lição. Cada lição virou princípio. Em 2025, esses princípios viraram parte formal do Framework dos 6Ps.
 
 **Sistema > Improviso. Sempre foi assim. Sempre vai ser.**
 

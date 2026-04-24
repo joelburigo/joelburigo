@@ -1,6 +1,6 @@
 ---
 title: 'De R$ 10k Para R$ 100k/Mês: As 8 Mudanças Que Ninguém Te Conta (E Por Que 10x Não É Fazer 10x Mais)'
-excerpt: 'A verdade brutal sobre escalar de R$ 10k para R$ 100k/mês: não é trabalhar 10x mais. É mudar 8 estruturas. Baseado em 17 anos estruturando vendas para 140+ clientes.'
+excerpt: 'A verdade brutal sobre escalar de R$ 10k para R$ 100k/mês: não é trabalhar 10x mais. É mudar 8 estruturas. Baseado em 17+ anos estruturando vendas para 140+ clientes.'
 category: 'Vendas Escaláveis'
 date: 2025-12-04
 readTime: '20 min'

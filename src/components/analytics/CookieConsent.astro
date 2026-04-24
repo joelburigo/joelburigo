@@ -4,27 +4,22 @@
 
 <div
   id="cookie-consent-banner"
-  class="fixed bottom-0 left-0 right-0 z-50 transform translate-y-full bg-[color:var(--jb-ink)] border-t border-[color:var(--jb-hair-strong)] p-6 transition-transform duration-[var(--jb-dur)] will-change-transform"
+  class="fixed bottom-0 left-0 right-0 z-50 transform translate-y-full bg-[color:var(--jb-ink)] border-t border-[color:var(--jb-hair-strong)] px-4 py-3 transition-transform duration-[var(--jb-dur)] will-change-transform"
   style="opacity: 0; pointer-events: none;"
   data-consent-banner
 >
-  <div class="mx-auto max-w-[1360px] px-2">
-    <div class="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-      <div class="flex-1">
-        <div class="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-acid)] mb-2">
-          // COOKIES · LGPD · PRIVACIDADE
-        </div>
-        <p class="font-sans text-sm text-[color:var(--jb-fg-2)] leading-relaxed">
-          Usamos cookies pra melhorar experiência, personalizar conteúdo e analisar tráfego. Ao clicar em "Aceitar", você concorda.
-          <a href="/privacidade" class="text-[color:var(--jb-acid)] underline underline-offset-2 hover:text-[color:var(--jb-acid-hot)]">Política de Privacidade</a>
-        </p>
-      </div>
-      <div class="flex gap-3 shrink-0">
-        <button id="cookie-reject" class="btn-secondary text-xs px-5 py-2 min-h-9">
+  <div class="mx-auto max-w-[1360px]">
+    <div class="flex flex-col items-start justify-between gap-3 md:flex-row md:items-center">
+      <p class="flex-1 font-sans text-[13px] leading-[1.5] text-[color:var(--jb-fg-2)]">
+        Cookies pra analisar tráfego e melhorar a experiência.
+        <a href="/privacidade" class="text-[color:var(--jb-acid)] underline underline-offset-2 hover:text-[color:var(--jb-acid-hot)]">Política de Privacidade</a>.
+      </p>
+      <div class="flex shrink-0 gap-2">
+        <button id="cookie-reject" class="btn-secondary min-h-8 px-4 py-1.5 text-xs">
           Rejeitar
         </button>
-        <button id="cookie-accept" class="btn-primary text-xs px-5 py-2 min-h-9">
-          Aceitar Todos
+        <button id="cookie-accept" class="btn-primary min-h-8 px-4 py-1.5 text-xs">
+          Aceitar
         </button>
       </div>
     </div>

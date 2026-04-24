@@ -651,45 +651,144 @@ GET /verificar?t={token}
   └─ Redirect → /area (VSS ativo) · /advisory/dashboard (Advisory) · /onboarding (se user_profile vazio)
 ```
 
-### 4.4 Workspace de destravamento com agente (fluxo principal VSS)
+### 4.4 Jornada do aluno VSS (fluxo principal)
+
+Princípio: **aluno nunca encara textarea vazia**. Tudo é conversa com agente que já conhece o contexto do aluno (6Ps declarados + artifacts anteriores).
+
+#### 4.4.a Onboarding — primeiro login
 
 ```
-/destravamento/[slug]  (Server Component)
+Primeiro login → redireciona /onboarding (user_profile.updated_at IS NULL)
+
+/onboarding (Server Component)
+  ├─ Carrega: dados do purchase (nome, email)
+  ├─ Renderiza <OnboardingChat> (Client Component)
+  └─ System prompt:
+        "Você é o copiloto VSS acolhendo o {nome} no primeiro dia.
+         Faça 8-12 perguntas calmas, numa conversa leve (não questionário).
+         Mapeie: empresa, oferta, operação, números, gargalo, 6Ps rascunho.
+         Use updateProfile() a cada campo aprendido, não espere ter tudo.
+         Ao final, resuma o que entendeu e pergunta se tá certo."
+
+Turnos típicos (~10-15 min):
+  Agente: "Prazer, {nome}. Bora começar me contando: qual a sua empresa e
+           o que vocês vendem?"
+  Aluno:  "É a AcmeSales, consultoria de vendas pra SaaS B2B..."
+  → updateProfile({empresa_nome: "AcmeSales", segmento: "consultoria..."})
+
+  Agente: "Legal. Faz quanto tempo? Quantas pessoas no time?"
+  Aluno:  "Abri em 2022, somos eu + 3 SDRs."
+  → updateProfile({...})
+
+  Agente: "E hoje, como vocês conseguem clientes? Mais prospecção ativa,
+           inbound, indicação?"
+  ... etc.
+
+  Agente: "Faturamento do ano passado, por alto? Meta pros próximos 12?"
+  → updateProfile({faturamento_atual_cents, meta_12m_cents})
+
+  Agente: "Se eu te perguntasse agora qual o maior gargalo — o que mais
+           te tira o sono — qual você escolheria?"
+  → updateProfile({gargalo_principal})
+
+  [6Ps resumo]: "Me conta em 2-3 frases cada: seu Produto, Pessoas,
+                 Precificação, Processos, Performance, Propaganda."
+  → updateProfile({produto_md, pessoas_md, ...})
+
+Final do onboarding:
+  ├─ Agente exibe "Resumo da sua empresa" (lê user_profile)
+  ├─ Aluno revisa/edita inline qualquer campo
+  ├─ Confirma → Redirect /area
+  └─ Tempo total: 10-15 min
+```
+
+Se aluno prefere pular, tem botão "preencher manualmente" que abre form clássico mapeado pros mesmos campos. Agente fica disponível pra enriquecer depois.
+
+#### 4.4.b Dashboard /area
+
+```
+/area (Server Component)
+  ├─ Valida session + entitlement VSS ativo
+  ├─ Carrega: user_profile, progresso agregado, artifacts recentes
+  ├─ Calcula: próximo destravamento recomendado baseado em gargalo_principal
+  └─ Renderiza:
+        - Saudação com nome + empresa
+        - Próximo passo em destaque ("Atacar {gargalo}: comece por {destravamento}")
+        - Progresso visual 7 fases (barras segmentadas)
+        - Grid de artifacts gerados (ICP, cadência, plano...) editáveis
+        - Link pra perfil (revisar 6Ps)
+        - Próxima mentoria agendada
+```
+
+#### 4.4.c Workspace do destravamento
+
+```
+/destravamento/[slug] (Server Component)
   ├─ Valida session + entitlement VSS ativo (middleware)
   ├─ Carrega no server:
   │     - destravamento metadata (title, flow, tools)
-  │     - user_profile (6Ps atuais)
+  │     - user_profile (6Ps atuais + empresa + números)
   │     - conversations anteriores desse destravamento
-  │     - artifacts anteriores
+  │     - artifacts anteriores do mesmo kind
   │     - quota restante do mês (agent_usage)
-  ├─ Renderiza shell: header, contexto, chat pane, artifact pane
+  ├─ Renderiza shell: header contextual, chat pane, artifact pane lateral
   └─ Passa contextSnapshot pro Client Component <AgentChat>
 
 <AgentChat> (Client Component com useChat do AI SDK)
-  ├─ Envia mensagem pro POST /api/agent/chat
-  └─ Stream recebendo tokens + tool calls
+  ├─ Primeira mensagem do agente já referencia o contexto:
+  │     "Pelo que você me contou, a AcmeSales vende pra SaaS B2B e o gargalo
+  │      é prospecção. Bora afiar o ICP. Começa me contando os 3 melhores
+  │      clientes que você já teve e o que eles tinham em comum?"
+  ├─ Conversa fluida (5-20 turnos dependendo do destravamento)
+  └─ Stream em tempo real via AI SDK
 
 POST /api/agent/chat (route handler)
   ├─ Valida session + entitlement + quota (soft + hard limit)
   ├─ Monta prompt:
   │     - System prompt do flow (src/content/vss/[slug].ts)
   │     - Cached: manifesto dos 6Ps + perfil do aluno (prompt cache 5min TTL)
+  │     - Artifacts anteriores relevantes (ex: ICP aparece em "Cadência")
   │     - Histórico da conversation (últimos N turnos)
   │     - Ferramentas disponíveis (tools):
   │         · saveArtifact(kind, title, content_md)
   │         · updateProfile(field, content_md)
   │         · markDestravamentoComplete()
-  │         · requestHumanReview() → cria form_submission
+  │         · requestHumanReview() → cria form_submission pra Joel
   ├─ Chama streamText do AI SDK com model selecionado
-  ├─ Stream pro cliente + persist incrementalmente em agent_messages
+  ├─ Stream pro cliente + persist incremental em agent_messages
   ├─ Tool calls executam server-side (saveArtifact cria row + upload R2 se exportável)
   └─ Atualiza agent_usage + cost_cents
 
 UI mostra:
   ├─ Stream de resposta em MessageBubble
   ├─ ArtifactPreview lateral atualiza quando saveArtifact é chamada
+  ├─ Aluno pode editar artifact inline e salvar nova versão
   ├─ Progresso visual: fase → módulo → destravamento → completo
   └─ Barra de quota: "47k / 100k tokens este mês"
+
+Conclusão:
+  ├─ Agente chama markDestravamentoComplete() quando critério atendido
+  ├─ UPDATE user_progress SET completed_at=NOW(), last_artifact_id=...
+  └─ Sugere próximo destravamento baseado na ordem da fase
+```
+
+#### 4.4.d Consolidação de fase (ao completar última destravamento de uma fase)
+
+```
+Trigger: user_progress.completed_at preenchido pra último destravamento da fase
+  ↓
+Enqueue: { job: 'consolidate_phase', user_id, phase_id }
+  ↓
+Worker (usando Claude Opus 4.7 pra esta etapa):
+  ├─ Carrega todos artifacts da fase do aluno
+  ├─ Prompt: "Você é o Joel consolidando a Fase {X} do aluno {nome}.
+              Com base nestes artifacts, monte o 'Plano da Fase' final:
+              decisões tomadas, próximos passos, riscos, métricas a acompanhar."
+  ├─ Gera consolidated_artifact (kind='phase_plan')
+  ├─ Upload R2 (versão PDF + MD)
+  └─ Notifica aluno via email + destaca no /area
+
+Next: aluno pode exportar, compartilhar com time, revisitar.
 ```
 
 ### 4.5 Mentoria ao vivo — replay
@@ -984,22 +1083,24 @@ Fechado v0.4: self-service com Mercado Pago (ticket R$ 7.5k parcelável).
 - ❓ Growth-infra já faz backup off-site pra S3/R2/B2 ou é só volume local?
 - Se não: entra no Sprint 1 — dump diário + upload R2 com retenção 30 dias.
 
-### 7.12 Editor do blog — Tiptap vs Markdown puro
+### 7.12 Editor do blog ✅
 
-- 📌 **Proposta:** Markdown com preview side-by-side (ex: `@uiw/react-md-editor` ou `react-markdown-editor-lite`). Mais simples, salva `content_md` direto, zero conversão. Como os posts atuais já são MD, zero fricção.
-- 🔄 Alternativa: **Tiptap** (rich text WYSIWYG). Melhor UX visual, mas salva HTML/JSON e precisa converter pra MD no salvar (ou guardar o JSON do Tiptap). Mais complexo.
-- ❓ Confirma MD puro ou prefere Tiptap?
+- ✅ **Tiptap + extensão `tiptap-markdown`**.
+- Source of truth: `content_md` (markdown) — tanto humano quanto agente escrevem/leem markdown.
+- Humano edita em WYSIWYG rico (Tiptap renderiza o MD); salva de volta em MD via `tiptap-markdown.getMarkdown()`.
+- Agente gera MD direto via `saveArtifact` / `createDraft`. Tiptap mostra pro humano editar.
+- Benefícios: agente simples (MD), humano confortável (WYSIWYG), zero perda de fidelidade.
 
-### 7.13 Migração dos 12 posts atuais
+### 7.13 Migração dos 12 posts atuais ✅ (parcial)
 
 - ✅ Script de migração em Sprint 1 (§8):
   1. Lê frontmatter + conteúdo de `src/content/blog/*.md`
   2. INSERT `blog_posts` preservando slug 1:1 (crítico pra SEO)
   3. Upload imagens de `src/assets/images/blog/` pra R2 com mesmo nome + variantes (480w/720w/1080w/1920w/.avif)
   4. Reescreve referências de imagem no markdown pra URLs públicas R2
-  5. Cria tags das frontmatter (se existirem) e associa via `blog_post_tags`
-- ❓ Os slugs atuais são definitivos ou algum precisa mudar?
-- ❓ Existe lista de tags/categorias hoje nos posts ou migração infere do conteúdo?
+  5. **Sem tags inicialmente**
+- ✅ **Classificação de tags pelo agente:** job one-shot `classify-blog-posts` roda após migração. Claude Opus 4.7 lê os 12 posts num único prompt (~36k tokens input + 2k output ≈ $0,10), sugere tags consistentes, UPSERT em `blog_tags` + vincula via `blog_post_tags`. Joel revisa/ajusta no CMS depois.
+- ❓ Slugs atuais são definitivos ou algum precisa mudar? (se mudar, adiciono rewrite no script)
 
 ---
 
@@ -1147,6 +1248,10 @@ _Append-only. Toda decisão fechada sobe pra cá com data._
 - **2026-04-24 (v0.4)** — ✅ Webhook MP: verificação HMAC `x-signature` obrigatória.
 - **2026-04-24 (v0.4)** — ✅ Artifacts do aluno em **R2**; conteúdo base de destravamentos no **repo** (não R2).
 - **2026-04-24 (v0.4)** — ✅ **Blog gerenciado no DB** via CMS admin. Posts como rows em `blog_posts`, imagens em R2, revisões em `blog_revisions`. 12 posts MD atuais migrados via script no Sprint 1.
+- **2026-04-24 (v0.4)** — ✅ **Editor blog:** Tiptap + `tiptap-markdown`. Source of truth em MD; humano edita em WYSIWYG, agente gera MD.
+- **2026-04-24 (v0.4)** — ✅ **Classificação de tags** dos 12 posts migrados via job one-shot `classify-blog-posts` (Opus 4.7). Joel revisa no CMS.
+- **2026-04-24 (v0.4)** — ✅ **Onboarding conversacional** como Day 1 do aluno VSS: agente faz 8-12 perguntas, preenche `user_profiles` via `updateProfile`, leva 10-15 min.
+- **2026-04-24 (v0.4)** — ✅ **Consolidação de fase** automática (Opus 4.7) ao completar última destravamento de cada fase — gera "Plano da Fase" exportável.
 
 ---
 
@@ -1297,7 +1402,11 @@ joelburigo-site/
 │   │   │   │   ├── tag-badge.tsx
 │   │   │   │   ├── author-byline.tsx
 │   │   │   │   ├── related-posts.tsx
-│   │   │   │   └── blog-editor.tsx       markdown editor com preview (admin)
+│   │   │   │   └── blog-editor.tsx       Tiptap + tiptap-markdown (WYSIWYG ↔ MD)
+│   │   │   ├── onboarding/
+│   │   │   │   ├── onboarding-chat.tsx   agente faz 8-12 perguntas
+│   │   │   │   ├── profile-summary.tsx   resumo editável ao fim
+│   │   │   │   └── manual-form.tsx       fallback pra quem prefere não conversar
 │   │   │   ├── advisory/
 │   │   │   │   ├── session-card.tsx
 │   │   │   │   ├── booking-embed.tsx
@@ -1378,6 +1487,8 @@ joelburigo-site/
 │   │   │   ├── aggregate-agent-usage.ts
 │   │   │   ├── publish-scheduled-posts.ts   cron 5min
 │   │   │   ├── process-blog-image.ts        resize multi-variant com sharp
+│   │   │   ├── classify-blog-posts.ts       one-shot: classifica tags dos 12 posts migrados
+│   │   │   ├── consolidate-phase.ts         Opus 4.7 ao completar fase → phase_plan
 │   │   │   └── reminder-mentoria.ts
 │   │   └── lib/                     Adapters + utils server-only
 │   │       ├── storage.ts           Interface + impl R2 (S3 SDK)
@@ -1545,16 +1656,16 @@ Pra Sprint 0 começar, preciso:
 3. ✅ Postgres dedicado
 4. ✅ Agente IA Nível 2-3 no VSS
 5. ✅ Design system em 5 camadas
-6. ✅ Blog no DB com CMS admin
-7. ❓ Confirma Cal.com pra Advisory (§7.2)
-8. ❓ Confirma NF manual MVP (§7.3)
-9. ❓ Alunos atuais pra importar? (§7.6)
-10. ❓ Admin MVP escopo ok? (§7.8)
-11. ❓ Quota LLM 150k/500k tokens output/mês por aluno? (§7.9)
-12. ❓ Modelo default Sonnet 4.6 + Opus 4.7 premium? (§7.10)
-13. ❓ Backup off-site growth-infra existe? (§7.11)
-14. ❓ Editor blog: Markdown puro (recomendado) ou Tiptap? (§7.12)
-15. ❓ Slugs atuais do blog são definitivos? Tags existentes? (§7.13)
+6. ✅ Blog no DB com CMS admin (Tiptap + MD source-of-truth)
+7. ✅ VSS fluxo: onboarding conversacional + workspace com agente + consolidação de fase
+8. ❓ Confirma Cal.com pra Advisory (§7.2)
+9. ❓ Confirma NF manual MVP (§7.3)
+10. ❓ Alunos atuais pra importar? (§7.6)
+11. ❓ Admin MVP escopo ok? (§7.8)
+12. ❓ Quota LLM 150k/500k tokens output/mês por aluno? (§7.9)
+13. ❓ Modelo default Sonnet 4.6 + Opus 4.7 premium? (§7.10)
+14. ❓ Backup off-site growth-infra existe? (§7.11)
+15. ❓ Slugs do blog definitivos? (§7.13)
 16. ⏳ Credenciais MP + Anthropic + CF + Stripe (§10)
 
-**Próxima revisão v0.5:** quando fechar 7-15. Sprint 0 pode começar em paralelo à coleta de credenciais.
+**Próxima revisão v0.5:** quando fechar 8-15. Sprint 0 pode começar em paralelo à coleta de credenciais.

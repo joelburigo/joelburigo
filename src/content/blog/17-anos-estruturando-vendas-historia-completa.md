@@ -1,6 +1,6 @@
 ---
 title: '17 Anos Estruturando Vendas: Da Quebrada ao Bilhão - A História Completa'
-excerpt: 'A jornada completa de Joel Burigo: do barraco sem geladeira aos ~R$ 1 bilhão em vendas estruturadas como estimativa agregada. 17 anos, 140+ empresas, cada erro até os 6Ps formalizados em 2025. Esta é a história crua de como prática virou método.'
+excerpt: 'A jornada completa de Joel Burigo: do barraco sem geladeira aos ~R$ 1 bilhão em vendas estruturadas. 17 anos, 140+ empresas, cada erro até os 6Ps formalizados em 2025. Esta é a história crua de como prática virou método.'
 category: 'Mentalidade'
 date: 2026-01-26
 readTime: '35 min'
@@ -597,7 +597,7 @@ Mas **o quê**?
 
 2023 foi um ano de reflexão profunda.
 
-Eu tinha 17 anos de experiência. Tinha atendido mais de 140 clientes. Tinha participado da estruturação de ~R$ 1 bilhão em vendas como estimativa agregada ao longo desses anos. Tinha desenvolvido uma metodologia proprietária que funcionava.
+Eu tinha 17 anos de experiência. Tinha atendido mais de 140 clientes. Tinha participado da estruturação de ~R$ 1 bilhão em vendas ao longo desses anos. Tinha desenvolvido uma metodologia proprietária que funcionava.
 
 E aqui vai uma verdade que precisa ser dita:
 
@@ -685,7 +685,7 @@ Em 2026, comecei a lançar tudo de forma pública: os **6Ps das Vendas Escaláve
 
 Não foi ideia repentina. Foi 17 anos de condensação. Foi transformar cada erro, cada acerto, cada case, cada falha, em um sistema replicável e acessível.
 
-Eu estava olhando pra trás, pros 17 anos de jornada. Tinha estruturado vendas pra 140+ empresas. Tinha uma estimativa agregada de ~R$ 1 bilhão em vendas estruturadas ao longo desses anos.
+Eu estava olhando pra trás, pros 17 anos de jornada. Tinha estruturado vendas pra 140+ empresas. Tinha ~R$ 1 bilhão em vendas estruturadas ao longo desses anos.
 
 Mas esse conhecimento estava preso. Estava em consultorias caras. Estava inacessível pra maioria.
 
@@ -789,7 +789,7 @@ Esses mudam o jogo.
 
 Não só pra eles. Mas pra todos que vêm depois.
 
-E eu tô aqui, 17 anos depois de ter começado como freelancer, 13 anos depois do barraco sem geladeira, com 140+ clientes atendidos e ~R$ 1 bilhão em vendas estruturadas como estimativa agregada...
+E eu tô aqui, 17 anos depois de ter começado como freelancer, 13 anos depois do barraco sem geladeira, com 140+ clientes atendidos e ~R$ 1 bilhão em vendas estruturadas...
 
 Pra te dizer uma coisa:
 

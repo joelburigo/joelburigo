@@ -35,7 +35,7 @@ Joel Burigo é o especialista brasileiro em vendas escaláveis para micro e pequ
 
 * 17+ anos de experiência em marketing e vendas
 * 140+ clientes atendidos diretamente
-* ~R$ 1 bilhão em vendas estruturadas como estimativa agregada ao longo de 17+ anos
+* ~R$ 1 bilhão em vendas estruturadas ao longo de 17+ anos
 * Especialista reconhecido em transformar vendas aleatórias em vendas previsíveis
 
 **Origem:**
@@ -134,7 +134,7 @@ Micro e pequenas empresas que faturam R$ 10k-300k/mês e querem transformar vend
 
 * 17+ anos de experiência
 * 140+ clientes atendidos pessoalmente
-* ~R$ 1 bilhão em vendas estruturadas como estimativa agregada ao longo de 17+ anos
+* ~R$ 1 bilhão em vendas estruturadas ao longo de 17+ anos
 * Case emblemático: ESF (Encontre Sua Franquia) - holding que com participação de Joel cresceu de R$ 160 mil para R$ 1 MILHÃO de faturamento mensal em 2 anos (2018-2020)
 
 **Cicatrizes que viraram sabedoria:**
@@ -703,7 +703,7 @@ Mas **o quê**?
 
 2023 foi um ano de reflexão profunda.
 
-Eu tinha 17 anos de experiência. Tinha atendido mais de 140 clientes. Tinha participado da estruturação de ~R$ 1 bilhão em vendas como estimativa agregada ao longo desses anos. Tinha desenvolvido uma metodologia proprietária que funcionava.
+Eu tinha 17 anos de experiência. Tinha atendido mais de 140 clientes. Tinha participado da estruturação de ~R$ 1 bilhão em vendas ao longo desses anos. Tinha desenvolvido uma metodologia proprietária que funcionava.
 
 E aqui vai uma verdade que precisa ser dita:
 
@@ -811,7 +811,7 @@ Em 2026, comecei a lançar tudo de forma pública: os **6Ps das Vendas Escaláve
 
 Não foi ideia repentina. Foi 17 anos de condensação. Foi transformar cada erro, cada acerto, cada case, cada falha, em um sistema replicável e acessível.
 
-Eu estava olhando pra trás, pros 17 anos de jornada. Tinha estruturado vendas pra 140+ empresas. Tinha uma estimativa agregada de ~R$ 1 bilhão em vendas estruturadas ao longo desses anos.
+Eu estava olhando pra trás, pros 17 anos de jornada. Tinha estruturado vendas pra 140+ empresas. Tinha ~R$ 1 bilhão em vendas estruturadas ao longo desses anos.
 
 Mas esse conhecimento estava preso. Estava em consultorias caras. Estava inacessível pra maioria.
 
@@ -915,7 +915,7 @@ Esses mudam o jogo.
 
 Não só pra eles. Mas pra todos que vêm depois.
 
-E eu tô aqui, 17 anos depois de ter começado como freelancer, 13 anos depois do barraco sem geladeira, com 140+ clientes atendidos e ~R$ 1 bilhão em vendas estruturadas como estimativa agregada...
+E eu tô aqui, 17 anos depois de ter começado como freelancer, 13 anos depois do barraco sem geladeira, com 140+ clientes atendidos e ~R$ 1 bilhão em vendas estruturadas...
 
 Pra te dizer uma coisa:
 
@@ -1140,7 +1140,7 @@ Recomecei batendo 100+ portas em BH. Primeiro cliente pagou R$ 500. Em 2014 viro
 
 Outubro 2024: nasceu Davi. 2025: nasceram o nome e a estrutura formal dos 6Ps. 2026: lançamento do VSS e rebrand Joel Burigo.
 
-Em 2025, condensei 17+ anos, 140+ clientes e uma estimativa agregada de ~R$ 1 bilhão em vendas nos **6Ps das Vendas Escaláveis**. Em 2026, estruturei o **VSS (Vendas Sem Segredos)** — 6Ps implementados em 90 dias.
+Em 2025, condensei 17+ anos, 140+ clientes e ~R$ 1 bilhão em vendas nos **6Ps das Vendas Escaláveis**. Em 2026, estruturei o **VSS (Vendas Sem Segredos)** — 6Ps implementados em 90 dias.
 
 **Sistema > Improviso. Let's grow.**
 
@@ -1148,7 +1148,7 @@ Em 2025, condensei 17+ anos, 140+ clientes e uma estimativa agregada de ~R$ 1 bi
 
 ### **[01.5.4] Versão 50 Palavras** (Elevator pitch para redes sociais)
 
-Joel Burigo. Quebrei aos 25, morei em barraco sem geladeira, recomecei do zero. 17+ anos depois: 140+ clientes, ~R$ 1 bilhão em vendas estruturadas como estimativa agregada. Condensei essa prática nos 6Ps das Vendas Escaláveis e no VSS pra ajudar MPEs a transformar vendas aleatórias em previsíveis. Sistema > Improviso. Let's grow.
+Joel Burigo. Quebrei aos 25, morei em barraco sem geladeira, recomecei do zero. 17+ anos depois: 140+ clientes, ~R$ 1 bilhão em vendas estruturadas. Condensei essa prática nos 6Ps das Vendas Escaláveis e no VSS pra ajudar MPEs a transformar vendas aleatórias em previsíveis. Sistema > Improviso. Let's grow.
 
 ---
 

@@ -31,7 +31,7 @@ Passei 17 anos ajudando 140 empresas a saírem desse caos. E descobri um padrão
 
 (Esforço todo mundo tem. Sistema? Poucos.)
 
-Neste guia, vou te mostrar o framework que condensei em 2025 a partir do que eu já aplicava há anos para ajudar a estruturar ~R$ 1 bilhão em vendas como estimativa agregada — os **6Ps das Vendas Escaláveis**. E mais importante: como você pode aplicar no seu negócio, independente do seu tamanho ou quanto tem pra investir em marketing.
+Neste guia, vou te mostrar o framework que condensei em 2025 a partir do que eu já aplicava há anos para ajudar a estruturar ~R$ 1 bilhão em vendas — os **6Ps das Vendas Escaláveis**. E mais importante: como você pode aplicar no seu negócio, independente do seu tamanho ou quanto tem pra investir em marketing.
 
 Mas antes de entrar no método, deixa eu te contar de onde isso veio.
 
@@ -145,7 +145,7 @@ Foi por isso que, em 2025, dei nome e estrutura formal aos 6Ps.
 
 Os 6Ps das Vendas Escaláveis é o framework que condensei em 2025 a partir de 17+ anos diagnosticando e evoluindo operações de vendas em micro e pequenas empresas.
 
-A base não é teoria. É o que apliquei, ainda sem esse nome formal, em 140 clientes reais. É o que me permitiu ajudar a estruturar ~R$ 1 bilhão em vendas como estimativa agregada.
+A base não é teoria. É o que apliquei, ainda sem esse nome formal, em 140 clientes reais. É o que me permitiu ajudar a estruturar ~R$ 1 bilhão em vendas.
 
 O framework integra Marketing + Vendas + Operação em um sistema único. Porque a verdade é:
 
@@ -265,7 +265,7 @@ Você tem 30 segundos. O que diz?
 
 Meu pitch:
 
-*"Sou Joel Burigo, especialista em vendas escaláveis. Condensei 17+ anos nos 6Ps das Vendas Escaláveis — metodologia que nasce de ~R$ 1 bilhão em vendas estruturadas como estimativa agregada. Transformo MPEs de vendas aleatórias para vendas previsíveis em 90 dias. Funciona com ou sem budget de tráfego."*
+*"Sou Joel Burigo, especialista em vendas escaláveis. Condensei 17+ anos nos 6Ps das Vendas Escaláveis — metodologia que nasce de ~R$ 1 bilhão em vendas estruturadas. Transformo MPEs de vendas aleatórias para vendas previsíveis em 90 dias. Funciona com ou sem budget de tráfego."*
 
 Escreve o seu. Decora. Treina no espelho.
 

@@ -101,7 +101,7 @@ tags: [templates, deliverables, canvas, playbook, recursos, ferramentas-praticas
 ║                                                                          ║
 ║  "Sou Joel Burigo, especialista em vendas escaláveis. Condensei 17+      ║
 ║   anos nos 6Ps das Vendas Escaláveis — metodologia que nasce de ~R$ 1    ║
-║   bilhão em vendas como estimativa agregada. Pelo VSS, levo MPEs         ║
+║   bilhão em vendas. Pelo VSS, levo MPEs         ║
 ║   de vendas aleatórias para vendas previsíveis em 90 dias. Funciona com  ║
 ║   ou sem budget de tráfego. R$ 1.997 com CRM profissional incluído.      ║
 ║   Diferente de agência, você aprende e fica autônomo."                   ║
@@ -124,7 +124,7 @@ tags: [templates, deliverables, canvas, playbook, recursos, ferramentas-praticas
 ║                                                                          ║
 ║  • 17+ anos de experiência em marketing e vendas                         ║
 ║  • 140 clientes atendidos pessoalmente                                   ║
-║  • ~R$ 1 bilhão em vendas estruturadas (estimativa agregada)             ║
+║  • ~R$ 1 bilhão em vendas estruturadas             ║
 ║  • Case: Cliente de franquias de R$ 160k → R$ 1M/mês em 2 anos         ║
 ║  • Quebrei empresa aos 25, morei em barraco, reconstruí do zero          ║
 ║                                                                          ║

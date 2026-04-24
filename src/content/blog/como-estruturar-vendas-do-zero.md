@@ -498,7 +498,7 @@ Não. Você pode começar com ferramentas gratuitas (CRM básico, prospecção a
 
 Estruturar vendas não é opcional se você quer escalar. É a diferença entre vender R$ 100k/mês e vender R$ 1M/mês com a mesma equipe.
 
-A base dos 6Ps já foi aplicada em 140+ clientes e ~R$ 1 bilhão em vendas estruturadas como estimativa agregada. Funciona porque é sistêmico, não mágico.
+A base dos 6Ps já foi aplicada em 140+ clientes e ~R$ 1 bilhão em vendas estruturadas. Funciona porque é sistêmico, não mágico.
 
 **Não há fórmula mágica. Há método. E você pode dominar cada etapa dele.**
 

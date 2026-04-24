@@ -1,6 +1,6 @@
 ---
 title: '7 Erros Que Me Quebraram e 7 Princípios Que Me Reconstruíram: Lições de Quem Começou do Zero'
-excerpt: 'Quebrei aos 25, morei em barraco de R$ 300, reconstruí tijolo por tijolo. Aqui estão os 7 erros que me derrubaram e os 7 princípios que me fizeram estruturar ~R$ 1 bilhão como estimativa agregada. Cicatriz virou sistema.'
+excerpt: 'Quebrei aos 25, morei em barraco de R$ 300, reconstruí tijolo por tijolo. Aqui estão os 7 erros que me derrubaram e os 7 princípios que me fizeram estruturar ~R$ 1 bilhão. Cicatriz virou sistema.'
 category: 'Mentalidade'
 date: 2025-11-29
 readTime: '18 min'
@@ -42,7 +42,7 @@ De maio a novembro de 2012, morei num barraco de R$ 300/mês sem geladeira no ba
 
 Juntei dinheiro, comprei mil cartões de visita e bati em mais de 100 portas na Avenida Afonso Pena em Belo Horizonte. Em dezembro de 2012, consegui meu primeiro cliente: R$ 500 por um site. Minha proposta? "Se não gostar, te dou de graça."
 
-Reconstruí tijolo por tijolo. Hoje: ~R$ 1 bilhão em vendas estruturadas como estimativa agregada ao longo de 17+ anos, 140+ clientes atendidos.
+Reconstruí tijolo por tijolo. Hoje: ~R$ 1 bilhão em vendas estruturadas ao longo de 17+ anos, 140+ clientes atendidos.
 
 **Não vou recontar a história completa aqui** (já fiz isso em [17 Anos Estruturando Vendas](/blog/17-anos-estruturando-vendas-historia-completa)).
 
@@ -324,7 +324,7 @@ Se você está lendo isso e se identificou com algo da minha história, eu tenho
 
 Não vai ser mágica. Não vai ser da noite pro dia. Mas VAI acontecer.
 
-Se EU consegui sair de um barraco sem geladeira para estruturar ~R$ 1 bilhão em vendas como estimativa agregada ao longo de 17 anos, você consegue reconstruir seu negócio. Se quiser conhecer minha trajetória completa, veja [sobre Joel Burigo](/sobre).
+Se EU consegui sair de um barraco sem geladeira para estruturar ~R$ 1 bilhão em vendas ao longo de 17 anos, você consegue reconstruir seu negócio. Se quiser conhecer minha trajetória completa, veja [sobre Joel Burigo](/sobre).
 
 A diferença entre quem fica no barraco e quem sai não é talento. Não é sorte. Não é dinheiro.
 

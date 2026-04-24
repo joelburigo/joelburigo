@@ -222,7 +222,7 @@ Contém:
 ### Sobre Viabilidade Pessoal
 
 **"Será que funciona de verdade ou é discurso motivacional?"**
-- Validação: 140+ clientes, ~R$ 1 bilhão estruturado como estimativa agregada em 17+ anos
+- Validação: 140+ clientes, ~R$ 1 bilhão estruturado em 17+ anos
 - Case emblemático: case de franquias R$ 160k → R$ 1M em 2 anos
 
 **"Não sou talentoso o suficiente para vender"**
@@ -564,7 +564,7 @@ Contém:
 - Família: Natalia (esposa) + Davi (filho nascido outubro 2024)
 - 17+ anos de carreira estruturada
 - 140+ clientes atendidos pessoalmente
-- ~R$ 1 bilhão em vendas estruturadas (estimativa agregada ao longo de 17+ anos)
+- ~R$ 1 bilhão em vendas estruturadas
 - Metodologia proprietária (6Ps)
 - Reconstruído do zero 2 vezes
 - Impactando milhares de vidas
@@ -631,7 +631,7 @@ Contém:
 ### Diferencial #1: Framework Proprietário (6Ps)
 
 - **Único:** Metodologia criada e testada pessoalmente
-- **Validação:** 17+ anos + 140 clientes + ~R$ 1 bilhão estruturado como estimativa agregada
+- **Validação:** 17+ anos + 140 clientes + ~R$ 1 bilhão estruturado
 - **Garantia:** Funciona (não é teoria de livro)
 - **Integração:** Marketing + Vendas + Growth em sistema único
 - **Ordem Correta:** Posicionamento → Público → Produto → Programas → Processos → Pessoas
@@ -694,7 +694,7 @@ Contém:
 
 - **17+ anos de experiência** (não 2 anos de sucesso overnight)
 - **140+ clientes pessoalmente** (não teoria)
-- **~R$ 1 bilhão estruturado** (estimativa agregada ao longo de 17+ anos)
+- **~R$ 1 bilhão estruturado**
 - **Case emblemático:** case de franquias R$ 160k → R$ 1M (2 anos)
 - **Múltiplos nichos:** 20+ segmentos validados
 - **Comunidade ativa:** Alunos ajudando alunos
@@ -764,7 +764,7 @@ E NÃO tiver em 90 dias:
 **Joel Burigo (Criador):**
 - **17+ anos** de experiência em marketing e vendas
 - **140+ clientes** atendidos pessoalmente
-- **~R$ 1 bilhão** em vendas estruturadas (estimativa agregada ao longo de 17+ anos)
+- **~R$ 1 bilhão** em vendas estruturadas
 - **20+ nichos** validados
 
 ### Case de Sucesso Emblemático
@@ -906,7 +906,7 @@ E NÃO tiver em 90 dias:
 
 **Estatística/Número:**
 - "80% das MPEs brasileiras vendem de forma aleatória"
-- "17+ anos. 140 clientes. ~R$ 1 bilhão estruturado como estimativa agregada"
+- "17+ anos. 140 clientes. ~R$ 1 bilhão estruturado"
 - "De R$ 160k para R$ 1 milhão em 2 anos"
 
 **Pergunta Provocativa:**
@@ -986,7 +986,7 @@ E NÃO tiver em 90 dias:
 
 **Pattern: Specificity (Números > Genérico)**
 - ❌ "Muitas pessoas conseguem resultado"
-- ✅ "140 clientes atendidos; ~R$ 1 bilhão em vendas estruturadas como estimativa agregada"
+- ✅ "140 clientes atendidos; ~R$ 1 bilhão em vendas estruturadas"
 
 **Pattern: Proof + Permission**
 - "Funciona (case case de franquias), e você pode fazer também"

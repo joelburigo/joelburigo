@@ -73,7 +73,7 @@ total_tempo: "2h30min"
 **Estrutura:**
 
 * \[0-4 min\] Trajetória de Joel  
-  * Dos primeiros projetos a ~R$ 1 bilhão em vendas estruturadas como estimativa agregada  
+  * Dos primeiros projetos a ~R$ 1 bilhão em vendas estruturadas  
   * Empresas atendidas  
   * Resultados comprovados  
 * \[4-8 min\] Os 3 erros caros que cometi  

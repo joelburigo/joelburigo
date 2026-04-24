@@ -71,7 +71,7 @@ Acreditem em vocês! Vocês conseguem!
 ### ✅ GOOD
 ```
 17+ anos vendendo pra MPE brasileira. 140 clientes. ~R$ 1 bilhão
-em vendas estruturadas como estimativa agregada ao longo desse período.
+em vendas estruturadas ao longo desse período.
 
 Uma coisa se repete, independente do nicho:
 
@@ -92,7 +92,7 @@ Inverteu? Quebra.
 ```
 
 **Por que funciona:**
-- Abre com 3 provas empilhadas e cuidadosas (`17+ anos`, `140 clientes`, `~R$ 1 bilhão` com til e contexto de estimativa agregada)
+- Abre com 3 provas empilhadas e cuidadosas (`17+ anos`, `140 clientes`, `~R$ 1 bilhão`)
 - Insight concreto amarrado ao framework proprietário (P4 nomeado, 6Ps listados em ordem correta)
 - 2 assinaturas canônicas ("Marketing sem vendas é hobby caro" + close duro)
 - Vocabulário proprietário grafado certo: `6Ps` junto, `Vendas Escaláveis` com iniciais maiúsculas

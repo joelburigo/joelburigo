@@ -86,10 +86,10 @@ Scripts completos para vídeos de apresentação das páginas principais:
 - Transição para foto atual (casa, família)
 
 **JOEL:**
-> "Hoje, 17+ anos depois, estruturei mais de 140 empresas. São ~R$ 1 bilhão em vendas organizadas como estimativa agregada. Não porque sou gênio. Porque aprendi na pancada que SISTEMA sempre vence improviso."
+> "Hoje, 17+ anos depois, estruturei mais de 140 empresas. São ~R$ 1 bilhão em vendas organizadas. Não porque sou gênio. Porque aprendi na pancada que SISTEMA sempre vence improviso."
 
 **VISUAL:**
-- Números aparecem: "140+ clientes", "17+ anos", "~R$ 1bi estruturado (estimativa agregada)"
+- Números aparecem: "140+ clientes", "17+ anos", "~R$ 1bi estruturado"
 - Logos/fotos de clientes (se autorizado)
 
 ---
@@ -582,7 +582,7 @@ Scripts completos para vídeos de apresentação das páginas principais:
 - Logo sempre visível
 
 **Textos na Tela:**
-- Estatísticas importantes (80% MPEs, 140 clientes, ~R$ 1bi como estimativa agregada)
+- Estatísticas importantes (80% MPEs, 140 clientes, ~R$ 1bi)
 - Perguntas-chave (para reforçar)
 - CTAs finais (sempre com botão visual)
 

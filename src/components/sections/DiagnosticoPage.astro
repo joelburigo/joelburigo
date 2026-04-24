@@ -1,6 +1,18 @@
 ---
 import HighLevelForm from '../ui/HighLevelForm.astro'
 import Container from '../ui/Container.astro'
+import Breadcrumbs from '../seo/Breadcrumbs.astro'
+
+interface BreadcrumbItem {
+  label: string
+  href: string
+}
+
+interface Props {
+  breadcrumbItems?: BreadcrumbItem[]
+}
+
+const { breadcrumbItems } = Astro.props
 
 // Diagnóstico 6Ps — tom direto, provocador. Base: copy-bank §1.2 + 01-marca §01.9 (7 inimigos)
 // Form HighLevel intocado — só wrapper visual Terminal Growth
@@ -10,6 +22,7 @@ import Container from '../ui/Container.astro'
   <div class="grid-overlay"></div>
 
   <Container width="narrow">
+    {breadcrumbItems && <Breadcrumbs items={breadcrumbItems} class="mb-5" />}
     <!-- Status bar -->
     <div class="mb-10 border border-white/10 bg-ink-2">
       <div class="flex flex-wrap items-center justify-between gap-3 px-4 py-3 md:px-6">

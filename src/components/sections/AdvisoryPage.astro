@@ -1,5 +1,17 @@
 ---
 import Container from '../ui/Container.astro'
+import Breadcrumbs from '../seo/Breadcrumbs.astro'
+
+interface BreadcrumbItem {
+  label: string
+  href: string
+}
+
+interface Props {
+  breadcrumbItems?: BreadcrumbItem[]
+}
+
+const { breadcrumbItems } = Astro.props
 
 // Fonte canônica: docs/conteudo/partes/02-oferta.md §02.3 Advisory
 // Tom: premium, exclusivo, por convite. Provas só do ANTI_DRIFT §4.
@@ -85,12 +97,13 @@ const naoEh = [
 ---
 
 <!-- HERO -->
-<section class="relative overflow-hidden bg-ink pb-24 pt-10 md:pt-14">
+<section class="relative overflow-hidden bg-ink pb-24 pt-12 md:pt-16">
   <div class="grid-overlay"></div>
   <!-- Gradient acid no canto -->
   <div class="pointer-events-none absolute -right-40 top-20 h-[600px] w-[600px] rounded-full" style="background: radial-gradient(circle, rgba(198,255,0,0.08), transparent 70%);"></div>
 
   <Container>
+    {breadcrumbItems && <Breadcrumbs items={breadcrumbItems} class="mb-5" />}
     <div class="grid items-center gap-[clamp(2rem,5vw,4rem)] lg:grid-cols-[1.2fr_0.8fr] lg:gap-x-[clamp(3rem,6vw,5rem)]">
       <!-- Hero copy -->
       <div class="flex flex-col gap-[clamp(1.25rem,2.5vw,2rem)]">

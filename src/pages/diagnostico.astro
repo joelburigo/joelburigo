@@ -3,8 +3,6 @@ import Layout from '../layouts/Layout.astro'
 import Header from '../components/layout/Header.astro'
 import Footer from '../components/layout/Footer.astro'
 import DiagnosticoPage from '../components/sections/DiagnosticoPage.astro'
-import Breadcrumbs from '../components/seo/Breadcrumbs.astro'
-import Container from '../components/ui/Container.astro'
 
 
 const seo = {
@@ -18,16 +16,11 @@ const seo = {
 
 <Layout title={seo.title} description={seo.description} keywords={seo.keywords}>
   <Header />
-  <section class="bg-ink pt-6 pb-0">
-    <Container>
-      <Breadcrumbs
-        items={[
-          { label: 'Home', href: '/' },
-          { label: 'Diagnóstico', href: '/diagnostico' },
-        ]}
-      />
-    </Container>
-  </section>
-  <DiagnosticoPage />
+  <DiagnosticoPage
+    breadcrumbItems={[
+      { label: 'Home', href: '/' },
+      { label: 'Diagnóstico', href: '/diagnostico' },
+    ]}
+  />
   <Footer />
 </Layout>

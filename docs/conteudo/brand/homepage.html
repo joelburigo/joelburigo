@@ -129,7 +129,7 @@
   .p-d { color: #9A9A9A; font-size: 14px; margin-top: 14px; line-height: 1.55; max-width: 320px; }
 
   /* PROGRAMS */
-  .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .tiers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
   .tier { background: var(--jb-ink-2); border: 1px solid var(--jb-hair); padding: 32px 26px; position: relative; display: flex; flex-direction: column; min-height: 440px; transition: all 180ms; }
   .tier:hover { border-color: var(--jb-fire); transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--jb-fire); }
   .tier.feat { border-color: var(--jb-acid); background: linear-gradient(180deg, rgba(198,255,0,0.06), var(--jb-ink-2)); }
@@ -194,7 +194,8 @@
   <div class="left">
     <span><span class="dot"></span> &nbsp;SYS ONLINE</span>
     <span>// <b>@joelburigo</b></span>
-    <span>// EST. 2008</span>
+    <span>// EXP. 2004</span>
+    <span>// GROWTH EST. 2008</span>
   </div>
   <div class="right">
     <span>LAT. -27.59 · LNG. -48.55</span>
@@ -228,7 +229,7 @@
         NÃO <span class="fire">SORTE.</span>
       </h1>
       <p class="hero-sub">
-        Framework dos <b>6Ps das Vendas Escaláveis</b> — a <span class="hl">Máquina</span> que transformou <b>140+ MPEs</b> em ~R$1 bilhão em vendas ao longo de 17 anos. Marketing + Vendas + Growth num sistema único, replicável, previsível. <b>Se tua empresa depende de tu, tu não tem empresa — tu tem emprego.</b>
+        Framework dos <b>6Ps das Vendas Escaláveis</b> — o <span class="hl">método</span> formalizado em 2025 a partir de vendas estruturadas em <b>140+ MPEs</b> e ~R$ 1 bilhão como estimativa agregada em 17+ anos. Marketing + Vendas + Growth num sistema único, replicável, previsível. <b>Se tua empresa depende de ti, tu não tem empresa — tu tem emprego.</b>
       </p>
       <div class="hero-ctas">
         <button class="btn btn-primary">Quero Ligar a Máquina <span class="arr">→</span></button>
@@ -236,7 +237,7 @@
       </div>
       <div class="stats-strip">
         <div class="stat"><div class="stat-num">17<span class="unit">+</span></div><div class="stat-label">/ anos em vendas</div></div>
-        <div class="stat"><div class="stat-num">R$1<span class="unit">BI</span></div><div class="stat-label">/ receita gerada</div></div>
+        <div class="stat"><div class="stat-num">~R$1<span class="unit">BI</span></div><div class="stat-label">/ estimativa agregada</div></div>
         <div class="stat"><div class="stat-num">140<span class="unit">+</span></div><div class="stat-label">/ mpes estruturadas</div></div>
         <div class="stat"><div class="stat-num">6<span class="unit">Ps</span></div><div class="stat-label">/ framework core</div></div>
       </div>
@@ -257,7 +258,7 @@
 <span class="c">› auditando processos (CRM)...</span>  <span class="e">fail</span><br>
 <span class="c">› avaliando pessoas (time)...</span>   <span class="y">warn</span><br>
 <br>
-<span class="w">RESULTADO:</span> <span class="e">2/6 Ps travados.</span><br>
+<span class="w">RESULTADO:</span> <span class="e">2 dos 6Ps travados.</span><br>
 <span class="w">DIAGNÓSTICO:</span> sem sistema comercial.<br>
 <span class="w">AÇÃO:</span> <span class="p">agendar_call()</span><span class="blink"></span>
       </div>
@@ -291,10 +292,10 @@
   <div class="sec-head">
     <div class="sec-num">// 02_PROGRAMAS</div>
     <h2 class="sec-t">ESCOLHE A <span class="acid">INTENSIDADE.</span></h2>
-    <div class="sec-meta">3 TIERS<br>DIY · DWY · 1:1</div>
+    <div class="sec-meta">2 CAMINHOS<br>DIY · 1:1</div>
   </div>
   <div class="tiers">
-    <div class="tier">
+    <div class="tier feat">
       <div class="tag">// TIER 01 · DIY · FATURA R$ 10-100K/MÊS</div>
       <div class="name">VSS — Vendas<br>Sem Segredos</div>
       <div class="price"><b>12× R$ 166,42</b> · ou R$ 1.997 à vista</div>
@@ -307,21 +308,8 @@
       </ul>
       <button class="tbtn">Começar agora <span>→</span></button>
     </div>
-    <div class="tier feat">
-      <div class="tag">// TIER 02 · DWY · FATURA R$ 50-300K/MÊS</div>
-      <div class="name">Services<br>6Ps</div>
-      <div class="price"><b>R$ 4.500–9.000/mês</b> · Fundação · Aceleração · ScaleUp</div>
-      <p class="desc">Meu time entra na sua operação, implementa os 6Ps junto e faz handoff. A Máquina roda sozinha quando a gente sai.</p>
-      <ul class="feats">
-        <li>Diagnóstico 360° dos 6Ps</li>
-        <li>Implementação assistida 5-12m</li>
-        <li>Playbook + Growth CRM + rituais</li>
-        <li>Handoff pro time interno</li>
-      </ul>
-      <button class="tbtn">Falar com time <span>→</span></button>
-    </div>
     <div class="tier">
-      <div class="tag">// TIER 03 · 1:1 · FATURA R$ 200K+/MÊS</div>
+      <div class="tag">// TIER 02 · 1:1 · FATURA R$ 200K+/MÊS</div>
       <div class="name">Advisory<br>com Joel</div>
       <div class="price"><b>R$ 997–15.000/mês</b> · Sessão · Sprint 30d · Conselho</div>
       <p class="desc">Acesso direto a mim. Pra founder com faturamento e time, destravando estratégia, pricing, M&amp;A, captação. Garantia incondicional.</p>
@@ -346,29 +334,29 @@
     <div class="case feat">
       <div class="tag">// CASE 001</div>
       <div>
-        <div class="m">2,3×</div>
-        <div class="co">Studio Amanda Oliveira</div>
-        <div class="sector">Estética · 4 meses</div>
+        <div class="m">+433%</div>
+        <div class="co">ESF — Encontre Sua Franquia</div>
+        <div class="sector">Franquias · 2018-2020</div>
       </div>
-      <div class="story">Agenda cheia, caixa furado. VSS em 90 dias: pacotes de recorrência + Growth CRM + follow-up automático: <b style="color:var(--jb-acid)">R$ 18k → R$ 42k em 4 meses</b>. 60% das clientes em pacotes.</div>
+      <div class="story">Operação travada em R$ 160k/mês. Com 6Ps implementados: <b style="color:var(--jb-acid)">R$ 1 milhão/mês</b>, leads ×8,33 e holding com 1.800+ franqueados.</div>
     </div>
     <div class="case">
       <div class="tag">// CASE 002</div>
       <div>
-        <div class="m">2,3×</div>
-        <div class="co">Barbearia Estilo Urbano</div>
-        <div class="sector">Serviço · 3 meses</div>
+        <div class="m">+250%</div>
+        <div class="co">Port Informática</div>
+        <div class="sector">E-commerce · 2016-2020</div>
       </div>
-      <div class="story">Dono cortava 10h/dia, agenda vazava. VSS + Growth CRM + pacotes mensais: <b style="color:var(--jb-fire)">R$ 12k → R$ 28k em 3 meses</b>. 45% assinantes, agenda 95% ocupada.</div>
+      <div class="story">E-commerce reestruturado com método e operação comercial. Resultado oficial autorizado: <b style="color:var(--jb-fire)">+250%</b> no e-commerce.</div>
     </div>
     <div class="case">
       <div class="tag">// CASE 003</div>
       <div>
-        <div class="m">2,2×</div>
-        <div class="co">Loja Essence Moda</div>
-        <div class="sector">Varejo · 5 meses</div>
+        <div class="m">+65%</div>
+        <div class="co">Lojas Rede</div>
+        <div class="sector">Varejo · 2016-2020</div>
       </div>
-      <div class="story">Vendia no Insta no feeling. VSS: WhatsApp Business + catálogo digital + programa de fidelidade: <b style="color:var(--jb-fire)">R$ 22k → R$ 48k em 5 meses</b>. Online = 40% do faturamento.</div>
+      <div class="story">Rede de varejo com sistema comercial mais previsível. Resultado oficial autorizado: <b style="color:var(--jb-fire)">+65%</b>.</div>
     </div>
   </div>
 </section>
@@ -397,15 +385,15 @@
     <div class="foot-grid">
       <div>
         <div class="logo"><span class="j">JOEL</span><span class="b">BURIGO</span></div>
-        <p style="color:var(--jb-fg-muted); font-size:13px; margin-top:16px; max-width:320px; line-height:1.6;">Sistema &gt; Improviso. Framework 6Ps das Vendas Escaláveis · 140+ MPEs · 17+ anos · ~R$1 bilhão em vendas estruturadas. Da quebrada ao bilhão.</p>
+        <p style="color:var(--jb-fg-muted); font-size:13px; margin-top:16px; max-width:320px; line-height:1.6;">Sistema &gt; Improviso. Framework 6Ps das Vendas Escaláveis · 140+ MPEs · 17+ anos · ~R$ 1 bilhão em vendas estruturadas (estimativa agregada). Da quebrada ao bilhão.</p>
       </div>
-      <div><h4>Programas</h4><a>Vendas Sem Segredos</a><a>Services DWY</a><a>Advisory 1:1</a></div>
+      <div><h4>Programas</h4><a>Vendas Sem Segredos</a><a>Advisory 1:1</a></div>
       <div><h4>Conteúdo</h4><a>Framework 6Ps</a><a>Cases</a><a>Blog</a><a>Máquina de Crescimento</a></div>
       <div><h4>Contato</h4><a>WhatsApp direto</a><a>LinkedIn</a><a>Instagram</a><a>YouTube</a></div>
     </div>
     <div class="foot-legal">
       <span>© 2026 · JOEL BURIGO</span>
-      <span>@joelburigo · EST. 2008</span>
+      <span>@joelburigo · EXP. 2004 · GROWTH EST. 2008</span>
       <span>BORA PRA CIMA · LET'S GROW</span>
     </div>
   </div>

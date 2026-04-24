@@ -32,7 +32,7 @@ Não é apenas um curso — é um programa completo que combina metodologia prop
 
 **O que o VSS entrega:**
 
-- ✅ Framework estruturado (6Ps das Vendas Escaláveis)
+- ✅ Framework estruturado (6Ps das Vendas Escaláveis, formalizado em 2025)
 - ✅ CRM profissional completo incluído (Growth CRM — 12 meses)
 - ✅ Implementação guiada passo a passo
 - ✅ Funciona com ou sem budget de tráfego pago
@@ -150,7 +150,7 @@ A promessa se sustenta em **4 pilares**:
 
 ## 03.2 Framework dos 6Ps — Espinha Dorsal do Sistema
 
-Os **6Ps das Vendas Escaláveis** são a metodologia central que estrutura todo o programa.
+Os **6Ps das Vendas Escaláveis** são a metodologia central que estrutura todo o programa. O nome e a estrutura formal nasceram em 2025, condensando uma base que Joel já aplicava na prática ao longo de 17+ anos; em 2026, isso entra em lançamento público pelo VSS.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -261,7 +261,7 @@ Cada P é avaliado de 0 a 5:
 2. Identifica os 2 Ps mais fracos.
 3. Prioriza fortalecer esses Ps primeiro.
 4. Reavalia a cada 30 dias.
-5. **Score total possível:** 30 pontos (5 × 6 Ps).
+5. **Score total possível:** 30 pontos (5 × 6Ps).
 
 **Interpretação do score total:**
 
@@ -1013,7 +1013,7 @@ Você tem **15 dias** para testar o programa completo. Se por qualquer motivo de
 
 ### 03.5.3 Por que temos essa confiança
 
-1. **Metodologia testada.** Os 6Ps não são teoria inventada — é um framework usado por centenas de empresas para estruturar vendas escaláveis.
+1. **Base aplicada.** Os 6Ps não são teoria inventada — são a formalização, em 2025, de uma base aplicada em 140+ empresas para estruturar vendas escaláveis.
 2. **Suporte completo.** Mentorias semanais + comunidade ativa + suporte técnico garantem que você não trave.
 3. **Ferramentas incluídas.** Com Growth CRM, templates e automações prontos, não existe desculpa de "faltou ferramenta".
 4. **Resultados comprovados.** Alunos da versão beta já validaram o método e estão tendo resultados tangíveis. > _Nota: % de alunos "beta com resultado tangível" precisa confirmação antes de virar copy pública._

@@ -8,9 +8,10 @@ interface BreadcrumbItem {
 
 interface Props {
   items: BreadcrumbItem[]
+  class?: string
 }
 
-const { items = [] } = Astro.props
+const { items = [], class: className = '' } = Astro.props
 const siteUrl = 'https://joelburigo.com.br'
 
 const normalizedItems = items.map((item) => ({
@@ -29,7 +30,7 @@ const breadcrumbSchema = {
 }
 ---
 
-<nav aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb" class={className}>
   <ol class="flex flex-wrap items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">
     {items.map((item, index) => {
       const isLast = index === items.length - 1

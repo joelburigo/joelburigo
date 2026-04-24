@@ -40,10 +40,11 @@
 
 ### 1.3 Conteúdo e mídia
 
+- 🚨 **`docs/conteudo/` é INTOCÁVEL na migração e permanente** — estratégia, copy, marca, marketing, templates. Fonte única de verdade humana. Fica fora do build Docker (já tá em `.dockerignore`) e fora do pacote Next. Qualquer referência a tom, vocabulário, cases ou copy **consulta aqui**, nunca reinventa (regra já no CLAUDE.md). Migração Astro → Next faz **cp** de strings 1:1 do Astro atual, não reescreve nada.
 - ✅ **Vídeo das mentorias:** Cloudflare Stream (HLS adaptativo + analytics + signed URLs/allowed origins).
-- ✅ **Conteúdo VSS no repo** (não em R2) — cada destravamento tem um flow definido em TS (metadados + prompts + tool definitions + output schema) + MD auxiliar em `src/content/vss/`. Versionado no git, review por diff.
+- ✅ **Flows dos destravamentos VSS no repo** — `src/content/vss/[slug].ts` com metadados + system prompts + tool defs + output schema. Derivados manualmente de `docs/conteudo/partes/04-playbook-vss.md`. O runtime nunca lê `docs/`; quem traduz `docs` → `src/content/vss` somos nós (humanos + agente), com revisão por diff no git.
 - ✅ **Artifacts do aluno em R2** — outputs de cada destravamento (ICPs, cadências, planos) ficam em R2 com versionamento. Exports CSV/PDF também.
-- ✅ **Blog gerenciado no DB** — posts, imagens de capa, tags, revisões e SEO geridos via admin CMS. Posts renderizados em ISR/SSR do Next a partir do DB. Migração inicial importa os 12 posts atuais de `src/content/blog/*.md` + imagens de `src/assets/images/blog/` pra R2.
+- ✅ **Blog gerenciado no DB** — posts, imagens de capa, tags, revisões e SEO geridos via admin CMS. Migração inicial: **cp literal** dos 12 posts MD pro DB (sem reescrita) + **cp literal** das imagens de `src/assets/images/blog/` pra `public/assets/images/blog/` (mesmas URLs relativas, zero alteração no conteúdo MD). R2 entra depois se volume justificar.
 
 ### 1.4 Features out-of-scope (MVP)
 
@@ -423,7 +424,7 @@ CREATE TABLE blog_posts (
   subtitle TEXT,
   excerpt TEXT,
   content_md TEXT NOT NULL,               -- markdown bruto (fonte de verdade)
-  cover_image_r2_key TEXT,                -- R2 path (ex: blog/covers/<slug>.webp)
+  cover_image_path TEXT,                  -- path agnóstico (ex: /assets/images/blog/<slug>.webp ou r2://...)
   cover_image_alt TEXT,
   author_id TEXT REFERENCES users(id),
   status TEXT NOT NULL DEFAULT 'draft',   -- draft · scheduled · published · archived
@@ -432,7 +433,7 @@ CREATE TABLE blog_posts (
   reading_minutes INTEGER,
   seo_title TEXT,
   seo_description TEXT,
-  og_image_r2_key TEXT,
+  og_image_path TEXT,
   view_count INTEGER NOT NULL DEFAULT 0,
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
@@ -469,7 +470,7 @@ CREATE INDEX idx_blog_revisions_post ON blog_revisions(post_id, created_at DESC)
 CREATE TABLE blog_images (
   id TEXT PRIMARY KEY,
   post_id TEXT REFERENCES blog_posts(id) ON DELETE CASCADE,
-  r2_key TEXT NOT NULL,                   -- blog/images/<post>/<hash>.webp
+  path TEXT NOT NULL,                     -- /assets/images/blog/... ou r2://blog/images/...
   alt TEXT,
   width INTEGER,
   height INTEGER,
@@ -1100,7 +1101,7 @@ Fechado v0.4: self-service com Mercado Pago (ticket R$ 7.5k parcelável).
   4. Reescreve referências de imagem no markdown pra URLs públicas R2
   5. **Sem tags inicialmente**
 - ✅ **Classificação de tags pelo agente:** job one-shot `classify-blog-posts` roda após migração. Claude Opus 4.7 lê os 12 posts num único prompt (~36k tokens input + 2k output ≈ $0,10), sugere tags consistentes, UPSERT em `blog_tags` + vincula via `blog_post_tags`. Joel revisa/ajusta no CMS depois.
-- ❓ Slugs atuais são definitivos ou algum precisa mudar? (se mudar, adiciono rewrite no script)
+- ✅ **Slugs preservados 1:1** a partir do filename MD.
 
 ---
 
@@ -1142,7 +1143,14 @@ Fechado v0.4: self-service com Mercado Pago (ticket R$ 7.5k parcelável).
 - [ ] R2 bucket + adapter testado (upload/get)
 - [ ] Backup off-site Postgres (dump diário → R2, retenção 30d)
 - [ ] Sentry integrado
-- [ ] **Migração dos 12 posts de blog:** script lê `src/content/blog/*.md` (frontmatter + conteúdo) → INSERT em `blog_posts` preservando slug. Upload das imagens de `src/assets/images/blog/` pra R2 mantendo variantes responsivas. Reescreve URLs de imagem no markdown.
+- [ ] **Migração dos 12 posts de blog (`cp` literal, zero reescrita):**
+  - Script lê `src/content/blog/*.md` com `gray-matter` (separa frontmatter do conteúdo bruto)
+  - INSERT `blog_posts` com `content_md` **byte-idêntico** ao original (sem normalização, sem reflow, sem mudar URLs)
+  - `cp -R src/assets/images/blog/* → public/assets/images/blog/` (Next serve de `/public`)
+  - `cover_image_path` guarda string literal que já está no frontmatter (ex: `/assets/images/blog/6ps-vendas-escalaveis-hero-1080w.webp`)
+  - Slugs preservados 1:1 a partir do filename
+  - Autor default = user do Joel (cria seed de `users` com role=admin)
+  - R2 opcional em futuro — schema já aceita `r2://` path quando migrar
 - [ ] Deploy staging + smoke test end-to-end
 
 **Entregável:** VSS vende via MP. Forms capturam leads. Blog renderiza os 12 posts a partir do DB. Backup off-site rodando.
@@ -1252,6 +1260,9 @@ _Append-only. Toda decisão fechada sobe pra cá com data._
 - **2026-04-24 (v0.4)** — ✅ **Classificação de tags** dos 12 posts migrados via job one-shot `classify-blog-posts` (Opus 4.7). Joel revisa no CMS.
 - **2026-04-24 (v0.4)** — ✅ **Onboarding conversacional** como Day 1 do aluno VSS: agente faz 8-12 perguntas, preenche `user_profiles` via `updateProfile`, leva 10-15 min.
 - **2026-04-24 (v0.4)** — ✅ **Consolidação de fase** automática (Opus 4.7) ao completar última destravamento de cada fase — gera "Plano da Fase" exportável.
+- **2026-04-24 (v0.4)** — ✅ **`docs/conteudo/` é INTOCÁVEL e permanente** — fonte única de verdade de estratégia/copy/marca. Fica fora do build Docker. Não migrar, não reescrever, só **consultar**.
+- **2026-04-24 (v0.4)** — ✅ **Migração é `cp` literal** — portar copy 1:1 do Astro pro Next (zero reescrita), posts MD byte-idênticos no DB, imagens blog em `public/assets/images/blog/` (mesmas URLs relativas).
+- **2026-04-24 (v0.4)** — ✅ **Slugs do blog preservados 1:1**; nomes de arquivos MD viram slugs sem transformação.
 
 ---
 

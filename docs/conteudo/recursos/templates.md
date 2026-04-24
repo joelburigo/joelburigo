@@ -46,7 +46,7 @@ tags: [templates, deliverables, canvas, playbook, recursos, ferramentas-praticas
 ║                                                                          ║
 ║  2. O QUE ME TORNA DIFERENTE (Diferencial)                               ║
 ║  ─────────────────────────────────────────────────────────────────────   ║
-║  • Metodologia proprietária (6Ps) testada em 140 clientes                ║
+║  • Base dos 6Ps aplicada em 140 clientes                                 ║
 ║  • CRM profissional INCLUÍDO (não é custo extra)                         ║
 ║  • Funciona COM ou SEM budget de tráfego                                 ║
 ║  • Foco em AUTONOMIA (não crio dependência)                              ║
@@ -99,10 +99,10 @@ tags: [templates, deliverables, canvas, playbook, recursos, ferramentas-praticas
 ║  6. ELEVATOR PITCH (30 segundos)                                         ║
 ║  ─────────────────────────────────────────────────────────────────────   ║
 ║                                                                          ║
-║  "Sou Joel Burigo, especialista em vendas escaláveis. Criei os 6Ps       ║
-║   das Vendas Escaláveis — metodologia que estruturou R$ 1 bilhão em      ║
-║   vendas em 17 anos. Através do programa VSS, transformo MPEs de         ║
-║   vendas aleatórias para vendas previsíveis em 90 dias. Funciona com     ║
+║  "Sou Joel Burigo, especialista em vendas escaláveis. Condensei 17+      ║
+║   anos nos 6Ps das Vendas Escaláveis — metodologia que nasce de ~R$ 1    ║
+║   bilhão em vendas como estimativa agregada. Pelo VSS, levo MPEs         ║
+║   de vendas aleatórias para vendas previsíveis em 90 dias. Funciona com  ║
 ║   ou sem budget de tráfego. R$ 1.997 com CRM profissional incluído.      ║
 ║   Diferente de agência, você aprende e fica autônomo."                   ║
 ║                                                                          ║
@@ -122,11 +122,11 @@ tags: [templates, deliverables, canvas, playbook, recursos, ferramentas-praticas
 ║  8. PROVA DE AUTORIDADE                                                  ║
 ║  ─────────────────────────────────────────────────────────────────────   ║
 ║                                                                          ║
-║  • 17 anos de experiência em marketing e vendas                          ║
+║  • 17+ anos de experiência em marketing e vendas                         ║
 ║  • 140 clientes atendidos pessoalmente                                   ║
-║  • ~R$ 1 bilhão em vendas estruturadas                                   ║
+║  • ~R$ 1 bilhão em vendas estruturadas (estimativa agregada)             ║
 ║  • Case: Cliente de franquias de R$ 160k → R$ 1M/mês em 2 anos         ║
-║  • Quebrei empresa aos 30, morei em barraco, reconstruí do zero          ║
+║  • Quebrei empresa aos 25, morei em barraco, reconstruí do zero          ║
 ║                                                                          ║
 ╚══════════════════════════════════════════════════════════════════════════╝
 ```
@@ -487,4 +487,3 @@ Ver detalhamento completo na seção de Advisory (Parte 10).
 4. **Planos de Ação:** Customizados para cada cliente
 
 ---
-

@@ -86,10 +86,10 @@ Scripts completos para vídeos de apresentação das páginas principais:
 - Transição para foto atual (casa, família)
 
 **JOEL:**
-> "Hoje, 17 anos depois, estruturei mais de 140 empresas. São quase R$ 1 bilhão em vendas organizadas. Não porque sou gênio. Porque aprendi na pancada que SISTEMA sempre vence improviso."
+> "Hoje, 17+ anos depois, estruturei mais de 140 empresas. São ~R$ 1 bilhão em vendas organizadas como estimativa agregada. Não porque sou gênio. Porque aprendi na pancada que SISTEMA sempre vence improviso."
 
 **VISUAL:**
-- Números aparecem: "140+ clientes", "17 anos", "~R$ 1bi estruturado"
+- Números aparecem: "140+ clientes", "17+ anos", "~R$ 1bi estruturado (estimativa agregada)"
 - Logos/fotos de clientes (se autorizado)
 
 ---
@@ -97,7 +97,7 @@ Scripts completos para vídeos de apresentação das páginas principais:
 **[01:00 - 02:00] SOLUÇÃO: FRAMEWORK 6Ps**
 
 **JOEL:**
-> "Criei um framework chamado **6Ps das Vendas Escaláveis**. Funciona pra qualquer negócio que vende — B2B, B2C, serviço, produto, tanto faz."
+> "Em 2025, eu dei nome e estrutura a um framework chamado **6Ps das Vendas Escaláveis**. A base dele eu já aplicava há anos. Funciona pra qualquer negócio que vende — B2B, B2C, serviço, produto, tanto faz."
 
 **VISUAL:** Gráfico/animação mostrando os 6Ps aparecendo um por um enquanto Joel fala
 
@@ -262,7 +262,7 @@ Scripts completos para vídeos de apresentação das páginas principais:
 **VISUAL:** Logo VSS + texto "SISTEMA IMPLEMENTÁVEL"
 
 **JOEL:**
-> "Baseado no Framework dos 6Ps que criei em 17 anos. Te ensino. Você implementa. Eu te guio toda semana."
+> "Baseado no Framework dos 6Ps que condensei a partir de 17+ anos de prática. Te ensino. Você implementa. Eu te guio toda semana."
 
 **VISUAL:** Animação rápida dos 6Ps
 
@@ -452,7 +452,7 @@ Scripts completos para vídeos de apresentação das páginas principais:
 **[00:35 - 01:00] SOLUÇÃO: ADVISORY**
 
 **JOEL:**
-> "**Strategic Advisory** é acesso direto a mim. Sessões mensais 1-on-1 de 90 minutos. WhatsApp direto comigo pra decisões urgentes. Minha experiência de 17 anos aplicada no SEU contexto específico."
+> "**Strategic Advisory** é acesso direto a mim. Sessões mensais 1-on-1 de 90 minutos. WhatsApp direto comigo pra decisões urgentes. Minha experiência de 17+ anos aplicada no SEU contexto específico."
 
 **VISUAL:** Logo "Advisory" + texto "1:1 DIRETO COM JOEL"
 
@@ -582,7 +582,7 @@ Scripts completos para vídeos de apresentação das páginas principais:
 - Logo sempre visível
 
 **Textos na Tela:**
-- Estatísticas importantes (80% MPEs, 140 clientes, R$ 1bi)
+- Estatísticas importantes (80% MPEs, 140 clientes, ~R$ 1bi como estimativa agregada)
 - Perguntas-chave (para reforçar)
 - CTAs finais (sempre com botão visual)
 

@@ -106,7 +106,7 @@ Contém:
 - "CRM profissional incluído"
 
 **Advisory (1:1):**
-- "17 anos de experiência aplicados ao seu desafio específico"
+- "17+ anos de experiência aplicados ao seu desafio específico"
 - "Acesso direto via WhatsApp para decisões críticas"
 - "Sessões mensais 1-on-1 para sparring estratégico"
 
@@ -222,7 +222,7 @@ Contém:
 ### Sobre Viabilidade Pessoal
 
 **"Será que funciona de verdade ou é discurso motivacional?"**
-- Validação: 140+ clientes, ~R$ 1 bilhão estruturado em 17 anos
+- Validação: 140+ clientes, ~R$ 1 bilhão estruturado como estimativa agregada em 17+ anos
 - Case emblemático: case de franquias R$ 160k → R$ 1M em 2 anos
 
 **"Não sou talentoso o suficiente para vender"**
@@ -497,7 +497,7 @@ Contém:
 > ❌ Solução em 14 dias
 >
 > **VSS É:**
-> ✅ Método estruturado (6Ps testado)
+> ✅ Método estruturado (base dos 6Ps aplicada)
 > ✅ Implementação guiada (você faz, a gente guia)
 > ✅ Sistema que funciona quando VOCÊ trabalha
 > ✅ 90 dias de estruturação
@@ -562,9 +562,9 @@ Contém:
 **DEPOIS (2026):**
 - Casa própria no Ribeirão da Ilha, Floripa
 - Família: Natalia (esposa) + Davi (filho nascido outubro 2024)
-- 17 anos de carreira estruturada
+- 17+ anos de carreira estruturada
 - 140+ clientes atendidos pessoalmente
-- ~R$ 1 bilhão em vendas estruturadas (ao longo de 17 anos)
+- ~R$ 1 bilhão em vendas estruturadas (estimativa agregada ao longo de 17+ anos)
 - Metodologia proprietária (6Ps)
 - Reconstruído do zero 2 vezes
 - Impactando milhares de vidas
@@ -631,7 +631,7 @@ Contém:
 ### Diferencial #1: Framework Proprietário (6Ps)
 
 - **Único:** Metodologia criada e testada pessoalmente
-- **Validação:** 17 anos + 140 clientes + ~R$ 1 bilhão estruturado
+- **Validação:** 17+ anos + 140 clientes + ~R$ 1 bilhão estruturado como estimativa agregada
 - **Garantia:** Funciona (não é teoria de livro)
 - **Integração:** Marketing + Vendas + Growth em sistema único
 - **Ordem Correta:** Posicionamento → Público → Produto → Programas → Processos → Pessoas
@@ -692,9 +692,9 @@ Contém:
 
 ### Diferencial #9: Prova Social Tangível
 
-- **17 anos de experiência** (não 2 anos de sucesso overnight)
+- **17+ anos de experiência** (não 2 anos de sucesso overnight)
 - **140+ clientes pessoalmente** (não teoria)
-- **~R$ 1 bilhão estruturado** (números reais ao longo de 17 anos)
+- **~R$ 1 bilhão estruturado** (estimativa agregada ao longo de 17+ anos)
 - **Case emblemático:** case de franquias R$ 160k → R$ 1M (2 anos)
 - **Múltiplos nichos:** 20+ segmentos validados
 - **Comunidade ativa:** Alunos ajudando alunos
@@ -750,7 +750,7 @@ E NÃO tiver em 90 dias:
 > "Queremos alunos comprometidos com seus resultados, não prisioneiros insatisfeitos."
 
 **Por que oferecemos:**
-1. Confiança total no método (17 anos testados)
+1. Confiança total no método (17+ anos de prática)
 2. Comprometimento real (não queremos clientes forçados)
 3. Transparência (risco é nosso, não seu)
 4. Alinhamento (você só avança se realmente quiser)
@@ -764,7 +764,7 @@ E NÃO tiver em 90 dias:
 **Joel Burigo (Criador):**
 - **17+ anos** de experiência em marketing e vendas
 - **140+ clientes** atendidos pessoalmente
-- **~R$ 1 bilhão** em vendas estruturadas (ao longo de 17 anos)
+- **~R$ 1 bilhão** em vendas estruturadas (estimativa agregada ao longo de 17+ anos)
 - **20+ nichos** validados
 
 ### Case de Sucesso Emblemático
@@ -906,7 +906,7 @@ E NÃO tiver em 90 dias:
 
 **Estatística/Número:**
 - "80% das MPEs brasileiras vendem de forma aleatória"
-- "17 anos. 140 clientes. ~R$ 1 bilhão estruturado"
+- "17+ anos. 140 clientes. ~R$ 1 bilhão estruturado como estimativa agregada"
 - "De R$ 160k para R$ 1 milhão em 2 anos"
 
 **Pergunta Provocativa:**
@@ -986,7 +986,7 @@ E NÃO tiver em 90 dias:
 
 **Pattern: Specificity (Números > Genérico)**
 - ❌ "Muitas pessoas conseguem resultado"
-- ✅ "140 clientes estruturaram ~R$ 1 bilhão em vendas"
+- ✅ "140 clientes atendidos; ~R$ 1 bilhão em vendas estruturadas como estimativa agregada"
 
 **Pattern: Proof + Permission**
 - "Funciona (case case de franquias), e você pode fazer também"

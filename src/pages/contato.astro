@@ -8,7 +8,7 @@ import { contactInfo as contact, getWhatsAppLink } from '../data/contact'
 
 const seo = {
   title: 'Contato | Joel Burigo',
-  description: 'Fala direto comigo. Respondo pessoalmente em até 24 horas.',
+  description: 'Fala direto comigo. Respondo pessoalmente · sem intermediários.',
   keywords: 'contato Joel Burigo, consultoria vendas, falar com Joel',
 }
 
@@ -66,12 +66,12 @@ const faqs = [
       <section class="pt-10 pb-16 md:pt-14 md:pb-24">
         <div class="mx-auto max-w-4xl">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Contato', href: '/contato' }]} class="mb-5" />
-          <div class="kicker mb-6">// CONTATO · DIRETO · 24H_RESPONSE</div>
+          <div class="kicker mb-6">// CONTATO · DIRETO · SEM_INTERMEDIÁRIOS</div>
           <h1 class="tg-display">
             Quer <span class="text-fire">ligar a Máquina</span>?
           </h1>
           <p class="mt-6 max-w-2xl font-sans text-lg text-[color:var(--jb-cream)]">
-            Respondo pessoalmente em até 24h. Manda mensagem no canal que preferir.
+            Respondo pessoalmente · sem intermediários. Manda mensagem no canal que preferir.
           </p>
           <p class="mt-3 max-w-2xl font-mono text-[12px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">
             <span class="text-acid">●</span>&nbsp; FLORIANÓPOLIS/SC &nbsp;·&nbsp; -27.59 / -48.55
@@ -225,7 +225,7 @@ const faqs = [
       const formData = new FormData(form)
       const data = Object.fromEntries(formData)
       console.log('Form data:', data)
-      alert('Mensagem enviada. Retorno em até 24h.')
+      alert('Mensagem enviada. Retorno direto do Joel.')
       form.reset()
     })
   }

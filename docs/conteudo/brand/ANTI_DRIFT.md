@@ -148,6 +148,7 @@ Consultorias · advocacia · clínicas (médicas/odonto/psicologia) · academias
 - ❌ `R$ 1 bilhão` sem til — é **`~R$ 1 bilhão`**. Sempre contextualizar como estimativa agregada ao longo de 17+ anos quando houver espaço.
 - ❌ `10 anos` · ❌ `mais de 20 anos` — é **`17+ anos`**.
 - ❌ `5-10 slots ativos` · ❌ `Máximo 3 clientes simultâneos` · ❌ `5 a 10 vagas/ano` — Advisory tem vagas limitadas, mas **o número é determinado pela capacidade real do Joel em cada momento** e não é declarado publicamente. Sempre: **`Vagas limitadas · conforme capacidade`** (ou `Vagas limitadas · por convite` em chip/nav curto).
+- ❌ `resposta em 24h` · ❌ `resposta em 48h` · ❌ `24h úteis` · ❌ `reembolso em 48h` · ❌ `relatório em 24h` · ❌ `WhatsApp resposta em 4h` — **não prometer SLA específico em horas/dias pra contato, análise, reembolso ou entrega pós-sessão**. O Joel responde pessoalmente mas não quer se comprometer com janela exata. Substituir por: **`resposta direta do Joel`**, **`sem intermediários`**, **`sem fila`**, **`sem fricção`**, **`sem burocracia`**, **`pós-sessão`** (pra entregáveis). Exceções canônicas que ficam: garantia 15 dias VSS (prazo do direito), 90 dias VSS (entregável nominal do programa).
 
 ---
 

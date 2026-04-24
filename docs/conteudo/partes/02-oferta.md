@@ -232,7 +232,7 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 - ✅ Diagnóstico rápido dos 6Ps
 - ✅ Plano de ação claro (3-5 ações prioritárias)
 - ✅ Gravação da sessão
-- ✅ Relatório executivo por escrito (2-3 páginas) em 24h
+- ✅ Relatório executivo por escrito (2-3 páginas) pós-sessão
 
 **Exemplos de uso:**
 - **Dilema estratégico:** "Como me diferenciar sem competir por preço?"
@@ -277,7 +277,7 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 - ✅ 4 sessões de 90 minutos (1 por semana)
 - ✅ Diagnóstico profundo dos 6Ps
 - ✅ Plano estratégico 12 meses detalhado
-- ✅ Suporte via WhatsApp (resposta em 24h úteis)
+- ✅ Suporte via WhatsApp direto com o Joel
 - ✅ 1 revisão de material crítico (proposta, apresentação, funil)
 - ✅ Documento estratégico final (20-40 páginas)
 
@@ -359,8 +359,8 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 
 **Como funciona:**
 1. Participa da primeira sessão
-2. Se não agregou valor, avisa em 24h
-3. Reembolso 100% em 48h
+2. Se não agregou valor, avisa direto
+3. Reembolso 100% · sem fricção
 4. Sem perguntas, sem justificativas
 
 **Por que oferecemos:** confiança total no valor entregue · 17 anos de experiência · zero risco para o cliente · alinhamento de expectativas.
@@ -381,7 +381,7 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 **3. Análise de Fit**
 - Avalio se posso ajudar
 - Verifico disponibilidade
-- Resposta em 48h
+- Resposta direta do Joel, sem fila
 
 **4. Proposta**
 - Formato recomendado

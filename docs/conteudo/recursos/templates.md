@@ -481,7 +481,7 @@ Ver detalhamento completo na seção de Advisory (Parte 10).
 
 ### **[6.2] Para Clientes Advisory**
 
-1. **Relatório Sessão:** Entregue em 24h após cada sessão
+1. **Relatório Sessão:** Entregue pós-sessão
 2. **Documento Sprint:** Entregue ao final dos 30 dias
 3. **Diagnóstico 6Ps:** Feito em todas as sessões/sprints
 4. **Planos de Ação:** Customizados para cada cliente

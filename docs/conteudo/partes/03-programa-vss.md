@@ -745,7 +745,7 @@ Durante toda a jornada, o aluno não fica sozinho:
 
 - **48 mentorias em grupo ao vivo** (semanais, 60 min cada) — aprofundamento guiado dos 15 módulos, resolução de casos reais e ajustes finos no plano de cada aluno.
 - **Comunidade ativa** — networking com outros alunos, troca de experiências, suporte peer-to-peer e biblioteca viva de objeções/soluções.
-- **Suporte técnico** — help desk para Growth CRM, templates e ferramentas (chat em horário comercial, e-mail com resposta em 24h).
+- **Suporte técnico** — help desk para Growth CRM, templates e ferramentas (chat em horário comercial, e-mail respondido em prazo razoável).
 - **Biblioteca evergreen** — gravações de mentorias anteriores, planilhas, scripts, biblioteca de objeções.
 
 > *Nota: a entrada no programa é perpétua (evergreen). O aluno compra qualquer dia; a primeira mentoria é na próxima data do ciclo. Os temas do ciclo anual se repetem, então nenhum aluno perde um tema — apenas entra em um ponto diferente do loop.*
@@ -834,7 +834,7 @@ Plataforma all-in-one. Escopo funcional:
 **Suporte e treinamento**
 
 - Base de conhecimento (artigos, vídeos, FAQs)
-- Chat (horário comercial), e-mail (resposta em 24h), comunidade, webinars
+- Chat (horário comercial), e-mail, comunidade, webinars
 
 #### Templates pré-configurados incluídos
 

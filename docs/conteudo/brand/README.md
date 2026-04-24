@@ -1,6 +1,6 @@
 # Joel Burigo — Design System
 
-**Especialista em vendas escaláveis para MPEs brasileiras. Criador do Framework 6Ps das Vendas Escaláveis.**
+**Especialista em vendas escaláveis para MPEs brasileiras. Criador dos 6Ps das Vendas Escaláveis.**
 Direção: **Terminal Growth** — tech/growth/sales brutalismo. Fogo `#FF3B0F` (urgência) + acid `#C6FF00` (growth) sobre preto puro `#050505` + cream `#F5F1E8`. DNA de terminal de trading encontra empreendedor da quebrada.
 
 ---
@@ -66,7 +66,7 @@ Skeletons por canal — copie o arquivo, edite copy seguindo ANTI_DRIFT, entregu
 - Sub-títulos e corpo: frase normal.
 - Micro-copy (ticker, eyebrows, bylines, status): UPPERCASE MONO com separadores `·` prefixos `//` e `★`.
 
-**Pronome:** **"você"** predominante (formal coloquial). **"Tu"** cirúrgico pra momento de autenticidade sul-catarinense — especialmente em frases-bandeira como *"se tua empresa depende de tu, tu não tem empresa — tu tem emprego"*. Evitar mistura aleatória no mesmo parágrafo.
+**Pronome:** **"você"** predominante (formal coloquial). **"Tu"** cirúrgico pra momento de autenticidade sul-catarinense — especialmente em frases-bandeira como *"se tua empresa depende de ti, tu não tem empresa — tu tem emprego"*. Evitar mistura aleatória no mesmo parágrafo.
 
 **Assinaturas canônicas:**
 - "Sistema > Improviso"
@@ -75,12 +75,12 @@ Skeletons por canal — copie o arquivo, edite copy seguindo ANTI_DRIFT, entregu
 - "Ligar a Máquina" (implementar os 6Ps)
 - "Da quebrada ao bilhão"
 - "Sem enrolação" · "Na moral"
-- "Se tua empresa depende de tu, tu não tem empresa — tu tem emprego"
+- "Se tua empresa depende de ti, tu não tem empresa — tu tem emprego"
 - "Marketing sem vendas é hobby caro"
 - "Improviso mata mais empresa que crise"
 
 **Vocabulário proprietário (caixa-alta apenas em título):**
-- **6Ps das Vendas Escaláveis** — a metodologia. P1 Posicionamento · P2 Público · P3 Produto · P4 Programas · P5 Processos · P6 Pessoas.
+- **6Ps das Vendas Escaláveis** — nome oficial da metodologia. Pode abreviar para **6Ps** quando o contexto estiver claro. P1 Posicionamento · P2 Público · P3 Produto · P4 Programas · P5 Processos · P6 Pessoas. Nome e estrutura formal em 2025; lançamento público no VSS em 2026; base aplicada antes disso sem esse nome.
 - **Máquina de Crescimento** — o movimento. Sistema integrado de marketing + vendas + growth.
 - **Growth CRM** — plataforma all-in-one proprietária (CRM + funis + automação + landing pages).
 - **Vendas Escaláveis** — não "vendas" — vendas que crescem sem você trabalhar 3× mais.
@@ -91,15 +91,15 @@ Skeletons por canal — copie o arquivo, edite copy seguindo ANTI_DRIFT, entregu
 
 Não existe meio-termo (serviço terceirizado). *Services (DWY) foi descontinuado — arquivado em `docs/conteudo/_archive/parte9-services.md`.*
 
-**Provas de autoridade:** 17+ anos · 140+ clientes atendidos · ~R$ 1 bilhão em vendas estruturadas · Framework 6Ps testado em todas.
+**Provas de autoridade:** 17+ anos · 140+ clientes atendidos · ~R$ 1 bilhão em vendas estruturadas ao longo de 17+ anos (estimativa agregada, não número auditado) · base dos 6Ps aplicada antes do nome formal.
 
 **Localização canônica:** Ribeirão da Ilha, Florianópolis/SC. Lat. -27.59 · Lng. -48.55.
 
 **Emoji:** só `★`, `▶`, `→`, `●`, `▲ ▼`. Nunca emoji facial.
 
-**Números como elemento gráfico:** `+247%`, `R$1BI`, `17+`, `140+`, `2,3×`, `433%` — sempre GIGANTES, em fogo (alerta) ou acid (growth).
+**Números como elemento gráfico:** use apenas provas oficiais de `ANTI_DRIFT.md §4`: `+433%`, `+250%`, `+65%`, `+60% a +140%`, `17+`, `140+`, `20+`, `~R$ 1 bilhão`, `×8,33`, `1.800+`. Sempre GIGANTES, em fogo (alerta) ou acid (growth). Quando usar `~R$ 1 bilhão`, manter o til e, quando houver espaço, escrever "estimativa agregada em 17+ anos".
 
-**Tech overlays:** "@joelburigo", "EST. 2008", "SYS ONLINE", coordenadas de Floripa, clock ao vivo. Dá densidade e autoridade técnica.
+**Tech overlays:** "@joelburigo", "EXP. 2004" (experiência pessoal), "GROWTH EST. 2008" (CNPJ/empresa), "SYS ONLINE", coordenadas de Floripa, clock ao vivo. Dá densidade e autoridade técnica.
 
 ---
 
@@ -185,14 +185,14 @@ Container: `max-width: 1360px`, padding horizontal `40px` desktop / `24px` mobil
 
 | Combinação | Ratio | Status |
 |---|---|---|
-| cream `#F5F1E8` sobre ink `#050505` | 17.1:1 | ✅ AAA (qualquer tamanho) |
-| acid `#C6FF00` sobre ink `#050505` | 16.3:1 | ✅ AAA (qualquer tamanho) |
-| fire `#FF3B0F` sobre ink `#050505` | 4.7:1 | ⚠️ AA texto grande (≥18px bold / ≥24px regular), **NÃO usar em body <18px** |
-| ink `#050505` sobre fire `#FF3B0F` | 4.7:1 | ⚠️ igual acima (display OK, body não) |
-| ink `#050505` sobre acid `#C6FF00` | 16.3:1 | ✅ AAA |
-| fg-muted `#6B7280` sobre ink | 4.7:1 | ⚠️ AA — aceitável em micro-copy mono (11-13px) mas não em body |
+| cream `#F5F1E8` sobre ink `#050505` | 18.08:1 | ✅ AAA (qualquer tamanho) |
+| acid `#C6FF00` sobre ink `#050505` | 17.18:1 | ✅ AAA (qualquer tamanho) |
+| fire `#FF3B0F` sobre ink `#050505` | 5.71:1 | ✅ AA texto normal / AAA texto grande |
+| ink `#050505` sobre fire `#FF3B0F` | 5.71:1 | ✅ AA texto normal / AAA texto grande |
+| ink `#050505` sobre acid `#C6FF00` | 17.18:1 | ✅ AAA |
+| fg-muted `#6B7280` sobre ink | 4.22:1 | ⚠️ Falha AA para texto normal; usar só em micro-copy decorativa ou trocar por `--jb-fg-3` |
 
-**Regra operacional:** body em cream-default (sempre AAA). Fire reservado pra display (≥28px) ou ink-sobre-fire em botões/CTAs grandes. Nunca body text pequeno em fire-sobre-ink.
+**Regra operacional:** body em cream-default (sempre AAA). Fire pode passar AA em texto normal, mas continua reservado pra display, links curtos, alertas e CTAs pra preservar hierarquia. `--jb-fg-muted` não deve carregar informação essencial em tamanho pequeno.
 
 **Stroke-text** — pedaços de títulos em `-webkit-text-stroke: 2px cream; color: transparent` pra criar ritmo visual (ver hero do master, manifesto).
 
@@ -202,7 +202,7 @@ Container: `max-width: 1360px`, padding horizontal `40px` desktop / `24px` mobil
 
 **Terminal window** — card com chrome macOS (3 lights: fire/yellow/acid), mono code, cursor piscando em acid. Use pra mostrar diagnóstico, processo, pipeline.
 
-**Status bar topo** — mono 11px, dot acid pulsante, "SYS ONLINE · @joelburigo · EST. 2008 · FLORIANÓPOLIS/SC · CLOCK".
+**Status bar topo** — mono 11px, dot acid pulsante, "SYS ONLINE · @joelburigo · EXP. 2004 · GROWTH EST. 2008 · FLORIANÓPOLIS/SC · CLOCK".
 
 **Animação** — `180ms` `cubic-bezier(0.2, 0.9, 0.2, 1)`. Ticker 38s. Dot acid pulse 1.6s. Terminal blink 1s. Hover CTA primário: `translate(-2px,-2px)` + sombra offset dura (4/6/8px) em cor oposta (fire→acid, acid→fire). Glitch 3s nos títulos-herói (sutil).
 
@@ -240,7 +240,7 @@ Nunca softglow exceto dot pulse (`0 0 10px acid`).
 - `assets/logo-mark.svg` — mark "JB" fogo
 - `assets/logo-mark-acid.svg` — variante mark acid
 
-**Emoji:** proibido salvo `★` e `▶` como parte de display type.
+**Emoji/símbolos permitidos:** `★`, `▶`, `→`, `●`, `▲`, `▼`. Nunca emoji facial, mãos, coração, foguete ou fogo como emoji.
 
 ---
 

@@ -175,7 +175,7 @@ Peças que rodam em múltiplos canvases precisam de copy adaptada — não basta
 - **Letter-spacing negativo:** OK até `-0.04em` em mobile. Mais apertado que isso (ex: `-0.06em` que funciona lindo em mega-números desktop) em telas pequenas vira mancha ilegível. No canvas de story/feed (1080px nativo, renderizado em ~375px) o problema é mitigado pelo downscale — mas em produção web `src/` com display real em mobile, respeitar o `-0.04em`
 - **JetBrains Mono micro-copy:** mínimo `11px` em ticker/status bar. Menos que isso só entra se for puramente decorativo e não precisar ser lido
 - **Stroke-text (`-webkit-text-stroke: 2px cream`)**: em mobile ficar atento ao stroke-width — 2px em tela retina 3× fica fino demais. Considerar 3px em mobile pra manter presença. No canvas nativo (1080px exportado) deixar 4px como já está nos templates
-- **Mega números** (tipo `+247%`, `R$1BI`): mínimo `96px` no canvas pra funcionar em thumb de feed. No IG story pode ir até `520px` (ver variant 2 do story template) porque a tela inteira absorve
+- **Mega números** (tipo `+433%`, `140+`, `~R$ 1 bilhão`): mínimo `96px` no canvas pra funcionar em thumb de feed. No IG story pode ir até `520px` (ver variant 2 do story template) porque a tela inteira absorve. Use apenas provas oficiais de `ANTI_DRIFT.md §4`; `~R$ 1 bilhão` sempre com til e, quando houver espaço, com contexto de estimativa agregada em 17+ anos.
 
 ---
 

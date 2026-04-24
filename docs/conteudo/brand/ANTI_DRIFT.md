@@ -29,7 +29,7 @@
 
 ### 1.4 Anti-inventar
 - **Nunca criar case, número, cliente, nicho ou frase de assinatura.** Só usar o que está nas fontes autoritativas (§4).
-- **Nunca mudar provas de autoridade.** `17+ anos` nunca vira `mais de 20`. `140+ clientes` nunca vira `150+`. `~R$ 1 bilhão` nunca vira `R$ 1 bilhão` (o til é intencional — honestidade).
+- **Nunca mudar provas de autoridade.** `17+ anos` nunca vira `mais de 20`. `140+ clientes` nunca vira `150+`. `~R$ 1 bilhão` nunca vira `R$ 1 bilhão` (o til é intencional — honestidade) nem "gerado diretamente".
 - **Nunca criar assinatura nova.** Só as 14 listadas em §3.2.
 
 ---
@@ -38,7 +38,7 @@
 
 | Termo | Grafia correta | Errado |
 |---|---|---|
-| **6Ps das Vendas Escaláveis** | `6Ps` sempre junto, sem espaço | ~~6 P's~~ ~~6 Ps~~ ~~6ps~~ |
+| **6Ps das Vendas Escaláveis** | Nome oficial. `6Ps` sempre junto, sem espaço. Pode abreviar para **6Ps** quando o contexto já estiver claro ou o espaço for curto. | ~~6 P's~~ ~~6 Ps~~ ~~6ps~~ |
 | **Máquina de Crescimento** | Ambas maiúsculas | ~~máquina de crescimento~~ ~~Máquina do Crescimento~~ |
 | **Vendas Escaláveis** | Ambas maiúsculas | ~~vendas escaláveis~~ ~~Vendas escaláveis~~ |
 | **Growth CRM** | Ambas maiúsculas | ~~growth crm~~ ~~Growth crm~~ |
@@ -51,13 +51,15 @@
 
 **Os 6Ps exatos (ordem fixa):** P1 Posicionamento · P2 Público · P3 Produto · P4 Programas · P5 Processos · P6 Pessoas.
 
+**Cronologia dos 6Ps:** Joel aplicava os princípios dos 6Ps na prática antes de dar nome a eles. O insight de integração Marketing + Vendas + Growth aparece na história antes, mas ainda sem nome e sem framework formal. Em **2025**, Joel deu nome, condensou e estruturou formalmente os **6Ps das Vendas Escaláveis**. Em **2026**, lança o VSS e reorganiza a marca pública como **Joel Burigo**. Nunca escrever que "os 6Ps existiam formalmente desde 2004" ou que "o Framework 6Ps foi criado em 17 anos". O certo é: **"17+ anos de prática condensados nos 6Ps"**.
+
 ---
 
 ## 3. Voz — pronome e assinaturas
 
 ### 3.1 Tu/Você
 - **"Você"** é o pronome padrão (formal-coloquial).
-- **"Tu"** é cirúrgico — só aparece em momentos de raiz sul-catarinense, especialmente na frase-bandeira *"se tua empresa depende de tu, tu não tem empresa — tu tem emprego"*.
+- **"Tu"** é cirúrgico — só aparece em momentos de raiz sul-catarinense, especialmente na frase-bandeira *"se tua empresa depende de ti, tu não tem empresa — tu tem emprego"*.
 - **Nunca misturar** "tu" e "você" no mesmo parágrafo. Se começou com "você", segue com "você".
 - Pode usar imperativo natural ("Vem comigo", "Decide") sem conjugar pronome.
 
@@ -73,7 +75,7 @@
 - "Improviso mata mais empresa que crise"
 - "Marketing sem vendas é hobby caro"
 - "Post bonito no Instagram não paga boleto"
-- "Se tua empresa depende de tu, tu não tem empresa — tu tem emprego"
+- "Se tua empresa depende de ti, tu não tem empresa — tu tem emprego"
 - "De vendas aleatórias para vendas previsíveis"
 - "Não há fórmula mágica. Há método."
 
@@ -91,9 +93,9 @@
 ## 4. Provas de autoridade — SÓ ESSAS EXISTEM
 
 ### 4.1 Números verificáveis
-- `17+ anos` de experiência (2004 → 2026)
+- `17+ anos` de experiência (início profissional/freelancer em 2004; Growth Master/CNPJ desde 2008; usar sempre `17+` como prova pública)
 - `140+ clientes` atendidos pessoalmente
-- `~R$ 1 bilhão` em vendas estruturadas (com til, sempre)
+- `~R$ 1 bilhão` em vendas estruturadas ao longo de 17+ anos (estimativa agregada feita por Joel a partir do faturamento/impacto das operações atendidas; inclui empresas que faturavam mais de R$ 22 milhões/mês; não tratar como número auditado, receita própria, promessa de resultado ou geração direta atribuída só ao Joel)
 - `20+ nichos` diferentes validados
 - `90 dias` = prazo guiado VSS (nunca menos, nunca "em 30 dias")
 
@@ -114,6 +116,8 @@
 - Filho Davi nascido 10/10/2024
 - Mora em Ribeirão da Ilha, Florianópolis (desde 2021)
 - Reconstruiu 2× (2012 e 2019 — perda de ~R$ 250k com Growth Master/OnSell)
+- "Joel Martins" é registro histórico dos cartões de visita/recomeço em 2012; a identidade pública atual é **Joel Burigo** (rebrand/estruturação em 2026)
+- **6Ps das Vendas Escaláveis:** nome e estrutura formal em 2025; lançamento público dentro do VSS em 2026; antes disso, Joel já aplicava os princípios sem chamá-los de 6Ps
 
 ### 4.4 Nichos validados (se precisar listar)
 Consultorias · advocacia · clínicas (médicas/odonto/psicologia) · academias · personal · lojas físicas · e-commerce · distribuidores B2B · escolas de idiomas · cursos · infoprodutos · SaaS · startups · salões de beleza · estética · restaurantes · cafeterias · produção de alimentos.
@@ -131,16 +135,17 @@ Consultorias · advocacia · clínicas (médicas/odonto/psicologia) · academias
 - ❌ "Consultoria" vago → ✅ **especifica: Advisory, VSS, Growth CRM**
 - ❌ Prometer resultado sem mencionar esforço → ✅ **deixar explícito: "exige 90 dias de execução"**
 - ❌ "Fórmula" ou "passo a passo mágico" → ✅ **"método estruturado"** ou **"framework"**
+- ❌ "Framework 6Ps testado em 140+ empresas" como se o nome existisse desde sempre → ✅ **"base dos 6Ps aplicada em 140+ empresas"** ou **"17+ anos de prática condensados nos 6Ps"**
 
 ### 5.2 Erros de fala sobre Joel
 - ❌ "Joel é inspirador" → ✅ **"Joel estruturou 140+ empresas"**
 - ❌ "Joel é simpático" → ✅ **"Joel implementa junto"**
 - ❌ "Joel acredita em você" → ✅ **"Joel acredita em sistema testado em 140+ casos"**
-- ❌ Romantizar a história de quebra → ✅ **extrair lição: os 6Ps nasceram do erro real**
+- ❌ Romantizar a história de quebra → ✅ **extrair lição: a base dos 6Ps nasceu do erro real; o nome/estrutura formal veio em 2025**
 
 ### 5.3 Erros numéricos frequentes
 - ❌ `150+ clientes` · ❌ `180+ clientes` — é **`140+`**, ponto.
-- ❌ `R$ 1 bilhão` sem til — é **`~R$ 1 bilhão`**.
+- ❌ `R$ 1 bilhão` sem til — é **`~R$ 1 bilhão`**. Sempre contextualizar como estimativa agregada ao longo de 17+ anos quando houver espaço.
 - ❌ `10 anos` · ❌ `mais de 20 anos` — é **`17+ anos`**.
 
 ---

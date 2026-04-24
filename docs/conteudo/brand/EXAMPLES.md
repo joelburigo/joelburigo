@@ -70,8 +70,8 @@ Acreditem em vocês! Vocês conseguem!
 
 ### ✅ GOOD
 ```
-17 anos vendendo pra MPE brasileira. 140 clientes. ~R$ 1 bilhão
-estruturado em vendas.
+17+ anos vendendo pra MPE brasileira. 140 clientes. ~R$ 1 bilhão
+em vendas estruturadas como estimativa agregada ao longo desse período.
 
 Uma coisa se repete, independente do nicho:
 
@@ -84,15 +84,15 @@ e morre.
 
 Marketing sem vendas é hobby caro.
 
-Os 6Ps das Vendas Escaláveis nasceram disso: ordenar o que ninguém
-ordena. P1 Posicionamento, P2 Público, P3 Produto, P4 Programas,
+A base dos 6Ps das Vendas Escaláveis nasceu disso; em 2025 eu condensei
+e nomeei esse sistema. P1 Posicionamento, P2 Público, P3 Produto, P4 Programas,
 P5 Processos, P6 Pessoas. Nessa ordem.
 
 Inverteu? Quebra.
 ```
 
 **Por que funciona:**
-- Abre com 3 provas empilhadas e exatas (`17 anos`, `140 clientes`, `~R$ 1 bilhão` com til)
+- Abre com 3 provas empilhadas e cuidadosas (`17+ anos`, `140 clientes`, `~R$ 1 bilhão` com til e contexto de estimativa agregada)
 - Insight concreto amarrado ao framework proprietário (P4 nomeado, 6Ps listados em ordem correta)
 - 2 assinaturas canônicas ("Marketing sem vendas é hobby caro" + close duro)
 - Vocabulário proprietário grafado certo: `6Ps` junto, `Vendas Escaláveis` com iniciais maiúsculas
@@ -116,7 +116,7 @@ e desbloqueie seu potencial máximo!
 ### ✅ GOOD
 ```
 Assunto A: Teu marketing vende. Tuas vendas não fecham.
-Assunto B: Se tua empresa depende de ti, tu não tem empresa.
+Assunto B: Se tua empresa depende de ti, tu não tem empresa — tu tem emprego.
 Assunto C: R$ 50k/mês travado há 8 meses? Abre.
 ```
 
@@ -191,7 +191,7 @@ R$ 200k/mês e ainda dependendo de ti pra fechar venda?
 Temos que conversar.
 
 Advisory 1:1 com Joel Burigo. 17+ anos estruturando vendas pra MPE.
-140+ empresas depois, o padrão é claro: se tua empresa depende de tu,
+140+ empresas depois, o padrão é claro: se tua empresa depende de ti,
 tu não tem empresa — tu tem emprego.
 
 Diagnóstico grátis · 10 min →
@@ -303,7 +303,7 @@ Slide 1 (1920×1080, fundo #050505):
   SISTEMA > IMPROVISO
 
   [sub, JetBrains Mono, acid #C6FF00]
-  17 anos estruturando vendas pra MPE.
+  17+ anos estruturando vendas pra MPE.
   140+ clientes depois, o padrão se repete.
 
   [rodapé, mono cinza]
@@ -312,7 +312,7 @@ Slide 1 (1920×1080, fundo #050505):
 
 **Por que funciona:**
 - Headline é assinatura canônica em stroke-text (uso visual correto do Terminal Growth)
-- Sub traz 2 provas empilhadas e exatas (`17 anos`, `140+ clientes`)
+- Sub traz 2 provas empilhadas e exatas (`17+ anos`, `140+ clientes`)
 - Paleta correta (preto `#050505` + acid `#C6FF00`) e tipografia certa (Archivo Black + JetBrains Mono)
 - Rodapé grafa o framework certo (`6Ps` junto, `Vendas Escaláveis` maiúsculo)
 - Zero "bem-vindos", zero emoji, zero preâmbulo
@@ -328,7 +328,7 @@ Passa os olhos na peça e responde:
 - [ ] Tem **dor concreta** (não abstrata, não motivacional)?
 - [ ] Zero palavra da lista proibida (§1.1)?
 - [ ] Zero emoji facial/mão/foguete/fogo (só `★ → ▶ ● ▲ ▼` permitidos)?
-- [ ] Vocabulário proprietário grafado certo (`6Ps` junto, `Vendas Escaláveis` maiúsculo, `~R$ 1 bilhão` com til)?
+- [ ] Vocabulário proprietário grafado certo (`6Ps` junto, `Vendas Escaláveis` maiúsculo, `~R$ 1 bilhão` com til e sem tratar como número auditado)?
 - [ ] "Tu" só na frase-bandeira ou momento de raiz — nunca misturado com "você" no mesmo parágrafo?
 - [ ] CTA claro e específico (tempo, escopo, produto nomeado)?
 - [ ] Se tem número de case, está na tabela §4.2? Se não está, **não existe** — tira ou pergunta pro Joel.

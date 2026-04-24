@@ -19,7 +19,7 @@
 | "post IG com número / estatística / mega-stat" | `templates/ig-feed.html` variante 2 (mega-número) | `copy-bank.md §provas` + `ANTI_DRIFT.md §4` (provas exatas) | 1080×1080 |
 | "post IG antes/depois / transformação" | `templates/ig-feed.html` variante 3 (split) | `copy-bank.md §casos` + `ANTI_DRIFT.md §4` | 1080×1080 |
 | "post IG citação / frase de impacto" | `templates/ig-feed.html` variante 4 (quote) | `copy-bank.md §frases-canônicas` | 1080×1080 |
-| "post IG dos 6 Ps / metodologia" | `preview/card-6ps.html` como base OU `templates/ig-feed.html` + bloco 6P | `partes/01-marca.md §6Ps` | 1080×1080 |
+| "post IG dos 6Ps / metodologia" | `preview/components-6ps.html` como base OU `templates/ig-feed.html` + bloco 6P | `partes/01-marca.md §6Ps` | 1080×1080 |
 | "post IG depoimento / social proof" | `templates/ig-feed.html` (layout depoimento do `ig_posts.html`) | `ANTI_DRIFT.md §4` — usar depoimentos nomeados; nunca inventar cliente | 1080×1080 |
 | "carrossel IG" (sem especificar slides) | `templates/ig-carrossel.html` — perguntar se 5, 7 ou 10 slides; default 7 (capa + 5 conteúdo + CTA) | `copy-bank.md` + `scripts-videos.md` (estruturas de hook) | 1080×1350 |
 | "carrossel completo sobre [tema]" | `templates/ig-carrossel.html` 7 slides: capa / dor / tese / 3 passos (3 slides) / CTA | `copy-bank.md` + `partes/01-marca.md` + `partes/02-oferta.md` | 1080×1350 |
@@ -28,7 +28,7 @@
 | "story IG bastidor / dia a dia" | `templates/ig-story.html` variante 3 (bastidor) | tom coloquial de `partes/01-marca.md §voz`; sem claim métrico | 1080×1920 |
 | "story com enquete / CTA swipe" | `templates/ig-story.html` variante 1 (adaptar CTA) | `copy-bank.md §CTAs` | 1080×1920 |
 | "post LinkedIn reflexão / ensaio curto" | `templates/linkedin.html` (layout reflexão) | `partes/01-marca.md` + `copy-bank.md §ensaios` | 1200×1200 |
-| "post LinkedIn case / resultado cliente" | `templates/linkedin.html` (layout case-slab — ver `preview/card-case-slab.html`) | `ANTI_DRIFT.md §4` provas — só cases nomeados/aprovados | 1200×1200 |
+| "post LinkedIn case / resultado cliente" | `templates/linkedin.html` (layout case-slab — ver `preview/components-case-slab.html`) | `ANTI_DRIFT.md §4` provas — só cases nomeados/aprovados | 1200×1200 |
 | "post LinkedIn anúncio Advisory" | `templates/linkedin.html` (layout CTA) | `partes/02-oferta.md §advisory` + `copy-bank.md §CTAs` | 1200×1200 |
 | "email de nurture / lista fria" | `templates/email.html` (layout texto longo) | `copy-bank.md §nurture` + `scripts-videos.md` (adaptação texto) | 620px |
 | "email de pitch VSS / venda direta" | `templates/email.html` (layout CTA forte) | `partes/02-oferta.md §vss` + `copy-bank.md §objeções` + `§urgência` | 620px |
@@ -36,7 +36,7 @@
 | "slide de apresentação" (sem especificar) | `templates/slide-apresentacao.html` — perguntar qual dos 5 layouts: capa / stat / 6P / case / CTA | dependendo do layout, ver linhas específicas desta tabela | 1920×1080 |
 | "slide capa de apresentação" | `templates/slide-apresentacao.html` layout 1 (capa) | `partes/01-marca.md` título + subtítulo | 1920×1080 |
 | "slide com mega número / KPI" | `templates/slide-apresentacao.html` layout 2 (stat) | `ANTI_DRIFT.md §4` | 1920×1080 |
-| "slide dos 6 Ps" | `templates/slide-apresentacao.html` layout 3 (6P) | `partes/01-marca.md §6Ps` | 1920×1080 |
+| "slide dos 6Ps" | `templates/slide-apresentacao.html` layout 3 (6P) | `partes/01-marca.md §6Ps` | 1920×1080 |
 | "slide de case / cliente X" | `templates/slide-apresentacao.html` layout 4 (case) | `ANTI_DRIFT.md §4` — só cases autorizados | 1920×1080 |
 | "slide CTA / próximo passo" | `templates/slide-apresentacao.html` layout 5 (CTA) | `partes/02-oferta.md` + `copy-bank.md §CTAs` | 1920×1080 |
 | "thumbnail YouTube" | `templates/yt-thumb.html` | `scripts-videos.md` (título do vídeo) + `copy-bank.md §hooks` | 1280×720 |
@@ -68,7 +68,7 @@ Referência canônica full-bleed: `master.html`. Landing institucional: `homepag
 - **Produtos ativos:** apenas VSS (R$ 1.997, DIY perpétuo) e Advisory (1:1). Nunca mencionar Services.
 - **Provas / números / cases:** só os listados em `ANTI_DRIFT.md §4`. Se pedido foge disso → perguntar, não inventar.
 - **Voz:** direta, sem eufemismo, sem palavra motivacional vazia (ver lista de proibidas em `ANTI_DRIFT.md`).
-- **Vocabulário canônico:** "vendas sem segredos", "6 Ps", "método", "previsibilidade", "escalar com saúde" — ver `partes/01-marca.md §voz`.
+- **Vocabulário canônico:** `VSS` / `Vendas Sem Segredos`, `6Ps`, "método", "previsibilidade", "escalar com saúde" — ver `partes/01-marca.md §voz` e grafia exata em `ANTI_DRIFT.md §2`.
 - **Nunca inventar:** nome de cliente, nicho de case, métrica percentual, tempo de resultado, faturamento.
 
 ## Quando usuário pede algo que não está nessa tabela

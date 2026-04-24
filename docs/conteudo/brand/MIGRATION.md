@@ -1,6 +1,6 @@
 # MIGRATION — Producao `src/` → Terminal Growth
 
-> **✅ EXECUTADA EM 2026-04-22** (branch `feat/terminal-growth-migration`). Merge pra `main` + push pendente de aprovação. Commits: `4da2d7ff` (fundação + remoção Services) · `1ae8437b` (blog + robots) · `148c4078` (páginas + slides + LP). Este doc permanece como registro histórico + referência caso migração precise ser repetida.
+> **✅ EXECUTADA EM 2026-04-22** (branch `feat/terminal-growth-migration`). Commits: `4da2d7ff` (fundação + remoção Services) · `1ae8437b` (blog + robots) · `148c4078` (páginas + slides + LP). Este doc permanece como registro histórico + referência caso migração precise ser repetida.
 
 ---
 
@@ -190,7 +190,7 @@ Prioridade comercial — testar visualmente cada uma em dev:
 - [ ] `src/components/home/ProblemSection.astro` — numeros gigantes em fire, body cream
 - [ ] `src/components/home/FrameworkSection.astro` — 6Ps em grid com borda externa 1px cream + divisores 1px hair, sem gap (ver `preview/components-6ps.html`)
 - [ ] `src/components/home/PathwaysSection.astro` — VSS + Advisory como 2 tiers. Advisory destaque: borda acid + gradient bg
-- [ ] `src/components/home/StatsSection.astro` — 17+ / 140+ / R$1BI em `--jb-fs-4xl` fire ou acid
+- [ ] `src/components/home/StatsSection.astro` — 17+ / 140+ / ~R$ 1BI em `--jb-fs-4xl` fire ou acid
 - [ ] `src/components/home/ProofSocialSection.astro` — logos em grid hair
 - [ ] `src/components/home/TestimonialsSection.astro` — depoimento em card ink-2, quote mark acid gigante
 - [ ] `src/components/home/QuemSouSection.astro` — foto b&w alto contraste overlay scanline
@@ -235,9 +235,9 @@ Prioridade comercial — testar visualmente cada uma em dev:
 - [ ] Font-size minimo 16px em `<input>` / `<textarea>` (impede iOS autozoom)
 - [ ] Headings gigantes (`--jb-fs-4xl` 80px+) quebram em mobile — usar `clamp(40px, 10vw, 80px)` ou media queries
 - [ ] Ticker horizontal: verificar overflow-x hidden no wrapper
-- [ ] Grid 6Ps em mobile: 2 colunas em 375px, 3 em 768px, 6 em desktop
+- [ ] Grid 6Ps em mobile: seguir `MOBILE.md` — 1 coluna até `sm`, 2 colunas `md`–`lg`, 3 colunas `lg+`, ou 6×1 em desktop `xl+` quando houver respiro
 - [ ] Menu mobile funciona + tem lock scroll quando aberto
-- [ ] Ver `docs/conteudo/brand/MOBILE.md` se existir (nao confirmado ainda — criar se faltar)
+- [ ] Ver `docs/conteudo/brand/MOBILE.md`
 
 ### Fase 9 — Validacao — ~20min
 
@@ -248,7 +248,7 @@ Prioridade comercial — testar visualmente cada uma em dev:
   - cream `#F5F1E8` sobre ink `#050505` — esperado AAA
   - fire `#FF3B0F` sobre ink — esperado AA normal, AAA large
   - acid `#C6FF00` sobre ink — esperado AAA
-  - ink sobre fire (texto em CTA fire) — esperado AAA
+  - ink sobre fire (texto em CTA fire) — esperado AA normal / AAA large
   - fg-3 `#A3A3A3` sobre ink — ~7.3, AA normal. Se cair abaixo, trocar muted pra `--jb-fg-2`.
 - [ ] Visual regression: comparar `docs/conteudo/brand/master.html` lado a lado com homepage renderizada. Esperamos parecer irmaos, nao gemeos.
 - [ ] Formularios: submeter diagnostico + contato e confirmar que dados chegam (HL iframe intocado; se quebrar, rollback do Form.astro)
@@ -305,7 +305,7 @@ Versao da imagem anterior sempre disponivel: `ghcr.io/joelburigo/joelburigo-site
 - [ ] Criar screenshots de referencia em `docs/conteudo/brand/screenshots/` (opcional mas recomendado):
   - `home-desktop-1440.png`, `home-mobile-375.png`
   - `vss-desktop.png`, `advisory-desktop.png`
-  - cole no `README.md` da brand como prova de paridade com master.html
+  - cole no `README.md` da brand como prova de paridade com `master.html`
 - [ ] Deletar esta MIGRATION.md (ou mover pra `_archive/`) — o doc cumpriu funcao
 
 ---

@@ -1,6 +1,6 @@
 ---
 name: joel-burigo-design
-description: Use this skill to generate well-branded interfaces and assets for Joel Burigo (consultor de vendas escaláveis para MPEs brasileiras, criador do Framework 6Ps das Vendas Escaláveis). Contains essential design guidelines, colors, type, fonts, assets, and UI kit components for prototyping.
+description: Use this skill to generate well-branded interfaces and assets for Joel Burigo (consultor de vendas escaláveis para MPEs brasileiras, criador dos 6Ps das Vendas Escaláveis). Contains essential design guidelines, colors, type, fonts, assets, and UI kit components for prototyping.
 user-invocable: true
 ---
 
@@ -22,12 +22,12 @@ If the user invokes this skill without any other guidance, ask them what they wa
 
 ## Voz
 
-- **Pronome:** "você" predominante (formal coloquial). "Tu" cirúrgico em momentos de autenticidade/raiz sul-catarinense ("se tua empresa depende de tu, tu não tem empresa — tu tem emprego").
+- **Pronome:** "você" predominante (formal coloquial). "Tu" cirúrgico em momentos de autenticidade/raiz sul-catarinense ("se tua empresa depende de ti, tu não tem empresa — tu tem emprego").
 - **Tom:** brasileiro direto, provocador, parceiro. 70% irreverente, 75% acessível, 85% pragmático, 90% próximo.
 - **Arquétipos:** O MENTOR (sábio experiente) + O CONSTRUTOR (executor prático que faz junto).
 - **Assinaturas obrigatórias:** "Sistema > Improviso" · "Bora pra cima" · "Let's grow" · "Na moral" · "Sem enrolação".
-- **Vocabulário proprietário:** **6Ps das Vendas Escaláveis** · **Máquina de Crescimento** (o movimento) · **Ligar a Máquina** (implementar os 6Ps) · **Vendas Escaláveis** (não só vendas — vendas que crescem sem trabalhar 3× mais) · **Da quebrada ao bilhão** (origem/legado).
-- **Provas:** 17+ anos · 140+ clientes · ~R$ 1 bilhão em vendas estruturadas · Framework 6Ps testado.
+- **Vocabulário proprietário:** **6Ps das Vendas Escaláveis** (nome oficial; **6Ps** pode ser usado como abreviação) · **Máquina de Crescimento** (o movimento) · **Ligar a Máquina** (implementar os 6Ps) · **Vendas Escaláveis** (não só vendas — vendas que crescem sem trabalhar 3× mais) · **Da quebrada ao bilhão** (origem/legado).
+- **Provas:** 17+ anos · 140+ clientes · ~R$ 1 bilhão em vendas estruturadas ao longo de 17+ anos (estimativa agregada, não número auditado) · base dos 6Ps aplicada antes do nome formal.
 - **Localização:** Ribeirão da Ilha, Florianópolis/SC. Lat. -27.59 · Lng. -48.55.
 
 ## Produtos (arquitetura 2 caminhos)
@@ -42,7 +42,7 @@ Services (DWY) foi descontinuado.
 ## Iconography & tech overlays
 
 - Unicode `★` `→` `▶` `●` `▲ ▼` `//`. Lucide via CDN pra conjunto amplo. Proibido emoji facial.
-- Tech overlays: "@joelburigo", "EST. 2008", "SYS ONLINE", coordenadas Floripa, clock ao vivo. Dá densidade e autoridade técnica.
+- Tech overlays: "@joelburigo", "EXP. 2004" (experiência pessoal), "GROWTH EST. 2008" (CNPJ/empresa), "SYS ONLINE", coordenadas Floripa, clock ao vivo. Dá densidade e autoridade técnica.
 
 ## File map
 

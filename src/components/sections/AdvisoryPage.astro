@@ -91,61 +91,60 @@ const naoEh = [
   <div class="pointer-events-none absolute -right-40 top-20 h-[600px] w-[600px] rounded-full" style="background: radial-gradient(circle, rgba(198,255,0,0.08), transparent 70%);"></div>
 
   <Container>
-    <!-- Status bar -->
-    <div class="mb-10 flex flex-wrap items-center justify-between gap-3">
-      <div class="flex items-center gap-3">
-        <span class="dot-live"></span>
-        <span class="mono text-acid">ADVISORY · POR CONVITE · 5–10 SLOTS ATIVOS</span>
-      </div>
-      <div class="mono text-fg-muted">@joelburigo · EXP. 2004</div>
-    </div>
-
-    <div class="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
+    <div class="grid items-center gap-[clamp(2rem,5vw,4rem)] lg:grid-cols-[1.2fr_0.8fr] lg:gap-x-[clamp(3rem,6vw,5rem)]">
       <!-- Hero copy -->
-      <div>
-        <div class="kicker mb-5">// ADVISORY · 1:1 COM JOEL · EXCLUSIVO</div>
-        <h1 class="mb-6 font-display text-cream" style="font-size: clamp(2.25rem, 6.5vw, 5rem); line-height: 0.9; letter-spacing: -0.045em; text-transform: uppercase;">
-          Se tua empresa faz <span class="text-acid">R$ 200k/mês</span> e ainda depende de ti —
-          <span class="stroke-text">tu não tem empresa.</span> Tu tem <span class="text-fire">emprego</span>.
+      <div class="flex flex-col gap-[clamp(1.25rem,2.5vw,2rem)]">
+        <div class="kicker">// ADVISORY · 1:1 COM JOEL · EXCLUSIVO</div>
+        <h1 class="font-display text-cream" style="font-size: clamp(2.25rem, 6.5vw, 5rem); line-height: 0.9; letter-spacing: -0.045em; text-transform: uppercase; margin: 0;">
+          Se sua empresa fatura mais de <span class="text-acid">R$ 200k/mês</span> e ainda depende de você —
+          <span class="stroke-text">ela não é empresa.</span> É <span class="text-fire">emprego</span>.
         </h1>
-        <p class="mb-8 font-sans text-cream/85" style="font-size: clamp(1.05rem, 2vw, 1.25rem); line-height: 1.5;">
+        <p class="font-sans text-cream/85" style="font-size: clamp(1.05rem, 2vw, 1.25rem); line-height: 1.5; max-width: 42ch; margin: 0;">
           Advisory é acesso direto à minha cabeça pra momentos críticos ou parceria estratégica de longo prazo. <strong class="text-cream">17+ anos</strong>, <strong class="text-cream">140+ empresas estruturadas</strong>, <strong class="text-cream">~R$ 1 bilhão</strong> em vendas estruturadas. Sem enrolação, sem PowerPoint de 200 slides, sem execução terceirizada. Eu penso junto. Você decide. Você executa.
         </p>
 
         <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
-          <a href="mailto:joel@joelburigo.com.br?subject=Solicitação%20Advisory" class="btn-primary">
+          <a href="mailto:joel@joelburigo.com.br?subject=Solicitação%20Advisory" class="btn-primary" style="min-height: 48px;">
             Solicitar convite →
           </a>
           <span class="mono text-fg-muted">★ resposta em 48h</span>
         </div>
       </div>
 
-      <!-- Card critérios -->
-      <aside class="border border-white/10 bg-ink-2 p-8">
-        <div class="kicker mb-4" style="color: var(--jb-fire);">// critérios de seleção</div>
-        <ul class="mb-6 space-y-3">
-          <li class="flex items-start gap-3 font-sans text-cream/85" style="font-size: 0.95rem;">
-            <span class="text-acid">▶</span>
-            <span>Momento crítico real (expansão, pivot, crise, exit)</span>
-          </li>
-          <li class="flex items-start gap-3 font-sans text-cream/85" style="font-size: 0.95rem;">
-            <span class="text-acid">▶</span>
-            <span>Faturamento R$ 200k+/mês</span>
-          </li>
-          <li class="flex items-start gap-3 font-sans text-cream/85" style="font-size: 0.95rem;">
-            <span class="text-acid">▶</span>
-            <span>CEO/Founder comprometido com execução</span>
-          </li>
-          <li class="flex items-start gap-3 font-sans text-cream/85" style="font-size: 0.95rem;">
-            <span class="text-acid">▶</span>
-            <span>Fit com experiência e agenda disponível</span>
-          </li>
-        </ul>
-        <div class="border-t border-white/10 pt-4">
-          <div class="mono mb-1 text-fg-muted">// acesso</div>
-          <p class="font-sans text-cream/80" style="font-size: 0.9rem; line-height: 1.5;">
-            Convite direto, indicação de cliente atual ou solicitação via e-mail (sujeito a avaliação). Não divulgado publicamente.
-          </p>
+      <!-- Terminal critérios -->
+      <aside class="border border-white/10 bg-ink-2" style="box-shadow: var(--shadow-terminal);">
+        <div class="flex items-center gap-2 border-b border-white/10" style="padding: 10px 14px;">
+          <span class="inline-block rounded-full bg-fire" style="width: 11px; height: 11px;"></span>
+          <span class="inline-block rounded-full" style="width: 11px; height: 11px; background: #FFB020;"></span>
+          <span class="inline-block rounded-full bg-acid" style="width: 11px; height: 11px;"></span>
+          <span class="mono ml-auto text-fg-muted" style="font-size: 11px; letter-spacing: 0.12em; text-transform: lowercase;">advisory_filter — criteria</span>
+        </div>
+        <div class="p-8">
+          <div class="kicker mb-4" style="color: var(--jb-fire);">// critérios de seleção</div>
+          <ul class="mb-6 space-y-3">
+            <li class="flex items-start gap-3 font-sans text-cream/85" style="font-size: 0.95rem;">
+              <span class="text-acid">▶</span>
+              <span>Momento crítico real (expansão, pivot, crise, exit)</span>
+            </li>
+            <li class="flex items-start gap-3 font-sans text-cream/85" style="font-size: 0.95rem;">
+              <span class="text-acid">▶</span>
+              <span>Faturamento R$ 200k+/mês</span>
+            </li>
+            <li class="flex items-start gap-3 font-sans text-cream/85" style="font-size: 0.95rem;">
+              <span class="text-acid">▶</span>
+              <span>CEO/Founder comprometido com execução</span>
+            </li>
+            <li class="flex items-start gap-3 font-sans text-cream/85" style="font-size: 0.95rem;">
+              <span class="text-acid">▶</span>
+              <span>Fit com experiência e agenda disponível</span>
+            </li>
+          </ul>
+          <div class="border-t border-white/10 pt-4">
+            <div class="mono mb-1 text-fg-muted">// acesso</div>
+            <p class="font-sans text-cream/80" style="font-size: 0.9rem; line-height: 1.5;">
+              Convite direto, indicação de cliente atual ou solicitação via e-mail (sujeito a avaliação). Não divulgado publicamente.
+            </p>
+          </div>
         </div>
       </aside>
     </div>

@@ -52,53 +52,31 @@ const naoEPara = [
   <div class="grid-overlay"></div>
 
   <Container>
-    <!-- Status bar -->
-    <div class="mb-10 flex flex-wrap items-center justify-between gap-3">
-      <div class="flex items-center gap-3">
-        <span class="dot-live"></span>
-        <span class="mono text-acid">VSS · VENDAS SEM SEGREDOS · PERPÉTUO · SEMPRE ABERTO</span>
-      </div>
-      <div class="mono text-fg-muted">@joelburigo · FLORIANÓPOLIS/SC</div>
-    </div>
-
-    <div class="grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:gap-16">
+    <div class="grid items-center gap-[clamp(2rem,5vw,4rem)] lg:grid-cols-[1.3fr_1fr] lg:gap-x-[clamp(3rem,6vw,5rem)]">
       <!-- Copy -->
-      <div>
-        <div class="kicker mb-5">// PRODUTO PRINCIPAL · DIY · R$ 1.997</div>
-        <h1 class="mb-6 font-display text-cream" style="font-size: clamp(2.25rem, 6.5vw, 5rem); line-height: 0.9; letter-spacing: -0.045em; text-transform: uppercase;">
+      <div class="flex flex-col gap-[clamp(1.25rem,2.5vw,2rem)]">
+        <div class="kicker">// PRODUTO PRINCIPAL · DIY · R$ 1.997</div>
+        <h1 class="font-display text-cream" style="font-size: clamp(2.25rem, 6.5vw, 5rem); line-height: 0.9; letter-spacing: -0.045em; text-transform: uppercase; margin: 0;">
           De vendas <span class="text-fire">aleatórias</span> para vendas <span class="text-acid">previsíveis.</span>
           <br /><span class="stroke-text">Em 90 dias</span>.
         </h1>
-        <p class="mb-8 font-sans text-cream/85" style="font-size: clamp(1.05rem, 2vw, 1.25rem); line-height: 1.5;">
+        <p class="font-sans text-cream/85" style="font-size: clamp(1.05rem, 2vw, 1.25rem); line-height: 1.5; max-width: 40ch; margin: 0;">
           VSS é o sistema implementável que estrutura os <span class="text-acid">6Ps das Vendas Escaláveis</span> no teu negócio. Framework formalizado em 2025 a partir de uma base aplicada em <strong class="text-cream">140+ empresas</strong> e <strong class="text-cream">20+ nichos</strong>. Não há fórmula mágica. Há método. E você vai dominar cada etapa — com ou sem budget de tráfego.
         </p>
 
-        <!-- Preço -->
-        <div class="mb-8 border border-acid bg-acid-soft p-6">
-          <div class="flex flex-wrap items-baseline gap-x-4 gap-y-2">
-            <span class="font-display text-acid" style="font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1; letter-spacing: -0.04em;">
-              R$ 1.997
-            </span>
-            <span class="mono text-cream/80">À VISTA · ou 12× R$ 166,42</span>
-          </div>
-          <p class="mt-3 font-sans text-cream/75" style="font-size: 0.875rem;">
-            Acesso vitalício ao playbook · Growth CRM 12 meses · 48 mentorias ao vivo (rolling 12m) · Comunidade · Templates. Stack empilhada: <strong class="text-cream">R$ 17.287</strong>.
-          </p>
-        </div>
-
         <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
-          <a href="/lp/vss" class="btn-primary">Começar agora →</a>
-          <a href="/diagnostico" class="btn-secondary">Diagnóstico 6Ps grátis</a>
+          <a href="/lp/vss" class="btn-primary" style="min-height: 48px;">Começar agora →</a>
+          <a href="/diagnostico" class="btn-secondary" style="min-height: 48px;">Diagnóstico 6Ps grátis</a>
         </div>
       </div>
 
       <!-- Terminal window -->
       <div class="border border-white/10 bg-ink-2" style="box-shadow: var(--shadow-terminal);">
-        <div class="flex items-center gap-2 border-b border-white/10 px-4 py-3">
-          <span class="inline-block h-3 w-3 bg-fire"></span>
-          <span class="inline-block h-3 w-3" style="background: #FFB020;"></span>
-          <span class="inline-block h-3 w-3 bg-acid"></span>
-          <span class="mono ml-3 text-fg-muted">&gt; vss_diag.run --system=6ps</span>
+        <div class="flex items-center gap-2 border-b border-white/10" style="padding: 10px 14px;">
+          <span class="inline-block rounded-full bg-fire" style="width: 11px; height: 11px;"></span>
+          <span class="inline-block rounded-full" style="width: 11px; height: 11px; background: #FFB020;"></span>
+          <span class="inline-block rounded-full bg-acid" style="width: 11px; height: 11px;"></span>
+          <span class="mono ml-auto text-fg-muted" style="font-size: 11px; letter-spacing: 0.12em; text-transform: lowercase;">vss_diag.run — system=6ps</span>
         </div>
         <div class="p-5" style="font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.7;">
           <div class="text-fg-muted">[00:00]</div>

@@ -29,13 +29,13 @@ tags: [marca, branding, história, autoridade, identidade, manifesto, tom-voz, v
 
 ## **[01.1] QUEM É JOEL BURIGO**
 
-Joel Burigo é o especialista brasileiro em vendas escaláveis para micro e pequenas empresas, criador do Framework dos 6Ps das Vendas Escaláveis - metodologia proprietária que integra Marketing + Vendas + Growth em sistema único e replicável.
+Joel Burigo é o especialista brasileiro em vendas escaláveis para micro e pequenas empresas, criador dos 6Ps das Vendas Escaláveis - método proprietário formalizado em 2025 a partir de 17+ anos integrando Marketing + Vendas + Growth em sistema único e replicável.
 
 **Credenciais:**
 
 * 17+ anos de experiência em marketing e vendas
 * 140+ clientes atendidos diretamente
-* ~R$ 1 bilhão em vendas estimadas ao longo de 17 anos
+* ~R$ 1 bilhão em vendas estruturadas como estimativa agregada ao longo de 17+ anos
 * Especialista reconhecido em transformar vendas aleatórias em vendas previsíveis
 
 **Origem:**
@@ -110,7 +110,7 @@ Democratizar vendas escaláveis para milhares de micro e pequenas empresas brasi
 
 **Diferencial único:**
 
-Joel não é teórico acadêmico nem consultor de terno. É executor que quebrou, reconstruiu, e sistematizou o que aprendeu batendo cabeça por 17 anos em metodologia replicável (os 6Ps).
+Joel não é teórico acadêmico nem consultor de terno. É executor que quebrou, reconstruiu, e em 2025 sistematizou o que aprendeu batendo cabeça por 17+ anos em metodologia replicável: os 6Ps.
 
 **Target primário:**
 
@@ -126,7 +126,7 @@ Micro e pequenas empresas que faturam R$ 10k-300k/mês e querem transformar vend
 **O que Joel É:**
 
 * ✅ Mentor executor (ensina + implementa junto)
-* ✅ Criador de metodologia proprietária (6Ps)
+* ✅ Criador de metodologia proprietária (6Ps formalizados em 2025)
 * ✅ Parceiro de transformação (fica até dar certo)
 * ✅ Autoridade prática (fala do que viveu)
 
@@ -134,7 +134,7 @@ Micro e pequenas empresas que faturam R$ 10k-300k/mês e querem transformar vend
 
 * 17+ anos de experiência
 * 140+ clientes atendidos pessoalmente
-* ~R$ 1 bilhão em vendas estimadas ao longo de 17 anos
+* ~R$ 1 bilhão em vendas estruturadas como estimativa agregada ao longo de 17+ anos
 * Case emblemático: ESF (Encontre Sua Franquia) - holding que com participação de Joel cresceu de R$ 160 mil para R$ 1 MILHÃO de faturamento mensal em 2 anos (2018-2020)
 
 **Cicatrizes que viraram sabedoria:**
@@ -532,7 +532,7 @@ Cada elemento que eu via em consultorias - posicionamento, público, produto, pr
 
 Não inventei nada disso da noite pro dia. Foi condensação de 13 anos errando, acertando, testando, ajustando. Mas naquele dia, pela primeira vez, ficou **cristalino** o conceito.
 
-Fechei o livro. Respirei fundo. E soube que tinha acabado de ter o insight que ia mudar não só minha carreira, mas a vida de centenas de empresas que eu ainda nem conhecia.
+Fechei o livro. Respirei fundo. E soube que tinha acabado de ter o insight que ia mudar não só minha carreira, mas a vida de empresas que eu ainda nem conhecia.
 
 ---
 
@@ -703,7 +703,7 @@ Mas **o quê**?
 
 2023 foi um ano de reflexão profunda.
 
-Eu tinha 17 anos de experiência. Tinha atendido mais de 140 clientes. Tinha participado da geração de aproximadamente R$ 1 bilhão em vendas ao longo desses anos. Tinha desenvolvido uma metodologia proprietária que funcionava.
+Eu tinha 17 anos de experiência. Tinha atendido mais de 140 clientes. Tinha participado da estruturação de ~R$ 1 bilhão em vendas como estimativa agregada ao longo desses anos. Tinha desenvolvido uma metodologia proprietária que funcionava.
 
 E aqui vai uma verdade que precisa ser dita:
 
@@ -801,15 +801,17 @@ Olhei pro Davi dormindo. Olhei pra Natalia. E soube exatamente o que eu precisav
 
 ---
 
-## Capítulo 17: O Nascimento do VSS
+## Capítulo 17: O Nascimento dos 6Ps e do VSS
 
-Dezembro de 2024. Janeiro de 2026.
+2025. Depois, janeiro de 2026.
 
-Nasceu o conceito final do **VSS - Vendas Sem Segredos**.
+Em 2025, eu dei nome e estrutura formal ao que já aplicava há anos sem chamar de 6Ps.
+
+Em 2026, comecei a lançar tudo de forma pública: os **6Ps das Vendas Escaláveis**, o **VSS - Vendas Sem Segredos** e a reestruturação da marca em torno de **Joel Burigo**.
 
 Não foi ideia repentina. Foi 17 anos de condensação. Foi transformar cada erro, cada acerto, cada case, cada falha, em um sistema replicável e acessível.
 
-Eu estava olhando pra trás, pros 17 anos de jornada. Tinha estruturado vendas pra 140+ empresas. Tinha gerado aproximadamente R$ 1 bilhão em vendas ao longo desses anos.
+Eu estava olhando pra trás, pros 17 anos de jornada. Tinha estruturado vendas pra 140+ empresas. Tinha uma estimativa agregada de ~R$ 1 bilhão em vendas estruturadas ao longo desses anos.
 
 Mas esse conhecimento estava preso. Estava em consultorias caras. Estava inacessível pra maioria.
 
@@ -817,7 +819,7 @@ E foi aí que percebi: eu não precisava inventar nada novo. Eu precisava estrut
 
 **Condensei tudo nos 6Ps das Vendas Escaláveis.**
 
-Cada P nasceu de uma lição real. Dolorosa ou vitoriosa, mas real:
+A base de cada P nasceu de uma lição real. Dolorosa ou vitoriosa, mas real:
 
 **P1 - Posicionamento:** Aquela sociedade que quebrou em março de 2012 me ensinou que sem clareza você vira commodity e atrai sócio errado.
 
@@ -831,7 +833,7 @@ Cada P nasceu de uma lição real. Dolorosa ou vitoriosa, mas real:
 
 **P6 - Pessoas:** O fundo do poço no barraco em 2012 me ensinou que empresa que depende 100% do fundador não é empresa, é emprego disfarçado.
 
-Cada P nasceu de erro real. De acerto real. De sangue, suor e lágrima. Não era teoria de livro. Era metodologia de rua construída ao longo de 17 anos e finalmente estruturada em framework formal.
+Cada P veio de erro real. De acerto real. De sangue, suor e lágrima. Não era teoria de livro. Era metodologia de rua aplicada ao longo de 17+ anos e finalmente nomeada e estruturada como framework formal em 2025.
 
 **Não é curso. Não é consultoria tradicional. Não é agência.**
 
@@ -913,7 +915,7 @@ Esses mudam o jogo.
 
 Não só pra eles. Mas pra todos que vêm depois.
 
-E eu tô aqui, 17 anos depois de ter começado como freelancer, 13 anos depois do barraco sem geladeira, com 140+ clientes atendidos e aproximadamente R$ 1 bilhão em vendas estruturadas...
+E eu tô aqui, 17 anos depois de ter começado como freelancer, 13 anos depois do barraco sem geladeira, com 140+ clientes atendidos e ~R$ 1 bilhão em vendas estruturadas como estimativa agregada...
 
 Pra te dizer uma coisa:
 
@@ -938,7 +940,7 @@ Let's grow, CARALHO!
 | **1987** | Nascimento em Palhoça/SC, bairro Jardim Eldorado (quebrada) |
 | **1987-1994** | Primeiros 7 anos morando com pais na casa da avó (Ponte do Imaruim) |
 | **1994-2004** | Mudança para casa própria (madeira) no Jardim Eldorado |
-| **2004** | Início como freelancer (17 anos): sites, anúncios, e-mail marketing |
+| **2004** | Início como freelancer/experiência profissional: sites, anúncios, e-mail marketing |
 
 #### **Fase 2: Aprendizado (2004-2012)**
 
@@ -1005,7 +1007,7 @@ Let's grow, CARALHO!
 | **15 Set 2021** | **Mudança para Florianópolis** (Jardim Atlântico) com Natalia |
 | **20 Nov 2021** | **Casamento oficial** |
 
-#### **Fase 7: Foco e Nascimento do VSS (2023-2026)**
+#### **Fase 7: Foco, 6Ps e Nascimento do VSS (2023-2026)**
 
 | **Data** | **Evento** |
 |----------|-----------|
@@ -1014,17 +1016,17 @@ Let's grow, CARALHO!
 | **Dez 2023** | Natalia teve uma perda |
 | **Mar 2024** | Descoberta da gravidez |
 | **Out 10, 2024** | **Nasceu Davi** (filho) |
-| **Dez 2024 - Jan 2026** | **Nascimento do conceito VSS (Vendas Sem Segredos)** |
-| **2026** | Mudança oficial para **Joel Burigo** (nova identidade comercial/branding pessoal) |
+| **2025** | Nome e estrutura formal dos **6Ps das Vendas Escaláveis** (condensação do que Joel já aplicava na prática) |
+| **Jan 2026** | **VSS (Vendas Sem Segredos)** entra em fase de lançamento/estruturação pública |
+| **2026** | Reestruturação oficial para **Joel Burigo** (nova identidade comercial/branding pessoal; "Joel Martins" fica como registro histórico do recomeço) |
 | **2026** | Mudança para sul da ilha (Ribeirão da Ilha), perto da praia |
-| **2026** | Estruturação dos **6Ps das Vendas Escaláveis** como metodologia final |
-| **2026** | Lançamento do **VSS** (programa 6Ps em 90 dias) |
+| **2026** | Lançamento do **VSS** (programa que implementa os 6Ps em 90 dias) |
 
 ---
 
 ### **CICATRIZES QUE VIRARAM METODOLOGIA**
 
-Cada pilar dos 6Ps nasceu de uma lição real, dolorosa ou vitoriosa:
+A base de cada pilar dos 6Ps nasceu de uma lição real, dolorosa ou vitoriosa:
 
 **P1 - POSICIONAMENTO** (Por Quê)  
 → **Lição:** Sociedade que quebrou em março de 2012  
@@ -1090,9 +1092,9 @@ Em 2014 virou o jogo. Em 14 de dezembro de 2016 conheci Natalia no Tinder, volte
 
 Entre 2016-2020, atendi empresas grandes: ESF - Encontre Sua Franquia (de R$ 160k → R$ 1mi/mês em 2 anos, +433%), Port Informática (+250% e-commerce), Lojas Rede (+65%). Mas o que mais me move é crescer empresas pequenas de R$ 50k pra R$ 300k — isso muda vidas de verdade.
 
-2018: cobertura duplex no Castelo/BH, Thor nosso golden, noivado na Praia do Sonho. 2019: Growth Master e OnSell (~R$ 250k perdidos, standby). 2020: pandemia, downsizing. 2021: Netlinks, mudança pra Floripa, casamento. Dezembro de 2023: tivemos uma perda. Março 2024: descobrimos nova gravidez. Outubro 2024: nasceu Davi. 2026: nasceu o VSS.
+2018: cobertura duplex no Castelo/BH, Thor nosso golden, noivado na Praia do Sonho. 2019: Growth Master e OnSell (~R$ 250k perdidos, standby). 2020: pandemia, downsizing. 2021: Netlinks, mudança pra Floripa, casamento. Dezembro de 2023: tivemos uma perda. Março 2024: descobrimos nova gravidez. Outubro 2024: nasceu Davi. 2025: nomeei e condensei os 6Ps. 2026: lançamento do VSS e rebrand Joel Burigo.
 
-Condensei 17+ anos nos **6Ps das Vendas Escaláveis**: Posicionamento, Público, Produto, Programas, Processos, Pessoas. Cada P nasceu de erro ou acerto real.
+Em 2025, condensei 17+ anos nos **6Ps das Vendas Escaláveis**: Posicionamento, Público, Produto, Programas, Processos, Pessoas. Cada P veio de erro ou acerto real.
 
 Criei o **VSS (Vendas Sem Segredos)** — programa que implementa os 6Ps em 90 dias. Escalável, acessível, cria autonomia (não dependência).
 
@@ -1116,9 +1118,9 @@ Primeiro cliente pagou R$ 500. Proposta simples: "Se não gostar, te dou de gra�
 
 Em 2014 virou o jogo. Em 14 de dezembro de 2016 conheci Natalia, voltei pra Floripa após quase 5 anos. Entre 2016-2020 atendi grandes cases: ESF (+433%, R$ 160k → R$ 1mi/mês), Port Informática (+250%), Lojas Rede (+65%). Mas o que mais me move é crescer empresas pequenas de R$ 50k pra R$ 300k — isso muda vidas de verdade.
 
-2018: cobertura duplex, Thor, noivado. 2019: Growth Master e OnSell (~R$ 250k perdidos). 2020: pandemia, downsizing. 2021: Netlinks, Floripa, casamento. Dezembro 2023: tivemos uma perda. Outubro 2024: nasceu Davi. 2026: nasceu o VSS.
+2018: cobertura duplex, Thor, noivado. 2019: Growth Master e OnSell (~R$ 250k perdidos). 2020: pandemia, downsizing. 2021: Netlinks, Floripa, casamento. Dezembro 2023: tivemos uma perda. Outubro 2024: nasceu Davi. 2025: nomeei e condensei os 6Ps. 2026: lançamento do VSS e rebrand Joel Burigo.
 
-Condensei 17+ anos nos **6Ps das Vendas Escaláveis**: Posicionamento, Público, Produto, Programas, Processos, Pessoas. Cada P de erro ou acerto real.
+Em 2025, condensei 17+ anos nos **6Ps das Vendas Escaláveis**: Posicionamento, Público, Produto, Programas, Processos, Pessoas. Cada P veio de erro ou acerto real.
 
 Criei o **VSS (Vendas Sem Segredos)** — 6Ps em 90 dias. Escalável, acessível, autonomia.
 
@@ -1136,9 +1138,9 @@ Joel Burigo. Nasci na quebrada de Palhoça/SC em 1987. Pai marceneiro, mãe vend
 
 Recomecei batendo 100+ portas em BH. Primeiro cliente pagou R$ 500. Em 2014 virou o jogo. Em 14/12/2016 conheci Natalia, voltei pra Floripa. Entre 2016-2020: grandes cases (ESF: +433%, R$ 160k→R$ 1mi/mês). Mas o que mais me move é crescer pequenas de R$ 50k pra R$ 300k — muda vidas.
 
-Outubro 2024: nasceu Davi. 2026: nasceu o VSS.
+Outubro 2024: nasceu Davi. 2025: nasceram o nome e a estrutura formal dos 6Ps. 2026: lançamento do VSS e rebrand Joel Burigo.
 
-Condensei 17+ anos, 140+ clientes e ~R$ 1 bilhão em vendas nos **6Ps das Vendas Escaláveis**. Criei o **VSS (Vendas Sem Segredos)** — 6Ps implementados em 90 dias.
+Em 2025, condensei 17+ anos, 140+ clientes e uma estimativa agregada de ~R$ 1 bilhão em vendas nos **6Ps das Vendas Escaláveis**. Em 2026, estruturei o **VSS (Vendas Sem Segredos)** — 6Ps implementados em 90 dias.
 
 **Sistema > Improviso. Let's grow.**
 
@@ -1146,7 +1148,7 @@ Condensei 17+ anos, 140+ clientes e ~R$ 1 bilhão em vendas nos **6Ps das Vendas
 
 ### **[01.5.4] Versão 50 Palavras** (Elevator pitch para redes sociais)
 
-Joel Burigo. Quebrei aos 25, morei em barraco sem geladeira, recomecei do zero. 17+ anos depois: 140+ clientes, ~R$ 1 bilhão em vendas estruturadas. Criei os 6Ps das Vendas Escaláveis e o VSS pra ajudar MPEs a transformar vendas aleatórias em previsíveis. Sistema > Improviso. Let's grow.
+Joel Burigo. Quebrei aos 25, morei em barraco sem geladeira, recomecei do zero. 17+ anos depois: 140+ clientes, ~R$ 1 bilhão em vendas estruturadas como estimativa agregada. Condensei essa prática nos 6Ps das Vendas Escaláveis e no VSS pra ajudar MPEs a transformar vendas aleatórias em previsíveis. Sistema > Improviso. Let's grow.
 
 ---
 
@@ -1201,7 +1203,7 @@ Cliente que você constrói junto vira evangelizador. Cliente que você vende e 
 ✅ Adaptação à realidade - sistema funciona com diferentes recursos
 ✅ Foco em resultado - métricas reais, não vaidade
 ✅ Linguagem direta - fala como parceiro, não como palestrante
-✅ Metodologia proprietária - 6Ps testados em 140+ clientes
+✅ Metodologia proprietária - base dos 6Ps aplicada em 140+ clientes
 
 ---
 
@@ -1324,7 +1326,7 @@ Síntese: Joel é o mentor que não só ensina o caminho, mas pega na mão e con
 
 **Termos Core da Marca Joel Burigo:**
 
-* **6Ps das Vendas Escaláveis** - A metodologia proprietária. Sempre com inicial maiúscula.
+* **6Ps das Vendas Escaláveis** - A metodologia proprietária. Nome completo oficial; **6Ps** pode ser usado como abreviação quando o contexto estiver claro. Formalizada em 2025 a partir da prática acumulada.
 * **Vendas Escaláveis** - Não é só "vendas". É vendas que crescem sem você precisar trabalhar 3x mais.
 * **Máquina de Crescimento** - O conceito/movimento. Sistema integrado onde marketing alimenta vendas.
 * **Sistema vs. Improviso** - A dicotomia central. Mantra que Joel repete sempre.

@@ -135,7 +135,7 @@ Micro e pequenas empresas que faturam R$ 10k-300k/mês e querem transformar vend
 * 17+ anos de experiência
 * 140+ clientes atendidos pessoalmente
 * ~R$ 1 bilhão em vendas estruturadas ao longo de 17+ anos
-* Case emblemático: ESF (Encontre Sua Franquia) - holding que com participação de Joel cresceu de R$ 160 mil para R$ 1 MILHÃO de faturamento mensal em 2 anos (2018-2020)
+* Case emblemático: holding de franquias que com participação de Joel cresceu de R$ 160 mil para R$ 1 MILHÃO de faturamento mensal em 2 anos (2018-2020)
 
 **Cicatrizes que viraram sabedoria:**
 
@@ -974,7 +974,7 @@ Let's grow, CARALHO!
 | **2014** | **VIROU O JOGO:** clientes maiores, mais estrutura, mais poder de compra |
 | **2015-2016** | Consultorias para pequenas e médias empresas |
 | **2016** | Trabalhando para agência (quase sócio) + consultorias paralelas |
-| **2016** | Morava no bairro Prado (BH), período Port Informática (cliente R$ 22mi/mês) |
+| **2016** | Morava no bairro Prado (BH), período de consultoria em e-commerce B2B (cliente R$ 22mi/mês) |
 | **14 Dez 2016** | **Conheceu Natalia** no Tinder (mineira de BH) |
 | **22 Dez 2016** | **Primeira volta a Florianópolis** após quase 5 anos (reformulado) |
 | **22 Jan 2017** | **Início do namoro oficial com Natalia** |
@@ -985,11 +985,11 @@ Let's grow, CARALHO!
 |----------|-----------|
 | **7 Jul 2017** | Consultoria para empresa de R$ 22 milhões/mês |
 | **27 Jul 2017** | Leu livros que integraram marketing + vendas + neuromarketing (virada intelectual) |
-| **Mai 2018** | Início trabalho com ESF (Encontre Sua Franquia) |
+| **Mai 2018** | Início trabalho com holding de franquias |
 | **2018** | Mudança para cobertura duplex no Castelo (BH) com Natalia |
 | **11 Set 2018** | Chegada de **Thor** (primeiro cachorro) |
 | **31 Dez 2018** | **Noivado** na Praia do Sonho (SC) |
-| **Mai 2018 - 2020** | **Case ESF:** R$ 160k/mês → R$ 1mi/mês (+433% faturamento, +833% leads, -428% CPL) |
+| **Mai 2018 - 2020** | **Case holding de franquias:** R$ 160k/mês → R$ 1mi/mês (+433% faturamento, +833% leads, -428% CPL) |
 | **Abr 2019** | Ideia da **Growth Master** (agência → aceleradora) |
 | **Out 2019** | Início **OnSell** (dropshipping, tímido e paralelo) |
 | **2019-2020** | OnSell: teve usuários, perdeu ~R$ 250 mil, entrou em standby |
@@ -1041,7 +1041,7 @@ A base de cada pilar dos 6Ps nasceu de uma lição real, dolorosa ou vitoriosa:
 → **Aprendizado:** Oferta irrecusável > promessa vazia.
 
 **P4 - PROGRAMAS** (Como Vender)  
-→ **Lição:** Grandes cases entre 2016-2020 (ESF, Port, Lojas Rede)  
+→ **Lição:** Grandes cases entre 2016-2020 (holding de franquias, e-commerce B2B, rede de varejo)  
 → **Aprendizado:** Vender sem sistema é roleta-russa. CRM + funis + automação = previsibilidade.
 
 **P5 - PROCESSOS** (Como Operar)  
@@ -1090,7 +1090,7 @@ Primeiro cliente pagou R$ 500 por um site. Fiz proposta simples: "Se não gostar
 
 Em 2014 virou o jogo. Em 14 de dezembro de 2016 conheci Natalia no Tinder, voltei pra Floripa depois de quase 5 anos e começamos a namorar em janeiro de 2017.
 
-Entre 2016-2020, atendi empresas grandes: ESF - Encontre Sua Franquia (de R$ 160k → R$ 1mi/mês em 2 anos, +433%), Port Informática (+250% e-commerce), Lojas Rede (+65%). Mas o que mais me move é crescer empresas pequenas de R$ 50k pra R$ 300k — isso muda vidas de verdade.
+Entre 2016-2020, atendi empresas grandes: holding de franquias (de R$ 160k → R$ 1mi/mês em 2 anos, +433%), e-commerce B2B (+250%), rede de varejo (+65%). Mas o que mais me move é crescer empresas pequenas de R$ 50k pra R$ 300k — isso muda vidas de verdade.
 
 2018: cobertura duplex no Castelo/BH, Thor nosso golden, noivado na Praia do Sonho. 2019: Growth Master e OnSell (~R$ 250k perdidos, standby). 2020: pandemia, downsizing. 2021: Netlinks, mudança pra Floripa, casamento. Dezembro de 2023: tivemos uma perda. Março 2024: descobrimos nova gravidez. Outubro 2024: nasceu Davi. 2025: nomeei e condensei os 6Ps. 2026: lançamento do VSS e rebrand Joel Burigo.
 
@@ -1116,7 +1116,7 @@ De maio a novembro de 2012 morei num barraco (R$ 300/mês) sem geladeira no bair
 
 Primeiro cliente pagou R$ 500. Proposta simples: "Se não gostar, te dou de graça." Gostou. Pagou. Indicou. Reconstrução começou.
 
-Em 2014 virou o jogo. Em 14 de dezembro de 2016 conheci Natalia, voltei pra Floripa após quase 5 anos. Entre 2016-2020 atendi grandes cases: ESF (+433%, R$ 160k → R$ 1mi/mês), Port Informática (+250%), Lojas Rede (+65%). Mas o que mais me move é crescer empresas pequenas de R$ 50k pra R$ 300k — isso muda vidas de verdade.
+Em 2014 virou o jogo. Em 14 de dezembro de 2016 conheci Natalia, voltei pra Floripa após quase 5 anos. Entre 2016-2020 atendi grandes cases: holding de franquias (+433%, R$ 160k → R$ 1mi/mês), e-commerce B2B (+250%), rede de varejo (+65%). Mas o que mais me move é crescer empresas pequenas de R$ 50k pra R$ 300k — isso muda vidas de verdade.
 
 2018: cobertura duplex, Thor, noivado. 2019: Growth Master e OnSell (~R$ 250k perdidos). 2020: pandemia, downsizing. 2021: Netlinks, Floripa, casamento. Dezembro 2023: tivemos uma perda. Outubro 2024: nasceu Davi. 2025: nomeei e condensei os 6Ps. 2026: lançamento do VSS e rebrand Joel Burigo.
 
@@ -1136,7 +1136,7 @@ Da quebrada ao bilhão, do bilhão ao legado.
 
 Joel Burigo. Nasci na quebrada de Palhoça/SC em 1987. Pai marceneiro, mãe vendedora. Freelancer desde 2004. Quebrei aos 25 anos (março 2012) com calote de sócio. Morei 6 meses num barraco sem geladeira em Ribeirão das Neves/MG, ganhando R$ 1.400/mês nos Correios.
 
-Recomecei batendo 100+ portas em BH. Primeiro cliente pagou R$ 500. Em 2014 virou o jogo. Em 14/12/2016 conheci Natalia, voltei pra Floripa. Entre 2016-2020: grandes cases (ESF: +433%, R$ 160k→R$ 1mi/mês). Mas o que mais me move é crescer pequenas de R$ 50k pra R$ 300k — muda vidas.
+Recomecei batendo 100+ portas em BH. Primeiro cliente pagou R$ 500. Em 2014 virou o jogo. Em 14/12/2016 conheci Natalia, voltei pra Floripa. Entre 2016-2020: grandes cases (holding de franquias: +433%, R$ 160k→R$ 1mi/mês). Mas o que mais me move é crescer pequenas de R$ 50k pra R$ 300k — muda vidas.
 
 Outubro 2024: nasceu Davi. 2025: nasceram o nome e a estrutura formal dos 6Ps. 2026: lançamento do VSS e rebrand Joel Burigo.
 

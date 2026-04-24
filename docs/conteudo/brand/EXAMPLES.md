@@ -146,7 +146,7 @@ com quem acredita!
 
 ### ✅ GOOD
 ```
-ESF — Encontre Sua Franquia. Operação travada em R$ 160k/mês, leads
+Holding de franquias. Operação travada em R$ 160k/mês, leads
 chegando sem qualificação, time comercial apagando incêndio.
 
 Em ~2 anos de implementação dos 6Ps — P1 reposicionamento, P2
@@ -162,7 +162,7 @@ Não há fórmula mágica. Há método.
 ```
 
 **Por que funciona:**
-- Usa case real (ESF) com todos os números exatos da tabela §4.2
+- Usa case real (holding de franquias) com todos os números exatos da tabela §4.2
 - Janela de tempo real (`~2 anos`, não 30 dias)
 - Amarra os 6Ps nomeados ao resultado (P1, P2, P4, P6)
 - Declara explicitamente o esforço ("24 meses de execução")

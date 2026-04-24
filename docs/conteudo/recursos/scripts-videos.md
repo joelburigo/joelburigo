@@ -521,9 +521,9 @@ Scripts completos para vídeos de apresentação das páginas principais:
 **VISUAL:** Texto: "Investimento: Sob Aplicação"
 
 **JOEL:**
-> "Vagas: máximo 10 clientes simultâneos. Quando fecha, abre lista de espera."
+> "Vagas limitadas conforme capacidade do momento. Quando fecha, abre lista de espera."
 
-**VISUAL:** Badge: "VAGAS LIMITADAS - 10 clientes"
+**VISUAL:** Badge: "VAGAS LIMITADAS · POR CONVITE"
 
 **JOEL:**
 > "Processo seletivo: você preenche aplicação. Eu avalio se faz sentido. Se sim, fazemos sessão diagnóstica de 60 minutos. Se alinhar, começamos."

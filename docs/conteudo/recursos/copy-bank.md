@@ -769,7 +769,7 @@ E NÃO tiver em 90 dias:
 
 ### Case de Sucesso Emblemático
 
-**ENCONTRE SUA FRANQUIA (case de franquias) — 2018-2020**
+**HOLDING DE FRANQUIAS — 2018-2020**
 
 **Contexto:**
 - Holding com 1.800+ franqueados

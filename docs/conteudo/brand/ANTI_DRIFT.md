@@ -102,9 +102,9 @@
 ### 4.2 Cases com número (usar exatamente)
 | Cliente | Número | Janela |
 |---|---|---|
-| **ESF — Encontre Sua Franquia** | R$ 160k/mês → **R$ 1 milhão/mês** · `+433%` · leads `×8,33` · holding 1.800+ franqueados | 2018–2020 |
-| **Port Informática** | `+250%` e-commerce | 2016–2020 |
-| **Lojas Rede** | `+65%` | 2016–2020 |
+| **Holding de franquias** (setor: franquias) | R$ 160k/mês → **R$ 1 milhão/mês** · `+433%` · leads `×8,33` · holding 1.800+ franqueados | 2018–2020 |
+| **E-commerce B2B** | `+250%` e-commerce | 2016–2020 |
+| **Rede de varejo** | `+65%` | 2016–2020 |
 | **Consultoria VSS típica (90d)** | R$ 50k/mês → R$ 80–120k/mês · `+60% a +140%` · 20–40 leads/mês · 3–5 funis | base agregada |
 
 ### 4.3 Dados biográficos — só estes
@@ -147,6 +147,7 @@ Consultorias · advocacia · clínicas (médicas/odonto/psicologia) · academias
 - ❌ `150+ clientes` · ❌ `180+ clientes` — é **`140+`**, ponto.
 - ❌ `R$ 1 bilhão` sem til — é **`~R$ 1 bilhão`**. Sempre contextualizar como estimativa agregada ao longo de 17+ anos quando houver espaço.
 - ❌ `10 anos` · ❌ `mais de 20 anos` — é **`17+ anos`**.
+- ❌ `5-10 slots ativos` · ❌ `Máximo 3 clientes simultâneos` · ❌ `5 a 10 vagas/ano` — Advisory tem vagas limitadas, mas **o número é determinado pela capacidade real do Joel em cada momento** e não é declarado publicamente. Sempre: **`Vagas limitadas · conforme capacidade`** (ou `Vagas limitadas · por convite` em chip/nav curto).
 
 ---
 

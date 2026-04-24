@@ -103,7 +103,7 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 | **Modelo** | DIY (faça você mesmo) | 1:1 direto com Joel |
 | **Investimento** | R$ 1.997 único | R$ 997-15.000/mês |
 | **Para quem** | R$ 10-100k/mês | R$ 200k+/mês |
-| **Escala** | Alta (300+ alunos/ano) | Muito baixa (5-10) |
+| **Escala** | Alta (300+ alunos/ano) | Muito baixa (vagas limitadas · conforme capacidade) |
 | **Foco Joel** | ~90% do esforço | ~10% do esforço |
 | **Formato** | Perpétuo / evergreen | Perpétuo / convite |
 | **Prazo** | Vitalício (90 dias guiados) | Variável |
@@ -199,7 +199,7 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 
 **Critérios de seleção:** momento crítico real · disponibilidade de agenda · fit com experiência · comprometimento com execução.
 
-**Objetivo comercial:** 5-10 clientes simultâneos (muito seletivo).
+**Objetivo comercial:** vagas limitadas conforme capacidade do momento (muito seletivo).
 
 ---
 
@@ -271,7 +271,7 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 | O que é | 30 dias de consultoria intensiva para transformação específica |
 | Investimento | R$ 7.500 (pagamento único) |
 | Para quem | Momento crítico que precisa de plano estruturado |
-| Disponibilidade | Máximo 3 clientes simultâneos |
+| Disponibilidade | Vagas limitadas · conforme capacidade |
 
 **O que inclui:**
 - ✅ 4 sessões de 90 minutos (1 por semana)
@@ -309,7 +309,7 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 | O que é | Parceria estratégica contínua como conselheiro |
 | Investimento | R$ 15.000/mês (3 meses) ou R$ 12.500/mês (6 meses) |
 | Para quem | Empresa que precisa de conselheiro presente |
-| Disponibilidade | Máximo 2 clientes simultâneos |
+| Disponibilidade | Vagas limitadas · conforme capacidade |
 
 **O que inclui:**
 - ✅ 8 sessões/mês (2 por semana, 60 minutos cada)
@@ -508,7 +508,7 @@ Services não volta ao roadmap. A decisão estratégica é: **foco em escala via
 ### **[02.5.2] Estratégia de Crescimento (3 anos)**
 
 - **Ano 1:** Validar VSS em modelo perpétuo (funil evergreen, tráfego contínuo) + Advisory seletivo por indicação
-- **Ano 2:** Escalar VSS (volume de alunos, otimização de funil) + Advisory mantendo 5-10 slots ativos
+- **Ano 2:** Escalar VSS (volume de alunos, otimização de funil) + Advisory mantendo vagas limitadas conforme capacidade
 - **Ano 3:** VSS como motor principal de escala + Advisory como camada premium recorrente
 
 ---
@@ -540,6 +540,6 @@ Services não volta ao roadmap. A decisão estratégica é: **foco em escala via
 
 **Tom:** exclusivo, estratégico.
 
-**Processo de qualificação:** todo interessado em Advisory passa pela sequência descrita em [02.3.4] (solicitação → pré-avaliação → análise de fit → proposta → contratação → kickoff). Não há página de venda nem checkout público — a assimetria entre demanda potencial e slots disponíveis (5-10 simultâneos) exige qualificação manual.
+**Processo de qualificação:** todo interessado em Advisory passa pela sequência descrita em [02.3.4] (solicitação → pré-avaliação → análise de fit → proposta → contratação → kickoff). Não há página de venda nem checkout público — a assimetria entre demanda potencial e capacidade real (vagas limitadas, sem número público) exige qualificação manual.
 
 ---

@@ -18,18 +18,18 @@ const { breadcrumbItems } = Astro.props
 
 const formatos = [
   {
-    nome: 'Sessão Estratégica Avulsa',
+    nome: 'Sessão Estratégica',
     investimento: 'R$ 997',
-    cadencia: '/sessão',
+    cadencia: '/sessão · 90 min',
     duracao: '90 minutos',
-    slots: 'Máximo 4 sessões/mês',
+    entrega: 'Relatório executivo 2–3 pgs',
     paraQuem: 'Desafio específico que precisa de direcionamento',
     inclusos: [
       '90 min de consultoria direta (presencial ou remoto)',
       'Diagnóstico rápido dos 6Ps',
       'Plano de ação (3–5 ações prioritárias)',
       'Gravação da sessão',
-      'Relatório executivo 2–3 páginas em 24h',
+      'Relatório executivo 2–3 páginas',
     ],
     usos: [
       'Como me diferenciar sem competir por preço?',
@@ -38,17 +38,17 @@ const formatos = [
     ],
   },
   {
-    nome: 'Sprint Estratégico 30 Dias',
+    nome: 'Sprint Estratégico',
     investimento: 'R$ 7.500',
-    cadencia: 'pagamento único',
+    cadencia: 'pagamento único · 30 dias',
     duracao: '4 sessões · 30 dias',
-    slots: 'Máximo 3 clientes simultâneos',
+    entrega: 'Documento estratégico final 20–40 pgs',
     paraQuem: 'Momento crítico que precisa de plano estruturado',
     inclusos: [
       '4 sessões de 90 min (1 por semana)',
       'Diagnóstico profundo dos 6Ps',
       'Plano estratégico 12 meses detalhado',
-      'WhatsApp direto (resposta em 24h úteis)',
+      'WhatsApp direto com o Joel',
       'Documento estratégico final (20–40 páginas)',
     ],
     usos: [
@@ -61,13 +61,14 @@ const formatos = [
   {
     nome: 'Conselho Executivo',
     investimento: 'R$ 15.000',
+    cadenciaPrefixo: 'a partir de',
     cadencia: '/mês · mín. 3 meses',
     duracao: '3–6 meses',
-    slots: 'Máximo 2 clientes simultâneos',
+    entrega: 'Diagnóstico trimestral dos 6Ps',
     paraQuem: 'Empresa que precisa de conselheiro presente',
     inclusos: [
       '8 sessões/mês (2 por semana · 60 min)',
-      'WhatsApp prioritário (resposta em 4h)',
+      'WhatsApp prioritário com o Joel',
       'Participação em até 2 reuniões críticas/mês',
       'Revisão ilimitada de materiais estratégicos',
       'Diagnóstico trimestral dos 6Ps',
@@ -107,9 +108,9 @@ const naoEh = [
     <div class="grid items-center gap-[clamp(2rem,5vw,4rem)] lg:grid-cols-[1.2fr_0.8fr] lg:gap-x-[clamp(3rem,6vw,5rem)]">
       <!-- Hero copy -->
       <div class="flex flex-col gap-[clamp(1.25rem,2.5vw,2rem)]">
-        <div class="kicker">// ADVISORY · 1:1 COM JOEL · EXCLUSIVO</div>
+        <div class="kicker" style="color: var(--jb-fg-muted);">// ADVISORY · 1:1 COM JOEL · EXCLUSIVO</div>
         <h1 class="font-display text-cream" style="font-size: clamp(2.25rem, 6.5vw, 5rem); line-height: 0.9; letter-spacing: -0.045em; text-transform: uppercase; margin: 0;">
-          Se sua empresa fatura mais de <span class="text-acid">R$ 200k/mês</span> e ainda depende de você —
+          Se sua empresa fatura mais de R$ 200k/mês e ainda depende de você —
           <span class="stroke-text">ela não é empresa.</span> É <span class="text-fire">emprego</span>.
         </h1>
         <p class="font-sans text-cream/85" style="font-size: clamp(1.05rem, 2vw, 1.25rem); line-height: 1.5; max-width: 42ch; margin: 0;">
@@ -120,44 +121,32 @@ const naoEh = [
           <a href="mailto:joel@joelburigo.com.br?subject=Solicitação%20Advisory" class="btn-primary" style="min-height: 48px;">
             Solicitar convite →
           </a>
-          <span class="mono text-fg-muted">★ resposta em 48h</span>
+          <span class="mono text-fg-muted">★ resposta direta do Joel</span>
         </div>
       </div>
 
-      <!-- Terminal critérios -->
+      <!-- Terminal qualificação -->
       <aside class="border border-white/10 bg-ink-2" style="box-shadow: var(--shadow-terminal);">
         <div class="flex items-center gap-2 border-b border-white/10" style="padding: 10px 14px;">
           <span class="inline-block rounded-full bg-fire" style="width: 11px; height: 11px;"></span>
           <span class="inline-block rounded-full" style="width: 11px; height: 11px; background: #FFB020;"></span>
           <span class="inline-block rounded-full bg-acid" style="width: 11px; height: 11px;"></span>
-          <span class="mono ml-auto text-fg-muted" style="font-size: 11px; letter-spacing: 0.12em; text-transform: lowercase;">advisory_filter — criteria</span>
+          <span class="mono ml-auto text-fg-muted" style="font-size: 11px; letter-spacing: 0.12em; text-transform: lowercase;">advisory_filter — qualify</span>
         </div>
-        <div class="p-8">
-          <div class="kicker mb-4" style="color: var(--jb-fire);">// critérios de seleção</div>
-          <ul class="mb-6 space-y-3">
-            <li class="flex items-start gap-3 font-sans text-cream/85" style="font-size: 0.95rem;">
-              <span class="text-acid">▶</span>
-              <span>Momento crítico real (expansão, pivot, crise, exit)</span>
-            </li>
-            <li class="flex items-start gap-3 font-sans text-cream/85" style="font-size: 0.95rem;">
-              <span class="text-acid">▶</span>
-              <span>Faturamento R$ 200k+/mês</span>
-            </li>
-            <li class="flex items-start gap-3 font-sans text-cream/85" style="font-size: 0.95rem;">
-              <span class="text-acid">▶</span>
-              <span>CEO/Founder comprometido com execução</span>
-            </li>
-            <li class="flex items-start gap-3 font-sans text-cream/85" style="font-size: 0.95rem;">
-              <span class="text-acid">▶</span>
-              <span>Fit com experiência e agenda disponível</span>
-            </li>
-          </ul>
-          <div class="border-t border-white/10 pt-4">
-            <div class="mono mb-1 text-fg-muted">// acesso</div>
-            <p class="font-sans text-cream/80" style="font-size: 0.9rem; line-height: 1.5;">
-              Convite direto, indicação de cliente atual ou solicitação via e-mail (sujeito a avaliação). Não divulgado publicamente.
-            </p>
-          </div>
+        <div class="p-5" style="font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.7;">
+          <div class="text-fg-muted">[00:00]</div>
+          <div class="text-cream"><span class="text-acid">$</span> ./advisory_filter --check</div>
+          <div class="text-fg-muted">&gt; qualificando candidato…</div>
+          <div class="mt-2 text-cream"><span class="text-acid">[✓]</span> momento crítico real ........... <span class="text-acid">OK</span></div>
+          <div class="text-cream"><span class="text-acid">[✓]</span> faturamento R$ 200k+/mês ....... <span class="text-acid">OK</span></div>
+          <div class="text-cream"><span class="text-acid">[✓]</span> CEO/Founder comprometido ....... <span class="text-acid">OK</span></div>
+          <div class="text-cream"><span class="text-acid">[✓]</span> fit + agenda disponível ........ <span class="text-acid">OK</span></div>
+          <div class="mt-2 text-cream">&gt; status: <span style="background: var(--jb-acid); color: var(--jb-ink); padding: 0 6px;">QUALIFIED</span></div>
+          <div class="mt-3 text-fg-muted">[00:02]</div>
+          <div class="text-fg-muted">&gt; checking slot availability…</div>
+          <div class="text-cream">&gt; slots: <span class="text-acid">limitados</span> · conforme capacidade</div>
+          <div class="text-cream">&gt; access: convite · indicação · e-mail</div>
+          <div class="text-cream"><span class="text-acid">$</span> solicitar_convite<span class="text-fg-muted" style="animation: blink 1s infinite;">_</span></div>
         </div>
       </aside>
     </div>
@@ -218,30 +207,44 @@ const naoEh = [
       </p>
     </div>
 
-    <div class="grid gap-0 border border-white/10 lg:grid-cols-3">
+    <div class="grid gap-0 border border-white/10 lg:grid-cols-3 lg:items-stretch">
       {formatos.map((f, i) => (
-        <article class={`p-8 md:p-10 ${i < formatos.length - 1 ? 'border-b border-white/10 lg:border-b-0 lg:border-r' : ''} ${f.destaque ? '' : ''}`} style={f.destaque ? 'background: linear-gradient(180deg, rgba(198,255,0,0.06), #0B0B0B); border-left: 1px solid var(--jb-acid-border); border-right: 1px solid var(--jb-acid-border);' : 'background: #0B0B0B;'}>
+        <article class={`relative flex flex-col p-8 md:p-10 ${i < formatos.length - 1 ? 'border-b border-white/10 lg:border-b-0 lg:border-r' : ''}`} style={f.destaque ? 'background: linear-gradient(180deg, rgba(198,255,0,0.06), #0B0B0B); border-left: 1px solid var(--jb-acid-border); border-right: 1px solid var(--jb-acid-border);' : 'background: #0B0B0B;'}>
+          {/* Badge MAIS PEDIDO — flutuante, não empurra conteúdo */}
           {f.destaque && (
-            <div class="mb-4 inline-flex items-center gap-2 bg-acid px-2 py-1" style="color: var(--jb-ink);">
+            <div class="absolute inline-flex items-center gap-2 bg-acid px-2 py-1" style="color: var(--jb-ink); top: -12px; right: 16px; z-index: 1;">
               <span class="font-display" style="font-size: 0.65rem; letter-spacing: 0.15em;">★ MAIS PEDIDO</span>
             </div>
           )}
-          <h3 class="mb-3 font-display text-cream" style="font-size: 1.35rem; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1.1;">
+
+          {/* Slot: título — min-height pra alinhar quando nome ocupa 1 ou 2 linhas */}
+          <h3 class="mb-3 font-display text-cream" style="font-size: 1.35rem; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1.1; min-height: 2.6em;">
             {f.nome}
           </h3>
-          <div class="mb-6 flex items-baseline gap-2">
-            <span class="font-display text-acid" style="font-size: clamp(1.75rem, 3vw, 2.25rem); letter-spacing: -0.035em; line-height: 1;">
+
+          {/* Slot: preço (prefixo opcional + valor grande + cadência logo abaixo) */}
+          <div class="mb-6">
+            {f.cadenciaPrefixo && (
+              <div class="mono text-fg-muted" style="margin-bottom: 2px;">{f.cadenciaPrefixo}</div>
+            )}
+            <div class="font-display text-acid" style="font-size: clamp(1.75rem, 3vw, 2.25rem); letter-spacing: -0.035em; line-height: 1;">
               {f.investimento}
-            </span>
-            <span class="mono text-fg-muted">{f.cadencia}</span>
+            </div>
+            <div class="mono text-fg-muted" style="margin-top: 4px;">{f.cadencia}</div>
           </div>
+
+          {/* Slot: meta duração + entrega */}
           <div class="mb-6 space-y-1">
             <div class="mono text-fg-muted">// duração · {f.duracao}</div>
-            <div class="mono text-fg-muted">// slots · {f.slots}</div>
+            <div class="mono text-fg-muted">// entrega · {f.entrega}</div>
           </div>
-          <p class="mb-6 font-sans text-cream/85" style="font-size: 0.95rem; line-height: 1.5;">
+
+          {/* Slot: para quem — min-height pra alinhar quando texto ocupa 1 ou 2 linhas */}
+          <p class="mb-6 font-sans text-cream/85" style="font-size: 0.95rem; line-height: 1.5; min-height: 3em;">
             <strong class="text-cream">Para quem:</strong> {f.paraQuem}
           </p>
+
+          {/* Slot: inclui */}
           <div class="mb-6 border-t border-white/10 pt-5">
             <div class="mono mb-3 text-acid">// inclui</div>
             <ul class="space-y-2">
@@ -253,6 +256,8 @@ const naoEh = [
               ))}
             </ul>
           </div>
+
+          {/* Slot: exemplos de uso */}
           <div class="mb-6 border-t border-white/10 pt-5">
             <div class="mono mb-3 text-fire">// exemplos de uso</div>
             <ul class="space-y-2">
@@ -263,12 +268,18 @@ const naoEh = [
               ))}
             </ul>
           </div>
-          {f.precoEspecial && (
-            <div class="mb-6 border-l-2 border-acid pl-3">
-              <div class="mono text-acid">★ {f.precoEspecial}</div>
-            </div>
-          )}
-          <a href="mailto:joel@joelburigo.com.br?subject=Advisory%20·%20" class={f.destaque ? 'btn-primary' : 'btn-secondary'} style="width: 100%; justify-content: center;">
+
+          {/* Slot: preço especial — reservado em todos pra CTA ficar no mesmo y */}
+          <div class="mb-6 min-h-[32px]">
+            {f.precoEspecial && (
+              <div class="border-l-2 border-acid pl-3">
+                <div class="mono text-acid">★ {f.precoEspecial}</div>
+              </div>
+            )}
+          </div>
+
+          {/* CTA empurrado pro bottom — alinha os 3 botões na mesma baseline */}
+          <a href="mailto:joel@joelburigo.com.br?subject=Advisory%20·%20" class={`mt-auto ${f.destaque ? 'btn-primary' : 'btn-secondary'}`} style="width: 100%; justify-content: center;">
             Solicitar convite →
           </a>
         </article>
@@ -310,7 +321,7 @@ const naoEh = [
           </div>
         </div>
         <p class="font-sans text-cream/80" style="font-size: 0.95rem; line-height: 1.55;">
-          <strong class="text-cream">Case emblemático:</strong> Encontre Sua Franquia — de R$ 160k/mês para R$ 1 milhão/mês (+433%), leads ×8,33, holding com 1.800+ franqueados. 2018–2020.
+          <strong class="text-cream">Case emblemático:</strong> holding de franquias — de R$ 160k/mês para R$ 1 milhão/mês (+433%), leads ×8,33, holding com 1.800+ franqueados. 2018–2020.
         </p>
       </div>
     </div>
@@ -328,7 +339,7 @@ const naoEh = [
         <br />Advisory <span class="text-acid">também não.</span>
       </h2>
       <p class="mb-8 font-sans text-cream/85" style="font-size: 1.125rem; line-height: 1.55;">
-        5–10 slots ativos por vez. Seleção por fit real, não por ordem de chegada. Se teu momento é agora, solicita o convite. Se não é, espera o momento certo.
+        Vagas limitadas conforme capacidade do momento. Seleção por fit real, não por ordem de chegada. Se teu momento é agora, solicita o convite. Se não é, espera o momento certo.
       </p>
       <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
         <a href="mailto:joel@joelburigo.com.br?subject=Solicitação%20Advisory" class="btn-fire">

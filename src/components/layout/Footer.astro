@@ -22,49 +22,49 @@ const currentYear = new Date().getFullYear()
     </div>
 
     {/* Grid 4 colunas */}
-    <div class="relative grid grid-cols-1 gap-10 py-16 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+    <div class="relative grid grid-cols-1 gap-12 py-20 md:grid-cols-2 md:gap-x-10 md:gap-y-14 lg:grid-cols-4 lg:gap-x-10">
       {/* Col 1 — Marca */}
-      <div class="space-y-5 lg:pr-6">
+      <div class="lg:pr-6">
         <a href="/" class="inline-block" aria-label="Joel Burigo · Home">
           <Logo />
         </a>
-        <p class="font-display text-xl uppercase leading-[0.95] tracking-[-0.03em] text-[color:var(--jb-cream)]">
+        <p class="mt-6 font-display text-xl uppercase leading-[0.95] tracking-[-0.03em] text-[color:var(--jb-cream)]">
           Sistema <span class="text-[color:var(--jb-fire)]">&gt;</span> Improviso
         </p>
-        <p class="max-w-xs font-sans text-[13px] leading-relaxed text-[color:var(--jb-fg-3)]">
+        <p class="mt-5 max-w-[34ch] font-sans text-[13px] leading-[1.65] text-[color:var(--jb-fg-3)]">
           Framework 6Ps das Vendas Escaláveis. 140+ MPEs · 17+ anos · ~R$ 1 bilhão em vendas estruturadas (estimativa agregada).
         </p>
-        <p class="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">
+        <p class="mt-6 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-muted)]">
           ★ Ribeirão da Ilha · Florianópolis/SC
         </p>
       </div>
 
       {/* Col 2 — Produtos */}
       <div>
-        <h3 class="mb-6 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-acid)]">
+        <h3 class="mb-8 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-acid)]">
           // Produtos
         </h3>
-        <ul class="space-y-3 font-mono text-[13px] uppercase tracking-[0.22em]">
+        <ul class="space-y-5 font-mono text-[13px] uppercase tracking-[0.22em]">
           <li>
             <a
               href="/vendas-sem-segredos"
-              class="jb-foot-link inline-flex items-center gap-2 text-[color:var(--jb-cream)] transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]"
+              class="jb-foot-link group inline-flex flex-col gap-1 text-[color:var(--jb-cream)] transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]"
             >
               <span>VSS</span>
-              <span class="text-[color:var(--jb-fg-muted)] normal-case tracking-normal">vendas sem segredos</span>
+              <span class="font-mono text-[10px] normal-case tracking-[0.18em] text-[color:var(--jb-fg-muted)]">vendas sem segredos</span>
             </a>
           </li>
           <li>
             <a
               href="/advisory"
               data-astro-prefetch
-              class="jb-foot-link inline-flex items-center gap-2 text-[color:var(--jb-cream)] transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]"
+              class="jb-foot-link group inline-flex flex-col gap-1 text-[color:var(--jb-cream)] transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]"
             >
               <span>Advisory</span>
-              <span class="text-[color:var(--jb-fg-muted)] normal-case tracking-normal">1:1 com Joel</span>
+              <span class="font-mono text-[10px] normal-case tracking-[0.18em] text-[color:var(--jb-fg-muted)]">1:1 com Joel</span>
             </a>
           </li>
-          <li class="pt-2">
+          <li class="pt-3">
             <a
               href="/diagnostico"
               class="jb-foot-link inline-flex items-center gap-2 text-[color:var(--jb-fire)] transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]"
@@ -78,10 +78,10 @@ const currentYear = new Date().getFullYear()
 
       {/* Col 3 — Recursos */}
       <div>
-        <h3 class="mb-6 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-acid)]">
+        <h3 class="mb-8 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-acid)]">
           // Recursos
         </h3>
-        <ul class="space-y-3 font-mono text-[13px] uppercase tracking-[0.22em]">
+        <ul class="space-y-4 font-mono text-[13px] uppercase tracking-[0.22em]">
           <li>
             <a href="/blog" class="jb-foot-link text-[color:var(--jb-cream)] transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]">Blog</a>
           </li>
@@ -99,10 +99,10 @@ const currentYear = new Date().getFullYear()
 
       {/* Col 4 — Social + Email */}
       <div>
-        <h3 class="mb-6 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-acid)]">
+        <h3 class="mb-8 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-acid)]">
           // Conexão
         </h3>
-        <ul class="space-y-3 font-mono text-[13px] uppercase tracking-[0.22em]">
+        <ul class="space-y-4 font-mono text-[13px] uppercase tracking-[0.22em]">
           <li>
             <a
               href={contactInfo.social.instagram.url}
@@ -136,7 +136,7 @@ const currentYear = new Date().getFullYear()
               <span class="font-mono text-[color:var(--jb-fg-muted)]">→</span>
             </a>
           </li>
-          <li class="pt-4">
+          <li class="pt-5">
             <a
               href={contactInfo.email.mailto}
               class="jb-foot-link inline-block text-[color:var(--jb-fg-3)] normal-case tracking-normal transition-colors duration-[var(--jb-dur)] hover:text-[color:var(--jb-acid)]"
@@ -155,21 +155,21 @@ const currentYear = new Date().getFullYear()
           <span>// Aviso legal e isenção de responsabilidade</span>
           <span class="text-[color:var(--jb-acid)] transition-transform duration-[var(--jb-dur)] group-open:rotate-180">▼</span>
         </summary>
-        <div class="mt-6 space-y-4 font-sans text-[12px] leading-relaxed text-[color:var(--jb-fg-muted)]">
+        <div class="mt-8 space-y-6 font-sans text-[12px] leading-[1.65] text-[color:var(--jb-fg-muted)]">
           <div>
-            <p class="mb-1 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-3)]">Resultados e desempenho</p>
+            <p class="mb-2 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-3)]">Resultados e desempenho</p>
             <p>As informações, estratégias e metodologias apresentadas neste site são baseadas na experiência de Joel Burigo e sua equipe ao longo de 17+ anos com empresas B2B e B2C. Todo o conteúdo é fornecido exclusivamente para fins educacionais.</p>
           </div>
           <div>
-            <p class="mb-1 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-3)]">Sem garantia de resultados</p>
+            <p class="mb-2 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-3)]">Sem garantia de resultados</p>
             <p>Os cases e resultados apresentados não constituem garantia de que você alcançará os mesmos resultados. Cada negócio é único e o desempenho depende de dedicação, contexto de mercado, recursos e execução. Resultados passados não garantem resultados futuros.</p>
           </div>
           <div>
-            <p class="mb-1 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-3)]">Esforço requerido</p>
+            <p class="mb-2 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-3)]">Esforço requerido</p>
             <p>O sucesso requer trabalho consistente, disciplina e correta implementação. Sistema &gt; Improviso — não existe fórmula mágica.</p>
           </div>
           <div>
-            <p class="mb-1 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-3)]">Responsabilidade</p>
+            <p class="mb-2 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--jb-fg-3)]">Responsabilidade</p>
             <p>Ao utilizar este site e os serviços oferecidos, você é o único responsável pelos resultados. Growth Master LTDA e Joel Burigo não se responsabilizam por perdas ou prejuízos decorrentes da aplicação das informações fornecidas.</p>
           </div>
         </div>

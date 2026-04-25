@@ -1,0 +1,136 @@
+.finalCtaSection {
+  background: var(--jb-fire);
+  padding-top: clamp(4rem, 10vw, 7rem);
+  padding-bottom: clamp(4rem, 10vw, 7rem);
+  color: var(--jb-ink);
+}
+
+.fctaGridOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.15;
+  background-image:
+    linear-gradient(to right, rgba(5, 5, 5, 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(5, 5, 5, 0.35) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.fctaWrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  align-items: center;
+}
+
+.fctaKicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--jb-ink);
+  text-transform: uppercase;
+  display: inline-block;
+  border: 1px solid rgba(5, 5, 5, 0.4);
+  padding: 8px 16px;
+}
+
+.fctaTitle {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  line-height: 0.85;
+  font-size: clamp(3.5rem, 14vw, 10rem);
+  color: var(--jb-ink);
+  margin: 0;
+}
+.fctaTitleStroke {
+  -webkit-text-stroke: 3px var(--jb-ink);
+  color: transparent;
+  display: block;
+}
+
+.fctaLede {
+  font-family: var(--font-sans);
+  font-size: clamp(1.125rem, 1.8vw, 1.375rem);
+  line-height: 1.5;
+  color: var(--jb-ink);
+  text-transform: none;
+  margin: 0;
+  max-width: 55ch;
+  font-weight: 500;
+}
+.fctaLede strong {
+  font-weight: 900;
+}
+
+.fctaCtas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding-top: 0.5rem;
+}
+
+.fctaBtnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--jb-ink);
+  color: var(--jb-acid);
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 900;
+  padding: 1rem 2rem;
+  min-height: 56px;
+  border: 0;
+  box-shadow: 4px 4px 0 var(--jb-acid);
+  transition: all var(--transition-base);
+}
+.fctaBtnPrimary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--jb-acid);
+}
+
+.fctaBtnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--jb-ink);
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 900;
+  padding: 1rem 2rem;
+  min-height: 56px;
+  border: 2px solid var(--jb-ink);
+  transition: all var(--transition-base);
+}
+.fctaBtnSecondary:hover {
+  background: var(--jb-ink);
+  color: var(--jb-acid);
+}
+
+.fctaSignature {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  color: var(--jb-ink);
+  text-transform: uppercase;
+  padding-top: 0.5rem;
+  display: inline-flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-weight: 700;
+}
+.fctaSep {
+  opacity: 0.6;
+}

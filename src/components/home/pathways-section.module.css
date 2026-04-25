@@ -1,0 +1,174 @@
+.sectionHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.sectionHeadMeta {
+  font-size: 11px;
+  color: var(--jb-fg-muted);
+}
+
+.pwIntro {
+  padding-top: clamp(2rem, 4vw, 3rem);
+  padding-bottom: clamp(2rem, 4vw, 3rem);
+  max-width: 960px;
+}
+.pwTitle {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  color: var(--jb-cream);
+  margin: 0 0 1.5rem 0;
+}
+.pwLede {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.6;
+  color: var(--jb-cream);
+  text-transform: none;
+  margin: 0;
+  max-width: 60ch;
+}
+
+.pwGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 900px) {
+  .pwGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.pwCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  position: relative;
+}
+.pwCardFeat {
+  position: relative;
+}
+.pwRibbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--jb-acid);
+  color: var(--jb-ink);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  padding: 6px 14px;
+}
+
+.pwTag {
+  font-size: 11px;
+  color: var(--jb-acid);
+  letter-spacing: 0.24em;
+  margin-bottom: 0.25rem;
+}
+
+.pwCardTitle {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  font-size: clamp(1.5rem, 3vw, 2.125rem);
+  line-height: 1.05;
+  color: var(--jb-cream);
+  margin: 0;
+}
+
+.pwSubtitle {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-size: 1rem;
+  color: var(--jb-fire);
+  margin: 0;
+}
+.pwCardFeat .pwSubtitle {
+  color: var(--jb-acid);
+}
+
+.pwDesc {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--jb-fg-2);
+  margin: 0;
+  text-transform: none;
+}
+
+.pwBullets {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 1px solid var(--jb-hair);
+  border-bottom: 1px solid var(--jb-hair);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.pwBullet {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  color: var(--jb-cream);
+  text-transform: none;
+  line-height: 1.45;
+}
+.pwCheck {
+  color: var(--jb-acid);
+  font-size: 12px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.pwPriceWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-top: 0.5rem;
+}
+.pwPrice {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.pwPriceNote {
+  font-size: 11px;
+  color: var(--jb-fg-muted);
+  letter-spacing: 0.16em;
+}
+
+.pwCta {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+.pwIdeal {
+  font-size: 11px;
+  color: var(--jb-fg-muted);
+  letter-spacing: 0.18em;
+  padding-top: 0.5rem;
+}
+.pwIdeal .pwIdealVal {
+  letter-spacing: 0.1em;
+  color: var(--jb-cream);
+}

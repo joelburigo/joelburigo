@@ -1,32 +1,22 @@
 import type { Metadata } from 'next';
-import { Hero } from '@/components/sections/hero';
-import { Container } from '@/components/patterns/container';
-import { DiagnosticoForm } from '@/components/features/auth/diagnostico-form';
+import { DevStub } from '@/components/patterns/dev-stub';
 
 export const metadata: Metadata = {
   title: 'Diagnóstico de Vendas — 7 minutos, resultado imediato',
   description:
-    'Responda 12 perguntas sobre os 6Ps da sua empresa. Receba um snapshot dos maiores gargalos e o caminho pra destravar. Sem cadastro, sem upsell.',
+    'Responda 12 perguntas sobre os 6Ps da sua empresa. Receba um snapshot dos maiores gargalos e o caminho pra destravar.',
   alternates: { canonical: '/diagnostico' },
 };
 
 export default function DiagnosticoPage() {
   return (
-    <>
-      <Hero
-        kicker="// DIAGNÓSTICO · 7 MIN"
-        title={
-          <>
-            Onde suas vendas <span className="text-acid">travam</span>?
-          </>
-        }
-        subtitle="12 perguntas honestas sobre os 6Ps. Sem cadastro obrigatório — só precisa de um email no fim pra receber o resultado."
-      />
-      <section className="section">
-        <Container size="md">
-          <DiagnosticoForm />
-        </Container>
-      </section>
-    </>
+    <DevStub
+      sprint={0}
+      route="/diagnostico"
+      title="Diagnóstico 6Ps"
+      description="Próximo passo do Sprint 0 (port byte-fiel): trazer DiagnosticoPage.astro original (98 linhas) + form HighLevel completo. Conteúdo intacto do Astro de produção."
+      backHref="/"
+      backLabel="Voltar pra home"
+    />
   );
 }

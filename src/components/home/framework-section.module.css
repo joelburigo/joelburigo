@@ -1,0 +1,149 @@
+.sectionHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.sectionHeadMeta {
+  font-size: 11px;
+  color: var(--jb-fg-muted);
+}
+
+.fwIntro {
+  padding-top: clamp(2rem, 4vw, 3rem);
+  padding-bottom: clamp(2rem, 4vw, 3rem);
+  max-width: 960px;
+}
+.fwTitle {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  font-size: clamp(2.25rem, 6.5vw, 4.5rem);
+  color: var(--jb-cream);
+  margin: 0 0 1.5rem 0;
+}
+.fwLede {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.6;
+  color: var(--jb-cream);
+  text-transform: none;
+  margin: 0;
+  max-width: 60ch;
+}
+
+.psGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--jb-hair);
+  border: 1px solid var(--jb-hair);
+  margin-bottom: clamp(3rem, 5vw, 4rem);
+}
+@media (min-width: 768px) {
+  .psGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1280px) {
+  .psGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.pCard {
+  background: var(--jb-ink-2);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: background var(--transition-base);
+  min-height: 280px;
+}
+.pCard:hover {
+  background: rgba(198, 255, 0, 0.03);
+}
+.pCard:hover .pNum {
+  color: var(--jb-acid);
+  text-shadow: 0 0 20px var(--jb-acid-glow);
+}
+.pCard:hover .pScanline {
+  transform: scaleX(1);
+}
+
+.pNum {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(3.5rem, 6vw, 5rem);
+  letter-spacing: -0.04em;
+  line-height: 0.85;
+  color: rgba(245, 241, 232, 0.14);
+  transition: color var(--transition-base), text-shadow var(--transition-base);
+}
+
+.pBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.pSubtitle {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  color: var(--jb-acid);
+  text-transform: uppercase;
+}
+
+.pName {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-size: 1.0625rem;
+  line-height: 1.15;
+  color: var(--jb-cream);
+  margin: 0;
+}
+
+.pDesc {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--jb-fg-2);
+  margin: 0;
+  text-transform: none;
+}
+
+.pScanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--jb-acid);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+}
+
+.fwFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+}
+.fwAssinatura {
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  color: var(--jb-fg-muted);
+}

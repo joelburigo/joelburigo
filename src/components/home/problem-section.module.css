@@ -1,0 +1,139 @@
+.sectionHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.sectionHeadMeta {
+  font-size: 11px;
+}
+
+.problemIntro {
+  padding-top: clamp(2rem, 4vw, 3rem);
+  padding-bottom: clamp(2rem, 4vw, 3rem);
+  max-width: 960px;
+}
+
+.problemTitle {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  font-size: clamp(2.25rem, 6.5vw, 4.5rem);
+  color: var(--jb-cream);
+  margin: 0 0 1.5rem 0;
+}
+
+.problemLede {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.6;
+  color: var(--jb-cream);
+  text-transform: none;
+  margin: 0;
+  max-width: 60ch;
+}
+.problemLede strong {
+  font-weight: 700;
+}
+
+.enemiesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--jb-hair);
+  border: 1px solid var(--jb-hair);
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+@media (min-width: 640px) {
+  .enemiesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .enemiesGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.enemyCard {
+  background: var(--jb-ink-2);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: background var(--transition-base);
+  position: relative;
+  min-height: 240px;
+}
+.enemyCard:hover {
+  background: var(--jb-ink-3);
+}
+.enemyCard:hover .enemyNum {
+  color: var(--jb-fire);
+}
+
+.enemyNum {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5vw, 4rem);
+  font-weight: 900;
+  color: rgba(245, 241, 232, 0.12);
+  letter-spacing: -0.04em;
+  line-height: 0.85;
+  transition: color var(--transition-base);
+}
+
+.enemyName {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-size: 1.0625rem;
+  color: var(--jb-cream);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.enemyDesc {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--jb-fg-2);
+  margin: 0;
+  text-transform: none;
+}
+
+.problemQuote {
+  position: relative;
+  background: var(--jb-ink-2);
+  border: 1px solid var(--jb-acid-border);
+  padding: clamp(2rem, 4vw, 3rem);
+  max-width: 900px;
+  margin: 0 auto;
+}
+.quoteMark {
+  position: absolute;
+  top: 0;
+  left: clamp(1rem, 3vw, 2rem);
+  transform: translateY(-60%);
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 12vw, 9rem);
+  color: var(--jb-fire);
+  line-height: 1;
+}
+.quoteText {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  line-height: 1.1;
+  color: var(--jb-cream);
+  margin: 0 0 1.25rem 0;
+}
+.quoteFoot {
+  margin-top: 1.5rem;
+}

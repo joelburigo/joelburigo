@@ -1,15 +1,28 @@
 import type { Metadata } from 'next';
-import { Hero } from '@/components/sections/hero';
-import { ProofBar } from '@/components/sections/proof-bar';
-import { Framework6Ps } from '@/components/sections/framework-6ps';
-import { Pathways } from '@/components/sections/pathways';
-import { FinalCta } from '@/components/sections/final-cta';
+import { HeroSection } from '@/components/home/hero-section';
+import { QuemSouSection } from '@/components/home/quem-sou-section';
+import { ProblemSection } from '@/components/home/problem-section';
+import { FrameworkSection } from '@/components/home/framework-section';
+import { ProofSocialSection } from '@/components/home/proof-social-section';
+import { PathwaysSection } from '@/components/home/pathways-section';
+import { BlogPostsSection } from '@/components/home/blog-posts-section';
+import { FinalCtaSection } from '@/components/home/final-cta-section';
 import { SITE } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Joel Burigo - Vendas Escaláveis para MPEs',
   description:
     'Estruture vendas previsíveis em 90 dias. Método 6Ps condensado de 17+ anos e 140+ empresas. DIY (VSS) ou Advisory 1:1.',
+  keywords: [
+    'vendas escaláveis',
+    'vendas B2B',
+    'CRM',
+    'consultoria vendas',
+    'framework 6Ps',
+    'Joel Burigo',
+    'vendas sem segredos',
+    'strategic advisory',
+  ],
   alternates: { canonical: '/' },
 };
 
@@ -43,22 +56,14 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
       />
-      <Hero
-        kicker="// sistema > improviso"
-        title={
-          <>
-            Vendas que funcionam <span className="text-acid">como máquina</span>, não como loteria.
-          </>
-        }
-        subtitle="17+ anos e ~R$ 1 bilhão em vendas estruturadas, condensados em 6 pilares replicáveis. Você escolhe: DIY com copiloto (VSS) ou 1:1 comigo (Advisory)."
-        ctaPrimary={{ label: 'Fazer diagnóstico', href: '/diagnostico' }}
-        ctaSecondary={{ label: 'Ver Vendas Sem Segredos', href: '/vendas-sem-segredos' }}
-        note="7 minutos · sem cadastro · sem upsell"
-      />
-      <ProofBar />
-      <Framework6Ps />
-      <Pathways />
-      <FinalCta />
+      <HeroSection />
+      <QuemSouSection />
+      <ProblemSection />
+      <FrameworkSection />
+      <ProofSocialSection />
+      <PathwaysSection />
+      <BlogPostsSection />
+      <FinalCtaSection />
     </>
   );
 }

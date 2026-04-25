@@ -27,7 +27,7 @@ export function DevLoginButtons() {
         ))}
       </div>
       <p className="text-fg-muted mt-4 font-mono text-[10px]">
-        bloqueado em produção. ENTRAR direto em /area como o user escolhido.
+        bloqueado em produção. ENTRAR direto em /app/area como o user escolhido.
       </p>
     </div>
   );

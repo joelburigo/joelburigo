@@ -13,7 +13,7 @@ export async function GET(req: NextRequest) {
   const url = req.nextUrl.clone();
   const token = url.searchParams.get('token');
   const nextParam = url.searchParams.get('next');
-  const next = isSafeNext(nextParam) ? nextParam : '/area';
+  const next = isSafeNext(nextParam) ? nextParam : '/app/area';
 
   if (!token) {
     const redir = req.nextUrl.clone();

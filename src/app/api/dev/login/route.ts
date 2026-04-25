@@ -39,7 +39,7 @@ async function handle(profile: string | null) {
   }
 
   const jwt = await createSession(user);
-  const res = NextResponse.redirect(new URL('/area', process.env.PUBLIC_SITE_URL ?? 'http://localhost:4321'));
+  const res = NextResponse.redirect(new URL('/app/area', process.env.PUBLIC_SITE_URL ?? 'http://localhost:4321'));
   setSessionCookie(res, jwt);
   return res;
 }

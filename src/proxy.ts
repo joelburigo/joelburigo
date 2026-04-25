@@ -14,14 +14,7 @@ import { verifySession, SESSION } from '@/lib/jwt';
  * Edge runtime — usa apenas `jose` + `JWT_SECRET` (sem DB / server-only).
  */
 
-const PROTECTED_PREFIXES = [
-  '/area',
-  '/fase',
-  '/destravamento',
-  '/onboarding',
-  '/advisory/dashboard',
-  '/sessao',
-];
+const PROTECTED_PREFIXES = ['/app'];
 
 const ADMIN_PREFIXES = ['/admin'];
 
@@ -54,7 +47,7 @@ export async function proxy(req: NextRequest): Promise<NextResponse> {
 
   if (isAdmin && payload.role !== 'admin') {
     const url = req.nextUrl.clone();
-    url.pathname = '/area';
+    url.pathname = '/app/area';
     url.search = '';
     return NextResponse.redirect(url);
   }

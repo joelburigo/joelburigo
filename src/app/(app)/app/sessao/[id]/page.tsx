@@ -11,10 +11,10 @@ export default async function SessaoPage({ params }: { params: Promise<{ id: str
   return (
     <DevStub
       sprint={3}
-      route={`/sessao/${id}`}
+      route={`/app/sessao/${id}`}
       title={`Sessão · ${id}`}
       description="Sprint 3 entrega: detalhes da sessão (data, duração, link Zoom), formulário de preparação pré-sessão pro cliente preencher, notas do Joel pós-sessão (quando compartilhadas), artifacts gerados na sessão."
-      backHref="/advisory/dashboard"
+      backHref="/app/advisory/dashboard"
       backLabel="Voltar pra Advisory"
     />
   );

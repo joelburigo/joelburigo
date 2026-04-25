@@ -74,7 +74,7 @@ export default async function CheckoutSucessoPage({
             )}
 
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Link href="/area" className="btn-primary">
+              <Link href="/app/area" className="btn-primary">
                 IR PARA A ÁREA →
               </Link>
               <Link href={product.productPath} className="btn-secondary">

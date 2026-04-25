@@ -5,6 +5,11 @@
  * Sprint 0: scaffold mínimo. Handlers reais em Sprint 1/2.
  */
 import { PgBoss } from 'pg-boss';
+import {
+  AGENT_USAGE_ROLLUP,
+  handleAgentUsageRollup,
+  schedule as agentUsageRollupSchedule,
+} from './agent-usage-rollup';
 
 const DATABASE_URL = process.env.DATABASE_URL;
 
@@ -25,6 +30,10 @@ async function main() {
 
   await boss.start();
   console.info('[worker] pg-boss started, aguardando jobs...');
+
+  // Sprint 2: agent usage rollup (diário 03:00 UTC)
+  await boss.work(AGENT_USAGE_ROLLUP, handleAgentUsageRollup);
+  await boss.schedule(AGENT_USAGE_ROLLUP, agentUsageRollupSchedule);
 
   // TODO Sprint 1: registrar handlers
   // await boss.work('welcome_vss', welcomeVss);

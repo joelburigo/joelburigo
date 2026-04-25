@@ -56,6 +56,11 @@ const envSchema = z.object({
 
   N8N_WEBHOOK_URL: optionalUrl,
 
+  // WhatsApp via EvolutionAPI (self-hosted no growth-infra)
+  EVOLUTION_API_URL: optionalUrl,
+  EVOLUTION_API_KEY: optionalString,
+  EVOLUTION_INSTANCE: z.string().default('joelburigo'),
+
   // Sessão (mínimo 16 chars quando preenchido)
   JWT_SECRET: z.string().min(16).optional().or(empty),
 

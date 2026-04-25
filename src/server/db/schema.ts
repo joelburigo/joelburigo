@@ -548,11 +548,16 @@ export const blog_images = pgTable(
 
 // ============ 8. FORMS ============
 
+/**
+ * Submissões genéricas (contato, advisory-aplicacao). Payload completo em `data`.
+ * Diagnóstico 6Ps tem tabela dedicada (`diagnostico_submissions`) por ter
+ * estrutura previsível e ser linkado ao onboarding VSS no Sprint 2.
+ */
 export const form_submissions = pgTable(
   'form_submissions',
   {
     id: text('id').primaryKey(),
-    type: text('type').notNull(),
+    type: text('type').notNull(), // contato · advisory_aplicacao
     data: jsonb('data').notNull(),
     user_id: text('user_id').references(() => users.id),
     email: text('email'),
@@ -565,6 +570,53 @@ export const form_submissions = pgTable(
   (t) => ({
     typeIdx: index('idx_form_submissions_type').on(t.type),
     emailIdx: index('idx_form_submissions_email').on(t.email),
+  })
+);
+
+/**
+ * Diagnóstico 6Ps — estruturado e linkado a user quando ele compra VSS.
+ * URL pública usa o ULID `id` (não-enumerable), sem token adicional.
+ * Sprint 2: onboarding VSS pré-popula user_profile com os scores daqui.
+ */
+export const diagnostico_submissions = pgTable(
+  'diagnostico_submissions',
+  {
+    id: text('id').primaryKey(), // ULID — vira `?id=...` na URL pública
+    user_id: text('user_id').references(() => users.id), // null até cliente comprar VSS
+    nome: text('nome').notNull(),
+    email: text('email').notNull(),
+    whatsapp: text('whatsapp'),
+    empresa: text('empresa'),
+    segmento: text('segmento'),
+    faturamento_aprox: text('faturamento_aprox'),
+
+    // Scores 6Ps (0-4 cada · total 0-24)
+    score_posicionamento: integer('score_posicionamento').notNull().default(0),
+    score_publico: integer('score_publico').notNull().default(0),
+    score_produto: integer('score_produto').notNull().default(0),
+    score_programas: integer('score_programas').notNull().default(0),
+    score_processos: integer('score_processos').notNull().default(0),
+    score_pessoas: integer('score_pessoas').notNull().default(0),
+    score_total: integer('score_total').notNull().default(0),
+    nivel_maturidade: text('nivel_maturidade'), // Caótico · Iniciante · ... · Otimizado
+
+    // Payload bruto pra recálculo futuro se framework mudar
+    raw_answers: jsonb('raw_answers').notNull().default({}),
+
+    // Status entrega ao cliente
+    email_sent_at: timestamp('email_sent_at', { withTimezone: true }),
+    whatsapp_sent_at: timestamp('whatsapp_sent_at', { withTimezone: true }),
+    forwarded_to_n8n_at: timestamp('forwarded_to_n8n_at', { withTimezone: true }),
+
+    ip: text('ip'),
+    user_agent: text('user_agent'),
+    notes_admin: text('notes_admin'),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    emailIdx: index('idx_diagnostico_email').on(t.email),
+    userIdx: index('idx_diagnostico_user').on(t.user_id),
+    createdIdx: index('idx_diagnostico_created').on(t.created_at),
   })
 );
 
@@ -593,3 +645,5 @@ export type Entitlement = typeof entitlements.$inferSelect;
 export type BlogPost = typeof blog_posts.$inferSelect;
 export type NewBlogPost = typeof blog_posts.$inferInsert;
 export type BlogTag = typeof blog_tags.$inferSelect;
+export type DiagnosticoSubmission = typeof diagnostico_submissions.$inferSelect;
+export type NewDiagnosticoSubmission = typeof diagnostico_submissions.$inferInsert;

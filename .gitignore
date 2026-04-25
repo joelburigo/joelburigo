@@ -2,6 +2,14 @@
 node_modules/
 .vite/
 
+# Lockfiles legados (pnpm é o único)
+package-lock.json
+yarn.lock
+
+# Pagefind (search) — não usamos mais no Next, era do Astro
+pagefind.yml
+pagefind/
+
 # Build outputs
 dist/
 .astro/

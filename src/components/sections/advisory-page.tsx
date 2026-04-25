@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Container } from '@/components/patterns/container';
 import { Breadcrumbs, type BreadcrumbItem } from '@/components/seo/breadcrumbs';
 

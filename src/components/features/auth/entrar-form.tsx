@@ -54,7 +54,7 @@ export function EntrarForm({ next, initialError }: Props) {
         throw new Error('Falha no envio');
       }
       const params = new URLSearchParams({ email: value });
-      if (next && next !== '/area') params.set('next', next);
+      if (next && next !== '/app/area') params.set('next', next);
       router.push(`/verificar?${params.toString()}`);
     } catch (err) {
       console.error(err);

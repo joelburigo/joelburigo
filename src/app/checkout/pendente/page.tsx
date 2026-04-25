@@ -63,7 +63,7 @@ export default async function CheckoutPendentePage({
           )}
 
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-            <Link href="/area" className="btn-secondary">
+            <Link href="/app/area" className="btn-secondary">
               ACOMPANHAR NA ÁREA →
             </Link>
             <Link href={product.productPath} className="btn-secondary">

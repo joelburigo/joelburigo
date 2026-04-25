@@ -22,6 +22,7 @@ import {
   entitlements,
 } from './schema';
 import { ulid } from 'ulid';
+import { seedVss } from './seed/vss';
 
 // ---------- Constantes ----------
 
@@ -309,6 +310,9 @@ async function main(): Promise<void> {
     await ensurePipeline(teamId, p);
     console.log(`[seed]   ✓ pipeline ${p.slug} (${p.stages.length} stages)`);
   }
+
+  console.log('[seed] vss metadata…');
+  await seedVss(db);
 
   // Demo users em dev — botões de quick-login em /entrar dependem desses
   if (process.env.NODE_ENV !== 'production') {

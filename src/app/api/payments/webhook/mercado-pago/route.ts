@@ -74,11 +74,11 @@ function buildWelcomeEmail(
 ): { subject: string; html: string; text: string } {
   const baseUrl = env.PUBLIC_SITE_URL;
   if (product.access_kind === 'lifetime') {
-    return welcomeVss({ name, areaUrl: `${baseUrl}/area` });
+    return welcomeVss({ name, areaUrl: `${baseUrl}/app/area` });
   }
   const modalidade = pickAdvisoryModalidade(product.slug);
   const areaUrl =
-    modalidade === 'sessao' ? `${baseUrl}/agendamento-sessao` : `${baseUrl}/area`;
+    modalidade === 'sessao' ? `${baseUrl}/agendamento-sessao` : `${baseUrl}/app/area`;
   return welcomeAdvisory({ name, modalidade, areaUrl });
 }
 
@@ -317,7 +317,7 @@ async function processApprovedPayment(
         const isAdvisory = product.access_kind === 'one_time';
         const link = isAdvisory
           ? `${env.PUBLIC_SITE_URL}/agendamento-sessao`
-          : `${env.PUBLIC_SITE_URL}/area`;
+          : `${env.PUBLIC_SITE_URL}/app/area`;
         const waMsg = isAdvisory
           ? `Sessão Advisory confirmada: ${product.name}. Agende seu horário: ${link}`
           : `Bem-vindo ao ${product.name}! Acesse a área de membros: ${link}`;

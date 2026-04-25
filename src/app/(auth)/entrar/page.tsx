@@ -22,7 +22,7 @@ export default async function EntrarPage({
   const params = await searchParams;
   const next = params.next && params.next.startsWith('/') && !params.next.startsWith('//')
     ? params.next
-    : '/area';
+    : '/app/area';
 
   return (
     <section className="section">

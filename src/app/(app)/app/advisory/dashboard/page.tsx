@@ -10,10 +10,10 @@ export default function AdvisoryDashboardPage() {
   return (
     <DevStub
       sprint={3}
-      route="/advisory/dashboard"
+      route="/app/advisory/dashboard"
       title="Advisory · Sua área 1:1"
-      description="Sprint 3 entrega: lista de sessões agendadas/passadas, embed Cal.com pra agendar, histórico de notas compartilhadas pelo Joel, artifacts trocados, link pra próxima sessão."
-      backHref="/area"
+      description="Sprint 3 entrega: lista de sessões agendadas/passadas (agendamento self-service em `/sessao/agendar`, sem terceiros), histórico de notas compartilhadas pelo Joel, artifacts trocados, link pra próxima sessão (Jitsi auto-gerado), botão remarcar."
+      backHref="/app/area"
       backLabel="Área principal"
     />
   );

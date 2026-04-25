@@ -49,7 +49,7 @@ const PRICE_PER_MILLION_CHARS = MODEL === 'tts-1-hd' ? 30.0 : 15.0;
 const USD_TO_BRL = 5.5;
 
 // Diretórios
-const BLOG_DIR = path.join(__dirname, '../src/content/blog');
+const BLOG_DIR = path.join(__dirname, '../docs/blog');
 const AUDIO_OUTPUT_DIR = path.join(__dirname, '../public/audio/blog');
 
 // Criar diretório de áudio se não existir

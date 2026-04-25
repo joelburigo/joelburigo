@@ -44,7 +44,7 @@ const CONFIG = {
 };
 
 // Directories to process
-const IMAGE_DIRS = ['src/assets/images', 'src/assets/images/blog'];
+const IMAGE_DIRS = ['public/images', 'public/images/blog'];
 
 /**
  * Get all image files from directory

@@ -1,79 +1,315 @@
 /**
- * Seed inicial — cria admin Joel + products.
- * Rodar: `pnpm db:seed`.
+ * Seed inicial — idempotente (upsert por unique key).
  *
- * Idempotente (onConflictDoNothing).
+ * Cria:
+ *   - users: Joel admin
+ *   - teams + team_members: team default `joelburigo`
+ *   - products: 4 (vss, advisory-sessao, advisory-sprint, advisory-conselho)
+ *   - pipelines + stages: `vss` (default) + `advisory`
+ *
+ * Rodar: `pnpm db:seed`
  */
 import 'dotenv/config';
+import { eq, and } from 'drizzle-orm';
 import { db } from './client';
-import { users, products } from './schema';
+import {
+  users,
+  teams,
+  team_members,
+  products,
+  pipelines,
+  stages,
+} from './schema';
+import { ulid } from 'ulid';
 
-async function main() {
-  console.info('[seed] iniciando...');
+// ---------- Constantes ----------
 
-  // Admin Joel
-  const adminId = 'ADMIN_JOEL';
+const ADMIN_EMAIL = 'joel@growthmaster.com.br';
+const ADMIN_NAME = 'Joel Burigo';
+
+const TEAM_SLUG = 'joelburigo';
+const TEAM_NAME = 'Joel Burigo';
+
+// Cores Terminal Growth
+const FIRE = '#FF3B0F';
+const ACID = '#C6FF00';
+const BLACK = '#050505';
+const GRAY = '#737373';
+
+// ---------- Helpers ----------
+
+async function ensureUserAdmin(): Promise<string> {
+  const [existing] = await db.select().from(users).where(eq(users.email, ADMIN_EMAIL)).limit(1);
+  if (existing) {
+    if (existing.role !== 'admin' || existing.name !== ADMIN_NAME) {
+      await db
+        .update(users)
+        .set({ role: 'admin', name: ADMIN_NAME })
+        .where(eq(users.id, existing.id));
+    }
+    return existing.id;
+  }
+  const id = ulid();
+  await db.insert(users).values({
+    id,
+    email: ADMIN_EMAIL,
+    name: ADMIN_NAME,
+    role: 'admin',
+  });
+  return id;
+}
+
+async function ensureTeam(): Promise<string> {
+  const [existing] = await db.select().from(teams).where(eq(teams.slug, TEAM_SLUG)).limit(1);
+  if (existing) return existing.id;
+  const id = ulid();
+  await db.insert(teams).values({ id, slug: TEAM_SLUG, name: TEAM_NAME });
+  return id;
+}
+
+async function ensureTeamMember(teamId: string, userId: string, role: string): Promise<void> {
   await db
-    .insert(users)
-    .values({
-      id: adminId,
-      email: 'joel@joelburigo.com.br',
-      name: 'Joel Burigo',
-      role: 'admin',
-    })
+    .insert(team_members)
+    .values({ team_id: teamId, user_id: userId, role })
     .onConflictDoNothing();
+}
 
-  // Products
-  const productsSeed = [
+interface ProductSeed {
+  slug: string;
+  name: string;
+  price_cents: number;
+  recurring: boolean;
+  access_kind: string;
+  gateway_default?: string;
+  monthly_llm_token_quota?: bigint;
+}
+
+async function ensureProduct(p: ProductSeed): Promise<void> {
+  const [existing] = await db.select().from(products).where(eq(products.slug, p.slug)).limit(1);
+  if (existing) {
+    await db
+      .update(products)
+      .set({
+        name: p.name,
+        price_cents: p.price_cents,
+        recurring: p.recurring,
+        access_kind: p.access_kind,
+        gateway_default: p.gateway_default ?? 'mercado_pago',
+        ...(p.monthly_llm_token_quota !== undefined
+          ? { monthly_llm_token_quota: p.monthly_llm_token_quota }
+          : {}),
+      })
+      .where(eq(products.id, existing.id));
+    return;
+  }
+  await db.insert(products).values({
+    id: ulid(),
+    slug: p.slug,
+    name: p.name,
+    price_cents: p.price_cents,
+    currency: 'BRL',
+    recurring: p.recurring,
+    access_kind: p.access_kind,
+    gateway_default: p.gateway_default ?? 'mercado_pago',
+    monthly_llm_token_quota: p.monthly_llm_token_quota ?? null,
+  });
+}
+
+interface StageSeed {
+  slug: string;
+  name: string;
+  kind: 'open' | 'won' | 'lost';
+  color: string;
+  probability?: number;
+}
+
+interface PipelineSeed {
+  slug: string;
+  name: string;
+  is_default: boolean;
+  position: number;
+  stages: StageSeed[];
+}
+
+async function ensurePipeline(teamId: string, p: PipelineSeed): Promise<void> {
+  const [existing] = await db
+    .select()
+    .from(pipelines)
+    .where(and(eq(pipelines.team_id, teamId), eq(pipelines.slug, p.slug)))
+    .limit(1);
+
+  let pipelineId: string;
+  if (existing) {
+    pipelineId = existing.id;
+    await db
+      .update(pipelines)
+      .set({ name: p.name, is_default: p.is_default, position: p.position })
+      .where(eq(pipelines.id, existing.id));
+  } else {
+    pipelineId = ulid();
+    await db.insert(pipelines).values({
+      id: pipelineId,
+      team_id: teamId,
+      slug: p.slug,
+      name: p.name,
+      is_default: p.is_default,
+      position: p.position,
+    });
+  }
+
+  for (let i = 0; i < p.stages.length; i++) {
+    const s = p.stages[i]!;
+    const [existingStage] = await db
+      .select()
+      .from(stages)
+      .where(and(eq(stages.pipeline_id, pipelineId), eq(stages.slug, s.slug)))
+      .limit(1);
+    if (existingStage) {
+      await db
+        .update(stages)
+        .set({
+          name: s.name,
+          kind: s.kind,
+          color: s.color,
+          position: i,
+          probability: s.probability ?? null,
+        })
+        .where(eq(stages.id, existingStage.id));
+    } else {
+      await db.insert(stages).values({
+        id: ulid(),
+        pipeline_id: pipelineId,
+        slug: s.slug,
+        name: s.name,
+        kind: s.kind,
+        color: s.color,
+        position: i,
+        probability: s.probability ?? null,
+      });
+    }
+  }
+}
+
+// ---------- Main ----------
+
+async function main(): Promise<void> {
+  console.log('[seed] iniciando…');
+
+  console.log('[seed] users…');
+  const adminId = await ensureUserAdmin();
+  console.log(`[seed]   ✓ admin Joel (${adminId})`);
+
+  console.log('[seed] teams + members…');
+  const teamId = await ensureTeam();
+  await ensureTeamMember(teamId, adminId, 'admin');
+  console.log(`[seed]   ✓ team ${TEAM_SLUG} (${teamId})`);
+
+  console.log('[seed] products…');
+  const productList: ProductSeed[] = [
     {
-      id: 'vss',
-      slug: 'vendas-sem-segredos',
+      slug: 'vss',
       name: 'Vendas Sem Segredos',
       price_cents: 199700,
-      currency: 'BRL',
       recurring: false,
-      access_kind: 'lifetime',
+      access_kind: 'vss_lifetime',
       gateway_default: 'mercado_pago',
       monthly_llm_token_quota: BigInt(500_000),
     },
     {
-      id: 'advisory_sessao',
       slug: 'advisory-sessao',
-      name: 'Sessão Advisory',
+      name: 'Advisory · Sessão',
       price_cents: 99700,
-      currency: 'BRL',
       recurring: false,
-      access_kind: 'one_time',
+      access_kind: 'advisory_session',
       gateway_default: 'mercado_pago',
     },
     {
-      id: 'advisory_sprint',
       slug: 'advisory-sprint',
-      name: 'Sprint Advisory 30 dias',
+      name: 'Advisory · Sprint 30 dias',
       price_cents: 750000,
-      currency: 'BRL',
       recurring: false,
-      access_kind: 'one_time',
+      access_kind: 'advisory_sprint',
       gateway_default: 'mercado_pago',
     },
     {
-      id: 'advisory_conselho',
       slug: 'advisory-conselho',
-      name: 'Conselho Executivo',
+      name: 'Advisory · Conselho Executivo',
       price_cents: 1500000,
-      currency: 'BRL',
       recurring: true,
-      access_kind: 'external',
+      access_kind: 'advisory_recurring',
       gateway_default: 'manual',
     },
-  ] as const;
-
-  for (const p of productsSeed) {
-    await db.insert(products).values(p).onConflictDoNothing();
+  ];
+  for (const p of productList) {
+    await ensureProduct(p);
+    console.log(`[seed]   ✓ product ${p.slug}`);
   }
 
-  console.info('[seed] OK — admin + 4 products criados (ou já existiam).');
-  // Evita leak de conexão
+  console.log('[seed] pipelines + stages…');
+  const pipelineList: PipelineSeed[] = [
+    {
+      slug: 'vss',
+      name: 'VSS',
+      is_default: true,
+      position: 0,
+      stages: [
+        { slug: 'novo', name: 'Novo', kind: 'open', color: GRAY, probability: 10 },
+        {
+          slug: 'qualificado',
+          name: 'Qualificado',
+          kind: 'open',
+          color: ACID,
+          probability: 35,
+        },
+        {
+          slug: 'checkout-iniciado',
+          name: 'Checkout iniciado',
+          kind: 'open',
+          color: FIRE,
+          probability: 65,
+        },
+        { slug: 'vendido', name: 'Vendido', kind: 'won', color: ACID, probability: 100 },
+        { slug: 'perdido', name: 'Perdido', kind: 'lost', color: BLACK, probability: 0 },
+      ],
+    },
+    {
+      slug: 'advisory',
+      name: 'Advisory',
+      is_default: false,
+      position: 1,
+      stages: [
+        {
+          slug: 'aplicacao-recebida',
+          name: 'Aplicação recebida',
+          kind: 'open',
+          color: GRAY,
+          probability: 15,
+        },
+        {
+          slug: 'qualificado',
+          name: 'Qualificado',
+          kind: 'open',
+          color: ACID,
+          probability: 40,
+        },
+        {
+          slug: 'proposta-enviada',
+          name: 'Proposta enviada',
+          kind: 'open',
+          color: FIRE,
+          probability: 70,
+        },
+        { slug: 'fechado', name: 'Fechado', kind: 'won', color: ACID, probability: 100 },
+        { slug: 'perdido', name: 'Perdido', kind: 'lost', color: BLACK, probability: 0 },
+      ],
+    },
+  ];
+  for (const p of pipelineList) {
+    await ensurePipeline(teamId, p);
+    console.log(`[seed]   ✓ pipeline ${p.slug} (${p.stages.length} stages)`);
+  }
+
+  console.log('✓ seed completo');
   process.exit(0);
 }
 

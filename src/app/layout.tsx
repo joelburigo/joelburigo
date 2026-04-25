@@ -1,0 +1,59 @@
+import type { Metadata, Viewport } from 'next';
+import { fontsClassName } from '@/lib/fonts';
+import { SITE } from '@/lib/constants';
+import './globals.css';
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
+  title: {
+    default: SITE.longName,
+    template: `%s | ${SITE.name}`,
+  },
+  description: SITE.description,
+  keywords: SITE.keywords.split(', '),
+  authors: [{ name: SITE.name, url: SITE.url }],
+  creator: SITE.name,
+  publisher: SITE.name,
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: SITE.locale,
+    url: SITE.url,
+    siteName: SITE.longName,
+    title: SITE.longName,
+    description: SITE.description,
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: SITE.longName }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE.longName,
+    description: SITE.description,
+    creator: SITE.twitter,
+    images: ['/og-image.jpg'],
+  },
+  icons: {
+    icon: '/favicon.svg',
+  },
+  other: {
+    'cloudflare-email-obfuscation': 'off',
+    'geo.region': SITE.region,
+    'geo.placename': SITE.place,
+    language: 'Portuguese',
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#050505',
+  width: 'device-width',
+  initialScale: 1,
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang={SITE.language} className={fontsClassName}>
+      <body className="bg-ink text-cream antialiased">{children}</body>
+    </html>
+  );
+}

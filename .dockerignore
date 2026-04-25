@@ -7,8 +7,12 @@
 node_modules/
 dist/
 .astro/
+.next/
+out/
 .vite/
 .cache/
+.turbo/
+.cloudflared.token
 
 # Docs (inclui conteudo/brand e conteudo/marketing — referência, não produção)
 docs/

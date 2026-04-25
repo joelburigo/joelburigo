@@ -1,0 +1,595 @@
+/**
+ * Drizzle schema — joelburigo-site
+ *
+ * Organizado por domínio (espelha PROPOSAL.md §3):
+ *   1. Users & Auth
+ *   2. Products & Purchases
+ *   3. VSS Content & Progress
+ *   4. Agent (LLM)
+ *   5. Mentorias
+ *   6. Advisory
+ *   7. Blog
+ *   8. Forms
+ *   9. Admin audit
+ *
+ * Sprint 0 habilita todas as tabelas pra drizzle-kit gerar as migrations.
+ * Sprint 1 conecta os serviços que efetivamente persistem.
+ */
+
+import {
+  pgTable,
+  text,
+  integer,
+  bigint,
+  boolean,
+  timestamp,
+  jsonb,
+  numeric,
+  primaryKey,
+  uniqueIndex,
+  index,
+} from 'drizzle-orm/pg-core';
+
+// ============ 1. USERS & AUTH ============
+
+export const users = pgTable(
+  'users',
+  {
+    id: text('id').primaryKey(),
+    email: text('email').notNull().unique(),
+    name: text('name'),
+    whatsapp: text('whatsapp'),
+    stripe_customer_id: text('stripe_customer_id').unique(),
+    mercado_pago_customer_id: text('mercado_pago_customer_id').unique(),
+    role: text('role').notNull().default('user'),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+    last_login_at: timestamp('last_login_at', { withTimezone: true }),
+  },
+  (t) => ({
+    emailIdx: index('idx_users_email').on(t.email),
+  })
+);
+
+export const user_profiles = pgTable('user_profiles', {
+  user_id: text('user_id')
+    .primaryKey()
+    .references(() => users.id, { onDelete: 'cascade' }),
+  empresa_nome: text('empresa_nome'),
+  segmento: text('segmento'),
+  faturamento_atual_cents: bigint('faturamento_atual_cents', { mode: 'bigint' }),
+  meta_12m_cents: bigint('meta_12m_cents', { mode: 'bigint' }),
+  ticket_medio_cents: bigint('ticket_medio_cents', { mode: 'bigint' }),
+  gargalo_principal: text('gargalo_principal'),
+  produto_md: text('produto_md'),
+  pessoas_md: text('pessoas_md'),
+  precificacao_md: text('precificacao_md'),
+  processos_md: text('processos_md'),
+  performance_md: text('performance_md'),
+  propaganda_md: text('propaganda_md'),
+  raw_data: jsonb('raw_data').notNull().default({}),
+  updated_at: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+  created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+});
+
+export const magic_links = pgTable('magic_links', {
+  token: text('token').primaryKey(),
+  user_id: text('user_id').references(() => users.id, { onDelete: 'cascade' }),
+  expires_at: timestamp('expires_at', { withTimezone: true }).notNull(),
+  used_at: timestamp('used_at', { withTimezone: true }),
+  created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+});
+
+export const kv_store = pgTable(
+  'kv_store',
+  {
+    key: text('key').primaryKey(),
+    value: jsonb('value').notNull(),
+    expires_at: timestamp('expires_at', { withTimezone: true }),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    expiresIdx: index('idx_kv_expires').on(t.expires_at),
+  })
+);
+
+// ============ 2. PRODUCTS & PURCHASES ============
+
+export const products = pgTable('products', {
+  id: text('id').primaryKey(),
+  slug: text('slug').notNull().unique(),
+  name: text('name').notNull(),
+  price_cents: integer('price_cents').notNull(),
+  currency: text('currency').notNull().default('BRL'),
+  recurring: boolean('recurring').notNull().default(false),
+  access_kind: text('access_kind').notNull(),
+  gateway_default: text('gateway_default').notNull().default('mercado_pago'),
+  stripe_price_id: text('stripe_price_id'),
+  mercado_pago_item_id: text('mercado_pago_item_id'),
+  monthly_llm_token_quota: bigint('monthly_llm_token_quota', { mode: 'bigint' }),
+  active: boolean('active').notNull().default(true),
+  created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+});
+
+export const purchases = pgTable(
+  'purchases',
+  {
+    id: text('id').primaryKey(),
+    user_id: text('user_id')
+      .notNull()
+      .references(() => users.id),
+    product_id: text('product_id')
+      .notNull()
+      .references(() => products.id),
+    gateway: text('gateway').notNull(),
+    gateway_checkout_id: text('gateway_checkout_id'),
+    gateway_payment_id: text('gateway_payment_id'),
+    gateway_customer_id: text('gateway_customer_id'),
+    status: text('status').notNull(),
+    amount_cents: integer('amount_cents').notNull(),
+    currency: text('currency').notNull(),
+    raw_payload: jsonb('raw_payload'),
+    paid_at: timestamp('paid_at', { withTimezone: true }),
+    refunded_at: timestamp('refunded_at', { withTimezone: true }),
+    welcome_sent_at: timestamp('welcome_sent_at', { withTimezone: true }),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    userIdx: index('idx_purchases_user').on(t.user_id),
+    statusIdx: index('idx_purchases_status').on(t.status),
+  })
+);
+
+export const subscriptions = pgTable(
+  'subscriptions',
+  {
+    id: text('id').primaryKey(),
+    user_id: text('user_id')
+      .notNull()
+      .references(() => users.id),
+    product_id: text('product_id')
+      .notNull()
+      .references(() => products.id),
+    gateway: text('gateway').notNull(),
+    gateway_subscription_id: text('gateway_subscription_id').notNull().unique(),
+    gateway_customer_id: text('gateway_customer_id'),
+    status: text('status').notNull(),
+    current_period_end: timestamp('current_period_end', { withTimezone: true }),
+    canceled_at: timestamp('canceled_at', { withTimezone: true }),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    userIdx: index('idx_subscriptions_user').on(t.user_id),
+    statusIdx: index('idx_subscriptions_status').on(t.status),
+  })
+);
+
+export const entitlements = pgTable(
+  'entitlements',
+  {
+    id: text('id').primaryKey(),
+    user_id: text('user_id')
+      .notNull()
+      .references(() => users.id, { onDelete: 'cascade' }),
+    product_id: text('product_id')
+      .notNull()
+      .references(() => products.id),
+    source_purchase_id: text('source_purchase_id').references(() => purchases.id),
+    source_subscription_id: text('source_subscription_id').references(() => subscriptions.id),
+    status: text('status').notNull(),
+    starts_at: timestamp('starts_at', { withTimezone: true }).notNull().defaultNow(),
+    ends_at: timestamp('ends_at', { withTimezone: true }),
+    revoked_at: timestamp('revoked_at', { withTimezone: true }),
+    revoked_reason: text('revoked_reason'),
+    metadata: jsonb('metadata').notNull().default({}),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+    updated_at: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    userIdx: index('idx_entitlements_user').on(t.user_id),
+    productIdx: index('idx_entitlements_product').on(t.product_id),
+    statusIdx: index('idx_entitlements_status').on(t.status),
+  })
+);
+
+export const payment_events = pgTable(
+  'payment_events',
+  {
+    id: text('id').primaryKey(),
+    gateway: text('gateway').notNull(),
+    gateway_event_id: text('gateway_event_id').notNull(),
+    event_type: text('event_type').notNull(),
+    object_id: text('object_id'),
+    status: text('status').notNull().default('pending'),
+    attempts: integer('attempts').notNull().default(0),
+    payload: jsonb('payload').notNull(),
+    last_attempt_at: timestamp('last_attempt_at', { withTimezone: true }),
+    processed_at: timestamp('processed_at', { withTimezone: true }),
+    error: text('error'),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    gatewayEventUnique: uniqueIndex('uniq_payment_events_gateway_event').on(
+      t.gateway,
+      t.gateway_event_id
+    ),
+    objectIdx: index('idx_payment_events_object').on(t.gateway, t.object_id),
+  })
+);
+
+// Admin aprova reembolso (15d incondicional mas operacional: Joel revisa cada pedido)
+export const refund_requests = pgTable('refund_requests', {
+  id: text('id').primaryKey(),
+  user_id: text('user_id')
+    .notNull()
+    .references(() => users.id, { onDelete: 'cascade' }),
+  purchase_id: text('purchase_id')
+    .notNull()
+    .references(() => purchases.id),
+  reason: text('reason'),
+  status: text('status').notNull().default('pending'), // pending · approved · denied · converted
+  admin_note: text('admin_note'),
+  approved_at: timestamp('approved_at', { withTimezone: true }),
+  denied_at: timestamp('denied_at', { withTimezone: true }),
+  converted_at: timestamp('converted_at', { withTimezone: true }),
+  created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+});
+
+// ============ 3. VSS CONTENT & PROGRESS ============
+
+export const vss_phases = pgTable('vss_phases', {
+  id: text('id').primaryKey(),
+  position: integer('position').notNull(),
+  code: text('code').notNull().unique(),
+  slug: text('slug').notNull().unique(),
+  title: text('title').notNull(),
+  description: text('description'),
+});
+
+export const vss_modules = pgTable('vss_modules', {
+  id: text('id').primaryKey(),
+  phase_id: text('phase_id')
+    .notNull()
+    .references(() => vss_phases.id),
+  position: integer('position').notNull(),
+  code: text('code').notNull().unique(),
+  slug: text('slug').notNull().unique(),
+  title: text('title').notNull(),
+  description: text('description'),
+});
+
+export const vss_destravamentos = pgTable('vss_destravamentos', {
+  id: text('id').primaryKey(),
+  module_id: text('module_id')
+    .notNull()
+    .references(() => vss_modules.id),
+  position: integer('position').notNull(),
+  code: text('code').notNull().unique(),
+  slug: text('slug').notNull().unique(),
+  title: text('title').notNull(),
+  estimated_minutes: integer('estimated_minutes').notNull().default(20),
+  flow_kind: text('flow_kind').notNull().default('agent_guided'),
+  content_version: text('content_version').notNull(),
+  available_from: timestamp('available_from', { withTimezone: true }),
+  published_at: timestamp('published_at', { withTimezone: true }),
+});
+
+export const user_progress = pgTable(
+  'user_progress',
+  {
+    user_id: text('user_id')
+      .notNull()
+      .references(() => users.id),
+    destravamento_id: text('destravamento_id')
+      .notNull()
+      .references(() => vss_destravamentos.id),
+    started_at: timestamp('started_at', { withTimezone: true }),
+    completed_at: timestamp('completed_at', { withTimezone: true }),
+    last_artifact_id: text('last_artifact_id'),
+    minutes_spent: integer('minutes_spent').notNull().default(0),
+  },
+  (t) => ({
+    pk: primaryKey({ columns: [t.user_id, t.destravamento_id] }),
+  })
+);
+
+// ============ 4. AGENT (LLM) ============
+
+export const agent_conversations = pgTable(
+  'agent_conversations',
+  {
+    id: text('id').primaryKey(),
+    user_id: text('user_id')
+      .notNull()
+      .references(() => users.id, { onDelete: 'cascade' }),
+    destravamento_id: text('destravamento_id').references(() => vss_destravamentos.id),
+    topic: text('topic'),
+    status: text('status').notNull().default('active'),
+    context_snapshot: jsonb('context_snapshot'),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+    updated_at: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    userIdx: index('idx_agent_conversations_user').on(t.user_id),
+    destIdx: index('idx_agent_conversations_destravamento').on(t.destravamento_id),
+  })
+);
+
+export const agent_messages = pgTable(
+  'agent_messages',
+  {
+    id: text('id').primaryKey(),
+    conversation_id: text('conversation_id')
+      .notNull()
+      .references(() => agent_conversations.id, { onDelete: 'cascade' }),
+    role: text('role').notNull(),
+    content: jsonb('content').notNull(),
+    tokens_input: integer('tokens_input'),
+    tokens_output: integer('tokens_output'),
+    tokens_cached: integer('tokens_cached'),
+    model: text('model'),
+    provider: text('provider'), // openai · anthropic
+    cost_cents: numeric('cost_cents', { precision: 10, scale: 4 }),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    convIdx: index('idx_agent_messages_conversation').on(t.conversation_id),
+    createdIdx: index('idx_agent_messages_created').on(t.created_at),
+  })
+);
+
+export const agent_artifacts = pgTable(
+  'agent_artifacts',
+  {
+    id: text('id').primaryKey(),
+    user_id: text('user_id')
+      .notNull()
+      .references(() => users.id, { onDelete: 'cascade' }),
+    conversation_id: text('conversation_id').references(() => agent_conversations.id, {
+      onDelete: 'set null',
+    }),
+    destravamento_id: text('destravamento_id').references(() => vss_destravamentos.id),
+    kind: text('kind').notNull(),
+    title: text('title').notNull(),
+    content_md: text('content_md'),
+    r2_export_key: text('r2_export_key'),
+    version: integer('version').notNull().default(1),
+    parent_artifact_id: text('parent_artifact_id'),
+    is_current: boolean('is_current').notNull().default(true),
+    metadata: jsonb('metadata').notNull().default({}),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    userIdx: index('idx_agent_artifacts_user').on(t.user_id),
+    destIdx: index('idx_agent_artifacts_destravamento').on(t.destravamento_id),
+  })
+);
+
+export const agent_usage = pgTable('agent_usage', {
+  id: text('id').primaryKey(),
+  user_id: text('user_id')
+    .notNull()
+    .references(() => users.id, { onDelete: 'cascade' }),
+  period_month: text('period_month').notNull(),
+  tokens_input: bigint('tokens_input', { mode: 'number' }).notNull().default(0),
+  tokens_output: bigint('tokens_output', { mode: 'number' }).notNull().default(0),
+  tokens_cached: bigint('tokens_cached', { mode: 'number' }).notNull().default(0),
+  cost_cents: numeric('cost_cents', { precision: 10, scale: 2 }).notNull().default('0'),
+  conversation_count: integer('conversation_count').notNull().default(0),
+});
+
+// ============ 5. MENTORIAS (CF Stream Live Input) ============
+
+export const mentorias = pgTable('mentorias', {
+  id: text('id').primaryKey(),
+  title: text('title').notNull(),
+  topic: text('topic'),
+  scheduled_at: timestamp('scheduled_at', { withTimezone: true }).notNull(),
+  duration_min: integer('duration_min').notNull().default(90),
+  cf_live_input_id: text('cf_live_input_id'),
+  cf_playback_id: text('cf_playback_id'),
+  rtmp_url: text('rtmp_url'),
+  rtmp_stream_key: text('rtmp_stream_key'),
+  live_status: text('live_status').notNull().default('idle'),
+  recording_ready_at: timestamp('recording_ready_at', { withTimezone: true }),
+  transcript_r2_key: text('transcript_r2_key'),
+  status: text('status').notNull(),
+  created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+});
+
+export const mentoria_presencas = pgTable(
+  'mentoria_presencas',
+  {
+    mentoria_id: text('mentoria_id')
+      .notNull()
+      .references(() => mentorias.id, { onDelete: 'cascade' }),
+    user_id: text('user_id')
+      .notNull()
+      .references(() => users.id, { onDelete: 'cascade' }),
+    checked_in_at: timestamp('checked_in_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    pk: primaryKey({ columns: [t.mentoria_id, t.user_id] }),
+  })
+);
+
+// ============ 6. ADVISORY ============
+
+export const advisory_sessions = pgTable('advisory_sessions', {
+  id: text('id').primaryKey(),
+  user_id: text('user_id')
+    .notNull()
+    .references(() => users.id),
+  product_id: text('product_id')
+    .notNull()
+    .references(() => products.id),
+  scheduled_at: timestamp('scheduled_at', { withTimezone: true }),
+  duration_min: integer('duration_min'),
+  meeting_url: text('meeting_url'),
+  status: text('status').notNull(),
+  joel_notes_r2_key: text('joel_notes_r2_key'),
+  client_preparation_md: text('client_preparation_md'),
+  created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+});
+
+export const external_provisioning = pgTable(
+  'external_provisioning',
+  {
+    id: text('id').primaryKey(),
+    user_id: text('user_id')
+      .notNull()
+      .references(() => users.id, { onDelete: 'cascade' }),
+    product_id: text('product_id')
+      .notNull()
+      .references(() => products.id),
+    entitlement_id: text('entitlement_id').references(() => entitlements.id),
+    provider: text('provider').notNull(),
+    status: text('status').notNull(),
+    external_account_id: text('external_account_id'),
+    external_login_url: text('external_login_url'),
+    metadata: jsonb('metadata').notNull().default({}),
+    provisioned_at: timestamp('provisioned_at', { withTimezone: true }),
+    revoked_at: timestamp('revoked_at', { withTimezone: true }),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+    updated_at: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    userIdx: index('idx_external_provisioning_user').on(t.user_id),
+    statusIdx: index('idx_external_provisioning_status').on(t.status),
+  })
+);
+
+// ============ 7. BLOG ============
+
+export const blog_posts = pgTable(
+  'blog_posts',
+  {
+    id: text('id').primaryKey(),
+    slug: text('slug').notNull().unique(),
+    title: text('title').notNull(),
+    subtitle: text('subtitle'),
+    excerpt: text('excerpt'),
+    content_md: text('content_md').notNull(),
+    cover_image_path: text('cover_image_path'),
+    cover_image_alt: text('cover_image_alt'),
+    author_id: text('author_id').references(() => users.id),
+    status: text('status').notNull().default('draft'),
+    published_at: timestamp('published_at', { withTimezone: true }),
+    scheduled_for: timestamp('scheduled_for', { withTimezone: true }),
+    reading_minutes: integer('reading_minutes'),
+    seo_title: text('seo_title'),
+    seo_description: text('seo_description'),
+    og_image_path: text('og_image_path'),
+    view_count: integer('view_count').notNull().default(0),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+    updated_at: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    slugIdx: index('idx_blog_posts_slug').on(t.slug),
+    statusIdx: index('idx_blog_posts_status').on(t.status),
+  })
+);
+
+export const blog_tags = pgTable('blog_tags', {
+  id: text('id').primaryKey(),
+  slug: text('slug').notNull().unique(),
+  name: text('name').notNull(),
+  description: text('description'),
+});
+
+export const blog_post_tags = pgTable(
+  'blog_post_tags',
+  {
+    post_id: text('post_id')
+      .notNull()
+      .references(() => blog_posts.id, { onDelete: 'cascade' }),
+    tag_id: text('tag_id')
+      .notNull()
+      .references(() => blog_tags.id, { onDelete: 'cascade' }),
+  },
+  (t) => ({
+    pk: primaryKey({ columns: [t.post_id, t.tag_id] }),
+  })
+);
+
+export const blog_revisions = pgTable(
+  'blog_revisions',
+  {
+    id: text('id').primaryKey(),
+    post_id: text('post_id')
+      .notNull()
+      .references(() => blog_posts.id, { onDelete: 'cascade' }),
+    title: text('title'),
+    content_md: text('content_md'),
+    saved_by: text('saved_by').references(() => users.id),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    postIdx: index('idx_blog_revisions_post').on(t.post_id, t.created_at),
+  })
+);
+
+export const blog_images = pgTable(
+  'blog_images',
+  {
+    id: text('id').primaryKey(),
+    post_id: text('post_id').references(() => blog_posts.id, { onDelete: 'cascade' }),
+    path: text('path').notNull(),
+    alt: text('alt'),
+    width: integer('width'),
+    height: integer('height'),
+    size_bytes: integer('size_bytes'),
+    variant: text('variant'),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    postIdx: index('idx_blog_images_post').on(t.post_id),
+  })
+);
+
+// ============ 8. FORMS ============
+
+export const form_submissions = pgTable(
+  'form_submissions',
+  {
+    id: text('id').primaryKey(),
+    type: text('type').notNull(),
+    data: jsonb('data').notNull(),
+    user_id: text('user_id').references(() => users.id),
+    email: text('email'),
+    ip: text('ip'),
+    user_agent: text('user_agent'),
+    forwarded_to_n8n_at: timestamp('forwarded_to_n8n_at', { withTimezone: true }),
+    notes_admin: text('notes_admin'),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    typeIdx: index('idx_form_submissions_type').on(t.type),
+    emailIdx: index('idx_form_submissions_email').on(t.email),
+  })
+);
+
+// ============ 9. ADMIN AUDIT ============
+
+export const admin_audit = pgTable('admin_audit', {
+  id: text('id').primaryKey(),
+  admin_id: text('admin_id')
+    .notNull()
+    .references(() => users.id),
+  action: text('action').notNull(),
+  target_table: text('target_table'),
+  target_id: text('target_id'),
+  payload: jsonb('payload'),
+  created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+});
+
+// ============ TYPE EXPORTS ============
+
+export type User = typeof users.$inferSelect;
+export type NewUser = typeof users.$inferInsert;
+export type UserProfile = typeof user_profiles.$inferSelect;
+export type Product = typeof products.$inferSelect;
+export type Purchase = typeof purchases.$inferSelect;
+export type Entitlement = typeof entitlements.$inferSelect;
+export type BlogPost = typeof blog_posts.$inferSelect;
+export type NewBlogPost = typeof blog_posts.$inferInsert;
+export type BlogTag = typeof blog_tags.$inferSelect;

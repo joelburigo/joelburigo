@@ -1,6 +1,6 @@
 # Backend Proposal — VSS + Advisory
 
-> **Status:** 🔄 EM DISCUSSÃO — v0.4 · atualizado 2026-04-24
+> **Status:** 🔄 EM DISCUSSÃO — v0.5 · atualizado 2026-04-24
 >
 > Doc vivo. Edita/comenta onde discordar. Cada decisão fechada vira ✅ e move pro log histórico no fim do doc.
 >
@@ -61,16 +61,16 @@
 | Camada              | Tecnologia                                              | Papel                                                                 |
 | ------------------- | ------------------------------------------------------- | --------------------------------------------------------------------- |
 | Runtime             | **Next.js 15 App Router** (Node 22) em Docker            | Render páginas (RSC + streaming) + route handlers + server actions    |
-| LLM SDK             | **Vercel AI SDK v5** + `@ai-sdk/anthropic`               | Streaming, tool calls, structured outputs, generative UI              |
-| Model default       | **Claude Sonnet 4.6** (chat/coach)                       | Custo/perf balanceado pros 66 destravamentos                          |
-| Model premium       | **Claude Opus 4.7** (artifacts finais, casos pesados)    | Geração de plano consolidado, análises longas                         |
-| Model router        | Adapter próprio em `server/lib/llm.ts`                   | Abstração fina pra trocar provider/modelo por flow                    |
+| LLM SDK             | **Vercel AI SDK v5** (multi-provider)                    | Streaming, tool calls, structured outputs, generative UI              |
+| LLM provider default| **OpenAI** (`@ai-sdk/openai`) — key já disponível        | `gpt-4o` ou `gpt-4.1` (a confirmar) pro chat/coach                    |
+| LLM provider opcional| **Anthropic** (`@ai-sdk/anthropic`)                     | Troca via env `LLM_PROVIDER=anthropic` — zero reescrita de código     |
+| Model router        | Adapter próprio em `server/lib/llm.ts` + provider select | Abstração fina pra trocar provider/modelo por flow                    |
 | ORM                 | **Drizzle** (Postgres adapter agora, D1 adapter futuro)  | Schema TS único, queries portáveis                                    |
-| DB relacional       | **Postgres 16 dedicado** (novo container `joelburigo-pg`)| users, purchases, entitlements, progress, sessions, agent state       |
+| DB relacional       | **Postgres 16 per-project** (container `pg-joelburigo-site` no growth-infra compose, rede `db-back` + pgbouncer em `db-front`) | users, purchases, entitlements, progress, sessions, agent state |
 | Sessions/KV         | **Tabela Postgres** via adapter KV                       | Cookies JWT, rate-limit, cache hot. Zero infra extra.                 |
 | Queue               | **pg-boss** em processo separado via adapter Queue       | Welcome email, onboarding async, agent jobs longos. Sem Redis.        |
 | Blob storage        | **Cloudflare R2** via adapter Storage                    | Artifacts do aluno · replays processados · exports CSV/PDF            |
-| Vídeo               | **Cloudflare Stream**                                    | Mentorias ao vivo (upload replay + HLS + player embed + signed URL)   |
+| Vídeo ao vivo + replay | **Cloudflare Stream Live Input**                      | OBS → RTMP do CF → HLS ao vivo na plataforma → **replay automático** disponível ao fim da live (sem upload manual) |
 | CAPTCHA             | **Cloudflare Turnstile**                                 | Anti-bot em forms públicos                                            |
 | CDN/DNS             | **Cloudflare proxied** (free tier)                       | Cache assets + DDoS protection                                        |
 | Pagamento default   | **Mercado Pago BR** (Checkout Pro)                       | Parcelamento local, PIX, boleto, cartão BR                            |
@@ -487,8 +487,13 @@ CREATE TABLE mentorias (
   topic TEXT,
   scheduled_at TIMESTAMPTZ NOT NULL,
   duration_min INTEGER NOT NULL DEFAULT 90,
-  zoom_url TEXT,
-  cf_stream_id TEXT,
+  -- Cloudflare Stream Live Input (OBS publica via RTMP, replay automático)
+  cf_live_input_id TEXT,                   -- UID do live input no CF
+  cf_playback_id TEXT,                     -- UID pra player HLS público (signed)
+  rtmp_url TEXT,                           -- rtmp://live.cloudflare.com:1935/live/ (sensível, só admin)
+  rtmp_stream_key TEXT,                    -- stream key (sensível, só admin)
+  live_status TEXT NOT NULL DEFAULT 'idle',-- idle · live · ended · recording_ready
+  recording_ready_at TIMESTAMPTZ,
   transcript_r2_key TEXT,
   status TEXT NOT NULL,                    -- scheduled · live · recorded · archived
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
@@ -792,20 +797,57 @@ Worker (usando Claude Opus 4.7 pra esta etapa):
 Next: aluno pode exportar, compartilhar com time, revisitar.
 ```
 
-### 4.5 Mentoria ao vivo — replay
+### 4.5 Mentoria ao vivo (OBS → CF Stream Live Input → replay automático)
 
+**Setup uma vez por mentoria:**
 ```
-Joel sobe MP4 pro Cloudflare Stream (dashboard CF ou via tus-js)
-  → recebe video_id
-  ↓
-Admin cria registro em `mentorias` com cf_stream_id
-  ↓
-/area/mentorias/[id] (Server Component)
+Admin /admin/mentorias → "Nova mentoria"
+  ├─ Joel preenche: title, topic, scheduled_at, duration
+  ├─ Backend chama POST https://api.cloudflare.com/.../stream/live_inputs
+  │     → CF retorna { uid, rtmps.url, rtmps.streamKey, playbackId }
+  ├─ Persist em `mentorias`: cf_live_input_id, rtmp_url, rtmp_stream_key, cf_playback_id
+  └─ Admin vê box com rtmp_url + stream_key prontos pra colar no OBS
+```
+
+**No dia da live:**
+```
+Joel abre OBS:
+  ├─ Settings → Stream → Service: Custom
+  │     Server: rtmp://live.cloudflare.com:1935/live/
+  │     Stream key: <rtmp_stream_key>
+  └─ Start Streaming
+       ↓
+Cloudflare recebe RTMP, transcoda pra HLS multi-bitrate
+       ↓
+Webhook CF → /api/mentorias/cf-webhook
+  ├─ Verifica signature
+  └─ Updates mentoria.live_status = 'live'
+       ↓
+Aluno acessa /area/mentorias/[id]
   ├─ Valida session + entitlement VSS ativo
-  ├─ Gera signed token curto para cf_stream_id privado
-  ├─ Render <StreamPlayer src={signedIframeUrl}>
-  └─ Player CF Stream (HLS adaptativo, mobile-friendly)
+  ├─ Vê banner "AO VIVO AGORA" + player HLS
+  └─ Renderiza <iframe src="https://iframe.videodelivery.net/{cf_playback_id}">
+       (signed URL com TTL curto pra prevenir share público)
+       ↓
+Joel encerra OBS:
+  ├─ CF processa replay automático (~30s-2min depois)
+  ├─ Webhook CF → /api/mentorias/cf-webhook
+  └─ Updates mentoria.live_status = 'recording_ready', recording_ready_at = NOW()
+       ↓
+Aluno volta em /area/mentorias/[id]
+  └─ Mesmo iframe agora serve VOD (replay) automaticamente
 ```
+
+📌 **Vantagens vs upload manual:**
+- Zero passo manual pós-live (sem upload de MP4)
+- Aluno pode assistir replay 1 min depois de Joel encerrar
+- Mesmo player URL serve live e VOD (transparente pro aluno)
+- CF gerencia transcoding, storage, CDN
+
+📌 **Custo CF Stream Live Input:**
+- $1 / 1.000 min armazenados (replay)
+- $1 / 1.000 min entregues (delivery)
+- Live encoding incluído
 
 ### 4.6 Webhooks de pagamento — eventos tratados
 
@@ -1046,9 +1088,9 @@ Fechado v0.4: self-service com Mercado Pago (ticket R$ 7.5k parcelável).
 - Trabalho incremental: Sprint 2 foca nos **destravamentos-âncora** (ICP, precificação, cadência, plano 90d — ~10 destravamentos), resto vai em sprints seguintes.
 - Conteúdo atual do MD vira base de prompt do sistema.
 
-### 7.6 Migração de dados
+### 7.6 Migração de dados ✅
 
-- ❓ Tem alunos/clientes atuais em outro sistema pra importar?
+- ✅ **Zero alunos legados.** Primeiro lançamento acontece quando essa plataforma estiver pronta. Seed do Sprint 1 só cria o admin Joel.
 
 ### 7.7 Contas externas
 
@@ -1076,13 +1118,19 @@ Fechado v0.4: self-service com Mercado Pago (ticket R$ 7.5k parcelável).
 
 ### 7.10 Escolha de modelo por flow
 
-- 📌 Sonnet 4.6 default · Opus 4.7 em flows marcados explicitamente (consolidação, plano 90d).
-- ❓ Confirma ou quer default mais agressivo (Opus em tudo)?
+- 📌 **OpenAI default** (key já existe no `.env`):
+  - **Chat/coach:** `gpt-4o` ou `gpt-4.1` (a confirmar — `gpt-4o` é mais rápido/barato, `gpt-4.1` mais capaz)
+  - **Consolidação de fase:** `gpt-4.1` (ou `o1` se Joel topar custo)
+- 🔄 **Anthropic** disponível via env switch sem reescrita.
+- ❓ Confirma `gpt-4o` como chat default ou prefere `gpt-4.1`?
 
-### 7.11 Backup off-site Postgres
+### 7.11 Backup off-site Postgres ✅
 
-- ❓ Growth-infra já faz backup off-site pra S3/R2/B2 ou é só volume local?
-- Se não: entra no Sprint 1 — dump diário + upload R2 com retenção 30 dias.
+- ✅ **Já existe** no growth-infra (`scripts/backup.sh`):
+  - Daily 00:00 BRT (retenção 7 dias) + monthly dia 1 (retenção 6 meses)
+  - Encriptado com `age` (chave pública no servidor, privada no 1P vault)
+  - Sync pra Google Drive via rclone + Hetzner snapshots
+- Sprint 1: só adicionar `/mnt/data/pg-joelburigo-site` aos paths validados do script. Restore via `restore-app.sh joelburigo-site <YYYY-MM-DD>`.
 
 ### 7.12 Editor do blog ✅
 
@@ -1109,23 +1157,27 @@ Fechado v0.4: self-service com Mercado Pago (ticket R$ 7.5k parcelável).
 
 ### Sprint 0 — Migração Astro → Next.js + Design System (10-14 dias)
 
-**Objetivo:** substituir Astro pelo Next.js mantendo o site público em paridade visual e performance. Setup do design system em camadas.
+**Objetivo:** substituir Astro pelo Next.js mantendo o site público em paridade visual e performance, **sem reescrever copy** (cp 1:1 do Astro). Setup do design system em camadas.
 
 - [ ] Scaffold Next.js 15 App Router (TypeScript, ESLint, Prettier)
-- [ ] Tailwind v4 + migração de tokens `--jb-*` (Terminal Growth) → `globals.css`
+- [ ] Tailwind v4 + migração de tokens `--jb-*` (Terminal Growth) → `app/globals.css` (cp do `src/styles/global.css` atual)
 - [ ] Fontes via `next/font/google`: Archivo, Archivo Black, JetBrains Mono
 - [ ] shadcn/ui init + customização Terminal Growth (radius 0, brutalist shadows, fire/acid)
 - [ ] Estrutura `src/components/` em 5 camadas (ver §11)
-- [ ] Portar páginas públicas: `/`, `/vendas-sem-segredos`, `/advisory`, `/diagnostico`
+- [ ] Portar páginas públicas (cp 1:1 da copy): `/`, `/vendas-sem-segredos`, `/advisory`, `/diagnostico`
 - [ ] **Blog shell lendo do DB** (não MDX): `/blog` lista + `/blog/[slug]` detalhe via Drizzle → Postgres (fica stub até migração dos posts em Sprint 1)
 - [ ] Sitemap + robots + OG images + structured data
-- [ ] Docker multi-stage com `output: 'standalone'`
-- [ ] GitHub Actions adaptado (build + push GHCR)
-- [ ] Redirects 301 pra qualquer URL que mude
-- [ ] Lighthouse audit: LCP/CLS/TBT em paridade ou melhor que Astro atual
-- [ ] Deploy staging → smoke test → swap production
+- [ ] **Dockerfile multi-stage Next** com `output: 'standalone'` — substitui o Dockerfile Astro atual
+- [ ] **Compose updates no growth-infra** (`/mnt/data/docker-compose.yml`): atualiza `joelburigo-site` (Next standalone), adiciona `joelburigo-worker` (mesma imagem, CMD diferente), adiciona `pg-joelburigo-site` (rede `db-back`), pgbouncer route em `db-front`
+- [ ] **`.env.tpl` no repo + 1P vault Infra** (Joel popula): `DATABASE_URL`, `OPENAI_API_KEY` (já existe), `MP_*`, `STRIPE_*`, `CF_*`, `BREVO_*`, `JWT_SECRET`, etc.
+- [ ] **Tunnel dev preservado**: `pnpm dev:tunnel` continua usando `.cloudflared.token` existente, agora rodando `next dev` na porta 4321 (mesma do Astro). Zero mudança no DNS / Cloudflare Tunnel.
+- [ ] GitHub Actions adaptado: type-check Next + build standalone + push GHCR `ghcr.io/joelburigo/joelburigo-site:latest`
+- [ ] Redirects 301 (zero esperado — slugs preservados)
+- [ ] Lighthouse audit: paridade ou melhor que Astro atual
+- [ ] Backup script: adicionar `/mnt/data/pg-joelburigo-site` aos paths validados
+- [ ] Deploy staging (`staging.joelburigo.com.br`) → smoke test → swap produção via Watchtower
 
-**Entregável:** site público inteiro em Next.js, zero regressão visual/SEO, stack unificado pronto pra tocar backend.
+**Entregável:** site público em Next.js, zero regressão visual/SEO/copy, infra Postgres/worker/staging tudo em paridade pronto pra Sprint 1.
 
 ### Sprint 1 — Foundation + Pagamento + Forms (8-10 dias)
 
@@ -1263,6 +1315,13 @@ _Append-only. Toda decisão fechada sobe pra cá com data._
 - **2026-04-24 (v0.4)** — ✅ **`docs/conteudo/` é INTOCÁVEL e permanente** — fonte única de verdade de estratégia/copy/marca. Fica fora do build Docker. Não migrar, não reescrever, só **consultar**.
 - **2026-04-24 (v0.4)** — ✅ **Migração é `cp` literal** — portar copy 1:1 do Astro pro Next (zero reescrita), posts MD byte-idênticos no DB, imagens blog em `public/assets/images/blog/` (mesmas URLs relativas).
 - **2026-04-24 (v0.4)** — ✅ **Slugs do blog preservados 1:1**; nomes de arquivos MD viram slugs sem transformação.
+- **2026-04-24 (v0.5)** — ✅ **LLM provider default: OpenAI** (`@ai-sdk/openai`) — key `OPENAI_API_KEY` já existe no `.env` atual. Adapter `server/lib/llm.ts` permite trocar via `LLM_PROVIDER=anthropic` sem reescrita.
+- **2026-04-24 (v0.5)** — ✅ **Mentorias ao vivo: Cloudflare Stream Live Input.** OBS publica RTMP → CF entrega HLS ao vivo na plataforma → replay automático disponível ao fim. Schema `mentorias` ganha `cf_live_input_id`, `cf_playback_id`, `rtmp_url`, `rtmp_stream_key`, `live_status`.
+- **2026-04-24 (v0.5)** — ✅ **Postgres como serviço no growth-infra compose** (não no repo do site). Container `pg-joelburigo-site` na rede `db-back` + pgbouncer em `db-front`. Sigue padrão `pg-housecredi-painel` etc.
+- **2026-04-24 (v0.5)** — ✅ **Backup off-site já existe** no growth-infra (`scripts/backup.sh` com age encrypt + rclone gdrive + Hetzner snapshots). Só adicionar path do novo volume.
+- **2026-04-24 (v0.5)** — ✅ **Secrets via 1Password CLI** — template `.env.tpl` no repo, `op inject` popula em prod via `/etc/op-token`. Sigue padrão growth-infra.
+- **2026-04-24 (v0.5)** — ✅ **Tunnel dev preservado**: mesmo `.cloudflared.token` aponta pra `dev.joelburigo.com.br`. `pnpm dev:tunnel` adaptado pra Next dev na porta 4321.
+- **2026-04-24 (v0.5)** — ✅ **Sem alunos legados** (primeiro lançamento pós-MVP). Seed cria só o admin Joel.
 
 ---
 

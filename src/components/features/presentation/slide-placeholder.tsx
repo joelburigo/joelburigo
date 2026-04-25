@@ -12,10 +12,10 @@ interface SlidePlaceholderProps {
  */
 export function SlidePlaceholder({ n, title, block, pendingPort = true }: SlidePlaceholderProps) {
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center gap-6 bg-ink p-8 md:p-16">
+    <div className="bg-ink flex h-full w-full flex-col items-center justify-center gap-6 p-8 md:p-16">
       <div className="grid-overlay" aria-hidden="true" />
       <div className="relative z-10 flex max-w-3xl flex-col items-center gap-6 text-center">
-        <div className="font-mono text-[11px] uppercase tracking-[0.28em] text-fg-muted">
+        <div className="text-fg-muted font-mono text-[11px] tracking-[0.28em] uppercase">
           // SLIDE {String(n).padStart(2, '0')} / 19{block ? ` · ${block}` : ''}
         </div>
         <h1
@@ -32,7 +32,7 @@ export function SlidePlaceholder({ n, title, block, pendingPort = true }: SlideP
         </h1>
         {pendingPort && (
           <div className="border border-[var(--jb-fire-border)] bg-[var(--jb-fire-soft)] px-5 py-3">
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-fire">
+            <p className="text-fire font-mono text-[11px] tracking-[0.22em] uppercase">
               ★ Conteúdo do slide em port byte-fiel · arquitetura do deck pronta
             </p>
           </div>

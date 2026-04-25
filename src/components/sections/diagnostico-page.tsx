@@ -8,14 +8,14 @@ interface DiagnosticoPageProps {
 
 export function DiagnosticoPage({ breadcrumbItems }: DiagnosticoPageProps) {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-ink pb-20 pt-32">
+    <section className="bg-ink relative min-h-screen overflow-hidden pt-32 pb-20">
       <div className="grid-overlay" />
 
       <Container size="md">
         {breadcrumbItems && <Breadcrumbs items={breadcrumbItems} className="mb-5" />}
 
         {/* Status bar */}
-        <div className="mb-10 border border-white/10 bg-ink-2">
+        <div className="bg-ink-2 mb-10 border border-white/10">
           <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 md:px-6">
             <div className="flex items-center gap-3">
               <span className="dot-live" />
@@ -29,7 +29,7 @@ export function DiagnosticoPage({ breadcrumbItems }: DiagnosticoPageProps) {
         <div className="mb-12">
           <div className="kicker mb-4">// DIAGNÓSTICO · 24 PERGUNTAS · 6 PILARES</div>
           <h1
-            className="mb-6 font-display text-cream"
+            className="font-display text-cream mb-6"
             style={{
               fontSize: 'clamp(2.25rem, 6vw, 4.5rem)',
               lineHeight: '0.9',
@@ -57,12 +57,9 @@ export function DiagnosticoPage({ breadcrumbItems }: DiagnosticoPageProps) {
           </p>
 
           {/* Bloco de honestidade */}
-          <div className="mb-8 border-l-4 border-fire bg-fire/5 p-5">
-            <div className="mono mb-2 text-fire">// na moral</div>
-            <p
-              className="font-sans text-cream"
-              style={{ fontSize: '1rem', lineHeight: '1.55' }}
-            >
+          <div className="border-fire bg-fire/5 mb-8 border-l-4 p-5">
+            <div className="mono text-fire mb-2">// na moral</div>
+            <p className="text-cream font-sans" style={{ fontSize: '1rem', lineHeight: '1.55' }}>
               Não é teste de certo ou errado. É{' '}
               <strong className="text-cream">radiografia real</strong> do que impede tua empresa de
               escalar. <strong className="text-cream">Responde com sinceridade</strong> — maquiar
@@ -71,7 +68,7 @@ export function DiagnosticoPage({ breadcrumbItems }: DiagnosticoPageProps) {
           </div>
 
           {/* Prova social em tira */}
-          <div className="grid gap-3 border border-white/10 bg-ink-2 md:grid-cols-3">
+          <div className="bg-ink-2 grid gap-3 border border-white/10 md:grid-cols-3">
             <div className="p-5" style={{ borderRight: '1px solid var(--jb-hair)' }}>
               <div
                 className="font-display text-acid"
@@ -79,7 +76,7 @@ export function DiagnosticoPage({ breadcrumbItems }: DiagnosticoPageProps) {
               >
                 140+
               </div>
-              <div className="mono mt-2 text-fg-muted">clientes atendidos</div>
+              <div className="mono text-fg-muted mt-2">clientes atendidos</div>
             </div>
             <div className="p-5" style={{ borderRight: '1px solid var(--jb-hair)' }}>
               <div
@@ -88,7 +85,7 @@ export function DiagnosticoPage({ breadcrumbItems }: DiagnosticoPageProps) {
               >
                 17+
               </div>
-              <div className="mono mt-2 text-fg-muted">anos de experiência</div>
+              <div className="mono text-fg-muted mt-2">anos de experiência</div>
             </div>
             <div className="p-5">
               <div
@@ -97,18 +94,18 @@ export function DiagnosticoPage({ breadcrumbItems }: DiagnosticoPageProps) {
               >
                 ~R$ 1BI
               </div>
-              <div className="mono mt-2 text-fg-muted">em vendas estruturadas</div>
+              <div className="mono text-fg-muted mt-2">em vendas estruturadas</div>
             </div>
           </div>
         </div>
 
         {/* Form wrapper terminal */}
-        <div className="border border-white/10 bg-ink-2">
+        <div className="bg-ink-2 border border-white/10">
           <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">
-            <span className="inline-block h-3 w-3 bg-fire" />
+            <span className="bg-fire inline-block h-3 w-3" />
             <span className="inline-block h-3 w-3" style={{ background: '#FFB020' }} />
-            <span className="inline-block h-3 w-3 bg-acid" />
-            <span className="mono ml-3 text-fg-muted">&gt; diagnostico_6ps.run</span>
+            <span className="bg-acid inline-block h-3 w-3" />
+            <span className="mono text-fg-muted ml-3">&gt; diagnostico_6ps.run</span>
           </div>
           <div className="p-4 md:p-6">
             <HighLevelForm formId="LiMgJuffsmbXgFNyyil9" height="1726px" />
@@ -118,7 +115,7 @@ export function DiagnosticoPage({ breadcrumbItems }: DiagnosticoPageProps) {
         {/* Rodapé manifesto */}
         <div className="mt-10 text-center">
           <p className="mono text-fg-muted">
-            ★ SISTEMA &gt; IMPROVISO · @joelburigo · FLORIANÓPOLIS/SC
+            ★ SISTEMA &gt; IMPROVISO · EST. 2008 · FLORIANÓPOLIS/SC
           </p>
         </div>
       </Container>

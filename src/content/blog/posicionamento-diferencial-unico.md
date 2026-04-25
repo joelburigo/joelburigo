@@ -38,6 +38,7 @@ Pergunta simples que 90% das empresas não sabe responder: **"Por que alguém de
 Sem resposta clara? Você compete por preço. Com resposta clara? Você cria categoria. É assim que funciona.
 
 <a name="o-que-e-posicionamento"></a>
+
 ## O Que é Posicionamento?
 
 Posicionamento é como você quer ser percebido na mente do seu cliente ideal. É seu diferencial único, comunicado de forma clara e consistente.
@@ -60,6 +61,7 @@ Não é slogan bonito. É razão de existir.
 - Como você quer ser lembrado?
 
 <a name="por-que-importa"></a>
+
 ## Por Que Posicionamento Importa?
 
 ### Sem Posicionamento Claro
@@ -85,6 +87,7 @@ Não é slogan bonito. É razão de existir.
 **A matemática é simples:** Posicionamento forte = Margem alta. Quando você tem diferencial claro, não precisa competir por preço.
 
 <a name="3-perguntas"></a>
+
 ## As 3 Perguntas do Posicionamento
 
 ### Pergunta 1: Para Quem Você Existe?
@@ -118,6 +121,7 @@ Bom posicionamento tem inimigo claro. Eu me posiciono CONTRA:
 **Teste rápido:** Responda essas 3 perguntas em VOZ ALTA e grave. Se você trava, é porque ainda não está claro. Se você consegue explicar em 30 segundos de forma cristalina, seu posicionamento está pronto.
 
 <a name="sinais"></a>
+
 ## Sinais de Posicionamento Forte vs Fraco
 
 ### Sinais de P1 Forte
@@ -141,18 +145,19 @@ Bom posicionamento tem inimigo claro. Eu me posiciono CONTRA:
 - Cliente não entende o valor
 
 <a name="matriz-maturidade"></a>
+
 ## Matriz de Maturidade do Posicionamento
 
 Avalie seu posicionamento de 0 a 5:
 
-| Nível | Pontos | Descrição | Características |
-|-------|--------|-----------|-----------------|
-| Caótico | 0 | Não existe posicionamento | Compete 100% por preço, não sabe explicar diferencial |
-| Iniciante | 1 | Posicionamento confuso | Tenta ser diferente mas não fica claro |
-| Básico | 2 | Existe mas fraco | Tem algum diferencial mas não defende |
-| Intermediário | 3 | Definido | Diferencial claro internamente |
-| Avançado | 4 | Forte | Mercado reconhece diferencial |
-| Otimizado | 5 | Dominante | Referência no nicho, top of mind |
+| Nível         | Pontos | Descrição                 | Características                                       |
+| ------------- | ------ | ------------------------- | ----------------------------------------------------- |
+| Caótico       | 0      | Não existe posicionamento | Compete 100% por preço, não sabe explicar diferencial |
+| Iniciante     | 1      | Posicionamento confuso    | Tenta ser diferente mas não fica claro                |
+| Básico        | 2      | Existe mas fraco          | Tem algum diferencial mas não defende                 |
+| Intermediário | 3      | Definido                  | Diferencial claro internamente                        |
+| Avançado      | 4      | Forte                     | Mercado reconhece diferencial                         |
+| Otimizado     | 5      | Dominante                 | Referência no nicho, top of mind                      |
 
 ### Perguntas Para Autodiagnóstico
 
@@ -171,6 +176,7 @@ Avalie seu posicionamento de 0 a 5:
 - Manifesto/história da marca
 
 <a name="frameworks"></a>
+
 ## Frameworks de Posicionamento Que Funcionam
 
 ### Framework 1: Declaração de Posicionamento
@@ -180,6 +186,7 @@ Complete esta fórmula:
 > "Para [PÚBLICO-ALVO], que [DECLARAÇÃO DA NECESSIDADE/OPORTUNIDADE], nosso [PRODUTO/SERVIÇO] é [CATEGORIA] que [DECLARAÇÃO DE BENEFÍCIO-CHAVE]. Diferente de [CONCORRENTE PRINCIPAL], nós [DECLARAÇÃO DO DIFERENCIAL PRINCIPAL]."
 
 **Exemplo do VSS:**
+
 > "Para donos de micro e pequenas empresas que enfrentam vendas aleatórias e imprevisíveis, o Vendas Sem Segredos é um programa de implementação que estrutura vendas escaláveis em 90 dias. Diferente de agências que criam dependência e cursos que só entregam teoria, nós implementamos junto com você e te deixamos autônomo."
 
 ### Framework 2: Contra-Posicionamento
@@ -187,11 +194,13 @@ Complete esta fórmula:
 Às vezes é mais fácil definir o que você NÃO é:
 
 **NÃO somos:**
+
 - Agência que faz por você (dependência)
 - Curso online que te deixa sozinho (abandono)
 - Consultoria de R$ 50k/mês (inacessível)
 
 **Somos:**
+
 - Implementação prática
 - Acompanhamento constante
 - Preço acessível para MPEs
@@ -203,6 +212,7 @@ Fórmula simples mas poderosa:
 > "Ajudo [NICHO ESPECÍFICO] a [RESULTADO MENSURÁVEL] em [PRAZO ESPECÍFICO]."
 
 **Exemplos:**
+
 - "Ajudo clínicas odontológicas a preencherem 100% da agenda em 60 dias"
 - "Ajudo consultores a passarem de R$ 10k para R$ 50k/mês em 6 meses"
 - "Ajudo e-commerces a triplicarem o ticket médio em 90 dias"
@@ -220,6 +230,7 @@ Estruture seu posicionamento de dentro para fora:
 A maioria das empresas começa pelo "O quê". Empresas com posicionamento forte começam pelo "Por quê".
 
 <a name="erros-fatais"></a>
+
 ## 5 Erros Fatais de Posicionamento
 
 ### Erro 1: Tentar Ser Tudo Para Todos
@@ -243,11 +254,13 @@ A maioria das empresas começa pelo "O quê". Empresas com posicionamento forte 
 Se você soa igual a todo mundo do seu mercado, você VAI competir por preço.
 
 **Evite frases batidas:**
+
 - "Qualidade e compromisso"
 - "Soluções personalizadas"
 - "Atendimento diferenciado"
 
 **Use frases específicas e proprietárias:**
+
 - "Framework dos 6Ps"
 - "Sistema Autonomia Comercial"
 - "Método 90 Dias de Previsibilidade"
@@ -269,6 +282,7 @@ Posicionamento leva tempo para penetrar no mercado. Se você muda a cada 3 meses
 **Regra:** Mantenha por **pelo menos 12-24 meses** antes de ajustar.
 
 <a name="exemplos-reais"></a>
+
 ## Exemplos Reais de Posicionamento Forte
 
 ### Exemplo 1: Dollar Shave Club
@@ -276,6 +290,7 @@ Posicionamento leva tempo para penetrar no mercado. Se você muda a cada 3 meses
 **Posicionamento:** "Lâminas de barbear de qualidade, entregues na sua casa, por R$ 1/mês"
 
 **Por que funciona:**
+
 - Preço claro e chocante
 - Conveniência óbvia
 - Contra Gillette (cara e vendida em supermercado)
@@ -285,6 +300,7 @@ Posicionamento leva tempo para penetrar no mercado. Se você muda a cada 3 meses
 **Posicionamento:** "O banco digital livre de burocracias e tarifas abusivas"
 
 **Por que funciona:**
+
 - Contra bancos tradicionais (burocracia + tarifas)
 - Benefício claro (gratuito + digital)
 - Nicho inicial: millennials digitais
@@ -294,11 +310,13 @@ Posicionamento leva tempo para penetrar no mercado. Se você muda a cada 3 meses
 **Posicionamento:** "Acesso a milhares de academias com uma única assinatura corporativa"
 
 **Por que funciona:**
+
 - Conveniência multiplicada
 - Público B2B (RH de empresas)
 - Contra modelo tradicional (uma academia só)
 
 <a name="exercicio-pratico"></a>
+
 ## Exercício Prático: Descubra Seu Posicionamento em 30 Minutos
 
 ### Passo 1: Liste Seus 3 Melhores Clientes (5 minutos)
@@ -306,6 +324,7 @@ Posicionamento leva tempo para penetrar no mercado. Se você muda a cada 3 meses
 Escreva nome, empresa, por que são os melhores.
 
 Critérios para "melhores":
+
 - Pagam em dia
 - Não pedem desconto
 - Valorizam seu trabalho
@@ -315,6 +334,7 @@ Critérios para "melhores":
 ### Passo 2: Encontre O Padrão Comum (5 minutos)
 
 O que esses 3 têm em comum?
+
 - Tamanho de empresa?
 - Segmento?
 - Dor principal?
@@ -349,6 +369,7 @@ Se você hesita ou diz "qualidade", seu posicionamento está fraco.
 Se você tem resposta objetiva e única, seu posicionamento está forte.
 
 **Exemplo de resposta forte:**
+
 > "Cobramos 30% a mais porque implementamos JUNTO com você durante 90 dias, enquanto outros te vendem curso e te deixam sozinho. Nosso resultado é mensurável: você terá vendas previsíveis. Não é consultoria, não é curso. É implementação guiada com método proprietário."
 
 ## Posicionamento Evolui (Mas Lentamente)
@@ -356,12 +377,14 @@ Se você tem resposta objetiva e única, seu posicionamento está forte.
 Não é fixo para sempre, mas também não muda toda hora.
 
 **Evolução saudável:**
+
 - Começa nicho (ex: "clínicas odonto")
 - Valida e domina (ex: 20 clínicas felizes)
 - Expande horizontal (ex: "todas as clínicas de saúde")
 - Expande vertical (ex: "consultórios e pequenas empresas de serviços")
 
 **Evolução errada:**
+
 - Mês 1: "Atendo clínicas"
 - Mês 2: "Atendo qualquer empresa"
 - Mês 3: "Atendo só B2B"
@@ -370,6 +393,7 @@ Não é fixo para sempre, mas também não muda toda hora.
 Escolha. Valide. Domine. Depois pense em expandir.
 
 <a name="checklist"></a>
+
 ## Checklist Final: Seu Posicionamento Está Pronto?
 
 ✅ Consigo explicar em 30 segundos o que faço

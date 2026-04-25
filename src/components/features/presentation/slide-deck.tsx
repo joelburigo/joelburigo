@@ -72,26 +72,26 @@ export function SlideDeck() {
   const slide = slides[current];
 
   return (
-    <div className="fixed inset-0 z-50 flex h-screen w-screen flex-col bg-ink text-cream">
+    <div className="bg-ink text-cream fixed inset-0 z-50 flex h-screen w-screen flex-col">
       {/* Progress bar */}
       <div
-        className="fixed left-0 top-0 z-[100] h-1 bg-acid transition-all duration-300"
+        className="bg-acid fixed top-0 left-0 z-[100] h-1 transition-all duration-300"
         style={{ width: `${progress}%` }}
       />
 
       {/* Nav controls */}
-      <div className="absolute bottom-8 right-8 z-50 flex gap-3 opacity-30 transition-opacity hover:opacity-100">
+      <div className="absolute right-8 bottom-8 z-50 flex gap-3 opacity-30 transition-opacity hover:opacity-100">
         <button
           onClick={prev}
           aria-label="Slide anterior"
-          className="border border-[var(--jb-hair-strong)] bg-ink-2 p-3 hover:border-acid hover:text-acid"
+          className="bg-ink-2 hover:border-acid hover:text-acid border border-[var(--jb-hair-strong)] p-3"
         >
           <ChevronLeft className="size-6" />
         </button>
         <button
           onClick={next}
           aria-label="Próximo slide"
-          className="border border-[var(--jb-hair-strong)] bg-ink-2 p-3 hover:border-acid hover:text-acid"
+          className="bg-ink-2 hover:border-acid hover:text-acid border border-[var(--jb-hair-strong)] p-3"
         >
           <ChevronRight className="size-6" />
         </button>
@@ -105,7 +105,7 @@ export function SlideDeck() {
       </div>
 
       {/* Footer indicator */}
-      <div className="absolute bottom-4 left-0 w-full text-center font-mono text-[11px] uppercase tracking-[0.22em] text-fg-muted">
+      <div className="text-fg-muted absolute bottom-4 left-0 w-full text-center font-mono text-[11px] tracking-[0.22em] uppercase">
         <span className="text-acid">●</span>&nbsp; SETAS{' '}
         <span className="border border-[var(--jb-hair-strong)] px-1.5 py-0.5">←</span>{' '}
         <span className="border border-[var(--jb-hair-strong)] px-1.5 py-0.5">→</span> · SLIDE{' '}

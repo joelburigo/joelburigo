@@ -46,7 +46,7 @@ clusterKeywords:
 
 # Da Quebrada ao Bilhão: A História Que Ninguém Me Pediu Pra Contar (Mas Que Precisa Ser Contada)
 
-Maio de 2012. 
+Maio de 2012.
 
 Acordo num barraco em Ribeirão das Neves, Minas Gerais. O colchão está em cima de tijolos porque não tenho cama. A parede tem um buraco coberto com papelão. Não tenho geladeira.
 
@@ -118,7 +118,7 @@ Mas comia. Porque era o que tinha.
 
 E olha, eu não conto isso pra gerar pena. Eu conto porque **essa foi minha universidade**. Foi ali que aprendi que dignidade não vem de quanto você tem na conta. Vem de quanto você luta mesmo quando ninguém tá vendo. Vem de uma mãe que transforma soja em "carne" pra que os filhos comam. Vem de um pai que sua serragem o dia inteiro pra botar comida na mesa.
 
-Apesar de tudo? Éramos felizes. 
+Apesar de tudo? Éramos felizes.
 
 Família unida. Base forte. Amor de verdade.
 
@@ -800,8 +800,8 @@ Bora pra cima.
 Let's grow, CARALHO!
 
 **— Joel Burigo**  
-*Ribeirão da Ilha, Florianópolis*  
-*Janeiro de 2026*
+_Ribeirão da Ilha, Florianópolis_  
+_Janeiro de 2026_
 
 ---
 

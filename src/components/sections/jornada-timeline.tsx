@@ -124,13 +124,13 @@ const fases = [
 
 export function JornadaTimeline() {
   return (
-    <section className="relative overflow-hidden bg-ink py-24">
+    <section className="bg-ink relative overflow-hidden py-24">
       <div className="grid-overlay" />
       <Container>
         <div className="mx-auto mb-16 max-w-3xl">
           <div className="kicker mb-4">// JORNADA · 90 DIAS GUIADOS + PERPÉTUO</div>
           <h2
-            className="mb-6 font-display text-cream"
+            className="font-display text-cream mb-6"
             style={{
               fontSize: 'clamp(2rem, 5vw, 3.5rem)',
               lineHeight: '0.92',
@@ -155,7 +155,7 @@ export function JornadaTimeline() {
           </p>
         </div>
 
-        <div className="mx-auto mb-12 max-w-5xl border border-white/10 bg-ink-2 p-4">
+        <div className="bg-ink-2 mx-auto mb-12 max-w-5xl border border-white/10 p-4">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-3">
               <span className="dot-live" />
@@ -189,12 +189,12 @@ export function JornadaTimeline() {
                     {f.numero}
                   </div>
                   <div className="mono mt-2">// {f.janela}</div>
-                  <div className="mono mt-1 text-fg-muted" style={{ fontSize: '0.65rem' }}>
+                  <div className="mono text-fg-muted mt-1" style={{ fontSize: '0.65rem' }}>
                     {f.modulos}
                   </div>
                   {f.marco && (
                     <div
-                      className="mt-3 inline-flex w-fit items-center gap-2 border border-acid bg-acid px-2 py-1"
+                      className="border-acid bg-acid mt-3 inline-flex w-fit items-center gap-2 border px-2 py-1"
                       style={{ color: 'var(--jb-ink)' }}
                     >
                       <span
@@ -208,7 +208,7 @@ export function JornadaTimeline() {
                 </div>
                 <div className="min-w-0">
                   <h3
-                    className="mb-4 font-display text-cream"
+                    className="font-display text-cream mb-4"
                     style={{
                       fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)',
                       lineHeight: '1',
@@ -228,7 +228,7 @@ export function JornadaTimeline() {
                   >
                     {f.objetivo}
                   </p>
-                  <div className="border border-white/10 bg-ink-2 p-5 md:p-6">
+                  <div className="bg-ink-2 border border-white/10 p-5 md:p-6">
                     <div className="mono mb-3" style={{ color: acentoColor }}>
                       // destravamentos-chave
                     </div>
@@ -255,10 +255,10 @@ export function JornadaTimeline() {
           })}
         </div>
 
-        <div className="mx-auto mt-16 max-w-4xl border-l-4 border-acid bg-ink-2 p-8 md:p-10">
+        <div className="border-acid bg-ink-2 mx-auto mt-16 max-w-4xl border-l-4 p-8 md:p-10">
           <div className="kicker mb-4">// RESULTADO AO FIM DAS 7 FASES</div>
           <p
-            className="mb-4 font-display text-cream"
+            className="font-display text-cream mb-4"
             style={{
               fontSize: 'clamp(1.5rem, 3vw, 2.25rem)',
               lineHeight: '1.05',
@@ -278,7 +278,7 @@ export function JornadaTimeline() {
             disciplina em 140+ empresas.
           </p>
           <p
-            className="mt-6 font-display text-fire"
+            className="font-display text-fire mt-6"
             style={{ fontSize: '1.25rem', letterSpacing: '-0.02em', textTransform: 'uppercase' }}
           >
             Sistema &gt; Improviso. Bora pra cima.

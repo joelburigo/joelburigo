@@ -6,11 +6,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default async function DestravamentoPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function DestravamentoPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   return (
     <DevStub

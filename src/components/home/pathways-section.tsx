@@ -97,10 +97,7 @@ export function PathwaysSection() {
                 <div className={cn('mono', s.pwPriceNote)}>{p.priceNote}</div>
               </div>
 
-              <Link
-                href={p.link}
-                className={cn(p.feat ? 'btn-primary' : 'btn-secondary', s.pwCta)}
-              >
+              <Link href={p.link} className={cn(p.feat ? 'btn-primary' : 'btn-secondary', s.pwCta)}>
                 <span>{p.cta}</span>
                 <span aria-hidden="true">→</span>
               </Link>

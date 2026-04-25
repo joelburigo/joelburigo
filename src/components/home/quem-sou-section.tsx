@@ -44,20 +44,22 @@ export function QuemSouSection() {
 
             <p className={s.qsLede}>
               Sou Joel Burigo. Nasci em 1987, Palhoça/SC, filho de marceneiro e vendedora de loja.
-              Quebrei minha primeira empresa aos 25, em 2012 — calote de sócio. Seis meses num barraco
-              em Ribeirão das Neves/MG, R$ 1.400/mês nos Correios pra colocar encomenda na esteira.
+              Quebrei minha primeira empresa aos 25, em 2012 — calote de sócio. Seis meses num
+              barraco em Ribeirão das Neves/MG, R$ 1.400/mês nos Correios pra colocar encomenda na
+              esteira.
             </p>
 
             <p className={s.qsBody}>
-              Reconstruí batendo porta em 100+ empresas. <strong className="text-cream">17+ anos depois</strong>:
-              140+ clientes atendidos pessoalmente. ~R$ 1 bilhão em vendas estruturadas. A base dos 6Ps
-              nasceu do erro real e virou método formalizado em 2025.
+              Reconstruí batendo porta em 100+ empresas.{' '}
+              <strong className="text-cream">17+ anos depois</strong>: 140+ clientes atendidos
+              pessoalmente. ~R$ 1 bilhão em vendas estruturadas. A base dos 6Ps nasceu do erro real
+              e virou método formalizado em 2025.
             </p>
 
             <p className={s.qsBody}>
-              Não sou guru motivacional. Não sou consultor de terno que some depois do PowerPoint. Sou{' '}
-              <strong className="text-cream">mentor-executor</strong>: ensino o método e implemento
-              junto. É o que funciona pra MPE brasileira.
+              Não sou guru motivacional. Não sou consultor de terno que some depois do PowerPoint.
+              Sou <strong className="text-cream">mentor-executor</strong>: ensino o método e
+              implemento junto. É o que funciona pra MPE brasileira.
             </p>
 
             <div className={s.qsMeta}>

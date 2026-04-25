@@ -31,6 +31,7 @@ clusterKeywords:
 ---
 
 <a name="o-problema-real"></a>
+
 ## O Problema Real
 
 Olha, depois de 17+ anos ajudando 140+ empresas, percebi um padrão: **80% dos problemas não são de produto. São de processo**.
@@ -65,6 +66,7 @@ O que falta? Sistema completo que entregue autonomia com preço acessível.
 ---
 
 <a name="o-que-e-framework"></a>
+
 ## O Que é o Framework dos 6Ps?
 
 O Framework dos 6Ps é uma metodologia proprietária que condensei em 2025 depois de anos de tentativa, erro e aplicação prática. São 6 pilares que, quando bem estruturados, transformam vendas aleatórias em previsíveis.
@@ -81,6 +83,7 @@ POSICIONAMENTO → PÚBLICO → PRODUTO → PROGRAMAS → PROCESSOS → PESSOAS
 ---
 
 <a name="os-6-pilares"></a>
+
 ## Os 6 Pilares Detalhados
 
 ### P1: Posicionamento Estratégico
@@ -263,6 +266,7 @@ Processos sem pessoas não funcionam. Pessoas sem processos não escalam.
 ---
 
 <a name="por-onde-comecar"></a>
+
 ## Por Onde Começar?
 
 A ordem importa. Você não pode contratar vendedores (P6) sem ter processos documentados (P5). Não pode implementar CRM (P4) sem saber quem é seu público (P2).
@@ -274,16 +278,13 @@ A ordem importa. Você não pode contratar vendedores (P6) sem ter processos doc
 ### Matriz de Priorização
 
 **Urgência Máxima (Fazer primeiro):**
+
 1. Se POSICIONAMENTO está fraco: COMECE AQUI
 2. Se PÚBLICO está fraco: COMECE AQUI
 
-**Urgência Alta (Fazer em seguida):**
-3. Se PRODUTO está fraco
-4. Se PROGRAMAS está fraco
+**Urgência Alta (Fazer em seguida):** 3. Se PRODUTO está fraco 4. Se PROGRAMAS está fraco
 
-**Urgência Média (Otimização):**
-5. Se PROCESSOS está fraco
-6. Se PESSOAS está fraco
+**Urgência Média (Otimização):** 5. Se PROCESSOS está fraco 6. Se PESSOAS está fraco
 
 ### Lógica
 
@@ -296,6 +297,7 @@ A ordem importa. Você não pode contratar vendedores (P6) sem ter processos doc
 ---
 
 <a name="sinais-fraco"></a>
+
 ## Sinais de Que Cada P Está Fraco
 
 ### Sinais de P1 (Posicionamento) Fraco
@@ -343,6 +345,7 @@ A ordem importa. Você não pode contratar vendedores (P6) sem ter processos doc
 ---
 
 <a name="erros-comuns"></a>
+
 ## Erros Comuns ao Estruturar Vendas
 
 ### Erro 1: Pular a Ordem dos Ps
@@ -372,6 +375,7 @@ Use o framework para achar SEU caminho. O que funciona para um negócio pode nã
 ---
 
 <a name="implementacao-pratica"></a>
+
 ## Implementação Prática em 90 Dias
 
 Estruturar vendas não é rápido, mas é sistemático. O cronograma abaixo é o mesmo que uso com clientes.
@@ -379,11 +383,13 @@ Estruturar vendas não é rápido, mas é sistemático. O cronograma abaixo é o
 ### Semanas 1-4: Fundação (P1, P2, P3)
 
 **Objetivos:**
+
 - Definir posicionamento claro
 - Documentar ICP (Cliente Ideal)
 - Estruturar oferta irresistível
 
 **Entregas mínimas:**
+
 - Proposta de valor em 1 frase
 - ICP básico documentado
 - Produto/pacote principal definido
@@ -392,11 +398,13 @@ Estruturar vendas não é rápido, mas é sistemático. O cronograma abaixo é o
 ### Semanas 5-8: Sistema (P4 - CRM e Funis)
 
 **Objetivos:**
+
 - Configurar CRM profissional
 - Criar funil de vendas estruturado
 - Implementar primeiras automações
 
 **Entregas mínimas:**
+
 - CRM implementado e em uso
 - Funil de vendas funcionando
 - Primeiras automações ativas
@@ -405,15 +413,18 @@ Estruturar vendas não é rápido, mas é sistemático. O cronograma abaixo é o
 ### Semanas 9-10: Atração (Tráfego ou Prospecção)
 
 **Objetivos:**
+
 - Escolher canal principal de atração
 - Começar a gerar leads de forma estruturada
 
 **Se você TEM budget para tráfego:**
+
 - Meta Ads ou Google Ads estruturado
 - Landing pages otimizadas
 - Automações desde o início
 
 **Se você NÃO TEM budget:**
+
 - Prospecção ativa (LinkedIn, e-mail, WhatsApp)
 - Ferramentas gratuitas
 - Crescimento orgânico consistente
@@ -421,11 +432,13 @@ Estruturar vendas não é rápido, mas é sistemático. O cronograma abaixo é o
 ### Semanas 11-12: Operação (P5, P6)
 
 **Objetivos:**
+
 - Documentar processos principais
 - Definir papéis e responsabilidades
 - Criar rituais de acompanhamento
 
 **Entregas mínimas:**
+
 - Playbook de vendas básico
 - Checklists operacionais
 - Dashboard de métricas
@@ -449,14 +462,14 @@ Ao final de 90 dias, você terá:
 
 Para cada P, dê uma nota de 0 a 5:
 
-| Nível | Pontos | Descrição |
-|-------|--------|-----------|
-| Caótico | 0 | Não existe ou extremamente fraco |
-| Iniciante | 1 | Existe mas muito informal |
-| Básico | 2 | Existe mas inconsistente |
-| Intermediário | 3 | Funciona mas não otimizado |
-| Avançado | 4 | Bem estruturado e funcionando |
-| Otimizado | 5 | Referência de mercado |
+| Nível         | Pontos | Descrição                        |
+| ------------- | ------ | -------------------------------- |
+| Caótico       | 0      | Não existe ou extremamente fraco |
+| Iniciante     | 1      | Existe mas muito informal        |
+| Básico        | 2      | Existe mas inconsistente         |
+| Intermediário | 3      | Funciona mas não otimizado       |
+| Avançado      | 4      | Bem estruturado e funcionando    |
+| Otimizado     | 5      | Referência de mercado            |
 
 **Score total possível:** 30 pontos (5 pontos × 6 Ps)
 
@@ -477,6 +490,7 @@ Identifique os 2 Ps com menor pontuação. Comece por eles.
 ### "Por onde devo começar?"
 
 Sempre pelos primeiros Ps. A ordem importa:
+
 1. Posicionamento (P1)
 2. Público (P2)
 3. Produto (P3)
@@ -494,6 +508,7 @@ Não. Você pode começar com ferramentas gratuitas (CRM básico, prospecção a
 ---
 
 <a name="conclusao"></a>
+
 ## Conclusão
 
 Estruturar vendas não é opcional se você quer escalar. É a diferença entre vender R$ 100k/mês e vender R$ 1M/mês com a mesma equipe.

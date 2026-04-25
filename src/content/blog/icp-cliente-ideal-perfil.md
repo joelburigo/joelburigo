@@ -96,12 +96,14 @@ Para o VSS, meu ICP é:
 Muita gente confunde os dois. Vou clarear:
 
 ### Persona (Marketing)
+
 - Personagem fictício
 - Foca em dados demográficos e comportamentais
 - Útil para criar conteúdo e comunicação
 - Exemplo: "Maria, 35 anos, casada, adora viajar"
 
 ### ICP (Vendas)
+
 - Perfil da EMPRESA/CLIENTE ideal
 - Foca em dados firmográficos e dor real
 - Útil para qualificar leads e fechar vendas
@@ -123,6 +125,7 @@ Vou te mostrar com números reais o quanto custa trabalhar sem ICP.
 - Faturamento: R$ 10.000
 
 **Custo oculto:**
+
 - 80% do seu tempo foi gasto com leads ruins
 - Churn alto (cliente errado cancela rápido)
 - Boca a boca fraco (cliente errado não indica)
@@ -137,6 +140,7 @@ Vou te mostrar com números reais o quanto custa trabalhar sem ICP.
 - Faturamento: R$ 50.000
 
 **Benefícios:**
+
 - 70% do tempo economizado
 - Churn baixo (cliente certo fica)
 - Boca a boca forte (cliente certo indica)
@@ -148,6 +152,7 @@ Vou te mostrar com números reais o quanto custa trabalhar sem ICP.
 ### ICP 1: Cliente Peixe Grande (Whale)
 
 **Características:**
+
 - Alto faturamento (R$ 1M+)
 - Ciclo de venda longo (3-12 meses)
 - Ticket alto (R$ 50k+)
@@ -155,6 +160,7 @@ Vou te mostrar com números reais o quanto custa trabalhar sem ICP.
 - Relacionamento complexo
 
 **Quando focar nesse ICP:**
+
 - Você tem equipe estruturada
 - Tem fluxo de caixa para esperar
 - Seu produto justifica ticket alto
@@ -162,6 +168,7 @@ Vou te mostrar com números reais o quanto custa trabalhar sem ICP.
 ### ICP 2: Cliente Médio Porte (Sweet Spot)
 
 **Características:**
+
 - Faturamento médio (R$ 30k-300k/mês)
 - Ciclo de venda médio (1-4 semanas)
 - Ticket médio (R$ 2k-20k)
@@ -169,6 +176,7 @@ Vou te mostrar com números reais o quanto custa trabalhar sem ICP.
 - Relacionamento direto
 
 **Quando focar nesse ICP:**
+
 - Você quer previsibilidade
 - Seu produto é completo mas não complexo
 - **Este é o ICP do VSS e geralmente o melhor para quem vende para MPEs**
@@ -176,6 +184,7 @@ Vou te mostrar com números reais o quanto custa trabalhar sem ICP.
 ### ICP 3: Cliente Pequeno (Volume)
 
 **Características:**
+
 - Faturamento baixo (até R$ 100k/mês)
 - Ciclo de venda curto (dias)
 - Ticket baixo (R$ 500-5k)
@@ -183,6 +192,7 @@ Vou te mostrar com números reais o quanto custa trabalhar sem ICP.
 - Self-service
 
 **Quando focar nesse ICP:**
+
 - Seu produto é escalável (SaaS, curso, etc)
 - Você tem automação forte
 - Modelo de negócio é volume
@@ -190,6 +200,7 @@ Vou te mostrar com números reais o quanto custa trabalhar sem ICP.
 ### ICP 4: Cliente Enterprise (Complexo)
 
 **Características:**
+
 - Mega faturamento (R$ 10M+)
 - Ciclo de venda muito longo (6-24 meses)
 - Ticket muito alto (R$ 100k+)
@@ -197,6 +208,7 @@ Vou te mostrar com números reais o quanto custa trabalhar sem ICP.
 - Compliance e legal pesado
 
 **Quando focar nesse ICP:**
+
 - Você tem estrutura robusta
 - Tem capital para investir em vendas enterprise
 - Seu produto resolve dor estratégica
@@ -223,6 +235,7 @@ Escreva nome e empresa de cada um.
 Para cada um dos 5, pesquise e documente:
 
 **Dados da Empresa:**
+
 - Faturamento anual estimado
 - Número de funcionários
 - Segmento/nicho
@@ -231,6 +244,7 @@ Para cada um dos 5, pesquise e documente:
 - Estrutura (familiar, corporativa, etc)
 
 **Dados do Decisor:**
+
 - Cargo
 - Idade aproximada
 - Formação
@@ -252,6 +266,7 @@ Para cada um dos 5, responda:
 Agora olhe para os 5 juntos. Procure:
 
 **Semelhanças óbvias:**
+
 - 4 dos 5 são do mesmo segmento? → Seu ICP é esse segmento
 - Todos faturam R$ 50-200k/mês? → Seu ICP é essa faixa
 - Todos têm 5-15 funcionários? → Seu ICP é esse tamanho
@@ -259,6 +274,7 @@ Agora olhe para os 5 juntos. Procure:
 **Exemplo real (meu):**
 
 Ao analisar meus 5 melhores, descobri:
+
 - Todos faturam R$ 30-150k/mês
 - Todos são empresas de serviço (não produto físico)
 - Todos têm o DONO como vendedor principal
@@ -276,6 +292,7 @@ Crie um documento único (pode ser Google Doc) com:
 **NOSSO ICP (CLIENTE IDEAL)**
 
 **Empresa:**
+
 - Faturamento: R$ 30k a R$ 300k/mês
 - Funcionários: 1 a 20 pessoas
 - Segmento: Serviços B2B (consultorias, clínicas, escritórios)
@@ -283,23 +300,27 @@ Crie um documento único (pode ser Google Doc) com:
 - Tempo de mercado: 2+ anos
 
 **Decisor:**
+
 - Cargo: Dono, fundador, sócio
 - Idade: 30-55 anos
 - Formação: Técnica ou superior
 - Comportamento: Ativo, busca informação, quer autonomia
 
 **Dor Principal:**
+
 - Vendas aleatórias (não sabe quanto vai faturar)
 - Dependência do fundador (só ele vende)
 - Já tentou agência/curso e não funcionou
 - Quer estruturar vendas mas não sabe por onde começar
 
 **Objeções Típicas:**
+
 - "Não tenho tempo"
 - "Já tentei antes e não deu certo"
 - "Meu caso é muito específico"
 
 **Budget Disponível:**
+
 - R$ 2.000 a R$ 10.000 para investir em vendas
 
 ---
@@ -311,21 +332,25 @@ Tão importante quanto saber quem é seu ICP é saber quem NÃO é.
 ### Meu ICP Anti-Fit (Exemplo Real)
 
 ❌ **Empresas muito pequenas** (abaixo de R$ 10k/mês)
+
 - Não têm budget para investir
 - Não têm estrutura para implementar
 - Churn alto
 
 ❌ **Empresas muito grandes** (acima de R$ 1M/mês)
+
 - Precisam de solução enterprise (não é meu foco)
 - Ciclo de venda muito longo
 - Meu método é para MPE
 
 ❌ **E-commerce de produto físico**
+
 - Dinâmica muito diferente de serviço
 - Logística e estoque que não domino
 - Minha experiência é B2B serviços
 
 ❌ **Pessoas que querem "fórmula mágica"**
+
 - Esperam resultado sem implementar
 - Não querem fazer o trabalho
 - Vão cancelar rápido
@@ -361,6 +386,7 @@ Se as respostas NÃO batem com seu ICP → Não é fit → Não perca tempo.
 Se você faz prospecção ativa (outbound), ICP te dá filtros precisos:
 
 **LinkedIn Sales Navigator:**
+
 - Tamanho da empresa: 1-50 funcionários
 - Cargo: Founder, CEO, Sócio
 - Segmento: Marketing & Advertising, Consulting, Health & Wellness
@@ -416,6 +442,7 @@ Tentar servir 3 ICPs ao mesmo tempo = Servir mal todos os 3.
 ICP evolui. O que era fit há 2 anos pode não ser mais.
 
 **Revise seu ICP a cada 12 meses:**
+
 - Seus melhores clientes ainda são os mesmos?
 - Seu produto evoluiu?
 - O mercado mudou?
@@ -446,33 +473,39 @@ Copie e preencha:
 **NOSSO CLIENTE IDEAL (ICP)**
 
 **DADOS DA EMPRESA**
-- Faturamento mensal: R$ _____ a R$ _____
-- Número de funcionários: _____ a _____
-- Segmento/Nicho: _____________________
-- Localização: _____________________
-- Tempo de mercado: _____ anos+
+
+- Faturamento mensal: R$ **\_** a R$ **\_**
+- Número de funcionários: **\_** a **\_**
+- Segmento/Nicho: **********\_**********
+- Localização: **********\_**********
+- Tempo de mercado: **\_** anos+
 
 **DECISOR**
-- Cargo: _____________________
-- Idade: _____ a _____ anos
-- Formação: _____________________
-- Como nos encontra: _____________________
+
+- Cargo: **********\_**********
+- Idade: **\_** a **\_** anos
+- Formação: **********\_**********
+- Como nos encontra: **********\_**********
 
 **DOR PRINCIPAL**
-1. _____________________
-2. _____________________
-3. _____________________
+
+1. ***
+2. ***
+3. ***
 
 **OBJEÇÕES TÍPICAS**
-1. _____________________
-2. _____________________
+
+1. ***
+2. ***
 
 **BUDGET DISPONÍVEL**
-- R$ _____ a R$ _____ para investir
+
+- R$ **\_** a R$ **\_** para investir
 
 **ANTI-FIT (QUEM NÃO ATENDEMOS)**
-1. _____________________
-2. _____________________
+
+1. ***
+2. ***
 
 ---
 

@@ -60,17 +60,17 @@ services:
       # Sentry (quando ativar)
       SENTRY_DSN: ${JOELBURIGO_SENTRY_DSN:-}
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.joelburigo-site.rule=Host(`joelburigo.com.br`) || Host(`www.joelburigo.com.br`)"
-      - "traefik.http.routers.joelburigo-site.entrypoints=websecure"
-      - "traefik.http.routers.joelburigo-site.tls.certresolver=cloudflare"
-      - "traefik.http.services.joelburigo-site.loadbalancer.server.port=4321"
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.joelburigo-site.rule=Host(`joelburigo.com.br`) || Host(`www.joelburigo.com.br`)'
+      - 'traefik.http.routers.joelburigo-site.entrypoints=websecure'
+      - 'traefik.http.routers.joelburigo-site.tls.certresolver=cloudflare'
+      - 'traefik.http.services.joelburigo-site.loadbalancer.server.port=4321'
       # redirect www → apex
       - "traefik.http.middlewares.joelburigo-www-redirect.redirectregex.regex=^https://www\\.joelburigo\\.com\\.br/(.*)"
-      - "traefik.http.middlewares.joelburigo-www-redirect.redirectregex.replacement=https://joelburigo.com.br/$${1}"
-      - "traefik.http.routers.joelburigo-site.middlewares=joelburigo-www-redirect"
+      - 'traefik.http.middlewares.joelburigo-www-redirect.redirectregex.replacement=https://joelburigo.com.br/$${1}'
+      - 'traefik.http.routers.joelburigo-site.middlewares=joelburigo-www-redirect'
       # Watchtower
-      - "com.centurylinklabs.watchtower.enable=true"
+      - 'com.centurylinklabs.watchtower.enable=true'
     depends_on:
       - pg-joelburigo-site
       - pgbouncer
@@ -95,9 +95,9 @@ services:
       R2_SECRET_ACCESS_KEY: ${JOELBURIGO_R2_SECRET_ACCESS_KEY}
       CF_ACCOUNT_ID: ${CF_ACCOUNT_ID}
       N8N_WEBHOOK_URL: ${JOELBURIGO_N8N_WEBHOOK_URL:-}
-    command: ["node", "--import", "tsx/esm", "worker-src/runner.ts"]
+    command: ['node', '--import', 'tsx/esm', 'worker-src/runner.ts']
     labels:
-      - "com.centurylinklabs.watchtower.enable=true"
+      - 'com.centurylinklabs.watchtower.enable=true'
     depends_on:
       - pg-joelburigo-site
       - pgbouncer
@@ -111,17 +111,17 @@ services:
       POSTGRES_DB: joelburigo
       POSTGRES_USER: joelburigo
       POSTGRES_PASSWORD: ${JOELBURIGO_SITE_DB_PASSWORD}
-      POSTGRES_INITDB_ARGS: "--encoding=UTF-8 --lc-collate=C --lc-ctype=C"
+      POSTGRES_INITDB_ARGS: '--encoding=UTF-8 --lc-collate=C --lc-ctype=C'
     volumes:
       - /mnt/data/pg-joelburigo-site:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U joelburigo"]
+      test: ['CMD-SHELL', 'pg_isready -U joelburigo']
       interval: 10s
       timeout: 5s
       retries: 5
     # Watchtower não puxa patch automático de DB
     labels:
-      - "com.centurylinklabs.watchtower.enable=false"
+      - 'com.centurylinklabs.watchtower.enable=false'
 
 # ============================================================================
 # Adicionar ao pgbouncer existente o pool pra novo DB:

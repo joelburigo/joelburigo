@@ -22,16 +22,12 @@ export function StatusBarTop() {
   }, []);
 
   return (
-    <div className="hidden items-center justify-between border-b border-[var(--jb-hair)] px-10 py-2 font-mono text-[11px] uppercase tracking-[0.22em] text-fg-muted md:flex">
+    <div className="text-fg-muted hidden items-center justify-between border-b border-[var(--jb-hair)] px-10 py-2 font-mono text-[11px] tracking-[0.22em] uppercase md:flex">
       <div className="flex items-center gap-3">
         <span className="dot-live" />
         <span>SYS ONLINE</span>
         <span className="text-[var(--jb-hair-strong)]">·</span>
-        <span>@joelburigo</span>
-        <span className="text-[var(--jb-hair-strong)]">·</span>
-        <span>EXP. 2004</span>
-        <span className="text-[var(--jb-hair-strong)]">·</span>
-        <span>GROWTH EST. 2008</span>
+        <span>EST. 2008</span>
       </div>
       <div className="flex items-center gap-3">
         <span>FLORIANÓPOLIS/SC</span>

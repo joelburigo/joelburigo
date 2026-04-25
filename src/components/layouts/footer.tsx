@@ -7,16 +7,16 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-[var(--jb-hair)] bg-ink text-cream">
+    <footer className="bg-ink text-cream relative border-t border-[var(--jb-hair)]">
       <div className="grid-overlay" aria-hidden="true" />
       <Container>
         {/* Kicker + meta */}
-        <div className="relative flex items-center justify-between border-b border-[var(--jb-hair)] py-4 font-mono text-[11px] uppercase tracking-[0.22em] text-fg-muted">
+        <div className="text-fg-muted relative flex items-center justify-between border-b border-[var(--jb-hair)] py-4 font-mono text-[11px] tracking-[0.22em] uppercase">
           <div className="flex items-center gap-3">
             <span className="dot-live" />
             <span className="text-acid">// SYS_FOOTER</span>
           </div>
-          <span className="hidden md:inline">EST. 2004</span>
+          <span className="hidden md:inline">EST. 2008</span>
         </div>
 
         {/* Grid 4 colunas */}
@@ -26,25 +26,28 @@ export function Footer() {
             <Link href="/" className="inline-block" aria-label="Joel Burigo · Home">
               <Logo size="lg" />
             </Link>
-            <p className="mt-7 font-display text-xl uppercase leading-[0.95] tracking-[-0.03em] text-cream">
+            <p className="font-display text-cream mt-7 text-xl leading-[0.95] tracking-[-0.03em] uppercase">
               Sistema <span className="text-fire">&gt;</span> Improviso
             </p>
-            <p className="mt-7 max-w-[320px] font-sans text-[13px] leading-[1.45] text-fg-3">
-              Framework 6Ps das Vendas Escaláveis. 140+ MPEs · 17+ anos · ~R$ 1 bilhão em vendas estruturadas.
+            <p className="text-fg-3 mt-7 max-w-[320px] font-sans text-[13px] leading-[1.45]">
+              Framework 6Ps das Vendas Escaláveis. 140+ MPEs · 17+ anos · ~R$ 1 bilhão em vendas
+              estruturadas.
             </p>
           </div>
 
           {/* Col 2 — Produtos */}
           <div>
-            <h3 className="mb-4 font-mono text-[11px] uppercase tracking-[0.22em] text-acid">// Produtos</h3>
-            <ul className="font-mono text-[13px] uppercase tracking-[0.22em]">
+            <h3 className="text-acid mb-4 font-mono text-[11px] tracking-[0.22em] uppercase">
+              // Produtos
+            </h3>
+            <ul className="font-mono text-[13px] tracking-[0.22em] uppercase">
               <li>
                 <Link
                   href="/vendas-sem-segredos"
-                  className="jb-foot-link group block py-1.5 text-cream transition-colors duration-[180ms] hover:text-acid"
+                  className="jb-foot-link group text-cream hover:text-acid block py-1.5 transition-colors duration-[180ms]"
                 >
                   <span>VSS</span>
-                  <span className="ml-2 font-mono text-[10px] normal-case tracking-[0.18em] text-fg-muted">
+                  <span className="text-fg-muted ml-2 font-mono text-[10px] tracking-[0.18em] normal-case">
                     vendas sem segredos
                   </span>
                 </Link>
@@ -52,10 +55,10 @@ export function Footer() {
               <li>
                 <Link
                   href="/advisory"
-                  className="jb-foot-link group block py-1.5 text-cream transition-colors duration-[180ms] hover:text-acid"
+                  className="jb-foot-link group text-cream hover:text-acid block py-1.5 transition-colors duration-[180ms]"
                 >
                   <span>Advisory</span>
-                  <span className="ml-2 font-mono text-[10px] normal-case tracking-[0.18em] text-fg-muted">
+                  <span className="text-fg-muted ml-2 font-mono text-[10px] tracking-[0.18em] normal-case">
                     1:1 com Joel
                   </span>
                 </Link>
@@ -63,7 +66,7 @@ export function Footer() {
               <li className="pt-2">
                 <Link
                   href="/diagnostico"
-                  className="jb-foot-link inline-flex items-center gap-2 py-1.5 text-fire transition-colors duration-[180ms] hover:text-acid"
+                  className="jb-foot-link text-fire hover:text-acid inline-flex items-center gap-2 py-1.5 transition-colors duration-[180ms]"
                 >
                   <span>Diagnóstico</span>
                   <span className="font-mono">→</span>
@@ -74,8 +77,10 @@ export function Footer() {
 
           {/* Col 3 — Recursos */}
           <div>
-            <h3 className="mb-4 font-mono text-[11px] uppercase tracking-[0.22em] text-acid">// Recursos</h3>
-            <ul className="font-mono text-[13px] uppercase tracking-[0.22em]">
+            <h3 className="text-acid mb-4 font-mono text-[11px] tracking-[0.22em] uppercase">
+              // Recursos
+            </h3>
+            <ul className="font-mono text-[13px] tracking-[0.22em] uppercase">
               {[
                 { href: '/blog', label: 'Blog' },
                 { href: '/cases', label: 'Cases' },
@@ -85,7 +90,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="jb-foot-link block py-1.5 text-cream transition-colors duration-[180ms] hover:text-acid"
+                    className="jb-foot-link text-cream hover:text-acid block py-1.5 transition-colors duration-[180ms]"
                   >
                     {link.label}
                   </Link>
@@ -96,8 +101,10 @@ export function Footer() {
 
           {/* Col 4 — Social */}
           <div>
-            <h3 className="mb-4 font-mono text-[11px] uppercase tracking-[0.22em] text-acid">// Conexão</h3>
-            <ul className="font-mono text-[13px] uppercase tracking-[0.22em]">
+            <h3 className="text-acid mb-4 font-mono text-[11px] tracking-[0.22em] uppercase">
+              // Conexão
+            </h3>
+            <ul className="font-mono text-[13px] tracking-[0.22em] uppercase">
               {[
                 { href: contactInfo.social.instagram.url, label: 'Instagram' },
                 { href: contactInfo.social.linkedin.url, label: 'LinkedIn' },
@@ -108,10 +115,10 @@ export function Footer() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="jb-foot-link inline-flex items-center gap-2 py-1.5 text-cream transition-colors duration-[180ms] hover:text-acid"
+                    className="jb-foot-link text-cream hover:text-acid inline-flex items-center gap-2 py-1.5 transition-colors duration-[180ms]"
                   >
                     <span>{link.label}</span>
-                    <span className="font-mono text-fg-muted">→</span>
+                    <span className="text-fg-muted font-mono">→</span>
                   </a>
                 </li>
               ))}
@@ -122,33 +129,36 @@ export function Footer() {
         {/* Aviso legal colapsável */}
         <div className="relative border-t border-[var(--jb-hair)] py-8">
           <details className="group mx-auto max-w-4xl">
-            <summary className="flex cursor-pointer list-none items-center justify-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-fg-muted transition-colors duration-[180ms] hover:text-acid">
+            <summary className="text-fg-muted hover:text-acid flex cursor-pointer list-none items-center justify-center gap-2 font-mono text-[11px] tracking-[0.22em] uppercase transition-colors duration-[180ms]">
               <span>// Aviso legal e isenção de responsabilidade</span>
-              <span className="text-acid transition-transform duration-[180ms] group-open:rotate-180">▼</span>
+              <span className="text-acid transition-transform duration-[180ms] group-open:rotate-180">
+                ▼
+              </span>
             </summary>
-            <div className="mt-8 space-y-6 font-sans text-[12px] leading-[1.65] text-fg-muted">
+            <div className="text-fg-muted mt-8 space-y-6 font-sans text-[12px] leading-[1.65]">
               <div>
-                <p className="mb-2 font-mono text-[11px] uppercase tracking-[0.22em] text-fg-3">
+                <p className="text-fg-3 mb-2 font-mono text-[11px] tracking-[0.22em] uppercase">
                   Resultados e desempenho
                 </p>
                 <p>
                   As informações, estratégias e metodologias apresentadas neste site são baseadas na
-                  experiência de Joel Burigo e sua equipe ao longo de 17+ anos com empresas B2B e B2C.
-                  Todo o conteúdo é fornecido exclusivamente para fins educacionais.
+                  experiência de Joel Burigo e sua equipe ao longo de 17+ anos com empresas B2B e
+                  B2C. Todo o conteúdo é fornecido exclusivamente para fins educacionais.
                 </p>
               </div>
               <div>
-                <p className="mb-2 font-mono text-[11px] uppercase tracking-[0.22em] text-fg-3">
+                <p className="text-fg-3 mb-2 font-mono text-[11px] tracking-[0.22em] uppercase">
                   Sem garantia de resultados
                 </p>
                 <p>
-                  Os cases e resultados apresentados não constituem garantia de que você alcançará os
-                  mesmos resultados. Cada negócio é único e o desempenho depende de dedicação, contexto
-                  de mercado, recursos e execução. Resultados passados não garantem resultados futuros.
+                  Os cases e resultados apresentados não constituem garantia de que você alcançará
+                  os mesmos resultados. Cada negócio é único e o desempenho depende de dedicação,
+                  contexto de mercado, recursos e execução. Resultados passados não garantem
+                  resultados futuros.
                 </p>
               </div>
               <div>
-                <p className="mb-2 font-mono text-[11px] uppercase tracking-[0.22em] text-fg-3">
+                <p className="text-fg-3 mb-2 font-mono text-[11px] tracking-[0.22em] uppercase">
                   Esforço requerido
                 </p>
                 <p>
@@ -157,7 +167,7 @@ export function Footer() {
                 </p>
               </div>
               <div>
-                <p className="mb-2 font-mono text-[11px] uppercase tracking-[0.22em] text-fg-3">
+                <p className="text-fg-3 mb-2 font-mono text-[11px] tracking-[0.22em] uppercase">
                   Responsabilidade
                 </p>
                 <p>
@@ -172,7 +182,7 @@ export function Footer() {
 
         {/* Linha final */}
         <div className="relative border-t border-[var(--jb-hair)] py-6">
-          <div className="flex flex-col gap-3 font-mono text-[10px] uppercase tracking-[0.22em] text-fg-muted md:flex-row md:items-center md:justify-between">
+          <div className="text-fg-muted flex flex-col gap-3 font-mono text-[10px] tracking-[0.22em] uppercase md:flex-row md:items-center md:justify-between">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
               <span>FLORIANÓPOLIS/SC</span>
               <span className="text-[var(--jb-hair-strong)]">·</span>
@@ -186,10 +196,13 @@ export function Footer() {
               <span>CNPJ {contactInfo.company.cnpj}</span>
             </div>
             <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-              <Link href="/privacidade" className="transition-colors duration-[180ms] hover:text-acid">
+              <Link
+                href="/privacidade"
+                className="hover:text-acid transition-colors duration-[180ms]"
+              >
                 Privacidade
               </Link>
-              <Link href="/termos" className="transition-colors duration-[180ms] hover:text-acid">
+              <Link href="/termos" className="hover:text-acid transition-colors duration-[180ms]">
                 Termos
               </Link>
             </div>

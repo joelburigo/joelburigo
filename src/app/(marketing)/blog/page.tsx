@@ -46,7 +46,7 @@ export default async function BlogIndexPage() {
               {post.excerpt && <p className="body-sm text-fg-2">{post.excerpt}</p>}
               <Link
                 href={`/blog/${post.slug}`}
-                className="mt-auto inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-acid hover:underline"
+                className="text-acid mt-auto inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.22em] uppercase hover:underline"
               >
                 Ler post <span>→</span>
               </Link>

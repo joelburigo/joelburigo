@@ -61,13 +61,13 @@ const verdades = [
 
 export function VerdadesDuras() {
   return (
-    <section className="relative overflow-hidden bg-ink py-24">
+    <section className="bg-ink relative overflow-hidden py-24">
       <div className="grid-overlay" />
       <Container>
         <div className="mx-auto mb-16 max-w-3xl">
           <div className="kicker mb-4">// 07_VERDADES · MANIFESTO</div>
           <h2
-            className="mb-6 font-display text-cream"
+            className="font-display text-cream mb-6"
             style={{
               fontSize: 'clamp(2rem, 5vw, 3.5rem)',
               lineHeight: '0.92',
@@ -113,7 +113,7 @@ export function VerdadesDuras() {
                   </div>
                   <div className="min-w-0">
                     <h3
-                      className="mb-4 font-display text-cream"
+                      className="font-display text-cream mb-4"
                       style={{
                         fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)',
                         lineHeight: '1',
@@ -133,7 +133,7 @@ export function VerdadesDuras() {
                     >
                       {v.corpo}
                     </p>
-                    <div className="inline-flex items-center gap-3 border border-acid/35 bg-acid/10 px-3 py-1.5">
+                    <div className="border-acid/35 bg-acid/10 inline-flex items-center gap-3 border px-3 py-1.5">
                       <span
                         className="text-acid"
                         style={{
@@ -148,9 +148,9 @@ export function VerdadesDuras() {
                       </span>
                     </div>
                   </div>
-                  <div className="mono hidden md:block md:text-right md:self-start">
+                  <div className="mono hidden md:block md:self-start md:text-right">
                     <div className="text-fg-muted">// dado</div>
-                    <div className="mt-2 text-acid" style={{ fontSize: '0.75rem' }}>
+                    <div className="text-acid mt-2" style={{ fontSize: '0.75rem' }}>
                       {v.dado}
                     </div>
                   </div>
@@ -161,14 +161,14 @@ export function VerdadesDuras() {
         </div>
 
         <div
-          className="mx-auto mt-20 max-w-4xl border-2 border-fire p-8 md:p-12"
+          className="border-fire mx-auto mt-20 max-w-4xl border-2 p-8 md:p-12"
           style={{ background: 'linear-gradient(180deg, rgba(255,59,15,0.08), #0B0B0B)' }}
         >
           <div className="kicker mb-5" style={{ color: 'var(--jb-fire)' }}>
             // CHAMADO
           </div>
           <p
-            className="mb-4 font-display text-cream"
+            className="font-display text-cream mb-4"
             style={{
               fontSize: 'clamp(1.5rem, 3.5vw, 2.5rem)',
               lineHeight: '1',

@@ -32,6 +32,7 @@ clusterKeywords:
 ---
 
 <a name="por-que-crm"></a>
+
 ## Por Que CRM Importa
 
 Em 2012, aprendi uma lição dur
@@ -47,6 +48,7 @@ CRM não é luxo. É obrigação para quem quer escalar — e faz parte do P4 do
 ---
 
 <a name="o-que-e-crm"></a>
+
 ## O Que É CRM e O Que Ele Faz
 
 CRM = Customer Relationship Management (Gestão de Relacionamento com Cliente).
@@ -76,6 +78,7 @@ Traduzindo pro português raiz: **CRM é o sistema que garante que nenhum lead c
 ---
 
 <a name="crms-gratuitos"></a>
+
 ## CRMs Gratuitos: Quando Funcionam
 
 Vou ser honesto: CRM gratuito funciona. Mas tem limite.
@@ -83,24 +86,28 @@ Vou ser honesto: CRM gratuito funciona. Mas tem limite.
 ### As Ferramentas Gratuitas Mais Comuns
 
 **Excel/Google Sheets:**
+
 - ✅ Prós: Simples, grátis, todo mundo sabe usar
 - ❌ Contras: Vira caos com +50 leads, sem automação, sem notificação
 
 **Melhor para:** Primeiras 20-30 vendas
 
 **Notion:**
+
 - ✅ Prós: Flexível, visual, grátis
 - ❌ Contras: Sem automações nativas, requer setup manual, curva de aprendizado
 
 **Melhor para:** Freelancers organizados que gostam de customização
 
 **HubSpot Free:**
+
 - ✅ Prós: CRM real, automações básicas, integrações
 - ❌ Contras: Limitações pesadas (1 pipeline, poucos emails, sem relatórios avançados)
 
 **Melhor para:** Primeiros 100 leads, testando CRM
 
 **Trello/ClickUp:**
+
 - ✅ Prós: Visual (kanban), fácil de usar
 - ❌ Contras: Não é CRM de verdade, sem funil de vendas real
 
@@ -121,6 +128,7 @@ Ferramentas gratuitas funcionam bem até você ter:
 ---
 
 <a name="sete-sinais"></a>
+
 ## Os 7 Sinais de Que Você Precisa Migrar
 
 Se você se identifica com **3 ou mais** desses sinais, é hora de migrar:
@@ -178,22 +186,23 @@ Toda sexta-feira, você perde 3h juntando dados de planilhas diferentes para mon
 ---
 
 <a name="comparacao"></a>
+
 ## Comparação: Excel vs Notion vs HubSpot vs CRM Pro
 
-| **Recurso** | **Excel** | **Notion** | **HubSpot Free** | **CRM Pro** |
-|-------------|-----------|------------|------------------|-------------|
-| **Custo** | R$ 0 | R$ 0 | R$ 0 | R$ 200-500/mês |
-| **Limite de leads** | ~50 | ~200 | Ilimitado | Ilimitado |
-| **Funil visual** | ❌ | Parcial | ✅ | ✅ |
-| **Automações** | ❌ | ❌ | Básicas | Avançadas |
-| **Follow-up automático** | ❌ | ❌ | Limitado | ✅ |
-| **Notificações** | ❌ | Parcial | ✅ | ✅ |
-| **Integração email** | ❌ | ❌ | ✅ | ✅ |
-| **Integração WhatsApp** | ❌ | ❌ | ❌ | ✅ |
-| **Relatórios automáticos** | ❌ | ❌ | Básicos | Completos |
-| **Múltiplos pipelines** | ❌ | Manual | ❌ (só 1) | ✅ |
-| **Histórico completo** | Manual | Manual | ✅ | ✅ |
-| **Previsão de vendas** | ❌ | ❌ | ❌ | ✅ |
+| **Recurso**                | **Excel** | **Notion** | **HubSpot Free** | **CRM Pro**    |
+| -------------------------- | --------- | ---------- | ---------------- | -------------- |
+| **Custo**                  | R$ 0      | R$ 0       | R$ 0             | R$ 200-500/mês |
+| **Limite de leads**        | ~50       | ~200       | Ilimitado        | Ilimitado      |
+| **Funil visual**           | ❌        | Parcial    | ✅               | ✅             |
+| **Automações**             | ❌        | ❌         | Básicas          | Avançadas      |
+| **Follow-up automático**   | ❌        | ❌         | Limitado         | ✅             |
+| **Notificações**           | ❌        | Parcial    | ✅               | ✅             |
+| **Integração email**       | ❌        | ❌         | ✅               | ✅             |
+| **Integração WhatsApp**    | ❌        | ❌         | ❌               | ✅             |
+| **Relatórios automáticos** | ❌        | ❌         | Básicos          | Completos      |
+| **Múltiplos pipelines**    | ❌        | Manual     | ❌ (só 1)        | ✅             |
+| **Histórico completo**     | Manual    | Manual     | ✅               | ✅             |
+| **Previsão de vendas**     | ❌        | ❌         | ❌               | ✅             |
 
 ### Qual Usar Quando
 
@@ -205,6 +214,7 @@ Toda sexta-feira, você perde 3h juntando dados de planilhas diferentes para mon
 ---
 
 <a name="quanto-perde"></a>
+
 ## Quanto Você Pode Estar Perdendo
 
 A conta é simples. Vou te mostrar com números conservadores:
@@ -212,6 +222,7 @@ A conta é simples. Vou te mostrar com números conservadores:
 ### Cenário Típico (Seus Números Podem Variar)
 
 **Sem CRM profissional:**
+
 - Leads por mês: 50
 - Follow-ups esquecidos: 20% (10 leads)
 - Taxa de conversão: 10%
@@ -219,6 +230,7 @@ A conta é simples. Vou te mostrar com números conservadores:
 - Vendas: 4/mês = R$ 12.000
 
 **Com CRM profissional:**
+
 - Mesmos 50 leads
 - Follow-ups esquecidos: 0
 - Taxa de conversão sobe para 15% (melhor follow-up)
@@ -241,6 +253,7 @@ A conta é simples. Vou te mostrar com números conservadores:
 ---
 
 <a name="o-que-resolve"></a>
+
 ## O Que Um CRM Profissional Resolve
 
 ### 1. Automações Que Vendem Por Você
@@ -276,6 +289,7 @@ A conta é simples. Vou te mostrar com números conservadores:
 ---
 
 <a name="roadmap-migracao"></a>
+
 ## Roadmap de Migração em 30 Dias
 
 Se você decidiu migrar, siga esse plano:
@@ -283,16 +297,19 @@ Se você decidiu migrar, siga esse plano:
 ### Semana 1: Preparação
 
 **Dia 1-2:** Exporte todos os dados atuais
+
 - Leads da planilha
 - Clientes ativos
 - Histórico de vendas
 
 **Dia 3-4:** Limpe os dados
+
 - Remove duplicados
 - Padroniza campos
 - Separa lead/cliente
 
 **Dia 5-7:** Configure CRM básico
+
 - Crie pipelines
 - Configure campos personalizados
 - Integre email
@@ -300,16 +317,19 @@ Se você decidiu migrar, siga esse plano:
 ### Semana 2: Importação
 
 **Dia 8-10:** Importe dados limpos
+
 - Leads primeiro
 - Depois clientes
 - Valide importação
 
 **Dia 11-12:** Configure automações
+
 - Follow-ups automáticos
 - Notificações
 - Templates de email
 
 **Dia 13-14:** Teste tudo
+
 - Simule lead entrando
 - Teste automações
 - Ajuste o que precisar
@@ -317,11 +337,13 @@ Se você decidiu migrar, siga esse plano:
 ### Semana 3: Treinamento
 
 **Dia 15-17:** Treine você mesmo
+
 - Use CRM por 3 dias
 - Cadastre leads novos
 - Teste cada função
 
 **Dia 18-21:** Treine time
+
 - 1h de treinamento por pessoa
 - Cada um cadastra 5 leads teste
 - Tire dúvidas
@@ -329,16 +351,19 @@ Se você decidiu migrar, siga esse plano:
 ### Semana 4: Transição
 
 **Dia 22-25:** Uso paralelo
+
 - Novo lead entra: CRM
 - Mantém planilha por segurança
 - Valida que tudo funciona
 
 **Dia 26-28:** 100% no CRM
+
 - Desliga planilha antiga
 - Todo mundo só usa CRM
 - Monitora primeiros dias
 
 **Dia 29-30:** Otimização
+
 - Ajusta processos
 - Refina automações
 - Celebra migração
@@ -348,6 +373,7 @@ Se você decidiu migrar, siga esse plano:
 ---
 
 <a name="como-escolher"></a>
+
 ## Como Escolher Seu CRM
 
 ### Critérios de Escolha
@@ -361,17 +387,20 @@ Se você decidiu migrar, siga esse plano:
 ### Opções de Mercado
 
 **Gratuitos:**
+
 - HubSpot Free
 - Zoho CRM Free
 - Bitrix24 Free
 
 **Pagos (R$ 100-500/mês):**
+
 - Pipedrive
 - RD Station CRM
 - Kommo (ex-AmoCRM)
 - Agendor
 
 **Pagos Premium (R$ 500+/mês):**
+
 - HubSpot Pro
 - Salesforce
 - RD Station Marketing + CRM
@@ -452,6 +481,7 @@ Mas se você quer escalar para R$ 50k, R$ 100k, R$ 200k/mês, **você precisa de
 A boa notícia: CRM profissional se paga sozinho. ROI típico de 15-40x no primeiro ano. Se você quer método guiado pra implementar processo + CRM com autonomia, veja [Vendas Sem Segredos](/vendas-sem-segredos) — já vem com Growth CRM incluso por 12 meses.
 
 A matemática é simples:
+
 - CRM profissional: R$ 300-500/mês
 - Vendas recuperadas por follow-up melhor: R$ 5.000-15.000/mês
 - ROI: 10-40x

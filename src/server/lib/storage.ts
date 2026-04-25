@@ -1,5 +1,10 @@
 import 'server-only';
-import { S3Client, PutObjectCommand, GetObjectCommand, DeleteObjectCommand } from '@aws-sdk/client-s3';
+import {
+  S3Client,
+  PutObjectCommand,
+  GetObjectCommand,
+  DeleteObjectCommand,
+} from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 
 /**
@@ -74,11 +79,9 @@ export const storage: StorageAdapter = {
   },
 
   async signedGetUrl(key, expiresInSec = 3600) {
-    return getSignedUrl(
-      client(),
-      new GetObjectCommand({ Bucket: R2_BUCKET, Key: key }),
-      { expiresIn: expiresInSec }
-    );
+    return getSignedUrl(client(), new GetObjectCommand({ Bucket: R2_BUCKET, Key: key }), {
+      expiresIn: expiresInSec,
+    });
   },
 
   publicUrl(key) {

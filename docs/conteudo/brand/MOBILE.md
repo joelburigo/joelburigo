@@ -8,19 +8,19 @@
 
 Toda peça nasce com premissa mobile-first. Desktop é caso secundário (exceto deck de venda e landing em fluxo desktop). Estimativas abaixo são internas — marcar `~` quando citar fora daqui.
 
-| Peça | Canal | ~% mobile | Device dominante | Ponto crítico |
-|---|---|---|---|---|
-| Post IG feed | Instagram | ~98% | iOS > Android (público MPE Sul/SE) | legibilidade em thumb de ~180px wide no grid do perfil |
-| Story IG | Instagram | ~100% | iOS e Android equilibrado | UI do IG cobre topo (barra + avatar) e base (CTA + caixa mensagem) |
-| Carrossel IG | Instagram | ~97% | iOS | primeiro slide tem que prender — swipe cai se capa é fraca |
-| Reels cover | Instagram | ~99% | Android > iOS | título do reel do autor cobre ~200px inferior |
-| Post LinkedIn | LinkedIn | ~70% mobile / ~30% desktop | iOS no mobile | primeiros 140 char antes do "…ver mais" |
-| Email nurture/pitch | Gmail + Apple Mail | ~75% mobile | iOS Mail + Gmail iOS | preview pane corta em ~90 char no Gmail iOS |
-| YouTube thumb | YouTube | ~85% mobile | Android | thumb lido em ~380px wide no feed do YT mobile |
-| Ad Meta feed | IG/FB | ~99% | iOS e Android | primeira linha da caption trunca em ~40 char na preview |
-| Ad Meta story | IG/FB | ~99% | iOS e Android | CTA nativo sobe a partir de ~1700px Y |
-| Landing joelburigo.com.br | Web | ~60–70% mobile | iOS | hero acima da dobra em 360–414px wide |
-| Deck apresentação | Keynote/PDF | ~20% mobile | iPad | se lido em iPad, texto de stat < 90px vira ilegível |
+| Peça                      | Canal              | ~% mobile                  | Device dominante                   | Ponto crítico                                                      |
+| ------------------------- | ------------------ | -------------------------- | ---------------------------------- | ------------------------------------------------------------------ |
+| Post IG feed              | Instagram          | ~98%                       | iOS > Android (público MPE Sul/SE) | legibilidade em thumb de ~180px wide no grid do perfil             |
+| Story IG                  | Instagram          | ~100%                      | iOS e Android equilibrado          | UI do IG cobre topo (barra + avatar) e base (CTA + caixa mensagem) |
+| Carrossel IG              | Instagram          | ~97%                       | iOS                                | primeiro slide tem que prender — swipe cai se capa é fraca         |
+| Reels cover               | Instagram          | ~99%                       | Android > iOS                      | título do reel do autor cobre ~200px inferior                      |
+| Post LinkedIn             | LinkedIn           | ~70% mobile / ~30% desktop | iOS no mobile                      | primeiros 140 char antes do "…ver mais"                            |
+| Email nurture/pitch       | Gmail + Apple Mail | ~75% mobile                | iOS Mail + Gmail iOS               | preview pane corta em ~90 char no Gmail iOS                        |
+| YouTube thumb             | YouTube            | ~85% mobile                | Android                            | thumb lido em ~380px wide no feed do YT mobile                     |
+| Ad Meta feed              | IG/FB              | ~99%                       | iOS e Android                      | primeira linha da caption trunca em ~40 char na preview            |
+| Ad Meta story             | IG/FB              | ~99%                       | iOS e Android                      | CTA nativo sobe a partir de ~1700px Y                              |
+| Landing joelburigo.com.br | Web                | ~60–70% mobile             | iOS                                | hero acima da dobra em 360–414px wide                              |
+| Deck apresentação         | Keynote/PDF        | ~20% mobile                | iPad                               | se lido em iPad, texto de stat < 90px vira ilegível                |
 
 **Regra:** se não testou em device real (não DevTools), considere que não testou.
 
@@ -51,6 +51,7 @@ UI nativa de cada canal cobre pedaços do canvas. Copy e elemento-chave **nunca*
 ### IG Story — 1080×1920 (9:16)
 
 Canvas nativo cobre:
+
 - **Topo ~180px:** barra de progresso + avatar + "…" + close
 - **Topo ~260px (cumulativo):** avatar do autor quando overlay aparece
 - **Base ~260–300px:** caixa de mensagem + botão compartilhar + CTA nativo ("arrasta pra cima" / link / sticker)
@@ -111,14 +112,14 @@ Canvas nativo cobre:
 
 Site em `src/` usa Tailwind v4 com breakpoints padrão:
 
-| Breakpoint | min-width | Uso canônico Joel Burigo |
-|---|---|---|
-| (base) | 0px | mobile vertical, smartphones 320–639px |
-| `sm` | 640px | smartphones landscape, tablets pequenos |
-| `md` | 768px | tablets vertical |
-| `lg` | 1024px | tablets landscape + desktop pequeno |
-| `xl` | 1280px | desktop padrão |
-| `2xl` | 1536px | desktop grande + deck externo |
+| Breakpoint | min-width | Uso canônico Joel Burigo                |
+| ---------- | --------- | --------------------------------------- |
+| (base)     | 0px       | mobile vertical, smartphones 320–639px  |
+| `sm`       | 640px     | smartphones landscape, tablets pequenos |
+| `md`       | 768px     | tablets vertical                        |
+| `lg`       | 1024px    | tablets landscape + desktop pequeno     |
+| `xl`       | 1280px    | desktop padrão                          |
+| `2xl`      | 1536px    | desktop grande + deck externo           |
 
 ### Regras de design mobile-first para `src/`
 
@@ -126,7 +127,7 @@ Site em `src/` usa Tailwind v4 com breakpoints padrão:
 - **Grid 6Ps:** 1 coluna até `sm`, 2 colunas `md`–`lg`, 3 colunas `lg+` (ou 6×1 linear em desktop xl+)
 - **Tabelas de preço (VSS / Advisory):** cards empilhados verticalmente até `md`; side-by-side a partir de `md`. Destaque (acid border + gradient bg) mantém em ambos
 - **Ticker:** velocidade `38s` desktop, `28s` mobile (percurso menor) — e diminuir `font-size` de 18px → 14px em `<sm`
-- **Status bar topo:** esconder em `<sm` (fica ruído em tela pequena) ou reduzir pra 1 única linha centralizada com só `@joelburigo · SYS ONLINE`
+- **Status bar topo:** esconder em `<sm` (fica ruído em tela pequena) ou reduzir pra 1 única linha centralizada com só `SYS ONLINE · EST. 2008`
 - **Font-sizes display:** usar `clamp()` ancorado em tokens `--jb-fs-*`:
   - H1 hero: `clamp(56px, 9vw, 160px)`
   - H2 section: `clamp(40px, 6vw, 96px)`
@@ -143,20 +144,20 @@ Peças que rodam em múltiplos canvases precisam de copy adaptada — não basta
 
 ### Tabela de comprimentos máximos efetivos (mobile)
 
-| Elemento | Limite duro | Limite útil (mobile) | Observação |
-|---|---|---|---|
-| IG caption (feed) | 2.200 char | **~125 char** antes do "…mais" | primeiras 125 char são críticas — hook + CTA aí |
-| IG comment | 2.200 char | ~300 char | comentário próprio ancorado vira thread |
-| IG story text overlay | sem limite técnico | 6–10 palavras no hero | mais que isso = texto apertado, ilegível |
-| LinkedIn post | 3.000 char | **~140 char** antes do "…ver mais" | abrir com provocação ou número, não com "Vou compartilhar…" |
-| Email subject | 998 char | **40–50 char** no Gmail mobile | acima disso trunca. Testar no iPhone 13 mini (375px) |
-| Email preheader | — | **60–80 char** | aparece ao lado do subject no inbox |
-| Email primeira linha corpo | — | ~90 char visíveis no preview | vale como segundo hook |
-| WhatsApp broadcast | 65.536 char | ~350 char antes de "Ler mais" | hook nos primeiros 2 parágrafos |
-| YouTube thumb texto | — | **3–4 palavras · 120px+ no canvas** | lido em ~380px na tela do feed YT |
-| Push notif (se houver) | — | **40 char title / 90 char body** | iOS trunca antes de Android |
-| Ad Meta primary text | 2.200 char | **~40 char** visíveis antes do truncamento | primeiras palavras carregam o peso |
-| Ad Meta headline | 40 char | 40 char | já é o limite duro |
+| Elemento                   | Limite duro        | Limite útil (mobile)                       | Observação                                                  |
+| -------------------------- | ------------------ | ------------------------------------------ | ----------------------------------------------------------- |
+| IG caption (feed)          | 2.200 char         | **~125 char** antes do "…mais"             | primeiras 125 char são críticas — hook + CTA aí             |
+| IG comment                 | 2.200 char         | ~300 char                                  | comentário próprio ancorado vira thread                     |
+| IG story text overlay      | sem limite técnico | 6–10 palavras no hero                      | mais que isso = texto apertado, ilegível                    |
+| LinkedIn post              | 3.000 char         | **~140 char** antes do "…ver mais"         | abrir com provocação ou número, não com "Vou compartilhar…" |
+| Email subject              | 998 char           | **40–50 char** no Gmail mobile             | acima disso trunca. Testar no iPhone 13 mini (375px)        |
+| Email preheader            | —                  | **60–80 char**                             | aparece ao lado do subject no inbox                         |
+| Email primeira linha corpo | —                  | ~90 char visíveis no preview               | vale como segundo hook                                      |
+| WhatsApp broadcast         | 65.536 char        | ~350 char antes de "Ler mais"              | hook nos primeiros 2 parágrafos                             |
+| YouTube thumb texto        | —                  | **3–4 palavras · 120px+ no canvas**        | lido em ~380px na tela do feed YT                           |
+| Push notif (se houver)     | —                  | **40 char title / 90 char body**           | iOS trunca antes de Android                                 |
+| Ad Meta primary text       | 2.200 char         | **~40 char** visíveis antes do truncamento | primeiras palavras carregam o peso                          |
+| Ad Meta headline           | 40 char            | 40 char                                    | já é o limite duro                                          |
 
 ### Regras de adaptação entre canvases
 
@@ -198,6 +199,7 @@ Peças que rodam em múltiplos canvases precisam de copy adaptada — não basta
 ### YouTube thumb — regra de ouro
 
 Thumb é lido em ~380px wide na tela do mobile. Texto **tem que** ser gigante no canvas original:
+
 - 3–4 palavras máx
 - Cada palavra ≥ 120px altura no canvas 1280×720
 - Contraste máximo — fire sobre preto ou acid sobre preto, nunca cream sobre cream
@@ -214,7 +216,7 @@ Erros recorrentes que só aparecem em mobile real:
 - **Shadow brutalista 6px offset:** em telas retina de densidade 3× (iPhone Pro), o offset 6px vira `~2px visual` — pode ficar discreto demais. Em story subir pra `8–10px` de offset pra manter a pegada brutalist. Desktop mantém 4–6px
 - **Emoji `★` em algumas fontes mobile:** Android às vezes substitui por estrela outline vazada (esquisito). Forçar `font-family: 'JetBrains Mono', monospace` no span que contém o marcador (`★`, `▶`, `→`, `●`) — o mono carrega o glyph correto
 - **Safe zone IG Story — CTA colidindo com UI nativa:** CTA (botão, "arrasta pra cima") **nunca** em Y 1700–1920. Subir pra Y 1500–1700. Qualquer coisa abaixo de 1700 é comido pela caixa de mensagem + ícone "compartilhar reação" do IG
-- **LinkedIn — primeiros 140 char:** se abrir com "Hoje quero compartilhar com vocês uma reflexão sobre…" mata o hook. Abrir com número, pergunta ou provocação direta. Ex: "R$ 160k → R$ 1MI. 24 meses. Um detalhe muda tudo:" 
+- **LinkedIn — primeiros 140 char:** se abrir com "Hoje quero compartilhar com vocês uma reflexão sobre…" mata o hook. Abrir com número, pergunta ou provocação direta. Ex: "R$ 160k → R$ 1MI. 24 meses. Um detalhe muda tudo:"
 - **Email subject com emoji:** Gmail iOS renderiza, Outlook mobile às vezes vira retângulo. Testar ou evitar. `★` e `▶` costumam ser seguros; faciais nunca
 - **Tap target em mobile < 44px:** botão com `padding: 8px 16px` vira ~36px de altura — abaixo do mínimo. Subir pra `padding: 16px 24px` (~56px de altura) mínimo no mobile
 - **Input sem `font-size: 16px`:** iOS dá zoom automático ao focar, quebra layout. Em `src/components/` conferir todos os `<input>`, `<textarea>`, `<select>`
@@ -246,6 +248,7 @@ Se algum item falhou → volta, ajusta, testa de novo. Publicar peça quebrada e
 ---
 
 **Ver também:**
+
 - `README.md` — tokens, tipografia, direção Terminal Growth
 - `USAGE.md` — decision tree por tipo de pedido
 - `ANTI_DRIFT.md` — regras duras (palavras proibidas, provas exatas)

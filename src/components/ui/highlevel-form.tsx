@@ -12,11 +12,7 @@ interface HighLevelFormProps {
  * Embed do form HighLevel (api.gsh.digital).
  * Iframe + script de auto-resize. Estilo "wrapper transparente".
  */
-export function HighLevelForm({
-  formId,
-  height = '1726px',
-  className,
-}: HighLevelFormProps) {
+export function HighLevelForm({ formId, height = '1726px', className }: HighLevelFormProps) {
   return (
     <>
       <div

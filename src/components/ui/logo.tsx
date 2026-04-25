@@ -24,17 +24,11 @@ const sizeMap = {
   xl: 'text-5xl',
 };
 
-export function Logo({
-  size = 'md',
-  asLink = false,
-  href = '/',
-  className,
-  ...props
-}: LogoProps) {
+export function Logo({ size = 'md', asLink = false, href = '/', className, ...props }: LogoProps) {
   const wordmark = (
     <span
       className={cn(
-        'inline-flex items-baseline tracking-[-0.03em] leading-none',
+        'inline-flex items-baseline leading-none tracking-[-0.03em]',
         sizeMap[size],
         className
       )}
@@ -99,7 +93,7 @@ export function LogoStacked({
       <div className="relative z-10 flex flex-col items-center justify-center leading-[0.92]">
         <span
           className={cn(
-            'font-display text-[color:var(--jb-cream)] tracking-[-0.04em]',
+            'font-display tracking-[-0.04em] text-[color:var(--jb-cream)]',
             stackedTextSize[size]
           )}
         >

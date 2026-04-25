@@ -28,13 +28,13 @@ export function DevStub({
         <span className="kicker text-fire">// SPRINT {sprint} · EM CONSTRUÇÃO</span>
         <h1 className="text-display-md">{title}</h1>
         <p className="body-lg text-fg-2">{description}</p>
-        <div className="flex flex-col gap-2 border border-[var(--jb-hair)] bg-ink-2 p-5">
+        <div className="bg-ink-2 flex flex-col gap-2 border border-[var(--jb-hair)] p-5">
           <span className="mono text-fg-muted">// rota</span>
-          <code className="font-mono text-sm text-acid">{route}</code>
+          <code className="text-acid font-mono text-sm">{route}</code>
         </div>
         <Link
           href={backHref}
-          className="font-mono text-[12px] uppercase tracking-[0.22em] text-fg-3 hover:text-acid"
+          className="text-fg-3 hover:text-acid font-mono text-[12px] tracking-[0.22em] uppercase"
         >
           ← {backLabel}
         </Link>

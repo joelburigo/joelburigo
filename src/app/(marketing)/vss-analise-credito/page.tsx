@@ -32,7 +32,7 @@ const items = [
 
 export default function VssAnaliseCreditoPage() {
   return (
-    <main className="relative overflow-hidden bg-ink pt-20">
+    <main className="bg-ink relative overflow-hidden pt-20">
       <div className="grid-overlay" />
       <Container className="relative z-10">
         <section className="py-16 md:py-24">
@@ -53,41 +53,41 @@ export default function VssAnaliseCreditoPage() {
               }}
             >
               <span className="stroke-text">PAGAMENTO</span>
-              <span className="block text-fire">EM ANÁLISE.</span>
+              <span className="text-fire block">EM ANÁLISE.</span>
             </h1>
 
-            <p className="mt-8 max-w-2xl font-sans text-lg text-cream">
-              A operadora do cartão está verificando a transação. Procedimento padrão de segurança
-              — protege você e nós contra fraude.
+            <p className="text-cream mt-8 max-w-2xl font-sans text-lg">
+              A operadora do cartão está verificando a transação. Procedimento padrão de segurança —
+              protege você e nós contra fraude.
             </p>
 
             <div className="mt-12 space-y-6">
               {items.map((item) => (
                 <div
                   key={item.n}
-                  className="flex items-start gap-5 border-l-2 border-acid bg-ink-2 p-5"
+                  className="border-acid bg-ink-2 flex items-start gap-5 border-l-2 p-5"
                 >
                   <div
-                    className="shrink-0 font-mono text-sm font-bold text-acid"
+                    className="text-acid shrink-0 font-mono text-sm font-bold"
                     style={{ letterSpacing: '0.1em' }}
                   >
                     {item.n}
                   </div>
                   <div className="flex-1">
-                    <h3 className="heading-4 mb-1 text-cream">
+                    <h3 className="heading-4 text-cream mb-1">
                       <span className="text-acid">{item.icon}</span>&nbsp; {item.title}
                     </h3>
-                    <p className="font-sans text-fg-2">{item.body}</p>
+                    <p className="text-fg-2 font-sans">{item.body}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-12 border border-[var(--jb-fire-border)] bg-ink-2 p-6">
+            <div className="bg-ink-2 mt-12 border border-[var(--jb-fire-border)] p-6">
               <div className="kicker mb-4" style={{ color: 'var(--jb-fire)' }}>
                 // CASO_RECUSADO · PLANOS_B
               </div>
-              <ul className="space-y-2 font-sans text-fg-2">
+              <ul className="text-fg-2 space-y-2 font-sans">
                 <li>
                   <span className="text-acid">▶</span> Tentar com outro cartão
                 </li>
@@ -115,15 +115,12 @@ export default function VssAnaliseCreditoPage() {
                 <span>Falar com suporte</span>
                 <span aria-hidden="true">→</span>
               </a>
-              <Link
-                href="/vendas-sem-segredos#investimento"
-                className="btn-secondary min-h-[48px]"
-              >
+              <Link href="/vendas-sem-segredos#investimento" className="btn-secondary min-h-[48px]">
                 Tentar outro pagamento
               </Link>
             </div>
 
-            <div className="mt-12 border-t border-[var(--jb-hair)] pt-6 font-mono text-[11px] uppercase tracking-[0.22em] text-fg-muted">
+            <div className="text-fg-muted mt-12 border-t border-[var(--jb-hair)] pt-6 font-mono text-[11px] tracking-[0.22em] uppercase">
               WHATSAPP: {contactInfo.phone.display} &nbsp;·&nbsp; EMAIL: {contactInfo.email.main}
             </div>
           </div>

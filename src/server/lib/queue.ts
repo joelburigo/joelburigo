@@ -14,7 +14,7 @@ type PgBoss = Awaited<ReturnType<typeof makeBoss>>;
 
 async function makeBoss() {
   if (!process.env.DATABASE_URL) return null;
-  const { default: PgBoss } = await import('pg-boss');
+  const { PgBoss } = await import('pg-boss');
   const boss = new PgBoss({
     connectionString: process.env.DATABASE_URL,
     schema: 'pgboss',
@@ -24,7 +24,6 @@ async function makeBoss() {
 }
 
 declare global {
-  // eslint-disable-next-line no-var
   var __jbPgBoss: Promise<PgBoss> | undefined;
 }
 

@@ -18,7 +18,7 @@
   - `/Users/joel/Documents/Dev/joelburigo-site/docs/conteudo/brand/preview/index.html`
 - [ ] Ler antes de tocar em qualquer arquivo:
   - `/Users/joel/Documents/Dev/joelburigo-site/docs/conteudo/brand/README.md` (secoes VISUAL FOUNDATIONS + CONTENT FUNDAMENTALS)
-  - `/Users/joel/Documents/Dev/joelburigo-site/docs/conteudo/brand/colors_and_type.css` (tokens --jb-*)
+  - `/Users/joel/Documents/Dev/joelburigo-site/docs/conteudo/brand/colors_and_type.css` (tokens --jb-\*)
   - `/Users/joel/Documents/Dev/joelburigo-site/docs/conteudo/brand/ANTI_DRIFT.md` (regras de copy — nao inventar)
 - [ ] Screenshot da homepage atual em mobile (375px) + desktop (1440px) pra comparacao pos-deploy
 
@@ -35,7 +35,7 @@
 - `@theme { --animate-bounce-slow, --animate-fade-in, --animate-slide-up }` (linhas 85-87)
 - `:root { --color-text-*, --color-bg-*, --color-border, --shadow-* (incluindo --shadow-glow-lime + --shadow-glow-blue), --border-radius-sm..2xl, --transition-fast/base/slow }` (linhas 94-122)
 - `@layer components { .text-display-*, .heading-*, .body*, .card, .btn-primary, .btn-secondary, .section, .section-sm }` (linhas 144-269)
-- Scrollbar custom com rgba(163,255,63,*) lime (linhas 276-291)
+- Scrollbar custom com rgba(163,255,63,\*) lime (linhas 276-291)
 - Keyframes fadeIn/slideUp/slideDown/scaleIn (linhas 297-337)
 
 ### Escopo no `src/`
@@ -75,30 +75,30 @@
 
 ## 2. Mapeamento tokens antigos → novos
 
-| Antigo | Novo | Notas |
-|---|---|---|
-| `--color-royal-blue` `#1d4ed8` | `--jb-fire` `#FF3B0F` | urgencia, CTA primario |
-| `--color-lime` `#a3ff3f` | `--jb-acid` `#C6FF00` | growth, tech, sucesso |
-| `--color-dark` `#020617` | `--jb-ink` `#050505` | base preta pura |
-| `--color-dark-gray` `#111827` | `--jb-ink-2` `#0B0B0B` | cards terminal |
-| `--color-light-gray` `#e5e7eb` | remover ou `--jb-fg-3` `#A3A3A3` | caso a caso |
-| `--color-off-white` `#f9fafb` | `--jb-cream` `#F5F1E8` | foreground quente |
-| `--color-text-primary` `#ffffff` | `--jb-cream` `#F5F1E8` | cream e o default |
-| `--color-text-secondary` `#d1d5db` | `--jb-fg-2` `#E5E5E5` | |
-| `--color-text-tertiary` `#9ca3af` | `--jb-fg-3` `#A3A3A3` | |
-| `--color-border` `rgba(255,255,255,0.1)` | `--jb-hair` `rgba(255,255,255,0.08)` | hairline |
-| `font-display: Montserrat` | `'Archivo Black', system-ui` | display (weight 900 sempre) |
-| `font-sans: Inter` | `'Archivo', system-ui` (400-800) | body/UI |
-| (sem mono antes) | `'JetBrains Mono'` (400/500/600/700/800) | ticker, status, terminal |
-| `--border-radius-sm` `0.5rem` em diante | `0` default, `2px` raro (chips) | brutalist — cantos duros |
-| `--shadow-glow-lime` (soft blur) | `4px 4px 0 var(--jb-fire)` (btn primario) | brutalist hard offset |
-| `--shadow-glow-blue` (soft blur) | `6px 6px 0 var(--jb-acid)` (btn fire gigante) | |
-| `--shadow-sm/md/lg/xl` | remover em cards; terminal usa `0 40px 80px rgba(0,0,0,0.6)` | |
-| classes Tailwind `rounded-xl/2xl/lg/md/sm` | remover ou `rounded-none` | auditoria caso-a-caso |
-| `--transition-base: 300ms ease` | `180ms cubic-bezier(0.2, 0.9, 0.2, 1)` | `--jb-dur` + `--jb-ease` |
-| `.btn-primary` (lime bg + glow) | acid bg + `4px 4px 0 fire` shadow + hover `translate(-2px,-2px)` | ver `preview/components-buttons.html` |
-| `.card` (radius xl + glow hover) | `#0B0B0B` + 1px hair + radius 0 + hover fire offset | ver `preview/components-cards.html` |
-| scrollbar lime | scrollbar acid ou hair neutro | |
+| Antigo                                     | Novo                                                             | Notas                                 |
+| ------------------------------------------ | ---------------------------------------------------------------- | ------------------------------------- |
+| `--color-royal-blue` `#1d4ed8`             | `--jb-fire` `#FF3B0F`                                            | urgencia, CTA primario                |
+| `--color-lime` `#a3ff3f`                   | `--jb-acid` `#C6FF00`                                            | growth, tech, sucesso                 |
+| `--color-dark` `#020617`                   | `--jb-ink` `#050505`                                             | base preta pura                       |
+| `--color-dark-gray` `#111827`              | `--jb-ink-2` `#0B0B0B`                                           | cards terminal                        |
+| `--color-light-gray` `#e5e7eb`             | remover ou `--jb-fg-3` `#A3A3A3`                                 | caso a caso                           |
+| `--color-off-white` `#f9fafb`              | `--jb-cream` `#F5F1E8`                                           | foreground quente                     |
+| `--color-text-primary` `#ffffff`           | `--jb-cream` `#F5F1E8`                                           | cream e o default                     |
+| `--color-text-secondary` `#d1d5db`         | `--jb-fg-2` `#E5E5E5`                                            |                                       |
+| `--color-text-tertiary` `#9ca3af`          | `--jb-fg-3` `#A3A3A3`                                            |                                       |
+| `--color-border` `rgba(255,255,255,0.1)`   | `--jb-hair` `rgba(255,255,255,0.08)`                             | hairline                              |
+| `font-display: Montserrat`                 | `'Archivo Black', system-ui`                                     | display (weight 900 sempre)           |
+| `font-sans: Inter`                         | `'Archivo', system-ui` (400-800)                                 | body/UI                               |
+| (sem mono antes)                           | `'JetBrains Mono'` (400/500/600/700/800)                         | ticker, status, terminal              |
+| `--border-radius-sm` `0.5rem` em diante    | `0` default, `2px` raro (chips)                                  | brutalist — cantos duros              |
+| `--shadow-glow-lime` (soft blur)           | `4px 4px 0 var(--jb-fire)` (btn primario)                        | brutalist hard offset                 |
+| `--shadow-glow-blue` (soft blur)           | `6px 6px 0 var(--jb-acid)` (btn fire gigante)                    |                                       |
+| `--shadow-sm/md/lg/xl`                     | remover em cards; terminal usa `0 40px 80px rgba(0,0,0,0.6)`     |                                       |
+| classes Tailwind `rounded-xl/2xl/lg/md/sm` | remover ou `rounded-none`                                        | auditoria caso-a-caso                 |
+| `--transition-base: 300ms ease`            | `180ms cubic-bezier(0.2, 0.9, 0.2, 1)`                           | `--jb-dur` + `--jb-ease`              |
+| `.btn-primary` (lime bg + glow)            | acid bg + `4px 4px 0 fire` shadow + hover `translate(-2px,-2px)` | ver `preview/components-buttons.html` |
+| `.card` (radius xl + glow hover)           | `#0B0B0B` + 1px hair + radius 0 + hover fire offset              | ver `preview/components-cards.html`   |
+| scrollbar lime                             | scrollbar acid ou hair neutro                                    |                                       |
 
 ### Mapeamento de classes Tailwind mais comuns
 
@@ -121,7 +121,7 @@ Arquivo: `/Users/joel/Documents/Dev/joelburigo-site/src/styles/global.css`
 
 - [ ] Backup mental: git commit WIP antes de editar ("wip: pre-migration snapshot")
 - [ ] Adicionar no topo do arquivo (apos `@import 'tailwindcss';`) o `@import url(...)` de fontes do `colors_and_type.css` (linha 8 do arquivo de referencia)
-- [ ] Substituir bloco `@theme { --color-* }` (linhas 11-23) por novos tokens mapeando pros --jb-*:
+- [ ] Substituir bloco `@theme { --color-* }` (linhas 11-23) por novos tokens mapeando pros --jb-\*:
   ```
   --color-fire: #FF3B0F;
   --color-fire-hot: #FF6A3D;
@@ -242,7 +242,7 @@ Prioridade comercial — testar visualmente cada uma em dev:
 ### Fase 9 — Validacao — ~20min
 
 - [ ] `npm run build` sem warn/erro — se erro, ler output e corrigir
-- [ ] `npm run preview` e navegar pelas 26 paginas (ignorar api/*)
+- [ ] `npm run preview` e navegar pelas 26 paginas (ignorar api/\*)
 - [ ] Lighthouse (Chrome devtools) na home: perf >= 90, a11y >= 90, SEO >= 95
 - [ ] Contraste WCAG (https://webaim.org/resources/contrastchecker/):
   - cream `#F5F1E8` sobre ink `#050505` — esperado AAA

@@ -43,7 +43,8 @@ export function DiagnosticoForm() {
         <span className="kicker">// ENVIADO</span>
         <h2 className="heading-2">Recebi. Agora olha sua caixa.</h2>
         <p className="body text-fg-2">
-          Em alguns minutos você recebe o resultado e uma recomendação do próximo passo — VSS ou Advisory.
+          Em alguns minutos você recebe o resultado e uma recomendação do próximo passo — VSS ou
+          Advisory.
         </p>
       </Card>
     );
@@ -86,9 +87,7 @@ export function DiagnosticoForm() {
         <Button type="submit" disabled={status === 'submitting'}>
           {status === 'submitting' ? 'Enviando...' : 'Ver meu diagnóstico →'}
         </Button>
-        <p className="mono text-fg-muted">
-          // 7 minutos · sem upsell · resultado chega em 5 min
-        </p>
+        <p className="mono text-fg-muted">// 7 minutos · sem upsell · resultado chega em 5 min</p>
       </form>
     </Card>
   );

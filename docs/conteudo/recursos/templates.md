@@ -1,11 +1,11 @@
 ---
 name: Templates e Deliverables
 description: Templates prontos e entregáveis práticos — Canvas Posicionamento, Relatório de Sessão Estratégica (Advisory), Playbook Comercial, documentos Advisory, guia de uso.
-id: "recursos/templates"
-versao: "3.0"
-depende_de: ["02", "03"]
+id: 'recursos/templates'
+versao: '3.0'
+depende_de: ['02', '03']
 autor: Joel Burigo
-atualizado: "2026-04-22"
+atualizado: '2026-04-22'
 tags: [templates, deliverables, canvas, playbook, recursos, ferramentas-praticas]
 ---
 
@@ -341,16 +341,19 @@ Agende em: [link calendly]
 ---
 
 **PARTE 1: FUNDAMENTOS**
+
 - 1.1 Nosso Posicionamento (P1)
 - 1.2 Nosso Cliente Ideal (P2)
 - 1.3 Nossa Oferta Principal (P3)
 
 **PARTE 2: PROCESSO DE VENDAS**
+
 - 2.1 Jornada do Cliente (do lead à venda)
 - 2.2 Etapas do Funil de Vendas
 - 2.3 Critérios de Qualificação de Leads
 
 **PARTE 3: SCRIPTS E ABORDAGENS**
+
 - 3.1 Script de Prospecção (Cold)
 - 3.2 Script de Primeira Conversa
 - 3.3 Script de Apresentação de Proposta
@@ -358,17 +361,20 @@ Agende em: [link calendly]
 - 3.5 Script de Tratamento de Objeções (12 principais)
 
 **PARTE 4: PROCESSOS OPERACIONAIS**
+
 - 4.1 Como usar o CRM
 - 4.2 Como documentar interações
 - 4.3 Como fazer follow-up
 - 4.4 Como enviar propostas
 
 **PARTE 5: MÉTRICAS E METAS**
+
 - 5.1 KPIs Principais
 - 5.2 Metas Individuais
 - 5.3 Como reportar resultados
 
 **PARTE 6: CASOS DE USO E FAQ**
+
 - 6.1 Casos de Sucesso
 - 6.2 Perguntas Frequentes
 - 6.3 Quando Escalar para Gestor
@@ -382,9 +388,11 @@ Agende em: [link calendly]
 **OBJEÇÃO #1: "Está caro"**
 
 **Resposta Completa:**
+
 > "Entendo. Mas compare: agência cobra R$ 3-5k/mês e não estrutura vendas. Consultoria cobra R$ 50-100k. VSS é R$ 1.997 com CRM incluído, 48 mentorias semanais, e sistema completo. Qual é mais caro de verdade?"
 
 **Resposta Curta:**
+
 > "Compare com quanto você perde por mês com vendas aleatórias. Se for mais que R$ 500, o VSS se paga em 4 meses."
 
 ---
@@ -392,9 +400,11 @@ Agende em: [link calendly]
 **OBJEÇÃO #2: "Não tenho tempo"**
 
 **Resposta Completa:**
+
 > "Precisa de 2-3h/semana. Se não tem isso, o problema é maior que vendas. Mas esse tempo existe se você priorizar. Quanto tempo você perde apagando incêndio de vendas inconsistentes?"
 
 **Resposta Curta:**
+
 > "2-3h/semana. Menos tempo do que você perde em vendas mal estruturadas."
 
 ---
@@ -402,9 +412,11 @@ Agende em: [link calendly]
 **OBJEÇÃO #3: "Vou pensar"**
 
 **Resposta Completa:**
+
 > "Claro! O que especificamente você precisa avaliar? Budget? Tempo? Se funciona pro seu nicho? Posso te ajudar agora com essas dúvidas."
 
 **Resposta Curta:**
+
 > "Entendo. Qual a principal dúvida que está te segurando? Vamos resolver agora."
 
 ---
@@ -424,6 +436,7 @@ Agende em: [link calendly]
 ### **[4.2] Canvas dos 6Ps (Em Branco)**
 
 **Formatos disponíveis:**
+
 - PDF editável
 - Google Docs (template)
 - Notion (template)
@@ -459,6 +472,7 @@ Agende em: [link calendly]
 Ver detalhamento completo na seção de Advisory (Parte 10).
 
 **Resumo das Partes:**
+
 - Parte 1: Diagnóstico Completo
 - Parte 2: Estratégia 12 Meses
 - Parte 3: Roadmap Mês a Mês

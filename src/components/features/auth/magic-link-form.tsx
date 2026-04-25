@@ -57,9 +57,7 @@ export function MagicLinkForm({ searchParamsPromise }: Props) {
       <div className="flex flex-col gap-2">
         <span className="kicker">// ENTRAR</span>
         <h1 className="text-display-sm">Acesse sua área</h1>
-        <p className="body text-fg-2">
-          Sem senha. Coloca seu email e mando um link de acesso.
-        </p>
+        <p className="body text-fg-2">Sem senha. Coloca seu email e mando um link de acesso.</p>
       </div>
       <form onSubmit={onSubmit} className="flex flex-col gap-5">
         <div className="flex flex-col gap-2">
@@ -75,7 +73,8 @@ export function MagicLinkForm({ searchParamsPromise }: Props) {
         </div>
         {error && <p className="body-sm text-fire">{error}</p>}
         <Button type="submit" disabled={status === 'sending'}>
-          {status === 'sending' ? 'Enviando...' : 'Receber link'} <span className="font-mono">→</span>
+          {status === 'sending' ? 'Enviando...' : 'Receber link'}{' '}
+          <span className="font-mono">→</span>
         </Button>
         <p className="mono text-fg-muted">// Sprint 1 conecta /api/auth/request</p>
       </form>

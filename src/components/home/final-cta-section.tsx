@@ -10,9 +10,7 @@ export function FinalCtaSection() {
 
       <Container className="relative z-10">
         <div className={s.fctaWrap}>
-          <div className={cn('mono', s.fctaKicker)}>
-            // PRÓXIMO PASSO · DIAGNÓSTICO 10 MIN
-          </div>
+          <div className={cn('mono', s.fctaKicker)}>// PRÓXIMO PASSO · DIAGNÓSTICO 10 MIN</div>
 
           <h2 className={s.fctaTitle}>
             LIGAR A

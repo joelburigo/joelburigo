@@ -11,7 +11,7 @@ export function StatusBar({ left, right, className, ...props }: StatusBarProps) 
     <div
       className={cn(
         'flex items-center justify-between gap-4 border-b border-[var(--jb-hair)] px-5 py-2.5 md:px-10',
-        'font-mono text-[11px] uppercase tracking-[0.22em] text-fg-muted',
+        'text-fg-muted font-mono text-[11px] tracking-[0.22em] uppercase',
         className
       )}
       {...props}

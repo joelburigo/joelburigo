@@ -1,11 +1,11 @@
 ---
-id: "P3"
-titulo: "ROTEIRO COMPLETO DE AULAS"
-documento: "Parte 3 de 13"
-versao: "1.2"
-autor: "Joel Burigo"
-ultima_atualizacao: "2026-01-23"
-arquivo: "conteudo/parte3-roteiro-aulas.md"
+id: 'P3'
+titulo: 'ROTEIRO COMPLETO DE AULAS'
+documento: 'Parte 3 de 13'
+versao: '1.2'
+autor: 'Joel Burigo'
+ultima_atualizacao: '2026-01-23'
+arquivo: 'conteudo/parte3-roteiro-aulas.md'
 
 objetivo: |
   Índice e estrutura de todas as aulas dos 15 módulos:
@@ -15,32 +15,32 @@ objetivo: |
   - Entregáveis e materiais de apoio
 
 secoes:
-  - id: "P3.1"
-    titulo: "Fase 1: Fundamentos (Módulos 1-3)"
-    arquivo: "parte3-aulas-fase1.md"
-  - id: "P3.2"
-    titulo: "Fase 2: Infraestrutura (Módulos 4-5)"
-    arquivo: "parte3-aulas-fase2.md"
-  - id: "P3.3"
-    titulo: "Fase 3: Atração (Módulos 6-8)"
-    arquivo: "parte3-aulas-fase3.md"
-  - id: "P3.4"
-    titulo: "Fase 4: Conversão (Módulos 9-10)"
-    arquivo: "parte3-aulas-fase4.md"
-  - id: "P3.5"
-    titulo: "Fase 5: Sistema (Módulo 11)"
-    arquivo: "parte3-aulas-fase5.md"
-  - id: "P3.6"
-    titulo: "Fase 6: Automação (Módulos 12-13)"
-    arquivo: "parte3-aulas-fase6.md"
-  - id: "P3.7"
-    titulo: "Fase 7: Crescimento (Módulos 14-15)"
-    arquivo: "parte3-aulas-fase7.md"
+  - id: 'P3.1'
+    titulo: 'Fase 1: Fundamentos (Módulos 1-3)'
+    arquivo: 'parte3-aulas-fase1.md'
+  - id: 'P3.2'
+    titulo: 'Fase 2: Infraestrutura (Módulos 4-5)'
+    arquivo: 'parte3-aulas-fase2.md'
+  - id: 'P3.3'
+    titulo: 'Fase 3: Atração (Módulos 6-8)'
+    arquivo: 'parte3-aulas-fase3.md'
+  - id: 'P3.4'
+    titulo: 'Fase 4: Conversão (Módulos 9-10)'
+    arquivo: 'parte3-aulas-fase4.md'
+  - id: 'P3.5'
+    titulo: 'Fase 5: Sistema (Módulo 11)'
+    arquivo: 'parte3-aulas-fase5.md'
+  - id: 'P3.6'
+    titulo: 'Fase 6: Automação (Módulos 12-13)'
+    arquivo: 'parte3-aulas-fase6.md'
+  - id: 'P3.7'
+    titulo: 'Fase 7: Crescimento (Módulos 14-15)'
+    arquivo: 'parte3-aulas-fase7.md'
 
 tags: [aulas, módulos, roteiro, pedagogia, fases, 15-módulos]
-dependencias: ["P1", "P2"]
-prox_parte: "P4"
-parte_anterior: "P2"
+dependencias: ['P1', 'P2']
+prox_parte: 'P4'
+parte_anterior: 'P2'
 ---
 
 [← P2: Arquitetura](parte2-arquitetura.md) | [Índice](README.md) | [P4: Diferenciação →](parte4-diferenciacao.md)
@@ -67,12 +67,12 @@ O roteiro completo de aulas está organizado em **7 arquivos por fase** para fac
 
 📄 **Arquivo:** [parte3-aulas-fase1.md](parte3-aulas-fase1.md)
 
-| Módulo | Título | Aulas | Tempo |
-|--------|--------|-------|-------|
-| M1 | O Sistema VSS e os 6Ps | 6 | 2h30 |
-| M2 | P1 + P2: Posicionamento e Público | 5 | 2h05 |
-| M3 | P3: Produto e Precificação | 4 | 1h40 |
-| **Total Fase 1** | | **15** | **6h15** |
+| Módulo           | Título                            | Aulas  | Tempo    |
+| ---------------- | --------------------------------- | ------ | -------- |
+| M1               | O Sistema VSS e os 6Ps            | 6      | 2h30     |
+| M2               | P1 + P2: Posicionamento e Público | 5      | 2h05     |
+| M3               | P3: Produto e Precificação        | 4      | 1h40     |
+| **Total Fase 1** |                                   | **15** | **6h15** |
 
 **Objetivo:** Estratégia 100% documentada, diagnóstico completo dos 6Ps, posicionamento definido, público mapeado, oferta estruturada.
 
@@ -82,11 +82,11 @@ O roteiro completo de aulas está organizado em **7 arquivos por fase** para fac
 
 📄 **Arquivo:** [parte3-aulas-fase2.md](parte3-aulas-fase2.md)
 
-| Módulo | Título | Aulas | Tempo |
-|--------|--------|-------|-------|
-| M4 | Domine o Growth CRM | 5 | 2h10 |
-| M5 | Presença Digital Profissional | 4 | 1h35 |
-| **Total Fase 2** | | **9** | **3h45** |
+| Módulo           | Título                        | Aulas | Tempo    |
+| ---------------- | ----------------------------- | ----- | -------- |
+| M4               | Domine o Growth CRM           | 5     | 2h10     |
+| M5               | Presença Digital Profissional | 4     | 1h35     |
+| **Total Fase 2** |                               | **9** | **3h45** |
 
 **Objetivo:** CRM configurado e alimentado, automações básicas funcionando, landing pages publicadas, presença digital profissional.
 
@@ -96,12 +96,12 @@ O roteiro completo de aulas está organizado em **7 arquivos por fase** para fac
 
 📄 **Arquivo:** [parte3-aulas-fase3.md](parte3-aulas-fase3.md)
 
-| Módulo | Título | Aulas | Tempo |
-|--------|--------|-------|-------|
-| M6 | Tráfego Orgânico | 4 | 1h35 |
-| M7 | Tráfego Pago (Para Quem Tem Budget) | 4 | 1h35 |
-| M8 | Prospecção Ativa Gratuita | 5 | 2h05 |
-| **Total Fase 3** | | **13** | **5h15** |
+| Módulo           | Título                              | Aulas  | Tempo    |
+| ---------------- | ----------------------------------- | ------ | -------- |
+| M6               | Tráfego Orgânico                    | 4      | 1h35     |
+| M7               | Tráfego Pago (Para Quem Tem Budget) | 4      | 1h35     |
+| M8               | Prospecção Ativa Gratuita           | 5      | 2h05     |
+| **Total Fase 3** |                                     | **13** | **5h15** |
 
 **Objetivo:** Dominar 2-3 canais de aquisição, gerar leads consistentemente, fluxo previsível de oportunidades.
 
@@ -111,11 +111,11 @@ O roteiro completo de aulas está organizado em **7 arquivos por fase** para fac
 
 📄 **Arquivo:** [parte3-aulas-fase4.md](parte3-aulas-fase4.md)
 
-| Módulo | Título | Aulas | Tempo |
-|--------|--------|-------|-------|
-| M9 | Funis de Conversão | 4 | 1h35 |
-| M10 | Fechamento e Pós-Venda | 5 | 2h10 |
-| **Total Fase 4** | | **9** | **3h45** |
+| Módulo           | Título                 | Aulas | Tempo    |
+| ---------------- | ---------------------- | ----- | -------- |
+| M9               | Funis de Conversão     | 4     | 1h35     |
+| M10              | Fechamento e Pós-Venda | 5     | 2h10     |
+| **Total Fase 4** |                        | **9** | **3h45** |
 
 **Objetivo:** Funis de venda estruturados, script de vendas validado, primeiras vendas consistentes, follow-up sistematizado.
 
@@ -125,10 +125,10 @@ O roteiro completo de aulas está organizado em **7 arquivos por fase** para fac
 
 📄 **Arquivo:** [parte3-aulas-fase5.md](parte3-aulas-fase5.md)
 
-| Módulo | Título | Aulas | Tempo |
-|--------|--------|-------|-------|
-| M11 | P4 + P5: Sistema Integrado | 4 | 1h35 |
-| **Total Fase 5** | | **4** | **1h35** |
+| Módulo           | Título                     | Aulas | Tempo    |
+| ---------------- | -------------------------- | ----- | -------- |
+| M11              | P4 + P5: Sistema Integrado | 4     | 1h35     |
+| **Total Fase 5** |                            | **4** | **1h35** |
 
 **Objetivo:** Todo o sistema conectado, processos documentados, métricas funcionando, preparação para escala.
 
@@ -138,11 +138,11 @@ O roteiro completo de aulas está organizado em **7 arquivos por fase** para fac
 
 📄 **Arquivo:** [parte3-aulas-fase6.md](parte3-aulas-fase6.md)
 
-| Módulo | Título | Aulas | Tempo |
-|--------|--------|-------|-------|
-| M12 | Automações Avançadas | 4 | 1h35 |
-| M13 | Agentes de IA Conversacional | 4 | 1h30 |
-| **Total Fase 6** | | **8** | **3h05** |
+| Módulo           | Título                       | Aulas | Tempo    |
+| ---------------- | ---------------------------- | ----- | -------- |
+| M12              | Automações Avançadas         | 4     | 1h35     |
+| M13              | Agentes de IA Conversacional | 4     | 1h30     |
+| **Total Fase 6** |                              | **8** | **3h05** |
 
 **Objetivo:** Automações avançadas funcionando, IA conversacional implementada, operação rodando com mínima intervenção manual.
 
@@ -152,11 +152,11 @@ O roteiro completo de aulas está organizado em **7 arquivos por fase** para fac
 
 📄 **Arquivo:** [parte3-aulas-fase7.md](parte3-aulas-fase7.md)
 
-| Módulo | Título | Aulas | Tempo |
-|--------|--------|-------|-------|
-| M14 | Analytics e Melhoria Contínua | 4 | 1h30 |
-| M15 | P6 + Próximos Passos | 4 | 1h30 |
-| **Total Fase 7** | | **8** | **3h00** |
+| Módulo           | Título                        | Aulas | Tempo    |
+| ---------------- | ----------------------------- | ----- | -------- |
+| M14              | Analytics e Melhoria Contínua | 4     | 1h30     |
+| M15              | P6 + Próximos Passos          | 4     | 1h30     |
+| **Total Fase 7** |                               | **8** | **3h00** |
 
 **Objetivo:** Análise contínua, melhorias baseadas em dados, sistema em constante evolução, próximos passos claros.
 
@@ -164,16 +164,16 @@ O roteiro completo de aulas está organizado em **7 arquivos por fase** para fac
 
 ## **📊 RESUMO COMPLETO DO PROGRAMA VSS**
 
-| Fase | Semanas | Módulos | Aulas | Tempo | Foco Principal |
-|------|---------|---------|-------|-------|----------------|
-| **Fase 1** | 1-2 | M1-M3 | 15 | 6h15 | Estratégia e posicionamento |
-| **Fase 2** | 3-4 | M4-M5 | 9 | 3h45 | CRM e presença digital |
-| **Fase 3** | 5-8 | M6-M8 | 13 | 5h15 | Canais de aquisição |
-| **Fase 4** | 9-10 | M9-M10 | 9 | 3h45 | Funis e vendas |
-| **Fase 5** | 11-12 | M11 | 4 | 1h35 | Sistema unificado |
-| **Fase 6** | 13-14 | M12-M13 | 8 | 3h05 | IA e automações |
-| **Fase 7** | 15-16 | M14-M15 | 8 | 3h00 | Crescimento e equipe |
-| **TOTAL** | **16** | **15** | **66** | **~25h** | **Sistema completo** |
+| Fase       | Semanas | Módulos | Aulas  | Tempo    | Foco Principal              |
+| ---------- | ------- | ------- | ------ | -------- | --------------------------- |
+| **Fase 1** | 1-2     | M1-M3   | 15     | 6h15     | Estratégia e posicionamento |
+| **Fase 2** | 3-4     | M4-M5   | 9      | 3h45     | CRM e presença digital      |
+| **Fase 3** | 5-8     | M6-M8   | 13     | 5h15     | Canais de aquisição         |
+| **Fase 4** | 9-10    | M9-M10  | 9      | 3h45     | Funis e vendas              |
+| **Fase 5** | 11-12   | M11     | 4      | 1h35     | Sistema unificado           |
+| **Fase 6** | 13-14   | M12-M13 | 8      | 3h05     | IA e automações             |
+| **Fase 7** | 15-16   | M14-M15 | 8      | 3h00     | Crescimento e equipe        |
+| **TOTAL**  | **16**  | **15**  | **66** | **~25h** | **Sistema completo**        |
 
 ---
 
@@ -285,15 +285,14 @@ O roteiro completo de aulas está organizado em **7 arquivos por fase** para fac
 
 ## **🔗 Navegação Rápida**
 
-| Fase | Arquivo | Módulos | Aulas |
-|------|---------|---------|-------|
-| Fase 1: Fundamentos | [parte3-aulas-fase1.md](parte3-aulas-fase1.md) | M1-M3 | 15 |
-| Fase 2: Infraestrutura | [parte3-aulas-fase2.md](parte3-aulas-fase2.md) | M4-M5 | 9 |
-| Fase 3: Atração | [parte3-aulas-fase3.md](parte3-aulas-fase3.md) | M6-M8 | 13 |
-| Fase 4: Conversão | [parte3-aulas-fase4.md](parte3-aulas-fase4.md) | M9-M10 | 9 |
-| Fase 5: Sistema | [parte3-aulas-fase5.md](parte3-aulas-fase5.md) | M11 | 4 |
-| Fase 6: Automação | [parte3-aulas-fase6.md](parte3-aulas-fase6.md) | M12-M13 | 8 |
-| Fase 7: Crescimento | [parte3-aulas-fase7.md](parte3-aulas-fase7.md) | M14-M15 | 8 |
+| Fase                   | Arquivo                                        | Módulos | Aulas |
+| ---------------------- | ---------------------------------------------- | ------- | ----- |
+| Fase 1: Fundamentos    | [parte3-aulas-fase1.md](parte3-aulas-fase1.md) | M1-M3   | 15    |
+| Fase 2: Infraestrutura | [parte3-aulas-fase2.md](parte3-aulas-fase2.md) | M4-M5   | 9     |
+| Fase 3: Atração        | [parte3-aulas-fase3.md](parte3-aulas-fase3.md) | M6-M8   | 13    |
+| Fase 4: Conversão      | [parte3-aulas-fase4.md](parte3-aulas-fase4.md) | M9-M10  | 9     |
+| Fase 5: Sistema        | [parte3-aulas-fase5.md](parte3-aulas-fase5.md) | M11     | 4     |
+| Fase 6: Automação      | [parte3-aulas-fase6.md](parte3-aulas-fase6.md) | M12-M13 | 8     |
+| Fase 7: Crescimento    | [parte3-aulas-fase7.md](parte3-aulas-fase7.md) | M14-M15 | 8     |
 
 ---
-

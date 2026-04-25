@@ -1,10 +1,10 @@
 ---
 name: A Oferta — Ecossistema VSS + Advisory
 description: Documento único da oferta. 2 produtos perpétuos — VSS (DIY, R$ 1.997) e Advisory (1:1 com Joel). Como se encaixam, jornada do cliente, projeções e marketing por produto.
-id: "02"
-versao: "1.0"
-autor: "Joel Burigo"
-atualizado: "2026-04-22"
+id: '02'
+versao: '1.0'
+autor: 'Joel Burigo'
+atualizado: '2026-04-22'
 tags: [oferta, ecossistema, produtos, vss, advisory, perpetuo, diy, premium]
 ---
 
@@ -67,6 +67,7 @@ tags: [oferta, ecossistema, produtos, vss, advisory, perpetuo, diy, premium]
 ```
 
 **Importante:**
+
 - **Joel Burigo** é a marca principal (guarda-chuva)
 - **VSS e Advisory** ficam embaixo de Joel Burigo
 - **Growth Master Ltda** é apenas a razão social (CNPJ)
@@ -97,22 +98,22 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 
 ### **[02.1.3] Comparativo Rápido**
 
-| Aspecto | VSS | ADVISORY |
-|---------|-----|----------|
-| **Status** | ★ PRINCIPAL | Exclusivo |
-| **Modelo** | DIY (faça você mesmo) | 1:1 direto com Joel |
-| **Investimento** | R$ 1.997 único | R$ 997-15.000/mês |
-| **Para quem** | R$ 10-100k/mês | R$ 200k+/mês |
-| **Escala** | Alta (300+ alunos/ano) | Muito baixa (vagas limitadas · conforme capacidade) |
-| **Foco Joel** | ~90% do esforço | ~10% do esforço |
-| **Formato** | Perpétuo / evergreen | Perpétuo / convite |
-| **Prazo** | Vitalício (90 dias guiados) | Variável |
-| **CRM Incluído** | ✅ Sim (12 meses) | ⚪ Depende |
-| **Mentorias** | 48/ano em grupo com Joel | 1-8/mês com Joel |
-| **Implementação** | Você faz | Você decide e faz |
-| **Autonomia** | ✅ Total desde início | ✅ Total |
-| **Dependência** | ❌ Zero | ❌ Zero |
-| **Divulgação** | ✅ Site principal | ❌ Convite apenas |
+| Aspecto           | VSS                         | ADVISORY                                            |
+| ----------------- | --------------------------- | --------------------------------------------------- |
+| **Status**        | ★ PRINCIPAL                 | Exclusivo                                           |
+| **Modelo**        | DIY (faça você mesmo)       | 1:1 direto com Joel                                 |
+| **Investimento**  | R$ 1.997 único              | R$ 997-15.000/mês                                   |
+| **Para quem**     | R$ 10-100k/mês              | R$ 200k+/mês                                        |
+| **Escala**        | Alta (300+ alunos/ano)      | Muito baixa (vagas limitadas · conforme capacidade) |
+| **Foco Joel**     | ~90% do esforço             | ~10% do esforço                                     |
+| **Formato**       | Perpétuo / evergreen        | Perpétuo / convite                                  |
+| **Prazo**         | Vitalício (90 dias guiados) | Variável                                            |
+| **CRM Incluído**  | ✅ Sim (12 meses)           | ⚪ Depende                                          |
+| **Mentorias**     | 48/ano em grupo com Joel    | 1-8/mês com Joel                                    |
+| **Implementação** | Você faz                    | Você decide e faz                                   |
+| **Autonomia**     | ✅ Total desde início       | ✅ Total                                            |
+| **Dependência**   | ❌ Zero                     | ❌ Zero                                             |
+| **Divulgação**    | ✅ Site principal           | ❌ Convite apenas                                   |
 
 ---
 
@@ -121,9 +122,11 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 ### **[02.2.1] Posicionamento**
 
 **Promessa:**
+
 > "Transforme vendas aleatórias em vendas previsíveis com um sistema implementável — sem precisar maratonar curso."
 
 **Diferencial:**
+
 - CRM profissional incluído
 - Funciona com ou sem tráfego pago
 - Autonomia total
@@ -146,15 +149,15 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 
 ### **[02.2.3] O Que Recebe (Stack Empilhada — R$ 17.287)**
 
-| Item | Valor |
-|---|---|
-| Sistema VSS Implementável (playbook + 15 vídeos-âncora, acesso vitalício) | R$ 1.997 |
-| Growth CRM completo (12 meses) | R$ 6.996 |
-| 48 mentorias ao vivo com Joel (1/semana, 60 min — rolling 12 meses) | R$ 7.200 |
-| Templates, scripts e recursos | R$ 497 |
-| Comunidade exclusiva (90 dias) | R$ 597 |
-| **Total empilhado** | **R$ 17.287** |
-| **Investimento** | **R$ 1.997** |
+| Item                                                                      | Valor         |
+| ------------------------------------------------------------------------- | ------------- |
+| Sistema VSS Implementável (playbook + 15 vídeos-âncora, acesso vitalício) | R$ 1.997      |
+| Growth CRM completo (12 meses)                                            | R$ 6.996      |
+| 48 mentorias ao vivo com Joel (1/semana, 60 min — rolling 12 meses)       | R$ 7.200      |
+| Templates, scripts e recursos                                             | R$ 497        |
+| Comunidade exclusiva (90 dias)                                            | R$ 597        |
+| **Total empilhado**                                                       | **R$ 17.287** |
+| **Investimento**                                                          | **R$ 1.997**  |
 
 **Bônus:** biblioteca evergreen de mentorias gravadas + planilhas + biblioteca de objeções.
 
@@ -165,6 +168,7 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 **Modelo:** perpétuo / evergreen. Aluno entra qualquer dia, primeira mentoria na próxima data do calendário semanal. Mentorias em ciclo rotativo (rolling 12 meses a partir da compra).
 
 **Resultado esperado:**
+
 - Sistema estruturado funcionando
 - Autonomia total
 - Base para crescer sozinho (ou evoluir pra Advisory quando fizer sentido)
@@ -176,16 +180,19 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 ### **[02.3.1] Posicionamento e Definição**
 
 **Promessa:**
+
 > "17 anos de experiência aplicados ao seu desafio específico."
 
 **Joel Burigo Advisory** é acesso direto a mim para momentos críticos ou parceria estratégica de longo prazo.
 
 **NÃO é:**
+
 - ❌ Para quem quer que eu faça por ele
 - ❌ Para quem busca preço acessível
 - ❌ Para quem não tem urgência real
 
 **É:**
+
 - ✅ Para CEO/Founder em momento crítico
 - ✅ Para quem quer minha cabeça, não execução
 - ✅ Para quem valoriza atalhos (17 anos de experiência)
@@ -205,28 +212,29 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 
 ### **[02.3.2] Os 3 Formatos do Advisory**
 
-| Aspecto | Sessão Avulsa | Sprint 30 Dias | Conselho Executivo |
-|---------|---------------|----------------|-------------------|
-| **Investimento** | R$ 997 | R$ 7.500 | R$ 12.500-15.000/mês |
-| **Duração** | 90 min | 30 dias (4 sessões) | 3-6 meses |
-| **Sessões** | 1 | 4 | 24-48 |
-| **Suporte** | Não | WhatsApp 30 dias | WhatsApp contínuo |
-| **Para quem** | Dúvida pontual | Momento crítico | Parceria contínua |
-| **Deliverable** | Relatório 2-3 pgs | Documento 20-40 pgs | Diagnósticos trimestrais |
-| **Garantia** | ✅ Sim | ✅ Sim (1ª sessão) | ✅ Sim (1ª semana) |
+| Aspecto          | Sessão Avulsa     | Sprint 30 Dias      | Conselho Executivo       |
+| ---------------- | ----------------- | ------------------- | ------------------------ |
+| **Investimento** | R$ 997            | R$ 7.500            | R$ 12.500-15.000/mês     |
+| **Duração**      | 90 min            | 30 dias (4 sessões) | 3-6 meses                |
+| **Sessões**      | 1                 | 4                   | 24-48                    |
+| **Suporte**      | Não               | WhatsApp 30 dias    | WhatsApp contínuo        |
+| **Para quem**    | Dúvida pontual    | Momento crítico     | Parceria contínua        |
+| **Deliverable**  | Relatório 2-3 pgs | Documento 20-40 pgs | Diagnósticos trimestrais |
+| **Garantia**     | ✅ Sim            | ✅ Sim (1ª sessão)  | ✅ Sim (1ª semana)       |
 
 ---
 
 #### **[02.3.2.1] Formato 1 — Sessão Estratégica Avulsa**
 
-| Aspecto | Detalhes |
-|---------|----------|
-| O que é | 90 minutos de consultoria direta comigo |
-| Investimento | R$ 997/sessão |
-| Para quem | Desafio específico que precisa de direcionamento |
-| Disponibilidade | Máximo 4 sessões/mês |
+| Aspecto         | Detalhes                                         |
+| --------------- | ------------------------------------------------ |
+| O que é         | 90 minutos de consultoria direta comigo          |
+| Investimento    | R$ 997/sessão                                    |
+| Para quem       | Desafio específico que precisa de direcionamento |
+| Disponibilidade | Máximo 4 sessões/mês                             |
 
 **O que inclui:**
+
 - ✅ 90 minutos de consultoria ao vivo (presencial ou remoto)
 - ✅ Análise profunda do desafio específico
 - ✅ Diagnóstico rápido dos 6Ps
@@ -235,6 +243,7 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 - ✅ Relatório executivo por escrito (2-3 páginas) pós-sessão
 
 **Exemplos de uso:**
+
 - **Dilema estratégico:** "Como me diferenciar sem competir por preço?"
 - **Decisão de investimento:** "Devo investir R$ 20k em tráfego OU contratar vendedor?"
 - **Validação externa:** "Vou apresentar para investidor, valida minha narrativa?"
@@ -242,18 +251,20 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 
 **Estrutura da sessão (90 minutos):**
 
-| Minutos | Foco | O que acontece |
-|--------:|------|----------------|
-| 0-15 | Contexto | Você apresenta o desafio; perguntas de clarificação |
-| 15-45 | Diagnóstico | Framework dos 6Ps; causa raiz; gaps principais |
-| 45-75 | Direcionamento | Recomendação + racional + alternativas consideradas |
-| 75-90 | Plano de Ação | 3-5 ações prioritárias, sequência e prazos |
+| Minutos | Foco           | O que acontece                                      |
+| ------: | -------------- | --------------------------------------------------- |
+|    0-15 | Contexto       | Você apresenta o desafio; perguntas de clarificação |
+|   15-45 | Diagnóstico    | Framework dos 6Ps; causa raiz; gaps principais      |
+|   45-75 | Direcionamento | Recomendação + racional + alternativas consideradas |
+|   75-90 | Plano de Ação  | 3-5 ações prioritárias, sequência e prazos          |
 
 **Deliverables:**
+
 - **Durante:** diagnóstico dos 6Ps com scores, recomendação estratégica clara, gravação completa
 - **Em 24h:** relatório executivo (2-3 páginas), plano de ação priorizado, recursos recomendados
 
 **Como agendar:**
+
 1. Solicitação via e-mail
 2. Pré-avaliação do caso
 3. Agendamento (sujeito a disponibilidade)
@@ -266,14 +277,15 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 
 #### **[02.3.2.2] Formato 2 — Sprint Estratégico 30 Dias**
 
-| Aspecto | Detalhes |
-|---------|----------|
-| O que é | 30 dias de consultoria intensiva para transformação específica |
-| Investimento | R$ 7.500 (pagamento único) |
-| Para quem | Momento crítico que precisa de plano estruturado |
-| Disponibilidade | Vagas limitadas · conforme capacidade |
+| Aspecto         | Detalhes                                                       |
+| --------------- | -------------------------------------------------------------- |
+| O que é         | 30 dias de consultoria intensiva para transformação específica |
+| Investimento    | R$ 7.500 (pagamento único)                                     |
+| Para quem       | Momento crítico que precisa de plano estruturado               |
+| Disponibilidade | Vagas limitadas · conforme capacidade                          |
 
 **O que inclui:**
+
 - ✅ 4 sessões de 90 minutos (1 por semana)
 - ✅ Diagnóstico profundo dos 6Ps
 - ✅ Plano estratégico 12 meses detalhado
@@ -283,16 +295,17 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 
 **Estrutura das 4 semanas:**
 
-| Semana | Foco | Entregável |
-|--------|------|------------|
-| **1 — Diagnóstico** | Entendimento profundo + análise 6Ps + gaps críticos | Diagnóstico completo 6Ps + Score detalhado (0-30) + Ps críticos identificados |
-| **2 — Estratégia** | Apresentação do diagnóstico + objetivos claros + priorização | Objetivos estratégicos (6-12m) + priorização clara + métricas |
-| **3 — Plano de Ação** | Plano estratégico + roadmap mês a mês + responsáveis | Roadmap 12 meses + plano por P + templates/recursos |
-| **4 — Fechamento** | Documento final + ajustes + accountability | Documento estratégico (20-40 pgs) + roadmap visual + plano de accountability |
+| Semana                | Foco                                                         | Entregável                                                                    |
+| --------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------- |
+| **1 — Diagnóstico**   | Entendimento profundo + análise 6Ps + gaps críticos          | Diagnóstico completo 6Ps + Score detalhado (0-30) + Ps críticos identificados |
+| **2 — Estratégia**    | Apresentação do diagnóstico + objetivos claros + priorização | Objetivos estratégicos (6-12m) + priorização clara + métricas                 |
+| **3 — Plano de Ação** | Plano estratégico + roadmap mês a mês + responsáveis         | Roadmap 12 meses + plano por P + templates/recursos                           |
+| **4 — Fechamento**    | Documento final + ajustes + accountability                   | Documento estratégico (20-40 pgs) + roadmap visual + plano de accountability  |
 
 **Entre sessões:** materiais complementares, análise de dados existentes, pesquisa de mercado/benchmarking quando necessário, detalhamento do plano e ajustes.
 
 **Exemplos de uso:**
+
 - **Expansão:** "Vou abrir filial, preciso de plano estruturado"
 - **Pivot:** "Estou migrando de consultoria para SaaS, preciso reorganizar tudo"
 - **Crise:** "Faturamento caiu 40%, preciso reagir rápido"
@@ -304,14 +317,15 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 
 #### **[02.3.2.3] Formato 3 — Conselho Executivo**
 
-| Aspecto | Detalhes |
-|---------|----------|
-| O que é | Parceria estratégica contínua como conselheiro |
-| Investimento | R$ 15.000/mês (3 meses) ou R$ 12.500/mês (6 meses) |
-| Para quem | Empresa que precisa de conselheiro presente |
-| Disponibilidade | Vagas limitadas · conforme capacidade |
+| Aspecto         | Detalhes                                           |
+| --------------- | -------------------------------------------------- |
+| O que é         | Parceria estratégica contínua como conselheiro     |
+| Investimento    | R$ 15.000/mês (3 meses) ou R$ 12.500/mês (6 meses) |
+| Para quem       | Empresa que precisa de conselheiro presente        |
+| Disponibilidade | Vagas limitadas · conforme capacidade              |
 
 **O que inclui:**
+
 - ✅ 8 sessões/mês (2 por semana, 60 minutos cada)
 - ✅ Acesso direto via WhatsApp (resposta prioritária em 4h)
 - ✅ Participação em até 2 reuniões críticas/mês
@@ -320,11 +334,13 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 - ✅ Acompanhamento executivo contínuo
 
 **Estrutura mensal:**
+
 - **Semanas 1-4:** 2 sessões/semana (60 min cada) = 8 sessões/mês, acesso WhatsApp prioritário, revisão de materiais, participação em reuniões críticas
 - **Revisão mensal:** análise de resultados, ajuste de estratégia, planejamento do mês seguinte
 - **Revisão trimestral (a cada 3 meses):** diagnóstico 6Ps atualizado, avaliação de evolução (scores), redefinição de prioridades, plano estratégico atualizado
 
 **Exemplos de uso:**
+
 - **Crescimento acelerado:** "Faturamos R$ 300k/mês, meta R$ 1M/mês em 12 meses"
 - **Reestruturação:** "Empresa cresceu desordenadamente, preciso arrumar a casa"
 - **Preparação para exit:** "Quero preparar empresa para venda em 18 meses"
@@ -332,19 +348,19 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 
 **Opções de investimento:**
 
-| Opção | Valor mensal | Mínimo | Total | Economia |
-|-------|--------------|--------|-------|----------|
-| Trimestral | R$ 15.000/mês | 3 meses | R$ 45.000 | — |
-| Semestral | R$ 12.500/mês | 6 meses | R$ 75.000 | R$ 15.000 |
+| Opção      | Valor mensal  | Mínimo  | Total     | Economia  |
+| ---------- | ------------- | ------- | --------- | --------- |
+| Trimestral | R$ 15.000/mês | 3 meses | R$ 45.000 | —         |
+| Semestral  | R$ 12.500/mês | 6 meses | R$ 75.000 | R$ 15.000 |
 
 **Compromisso mútuo:**
 
-| Da minha parte | Da sua parte |
-|---|---|
-| Estar presente nas sessões | Comparecer às 8 sessões/mês |
-| Responder WhatsApp em 4h úteis | Executar as recomendações |
+| Da minha parte                  | Da sua parte                     |
+| ------------------------------- | -------------------------------- |
+| Estar presente nas sessões      | Comparecer às 8 sessões/mês      |
+| Responder WhatsApp em 4h úteis  | Executar as recomendações        |
 | Participar de reuniões críticas | Compartilhar dados e informações |
-| Fazer diagnósticos trimestrais | Estar aberto a feedback direto |
+| Fazer diagnósticos trimestrais  | Estar aberto a feedback direto   |
 
 ---
 
@@ -353,11 +369,13 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 > "Se não agregar valor na primeira sessão, devolvemos seu investimento. Sem perguntas."
 
 **Válida para:**
+
 - ✅ Sessão Estratégica Avulsa
 - ✅ Sprint Estratégico (primeira sessão)
 - ✅ Conselho Executivo (primeira semana)
 
 **Como funciona:**
+
 1. Participa da primeira sessão
 2. Se não agregou valor, avisa direto
 3. Reembolso 100% · sem fricção
@@ -370,30 +388,36 @@ Só há dois caminhos porque a decisão do cliente passa por uma pergunta simple
 ### **[02.3.4] Processo de Contratação**
 
 **1. Solicitação/Indicação**
+
 - E-mail para [email protected]
 - Ou indicação de cliente atual
 
 **2. Pré-avaliação**
+
 - Formulário de qualificação
 - Descrição do desafio
 - Expectativas
 
 **3. Análise de Fit**
+
 - Avalio se posso ajudar
 - Verifico disponibilidade
 - Resposta direta do Joel, sem fila
 
 **4. Proposta**
+
 - Formato recomendado
 - Investimento
 - Próximos passos
 
 **5. Contratação**
+
 - Contrato simples
 - Pagamento
 - Agendamento
 
 **6. Kickoff**
+
 - Primeira sessão agendada
 - Materiais preparatórios
 - Expectativas alinhadas
@@ -435,6 +459,7 @@ ESTÁGIO 2: Momentos Críticos (Quando necessário)
 ### **[02.4.2] Quando Indicar Cada Produto**
 
 **Indique VSS quando:**
+
 - Cliente quer autonomia completa
 - Tem tempo para implementar
 - Orçamento até R$ 2k à vista
@@ -443,6 +468,7 @@ ESTÁGIO 2: Momentos Críticos (Quando necessário)
 - Tem budget mas quer o método antes de contratar 1:1
 
 **Indique Advisory quando:**
+
 - Momento crítico específico (expansão, pivot, crise, investimento, venda, reestruturação)
 - Decisão estratégica importante
 - Precisa de visão externa experiente
@@ -452,6 +478,7 @@ ESTÁGIO 2: Momentos Críticos (Quando necessário)
 - CEO/Founder/Sócio com comprometimento de execução (não quer terceirizar a execução)
 
 **Cliente NÃO ideal para Advisory:**
+
 - ❌ Quer que Joel execute por ele
 - ❌ Não tem urgência real
 - ❌ Fatura menos de R$ 200k/mês → vai para VSS
@@ -464,12 +491,14 @@ ESTÁGIO 2: Momentos Críticos (Quando necessário)
 ### **[02.4.3] Cross-sell e Entrada Direta**
 
 **VSS → Advisory:**
+
 - Aluno VSS em momento crítico
 - Decisão estratégica importante
 - Quer validação com Joel antes de executar
 - Cresceu e precisa de sparring partner estratégico
 
 **Entrada direta em Advisory (sem VSS):**
+
 - Convite/indicação de aluno VSS existente
 - Indicação de rede pessoal do Joel
 - CEO que chega já com problema estratégico específico e budget compatível
@@ -493,11 +522,11 @@ Services não volta ao roadmap. A decisão estratégica é: **foco em escala via
 
 ### **[02.5.1] Projeção Ano 1**
 
-| Produto | Preço Médio | Meta Vendas | Receita Projetada |
-|---------|-------------|-------------|-------------------|
-| VSS | R$ 1.997 | 100 alunos | R$ 199.700 |
-| Advisory | R$ 7.500/sprint | 20 sprints | R$ 150.000 |
-| **TOTAL** | — | — | **R$ 349.700** |
+| Produto   | Preço Médio     | Meta Vendas | Receita Projetada |
+| --------- | --------------- | ----------- | ----------------- |
+| VSS       | R$ 1.997        | 100 alunos  | R$ 199.700        |
+| Advisory  | R$ 7.500/sprint | 20 sprints  | R$ 150.000        |
+| **TOTAL** | —               | —           | **R$ 349.700**    |
 
 **Foco:** ~57% VSS / ~43% Advisory em receita (projeção Ano 1 conservadora). Em esforço operacional do Joel, a proporção é ~90% VSS e ~10% Advisory — Advisory rende mais por hora, mas VSS consome quase todo o tempo recorrente (conteúdo, mentorias, comunidade).
 
@@ -518,6 +547,7 @@ Services não volta ao roadmap. A decisão estratégica é: **foco em escala via
 ### **[02.6.1] VSS — Marketing de Massa (Evergreen)**
 
 **Canais:**
+
 - LinkedIn (orgânico + ads)
 - Instagram (conteúdo + stories)
 - YouTube (aulas gratuitas)
@@ -533,6 +563,7 @@ Services não volta ao roadmap. A decisão estratégica é: **foco em escala via
 ### **[02.6.2] Advisory — Sem Marketing Ativo**
 
 **Canais:**
+
 - Convite direto
 - Indicação de alunos VSS
 - Indicação de rede pessoal

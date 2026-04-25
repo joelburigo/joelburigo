@@ -1,17 +1,17 @@
 // Cases de Sucesso Centralizados
 
 export interface Case {
-  empresa: string
-  nicho: string
-  produto: string
-  antes: string
-  depois: string
-  tempo: string
-  crescimento: string
-  resultado: string
-  situacaoAntes: string
-  solucao: string
-  badge?: string
+  empresa: string;
+  nicho: string;
+  produto: string;
+  antes: string;
+  depois: string;
+  tempo: string;
+  crescimento: string;
+  resultado: string;
+  situacaoAntes: string;
+  solucao: string;
+  badge?: string;
 }
 
 export const cases: Case[] = [
@@ -165,4 +165,4 @@ export const cases: Case[] = [
     solucao:
       'Conselho Executivo (6 meses): sessões semanais comigo, estruturação completa dos 6Ps para holding, Growth CRM integrado, playbook comercial unificado, treinamento de equipe, processos documentados. Padronizaram atendimento, marketing e vendas. Abriram 5ª clínica com ROI positivo desde mês 1.',
   },
-]
+];

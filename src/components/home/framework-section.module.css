@@ -84,7 +84,9 @@
   letter-spacing: -0.04em;
   line-height: 0.85;
   color: rgba(245, 241, 232, 0.14);
-  transition: color var(--transition-base), text-shadow var(--transition-base);
+  transition:
+    color var(--transition-base),
+    text-shadow var(--transition-base);
 }
 
 .pBody {

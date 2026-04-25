@@ -22,7 +22,7 @@ const incluido = [
 
 export default function AgendamentoSessaoPage() {
   return (
-    <main className="relative overflow-hidden bg-ink pt-20">
+    <main className="bg-ink relative overflow-hidden pt-20">
       <div className="grid-overlay" />
 
       <Container className="relative z-10">
@@ -43,7 +43,7 @@ export default function AgendamentoSessaoPage() {
               >
                 Agendar <span className="text-acid">Sessão.</span>
               </h1>
-              <p className="mt-6 max-w-2xl font-sans text-lg text-cream">
+              <p className="text-cream mt-6 max-w-2xl font-sans text-lg">
                 Escolhe o melhor horário pra tua sessão estratégica de 90 minutos. Máximo 4
                 sessões/mês na agenda.
               </p>
@@ -52,38 +52,35 @@ export default function AgendamentoSessaoPage() {
             <div className="mb-10 grid gap-6 md:grid-cols-3">
               <div className="card">
                 <div className="kicker mb-3">// DURAÇÃO</div>
-                <div className="font-display text-3xl text-cream">90 min</div>
+                <div className="font-display text-cream text-3xl">90 min</div>
               </div>
               <div className="card">
                 <div className="kicker mb-3">// DISPONIBILIDADE</div>
-                <div className="font-display text-3xl text-cream">4/mês</div>
+                <div className="font-display text-cream text-3xl">4/mês</div>
               </div>
               <div className="card" style={{ borderColor: 'var(--jb-acid-border)' }}>
                 <div className="kicker mb-3" style={{ color: 'var(--jb-acid)' }}>
                   // INVESTIMENTO
                 </div>
-                <div className="font-display text-3xl text-acid">R$ 997</div>
+                <div className="font-display text-acid text-3xl">R$ 997</div>
               </div>
             </div>
 
-            <div className="mb-10 border border-[var(--jb-acid-border)] bg-ink-2 p-8">
+            <div className="bg-ink-2 mb-10 border border-[var(--jb-acid-border)] p-8">
               <div className="kicker mb-4" style={{ color: 'var(--jb-acid)' }}>
                 // INCLUÍDO
               </div>
               <ul className="grid gap-3 md:grid-cols-2">
                 {incluido.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-3 font-sans text-fg-2"
-                  >
-                    <span className="mt-[3px] shrink-0 text-acid">▶</span>
+                  <li key={item} className="text-fg-2 flex items-start gap-3 font-sans">
+                    <span className="text-acid mt-[3px] shrink-0">▶</span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="border border-[var(--jb-hair)] bg-ink-2 p-4">
+            <div className="bg-ink-2 border border-[var(--jb-hair)] p-4">
               <div className="kicker mb-4 px-2 pt-2">// CALENDÁRIO · ESCOLHA_HORÁRIO</div>
               <BookingWidget />
             </div>
@@ -91,7 +88,7 @@ export default function AgendamentoSessaoPage() {
             <div className="mt-10">
               <Link
                 href="/advisory"
-                className="font-mono text-[12px] uppercase tracking-[0.22em] text-fg-3 hover:text-acid"
+                className="text-fg-3 hover:text-acid font-mono text-[12px] tracking-[0.22em] uppercase"
               >
                 ← Voltar pra Advisory
               </Link>

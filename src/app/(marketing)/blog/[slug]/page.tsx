@@ -20,11 +20,7 @@ export async function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<Params>;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
   if (!post) return {};
@@ -53,7 +49,7 @@ export default async function PostPage({ params }: { params: Promise<Params> }) 
         <div className="mb-12 flex flex-col gap-4">
           <Link
             href="/blog"
-            className="font-mono text-[11px] uppercase tracking-[0.22em] text-fg-3 hover:text-acid"
+            className="text-fg-3 hover:text-acid font-mono text-[11px] tracking-[0.22em] uppercase"
           >
             ← Blog
           </Link>

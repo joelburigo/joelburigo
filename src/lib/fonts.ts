@@ -21,6 +21,8 @@ export const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 });
 
-export const fontsClassName = [archivo.variable, archivoBlack.variable, jetbrainsMono.variable].join(
-  ' '
-);
+export const fontsClassName = [
+  archivo.variable,
+  archivoBlack.variable,
+  jetbrainsMono.variable,
+].join(' ');

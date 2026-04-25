@@ -34,6 +34,7 @@ clusterKeywords:
 ---
 
 <a name="o-erro"></a>
+
 ## O Erro Que Me Quebrou
 
 Março de 2012. 25 anos. Quebrei. Tomei calote do próprio sócio. Empresa quebrada.
@@ -55,6 +56,7 @@ Cicatriz virou sabedoria. Sabedoria virou sistema. Em 2025, esse sistema ganhou 
 ---
 
 <a name="sete-erros"></a>
+
 ## Os 7 Erros Que Quebram Empresas
 
 Depois de quebrar e reconstruir, identifiquei exatamente onde errei.
@@ -151,6 +153,7 @@ Eu via sinais e fingia que estava tudo bem. Porque confrontar era desconfortáve
 ---
 
 <a name="sete-principios"></a>
+
 ## Os 7 Princípios Que Me Fizeram Reconstruir
 
 Esses são os princípios que usei na reconstrução. São os mesmos que ensino hoje:
@@ -230,6 +233,7 @@ Leads, conversão, CAC, LTV, ciclo de vendas, churn, ticket médio.
 ---
 
 <a name="timeline"></a>
+
 ## A Timeline Real da Reconstrução
 
 **Março 2012:** Quebrei aos 25 anos. Calote do sócio. Saí de SC no dia seguinte ao meu aniversário. Perdi tudo.
@@ -257,6 +261,7 @@ Leads, conversão, CAC, LTV, ciclo de vendas, churn, ticket médio.
 ---
 
 <a name="faria-diferente"></a>
+
 ## O Que Eu Faria Diferente
 
 Se eu pudesse voltar no tempo e dar conselhos pro Joel de 25 anos quebrando em março de 2012:
@@ -292,6 +297,7 @@ Ensinar te obriga a estruturar. Estruturar te faz crescer. Ensinar multiplica im
 ---
 
 <a name="como-aplicar"></a>
+
 ## Como Aplicar Essas Lições ao Seu Negócio
 
 ### Esta Semana
@@ -316,6 +322,7 @@ Ensinar te obriga a estruturar. Estruturar te faz crescer. Ensinar multiplica im
 ---
 
 <a name="seu-recomeco"></a>
+
 ## Seu Recomeço Começa Agora
 
 Se você está lendo isso e se identificou com algo da minha história, eu tenho uma mensagem pra você:

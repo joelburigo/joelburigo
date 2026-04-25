@@ -1,499 +1,684 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<title>Template · IG Carrossel 1080×1350 · Joel Burigo</title>
-<!-- Template skeleton de carrossel IG — 8 slides, canvas real 1080×1350 (4:5).
+  <head>
+    <meta charset="utf-8" />
+    <title>Template · IG Carrossel 1080×1350 · Joel Burigo</title>
+    <!-- Template skeleton de carrossel IG — 8 slides, canvas real 1080×1350 (4:5).
      Estrutura: 1 capa + 6 cards (P1→P6) + 1 CTA final.
      Uso: copiar este arquivo, trocar copy mantendo estrutura, dots e tokens.
      Preview: slides lado a lado, scroll horizontal, escala 0.5. -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../colors_and_type.css">
-<style>
-  /* ======================================================
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../colors_and_type.css" />
+    <style>
+      /* ======================================================
      VIEWER — cinza neutro, slides lado a lado com scroll-x.
      Canvas real: 1080 × 1350. Escalado 0.5 pra preview.
      ====================================================== */
-  :root{
-    --ink:#050505; --ink-2:#0B0B0B; --cream:#F5F1E8;
-    --fire:#FF3B0F; --acid:#C6FF00; --cyan:#00E0FF;
-    --mute:#6B7280; --line:rgba(255,255,255,0.08);
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0;background:#1a1a1a}
-  body{
-    padding:40px;
-    font-family:'Archivo',sans-serif;color:#A3A3A3;
-  }
-  .viewer-head{
-    max-width:1360px;margin:0 auto 28px;
-    font-family:'JetBrains Mono',monospace;font-size:11px;
-    letter-spacing:0.22em;text-transform:uppercase;color:#A3A3A3;
-    display:flex;justify-content:space-between;align-items:center;gap:18px;
-  }
-  .viewer-head b{color:var(--acid)}
-  .viewer-head .fire-b{color:var(--fire)}
-  .viewer{
-    display:flex;gap:24px;overflow-x:auto;padding-bottom:40px;
-    scroll-snap-type:x mandatory;
-  }
-  /* Wrapper pós-escala — ocupa 540x675 no layout, contém canvas 1080x1350 escalado */
-  .slide-wrap{
-    flex:0 0 auto;scroll-snap-align:start;
-    width:540px;height:675px;position:relative;
-  }
-  .slide-wrap .slide{transform:scale(0.5);transform-origin:top left}
+      :root {
+        --ink: #050505;
+        --ink-2: #0b0b0b;
+        --cream: #f5f1e8;
+        --fire: #ff3b0f;
+        --acid: #c6ff00;
+        --cyan: #00e0ff;
+        --mute: #6b7280;
+        --line: rgba(255, 255, 255, 0.08);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        background: #1a1a1a;
+      }
+      body {
+        padding: 40px;
+        font-family: 'Archivo', sans-serif;
+        color: #a3a3a3;
+      }
+      .viewer-head {
+        max-width: 1360px;
+        margin: 0 auto 28px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #a3a3a3;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 18px;
+      }
+      .viewer-head b {
+        color: var(--acid);
+      }
+      .viewer-head .fire-b {
+        color: var(--fire);
+      }
+      .viewer {
+        display: flex;
+        gap: 24px;
+        overflow-x: auto;
+        padding-bottom: 40px;
+        scroll-snap-type: x mandatory;
+      }
+      /* Wrapper pós-escala — ocupa 540x675 no layout, contém canvas 1080x1350 escalado */
+      .slide-wrap {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        width: 540px;
+        height: 675px;
+        position: relative;
+      }
+      .slide-wrap .slide {
+        transform: scale(0.5);
+        transform-origin: top left;
+      }
 
-  /* Rótulo externo mono — fica ACIMA do slide, identifica qual é */
-  .slide-label{
-    font-family:'JetBrains Mono',monospace;font-size:10px;
-    letter-spacing:0.24em;text-transform:uppercase;color:#A3A3A3;
-    margin-bottom:10px;
-  }
-  .slide-label b{color:var(--acid)}
-  .slide-label .fire-b{color:var(--fire)}
+      /* Rótulo externo mono — fica ACIMA do slide, identifica qual é */
+      .slide-label {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: #a3a3a3;
+        margin-bottom: 10px;
+      }
+      .slide-label b {
+        color: var(--acid);
+      }
+      .slide-label .fire-b {
+        color: var(--fire);
+      }
 
-  /* ============ CANVAS 1080×1350 (4:5) ============ */
-  .slide{
-    width:1080px;height:1350px;
-    position:relative;overflow:hidden;
-    background:var(--ink);color:var(--cream);
-    font-family:'Archivo',sans-serif;
-  }
+      /* ============ CANVAS 1080×1350 (4:5) ============ */
+      .slide {
+        width: 1080px;
+        height: 1350px;
+        position: relative;
+        overflow: hidden;
+        background: var(--ink);
+        color: var(--cream);
+        font-family: 'Archivo', sans-serif;
+      }
 
-  /* Grid assinatura — 80px, opacity 0.35 */
-  .grid-bg{
-    position:absolute;inset:0;pointer-events:none;z-index:0;opacity:0.35;
-    background-image:
-      linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
-    background-size:80px 80px;
-  }
+      /* Grid assinatura — 80px, opacity 0.35 */
+      .grid-bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.35;
+        background-image:
+          linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+        background-size: 80px 80px;
+      }
 
-  .pad{
-    position:relative;z-index:2;
-    padding:72px;height:100%;
-    display:flex;flex-direction:column;justify-content:space-between;
-  }
+      .pad {
+        position: relative;
+        z-index: 2;
+        padding: 72px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
 
-  /* ===== STATUS BAR (topo comum) ===== */
-  .sb{
-    display:flex;justify-content:space-between;align-items:center;
-    font-family:'JetBrains Mono',monospace;font-size:16px;
-    letter-spacing:0.25em;text-transform:uppercase;color:var(--mute);
-  }
-  .sb .dot{
-    width:10px;height:10px;background:var(--acid);border-radius:50%;
-    box-shadow:0 0 10px var(--acid);display:inline-block;
-    margin-right:10px;vertical-align:middle;
-  }
-  .sb b{color:var(--cream)}
-  .sb .fire-b{color:var(--fire)}
+      /* ===== STATUS BAR (topo comum) ===== */
+      .sb {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 16px;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--mute);
+      }
+      .sb .dot {
+        width: 10px;
+        height: 10px;
+        background: var(--acid);
+        border-radius: 50%;
+        box-shadow: 0 0 10px var(--acid);
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+      .sb b {
+        color: var(--cream);
+      }
+      .sb .fire-b {
+        color: var(--fire);
+      }
 
-  /* ===== DOTS progresso (8 slots) ===== */
-  .dots{display:flex;gap:10px;align-items:center}
-  .dots span{width:44px;height:5px;background:rgba(255,255,255,0.18);display:block}
-  .dots span.on{background:var(--acid)}
+      /* ===== DOTS progresso (8 slots) ===== */
+      .dots {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .dots span {
+        width: 44px;
+        height: 5px;
+        background: rgba(255, 255, 255, 0.18);
+        display: block;
+      }
+      .dots span.on {
+        background: var(--acid);
+      }
 
-  .foot-row{
-    display:flex;justify-content:space-between;align-items:center;gap:24px;
-  }
-  .foot-meta{
-    font-family:'JetBrains Mono',monospace;font-size:14px;
-    letter-spacing:0.24em;text-transform:uppercase;color:var(--mute);
-  }
-  .foot-meta b{color:var(--acid)}
+      .foot-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+      }
+      .foot-meta {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 14px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--mute);
+      }
+      .foot-meta b {
+        color: var(--acid);
+      }
 
-  /* ============ SLIDE 01 — CAPA ============ */
-  .cover .hero{
-    font-family:'Archivo Black',sans-serif;
-    font-size:150px;line-height:0.88;letter-spacing:-0.05em;
-    text-transform:uppercase;color:var(--cream);
-    margin-top:40px;
-  }
-  .cover .hero .box{
-    background:var(--acid);color:var(--ink);
-    padding:0 20px;display:inline-block;
-  }
-  .cover .hero .fire{color:var(--fire)}
-  .cover .hero .stroke{-webkit-text-stroke:3px var(--cream);color:transparent}
-  .cover .sub{
-    font-family:'Archivo',sans-serif;font-size:24px;line-height:1.45;
-    color:#A3A3A3;max-width:760px;margin-top:36px;
-  }
-  .cover .cta{
-    display:flex;align-items:center;gap:14px;
-    font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;
-    letter-spacing:0.22em;text-transform:uppercase;color:var(--acid);
-  }
+      /* ============ SLIDE 01 — CAPA ============ */
+      .cover .hero {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 150px;
+        line-height: 0.88;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        color: var(--cream);
+        margin-top: 40px;
+      }
+      .cover .hero .box {
+        background: var(--acid);
+        color: var(--ink);
+        padding: 0 20px;
+        display: inline-block;
+      }
+      .cover .hero .fire {
+        color: var(--fire);
+      }
+      .cover .hero .stroke {
+        -webkit-text-stroke: 3px var(--cream);
+        color: transparent;
+      }
+      .cover .sub {
+        font-family: 'Archivo', sans-serif;
+        font-size: 24px;
+        line-height: 1.45;
+        color: #a3a3a3;
+        max-width: 760px;
+        margin-top: 36px;
+      }
+      .cover .cta {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--acid);
+      }
 
-  /* ============ SLIDES 02–07 — CARDS P1–P6 ============ */
-  .pslide .top-meta{
-    font-family:'JetBrains Mono',monospace;font-size:20px;
-    letter-spacing:0.28em;text-transform:uppercase;color:var(--fire);
-    margin-top:28px;
-  }
-  .pslide .pnum{
-    font-family:'Archivo Black',sans-serif;
-    font-size:560px;line-height:0.82;letter-spacing:-0.08em;
-    margin-top:-40px;margin-left:-20px;
-    color:var(--acid);text-shadow:0 0 60px rgba(198,255,0,0.25);
-  }
-  .pslide .qa{margin-top:auto;margin-bottom:40px}
-  .pslide .q{
-    font-family:'Archivo Black',sans-serif;font-size:96px;line-height:0.96;
-    letter-spacing:-0.035em;text-transform:uppercase;color:var(--cream);
-  }
-  .pslide .q .acid{color:var(--acid)}
-  .pslide .q .fire{color:var(--fire)}
-  .pslide .d{
-    font-family:'Archivo',sans-serif;font-size:22px;line-height:1.5;
-    color:#A3A3A3;margin-top:24px;max-width:880px;
-  }
+      /* ============ SLIDES 02–07 — CARDS P1–P6 ============ */
+      .pslide .top-meta {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 20px;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--fire);
+        margin-top: 28px;
+      }
+      .pslide .pnum {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 560px;
+        line-height: 0.82;
+        letter-spacing: -0.08em;
+        margin-top: -40px;
+        margin-left: -20px;
+        color: var(--acid);
+        text-shadow: 0 0 60px rgba(198, 255, 0, 0.25);
+      }
+      .pslide .qa {
+        margin-top: auto;
+        margin-bottom: 40px;
+      }
+      .pslide .q {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 96px;
+        line-height: 0.96;
+        letter-spacing: -0.035em;
+        text-transform: uppercase;
+        color: var(--cream);
+      }
+      .pslide .q .acid {
+        color: var(--acid);
+      }
+      .pslide .q .fire {
+        color: var(--fire);
+      }
+      .pslide .d {
+        font-family: 'Archivo', sans-serif;
+        font-size: 22px;
+        line-height: 1.5;
+        color: #a3a3a3;
+        margin-top: 24px;
+        max-width: 880px;
+      }
 
-  /* ============ SLIDE 08 — CTA FINAL (fire bg) ============ */
-  .cta-slide{background:var(--fire);color:var(--ink)}
-  .cta-slide .grid-bg{
-    opacity:1;
-    background-image:
-      linear-gradient(to right, rgba(0,0,0,0.08) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(0,0,0,0.08) 1px, transparent 1px);
-    background-size:80px 80px;
-  }
-  .cta-slide .sb{color:rgba(5,5,5,0.7)}
-  .cta-slide .sb b{color:var(--ink)}
-  .cta-slide .sb .dot{background:var(--ink);box-shadow:none}
-  .cta-slide .big{
-    font-family:'Archivo Black',sans-serif;
-    font-size:112px;line-height:0.92;letter-spacing:-0.045em;
-    text-transform:uppercase;color:var(--ink);
-    margin-top:40px;
-  }
-  .cta-slide .sub{
-    font-family:'Archivo',sans-serif;font-weight:500;
-    font-size:28px;line-height:1.4;color:var(--ink);
-    max-width:900px;margin-top:28px;
-  }
-  .cta-slide .sub b{
-    background:var(--ink);color:var(--fire);padding:0 8px;
-  }
-  .cta-slide .action{
-    display:inline-flex;align-items:center;gap:14px;
-    background:var(--ink);color:var(--cream);
-    padding:26px 36px;
-    font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:800;
-    letter-spacing:0.18em;text-transform:uppercase;
-    margin-top:44px;
-  }
-  .cta-slide .action b{color:var(--acid)}
-  .cta-slide .sign{
-    font-family:'JetBrains Mono',monospace;font-size:14px;
-    letter-spacing:0.24em;text-transform:uppercase;color:var(--ink);
-  }
-  .cta-slide .sign b{background:var(--ink);color:var(--fire);padding:0 6px}
+      /* ============ SLIDE 08 — CTA FINAL (fire bg) ============ */
+      .cta-slide {
+        background: var(--fire);
+        color: var(--ink);
+      }
+      .cta-slide .grid-bg {
+        opacity: 1;
+        background-image:
+          linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+        background-size: 80px 80px;
+      }
+      .cta-slide .sb {
+        color: rgba(5, 5, 5, 0.7);
+      }
+      .cta-slide .sb b {
+        color: var(--ink);
+      }
+      .cta-slide .sb .dot {
+        background: var(--ink);
+        box-shadow: none;
+      }
+      .cta-slide .big {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 112px;
+        line-height: 0.92;
+        letter-spacing: -0.045em;
+        text-transform: uppercase;
+        color: var(--ink);
+        margin-top: 40px;
+      }
+      .cta-slide .sub {
+        font-family: 'Archivo', sans-serif;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 1.4;
+        color: var(--ink);
+        max-width: 900px;
+        margin-top: 28px;
+      }
+      .cta-slide .sub b {
+        background: var(--ink);
+        color: var(--fire);
+        padding: 0 8px;
+      }
+      .cta-slide .action {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        background: var(--ink);
+        color: var(--cream);
+        padding: 26px 36px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-top: 44px;
+      }
+      .cta-slide .action b {
+        color: var(--acid);
+      }
+      .cta-slide .sign {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 14px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--ink);
+      }
+      .cta-slide .sign b {
+        background: var(--ink);
+        color: var(--fire);
+        padding: 0 6px;
+      }
 
-  /* Rodapé atribuição */
-  .source{
-    max-width:1360px;margin:0 auto;
-    font-family:'JetBrains Mono',monospace;font-size:11px;
-    letter-spacing:0.2em;text-transform:uppercase;color:var(--mute);
-    border-top:1px solid var(--line);padding-top:20px;
-  }
-  .source b{color:var(--cream)}
-</style>
-</head>
-<body>
+      /* Rodapé atribuição */
+      .source {
+        max-width: 1360px;
+        margin: 0 auto;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--mute);
+        border-top: 1px solid var(--line);
+        padding-top: 20px;
+      }
+      .source b {
+        color: var(--cream);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="viewer-head">
+      <span>
+        <span
+          style="
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--acid);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--acid);
+            margin-right: 8px;
+            vertical-align: middle;
+          "
+        ></span>
+        TEMPLATE · IG CARROSSEL · <b>1080 × 1350 · 8 SLIDES</b>
+      </span>
+      <span>// <b>@joelburigo</b> · REV. <span class="fire-b">2026.04</span></span>
+    </div>
 
-<div class="viewer-head">
-  <span>
-    <span style="display:inline-block;width:6px;height:6px;background:var(--acid);border-radius:50%;box-shadow:0 0 8px var(--acid);margin-right:8px;vertical-align:middle"></span>
-    TEMPLATE · IG CARROSSEL · <b>1080 × 1350 · 8 SLIDES</b>
-  </span>
-  <span>// <b>@joelburigo</b> · REV. <span class="fire-b">2026.04</span></span>
-</div>
-
-<div class="viewer">
-
-  <!-- ================================================================
+    <div class="viewer">
+      <!-- ================================================================
        SLIDE 01 — CAPA
        ================================================================ -->
-  <div class="slide-wrap">
-    <div class="slide-label">// SLIDE <b>01</b> · CAPA</div>
-    <div class="slide cover">
-      <div class="grid-bg"></div>
-      <div class="pad">
-        <div>
-          <div class="sb">
-            <span><span class="dot"></span>CARROSSEL · 8 SLIDES / FRAMEWORK 6PS</span>
-            <span>// <b>01/08</b></span>
-          </div>
-          <div class="hero">
-            OS 6<br>
-            <span class="box">PS</span><br>
-            QUE VIRAM<br>
-            <span class="fire">SISTEMA.</span>
-          </div>
-          <div class="sub">
-            O que eu aprendi estruturando <span style="color:var(--cream)">140+ MPEs</span> em <span style="color:var(--cream)">17+ anos</span> — condensado em 2025 em 6 perguntas.
-          </div>
-        </div>
-        <div class="foot-row">
-          <div class="cta">▶ ARRASTA PRO LADO</div>
-          <div class="dots">
-            <span class="on"></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span>
+      <div class="slide-wrap">
+        <div class="slide-label">// SLIDE <b>01</b> · CAPA</div>
+        <div class="slide cover">
+          <div class="grid-bg"></div>
+          <div class="pad">
+            <div>
+              <div class="sb">
+                <span><span class="dot"></span>CARROSSEL · 8 SLIDES / FRAMEWORK 6PS</span>
+                <span>// <b>01/08</b></span>
+              </div>
+              <div class="hero">
+                OS 6<br />
+                <span class="box">PS</span><br />
+                QUE VIRAM<br />
+                <span class="fire">SISTEMA.</span>
+              </div>
+              <div class="sub">
+                O que eu aprendi estruturando <span style="color: var(--cream)">140+ MPEs</span> em
+                <span style="color: var(--cream)">17+ anos</span> — condensado em 2025 em 6
+                perguntas.
+              </div>
+            </div>
+            <div class="foot-row">
+              <div class="cta">▶ ARRASTA PRO LADO</div>
+              <div class="dots">
+                <span class="on"></span><span></span><span></span><span></span> <span></span
+                ><span></span><span></span><span></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- ================================================================
+      <!-- ================================================================
        SLIDE 02 — P1 POSICIONAMENTO
        ================================================================ -->
-  <div class="slide-wrap">
-    <div class="slide-label">// SLIDE <b>02</b> · <span class="fire-b">P1</span> POSICIONAMENTO</div>
-    <div class="slide pslide">
-      <div class="grid-bg"></div>
-      <div class="pad">
-        <div>
-          <div class="sb">
-            <span><span class="dot"></span>FRAMEWORK 6PS · CARD <b>02 / 08</b></span>
-            <span>// MODULE</span>
-          </div>
-          <div class="top-meta">// POSICIONAMENTO</div>
-          <div class="pnum">P1</div>
+      <div class="slide-wrap">
+        <div class="slide-label">
+          // SLIDE <b>02</b> · <span class="fire-b">P1</span> POSICIONAMENTO
         </div>
-        <div class="qa">
-          <div class="q"><span class="acid">QUEM?</span></div>
-          <div class="d">
-            Quem tu é, o que defende, contra o que luta. Se todo mundo pode comprar de ti, ninguém precisa comprar de ti.
-          </div>
-        </div>
-        <div class="foot-row">
-          <div class="foot-meta">Arrasta → <b>P2 · PÚBLICO</b></div>
-          <div class="dots">
-            <span></span><span class="on"></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span>
+        <div class="slide pslide">
+          <div class="grid-bg"></div>
+          <div class="pad">
+            <div>
+              <div class="sb">
+                <span><span class="dot"></span>FRAMEWORK 6PS · CARD <b>02 / 08</b></span>
+                <span>// MODULE</span>
+              </div>
+              <div class="top-meta">// POSICIONAMENTO</div>
+              <div class="pnum">P1</div>
+            </div>
+            <div class="qa">
+              <div class="q"><span class="acid">QUEM?</span></div>
+              <div class="d">
+                Quem tu é, o que defende, contra o que luta. Se todo mundo pode comprar de ti,
+                ninguém precisa comprar de ti.
+              </div>
+            </div>
+            <div class="foot-row">
+              <div class="foot-meta">Arrasta → <b>P2 · PÚBLICO</b></div>
+              <div class="dots">
+                <span></span><span class="on"></span><span></span><span></span> <span></span
+                ><span></span><span></span><span></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- ================================================================
+      <!-- ================================================================
        SLIDE 03 — P2 PÚBLICO
        ================================================================ -->
-  <div class="slide-wrap">
-    <div class="slide-label">// SLIDE <b>03</b> · <span class="fire-b">P2</span> PÚBLICO</div>
-    <div class="slide pslide">
-      <div class="grid-bg"></div>
-      <div class="pad">
-        <div>
-          <div class="sb">
-            <span><span class="dot"></span>FRAMEWORK 6PS · CARD <b>03 / 08</b></span>
-            <span>// MODULE</span>
-          </div>
-          <div class="top-meta">// PÚBLICO</div>
-          <div class="pnum">P2</div>
-        </div>
-        <div class="qa">
-          <div class="q"><span class="acid">PRA QUEM?</span></div>
-          <div class="d">
-            ICP escrito, dor mapeada, canal decidido. Não é "todo empresário", é "dono de clínica de R$ 80k–250k/mês".
-          </div>
-        </div>
-        <div class="foot-row">
-          <div class="foot-meta">Arrasta → <b>P3 · PRODUTO</b></div>
-          <div class="dots">
-            <span></span><span></span><span class="on"></span><span></span>
-            <span></span><span></span><span></span><span></span>
+      <div class="slide-wrap">
+        <div class="slide-label">// SLIDE <b>03</b> · <span class="fire-b">P2</span> PÚBLICO</div>
+        <div class="slide pslide">
+          <div class="grid-bg"></div>
+          <div class="pad">
+            <div>
+              <div class="sb">
+                <span><span class="dot"></span>FRAMEWORK 6PS · CARD <b>03 / 08</b></span>
+                <span>// MODULE</span>
+              </div>
+              <div class="top-meta">// PÚBLICO</div>
+              <div class="pnum">P2</div>
+            </div>
+            <div class="qa">
+              <div class="q"><span class="acid">PRA QUEM?</span></div>
+              <div class="d">
+                ICP escrito, dor mapeada, canal decidido. Não é "todo empresário", é "dono de
+                clínica de R$ 80k–250k/mês".
+              </div>
+            </div>
+            <div class="foot-row">
+              <div class="foot-meta">Arrasta → <b>P3 · PRODUTO</b></div>
+              <div class="dots">
+                <span></span><span></span><span class="on"></span><span></span> <span></span
+                ><span></span><span></span><span></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- ================================================================
+      <!-- ================================================================
        SLIDE 04 — P3 PRODUTO
        ================================================================ -->
-  <div class="slide-wrap">
-    <div class="slide-label">// SLIDE <b>04</b> · <span class="fire-b">P3</span> PRODUTO</div>
-    <div class="slide pslide">
-      <div class="grid-bg"></div>
-      <div class="pad">
-        <div>
-          <div class="sb">
-            <span><span class="dot"></span>FRAMEWORK 6PS · CARD <b>04 / 08</b></span>
-            <span>// MODULE</span>
-          </div>
-          <div class="top-meta">// PRODUTO</div>
-          <div class="pnum">P3</div>
-        </div>
-        <div class="qa">
-          <div class="q"><span class="acid">O QUÊ?</span></div>
-          <div class="d">
-            Oferta, pricing, pacote. O que tu entrega, por qual preço, com qual margem — escrito, versionado, testado. Não no feeling.
-          </div>
-        </div>
-        <div class="foot-row">
-          <div class="foot-meta">Arrasta → <b>P4 · PROGRAMAS</b></div>
-          <div class="dots">
-            <span></span><span></span><span></span><span class="on"></span>
-            <span></span><span></span><span></span><span></span>
+      <div class="slide-wrap">
+        <div class="slide-label">// SLIDE <b>04</b> · <span class="fire-b">P3</span> PRODUTO</div>
+        <div class="slide pslide">
+          <div class="grid-bg"></div>
+          <div class="pad">
+            <div>
+              <div class="sb">
+                <span><span class="dot"></span>FRAMEWORK 6PS · CARD <b>04 / 08</b></span>
+                <span>// MODULE</span>
+              </div>
+              <div class="top-meta">// PRODUTO</div>
+              <div class="pnum">P3</div>
+            </div>
+            <div class="qa">
+              <div class="q"><span class="acid">O QUÊ?</span></div>
+              <div class="d">
+                Oferta, pricing, pacote. O que tu entrega, por qual preço, com qual margem —
+                escrito, versionado, testado. Não no feeling.
+              </div>
+            </div>
+            <div class="foot-row">
+              <div class="foot-meta">Arrasta → <b>P4 · PROGRAMAS</b></div>
+              <div class="dots">
+                <span></span><span></span><span></span><span class="on"></span> <span></span
+                ><span></span><span></span><span></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- ================================================================
+      <!-- ================================================================
        SLIDE 05 — P4 PROGRAMAS
        ================================================================ -->
-  <div class="slide-wrap">
-    <div class="slide-label">// SLIDE <b>05</b> · <span class="fire-b">P4</span> PROGRAMAS</div>
-    <div class="slide pslide">
-      <div class="grid-bg"></div>
-      <div class="pad">
-        <div>
-          <div class="sb">
-            <span><span class="dot"></span>FRAMEWORK 6PS · CARD <b>05 / 08</b></span>
-            <span>// MODULE</span>
-          </div>
-          <div class="top-meta">// PROGRAMAS</div>
-          <div class="pnum">P4</div>
-        </div>
-        <div class="qa">
-          <div class="q"><span class="acid">COMO?</span></div>
-          <div class="d">
-            Marketing + vendas + growth integrados. Campanhas que geram lead qualificado e quantificado, não só bonito.
-          </div>
-        </div>
-        <div class="foot-row">
-          <div class="foot-meta">Arrasta → <b>P5 · PROCESSOS</b></div>
-          <div class="dots">
-            <span></span><span></span><span></span><span></span>
-            <span class="on"></span><span></span><span></span><span></span>
+      <div class="slide-wrap">
+        <div class="slide-label">// SLIDE <b>05</b> · <span class="fire-b">P4</span> PROGRAMAS</div>
+        <div class="slide pslide">
+          <div class="grid-bg"></div>
+          <div class="pad">
+            <div>
+              <div class="sb">
+                <span><span class="dot"></span>FRAMEWORK 6PS · CARD <b>05 / 08</b></span>
+                <span>// MODULE</span>
+              </div>
+              <div class="top-meta">// PROGRAMAS</div>
+              <div class="pnum">P4</div>
+            </div>
+            <div class="qa">
+              <div class="q"><span class="acid">COMO?</span></div>
+              <div class="d">
+                Marketing + vendas + growth integrados. Campanhas que geram lead qualificado e
+                quantificado, não só bonito.
+              </div>
+            </div>
+            <div class="foot-row">
+              <div class="foot-meta">Arrasta → <b>P5 · PROCESSOS</b></div>
+              <div class="dots">
+                <span></span><span></span><span></span><span></span> <span class="on"></span
+                ><span></span><span></span><span></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- ================================================================
+      <!-- ================================================================
        SLIDE 06 — P5 PROCESSOS
        ================================================================ -->
-  <div class="slide-wrap">
-    <div class="slide-label">// SLIDE <b>06</b> · <span class="fire-b">P5</span> PROCESSOS</div>
-    <div class="slide pslide">
-      <div class="grid-bg"></div>
-      <div class="pad">
-        <div>
-          <div class="sb">
-            <span><span class="dot"></span>FRAMEWORK 6PS · CARD <b>06 / 08</b></span>
-            <span>// MODULE</span>
-          </div>
-          <div class="top-meta">// PROCESSOS</div>
-          <div class="pnum">P5</div>
-        </div>
-        <div class="qa">
-          <div class="q"><span class="acid">POR ONDE?</span></div>
-          <div class="d">
-            SOPs, funis, CRM. Vendas que fecham quando tu não tá olhando.
-          </div>
-        </div>
-        <div class="foot-row">
-          <div class="foot-meta">Arrasta → <b>P6 · PESSOAS</b></div>
-          <div class="dots">
-            <span></span><span></span><span></span><span></span>
-            <span></span><span class="on"></span><span></span><span></span>
+      <div class="slide-wrap">
+        <div class="slide-label">// SLIDE <b>06</b> · <span class="fire-b">P5</span> PROCESSOS</div>
+        <div class="slide pslide">
+          <div class="grid-bg"></div>
+          <div class="pad">
+            <div>
+              <div class="sb">
+                <span><span class="dot"></span>FRAMEWORK 6PS · CARD <b>06 / 08</b></span>
+                <span>// MODULE</span>
+              </div>
+              <div class="top-meta">// PROCESSOS</div>
+              <div class="pnum">P5</div>
+            </div>
+            <div class="qa">
+              <div class="q"><span class="acid">POR ONDE?</span></div>
+              <div class="d">SOPs, funis, CRM. Vendas que fecham quando tu não tá olhando.</div>
+            </div>
+            <div class="foot-row">
+              <div class="foot-meta">Arrasta → <b>P6 · PESSOAS</b></div>
+              <div class="dots">
+                <span></span><span></span><span></span><span></span> <span></span
+                ><span class="on"></span><span></span><span></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- ================================================================
+      <!-- ================================================================
        SLIDE 07 — P6 PESSOAS
        ================================================================ -->
-  <div class="slide-wrap">
-    <div class="slide-label">// SLIDE <b>07</b> · <span class="fire-b">P6</span> PESSOAS</div>
-    <div class="slide pslide">
-      <div class="grid-bg"></div>
-      <div class="pad">
-        <div>
-          <div class="sb">
-            <span><span class="dot"></span>FRAMEWORK 6PS · CARD <b>07 / 08</b></span>
-            <span>// MODULE</span>
-          </div>
-          <div class="top-meta">// PESSOAS</div>
-          <div class="pnum">P6</div>
-        </div>
-        <div class="qa">
-          <div class="q">COM <span class="acid">QUEM?</span></div>
-          <div class="d">
-            Time estruturado, cargos claros, metas quantificadas. Se tua empresa depende de ti, tu não tem empresa — tu tem emprego.
-          </div>
-        </div>
-        <div class="foot-row">
-          <div class="foot-meta">Arrasta → <b>FECHAMENTO</b></div>
-          <div class="dots">
-            <span></span><span></span><span></span><span></span>
-            <span></span><span></span><span class="on"></span><span></span>
+      <div class="slide-wrap">
+        <div class="slide-label">// SLIDE <b>07</b> · <span class="fire-b">P6</span> PESSOAS</div>
+        <div class="slide pslide">
+          <div class="grid-bg"></div>
+          <div class="pad">
+            <div>
+              <div class="sb">
+                <span><span class="dot"></span>FRAMEWORK 6PS · CARD <b>07 / 08</b></span>
+                <span>// MODULE</span>
+              </div>
+              <div class="top-meta">// PESSOAS</div>
+              <div class="pnum">P6</div>
+            </div>
+            <div class="qa">
+              <div class="q">COM <span class="acid">QUEM?</span></div>
+              <div class="d">
+                Time estruturado, cargos claros, metas quantificadas. Se tua empresa depende de ti,
+                tu não tem empresa — tu tem emprego.
+              </div>
+            </div>
+            <div class="foot-row">
+              <div class="foot-meta">Arrasta → <b>FECHAMENTO</b></div>
+              <div class="dots">
+                <span></span><span></span><span></span><span></span> <span></span><span></span
+                ><span class="on"></span><span></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- ================================================================
+      <!-- ================================================================
        SLIDE 08 — CTA FINAL (fire bg)
        ================================================================ -->
-  <div class="slide-wrap">
-    <div class="slide-label">// SLIDE <b>08</b> · <span class="fire-b">CTA FINAL</span></div>
-    <div class="slide cta-slide">
-      <div class="grid-bg"></div>
-      <div class="pad">
-        <div>
-          <div class="sb">
-            <span><span class="dot"></span>FIM · SE GOSTOU · SALVA</span>
-            <span>// <b>08/08</b></span>
-          </div>
-          <div class="big">
-            QUER LIGAR<br>
-            ESSA MÁQUINA<br>
-            NO TEU<br>
-            NEGÓCIO?
-          </div>
-          <div class="sub">
-            <b>VSS</b> — o playbook completo dos 6Ps em 90 dias. R$ 1.997 à vista ou 12× R$ 166,42.
-          </div>
-        </div>
-        <div>
-          <div class="action">[ VER VSS COMPLETO <b>→</b> ]</div>
-          <div class="foot-row" style="margin-top:44px">
-            <div class="sign">★ SISTEMA <b>&gt;</b> IMPROVISO · @JOELBURIGO · BORA PRA CIMA</div>
-            <div class="dots">
-              <span></span><span></span><span></span><span></span>
-              <span></span><span></span><span></span><span class="on"></span>
+      <div class="slide-wrap">
+        <div class="slide-label">// SLIDE <b>08</b> · <span class="fire-b">CTA FINAL</span></div>
+        <div class="slide cta-slide">
+          <div class="grid-bg"></div>
+          <div class="pad">
+            <div>
+              <div class="sb">
+                <span><span class="dot"></span>FIM · SE GOSTOU · SALVA</span>
+                <span>// <b>08/08</b></span>
+              </div>
+              <div class="big">
+                QUER LIGAR<br />
+                ESSA MÁQUINA<br />
+                NO TEU<br />
+                NEGÓCIO?
+              </div>
+              <div class="sub">
+                <b>VSS</b> — o playbook completo dos 6Ps em 90 dias. R$ 1.997 à vista ou 12× R$
+                166,42.
+              </div>
+            </div>
+            <div>
+              <div class="action">[ VER VSS COMPLETO <b>→</b> ]</div>
+              <div class="foot-row" style="margin-top: 44px">
+                <div class="sign">
+                  ★ SISTEMA <b>&gt;</b> IMPROVISO · @JOELBURIGO · BORA PRA CIMA
+                </div>
+                <div class="dots">
+                  <span></span><span></span><span></span><span></span> <span></span><span></span
+                  ><span></span><span class="on"></span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-</div>
-
-<div class="source">
-  Provas de autoridade: <b>17+ anos · 140+ MPEs · ~R$ 1 bilhão</b> em vendas estruturadas ·
-  Fonte: <b>docs/conteudo/brand/ANTI_DRIFT.md §4</b> ·
-  Voz &amp; 6Ps (ordem fixa P1–P6): <b>partes/01-marca.md</b> ·
-  Copy bank: <b>recursos/copy-bank.md</b> ·
-  Oferta VSS: <b>partes/02-oferta.md</b>
-</div>
-
-</body>
+    <div class="source">
+      Provas de autoridade: <b>17+ anos · 140+ MPEs · ~R$ 1 bilhão</b> em vendas estruturadas ·
+      Fonte: <b>docs/conteudo/brand/ANTI_DRIFT.md §4</b> · Voz &amp; 6Ps (ordem fixa P1–P6):
+      <b>partes/01-marca.md</b> · Copy bank: <b>recursos/copy-bank.md</b> · Oferta VSS:
+      <b>partes/02-oferta.md</b>
+    </div>
+  </body>
 </html>

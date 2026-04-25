@@ -1,10 +1,4 @@
-export type PKey =
-  | 'posicionamento'
-  | 'publico'
-  | 'produto'
-  | 'programas'
-  | 'processos'
-  | 'pessoas';
+export type PKey = 'posicionamento' | 'publico' | 'produto' | 'programas' | 'processos' | 'pessoas';
 
 export interface PLevel {
   name: string;
@@ -64,11 +58,7 @@ export const psData: Record<PKey, PInfo> = {
       4: {
         name: 'Avançado',
         description: 'Mercado reconhece seu diferencial',
-        actions: [
-          'Expanda para novos segmentos',
-          'Desenvolva sub-marcas',
-          'Licencie seu método',
-        ],
+        actions: ['Expanda para novos segmentos', 'Desenvolva sub-marcas', 'Licencie seu método'],
       },
     },
   },
@@ -151,11 +141,7 @@ export const psData: Record<PKey, PInfo> = {
       3: {
         name: 'Intermediário',
         description: 'Produto bem posicionado',
-        actions: [
-          'Desenvolva versões escaláveis',
-          'Crie linhas de produto',
-          'Implemente upsells',
-        ],
+        actions: ['Desenvolva versões escaláveis', 'Crie linhas de produto', 'Implemente upsells'],
       },
       4: {
         name: 'Avançado',
@@ -190,11 +176,7 @@ export const psData: Record<PKey, PInfo> = {
       2: {
         name: 'Básico',
         description: 'Funil estruturado',
-        actions: [
-          'Automatize follow-ups',
-          'Crie nutrição de leads',
-          'Desenvolva múltiplos funis',
-        ],
+        actions: ['Automatize follow-ups', 'Crie nutrição de leads', 'Desenvolva múltiplos funis'],
       },
       3: {
         name: 'Intermediário',
@@ -204,11 +186,7 @@ export const psData: Record<PKey, PInfo> = {
       4: {
         name: 'Avançado',
         description: 'Machine de vendas previsível',
-        actions: [
-          'Escale aquisição',
-          'Desenvolva parcerias',
-          'Crie modelo recorrente',
-        ],
+        actions: ['Escale aquisição', 'Desenvolva parcerias', 'Crie modelo recorrente'],
       },
     },
   },
@@ -248,11 +226,7 @@ export const psData: Record<PKey, PInfo> = {
       4: {
         name: 'Avançado',
         description: 'Processos otimizados',
-        actions: [
-          'Certificação de qualidade',
-          'Benchmarking',
-          'Inovação de processos',
-        ],
+        actions: ['Certificação de qualidade', 'Benchmarking', 'Inovação de processos'],
       },
     },
   },
@@ -291,20 +265,12 @@ export const psData: Record<PKey, PInfo> = {
       3: {
         name: 'Intermediário',
         description: 'Time estruturado',
-        actions: [
-          'Desenvolva lideranças',
-          'Crie plano de carreira',
-          'Implemente meritocracia',
-        ],
+        actions: ['Desenvolva lideranças', 'Crie plano de carreira', 'Implemente meritocracia'],
       },
       4: {
         name: 'Avançado',
         description: 'Time de alta performance',
-        actions: [
-          'Desenvolva cultura forte',
-          'Crie programa de sucessão',
-          'Expanda liderança',
-        ],
+        actions: ['Desenvolva cultura forte', 'Crie programa de sucessão', 'Expanda liderança'],
       },
     },
   },
@@ -332,8 +298,7 @@ export function getMaturityLevel(total: number): MaturityLevel {
     return {
       name: 'Iniciante',
       color: 'text-fire-hot',
-      description:
-        'Você tem alguns elementos, mas falta consistência. Priorize os Ps mais fracos.',
+      description: 'Você tem alguns elementos, mas falta consistência. Priorize os Ps mais fracos.',
     };
   if (total <= 12)
     return {

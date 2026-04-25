@@ -1,24 +1,24 @@
 # CLAUDE.md — joelburigo-site
 
-Site público + plataforma VSS/Advisory do Joel Burigo. **Next.js 15 App Router** (Node 22). Categoria: **interno**.
+Site público + plataforma VSS/Advisory do Joel Burigo. **Next.js 16 App Router** (React 19, Node 22). Categoria: **interno**.
 
 ## Resumo
 
-| Item | Valor |
-|---|---|
-| Cliente | Joel Burigo (próprio) |
-| Produção | https://joelburigo.com.br |
-| Stack | Next.js 15 App Router + Tailwind v4 + shadcn/ui customizado |
-| Banco | Postgres 16 dedicado (`pg-joelburigo-site` no growth-infra compose) |
-| ORM | Drizzle |
-| LLM | Vercel AI SDK · OpenAI default (`gpt-5.2`, `gpt-image-2`) · adapter pra Anthropic via env |
-| Storage | Cloudflare R2 (artifacts, exports) · `public/` pra blog images |
-| Vídeo | Cloudflare Stream **Live Input** (OBS → RTMP → HLS + replay automático) |
-| Pagamento | Mercado Pago BR (default) + Stripe US (fallback cartão internacional) |
-| Email | Brevo API (transacional via Stalwart relay no growth-infra) |
-| Imagem Docker | `ghcr.io/joelburigo/joelburigo-site:latest` |
+| Item                  | Valor                                                                                                                    |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Cliente               | Joel Burigo (próprio)                                                                                                    |
+| Produção              | https://joelburigo.com.br                                                                                                |
+| Stack                 | Next.js 16 App Router + React 19 + Tailwind v4 + shadcn/ui customizado (`components.json`)                               |
+| Banco                 | Postgres 16 dedicado (`pg-joelburigo-site` no growth-infra compose)                                                      |
+| ORM                   | Drizzle                                                                                                                  |
+| LLM                   | Vercel AI SDK · OpenAI default (`gpt-5.2`, `gpt-image-2`) · adapter pra Anthropic via env                                |
+| Storage               | Cloudflare R2 (artifacts, exports) · `public/` pra blog images                                                           |
+| Vídeo                 | Cloudflare Stream **Live Input** (OBS → RTMP → HLS + replay automático)                                                  |
+| Pagamento             | Mercado Pago BR (default) + Stripe US (fallback cartão internacional)                                                    |
+| Email                 | Brevo API (transacional via Stalwart relay no growth-infra)                                                              |
+| Imagem Docker         | `ghcr.io/joelburigo/joelburigo-site:latest`                                                                              |
 | Containers no compose | `joelburigo-site` (web · 4321) · `joelburigo-worker` (pg-boss · mesma imagem, CMD diferente) · `pg-joelburigo-site` (DB) |
-| Tunnel dev | `pnpm dev:tunnel` → `dev.joelburigo.com.br` (Cloudflare Tunnel + `.cloudflared.token`) |
+| Tunnel dev            | `pnpm dev:tunnel` → `dev.joelburigo.com.br` (Cloudflare Tunnel + `.cloudflared.token`)                                   |
 
 ## Estrutura do repo
 
@@ -57,9 +57,10 @@ joelburigo-site/
 │   │   └── jobs/runner.ts       worker pg-boss (processo separado no compose)
 │   │
 │   ├── lib/                     utils client+server safe (cn, fonts, contact, constants)
+│   ├── data/                    data estática versionada (cases.ts)
 │   ├── content/blog/            posts MD (fonte pra migração Sprint 1 → DB)
-│   ├── assets/images/           imagens originais (cp pra public/ no Sprint 1)
-│   ├── middleware.ts            protege /area, /destravamento, /admin
+│   ├── assets/images/           imagens originais — ver assets/README.md
+│   ├── proxy.ts                 Next 16 proxy (antes middleware) protege /area /admin etc
 │   └── env.ts                   Zod env validator
 │
 ├── public/                      assets estáticos servidos pelo Next

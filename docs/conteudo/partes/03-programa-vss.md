@@ -1,9 +1,9 @@
 ---
 name: Programa VSS — Fundamentos, Arquitetura e Valor
 description: Documento único do programa VSS. Visão estratégica + Framework 6Ps + arquitetura 15 módulos / 90 dias + diferenciação (Growth CRM, valor, precificação, garantia).
-id: "03"
-versao: "1.0"
-atualizado: "2026-04-22"
+id: '03'
+versao: '1.0'
+atualizado: '2026-04-22'
 autor: Joel Burigo
 tags: [programa, vss, 6ps, arquitetura, growth-crm, valor, garantia]
 ---
@@ -68,7 +68,7 @@ MPEs precisam de algo no meio: **sistema completo + autonomia + preço acessíve
 
 **Promessa:**
 
-> *Transforme seu negócio de vendas incertas e imprevisíveis em vendas estruturadas e recorrentes em 90 dias usando o Framework dos 6Ps — com ou sem investir em tráfego pago.*
+> _Transforme seu negócio de vendas incertas e imprevisíveis em vendas estruturadas e recorrentes em 90 dias usando o Framework dos 6Ps — com ou sem investir em tráfego pago._
 
 A promessa se sustenta em **4 pilares**:
 
@@ -76,8 +76,8 @@ A promessa se sustenta em **4 pilares**:
 
 **2. Flexibilidade total.**
 
-- *Com budget:* tráfego pago estruturado, Meta Ads + Google Ads, automações e escala mais rápida.
-- *Sem budget:* prospecção ativa gratuita (LinkedIn + Instagram + e-mail), ferramentas gratuitas, crescimento orgânico consistente.
+- _Com budget:_ tráfego pago estruturado, Meta Ads + Google Ads, automações e escala mais rápida.
+- _Sem budget:_ prospecção ativa gratuita (LinkedIn + Instagram + e-mail), ferramentas gratuitas, crescimento orgânico consistente.
 - Ambos aprendem o sistema completo — você escolhe o caminho conforme sua realidade financeira.
 
 **3. Ferramentas profissionais incluídas.** CRM completo (Growth CRM, 12 meses), templates de funis e automações, landing pages, scripts, dashboards e integrações. Você não precisa pesquisar, testar ou pagar ferramentas adicionais.
@@ -98,11 +98,11 @@ A promessa se sustenta em **4 pilares**:
 - Primário: **O Mentor** (sábio experiente)
 - Secundário: **O Construtor** (executor prático)
 
-**Joel como personagem:** a ponte entre teoria e prática. Linguagem em primeira pessoa, transparente, sem jargão desnecessário. Narrativas do tipo: *"eu também vendia no caos", "eu mesmo configurei os primeiros CRMs dos meus clientes", "o que ensino aqui já salvou dezenas de negócios".*
+**Joel como personagem:** a ponte entre teoria e prática. Linguagem em primeira pessoa, transparente, sem jargão desnecessário. Narrativas do tipo: _"eu também vendia no caos", "eu mesmo configurei os primeiros CRMs dos meus clientes", "o que ensino aqui já salvou dezenas de negócios"._
 
-**Tagline:** *Vendas Sem Segredos: o método que funciona quando você trabalha.*
+**Tagline:** _Vendas Sem Segredos: o método que funciona quando você trabalha._
 
-**Mensagem-chave:** *Não há fórmula mágica. Há método. E você vai dominar cada etapa dele.*
+**Mensagem-chave:** _Não há fórmula mágica. Há método. E você vai dominar cada etapa dele._
 
 ### 03.1.5 Público-alvo (ICP)
 
@@ -112,7 +112,7 @@ A promessa se sustenta em **4 pilares**:
 - Tamanho: 3–20 funcionários
 - Faturamento: R$ 10k – R$ 300k/mês
 - Estágio: negócio validado, mas vendas inconsistentes
-- Dor central: *"não sei de onde virá a próxima venda"*
+- Dor central: _"não sei de onde virá a próxima venda"_
 - Geografia: Brasil (português)
 
 **Demográfico:**
@@ -136,13 +136,13 @@ A promessa se sustenta em **4 pilares**:
 
 ### 03.1.6 Análise de mercado (TAM / SAM / SOM)
 
-| Camada | Tamanho | Descrição |
-|---|---|---|
-| **TAM** | ~13 milhões | Total de MPEs brasileiras ativas (SEBRAE/IBGE, 2023). 9,8M microempresas + 3,2M pequenas empresas. |
-| **SAM** | ~4 milhões | MPEs com faturamento R$ 10k–300k/mês (nosso range). Fatura o mínimo para investir em sistema e não exige consultoria enterprise. |
-| **SOM Ano 1** | 300–500 alunos (~0,01%) | Crescimento orgânico conservador. |
-| **SOM Ano 2** | 1.000–2.000 (~0,05%) | Consolidação de canais. |
-| **SOM Ano 3** | 5.000+ (~0,1%) | Efeito rede + marca. |
+| Camada        | Tamanho                 | Descrição                                                                                                                        |
+| ------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| **TAM**       | ~13 milhões             | Total de MPEs brasileiras ativas (SEBRAE/IBGE, 2023). 9,8M microempresas + 3,2M pequenas empresas.                               |
+| **SAM**       | ~4 milhões              | MPEs com faturamento R$ 10k–300k/mês (nosso range). Fatura o mínimo para investir em sistema e não exige consultoria enterprise. |
+| **SOM Ano 1** | 300–500 alunos (~0,01%) | Crescimento orgânico conservador.                                                                                                |
+| **SOM Ano 2** | 1.000–2.000 (~0,05%)    | Consolidação de canais.                                                                                                          |
+| **SOM Ano 3** | 5.000+ (~0,1%)          | Efeito rede + marca.                                                                                                             |
 
 **Conclusão:** o mercado é gigantesco. Conquistar 0,01% no primeiro ano é ambicioso, porém executável com marketing consistente.
 
@@ -246,14 +246,14 @@ Quem executa o sistema com excelência.
 
 Cada P é avaliado de 0 a 5:
 
-| Nível | Pontos | Descrição |
-|---|---|---|
-| Caótico | 0 | Não existe ou extremamente fraco |
-| Iniciante | 1 | Existe mas muito informal |
-| Básico | 2 | Existe mas inconsistente |
-| Intermediário | 3 | Funciona mas não otimizado |
-| Avançado | 4 | Bem estruturado e funcionando |
-| Otimizado | 5 | Referência de mercado |
+| Nível         | Pontos | Descrição                        |
+| ------------- | ------ | -------------------------------- |
+| Caótico       | 0      | Não existe ou extremamente fraco |
+| Iniciante     | 1      | Existe mas muito informal        |
+| Básico        | 2      | Existe mas inconsistente         |
+| Intermediário | 3      | Funciona mas não otimizado       |
+| Avançado      | 4      | Bem estruturado e funcionando    |
+| Otimizado     | 5      | Referência de mercado            |
 
 **Uso no VSS:**
 
@@ -275,93 +275,93 @@ Cada P é avaliado de 0 a 5:
 
 **P1 — Posicionamento**
 
-| Nível | Pts | Descrição | Características |
-|---|---|---|---|
-| Caótico | 0 | Não existe posicionamento | Compete 100% por preço; não sabe explicar diferencial; copia concorrente |
-| Iniciante | 1 | Posicionamento confuso | Tenta ser diferente mas não comunica; copy genérico; cliente não vê valor |
-| Básico | 2 | Posicionamento fraco | Tem diferencial mas não defende; pouca clareza; compete por preço |
-| Intermediário | 3 | Posicionamento definido | Diferencial claro internamente; comunicação melhorando; alguns clientes reconhecem |
-| Avançado | 4 | Posicionamento forte | Mercado reconhece; comunicação consistente; consegue cobrar premium |
-| Otimizado | 5 | Posicionamento dominante | Referência no nicho; top of mind; clientes vêm até você |
+| Nível         | Pts | Descrição                 | Características                                                                    |
+| ------------- | --- | ------------------------- | ---------------------------------------------------------------------------------- |
+| Caótico       | 0   | Não existe posicionamento | Compete 100% por preço; não sabe explicar diferencial; copia concorrente           |
+| Iniciante     | 1   | Posicionamento confuso    | Tenta ser diferente mas não comunica; copy genérico; cliente não vê valor          |
+| Básico        | 2   | Posicionamento fraco      | Tem diferencial mas não defende; pouca clareza; compete por preço                  |
+| Intermediário | 3   | Posicionamento definido   | Diferencial claro internamente; comunicação melhorando; alguns clientes reconhecem |
+| Avançado      | 4   | Posicionamento forte      | Mercado reconhece; comunicação consistente; consegue cobrar premium                |
+| Otimizado     | 5   | Posicionamento dominante  | Referência no nicho; top of mind; clientes vêm até você                            |
 
-*Perguntas-chave P1:* você explica em 1 frase o que te diferencia? Seus clientes explicam por que escolheram você além do preço? Você cobra acima da média? Quando pensam na categoria, pensam em você?
+_Perguntas-chave P1:_ você explica em 1 frase o que te diferencia? Seus clientes explicam por que escolheram você além do preço? Você cobra acima da média? Quando pensam na categoria, pensam em você?
 
-*Entregáveis para evoluir:* documento de Posicionamento (Golden Circle), Proposta de Valor testada, Elevator Pitch de 30s, diferenciais tangíveis documentados, promessa central, manifesto/história da marca.
+_Entregáveis para evoluir:_ documento de Posicionamento (Golden Circle), Proposta de Valor testada, Elevator Pitch de 30s, diferenciais tangíveis documentados, promessa central, manifesto/história da marca.
 
 **P2 — Público**
 
-| Nível | Pts | Descrição | Características |
-|---|---|---|---|
-| Caótico | 0 | Público indefinido | "Vendo para todo mundo"; sem critério; atende qualquer um |
-| Iniciante | 1 | Público amplo demais | Sabe o setor mas não detalha; sem qualificação; perde tempo com não-clientes |
-| Básico | 2 | Segmentação superficial | Noção do público; falta profundidade nas dores; comunicação genérica |
-| Intermediário | 3 | ICP definido | Cliente ideal documentado; dores conhecidas; sabe onde encontrá-lo |
-| Avançado | 4 | Persona completa | Conhece profundamente; entende jornada; comunicação personalizada |
-| Otimizado | 5 | Segmentação avançada | Múltiplas personas; micro-segmentos; previsibilidade comportamental |
+| Nível         | Pts | Descrição               | Características                                                              |
+| ------------- | --- | ----------------------- | ---------------------------------------------------------------------------- |
+| Caótico       | 0   | Público indefinido      | "Vendo para todo mundo"; sem critério; atende qualquer um                    |
+| Iniciante     | 1   | Público amplo demais    | Sabe o setor mas não detalha; sem qualificação; perde tempo com não-clientes |
+| Básico        | 2   | Segmentação superficial | Noção do público; falta profundidade nas dores; comunicação genérica         |
+| Intermediário | 3   | ICP definido            | Cliente ideal documentado; dores conhecidas; sabe onde encontrá-lo           |
+| Avançado      | 4   | Persona completa        | Conhece profundamente; entende jornada; comunicação personalizada            |
+| Otimizado     | 5   | Segmentação avançada    | Múltiplas personas; micro-segmentos; previsibilidade comportamental          |
 
-*Perguntas-chave P2:* descreve seu cliente ideal com 10+ características? Sabe as 3 maiores dores? Sabe onde ele passa tempo? Rejeita quem não se encaixa?
+_Perguntas-chave P2:_ descreve seu cliente ideal com 10+ características? Sabe as 3 maiores dores? Sabe onde ele passa tempo? Rejeita quem não se encaixa?
 
-*Entregáveis:* ICP detalhado, Buyer Persona(s), mapa de dores/desejos, objeções comuns, jornada de compra, lista de canais.
+_Entregáveis:_ ICP detalhado, Buyer Persona(s), mapa de dores/desejos, objeções comuns, jornada de compra, lista de canais.
 
 **P3 — Produto**
 
-| Nível | Pts | Descrição | Características |
-|---|---|---|---|
-| Caótico | 0 | Mal estruturado | Sem proposta de valor clara; entrega confusa; muita objeção |
-| Iniciante | 1 | Funciona mas mal apresentado | Resolve problema mas não mostra valor; embalagem ruim |
-| Básico | 2 | Valor definido | Benefício mal comunicado; preço sem estratégia; pouca prova social |
-| Intermediário | 3 | Bem estruturado | Proposta clara; preço justificado; algumas provas sociais |
-| Avançado | 4 | Otimizado | Alto valor percebido; prova social forte; experiência diferenciada |
-| Otimizado | 5 | Premium | Referência de mercado; clientes vendem por você; lista de espera |
+| Nível         | Pts | Descrição                    | Características                                                    |
+| ------------- | --- | ---------------------------- | ------------------------------------------------------------------ |
+| Caótico       | 0   | Mal estruturado              | Sem proposta de valor clara; entrega confusa; muita objeção        |
+| Iniciante     | 1   | Funciona mas mal apresentado | Resolve problema mas não mostra valor; embalagem ruim              |
+| Básico        | 2   | Valor definido               | Benefício mal comunicado; preço sem estratégia; pouca prova social |
+| Intermediário | 3   | Bem estruturado              | Proposta clara; preço justificado; algumas provas sociais          |
+| Avançado      | 4   | Otimizado                    | Alto valor percebido; prova social forte; experiência diferenciada |
+| Otimizado     | 5   | Premium                      | Referência de mercado; clientes vendem por você; lista de espera   |
 
-*Perguntas-chave P3:* cliente entende em 10s qual problema você resolve? Tem depoimentos documentados? Preço reflete valor? Diferenciais claros vs. concorrência?
+_Perguntas-chave P3:_ cliente entende em 10s qual problema você resolve? Tem depoimentos documentados? Preço reflete valor? Diferenciais claros vs. concorrência?
 
-*Entregáveis:* Value Proposition Canvas, estrutura de preço e pacotes, biblioteca de provas sociais, garantias, diferenciais, script de apresentação, FAQ com objeções.
+_Entregáveis:_ Value Proposition Canvas, estrutura de preço e pacotes, biblioteca de provas sociais, garantias, diferenciais, script de apresentação, FAQ com objeções.
 
 **P4 — Programas**
 
-| Nível | Pts | Descrição | Características |
-|---|---|---|---|
-| Caótico | 0 | Sem sistema | Vendas aleatórias; sem funil; sem previsibilidade |
-| Iniciante | 1 | Tentativas descoordenadas | Marketing não converte; depende de indicação; sem automação |
-| Básico | 2 | Início de estrutura | Algum funil; marketing e vendas separados; automação básica |
-| Intermediário | 3 | Funil estruturado | Leads regulares; funil claro; algumas automações |
-| Avançado | 4 | Sistema robusto | Múltiplos funis; automação avançada; previsibilidade boa |
-| Otimizado | 5 | Máquina de vendas | Multi-canal; totalmente automatizado; crescimento previsível |
+| Nível         | Pts | Descrição                 | Características                                              |
+| ------------- | --- | ------------------------- | ------------------------------------------------------------ |
+| Caótico       | 0   | Sem sistema               | Vendas aleatórias; sem funil; sem previsibilidade            |
+| Iniciante     | 1   | Tentativas descoordenadas | Marketing não converte; depende de indicação; sem automação  |
+| Básico        | 2   | Início de estrutura       | Algum funil; marketing e vendas separados; automação básica  |
+| Intermediário | 3   | Funil estruturado         | Leads regulares; funil claro; algumas automações             |
+| Avançado      | 4   | Sistema robusto           | Múltiplos funis; automação avançada; previsibilidade boa     |
+| Otimizado     | 5   | Máquina de vendas         | Multi-canal; totalmente automatizado; crescimento previsível |
 
-*Perguntas-chave P4:* tem funil documentado e funcionando? Leads entram previsivelmente? Usa automações? Consegue prever faturamento dos próximos 30–60 dias?
+_Perguntas-chave P4:_ tem funil documentado e funcionando? Leads entram previsivelmente? Usa automações? Consegue prever faturamento dos próximos 30–60 dias?
 
-*Entregáveis:* funil desenhado (topo/meio/fundo), iscas digitais, sequências automatizadas, CRM em uso, páginas de captura e vendas, campanhas de tráfego estruturadas, régua de relacionamento, modelo de upsell/cross-sell.
+_Entregáveis:_ funil desenhado (topo/meio/fundo), iscas digitais, sequências automatizadas, CRM em uso, páginas de captura e vendas, campanhas de tráfego estruturadas, régua de relacionamento, modelo de upsell/cross-sell.
 
 **P5 — Processos**
 
-| Nível | Pts | Descrição | Características |
-|---|---|---|---|
-| Caótico | 0 | Sem processos | Tudo na cabeça; cada venda é única; muitos erros |
-| Iniciante | 1 | Informais | Rotina não escrita; depende de pessoas; inconsistente |
-| Básico | 2 | Alguns documentados | Processos-chave escritos; nem todos seguem; falta padronização |
-| Intermediário | 3 | Padronizados | Principais processos doc.; time segue a maioria; melhoria contínua |
-| Avançado | 4 | Otimizados | Tudo documentado; time segue religiosamente; métricas por processo |
-| Otimizado | 5 | Excelência | Processos auditados; benchmarking; cultura de processos |
+| Nível         | Pts | Descrição           | Características                                                    |
+| ------------- | --- | ------------------- | ------------------------------------------------------------------ |
+| Caótico       | 0   | Sem processos       | Tudo na cabeça; cada venda é única; muitos erros                   |
+| Iniciante     | 1   | Informais           | Rotina não escrita; depende de pessoas; inconsistente              |
+| Básico        | 2   | Alguns documentados | Processos-chave escritos; nem todos seguem; falta padronização     |
+| Intermediário | 3   | Padronizados        | Principais processos doc.; time segue a maioria; melhoria contínua |
+| Avançado      | 4   | Otimizados          | Tudo documentado; time segue religiosamente; métricas por processo |
+| Otimizado     | 5   | Excelência          | Processos auditados; benchmarking; cultura de processos            |
 
-*Perguntas-chave P5:* processos documentados (vendas, marketing, entrega)? Pessoa nova segue sozinha? Mede cada etapa? Revisa regularmente?
+_Perguntas-chave P5:_ processos documentados (vendas, marketing, entrega)? Pessoa nova segue sozinha? Mede cada etapa? Revisa regularmente?
 
-*Entregáveis:* playbooks (vendas, marketing, atendimento/entrega), scripts, checklists, SOP, dashboard de métricas, ritual de revisão.
+_Entregáveis:_ playbooks (vendas, marketing, atendimento/entrega), scripts, checklists, SOP, dashboard de métricas, ritual de revisão.
 
 **P6 — Pessoas**
 
-| Nível | Pts | Descrição | Características |
-|---|---|---|---|
-| Caótico | 0 | Tudo depende do fundador | Fundador faz tudo; sem time; impossível escalar |
-| Iniciante | 1 | Sem estrutura | Tem pessoas mas sem clareza; papéis confusos; retrabalho |
-| Básico | 2 | Papéis superficiais | Organograma básico; treinamento informal; alta dependência |
-| Intermediário | 3 | Estruturado | Papéis claros; treinamento básico; fundador começa a desafogar |
-| Avançado | 4 | Autônomo | Time produtivo sem supervisão; treinamento contínuo; baixa rotatividade |
-| Otimizado | 5 | Alta performance | Cultura forte; time se desenvolve sozinho; atrai talentos |
+| Nível         | Pts | Descrição                | Características                                                         |
+| ------------- | --- | ------------------------ | ----------------------------------------------------------------------- |
+| Caótico       | 0   | Tudo depende do fundador | Fundador faz tudo; sem time; impossível escalar                         |
+| Iniciante     | 1   | Sem estrutura            | Tem pessoas mas sem clareza; papéis confusos; retrabalho                |
+| Básico        | 2   | Papéis superficiais      | Organograma básico; treinamento informal; alta dependência              |
+| Intermediário | 3   | Estruturado              | Papéis claros; treinamento básico; fundador começa a desafogar          |
+| Avançado      | 4   | Autônomo                 | Time produtivo sem supervisão; treinamento contínuo; baixa rotatividade |
+| Otimizado     | 5   | Alta performance         | Cultura forte; time se desenvolve sozinho; atrai talentos               |
 
-*Perguntas-chave P6:* cada pessoa sabe seu papel? Tem onboarding? O negócio sobrevive 2 semanas sem você? Mede performance individual?
+_Perguntas-chave P6:_ cada pessoa sabe seu papel? Tem onboarding? O negócio sobrevive 2 semanas sem você? Mede performance individual?
 
-*Entregáveis:* organograma, descrição de cargos, onboarding, trilha por função, metas individuais/coletivas, ritual 1:1, plano de carreira, cultura e valores documentados.
+_Entregáveis:_ organograma, descrição de cargos, onboarding, trilha por função, metas individuais/coletivas, ritual 1:1, plano de carreira, cultura e valores documentados.
 
 ### 03.2.3 Como os 6Ps vivem no CRM
 
@@ -405,12 +405,12 @@ URGÊNCIA MÉDIA (otimização):
 
 ### 03.2.5 Plano de ação por nível de maturidade
 
-- **Caótico (0–5 pts):** foco em sobrevivência → estruturação básica. Proposta de valor em 1 frase, ICP básico, produto/pacote principal, forma básica de captar leads. *Mentalidade:* construindo a base — não pule etapas.
-- **Iniciante (6–10 pts):** estruturação básica → crescimento inicial. Documento de posicionamento, buyer persona, funil funcionando, primeiras automações, processos principais documentados. *Mentalidade:* saindo do caos; foco em consistência.
-- **Em desenvolvimento (11–15 pts):** crescimento inicial → escala. Múltiplos funis, automações avançadas, todos os processos doc., CRM em uso efetivo, papéis do time definidos. *Mentalidade:* estruturar para não quebrar.
-- **Estruturado (16–20 pts):** escala → otimização. Testes A/B, time treinado e autônomo, processos com métricas, crescimento previsível. *Mentalidade:* otimizar o que funciona.
-- **Avançado (21–25 pts):** otimização → excelência. Novos canais de aquisição, lideranças desenvolvidas, cultura forte, margens otimizadas. *Mentalidade:* inovar e liderar mercado.
-- **Otimizado (26–30 pts):** excelência → dominância. Dominar nicho, criar barreiras de entrada, expandir ou vender. *Mentalidade:* referência; mantenha e expanda.
+- **Caótico (0–5 pts):** foco em sobrevivência → estruturação básica. Proposta de valor em 1 frase, ICP básico, produto/pacote principal, forma básica de captar leads. _Mentalidade:_ construindo a base — não pule etapas.
+- **Iniciante (6–10 pts):** estruturação básica → crescimento inicial. Documento de posicionamento, buyer persona, funil funcionando, primeiras automações, processos principais documentados. _Mentalidade:_ saindo do caos; foco em consistência.
+- **Em desenvolvimento (11–15 pts):** crescimento inicial → escala. Múltiplos funis, automações avançadas, todos os processos doc., CRM em uso efetivo, papéis do time definidos. _Mentalidade:_ estruturar para não quebrar.
+- **Estruturado (16–20 pts):** escala → otimização. Testes A/B, time treinado e autônomo, processos com métricas, crescimento previsível. _Mentalidade:_ otimizar o que funciona.
+- **Avançado (21–25 pts):** otimização → excelência. Novos canais de aquisição, lideranças desenvolvidas, cultura forte, margens otimizadas. _Mentalidade:_ inovar e liderar mercado.
+- **Otimizado (26–30 pts):** excelência → dominância. Dominar nicho, criar barreiras de entrada, expandir ou vender. _Mentalidade:_ referência; mantenha e expanda.
 
 ### 03.2.6 Como aplicar na prática — 5 passos
 
@@ -451,9 +451,9 @@ URGÊNCIA MÉDIA (otimização):
 
 **Pedagogia:**
 
-- *Learn by doing* (aprende fazendo)
-- *Microlearning* (conceitos pequenos)
-- *Feedback loops* (mentoria + comunidade)
+- _Learn by doing_ (aprende fazendo)
+- _Microlearning_ (conceitos pequenos)
+- _Feedback loops_ (mentoria + comunidade)
 - Gamificação (progresso visível)
 
 ### 03.3.2 Os 15 módulos em 7 fases
@@ -624,17 +624,17 @@ URGÊNCIA MÉDIA (otimização):
 
 #### Investimento de tempo realista
 
-| Semanas | Fase | Horas/semana | Atividades |
-|---|---|---|---|
-| 1–2 | Fundamentos | 6–8h | Aulas + Diagnóstico + Planejamento |
-| 3–4 | Infraestrutura | 8–10h | Aulas + Setup CRM + Site |
-| 5–8 | Atração | 6–10h | Aulas + Conteúdo/Tráfego/Prospecção |
-| 9–10 | Conversão | 5–7h | Aulas + Funis + Scripts |
-| 11–13 | Integração | 4–6h | Aulas + Documentação + Análise |
+| Semanas | Fase           | Horas/semana | Atividades                          |
+| ------- | -------------- | ------------ | ----------------------------------- |
+| 1–2     | Fundamentos    | 6–8h         | Aulas + Diagnóstico + Planejamento  |
+| 3–4     | Infraestrutura | 8–10h        | Aulas + Setup CRM + Site            |
+| 5–8     | Atração        | 6–10h        | Aulas + Conteúdo/Tráfego/Prospecção |
+| 9–10    | Conversão      | 5–7h         | Aulas + Funis + Scripts             |
+| 11–13   | Integração     | 4–6h         | Aulas + Documentação + Análise      |
 
 **Média total:** 6–9 horas/semana — o que significa 1–2h/dia durante a semana OU sábado manhã (6–9h) OU domingo tarde/noite (6–9h).
 
-> *Este programa exige dedicação real. Se você não tem 6–9h/semana para investir no futuro do seu negócio, espere ter esse tempo antes de se inscrever. Mas se você tem, os resultados compensam.*
+> _Este programa exige dedicação real. Se você não tem 6–9h/semana para investir no futuro do seu negócio, espere ter esse tempo antes de se inscrever. Mas se você tem, os resultados compensam._
 
 #### Expectativas de resultado por fase
 
@@ -656,7 +656,7 @@ URGÊNCIA MÉDIA (otimização):
 - **Rota B (sem budget):** lista de 200+ prospects, prospecção no LinkedIn, cold e-mail, WhatsApp ético, primeiras reuniões.
 - **Rota C (orgânico, todos fazem):** calendário de conteúdo, Instagram/LinkedIn, SEO local básico, engajamento em comunidades.
 - **Entrega:** Rota A — 30–100 leads via tráfego; Rota B — 20–50 conversas via prospecção; Rota C — primeiros seguidores e engajamento.
-- **Vendas:** primeiras vendas começam a acontecer. *Volume e velocidade variam por nicho, ticket e ciclo — B2C converte mais rápido que B2B.*
+- **Vendas:** primeiras vendas começam a acontecer. _Volume e velocidade variam por nicho, ticket e ciclo — B2C converte mais rápido que B2B._
 
 **Semanas 9–10 — Conversão**
 
@@ -748,7 +748,7 @@ Durante toda a jornada, o aluno não fica sozinho:
 - **Suporte técnico** — help desk para Growth CRM, templates e ferramentas (chat em horário comercial, e-mail respondido em prazo razoável).
 - **Biblioteca evergreen** — gravações de mentorias anteriores, planilhas, scripts, biblioteca de objeções.
 
-> *Nota: a entrada no programa é perpétua (evergreen). O aluno compra qualquer dia; a primeira mentoria é na próxima data do ciclo. Os temas do ciclo anual se repetem, então nenhum aluno perde um tema — apenas entra em um ponto diferente do loop.*
+> _Nota: a entrada no programa é perpétua (evergreen). O aluno compra qualquer dia; a primeira mentoria é na próxima data do ciclo. Os temas do ciclo anual se repetem, então nenhum aluno perde um tema — apenas entra em um ponto diferente do loop._
 
 ---
 
@@ -871,14 +871,14 @@ Você não começa do zero.
 
 #### Cálculo de valor real entregue
 
-| Item | Valor de mercado |
-|---|---|
-| Sistema VSS Implementável (playbook digital + 15 vídeos-âncora + acesso vitalício) | R$ 1.997 |
-| Growth CRM profissional (12 meses) | R$ 6.996 |
-| 48 mentorias em grupo ao vivo (semanais, R$ 150/sessão) | R$ 7.200 |
-| Templates, scripts e automações prontos | R$ 497 |
-| Comunidade exclusiva (90 dias) | R$ 597 |
-| **Valor total entregue** | **R$ 17.287** |
+| Item                                                                               | Valor de mercado |
+| ---------------------------------------------------------------------------------- | ---------------- |
+| Sistema VSS Implementável (playbook digital + 15 vídeos-âncora + acesso vitalício) | R$ 1.997         |
+| Growth CRM profissional (12 meses)                                                 | R$ 6.996         |
+| 48 mentorias em grupo ao vivo (semanais, R$ 150/sessão)                            | R$ 7.200         |
+| Templates, scripts e automações prontos                                            | R$ 497           |
+| Comunidade exclusiva (90 dias)                                                     | R$ 597           |
+| **Valor total entregue**                                                           | **R$ 17.287**    |
 
 #### Investimento
 
@@ -907,13 +907,13 @@ Você não começa do zero.
 
 Quanto se gasta hoje sem sistema estruturado:
 
-| Alternativa | Investimento/ano |
-|---|---|
-| Agência de marketing | R$ 36.000 – R$ 96.000 |
-| CRM + automação | R$ 6.000 – R$ 12.000 |
-| Consultor de vendas | R$ 60.000 – R$ 180.000 |
-| Ferramentas diversas | R$ 3.000 – R$ 10.000 |
-| **Total** | **R$ 105.000 – R$ 300.000/ano** |
+| Alternativa          | Investimento/ano                |
+| -------------------- | ------------------------------- |
+| Agência de marketing | R$ 36.000 – R$ 96.000           |
+| CRM + automação      | R$ 6.000 – R$ 12.000            |
+| Consultor de vendas  | R$ 60.000 – R$ 180.000          |
+| Ferramentas diversas | R$ 3.000 – R$ 10.000            |
+| **Total**            | **R$ 105.000 – R$ 300.000/ano** |
 
 **Com VSS:**
 
@@ -925,25 +925,25 @@ Quanto se gasta hoje sem sistema estruturado:
 
 ### 03.4.3 VSS vs. alternativas — matriz comparativa
 
-| Critério | **VSS** | Agências | Consultorias | Cursos online |
-|---|---|---|---|---|
-| **Preço** | R$ 1.997 one-time | R$ 3–5k/mês | R$ 50–100k/projeto | R$ 297–997 |
-| **Duração** | 90 dias estruturados + acesso perpétuo | Recorrente | 3–6 meses | Acesso vitalício |
-| **Implementação** | Junto com Joel | Fazem por você | Só diagnosticam | Você sozinho |
-| **CRM incluído** | ✅ Sim (12 meses) | ❌ | ❌ | ❌ |
-| **Funciona sem budget** | ✅ Sim | ❌ | ❌ | ⚠️ Raramente |
-| **Mentorias semanais** | ✅ 48 sessões em grupo | ❌ | ✅ Poucas | ❌ |
-| **Metodologia proprietária** | ✅ 6Ps (Joel) | ❌ Genérico | ⚠️ Varia | ❌ Genérico |
-| **Foco em MPE** | ✅ Exclusivo (R$ 10–300k/mês) | ❌ Grandes | ❌ Grandes | ⚠️ Qualquer um |
-| **Autonomia** | ✅ Constrói | ❌ Dependência | ⚠️ Varia | ✅ Total |
-| **Garantia** | ✅ 15 dias | ❌ | ❌ | ⚠️ Varia |
-| **Resultado em 90 dias** | ✅ Prometido | ❌ | ❌ | ❌ |
+| Critério                     | **VSS**                                | Agências       | Consultorias       | Cursos online    |
+| ---------------------------- | -------------------------------------- | -------------- | ------------------ | ---------------- |
+| **Preço**                    | R$ 1.997 one-time                      | R$ 3–5k/mês    | R$ 50–100k/projeto | R$ 297–997       |
+| **Duração**                  | 90 dias estruturados + acesso perpétuo | Recorrente     | 3–6 meses          | Acesso vitalício |
+| **Implementação**            | Junto com Joel                         | Fazem por você | Só diagnosticam    | Você sozinho     |
+| **CRM incluído**             | ✅ Sim (12 meses)                      | ❌             | ❌                 | ❌               |
+| **Funciona sem budget**      | ✅ Sim                                 | ❌             | ❌                 | ⚠️ Raramente     |
+| **Mentorias semanais**       | ✅ 48 sessões em grupo                 | ❌             | ✅ Poucas          | ❌               |
+| **Metodologia proprietária** | ✅ 6Ps (Joel)                          | ❌ Genérico    | ⚠️ Varia           | ❌ Genérico      |
+| **Foco em MPE**              | ✅ Exclusivo (R$ 10–300k/mês)          | ❌ Grandes     | ❌ Grandes         | ⚠️ Qualquer um   |
+| **Autonomia**                | ✅ Constrói                            | ❌ Dependência | ⚠️ Varia           | ✅ Total         |
+| **Garantia**                 | ✅ 15 dias                             | ❌             | ❌                 | ⚠️ Varia         |
+| **Resultado em 90 dias**     | ✅ Prometido                           | ❌             | ❌                 | ❌               |
 
-**VSS vs. agências de marketing.** Agências cobram R$ 3–5k/mês recorrente, focam só em marketing, entregam leads mas conversão é problema seu, e criam dependência. VSS custa R$ 1.997 one-time, integra marketing + vendas, inclui CRM e processo de conversão, e constrói autonomia. *Agência faz sentido quando o sistema já está estruturado e falta volume. VSS faz sentido quando é preciso estruturar o sistema do zero.*
+**VSS vs. agências de marketing.** Agências cobram R$ 3–5k/mês recorrente, focam só em marketing, entregam leads mas conversão é problema seu, e criam dependência. VSS custa R$ 1.997 one-time, integra marketing + vendas, inclui CRM e processo de conversão, e constrói autonomia. _Agência faz sentido quando o sistema já está estruturado e falta volume. VSS faz sentido quando é preciso estruturar o sistema do zero._
 
-**VSS vs. consultorias tradicionais.** Consultorias cobram R$ 50–100k por projeto, entregam diagnóstico em PowerPoint e somem. VSS implementa junto, mão na massa — parceria, não distância. *Consultoria faz sentido acima de R$ 500k/mês com diagnóstico complexo e time executando. VSS faz sentido em R$ 10–300k/mês com necessidade de quem implemente junto.*
+**VSS vs. consultorias tradicionais.** Consultorias cobram R$ 50–100k por projeto, entregam diagnóstico em PowerPoint e somem. VSS implementa junto, mão na massa — parceria, não distância. _Consultoria faz sentido acima de R$ 500k/mês com diagnóstico complexo e time executando. VSS faz sentido em R$ 10–300k/mês com necessidade de quem implemente junto._
 
-**VSS vs. cursos online.** Cursos (R$ 297–997) são só conteúdo, sem ferramentas, sem suporte, com 5–10% de conclusão. VSS (R$ 1.997) junta conteúdo + CRM + templates + 48 mentorias + suporte ativo, com conclusão esperada de 70%+. *Curso faz sentido para quem só quer consumir e já tem estrutura. VSS faz sentido para quem quer aprender E implementar com suporte.*
+**VSS vs. cursos online.** Cursos (R$ 297–997) são só conteúdo, sem ferramentas, sem suporte, com 5–10% de conclusão. VSS (R$ 1.997) junta conteúdo + CRM + templates + 48 mentorias + suporte ativo, com conclusão esperada de 70%+. _Curso faz sentido para quem só quer consumir e já tem estrutura. VSS faz sentido para quem quer aprender E implementar com suporte._
 
 ### 03.4.4 Por que VSS é diferente
 
@@ -1022,4 +1022,4 @@ Você tem **15 dias** para testar o programa completo. Se por qualquer motivo de
 
 ---
 
-*Fim do documento 03. Próximo na arquitetura de conteúdo: 04-playbook-vss.md (consolidação das 8 partes de roteiro de aulas, P3-*).*
+_Fim do documento 03. Próximo na arquitetura de conteúdo: 04-playbook-vss.md (consolidação das 8 partes de roteiro de aulas, P3-_).\*

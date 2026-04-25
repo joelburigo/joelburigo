@@ -29,6 +29,7 @@ clusterKeywords:
 ---
 
 <a name="por-que-medir"></a>
+
 ## Por Que Medir Importa (E Por Que a Maioria Não Faz)
 
 **Se você não mede, você não gerencia. E se não gerencia, você está na mão da sorte.**
@@ -50,6 +51,7 @@ Uma das lições que levei anos pra aceitar: se não mede, não gerencia. Ponto.
 ---
 
 <a name="sete-metricas"></a>
+
 ## As 7 Métricas Que Realmente Importam
 
 Não são 50 métricas. São 7. Se você medir só essas 7, você já está na frente de 95% das empresas.
@@ -63,6 +65,7 @@ Não são 50 métricas. São 7. Se você medir só essas 7, você já está na f
 **Por que importa:** Se você não sabe quantos leads gera, não consegue prever quantas vendas vai fazer. É a entrada do funil. Sem entrada, não tem saída.
 
 **Como medir:**
+
 ```
 Leads Gerados = Todos os contatos novos que demonstraram interesse
 (formulário preenchido, WhatsApp enviado, ligação recebida, etc)
@@ -71,10 +74,10 @@ Leads Gerados = Todos os contatos novos que demonstraram interesse
 **Benchmarks por faturamento:**
 
 | Faturamento Mensal | Leads Mínimos | Leads Ideais |
-|-------------------|---------------|--------------|
-| R$ 10-30k | 20-40 leads | 50+ leads |
-| R$ 30-100k | 50-80 leads | 100+ leads |
-| R$ 100-300k | 100-150 leads | 200+ leads |
+| ------------------ | ------------- | ------------ |
+| R$ 10-30k          | 20-40 leads   | 50+ leads    |
+| R$ 30-100k         | 50-80 leads   | 100+ leads   |
+| R$ 100-300k        | 100-150 leads | 200+ leads   |
 
 **Erro comum:** Confundir "visitas no site" com "leads". Lead é quem SE IDENTIFICOU. Visita anônima não é lead.
 
@@ -85,27 +88,30 @@ Leads Gerados = Todos os contatos novos que demonstraram interesse
 **O que é:** De cada 100 leads, quantos viram clientes pagantes.
 
 **Fórmula:**
+
 ```
 Taxa de Conversão = (Clientes Fechados ÷ Leads Gerados) × 100
 ```
 
 **Exemplo prático:**
+
 - Entraram 100 leads no mês
 - Fecharam 12 clientes
 - Taxa de conversão = 12%
 
 **Benchmarks por modelo de negócio:**
 
-| Modelo | Ticket Médio | Conversão Boa | Conversão Excelente |
-|--------|-------------|---------------|---------------------|
-| B2C Baixo | R$ 100-500 | 3-5% | > 8% |
-| B2C Médio | R$ 500-2k | 8-12% | > 15% |
-| B2B Baixo | R$ 1k-5k | 12-18% | > 20% |
-| B2B Alto | R$ 5k-20k | 20-30% | > 35% |
+| Modelo    | Ticket Médio | Conversão Boa | Conversão Excelente |
+| --------- | ------------ | ------------- | ------------------- |
+| B2C Baixo | R$ 100-500   | 3-5%          | > 8%                |
+| B2C Médio | R$ 500-2k    | 8-12%         | > 15%               |
+| B2B Baixo | R$ 1k-5k     | 12-18%        | > 20%               |
+| B2B Alto  | R$ 5k-20k    | 20-30%        | > 35%               |
 
 **Por que importa:** Aumentar conversão de 10% para 15% = 50% mais faturamento COM OS MESMOS LEADS. É a alavanca mais poderosa.
 
 **Como melhorar:**
+
 - Qualificar melhor (definindo o [ICP cliente ideal](/blog/icp-cliente-ideal-perfil))
 - Script de vendas validado
 - Follow-up consistente
@@ -119,6 +125,7 @@ Taxa de Conversão = (Clientes Fechados ÷ Leads Gerados) × 100
 **O que é:** Valor médio de cada venda.
 
 **Fórmula:**
+
 ```
 Ticket Médio = Faturamento Total ÷ Número de Vendas
 ```
@@ -126,10 +133,12 @@ Ticket Médio = Faturamento Total ÷ Número de Vendas
 **Por que é a métrica mais subestimada:**
 
 **Cenário A: Ticket R$ 2.000**
+
 - 40 vendas/mês
 - Faturamento = R$ 80.000
 
 **Cenário B: Ticket R$ 2.500 (aumento de 25%)**
+
 - 40 vendas/mês (mesmo número!)
 - Faturamento = R$ 100.000
 
@@ -151,11 +160,13 @@ Ticket Médio = Faturamento Total ÷ Número de Vendas
 **O que é:** Quanto você gasta (em média) para conquistar 1 cliente.
 
 **Fórmula:**
+
 ```
 CAC = (Investimento em Marketing + Custo de Vendas) ÷ Número de Clientes Novos
 ```
 
 **Exemplo:**
+
 - Investimento em ads: R$ 6.000
 - Salário vendedor: R$ 4.000
 - Ferramentas (CRM, etc): R$ 500
@@ -171,14 +182,15 @@ CAC = (Investimento em Marketing + Custo de Vendas) ÷ Número de Clientes Novos
 LTV (Lifetime Value) ≥ 3x CAC
 ```
 
-| Relação LTV/CAC | Situação | Ação |
-|----------------|----------|------|
-| < 1x | PERIGO | Pare de investir, corrija conversão |
-| 1-2x | RUIM | Otimize antes de escalar |
-| 3-5x | BOM | Pode escalar com segurança |
-| > 5x | ÓTIMO | Escale agressivamente |
+| Relação LTV/CAC | Situação | Ação                                |
+| --------------- | -------- | ----------------------------------- |
+| < 1x            | PERIGO   | Pare de investir, corrija conversão |
+| 1-2x            | RUIM     | Otimize antes de escalar            |
+| 3-5x            | BOM      | Pode escalar com segurança          |
+| > 5x            | ÓTIMO    | Escale agressivamente               |
 
 **Como reduzir CAC:**
+
 1. Melhore conversão (fecha mais com mesmo investimento)
 2. Otimize campanhas (teste público, criativos, copy)
 3. Foque em canal com CAC menor
@@ -191,18 +203,19 @@ LTV (Lifetime Value) ≥ 3x CAC
 **O que é:** Tempo médio entre primeiro contato e fechamento.
 
 **Fórmula:**
+
 ```
 Ciclo de Vendas = Soma de dias de todas vendas ÷ Número de vendas
 ```
 
 **Benchmarks por segmento:**
 
-| Tipo de Venda | Ciclo Bom | Ciclo Excelente |
-|---------------|-----------|-----------------|
-| B2C Baixo Ticket | 3-7 dias | < 2 dias |
-| B2C Alto Ticket | 15-30 dias | < 10 dias |
-| B2B SMB | 30-45 dias | < 20 dias |
-| B2B Midmarket | 45-90 dias | < 30 dias |
+| Tipo de Venda    | Ciclo Bom  | Ciclo Excelente |
+| ---------------- | ---------- | --------------- |
+| B2C Baixo Ticket | 3-7 dias   | < 2 dias        |
+| B2C Alto Ticket  | 15-30 dias | < 10 dias       |
+| B2B SMB          | 30-45 dias | < 20 dias       |
+| B2B Midmarket    | 45-90 dias | < 30 dias       |
 
 **Por que importa:**
 
@@ -252,16 +265,19 @@ Ou seja: você está deixando dinheiro na mesa por desistir cedo demais.
 **O que é:** Soma de TODAS as oportunidades abertas no funil.
 
 **Fórmula:**
+
 ```
 Pipeline Value = Soma de todas propostas em negociação
 ```
 
 **Pipeline Ponderado (mais preciso):**
+
 ```
 Pipeline Ponderado = Soma(Valor × Probabilidade)
 ```
 
 **Exemplo:**
+
 - R$ 5.000 × 70% = R$ 3.500
 - R$ 10.000 × 40% = R$ 4.000
 - R$ 3.000 × 90% = R$ 2.700
@@ -283,6 +299,7 @@ Pipeline te diz quanto você VAI faturar nos próximos 30-90 dias.
 ---
 
 <a name="como-medir"></a>
+
 ## Como Medir Cada Métrica (Guia Prático)
 
 ### Setup Mínimo (Gratuito)
@@ -291,10 +308,10 @@ Pipeline te diz quanto você VAI faturar nos próximos 30-90 dias.
 
 **Template básico:**
 
-| Data | Leads | Vendas | Faturamento | CAC | Ticket Médio | Conversão % |
-|------|-------|--------|-------------|-----|--------------|-------------|
-| Jan | 80 | 12 | R$ 36k | R$ 500 | R$ 3k | 15% |
-| Fev | 95 | 18 | R$ 54k | R$ 480 | R$ 3k | 19% |
+| Data | Leads | Vendas | Faturamento | CAC    | Ticket Médio | Conversão % |
+| ---- | ----- | ------ | ----------- | ------ | ------------ | ----------- |
+| Jan  | 80    | 12     | R$ 36k      | R$ 500 | R$ 3k        | 15%         |
+| Fev  | 95    | 18     | R$ 54k      | R$ 480 | R$ 3k        | 19%         |
 
 **Atualização:** Semanal (toda segunda de manhã)
 
@@ -303,6 +320,7 @@ Pipeline te diz quanto você VAI faturar nos próximos 30-90 dias.
 **Ferramenta:** CRM com dashboard nativo
 
 Benefícios:
+
 - Leads gerados (dia/semana/mês)
 - Taxa de conversão por etapa
 - Ticket médio e pipeline value
@@ -315,6 +333,7 @@ Benefícios:
 ---
 
 <a name="dashboard"></a>
+
 ## O Dashboard Essencial
 
 Não precisa de 50 gráficos. Precisa de 1 tela com 7 números.
@@ -353,6 +372,7 @@ ALERTAS
 ---
 
 <a name="erros-fatais"></a>
+
 ## Os 5 Erros Fatais ao Medir Vendas
 
 ### Erro 1: Medir Vaidades, Não Resultados
@@ -387,6 +407,7 @@ Você não precisa de 50 métricas. Precisa das 7 que te mostrei.
 ---
 
 <a name="proximo-passo"></a>
+
 ## Seu Próximo Passo: Começar a Medir HOJE
 
 1. Copie o template de planilha
@@ -403,6 +424,7 @@ Medir sem meta é inútil. Você precisa saber se o número é bom ou ruim.
 ### Passo 1: Olhe Seu Histórico
 
 Se você já vende há 6+ meses, olhe os últimos 6 meses:
+
 - Média de leads/mês
 - Média de vendas/mês
 - Ticket médio
@@ -414,6 +436,7 @@ Essa é sua baseline.
 Não coloque meta de "dobrar vendas". Coloque meta de melhorar 10-20% por trimestre.
 
 **Exemplo:**
+
 - Conversão atual: 12%
 - Meta próximo trimestre: 14% (+2 pontos percentuais)
 
@@ -422,6 +445,7 @@ Não coloque meta de "dobrar vendas". Coloque meta de melhorar 10-20% por trimes
 Qual métrica, se melhorar, tem maior impacto no faturamento?
 
 Geralmente é:
+
 1. **Taxa de conversão** (melhora tudo)
 2. **Ticket médio** (aumenta faturamento sem mais trabalho)
 3. **Leads** (só se conversão já está boa)
@@ -431,18 +455,21 @@ Foque em melhorar 1 métrica por vez.
 ### Metas Sugeridas Por Estágio
 
 **Se fatura R$ 10-30k/mês:**
+
 - Leads: 30-50/mês
 - Conversão: 10-15%
 - Ticket: R$ 1.500-3.000
 - CAC: < R$ 500
 
 **Se fatura R$ 30-100k/mês:**
+
 - Leads: 50-100/mês
 - Conversão: 15-20%
 - Ticket: R$ 3.000-5.000
 - CAC: < R$ 800
 
 **Se fatura R$ 100-300k/mês:**
+
 - Leads: 100-200/mês
 - Conversão: 18-25%
 - Ticket: R$ 5.000-10.000
@@ -459,6 +486,7 @@ As 7 métricas que te mostrei são as mesmas que uso em todos os clientes que es
 Comece hoje. Não precisa de ferramenta cara. Precisa de disciplina de olhar os números toda semana. Se você ainda está estruturando do zero, veja [como estruturar vendas do zero](/blog/como-estruturar-vendas-do-zero). Para implementar o sistema completo com autonomia, veja [Vendas Sem Segredos](/vendas-sem-segredos).
 
 **O ritual que funciona:**
+
 - Segunda: Olhe as métricas da semana anterior
 - Identifique: O que foi bem? O que foi mal?
 - Defina: O que vai fazer diferente esta semana?

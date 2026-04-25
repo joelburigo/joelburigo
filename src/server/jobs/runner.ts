@@ -4,7 +4,7 @@
  *
  * Sprint 0: scaffold mínimo. Handlers reais em Sprint 1/2.
  */
-import PgBoss from 'pg-boss';
+import { PgBoss } from 'pg-boss';
 
 const DATABASE_URL = process.env.DATABASE_URL;
 

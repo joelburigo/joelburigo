@@ -1,36 +1,91 @@
-<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
-<style>
- body{margin:0;padding:0;background:#050505;color:#F5F1E8;font-family:'Archivo',sans-serif}
- .topbar{display:flex;justify-content:space-between;align-items:center;padding:10px 28px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#6B7280;border-bottom:1px solid rgba(255,255,255,0.08)}
- .topbar .left,.topbar .right{display:flex;gap:20px;align-items:center}
- .topbar .dot{width:7px;height:7px;background:#C6FF00;border-radius:50%;box-shadow:0 0 10px #C6FF00;animation:pulse 1.6s infinite}
- @keyframes pulse{50%{opacity:.3}}
- .topbar b{color:#F5F1E8}
- .cap{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#6B7280;text-transform:uppercase;padding:18px 28px}
- .cap b{color:#C6FF00}
-</style></head><body>
-<div class="topbar">
-  <div class="left">
-    <span><span class="dot"></span> &nbsp;SYS ONLINE</span>
-    <span>// <b>@joelburigo</b></span>
-    <span>// EXP. 2004</span>
-    <span>// GROWTH EST. 2008</span>
-  </div>
-  <div class="right">
-    <span>LAT. -27.59 · LNG. -48.55</span>
-    <span>FLORIANÓPOLIS/SC · <b>BR</b></span>
-    <span id="clk">00:00:00 BRT</span>
-  </div>
-</div>
-<div class="cap">// STATUS BAR · TOPO GLOBAL · <b>DOT ACID PULSE</b> · @JOELBURIGO · EXP. 2004 · GROWTH EST. 2008 · COORDS · CLOCK AO VIVO</div>
-<script>
- function tick(){
-   const d=new Date();
-   const hh=String(d.getHours()).padStart(2,'0');
-   const mm=String(d.getMinutes()).padStart(2,'0');
-   const ss=String(d.getSeconds()).padStart(2,'0');
-   document.getElementById('clk').textContent=`${hh}:${mm}:${ss} BRT`;
- }
- tick();setInterval(tick,1000);
-</script>
-</body></html>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../colors_and_type.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #050505;
+        color: #f5f1e8;
+        font-family: 'Archivo', sans-serif;
+      }
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 28px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #6b7280;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .topbar .left,
+      .topbar .right {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+      .topbar .dot {
+        width: 7px;
+        height: 7px;
+        background: #c6ff00;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #c6ff00;
+        animation: pulse 1.6s infinite;
+      }
+      @keyframes pulse {
+        50% {
+          opacity: 0.3;
+        }
+      }
+      .topbar b {
+        color: #f5f1e8;
+      }
+      .cap {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.22em;
+        color: #6b7280;
+        text-transform: uppercase;
+        padding: 18px 28px;
+      }
+      .cap b {
+        color: #c6ff00;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="left">
+        <span><span class="dot"></span> &nbsp;SYS ONLINE</span>
+        <span>// <b>@joelburigo</b></span>
+        <span>// EXP. 2004</span>
+        <span>// GROWTH EST. 2008</span>
+      </div>
+      <div class="right">
+        <span>LAT. -27.59 · LNG. -48.55</span>
+        <span>FLORIANÓPOLIS/SC · <b>BR</b></span>
+        <span id="clk">00:00:00 BRT</span>
+      </div>
+    </div>
+    <div class="cap">
+      // STATUS BAR · TOPO GLOBAL · <b>DOT ACID PULSE</b> · @JOELBURIGO · EXP. 2004 · GROWTH EST.
+      2008 · COORDS · CLOCK AO VIVO
+    </div>
+    <script>
+      function tick() {
+        const d = new Date();
+        const hh = String(d.getHours()).padStart(2, '0');
+        const mm = String(d.getMinutes()).padStart(2, '0');
+        const ss = String(d.getSeconds()).padStart(2, '0');
+        document.getElementById('clk').textContent = `${hh}:${mm}:${ss} BRT`;
+      }
+      tick();
+      setInterval(tick, 1000);
+    </script>
+  </body>
+</html>

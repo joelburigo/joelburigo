@@ -57,7 +57,8 @@ export const PRODUCTS = {
 
 export const REFUND_POLICY = {
   days: 15,
-  description: '15 dias, sem perguntas — Joel revisa cada pedido (oportunidade de entender e reter)',
+  description:
+    '15 dias, sem perguntas — Joel revisa cada pedido (oportunidade de entender e reter)',
 } as const;
 
 export const TIMEZONE = 'America/Sao_Paulo';

@@ -7,6 +7,7 @@
 > **Legenda:** ✅ fechado · 🔄 em discussão · 📌 proposta minha · ⏳ aguardando resposta · ❓ pergunta aberta
 >
 > **Mudanças v0.3 → v0.4:**
+>
 > - Stack migrou de Astro para **Next.js App Router monolito** (Opção C fechada)
 > - **Mercado Pago BR** virou default; Stripe US vira fallback pra cartão internacional
 > - VSS deixa de ser "MD + checkbox" e passa a ser **workspace com agente IA (Nível 2→3)** que ajuda o aluno a aplicar os 6Ps e gera artifacts
@@ -58,29 +59,29 @@
 
 ### 2.1 Camada por camada
 
-| Camada              | Tecnologia                                              | Papel                                                                 |
-| ------------------- | ------------------------------------------------------- | --------------------------------------------------------------------- |
-| Runtime             | **Next.js 15 App Router** (Node 22) em Docker            | Render páginas (RSC + streaming) + route handlers + server actions    |
-| LLM SDK             | **Vercel AI SDK v5** (multi-provider)                    | Streaming, tool calls, structured outputs, generative UI              |
-| LLM provider default| **OpenAI** (`@ai-sdk/openai`) — key já disponível        | `gpt-4o` ou `gpt-4.1` (a confirmar) pro chat/coach                    |
-| LLM provider opcional| **Anthropic** (`@ai-sdk/anthropic`)                     | Troca via env `LLM_PROVIDER=anthropic` — zero reescrita de código     |
-| Model router        | Adapter próprio em `server/lib/llm.ts` + provider select | Abstração fina pra trocar provider/modelo por flow                    |
-| ORM                 | **Drizzle** (Postgres adapter agora, D1 adapter futuro)  | Schema TS único, queries portáveis                                    |
-| DB relacional       | **Postgres 16 per-project** (container `pg-joelburigo-site` no growth-infra compose, rede `db-back` + pgbouncer em `db-front`) | users, purchases, entitlements, progress, sessions, agent state |
-| Sessions/KV         | **Tabela Postgres** via adapter KV                       | Cookies JWT, rate-limit, cache hot. Zero infra extra.                 |
-| Queue               | **pg-boss** em processo separado via adapter Queue       | Welcome email, onboarding async, agent jobs longos. Sem Redis.        |
-| Blob storage        | **Cloudflare R2** via adapter Storage                    | Artifacts do aluno · replays processados · exports CSV/PDF            |
-| Vídeo ao vivo + replay | **Cloudflare Stream Live Input**                      | OBS → RTMP do CF → HLS ao vivo na plataforma → **replay automático** disponível ao fim da live (sem upload manual) |
-| CAPTCHA             | **Cloudflare Turnstile**                                 | Anti-bot em forms públicos                                            |
-| CDN/DNS             | **Cloudflare proxied** (free tier)                       | Cache assets + DDoS protection                                        |
-| Pagamento default   | **Mercado Pago BR** (Checkout Pro)                       | Parcelamento local, PIX, boleto, cartão BR                            |
-| Pagamento fallback  | **Stripe US** (LLC)                                      | Cartão internacional, clientes fora do Brasil                         |
-| Email transacional  | **Brevo API** (growth-infra)                             | Magic link, welcome, recuperação, notificações                        |
-| Automação externa   | **n8n** (growth-infra)                                   | Slack, GA, fluxos cruzados, provisionamento Growth CRM                |
-| Agenda Advisory     | **Cal.com** embed (free tier)                            | Reserva de sessão 1:1                                                 |
-| Monitoring          | **Sentry** (free tier) + logs Docker                     | Erros + uptime + traces de agente                                     |
-| Styling             | **Tailwind v4** + design tokens `--jb-*` (Terminal Growth)| Mesmos tokens do Astro atual, 100% portáveis                          |
-| UI primitives       | **shadcn/ui** customizado pra Terminal Growth            | Radius 0, brutalist shadows, fire/acid overrides                      |
+| Camada                 | Tecnologia                                                                                                                     | Papel                                                                                                              |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| Runtime                | **Next.js 15 App Router** (Node 22) em Docker                                                                                  | Render páginas (RSC + streaming) + route handlers + server actions                                                 |
+| LLM SDK                | **Vercel AI SDK v5** (multi-provider)                                                                                          | Streaming, tool calls, structured outputs, generative UI                                                           |
+| LLM provider default   | **OpenAI** (`@ai-sdk/openai`) — key já disponível                                                                              | `gpt-4o` ou `gpt-4.1` (a confirmar) pro chat/coach                                                                 |
+| LLM provider opcional  | **Anthropic** (`@ai-sdk/anthropic`)                                                                                            | Troca via env `LLM_PROVIDER=anthropic` — zero reescrita de código                                                  |
+| Model router           | Adapter próprio em `server/lib/llm.ts` + provider select                                                                       | Abstração fina pra trocar provider/modelo por flow                                                                 |
+| ORM                    | **Drizzle** (Postgres adapter agora, D1 adapter futuro)                                                                        | Schema TS único, queries portáveis                                                                                 |
+| DB relacional          | **Postgres 16 per-project** (container `pg-joelburigo-site` no growth-infra compose, rede `db-back` + pgbouncer em `db-front`) | users, purchases, entitlements, progress, sessions, agent state                                                    |
+| Sessions/KV            | **Tabela Postgres** via adapter KV                                                                                             | Cookies JWT, rate-limit, cache hot. Zero infra extra.                                                              |
+| Queue                  | **pg-boss** em processo separado via adapter Queue                                                                             | Welcome email, onboarding async, agent jobs longos. Sem Redis.                                                     |
+| Blob storage           | **Cloudflare R2** via adapter Storage                                                                                          | Artifacts do aluno · replays processados · exports CSV/PDF                                                         |
+| Vídeo ao vivo + replay | **Cloudflare Stream Live Input**                                                                                               | OBS → RTMP do CF → HLS ao vivo na plataforma → **replay automático** disponível ao fim da live (sem upload manual) |
+| CAPTCHA                | **Cloudflare Turnstile**                                                                                                       | Anti-bot em forms públicos                                                                                         |
+| CDN/DNS                | **Cloudflare proxied** (free tier)                                                                                             | Cache assets + DDoS protection                                                                                     |
+| Pagamento default      | **Mercado Pago BR** (Checkout Pro)                                                                                             | Parcelamento local, PIX, boleto, cartão BR                                                                         |
+| Pagamento fallback     | **Stripe US** (LLC)                                                                                                            | Cartão internacional, clientes fora do Brasil                                                                      |
+| Email transacional     | **Brevo API** (growth-infra)                                                                                                   | Magic link, welcome, recuperação, notificações                                                                     |
+| Automação externa      | **n8n** (growth-infra)                                                                                                         | Slack, GA, fluxos cruzados, provisionamento Growth CRM                                                             |
+| Agenda Advisory        | **Cal.com** embed (free tier)                                                                                                  | Reserva de sessão 1:1                                                                                              |
+| Monitoring             | **Sentry** (free tier) + logs Docker                                                                                           | Erros + uptime + traces de agente                                                                                  |
+| Styling                | **Tailwind v4** + design tokens `--jb-*` (Terminal Growth)                                                                     | Mesmos tokens do Astro atual, 100% portáveis                                                                       |
+| UI primitives          | **shadcn/ui** customizado pra Terminal Growth                                                                                  | Radius 0, brutalist shadows, fire/acid overrides                                                                   |
 
 ### 2.2 Diagrama de alto nível
 
@@ -632,6 +633,7 @@ Worker pg-boss (processo separado):
 | Conselho Executivo | R$ 15.000/mês | **Manual (PIX/NF)** | Cobrança off-system | 📌 Manual (Joel qualifica antes) |
 
 Conselho **sai de subscription Stripe** por 3 motivos (discussão v0.3):
+
 - Cliente PJ BR de R$15k/mês exige NFS-e mensal (Stripe US não emite)
 - R$15k recorrente em USD flutua com FX
 - Cartão BR corporativo rejeita cobrança recorrente em USD com frequência
@@ -800,6 +802,7 @@ Next: aluno pode exportar, compartilhar com time, revisitar.
 ### 4.5 Mentoria ao vivo (OBS → CF Stream Live Input → replay automático)
 
 **Setup uma vez por mentoria:**
+
 ```
 Admin /admin/mentorias → "Nova mentoria"
   ├─ Joel preenche: title, topic, scheduled_at, duration
@@ -810,6 +813,7 @@ Admin /admin/mentorias → "Nova mentoria"
 ```
 
 **No dia da live:**
+
 ```
 Joel abre OBS:
   ├─ Settings → Stream → Service: Custom
@@ -839,27 +843,29 @@ Aluno volta em /area/mentorias/[id]
 ```
 
 📌 **Vantagens vs upload manual:**
+
 - Zero passo manual pós-live (sem upload de MP4)
 - Aluno pode assistir replay 1 min depois de Joel encerrar
 - Mesmo player URL serve live e VOD (transparente pro aluno)
 - CF gerencia transcoding, storage, CDN
 
 📌 **Custo CF Stream Live Input:**
+
 - $1 / 1.000 min armazenados (replay)
 - $1 / 1.000 min entregues (delivery)
 - Live encoding incluído
 
 ### 4.6 Webhooks de pagamento — eventos tratados
 
-| Gateway      | Evento                                             | Ação                                                                  |
-| ------------ | -------------------------------------------------- | --------------------------------------------------------------------- |
-| Mercado Pago | `payment` aprovado                                 | Marca purchase paid, cria entitlement VSS                             |
-| Mercado Pago | `payment` pending/in_process                       | Mantém purchase pending; mostra `/vss-aguardando-pagamento`           |
-| Mercado Pago | `payment` rejected/cancelled                       | Marca purchase failed, não cria entitlement                           |
-| Mercado Pago | `payment` refunded/charged_back                    | Revoga entitlement imediato, notifica Joel                            |
-| Stripe       | `checkout.session.completed`                       | Ativa compra one-time (fallback cartão internacional)                 |
-| Stripe       | `charge.refunded`                                  | Marca refunded, revoga entitlement imediato                           |
-| Stripe       | `charge.dispute.created`                           | Alerta Joel via Slack/email, entitlement em revisão                   |
+| Gateway      | Evento                          | Ação                                                        |
+| ------------ | ------------------------------- | ----------------------------------------------------------- |
+| Mercado Pago | `payment` aprovado              | Marca purchase paid, cria entitlement VSS                   |
+| Mercado Pago | `payment` pending/in_process    | Mantém purchase pending; mostra `/vss-aguardando-pagamento` |
+| Mercado Pago | `payment` rejected/cancelled    | Marca purchase failed, não cria entitlement                 |
+| Mercado Pago | `payment` refunded/charged_back | Revoga entitlement imediato, notifica Joel                  |
+| Stripe       | `checkout.session.completed`    | Ativa compra one-time (fallback cartão internacional)       |
+| Stripe       | `charge.refunded`               | Marca refunded, revoga entitlement imediato                 |
+| Stripe       | `charge.dispute.created`        | Alerta Joel via Slack/email, entitlement em revisão         |
 
 **Segurança webhook MP (2026):** verificação obrigatória do header `x-signature` via HMAC-SHA256 com secret do painel. IP whitelist não basta. Exemplo:
 
@@ -867,7 +873,7 @@ Aluno volta em /area/mentorias/[id]
 // src/server/services/mercado-pago.ts
 const xSig = req.headers['x-signature']; // ts=...,v1=...
 const xReqId = req.headers['x-request-id'];
-const parts = Object.fromEntries(xSig.split(',').map(p => p.split('=')));
+const parts = Object.fromEntries(xSig.split(',').map((p) => p.split('=')));
 const signed = `id:${dataId};request-id:${xReqId};ts:${parts.ts};`;
 const hmac = createHmac('sha256', MP_WEBHOOK_SECRET).update(signed).digest('hex');
 if (hmac !== parts.v1) return new Response('invalid signature', { status: 401 });
@@ -906,6 +912,7 @@ GET /blog/[slug]
 ```
 
 📌 **Job `publish_scheduled_posts`** (pg-boss cron a cada 5min):
+
 - Encontra posts com `status='scheduled' AND scheduled_for <= NOW()`
 - Atualiza pra `status='published'`, seta `published_at=scheduled_for`
 - Triggera on-demand revalidate de `/blog` e `/blog/[slug]`
@@ -939,11 +946,12 @@ export default defineDestravamento({
   tools: ['saveArtifact', 'updateProfile', 'markComplete'],
   outputArtifactKind: 'icp',
   completionCriteria: 'aluno confirma artifact ICP gerado',
-  model: 'claude-sonnet-4-6',     // Opus 4.7 só em flows de consolidação
+  model: 'claude-sonnet-4-6', // Opus 4.7 só em flows de consolidação
 });
 ```
 
 Vantagens de modelar em TS:
+
 - Type-safe
 - Review por diff no git (não shadow-uploads num CMS)
 - Um flow pode ser testado unit (mock LLM)
@@ -955,11 +963,11 @@ Vantagens de modelar em TS:
 
 ### 5.1 Estratégia
 
-| Necessidade                                             | Gateway             | Motivo                                                                  |
-| ------------------------------------------------------- | ------------------- | ----------------------------------------------------------------------- |
-| Checkout principal BR, parcelamento, PIX, boleto, cartão| **Mercado Pago BR** | Default de todo checkout. Parcelamento 12x resolve conversão VSS        |
-| Cartão internacional / cliente fora do Brasil           | **Stripe US**       | Fallback quando usuário escolhe "pagar em USD" ou IP/cartão não-BR      |
-| Conselho Executivo R$ 15k/mês                           | **Manual**          | Joel cobra por PIX/boleto + emite NFS-e. Sem subscription automatizada  |
+| Necessidade                                              | Gateway             | Motivo                                                                 |
+| -------------------------------------------------------- | ------------------- | ---------------------------------------------------------------------- |
+| Checkout principal BR, parcelamento, PIX, boleto, cartão | **Mercado Pago BR** | Default de todo checkout. Parcelamento 12x resolve conversão VSS       |
+| Cartão internacional / cliente fora do Brasil            | **Stripe US**       | Fallback quando usuário escolhe "pagar em USD" ou IP/cartão não-BR     |
+| Conselho Executivo R$ 15k/mês                            | **Manual**          | Joel cobra por PIX/boleto + emite NFS-e. Sem subscription automatizada |
 
 ### 5.2 Mercado Pago BR — Checkout Pro
 
@@ -978,12 +986,12 @@ Vantagens de modelar em TS:
 
 ### 5.4 Comparativo de custo (ticket VSS R$ 1.997, 10 vendas/mês)
 
-| Gateway                | Taxa típica BR                  | Custo mensal estimado  |
-| ---------------------- | ------------------------------- | ---------------------- |
-| Hotmart (marketplace)  | 9.9% + R$1,99                   | ~R$ 1.980              |
-| Kiwify (marketplace)   | 5% + R$1,99                     | ~R$ 1.015              |
-| **Mercado Pago BR**    | ~4.99% à vista · até 6% parcel  | ~R$ 800-1.200          |
-| Stripe US (cartão int.)| 2.9% + $0.30 (USD)              | depende do mix         |
+| Gateway                 | Taxa típica BR                 | Custo mensal estimado |
+| ----------------------- | ------------------------------ | --------------------- |
+| Hotmart (marketplace)   | 9.9% + R$1,99                  | ~R$ 1.980             |
+| Kiwify (marketplace)    | 5% + R$1,99                    | ~R$ 1.015             |
+| **Mercado Pago BR**     | ~4.99% à vista · até 6% parcel | ~R$ 800-1.200         |
+| Stripe US (cartão int.) | 2.9% + $0.30 (USD)             | depende do mix        |
 
 Mercado Pago ganha em custo vs marketplace e em conversão vs Stripe US puro (parcelamento resolve objeção).
 
@@ -1005,14 +1013,14 @@ Mercado Pago ganha em custo vs marketplace e em conversão vs Stripe US puro (pa
 
 ### 6.2 Cloudflare standalone
 
-| Serviço              | Tier grátis              | Estimativa mensal                                                              |
-| -------------------- | ------------------------ | ------------------------------------------------------------------------------ |
-| R2 storage           | 10 GB                    | **$0-5** (artifacts do aluno + replays processados)                            |
-| R2 operations        | 1M class A + 10M class B | **$0**                                                                         |
-| Stream armazenamento | —                        | **$5/1000 min armazenados** (48 mentorias × 90min/ano ≈ $21,60/ano acumulado)  |
-| Stream delivery      | —                        | **$1/1000 min entregues** (100 alunos × 1h/mês ≈ $6/mês)                       |
-| Turnstile            | ilimitado                | **$0**                                                                         |
-| CDN/DNS              | ilimitado free           | **$0**                                                                         |
+| Serviço              | Tier grátis              | Estimativa mensal                                                             |
+| -------------------- | ------------------------ | ----------------------------------------------------------------------------- |
+| R2 storage           | 10 GB                    | **$0-5** (artifacts do aluno + replays processados)                           |
+| R2 operations        | 1M class A + 10M class B | **$0**                                                                        |
+| Stream armazenamento | —                        | **$5/1000 min armazenados** (48 mentorias × 90min/ano ≈ $21,60/ano acumulado) |
+| Stream delivery      | —                        | **$1/1000 min entregues** (100 alunos × 1h/mês ≈ $6/mês)                      |
+| Turnstile            | ilimitado                | **$0**                                                                        |
+| CDN/DNS              | ilimitado free           | **$0**                                                                        |
 
 **Total CF estimado:** $5-30/mês no início.
 
@@ -1020,15 +1028,16 @@ Mercado Pago ganha em custo vs marketplace e em conversão vs Stripe US puro (pa
 
 Tabela hipotética pra Sonnet 4.6 default. Opus 4.7 usado em ~10% das chamadas (flows de consolidação).
 
-| Cenário                        | Tokens/aluno/mês  | Custo/aluno/mês |
-| ------------------------------ | ----------------- | --------------- |
-| Aluno light (3 destravamentos) | ~50k in / 10k out | ~$0,30          |
-| Aluno médio (10 destravamentos)| ~150k in / 30k out| ~$0,90          |
-| Aluno heavy (20 destravamentos)| ~300k in / 60k out| ~$1,80          |
+| Cenário                         | Tokens/aluno/mês   | Custo/aluno/mês |
+| ------------------------------- | ------------------ | --------------- |
+| Aluno light (3 destravamentos)  | ~50k in / 10k out  | ~$0,30          |
+| Aluno médio (10 destravamentos) | ~150k in / 30k out | ~$0,90          |
+| Aluno heavy (20 destravamentos) | ~300k in / 60k out | ~$1,80          |
 
 Com **prompt caching** no system + perfil (5min TTL), input cai ~70-90% em cache hit. Estimativa realista: **$2-5/aluno/mês em média**.
 
 **Budget estratégia:**
+
 - Soft quota: **150k tokens output/mês por aluno** (equivale a ~$2,25 Sonnet)
 - Hard quota: **500k tokens output/mês** (pede confirmação pro Joel revisar)
 - Admin vê top consumidores em tempo real
@@ -1038,10 +1047,10 @@ Com **prompt caching** no system + perfil (5min TTL), input cai ~70-90% em cache
 
 ### 6.4 Brevo
 
-| Item                | Custo                                                                  |
-| ------------------- | ---------------------------------------------------------------------- |
-| Brevo free          | 300 emails/dia (suficiente nos primeiros meses)                        |
-| Brevo Starter       | ~$25/mês se escalar (10-20k emails/mês)                                |
+| Item          | Custo                                           |
+| ------------- | ----------------------------------------------- |
+| Brevo free    | 300 emails/dia (suficiente nos primeiros meses) |
+| Brevo Starter | ~$25/mês se escalar (10-20k emails/mês)         |
 
 ### 6.5 Total operacional estimado (baseline)
 
@@ -1052,6 +1061,7 @@ Com **prompt caching** no system + perfil (5min TTL), input cai ~70-90% em cache
 Taxas MP/Stripe são proporcionais à receita.
 
 Fontes oficiais:
+
 - Stream pricing: https://developers.cloudflare.com/stream/pricing/
 - R2 pricing: https://developers.cloudflare.com/r2/pricing/
 - Anthropic pricing: https://www.anthropic.com/pricing
@@ -1211,7 +1221,7 @@ Fechado v0.4: self-service com Mercado Pago (ticket R$ 7.5k parcelável).
 
 **Objetivo:** aluno loga, faz onboarding de perfil 6P, executa destravamentos-âncora com agente.
 
-- [ ] Schema vss_phases/modules/destravamentos + agent_* tables
+- [ ] Schema vss*phases/modules/destravamentos + agent*\* tables
 - [ ] Seed script (7 fases, 15 módulos, 66 destravamentos — metadados; flows implementados incrementalmente)
 - [ ] `/onboarding` — formulário guiado pelo agente que preenche `user_profiles` (6Ps iniciais)
 - [ ] `/area` — dashboard aluno (progresso, próximo destravamento, artifacts recentes)
@@ -1595,6 +1605,7 @@ joelburigo-site/
 ### Regras das 5 camadas de componentes
 
 **[1] `ui/` — Primitives**
+
 - Átomos do design system. Zero conhecimento de domínio.
 - Base: shadcn/ui customizado com tokens Terminal Growth.
 - Regras: não importa de `patterns/`, `sections/`, `features/`, `server/`.
@@ -1602,23 +1613,27 @@ joelburigo-site/
 - Exemplo inválido aqui: `LoginButton` (conhece domínio auth → vai pra `features/auth/`).
 
 **[2] `patterns/` — Compostos domain-agnostic**
+
 - Combinações reutilizáveis de `ui/`. Ainda sem lógica de negócio.
 - Pode importar de `ui/`. Não importa de `features/` ou `sections/`.
 - Exemplo válido: `DataTable`, `FormField`, `EmptyState`, `PageHeader`.
 - Exemplo inválido aqui: `LeadsTable` (específico de admin → vai pra `features/admin/`).
 
 **[3] `sections/` — Pedaços grandes de landing**
+
 - Composições de marketing: Hero, Pricing, FAQ, Comparison.
 - Pode importar de `ui/` e `patterns/`.
 - Usado principalmente em `app/(marketing)/*`.
 
 **[4] `features/<domínio>/` — UI por domínio**
+
 - UI que conhece um domínio: vss, advisory, agent, admin, auth, payments.
 - Pode importar de `ui/`, `patterns/`, `sections/` (raramente).
 - Server components aqui podem importar de `server/services/*`.
 - Client components buscam via route handlers ou server actions.
 
 **[5] `layouts/` — Shells de página**
+
 - MarketingLayout, AppLayout, AdminLayout, AuthLayout.
 - Define chrome (header/nav/footer) + providers (theme, toast, session).
 
@@ -1650,6 +1665,7 @@ ui/            → nada interno
 ### Portabilidade pra Fase B (CF)
 
 Quando migrar:
+
 - Next 15 roda em CF via `@opennextjs/cloudflare` (output standalone → Workers)
 - Troca `src/server/lib/storage.ts` impl de R2-SDK pra R2-binding direto
 - Troca `src/server/lib/kv.ts` impl de Postgres pra CF KV binding
@@ -1673,17 +1689,17 @@ Migra **apenas quando** um desses acontecer:
 
 ### 12.2 O que muda (se migrar)
 
-| Componente           | Fase A (Hetzner)              | Fase B (Cloudflare)              | Esforço                  |
-| -------------------- | ----------------------------- | -------------------------------- | ------------------------ |
-| Runtime              | Docker Next standalone Node22 | CF Workers via @opennextjs/cf    | 2-3d (adapter + test)    |
-| DB                   | Postgres 16 dedicado          | D1 (SQLite serverless)           | 5-7d (type map + data)   |
-| KV adapter impl      | table Postgres                | CF KV binding                    | 0.5d                     |
-| Queue adapter impl   | pg-boss                       | CF Queues                        | 1d                       |
-| Storage adapter impl | R2-SDK HTTP                   | R2 binding                       | 0.5d                     |
-| LLM adapter impl     | Anthropic via AI SDK          | Idem (funciona igual em Workers) | 0d                       |
-| Secrets              | env Docker                    | Wrangler secrets                 | 0.5d                     |
-| Deploy               | GH Actions → GHCR             | Wrangler deploy                  | 1d                       |
-| DNS                  | Traefik                       | CF Workers custom domain         | 0.5d                     |
+| Componente           | Fase A (Hetzner)              | Fase B (Cloudflare)              | Esforço                |
+| -------------------- | ----------------------------- | -------------------------------- | ---------------------- |
+| Runtime              | Docker Next standalone Node22 | CF Workers via @opennextjs/cf    | 2-3d (adapter + test)  |
+| DB                   | Postgres 16 dedicado          | D1 (SQLite serverless)           | 5-7d (type map + data) |
+| KV adapter impl      | table Postgres                | CF KV binding                    | 0.5d                   |
+| Queue adapter impl   | pg-boss                       | CF Queues                        | 1d                     |
+| Storage adapter impl | R2-SDK HTTP                   | R2 binding                       | 0.5d                   |
+| LLM adapter impl     | Anthropic via AI SDK          | Idem (funciona igual em Workers) | 0d                     |
+| Secrets              | env Docker                    | Wrangler secrets                 | 0.5d                   |
+| Deploy               | GH Actions → GHCR             | Wrangler deploy                  | 1d                     |
+| DNS                  | Traefik                       | CF Workers custom domain         | 0.5d                   |
 
 **Total estimado:** 1-2 sprints (8-14 dias) se Fase A foi bem arquitetada.
 

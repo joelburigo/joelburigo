@@ -1,63 +1,214 @@
-<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
-<style>
- body{margin:0;padding:0;background:#050505;color:#F5F1E8;font-family:'Archivo',sans-serif}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../colors_and_type.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #050505;
+        color: #f5f1e8;
+        font-family: 'Archivo', sans-serif;
+      }
 
- /* STATUS BAR */
- .topbar{display:flex;justify-content:space-between;align-items:center;padding:10px 28px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#6B7280;border-bottom:1px solid rgba(255,255,255,0.08)}
- .topbar .left,.topbar .right{display:flex;gap:20px;align-items:center}
- .topbar .dot{width:7px;height:7px;background:#C6FF00;border-radius:50%;box-shadow:0 0 10px #C6FF00;animation:pulse 1.6s infinite}
- @keyframes pulse{50%{opacity:.3}}
- .topbar b{color:#F5F1E8}
+      /* STATUS BAR */
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 28px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #6b7280;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .topbar .left,
+      .topbar .right {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+      .topbar .dot {
+        width: 7px;
+        height: 7px;
+        background: #c6ff00;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #c6ff00;
+        animation: pulse 1.6s infinite;
+      }
+      @keyframes pulse {
+        50% {
+          opacity: 0.3;
+        }
+      }
+      .topbar b {
+        color: #f5f1e8;
+      }
 
- /* TICKER */
- .tk{background:#FF3B0F;color:#050505;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;padding:10px 0;overflow:hidden;white-space:nowrap}
- .tk-inner{display:inline-block;animation:slide 38s linear infinite}
- .tk span{margin:0 40px}
- .tk em{font-style:normal;background:#C6FF00;padding:2px 8px;color:#050505}
- @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+      /* TICKER */
+      .tk {
+        background: #ff3b0f;
+        color: #050505;
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: 700;
+        font-size: 12px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        padding: 10px 0;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .tk-inner {
+        display: inline-block;
+        animation: slide 38s linear infinite;
+      }
+      .tk span {
+        margin: 0 40px;
+      }
+      .tk em {
+        font-style: normal;
+        background: #c6ff00;
+        padding: 2px 8px;
+        color: #050505;
+      }
+      @keyframes slide {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
 
- /* NAV */
- .nav{display:flex;justify-content:space-between;align-items:center;padding:20px 28px;border-bottom:1px solid rgba(255,255,255,0.08);background:rgba(5,5,5,0.88);backdrop-filter:blur(12px)}
- .wm{font-family:'Archivo',sans-serif;font-size:22px;letter-spacing:-0.045em;line-height:1}
- .wm .j{font-family:'Archivo Black',sans-serif;font-weight:900;color:#F5F1E8}
- .wm .b{font-family:'Archivo',sans-serif;font-weight:500;color:#FF3B0F}
- .links{display:flex;gap:28px;font-family:'Archivo',sans-serif;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:0.14em}
- .links a{color:#F5F1E8;text-decoration:none;cursor:pointer;position:relative;padding:4px 0}
- .links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:#C6FF00;transition:width 180ms}
- .links a:hover::after{width:100%}
- .links a:hover{color:#C6FF00}
- .cta{background:#C6FF00;color:#050505;border:0;padding:10px 16px;font-family:'Archivo',sans-serif;font-weight:800;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;border-radius:0;cursor:pointer;display:inline-flex;align-items:center;gap:8px;box-shadow:4px 4px 0 #FF3B0F;transition:all 150ms}
- .cta:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #FF3B0F}
- .arr{font-family:'JetBrains Mono',monospace}
+      /* NAV */
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 28px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(5, 5, 5, 0.88);
+        backdrop-filter: blur(12px);
+      }
+      .wm {
+        font-family: 'Archivo', sans-serif;
+        font-size: 22px;
+        letter-spacing: -0.045em;
+        line-height: 1;
+      }
+      .wm .j {
+        font-family: 'Archivo Black', sans-serif;
+        font-weight: 900;
+        color: #f5f1e8;
+      }
+      .wm .b {
+        font-family: 'Archivo', sans-serif;
+        font-weight: 500;
+        color: #ff3b0f;
+      }
+      .links {
+        display: flex;
+        gap: 28px;
+        font-family: 'Archivo', sans-serif;
+        font-weight: 600;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+      }
+      .links a {
+        color: #f5f1e8;
+        text-decoration: none;
+        cursor: pointer;
+        position: relative;
+        padding: 4px 0;
+      }
+      .links a::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #c6ff00;
+        transition: width 180ms;
+      }
+      .links a:hover::after {
+        width: 100%;
+      }
+      .links a:hover {
+        color: #c6ff00;
+      }
+      .cta {
+        background: #c6ff00;
+        color: #050505;
+        border: 0;
+        padding: 10px 16px;
+        font-family: 'Archivo', sans-serif;
+        font-weight: 800;
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border-radius: 0;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 4px 4px 0 #ff3b0f;
+        transition: all 150ms;
+      }
+      .cta:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 6px 6px 0 #ff3b0f;
+      }
+      .arr {
+        font-family: 'JetBrains Mono', monospace;
+      }
 
- .cap{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.25em;color:#6B7280;text-transform:uppercase;padding:14px 28px}
-</style></head><body>
+      .cap {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.25em;
+        color: #6b7280;
+        text-transform: uppercase;
+        padding: 14px 28px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="left">
+        <span><span class="dot"></span> &nbsp;SYS ONLINE</span>
+        <span>// <b>@joelburigo</b></span>
+        <span>// EXP. 2004</span>
+      </div>
+      <div class="right">
+        <span>FLORIANÓPOLIS/SC · <b>BR</b></span>
+        <span>00:00:00 BRT</span>
+      </div>
+    </div>
 
-<div class="topbar">
-  <div class="left">
-    <span><span class="dot"></span> &nbsp;SYS ONLINE</span>
-    <span>// <b>@joelburigo</b></span>
-    <span>// EXP. 2004</span>
-  </div>
-  <div class="right">
-    <span>FLORIANÓPOLIS/SC · <b>BR</b></span>
-    <span>00:00:00 BRT</span>
-  </div>
-</div>
+    <div class="tk">
+      <div class="tk-inner">
+        <span>★ DIAGNÓSTICO 10MIN</span><span>★ <em>SISTEMA &gt; IMPROVISO</em></span
+        ><span>★ 140+ MPES</span><span>★ ~R$1BI GERADO</span><span>★ FRAMEWORK 6PS</span>
+        <span>★ DIAGNÓSTICO 10MIN</span><span>★ <em>SISTEMA &gt; IMPROVISO</em></span
+        ><span>★ 140+ MPES</span><span>★ ~R$1BI GERADO</span><span>★ FRAMEWORK 6PS</span>
+      </div>
+    </div>
 
-<div class="tk">
-  <div class="tk-inner">
-    <span>★ DIAGNÓSTICO 10MIN</span><span>★ <em>SISTEMA &gt; IMPROVISO</em></span><span>★ 140+ MPES</span><span>★ ~R$1BI GERADO</span><span>★ FRAMEWORK 6PS</span>
-    <span>★ DIAGNÓSTICO 10MIN</span><span>★ <em>SISTEMA &gt; IMPROVISO</em></span><span>★ 140+ MPES</span><span>★ ~R$1BI GERADO</span><span>★ FRAMEWORK 6PS</span>
-  </div>
-</div>
+    <nav class="nav">
+      <div class="wm"><span class="j">JOEL</span><span class="b">BURIGO</span></div>
+      <div class="links">
+        <a>Framework</a><a>Programas</a><a>Cases</a><a>Growth_lab</a><a>Blog</a>
+      </div>
+      <button class="cta">Diagnóstico <span class="arr">→</span></button>
+    </nav>
 
-<nav class="nav">
-  <div class="wm"><span class="j">JOEL</span><span class="b">BURIGO</span></div>
-  <div class="links"><a>Framework</a><a>Programas</a><a>Cases</a><a>Growth_lab</a><a>Blog</a></div>
-  <button class="cta">Diagnóstico <span class="arr">→</span></button>
-</nav>
-
-<div class="cap">// STATUS BAR + TICKER + NAV (STICKY BLUR · UNDERLINE ACID · CTA OFFSET FIRE)</div>
-
-</body></html>
+    <div class="cap">
+      // STATUS BAR + TICKER + NAV (STICKY BLUR · UNDERLINE ACID · CTA OFFSET FIRE)
+    </div>
+  </body>
+</html>

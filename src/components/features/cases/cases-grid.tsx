@@ -13,9 +13,7 @@ const filters = [
 export function CasesGrid() {
   const [filter, setFilter] = useState<string>('all');
 
-  const filtered = cases.filter((c) =>
-    filter === 'all' ? true : c.produto.includes(filter)
-  );
+  const filtered = cases.filter((c) => (filter === 'all' ? true : c.produto.includes(filter)));
 
   return (
     <>
@@ -45,7 +43,7 @@ export function CasesGrid() {
             {filtered.map((caso: Case) => (
               <article
                 key={caso.empresa}
-                className="border border-[var(--jb-hair)] bg-ink-2 p-6 md:p-8 transition-all duration-[180ms] hover:border-acid hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[6px_6px_0_var(--jb-acid)]"
+                className="bg-ink-2 hover:border-acid border border-[var(--jb-hair)] p-6 transition-all duration-[180ms] hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[6px_6px_0_var(--jb-acid)] md:p-8"
               >
                 <div className="mb-5 flex flex-wrap items-start justify-between gap-3 border-b border-[var(--jb-hair)] pb-5">
                   <div
@@ -57,15 +55,15 @@ export function CasesGrid() {
                     // {caso.produto.toUpperCase()}
                   </div>
                   {caso.badge && (
-                    <div className="border border-[var(--jb-acid-border)] bg-[var(--jb-acid-soft)] px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-acid">
+                    <div className="text-acid border border-[var(--jb-acid-border)] bg-[var(--jb-acid-soft)] px-3 py-1 font-mono text-[10px] tracking-[0.2em] uppercase">
                       ★ {caso.badge}
                     </div>
                   )}
                 </div>
 
                 <div className="mb-6">
-                  <h3 className="heading-3 mb-1 text-cream">{caso.empresa}</h3>
-                  <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-fg-muted">
+                  <h3 className="heading-3 text-cream mb-1">{caso.empresa}</h3>
+                  <p className="text-fg-muted font-mono text-[11px] tracking-[0.22em] uppercase">
                     {caso.nicho}
                   </p>
                 </div>
@@ -73,24 +71,24 @@ export function CasesGrid() {
                 <div className="mb-5 grid grid-cols-3 gap-px border border-[var(--jb-hair)] bg-[var(--jb-hair)]">
                   <div className="bg-ink p-4">
                     <div className="kicker mb-1">// ANTES</div>
-                    <div className="font-display text-base text-cream">{caso.antes}</div>
+                    <div className="font-display text-cream text-base">{caso.antes}</div>
                   </div>
                   <div className="bg-ink p-4">
                     <div className="kicker mb-1" style={{ color: 'var(--jb-acid)' }}>
                       // DEPOIS
                     </div>
-                    <div className="font-display text-base text-acid">{caso.depois}</div>
+                    <div className="font-display text-acid text-base">{caso.depois}</div>
                   </div>
                   <div className="bg-ink p-4">
                     <div className="kicker mb-1">// TEMPO</div>
-                    <div className="font-display text-base text-cream">{caso.tempo}</div>
+                    <div className="font-display text-cream text-base">{caso.tempo}</div>
                   </div>
                 </div>
 
-                <div className="mb-6 flex items-baseline gap-3 border-l-2 border-acid bg-ink p-4">
+                <div className="border-acid bg-ink mb-6 flex items-baseline gap-3 border-l-2 p-4">
                   <span className="text-acid font-mono">▲</span>
-                  <span className="font-display text-3xl text-acid">{caso.crescimento}</span>
-                  <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-fg-muted">
+                  <span className="font-display text-acid text-3xl">{caso.crescimento}</span>
+                  <span className="text-fg-muted font-mono text-[11px] tracking-[0.22em] uppercase">
                     crescimento
                   </span>
                 </div>
@@ -99,7 +97,7 @@ export function CasesGrid() {
                   <div className="kicker mb-2" style={{ color: 'var(--jb-fire)' }}>
                     // SITUAÇÃO_ANTES
                   </div>
-                  <p className="font-sans text-sm text-fg-2 leading-relaxed">
+                  <p className="text-fg-2 font-sans text-sm leading-relaxed">
                     {caso.situacaoAntes}
                   </p>
                 </div>
@@ -108,7 +106,7 @@ export function CasesGrid() {
                   <div className="kicker mb-2" style={{ color: 'var(--jb-acid)' }}>
                     // O_QUE_FIZEMOS
                   </div>
-                  <p className="font-sans text-sm text-fg-2 leading-relaxed">{caso.solucao}</p>
+                  <p className="text-fg-2 font-sans text-sm leading-relaxed">{caso.solucao}</p>
                 </div>
               </article>
             ))}

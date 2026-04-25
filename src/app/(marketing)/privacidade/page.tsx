@@ -24,7 +24,8 @@ export default function PrivacidadePage() {
         <p className="body-sm text-fg-3">
           Coletamos apenas dados necessários pro atendimento (nome, email, empresa, telefone quando
           informado). Não vendemos dados. Compartilhamos apenas com ferramentas de operação (Brevo,
-          Mercado Pago, Google Analytics, Meta Ads). Você pode solicitar exclusão a qualquer momento.
+          Mercado Pago, Google Analytics, Meta Ads). Você pode solicitar exclusão a qualquer
+          momento.
         </p>
         <p className="mono text-fg-muted">
           // Growth Master LTDA · CNPJ {contactInfo.company.cnpj}

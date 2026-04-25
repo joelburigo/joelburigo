@@ -1,11 +1,11 @@
 ---
 name: Playbook VSS — Sistema Implementável
 description: Playbook digital do programa VSS — 7 fases, 15 módulos, 66 destravamentos práticos. Sistema escrito + 15 vídeos-âncora + mentorias ao vivo.
-id: "04"
-versao: "1.0"
-depende_de: ["02", "03"]
+id: '04'
+versao: '1.0'
+depende_de: ['02', '03']
 autor: Joel Burigo
-atualizado: "2026-04-22"
+atualizado: '2026-04-22'
 tags: [playbook, vss, implementacao, modulos, destravamentos, sistema]
 ---
 
@@ -39,16 +39,16 @@ Este playbook é o **produto principal** do programa VSS. Cada módulo é compos
 
 ## Jornada: 7 fases, 15 módulos, 66 destravamentos
 
-| Fase | Módulos | Destravamentos | Tema | Bloco |
-|---|---|---|---|---|
-| **Fase 1 — Fundamentos** | M1-M3 | 15 | Estratégia e posicionamento | 0-30 dias |
-| **Fase 2 — Infraestrutura** | M4-M5 | 9 | CRM e presença digital | 30-45 dias |
-| **Fase 3 — Atração** | M6-M8 | 13 | Canais de aquisição de leads | 45-75 dias |
-| **Fase 4 — Conversão** | M9-M10 | 9 | Funis, scripts e fechamento | 75-90 dias |
-| **Fase 5 — Sistema** | M11 | 4 | Integração e documentação | 90 dias |
-| **Fase 6 — Automação** | M12-M13 | 8 | Automações avançadas e IA | Pós-90 |
-| **Fase 7 — Crescimento** | M14-M15 | 8 | Analytics, time e escala | Pós-90 |
-| **TOTAL** | **15** | **66** | | **~16 semanas** |
+| Fase                        | Módulos | Destravamentos | Tema                         | Bloco           |
+| --------------------------- | ------- | -------------- | ---------------------------- | --------------- |
+| **Fase 1 — Fundamentos**    | M1-M3   | 15             | Estratégia e posicionamento  | 0-30 dias       |
+| **Fase 2 — Infraestrutura** | M4-M5   | 9              | CRM e presença digital       | 30-45 dias      |
+| **Fase 3 — Atração**        | M6-M8   | 13             | Canais de aquisição de leads | 45-75 dias      |
+| **Fase 4 — Conversão**      | M9-M10  | 9              | Funis, scripts e fechamento  | 75-90 dias      |
+| **Fase 5 — Sistema**        | M11     | 4              | Integração e documentação    | 90 dias         |
+| **Fase 6 — Automação**      | M12-M13 | 8              | Automações avançadas e IA    | Pós-90          |
+| **Fase 7 — Crescimento**    | M14-M15 | 8              | Analytics, time e escala     | Pós-90          |
+| **TOTAL**                   | **15**  | **66**         |                              | **~16 semanas** |
 
 O playbook comporta execução em 90 dias (Fases 1-5) com as Fases 6-7 como destravamentos avançados para depois da fundação sólida. Não pule etapas — o sistema foi desenhado para que cada P fraco bloqueie o seguinte.
 
@@ -71,6 +71,7 @@ Big idea do módulo: **vender mais não é sorte — é sistema.** Antes de qual
 **Tempo:** 15 min
 **Você precisa de:** e-mail de acesso, foto/bio básica.
 **Ação:**
+
 1. Abrir o e-mail de boas-vindas e fazer login no sistema VSS + Growth CRM.
 2. Completar seu perfil (foto, nome, negócio, objetivo principal).
 3. Entrar na comunidade VSS e se apresentar: nome, negócio, objetivo em 90 dias.
@@ -88,6 +89,7 @@ Big idea do módulo: **vender mais não é sorte — é sistema.** Antes de qual
 **Ação:** Leia o bloco de contexto abaixo e anote, no seu próprio documento, qual dos 3 erros clássicos você já cometeu.
 
 Os 3 erros caros que travam negócios em crescimento:
+
 1. **Comprar leads sem sistema pra convertê-los** (tráfego sem funil = dinheiro queimado).
 2. **Contratar agências sem entender o processo** (você fica dependente e sem visibilidade).
 3. **Focar em tráfego antes de definir o público** (você fala pra todo mundo = não fala pra ninguém).
@@ -127,6 +129,7 @@ Lógica da ordem: Por quê → Para quem → O quê → Como vender → Como ope
 **Tempo:** 25-30 min
 **Você precisa de:** template **Canvas 6Ps + Plano 90 Dias MVP** (entregável #1).
 **Ação:**
+
 1. Abra o Canvas 6Ps.
 2. Para cada P, responda as perguntas-chave e **dê nota 0-5 honesta** (0 = inexistente, 5 = dominado).
 3. Some o score total (0-30).
@@ -134,6 +137,7 @@ Lógica da ordem: Por quê → Para quem → O quê → Como vender → Como ope
 5. Liste evidências que justificam cada nota (fatos, não sensações).
 
 Interpretando o resultado:
+
 - **0-10:** maturidade inicial — foque em P1+P2 primeiro.
 - **11-20:** maturidade intermediária — foque nos 2 Ps mais fracos.
 - **21-30:** maturidade avançada — otimização e escala.
@@ -155,11 +159,13 @@ MARKETING → LEADS → PROSPECÇÃO → VENDAS → ENTREGA → DADOS → MELHOR
 ```
 
 Para cada etapa, responda:
+
 - Como está hoje? (0 = inexistente, 5 = funciona bem)
 - Qual parte está mais quebrada?
 - Como uma parte alimenta a outra (ou falha em alimentar)?
 
 Conectando 6Ps com a Máquina:
+
 - P1-P3 = **O QUE** vender e **PARA QUEM**.
 - P4-P5 = **COMO** vender de forma escalável.
 - P6 = **QUEM** executa com excelência.
@@ -176,6 +182,7 @@ Conectando 6Ps com a Máquina:
 **Tempo:** 25 min
 **Você precisa de:** a segunda metade do template Canvas 6Ps + Plano 90 Dias MVP (entregável #1).
 **Ação:**
+
 1. Defina metas **30-60-90 dias**:
    - 30 dias: Estratégia + Infraestrutura (Fases 1-2 implementadas).
    - 60 dias: Atração + primeiras vendas (Fases 3-4 iniciadas).
@@ -213,6 +220,7 @@ Big idea: **se você tenta agradar todo mundo, não agrada ninguém.** Posiciona
 4. **Promessa central** (transformação que entrega).
 
 Checagem rápida:
+
 - ❌ Fraco: "Oferecemos soluções completas em marketing."
 - ✅ Forte: "Ajudamos clínicas odontológicas a ter agenda cheia sem depender de convênios."
 - ❌ Fraco: "Vendemos roupas de qualidade."
@@ -238,10 +246,12 @@ para que [BENEFÍCIO FINAL - vida melhor]."
 ```
 
 Exemplos prontos:
+
 - "Ajudamos donos de academias a ter 50+ alunos novos por mês através de tráfego pago estruturado e funil de conversão, para que tenham faturamento previsível e possam investir em expansão."
 - "Ajudamos advogados autônomos a conseguir 10+ consultas qualificadas por mês através de conteúdo educativo no Instagram e prospecção ativa, para que reduzam ansiedade financeira e construam carteira sólida."
 
 Validação (não pule):
+
 1. Grave áudio falando sua PUV.
 2. Mande pra **5 pessoas** diferentes (clientes, amigos, desconhecidos).
 3. Pergunte: "Entendeu o que eu faço?"
@@ -259,6 +269,7 @@ Validação (não pule):
 **Tempo:** 25 min
 **Você precisa de:** **Template de Persona VSS** (entregável #3).
 **Ação:**
+
 1. Decida se seu negócio é mais B2B (use **ICP — Ideal Customer Profile**: porte, setor, faturamento da empresa) ou B2C (use **Buyer Persona**: demografia, comportamento, dores da pessoa). Muitas vezes você usa os dois.
 2. Preencha os 5 elementos essenciais da persona primária:
    - **Demografia:** idade, localização, cargo, renda.
@@ -278,6 +289,7 @@ Validação (não pule):
 
 **Tempo:** 30-45 min (inclui entrevistar 3 clientes)
 **Ação:**
+
 1. Dê nome fictício à persona (ex: "Mariana, 35 anos").
 2. Escreva história resumida em 1 parágrafo + citação representativa + "um dia na vida de...".
 3. **Entreviste 3 clientes atuais (ou 3 prospects próximos)** e pergunte:
@@ -300,6 +312,7 @@ Se fizer sentido, replique (mais rápido e superficial) pra Persona #2 e #3. Foc
 
 **Tempo:** 20 min
 **Ação:**
+
 1. Liste 10 conceitos relacionados ao seu negócio.
 2. Cruze com as dores da persona.
 3. Escolha o mais forte.
@@ -307,6 +320,7 @@ Se fizer sentido, replique (mais rápido e superficial) pra Persona #2 e #3. Foc
 5. Teste em formatos diferentes: como hashtag, como título de conteúdo, como frase de e-mail.
 
 Critérios de uma Big Idea forte:
+
 - Conecta com dor da persona.
 - Simples e memorável.
 - Diferente do óbvio.
@@ -340,6 +354,7 @@ Big idea: **produto certo pra pessoa certa na hora certa = vendas fáceis.** Se 
 Sinais de falta de PMF: objeções constantes, churn alto, dificuldade de venda.
 
 Os 3 elementos de uma oferta irresistível:
+
 1. **Produto/serviço core** — o que você realmente entrega + transformação principal.
 2. **Bônus que amplificam valor** — facilitam o resultado principal, não são aleatórios.
 3. **Garantia que remove risco** — inverta o risco (você assume).
@@ -365,11 +380,13 @@ Se não há fit: **mude o produto OU o público**. Não insista em vender algo q
 - **Escassez/Urgência (se genuína):** vagas limitadas? bônus temporário?
 
 Calcule valor percebido vs. preço:
+
 ```
 Valor Total Entregue: R$ 10.000
 Seu Preço: R$ 1.997
 "Desconto": 80%
 ```
+
 Cliente vê o valor, não o custo.
 
 Teste final: leia sua oferta em voz alta. **Se você mesmo se empolgaria, é boa. Se parece fraca, ajuste.**
@@ -387,6 +404,7 @@ Teste final: leia sua oferta em voz alta. **Se você mesmo se empolgaria, é boa
 **Ação:** Evite os 3 erros fatais — (1) basear só em custo, (2) copiar concorrência, (3) subvalorizar.
 
 Método de precificação por valor — use **3 âncoras**:
+
 - **Mínimo (custo):** abaixo disso você perde dinheiro.
 - **Valor entregue (máximo):** quanto vale a transformação?
 - **Concorrência (referência):** contexto de mercado.
@@ -394,11 +412,13 @@ Método de precificação por valor — use **3 âncoras**:
 **Fórmula:** Custo + Margem desejada + Valor percebido − Desconto estratégico = Preço final.
 
 **Precificação psicológica:**
+
 - R$ 1.997 > R$ 2.000 (parece menor).
 - R$ 497 > R$ 500.
 - Números ímpares convertem mais.
 
 Estrutura de 3 opções (âncora psicológica — 70% escolhem a do meio):
+
 - **Opção 1 (Básico):** R$ 997 — produto core + suporte mínimo.
 - **Opção 2 (Recomendado):** R$ 1.997 ⭐ — produto + bônus + suporte completo (mais vendida).
 - **Opção 3 (Premium):** R$ 4.997 — tudo da 2 + consultoria 1-on-1 + implementação assistida.
@@ -418,24 +438,28 @@ Quando aumentar: a cada 10-20 clientes novos. Cliente antigo mantém preço anti
 **Ação:** Defina para cada área:
 
 **Marketing:**
+
 - CPL (Custo por Lead).
 - CTR (Click-Through Rate).
 - CPC (Custo por Clique).
 - Taxa de conversão visitante → lead.
 
 **Vendas:**
+
 - Taxa de conversão lead → venda.
 - Ticket médio.
 - Ciclo de vendas (dias do primeiro contato até fechar).
 - Taxa de fechamento (propostas → vendas).
 
 **Financeiro:**
+
 - CAC (Custo de Aquisição de Cliente).
 - LTV (Lifetime Value).
 - LTV:CAC ratio (ideal ~3:1, mas não é regra).
 - Margem bruta.
 
 Exemplo de metas 30-60-90 dias (ajuste pra sua realidade):
+
 - **30 dias:** 20 leads, 3 vendas, R$ 6.000.
 - **60 dias:** 50 leads, 8 vendas, R$ 16.000.
 - **90 dias:** 100 leads, 15 vendas, R$ 30.000.
@@ -463,6 +487,7 @@ Big idea: **o CRM não é ferramenta. É o sistema nervoso da sua operação de 
 
 **Tempo:** 15 min
 **Ação:**
+
 1. Acessar a conta do Growth CRM (link enviado por e-mail).
 2. Fazer primeiro login.
 3. Tour rápido da interface — dashboard, contatos, pipeline, automações, configurações.
@@ -477,6 +502,7 @@ Big idea: **o CRM não é ferramenta. É o sistema nervoso da sua operação de 
 **Tempo:** 30 min + 2-3h de execução guiada
 **Você precisa de:** **Checklist Setup CRM Completo** (entregável #5), logo da empresa, dados de acesso de e-mail/Google/Meta.
 **Ação:**
+
 1. **Configurações básicas:** nome da empresa, logo, cores, timezone, moeda, usuários (se tiver equipe).
 2. **Estrutura de dados:**
    - **Campos customizados** (ex: "Porte da empresa", "Segmento", "Fonte do lead").
@@ -502,9 +528,11 @@ Big idea: **o CRM não é ferramenta. É o sistema nervoso da sua operação de 
 - **Oportunidade:** lead qualificado com potencial real — tem budget, autoridade, necessidade.
 
 Gerencie no pipeline:
+
 - Criar oportunidade → associar a contato → definir valor estimado → mover entre estágios (drag and drop) → adicionar notas/tarefas → agendar follow-up.
 
 Boas práticas diárias (inegociáveis):
+
 - Atualize CRM diariamente.
 - Toda interação registrada.
 - Use tags pra organizar.
@@ -519,6 +547,7 @@ Boas práticas diárias (inegociáveis):
 
 **Tempo:** 20 min (mais dependendo do tamanho da base)
 **Ação:**
+
 1. **Preparar arquivo CSV:** colunas obrigatórias (Nome, E-mail), opcionais (Telefone, Empresa, Tags). Remover duplicatas.
 2. **Importação passo a passo:** upload → mapeamento de campos → preview → confirmar → verificar.
 3. **Organizar pós-importação:** tags em massa, listas dinâmicas, segmentação.
@@ -537,6 +566,7 @@ Boas práticas diárias (inegociáveis):
 **Ação:** Crie e ative no CRM:
 
 **Automação #1 — Boas-vindas pra novo lead:**
+
 - Gatilho: Lead criado via formulário.
 - Espera: 2 min.
 - Ação 1: Envia e-mail "Obrigado por se cadastrar".
@@ -544,6 +574,7 @@ Boas práticas diárias (inegociáveis):
 - Ação 3: Aplica tag "Novo Lead".
 
 **Automação #2 — Follow-up esquecido:**
+
 - Gatilho: Oportunidade há 7 dias sem interação.
 - Ação: Notifica vendedor.
 - Ação: Envia SMS/WhatsApp pro lead "Ainda posso ajudar?".
@@ -578,6 +609,7 @@ Big idea: **presença digital profissional não é luxo. É obrigação.** Clien
 - ✅ Botão claro de ação.
 
 Opções:
+
 1. **Landing page simples** (mais rápido — recomendado pra começar).
 2. Site institucional básico (3-5 páginas).
 3. Site + blog (só se tiver fôlego para conteúdo contínuo).
@@ -593,6 +625,7 @@ Você vai criar dentro do próprio Growth CRM (builder integrado, drag and drop,
 
 **Tempo:** 35 min (+ tempo pra comprar domínio se ainda não tem)
 **Ação:**
+
 1. **Escolher template** do Growth CRM (50+ disponíveis). Personalize (não use igual ao template).
 2. **Construir seção por seção:**
    - **Hero (topo):** headline com PUV + subheadline + CTA (botão) + imagem ou vídeo.
@@ -616,6 +649,7 @@ Você vai criar dentro do próprio Growth CRM (builder integrado, drag and drop,
 **Tempo:** 25 min
 **Você precisa de:** **Checklist GMB + SEO Local** (entregável #6).
 **Ação:**
+
 1. **Criar conta no Google Meu Negócio.**
 2. **Preencher 100% das informações.**
 3. Adicionar **fotos de qualidade (mín. 10)**.
@@ -638,6 +672,7 @@ Monitore no painel GMB: visualizações, ligações, pedidos de direção.
 **Tempo:** 20 min
 **Você precisa de:** **Kit Otimização Perfis** (entregável #7).
 **Ação:**
+
 1. **Escolha 1-2 redes** (não tente todas):
    - **B2B:** LinkedIn (obrigatório).
    - **B2C:** Instagram (visual) ou TikTok (vídeo).
@@ -669,18 +704,21 @@ Big idea: **conteúdo constrói autoridade. Autoridade gera vendas.** Orgânico 
 **Ação:** Escolha 1 plataforma e comprometa-se com frequência mínima.
 
 Os 4 tipos de conteúdo que funcionam:
+
 1. **Educacional** — ensina algo útil ("5 erros que matam sua conversão").
 2. **Inspiracional** — motiva e engaja ("Como pequeno empresário X cresceu 300%").
 3. **Bastidores** — humaniza a marca ("Um dia no nosso escritório").
 4. **Prova social** — resultados, depoimentos, números.
 
 Formatos que geram mais resultado:
+
 - Vídeo curto > texto.
 - Carrossel > imagem única.
 - Stories > feed (alcance).
 - Ao vivo > gravado (engajamento).
 
 Frequências ideais:
+
 - Instagram: 3-5x/semana.
 - LinkedIn: 2-3x/semana.
 - YouTube: 1x/semana.
@@ -695,6 +733,7 @@ Frequências ideais:
 
 **Tempo:** 25 min (+ tempo de criação de conteúdo depois)
 **Ação:**
+
 1. **Pesquisa de palavras-chave:**
    - Use Google Keyword Planner (grátis).
    - Volume médio + baixa concorrência.
@@ -725,6 +764,7 @@ Frequências ideais:
 **Ação:** Aplique a estratégia por rede:
 
 **Instagram orgânico:**
+
 - Perfil otimizado (bio + link).
 - 3-5 posts/semana + stories diários.
 - Carrosséis educacionais (geram saves).
@@ -734,6 +774,7 @@ Frequências ideais:
 - Posts que funcionam: listas, antes e depois, mitos vs. verdades, bastidores, depoimentos.
 
 **LinkedIn orgânico (B2B):**
+
 - Perfil 100% completo.
 - 2-3 posts/semana.
 - Foco em texto (carrossel em segundo).
@@ -794,12 +835,14 @@ Big idea: **tráfego pago não é mágica. É ciência com investimento.** Só i
 - ✅ Tempo pra testar (60-90 dias).
 
 Principais plataformas:
+
 - **Meta Ads (Facebook + Instagram):** melhor B2C, CPM barato.
 - **Google Ads:** melhor B2B e intenção de compra.
 - **LinkedIn Ads:** B2B enterprise (CPL caro — só pra ticket alto).
 - **YouTube Ads:** conscientização (requer vídeo).
 
 Budget realista:
+
 - **Teste:** R$ 1.000-1.500/mês (2 meses).
 - **Otimização:** R$ 2.000-3.000/mês.
 - **Escala:** R$ 5.000+/mês.
@@ -815,6 +858,7 @@ Budget realista:
 **Tempo:** 30 min
 **Você precisa de:** **Guia Meta Ads Completo** (entregável #9).
 **Ação:**
+
 1. **Criar Business Manager** em business.facebook.com → conta de anúncios → método de pagamento → instalar Pixel no site.
 2. **Estrutura de campanha:**
    - **Campanha:** objetivo = Geração de Leads, budget R$ 50/dia, otimização = Conversões.
@@ -836,6 +880,7 @@ Budget realista:
 
 **Tempo:** 25 min
 **Ação:**
+
 1. **Quando usar Google Ads:** cliente está procurando ativamente (intenção de compra alta).
 2. **Campanha de Busca:**
    - Palavras-chave: pesquise no Planejador, long-tail, 10-20 palavras pra começar.
@@ -856,11 +901,13 @@ Métricas: CPC, CTR, Índice de Qualidade (1-10), conversões, custo por convers
 **Ação:** Regra básica — espere mínimo 7 dias e 50 conversões antes de otimizar. Análise **semanal**, não diária.
 
 O que otimizar:
+
 - **CPL muito alto:** teste novos criativos, ajuste público, melhore copy da LP, simplifique formulário.
 - **CTR baixo:** melhore visual, teste novo hook, ajuste segmentação.
 - **Conversão baixa:** problema é na landing page, não no anúncio.
 
 Escalando (aumentando budget):
+
 - Aumente 20% a cada 3-5 dias.
 - Não dobre de uma vez.
 - Monitore CPL (não pode disparar).
@@ -887,6 +934,7 @@ Big idea: **se você não tem dinheiro, tem que ter tempo e coragem.** Prospecç
 
 **Tempo:** 20 min
 **Ação:** Avalie o fit — prospecção ativa faz sentido se:
+
 - ✅ Não tem budget pra tráfego pago.
 - ✅ Vende B2B (decision maker definido).
 - ✅ Ticket médio > R$ 1.000.
@@ -894,6 +942,7 @@ Big idea: **se você não tem dinheiro, tem que ter tempo e coragem.** Prospecç
 - ❌ NÃO funciona bem se: produto muito barato (< R$ 100), sem tempo pra follow-up, não aguenta rejeição.
 
 Canais de prospecção gratuita:
+
 - LinkedIn (B2B principalmente).
 - Instagram DM (B2C e criadores).
 - E-mail frio (se tem lista).
@@ -911,6 +960,7 @@ Mindset correto: jogo de números. **100 abordagens = 10 respostas = 1-3 vendas.
 
 **Tempo:** 30 min (+ tempo de pesquisa na semana)
 **Ação:**
+
 1. **Onde encontrar:**
    - B2B: LinkedIn Sales Navigator (pago mas vale) ou busca avançada grátis, Google Maps (negócios locais), listas de associações, eventos/webinars.
    - B2C: seguidores de concorrentes (Instagram), membros de grupos/comunidades, hashtags do nicho, comentários em posts relevantes.
@@ -931,6 +981,7 @@ Mindset correto: jogo de números. **100 abordagens = 10 respostas = 1-3 vendas.
 **Ação:**
 
 **Prospecção LinkedIn (B2B):**
+
 - **Perfil:** foto profissional, banner com PUV, seção "Sobre" contando sua história + como ajuda, experiências detalhadas, recomendações de clientes.
 - **Conectar estrategicamente:** 50-100 conexões/semana, **personalize convite SEMPRE**. Ex: "Oi [nome], vi que você trabalha com [X]. Estou ajudando empresas de [setor] a [resultado]. Vamos conectar?"
 - **Sequência de mensagens:**
@@ -943,6 +994,7 @@ Mindset correto: jogo de números. **100 abordagens = 10 respostas = 1-3 vendas.
 - **Engajar em posts** dos prospects com valor (não só "Parabéns" ou emoji).
 
 **Prospecção Instagram (B2C):**
+
 - Perfil profissional (bio clara, link pra oferta, destaques, feed consistente).
 - Identificar prospects (seguidores de concorrentes, comentaristas em posts do nicho, hashtags, geolocalização).
 - **Engajar antes de prospectar:** curta 3-5 posts, comente com valor, assista stories, DEPOIS envie DM.
@@ -964,8 +1016,10 @@ Mindset correto: jogo de números. **100 abordagens = 10 respostas = 1-3 vendas.
 **Ação:**
 
 **Cold email (B2B):**
+
 - **Lista:** extraia via LinkedIn (Hunter.io, Snov.io), site da empresa, formulário de contato. **NUNCA compre lista.**
 - **Estrutura:**
+
   ```
   ASSUNTO: Rápida pergunta sobre [dor específica]
 
@@ -986,6 +1040,7 @@ Mindset correto: jogo de números. **100 abordagens = 10 respostas = 1-3 vendas.
   [Cargo] | [Empresa]
   [Link LinkedIn]
   ```
+
 - **Boas práticas:** e-mail curto (máx 100 palavras), personalização real, 1 CTA, domínio profissional, evitar spam words (grátis, desconto, urgente). Follow-up: 3-5 e-mails com 3 dias de intervalo.
 
 **WhatsApp ético:** use SÓ se cliente deu número OU relacionamento já iniciado. NUNCA spam frio. Mensagem curta, sem áudio de primeira, sem links suspeitos. Se não responder, NÃO insista. Máximo 2 follow-ups.
@@ -1014,6 +1069,7 @@ Ferramentas: Lemlist, Mailshake (e-mail), Apollo.io (e-mail + LinkedIn), Reply.i
 **Breakup e-mail aumenta taxa de resposta.**
 
 Métricas de prospecção:
+
 - Abordagens enviadas.
 - Taxa de resposta (meta: 10-20%).
 - Reuniões agendadas (meta: 2-5%).
@@ -1059,11 +1115,13 @@ VENDA
 ```
 
 Etapas clássicas:
+
 - **TOPO (Awareness):** cliente não sabe que tem problema — educar e atrair — conteúdo amplo — métrica: visitantes/impressões.
 - **MEIO (Consideração):** cliente pesquisando — capturar e nutrir — ebook/webinar/diagnóstico — métrica: leads, conversão.
 - **FUNDO (Decisão):** pronto pra comprar — converter — proposta/demo/consultoria — métrica: vendas, ticket médio.
 
 Taxas realistas:
+
 - Visitante → Lead: 2-5%.
 - Lead → Oportunidade: 10-20%.
 - Oportunidade → Venda: 20-30%.
@@ -1125,10 +1183,12 @@ Configure delays, teste deliverability (não cair em spam). Métricas: abertura 
 
 **Tempo:** 20 min
 **Ação:**
+
 - **Por que:** 99% dos brasileiros usam, abertura 98% (e-mail 20%), conversão 5-10x maior que e-mail.
 - **Como integrar:** conectar número via API, sincronização bidirecional, histórico completo no CRM, automação de mensagens, chatbots simples.
 
 Casos de uso estratégico:
+
 - **Atendimento:** lead preenche formulário → WhatsApp automático → vendedor responde.
 - **Follow-up:** oportunidade sem resposta há 3 dias → WhatsApp automático.
 - **Pós-venda:** cliente fechou → WhatsApp de boas-vindas + lembrete de próximos passos.
@@ -1155,18 +1215,21 @@ Big idea: **perguntas certas = vendas certas.** Qualificação + script + tratam
 **Ação:** Aplique BANT em todo lead ativo hoje:
 
 **BANT (simples e efetivo):**
+
 - **B - Budget:** "Você tem budget aprovado pra isso?" "Quanto está investindo hoje em [área]?"
 - **A - Authority:** "Você é quem decide, ou precisa alinhar com alguém?"
 - **N - Need:** "Qual o maior desafio que você enfrenta hoje?" "O que acontece se não resolver nos próximos meses?"
 - **T - Timeline:** "Quando você precisa ter isso resolvido?"
 
 **SPIN (perguntas poderosas pra descoberta):**
+
 - **S - Situation:** "Como funciona [processo] hoje na sua empresa?"
 - **P - Problem:** "Qual a maior dificuldade com isso?"
 - **I - Implication:** "Qual o impacto disso no faturamento?" "Quanto você estima que perde por mês com isso?"
 - **N - Need-Payoff:** "Como seria se você resolvesse isso?" "Quanto valeria pra você ter [resultado]?"
 
 **Semáforo de qualificação:**
+
 - 🟢 Verde (venda agora): BANT completo + dor forte.
 - 🟡 Amarelo (nutra mais): falta 1-2 elementos.
 - 🔴 Vermelho (desqualifica): sem budget, autoridade ou urgência.
@@ -1183,6 +1246,7 @@ Big idea: **perguntas certas = vendas certas.** Qualificação + script + tratam
 **Ação:** Adote os scripts base:
 
 **Script WhatsApp (B2C) — 5 mensagens:**
+
 - M1 (imediata): cumprimento + confirmação de cadastro + pergunta aberta sobre desafio.
 - M2 (pós-resposta): empatia com dor + pergunta sobre alternativas tentadas.
 - M3 (qualificação suave): resumir dor + apresentar solução + case + "quer saber mais?".
@@ -1190,6 +1254,7 @@ Big idea: **perguntas certas = vendas certas.** Qualificação + script + tratam
 - M5: se interessado → link pagamento/agendamento; se hesitante → diagnóstico/demo; se negativo → agradecer + adicionar em nutrição.
 
 **Script Ligação/Reunião (B2B) — estrutura de 30 min:**
+
 - Abertura (2 min): "Obrigado pelo tempo. Combinamos 30min. Antes de começar, o que te fez marcar essa conversa?"
 - Descoberta (15 min — 70% da reunião): BANT/SPIN. **Ouça 80%, fale 20%.** Tome notas. Valide entendimento.
 - Apresentação (10 min): "Baseado no que você me contou..." Apresente só o relevante. Use caso similar.
@@ -1265,6 +1330,7 @@ Evite: pressão excessiva, desconto desesperado, mentir sobre urgência, insisti
 **Ação:** Custo de retenção < custo de aquisição (5-25x menor). Cliente feliz indica (CAC zero).
 
 **Estrutura de pós-venda:**
+
 - **Dia 0 (fechamento):** e-mail boas-vindas + WhatsApp com próximos passos + grupo/comunidade.
 - **Dia 1:** onboarding (como usar) + expectativas claras + contatos importantes.
 - **Dia 7:** check-in "Como está sendo?" + resolver dúvidas iniciais + garantir uso.
@@ -1273,6 +1339,7 @@ Evite: pressão excessiva, desconto desesperado, mentir sobre urgência, insisti
 - **Dia 90:** pedir depoimento + pedir indicação + oferecer bônus por indicação.
 
 **Programa de indicações estruturado:**
+
 - **Incentivos:** desconto em renovação, créditos em serviços, bônus exclusivo, reconhecimento público.
 - **Facilite:** link de indicação personalizado, material pronto pra compartilhar, tracking no CRM, recompensa automática.
 
@@ -1309,6 +1376,7 @@ Big idea: **sistema integrado = nada se perde, tudo funciona.** Chegou a hora de
 - ✅ **Funis ativos:** tráfego pago OU prospecção; LPs convertendo; sequências de e-mail nutrindo; ofertas sendo apresentadas.
 
 Fluxo completo funcionando:
+
 ```
 LEAD CHEGA → CAPTURADO NO CRM → NUTRIÇÃO AUTOMÁTICA →
 QUALIFICAÇÃO (BANT/score) → VENDEDOR NOTIFICADO →
@@ -1335,6 +1403,7 @@ ABORDAGEM → REUNIÃO → FECHAMENTO → PÓS-VENDA (onboarding + indicação)
 5. **Atendimento:** SLA, canais, escalonamento, FAQ, satisfação.
 
 Template de SOP:
+
 ```
 NOME DO PROCESSO: [ex: Captação de Leads via LinkedIn]
 OBJETIVO: [pra que serve]
@@ -1369,6 +1438,7 @@ Onde guardar: Google Drive, Notion (melhor), Wiki, CRM (processos de vendas). Ac
 **Satisfação:** NPS, churn, indicações recebidas, depoimentos coletados.
 
 **Ritual de análise:**
+
 - **Diário:** 5 min ao abrir o dia.
 - **Semanal:** 30 min toda segunda 9h.
 - **Mensal:** 2h na primeira semana do mês.
@@ -1395,6 +1465,7 @@ Onde guardar: Google Drive, Notion (melhor), Wiki, CRM (processos de vendas). Ac
 Próximos 90 dias (escala): aumentar budget 20-50%, contratar primeiro vendedor/assistente, otimizar conversão, testar novos canais, documentar tudo.
 
 **Armadilhas de escala:**
+
 - ❌ Escalar antes de validar (queima dinheiro).
 - ❌ Contratar rápido demais (caos).
 - ❌ Ignorar margem (crescer com prejuízo).
@@ -1425,6 +1496,7 @@ Big idea: **automação avançada = inteligência operacional.** Básica é 1 ga
 **Ação:** Monte no CRM os 3 workflows críticos:
 
 **Workflow 1 — Recuperação de Lead Frio:**
+
 - Gatilho: lead sem interação há 30 dias.
 - Condição: não comprou.
 - Ação 1: e-mail "Sentimos sua falta".
@@ -1432,11 +1504,13 @@ Big idea: **automação avançada = inteligência operacional.** Básica é 1 ga
 - Espera 2 dias → condição: não respondeu → Ação 3: marcar como "Inativo".
 
 **Workflow 2 — Upsell Inteligente:**
+
 - Gatilho: cliente comprou produto básico.
 - Espera 30 dias → condição: NPS > 8 → Ação 1: e-mail ofertando upgrade.
 - Espera 7 dias → condição: não comprou → Ação 2: WhatsApp com desconto temporário.
 
 **Workflow 3 — Prevenção de Churn:**
+
 - Gatilho: cliente não usa produto há 14 dias.
 - Ação 1: notificar gestor de sucesso.
 - Ação 2: e-mail "Precisa de ajuda?".
@@ -1455,12 +1529,14 @@ Erros comuns: workflow muito complexo, não testar antes de ativar, esquecer sa�
 **Ação:** Segmente por AÇÕES, não só demografia.
 
 **Segmentos essenciais:**
+
 - **Engajamento:** 🔥 Quente (abriu 3+ e-mails, visitou site 5+ vezes) | 🟡 Morno | ❄️ Frio.
 - **Intenção de compra:** 💰 Alta (página de preços, carrinho) | 🤔 Média | 🔍 Baixa.
 - **Produto de interesse:** Produto A / B / Indeciso.
 - **Estágio no funil:** Topo / Meio / Fundo.
 
 Aplicações:
+
 - **Quente + Alta Intenção:** prioridade máxima pra vendedor, abordagem imediata, oferta direta.
 - **Morno + Média:** mais nutrição, webinar, case studies.
 - **Frio:** campanha de reativação OU limpar da base.
@@ -1487,6 +1563,7 @@ Configurar no CRM: tags automáticas por comportamento, **lead scoring** (pontua
 **70% dos carrinhos são abandonados.** Recuperar 10-30% = receita extra significativa.
 
 **Upsell:**
+
 - **Na compra:** "Clientes que levaram X também levaram Y" / upgrade +R$ 100 / one-click.
 - **Pós-compra:** dia 30 "Que tal [complemento]?" / dia 60 "[Premium]?" / baseado em uso.
 
@@ -1534,6 +1611,7 @@ Big idea: **IA não substitui humano. Filtra pra que o humano foque no que impor
 - **Pós-venda:** onboarding guiado, dúvidas técnicas, coleta feedback.
 
 **Quando NÃO usar IA:**
+
 - ❌ Vendas complexas B2B (requer humano).
 - ❌ Cliente pediu humano explicitamente.
 - ❌ Situações sensíveis (reclamação séria).
@@ -1548,6 +1626,7 @@ Big idea: **IA não substitui humano. Filtra pra que o humano foque no que impor
 
 **Tempo:** 30 min (+ tempo de treino)
 **Ação:**
+
 1. **Conectar WhatsApp Business API** ao CRM (número verificado + integração).
 2. **Treinar IA com FAQs:** liste 20-30 perguntas comuns + respostas padrão (Quanto custa? Como funciona? Tem garantia?).
 3. **Definir fluxo de conversa:**
@@ -1559,6 +1638,7 @@ Big idea: **IA não substitui humano. Filtra pra que o humano foque no que impor
 5. **Testar exaustivamente:** 20 perguntas diferentes, tente confundir, veja se handoff funciona, ajuste respostas confusas.
 
 **Boas práticas:**
+
 - ✅ IA se apresenta como assistente virtual (nunca finge ser humano).
 - ✅ Oferece opção de falar com humano sempre.
 - ✅ Tom amigável mas profissional.
@@ -1577,6 +1657,7 @@ Big idea: **IA não substitui humano. Filtra pra que o humano foque no que impor
 **Ação:** Handoff crítico — transição ruim = cliente irritado; boa = cliente nem percebe.
 
 **Gatilhos de handoff obrigatório:**
+
 - Cliente pede falar com humano.
 - Cliente irritado (detecção de sentimento).
 - Pergunta muito específica/técnica.
@@ -1586,6 +1667,7 @@ Big idea: **IA não substitui humano. Filtra pra que o humano foque no que impor
 **Gatilhos opcionais:** lead muito qualificado (alto score), cliente VIP, oportunidade de alto valor.
 
 **Fluxo ideal:**
+
 ```
 IA: "Vou te conectar com [Vendedor], especialista nisso."
 [IA passa com resumo pro vendedor:
@@ -1615,6 +1697,7 @@ Configurar no CRM: regras claras de handoff, notificação instantânea, histór
 - Testes A/B: tom formal vs. casual.
 
 **Métricas de sucesso:**
+
 - Taxa de resolução: 70%+ (IA resolveu sozinha).
 - NPS > 8.
 - Tempo médio < 3 min.
@@ -1622,6 +1705,7 @@ Configurar no CRM: regras claras de handoff, notificação instantânea, histór
 - Conversões: leads qualificados gerados.
 
 **Evolução gradual:**
+
 - Mês 1: IA responde básico.
 - Mês 2: IA qualifica leads.
 - Mês 3: IA agenda reuniões.
@@ -1656,26 +1740,31 @@ Big idea: **meça o que importa. Melhore o que mede.**
 **Métricas essenciais por área:**
 
 **Aquisição:**
+
 - CPL: R$ 5-60 (depende do nicho).
 - Conversão visitante → lead: 2-5%.
 - CTR: 1-3% (frio), 5-10% (retargeting).
 
 **Ativação:**
+
 - Conversão lead → oportunidade: 10-20%.
 - Tempo até 1ª interação: < 5 min.
 - Engajamento: 20-30% abertura, 2-5% clique.
 
 **Receita:**
+
 - Conversão oportunidade → venda: 20-30% B2C / 10-20% B2B.
 - Ticket médio: depende do negócio.
 - Ciclo: < 30 dias B2C / < 90 dias B2B.
 
 **Retenção:**
+
 - Churn: < 5%/mês.
 - LTV: ticket × compras/ano × anos.
 - NPS: > 50.
 
 **Financeiro:**
+
 - CAC: investimento ÷ novos clientes.
 - LTV:CAC: > 3:1.
 - Margem bruta: > 60%.
@@ -1702,6 +1791,7 @@ Calcule em planilha/CRM/GA. Atualize semanalmente.
 **Ofertas:** preço, bônus, garantia, urgência.
 
 **Regras:**
+
 1. **Teste 1 elemento por vez** (senão não sabe o que causou diferença).
 2. **Significância estatística:** mínimo 100 conversões por variação. Use calculadora de significância.
 3. **Tempo suficiente:** mínimo 7-14 dias (pega diferentes dias da semana).
@@ -1722,6 +1812,7 @@ Ferramentas: Google Optimize (grátis), VWO, Optimizely (pagos), nativos do Meta
 **Ação:** Coorte = grupo de clientes que começaram no mesmo período. Acompanhe ao longo do tempo.
 
 **Exemplo:**
+
 ```
 Coorte Jan/25: 100 clientes
 - Mês 1: 100 ativos (100%)
@@ -1732,11 +1823,13 @@ LTV estimado: R$ 100/mês × 10 meses médio = R$ 1.000
 ```
 
 **Insights:**
+
 - Churn alto no mês 2? **Problema de onboarding.**
 - Churn alto no mês 6? **Problema de valor percebido.**
 - Coortes antigas retêm melhor? Produto melhorou.
 
 **Prevenção de churn:**
+
 - **Sinais de risco:** não usa há X dias, não abre e-mails, NPS baixo (< 7), ticket não resolvido, tentou cancelar.
 - **Ações:** check-in proativo, oferecer ajuda, desconto de retenção (último recurso), melhorar onboarding, adicionar features pedidas.
 
@@ -1756,18 +1849,21 @@ Calcular LTV com coorte: ticket × retenção média. Use pra calcular quanto po
 **Ação:** "Eu acho" → "Os dados mostram". Monte rituais:
 
 **Ritual semanal** (segunda 9h, 30 min):
+
 - Revisar dashboard.
 - Identificar o que está fora da meta.
 - Definir 1-3 ações pra semana.
 - Responsável por cada ação.
 
 **Ritual mensal** (primeira semana, 2h):
+
 - Revisar mês completo.
 - Identificar tendências.
 - Planejar testes do mês.
 - Comemorar vitórias.
 
 **Ritual trimestral:**
+
 - Revisar estratégia.
 - Ajustar metas.
 - Realocar recursos.
@@ -1801,11 +1897,13 @@ Big idea: **contratar errado custa 3x o salário. Contratar certo multiplica res
 **Estágio 1 — Solo (0-10 vendas/mês):** você faz tudo. Foco: validar sistema, documentar processos, preparar pra delegar.
 
 **Estágio 2 — Você + 1 (10-30 vendas/mês):** contrate **Assistente Virtual (VA)**.
+
 - VA: captura de leads, follow-up básico, agendamento.
 - Você: vendas, estratégia, fechamento.
 - Investimento: R$ 1.500-2.500/mês.
 
 **Estágio 3 — Mini-time (30-50 vendas/mês):** você + VA + **Closer**.
+
 - Closer: reuniões, vendas, fechamento.
 - VA: operacional, follow-up.
 - Você: estratégia, marketing, liderança.
@@ -1814,6 +1912,7 @@ Big idea: **contratar errado custa 3x o salário. Contratar certo multiplica res
 **Estágio 4 — Time estruturado (50+ vendas/mês):** gestor comercial + 2-3 closers/SDRs + gestor de tráfego + designer + CS. Você: CEO.
 
 **Como contratar certo:**
+
 1. Job description clara.
 2. Publicar vaga (Gupy, LinkedIn, comunidades).
 3. Triagem de currículos.
@@ -1838,6 +1937,7 @@ Big idea: **contratar errado custa 3x o salário. Contratar certo multiplica res
 **Ação:** Estruture onboarding:
 
 **Semana 1 — Imersão:**
+
 - Dia 1: boas-vindas, tour, acessos.
 - Dia 2-3: produto/serviço a fundo.
 - Dia 4-5: processos documentados + shadowing.
@@ -1849,11 +1949,13 @@ Big idea: **contratar errado custa 3x o salário. Contratar certo multiplica res
 **Semana 4 — Autonomia completa:** totalmente produtivo, 1:1 semanal, avaliação de 30 dias.
 
 **Treinamento contínuo:**
+
 - **Mensal:** 1 workshop de skill, compartilhamento de melhores práticas, análise de calls.
 - **Trimestral:** curso externo/certificação (R$ 500-1k/pessoa), atualização de processos.
 - **Anual:** evento presencial, planejamento conjunto, avaliação 360°.
 
 **Rituais de time:**
+
 - Daily standup: 15 min (o que fez/fará/obstáculos).
 - Weekly review: 1h (métricas + plano).
 - Monthly retro: 2h (o que funcionou, ajustes).
@@ -1872,11 +1974,13 @@ Big idea: **contratar errado custa 3x o salário. Contratar certo multiplica res
 **Ação:** Recapitule a jornada (fundação de 90 dias feita) e escreva os dois blocos:
 
 **Dias 91-180 (Meses 4-6) — Foco: ESCALA:**
+
 - Objetivos: 3-5x vendas dos primeiros 90, contratar primeira pessoa, múltiplos canais, automação avançada + IA, margem mantida.
 - Ações: aumentar tráfego 50-100%, testar 2 novos canais, implementar IA, contratar VA/closer, programa de indicações robusto, parceria estratégica, começar marca pessoal.
 - Métricas: 15-60 vendas, CPL mantido/reduzido, conversão > 3%, NPS > 50, 1 pessoa produtiva.
 
 **Dias 181-365 (Meses 7-12) — Foco: CONSOLIDAÇÃO E DOMÍNIO:**
+
 - Objetivos: operação lucrativa e previsível, time de 2-5 pessoas, marca estabelecida, múltiplas fontes de receita, sistema menos dependente de você.
 - Ações: estruturar time comercial (closer + SDR), lançar produto complementar, conteúdo de autoridade (podcast/YouTube), eventos do setor, comunidade de clientes, otimizar margem, preparar ano 2.
 - Métricas: 100-200 vendas no ano, faturamento R$ 200k-500k, lucro > 40%, NPS > 60, time 3-5 pessoas.
@@ -1895,6 +1999,7 @@ Big idea: **contratar errado custa 3x o salário. Contratar certo multiplica res
 **Tempo:** 15 min
 **Você precisa de:** **Guia Comunidade VSS** (entregável #33) — como participar, eventos, networking, suporte contínuo.
 **Ação:**
+
 1. Entre na comunidade (se ainda não entrou).
 2. Apresente-se formalmente com seu resultado dos 90 dias.
 3. Cadastre-se na próxima mentoria ao vivo (semanal com Joel).
@@ -1915,6 +2020,7 @@ A comunidade VSS + mentorias semanais é onde o playbook vira prática. O conte�
 Parabéns — você chegou ao fim dos 66 destravamentos. Na prática, a maioria dos alunos implementa as **Fases 1-5 em 90 dias** e usa as **Fases 6-7 como aprofundamento dos meses 4-12**.
 
 **Próximos passos recomendados:**
+
 1. Revise o seu **Canvas 6Ps** (04.M1.A4) a cada 90 dias.
 2. Atualize seu **Plano 90-180-365 dias** trimestralmente.
 3. Traga para as **mentorias ao vivo semanais** qualquer destravamento onde você travou.
@@ -1924,38 +2030,38 @@ Parabéns — você chegou ao fim dos 66 destravamentos. Na prática, a maioria 
 
 ## Índice rápido dos entregáveis MVP (ferramentas/templates do programa)
 
-| # | Entregável | Destravamento |
-|---|---|---|
-| 1 | Canvas 6Ps + Plano 90 Dias MVP | A4, A6 |
-| 2 | Canvas Posicionamento + PUV MVP | A7 |
-| 3 | Template de Persona VSS | A9 |
-| 4 | Canvas Oferta + Precificação MVP | A13 |
-| 5 | Checklist Setup CRM Completo | A17 |
-| 6 | Checklist GMB + SEO Local | A23 |
-| 7 | Kit Otimização Perfis | A24 |
-| 8 | Checklist "Pronto Para Tráfego Pago" | A29 |
-| 9 | Guia Meta Ads Completo | A30 |
-| 10 | 5 Scripts LinkedIn | A35 |
-| 11 | 6 Scripts WhatsApp | A36 |
-| 12 | 2 Cadências Multicanal | A37 |
-| 13 | Diagrama Funil Visual | A38 |
-| 14 | 3 Sequências Email | A40 |
-| 15 | Questionário BANT + Roteiro SPIN | A42 |
-| 16 | 3 Scripts Vendas Core | A43 |
-| 17 | Banco 25 Objeções + Respostas | A44 |
-| 18 | 5 Técnicas Fechamento | A45 |
-| 19 | Checklist Onboarding 30 Dias | A46 |
-| 20 | Sistema Indicações | A46 |
-| 21 | Checklist Integração Completa | A47 |
-| 22 | 3 SOPs Essenciais + Template SOP | A48 |
-| 23 | Checklist "Pronto Para Escalar" | A50 |
-| 24 | Plano 90-180 Dias | A50 |
-| 25 | Sequência Recuperação Carrinho | A53 |
-| 26 | Régua Relacionamento Base | A54 |
-| 27 | Guia Testes A/B | A60 |
-| 28 | Template Documentação Testes | A60 |
-| 29 | Checklist Decisões Data-Driven | A62 |
-| 30 | Organograma Atual + Futuro | A63 |
-| 31 | 3 Job Descriptions Core | A64 |
-| 32 | Checklist Onboarding Time | A64 |
-| 33 | Guia Comunidade VSS | A66 |
+| #   | Entregável                           | Destravamento |
+| --- | ------------------------------------ | ------------- |
+| 1   | Canvas 6Ps + Plano 90 Dias MVP       | A4, A6        |
+| 2   | Canvas Posicionamento + PUV MVP      | A7            |
+| 3   | Template de Persona VSS              | A9            |
+| 4   | Canvas Oferta + Precificação MVP     | A13           |
+| 5   | Checklist Setup CRM Completo         | A17           |
+| 6   | Checklist GMB + SEO Local            | A23           |
+| 7   | Kit Otimização Perfis                | A24           |
+| 8   | Checklist "Pronto Para Tráfego Pago" | A29           |
+| 9   | Guia Meta Ads Completo               | A30           |
+| 10  | 5 Scripts LinkedIn                   | A35           |
+| 11  | 6 Scripts WhatsApp                   | A36           |
+| 12  | 2 Cadências Multicanal               | A37           |
+| 13  | Diagrama Funil Visual                | A38           |
+| 14  | 3 Sequências Email                   | A40           |
+| 15  | Questionário BANT + Roteiro SPIN     | A42           |
+| 16  | 3 Scripts Vendas Core                | A43           |
+| 17  | Banco 25 Objeções + Respostas        | A44           |
+| 18  | 5 Técnicas Fechamento                | A45           |
+| 19  | Checklist Onboarding 30 Dias         | A46           |
+| 20  | Sistema Indicações                   | A46           |
+| 21  | Checklist Integração Completa        | A47           |
+| 22  | 3 SOPs Essenciais + Template SOP     | A48           |
+| 23  | Checklist "Pronto Para Escalar"      | A50           |
+| 24  | Plano 90-180 Dias                    | A50           |
+| 25  | Sequência Recuperação Carrinho       | A53           |
+| 26  | Régua Relacionamento Base            | A54           |
+| 27  | Guia Testes A/B                      | A60           |
+| 28  | Template Documentação Testes         | A60           |
+| 29  | Checklist Decisões Data-Driven       | A62           |
+| 30  | Organograma Atual + Futuro           | A63           |
+| 31  | 3 Job Descriptions Core              | A64           |
+| 32  | Checklist Onboarding Time            | A64           |
+| 33  | Guia Comunidade VSS                  | A66           |

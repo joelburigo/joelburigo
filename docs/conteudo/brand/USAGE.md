@@ -13,53 +13,53 @@
 
 ## Tabela de decisão
 
-| Pedido do usuário | Template/arquivo | Fonte de copy | Canvas |
-|---|---|---|---|
-| "post IG manifesto / tese" | `templates/ig-feed.html` variante 1 (manifesto) | `copy-bank.md §manifesto` + `partes/01-marca.md` | 1080×1080 |
-| "post IG com número / estatística / mega-stat" | `templates/ig-feed.html` variante 2 (mega-número) | `copy-bank.md §provas` + `ANTI_DRIFT.md §4` (provas exatas) | 1080×1080 |
-| "post IG antes/depois / transformação" | `templates/ig-feed.html` variante 3 (split) | `copy-bank.md §casos` + `ANTI_DRIFT.md §4` | 1080×1080 |
-| "post IG citação / frase de impacto" | `templates/ig-feed.html` variante 4 (quote) | `copy-bank.md §frases-canônicas` | 1080×1080 |
-| "post IG dos 6Ps / metodologia" | `preview/components-6ps.html` como base OU `templates/ig-feed.html` + bloco 6P | `partes/01-marca.md §6Ps` | 1080×1080 |
-| "post IG depoimento / social proof" | `templates/ig-feed.html` (layout depoimento do `ig_posts.html`) | `ANTI_DRIFT.md §4` — usar depoimentos nomeados; nunca inventar cliente | 1080×1080 |
-| "carrossel IG" (sem especificar slides) | `templates/ig-carrossel.html` — perguntar se 5, 7 ou 10 slides; default 7 (capa + 5 conteúdo + CTA) | `copy-bank.md` + `scripts-videos.md` (estruturas de hook) | 1080×1350 |
-| "carrossel completo sobre [tema]" | `templates/ig-carrossel.html` 7 slides: capa / dor / tese / 3 passos (3 slides) / CTA | `copy-bank.md` + `partes/01-marca.md` + `partes/02-oferta.md` | 1080×1350 |
-| "story IG teaser / pergunta" | `templates/ig-story.html` variante 1 (pergunta) | `copy-bank.md §hooks` | 1080×1920 |
-| "story IG com stat / dado" | `templates/ig-story.html` variante 2 (stat) | `copy-bank.md §provas` + `ANTI_DRIFT.md §4` | 1080×1920 |
-| "story IG bastidor / dia a dia" | `templates/ig-story.html` variante 3 (bastidor) | tom coloquial de `partes/01-marca.md §voz`; sem claim métrico | 1080×1920 |
-| "story com enquete / CTA swipe" | `templates/ig-story.html` variante 1 (adaptar CTA) | `copy-bank.md §CTAs` | 1080×1920 |
-| "post LinkedIn reflexão / ensaio curto" | `templates/linkedin.html` (layout reflexão) | `partes/01-marca.md` + `copy-bank.md §ensaios` | 1200×1200 |
-| "post LinkedIn case / resultado cliente" | `templates/linkedin.html` (layout case-slab — ver `preview/components-case-slab.html`) | `ANTI_DRIFT.md §4` provas — só cases nomeados/aprovados | 1200×1200 |
-| "post LinkedIn anúncio Advisory" | `templates/linkedin.html` (layout CTA) | `partes/02-oferta.md §advisory` + `copy-bank.md §CTAs` | 1200×1200 |
-| "email de nurture / lista fria" | `templates/email.html` (layout texto longo) | `copy-bank.md §nurture` + `scripts-videos.md` (adaptação texto) | 620px |
-| "email de pitch VSS / venda direta" | `templates/email.html` (layout CTA forte) | `partes/02-oferta.md §vss` + `copy-bank.md §objeções` + `§urgência` | 620px |
-| "email de reativação / winback" | `templates/email.html` (layout curto + CTA) | `copy-bank.md §reativação` | 620px |
-| "slide de apresentação" (sem especificar) | `templates/slide-apresentacao.html` — perguntar qual dos 5 layouts: capa / stat / 6P / case / CTA | dependendo do layout, ver linhas específicas desta tabela | 1920×1080 |
-| "slide capa de apresentação" | `templates/slide-apresentacao.html` layout 1 (capa) | `partes/01-marca.md` título + subtítulo | 1920×1080 |
-| "slide com mega número / KPI" | `templates/slide-apresentacao.html` layout 2 (stat) | `ANTI_DRIFT.md §4` | 1920×1080 |
-| "slide dos 6Ps" | `templates/slide-apresentacao.html` layout 3 (6P) | `partes/01-marca.md §6Ps` | 1920×1080 |
-| "slide de case / cliente X" | `templates/slide-apresentacao.html` layout 4 (case) | `ANTI_DRIFT.md §4` — só cases autorizados | 1920×1080 |
-| "slide CTA / próximo passo" | `templates/slide-apresentacao.html` layout 5 (CTA) | `partes/02-oferta.md` + `copy-bank.md §CTAs` | 1920×1080 |
-| "thumbnail YouTube" | `templates/yt-thumb.html` | `scripts-videos.md` (título do vídeo) + `copy-bank.md §hooks` | 1280×720 |
-| "anúncio Meta VSS (feed)" | `templates/ad-meta.html` formato 1080×1080 | `partes/02-oferta.md §vss` + `copy-bank.md §ads` | 1080×1080 |
-| "anúncio Meta VSS (story/reels)" | `templates/ad-meta.html` formato 1080×1920 | `partes/02-oferta.md §vss` + `copy-bank.md §ads` | 1080×1920 |
-| "anúncio Meta Advisory" | `templates/ad-meta.html` (qualquer formato, tom premium) | `partes/02-oferta.md §advisory` — sempre qualificar (não é pra todo mundo) | 1080×1080 ou 1080×1920 |
-| "editar landing / homepage / seção do site" | `src/pages/*.astro` + `src/components/*.astro` | **ver seção "Workflow pra editar landing" abaixo** | — |
-| "criar nova peça para calendário editorial" | consultar `../marketing/calendario.md` pra saber o slot/tema; depois escolher template acima | dependendo da peça | — |
-| "algo igual ao post X que já saiu" | `../marketing/posts/` — procurar referência e replicar estrutura, trocar copy | herdar fontes da peça original | idem original |
+| Pedido do usuário                              | Template/arquivo                                                                                    | Fonte de copy                                                              | Canvas                 |
+| ---------------------------------------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ---------------------- |
+| "post IG manifesto / tese"                     | `templates/ig-feed.html` variante 1 (manifesto)                                                     | `copy-bank.md §manifesto` + `partes/01-marca.md`                           | 1080×1080              |
+| "post IG com número / estatística / mega-stat" | `templates/ig-feed.html` variante 2 (mega-número)                                                   | `copy-bank.md §provas` + `ANTI_DRIFT.md §4` (provas exatas)                | 1080×1080              |
+| "post IG antes/depois / transformação"         | `templates/ig-feed.html` variante 3 (split)                                                         | `copy-bank.md §casos` + `ANTI_DRIFT.md §4`                                 | 1080×1080              |
+| "post IG citação / frase de impacto"           | `templates/ig-feed.html` variante 4 (quote)                                                         | `copy-bank.md §frases-canônicas`                                           | 1080×1080              |
+| "post IG dos 6Ps / metodologia"                | `preview/components-6ps.html` como base OU `templates/ig-feed.html` + bloco 6P                      | `partes/01-marca.md §6Ps`                                                  | 1080×1080              |
+| "post IG depoimento / social proof"            | `templates/ig-feed.html` (layout depoimento do `ig_posts.html`)                                     | `ANTI_DRIFT.md §4` — usar depoimentos nomeados; nunca inventar cliente     | 1080×1080              |
+| "carrossel IG" (sem especificar slides)        | `templates/ig-carrossel.html` — perguntar se 5, 7 ou 10 slides; default 7 (capa + 5 conteúdo + CTA) | `copy-bank.md` + `scripts-videos.md` (estruturas de hook)                  | 1080×1350              |
+| "carrossel completo sobre [tema]"              | `templates/ig-carrossel.html` 7 slides: capa / dor / tese / 3 passos (3 slides) / CTA               | `copy-bank.md` + `partes/01-marca.md` + `partes/02-oferta.md`              | 1080×1350              |
+| "story IG teaser / pergunta"                   | `templates/ig-story.html` variante 1 (pergunta)                                                     | `copy-bank.md §hooks`                                                      | 1080×1920              |
+| "story IG com stat / dado"                     | `templates/ig-story.html` variante 2 (stat)                                                         | `copy-bank.md §provas` + `ANTI_DRIFT.md §4`                                | 1080×1920              |
+| "story IG bastidor / dia a dia"                | `templates/ig-story.html` variante 3 (bastidor)                                                     | tom coloquial de `partes/01-marca.md §voz`; sem claim métrico              | 1080×1920              |
+| "story com enquete / CTA swipe"                | `templates/ig-story.html` variante 1 (adaptar CTA)                                                  | `copy-bank.md §CTAs`                                                       | 1080×1920              |
+| "post LinkedIn reflexão / ensaio curto"        | `templates/linkedin.html` (layout reflexão)                                                         | `partes/01-marca.md` + `copy-bank.md §ensaios`                             | 1200×1200              |
+| "post LinkedIn case / resultado cliente"       | `templates/linkedin.html` (layout case-slab — ver `preview/components-case-slab.html`)              | `ANTI_DRIFT.md §4` provas — só cases nomeados/aprovados                    | 1200×1200              |
+| "post LinkedIn anúncio Advisory"               | `templates/linkedin.html` (layout CTA)                                                              | `partes/02-oferta.md §advisory` + `copy-bank.md §CTAs`                     | 1200×1200              |
+| "email de nurture / lista fria"                | `templates/email.html` (layout texto longo)                                                         | `copy-bank.md §nurture` + `scripts-videos.md` (adaptação texto)            | 620px                  |
+| "email de pitch VSS / venda direta"            | `templates/email.html` (layout CTA forte)                                                           | `partes/02-oferta.md §vss` + `copy-bank.md §objeções` + `§urgência`        | 620px                  |
+| "email de reativação / winback"                | `templates/email.html` (layout curto + CTA)                                                         | `copy-bank.md §reativação`                                                 | 620px                  |
+| "slide de apresentação" (sem especificar)      | `templates/slide-apresentacao.html` — perguntar qual dos 5 layouts: capa / stat / 6P / case / CTA   | dependendo do layout, ver linhas específicas desta tabela                  | 1920×1080              |
+| "slide capa de apresentação"                   | `templates/slide-apresentacao.html` layout 1 (capa)                                                 | `partes/01-marca.md` título + subtítulo                                    | 1920×1080              |
+| "slide com mega número / KPI"                  | `templates/slide-apresentacao.html` layout 2 (stat)                                                 | `ANTI_DRIFT.md §4`                                                         | 1920×1080              |
+| "slide dos 6Ps"                                | `templates/slide-apresentacao.html` layout 3 (6P)                                                   | `partes/01-marca.md §6Ps`                                                  | 1920×1080              |
+| "slide de case / cliente X"                    | `templates/slide-apresentacao.html` layout 4 (case)                                                 | `ANTI_DRIFT.md §4` — só cases autorizados                                  | 1920×1080              |
+| "slide CTA / próximo passo"                    | `templates/slide-apresentacao.html` layout 5 (CTA)                                                  | `partes/02-oferta.md` + `copy-bank.md §CTAs`                               | 1920×1080              |
+| "thumbnail YouTube"                            | `templates/yt-thumb.html`                                                                           | `scripts-videos.md` (título do vídeo) + `copy-bank.md §hooks`              | 1280×720               |
+| "anúncio Meta VSS (feed)"                      | `templates/ad-meta.html` formato 1080×1080                                                          | `partes/02-oferta.md §vss` + `copy-bank.md §ads`                           | 1080×1080              |
+| "anúncio Meta VSS (story/reels)"               | `templates/ad-meta.html` formato 1080×1920                                                          | `partes/02-oferta.md §vss` + `copy-bank.md §ads`                           | 1080×1920              |
+| "anúncio Meta Advisory"                        | `templates/ad-meta.html` (qualquer formato, tom premium)                                            | `partes/02-oferta.md §advisory` — sempre qualificar (não é pra todo mundo) | 1080×1080 ou 1080×1920 |
+| "editar landing / homepage / seção do site"    | `src/pages/*.astro` + `src/components/*.astro`                                                      | **ver seção "Workflow pra editar landing" abaixo**                         | —                      |
+| "criar nova peça para calendário editorial"    | consultar `../marketing/calendario.md` pra saber o slot/tema; depois escolher template acima        | dependendo da peça                                                         | —                      |
+| "algo igual ao post X que já saiu"             | `../marketing/posts/` — procurar referência e replicar estrutura, trocar copy                       | herdar fontes da peça original                                             | idem original          |
 
 ## Cheatsheet de dimensões
 
-| Peça | Dimensão | Aspect |
-|---|---|---|
-| IG feed | 1080×1080 | 1:1 |
-| IG carrossel | 1080×1350 | 4:5 |
-| IG story / reels cover | 1080×1920 | 9:16 |
-| LinkedIn feed | 1200×1200 | 1:1 (1200×627 se link, mas preferir quadrado) |
-| Email (largura corpo) | 620px | responsivo até 100% mobile |
-| Slide apresentação | 1920×1080 | 16:9 |
-| YouTube thumb | 1280×720 | 16:9 |
-| Ad Meta feed | 1080×1080 | 1:1 |
-| Ad Meta story/reels | 1080×1920 | 9:16 |
+| Peça                   | Dimensão  | Aspect                                        |
+| ---------------------- | --------- | --------------------------------------------- |
+| IG feed                | 1080×1080 | 1:1                                           |
+| IG carrossel           | 1080×1350 | 4:5                                           |
+| IG story / reels cover | 1080×1920 | 9:16                                          |
+| LinkedIn feed          | 1200×1200 | 1:1 (1200×627 se link, mas preferir quadrado) |
+| Email (largura corpo)  | 620px     | responsivo até 100% mobile                    |
+| Slide apresentação     | 1920×1080 | 16:9                                          |
+| YouTube thumb          | 1280×720  | 16:9                                          |
+| Ad Meta feed           | 1080×1080 | 1:1                                           |
+| Ad Meta story/reels    | 1080×1920 | 9:16                                          |
 
 Referência canônica full-bleed: `master.html`. Landing institucional: `homepage.html`. Grid de 25 componentes: `preview/index.html`.
 

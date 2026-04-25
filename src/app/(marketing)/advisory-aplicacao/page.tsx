@@ -7,13 +7,7 @@ export const metadata: Metadata = {
   title: 'Aplicar pra Advisory — Sprint + Conselho | Joel Burigo',
   description:
     'Análise de fit pra Sprint Estratégico 30 Dias ou Conselho Executivo. Vagas limitadas.',
-  keywords: [
-    'advisory',
-    'sprint estratégico',
-    'conselho executivo',
-    'consultoria',
-    'Joel Burigo',
-  ],
+  keywords: ['advisory', 'sprint estratégico', 'conselho executivo', 'consultoria', 'Joel Burigo'],
   robots: { index: false, follow: false },
 };
 
@@ -37,7 +31,7 @@ const steps = [
 
 export default function AdvisoryAplicacaoPage() {
   return (
-    <main className="relative overflow-hidden bg-ink pt-20">
+    <main className="bg-ink relative overflow-hidden pt-20">
       <div className="grid-overlay" />
 
       <Container className="relative z-10">
@@ -58,7 +52,7 @@ export default function AdvisoryAplicacaoPage() {
               >
                 Aplicar pra <span className="text-acid">Advisory.</span>
               </h1>
-              <p className="mt-6 max-w-2xl font-sans text-lg text-cream">
+              <p className="text-cream mt-6 max-w-2xl font-sans text-lg">
                 Preenche o formulário detalhando teu momento. Analiso pessoalmente ·{' '}
                 <strong className="text-acid">resposta direta do Joel</strong>, sem fila.
               </p>
@@ -69,8 +63,8 @@ export default function AdvisoryAplicacaoPage() {
                 <div className="kicker mb-3" style={{ color: 'var(--jb-acid)' }}>
                   // SPRINT · 30_DIAS
                 </div>
-                <h3 className="heading-3 mb-4 text-cream">Sprint Estratégico 30 Dias</h3>
-                <ul className="space-y-2 font-mono text-[13px] text-fg-2">
+                <h3 className="heading-3 text-cream mb-4">Sprint Estratégico 30 Dias</h3>
+                <ul className="text-fg-2 space-y-2 font-mono text-[13px]">
                   <li>
                     <span className="text-acid">▶</span> 30 dias intensivos
                   </li>
@@ -84,7 +78,7 @@ export default function AdvisoryAplicacaoPage() {
                     <span className="text-acid">▶</span> R$ 7.500
                   </li>
                 </ul>
-                <p className="mt-4 font-sans text-fg-2">
+                <p className="text-fg-2 mt-4 font-sans">
                   Pra momentos de virada que exigem plano estruturado em 30 dias.
                 </p>
               </div>
@@ -93,8 +87,8 @@ export default function AdvisoryAplicacaoPage() {
                 <div className="kicker mb-3" style={{ color: 'var(--jb-fire)' }}>
                   // CONSELHO · EXECUTIVO
                 </div>
-                <h3 className="heading-3 mb-4 text-cream">Conselho Executivo</h3>
-                <ul className="space-y-2 font-mono text-[13px] text-fg-2">
+                <h3 className="heading-3 text-cream mb-4">Conselho Executivo</h3>
+                <ul className="text-fg-2 space-y-2 font-mono text-[13px]">
                   <li>
                     <span className="text-fire">●</span> 3-6 meses
                   </li>
@@ -108,42 +102,42 @@ export default function AdvisoryAplicacaoPage() {
                     <span className="text-fire">●</span> R$ 15.000/mês
                   </li>
                 </ul>
-                <p className="mt-4 font-sans text-fg-2">
+                <p className="text-fg-2 mt-4 font-sans">
                   Pra empresas que precisam de conselheiro presente e acompanhamento contínuo.
                 </p>
               </div>
             </div>
 
-            <div className="mb-10 border border-[var(--jb-hair)] bg-ink-2 p-8">
+            <div className="bg-ink-2 mb-10 border border-[var(--jb-hair)] p-8">
               <div className="kicker mb-6">// COMO_FUNCIONA</div>
               <div className="grid gap-6 md:grid-cols-3">
                 {steps.map((step) => (
                   <div key={step.n}>
                     <div
-                      className="mb-3 font-mono text-sm font-bold text-acid"
+                      className="text-acid mb-3 font-mono text-sm font-bold"
                       style={{ letterSpacing: '0.1em' }}
                     >
                       {step.n}
                     </div>
-                    <h3 className="heading-4 mb-2 text-cream">{step.title}</h3>
-                    <p className="font-sans text-sm text-fg-2">{step.body}</p>
+                    <h3 className="heading-4 text-cream mb-2">{step.title}</h3>
+                    <p className="text-fg-2 font-sans text-sm">{step.body}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="mb-10 border border-[var(--jb-acid-border)] bg-ink-2 p-4 sm:p-6">
+            <div className="bg-ink-2 mb-10 border border-[var(--jb-acid-border)] p-4 sm:p-6">
               <div className="kicker mb-4" style={{ color: 'var(--jb-acid)' }}>
                 // FORMULÁRIO · APLICAÇÃO
               </div>
               <HighLevelForm formId="GwMlk5A2LFPxqbNJC1j2" height="2042px" />
             </div>
 
-            <div className="border-l-2 border-fire bg-ink-2 p-6">
+            <div className="border-fire bg-ink-2 border-l-2 p-6">
               <div className="kicker mb-2" style={{ color: 'var(--jb-fire)' }}>
                 // VAGAS · EXTREMAMENTE_LIMITADAS
               </div>
-              <p className="font-sans text-cream">
+              <p className="text-cream font-sans">
                 Vagas limitadas conforme capacidade do momento — tanto no Sprint quanto no Conselho
                 Executivo. Só aceito quem tá em momento crítico real e vai executar.
               </p>
@@ -152,7 +146,7 @@ export default function AdvisoryAplicacaoPage() {
             <div className="mt-10">
               <Link
                 href="/advisory"
-                className="font-mono text-[12px] uppercase tracking-[0.22em] text-fg-3 hover:text-acid"
+                className="text-fg-3 hover:text-acid font-mono text-[12px] tracking-[0.22em] uppercase"
               >
                 ← Voltar pra Advisory
               </Link>

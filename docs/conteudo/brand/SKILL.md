@@ -32,21 +32,22 @@ If the user invokes this skill without any other guidance, ask them what they wa
 
 ## Produtos (arquitetura 2 caminhos)
 
-| Nome | Tipo | Público (fat/mês) | Investimento |
-|---|---|---|---|
-| **VSS — Vendas Sem Segredos** ★ principal | DIY · programa 6Ps em 90 dias · perpétuo | R$ 10–100k | R$ 1.997 à vista ou 12× R$ 166,42 |
-| **Advisory** · exclusivo | Premium 1:1 com Joel (Sessão · Sprint 30d · Conselho) · convite | R$ 200k+ | R$ 997–15.000/mês |
+| Nome                                      | Tipo                                                            | Público (fat/mês) | Investimento                      |
+| ----------------------------------------- | --------------------------------------------------------------- | ----------------- | --------------------------------- |
+| **VSS — Vendas Sem Segredos** ★ principal | DIY · programa 6Ps em 90 dias · perpétuo                        | R$ 10–100k        | R$ 1.997 à vista ou 12× R$ 166,42 |
+| **Advisory** · exclusivo                  | Premium 1:1 com Joel (Sessão · Sprint 30d · Conselho) · convite | R$ 200k+          | R$ 997–15.000/mês                 |
 
 Services (DWY) foi descontinuado.
 
 ## Iconography & tech overlays
 
 - Unicode `★` `→` `▶` `●` `▲ ▼` `//`. Lucide via CDN pra conjunto amplo. Proibido emoji facial.
-- Tech overlays: "@joelburigo", "EXP. 2004" (experiência pessoal), "GROWTH EST. 2008" (CNPJ/empresa), "SYS ONLINE", coordenadas Floripa, clock ao vivo. Dá densidade e autoridade técnica.
+- Tech overlays: "EST. 2008", "SYS ONLINE", coordenadas Floripa, clock ao vivo. Dá densidade e autoridade técnica.
 
 ## File map
 
 **Guias operacionais (ler nesta ordem antes de produzir peça):**
+
 - `ANTI_DRIFT.md` — regras duras: palavras proibidas, provas de autoridade exatas, assinaturas canônicas, vocabulário
 - `USAGE.md` — decision tree "pediu X → usa Y + copy fonte Z"
 - `EXAMPLES.md` — 8 pares BAD vs GOOD comentados
@@ -55,6 +56,7 @@ Services (DWY) foi descontinuado.
 - `README.md` — guia completo de conteúdo + visual + iconografia + escalas (cores, type, spacing, contraste)
 
 **Templates copiáveis (`templates/`):**
+
 - `templates/ig-feed.html` — IG feed 1080×1080 (4 variantes)
 - `templates/ig-story.html` — IG story 1080×1920 (4 variantes)
 - `templates/ig-carrossel.html` — IG carrossel 1080×1350 (8 slides com P1–P6)
@@ -65,13 +67,14 @@ Services (DWY) foi descontinuado.
 - `templates/ad-meta.html` — Meta Ads (2 VSS + 2 Advisory, feed + story)
 
 **Referências visuais e tokens:**
+
 - `colors_and_type.css` — todas as CSS vars (`--jb-*`) + elementos semânticos
 - `master.html` — referência canônica (composição full-page)
 - `homepage.html` — landing institucional
 - `ig_posts.html` — galeria de 8 posts Instagram 540×540 (referência histórica)
 - `assets/logo.svg` · `assets/logo-mark.svg` · `assets/logo-mark-acid.svg` — brand marks
 - `preview/index.html` — galeria navegável dos 25 cards do DS
-- `preview/*.html` — cards individuais (colors, type, spacing, components-*)
+- `preview/*.html` — cards individuais (colors, type, spacing, components-\*)
 
 Quando produzir novos artefatos, sempre `<link rel="stylesheet" href="colors_and_type.css">` (ou copia inline) pra herdar o sistema de tokens `--jb-*`.
 

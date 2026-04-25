@@ -1,10 +1,10 @@
 ---
 name: Marca Joel Burigo — História, Manifesto e Identidade
 description: Branding Joel Burigo — história (1987–2026), propósito, posicionamento de autoridade, manifesto, tom de voz, vocabulário proprietário, os 7 inimigos que Joel combate e o movimento Máquina de Crescimento.
-id: "01"
-versao: "2.1"
+id: '01'
+versao: '2.1'
 autor: Joel Burigo
-atualizado: "2026-04-22"
+atualizado: '2026-04-22'
 tags: [marca, branding, história, autoridade, identidade, manifesto, tom-voz, vocabulario]
 ---
 
@@ -33,30 +33,30 @@ Joel Burigo é o especialista brasileiro em vendas escaláveis para micro e pequ
 
 **Credenciais:**
 
-* 17+ anos de experiência em marketing e vendas
-* 140+ clientes atendidos diretamente
-* ~R$ 1 bilhão em vendas estruturadas ao longo de 17+ anos
-* Especialista reconhecido em transformar vendas aleatórias em vendas previsíveis
+- 17+ anos de experiência em marketing e vendas
+- 140+ clientes atendidos diretamente
+- ~R$ 1 bilhão em vendas estruturadas ao longo de 17+ anos
+- Especialista reconhecido em transformar vendas aleatórias em vendas previsíveis
 
 **Origem:**
 
-* Nascido em 1987 em Palhoça/SC, bairro Jardim Eldorado (quebrada)
-* Filho de marceneiro e vendedora de loja
-* Aprendeu desde cedo: trabalho > sorte
+- Nascido em 1987 em Palhoça/SC, bairro Jardim Eldorado (quebrada)
+- Filho de marceneiro e vendedora de loja
+- Aprendeu desde cedo: trabalho > sorte
 
 **Virada:**
 
-* Quebrou primeira empresa aos 25 anos (2012)
-* Recomeçou do zero morando em barraco em MG (sem geladeira)
-* Reconstruiu carreira batendo porta a porta
-* Transformou fracasso em metodologia de sucesso
+- Quebrou primeira empresa aos 25 anos (2012)
+- Recomeçou do zero morando em barraco em MG (sem geladeira)
+- Reconstruiu carreira batendo porta a porta
+- Transformou fracasso em metodologia de sucesso
 
 **Hoje:**
 
-* Autoridade em estruturação de vendas para MPEs
-* Fundador do VSS (Vendas Sem Segredos)
-* Defensor do sistema vs. improviso
-* Mentor executor (não só ensina, implementa junto)
+- Autoridade em estruturação de vendas para MPEs
+- Fundador do VSS (Vendas Sem Segredos)
+- Defensor do sistema vs. improviso
+- Mentor executor (não só ensina, implementa junto)
 
 ---
 
@@ -68,10 +68,10 @@ Transformar vidas através do empreendedorismo estruturado.
 
 Não o empreendedorismo de discurso motivacional vazio, mas aquele que:
 
-* Gera empregos reais
-* Sustenta famílias
-* Movimenta economia local
-* Prova que sistema supera talento improvisado
+- Gera empregos reais
+- Sustenta famílias
+- Movimenta economia local
+- Prova que sistema supera talento improvisado
 
 Joel existe para que empreendedores brasileiros - especialmente os que vêm de baixo - tenham acesso às mesmas ferramentas e metodologias que empresas consolidadas têm, sem precisar pagar R$ 50-100k em consultoria.
 
@@ -81,24 +81,24 @@ Democratizar vendas escaláveis para milhares de micro e pequenas empresas brasi
 
 **Impacto multiplicador:** Cada empresa que Joel estrutura:
 
-* Contrata mais pessoas (empregos diretos)
-* Compra de fornecedores (empregos indiretos)
-* Fortalece economia local
-* Prova que vencer vindo da quebrada é possível
+- Contrata mais pessoas (empregos diretos)
+- Compra de fornecedores (empregos indiretos)
+- Fortalece economia local
+- Prova que vencer vindo da quebrada é possível
 
 **Meta de Impacto (2026-2028):**
 
-* Ano 1: 150-250 empresas estruturadas
-* Ano 3: 1.500-2.000 empresas estruturadas
-* Milhares de empregos gerados indiretamente
+- Ano 1: 150-250 empresas estruturadas
+- Ano 3: 1.500-2.000 empresas estruturadas
+- Milhares de empregos gerados indiretamente
 
 **Valores Inegociáveis:**
 
-* **Sistema > Improviso** - Empreendedorismo sério precisa de método replicável, não sorte.
-* **Transparência Brutal** - Falar a verdade mesmo quando dói. Sem promessas vazias.
-* **Execução > Teoria** - Implementar junto, não só diagnosticar e sumir.
-* **Acessibilidade** - Ferramentas e métodos profissionais devem estar ao alcance de MPEs.
-* **Dignidade do Trabalho** - Resultado vem de esforço + método, não atalho mágico.
+- **Sistema > Improviso** - Empreendedorismo sério precisa de método replicável, não sorte.
+- **Transparência Brutal** - Falar a verdade mesmo quando dói. Sem promessas vazias.
+- **Execução > Teoria** - Implementar junto, não só diagnosticar e sumir.
+- **Acessibilidade** - Ferramentas e métodos profissionais devem estar ao alcance de MPEs.
+- **Dignidade do Trabalho** - Resultado vem de esforço + método, não atalho mágico.
 
 ---
 
@@ -118,31 +118,31 @@ Micro e pequenas empresas que faturam R$ 10k-300k/mês e querem transformar vend
 
 **O que Joel NÃO é:**
 
-* ❌ Guru motivacional de promessa vazia
-* ❌ Consultor corporativo distante
-* ❌ Agência que só entrega posts bonitos
-* ❌ Vendedor de curso que abandona aluno
+- ❌ Guru motivacional de promessa vazia
+- ❌ Consultor corporativo distante
+- ❌ Agência que só entrega posts bonitos
+- ❌ Vendedor de curso que abandona aluno
 
 **O que Joel É:**
 
-* ✅ Mentor executor (ensina + implementa junto)
-* ✅ Criador de metodologia proprietária (6Ps formalizados em 2025)
-* ✅ Parceiro de transformação (fica até dar certo)
-* ✅ Autoridade prática (fala do que viveu)
+- ✅ Mentor executor (ensina + implementa junto)
+- ✅ Criador de metodologia proprietária (6Ps formalizados em 2025)
+- ✅ Parceiro de transformação (fica até dar certo)
+- ✅ Autoridade prática (fala do que viveu)
 
 **Prova de Autoridade:**
 
-* 17+ anos de experiência
-* 140+ clientes atendidos pessoalmente
-* ~R$ 1 bilhão em vendas estruturadas ao longo de 17+ anos
-* Case emblemático: holding de franquias que com participação de Joel cresceu de R$ 160 mil para R$ 1 MILHÃO de faturamento mensal em 2 anos (2018-2020)
+- 17+ anos de experiência
+- 140+ clientes atendidos pessoalmente
+- ~R$ 1 bilhão em vendas estruturadas ao longo de 17+ anos
+- Case emblemático: holding de franquias que com participação de Joel cresceu de R$ 160 mil para R$ 1 MILHÃO de faturamento mensal em 2 anos (2018-2020)
 
 **Cicatrizes que viraram sabedoria:**
 
-* Quebrou empresa aos 25 anos em 2012 (sabe como é perder tudo)
-* Morou em barraco 6 meses (sabe o que é recomeçar do zero)
-* Bateu porta a porta em 100+ empresas (sabe o que é trabalho duro)
-* Atendeu 140+ clientes (sabe o que funciona e o que não funciona)
+- Quebrou empresa aos 25 anos em 2012 (sabe como é perder tudo)
+- Morou em barraco 6 meses (sabe o que é recomeçar do zero)
+- Bateu porta a porta em 100+ empresas (sabe o que é trabalho duro)
+- Atendeu 140+ clientes (sabe o que funciona e o que não funciona)
 
 ---
 
@@ -152,7 +152,7 @@ Micro e pequenas empresas que faturam R$ 10k-300k/mês e querem transformar vend
 
 ### **DA QUEBRADA AO BILHÃO: A HISTÓRIA QUE NINGUÉM ME PEDIU PRA CONTAR (MAS QUE PRECISA SER CONTADA)**
 
-Maio de 2012. 
+Maio de 2012.
 
 Acordo num barraco em Ribeirão das Neves, Minas Gerais. O colchão está em cima de tijolos porque não tenho cama. A parede tem um buraco coberto com papelão. Não tenho geladeira.
 
@@ -224,7 +224,7 @@ Mas comia. Porque era o que tinha.
 
 E olha, eu não conto isso pra gerar pena. Eu conto porque **essa foi minha universidade**. Foi ali que aprendi que dignidade não vem de quanto você tem na conta. Vem de quanto você luta mesmo quando ninguém tá vendo. Vem de uma mãe que transforma soja em "carne" pra que os filhos comam. Vem de um pai que sua serragem o dia inteiro pra botar comida na mesa.
 
-Apesar de tudo? Éramos felizes. 
+Apesar de tudo? Éramos felizes.
 
 Família unida. Base forte. Amor de verdade.
 
@@ -926,8 +926,8 @@ Bora pra cima.
 Let's grow, CARALHO!
 
 **— Joel Burigo**  
-*Ribeirão da Ilha, Florianópolis*  
-*Janeiro de 2026*
+_Ribeirão da Ilha, Florianópolis_  
+_Janeiro de 2026_
 
 ---
 
@@ -935,92 +935,92 @@ Let's grow, CARALHO!
 
 #### **Fase 1: Raízes (1987-2004)**
 
-| **Ano** | **Evento** |
-|---------|-----------|
-| **1987** | Nascimento em Palhoça/SC, bairro Jardim Eldorado (quebrada) |
-| **1987-1994** | Primeiros 7 anos morando com pais na casa da avó (Ponte do Imaruim) |
-| **1994-2004** | Mudança para casa própria (madeira) no Jardim Eldorado |
-| **2004** | Início como freelancer/experiência profissional: sites, anúncios, e-mail marketing |
+| **Ano**       | **Evento**                                                                         |
+| ------------- | ---------------------------------------------------------------------------------- |
+| **1987**      | Nascimento em Palhoça/SC, bairro Jardim Eldorado (quebrada)                        |
+| **1987-1994** | Primeiros 7 anos morando com pais na casa da avó (Ponte do Imaruim)                |
+| **1994-2004** | Mudança para casa própria (madeira) no Jardim Eldorado                             |
+| **2004**      | Início como freelancer/experiência profissional: sites, anúncios, e-mail marketing |
 
 #### **Fase 2: Aprendizado (2004-2012)**
 
-| **Ano/Data** | **Evento** |
-|--------------|-----------|
-| **2004-2010** | 6 anos como freelancer: aprendeu fazendo, errou fazendo, cresceu fazendo |
-| **Meados 2010** | Abertura de empresa em Itajaí com sócio (gráfica) |
-| **2010-Mar/2012** | Sociedade problemática: sócio ficava com clientes, Joel com prejuízo |
-| **Início 2012** | **QUEBRA:** Calote do sócio, empresa fechada, prejuízo total |
-| **Fev 2012** | Aceita proposta do ex-sogro para recomeçar em Minas (promessa de emprego que não existia) |
-| **13 Mar 2012** | Aniversário de 25 anos |
-| **14 Mar 2012** | Saída de SC e mudança para Belo Horizonte/MG (desespero/vergonha) |
+| **Ano/Data**      | **Evento**                                                                                |
+| ----------------- | ----------------------------------------------------------------------------------------- |
+| **2004-2010**     | 6 anos como freelancer: aprendeu fazendo, errou fazendo, cresceu fazendo                  |
+| **Meados 2010**   | Abertura de empresa em Itajaí com sócio (gráfica)                                         |
+| **2010-Mar/2012** | Sociedade problemática: sócio ficava com clientes, Joel com prejuízo                      |
+| **Início 2012**   | **QUEBRA:** Calote do sócio, empresa fechada, prejuízo total                              |
+| **Fev 2012**      | Aceita proposta do ex-sogro para recomeçar em Minas (promessa de emprego que não existia) |
+| **13 Mar 2012**   | Aniversário de 25 anos                                                                    |
+| **14 Mar 2012**   | Saída de SC e mudança para Belo Horizonte/MG (desespero/vergonha)                         |
 
 #### **Fase 3: Fundo do Poço (Março-Novembro 2012)**
 
-| **Data** | **Evento** |
-|----------|-----------|
-| **Mar-Mai 2012** | Casa da família da ex-namorada (conflitos, não deu certo) |
-| **Mai 2012** | Mudança para barraco no bairro Paraíso das Piabas, cidade de Ribeirão das Neves/MG (R$ 300/mês, sem geladeira) |
-| **29 Mai 2012** | Início no CTE dos Correios (terceirizado, R$ 1.400/mês, 6 meses + 3 possíveis) |
-| **Mai-Nov 2012** | 6 meses no barraco: juntou dinheiro, comprou mil cartões "Joel Martins" |
-| **Nov 2012** | Mudança para Belo Horizonte (capital), bater 100+ portas Avenida Afonso Pena |
+| **Data**         | **Evento**                                                                                                     |
+| ---------------- | -------------------------------------------------------------------------------------------------------------- |
+| **Mar-Mai 2012** | Casa da família da ex-namorada (conflitos, não deu certo)                                                      |
+| **Mai 2012**     | Mudança para barraco no bairro Paraíso das Piabas, cidade de Ribeirão das Neves/MG (R$ 300/mês, sem geladeira) |
+| **29 Mai 2012**  | Início no CTE dos Correios (terceirizado, R$ 1.400/mês, 6 meses + 3 possíveis)                                 |
+| **Mai-Nov 2012** | 6 meses no barraco: juntou dinheiro, comprou mil cartões "Joel Martins"                                        |
+| **Nov 2012**     | Mudança para Belo Horizonte (capital), bater 100+ portas Avenida Afonso Pena                                   |
 
 #### **Fase 4: Reconstrução (2012-2016)**
 
-| **Ano/Data** | **Evento** |
-|--------------|-----------|
-| **Dez 2012** | Primeiro cliente: R$ 500, proposta "se não gostar, de graça" |
-| **2013** | Evolução: primeiro apartamento em Cachoeirinha (BH), sofá, geladeira |
-| **2013** | Saída dos Correios → SOS Educação Profissional (melhor salário) |
-| **2014** | **VIROU O JOGO:** clientes maiores, mais estrutura, mais poder de compra |
-| **2015-2016** | Consultorias para pequenas e médias empresas |
-| **2016** | Trabalhando para agência (quase sócio) + consultorias paralelas |
-| **2016** | Morava no bairro Prado (BH), período de consultoria em e-commerce B2B (cliente R$ 22mi/mês) |
-| **14 Dez 2016** | **Conheceu Natalia** no Tinder (mineira de BH) |
-| **22 Dez 2016** | **Primeira volta a Florianópolis** após quase 5 anos (reformulado) |
-| **22 Jan 2017** | **Início do namoro oficial com Natalia** |
+| **Ano/Data**    | **Evento**                                                                                  |
+| --------------- | ------------------------------------------------------------------------------------------- |
+| **Dez 2012**    | Primeiro cliente: R$ 500, proposta "se não gostar, de graça"                                |
+| **2013**        | Evolução: primeiro apartamento em Cachoeirinha (BH), sofá, geladeira                        |
+| **2013**        | Saída dos Correios → SOS Educação Profissional (melhor salário)                             |
+| **2014**        | **VIROU O JOGO:** clientes maiores, mais estrutura, mais poder de compra                    |
+| **2015-2016**   | Consultorias para pequenas e médias empresas                                                |
+| **2016**        | Trabalhando para agência (quase sócio) + consultorias paralelas                             |
+| **2016**        | Morava no bairro Prado (BH), período de consultoria em e-commerce B2B (cliente R$ 22mi/mês) |
+| **14 Dez 2016** | **Conheceu Natalia** no Tinder (mineira de BH)                                              |
+| **22 Dez 2016** | **Primeira volta a Florianópolis** após quase 5 anos (reformulado)                          |
+| **22 Jan 2017** | **Início do namoro oficial com Natalia**                                                    |
 
 #### **Fase 5: Consolidação (2017-2020)**
 
-| **Data** | **Evento** |
-|----------|-----------|
-| **7 Jul 2017** | Consultoria para empresa de R$ 22 milhões/mês |
-| **27 Jul 2017** | Leu livros que integraram marketing + vendas + neuromarketing (virada intelectual) |
-| **Mai 2018** | Início trabalho com holding de franquias |
-| **2018** | Mudança para cobertura duplex no Castelo (BH) com Natalia |
-| **11 Set 2018** | Chegada de **Thor** (primeiro cachorro) |
-| **31 Dez 2018** | **Noivado** na Praia do Sonho (SC) |
+| **Data**            | **Evento**                                                                                          |
+| ------------------- | --------------------------------------------------------------------------------------------------- |
+| **7 Jul 2017**      | Consultoria para empresa de R$ 22 milhões/mês                                                       |
+| **27 Jul 2017**     | Leu livros que integraram marketing + vendas + neuromarketing (virada intelectual)                  |
+| **Mai 2018**        | Início trabalho com holding de franquias                                                            |
+| **2018**            | Mudança para cobertura duplex no Castelo (BH) com Natalia                                           |
+| **11 Set 2018**     | Chegada de **Thor** (primeiro cachorro)                                                             |
+| **31 Dez 2018**     | **Noivado** na Praia do Sonho (SC)                                                                  |
 | **Mai 2018 - 2020** | **Case holding de franquias:** R$ 160k/mês → R$ 1mi/mês (+433% faturamento, +833% leads, -428% CPL) |
-| **Abr 2019** | Ideia da **Growth Master** (agência → aceleradora) |
-| **Out 2019** | Início **OnSell** (dropshipping, tímido e paralelo) |
-| **2019-2020** | OnSell: teve usuários, perdeu ~R$ 250 mil, entrou em standby |
+| **Abr 2019**        | Ideia da **Growth Master** (agência → aceleradora)                                                  |
+| **Out 2019**        | Início **OnSell** (dropshipping, tímido e paralelo)                                                 |
+| **2019-2020**       | OnSell: teve usuários, perdeu ~R$ 250 mil, entrou em standby                                        |
 
 #### **Fase 6: Pandemia e Recomeço (2020-2021)**
 
-| **Data** | **Evento** |
-|----------|-----------|
-| **2020** | Pandemia bateu forte em clientes Growth Master |
-| **2020** | Descapitalização tentando segurar OnSell |
-| **Ago 2020** | Downgrade: apartamento menor, bairro mais barato |
-| **21 Nov 2020** | Casamento planejado (adiado por pandemia) |
-| **Nov 2020** | Viagem pequena a Floripa no lugar do casamento |
-| **Jan 2021** | Sociedade **Netlinks** (foco SEO) |
+| **Data**        | **Evento**                                                    |
+| --------------- | ------------------------------------------------------------- |
+| **2020**        | Pandemia bateu forte em clientes Growth Master                |
+| **2020**        | Descapitalização tentando segurar OnSell                      |
+| **Ago 2020**    | Downgrade: apartamento menor, bairro mais barato              |
+| **21 Nov 2020** | Casamento planejado (adiado por pandemia)                     |
+| **Nov 2020**    | Viagem pequena a Floripa no lugar do casamento                |
+| **Jan 2021**    | Sociedade **Netlinks** (foco SEO)                             |
 | **15 Set 2021** | **Mudança para Florianópolis** (Jardim Atlântico) com Natalia |
-| **20 Nov 2021** | **Casamento oficial** |
+| **20 Nov 2021** | **Casamento oficial**                                         |
 
 #### **Fase 7: Foco, 6Ps e Nascimento do VSS (2023-2026)**
 
-| **Data** | **Evento** |
-|----------|-----------|
-| **Jan 2023** | Saída da Netlinks (divergências) |
-| **2023** | Foco 100% Growth Master como aceleradora (com equipe) |
-| **Dez 2023** | Natalia teve uma perda |
-| **Mar 2024** | Descoberta da gravidez |
-| **Out 10, 2024** | **Nasceu Davi** (filho) |
-| **2025** | Nome e estrutura formal dos **6Ps das Vendas Escaláveis** (condensação do que Joel já aplicava na prática) |
-| **Jan 2026** | **VSS (Vendas Sem Segredos)** entra em fase de lançamento/estruturação pública |
-| **2026** | Reestruturação oficial para **Joel Burigo** (nova identidade comercial/branding pessoal; "Joel Martins" fica como registro histórico do recomeço) |
-| **2026** | Mudança para sul da ilha (Ribeirão da Ilha), perto da praia |
-| **2026** | Lançamento do **VSS** (programa que implementa os 6Ps em 90 dias) |
+| **Data**         | **Evento**                                                                                                                                        |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Jan 2023**     | Saída da Netlinks (divergências)                                                                                                                  |
+| **2023**         | Foco 100% Growth Master como aceleradora (com equipe)                                                                                             |
+| **Dez 2023**     | Natalia teve uma perda                                                                                                                            |
+| **Mar 2024**     | Descoberta da gravidez                                                                                                                            |
+| **Out 10, 2024** | **Nasceu Davi** (filho)                                                                                                                           |
+| **2025**         | Nome e estrutura formal dos **6Ps das Vendas Escaláveis** (condensação do que Joel já aplicava na prática)                                        |
+| **Jan 2026**     | **VSS (Vendas Sem Segredos)** entra em fase de lançamento/estruturação pública                                                                    |
+| **2026**         | Reestruturação oficial para **Joel Burigo** (nova identidade comercial/branding pessoal; "Joel Martins" fica como registro histórico do recomeço) |
+| **2026**         | Mudança para sul da ilha (Ribeirão da Ilha), perto da praia                                                                                       |
+| **2026**         | Lançamento do **VSS** (programa que implementa os 6Ps em 90 dias)                                                                                 |
 
 ---
 
@@ -1233,8 +1233,8 @@ Bora pra cima. Let's grow.
 
 **Arquétipos de Marca:**
 
-* **Arquétipo Primário:** O MENTOR (Sábio experiente que guia)
-* **Arquétipo Secundário:** O CONSTRUTOR (Executor prático que faz junto)
+- **Arquétipo Primário:** O MENTOR (Sábio experiente que guia)
+- **Arquétipo Secundário:** O CONSTRUTOR (Executor prático que faz junto)
 
 Síntese: Joel é o mentor que não só ensina o caminho, mas pega na mão e constrói junto.
 
@@ -1242,56 +1242,56 @@ Síntese: Joel é o mentor que não só ensina o caminho, mas pega na mão e con
 
 ### **1. DIRETO**
 
-* Vai ao ponto sem enrolação
-* Não tem medo de falar verdades inconvenientes
-* Transparência brutal mas construtiva
-* Zero papo furado
+- Vai ao ponto sem enrolação
+- Não tem medo de falar verdades inconvenientes
+- Transparência brutal mas construtiva
+- Zero papo furado
 
-*Exemplo:*
+_Exemplo:_
 ❌ "Gostaria de compartilhar algumas reflexões sobre..."
 ✅ "Marketing sem vendas é hobby caro. Ponto."
 
 ### **2. PARCEIRO**
 
-* Trata como igual, não superior/inferior
-* Linguagem de "nós", não "eu vs vocês"
-* Implementa JUNTO, não dá lição de casa e some
-* Sucesso compartilhado, fracasso também
+- Trata como igual, não superior/inferior
+- Linguagem de "nós", não "eu vs vocês"
+- Implementa JUNTO, não dá lição de casa e some
+- Sucesso compartilhado, fracasso também
 
-*Exemplo:*
+_Exemplo:_
 ❌ "Você deve fazer isso sozinho."
 ✅ "Vamos fazer isso juntos. Eu te ajudo."
 
 ### **3. INTENSO**
 
-* Energia alta, urgência real
-* Comprometimento total com resultado
-* Não aceita mediocridade (própria ou do cliente)
-* Quer ver transformação, não likes
+- Energia alta, urgência real
+- Comprometimento total com resultado
+- Não aceita mediocridade (própria ou do cliente)
+- Quer ver transformação, não likes
 
-*Exemplo:*
+_Exemplo:_
 ❌ "Quando tiver um tempinho, dá uma olhada."
 ✅ "Bora fazer isso HOJE. Seu concorrente já está estruturando."
 
 ### **4. TRANSPARENTE**
 
-* Conta os fracassos, não esconde
-* Mostra os bastidores, não só highlights
-* Admite quando não sabe ou errou
-* Números reais, não inflados
+- Conta os fracassos, não esconde
+- Mostra os bastidores, não só highlights
+- Admite quando não sabe ou errou
+- Números reais, não inflados
 
-*Exemplo:*
+_Exemplo:_
 ❌ "Sempre fui bem-sucedido."
 ✅ "Quebrei aos 25, morei em barraco. Sei como é perder tudo."
 
 ### **5. RAIZ**
 
-* Não perdeu essência da quebrada
-* Pés no chão, sem ostentação
-* Valoriza esforço e resultado real
-* Autêntico, não personagem
+- Não perdeu essência da quebrada
+- Pés no chão, sem ostentação
+- Valoriza esforço e resultado real
+- Autêntico, não personagem
 
-*Exemplo:*
+_Exemplo:_
 ❌ Postar carro de luxo: "É possível!"
 ✅ Postar rotina de trabalho: "3 implementações hoje. Bora estruturar mais empresas."
 
@@ -1299,10 +1299,10 @@ Síntese: Joel é o mentor que não só ensina o caminho, mas pega na mão e con
 
 **Matriz de Tom:**
 
-* 70% Irreverente (vs. formal corporativo)
-* 75% Acessível (vs. técnico/jargão)
-* 85% Pragmático (vs. motivacional)
-* 90% Próximo (vs. distante)
+- 70% Irreverente (vs. formal corporativo)
+- 75% Acessível (vs. técnico/jargão)
+- 85% Pragmático (vs. motivacional)
+- 90% Próximo (vs. distante)
 
 **Características:**
 
@@ -1326,41 +1326,41 @@ Síntese: Joel é o mentor que não só ensina o caminho, mas pega na mão e con
 
 **Termos Core da Marca Joel Burigo:**
 
-* **6Ps das Vendas Escaláveis** - A metodologia proprietária. Nome completo oficial; **6Ps** pode ser usado como abreviação quando o contexto estiver claro. Formalizada em 2025 a partir da prática acumulada.
-* **Vendas Escaláveis** - Não é só "vendas". É vendas que crescem sem você precisar trabalhar 3x mais.
-* **Máquina de Crescimento** - O conceito/movimento. Sistema integrado onde marketing alimenta vendas.
-* **Sistema vs. Improviso** - A dicotomia central. Mantra que Joel repete sempre.
-* **Marketing + Vendas + Growth** - A tríade sagrada. Nunca separa. Sempre integrados.
+- **6Ps das Vendas Escaláveis** - A metodologia proprietária. Nome completo oficial; **6Ps** pode ser usado como abreviação quando o contexto estiver claro. Formalizada em 2025 a partir da prática acumulada.
+- **Vendas Escaláveis** - Não é só "vendas". É vendas que crescem sem você precisar trabalhar 3x mais.
+- **Máquina de Crescimento** - O conceito/movimento. Sistema integrado onde marketing alimenta vendas.
+- **Sistema vs. Improviso** - A dicotomia central. Mantra que Joel repete sempre.
+- **Marketing + Vendas + Growth** - A tríade sagrada. Nunca separa. Sempre integrados.
 
 **Diagnósticos (Dores que Joel Fala):**
 
-* "Não sabe quanto vai faturar no próximo mês"
-* "Vendas aleatórias"
-* "Marketing sozinho enche linguiça"
-* "Improviso mata mais que crise"
-* "Acordar sem saber de onde vem a próxima venda"
-* "Cliente anota lead no papel"
+- "Não sabe quanto vai faturar no próximo mês"
+- "Vendas aleatórias"
+- "Marketing sozinho enche linguiça"
+- "Improviso mata mais que crise"
+- "Acordar sem saber de onde vem a próxima venda"
+- "Cliente anota lead no papel"
 
 **Transformações (Resultados que Joel Entrega):**
 
-* "De vendas aleatórias para vendas previsíveis"
-* "Previsibilidade de faturamento"
-* "Ligar a Máquina"
-* "Sistema rodando"
-* "Da quebrada ao bilhão"
+- "De vendas aleatórias para vendas previsíveis"
+- "Previsibilidade de faturamento"
+- "Ligar a Máquina"
+- "Sistema rodando"
+- "Da quebrada ao bilhão"
 
 **Expressões Únicas Joel:**
 
-* "Fala galera"
-* "E aí, jovem"
-* "Opa"
-* "Bora pra cima"
-* "Let's grow"
-* "Let's grow, CARALHO!" (versão informal/autêntica)
-* "Sem enrolação"
-* "Na moral"
-* "Vamos direto ao ponto"
-* "Sistema > Improviso"
+- "Fala galera"
+- "E aí, jovem"
+- "Opa"
+- "Bora pra cima"
+- "Let's grow"
+- "Let's grow, CARALHO!" (versão informal/autêntica)
+- "Sem enrolação"
+- "Na moral"
+- "Vamos direto ao ponto"
+- "Sistema > Improviso"
 
 ---
 
@@ -1392,19 +1392,19 @@ Não é só um slogan. É uma filosofia de como fazer negócios.
 
 **Filosofia:**
 
-* Máquina = Sistema estruturado
-* Máquina precisa de combustível (marketing) E motor (vendas)
-* Máquina bem construída não para
-* Máquina bem calibrada escala
-* Máquina pode usar diferentes combustíveis (tráfego pago OU prospecção gratuita)
+- Máquina = Sistema estruturado
+- Máquina precisa de combustível (marketing) E motor (vendas)
+- Máquina bem construída não para
+- Máquina bem calibrada escala
+- Máquina pode usar diferentes combustíveis (tráfego pago OU prospecção gratuita)
 
 **Vocabulário do Movimento:**
 
-* "Ligar a Máquina" = implementar os 6Ps completos
-* "Máquina rodando" = sistema funcionando
-* "Calibrar" = otimizar processos
-* "Operadores de Máquina" = quem domina os 6Ps
-* "Engrenagens" = os 6Ps (cada P é engrenagem essencial)
+- "Ligar a Máquina" = implementar os 6Ps completos
+- "Máquina rodando" = sistema funcionando
+- "Calibrar" = otimizar processos
+- "Operadores de Máquina" = quem domina os 6Ps
+- "Engrenagens" = os 6Ps (cada P é engrenagem essencial)
 
 ---
 
@@ -1412,10 +1412,10 @@ Não é só um slogan. É uma filosofia de como fazer negócios.
 
 A identidade de Joel Burigo não é construída apenas em palavras, mas em ações consistentes. Cada decisão, cada conteúdo, cada interação deve refletir:
 
-* **Sistema > Improviso**
-* **Execução > Teoria**
-* **Parceria > Transação**
-* **Transparência > Marketing de fachada**
+- **Sistema > Improviso**
+- **Execução > Teoria**
+- **Parceria > Transação**
+- **Transparência > Marketing de fachada**
 
 Este é o alicerce do branding Joel Burigo. Autêntico, direto, raiz.
 

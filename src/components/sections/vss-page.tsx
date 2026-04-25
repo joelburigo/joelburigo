@@ -18,22 +18,65 @@ const stack = [
 ];
 
 const pPilares = [
-  { p: 'P1', nome: 'Posicionamento', resumo: 'Diferenciação + PUV + Big Idea. Cliente entende em 10s.' },
+  {
+    p: 'P1',
+    nome: 'Posicionamento',
+    resumo: 'Diferenciação + PUV + Big Idea. Cliente entende em 10s.',
+  },
   { p: 'P2', nome: 'Público', resumo: 'ICP cirúrgico + persona + mapa de dores. Conversão sobe.' },
-  { p: 'P3', nome: 'Produto', resumo: 'Oferta irresistível + precificação por valor + prova social.' },
+  {
+    p: 'P3',
+    nome: 'Produto',
+    resumo: 'Oferta irresistível + precificação por valor + prova social.',
+  },
   { p: 'P4', nome: 'Programas', resumo: 'Growth CRM + funis + automação + tráfego ou prospecção.' },
   { p: 'P5', nome: 'Processos', resumo: '5 playbooks essenciais + SOPs + dashboard unificado.' },
   { p: 'P6', nome: 'Pessoas', resumo: 'Estrutura de time por estágio + onboarding 30d + rituais.' },
 ];
 
 const fases = [
-  { n: '01', nome: 'Fundamentos', janela: '0–30D', desc: 'Canvas 6Ps + P1 + P2 + P3 · 15 destravamentos' },
-  { n: '02', nome: 'Infraestrutura', janela: '30–45D', desc: 'Growth CRM + landing page · 9 destravamentos' },
-  { n: '03', nome: 'Atração', janela: '45–75D', desc: 'Orgânico + pago + prospecção · 13 destravamentos' },
-  { n: '04', nome: 'Conversão', janela: '75–90D', desc: 'Funis + scripts + objeções · 9 destravamentos' },
-  { n: '05', nome: 'Sistema', janela: '90D · MARCO', desc: 'Integração + processos · 4 destravamentos' },
-  { n: '06', nome: 'Automação', janela: 'PÓS-90D', desc: 'Workflows + IA conversacional · 8 destravamentos' },
-  { n: '07', nome: 'Crescimento', janela: 'PÓS-90D', desc: 'Analytics + P6 + Plano 180–365d · 8 destravamentos' },
+  {
+    n: '01',
+    nome: 'Fundamentos',
+    janela: '0–30D',
+    desc: 'Canvas 6Ps + P1 + P2 + P3 · 15 destravamentos',
+  },
+  {
+    n: '02',
+    nome: 'Infraestrutura',
+    janela: '30–45D',
+    desc: 'Growth CRM + landing page · 9 destravamentos',
+  },
+  {
+    n: '03',
+    nome: 'Atração',
+    janela: '45–75D',
+    desc: 'Orgânico + pago + prospecção · 13 destravamentos',
+  },
+  {
+    n: '04',
+    nome: 'Conversão',
+    janela: '75–90D',
+    desc: 'Funis + scripts + objeções · 9 destravamentos',
+  },
+  {
+    n: '05',
+    nome: 'Sistema',
+    janela: '90D · MARCO',
+    desc: 'Integração + processos · 4 destravamentos',
+  },
+  {
+    n: '06',
+    nome: 'Automação',
+    janela: 'PÓS-90D',
+    desc: 'Workflows + IA conversacional · 8 destravamentos',
+  },
+  {
+    n: '07',
+    nome: 'Crescimento',
+    janela: 'PÓS-90D',
+    desc: 'Analytics + P6 + Plano 180–365d · 8 destravamentos',
+  },
 ];
 
 const paraQuem = [
@@ -81,7 +124,7 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
   return (
     <>
       {/* HERO TERMINAL */}
-      <section className="relative overflow-hidden bg-ink pb-24 pt-12 md:pt-16">
+      <section className="bg-ink relative overflow-hidden pt-12 pb-24 md:pt-16">
         <div className="grid-overlay" />
 
         <Container>
@@ -127,15 +170,14 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
 
               {/* Bloco preço + checkout */}
               <div
-                className="border-2 border-acid p-6 md:p-8"
+                className="border-acid border-2 p-6 md:p-8"
                 style={{
-                  background:
-                    'linear-gradient(180deg, rgba(198,255,0,0.1), rgba(198,255,0,0.02))',
+                  background: 'linear-gradient(180deg, rgba(198,255,0,0.1), rgba(198,255,0,0.02))',
                 }}
               >
                 <div className="grid gap-5 md:grid-cols-[1fr_auto] md:items-center">
                   <div>
-                    <div className="mono mb-2 text-acid">
+                    <div className="mono text-acid mb-2">
                       // INVESTIMENTO ÚNICO · ACESSO VITALÍCIO
                     </div>
                     <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
@@ -165,8 +207,7 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                       style={{ fontSize: '1rem', color: 'rgba(245, 241, 232, 0.85)' }}
                     >
                       ou <strong className="text-cream">12× de R$ 166,42</strong> no cartão · stack
-                      empilhada{' '}
-                      <span className="text-fg-muted line-through">R$ 17.287</span>
+                      empilhada <span className="text-fg-muted line-through">R$ 17.287</span>
                     </div>
                   </div>
                   <Link
@@ -179,7 +220,7 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                 </div>
               </div>
 
-              <div className="mono flex flex-wrap items-center gap-x-6 gap-y-2 text-fg-muted">
+              <div className="mono text-fg-muted flex flex-wrap items-center gap-x-6 gap-y-2">
                 <span className="flex items-center gap-2">
                   <span className="text-acid">★</span> GARANTIA 15 DIAS
                 </span>
@@ -202,7 +243,7 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
 
             {/* Terminal window */}
             <div
-              className="border border-white/10 bg-ink-2"
+              className="bg-ink-2 border border-white/10"
               style={{ boxShadow: 'var(--shadow-terminal)' }}
             >
               <div
@@ -210,7 +251,7 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                 style={{ padding: '10px 14px' }}
               >
                 <span
-                  className="inline-block rounded-full bg-fire"
+                  className="bg-fire inline-block rounded-full"
                   style={{ width: '11px', height: '11px' }}
                 />
                 <span
@@ -218,11 +259,11 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                   style={{ width: '11px', height: '11px', background: '#FFB020' }}
                 />
                 <span
-                  className="inline-block rounded-full bg-acid"
+                  className="bg-acid inline-block rounded-full"
                   style={{ width: '11px', height: '11px' }}
                 />
                 <span
-                  className="mono ml-auto text-fg-muted"
+                  className="mono text-fg-muted ml-auto"
                   style={{
                     fontSize: '11px',
                     letterSpacing: '0.12em',
@@ -244,25 +285,31 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                 <div className="text-fire">▼ P4 programas ............... 00/05 caótico</div>
                 <div className="text-fire">▼ P5 processos ............... 00/05 caótico</div>
                 <div className="text-fire">▼ P6 pessoas ................. 01/05 fraco</div>
-                <div className="mt-2 text-cream">
+                <div className="text-cream mt-2">
                   &gt; score total: <span className="text-fire">06/30</span> · status:{' '}
                   <span className="text-fire">caótico</span>
                 </div>
-                <div className="mt-2 text-fg-muted">[00:04]</div>
+                <div className="text-fg-muted mt-2">[00:04]</div>
                 <div className="text-cream">&gt; aplicando método VSS (90d)…</div>
-                <div className="mt-2 text-acid">▲ P1 ............. 04/05 forte</div>
+                <div className="text-acid mt-2">▲ P1 ............. 04/05 forte</div>
                 <div className="text-acid">▲ P2 ............. 04/05 forte</div>
                 <div className="text-acid">▲ P3 ............. 04/05 forte</div>
                 <div className="text-acid">▲ P4 ............. 04/05 forte</div>
                 <div className="text-acid">▲ P5 ............. 03/05 estruturado</div>
                 <div className="text-acid">▲ P6 ............. 03/05 estruturado</div>
-                <div className="mt-2 text-cream">
+                <div className="text-cream mt-2">
                   &gt; score total: <span className="text-acid">22/30</span> · status:{' '}
                   <span className="text-acid">estruturado</span>
                 </div>
-                <div className="mt-3 text-acid">
+                <div className="text-acid mt-3">
                   ★ máquina de crescimento:{' '}
-                  <span style={{ background: 'var(--jb-acid)', color: 'var(--jb-ink)', padding: '0 6px' }}>
+                  <span
+                    style={{
+                      background: 'var(--jb-acid)',
+                      color: 'var(--jb-ink)',
+                      padding: '0 6px',
+                    }}
+                  >
                     ONLINE
                   </span>
                 </div>
@@ -276,12 +323,12 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
       </section>
 
       {/* 6PS PILARES */}
-      <section className="relative bg-ink-2 py-24">
+      <section className="bg-ink-2 relative py-24">
         <Container>
           <div className="mx-auto mb-14 max-w-3xl">
             <div className="kicker mb-4">// 01_FRAMEWORK</div>
             <h2
-              className="mb-6 font-display text-cream"
+              className="font-display text-cream mb-6"
               style={{
                 fontSize: 'clamp(2rem, 5vw, 3.5rem)',
                 lineHeight: '0.92',
@@ -293,7 +340,11 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
             </h2>
             <p
               className="font-sans"
-              style={{ fontSize: '1.125rem', lineHeight: '1.55', color: 'rgba(245, 241, 232, 0.7)' }}
+              style={{
+                fontSize: '1.125rem',
+                lineHeight: '1.55',
+                color: 'rgba(245, 241, 232, 0.7)',
+              }}
             >
               Posicionamento → Público → Produto → Programas → Processos → Pessoas. Sequência
               importa — fraqueza em um compromete todos os seguintes. Não é teoria de MBA. É método
@@ -318,14 +369,22 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                   {p.p}
                 </div>
                 <h3
-                  className="mb-3 mt-2 font-display text-cream"
-                  style={{ fontSize: '1.1rem', letterSpacing: '-0.02em', textTransform: 'uppercase' }}
+                  className="font-display text-cream mt-2 mb-3"
+                  style={{
+                    fontSize: '1.1rem',
+                    letterSpacing: '-0.02em',
+                    textTransform: 'uppercase',
+                  }}
                 >
                   {p.nome}
                 </h3>
                 <p
                   className="font-sans"
-                  style={{ fontSize: '0.9rem', lineHeight: '1.5', color: 'rgba(245, 241, 232, 0.75)' }}
+                  style={{
+                    fontSize: '0.9rem',
+                    lineHeight: '1.5',
+                    color: 'rgba(245, 241, 232, 0.75)',
+                  }}
                 >
                   {p.resumo}
                 </p>
@@ -336,13 +395,13 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
       </section>
 
       {/* 7 FASES */}
-      <section className="relative overflow-hidden bg-ink py-24">
+      <section className="bg-ink relative overflow-hidden py-24">
         <div className="grid-overlay" />
         <Container>
           <div className="mx-auto mb-14 max-w-3xl">
             <div className="kicker mb-4">// 02_JORNADA</div>
             <h2
-              className="mb-6 font-display text-cream"
+              className="font-display text-cream mb-6"
               style={{
                 fontSize: 'clamp(2rem, 5vw, 3.5rem)',
                 lineHeight: '0.92',
@@ -355,7 +414,11 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
             </h2>
             <p
               className="font-sans"
-              style={{ fontSize: '1.125rem', lineHeight: '1.55', color: 'rgba(245, 241, 232, 0.7)' }}
+              style={{
+                fontSize: '1.125rem',
+                lineHeight: '1.55',
+                color: 'rgba(245, 241, 232, 0.7)',
+              }}
             >
               Cada destravamento é ação de 15–20 min com entregável tangível. Fases 1–5 em 90 dias.
               Fases 6–7 avançadas pós-fundação. Vitalício: entra qualquer dia, começa essa semana.
@@ -392,7 +455,7 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                     >
                       {f.nome}
                     </div>
-                    <div className="mono mt-1 text-fg-muted">{f.janela}</div>
+                    <div className="mono text-fg-muted mt-1">{f.janela}</div>
                   </div>
                 </div>
                 <div className="flex items-center p-5">
@@ -414,7 +477,7 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
       </section>
 
       {/* STACK / VALOR */}
-      <section className="relative bg-ink-2 py-24">
+      <section className="bg-ink-2 relative py-24">
         <Container>
           <div className="mx-auto max-w-4xl">
             <div className="mb-12">
@@ -441,10 +504,10 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                   style={{ borderTop: i === 0 ? '0' : '1px solid var(--jb-hair)' }}
                 >
                   <div
-                    className="font-sans text-cream"
+                    className="text-cream font-sans"
                     style={{ fontSize: '0.95rem', lineHeight: '1.4' }}
                   >
-                    <span className="mono mr-2 text-acid">▶</span>
+                    <span className="mono text-acid mr-2">▶</span>
                     {s.item}
                   </div>
                   <div
@@ -516,7 +579,7 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                     </span>
                   </div>
                   <div
-                    className="mt-1 mono"
+                    className="mono mt-1"
                     style={{ fontSize: '0.8rem', color: 'rgba(245, 241, 232, 0.6)' }}
                   >
                     ou R$ 1.997 à vista
@@ -535,7 +598,7 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
       </section>
 
       {/* É × NÃO É */}
-      <section className="relative overflow-hidden bg-ink py-24">
+      <section className="bg-ink relative overflow-hidden py-24">
         <div className="grid-overlay" />
         <Container>
           <div className="mx-auto max-w-5xl">
@@ -557,15 +620,15 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
 
             <div className="grid gap-0 border border-white/10 md:grid-cols-2">
               <div
-                className="border-b border-white/10 p-8 md:border-b-0 md:border-r"
+                className="border-b border-white/10 p-8 md:border-r md:border-b-0"
                 style={{ background: 'linear-gradient(180deg, rgba(198,255,0,0.04), transparent)' }}
               >
-                <div className="mono mb-5 text-acid">▲ é pra você se</div>
+                <div className="mono text-acid mb-5">▲ é pra você se</div>
                 <ul className="space-y-4">
                   {paraQuem.map((item) => (
                     <li
                       key={item}
-                      className="flex items-start gap-3 font-sans text-cream"
+                      className="text-cream flex items-start gap-3 font-sans"
                       style={{ fontSize: '1rem', lineHeight: '1.45' }}
                     >
                       <span className="text-acid">✓</span>
@@ -578,13 +641,17 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                 className="p-8"
                 style={{ background: 'linear-gradient(180deg, rgba(255,59,15,0.04), transparent)' }}
               >
-                <div className="mono mb-5 text-fire">▼ NÃO é pra você se</div>
+                <div className="mono text-fire mb-5">▼ NÃO é pra você se</div>
                 <ul className="space-y-4">
                   {naoEPara.map((item) => (
                     <li
                       key={item}
                       className="flex items-start gap-3 font-sans"
-                      style={{ fontSize: '1rem', lineHeight: '1.45', color: 'rgba(245, 241, 232, 0.8)' }}
+                      style={{
+                        fontSize: '1rem',
+                        lineHeight: '1.45',
+                        color: 'rgba(245, 241, 232, 0.8)',
+                      }}
                     >
                       <span className="text-fire">✗</span>
                       <span>{item}</span>
@@ -598,13 +665,13 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
       </section>
 
       {/* OBJEÇÕES */}
-      <section className="relative overflow-hidden bg-ink py-24">
+      <section className="bg-ink relative overflow-hidden py-24">
         <div className="grid-overlay" />
         <Container>
           <div className="mx-auto mb-14 max-w-3xl">
             <div className="kicker mb-4">// OBJEÇÕES</div>
             <h2
-              className="mb-6 font-display text-cream"
+              className="font-display text-cream mb-6"
               style={{
                 fontSize: 'clamp(1.75rem, 4.5vw, 3rem)',
                 lineHeight: '0.95',
@@ -624,7 +691,7 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                 style={{ borderTop: i === 0 ? '0' : '1px solid var(--jb-hair)' }}
               >
                 <summary
-                  className="flex cursor-pointer items-center justify-between gap-4 p-6 font-display text-cream md:p-8"
+                  className="font-display text-cream flex cursor-pointer items-center justify-between gap-4 p-6 md:p-8"
                   style={{
                     fontSize: 'clamp(1rem, 2vw, 1.15rem)',
                     letterSpacing: '-0.02em',
@@ -659,13 +726,13 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
       </section>
 
       {/* GARANTIA + PROVAS */}
-      <section className="relative bg-ink-2 py-20">
+      <section className="bg-ink-2 relative py-20">
         <Container>
           <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-2">
-            <div className="border-l-4 border-acid bg-ink p-8 md:p-10">
+            <div className="border-acid bg-ink border-l-4 p-8 md:p-10">
               <div className="kicker mb-4">// GARANTIA 15 DIAS</div>
               <p
-                className="mb-4 font-display text-cream"
+                className="font-display text-cream mb-4"
                 style={{
                   fontSize: 'clamp(1.35rem, 3vw, 1.75rem)',
                   lineHeight: '1.05',
@@ -677,38 +744,51 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
               </p>
               <p
                 className="font-sans"
-                style={{ fontSize: '0.95rem', lineHeight: '1.55', color: 'rgba(245, 241, 232, 0.8)' }}
+                style={{
+                  fontSize: '0.95rem',
+                  lineHeight: '1.55',
+                  color: 'rgba(245, 241, 232, 0.8)',
+                }}
               >
                 Testou, não se adaptou — devolvemos tudo. Sem perguntas, sem fricção. Confiança
                 total porque a base do método já foi aplicada em 140+ empresas.
               </p>
             </div>
-            <div className="border-l-4 border-fire bg-ink p-8 md:p-10">
+            <div className="border-fire bg-ink border-l-4 p-8 md:p-10">
               <div className="kicker mb-4" style={{ color: 'var(--jb-fire)' }}>
                 // PROVAS
               </div>
               <div className="grid grid-cols-3 gap-3 border-b border-white/10 pb-4">
                 <div>
-                  <div className="font-display text-acid" style={{ fontSize: '1.75rem', lineHeight: '1' }}>
+                  <div
+                    className="font-display text-acid"
+                    style={{ fontSize: '1.75rem', lineHeight: '1' }}
+                  >
                     17+
                   </div>
-                  <div className="mono mt-1 text-fg-muted" style={{ fontSize: '0.6rem' }}>
+                  <div className="mono text-fg-muted mt-1" style={{ fontSize: '0.6rem' }}>
                     anos
                   </div>
                 </div>
                 <div>
-                  <div className="font-display text-acid" style={{ fontSize: '1.75rem', lineHeight: '1' }}>
+                  <div
+                    className="font-display text-acid"
+                    style={{ fontSize: '1.75rem', lineHeight: '1' }}
+                  >
                     140+
                   </div>
-                  <div className="mono mt-1 text-fg-muted" style={{ fontSize: '0.6rem' }}>
+                  <div className="mono text-fg-muted mt-1" style={{ fontSize: '0.6rem' }}>
                     clientes
                   </div>
                 </div>
                 <div>
-                  <div className="font-display text-acid" style={{ fontSize: '1.25rem', lineHeight: '1' }}>
+                  <div
+                    className="font-display text-acid"
+                    style={{ fontSize: '1.25rem', lineHeight: '1' }}
+                  >
                     ~R$ 1BI
                   </div>
-                  <div className="mono mt-1 text-fg-muted" style={{ fontSize: '0.6rem' }}>
+                  <div className="mono text-fg-muted mt-1" style={{ fontSize: '0.6rem' }}>
                     estruturado
                   </div>
                 </div>
@@ -726,16 +806,16 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
       </section>
 
       {/* CTA FINAL */}
-      <section className="relative overflow-hidden bg-ink py-24">
+      <section className="bg-ink relative overflow-hidden py-24">
         <div className="grid-overlay" />
         <Container>
           <div
-            className="mx-auto max-w-4xl border-2 border-acid p-10 md:p-16"
+            className="border-acid mx-auto max-w-4xl border-2 p-10 md:p-16"
             style={{ background: 'linear-gradient(180deg, rgba(198,255,0,0.08), #050505)' }}
           >
             <div className="kicker mb-5">// DECISÃO</div>
             <h2
-              className="mb-6 font-display text-cream"
+              className="font-display text-cream mb-6"
               style={{
                 fontSize: 'clamp(1.75rem, 4.5vw, 3rem)',
                 lineHeight: '0.95',
@@ -750,7 +830,11 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
             </h2>
             <p
               className="mb-8 font-sans"
-              style={{ fontSize: '1.125rem', lineHeight: '1.55', color: 'rgba(245, 241, 232, 0.85)' }}
+              style={{
+                fontSize: '1.125rem',
+                lineHeight: '1.55',
+                color: 'rgba(245, 241, 232, 0.85)',
+              }}
             >
               R$ 1.997 à vista ou 12× R$ 166,42. Perpétuo — entra hoje, primeira mentoria na próxima
               data do calendário. Bora pra cima.
@@ -763,8 +847,8 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                 Diagnóstico 6Ps grátis
               </Link>
             </div>
-            <p className="mt-8 mono text-fg-muted">
-              ★ SISTEMA &gt; IMPROVISO · SEMPRE ABERTO · @joelburigo
+            <p className="mono text-fg-muted mt-8">
+              ★ SISTEMA &gt; IMPROVISO · SEMPRE ABERTO · EST. 2008
             </p>
           </div>
         </Container>

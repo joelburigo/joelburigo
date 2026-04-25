@@ -1,191 +1,603 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<title>Template · Slide Apresentação 1920×1080 · Joel Burigo</title>
-<!-- Template de deck/apresentação (1920×1080, 16:9).
+  <head>
+    <meta charset="utf-8" />
+    <title>Template · Slide Apresentação 1920×1080 · Joel Burigo</title>
+    <!-- Template de deck/apresentação (1920×1080, 16:9).
      5 layouts: capa · stat · 6P card · case · CTA final.
      Cada slide é self-contained. Copie uma section, edite copy. -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../colors_and_type.css">
-<style>
-  body{margin:0;background:#1a1a1a;padding:40px;font-family:'Archivo',sans-serif;display:flex;flex-direction:column;gap:48px;align-items:center}
-  .wrap{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
-  .lbl{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.28em;color:#C6FF00;text-transform:uppercase}
-  .box{width:960px;height:540px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.6)}
-  .slide{width:1920px;height:1080px;transform:scale(0.5);transform-origin:top left;position:relative;overflow:hidden;background:#050505;color:#F5F1E8;font-family:'Archivo',sans-serif}
-  .grid-bg{position:absolute;inset:0;pointer-events:none;opacity:0.35;background-image:linear-gradient(to right,rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:80px 80px}
-  .sb{position:absolute;top:0;left:0;right:0;padding:22px 60px;display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.24em;color:#6B7280;text-transform:uppercase;z-index:3}
-  .sb .dot{width:10px;height:10px;background:#C6FF00;border-radius:50%;box-shadow:0 0 14px #C6FF00;display:inline-block;margin-right:12px;vertical-align:middle;animation:pulse 1.6s infinite}
-  .sb b{color:#F5F1E8}
-  @keyframes pulse{50%{opacity:0.3}}
-  .nav{position:absolute;bottom:0;left:0;right:0;padding:22px 60px;display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.22em;color:#6B7280;text-transform:uppercase;z-index:3;border-top:1px solid rgba(255,255,255,0.08)}
-  .nav .acid{color:#C6FF00}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../colors_and_type.css" />
+    <style>
+      body {
+        margin: 0;
+        background: #1a1a1a;
+        padding: 40px;
+        font-family: 'Archivo', sans-serif;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        align-items: center;
+      }
+      .wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .lbl {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        letter-spacing: 0.28em;
+        color: #c6ff00;
+        text-transform: uppercase;
+      }
+      .box {
+        width: 960px;
+        height: 540px;
+        overflow: hidden;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+      }
+      .slide {
+        width: 1920px;
+        height: 1080px;
+        transform: scale(0.5);
+        transform-origin: top left;
+        position: relative;
+        overflow: hidden;
+        background: #050505;
+        color: #f5f1e8;
+        font-family: 'Archivo', sans-serif;
+      }
+      .grid-bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.35;
+        background-image:
+          linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+        background-size: 80px 80px;
+      }
+      .sb {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 22px 60px;
+        display: flex;
+        justify-content: space-between;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 15px;
+        letter-spacing: 0.24em;
+        color: #6b7280;
+        text-transform: uppercase;
+        z-index: 3;
+      }
+      .sb .dot {
+        width: 10px;
+        height: 10px;
+        background: #c6ff00;
+        border-radius: 50%;
+        box-shadow: 0 0 14px #c6ff00;
+        display: inline-block;
+        margin-right: 12px;
+        vertical-align: middle;
+        animation: pulse 1.6s infinite;
+      }
+      .sb b {
+        color: #f5f1e8;
+      }
+      @keyframes pulse {
+        50% {
+          opacity: 0.3;
+        }
+      }
+      .nav {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 22px 60px;
+        display: flex;
+        justify-content: space-between;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 14px;
+        letter-spacing: 0.22em;
+        color: #6b7280;
+        text-transform: uppercase;
+        z-index: 3;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .nav .acid {
+        color: #c6ff00;
+      }
 
-  /* ============ SLIDE 1 — CAPA ============ */
-  .s1 .body{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 120px;text-align:center}
-  .s1 .eyebrow{font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:0.32em;color:#C6FF00;text-transform:uppercase;margin-bottom:44px}
-  .s1 h1{margin:0;font-family:'Archivo Black',sans-serif;font-size:220px;line-height:0.88;letter-spacing:-0.055em;text-transform:uppercase;color:#F5F1E8}
-  .s1 h1 .stroke{-webkit-text-stroke:4px #F5F1E8;color:transparent}
-  .s1 h1 .fire{color:#FF3B0F}
-  .s1 h1 .acid{color:#C6FF00}
-  .s1 .sub{margin-top:48px;font-family:'Archivo',sans-serif;font-size:26px;line-height:1.5;color:#A3A3A3;max-width:900px}
-  .s1 .sub b{color:#F5F1E8}
+      /* ============ SLIDE 1 — CAPA ============ */
+      .s1 .body {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 120px;
+        text-align: center;
+      }
+      .s1 .eyebrow {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 18px;
+        letter-spacing: 0.32em;
+        color: #c6ff00;
+        text-transform: uppercase;
+        margin-bottom: 44px;
+      }
+      .s1 h1 {
+        margin: 0;
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 220px;
+        line-height: 0.88;
+        letter-spacing: -0.055em;
+        text-transform: uppercase;
+        color: #f5f1e8;
+      }
+      .s1 h1 .stroke {
+        -webkit-text-stroke: 4px #f5f1e8;
+        color: transparent;
+      }
+      .s1 h1 .fire {
+        color: #ff3b0f;
+      }
+      .s1 h1 .acid {
+        color: #c6ff00;
+      }
+      .s1 .sub {
+        margin-top: 48px;
+        font-family: 'Archivo', sans-serif;
+        font-size: 26px;
+        line-height: 1.5;
+        color: #a3a3a3;
+        max-width: 900px;
+      }
+      .s1 .sub b {
+        color: #f5f1e8;
+      }
 
-  /* ============ SLIDE 2 — STAT GIGANTE ============ */
-  .s2{background:#FF3B0F;color:#050505}
-  .s2 .grid-bg{background-image:linear-gradient(to right,rgba(0,0,0,0.08) 1px,transparent 1px),linear-gradient(to bottom,rgba(0,0,0,0.08) 1px,transparent 1px);opacity:1}
-  .s2 .sb{color:rgba(5,5,5,0.7)}
-  .s2 .sb b{color:#050505}
-  .s2 .sb .dot{background:#050505;box-shadow:none}
-  .s2 .body{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 120px;text-align:center}
-  .s2 .mega{font-family:'Archivo Black',sans-serif;font-size:520px;line-height:0.85;letter-spacing:-0.07em;color:#050505;margin-left:-30px}
-  .s2 .sub{font-family:'Archivo Black',sans-serif;font-size:52px;line-height:1.1;letter-spacing:-0.02em;text-transform:uppercase;color:#050505;max-width:1400px;margin-top:24px}
-  .s2 .nav{color:rgba(5,5,5,0.7);border-top-color:rgba(0,0,0,0.1)}
+      /* ============ SLIDE 2 — STAT GIGANTE ============ */
+      .s2 {
+        background: #ff3b0f;
+        color: #050505;
+      }
+      .s2 .grid-bg {
+        background-image:
+          linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+        opacity: 1;
+      }
+      .s2 .sb {
+        color: rgba(5, 5, 5, 0.7);
+      }
+      .s2 .sb b {
+        color: #050505;
+      }
+      .s2 .sb .dot {
+        background: #050505;
+        box-shadow: none;
+      }
+      .s2 .body {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 120px;
+        text-align: center;
+      }
+      .s2 .mega {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 520px;
+        line-height: 0.85;
+        letter-spacing: -0.07em;
+        color: #050505;
+        margin-left: -30px;
+      }
+      .s2 .sub {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 52px;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: #050505;
+        max-width: 1400px;
+        margin-top: 24px;
+      }
+      .s2 .nav {
+        color: rgba(5, 5, 5, 0.7);
+        border-top-color: rgba(0, 0, 0, 0.1);
+      }
 
-  /* ============ SLIDE 3 — 6P CARD ============ */
-  .s3 .body{position:absolute;inset:0;z-index:2;display:flex;padding:120px 120px 120px 120px;align-items:center;gap:80px}
-  .s3 .num{font-family:'Archivo Black',sans-serif;font-size:540px;line-height:0.85;letter-spacing:-0.06em;color:#C6FF00;text-shadow:0 0 60px rgba(198,255,0,0.2);flex-shrink:0}
-  .s3 .right{flex:1}
-  .s3 .lbl2{font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.32em;color:#FF3B0F;text-transform:uppercase}
-  .s3 .q{margin:24px 0 28px;font-family:'Archivo Black',sans-serif;font-size:150px;line-height:0.92;letter-spacing:-0.045em;text-transform:uppercase;color:#F5F1E8}
-  .s3 .desc{font-family:'Archivo',sans-serif;font-size:28px;line-height:1.5;color:#A3A3A3;max-width:900px}
-  .s3 .desc b{color:#F5F1E8}
+      /* ============ SLIDE 3 — 6P CARD ============ */
+      .s3 .body {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        display: flex;
+        padding: 120px 120px 120px 120px;
+        align-items: center;
+        gap: 80px;
+      }
+      .s3 .num {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 540px;
+        line-height: 0.85;
+        letter-spacing: -0.06em;
+        color: #c6ff00;
+        text-shadow: 0 0 60px rgba(198, 255, 0, 0.2);
+        flex-shrink: 0;
+      }
+      .s3 .right {
+        flex: 1;
+      }
+      .s3 .lbl2 {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 20px;
+        letter-spacing: 0.32em;
+        color: #ff3b0f;
+        text-transform: uppercase;
+      }
+      .s3 .q {
+        margin: 24px 0 28px;
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 150px;
+        line-height: 0.92;
+        letter-spacing: -0.045em;
+        text-transform: uppercase;
+        color: #f5f1e8;
+      }
+      .s3 .desc {
+        font-family: 'Archivo', sans-serif;
+        font-size: 28px;
+        line-height: 1.5;
+        color: #a3a3a3;
+        max-width: 900px;
+      }
+      .s3 .desc b {
+        color: #f5f1e8;
+      }
 
-  /* ============ SLIDE 4 — CASE ============ */
-  .s4 .body{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;padding:120px}
-  .s4 .case-name{font-family:'Archivo Black',sans-serif;font-size:72px;line-height:0.95;letter-spacing:-0.03em;text-transform:uppercase}
-  .s4 .case-name .stroke{-webkit-text-stroke:3px #F5F1E8;color:transparent}
-  .s4 .row{margin-top:60px;display:flex;gap:60px;align-items:flex-end}
-  .s4 .col{flex:1}
-  .s4 .col .tag{font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:0.28em;text-transform:uppercase;margin-bottom:12px}
-  .s4 .col.neg .tag{color:#FF3B0F}
-  .s4 .col.pos .tag{color:#C6FF00}
-  .s4 .col .v{font-family:'Archivo Black',sans-serif;font-size:110px;line-height:0.92;letter-spacing:-0.04em;text-transform:uppercase}
-  .s4 .col.neg .v{color:#6B7280;text-decoration:line-through;text-decoration-color:#FF3B0F;text-decoration-thickness:6px}
-  .s4 .col.pos .v{color:#F5F1E8}
-  .s4 .col.pos .v em{font-style:normal;color:#C6FF00}
-  .s4 .timeline{margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.22em;color:#6B7280;text-transform:uppercase}
-  .s4 .metrics{margin-top:60px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .s4 .metrics .m{background:#0B0B0B;border:1px solid rgba(255,255,255,0.08);padding:32px 28px}
-  .s4 .metrics .mv{font-family:'Archivo Black',sans-serif;font-size:66px;letter-spacing:-0.03em;color:#C6FF00}
-  .s4 .metrics .ml{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.22em;color:#6B7280;text-transform:uppercase;margin-top:8px}
+      /* ============ SLIDE 4 — CASE ============ */
+      .s4 .body {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 120px;
+      }
+      .s4 .case-name {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 72px;
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+      }
+      .s4 .case-name .stroke {
+        -webkit-text-stroke: 3px #f5f1e8;
+        color: transparent;
+      }
+      .s4 .row {
+        margin-top: 60px;
+        display: flex;
+        gap: 60px;
+        align-items: flex-end;
+      }
+      .s4 .col {
+        flex: 1;
+      }
+      .s4 .col .tag {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 18px;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+      .s4 .col.neg .tag {
+        color: #ff3b0f;
+      }
+      .s4 .col.pos .tag {
+        color: #c6ff00;
+      }
+      .s4 .col .v {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 110px;
+        line-height: 0.92;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+      }
+      .s4 .col.neg .v {
+        color: #6b7280;
+        text-decoration: line-through;
+        text-decoration-color: #ff3b0f;
+        text-decoration-thickness: 6px;
+      }
+      .s4 .col.pos .v {
+        color: #f5f1e8;
+      }
+      .s4 .col.pos .v em {
+        font-style: normal;
+        color: #c6ff00;
+      }
+      .s4 .timeline {
+        margin-top: 12px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 20px;
+        letter-spacing: 0.22em;
+        color: #6b7280;
+        text-transform: uppercase;
+      }
+      .s4 .metrics {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .s4 .metrics .m {
+        background: #0b0b0b;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 32px 28px;
+      }
+      .s4 .metrics .mv {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 66px;
+        letter-spacing: -0.03em;
+        color: #c6ff00;
+      }
+      .s4 .metrics .ml {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 14px;
+        letter-spacing: 0.22em;
+        color: #6b7280;
+        text-transform: uppercase;
+        margin-top: 8px;
+      }
 
-  /* ============ SLIDE 5 — CTA FINAL ============ */
-  .s5 .radial{position:absolute;inset:0;background:radial-gradient(circle at 85% 15%,rgba(198,255,0,0.12),transparent 50%);pointer-events:none;z-index:1}
-  .s5 .body{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:120px;text-align:center}
-  .s5 h1{margin:0;font-family:'Archivo Black',sans-serif;font-size:180px;line-height:0.9;letter-spacing:-0.05em;text-transform:uppercase;color:#F5F1E8}
-  .s5 h1 .fire{color:#FF3B0F}
-  .s5 .sub{margin-top:40px;font-family:'Archivo',sans-serif;font-size:28px;line-height:1.55;color:#A3A3A3;max-width:1100px}
-  .s5 .price{margin-top:48px;font-family:'JetBrains Mono',monospace;font-size:42px;letter-spacing:0.12em;color:#C6FF00;text-transform:uppercase;font-weight:700}
-  .s5 .ctas{margin-top:56px;display:flex;gap:32px}
-  .s5 .btn{padding:24px 44px;font-family:'Archivo Black',sans-serif;font-size:22px;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none}
-  .s5 .btn.primary{background:#FF3B0F;color:#050505;box-shadow:6px 6px 0 #C6FF00}
-  .s5 .btn.secondary{background:transparent;color:#F5F1E8;border:2px solid #F5F1E8}
-</style>
-</head>
-<body>
-
-<!-- SLIDE 1 — CAPA -->
-<div class="wrap">
-  <div class="lbl">// SLIDE 01 · CAPA</div>
-  <div class="box">
-  <section class="slide s1">
-    <div class="grid-bg"></div>
-    <div class="sb"><span><span class="dot"></span>APRESENTAÇÃO · VENDAS ESCALÁVEIS</span><span>// @joelburigo · EXP. 2004 · FLORIANÓPOLIS/SC</span></div>
-    <div class="body">
-      <div class="eyebrow">// FRAMEWORK 6PS · SESSÃO INTRODUTÓRIA</div>
-      <h1><span class="stroke">SISTEMA</span> <span class="fire">&gt;</span><br><span class="acid">IMPROVISO</span></h1>
-      <div class="sub">17+ anos estruturando vendas pra micro e pequena empresa.<br><b>140+ clientes. ~R$ 1 bilhão</b> em vendas estruturadas.</div>
-    </div>
-    <div class="nav"><span>JOEL BURIGO · CRIADOR DO FRAMEWORK 6PS</span><span class="acid">01 / 12 · → PRÓXIMO</span></div>
-  </section>
-  </div>
-</div>
-
-<!-- SLIDE 2 — STAT -->
-<div class="wrap">
-  <div class="lbl">// SLIDE 02 · STAT GIGANTE</div>
-  <div class="box">
-  <section class="slide s2">
-    <div class="grid-bg"></div>
-    <div class="sb"><span><span class="dot"></span>DADO · SEBRAE 2024</span><span>// ▲ MERCADO</span></div>
-    <div class="body">
-      <div class="mega">60%</div>
-      <div class="sub">Das MPEs fecham em até 5 anos. A maioria por falta de sistema.</div>
-    </div>
-    <div class="nav"><span>★ FONTE: SEBRAE · ANUÁRIO 2024</span><span>02 / 12 · → PRÓXIMO</span></div>
-  </section>
-  </div>
-</div>
-
-<!-- SLIDE 3 — 6P CARD -->
-<div class="wrap">
-  <div class="lbl">// SLIDE 03 · 6P CARD (P3 Produto)</div>
-  <div class="box">
-  <section class="slide s3">
-    <div class="grid-bg"></div>
-    <div class="sb"><span><span class="dot"></span>P3 · PRODUTO</span><span>// MÓDULO 03 / 06</span></div>
-    <div class="body">
-      <div class="num">P3</div>
-      <div class="right">
-        <div class="lbl2">// PRODUTO</div>
-        <div class="q">O QUÊ?</div>
-        <div class="desc">Oferta, pricing, pacote. O que tu entrega, por qual preço e com qual margem — <b>escrito, versionado, testado</b>. Não no feeling. Sem isso, P4 (marketing) e P5 (processos) viram chute.</div>
+      /* ============ SLIDE 5 — CTA FINAL ============ */
+      .s5 .radial {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 85% 15%, rgba(198, 255, 0, 0.12), transparent 50%);
+        pointer-events: none;
+        z-index: 1;
+      }
+      .s5 .body {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 120px;
+        text-align: center;
+      }
+      .s5 h1 {
+        margin: 0;
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 180px;
+        line-height: 0.9;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        color: #f5f1e8;
+      }
+      .s5 h1 .fire {
+        color: #ff3b0f;
+      }
+      .s5 .sub {
+        margin-top: 40px;
+        font-family: 'Archivo', sans-serif;
+        font-size: 28px;
+        line-height: 1.55;
+        color: #a3a3a3;
+        max-width: 1100px;
+      }
+      .s5 .price {
+        margin-top: 48px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 42px;
+        letter-spacing: 0.12em;
+        color: #c6ff00;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      .s5 .ctas {
+        margin-top: 56px;
+        display: flex;
+        gap: 32px;
+      }
+      .s5 .btn {
+        padding: 24px 44px;
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 22px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+      .s5 .btn.primary {
+        background: #ff3b0f;
+        color: #050505;
+        box-shadow: 6px 6px 0 #c6ff00;
+      }
+      .s5 .btn.secondary {
+        background: transparent;
+        color: #f5f1e8;
+        border: 2px solid #f5f1e8;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- SLIDE 1 — CAPA -->
+    <div class="wrap">
+      <div class="lbl">// SLIDE 01 · CAPA</div>
+      <div class="box">
+        <section class="slide s1">
+          <div class="grid-bg"></div>
+          <div class="sb">
+            <span><span class="dot"></span>APRESENTAÇÃO · VENDAS ESCALÁVEIS</span
+            ><span>// @joelburigo · EXP. 2004 · FLORIANÓPOLIS/SC</span>
+          </div>
+          <div class="body">
+            <div class="eyebrow">// FRAMEWORK 6PS · SESSÃO INTRODUTÓRIA</div>
+            <h1>
+              <span class="stroke">SISTEMA</span> <span class="fire">&gt;</span><br /><span
+                class="acid"
+                >IMPROVISO</span
+              >
+            </h1>
+            <div class="sub">
+              17+ anos estruturando vendas pra micro e pequena empresa.<br /><b
+                >140+ clientes. ~R$ 1 bilhão</b
+              >
+              em vendas estruturadas.
+            </div>
+          </div>
+          <div class="nav">
+            <span>JOEL BURIGO · CRIADOR DO FRAMEWORK 6PS</span
+            ><span class="acid">01 / 12 · → PRÓXIMO</span>
+          </div>
+        </section>
       </div>
     </div>
-    <div class="nav"><span>← P2 · PÚBLICO</span><span class="acid">03 / 12 · P4 · PROGRAMAS →</span></div>
-  </section>
-  </div>
-</div>
 
-<!-- SLIDE 4 — CASE -->
-<div class="wrap">
-  <div class="lbl">// SLIDE 04 · CASE (holding de franquias)</div>
-  <div class="box">
-  <section class="slide s4">
-    <div class="grid-bg"></div>
-    <div class="sb"><span><span class="dot"></span>CASE · HOLDING DE FRANQUIAS · 2018–2020 · AUDITED</span><span>// +433%</span></div>
-    <div class="body">
-      <div class="case-name"><span class="stroke">CASE ·</span> HOLDING DE FRANQUIAS</div>
-      <div class="row">
-        <div class="col neg"><div class="tag">// ANTES</div><div class="v">R$ 160K<br>/MÊS</div></div>
-        <div class="col pos"><div class="tag">// DEPOIS</div><div class="v">R$ 1 <em>MILHÃO</em>/MÊS</div><div class="timeline">2018 ──────── 2020</div></div>
-      </div>
-      <div class="metrics">
-        <div class="m"><div class="mv">+433%</div><div class="ml">// FATURAMENTO</div></div>
-        <div class="m"><div class="mv">×8,33</div><div class="ml">// LEADS</div></div>
-        <div class="m"><div class="mv">1.800+</div><div class="ml">// FRANQUEADOS</div></div>
+    <!-- SLIDE 2 — STAT -->
+    <div class="wrap">
+      <div class="lbl">// SLIDE 02 · STAT GIGANTE</div>
+      <div class="box">
+        <section class="slide s2">
+          <div class="grid-bg"></div>
+          <div class="sb">
+            <span><span class="dot"></span>DADO · SEBRAE 2024</span><span>// ▲ MERCADO</span>
+          </div>
+          <div class="body">
+            <div class="mega">60%</div>
+            <div class="sub">Das MPEs fecham em até 5 anos. A maioria por falta de sistema.</div>
+          </div>
+          <div class="nav">
+            <span>★ FONTE: SEBRAE · ANUÁRIO 2024</span><span>02 / 12 · → PRÓXIMO</span>
+          </div>
+        </section>
       </div>
     </div>
-    <div class="nav"><span>★ O MESMO PLAYBOOK DENTRO DO VSS</span><span class="acid">04 / 12 · → PRÓXIMO</span></div>
-  </section>
-  </div>
-</div>
 
-<!-- SLIDE 5 — CTA FINAL -->
-<div class="wrap">
-  <div class="lbl">// SLIDE 05 · CTA FINAL</div>
-  <div class="box">
-  <section class="slide s5">
-    <div class="radial"></div>
-    <div class="grid-bg"></div>
-    <div class="sb"><span><span class="dot"></span>PRÓXIMO PASSO · DECIDIR</span><span>// 12 / 12</span></div>
-    <div class="body">
-      <h1>LIGAR A <span class="fire">MÁQUINA?</span></h1>
-      <div class="sub">90 dias de playbook completo. Framework 6Ps aplicado passo a passo.<br>Growth CRM incluído 12 meses. Mentorias ao vivo 48/ano.</div>
-      <div class="price">R$ 1.997 À VISTA · OU 12× R$ 166,42</div>
-      <div class="ctas">
-        <a href="#" class="btn primary">VER VSS COMPLETO →</a>
-        <a href="#" class="btn secondary">FALAR COM JOEL (ADVISORY) →</a>
+    <!-- SLIDE 3 — 6P CARD -->
+    <div class="wrap">
+      <div class="lbl">// SLIDE 03 · 6P CARD (P3 Produto)</div>
+      <div class="box">
+        <section class="slide s3">
+          <div class="grid-bg"></div>
+          <div class="sb">
+            <span><span class="dot"></span>P3 · PRODUTO</span><span>// MÓDULO 03 / 06</span>
+          </div>
+          <div class="body">
+            <div class="num">P3</div>
+            <div class="right">
+              <div class="lbl2">// PRODUTO</div>
+              <div class="q">O QUÊ?</div>
+              <div class="desc">
+                Oferta, pricing, pacote. O que tu entrega, por qual preço e com qual margem —
+                <b>escrito, versionado, testado</b>. Não no feeling. Sem isso, P4 (marketing) e P5
+                (processos) viram chute.
+              </div>
+            </div>
+          </div>
+          <div class="nav">
+            <span>← P2 · PÚBLICO</span><span class="acid">03 / 12 · P4 · PROGRAMAS →</span>
+          </div>
+        </section>
       </div>
     </div>
-    <div class="nav"><span>★ SISTEMA &gt; IMPROVISO · BORA PRA CIMA</span><span>@JOELBURIGO.COM.BR</span></div>
-  </section>
-  </div>
-</div>
 
-</body>
+    <!-- SLIDE 4 — CASE -->
+    <div class="wrap">
+      <div class="lbl">// SLIDE 04 · CASE (holding de franquias)</div>
+      <div class="box">
+        <section class="slide s4">
+          <div class="grid-bg"></div>
+          <div class="sb">
+            <span><span class="dot"></span>CASE · HOLDING DE FRANQUIAS · 2018–2020 · AUDITED</span
+            ><span>// +433%</span>
+          </div>
+          <div class="body">
+            <div class="case-name"><span class="stroke">CASE ·</span> HOLDING DE FRANQUIAS</div>
+            <div class="row">
+              <div class="col neg">
+                <div class="tag">// ANTES</div>
+                <div class="v">R$ 160K<br />/MÊS</div>
+              </div>
+              <div class="col pos">
+                <div class="tag">// DEPOIS</div>
+                <div class="v">R$ 1 <em>MILHÃO</em>/MÊS</div>
+                <div class="timeline">2018 ──────── 2020</div>
+              </div>
+            </div>
+            <div class="metrics">
+              <div class="m">
+                <div class="mv">+433%</div>
+                <div class="ml">// FATURAMENTO</div>
+              </div>
+              <div class="m">
+                <div class="mv">×8,33</div>
+                <div class="ml">// LEADS</div>
+              </div>
+              <div class="m">
+                <div class="mv">1.800+</div>
+                <div class="ml">// FRANQUEADOS</div>
+              </div>
+            </div>
+          </div>
+          <div class="nav">
+            <span>★ O MESMO PLAYBOOK DENTRO DO VSS</span
+            ><span class="acid">04 / 12 · → PRÓXIMO</span>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- SLIDE 5 — CTA FINAL -->
+    <div class="wrap">
+      <div class="lbl">// SLIDE 05 · CTA FINAL</div>
+      <div class="box">
+        <section class="slide s5">
+          <div class="radial"></div>
+          <div class="grid-bg"></div>
+          <div class="sb">
+            <span><span class="dot"></span>PRÓXIMO PASSO · DECIDIR</span><span>// 12 / 12</span>
+          </div>
+          <div class="body">
+            <h1>LIGAR A <span class="fire">MÁQUINA?</span></h1>
+            <div class="sub">
+              90 dias de playbook completo. Framework 6Ps aplicado passo a passo.<br />Growth CRM
+              incluído 12 meses. Mentorias ao vivo 48/ano.
+            </div>
+            <div class="price">R$ 1.997 À VISTA · OU 12× R$ 166,42</div>
+            <div class="ctas">
+              <a href="#" class="btn primary">VER VSS COMPLETO →</a>
+              <a href="#" class="btn secondary">FALAR COM JOEL (ADVISORY) →</a>
+            </div>
+          </div>
+          <div class="nav">
+            <span>★ SISTEMA &gt; IMPROVISO · BORA PRA CIMA</span><span>@JOELBURIGO.COM.BR</span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
 </html>

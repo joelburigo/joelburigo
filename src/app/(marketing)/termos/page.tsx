@@ -14,9 +14,9 @@ export default function TermosPage() {
         <span className="kicker">// TERMOS DE USO</span>
         <h1 className="text-display-sm">Termos de Uso</h1>
         <p className="body text-fg-2">
-          Ao adquirir VSS ou Advisory você concorda com: conteúdo de uso pessoal (não redistribuível),
-          garantia incondicional de 15 dias para reembolso (processado após revisão do Joel), e que
-          resultados dependem de aplicação consistente.
+          Ao adquirir VSS ou Advisory você concorda com: conteúdo de uso pessoal (não
+          redistribuível), garantia incondicional de 15 dias para reembolso (processado após revisão
+          do Joel), e que resultados dependem de aplicação consistente.
         </p>
         <p className="body-sm text-fg-3">
           Texto completo da migração pendente. Dúvidas:{' '}

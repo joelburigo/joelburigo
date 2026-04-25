@@ -8,11 +8,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default function EntrarPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ next?: string }>;
-}) {
+export default function EntrarPage({ searchParams }: { searchParams: Promise<{ next?: string }> }) {
   return (
     <section className="section">
       <Container size="md">

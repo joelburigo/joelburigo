@@ -26,12 +26,12 @@ export function ContatoForm() {
 
   if (status === 'sent') {
     return (
-      <div className="text-center py-10">
+      <div className="py-10 text-center">
         <div className="kicker mb-3" style={{ color: 'var(--jb-acid)' }}>
           // ENVIADO
         </div>
-        <p className="font-display text-2xl text-cream mb-2">Mensagem recebida.</p>
-        <p className="font-sans text-fg-2">Retorno direto do Joel em até 2 dias úteis.</p>
+        <p className="font-display text-cream mb-2 text-2xl">Mensagem recebida.</p>
+        <p className="text-fg-2 font-sans">Retorno direto do Joel em até 2 dias úteis.</p>
       </div>
     );
   }
@@ -42,7 +42,7 @@ export function ContatoForm() {
         <div>
           <label
             htmlFor="name"
-            className="mb-2 block font-mono text-[11px] uppercase tracking-[0.22em] text-fg-3"
+            className="text-fg-3 mb-2 block font-mono text-[11px] tracking-[0.22em] uppercase"
           >
             Nome *
           </label>
@@ -51,14 +51,14 @@ export function ContatoForm() {
             id="name"
             name="name"
             required
-            className="w-full border border-[var(--jb-hair-strong)] bg-ink px-4 py-3 font-sans text-cream placeholder:text-fg-muted transition-colors focus:border-acid focus:outline-none"
+            className="bg-ink text-cream placeholder:text-fg-muted focus:border-acid w-full border border-[var(--jb-hair-strong)] px-4 py-3 font-sans transition-colors focus:outline-none"
             placeholder="Seu nome completo"
           />
         </div>
         <div>
           <label
             htmlFor="email"
-            className="mb-2 block font-mono text-[11px] uppercase tracking-[0.22em] text-fg-3"
+            className="text-fg-3 mb-2 block font-mono text-[11px] tracking-[0.22em] uppercase"
           >
             Email *
           </label>
@@ -67,7 +67,7 @@ export function ContatoForm() {
             id="email"
             name="email"
             required
-            className="w-full border border-[var(--jb-hair-strong)] bg-ink px-4 py-3 font-sans text-cream placeholder:text-fg-muted transition-colors focus:border-acid focus:outline-none"
+            className="bg-ink text-cream placeholder:text-fg-muted focus:border-acid w-full border border-[var(--jb-hair-strong)] px-4 py-3 font-sans transition-colors focus:outline-none"
             placeholder="seu@email.com"
           />
         </div>
@@ -76,7 +76,7 @@ export function ContatoForm() {
         <div>
           <label
             htmlFor="phone"
-            className="mb-2 block font-mono text-[11px] uppercase tracking-[0.22em] text-fg-3"
+            className="text-fg-3 mb-2 block font-mono text-[11px] tracking-[0.22em] uppercase"
           >
             WhatsApp
           </label>
@@ -84,14 +84,14 @@ export function ContatoForm() {
             type="tel"
             id="phone"
             name="phone"
-            className="w-full border border-[var(--jb-hair-strong)] bg-ink px-4 py-3 font-sans text-cream placeholder:text-fg-muted transition-colors focus:border-acid focus:outline-none"
+            className="bg-ink text-cream placeholder:text-fg-muted focus:border-acid w-full border border-[var(--jb-hair-strong)] px-4 py-3 font-sans transition-colors focus:outline-none"
             placeholder="(48) 99999-9999"
           />
         </div>
         <div>
           <label
             htmlFor="subject"
-            className="mb-2 block font-mono text-[11px] uppercase tracking-[0.22em] text-fg-3"
+            className="text-fg-3 mb-2 block font-mono text-[11px] tracking-[0.22em] uppercase"
           >
             Assunto *
           </label>
@@ -100,7 +100,7 @@ export function ContatoForm() {
             name="subject"
             required
             defaultValue=""
-            className="w-full border border-[var(--jb-hair-strong)] bg-ink px-4 py-3 font-sans text-cream transition-colors focus:border-acid focus:outline-none"
+            className="bg-ink text-cream focus:border-acid w-full border border-[var(--jb-hair-strong)] px-4 py-3 font-sans transition-colors focus:outline-none"
           >
             <option value="" disabled>
               Selecione...
@@ -115,7 +115,7 @@ export function ContatoForm() {
       <div>
         <label
           htmlFor="message"
-          className="mb-2 block font-mono text-[11px] uppercase tracking-[0.22em] text-fg-3"
+          className="text-fg-3 mb-2 block font-mono text-[11px] tracking-[0.22em] uppercase"
         >
           Mensagem *
         </label>
@@ -124,7 +124,7 @@ export function ContatoForm() {
           name="message"
           required
           rows={6}
-          className="w-full border border-[var(--jb-hair-strong)] bg-ink px-4 py-3 font-sans text-cream placeholder:text-fg-muted transition-colors focus:border-acid focus:outline-none"
+          className="bg-ink text-cream placeholder:text-fg-muted focus:border-acid w-full border border-[var(--jb-hair-strong)] px-4 py-3 font-sans transition-colors focus:outline-none"
           placeholder="Conta teu desafio atual, faturamento, momento da empresa..."
         />
       </div>
@@ -134,9 +134,11 @@ export function ContatoForm() {
         <span aria-hidden="true">→</span>
       </button>
       {status === 'error' && (
-        <p className="text-fire font-mono text-[11px]">Erro ao enviar. Tenta de novo ou usa email/WhatsApp.</p>
+        <p className="text-fire font-mono text-[11px]">
+          Erro ao enviar. Tenta de novo ou usa email/WhatsApp.
+        </p>
       )}
-      <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-fg-muted">
+      <p className="text-fg-muted font-mono text-[11px] tracking-[0.22em] uppercase">
         * Campos obrigatórios
       </p>
     </form>

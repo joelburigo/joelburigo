@@ -1,34 +1,165 @@
-<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
-<style>
- body{margin:0;padding:28px;background:#050505;color:#F5F1E8;font-family:'Archivo',sans-serif}
- .top{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#6B7280;text-transform:uppercase;margin-bottom:14px}
- .top b{color:#C6FF00}
- .row{display:flex;flex-direction:column;gap:18px}
- .line{display:grid;grid-template-columns:200px 1fr;align-items:center;gap:20px;padding:12px 0;border-bottom:1px dashed rgba(255,255,255,0.06)}
- .lab{font-family:'JetBrains Mono',monospace;font-size:10px;color:#C6FF00;letter-spacing:0.22em;text-transform:uppercase}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../colors_and_type.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 28px;
+        background: #050505;
+        color: #f5f1e8;
+        font-family: 'Archivo', sans-serif;
+      }
+      .top {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.22em;
+        color: #6b7280;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+      }
+      .top b {
+        color: #c6ff00;
+      }
+      .row {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .line {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        align-items: center;
+        gap: 20px;
+        padding: 12px 0;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
+      }
+      .lab {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        color: #c6ff00;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
 
- .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#C6FF00;border:1px solid rgba(198,255,0,0.3);padding:7px 14px}
- .eyebrow .dot{width:6px;height:6px;background:#C6FF00;border-radius:50%;box-shadow:0 0 8px #C6FF00}
- .status{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#6B7280}
- .status b{color:#F5F1E8}
- .status .live{color:#C6FF00}
- .byline{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#6B7280;display:flex;align-items:center;gap:12px}
- .byline::before{content:'';width:40px;height:1px;background:#C6FF00}
- .ticker{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#FF3B0F}
- .ticker em{font-style:normal;background:#C6FF00;padding:2px 8px;color:#050505}
- .term{font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.7;color:#E5E5E5}
- .term .c{color:#6B7280}
- .term .p{color:#C6FF00}
- .term .w{color:#F5F1E8}
- .kicker{font-family:'JetBrains Mono',monospace;font-size:14px;color:#C6FF00;letter-spacing:0.28em;text-transform:uppercase}
-</style></head><body>
-<div class="top">// MONO HIERARCHY · JETBRAINS MONO · O "SOTAQUE" DO SISTEMA</div>
-<div class="row">
-  <div class="line"><span class="lab">// EYEBROW</span><span class="eyebrow"><span class="dot"></span> DIAGNÓSTICO AO VIVO · 10 MIN</span></div>
-  <div class="line"><span class="lab">// SECTION KICKER</span><span class="kicker">// 01_FRAMEWORK</span></div>
-  <div class="line"><span class="lab">// STATUS BAR</span><span class="status"><span class="live">● SYS ONLINE</span> · // <b>@joelburigo</b> · EXP. 2004</span></div>
-  <div class="line"><span class="lab">// TICKER</span><span class="ticker">★ SISTEMA &gt; IMPROVISO · <em>140+ MPES</em> · 17+ ANOS</span></div>
-  <div class="line"><span class="lab">// BYLINE / ATTR</span><span class="byline">JOEL BURIGO · FRAMEWORK 6PS · 17 ANOS</span></div>
-  <div class="line"><span class="lab">// TERMINAL CODE</span><span class="term"><span class="c">$</span> <span class="w">joel --diagnose</span> <span class="p">ok</span></span></div>
-</div>
-</body></html>
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: #c6ff00;
+        border: 1px solid rgba(198, 255, 0, 0.3);
+        padding: 7px 14px;
+      }
+      .eyebrow .dot {
+        width: 6px;
+        height: 6px;
+        background: #c6ff00;
+        border-radius: 50%;
+        box-shadow: 0 0 8px #c6ff00;
+      }
+      .status {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #6b7280;
+      }
+      .status b {
+        color: #f5f1e8;
+      }
+      .status .live {
+        color: #c6ff00;
+      }
+      .byline {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: #6b7280;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .byline::before {
+        content: '';
+        width: 40px;
+        height: 1px;
+        background: #c6ff00;
+      }
+      .ticker {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #ff3b0f;
+      }
+      .ticker em {
+        font-style: normal;
+        background: #c6ff00;
+        padding: 2px 8px;
+        color: #050505;
+      }
+      .term {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 13px;
+        line-height: 1.7;
+        color: #e5e5e5;
+      }
+      .term .c {
+        color: #6b7280;
+      }
+      .term .p {
+        color: #c6ff00;
+      }
+      .term .w {
+        color: #f5f1e8;
+      }
+      .kicker {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 14px;
+        color: #c6ff00;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">// MONO HIERARCHY · JETBRAINS MONO · O "SOTAQUE" DO SISTEMA</div>
+    <div class="row">
+      <div class="line">
+        <span class="lab">// EYEBROW</span
+        ><span class="eyebrow"><span class="dot"></span> DIAGNÓSTICO AO VIVO · 10 MIN</span>
+      </div>
+      <div class="line">
+        <span class="lab">// SECTION KICKER</span><span class="kicker">// 01_FRAMEWORK</span>
+      </div>
+      <div class="line">
+        <span class="lab">// STATUS BAR</span
+        ><span class="status"
+          ><span class="live">● SYS ONLINE</span> · // <b>@joelburigo</b> · EXP. 2004</span
+        >
+      </div>
+      <div class="line">
+        <span class="lab">// TICKER</span
+        ><span class="ticker">★ SISTEMA &gt; IMPROVISO · <em>140+ MPES</em> · 17+ ANOS</span>
+      </div>
+      <div class="line">
+        <span class="lab">// BYLINE / ATTR</span
+        ><span class="byline">JOEL BURIGO · FRAMEWORK 6PS · 17 ANOS</span>
+      </div>
+      <div class="line">
+        <span class="lab">// TERMINAL CODE</span
+        ><span class="term"
+          ><span class="c">$</span> <span class="w">joel --diagnose</span>
+          <span class="p">ok</span></span
+        >
+      </div>
+    </div>
+  </body>
+</html>

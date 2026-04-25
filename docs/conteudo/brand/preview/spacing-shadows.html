@@ -1,24 +1,110 @@
-<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
-<style>
- body{margin:0;padding:32px;background:#050505;color:#F5F1E8;font-family:'Archivo',sans-serif;display:flex;gap:32px;align-items:center;flex-wrap:wrap}
- .c{display:flex;flex-direction:column;align-items:center;gap:10px}
- .b{width:112px;height:64px;background:#0B0B0B;border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#6B7280}
- .lbl{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C6FF00;text-align:center}
- .lbl .t{display:block;color:#6B7280;margin-top:4px}
- .top{width:100%;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#6B7280;text-transform:uppercase;margin-bottom:8px}
- .top b{color:#C6FF00}
-</style></head><body>
-<div class="top">// SHADOWS — <b>SÓ OFFSET DUROS.</b> BLUR APENAS EM DOT PULSE.</div>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../colors_and_type.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 32px;
+        background: #050505;
+        color: #f5f1e8;
+        font-family: 'Archivo', sans-serif;
+        display: flex;
+        gap: 32px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .c {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .b {
+        width: 112px;
+        height: 64px;
+        background: #0b0b0b;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        color: #6b7280;
+      }
+      .lbl {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 9px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #c6ff00;
+        text-align: center;
+      }
+      .lbl .t {
+        display: block;
+        color: #6b7280;
+        margin-top: 4px;
+      }
+      .top {
+        width: 100%;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.22em;
+        color: #6b7280;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+      .top b {
+        color: #c6ff00;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">// SHADOWS — <b>SÓ OFFSET DUROS.</b> BLUR APENAS EM DOT PULSE.</div>
 
-<div class="c"><div class="b">FLAT</div><div class="lbl">NONE<span class="t">default</span></div></div>
+    <div class="c">
+      <div class="b">FLAT</div>
+      <div class="lbl">NONE<span class="t">default</span></div>
+    </div>
 
-<div class="c"><div class="b" style="box-shadow:4px 4px 0 #FF3B0F">OFFSET</div><div class="lbl">4 · FIRE<span class="t">cta primário</span></div></div>
+    <div class="c">
+      <div class="b" style="box-shadow: 4px 4px 0 #ff3b0f">OFFSET</div>
+      <div class="lbl">4 · FIRE<span class="t">cta primário</span></div>
+    </div>
 
-<div class="c"><div class="b" style="box-shadow:6px 6px 0 #C6FF00">OFFSET</div><div class="lbl">6 · ACID<span class="t">btn-fire hover</span></div></div>
+    <div class="c">
+      <div class="b" style="box-shadow: 6px 6px 0 #c6ff00">OFFSET</div>
+      <div class="lbl">6 · ACID<span class="t">btn-fire hover</span></div>
+    </div>
 
-<div class="c"><div class="b" style="box-shadow:6px 6px 0 #FF3B0F">OFFSET</div><div class="lbl">6 · FIRE<span class="t">tier hover</span></div></div>
+    <div class="c">
+      <div class="b" style="box-shadow: 6px 6px 0 #ff3b0f">OFFSET</div>
+      <div class="lbl">6 · FIRE<span class="t">tier hover</span></div>
+    </div>
 
-<div class="c"><div class="b" style="box-shadow:0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(255,59,15,0.08) inset">TERMINAL</div><div class="lbl">DEEP + INSET<span class="t">só terminal</span></div></div>
+    <div class="c">
+      <div
+        class="b"
+        style="
+          box-shadow:
+            0 40px 80px rgba(0, 0, 0, 0.6),
+            0 0 60px rgba(255, 59, 15, 0.08) inset;
+        "
+      >
+        TERMINAL
+      </div>
+      <div class="lbl">DEEP + INSET<span class="t">só terminal</span></div>
+    </div>
 
-<div class="c"><div class="b" style="box-shadow:0 0 10px #C6FF00;background:#C6FF00" title="dot pulse"></div><div class="lbl">PULSE GLOW<span class="t">apenas em dot</span></div></div>
-</body></html>
+    <div class="c">
+      <div
+        class="b"
+        style="box-shadow: 0 0 10px #c6ff00; background: #c6ff00"
+        title="dot pulse"
+      ></div>
+      <div class="lbl">PULSE GLOW<span class="t">apenas em dot</span></div>
+    </div>
+  </body>
+</html>

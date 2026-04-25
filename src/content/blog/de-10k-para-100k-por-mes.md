@@ -36,6 +36,7 @@ clusterKeywords:
 ---
 
 <a name="por-que-trava"></a>
+
 ## Por Que 90% Trava em R$ 30-40k/Mês
 
 Você já reparou? A maioria dos pequenos negócios chega em R$ 30-40k/mês e **estaciona ali.**
@@ -47,6 +48,7 @@ Não é coincidência. É teto estrutural.
 R$ 30-40k/mês é o máximo que 1 pessoa consegue fazer improvisando.
 
 Dá pra:
+
 - Você prospectar
 - Você vender
 - Você entregar
@@ -80,6 +82,7 @@ Vou mostrar cada uma.
 ---
 
 <a name="as-8-mudancas"></a>
+
 ## As 8 Mudanças Estruturais
 
 Essas são as mudanças que separam quem fica travado de quem escala. Não é teoria — é o que vi acontecer em mais de uma década ajudando empresas a crescerem.
@@ -91,6 +94,7 @@ Vamos às 8 mudanças.
 ---
 
 <a name="mudanca-1"></a>
+
 ## Mudança #1: De Improviso Para Sistema
 
 Em R$ 10k/mês, você consegue improvisar. O dono vende, entrega, resolve problema, apaga incêndio. Funciona porque o volume é baixo.
@@ -113,6 +117,7 @@ Improviso mata mais empresa que crise. A maioria das MPEs não quebra por falta 
 ---
 
 <a name="mudanca-2"></a>
+
 ## Mudança #2: De "Todo Mundo" Para ICP Cristalino
 
 Em R$ 10k/mês, você atende qualquer um que paga. Em R$ 100k/mês, você SÓ atende seu ICP ideal.
@@ -136,6 +141,7 @@ Cliente confuso não compra. Cliente que se sente compreendido, compra.
 ---
 
 <a name="mudanca-3"></a>
+
 ## Mudança #3: De Vendedor Solo Para Time
 
 R$ 10k/mês você faz sozinho. R$ 100k/mês é IMPOSSÍVEL fazer sozinho de forma sustentável.
@@ -153,6 +159,7 @@ Você não precisa contratar os 3 no mesmo dia. Mas precisa ter clareza de QUAND
 Só contrate quando você já validou o processo de vendas. Se VOCÊ não consegue vender seu produto com processo documentado, um funcionário também não vai conseguir.
 
 Primeiro:
+
 1. Venda você mesmo
 2. Documente o processo
 3. Prove que funciona (fechou 10+ clientes consistentemente)
@@ -163,6 +170,7 @@ Primeiro:
 ---
 
 <a name="mudanca-4"></a>
+
 ## Mudança #4: De Excel Para CRM Profissional
 
 Planilha Excel quebra em 50 leads. [CRM profissional](/blog/crm-gratuito-vs-profissional) aguenta milhares.
@@ -182,6 +190,7 @@ Quem não tem CRM não tem negócio, tem bico. CRM não é luxo — é obrigaç�
 ---
 
 <a name="mudanca-5"></a>
+
 ## Mudança #5: De Indicação Para Tráfego Previsível
 
 Indicação é ótimo, mas não escala. Para chegar em R$ 100k/mês de forma previsível, você precisa de fonte de leads estruturada.
@@ -189,6 +198,7 @@ Indicação é ótimo, mas não escala. Para chegar em R$ 100k/mês de forma pre
 Duas rotas funcionam — compare em detalhe no guia de [tráfego pago vs prospecção ativa](/blog/trafego-pago-vs-prospecao-ativa):
 
 ### Rota A: Tráfego Pago
+
 Meta Ads, Google Ads, LinkedIn Ads.
 
 **Funciona quando:** Você tem budget para investir (mínimo R$ 1.500/mês) e quer resultado mais rápido.
@@ -196,6 +206,7 @@ Meta Ads, Google Ads, LinkedIn Ads.
 **Vantagem:** Escalável. Mais budget = mais leads.
 
 ### Rota B: Prospecção Ativa
+
 LinkedIn outbound, email frio, cold calling. Exige tempo e consistência.
 
 **Funciona quando:** Seu ticket é alto (R$ 3k+) e ICP é bem definido.
@@ -207,6 +218,7 @@ A boa notícia: dá para escalar com qualquer uma das duas rotas. O [Vendas Sem 
 ---
 
 <a name="mudanca-6"></a>
+
 ## Mudança #6: De Preço por Hora Para Valor Percebido
 
 Em R$ 10k/mês, você cobra "R$ 150/hora". Em R$ 100k/mês, você cobra pelo **resultado**.
@@ -225,12 +237,14 @@ Por quê funciona? Porque você mudou a conversa de custo para valor. Preço só
 ---
 
 <a name="mudanca-7"></a>
+
 ## Mudança #7: De Reativo Para Proativo
 
 R$ 10k/mês: Cliente pede, você faz. Você é "tirador de pedido".
 R$ 100k/mês: Você diagnostica e prescreve a solução certa. Você é consultor.
 
 **Framework de diagnóstico:**
+
 1. Qual o objetivo real? (O que você quer alcançar?)
 2. Onde está o gargalo? (O que está impedindo?)
 3. O que já tentou? (O que não funcionou?)
@@ -243,6 +257,7 @@ R$ 100k/mês: Você diagnostica e prescreve a solução certa. Você é consulto
 ---
 
 <a name="mudanca-8"></a>
+
 ## Mudança #8: De Founder-Dependent Para Company-Based
 
 Em R$ 10k/mês, você É a empresa. Sem você, para.
@@ -250,6 +265,7 @@ Em R$ 10k/mês, você É a empresa. Sem você, para.
 Em R$ 100k/mês, a empresa funciona sem você. Processos documentados, time treinado, sistema rodando.
 
 **Como chegar lá:**
+
 - Documente tudo (o que não está escrito não existe)
 - Delegue o repetitivo primeiro
 - Crie KPIs claros para cada função
@@ -261,11 +277,13 @@ Empresa que depende 100% do fundador não é empresa, é emprego disfarçado. E 
 ---
 
 <a name="case-real"></a>
+
 ## Case Real: De R$ 160k Para R$ 1 Milhão/Mês
 
 Em maio de 2018, comecei a trabalhar com uma holding que concentrava várias empresas no modelo franquia. Mais de 1.800 franqueados espalhados pelo Brasil.
 
 **Situação inicial:**
+
 - Faturamento: R$ 160k/mês
 - Operação complexa, mas sem sistema integrado
 - Marketing e vendas trabalhando separados
@@ -284,6 +302,7 @@ Em maio de 2018, comecei a trabalhar com uma holding que concentrava várias emp
 8. **Company-based:** Treinamos time para operar com autonomia
 
 **Resultado em 2 anos (2020):**
+
 - Faturamento: **R$ 1 milhão/mês**
 - **Crescimento de 433%**
 - Sistema rodando com previsibilidade
@@ -295,6 +314,7 @@ Não foi sorte. Não foi timing de mercado. Foi sistema replicável bem executad
 ---
 
 <a name="erros-comuns"></a>
+
 ## Erros Comuns ao Tentar Escalar
 
 ### Erro 1: Contratar Antes de Sistematizar
@@ -320,6 +340,7 @@ Crescimento consome caixa. Sem reserva, você quebra no meio do caminho.
 ---
 
 <a name="plano-90-dias"></a>
+
 ## Seu Plano de 90 Dias Para Começar
 
 ### Primeiros 30 Dias: Diagnóstico e Fundação
@@ -389,6 +410,7 @@ Antes de tentar ir de R$ 10k para R$ 100k, avalie:
 De R$ 10k para R$ 100k/mês é salto estrutural. Não é sobre trabalhar mais — é sobre trabalhar diferente.
 
 **As 8 mudanças:**
+
 1. Improviso → Sistema
 2. Todo mundo → ICP cristalino
 3. Solo → Time

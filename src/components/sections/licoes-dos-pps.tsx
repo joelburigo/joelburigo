@@ -11,8 +11,7 @@ const licoes = [
       'Quebrei aos 25 com calote de sócio — sem P1 e P6 cristalinos, parceria é prejuízo anunciado.',
     sinal_forte:
       'Cliente explica em 10s o que você faz de diferente. Não compete só por preço. Indicação espontânea.',
-    sinal_fraco:
-      '"Fazemos de tudo." Copy genérico. Só vende em promoção. Compara só pelo preço.',
+    sinal_fraco: '"Fazemos de tudo." Copy genérico. Só vende em promoção. Compara só pelo preço.',
   },
   {
     p: 'P2',
@@ -60,8 +59,10 @@ const licoes = [
       'Sem processo documentado você não cresce — só repete o caos em volume maior. Cada cliente vira projeto único. Impossível replicar. Impossível escalar.',
     cicatriz:
       'Tentando escalar Growth Master, minha cabeça virou o gargalo. Se não estava em checklist, não acontecia.',
-    sinal_forte: 'Processos acessíveis. Onboarding em ≤7 dias. Métricas visíveis. Melhoria contínua.',
-    sinal_fraco: 'Tudo na cabeça do fundador. Cada venda é única. Erros repetidos. Caos operacional.',
+    sinal_forte:
+      'Processos acessíveis. Onboarding em ≤7 dias. Métricas visíveis. Melhoria contínua.',
+    sinal_fraco:
+      'Tudo na cabeça do fundador. Cada venda é única. Erros repetidos. Caos operacional.',
   },
   {
     p: 'P6',
@@ -73,20 +74,19 @@ const licoes = [
       'No barraco em Ribeirão das Neves, eu era tudo: vendedor, entregador, suporte. No VSS, criei o sistema pra libertar donos dessa prisão.',
     sinal_forte:
       'Time autônomo. Baixa rotatividade. Metas batidas. Negócio sobrevive 2 semanas sem você.',
-    sinal_fraco:
-      'Tudo depende do fundador. Rotatividade alta. Papéis confusos. Time desmotivado.',
+    sinal_fraco: 'Tudo depende do fundador. Rotatividade alta. Papéis confusos. Time desmotivado.',
   },
 ];
 
 export function LicoesDosPps() {
   return (
-    <section className="relative overflow-hidden bg-ink py-24">
+    <section className="bg-ink relative overflow-hidden py-24">
       <div className="grid-overlay" />
       <Container>
         <div className="mx-auto mb-16 max-w-3xl">
           <div className="kicker mb-4">// 01_FRAMEWORK · 6PS DAS VENDAS ESCALÁVEIS</div>
           <h2
-            className="mb-6 font-display text-cream"
+            className="font-display text-cream mb-6"
             style={{
               fontSize: 'clamp(2rem, 5vw, 3.5rem)',
               lineHeight: '0.92',
@@ -121,12 +121,10 @@ export function LicoesDosPps() {
                 style={{ borderTop: i === 0 ? '0' : '1px solid var(--jb-hair)' }}
               >
                 <div
-                  className="flex flex-col justify-center border-b border-white/10 p-8 md:border-b-0 md:border-r"
+                  className="flex flex-col justify-center border-b border-white/10 p-8 md:border-r md:border-b-0"
                   style={{
                     background:
-                      l.acento === 'acid'
-                        ? 'rgba(198,255,0,0.04)'
-                        : 'rgba(255,59,15,0.04)',
+                      l.acento === 'acid' ? 'rgba(198,255,0,0.04)' : 'rgba(255,59,15,0.04)',
                   }}
                 >
                   <div
@@ -142,7 +140,7 @@ export function LicoesDosPps() {
                     {l.p}
                   </div>
                   <div
-                    className="mt-2 font-display text-cream"
+                    className="font-display text-cream mt-2"
                     style={{
                       fontSize: '1rem',
                       letterSpacing: '-0.02em',
@@ -154,7 +152,7 @@ export function LicoesDosPps() {
                 </div>
                 <div className="p-8 md:p-10">
                   <p
-                    className="mb-5 font-sans text-cream"
+                    className="text-cream mb-5 font-sans"
                     style={{
                       fontSize: 'clamp(1.05rem, 1.8vw, 1.25rem)',
                       lineHeight: '1.5',
@@ -179,8 +177,8 @@ export function LicoesDosPps() {
                     </p>
                   </div>
                   <div className="grid gap-4 md:grid-cols-2">
-                    <div className="border border-acid/35 bg-acid/5 p-4">
-                      <div className="mono mb-2 text-acid">▲ sinal forte</div>
+                    <div className="border-acid/35 bg-acid/5 border p-4">
+                      <div className="mono text-acid mb-2">▲ sinal forte</div>
                       <p
                         className="font-sans"
                         style={{
@@ -192,8 +190,8 @@ export function LicoesDosPps() {
                         {l.sinal_forte}
                       </p>
                     </div>
-                    <div className="border border-fire/35 bg-fire/5 p-4">
-                      <div className="mono mb-2 text-fire">▼ sinal fraco</div>
+                    <div className="border-fire/35 bg-fire/5 border p-4">
+                      <div className="mono text-fire mb-2">▼ sinal fraco</div>
                       <p
                         className="font-sans"
                         style={{
@@ -213,9 +211,9 @@ export function LicoesDosPps() {
         </div>
 
         <div className="mx-auto mt-16 max-w-4xl">
-          <div className="border-l-4 border-acid bg-ink-2 p-8 md:p-10">
+          <div className="border-acid bg-ink-2 border-l-4 p-8 md:p-10">
             <p
-              className="mb-4 font-display text-cream"
+              className="font-display text-cream mb-4"
               style={{
                 fontSize: 'clamp(1.5rem, 3vw, 2.25rem)',
                 lineHeight: '1.05',

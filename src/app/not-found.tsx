@@ -3,7 +3,7 @@ import { Container } from '@/components/patterns/container';
 
 export default function NotFound() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-ink py-20">
+    <div className="bg-ink flex min-h-screen items-center justify-center py-20">
       <Container size="md" className="text-center">
         <div className="flex flex-col items-center gap-6">
           <span className="kicker">// ERROR 404</span>

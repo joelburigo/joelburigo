@@ -89,10 +89,10 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-ink pb-24 pt-12 md:pt-16">
+      <section className="bg-ink relative overflow-hidden pt-12 pb-24 md:pt-16">
         <div className="grid-overlay" />
         <div
-          className="pointer-events-none absolute -right-40 top-20 h-[600px] w-[600px] rounded-full"
+          className="pointer-events-none absolute top-20 -right-40 h-[600px] w-[600px] rounded-full"
           style={{
             background: 'radial-gradient(circle, rgba(198,255,0,0.08), transparent 70%)',
           }}
@@ -150,7 +150,7 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
             </div>
 
             <aside
-              className="border border-white/10 bg-ink-2"
+              className="bg-ink-2 border border-white/10"
               style={{ boxShadow: 'var(--shadow-terminal)' }}
             >
               <div
@@ -158,7 +158,7 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
                 style={{ padding: '10px 14px' }}
               >
                 <span
-                  className="inline-block rounded-full bg-fire"
+                  className="bg-fire inline-block rounded-full"
                   style={{ width: '11px', height: '11px' }}
                 />
                 <span
@@ -166,11 +166,11 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
                   style={{ width: '11px', height: '11px', background: '#FFB020' }}
                 />
                 <span
-                  className="inline-block rounded-full bg-acid"
+                  className="bg-acid inline-block rounded-full"
                   style={{ width: '11px', height: '11px' }}
                 />
                 <span
-                  className="mono ml-auto text-fg-muted"
+                  className="mono text-fg-muted ml-auto"
                   style={{
                     fontSize: '11px',
                     letterSpacing: '0.12em',
@@ -189,7 +189,7 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
                   <span className="text-acid">$</span> ./advisory_filter --check
                 </div>
                 <div className="text-fg-muted">&gt; qualificando candidato…</div>
-                <div className="mt-2 text-cream">
+                <div className="text-cream mt-2">
                   <span className="text-acid">[✓]</span> momento crítico real ...........{' '}
                   <span className="text-acid">OK</span>
                 </div>
@@ -205,7 +205,7 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
                   <span className="text-acid">[✓]</span> fit + agenda disponível ........{' '}
                   <span className="text-acid">OK</span>
                 </div>
-                <div className="mt-2 text-cream">
+                <div className="text-cream mt-2">
                   &gt; status:{' '}
                   <span
                     style={{
@@ -217,7 +217,7 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
                     QUALIFIED
                   </span>
                 </div>
-                <div className="mt-3 text-fg-muted">[00:02]</div>
+                <div className="text-fg-muted mt-3">[00:02]</div>
                 <div className="text-fg-muted">&gt; checking slot availability…</div>
                 <div className="text-cream">
                   &gt; slots: <span className="text-acid">limitados</span> · conforme capacidade
@@ -236,7 +236,7 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
       </section>
 
       {/* MANIFESTO / FILTRO É × NÃO É */}
-      <section className="relative bg-ink-2 py-20">
+      <section className="bg-ink-2 relative py-20">
         <Container>
           <div className="mx-auto max-w-5xl">
             <div className="mb-12">
@@ -257,15 +257,15 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
 
             <div className="grid gap-0 border border-white/10 md:grid-cols-2">
               <div
-                className="border-b border-white/10 p-8 md:border-b-0 md:border-r"
+                className="border-b border-white/10 p-8 md:border-r md:border-b-0"
                 style={{ background: 'linear-gradient(180deg, rgba(198,255,0,0.04), transparent)' }}
               >
-                <div className="mono mb-5 text-acid">▲ é para</div>
+                <div className="mono text-acid mb-5">▲ é para</div>
                 <ul className="space-y-4">
                   {eh.map((item) => (
                     <li
                       key={item}
-                      className="flex items-start gap-3 font-sans text-cream"
+                      className="text-cream flex items-start gap-3 font-sans"
                       style={{ fontSize: '1rem', lineHeight: '1.45' }}
                     >
                       <span className="text-acid">✓</span>
@@ -278,7 +278,7 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
                 className="p-8"
                 style={{ background: 'linear-gradient(180deg, rgba(255,59,15,0.04), transparent)' }}
               >
-                <div className="mono mb-5 text-fire">▼ NÃO é para</div>
+                <div className="mono text-fire mb-5">▼ NÃO é para</div>
                 <ul className="space-y-4">
                   {naoEh.map((item) => (
                     <li
@@ -302,14 +302,14 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
       </section>
 
       {/* 3 FORMATOS */}
-      <section className="relative overflow-hidden bg-ink py-24">
+      <section className="bg-ink relative overflow-hidden py-24">
         <div className="grid-overlay" />
 
         <Container>
           <div className="mx-auto mb-16 max-w-3xl">
             <div className="kicker mb-4">// FORMATOS · 3 NÍVEIS DE PROFUNDIDADE</div>
             <h2
-              className="mb-6 font-display text-cream"
+              className="font-display text-cream mb-6"
               style={{
                 fontSize: 'clamp(2rem, 5vw, 3.5rem)',
                 lineHeight: '0.92',
@@ -321,7 +321,11 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
             </h2>
             <p
               className="font-sans"
-              style={{ fontSize: '1.125rem', lineHeight: '1.55', color: 'rgba(245, 241, 232, 0.7)' }}
+              style={{
+                fontSize: '1.125rem',
+                lineHeight: '1.55',
+                color: 'rgba(245, 241, 232, 0.7)',
+              }}
             >
               De sessão pontual a conselheiro executivo contínuo. Garantia incondicional em todos:
               se não agregar valor na primeira sessão, reembolso 100% · sem fricção. Sem perguntas.
@@ -342,13 +346,13 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
                 <article
                   key={f.nome}
                   className={`relative flex flex-col p-8 md:p-10 ${
-                    !isLast ? 'border-b border-white/10 lg:border-b-0 lg:border-r' : ''
+                    !isLast ? 'border-b border-white/10 lg:border-r lg:border-b-0' : ''
                   }`}
                   style={baseStyle}
                 >
                   {f.destaque && (
                     <div
-                      className="absolute inline-flex items-center gap-2 bg-acid px-2 py-1"
+                      className="bg-acid absolute inline-flex items-center gap-2 px-2 py-1"
                       style={{
                         color: 'var(--jb-ink)',
                         top: '-12px',
@@ -366,7 +370,7 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
                   )}
 
                   <h3
-                    className="mb-3 font-display text-cream"
+                    className="font-display text-cream mb-3"
                     style={{
                       fontSize: '1.35rem',
                       letterSpacing: '-0.02em',
@@ -417,7 +421,7 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
                   </p>
 
                   <div className="mb-6 border-t border-white/10 pt-5">
-                    <div className="mono mb-3 text-acid">// inclui</div>
+                    <div className="mono text-acid mb-3">// inclui</div>
                     <ul className="space-y-2">
                       {f.inclusos.map((item) => (
                         <li
@@ -437,7 +441,7 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
                   </div>
 
                   <div className="mb-6 border-t border-white/10 pt-5">
-                    <div className="mono mb-3 text-fire">// exemplos de uso</div>
+                    <div className="mono text-fire mb-3">// exemplos de uso</div>
                     <ul className="space-y-2">
                       {f.usos.map((u) => (
                         <li
@@ -458,7 +462,7 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
 
                   <div className="mb-6 min-h-[32px]">
                     {f.precoEspecial && (
-                      <div className="border-l-2 border-acid pl-3">
+                      <div className="border-acid border-l-2 pl-3">
                         <div className="mono text-acid">★ {f.precoEspecial}</div>
                       </div>
                     )}
@@ -479,13 +483,13 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
       </section>
 
       {/* GARANTIA + PROVA SOCIAL */}
-      <section className="relative bg-ink-2 py-20">
+      <section className="bg-ink-2 relative py-20">
         <Container>
           <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-[1fr_1fr]">
-            <div className="border-l-4 border-acid bg-ink p-8 md:p-10">
+            <div className="border-acid bg-ink border-l-4 p-8 md:p-10">
               <div className="kicker mb-4">// GARANTIA INCONDICIONAL</div>
               <p
-                className="mb-4 font-display text-cream"
+                className="font-display text-cream mb-4"
                 style={{
                   fontSize: 'clamp(1.5rem, 3vw, 2rem)',
                   lineHeight: '1.05',
@@ -498,7 +502,11 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
               </p>
               <p
                 className="font-sans"
-                style={{ fontSize: '0.95rem', lineHeight: '1.55', color: 'rgba(245, 241, 232, 0.8)' }}
+                style={{
+                  fontSize: '0.95rem',
+                  lineHeight: '1.55',
+                  color: 'rgba(245, 241, 232, 0.8)',
+                }}
               >
                 Avisa direto e o reembolso é processado sem burocracia. Sem perguntas. Sem
                 justificativas. Válida pra Sessão Estratégica, primeira sessão do Sprint e primeira
@@ -506,7 +514,7 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
               </p>
             </div>
 
-            <div className="border-l-4 border-fire bg-ink p-8 md:p-10">
+            <div className="border-fire bg-ink border-l-4 p-8 md:p-10">
               <div className="kicker mb-4" style={{ color: 'var(--jb-fire)' }}>
                 // PROVAS
               </div>
@@ -518,7 +526,7 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
                   >
                     17+
                   </div>
-                  <div className="mono mt-1 text-fg-muted" style={{ fontSize: '0.6rem' }}>
+                  <div className="mono text-fg-muted mt-1" style={{ fontSize: '0.6rem' }}>
                     anos
                   </div>
                 </div>
@@ -529,7 +537,7 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
                   >
                     140+
                   </div>
-                  <div className="mono mt-1 text-fg-muted" style={{ fontSize: '0.6rem' }}>
+                  <div className="mono text-fg-muted mt-1" style={{ fontSize: '0.6rem' }}>
                     clientes
                   </div>
                 </div>
@@ -540,14 +548,18 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
                   >
                     ~R$ 1BI
                   </div>
-                  <div className="mono mt-1 text-fg-muted" style={{ fontSize: '0.6rem' }}>
+                  <div className="mono text-fg-muted mt-1" style={{ fontSize: '0.6rem' }}>
                     em vendas
                   </div>
                 </div>
               </div>
               <p
                 className="font-sans"
-                style={{ fontSize: '0.95rem', lineHeight: '1.55', color: 'rgba(245, 241, 232, 0.8)' }}
+                style={{
+                  fontSize: '0.95rem',
+                  lineHeight: '1.55',
+                  color: 'rgba(245, 241, 232, 0.8)',
+                }}
               >
                 <strong className="text-cream">Case emblemático:</strong> holding de franquias — de
                 R$ 160k/mês para R$ 1 milhão/mês (+433%), leads ×8,33, holding com 1.800+
@@ -559,18 +571,18 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
       </section>
 
       {/* CTA FINAL */}
-      <section className="relative overflow-hidden bg-ink py-24">
+      <section className="bg-ink relative overflow-hidden py-24">
         <div className="grid-overlay" />
         <Container>
           <div
-            className="mx-auto max-w-4xl border-2 border-fire p-10 md:p-16"
+            className="border-fire mx-auto max-w-4xl border-2 p-10 md:p-16"
             style={{ background: 'linear-gradient(180deg, rgba(255,59,15,0.08), #050505)' }}
           >
             <div className="kicker mb-5" style={{ color: 'var(--jb-fire)' }}>
               // DECISÃO
             </div>
             <h2
-              className="mb-6 font-display text-cream"
+              className="font-display text-cream mb-6"
               style={{
                 fontSize: 'clamp(1.75rem, 4.5vw, 3rem)',
                 lineHeight: '0.95',
@@ -584,11 +596,14 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
             </h2>
             <p
               className="mb-8 font-sans"
-              style={{ fontSize: '1.125rem', lineHeight: '1.55', color: 'rgba(245, 241, 232, 0.85)' }}
+              style={{
+                fontSize: '1.125rem',
+                lineHeight: '1.55',
+                color: 'rgba(245, 241, 232, 0.85)',
+              }}
             >
-              Vagas limitadas conforme capacidade do momento. Seleção por fit real, não por ordem
-              de chegada. Se teu momento é agora, solicita o convite. Se não é, espera o momento
-              certo.
+              Vagas limitadas conforme capacidade do momento. Seleção por fit real, não por ordem de
+              chegada. Se teu momento é agora, solicita o convite. Se não é, espera o momento certo.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
               <a

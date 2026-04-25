@@ -4,8 +4,7 @@ import { Container } from '@/components/patterns/container';
 
 export const metadata: Metadata = {
   title: 'Diagnóstico concluído | Joel Burigo',
-  description:
-    'Seu diagnóstico 6Ps foi processado. Resultado chegando no WhatsApp e email.',
+  description: 'Seu diagnóstico 6Ps foi processado. Resultado chegando no WhatsApp e email.',
   robots: { index: false, follow: false },
 };
 
@@ -29,12 +28,14 @@ const steps = [
 
 export default function DiagnosticoObrigadoPage() {
   return (
-    <main className="relative overflow-hidden bg-ink pt-20">
+    <main className="bg-ink relative overflow-hidden pt-20">
       <div className="grid-overlay" />
       <Container className="relative z-10">
         <section className="py-16 md:py-24">
           <div className="mx-auto max-w-4xl">
-            <div className="kicker mb-6">// DIAGNÓSTICO · STATUS: PROCESSADO · RESULTADO_ENVIADO</div>
+            <div className="kicker mb-6">
+              // DIAGNÓSTICO · STATUS: PROCESSADO · RESULTADO_ENVIADO
+            </div>
 
             <h1
               className="font-display text-cream"
@@ -48,10 +49,10 @@ export default function DiagnosticoObrigadoPage() {
               }}
             >
               <span className="stroke-text">DIAGNÓSTICO</span>
-              <span className="block text-acid">CONCLUÍDO.</span>
+              <span className="text-acid block">CONCLUÍDO.</span>
             </h1>
 
-            <p className="mt-8 max-w-2xl font-sans text-lg text-cream">
+            <p className="text-cream mt-8 max-w-2xl font-sans text-lg">
               Suas respostas foram processadas. O raio-X dos 6Ps tá indo pro teu WhatsApp e email
               agora.
             </p>
@@ -61,48 +62,48 @@ export default function DiagnosticoObrigadoPage() {
                 <div className="kicker mb-3" style={{ color: 'var(--jb-acid)' }}>
                   // CANAL · WHATSAPP
                 </div>
-                <h3 className="heading-4 mb-2 text-cream">Resultado completo</h3>
-                <p className="font-sans text-fg-2">
-                  Análise automática dos 6Ps + score por P + diagnóstico estratégico chegando no
-                  teu WhatsApp agora.
+                <h3 className="heading-4 text-cream mb-2">Resultado completo</h3>
+                <p className="text-fg-2 font-sans">
+                  Análise automática dos 6Ps + score por P + diagnóstico estratégico chegando no teu
+                  WhatsApp agora.
                 </p>
               </div>
               <div className="card">
                 <div className="kicker mb-3">// CANAL · EMAIL</div>
-                <h3 className="heading-4 mb-2 text-cream">Link pro raio-X</h3>
-                <p className="font-sans text-fg-2">
+                <h3 className="heading-4 text-cream mb-2">Link pro raio-X</h3>
+                <p className="text-fg-2 font-sans">
                   Também chega por email um link pra acessar o diagnóstico completo com plano de
                   ação.
                 </p>
               </div>
             </div>
 
-            <div className="mt-12 border border-[var(--jb-hair)] bg-ink-2 p-8">
+            <div className="bg-ink-2 mt-12 border border-[var(--jb-hair)] p-8">
               <div className="kicker mb-6">// O_QUE_ACONTECE_AGORA</div>
               <ol className="space-y-6">
                 {steps.map((step) => (
                   <li key={step.n} className="flex items-start gap-5">
                     <div
-                      className="shrink-0 font-mono text-sm font-bold text-acid"
+                      className="text-acid shrink-0 font-mono text-sm font-bold"
                       style={{ letterSpacing: '0.1em' }}
                     >
                       {step.n}
                     </div>
                     <div>
-                      <h3 className="heading-4 mb-1 text-cream">{step.title}</h3>
-                      <p className="font-sans text-fg-2">{step.body}</p>
+                      <h3 className="heading-4 text-cream mb-1">{step.title}</h3>
+                      <p className="text-fg-2 font-sans">{step.body}</p>
                     </div>
                   </li>
                 ))}
               </ol>
             </div>
 
-            <div className="mt-12 border-l-2 border-fire bg-ink-2 p-8">
+            <div className="border-fire bg-ink-2 mt-12 border-l-2 p-8">
               <div className="kicker mb-3" style={{ color: 'var(--jb-fire)' }}>
                 // ENQUANTO_AGUARDA
               </div>
-              <h2 className="heading-2 mb-4 text-cream">Conhece o framework 6Ps.</h2>
-              <p className="mb-6 font-sans text-fg-2">
+              <h2 className="heading-2 text-cream mb-4">Conhece o framework 6Ps.</h2>
+              <p className="text-fg-2 mb-6 font-sans">
                 O diagnóstico que você fez é baseado na mesma base aplicada em 140+ empresas. Veja
                 como funciona o VSS completo.
               </p>
@@ -129,7 +130,7 @@ export default function DiagnosticoObrigadoPage() {
               </Link>
             </div>
 
-            <div className="mt-12 border-t border-[var(--jb-hair)] pt-8 font-mono text-[11px] uppercase tracking-[0.28em] text-fg-muted">
+            <div className="text-fg-muted mt-12 border-t border-[var(--jb-hair)] pt-8 font-mono text-[11px] tracking-[0.28em] uppercase">
               <span className="text-acid">★</span>&nbsp;&nbsp;SISTEMA{' '}
               <span className="text-fire">&gt;</span> IMPROVISO · LET&apos;S GROW
             </div>

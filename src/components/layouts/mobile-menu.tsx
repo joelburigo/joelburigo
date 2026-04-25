@@ -20,14 +20,14 @@ export function MobileMenu({ navLinks, secondaryLinks }: MobileMenuProps) {
   return (
     <Sheet>
       <SheetTrigger
-        className="relative z-50 inline-flex size-11 items-center justify-center text-cream md:hidden"
+        className="text-cream relative z-50 inline-flex size-11 items-center justify-center md:hidden"
         aria-label="Abrir menu"
       >
         <Menu className="size-6" />
       </SheetTrigger>
       <SheetContent
         side="right"
-        className="w-full max-w-full bg-ink border-l-[var(--jb-hair-strong)] sm:max-w-md"
+        className="bg-ink w-full max-w-full border-l-[var(--jb-hair-strong)] sm:max-w-md"
       >
         <SheetTitle className="sr-only">Menu de navegação</SheetTitle>
         <div className="flex flex-col gap-8 pt-4">
@@ -38,8 +38,8 @@ export function MobileMenu({ navLinks, secondaryLinks }: MobileMenuProps) {
                 key={link.path}
                 href={link.path}
                 className={cn(
-                  'font-display text-2xl font-black uppercase tracking-tight text-cream',
-                  'transition-colors hover:text-acid'
+                  'font-display text-cream text-2xl font-black tracking-tight uppercase',
+                  'hover:text-acid transition-colors'
                 )}
               >
                 {link.name}
@@ -52,7 +52,7 @@ export function MobileMenu({ navLinks, secondaryLinks }: MobileMenuProps) {
               <Link
                 key={link.path}
                 href={link.path}
-                className="font-mono text-xs uppercase tracking-[0.22em] text-fg-3 transition-colors hover:text-acid"
+                className="text-fg-3 hover:text-acid font-mono text-xs tracking-[0.22em] uppercase transition-colors"
               >
                 {link.name}
               </Link>

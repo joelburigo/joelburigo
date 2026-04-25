@@ -5,8 +5,7 @@ import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'Links — Joel Burigo',
-  description:
-    'Todos os canais oficiais de Joel Burigo · criador dos 6Ps das Vendas Escaláveis',
+  description: 'Todos os canais oficiais de Joel Burigo · criador dos 6Ps das Vendas Escaláveis',
   robots: { index: false, follow: false },
 };
 
@@ -69,14 +68,14 @@ const links = [
 
 export default function LinksPage() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-ink">
+    <main className="bg-ink relative min-h-screen overflow-hidden">
       <div className="grid-overlay" />
 
-      <div className="relative z-10 flex items-center justify-between border-b border-[var(--jb-hair)] px-5 py-3 font-mono text-[11px] uppercase tracking-[0.22em] text-fg-muted">
+      <div className="text-fg-muted relative z-10 flex items-center justify-between border-b border-[var(--jb-hair)] px-5 py-3 font-mono text-[11px] tracking-[0.22em] uppercase">
         <div className="flex items-center gap-3">
           <span className="dot-live" />
           <span>SYS ONLINE</span>
-          <span className="text-[var(--jb-hair-strong)] hidden sm:inline">·</span>
+          <span className="hidden text-[var(--jb-hair-strong)] sm:inline">·</span>
           <span className="hidden sm:inline">FLORIANÓPOLIS/SC</span>
         </div>
         <div>JB_LINKS v3.0</div>
@@ -84,17 +83,17 @@ export default function LinksPage() {
 
       <div className="relative z-10 mx-auto max-w-xl px-5 py-12 md:py-16">
         <header className="mb-10 text-center">
-          <div className="mx-auto mb-6 inline-flex h-24 w-24 items-center justify-center border border-[var(--jb-fire-border)] bg-ink-2">
+          <div className="bg-ink-2 mx-auto mb-6 inline-flex h-24 w-24 items-center justify-center border border-[var(--jb-fire-border)]">
             <span className="font-display text-2xl tracking-tight">
               <span className="text-cream">JB</span>
             </span>
           </div>
 
           <div className="kicker mb-4">// JOEL_BURIGO · 17+ ANOS · 140+ MPES</div>
-          <h1 className="heading-1 mb-3 text-cream">
+          <h1 className="heading-1 text-cream mb-3">
             JOEL<span className="text-fire">|</span>BURIGO
           </h1>
-          <p className="font-sans text-fg-2">
+          <p className="text-fg-2 font-sans">
             Vendas Escaláveis pra MPE.
             <br />
             Framework 6Ps. Zero fórmula mágica.
@@ -108,8 +107,8 @@ export default function LinksPage() {
             { num: '140+', label: 'clientes' },
           ].map((s) => (
             <div key={s.label} className="bg-ink-2 p-4 text-center">
-              <div className="font-display text-xl text-acid">{s.num}</div>
-              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-fg-muted">
+              <div className="font-display text-acid text-xl">{s.num}</div>
+              <div className="text-fg-muted font-mono text-[10px] tracking-[0.2em] uppercase">
                 {s.label}
               </div>
             </div>
@@ -124,14 +123,12 @@ export default function LinksPage() {
               <Tag
                 key={link.title}
                 href={link.href}
-                {...(link.external
-                  ? { target: '_blank', rel: 'noopener noreferrer' }
-                  : {})}
+                {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 className={cn(
-                  'group block border bg-ink-2 p-5 transition-all duration-[180ms] hover:-translate-x-[2px] hover:-translate-y-[2px]',
+                  'group bg-ink-2 block border p-5 transition-all duration-[180ms] hover:-translate-x-[2px] hover:-translate-y-[2px]',
                   link.featured
-                    ? 'border-[var(--jb-acid-border)] hover:shadow-[6px_6px_0_var(--jb-acid)] hover:border-acid'
-                    : 'border-[var(--jb-hair)] hover:shadow-[6px_6px_0_var(--jb-fire)] hover:border-fire'
+                    ? 'hover:border-acid border-[var(--jb-acid-border)] hover:shadow-[6px_6px_0_var(--jb-acid)]'
+                    : 'hover:border-fire border-[var(--jb-hair)] hover:shadow-[6px_6px_0_var(--jb-fire)]'
                 )}
                 style={
                   link.featured
@@ -143,17 +140,17 @@ export default function LinksPage() {
                 }
               >
                 <div className="flex items-center justify-between gap-4">
-                  <div className="flex-1 min-w-0">
+                  <div className="min-w-0 flex-1">
                     <div
                       className={cn(
-                        'font-mono text-[11px] uppercase tracking-[0.22em]',
+                        'font-mono text-[11px] tracking-[0.22em] uppercase',
                         link.featured ? 'text-acid' : 'text-fg-muted'
                       )}
                     >
                       {link.kicker}
                     </div>
-                    <div className="mt-1 font-display text-base text-cream">{link.title}</div>
-                    <div className="mt-1 font-sans text-sm text-fg-3">{link.body}</div>
+                    <div className="font-display text-cream mt-1 text-base">{link.title}</div>
+                    <div className="text-fg-3 mt-1 font-sans text-sm">{link.body}</div>
                   </div>
                   <span
                     className={cn(
@@ -170,11 +167,11 @@ export default function LinksPage() {
         </div>
 
         <footer className="mt-12 border-t border-[var(--jb-hair)] pt-8 text-center">
-          <div className="mb-3 font-mono text-[11px] uppercase tracking-[0.28em] text-fg-muted">
+          <div className="text-fg-muted mb-3 font-mono text-[11px] tracking-[0.28em] uppercase">
             <span className="text-acid">★</span>&nbsp;&nbsp;SISTEMA{' '}
             <span className="text-fire">&gt;</span> IMPROVISO
           </div>
-          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-fg-muted">
+          <p className="text-fg-muted font-mono text-[10px] tracking-[0.2em] uppercase">
             © 2026 Joel Burigo · Growth Master Ltda
           </p>
         </footer>

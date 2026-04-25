@@ -1,8 +1,8 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Container } from '@/components/patterns/container';
-import { cn } from '@/lib/utils';
+import { cn, formatDate } from '@/lib/utils';
 import { getPublishedPosts } from '@/server/services/blog';
-import { formatDate } from '@/lib/utils';
 import s from './blog-posts-section.module.css';
 
 export async function BlogPostsSection() {
@@ -40,9 +40,12 @@ export async function BlogPostsSection() {
               <Link key={post.slug} href={`/blog/${post.slug}`} className={s.blogCard} prefetch>
                 {post.cover_image_path && (
                   <div className={s.blogThumb}>
-                    <img
+                    <Image
                       src={post.cover_image_path}
                       alt={post.cover_image_alt || post.title}
+                      width={640}
+                      height={400}
+                      sizes="(max-width: 768px) 100vw, 33vw"
                       loading="lazy"
                       className={s.blogThumbImg}
                     />

@@ -67,6 +67,7 @@ Vamos lá.
 ---
 
 <a name="por-que-80-das-mpes-tem-vendas-aleatorias"></a>
+
 ## Por Que 80% das MPEs Têm Vendas Aleatórias
 
 Deixa eu te descrever uma cena que já vi centenas de vezes.
@@ -141,6 +142,7 @@ Foi por isso que, em 2025, dei nome e estrutura formal aos 6Ps.
 ---
 
 <a name="o-que-sao-os-6ps-das-vendas-escalaveis"></a>
+
 ## O Que São os 6Ps das Vendas Escaláveis
 
 Os 6Ps das Vendas Escaláveis é o framework que condensei em 2025 a partir de 17+ anos diagnosticando e evoluindo operações de vendas em micro e pequenas empresas.
@@ -196,6 +198,7 @@ Esse é o objetivo. Vamos destrinchar cada P.
 ---
 
 <a name="p1-posicionamento"></a>
+
 ## P1: Posicionamento — Por Que Você Existe (e Por Que Alguém Deveria Te Escolher)
 
 Posicionamento é a BASE de tudo. É a fundação da casa. Se estiver fraco, todo o resto desmorona. Se você quer construir um diferencial que o cliente entenda em 30 segundos, comece pelo guia de [posicionamento e diferencial único](/blog/posicionamento-diferencial-unico).
@@ -249,11 +252,11 @@ Se respondeu "não" pra 2 ou mais, seu P1 precisa de trabalho urgente.
 
 Complete essa frase:
 
-*"Eu ajudo [PÚBLICO] a [TRANSFORMAÇÃO] através de [MÉTODO/DIFERENCIAL] para que [RESULTADO FINAL]."*
+_"Eu ajudo [PÚBLICO] a [TRANSFORMAÇÃO] através de [MÉTODO/DIFERENCIAL] para que [RESULTADO FINAL]."_
 
 Exemplo do meu posicionamento:
 
-*"Eu ajudo donos de MPEs que faturam R$ 10k-300k/mês a transformar vendas aleatórias em vendas previsíveis através do Framework dos 6Ps para que tenham clareza, autonomia e crescimento sustentável."*
+_"Eu ajudo donos de MPEs que faturam R$ 10k-300k/mês a transformar vendas aleatórias em vendas previsíveis através do Framework dos 6Ps para que tenham clareza, autonomia e crescimento sustentável."_
 
 Simples. Direto. Claro.
 
@@ -265,7 +268,7 @@ Você tem 30 segundos. O que diz?
 
 Meu pitch:
 
-*"Sou Joel Burigo, especialista em vendas escaláveis. Condensei 17+ anos nos 6Ps das Vendas Escaláveis — metodologia que nasce de ~R$ 1 bilhão em vendas estruturadas. Transformo MPEs de vendas aleatórias para vendas previsíveis em 90 dias. Funciona com ou sem budget de tráfego."*
+_"Sou Joel Burigo, especialista em vendas escaláveis. Condensei 17+ anos nos 6Ps das Vendas Escaláveis — metodologia que nasce de ~R$ 1 bilhão em vendas estruturadas. Transformo MPEs de vendas aleatórias para vendas previsíveis em 90 dias. Funciona com ou sem budget de tráfego."_
 
 Escreve o seu. Decora. Treina no espelho.
 
@@ -308,6 +311,7 @@ Percebe como o segundo gera interesse imediato? O empresário pensa: "Esse cara 
 ---
 
 <a name="p2-publico"></a>
+
 ## P2: Público — Pra Quem Você Vende (Definir o Cliente Ideal Muda Tudo)
 
 Se P1 é a fundação, P2 é a parede. Sem saber pra quem você vende, você atira pra todo lado e não acerta ninguém.
@@ -357,6 +361,7 @@ Se serve pra todo mundo, não serve pra ninguém. Porque sua comunicação fica 
 **Passo 1: Analise seus 10 melhores clientes**
 
 Não os maiores. Os MELHORES. Aqueles que:
+
 - Pagam bem e sem reclamar
 - Valorizam seu trabalho
 - Indicam outros
@@ -367,6 +372,7 @@ Olha pra esses 10. O que eles têm em comum?
 **Passo 2: Encontre padrões**
 
 Padrões demográficos:
+
 - Faixa de faturamento?
 - Número de funcionários?
 - Segmento?
@@ -374,6 +380,7 @@ Padrões demográficos:
 - Cargo do decisor?
 
 Padrões comportamentais:
+
 - Como te encontraram?
 - O que os fez comprar?
 - Quanto tempo levaram pra decidir?
@@ -397,28 +404,33 @@ Exemplo da minha persona:
 - Formado em Contabilidade, empreende há 6 anos
 
 **Situação:**
+
 - Ele é o principal vendedor da empresa
 - Usa Excel pra controlar leads
 - Já pagou R$ 3k/mês pra agência de tráfego (resultado pífio)
 - Trabalha 12h/dia, vendas oscilam muito
 
 **3 Maiores Dores:**
+
 1. "Mês passado faturei R$ 120k, esse mês R$ 50k — zero previsibilidade. Fico ansioso todo fechamento."
 2. "Quando entro de férias, vendas param. Só eu sei vender. Não tenho vida."
 3. "Contratei agência, gastei R$ 15k em 3 meses, não fechei nada. Leads chegavam mas não convertiam."
 
 **3 Maiores Desejos:**
+
 1. "Quero saber exatamente quanto vai entrar próximo mês. Dormir tranquilo."
 2. "Quero tirar férias sem vendas pararem. Sistema que roda sem mim."
 3. "Quero crescer sem trabalhar 3x mais. Escalar com inteligência."
 
 **Objeções:**
+
 - "Já fiz curso e não implementei"
 - "Não tenho tempo"
 - "Funciona pro meu nicho?"
 - "R$ 2k é caro"
 
 **Onde encontrá-lo:**
+
 - LinkedIn (ativo, posta sobre negócios)
 - Instagram (segue perfis de gestão empresarial)
 - Eventos de empreendedorismo
@@ -431,6 +443,7 @@ Quando você tem uma persona assim, sua comunicação muda completamente. Você 
 **Passo 4: Mapeie dores, desejos e objeções**
 
 Pra cada persona:
+
 - Liste 3-5 maiores dores (problemas que tiram o sono)
 - Liste 3-5 maiores desejos (onde quer chegar)
 - Liste 5-10 objeções comuns (por que não compraria)
@@ -440,12 +453,14 @@ Isso vira munição pro seu marketing.
 **Passo 5: Liste onde encontrá-lo**
 
 Online:
+
 - Quais redes sociais usa?
 - Quais grupos participa?
 - Quais conteúdos consome?
 - Quais influenciadores segue?
 
 Offline:
+
 - Quais eventos frequenta?
 - Quais associações participa?
 - Onde faz networking?
@@ -455,6 +470,7 @@ Agora você sabe onde seu cliente está. Vai até ele.
 ---
 
 <a name="p3-produto"></a>
+
 ## P3: Produto — O Que Você Oferece (A Arte de Criar Ofertas Irresistíveis)
 
 Você pode ter o melhor produto do mundo. Se estiver mal "embalado", não vende.
@@ -509,13 +525,13 @@ Qual é o ANTES e DEPOIS do seu cliente?
 
 Exemplo VSS:
 
-| ANTES | DEPOIS |
-|-------|--------|
-| Vendas aleatórias | Sistema funcionando |
-| Dependência do fundador | Time vendendo |
-| Sem previsibilidade | Sabe quanto vai faturar |
-| Leads em Excel | CRM rodando |
-| Cada venda diferente | Processo documentado |
+| ANTES                   | DEPOIS                  |
+| ----------------------- | ----------------------- |
+| Vendas aleatórias       | Sistema funcionando     |
+| Dependência do fundador | Time vendendo           |
+| Sem previsibilidade     | Sabe quanto vai faturar |
+| Leads em Excel          | CRM rodando             |
+| Cada venda diferente    | Processo documentado    |
 
 Isso é transformação. É isso que o cliente compra.
 
@@ -525,14 +541,14 @@ Stack de Valor é listar tudo que o cliente recebe e quanto cada coisa valeria s
 
 Exemplo VSS:
 
-| COMPONENTE | VALOR SEPARADO |
-|------------|----------------|
-| Sistema VSS Implementável (playbook + 15 vídeos-âncora, vitalício) | R$ 1.997 |
-| Growth CRM 12 meses | R$ 6.996 |
-| 48 mentorias ao vivo com Joel (1/semana, 60 min) | R$ 7.200 |
-| Templates e automações | R$ 497 |
-| Comunidade exclusiva (90 dias) | R$ 597 |
-| **VALOR TOTAL** | **R$ 17.287** |
+| COMPONENTE                                                         | VALOR SEPARADO |
+| ------------------------------------------------------------------ | -------------- |
+| Sistema VSS Implementável (playbook + 15 vídeos-âncora, vitalício) | R$ 1.997       |
+| Growth CRM 12 meses                                                | R$ 6.996       |
+| 48 mentorias ao vivo com Joel (1/semana, 60 min)                   | R$ 7.200       |
+| Templates e automações                                             | R$ 497         |
+| Comunidade exclusiva (90 dias)                                     | R$ 597         |
+| **VALOR TOTAL**                                                    | **R$ 17.287**  |
 
 **Investimento real: R$ 1.997**
 
@@ -543,6 +559,7 @@ Quando o cliente vê que está levando R$ 17k de valor por R$ 2k, a objeção de
 Garantia remove risco. Risco é a principal barreira de compra.
 
 Tipos de garantia:
+
 - **Garantia incondicional**: "Não gostou? Devolvemos 100% em X dias."
 - **Garantia de resultado**: "Se não tiver resultado X, devolvemos."
 - **Garantia de satisfação**: "Se não ficar satisfeito, continuamos trabalhando até ficar."
@@ -555,6 +572,7 @@ Ter 1 opção = cliente decide "compro ou não compro".
 Ter 2-3 opções = cliente decide "qual eu compro".
 
 Exemplo:
+
 - **Opção 1**: Pagamento à vista com desconto
 - **Opção 2**: Parcelamento em 12x
 
@@ -564,6 +582,7 @@ Urgência falsa = perde credibilidade.
 Urgência real = acelera decisão.
 
 Urgências reais:
+
 - Capacidade de acompanhamento ao vivo (grupos com limite pra manter qualidade)
 - Bônus por tempo limitado em ações específicas
 - Realidade do mercado ("cada mês com vendas aleatórias = dinheiro perdido")
@@ -571,6 +590,7 @@ Urgências reais:
 ---
 
 <a name="p4-programas"></a>
+
 ## P4: Programas — Como Você Vende (O Motor das Vendas Escaláveis)
 
 Agora entramos no coração da máquina. P4 é onde a maioria dos empresários quer começar — e onde mais erram.
@@ -612,6 +632,7 @@ Ter bom produto (P3) não basta. Você precisa de um sistema pra atrair, nutrir 
 CRM é o coração do P4. Sem CRM, você não tem sistema — tem bagunça.
 
 **O que o CRM faz:**
+
 - Centraliza todos os leads
 - Registra todo histórico de interação
 - Organiza pipeline de vendas
@@ -627,6 +648,7 @@ No VSS, uso o Growth CRM (white-label do Go High Level). Mas serve HubSpot, Pipe
 > 💡 **Aprofunde**: Veja a comparação completa entre opções gratuitas e profissionais em [CRM Gratuito vs Profissional: Qual Escolher?](/blog/crm-gratuito-vs-profissional)
 
 **O que configurar primeiro:**
+
 1. Pipeline de vendas (Novo → Qualificando → Proposta → Negociação → Fechado/Perdido)
 2. Campos personalizados (faturamento, segmento, origem)
 3. Automação de boas-vindas (lead entra → recebe mensagem)
@@ -664,16 +686,19 @@ Automações fazem o trabalho repetitivo por você.
 **3 automações essenciais:**
 
 **Automação 1: Boas-vindas de lead novo**
+
 - Trigger: Lead entra no CRM
 - Ação: Envia email + WhatsApp de boas-vindas
 - Ação: Cria tarefa pro vendedor qualificar em 24h
 
 **Automação 2: Follow-up de lead frio**
+
 - Trigger: Lead não respondeu há 7 dias
 - Ação: Envia email "Ainda faz sentido?"
 - Ação: Se não responder em 3 dias, manda WhatsApp
 
 **Automação 3: Onboarding de cliente novo**
+
 - Trigger: Cliente fechou
 - Ação: Envia email de boas-vindas + acesso
 - Ação: Cria tarefa pra primeiro contato de sucesso
@@ -685,12 +710,14 @@ Funil sem tráfego é carro sem combustível.
 **Duas rotas:**
 
 **ROTA 1: Com budget de tráfego**
+
 - Meta Ads (Facebook/Instagram)
 - Google Ads
 - Investimento mínimo: R$ 1.500-3.000/mês
 - Resultado mais rápido, mais previsível
 
 **ROTA 2: Sem budget (ou pouco)**
+
 - LinkedIn (prospecção ativa + conteúdo)
 - Instagram (conteúdo + DM)
 - Email frio
@@ -711,6 +738,7 @@ O VSS ensina as duas rotas. Porque nem todo mundo tem R$ 3k/mês pra tráfego. E
 ---
 
 <a name="p5-processos"></a>
+
 ## P5: Processos — Como Você Opera (O Que Não Está Documentado, Não Existe)
 
 P5 é onde separamos amadores de profissionais.
@@ -752,18 +780,21 @@ Essa frase é a prova de que seu P5 está quebrado.
 ### Os 5 Processos Essenciais de Vendas
 
 **Processo 1: Captação de Leads**
+
 - Como leads são gerados?
 - Quais canais?
 - Quem é responsável?
 - Qual a meta diária/semanal?
 
 **Processo 2: Qualificação**
+
 - Quais critérios definem lead qualificado?
 - Quais perguntas fazer?
 - Como registrar no CRM?
 - Quanto tempo máximo pra qualificar?
 
 **Processo 3: Vendas (Script)**
+
 - Roteiro da ligação/reunião de vendas
 - Perguntas de descoberta
 - Apresentação da solução
@@ -771,6 +802,7 @@ Essa frase é a prova de que seu P5 está quebrado.
 - Fechamento
 
 **Processo 4: Onboarding de Cliente**
+
 - O que acontece depois que cliente fecha?
 - Primeiro email/mensagem
 - Primeira entrega
@@ -778,6 +810,7 @@ Essa frase é a prova de que seu P5 está quebrado.
 - Check-in de 7, 15, 30 dias
 
 **Processo 5: Pós-Venda**
+
 - Como medir satisfação?
 - Como pedir indicação?
 - Como identificar upsell?
@@ -854,6 +887,7 @@ MÉTRICAS:
 ```
 
 Quando você tem isso pra cada processo, você pode:
+
 - Treinar qualquer pessoa
 - Medir resultados
 - Melhorar continuamente
@@ -862,6 +896,7 @@ Quando você tem isso pra cada processo, você pode:
 ---
 
 <a name="p6-pessoas"></a>
+
 ## P6: Pessoas — Quem Executa (Estratégia Sem Time é Só PowerPoint)
 
 O último P. E talvez o mais negligenciado.
@@ -923,6 +958,7 @@ Hoje você pode ocupar todas as caixas. Mas sabe quais contratar primeiro.
 **Passo 2: Crie Job Descriptions**
 
 Pra cada função:
+
 - Responsabilidades (o que faz)
 - Métricas de sucesso (como é medido)
 - Autonomia vs. Aprovação (o que decide sozinho, o que precisa aprovar)
@@ -932,6 +968,7 @@ Pra cada função:
 **Passo 3: Estruture Onboarding**
 
 Quando contratar, tenha:
+
 - Semana 1: O que a pessoa precisa aprender
 - Semana 2-4: O que precisa executar com supervisão
 - Mês 2-3: O que precisa executar sozinha
@@ -950,6 +987,7 @@ Isso acelera a curva de aprendizado dramaticamente.
 Cultura não é o que você fala. É o que você faz.
 
 Defina:
+
 - 3-5 valores inegociáveis
 - Comportamentos que representam esses valores
 - Como reconhecer quem vive os valores
@@ -964,6 +1002,7 @@ Minha regra: **Só contrate quando você já validou o processo de vendas.**
 Se VOCÊ não consegue vender seu produto, um funcionário também não vai conseguir.
 
 Primeiro:
+
 1. Venda você mesmo
 2. Documente o processo (P5)
 3. Prove que funciona (fechou 10-20 clientes)
@@ -974,20 +1013,21 @@ Contratar vendedor pra "descobrir como vender" é receita pra frustração.
 ---
 
 <a name="como-descobrir-seu-score"></a>
+
 ## Como Descobrir Seu Score nos 6Ps (e Por Onde Começar)
 
 Agora que você entende cada P, hora de se avaliar.
 
 ### A Matriz de Maturidade
 
-| Pontuação | Nível | Descrição |
-|-----------|-------|-----------|
-| 0-5 | Caótico | Não existe sistema. Improviso total. |
-| 6-10 | Iniciante | Tentando estruturar. Muito a fazer. |
-| 11-15 | Em Desenvolvimento | Alguns Ps funcionando. Outros travados. |
-| 16-20 | Estruturado | Sistema existe. Precisa otimizar. |
-| 21-25 | Avançado | Sistema funcionando bem. Refinando. |
-| 26-30 | Otimizado | Máquina rodando. Referência no mercado. |
+| Pontuação | Nível              | Descrição                               |
+| --------- | ------------------ | --------------------------------------- |
+| 0-5       | Caótico            | Não existe sistema. Improviso total.    |
+| 6-10      | Iniciante          | Tentando estruturar. Muito a fazer.     |
+| 11-15     | Em Desenvolvimento | Alguns Ps funcionando. Outros travados. |
+| 16-20     | Estruturado        | Sistema existe. Precisa otimizar.       |
+| 21-25     | Avançado           | Sistema funcionando bem. Refinando.     |
+| 26-30     | Otimizado          | Máquina rodando. Referência no mercado. |
 
 ### Como Fazer Seu Diagnóstico
 
@@ -999,15 +1039,15 @@ Agora que você entende cada P, hora de se avaliar.
 
 ### Sua Avaliação (faça agora)
 
-| P | Pergunta-chave | Sua Nota (0-5) |
-|---|----------------|----------------|
-| P1 | Você consegue explicar seu diferencial em 30 segundos de forma clara? | ___ |
-| P2 | Você sabe exatamente quem é seu cliente ideal e onde encontrá-lo? | ___ |
-| P3 | Sua oferta é clara, com valor percebido e garantia? | ___ |
-| P4 | Você tem CRM, funis e automações funcionando? | ___ |
-| P5 | Seus processos estão documentados e qualquer pessoa pode seguir? | ___ |
-| P6 | Você tem pessoas treinadas com papéis claros? | ___ |
-| **TOTAL** | | **___/30** |
+| P         | Pergunta-chave                                                        | Sua Nota (0-5) |
+| --------- | --------------------------------------------------------------------- | -------------- |
+| P1        | Você consegue explicar seu diferencial em 30 segundos de forma clara? | \_\_\_         |
+| P2        | Você sabe exatamente quem é seu cliente ideal e onde encontrá-lo?     | \_\_\_         |
+| P3        | Sua oferta é clara, com valor percebido e garantia?                   | \_\_\_         |
+| P4        | Você tem CRM, funis e automações funcionando?                         | \_\_\_         |
+| P5        | Seus processos estão documentados e qualquer pessoa pode seguir?      | \_\_\_         |
+| P6        | Você tem pessoas treinadas com papéis claros?                         | \_\_\_         |
+| **TOTAL** |                                                                       | **\_\_\_/30**  |
 
 ### Regra de Ouro: A Ordem Importa
 
@@ -1042,6 +1082,7 @@ Repita o ciclo a cada trimestre.
 ---
 
 <a name="erros-comuns"></a>
+
 ## 6 Erros Que Vão Sabotar Seus 6Ps (Evite a Todo Custo)
 
 Depois de 17 anos e 140 clientes, já vi todo tipo de erro. Esses são os mais comuns:
@@ -1097,6 +1138,7 @@ O contexto dele é diferente do seu. O que funciona pra ele pode não funcionar 
 ---
 
 <a name="case-real"></a>
+
 ## Cases Reais: 6Ps em Diferentes Operações
 
 Vou te mostrar 3 casos que marcaram minha trajetória. Cada um com desafio diferente, mas mesmo framework.
@@ -1151,9 +1193,9 @@ Let's grow.
 
 ---
 
-*Joel Burigo*
-*Especialista em Vendas Escaláveis*
-*Criador dos 6Ps das Vendas Escaláveis*
+_Joel Burigo_
+_Especialista em Vendas Escaláveis_
+_Criador dos 6Ps das Vendas Escaláveis_
 
 ---
 

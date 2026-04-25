@@ -7,7 +7,9 @@
 ## Estrutura do Cluster
 
 ### 🎯 PILAR (Pillar Page)
+
 **Artigo Principal**: `6ps-vendas-escalaveis-guia-completo.md`
+
 - **Keyword Principal**: "6Ps das vendas escaláveis"
 - **Keywords Secundárias**: "vendas previsíveis", "sistema de vendas", "estruturar vendas"
 - **Objetivo**: Conteúdo abrangente (25 min leitura) que cobre todos os 6Ps
@@ -19,27 +21,35 @@
 ## 📚 CLUSTERS (Spoke Content)
 
 ### Cluster 1: P1 - Posicionamento
+
 **Artigo**: `posicionamento-diferencial-unico.md`
+
 - **Keyword Principal**: "posicionamento de mercado"
 - **Keywords Long-tail**: "como definir posicionamento", "diferencial competitivo"
 - **Aprofunda**: Primeira seção do pilar
 - **Link interno**: Para o pilar e para o cluster P2
 
 ### Cluster 2: P2 - Público (ICP)
+
 **Artigo**: `icp-cliente-ideal-perfil.md`
+
 - **Keyword Principal**: "ICP cliente ideal"
 - **Keywords Long-tail**: "como definir cliente ideal", "perfil de cliente"
 - **Aprofunda**: Segunda seção do pilar
 - **Link interno**: Para o pilar e para o cluster P3
 
 ### Cluster 3: P3 - Produto/Oferta
-**Artigo**: *(A CRIAR)* `oferta-irresistivel-vendas.md`
+
+**Artigo**: _(A CRIAR)_ `oferta-irresistivel-vendas.md`
+
 - **Keyword Principal**: "oferta irresistível"
 - **Keywords Long-tail**: "como criar oferta de valor", "proposta de venda"
 - **Aprofunda**: Terceira seção do pilar
 
 ### Cluster 4: P4 - Programas (CRM/Funis)
+
 **Artigos Existentes**:
+
 1. `crm-gratuito-vs-profissional.md`
    - **Keyword**: "CRM gratuito"
    - **Foco**: Tecnologia para vendas
@@ -49,7 +59,9 @@
    - **Foco**: Geração de leads
 
 ### Cluster 5: P5 - Processos
+
 **Artigos Existentes**:
+
 1. `sistema-melhor-que-improviso.md`
    - **Keyword**: "sistema de vendas"
    - **Foco**: Importância de processos
@@ -63,7 +75,9 @@
    - **Foco**: Passo a passo implementação
 
 ### Cluster 6: P6 - Pessoas
-**Artigo**: *(A CRIAR)* `como-montar-time-vendas.md`
+
+**Artigo**: _(A CRIAR)_ `como-montar-time-vendas.md`
+
 - **Keyword Principal**: "montar time de vendas"
 - **Keywords Long-tail**: "contratar vendedor", "treinar equipe vendas"
 
@@ -72,7 +86,9 @@
 ## 🔗 Estratégia de Links Internos
 
 ### Regra de Ouro
+
 **SEMPRE crie links bidirecionais:**
+
 - Do PILAR → para cada CLUSTER relevante
 - De cada CLUSTER → de volta para o PILAR
 - Entre CLUSTERS relacionados
@@ -80,6 +96,7 @@
 ### Exemplo de Estrutura de Links
 
 #### No Artigo Pilar:
+
 ```markdown
 ## P1: Posicionamento
 
@@ -89,6 +106,7 @@
 ```
 
 #### No Artigo Cluster:
+
 ```markdown
 ## Introdução
 
@@ -107,17 +125,18 @@ Agora que você definiu seu posicionamento, é hora de identificar seu [Cliente 
 
 ### Keyword Mapping
 
-| Artigo | Keyword Principal | Volume | Dificuldade | Intenção |
-|--------|------------------|--------|-------------|----------|
-| 6ps-vendas-escalaveis-guia-completo | "6Ps vendas escaláveis" | Médio | Médio | Info + Com |
-| posicionamento-diferencial-unico | "posicionamento de mercado" | Alto | Alto | Informacional |
-| icp-cliente-ideal-perfil | "ICP cliente ideal" | Médio | Médio | Informacional |
-| sistema-melhor-que-improviso | "sistema de vendas" | Alto | Médio | Informacional |
-| como-estruturar-vendas-do-zero | "estruturar vendas" | Alto | Médio | Transacional |
-| crm-gratuito-vs-profissional | "CRM gratuito" | Alto | Baixo | Comparativo |
-| metricas-vendas-essenciais | "métricas de vendas" | Médio | Médio | Informacional |
+| Artigo                              | Keyword Principal           | Volume | Dificuldade | Intenção      |
+| ----------------------------------- | --------------------------- | ------ | ----------- | ------------- |
+| 6ps-vendas-escalaveis-guia-completo | "6Ps vendas escaláveis"     | Médio  | Médio       | Info + Com    |
+| posicionamento-diferencial-unico    | "posicionamento de mercado" | Alto   | Alto        | Informacional |
+| icp-cliente-ideal-perfil            | "ICP cliente ideal"         | Médio  | Médio       | Informacional |
+| sistema-melhor-que-improviso        | "sistema de vendas"         | Alto   | Médio       | Informacional |
+| como-estruturar-vendas-do-zero      | "estruturar vendas"         | Alto   | Médio       | Transacional  |
+| crm-gratuito-vs-profissional        | "CRM gratuito"              | Alto   | Baixo       | Comparativo   |
+| metricas-vendas-essenciais          | "métricas de vendas"        | Médio  | Médio       | Informacional |
 
 ### Variações Long-tail para Cada Cluster
+
 - Posicionamento: "como criar posicionamento de marca", "diferencial competitivo exemplos"
 - ICP: "como descobrir cliente ideal", "perfil cliente ideal B2B"
 - Sistema: "sistema vendas pequena empresa", "vendas sem improviso"
@@ -128,6 +147,7 @@ Agora que você definiu seu posicionamento, é hora de identificar seu [Cliente 
 ## 📊 Métricas de Sucesso
 
 ### KPIs para Acompanhar:
+
 1. **Ranking de Keywords**: Posição no Google para cada keyword principal
 2. **Tráfego Orgânico**: Visitas vindas de busca por artigo
 3. **Taxa de Cliques Internos**: % de usuários que clicam nos links internos
@@ -135,6 +155,7 @@ Agora que você definiu seu posicionamento, é hora de identificar seu [Cliente 
 5. **Conversões**: Leads gerados por artigo (CTA para diagnóstico)
 
 ### Objetivos 3 Meses:
+
 - Artigo pilar rankeando em Top 10 para "vendas escaláveis"
 - 3+ clusters rankeando em Top 20 para suas keywords
 - 500+ visitas orgânicas mensais no cluster completo
@@ -144,6 +165,7 @@ Agora que você definiu seu posicionamento, é hora de identificar seu [Cliente 
 ## ✅ Checklist de Implementação
 
 ### Fase 1: Otimizar Artigos Existentes (Semana 1-2)
+
 - [ ] Adicionar metadados de cluster em todos os artigos
 - [ ] Inserir links internos do pilar para clusters
 - [ ] Inserir links internos dos clusters para o pilar
@@ -151,11 +173,13 @@ Agora que você definiu seu posicionamento, é hora de identificar seu [Cliente 
 - [ ] Otimizar títulos e meta descriptions
 
 ### Fase 2: Criar Conteúdo Faltante (Semana 3-4)
+
 - [ ] Criar artigo sobre P3 (Oferta Irresistível)
 - [ ] Criar artigo sobre P6 (Time de Vendas)
 - [ ] Criar artigo sobre cases específicos por vertical
 
 ### Fase 3: Promoção e Link Building (Mês 2-3)
+
 - [ ] Compartilhar conteúdo em redes sociais
 - [ ] Criar newsletter destacando o cluster
 - [ ] Buscar backlinks de sites relevantes
@@ -178,7 +202,7 @@ author: 'Joel Burigo'
 featured: true
 
 # SEO Cluster
-pillarContent: true  # true apenas para o artigo principal
+pillarContent: true # true apenas para o artigo principal
 relatedArticles:
   - 'posicionamento-diferencial-unico'
   - 'icp-cliente-ideal-perfil'
@@ -192,16 +216,19 @@ clusterKeywords:
 ### Template para Links Internos
 
 **No início do cluster** (breadcrumb semântico):
+
 ```markdown
 > **Série**: Este artigo faz parte do [Framework 6Ps das Vendas Escaláveis](/blog/6ps-vendas-escalaveis-guia-completo)
 ```
 
 **No meio do conteúdo** (contextual):
+
 ```markdown
 Para entender melhor como isso se conecta com o [Posicionamento](/blog/posicionamento-diferencial-unico), veja...
 ```
 
 **No final do cluster** (navegação):
+
 ```markdown
 ## Continue Aprendendo
 
@@ -215,20 +242,25 @@ Para entender melhor como isso se conecta com o [Posicionamento](/blog/posiciona
 ## 📱 Otimizações Adicionais
 
 ### Schema Markup (JSON-LD)
+
 Adicionar nos templates do blog:
+
 - `Article` schema para todos os posts
 - `HowTo` schema para artigos de processo
 - `FAQPage` schema quando aplicável
 - `BreadcrumbList` para navegação do cluster
 
 ### Internal Linking Best Practices
+
 1. Use anchor text descritivo (não "clique aqui")
 2. Priorize links contextuais no corpo do texto
 3. Mantenha 3-5 links internos por artigo cluster
 4. Link sempre do cluster mais fraco para o mais forte
 
 ### URL Structure
+
 Manter URLs simples e descritivas:
+
 - ✅ `/blog/6ps-vendas-escalaveis-guia-completo`
 - ✅ `/blog/posicionamento-diferencial-unico`
 - ❌ `/blog/artigo-123-vendas`
@@ -248,6 +280,7 @@ Manter URLs simples e descritivas:
 ### CTAs Estratégicos por Tipo de Conteúdo:
 
 **Artigo Pilar**:
+
 ```markdown
 ## Descubra Seu Score nos 6Ps
 
@@ -255,6 +288,7 @@ Faça agora o [Diagnóstico Gratuito](/diagnostico) e descubra qual dos 6Ps est�
 ```
 
 **Artigos Cluster**:
+
 ```markdown
 ## Aplique Isso no Seu Negócio
 
@@ -266,20 +300,24 @@ Quer ajuda para implementar isso na prática? [Agende uma conversa gratuita](/co
 ## 📈 Roadmap de Expansão do Cluster
 
 ### Fase 1 (Concluído)
+
 ✅ Artigo pilar criado
 ✅ 7 artigos cluster publicados
 
 ### Fase 2 (Próximos 30 dias)
+
 - Adicionar 2 artigos faltantes (P3 e P6)
 - Implementar links internos completos
 - Otimizar meta descriptions
 
 ### Fase 3 (60-90 dias)
+
 - Criar sub-clusters por vertical (ex: "6Ps para consultórios", "6Ps para SaaS")
 - Adicionar estudos de caso aprofundados
 - Criar ferramentas interativas (calculadora de score)
 
 ### Fase 4 (6 meses)
+
 - Expandir para conteúdo em vídeo
 - Criar mini-curso baseado no cluster
 - Desenvolver materiais ricos (ebooks, templates)
@@ -289,12 +327,14 @@ Quer ajuda para implementar isso na prática? [Agende uma conversa gratuita](/co
 ## 🔍 Monitoramento e Ajustes
 
 ### Ferramentas Recomendadas:
+
 - Google Search Console (ranking e CTR)
 - Google Analytics 4 (tráfego e conversões)
 - Ahrefs/SEMrush (keywords e backlinks)
 - Hotjar (heatmaps para otimizar links internos)
 
 ### Revisão Mensal:
+
 - Analisar quais clusters estão performando melhor
 - Identificar oportunidades de keywords emergentes
 - Ajustar anchor texts e posicionamento de links
@@ -313,6 +353,7 @@ Quer ajuda para implementar isso na prática? [Agende uma conversa gratuita](/co
 5. **Conversão**: Múltiplos pontos de entrada levando ao mesmo funil
 
 ### Diferencial Competitivo:
+
 A maioria dos concorrentes tem artigos soltos. Você terá um **sistema integrado** de conteúdo que reforça sua autoridade e domina as buscas.
 
 **Sistema > Improviso. Sempre.**

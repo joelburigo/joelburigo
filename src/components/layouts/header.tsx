@@ -42,7 +42,7 @@ export function Header({ transparent = false, showStatusBar = true }: HeaderProp
     <header
       ref={ref}
       className={cn(
-        'sticky left-0 right-0 top-0 z-50 border-b border-[var(--jb-hair)] transition-colors duration-[180ms]',
+        'sticky top-0 right-0 left-0 z-50 border-b border-[var(--jb-hair)] transition-colors duration-[180ms]',
         bg
       )}
     >
@@ -58,7 +58,7 @@ export function Header({ transparent = false, showStatusBar = true }: HeaderProp
               <Link
                 key={link.path}
                 href={link.path}
-                className="jb-nav-link font-mono text-[12px] font-semibold uppercase tracking-[0.22em] text-cream transition-colors duration-[180ms] hover:text-acid"
+                className="jb-nav-link text-cream hover:text-acid font-mono text-[12px] font-semibold tracking-[0.22em] uppercase transition-colors duration-[180ms]"
               >
                 {link.name}
               </Link>

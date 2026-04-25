@@ -31,6 +31,7 @@ clusterKeywords:
 ---
 
 <a name="por-que-autonomia"></a>
+
 ## Por Que Autonomia é Meu Modelo
 
 Quando quebrei em 2012, uma das lições mais duras foi perceber que eu não tinha controle de nada. Tudo estava na minha cabeça ou na cabeça do sócio. Quando quebrou, quebrou tudo junto.
@@ -48,6 +49,7 @@ Parece contraintuitivo? Deixa eu explicar por quê funciona.
 ---
 
 <a name="modelo-dependencia"></a>
+
 ## O Modelo de Dependência (Como 90% das Agências Lucram)
 
 Agências e consultorias tradicionais não lucram vendendo solução. Lucram vendendo DEPENDÊNCIA.
@@ -114,6 +116,7 @@ Tradução: **"Queremos que você continue pagando eternamente."**
 ---
 
 <a name="cinco-sinais"></a>
+
 ## Os 5 Sinais Que Você Está Refém
 
 Como saber se você está preso num modelo de dependência?
@@ -151,6 +154,7 @@ Se você cancelar hoje e ninguém da sua empresa sabe dar continuidade, você n�
 ---
 
 <a name="modelo-autonomia"></a>
+
 ## O Modelo de Autonomia (Como EU Trabalho)
 
 Meu modelo é o oposto da agência tradicional. Se você quer método guiado para implementar com autonomia, veja [Vendas Sem Segredos](/vendas-sem-segredos).
@@ -210,27 +214,30 @@ Zero caixa preta.
 ---
 
 <a name="comparacao"></a>
+
 ## Dependência vs Autonomia: Comparação Real
 
-| **Aspecto** | **Modelo Dependência (Agência)** | **Modelo Autonomia (VSS)** |
-|-------------|----------------------------------|----------------------------|
-| **Propriedade CRM** | Conta deles | Conta SUA |
-| **Acesso aos Dados** | Relatório mensal | Acesso completo |
-| **Processos** | Caixa preta | Documentado pra você |
-| **Treinamento Time** | Não (eles fazem) | Sim (time aprende) |
-| **Duração** | Contrato eterno | 90 dias + 12 meses suporte |
-| **Se Cancelar** | Perde tudo | Continua rodando |
-| **Objetivo** | Te manter pagando | Te deixar autônomo |
-| **Conhecimento** | Você não aprende | Você domina |
-| **Escala** | Limitado (depende deles) | Ilimitado (você controla) |
+| **Aspecto**          | **Modelo Dependência (Agência)** | **Modelo Autonomia (VSS)** |
+| -------------------- | -------------------------------- | -------------------------- |
+| **Propriedade CRM**  | Conta deles                      | Conta SUA                  |
+| **Acesso aos Dados** | Relatório mensal                 | Acesso completo            |
+| **Processos**        | Caixa preta                      | Documentado pra você       |
+| **Treinamento Time** | Não (eles fazem)                 | Sim (time aprende)         |
+| **Duração**          | Contrato eterno                  | 90 dias + 12 meses suporte |
+| **Se Cancelar**      | Perde tudo                       | Continua rodando           |
+| **Objetivo**         | Te manter pagando                | Te deixar autônomo         |
+| **Conhecimento**     | Você não aprende                 | Você domina                |
+| **Escala**           | Limitado (depende deles)         | Ilimitado (você controla)  |
 
 ### A Conta de 3 Anos
 
 **Modelo Dependência:**
+
 - R$ 10k/mês × 36 meses = R$ 360 mil
 - Se cancelar no mês 36 = Perde tudo, volta estaca zero
 
 **Modelo Autonomia:**
+
 - Investimento uma vez no VSS
 - Mês 4 em diante = Rodando sozinho
 - Se "cancelar" (parar de me procurar) = Sistema continua rodando
@@ -240,6 +247,7 @@ Zero caixa preta.
 ---
 
 <a name="como-saber"></a>
+
 ## Como Saber Se Você Está Sendo Refém
 
 Responda essas 10 perguntas com SIM ou NÃO:
@@ -264,6 +272,7 @@ Responda essas 10 perguntas com SIM ou NÃO:
 ---
 
 <a name="roadmap"></a>
+
 ## Roadmap Para Autonomia em 90 Dias
 
 Se você está refém hoje, esse é o caminho para autonomia:
@@ -271,21 +280,25 @@ Se você está refém hoje, esse é o caminho para autonomia:
 ### Mês 1: Auditoria e Migração
 
 **Semana 1:** Auditoria completa
+
 - Liste TODAS as ferramentas que usa
 - Identifique o que é seu vs o que é deles
 - Exporte dados que conseguir
 
 **Semana 2:** Criação de estrutura própria
+
 - CRM na SUA conta
 - Ferramentas em SEU nome
 - Domínios/emails sob SEU controle
 
 **Semana 3:** Migração de dados
+
 - Exporte histórico completo (negocie se precisar)
 - Importe no novo CRM
 - Valide integridade dos dados
 
 **Semana 4:** Recriação de automações
+
 - Mapeie fluxos atuais
 - Recrie em ferramentas SUAS
 - Teste tudo antes de desligar antigo
@@ -293,12 +306,14 @@ Se você está refém hoje, esse é o caminho para autonomia:
 ### Mês 2: Documentação e Treinamento
 
 **Semana 5-6:** Documentação
+
 - Processos de prospecção
 - Scripts de qualificação
 - Templates de proposta
 - Playbook de objeções
 
 **Semana 7-8:** Treinamento do time
+
 - Ensine CRM para 2-3 pessoas
 - Treine em cada processo
 - Valide que sabem executar sozinhos
@@ -306,16 +321,19 @@ Se você está refém hoje, esse é o caminho para autonomia:
 ### Mês 3: Teste e Autonomia
 
 **Semana 9-10:** Execução supervisionada
+
 - Time executa sozinho
 - Você só supervisiona
 - Ajuste o que precisar
 
 **Semana 11:** Desligamento seguro
+
 - Cancele agência/consultor antigo
 - Valide que tudo funciona
 - Você está autônomo
 
 **Semana 12:** Otimização
+
 - Ajuste processos baseado em dados
 - Documente aprendizados
 - Celebre autonomia
@@ -323,6 +341,7 @@ Se você está refém hoje, esse é o caminho para autonomia:
 ---
 
 <a name="por-que-funciona"></a>
+
 ## Por Que Autonomia Funciona Para Mim
 
 "Joel, se você ensina autonomia, não perde clientes?"
@@ -332,11 +351,13 @@ Se você está refém hoje, esse é o caminho para autonomia:
 ### A Matemática da Autonomia
 
 **Modelo Dependência:**
+
 - 1 cliente paga mensalidade eternamente
 - Mas odeia quando cancela (perde tudo)
 - Não indica ninguém (ficou frustrado)
 
 **Modelo Autonomia:**
+
 - 1 cliente investe uma vez
 - Fica autônomo e FELIZ
 - Indica 3-5 outros (porque ficou muito satisfeito)
@@ -380,6 +401,7 @@ O [Vendas Sem Segredos](/vendas-sem-segredos) foi desenhado para empresários, n
 Autonomia não significa ficar sozinho para sempre. Significa ter OPÇÃO.
 
 Depois de autônomo, você pode:
+
 - Continuar sozinho (zero custo)
 - Contratar consultoria pontual quando precisar
 - Expandir com [Advisory](/advisory) para escalar mais
@@ -389,6 +411,7 @@ A diferença: você ESCOLHE quando precisa de ajuda. Não é OBRIGADO a pagar to
 ### "Agência X prometeu resultado garantido"
 
 Promessa é fácil. Pergunte:
+
 - "Se eu cancelar, o que fica comigo?"
 - "Tenho acesso admin a tudo?"
 - "Os processos ficam documentados pra mim?"

@@ -18,16 +18,16 @@ Agenda única de produção de conteúdo (Instagram, email, anúncios, apresenta
 canal: instagram-carrossel | instagram-reels | instagram-story | email | anuncio-meta | anuncio-google | apresentacao
 data: 2026-04-28
 status: rascunho | pronto | publicado
-fonte: partes/parte12-banco-recursos-copy.md#P12.1   # referência ao ID da fonte
+fonte: partes/parte12-banco-recursos-copy.md#P12.1 # referência ao ID da fonte
 objetivo: autoridade | conversao | retencao | anuncio-vss | anuncio-advisory
 ---
 ```
 
 ## Próximas saídas
 
-| Data | Canal | Tema | Fonte | Status |
-|------|-------|------|-------|--------|
-| _(vazio — preencher conforme produção)_ | | | | |
+| Data                                    | Canal | Tema | Fonte | Status |
+| --------------------------------------- | ----- | ---- | ----- | ------ |
+| _(vazio — preencher conforme produção)_ |       |      |       |        |
 
 ## Pilares de conteúdo (evergreen)
 

@@ -165,7 +165,7 @@ const resultadoConsolidado = [
 
 export default function Jornada90DiasPage() {
   return (
-    <main className="relative overflow-hidden bg-ink">
+    <main className="bg-ink relative overflow-hidden">
       <div className="grid-overlay" />
 
       <Container className="relative z-10">
@@ -193,10 +193,10 @@ export default function Jornada90DiasPage() {
             >
               Do caos à <span className="text-acid">previsibilidade.</span>
             </h1>
-            <p className="mt-6 max-w-2xl font-sans text-lg text-cream">
-              Em 13 semanas, teu sistema de vendas sai do aleatório e vira uma máquina com
-              processo. Zero promessa vazia. Zero fórmula mágica. Método estruturado que funciona
-              em quem executa.
+            <p className="text-cream mt-6 max-w-2xl font-sans text-lg">
+              Em 13 semanas, teu sistema de vendas sai do aleatório e vira uma máquina com processo.
+              Zero promessa vazia. Zero fórmula mágica. Método estruturado que funciona em quem
+              executa.
             </p>
           </div>
         </section>
@@ -207,28 +207,25 @@ export default function Jornada90DiasPage() {
             <div className="kicker mb-6">// PREMISSA_CENTRAL · O_QUE_ESPERAR</div>
             <div className="grid gap-6 md:grid-cols-2">
               <div
-                className="border border-[var(--jb-acid-border)] bg-ink-2 p-8"
+                className="bg-ink-2 border border-[var(--jb-acid-border)] p-8"
                 style={{
-                  background:
-                    'linear-gradient(180deg, rgba(198,255,0,0.06), var(--jb-ink-2))',
+                  background: 'linear-gradient(180deg, rgba(198,255,0,0.06), var(--jb-ink-2))',
                 }}
               >
                 <div className="kicker mb-3" style={{ color: 'var(--jb-acid)' }}>
                   // PROMETEMOS
                 </div>
-                <p className="font-sans text-lg text-cream leading-relaxed">
+                <p className="text-cream font-sans text-lg leading-relaxed">
                   Em 90 dias você tem um{' '}
-                  <strong className="text-acid">
-                    sistema de vendas estruturado e funcionando
-                  </strong>
+                  <strong className="text-acid">sistema de vendas estruturado e funcionando</strong>
                   , com primeiras vendas confirmadas e clareza de como escalar.
                 </p>
               </div>
-              <div className="border border-[var(--jb-fire-border)] bg-ink-2 p-8">
+              <div className="bg-ink-2 border border-[var(--jb-fire-border)] p-8">
                 <div className="kicker mb-3" style={{ color: 'var(--jb-fire)' }}>
                   // NÃO_PROMETEMOS
                 </div>
-                <ul className="space-y-2 font-sans text-fg-2">
+                <ul className="text-fg-2 space-y-2 font-sans">
                   <li>
                     <span className="text-fire">●</span>&nbsp; Enriquecimento rápido
                   </li>
@@ -245,11 +242,11 @@ export default function Jornada90DiasPage() {
               </div>
             </div>
 
-            <div className="mt-6 border-l-2 border-acid bg-ink-2 p-6">
+            <div className="border-acid bg-ink-2 mt-6 border-l-2 p-6">
               <div className="kicker mb-2" style={{ color: 'var(--jb-acid)' }}>
                 // HONESTIDADE_BRUTAL
               </div>
-              <p className="font-sans text-cream">
+              <p className="text-cream font-sans">
                 Nos primeiros 90 dias você <strong>constrói a fundação</strong>. Dos 90 aos 180 você{' '}
                 <strong>escala e otimiza</strong>. É jornada de construção, não milagre instantâneo.
               </p>
@@ -261,16 +258,16 @@ export default function Jornada90DiasPage() {
         <section className="pb-16">
           <div className="mx-auto max-w-6xl">
             <div className="kicker mb-6">// INVESTIMENTO_DE_TEMPO · REAL</div>
-            <h2 className="heading-2 mb-8 text-cream">Quanto tempo você precisa dedicar</h2>
+            <h2 className="heading-2 text-cream mb-8">Quanto tempo você precisa dedicar</h2>
 
-            <div className="overflow-x-auto border border-[var(--jb-hair)] bg-ink-2">
+            <div className="bg-ink-2 overflow-x-auto border border-[var(--jb-hair)]">
               <table className="w-full">
                 <thead className="bg-ink border-b border-[var(--jb-hair)]">
                   <tr>
                     {['Semanas', 'Fase', 'Horas/Sem', 'Atividades'].map((h) => (
                       <th
                         key={h}
-                        className="px-6 py-4 text-left font-mono text-[11px] uppercase tracking-[0.22em] text-fg-muted"
+                        className="text-fg-muted px-6 py-4 text-left font-mono text-[11px] tracking-[0.22em] uppercase"
                       >
                         {h}
                       </th>
@@ -280,10 +277,10 @@ export default function Jornada90DiasPage() {
                 <tbody>
                   {fases.map((f, i) => (
                     <tr key={f.nome} className={i > 0 ? 'border-t border-[var(--jb-hair)]' : ''}>
-                      <td className="px-6 py-4 font-mono text-sm text-cream">{f.semanas}</td>
-                      <td className="px-6 py-4 font-display text-sm text-cream">{f.nome}</td>
-                      <td className="px-6 py-4 font-display text-acid">{f.horas}</td>
-                      <td className="px-6 py-4 font-sans text-sm text-fg-2">{f.atividades[0]}</td>
+                      <td className="text-cream px-6 py-4 font-mono text-sm">{f.semanas}</td>
+                      <td className="font-display text-cream px-6 py-4 text-sm">{f.nome}</td>
+                      <td className="font-display text-acid px-6 py-4">{f.horas}</td>
+                      <td className="text-fg-2 px-6 py-4 font-sans text-sm">{f.atividades[0]}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -301,15 +298,15 @@ export default function Jornada90DiasPage() {
                   <div className={`font-display text-3xl ${s.acent ? 'text-acid' : 'text-cream'}`}>
                     {s.num}
                   </div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-fg-muted">
+                  <div className="text-fg-muted font-mono text-[11px] tracking-[0.22em] uppercase">
                     {s.label}
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-6 border-l-2 border-fire bg-ink-2 p-5">
-              <p className="font-sans text-cream">
+            <div className="border-fire bg-ink-2 mt-6 border-l-2 p-5">
+              <p className="text-cream font-sans">
                 <strong>Se não tem 6-9h/semana</strong> pra investir no futuro do negócio, espera
                 ter antes de entrar. <strong>Mas se tem, compensa.</strong>
               </p>
@@ -321,13 +318,13 @@ export default function Jornada90DiasPage() {
         <section className="pb-16">
           <div className="mx-auto max-w-6xl">
             <div className="kicker mb-6">// AS_5_FASES · TIMELINE</div>
-            <h2 className="heading-2 mb-10 text-cream">As 5 fases da jornada</h2>
+            <h2 className="heading-2 text-cream mb-10">As 5 fases da jornada</h2>
 
             <div className="space-y-8">
               {fases.map((fase, idx) => (
                 <article
                   key={fase.nome}
-                  className="border border-[var(--jb-hair)] bg-ink-2 p-6 md:p-8 transition-all duration-[180ms] hover:border-acid hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[6px_6px_0_var(--jb-acid)]"
+                  className="bg-ink-2 hover:border-acid border border-[var(--jb-hair)] p-6 transition-all duration-[180ms] hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[6px_6px_0_var(--jb-acid)] md:p-8"
                 >
                   <div className="mb-6 flex flex-wrap items-baseline justify-between gap-3 border-b border-[var(--jb-hair)] pb-5">
                     <div>
@@ -337,7 +334,7 @@ export default function Jornada90DiasPage() {
                       <h3 className="heading-2 text-cream">{fase.nome}</h3>
                     </div>
                     <div className="border border-[var(--jb-acid-border)] bg-[var(--jb-acid-soft)] px-4 py-2">
-                      <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-acid">
+                      <div className="text-acid font-mono text-[11px] tracking-[0.22em] uppercase">
                         {fase.horas}
                       </div>
                     </div>
@@ -350,9 +347,9 @@ export default function Jornada90DiasPage() {
                         {fase.atividades.map((a) => (
                           <li
                             key={a}
-                            className="flex items-start gap-3 font-sans text-sm text-fg-2"
+                            className="text-fg-2 flex items-start gap-3 font-sans text-sm"
                           >
-                            <span className="mt-[3px] shrink-0 text-acid">▶</span>
+                            <span className="text-acid mt-[3px] shrink-0">▶</span>
                             <span>{a}</span>
                           </li>
                         ))}
@@ -366,9 +363,9 @@ export default function Jornada90DiasPage() {
                         {fase.resultados.map((r) => (
                           <li
                             key={r}
-                            className="flex items-start gap-3 font-sans text-sm text-fg-2"
+                            className="text-fg-2 flex items-start gap-3 font-sans text-sm"
                           >
-                            <span className="mt-[3px] shrink-0 text-acid">●</span>
+                            <span className="text-acid mt-[3px] shrink-0">●</span>
                             <span>{r}</span>
                           </li>
                         ))}
@@ -376,7 +373,7 @@ export default function Jornada90DiasPage() {
                     </div>
                   </div>
 
-                  <div className="mt-6 border-l-2 border-fire bg-ink p-4 font-mono text-sm text-cream">
+                  <div className="border-fire bg-ink text-cream mt-6 border-l-2 p-4 font-mono text-sm">
                     <span className="text-fire">●</span>&nbsp; VENDAS_NESTA_FASE: {fase.vendas}
                   </div>
                 </article>
@@ -389,16 +386,16 @@ export default function Jornada90DiasPage() {
         <section className="pb-16">
           <div className="mx-auto max-w-6xl">
             <div className="kicker mb-6">// AO_FINAL_DOS_90_DIAS</div>
-            <h2 className="heading-2 mb-10 text-cream">O que você vai ter construído</h2>
+            <h2 className="heading-2 text-cream mb-10">O que você vai ter construído</h2>
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {resultadoConsolidado.map((item) => (
                 <div key={item.titulo} className="card">
-                  <h3 className="heading-4 mb-4 text-cream">{item.titulo}</h3>
+                  <h3 className="heading-4 text-cream mb-4">{item.titulo}</h3>
                   <ul className="space-y-2">
                     {item.itens.map((sub) => (
-                      <li key={sub} className="flex items-start gap-3 font-sans text-sm text-fg-2">
-                        <span className="mt-[3px] shrink-0 text-acid">▶</span>
+                      <li key={sub} className="text-fg-2 flex items-start gap-3 font-sans text-sm">
+                        <span className="text-acid mt-[3px] shrink-0">▶</span>
                         <span>{sub}</span>
                       </li>
                     ))}
@@ -408,10 +405,9 @@ export default function Jornada90DiasPage() {
             </div>
 
             <div
-              className="mt-10 border border-[var(--jb-acid-border)] bg-ink-2 p-8"
+              className="bg-ink-2 mt-10 border border-[var(--jb-acid-border)] p-8"
               style={{
-                background:
-                  'linear-gradient(180deg, rgba(198,255,0,0.06), var(--jb-ink-2))',
+                background: 'linear-gradient(180deg, rgba(198,255,0,0.06), var(--jb-ink-2))',
               }}
             >
               <div className="kicker mb-4" style={{ color: 'var(--jb-acid)' }}>
@@ -432,12 +428,12 @@ export default function Jornada90DiasPage() {
                     body: 'Processos documentados e sistema replicável.',
                   },
                 ].map((b) => (
-                  <div key={b.title} className="border-l-2 border-acid bg-ink p-5">
+                  <div key={b.title} className="border-acid bg-ink border-l-2 p-5">
                     <div className="font-display text-acid">{b.title}</div>
-                    <p className="mt-1 font-sans text-fg-2">{b.body}</p>
+                    <p className="text-fg-2 mt-1 font-sans">{b.body}</p>
                   </div>
                 ))}
-                <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-fg-muted">
+                <p className="text-fg-muted font-mono text-[11px] tracking-[0.22em] uppercase">
                   NOTA: volume varia por nicho, ticket e ciclo. O importante é ter{' '}
                   <strong className="text-cream">sistema previsível rodando</strong>.
                 </p>
@@ -449,12 +445,12 @@ export default function Jornada90DiasPage() {
         {/* Próximos 90 Dias */}
         <section className="pb-16">
           <div className="mx-auto max-w-5xl">
-            <div className="border border-[var(--jb-fire-border)] bg-ink-2 p-8 md:p-12">
+            <div className="bg-ink-2 border border-[var(--jb-fire-border)] p-8 md:p-12">
               <div className="kicker mb-4" style={{ color: 'var(--jb-fire)' }}>
                 // APÓS_OS_90_DIAS · ESCALA
               </div>
-              <h2 className="heading-2 mb-6 text-cream">E depois dos 90 dias?</h2>
-              <p className="mb-6 font-sans text-fg-2">
+              <h2 className="heading-2 text-cream mb-6">E depois dos 90 dias?</h2>
+              <p className="text-fg-2 mb-6 font-sans">
                 O programa continua pra você evoluir e otimizar o sistema. Acesso vitalício ao
                 conteúdo.
               </p>
@@ -465,14 +461,14 @@ export default function Jornada90DiasPage() {
                   'Estruturação de time',
                   'Otimização com dados',
                 ].map((item) => (
-                  <div key={item} className="border border-[var(--jb-hair)] bg-ink p-4">
-                    <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-acid">
+                  <div key={item} className="bg-ink border border-[var(--jb-hair)] p-4">
+                    <div className="text-acid font-mono text-[11px] tracking-[0.22em] uppercase">
                       ▶ {item}
                     </div>
                   </div>
                 ))}
               </div>
-              <p className="mt-6 font-display text-xl text-acid">
+              <p className="font-display text-acid mt-6 text-xl">
                 RESULTADO: escala e crescimento acelerado.
               </p>
             </div>
@@ -483,19 +479,18 @@ export default function Jornada90DiasPage() {
         <section className="pb-16 md:pb-24">
           <div className="mx-auto max-w-5xl">
             <div
-              className="border border-[var(--jb-acid-border)] bg-ink-2 p-8 md:p-12"
+              className="bg-ink-2 border border-[var(--jb-acid-border)] p-8 md:p-12"
               style={{
-                background:
-                  'linear-gradient(180deg, rgba(198,255,0,0.06), var(--jb-ink-2))',
+                background: 'linear-gradient(180deg, rgba(198,255,0,0.06), var(--jb-ink-2))',
               }}
             >
               <div className="kicker mb-4" style={{ color: 'var(--jb-acid)' }}>
                 // PRONTO_PRA_COMEÇAR?
               </div>
-              <h2 className="heading-2 mb-4 text-cream">
+              <h2 className="heading-2 text-cream mb-4">
                 Agora você sabe o que acontece. Sem surpresa, sem promessa vazia.
               </h2>
-              <p className="mb-8 font-sans text-fg-2">
+              <p className="text-fg-2 mb-8 font-sans">
                 Apenas trabalho estruturado que gera resultado em quem executa.
               </p>
 
@@ -506,8 +501,8 @@ export default function Jornada90DiasPage() {
                   { num: 'CRM INCLUSO', sub: '12 meses grátis' },
                 ].map((b) => (
                   <div key={b.num} className="bg-ink p-5">
-                    <div className="font-display text-2xl text-acid">{b.num}</div>
-                    <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-fg-muted">
+                    <div className="font-display text-acid text-2xl">{b.num}</div>
+                    <div className="text-fg-muted font-mono text-[11px] tracking-[0.22em] uppercase">
                       {b.sub}
                     </div>
                   </div>
@@ -524,12 +519,12 @@ export default function Jornada90DiasPage() {
                 </Link>
               </div>
 
-              <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.22em] text-fg-muted">
+              <p className="text-fg-muted mt-4 font-mono text-[11px] tracking-[0.22em] uppercase">
                 <span className="text-acid">●</span>&nbsp; 15 DIAS DE GARANTIA · ACESSO VITALÍCIO ·
                 12× R$ 166,42
               </p>
 
-              <div className="mt-8 border-t border-[var(--jb-hair)] pt-6 font-mono text-[11px] uppercase tracking-[0.28em] text-fg-muted">
+              <div className="text-fg-muted mt-8 border-t border-[var(--jb-hair)] pt-6 font-mono text-[11px] tracking-[0.28em] uppercase">
                 <span className="text-acid">★</span>&nbsp;&nbsp;SISTEMA{' '}
                 <span className="text-fire">&gt;</span> IMPROVISO · LET&apos;S GROW
               </div>

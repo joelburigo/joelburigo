@@ -35,6 +35,7 @@ clusterKeywords:
 ---
 
 <a name="por-que-eu-odeio-essa-verdade"></a>
+
 ## Por Que Eu Odeio Essa Verdade (Mas Preciso Te Contar)
 
 Cara, eu ODIAVA admitir isso.
@@ -54,6 +55,7 @@ A verdade dura que demorei 17 anos pra aceitar completamente: **talento vence ta
 ---
 
 <a name="o-problema-do-improviso"></a>
+
 ## O Problema do Improviso
 
 Improviso funciona. Eu sei que funciona. Eu fechei milhares de vendas improvisando.
@@ -87,6 +89,7 @@ Se cada venda é diferente, você não consegue identificar padrões. Não conse
 ---
 
 <a name="sintomas-improviso"></a>
+
 ## Os 7 Sintomas de Vendas Por Improviso
 
 Se você se identificar com 4 ou mais desses sintomas, você vende por improviso:
@@ -156,6 +159,7 @@ Uma venda você fecha em 2 dias. Outra leva 3 meses. Você não sabe prever.
 ---
 
 <a name="o-que-e-sistema"></a>
+
 ## O Que É Sistema de Vendas (De Verdade)
 
 Sistema não é rigidez. Sistema não é robotização.
@@ -169,6 +173,7 @@ Deixa eu quebrar isso:
 ### 1. Processos Documentados
 
 Tudo que você faz está escrito, passo a passo:
+
 - Como prospectar
 - Como qualificar
 - Como fazer proposta
@@ -181,6 +186,7 @@ Tudo que você faz está escrito, passo a passo:
 ### 2. Ferramentas Integradas
 
 Você tem CRM, automações, templates, scripts funcionando juntos:
+
 - Lead entra no CRM → recebe email automático
 - Follow-up acontece automaticamente
 - Pipeline é visual e atualizado em tempo real
@@ -191,6 +197,7 @@ Você tem CRM, automações, templates, scripts funcionando juntos:
 ### 3. Pessoas Treinadas
 
 Time sabe exatamente o que fazer, quando fazer, como fazer:
+
 - Checklist de tarefas diárias
 - Métricas claras de sucesso
 - Treinamento contínuo
@@ -207,26 +214,28 @@ Quando você tem base sólida (processo), você pode improvisar em cima. Mas sem
 ---
 
 <a name="tabela-brutal"></a>
+
 ## Sistema vs Improviso: A Tabela Brutal
 
-| **Aspecto** | **Improviso** | **Sistema** |
-|-------------|---------------|-------------|
-| **Previsibilidade** | Zero. Loteria mês a mês | Alta. Sabe quanto vai fechar com precisão |
-| **Dependência** | 100% do fundador | Time autônomo |
-| **Escalabilidade** | Trava em R$ 50-100k/mês | Escala para R$ 500k+ |
-| **Onboarding** | Meses até produzir | Semanas até produzir |
-| **Conversão** | Depende do feeling do dia | Otimizada com dados |
-| **Follow-up** | Acontece quando lembra | Automatizado e consistente |
-| **Proposta** | Horas por proposta, do zero | Minutos, template pronto |
-| **Férias** | Impossível (vendas param) | Possível (vendas continuam) |
-| **Burnout** | Alto (trabalha demais) | Baixo (delega e automatiza) |
-| **Crescimento** | Linear (mais horas = mais vendas) | Exponencial (sistema escala) |
+| **Aspecto**         | **Improviso**                     | **Sistema**                               |
+| ------------------- | --------------------------------- | ----------------------------------------- |
+| **Previsibilidade** | Zero. Loteria mês a mês           | Alta. Sabe quanto vai fechar com precisão |
+| **Dependência**     | 100% do fundador                  | Time autônomo                             |
+| **Escalabilidade**  | Trava em R$ 50-100k/mês           | Escala para R$ 500k+                      |
+| **Onboarding**      | Meses até produzir                | Semanas até produzir                      |
+| **Conversão**       | Depende do feeling do dia         | Otimizada com dados                       |
+| **Follow-up**       | Acontece quando lembra            | Automatizado e consistente                |
+| **Proposta**        | Horas por proposta, do zero       | Minutos, template pronto                  |
+| **Férias**          | Impossível (vendas param)         | Possível (vendas continuam)               |
+| **Burnout**         | Alto (trabalha demais)            | Baixo (delega e automatiza)               |
+| **Crescimento**     | Linear (mais horas = mais vendas) | Exponencial (sistema escala)              |
 
 **A verdade:** Improviso tem teto baixo. Sistema tem teto alto.
 
 ---
 
 <a name="cinco-pilares"></a>
+
 ## Os 5 Pilares de Um Sistema de Vendas
 
 Para construir sistema de vendas, você precisa estruturar 5 pilares:
@@ -239,6 +248,7 @@ Para construir sistema de vendas, você precisa estruturar 5 pilares:
 **Sistema:** Tráfego pago rodando, ou prospecção ativa com cadência
 
 **Documentar:**
+
 - Quantos leads você precisa por mês?
 - De quais canais virão (Meta Ads? LinkedIn? Cold email)?
 - Quem é responsável?
@@ -252,6 +262,7 @@ Para construir sistema de vendas, você precisa estruturar 5 pilares:
 **Sistema:** Pergunta BANT (Budget, Authority, Need, Timeline) + critérios de ICP
 
 **Documentar:**
+
 - Quais perguntas fazer?
 - Quais respostas classificam como "qualificado"?
 - Quanto tempo máximo para qualificar?
@@ -265,6 +276,7 @@ Para construir sistema de vendas, você precisa estruturar 5 pilares:
 **Sistema:** Template validado + script de apresentação + tratamento de objeções documentado
 
 **Documentar:**
+
 - Template de proposta comercial
 - Script de apresentação (discovery + pitch + objeções + close)
 - Objeções comuns e respostas testadas
@@ -278,6 +290,7 @@ Para construir sistema de vendas, você precisa estruturar 5 pilares:
 **Sistema:** Cadência automática estruturada
 
 **Documentar:**
+
 - Qual a cadência? (quantos toques e quando)
 - Qual o conteúdo de cada follow-up?
 - Quando desistir de um lead?
@@ -298,6 +311,7 @@ Para construir sistema de vendas, você precisa estruturar 5 pilares:
 **Sistema:** Jornada clara de boas-vindas + kickoff + check-ins agendados
 
 **Documentar:**
+
 - Email de boas-vindas (quando e o quê)
 - Kickoff (quando agendar, o que cobrir)
 - Primeiros 30 dias (marcos e check-ins)
@@ -310,6 +324,7 @@ Para construir sistema de vendas, você precisa estruturar 5 pilares:
 ---
 
 <a name="como-documentar"></a>
+
 ## Como Documentar Seus Processos (Passo a Passo)
 
 "Ok Joel, concordo que preciso documentar. Mas como?"
@@ -352,6 +367,7 @@ Ajuste o processo com base no feedback.
 ---
 
 <a name="custo-improviso"></a>
+
 ## O Custo Real do Improviso
 
 Improviso mata mais empresa que crise. A maioria das MPEs não quebra por falta de mercado. Quebra por falta de sistema replicável.
@@ -375,11 +391,13 @@ Se não tem processo documentado, você não consegue treinar ninguém. E se nã
 ---
 
 <a name="case-real"></a>
+
 ## Case Real: Operação de Crédito com Garantia de Imóvel
 
 Cliente que atendi em 2021. Operação de home equity (crédito com garantia de imóveis). Time pequeno, 8 pessoas.
 
 **Situação Inicial:**
+
 - Leads chegavam de várias fontes (parceiros, site, indicação)
 - Tudo em planilha Excel
 - Cada vendedor tinha "seu jeito" de qualificar
@@ -387,12 +405,14 @@ Cliente que atendi em 2021. Operação de home equity (crédito com garantia de 
 - Conversão: 3%
 
 **O Que Fizemos:**
+
 - CRM estruturado com pipeline específico (Análise → Avaliação Imóvel → Proposta → Contrato → Liberação)
 - Processo de qualificação padronizado (valor imóvel, renda comprovada, finalidade do crédito)
 - Cadência de follow-up automática
 - Scripts validados para cada etapa
 
 **Resultado em 6 meses:**
+
 - Conversão: 3% → 11%
 - Ticket médio: +40% (qualificação melhor = cliente com imóvel melhor)
 - Tempo médio de fechamento: 45 dias → 28 dias

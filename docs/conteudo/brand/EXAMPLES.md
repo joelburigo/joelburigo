@@ -9,6 +9,7 @@
 ## 1. Caption IG — manifesto
 
 ### ❌ BAD
+
 ```
 Desperte seu potencial empresarial! 💪 Sua jornada rumo ao sucesso
 começa aqui. Com nosso método poderoso, você vai desbloquear o mindset
@@ -19,6 +20,7 @@ Clique no link da bio e eleve seu game! 🚀🔥
 ```
 
 **Por que é ruim:**
+
 - "Desperte seu potencial", "jornada", "poderoso", "desbloquear", "mindset", "transformar sua vida", "em 3 passos fáceis", "eleve seu game" — oito palavras-jargão-IA proibidas numa peça só
 - Emojis faciais/mãos/foguete/fogo (💪🚀🔥) — todos proibidos
 - Zero prova social concreta, zero dor real
@@ -26,6 +28,7 @@ Clique no link da bio e eleve seu game! 🚀🔥
 - Promessa de facilidade nega o esforço real do método
 
 ### ✅ GOOD
+
 ```
 Improviso mata mais empresa que crise.
 
@@ -41,6 +44,7 @@ Link na bio: diagnóstico grátis de 10 min.
 ```
 
 **Por que funciona:**
+
 - Abre com assinatura canônica palavra por palavra ("Improviso mata mais empresa que crise")
 - 3 dores concretas e reconhecíveis, não abstração
 - Prova exata (`140+ MPEs`, não "várias empresas", não "150+")
@@ -52,6 +56,7 @@ Link na bio: diagnóstico grátis de 10 min.
 ## 2. Post LinkedIn — reflexão de autoridade
 
 ### ❌ BAD
+
 ```
 Minha jornada empreendedora me ensinou que o verdadeiro sucesso vem
 de dentro. Depois de mais de 20 anos no mercado, ajudando incontáveis
@@ -62,6 +67,7 @@ Acreditem em vocês! Vocês conseguem!
 ```
 
 **Por que é ruim:**
+
 - "Jornada empreendedora", "desbloquearem seu potencial", "mindset" — proibidos
 - "Mais de 20 anos" é número inventado — o correto é `17+ anos`
 - "Incontáveis empresários" foge da prova exata (`140+ clientes`)
@@ -69,6 +75,7 @@ Acreditem em vocês! Vocês conseguem!
 - Emoji de oração (🙏) proibido
 
 ### ✅ GOOD
+
 ```
 17+ anos vendendo pra MPE brasileira. 140 clientes. ~R$ 1 bilhão
 em vendas estruturadas ao longo desse período.
@@ -92,6 +99,7 @@ Inverteu? Quebra.
 ```
 
 **Por que funciona:**
+
 - Abre com 3 provas empilhadas e cuidadosas (`17+ anos`, `140 clientes`, `~R$ 1 bilhão`)
 - Insight concreto amarrado ao framework proprietário (P4 nomeado, 6Ps listados em ordem correta)
 - 2 assinaturas canônicas ("Marketing sem vendas é hobby caro" + close duro)
@@ -103,17 +111,20 @@ Inverteu? Quebra.
 ## 3. Assunto de email
 
 ### ❌ BAD
+
 ```
 Transforme seu negócio HOJE! 🚀 Aproveite esta oferta imperdível
 e desbloqueie seu potencial máximo!
 ```
 
 **Por que é ruim:**
+
 - "Transforme", "desbloqueie", "potencial máximo", "HOJE" em caixa-alta, "imperdível", emoji de foguete — assinatura sonora de spam infoproduto
 - Nenhuma dor, nenhuma prova, nenhuma especificidade
 - Promessa mágica sem conteúdo
 
 ### ✅ GOOD
+
 ```
 Assunto A: Teu marketing vende. Tuas vendas não fecham.
 Assunto B: Se tua empresa depende de ti, tu não tem empresa — tu tem emprego.
@@ -121,6 +132,7 @@ Assunto C: R$ 50k/mês travado há 8 meses? Abre.
 ```
 
 **Por que funciona:**
+
 - A: diagnóstico de dor real (desconexão marketing/vendas, reconhecível em segundos)
 - B: assinatura canônica palavra por palavra, usa "tu" porque é a frase-bandeira (uso cirúrgico permitido)
 - C: número plausível + situação concreta, verbo imperativo sem enfeite
@@ -131,6 +143,7 @@ Assunto C: R$ 50k/mês travado há 8 meses? Abre.
 ## 4. Texto de caso/depoimento
 
 ### ❌ BAD
+
 ```
 Em apenas 30 dias, nosso cliente fez R$ 2 milhões usando a fórmula
 secreta do Joel! Um verdadeiro case de sucesso revolucionário que
@@ -139,12 +152,14 @@ com quem acredita!
 ```
 
 **Por que é ruim:**
+
 - **Número totalmente inventado** — R$ 2 milhões em 30 dias não existe em nenhum case real (violação máxima do §1.4)
 - "30 dias" contradiz o prazo guiado VSS de `90 dias` — nunca menos
 - "Fórmula secreta", "revolucionário", "incríveis", "acredita" — cinco proibidos
 - Zero contexto de esforço, zero nome de cliente verificável
 
 ### ✅ GOOD
+
 ```
 Holding de franquias. Operação travada em R$ 160k/mês, leads
 chegando sem qualificação, time comercial apagando incêndio.
@@ -162,6 +177,7 @@ Não há fórmula mágica. Há método.
 ```
 
 **Por que funciona:**
+
 - Usa case real (holding de franquias) com todos os números exatos da tabela §4.2
 - Janela de tempo real (`~2 anos`, não 30 dias)
 - Amarra os 6Ps nomeados ao resultado (P1, P2, P4, P6)
@@ -173,6 +189,7 @@ Não há fórmula mágica. Há método.
 ## 5. Headline de anúncio Advisory
 
 ### ❌ BAD
+
 ```
 Mentoria premium para empresários visionários alcançarem o próximo
 nível. Desbloqueie todo o seu potencial e transforme sua empresa com
@@ -180,12 +197,14 @@ acompanhamento exclusivo de um especialista renomado.
 ```
 
 **Por que é ruim:**
+
 - "Premium", "visionários", "próximo nível", "desbloqueie", "potencial", "transforme" — proibidos empilhados
 - "Especialista renomado" genérico, sem prova exata
 - Zero dor, zero especificidade — poderia ser anúncio de qualquer coach
 - Fala com o ego, não com o problema real do dono faturando R$ 200k/mês
 
 ### ✅ GOOD
+
 ```
 R$ 200k/mês e ainda dependendo de ti pra fechar venda?
 Temos que conversar.
@@ -198,6 +217,7 @@ Diagnóstico grátis · 10 min →
 ```
 
 **Por que funciona:**
+
 - Abre com dor específica do público-alvo de Advisory (dono travado, não iniciante)
 - "Tu" cirúrgico na pergunta e na frase-bandeira — uso permitido
 - 2 provas exatas empilhadas (`17+ anos`, `140+ empresas`)
@@ -209,6 +229,7 @@ Diagnóstico grátis · 10 min →
 ## 6. CTA / botão
 
 ### ❌ BAD
+
 ```
 Botão A: Clique aqui e transforme sua vida!
 Botão B: Descubra o método revolucionário 🔥
@@ -216,11 +237,13 @@ Botão C: Quero minha melhor versão agora!
 ```
 
 **Por que é ruim:**
+
 - A: "transforme sua vida" proibido, exclamação de venda
 - B: "revolucionário" proibido, emoji de fogo proibido, "descubra" genérico de infoproduto
 - C: "melhor versão" proibido, tom de coach
 
 ### ✅ GOOD
+
 ```
 Botão A: Diagnóstico grátis · 10 min
 Botão B: Ligar a Máquina →
@@ -229,6 +252,7 @@ Botão D: Quero sair do improviso →
 ```
 
 **Por que funciona:**
+
 - A: proposta exata (o que é + tempo + custo), sem adjetivo
 - B: assinatura canônica ("Ligar a Máquina") como verbo de ação, símbolo permitido
 - C: específico (playbook, não "método"), nome de produto certo (VSS)
@@ -240,6 +264,7 @@ Botão D: Quero sair do improviso →
 ## 7. Story IG — dado / estatística
 
 ### ❌ BAD
+
 ```
 Sabia que 9 em cada 10 empresas fracassam? 😱
 Não seja mais um número! Use nosso método poderoso e garanta seu
@@ -247,6 +272,7 @@ sucesso! 💪🔥
 ```
 
 **Por que é ruim:**
+
 - "9 em cada 10" — **número inventado**, não bate com dado real
 - "Não seja mais um número" é chantagem motivacional
 - "Poderoso", "garanta seu sucesso" — promessa mágica proibida
@@ -254,6 +280,7 @@ sucesso! 💪🔥
 - Sem fonte citada (viola §7 — sempre citar fonte de prova)
 
 ### ✅ GOOD
+
 ```
 60% das MPEs brasileiras fecham em até 5 anos.
 FONTE: SEBRAE.
@@ -270,6 +297,7 @@ Sistema > Improviso.
 ```
 
 **Por que funciona:**
+
 - Dado real com fonte citada (SEBRAE) — cumpre §7
 - Contraste antes/depois (improviso → sistema) — elemento obrigatório §6
 - Diagnóstico concreto ("vende no peito, sem CRM, sem cadência")
@@ -281,6 +309,7 @@ Sistema > Improviso.
 ## 8. Slide de apresentação — abertura
 
 ### ❌ BAD
+
 ```
 Slide 1:
   Título:    Bem-vindos!
@@ -289,6 +318,7 @@ Slide 1:
 ```
 
 **Por que é ruim:**
+
 - "Bem-vindos" — abertura corporativa morna
 - "Jornada transformadora", "desbloquear", "mindset" — três proibidos
 - Emoji de brilho (✨) proibido
@@ -296,6 +326,7 @@ Slide 1:
 - Tom de palestra motivacional, não é o Joel
 
 ### ✅ GOOD
+
 ```
 Slide 1 (1920×1080, fundo #050505):
 
@@ -311,6 +342,7 @@ Slide 1 (1920×1080, fundo #050505):
 ```
 
 **Por que funciona:**
+
 - Headline é assinatura canônica em stroke-text (uso visual correto do Terminal Growth)
 - Sub traz 2 provas empilhadas e exatas (`17+ anos`, `140+ clientes`)
 - Paleta correta (preto `#050505` + acid `#C6FF00`) e tipografia certa (Archivo Black + JetBrains Mono)

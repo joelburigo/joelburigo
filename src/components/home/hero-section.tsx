@@ -5,7 +5,7 @@ import s from './hero-section.module.css';
 
 export function HeroSection() {
   return (
-    <section className={cn(s.heroSection, 'relative overflow-hidden bg-ink')}>
+    <section className={cn(s.heroSection, 'bg-ink relative overflow-hidden')}>
       <div className="grid-overlay" />
       <div className={s.heroGlow} aria-hidden="true" />
 
@@ -29,8 +29,8 @@ export function HeroSection() {
             <p className={s.heroLede}>
               17+ anos estruturando vendas escaláveis pra MPE.{' '}
               <strong className="text-cream">140+ clientes</strong>.{' '}
-              <strong className="text-cream">~R$ 1 bilhão</strong> em vendas estruturadas. Framework 6Ps.
-              Zero fórmula mágica.
+              <strong className="text-cream">~R$ 1 bilhão</strong> em vendas estruturadas. Framework
+              6Ps. Zero fórmula mágica.
             </p>
 
             <div className={s.heroCtas}>

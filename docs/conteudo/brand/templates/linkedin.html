@@ -1,299 +1,460 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<title>Template · LinkedIn Post 1200×1200 · Joel Burigo</title>
-<!-- Template LinkedIn Feed (1200×1200). 3 variantes visuais.
+  <head>
+    <meta charset="utf-8" />
+    <title>Template · LinkedIn Post 1200×1200 · Joel Burigo</title>
+    <!-- Template LinkedIn Feed (1200×1200). 3 variantes visuais.
      Tom: autoridade B2B. Público mais sênior que IG — formal mas provocador.
      Fontes autoritativas: 01-marca.md · copy-bank.md · ANTI_DRIFT.md -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../colors_and_type.css">
-<style>
- /* ============ VIEWER (fora do canvas) ============ */
- *{box-sizing:border-box}
- html,body{margin:0;background:#1a1a1a;color:#E5E5E5}
- body{
-   padding:40px;display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start;
-   font-family:'Archivo',sans-serif;min-height:100vh;
- }
- .stage{display:flex;flex-direction:column;gap:12px}
- .stage .label{
-   font-family:'JetBrains Mono',monospace;font-size:11px;
-   letter-spacing:0.25em;text-transform:uppercase;color:#A3A3A3
- }
- .stage .label b{color:var(--jb-acid)}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../colors_and_type.css" />
+    <style>
+      /* ============ VIEWER (fora do canvas) ============ */
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        background: #1a1a1a;
+        color: #e5e5e5;
+      }
+      body {
+        padding: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+        align-items: flex-start;
+        font-family: 'Archivo', sans-serif;
+        min-height: 100vh;
+      }
+      .stage {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .stage .label {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: #a3a3a3;
+      }
+      .stage .label b {
+        color: var(--jb-acid);
+      }
 
- /* Cada variante é renderizada em 1200×1200 mas escalada p/ caber (0.5 = 600×600) */
- .scale{transform:scale(0.5);transform-origin:top left;width:600px;height:600px}
+      /* Cada variante é renderizada em 1200×1200 mas escalada p/ caber (0.5 = 600×600) */
+      .scale {
+        transform: scale(0.5);
+        transform-origin: top left;
+        width: 600px;
+        height: 600px;
+      }
 
- /* ============ BASE DO POST (1200×1200) ============ */
- .post{
-   width:1200px;height:1200px;position:relative;overflow:hidden;
-   background:var(--jb-ink);color:var(--jb-cream);
-   font-family:'Archivo',sans-serif;
- }
- .post .grid-bg{
-   position:absolute;inset:0;pointer-events:none;z-index:0;opacity:0.35;
-   background-image:
-     linear-gradient(to right,rgba(255,255,255,0.04) 1px,transparent 1px),
-     linear-gradient(to bottom,rgba(255,255,255,0.04) 1px,transparent 1px);
-   background-size:80px 80px;
- }
- .post .pad{
-   position:relative;z-index:2;padding:80px;height:100%;
-   display:flex;flex-direction:column;justify-content:space-between
- }
+      /* ============ BASE DO POST (1200×1200) ============ */
+      .post {
+        width: 1200px;
+        height: 1200px;
+        position: relative;
+        overflow: hidden;
+        background: var(--jb-ink);
+        color: var(--jb-cream);
+        font-family: 'Archivo', sans-serif;
+      }
+      .post .grid-bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.35;
+        background-image:
+          linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+        background-size: 80px 80px;
+      }
+      .post .pad {
+        position: relative;
+        z-index: 2;
+        padding: 80px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
 
- /* STATUS BAR (topo) */
- .sb{
-   display:flex;justify-content:space-between;align-items:center;
-   font-family:'JetBrains Mono',monospace;font-size:16px;
-   letter-spacing:0.25em;text-transform:uppercase;color:var(--jb-fg-muted)
- }
- .sb .dot{
-   width:10px;height:10px;background:var(--jb-acid);border-radius:50%;
-   box-shadow:0 0 12px var(--jb-acid);display:inline-block;
-   margin-right:10px;vertical-align:middle
- }
- .sb b{color:var(--jb-cream)}
+      /* STATUS BAR (topo) */
+      .sb {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 16px;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--jb-fg-muted);
+      }
+      .sb .dot {
+        width: 10px;
+        height: 10px;
+        background: var(--jb-acid);
+        border-radius: 50%;
+        box-shadow: 0 0 12px var(--jb-acid);
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+      .sb b {
+        color: var(--jb-cream);
+      }
 
- /* Hairline separator */
- .hair{height:1px;background:var(--jb-hair);margin:24px 0}
+      /* Hairline separator */
+      .hair {
+        height: 1px;
+        background: var(--jb-hair);
+        margin: 24px 0;
+      }
 
- /* Footer mono comum */
- .foot{
-   font-family:'JetBrains Mono',monospace;font-size:16px;
-   letter-spacing:0.22em;text-transform:uppercase;color:var(--jb-fg-muted)
- }
- .foot b{color:var(--jb-acid)}
- .foot .fire{color:var(--jb-fire)}
+      /* Footer mono comum */
+      .foot {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 16px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--jb-fg-muted);
+      }
+      .foot b {
+        color: var(--jb-acid);
+      }
+      .foot .fire {
+        color: var(--jb-fire);
+      }
 
- /* ============ VARIANT 1 — REFLEXÃO DE AUTORIDADE ============ */
- .p1 .eyebrow{
-   font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;
-   letter-spacing:0.28em;text-transform:uppercase;color:var(--jb-acid);
-   margin-bottom:40px
- }
- .p1 .head{
-   font-family:'Archivo Black',sans-serif;font-size:136px;line-height:0.9;
-   letter-spacing:-0.045em;text-transform:uppercase;color:var(--jb-cream);
-   margin-bottom:48px
- }
- .p1 .head .stroke{
-   -webkit-text-stroke:2.5px var(--jb-cream);color:transparent
- }
- .p1 .head .fire{color:var(--jb-fire)}
- .p1 .head .acid{color:var(--jb-acid)}
- .p1 .lede{
-   font-family:'Archivo',sans-serif;font-weight:400;font-size:30px;
-   line-height:1.4;color:var(--jb-fg-2);max-width:880px
- }
- .p1 .lede em{font-style:normal;color:var(--jb-cream);font-weight:600}
+      /* ============ VARIANT 1 — REFLEXÃO DE AUTORIDADE ============ */
+      .p1 .eyebrow {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--jb-acid);
+        margin-bottom: 40px;
+      }
+      .p1 .head {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 136px;
+        line-height: 0.9;
+        letter-spacing: -0.045em;
+        text-transform: uppercase;
+        color: var(--jb-cream);
+        margin-bottom: 48px;
+      }
+      .p1 .head .stroke {
+        -webkit-text-stroke: 2.5px var(--jb-cream);
+        color: transparent;
+      }
+      .p1 .head .fire {
+        color: var(--jb-fire);
+      }
+      .p1 .head .acid {
+        color: var(--jb-acid);
+      }
+      .p1 .lede {
+        font-family: 'Archivo', sans-serif;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 1.4;
+        color: var(--jb-fg-2);
+        max-width: 880px;
+      }
+      .p1 .lede em {
+        font-style: normal;
+        color: var(--jb-cream);
+        font-weight: 600;
+      }
 
- /* ============ VARIANT 2 — CASE BIG ============ */
- .p2 .corner-acid{
-   position:absolute;right:0;top:0;width:360px;height:360px;
-   background:radial-gradient(circle at top right, rgba(198,255,0,0.12), transparent 70%);
-   pointer-events:none;z-index:1
- }
- .p2 .split{display:flex;gap:48px;align-items:flex-start;margin-top:40px}
- .p2 .mega{
-   flex:0 0 60%;font-family:'Archivo Black',sans-serif;
-   font-size:360px;line-height:0.82;letter-spacing:-0.07em;
-   color:var(--jb-acid);margin-left:-18px;white-space:nowrap;
-   text-shadow:0 0 60px rgba(198,255,0,0.15)
- }
- .p2 .facts{
-   flex:1;display:flex;flex-direction:column;gap:28px;
-   padding-top:40px
- }
- .p2 .fact .k{
-   font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;
-   letter-spacing:0.28em;text-transform:uppercase;color:var(--jb-fire);
-   margin-bottom:8px
- }
- .p2 .fact .v{
-   font-family:'Archivo Black',sans-serif;font-size:26px;line-height:1.05;
-   letter-spacing:-0.02em;text-transform:uppercase;color:var(--jb-cream)
- }
- .p2 .head-bottom{
-   font-family:'Archivo Black',sans-serif;font-size:68px;line-height:0.95;
-   letter-spacing:-0.04em;text-transform:uppercase;color:var(--jb-cream);
-   max-width:1000px;margin-top:32px
- }
- .p2 .head-bottom .acid{color:var(--jb-acid)}
+      /* ============ VARIANT 2 — CASE BIG ============ */
+      .p2 .corner-acid {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 360px;
+        height: 360px;
+        background: radial-gradient(circle at top right, rgba(198, 255, 0, 0.12), transparent 70%);
+        pointer-events: none;
+        z-index: 1;
+      }
+      .p2 .split {
+        display: flex;
+        gap: 48px;
+        align-items: flex-start;
+        margin-top: 40px;
+      }
+      .p2 .mega {
+        flex: 0 0 60%;
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 360px;
+        line-height: 0.82;
+        letter-spacing: -0.07em;
+        color: var(--jb-acid);
+        margin-left: -18px;
+        white-space: nowrap;
+        text-shadow: 0 0 60px rgba(198, 255, 0, 0.15);
+      }
+      .p2 .facts {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        padding-top: 40px;
+      }
+      .p2 .fact .k {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--jb-fire);
+        margin-bottom: 8px;
+      }
+      .p2 .fact .v {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 26px;
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: var(--jb-cream);
+      }
+      .p2 .head-bottom {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 68px;
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+        color: var(--jb-cream);
+        max-width: 1000px;
+        margin-top: 32px;
+      }
+      .p2 .head-bottom .acid {
+        color: var(--jb-acid);
+      }
 
- /* ============ VARIANT 3 — ADVISORY PREMIUM ============ */
- .p3 .corner-gradient{
-   position:absolute;right:-200px;top:-200px;width:780px;height:780px;
-   background:radial-gradient(circle, rgba(198,255,0,0.08), transparent 65%);
-   pointer-events:none;z-index:1
- }
- .p3 .eyebrow{
-   font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;
-   letter-spacing:0.28em;text-transform:uppercase;color:var(--jb-fire);
-   margin-bottom:40px
- }
- .p3 .head{
-   font-family:'Archivo Black',sans-serif;font-size:104px;line-height:0.92;
-   letter-spacing:-0.04em;text-transform:uppercase;color:var(--jb-cream);
-   margin-bottom:40px
- }
- .p3 .head .fire-box{
-   background:var(--jb-fire);color:var(--jb-ink);padding:0 16px;
-   display:inline-block
- }
- .p3 .head .acid-ul{
-   color:var(--jb-cream);
-   border-bottom:6px solid var(--jb-acid);
-   padding-bottom:2px
- }
- .p3 .sub{
-   font-family:'Archivo',sans-serif;font-weight:500;font-size:28px;
-   line-height:1.45;color:var(--jb-fg-2);max-width:940px;margin-bottom:56px
- }
- .p3 .chips{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px}
- .p3 .chip{
-   font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;
-   letter-spacing:0.2em;text-transform:uppercase;color:var(--jb-cream);
-   background:var(--jb-ink-2);border:1px solid var(--jb-acid-border);
-   padding:16px 22px
- }
- .p3 .chip b{color:var(--jb-acid)}
- .p3 .cta{
-   display:inline-flex;align-items:center;gap:16px;
-   background:var(--jb-acid);color:var(--jb-ink);
-   font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:800;
-   letter-spacing:0.22em;text-transform:uppercase;
-   padding:24px 36px;
-   box-shadow:6px 6px 0 var(--jb-ink),12px 12px 0 var(--jb-fire);
-   align-self:flex-start
- }
-</style>
-</head>
-<body>
-
-<!-- ============ VARIANT 1 — REFLEXÃO DE AUTORIDADE ============ -->
-<div class="stage">
-  <div class="label">// <b>VARIANT 01</b> · LINKEDIN · REFLEXÃO DE AUTORIDADE · 1200×1200</div>
-  <div class="scale">
-    <div class="post p1">
-      <div class="grid-bg"></div>
-      <div class="pad">
-        <div class="sb">
-          <span><span class="dot"></span>ARTIGO · 2 MIN LEITURA</span>
-          <span>// @JOELBURIGO · <b>LINKEDIN</b></span>
-        </div>
-        <div>
-          <div class="eyebrow">// OBSERVAÇÃO · 17+ ANOS</div>
-          <div class="head">
-            140 CLIENTES<br>
-            DEPOIS, O<br>
-            <span class="stroke">PADRÃO</span> NUNCA<br>
-            <span class="acid">MUDA.</span>
+      /* ============ VARIANT 3 — ADVISORY PREMIUM ============ */
+      .p3 .corner-gradient {
+        position: absolute;
+        right: -200px;
+        top: -200px;
+        width: 780px;
+        height: 780px;
+        background: radial-gradient(circle, rgba(198, 255, 0, 0.08), transparent 65%);
+        pointer-events: none;
+        z-index: 1;
+      }
+      .p3 .eyebrow {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--jb-fire);
+        margin-bottom: 40px;
+      }
+      .p3 .head {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 104px;
+        line-height: 0.92;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+        color: var(--jb-cream);
+        margin-bottom: 40px;
+      }
+      .p3 .head .fire-box {
+        background: var(--jb-fire);
+        color: var(--jb-ink);
+        padding: 0 16px;
+        display: inline-block;
+      }
+      .p3 .head .acid-ul {
+        color: var(--jb-cream);
+        border-bottom: 6px solid var(--jb-acid);
+        padding-bottom: 2px;
+      }
+      .p3 .sub {
+        font-family: 'Archivo', sans-serif;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 1.45;
+        color: var(--jb-fg-2);
+        max-width: 940px;
+        margin-bottom: 56px;
+      }
+      .p3 .chips {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 48px;
+      }
+      .p3 .chip {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--jb-cream);
+        background: var(--jb-ink-2);
+        border: 1px solid var(--jb-acid-border);
+        padding: 16px 22px;
+      }
+      .p3 .chip b {
+        color: var(--jb-acid);
+      }
+      .p3 .cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        background: var(--jb-acid);
+        color: var(--jb-ink);
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        padding: 24px 36px;
+        box-shadow:
+          6px 6px 0 var(--jb-ink),
+          12px 12px 0 var(--jb-fire);
+        align-self: flex-start;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============ VARIANT 1 — REFLEXÃO DE AUTORIDADE ============ -->
+    <div class="stage">
+      <div class="label">// <b>VARIANT 01</b> · LINKEDIN · REFLEXÃO DE AUTORIDADE · 1200×1200</div>
+      <div class="scale">
+        <div class="post p1">
+          <div class="grid-bg"></div>
+          <div class="pad">
+            <div class="sb">
+              <span><span class="dot"></span>ARTIGO · 2 MIN LEITURA</span>
+              <span>// @JOELBURIGO · <b>LINKEDIN</b></span>
+            </div>
+            <div>
+              <div class="eyebrow">// OBSERVAÇÃO · 17+ ANOS</div>
+              <div class="head">
+                140 CLIENTES<br />
+                DEPOIS, O<br />
+                <span class="stroke">PADRÃO</span> NUNCA<br />
+                <span class="acid">MUDA.</span>
+              </div>
+              <div class="lede">
+                Dono liga: <em>"meu marketing não tá vendendo"</em>. Errado. O problema nunca é
+                marketing — é sistema. Marketing sem vendas é hobby caro.
+              </div>
+            </div>
+            <div>
+              <div class="hair"></div>
+              <div class="foot">★ <b>SISTEMA &gt; IMPROVISO</b> · JOEL BURIGO · FRAMEWORK 6PS</div>
+            </div>
           </div>
-          <div class="lede">
-            Dono liga: <em>"meu marketing não tá vendendo"</em>. Errado.
-            O problema nunca é marketing — é sistema. Marketing sem vendas é hobby caro.
-          </div>
-        </div>
-        <div>
-          <div class="hair"></div>
-          <div class="foot">★ <b>SISTEMA &gt; IMPROVISO</b> · JOEL BURIGO · FRAMEWORK 6PS</div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- ============ VARIANT 2 — CASE BIG ============ -->
-<div class="stage">
-  <div class="label">// <b>VARIANT 02</b> · LINKEDIN · CASE BIG (holding de franquias) · 1200×1200</div>
-  <div class="scale">
-    <div class="post p2">
-      <div class="grid-bg"></div>
-      <div class="corner-acid"></div>
-      <div class="pad">
-        <div class="sb">
-          <span><span class="dot"></span>CASE · HOLDING DE FRANQUIAS · 2018-2020</span>
-          <span>// <b>AUDITED</b></span>
+    <!-- ============ VARIANT 2 — CASE BIG ============ -->
+    <div class="stage">
+      <div class="label">
+        // <b>VARIANT 02</b> · LINKEDIN · CASE BIG (holding de franquias) · 1200×1200
+      </div>
+      <div class="scale">
+        <div class="post p2">
+          <div class="grid-bg"></div>
+          <div class="corner-acid"></div>
+          <div class="pad">
+            <div class="sb">
+              <span><span class="dot"></span>CASE · HOLDING DE FRANQUIAS · 2018-2020</span>
+              <span>// <b>AUDITED</b></span>
+            </div>
+            <div>
+              <div class="split">
+                <div class="mega">+433%</div>
+                <div class="facts">
+                  <div class="fact">
+                    <div class="k">// CLIENTE</div>
+                    <div class="v">Holding de<br />franquias</div>
+                  </div>
+                  <div class="fact">
+                    <div class="k">// JANELA</div>
+                    <div class="v">~2 anos<br />2018–2020</div>
+                  </div>
+                  <div class="fact">
+                    <div class="k">// FATURAMENTO</div>
+                    <div class="v">R$ 160k/mês →<br />R$ 1 milhão/mês</div>
+                  </div>
+                  <div class="fact">
+                    <div class="k">// LEADS</div>
+                    <div class="v">×8,33</div>
+                  </div>
+                </div>
+              </div>
+              <div class="head-bottom">
+                NÃO FOI GROWTH HACKING.<br />
+                FOI <span class="acid">SISTEMA.</span>
+              </div>
+            </div>
+            <div>
+              <div class="hair"></div>
+              <div class="foot">★ <b>VSS — O MESMO PLAYBOOK</b> · LINK NA BIO →</div>
+            </div>
+          </div>
         </div>
-        <div>
-          <div class="split">
-            <div class="mega">+433%</div>
-            <div class="facts">
-              <div class="fact">
-                <div class="k">// CLIENTE</div>
-                <div class="v">Holding de<br>franquias</div>
+      </div>
+    </div>
+
+    <!-- ============ VARIANT 3 — ADVISORY PREMIUM ============ -->
+    <div class="stage">
+      <div class="label">// <b>VARIANT 03</b> · LINKEDIN · ANÚNCIO ADVISORY · 1200×1200</div>
+      <div class="scale">
+        <div class="post p3">
+          <div class="grid-bg"></div>
+          <div class="corner-gradient"></div>
+          <div class="pad">
+            <div class="sb">
+              <span><span class="dot"></span>ADVISORY · EXCLUSIVO · CONVITE</span>
+              <span>// <b>VAGAS LIMITADAS</b></span>
+            </div>
+            <div>
+              <div class="eyebrow">// SÓ PRA R$ 200K+/MÊS</div>
+              <div class="head">
+                FATURA R$ 200K+<br />
+                E AINDA <span class="fire-box">[DEPENDE DE TI]</span><br />
+                PRA <span class="acid-ul">FECHAR VENDA</span>?
               </div>
-              <div class="fact">
-                <div class="k">// JANELA</div>
-                <div class="v">~2 anos<br>2018–2020</div>
+              <div class="sub">
+                Advisory é minha mente no teu negócio. 1:1. Sessão, Sprint de 30 dias, ou Conselho
+                Executivo — você escolhe o formato.
               </div>
-              <div class="fact">
-                <div class="k">// FATURAMENTO</div>
-                <div class="v">R$ 160k/mês →<br>R$ 1 milhão/mês</div>
+              <div class="chips">
+                <div class="chip">SESSÃO · <b>R$ 997</b></div>
+                <div class="chip">SPRINT 30D · <b>R$ 4.997</b></div>
+                <div class="chip">CONSELHO · <b>R$ 15.000/mês</b></div>
               </div>
-              <div class="fact">
-                <div class="k">// LEADS</div>
-                <div class="v">×8,33</div>
+              <div class="cta">[ ENTRAR EM CONTATO → ]</div>
+            </div>
+            <div>
+              <div class="hair"></div>
+              <div class="foot">
+                ★ JOEL BURIGO · @JOELBURIGO · <b>ADVISORY@JOELBURIGO.COM.BR</b>
               </div>
             </div>
           </div>
-          <div class="head-bottom">
-            NÃO FOI GROWTH HACKING.<br>
-            FOI <span class="acid">SISTEMA.</span>
-          </div>
-        </div>
-        <div>
-          <div class="hair"></div>
-          <div class="foot">★ <b>VSS — O MESMO PLAYBOOK</b> · LINK NA BIO →</div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- ============ VARIANT 3 — ADVISORY PREMIUM ============ -->
-<div class="stage">
-  <div class="label">// <b>VARIANT 03</b> · LINKEDIN · ANÚNCIO ADVISORY · 1200×1200</div>
-  <div class="scale">
-    <div class="post p3">
-      <div class="grid-bg"></div>
-      <div class="corner-gradient"></div>
-      <div class="pad">
-        <div class="sb">
-          <span><span class="dot"></span>ADVISORY · EXCLUSIVO · CONVITE</span>
-          <span>// <b>VAGAS LIMITADAS</b></span>
-        </div>
-        <div>
-          <div class="eyebrow">// SÓ PRA R$ 200K+/MÊS</div>
-          <div class="head">
-            FATURA R$ 200K+<br>
-            E AINDA <span class="fire-box">[DEPENDE DE TI]</span><br>
-            PRA <span class="acid-ul">FECHAR VENDA</span>?
-          </div>
-          <div class="sub">
-            Advisory é minha mente no teu negócio. 1:1. Sessão, Sprint de 30 dias,
-            ou Conselho Executivo — você escolhe o formato.
-          </div>
-          <div class="chips">
-            <div class="chip">SESSÃO · <b>R$ 997</b></div>
-            <div class="chip">SPRINT 30D · <b>R$ 4.997</b></div>
-            <div class="chip">CONSELHO · <b>R$ 15.000/mês</b></div>
-          </div>
-          <div class="cta">[ ENTRAR EM CONTATO → ]</div>
-        </div>
-        <div>
-          <div class="hair"></div>
-          <div class="foot">★ JOEL BURIGO · @JOELBURIGO · <b>ADVISORY@JOELBURIGO.COM.BR</b></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-</body>
+  </body>
 </html>

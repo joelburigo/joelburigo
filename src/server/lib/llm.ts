@@ -79,11 +79,7 @@ export const PRICING_USD_PER_M = {
   'claude-opus-4-7': { input: 15, output: 75 },
 } as const;
 
-export function estimateCostUsd(
-  model: string,
-  tokensInput: number,
-  tokensOutput: number
-): number {
+export function estimateCostUsd(model: string, tokensInput: number, tokensOutput: number): number {
   const prices = PRICING_USD_PER_M[model as keyof typeof PRICING_USD_PER_M];
   if (!prices) return 0;
   return (tokensInput * prices.input + tokensOutput * prices.output) / 1_000_000;

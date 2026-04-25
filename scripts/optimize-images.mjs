@@ -44,10 +44,7 @@ const CONFIG = {
 };
 
 // Directories to process
-const IMAGE_DIRS = [
-  'src/assets/images',
-  'src/assets/images/blog',
-];
+const IMAGE_DIRS = ['src/assets/images', 'src/assets/images/blog'];
 
 /**
  * Get all image files from directory
@@ -55,13 +52,13 @@ const IMAGE_DIRS = [
 function getImages(dir) {
   const fullPath = join(process.cwd(), dir);
   const files = readdirSync(fullPath);
-  
+
   return files
-    .filter(file => {
+    .filter((file) => {
       const ext = extname(file).toLowerCase();
       return ['.png', '.jpg', '.jpeg'].includes(ext);
     })
-    .map(file => ({
+    .map((file) => ({
       path: join(fullPath, file),
       name: file,
       dir: dir,
@@ -76,17 +73,17 @@ function getImageConfig(filename, originalWidth) {
   if (filename.includes('joel-burigo-vendas-sem-segredos')) {
     return CONFIG.hero;
   }
-  
+
   // Blog images
   if (filename.includes('blog/')) {
     return CONFIG.blog;
   }
-  
+
   // Small images (testimonials, etc)
   if (originalWidth <= 300) {
     return CONFIG.small;
   }
-  
+
   // General images
   return CONFIG.general;
 }
@@ -96,40 +93,41 @@ function getImageConfig(filename, originalWidth) {
  */
 async function optimizeImage(imageInfo) {
   const { path, name, dir } = imageInfo;
-  
+
   console.log(`\n📸 Processing: ${name}`);
-  
+
   try {
     // Get original metadata
     const image = sharp(path);
     const metadata = await image.metadata();
     const originalSize = statSync(path).size;
-    
-    console.log(`   Original: ${metadata.width}x${metadata.height} (${(originalSize / 1024 / 1024).toFixed(2)}MB)`);
-    
+
+    console.log(
+      `   Original: ${metadata.width}x${metadata.height} (${(originalSize / 1024 / 1024).toFixed(2)}MB)`
+    );
+
     // Get config for this image
     const config = getImageConfig(path, metadata.width);
-    
+
     // Determine sizes to generate
     let sizes = config.sizes || [metadata.width];
     if (config.maxSize) {
       sizes = [Math.min(metadata.width, config.maxSize)];
     }
-    
+
     // Filter out sizes larger than original
-    sizes = sizes.filter(size => size <= metadata.width);
-    
+    sizes = sizes.filter((size) => size <= metadata.width);
+
     // Generate optimized versions
     const outputDir = join(process.cwd(), dir);
     const baseName = basename(name, extname(name));
-    
+
     for (const size of sizes) {
-      const outputName = sizes.length > 1 
-        ? `${baseName}-${size}w.${config.format}`
-        : `${baseName}.${config.format}`;
-      
+      const outputName =
+        sizes.length > 1 ? `${baseName}-${size}w.${config.format}` : `${baseName}.${config.format}`;
+
       const outputPath = join(outputDir, outputName);
-      
+
       await sharp(path)
         .resize(size, null, {
           withoutEnlargement: true,
@@ -140,18 +138,18 @@ async function optimizeImage(imageInfo) {
           effort: 6, // 0-6, higher = better compression but slower
         })
         .toFile(outputPath);
-      
+
       const outputSize = statSync(outputPath).size;
       const savings = ((1 - outputSize / originalSize) * 100).toFixed(1);
-      
+
       console.log(`   ✓ ${outputName}: ${(outputSize / 1024).toFixed(1)}KB (-${savings}%)`);
     }
-    
+
     // For hero and blog images, also create AVIF (better compression)
     if (config === CONFIG.hero || config === CONFIG.blog) {
       const avifName = `${baseName}.avif`;
       const avifPath = join(outputDir, avifName);
-      
+
       await sharp(path)
         .resize(Math.max(...sizes), null, {
           withoutEnlargement: true,
@@ -162,13 +160,12 @@ async function optimizeImage(imageInfo) {
           effort: 4, // 0-9, higher = better compression but slower
         })
         .toFile(avifPath);
-      
+
       const avifSize = statSync(avifPath).size;
       const avifSavings = ((1 - avifSize / originalSize) * 100).toFixed(1);
-      
+
       console.log(`   ✓ ${avifName}: ${(avifSize / 1024).toFixed(1)}KB (-${avifSavings}%)`);
     }
-    
   } catch (error) {
     console.error(`   ❌ Error processing ${name}:`, error.message);
   }
@@ -181,26 +178,26 @@ async function main() {
   console.log('🚀 Starting image optimization...\n');
   console.log('This will convert all PNG/JPG images to WebP (and AVIF for hero/blog images)');
   console.log('Multiple sizes will be generated for responsive images\n');
-  
+
   let totalOriginal = 0;
   let totalOptimized = 0;
-  
+
   // Process each directory
   for (const dir of IMAGE_DIRS) {
     const images = getImages(dir);
-    
+
     if (images.length === 0) {
       console.log(`📁 ${dir}: No images found`);
       continue;
     }
-    
+
     console.log(`📁 ${dir}: ${images.length} images found`);
-    
+
     for (const image of images) {
       await optimizeImage(image);
     }
   }
-  
+
   console.log('\n✅ Image optimization complete!');
   console.log('\n📝 Next steps:');
   console.log('   1. Review the optimized images');

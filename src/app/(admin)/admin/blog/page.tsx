@@ -21,7 +21,7 @@ export default function AdminBlogPage() {
       <div className="mx-auto max-w-screen-md px-5 pb-20">
         <Link
           href="/admin/blog/new"
-          className="font-mono text-[12px] uppercase tracking-[0.22em] text-acid hover:underline"
+          className="text-acid font-mono text-[12px] tracking-[0.22em] uppercase hover:underline"
         >
           → Ver stub do editor (/admin/blog/new)
         </Link>

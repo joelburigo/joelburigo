@@ -11,13 +11,7 @@ export const metadata: Metadata = {
   title: 'Sobre | Joel Burigo',
   description:
     'De barraco em 2012 a 140+ clientes. Da quebrada ao bilhão. Manifesto + história + 6Ps formalizados em 2025.',
-  keywords: [
-    'Joel Burigo',
-    'história',
-    'Framework 6Ps',
-    'vendas escaláveis',
-    'consultor vendas',
-  ],
+  keywords: ['Joel Burigo', 'história', 'Framework 6Ps', 'vendas escaláveis', 'consultor vendas'],
   alternates: { canonical: '/sobre' },
 };
 
@@ -34,8 +28,7 @@ const inimigos = [
   {
     n: '01',
     titulo: 'IMPROVISO',
-    descricao:
-      'Vendas aleatórias, sem processo, dependendo de sorte ou da agenda do dia.',
+    descricao: 'Vendas aleatórias, sem processo, dependendo de sorte ou da agenda do dia.',
   },
   {
     n: '02',
@@ -45,8 +38,7 @@ const inimigos = [
   {
     n: '03',
     titulo: 'MARKETING SEM VENDAS',
-    descricao:
-      'Post bonito no Instagram não paga boleto. Marketing sem vendas é hobby caro.',
+    descricao: 'Post bonito no Instagram não paga boleto. Marketing sem vendas é hobby caro.',
   },
   {
     n: '04',
@@ -56,14 +48,12 @@ const inimigos = [
   {
     n: '05',
     titulo: 'CRM VAZIO',
-    descricao:
-      'Ferramenta no lugar errado, processo no lugar nenhum. Leads entram e somem.',
+    descricao: 'Ferramenta no lugar errado, processo no lugar nenhum. Leads entram e somem.',
   },
   {
     n: '06',
     titulo: 'TÁTICA SEM SISTEMA',
-    descricao:
-      'Anúncio sem funil, funil sem script, script sem follow-up. Peça solta não escala.',
+    descricao: 'Anúncio sem funil, funil sem script, script sem follow-up. Peça solta não escala.',
   },
   {
     n: '07',
@@ -124,7 +114,7 @@ const cicatrizes = [
 
 export default function SobrePage() {
   return (
-    <main className="relative overflow-hidden bg-ink">
+    <main className="bg-ink relative overflow-hidden">
       <div className="grid-overlay" />
 
       <Container className="relative z-10">
@@ -155,12 +145,11 @@ export default function SobrePage() {
               >
                 <span className="block">Da quebrada</span>
                 <span className="block">
-                  <span className="stroke-text">ao</span>{' '}
-                  <span className="text-acid">bilhão.</span>
+                  <span className="stroke-text">ao</span> <span className="text-acid">bilhão.</span>
                 </span>
               </h1>
               <p
-                className="mt-8 max-w-[56ch] font-sans text-xl text-cream"
+                className="text-cream mt-8 max-w-[56ch] font-sans text-xl"
                 style={{ lineHeight: '1.55' }}
               >
                 Março/2012. Barraco de R$ 300 em Ribeirão das Neves/MG. Sem geladeira. Cama em
@@ -183,31 +172,28 @@ export default function SobrePage() {
                 <strong className="text-cream">140+ empresas</strong> e{' '}
                 <strong className="text-cream">~R$ 1 bilhão</strong> em vendas estruturadas.
               </p>
-              <p className="mt-6 max-w-xl font-mono text-[13px] uppercase tracking-[0.22em] text-fg-3">
+              <p className="text-fg-3 mt-6 max-w-xl font-mono text-[13px] tracking-[0.22em] uppercase">
                 <span className="text-acid">●</span>&nbsp; NASCIDO 1987 · PALHOÇA/SC ·
                 JARDIM_ELDORADO
               </p>
             </div>
 
             <aside>
-              <div className="border border-[var(--jb-acid-border)] bg-ink-2 overflow-hidden">
+              <div className="bg-ink-2 overflow-hidden border border-[var(--jb-acid-border)]">
                 <Image
                   src="/images/joel-burigo-vendas-sem-segredos-2-1200w.webp"
                   alt="Joel Burigo — especialista em Vendas Escaláveis"
                   width={1200}
                   height={1500}
                   loading="lazy"
-                  className="w-full h-auto"
+                  className="h-auto w-full"
                   style={{ filter: 'grayscale(100%) contrast(1.1)' }}
                 />
-                <div className="p-6 border-t border-[var(--jb-hair)]">
+                <div className="border-t border-[var(--jb-hair)] p-6">
                   <div className="kicker mb-3" style={{ color: 'var(--jb-acid)' }}>
                     // JOEL_BURIGO
                   </div>
-                  <p
-                    className="font-display text-lg text-cream"
-                    style={{ lineHeight: '1.1' }}
-                  >
+                  <p className="font-display text-cream text-lg" style={{ lineHeight: '1.1' }}>
                     Vendas Escaláveis · Framework 6Ps
                   </p>
                 </div>
@@ -219,8 +205,8 @@ export default function SobrePage() {
           <div className="mt-12 grid grid-cols-2 gap-px border border-[var(--jb-hair)] bg-[var(--jb-hair)] md:grid-cols-4">
             {stats.map((s) => (
               <div key={s.label} className="bg-ink p-6">
-                <div className="font-display text-3xl md:text-4xl text-acid">{s.num}</div>
-                <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-fg-muted">
+                <div className="font-display text-acid text-3xl md:text-4xl">{s.num}</div>
+                <div className="text-fg-muted font-mono text-[11px] tracking-[0.22em] uppercase">
                   {s.label}
                 </div>
               </div>
@@ -230,12 +216,12 @@ export default function SobrePage() {
 
         {/* Manifesto */}
         <section className="pb-16">
-          <div className="border border-[var(--jb-fire-border)] bg-ink-2 p-8 md:p-12">
+          <div className="bg-ink-2 border border-[var(--jb-fire-border)] p-8 md:p-12">
             <div className="kicker mb-6" style={{ color: 'var(--jb-fire)' }}>
               // MANIFESTO · DA_QUEBRADA_AO_BILHÃO
             </div>
             <div
-              className="space-y-5 max-w-[62ch] font-sans text-lg text-cream"
+              className="text-cream max-w-[62ch] space-y-5 font-sans text-lg"
               style={{ lineHeight: '1.6' }}
             >
               <p>
@@ -255,7 +241,7 @@ export default function SobrePage() {
               </p>
             </div>
             <p
-              className="mt-8 border-t border-[var(--jb-fire-border)] pt-6 font-display text-2xl md:text-3xl text-acid"
+              className="font-display text-acid mt-8 border-t border-[var(--jb-fire-border)] pt-6 text-2xl md:text-3xl"
               style={{ lineHeight: '1.05' }}
             >
               &ldquo;SE TUA EMPRESA DEPENDE DE TU, TU NÃO TEM EMPRESA — TU TEM EMPREGO.&rdquo;
@@ -271,57 +257,45 @@ export default function SobrePage() {
         <section className="py-16">
           <div className="mx-auto max-w-5xl">
             <div className="kicker mb-6">// CICATRIZES · QUE_VIRARAM_SABEDORIA</div>
-            <h2
-              className="heading-2 mb-8 max-w-[30ch] text-cream"
-              style={{ lineHeight: '1.15' }}
-            >
+            <h2 className="heading-2 text-cream mb-8 max-w-[30ch]" style={{ lineHeight: '1.15' }}>
               Cada falha ensinou algo que nenhum MBA ensina.
             </h2>
-            <ul className="space-y-0 border border-[var(--jb-hair)] bg-ink-2">
+            <ul className="bg-ink-2 space-y-0 border border-[var(--jb-hair)]">
               {cicatrizes.map((c, i) => (
                 <li
                   key={c}
                   className={`flex items-start gap-5 p-6 ${i > 0 ? 'border-t border-[var(--jb-hair)]' : ''}`}
                 >
                   <div
-                    className="font-mono text-sm font-bold text-acid shrink-0 pt-[2px]"
+                    className="text-acid shrink-0 pt-[2px] font-mono text-sm font-bold"
                     style={{ letterSpacing: '0.1em' }}
                   >
                     {String(i + 1).padStart(2, '0')}
                   </div>
-                  <p className="font-sans text-fg-2" style={{ lineHeight: '1.6' }}>
+                  <p className="text-fg-2 font-sans" style={{ lineHeight: '1.6' }}>
                     {c}
                   </p>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-10 border-l-2 border-fire bg-ink-2 p-8">
+            <div className="border-fire bg-ink-2 mt-10 border-l-2 p-8">
               <div className="kicker mb-4" style={{ color: 'var(--jb-fire)' }}>
                 // INSIGHT · O_PADRÃO_DEPOIS_DE_17_ANOS
               </div>
-              <p
-                className="font-display text-2xl text-cream mb-5"
-                style={{ lineHeight: '1.05' }}
-              >
+              <p className="font-display text-cream mb-5 text-2xl" style={{ lineHeight: '1.05' }}>
                 &ldquo;IMPROVISO MATA MAIS EMPRESA QUE CRISE.&rdquo;
               </p>
-              <p
-                className="max-w-[62ch] font-sans text-fg-2"
-                style={{ lineHeight: '1.65' }}
-              >
+              <p className="text-fg-2 max-w-[62ch] font-sans" style={{ lineHeight: '1.65' }}>
                 A maioria das MPEs brasileiras não quebra por falta de mercado. Quebra por falta de
                 sistema replicável. Marketing sozinho não converte — leads chegam mas não viram
                 venda porque falta CRM, processo, follow-up, proposta padronizada.
               </p>
-              <p
-                className="mt-4 max-w-[62ch] font-sans text-fg-2"
-                style={{ lineHeight: '1.65' }}
-              >
+              <p className="text-fg-2 mt-4 max-w-[62ch] font-sans" style={{ lineHeight: '1.65' }}>
                 Foi isso que virou a base dos{' '}
                 <strong className="text-cream">6Ps das Vendas Escaláveis</strong> — metodologia que
-                eu formalizei em 2025 para integrar Marketing + Vendas + Operação num sistema
-                único. Cada P veio de erro ou acerto real.
+                eu formalizei em 2025 para integrar Marketing + Vendas + Operação num sistema único.
+                Cada P veio de erro ou acerto real.
               </p>
             </div>
           </div>
@@ -331,23 +305,20 @@ export default function SobrePage() {
         <section className="pb-16">
           <div className="mx-auto max-w-6xl">
             <div className="kicker mb-6">// FRAMEWORK · 6PS_DAS_VENDAS_ESCALÁVEIS</div>
-            <h2
-              className="heading-2 mb-8 max-w-[36ch] text-cream"
-              style={{ lineHeight: '1.15' }}
-            >
+            <h2 className="heading-2 text-cream mb-8 max-w-[36ch]" style={{ lineHeight: '1.15' }}>
               Os 6Ps são sequenciais. Pular etapa é garantia de falha.
             </h2>
-            <div className="grid gap-px border border-[var(--jb-hair)] bg-[var(--jb-hair)] grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+            <div className="grid grid-cols-2 gap-px border border-[var(--jb-hair)] bg-[var(--jb-hair)] md:grid-cols-3 lg:grid-cols-6">
               {ps6.map((p) => (
                 <div key={p.n} className="bg-ink-2 p-5">
-                  <div className="font-display text-2xl leading-none text-acid">{p.n}</div>
-                  <div className="mt-3 font-mono text-[11px] uppercase tracking-[0.22em] text-cream">
+                  <div className="font-display text-acid text-2xl leading-none">{p.n}</div>
+                  <div className="text-cream mt-3 font-mono text-[11px] tracking-[0.22em] uppercase">
                     {p.nome}
                   </div>
                 </div>
               ))}
             </div>
-            <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.22em] text-fg-muted">
+            <p className="text-fg-muted mt-5 font-mono text-[11px] tracking-[0.22em] uppercase">
               <span className="text-acid">●</span>&nbsp; POSICIONAMENTO → PÚBLICO → PRODUTO →
               PROGRAMAS → PROCESSOS → PESSOAS
             </p>
@@ -363,10 +334,10 @@ export default function SobrePage() {
         <section className="py-16">
           <div className="mx-auto max-w-5xl">
             <div className="kicker mb-6">// OS_7_INIMIGOS · DA_MÁQUINA_DE_CRESCIMENTO</div>
-            <h2 className="heading-2 mb-8 text-cream" style={{ lineHeight: '1.15' }}>
+            <h2 className="heading-2 text-cream mb-8" style={{ lineHeight: '1.15' }}>
               O que impede MPE de escalar.
             </h2>
-            <div className="grid gap-0 border border-[var(--jb-hair)] bg-ink-2 md:grid-cols-2">
+            <div className="bg-ink-2 grid gap-0 border border-[var(--jb-hair)] md:grid-cols-2">
               {inimigos.map((i, idx) => {
                 const classes = ['p-6'];
                 if (idx % 2 === 0 && idx < inimigos.length - 1) {
@@ -376,19 +347,16 @@ export default function SobrePage() {
                 if (idx === 1) classes.push('border-t md:border-t-0 border-[var(--jb-hair)]');
                 return (
                   <article key={i.n} className={classes.join(' ')}>
-                    <div className="flex items-baseline gap-3 mb-3">
+                    <div className="mb-3 flex items-baseline gap-3">
                       <span
-                        className="font-mono text-sm font-bold text-fire"
+                        className="text-fire font-mono text-sm font-bold"
                         style={{ letterSpacing: '0.1em' }}
                       >
                         #{i.n}
                       </span>
                       <h3 className="heading-4 text-cream">{i.titulo}</h3>
                     </div>
-                    <p
-                      className="font-sans text-sm text-fg-2"
-                      style={{ lineHeight: '1.65' }}
-                    >
+                    <p className="text-fg-2 font-sans text-sm" style={{ lineHeight: '1.65' }}>
                       {i.descricao}
                     </p>
                   </article>
@@ -402,7 +370,7 @@ export default function SobrePage() {
         <section className="pb-16">
           <div className="mx-auto max-w-6xl">
             <div className="kicker mb-6">// COMO_EU_TRABALHO · 6_CARACTERÍSTICAS</div>
-            <h2 className="heading-2 mb-8 text-cream" style={{ lineHeight: '1.15' }}>
+            <h2 className="heading-2 text-cream mb-8" style={{ lineHeight: '1.15' }}>
               Como eu trabalho.
             </h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -411,14 +379,11 @@ export default function SobrePage() {
                   <div className="kicker mb-3" style={{ color: 'var(--jb-acid)' }}>
                     // {item.carac}
                   </div>
-                  <p
-                    className="font-sans text-cream mb-4 font-bold"
-                    style={{ lineHeight: '1.5' }}
-                  >
+                  <p className="text-cream mb-4 font-sans font-bold" style={{ lineHeight: '1.5' }}>
                     {item.significa}
                   </p>
                   <p
-                    className="font-mono text-sm text-fg-2 border-l-2 border-[var(--jb-hair-strong)] pl-3"
+                    className="text-fg-2 border-l-2 border-[var(--jb-hair-strong)] pl-3 font-mono text-sm"
                     style={{ lineHeight: '1.55' }}
                   >
                     &ldquo;{item.exemplo}&rdquo;
@@ -433,30 +398,26 @@ export default function SobrePage() {
         <section className="pb-16">
           <div className="mx-auto max-w-6xl">
             <div className="kicker mb-6">// 2_CAMINHOS · PRA_TRABALHAR_COMIGO</div>
-            <h2
-              className="heading-2 mb-8 max-w-[36ch] text-cream"
-              style={{ lineHeight: '1.15' }}
-            >
+            <h2 className="heading-2 text-cream mb-8 max-w-[36ch]" style={{ lineHeight: '1.15' }}>
               Dois caminhos. Escolhe o que faz sentido pro teu momento.
             </h2>
 
             <div className="grid gap-6 md:grid-cols-2">
               <article
-                className="border border-[var(--jb-acid-border)] bg-ink-2 p-8"
+                className="bg-ink-2 border border-[var(--jb-acid-border)] p-8"
                 style={{
-                  background:
-                    'linear-gradient(180deg, rgba(198,255,0,0.06), var(--jb-ink-2))',
+                  background: 'linear-gradient(180deg, rgba(198,255,0,0.06), var(--jb-ink-2))',
                 }}
               >
                 <div className="kicker mb-4" style={{ color: 'var(--jb-acid)' }}>
                   // DIY · PERPÉTUO · PRINCIPAL
                 </div>
-                <h3 className="heading-2 mb-3 text-cream" style={{ lineHeight: '1.05' }}>
+                <h3 className="heading-2 text-cream mb-3" style={{ lineHeight: '1.05' }}>
                   VENDAS SEM SEGREDOS
                 </h3>
-                <div className="font-display text-3xl leading-none text-acid mb-6">R$ 1.997</div>
+                <div className="font-display text-acid mb-6 text-3xl leading-none">R$ 1.997</div>
                 <ul
-                  className="space-y-2 font-sans text-sm text-fg-2"
+                  className="text-fg-2 space-y-2 font-sans text-sm"
                   style={{ lineHeight: '1.55' }}
                 >
                   <li>
@@ -478,24 +439,28 @@ export default function SobrePage() {
                     <span className="text-acid">▶</span> Garantia 15 dias incondicional
                   </li>
                 </ul>
-                <Link href="/vendas-sem-segredos" className="btn-primary mt-8 min-h-[44px]" prefetch>
+                <Link
+                  href="/vendas-sem-segredos"
+                  className="btn-primary mt-8 min-h-[44px]"
+                  prefetch
+                >
                   <span>Conhecer VSS</span>
                   <span aria-hidden="true">→</span>
                 </Link>
               </article>
 
-              <article className="border border-[var(--jb-fire-border)] bg-ink-2 p-8">
+              <article className="bg-ink-2 border border-[var(--jb-fire-border)] p-8">
                 <div className="kicker mb-4" style={{ color: 'var(--jb-fire)' }}>
                   // 1:1 · EXCLUSIVO · CONVITE
                 </div>
-                <h3 className="heading-2 mb-3 text-cream" style={{ lineHeight: '1.05' }}>
+                <h3 className="heading-2 text-cream mb-3" style={{ lineHeight: '1.05' }}>
                   ADVISORY
                 </h3>
-                <div className="font-display text-3xl leading-none text-fire mb-6">
+                <div className="font-display text-fire mb-6 text-3xl leading-none">
                   R$ 997-15.000/mês
                 </div>
                 <ul
-                  className="space-y-2 font-sans text-sm text-fg-2"
+                  className="text-fg-2 space-y-2 font-sans text-sm"
                   style={{ lineHeight: '1.55' }}
                 >
                   <li>
@@ -529,26 +494,20 @@ export default function SobrePage() {
         {/* CTA Final */}
         <section className="pb-16 md:pb-24">
           <div className="mx-auto max-w-5xl">
-            <div className="border border-[var(--jb-hair)] bg-ink-2 p-8 md:p-12">
+            <div className="bg-ink-2 border border-[var(--jb-hair)] p-8 md:p-12">
               <div className="kicker mb-5">// LEGADO · DA_QUEBRADA_AO_LEGADO</div>
-              <h2
-                className="heading-1 mb-6 max-w-[28ch] text-cream"
-                style={{ lineHeight: '1.1' }}
-              >
+              <h2 className="heading-1 text-cream mb-6 max-w-[28ch]" style={{ lineHeight: '1.1' }}>
                 Meu filho Davi (10/10/2024) nunca vai saber o que é barraco sem geladeira.
               </h2>
               <p
-                className="max-w-[62ch] font-sans text-lg text-fg-2 mb-5"
+                className="text-fg-2 mb-5 max-w-[62ch] font-sans text-lg"
                 style={{ lineHeight: '1.6' }}
               >
-                Mas vai saber o que é dignidade do trabalho. Vai saber que sistema supera
-                improviso. Vai saber que da quebrada pro bilhão tem um caminho — e esse caminho tem
-                nome: <strong className="text-acid">metodologia</strong>.
+                Mas vai saber o que é dignidade do trabalho. Vai saber que sistema supera improviso.
+                Vai saber que da quebrada pro bilhão tem um caminho — e esse caminho tem nome:{' '}
+                <strong className="text-acid">metodologia</strong>.
               </p>
-              <p
-                className="max-w-[62ch] font-sans text-fg-2"
-                style={{ lineHeight: '1.65' }}
-              >
+              <p className="text-fg-2 max-w-[62ch] font-sans" style={{ lineHeight: '1.65' }}>
                 Meu legado é simples: ajudar empreendedor brasileiro — especialmente quem vem de
                 baixo — a estruturar vendas sem precisar passar pelo sofrimento que eu passei.
               </p>
@@ -564,13 +523,13 @@ export default function SobrePage() {
               </div>
 
               <div className="mt-10 border-t border-[var(--jb-hair)] pt-6">
-                <div className="font-display text-lg text-cream" style={{ lineHeight: '1.1' }}>
+                <div className="font-display text-cream text-lg" style={{ lineHeight: '1.1' }}>
                   JOEL BURIGO
                 </div>
-                <div className="mt-2 font-mono text-[11px] uppercase tracking-[0.22em] text-fg-muted">
+                <div className="text-fg-muted mt-2 font-mono text-[11px] tracking-[0.22em] uppercase">
                   ESPECIALISTA EM VENDAS ESCALÁVEIS · CRIADOR DOS 6PS · RIBEIRÃO DA ILHA/SC
                 </div>
-                <div className="mt-4 font-mono text-[11px] uppercase tracking-[0.28em] text-fg-muted">
+                <div className="text-fg-muted mt-4 font-mono text-[11px] tracking-[0.28em] uppercase">
                   <span className="text-acid">★</span>&nbsp;&nbsp;SISTEMA{' '}
                   <span className="text-fire">&gt;</span> IMPROVISO · BORA PRA CIMA · LET&apos;S
                   GROW

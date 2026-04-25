@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from 'next/server';
 
 /**
- * Middleware de proteção de rotas.
+ * Proxy de proteção de rotas (Next 16+ — antes era `middleware`).
  *
  * Rotas públicas (marketing): tudo fora de /area, /fase, /destravamento, /onboarding,
  *   /advisory/dashboard, /sessao, /admin.
@@ -25,7 +25,7 @@ const PROTECTED_PREFIXES = [
 
 const ADMIN_PREFIXES = ['/admin'];
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
   const session = req.cookies.get('jb_session')?.value;
@@ -44,7 +44,7 @@ export function middleware(req: NextRequest) {
   }
 
   // Validação de JWT + role=admin fica nas páginas (layout `(admin)` consulta DB).
-  // Middleware só bloqueia quando cookie ausente pra evitar I/O em Edge runtime.
+  // Proxy só bloqueia quando cookie ausente pra evitar I/O em Edge runtime.
   return NextResponse.next();
 }
 

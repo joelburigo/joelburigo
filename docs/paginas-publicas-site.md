@@ -9,84 +9,84 @@
 
 ### Páginas Principais (Indexar)
 
-| URL | Arquivo | SEO Priority | Structured Data |
-|-----|---------|--------------|-----------------|
-| `/` | index.astro | 1.0 | Organization, WebSite |
-| `/sobre` | sobre.astro | 0.8 | Person, ProfilePage |
-| `/vendas-sem-segredos` | vendas-sem-segredos.astro | 0.9 | Product, Course |
-| `/services` | services.astro | 0.9 | Service, Product |
-| `/advisory` | advisory.astro | 0.9 | Service, Product |
-| `/cases` | cases.astro | 0.8 | ItemList |
-| `/blog` | blog/index.astro | 0.8 | Blog |
-| `/contato` | contato.astro | 0.6 | ContactPage |
-| `/diagnostico` | diagnostico.astro | 0.7 | WebApplication |
-| `/jornada-90-dias` | jornada-90-dias.astro | 0.7 | WebPage |
+| URL                    | Arquivo                   | SEO Priority | Structured Data       |
+| ---------------------- | ------------------------- | ------------ | --------------------- |
+| `/`                    | index.astro               | 1.0          | Organization, WebSite |
+| `/sobre`               | sobre.astro               | 0.8          | Person, ProfilePage   |
+| `/vendas-sem-segredos` | vendas-sem-segredos.astro | 0.9          | Product, Course       |
+| `/services`            | services.astro            | 0.9          | Service, Product      |
+| `/advisory`            | advisory.astro            | 0.9          | Service, Product      |
+| `/cases`               | cases.astro               | 0.8          | ItemList              |
+| `/blog`                | blog/index.astro          | 0.8          | Blog                  |
+| `/contato`             | contato.astro             | 0.6          | ContactPage           |
+| `/diagnostico`         | diagnostico.astro         | 0.7          | WebApplication        |
+| `/jornada-90-dias`     | jornada-90-dias.astro     | 0.7          | WebPage               |
 
 ### Blog Posts (Indexar)
 
-| URL | Arquivo | Topic Cluster |
-|-----|---------|---------------|
-| `/blog/6ps-vendas-escalaveis-guia-completo` | .md | Pilar - 6Ps |
-| `/blog/sistema-melhor-que-improviso` | .md | Filosofia |
-| `/blog/do-barraco-ao-milhao` | .md | História |
-| `/blog/como-estruturar-vendas-do-zero` | .md | Guia Prático |
-| `/blog/icp-cliente-ideal-perfil` | .md | P2 - Público |
-| `/blog/posicionamento-diferencial-unico` | .md | P1 - Posicionamento |
-| `/blog/crm-gratuito-vs-profissional` | .md | P4 - Programas |
-| `/blog/metricas-vendas-essenciais` | .md | P5 - Processos |
-| `/blog/trafego-pago-vs-prospecao-ativa` | .md | P4 - Atração |
-| `/blog/agencia-vs-autonomia` | .md | Comparativo |
-| `/blog/de-10k-para-100k-por-mes` | .md | Case/Escala |
-| `/blog/17-anos-estruturando-vendas-historia-completa` | .md | História |
+| URL                                                   | Arquivo | Topic Cluster       |
+| ----------------------------------------------------- | ------- | ------------------- |
+| `/blog/6ps-vendas-escalaveis-guia-completo`           | .md     | Pilar - 6Ps         |
+| `/blog/sistema-melhor-que-improviso`                  | .md     | Filosofia           |
+| `/blog/do-barraco-ao-milhao`                          | .md     | História            |
+| `/blog/como-estruturar-vendas-do-zero`                | .md     | Guia Prático        |
+| `/blog/icp-cliente-ideal-perfil`                      | .md     | P2 - Público        |
+| `/blog/posicionamento-diferencial-unico`              | .md     | P1 - Posicionamento |
+| `/blog/crm-gratuito-vs-profissional`                  | .md     | P4 - Programas      |
+| `/blog/metricas-vendas-essenciais`                    | .md     | P5 - Processos      |
+| `/blog/trafego-pago-vs-prospecao-ativa`               | .md     | P4 - Atração        |
+| `/blog/agencia-vs-autonomia`                          | .md     | Comparativo         |
+| `/blog/de-10k-para-100k-por-mes`                      | .md     | Case/Escala         |
+| `/blog/17-anos-estruturando-vendas-historia-completa` | .md     | História            |
 
 ### Landing Pages (NÃO Indexar)
 
-| URL | Arquivo | Status |
-|-----|---------|--------|
+| URL       | Arquivo      | Status                                           |
+| --------- | ------------ | ------------------------------------------------ |
 | `/lp/vss` | lp/vss.astro | ✅ noindex + canonical -> `/vendas-sem-segredos` |
 
 ### Páginas Legais (Indexar, baixa prioridade)
 
-| URL | Arquivo | Priority |
-|-----|---------|----------|
-| `/privacidade` | privacidade.astro | 0.3 |
-| `/termos` | termos.astro | 0.3 |
+| URL            | Arquivo           | Priority |
+| -------------- | ----------------- | -------- |
+| `/privacidade` | privacidade.astro | 0.3      |
+| `/termos`      | termos.astro      | 0.3      |
 
 ### Utilitárias (Avaliar indexação)
 
-| URL | Arquivo | Indexar? | Notas |
-|-----|---------|----------|-------|
-| `/links` | links.astro | Não | Linktree interno - canonical próprio |
-| `/press-kit` | press-kit.astro | Sim | Útil para SEO de marca |
+| URL          | Arquivo         | Indexar? | Notas                                |
+| ------------ | --------------- | -------- | ------------------------------------ |
+| `/links`     | links.astro     | Não      | Linktree interno - canonical próprio |
+| `/press-kit` | press-kit.astro | Sim      | Útil para SEO de marca               |
 
 ### Páginas que NÃO DEVEM ser indexadas
 
-| URL | Arquivo | Motivo |
-|-----|---------|--------|
-| `/apresentacao` | apresentacao.astro | Pitch interno/clientes |
-| `/advisory-aplicacao` | advisory-aplicacao.astro | Formulário |
-| `/advisory-obrigado` | advisory-obrigado.astro | Thank you page |
-| `/diagnostico-resultado` | diagnostico-resultado.astro | Resultado privado |
-| `/diagnostico-obrigado` | diagnostico-obrigado.astro | Thank you page |
-| `/agendamento-sessao` | agendamento-sessao.astro | Redirect/embed |
-| `/agendar-services` | agendar-services.astro | Redirect/embed |
-| `/vss-aguardando-pagamento` | vss-aguardando-pagamento.astro | Pós-checkout |
-| `/vss-analise-credito` | vss-analise-credito.astro | Pós-checkout |
-| `/vss-compra-aprovada` | vss-compra-aprovada.astro | Pós-checkout |
+| URL                         | Arquivo                        | Motivo                 |
+| --------------------------- | ------------------------------ | ---------------------- |
+| `/apresentacao`             | apresentacao.astro             | Pitch interno/clientes |
+| `/advisory-aplicacao`       | advisory-aplicacao.astro       | Formulário             |
+| `/advisory-obrigado`        | advisory-obrigado.astro        | Thank you page         |
+| `/diagnostico-resultado`    | diagnostico-resultado.astro    | Resultado privado      |
+| `/diagnostico-obrigado`     | diagnostico-obrigado.astro     | Thank you page         |
+| `/agendamento-sessao`       | agendamento-sessao.astro       | Redirect/embed         |
+| `/agendar-services`         | agendar-services.astro         | Redirect/embed         |
+| `/vss-aguardando-pagamento` | vss-aguardando-pagamento.astro | Pós-checkout           |
+| `/vss-analise-credito`      | vss-analise-credito.astro      | Pós-checkout           |
+| `/vss-compra-aprovada`      | vss-compra-aprovada.astro      | Pós-checkout           |
 
 ### Páginas de Erro (Não indexar)
 
-| URL | Arquivo |
-|-----|---------|
+| URL    | Arquivo   |
+| ------ | --------- |
 | `/404` | 404.astro |
 | `/500` | 500.astro |
 
 ### APIs (Não públicas)
 
-| Endpoint | Arquivo |
-|----------|---------|
+| Endpoint               | Arquivo                |
+| ---------------------- | ---------------------- |
 | `/api/meta-conversion` | api/meta-conversion.ts |
-| `/api/track` | api/track.ts |
+| `/api/track`           | api/track.ts           |
 
 ---
 
@@ -95,6 +95,7 @@
 ### ✅ Sitemap (CORRIGIDO)
 
 O filtro do sitemap em `astro.config.mjs` foi atualizado para excluir:
+
 - Todas as landing pages (`/lp/`)
 - Páginas de formulário e thank you
 - Páginas de checkout/status
@@ -113,6 +114,7 @@ Bloqueios implementados para todas as páginas privadas.
 ### ✅ Structured Data (IMPLEMENTADO)
 
 JSON-LD implementado nas páginas principais:
+
 - `/` (Home) - Organization, WebSite, WebPage
 - `/vendas-sem-segredos` - Course com ofertas e ratings
 - `/services` - Service com catálogo de pacotes
@@ -126,6 +128,7 @@ JSON-LD implementado nas páginas principais:
 ### ✅ 1. noindex nas páginas privadas (CONCLUÍDO)
 
 Todas as páginas privadas agora têm `noIndex={true}` no Layout:
+
 - `/apresentacao` ✅
 - `/advisory-aplicacao`, `/advisory-obrigado` ✅
 - `/diagnostico-resultado`, `/diagnostico-obrigado` ✅
@@ -154,17 +157,14 @@ Implementado em: `/`, `/vendas-sem-segredos`, `/services`, `/advisory`
         "@type": "Person",
         "name": "Joel Burigo"
       },
-      "sameAs": [
-        "https://linkedin.com/in/joelburigo",
-        "https://instagram.com/joelburigo"
-      ]
+      "sameAs": ["https://linkedin.com/in/joelburigo", "https://instagram.com/joelburigo"]
     },
     {
       "@type": "WebSite",
       "@id": "https://joelburigo.com.br/#website",
       "url": "https://joelburigo.com.br",
       "name": "Joel Burigo - Vendas Escaláveis",
-      "publisher": {"@id": "https://joelburigo.com.br/#organization"}
+      "publisher": { "@id": "https://joelburigo.com.br/#organization" }
     }
   ]
 }
@@ -250,6 +250,7 @@ Home ←→ Sobre ←→ VSS ←→ Services ←→ Advisory ←→ Cases
 #### Topic Clusters no Blog
 
 **Cluster: Framework 6Ps**
+
 - Pilar: `/blog/6ps-vendas-escalaveis-guia-completo`
 - Satélites:
   - `/blog/posicionamento-diferencial-unico` (P1)
@@ -259,26 +260,28 @@ Home ←→ Sobre ←→ VSS ←→ Services ←→ Advisory ←→ Cases
   - `/blog/trafego-pago-vs-prospecao-ativa` (P4)
 
 **Cluster: História/Credibilidade**
+
 - `/blog/do-barraco-ao-milhao`
 - `/blog/17-anos-estruturando-vendas-historia-completa`
 - Links para `/sobre`
 
 **Cluster: Conversão**
+
 - `/blog/sistema-melhor-que-improviso` → `/vendas-sem-segredos`
 - `/blog/agencia-vs-autonomia` → `/services`
 - `/blog/de-10k-para-100k-por-mes` → `/advisory`
 
 ### 4. Meta Tags por Página
 
-| Página | Title (60 chars) | Description (155 chars) |
-|--------|------------------|-------------------------|
-| `/` | Joel Burigo - Vendas Escaláveis para MPEs | Estruture vendas previsíveis em 90 dias. Framework 6Ps testado em 140+ empresas. DIY, DWY ou Mentoria 1:1. |
+| Página                 | Title (60 chars)                                 | Description (155 chars)                                                                                         |
+| ---------------------- | ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| `/`                    | Joel Burigo - Vendas Escaláveis para MPEs        | Estruture vendas previsíveis em 90 dias. Framework 6Ps testado em 140+ empresas. DIY, DWY ou Mentoria 1:1.      |
 | `/vendas-sem-segredos` | VSS: Sistema de Vendas em 90 Dias \| Joel Burigo | Programa completo com CRM, mentorias semanais e Framework 6Ps. De vendas aleatórias para previsíveis. R$ 1.997. |
-| `/services` | Implementation Services \| Joel Burigo | Implementação guiada dos 6Ps. Minha equipe faz junto com você. 4-6 meses para sistema completo. |
-| `/advisory` | Advisory 1:1 \| Joel Burigo | Mentoria estratégica direto comigo. Sessões mensais + WhatsApp para decisões críticas. |
-| `/sobre` | Sobre Joel Burigo \| 17 Anos Estruturando Vendas | De barraco em 2012 a 140+ clientes. Conheça a história e o Framework 6Ps. |
-| `/cases` | Cases de Sucesso \| Joel Burigo | Resultados reais: R$ 160k → R$ 1M/mês. Veja como empresas estruturaram vendas. |
-| `/blog` | Blog \| Vendas Escaláveis \| Joel Burigo | Artigos práticos sobre vendas, marketing e crescimento para MPEs. |
+| `/services`            | Implementation Services \| Joel Burigo           | Implementação guiada dos 6Ps. Minha equipe faz junto com você. 4-6 meses para sistema completo.                 |
+| `/advisory`            | Advisory 1:1 \| Joel Burigo                      | Mentoria estratégica direto comigo. Sessões mensais + WhatsApp para decisões críticas.                          |
+| `/sobre`               | Sobre Joel Burigo \| 17 Anos Estruturando Vendas | De barraco em 2012 a 140+ clientes. Conheça a história e o Framework 6Ps.                                       |
+| `/cases`               | Cases de Sucesso \| Joel Burigo                  | Resultados reais: R$ 160k → R$ 1M/mês. Veja como empresas estruturaram vendas.                                  |
+| `/blog`                | Blog \| Vendas Escaláveis \| Joel Burigo         | Artigos práticos sobre vendas, marketing e crescimento para MPEs.                                               |
 
 ---
 
@@ -324,15 +327,15 @@ Home ←→ Sobre ←→ VSS ←→ Services ←→ Advisory ←→ Cases
 
 ## Palavras-chave Alvo
 
-| Keyword | Volume | Página Alvo |
-|---------|--------|-------------|
-| vendas escaláveis | médio | Home, VSS |
-| estruturar vendas | médio | VSS, Blog |
-| consultoria de vendas | alto | Services |
-| mentoria de vendas | médio | Advisory |
-| framework 6ps | baixo (branded) | Blog pilar |
-| crm para pequenas empresas | alto | Blog |
-| como aumentar vendas | alto | Blog |
+| Keyword                    | Volume          | Página Alvo |
+| -------------------------- | --------------- | ----------- |
+| vendas escaláveis          | médio           | Home, VSS   |
+| estruturar vendas          | médio           | VSS, Blog   |
+| consultoria de vendas      | alto            | Services    |
+| mentoria de vendas         | médio           | Advisory    |
+| framework 6ps              | baixo (branded) | Blog pilar  |
+| crm para pequenas empresas | alto            | Blog        |
+| como aumentar vendas       | alto            | Blog        |
 
 ---
 

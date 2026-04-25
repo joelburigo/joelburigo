@@ -1,414 +1,1273 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
-<title>Joel Burigo — Sistema &gt; Improviso</title>
-<link rel="stylesheet" href="colors_and_type.css">
-<style>
-  * { box-sizing: border-box; }
-  body { margin: 0; overflow-x: hidden; }
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Joel Burigo — Sistema &gt; Improviso</title>
+    <link rel="stylesheet" href="colors_and_type.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        overflow-x: hidden;
+      }
 
-  .wrap { max-width: 1360px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2; }
-  .grid-bg { position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.35;
-    background-image:
-      linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
-    background-size: 80px 80px; }
-  .noise { position: fixed; inset: 0; pointer-events: none; z-index: 1; opacity: 0.06; mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.9'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>"); }
+      .wrap {
+        max-width: 1360px;
+        margin: 0 auto;
+        padding: 0 40px;
+        position: relative;
+        z-index: 2;
+      }
+      .grid-bg {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.35;
+        background-image:
+          linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+        background-size: 80px 80px;
+      }
+      .noise {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.06;
+        mix-blend-mode: overlay;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.9'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+      }
 
-  /* TOP STATUS BAR */
-  .topbar { display: flex; justify-content: space-between; align-items: center; padding: 10px 40px;
-    font-family: var(--jb-ff-mono); font-size: var(--jb-fs-xs); letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--jb-fg-muted); border-bottom: 1px solid var(--jb-hair); position: relative; z-index: 3; }
-  .topbar .left, .topbar .right { display: flex; gap: 24px; align-items: center; }
-  .topbar .dot { width: 7px; height: 7px; background: var(--jb-acid); border-radius: 50%; box-shadow: 0 0 10px var(--jb-acid); animation: pulse 1.6s infinite; }
-  .topbar b { color: var(--jb-cream); }
-  @keyframes pulse { 50% { opacity: 0.3; } }
+      /* TOP STATUS BAR */
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 40px;
+        font-family: var(--jb-ff-mono);
+        font-size: var(--jb-fs-xs);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--jb-fg-muted);
+        border-bottom: 1px solid var(--jb-hair);
+        position: relative;
+        z-index: 3;
+      }
+      .topbar .left,
+      .topbar .right {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+      .topbar .dot {
+        width: 7px;
+        height: 7px;
+        background: var(--jb-acid);
+        border-radius: 50%;
+        box-shadow: 0 0 10px var(--jb-acid);
+        animation: pulse 1.6s infinite;
+      }
+      .topbar b {
+        color: var(--jb-cream);
+      }
+      @keyframes pulse {
+        50% {
+          opacity: 0.3;
+        }
+      }
 
-  /* TICKER */
-  .ticker { background: var(--jb-fire); color: var(--jb-ink); font-family: var(--jb-ff-mono); font-weight: 700;
-    font-size: 12px; letter-spacing: var(--jb-tr-caps); text-transform: uppercase; padding: 10px 0; overflow: hidden; white-space: nowrap;
-    border-top: 1px solid rgba(0,0,0,0.3); border-bottom: 1px solid rgba(0,0,0,0.3); position: relative; z-index: 3; }
-  .ticker-inner { display: inline-block; animation: slide 38s linear infinite; }
-  .ticker span { margin: 0 40px; }
-  .ticker em { font-style: normal; background: var(--jb-acid); padding: 2px 8px; color: var(--jb-ink); }
-  @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+      /* TICKER */
+      .ticker {
+        background: var(--jb-fire);
+        color: var(--jb-ink);
+        font-family: var(--jb-ff-mono);
+        font-weight: 700;
+        font-size: 12px;
+        letter-spacing: var(--jb-tr-caps);
+        text-transform: uppercase;
+        padding: 10px 0;
+        overflow: hidden;
+        white-space: nowrap;
+        border-top: 1px solid rgba(0, 0, 0, 0.3);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+        position: relative;
+        z-index: 3;
+      }
+      .ticker-inner {
+        display: inline-block;
+        animation: slide 38s linear infinite;
+      }
+      .ticker span {
+        margin: 0 40px;
+      }
+      .ticker em {
+        font-style: normal;
+        background: var(--jb-acid);
+        padding: 2px 8px;
+        color: var(--jb-ink);
+      }
+      @keyframes slide {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
 
-  /* NAV */
-  .nav { position: sticky; top: 0; z-index: 50; background: rgba(5,5,5,0.88); backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--jb-hair); padding: 20px 40px;
-    display: flex; align-items: center; justify-content: space-between; }
-  .logo { font-family: var(--jb-ff-body); font-size: 22px; letter-spacing: -0.045em; line-height: 1; }
-  .logo .j { font-family: var(--jb-ff-display); font-weight: 900; color: var(--jb-cream); }
-  .logo .b { font-family: var(--jb-ff-body); font-weight: 500; color: var(--jb-fire); }
-  .nav-links { display: flex; gap: 30px; }
-  .nav-links a { color: var(--jb-cream); text-decoration: none; font-family: var(--jb-ff-body); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; position: relative; padding: 4px 0; cursor: pointer; }
-  .nav-links a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: var(--jb-acid); transition: width 180ms; }
-  .nav-links a:hover::after { width: 100%; }
-  .nav-links a:hover { color: var(--jb-acid); }
+      /* NAV */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(5, 5, 5, 0.88);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--jb-hair);
+        padding: 20px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        font-family: var(--jb-ff-body);
+        font-size: 22px;
+        letter-spacing: -0.045em;
+        line-height: 1;
+      }
+      .logo .j {
+        font-family: var(--jb-ff-display);
+        font-weight: 900;
+        color: var(--jb-cream);
+      }
+      .logo .b {
+        font-family: var(--jb-ff-body);
+        font-weight: 500;
+        color: var(--jb-fire);
+      }
+      .nav-links {
+        display: flex;
+        gap: 30px;
+      }
+      .nav-links a {
+        color: var(--jb-cream);
+        text-decoration: none;
+        font-family: var(--jb-ff-body);
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        position: relative;
+        padding: 4px 0;
+        cursor: pointer;
+      }
+      .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--jb-acid);
+        transition: width 180ms;
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+      .nav-links a:hover {
+        color: var(--jb-acid);
+      }
 
-  /* BUTTONS */
-  .btn { font-family: var(--jb-ff-body); font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em;
-    padding: 12px 18px; border: 0; cursor: pointer; display: inline-flex; align-items: center; gap: 10px;
-    transition: all 150ms; font-size: 12px; border-radius: var(--jb-r-none); }
-  .btn-primary { background: var(--jb-acid); color: var(--jb-ink); box-shadow: 4px 4px 0 var(--jb-fire); }
-  .btn-primary:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--jb-fire); }
-  .btn-fire { background: var(--jb-fire); color: var(--jb-ink); box-shadow: 6px 6px 0 var(--jb-acid); padding: 18px 24px; font-size: 14px; }
-  .btn-fire:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--jb-acid); }
-  .btn-ghost { background: transparent; color: var(--jb-cream); border: 1px solid rgba(245,241,232,0.25); }
-  .btn-ghost:hover { border-color: var(--jb-fire); color: var(--jb-fire); }
-  .arr { font-family: var(--jb-ff-mono); }
+      /* BUTTONS */
+      .btn {
+        font-family: var(--jb-ff-body);
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        padding: 12px 18px;
+        border: 0;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 150ms;
+        font-size: 12px;
+        border-radius: var(--jb-r-none);
+      }
+      .btn-primary {
+        background: var(--jb-acid);
+        color: var(--jb-ink);
+        box-shadow: 4px 4px 0 var(--jb-fire);
+      }
+      .btn-primary:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 6px 6px 0 var(--jb-fire);
+      }
+      .btn-fire {
+        background: var(--jb-fire);
+        color: var(--jb-ink);
+        box-shadow: 6px 6px 0 var(--jb-acid);
+        padding: 18px 24px;
+        font-size: 14px;
+      }
+      .btn-fire:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 8px 8px 0 var(--jb-acid);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--jb-cream);
+        border: 1px solid rgba(245, 241, 232, 0.25);
+      }
+      .btn-ghost:hover {
+        border-color: var(--jb-fire);
+        color: var(--jb-fire);
+      }
+      .arr {
+        font-family: var(--jb-ff-mono);
+      }
 
-  /* HERO */
-  .hero { padding: 72px 0 120px; position: relative; }
-  .hero-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 80px; align-items: start; }
-  .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-family: var(--jb-ff-mono);
-    font-size: var(--jb-fs-xs); letter-spacing: 0.28em; text-transform: uppercase; color: var(--jb-acid);
-    border: 1px solid var(--jb-acid-border); padding: 7px 14px; margin-bottom: 32px; }
-  .eyebrow .dotG { width: 6px; height: 6px; background: var(--jb-acid); border-radius: 50%; box-shadow: 0 0 8px var(--jb-acid); }
-  .h1 { font-family: var(--jb-ff-display); font-size: clamp(68px, 9vw, 148px);
-    line-height: 0.84; letter-spacing: var(--jb-tr-tighter); text-transform: uppercase; font-weight: 900; margin: 0; color: var(--jb-cream); }
-  .h1 .stroke { -webkit-text-stroke: 2px var(--jb-cream); color: transparent; }
-  .h1 .fire { color: var(--jb-fire); }
-  .h1 .acid { color: var(--jb-acid); }
-  .h1 .mark { background: var(--jb-fire); color: var(--jb-ink); padding: 0 0.1em; display: inline-block; }
-  .hero-sub { font-size: 19px; color: #BFBFBF; max-width: 580px; margin-top: 32px; line-height: 1.5; }
-  .hero-sub b { color: var(--jb-cream); font-weight: 600; }
-  .hero-sub .hl { background: linear-gradient(90deg, var(--jb-acid-soft-2), transparent); padding: 2px 6px; border-left: 2px solid var(--jb-acid); }
-  .hero-ctas { margin-top: 44px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+      /* HERO */
+      .hero {
+        padding: 72px 0 120px;
+        position: relative;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 80px;
+        align-items: start;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--jb-ff-mono);
+        font-size: var(--jb-fs-xs);
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--jb-acid);
+        border: 1px solid var(--jb-acid-border);
+        padding: 7px 14px;
+        margin-bottom: 32px;
+      }
+      .eyebrow .dotG {
+        width: 6px;
+        height: 6px;
+        background: var(--jb-acid);
+        border-radius: 50%;
+        box-shadow: 0 0 8px var(--jb-acid);
+      }
+      .h1 {
+        font-family: var(--jb-ff-display);
+        font-size: clamp(68px, 9vw, 148px);
+        line-height: 0.84;
+        letter-spacing: var(--jb-tr-tighter);
+        text-transform: uppercase;
+        font-weight: 900;
+        margin: 0;
+        color: var(--jb-cream);
+      }
+      .h1 .stroke {
+        -webkit-text-stroke: 2px var(--jb-cream);
+        color: transparent;
+      }
+      .h1 .fire {
+        color: var(--jb-fire);
+      }
+      .h1 .acid {
+        color: var(--jb-acid);
+      }
+      .h1 .mark {
+        background: var(--jb-fire);
+        color: var(--jb-ink);
+        padding: 0 0.1em;
+        display: inline-block;
+      }
+      .hero-sub {
+        font-size: 19px;
+        color: #bfbfbf;
+        max-width: 580px;
+        margin-top: 32px;
+        line-height: 1.5;
+      }
+      .hero-sub b {
+        color: var(--jb-cream);
+        font-weight: 600;
+      }
+      .hero-sub .hl {
+        background: linear-gradient(90deg, var(--jb-acid-soft-2), transparent);
+        padding: 2px 6px;
+        border-left: 2px solid var(--jb-acid);
+      }
+      .hero-ctas {
+        margin-top: 44px;
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
 
-  /* TERMINAL */
-  .term { background: var(--jb-ink-2); border: 1px solid var(--jb-hair); position: relative; overflow: hidden;
-    box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(255,59,15,0.08) inset; }
-  .term-head { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; border-bottom: 1px solid var(--jb-hair); background: #0A0A0A; }
-  .term-head .lights { display: flex; gap: 6px; }
-  .term-head .lights i { width: 10px; height: 10px; border-radius: 50%; display: block; }
-  .term-head .lights i:nth-child(1) { background: var(--jb-fire); }
-  .term-head .lights i:nth-child(2) { background: #FFB020; }
-  .term-head .lights i:nth-child(3) { background: var(--jb-acid); }
-  .term-head .title { font-family: var(--jb-ff-mono); font-size: 10px; color: var(--jb-fg-muted); letter-spacing: var(--jb-tr-caps); text-transform: uppercase; }
-  .term-body { padding: 22px; font-family: var(--jb-ff-mono); font-size: 13px; line-height: 1.75; color: var(--jb-fg-2); }
-  .term-body .p { color: var(--jb-acid); } .term-body .c { color: var(--jb-fg-muted); } .term-body .e { color: var(--jb-fire); } .term-body .y { color: #FFB020; } .term-body .w { color: var(--jb-cream); }
-  .term-body .blink::after { content: '▊'; margin-left: 2px; color: var(--jb-acid); animation: blink 1s steps(1) infinite; }
-  @keyframes blink { 50% { opacity: 0; } }
-  .term-stats { border-top: 1px solid var(--jb-hair); padding: 16px 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .term-stat { display: flex; justify-content: space-between; font-family: var(--jb-ff-mono); font-size: 11px; }
-  .term-stat .k { color: var(--jb-fg-muted); letter-spacing: 0.18em; text-transform: uppercase; }
-  .term-stat .v { color: var(--jb-cream); font-weight: 700; }
-  .term-stat .up { color: var(--jb-acid); } .term-stat .down { color: var(--jb-fire); }
+      /* TERMINAL */
+      .term {
+        background: var(--jb-ink-2);
+        border: 1px solid var(--jb-hair);
+        position: relative;
+        overflow: hidden;
+        box-shadow:
+          0 40px 80px rgba(0, 0, 0, 0.6),
+          0 0 60px rgba(255, 59, 15, 0.08) inset;
+      }
+      .term-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 14px;
+        border-bottom: 1px solid var(--jb-hair);
+        background: #0a0a0a;
+      }
+      .term-head .lights {
+        display: flex;
+        gap: 6px;
+      }
+      .term-head .lights i {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: block;
+      }
+      .term-head .lights i:nth-child(1) {
+        background: var(--jb-fire);
+      }
+      .term-head .lights i:nth-child(2) {
+        background: #ffb020;
+      }
+      .term-head .lights i:nth-child(3) {
+        background: var(--jb-acid);
+      }
+      .term-head .title {
+        font-family: var(--jb-ff-mono);
+        font-size: 10px;
+        color: var(--jb-fg-muted);
+        letter-spacing: var(--jb-tr-caps);
+        text-transform: uppercase;
+      }
+      .term-body {
+        padding: 22px;
+        font-family: var(--jb-ff-mono);
+        font-size: 13px;
+        line-height: 1.75;
+        color: var(--jb-fg-2);
+      }
+      .term-body .p {
+        color: var(--jb-acid);
+      }
+      .term-body .c {
+        color: var(--jb-fg-muted);
+      }
+      .term-body .e {
+        color: var(--jb-fire);
+      }
+      .term-body .y {
+        color: #ffb020;
+      }
+      .term-body .w {
+        color: var(--jb-cream);
+      }
+      .term-body .blink::after {
+        content: '▊';
+        margin-left: 2px;
+        color: var(--jb-acid);
+        animation: blink 1s steps(1) infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+      .term-stats {
+        border-top: 1px solid var(--jb-hair);
+        padding: 16px 22px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .term-stat {
+        display: flex;
+        justify-content: space-between;
+        font-family: var(--jb-ff-mono);
+        font-size: 11px;
+      }
+      .term-stat .k {
+        color: var(--jb-fg-muted);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+      .term-stat .v {
+        color: var(--jb-cream);
+        font-weight: 700;
+      }
+      .term-stat .up {
+        color: var(--jb-acid);
+      }
+      .term-stat .down {
+        color: var(--jb-fire);
+      }
 
-  /* STATS STRIP */
-  .stats-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
-    border-top: 1px solid var(--jb-acid-border); border-bottom: 1px solid var(--jb-hair); margin-top: 56px; }
-  .stat { padding: 22px 18px; border-right: 1px solid var(--jb-hair); }
-  .stat:last-child { border-right: 0; }
-  .stat-num { font-family: var(--jb-ff-display); font-size: 44px; line-height: 0.95; letter-spacing: -0.04em; color: var(--jb-cream); }
-  .stat-num .unit { color: var(--jb-acid); font-size: 26px; }
-  .stat-label { font-family: var(--jb-ff-mono); font-size: 10px; text-transform: uppercase; letter-spacing: var(--jb-tr-caps); color: var(--jb-fg-muted); margin-top: 8px; }
+      /* STATS STRIP */
+      .stats-strip {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        border-top: 1px solid var(--jb-acid-border);
+        border-bottom: 1px solid var(--jb-hair);
+        margin-top: 56px;
+      }
+      .stat {
+        padding: 22px 18px;
+        border-right: 1px solid var(--jb-hair);
+      }
+      .stat:last-child {
+        border-right: 0;
+      }
+      .stat-num {
+        font-family: var(--jb-ff-display);
+        font-size: 44px;
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+        color: var(--jb-cream);
+      }
+      .stat-num .unit {
+        color: var(--jb-acid);
+        font-size: 26px;
+      }
+      .stat-label {
+        font-family: var(--jb-ff-mono);
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: var(--jb-tr-caps);
+        color: var(--jb-fg-muted);
+        margin-top: 8px;
+      }
 
-  /* SECTION HEAD */
-  .sec { padding: 140px 0 40px; }
-  .sec-head { display: flex; align-items: baseline; gap: 28px; margin-bottom: 56px; border-bottom: 1px solid var(--jb-hair); padding-bottom: 24px; }
-  .sec-num { font-family: var(--jb-ff-mono); font-size: 14px; color: var(--jb-acid); letter-spacing: 0.28em; }
-  .sec-t { font-family: var(--jb-ff-display); font-size: clamp(44px, 5.5vw, 72px); line-height: 0.92; letter-spacing: var(--jb-tr-tight); text-transform: uppercase; flex: 1; }
-  .sec-t .fire { color: var(--jb-fire); } .sec-t .acid { color: var(--jb-acid); }
-  .sec-meta { font-family: var(--jb-ff-mono); font-size: 11px; color: var(--jb-fg-muted); letter-spacing: 0.2em; text-transform: uppercase; text-align: right; }
+      /* SECTION HEAD */
+      .sec {
+        padding: 140px 0 40px;
+      }
+      .sec-head {
+        display: flex;
+        align-items: baseline;
+        gap: 28px;
+        margin-bottom: 56px;
+        border-bottom: 1px solid var(--jb-hair);
+        padding-bottom: 24px;
+      }
+      .sec-num {
+        font-family: var(--jb-ff-mono);
+        font-size: 14px;
+        color: var(--jb-acid);
+        letter-spacing: 0.28em;
+      }
+      .sec-t {
+        font-family: var(--jb-ff-display);
+        font-size: clamp(44px, 5.5vw, 72px);
+        line-height: 0.92;
+        letter-spacing: var(--jb-tr-tight);
+        text-transform: uppercase;
+        flex: 1;
+      }
+      .sec-t .fire {
+        color: var(--jb-fire);
+      }
+      .sec-t .acid {
+        color: var(--jb-acid);
+      }
+      .sec-meta {
+        font-family: var(--jb-ff-mono);
+        font-size: 11px;
+        color: var(--jb-fg-muted);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        text-align: right;
+      }
 
-  /* 6Ps */
-  .ps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--jb-hair); }
-  .p { padding: 28px 24px 34px; border-right: 1px solid var(--jb-hair); border-bottom: 1px solid var(--jb-hair); position: relative; cursor: pointer; transition: background 200ms; }
-  .p:nth-child(3n) { border-right: 0; }
-  .p:nth-last-child(-n+3) { border-bottom: 0; }
-  .p:hover { background: rgba(198,255,0,0.03); }
-  .p:hover .p-num { color: var(--jb-acid); text-shadow: 0 0 18px var(--jb-acid-glow); }
-  .p::before { content: ''; position: absolute; top: 0; left: 0; width: 0; height: 2px; background: var(--jb-acid); transition: width 240ms; }
-  .p:hover::before { width: 100%; }
-  .p-tag { font-family: var(--jb-ff-mono); font-size: 10px; letter-spacing: 0.25em; color: var(--jb-fg-muted); text-transform: uppercase; }
-  .p-tag b { color: var(--jb-fire); }
-  .p-num { font-family: var(--jb-ff-display); font-size: 108px; line-height: 0.9; letter-spacing: -0.05em; color: rgba(245,241,232,0.12); transition: all 220ms; margin-top: 8px; }
-  .p-lbl { font-family: var(--jb-ff-mono); font-size: 11px; color: var(--jb-fire); letter-spacing: 0.28em; text-transform: uppercase; margin-top: 6px; }
-  .p-q { font-family: var(--jb-ff-display); font-size: 30px; letter-spacing: -0.03em; text-transform: uppercase; margin-top: 12px; color: var(--jb-cream); line-height: 0.95; }
-  .p-d { color: #9A9A9A; font-size: 14px; margin-top: 14px; line-height: 1.55; max-width: 320px; }
+      /* 6Ps */
+      .ps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        border: 1px solid var(--jb-hair);
+      }
+      .p {
+        padding: 28px 24px 34px;
+        border-right: 1px solid var(--jb-hair);
+        border-bottom: 1px solid var(--jb-hair);
+        position: relative;
+        cursor: pointer;
+        transition: background 200ms;
+      }
+      .p:nth-child(3n) {
+        border-right: 0;
+      }
+      .p:nth-last-child(-n + 3) {
+        border-bottom: 0;
+      }
+      .p:hover {
+        background: rgba(198, 255, 0, 0.03);
+      }
+      .p:hover .p-num {
+        color: var(--jb-acid);
+        text-shadow: 0 0 18px var(--jb-acid-glow);
+      }
+      .p::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--jb-acid);
+        transition: width 240ms;
+      }
+      .p:hover::before {
+        width: 100%;
+      }
+      .p-tag {
+        font-family: var(--jb-ff-mono);
+        font-size: 10px;
+        letter-spacing: 0.25em;
+        color: var(--jb-fg-muted);
+        text-transform: uppercase;
+      }
+      .p-tag b {
+        color: var(--jb-fire);
+      }
+      .p-num {
+        font-family: var(--jb-ff-display);
+        font-size: 108px;
+        line-height: 0.9;
+        letter-spacing: -0.05em;
+        color: rgba(245, 241, 232, 0.12);
+        transition: all 220ms;
+        margin-top: 8px;
+      }
+      .p-lbl {
+        font-family: var(--jb-ff-mono);
+        font-size: 11px;
+        color: var(--jb-fire);
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        margin-top: 6px;
+      }
+      .p-q {
+        font-family: var(--jb-ff-display);
+        font-size: 30px;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+        margin-top: 12px;
+        color: var(--jb-cream);
+        line-height: 0.95;
+      }
+      .p-d {
+        color: #9a9a9a;
+        font-size: 14px;
+        margin-top: 14px;
+        line-height: 1.55;
+        max-width: 320px;
+      }
 
-  /* PROGRAMS */
-  .tiers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-  .tier { background: var(--jb-ink-2); border: 1px solid var(--jb-hair); padding: 32px 26px; position: relative; display: flex; flex-direction: column; min-height: 440px; transition: all 180ms; }
-  .tier:hover { border-color: var(--jb-fire); transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--jb-fire); }
-  .tier.feat { border-color: var(--jb-acid); background: linear-gradient(180deg, rgba(198,255,0,0.06), var(--jb-ink-2)); }
-  .tier.feat:hover { box-shadow: 6px 6px 0 var(--jb-acid); }
-  .tier .tag { font-family: var(--jb-ff-mono); font-size: 10px; letter-spacing: 0.28em; color: var(--jb-fg-muted); text-transform: uppercase; }
-  .tier.feat .tag { color: var(--jb-acid); }
-  .tier .name { font-family: var(--jb-ff-display); font-size: 28px; letter-spacing: -0.03em; text-transform: uppercase; margin-top: 14px; line-height: 1; }
-  .tier .price { font-family: var(--jb-ff-mono); color: #BFBFBF; font-size: 13px; margin-top: 10px; letter-spacing: 0.04em; }
-  .tier .price b { color: var(--jb-cream); font-weight: 700; }
-  .tier .desc { color: #9A9A9A; font-size: 14px; line-height: 1.55; margin-top: 20px; flex: 1; }
-  .tier .feats { list-style: none; margin-top: 18px; padding: 0; }
-  .tier .feats li { font-family: var(--jb-ff-mono); font-size: 11px; color: #CFCFCF; letter-spacing: 0.1em; padding: 6px 0; border-bottom: 1px dashed rgba(255,255,255,0.06); text-transform: uppercase; }
-  .tier .feats li::before { content: '→ '; color: var(--jb-fire); }
-  .tier.feat .feats li::before { color: var(--jb-acid); }
-  .tier .tbtn { margin-top: 22px; background: transparent; border: 1px solid var(--jb-fire); color: var(--jb-fire); padding: 12px 14px; font-family: var(--jb-ff-body); font-weight: 800; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; text-align: left; display: flex; justify-content: space-between; align-items: center; }
-  .tier .tbtn:hover { background: var(--jb-fire); color: var(--jb-ink); }
-  .tier.feat .tbtn { background: var(--jb-acid); color: var(--jb-ink); border-color: var(--jb-acid); }
-  .tier.feat .tbtn:hover { background: var(--jb-cream); border-color: var(--jb-cream); }
+      /* PROGRAMS */
+      .tiers {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+      .tier {
+        background: var(--jb-ink-2);
+        border: 1px solid var(--jb-hair);
+        padding: 32px 26px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 440px;
+        transition: all 180ms;
+      }
+      .tier:hover {
+        border-color: var(--jb-fire);
+        transform: translate(-2px, -2px);
+        box-shadow: 6px 6px 0 var(--jb-fire);
+      }
+      .tier.feat {
+        border-color: var(--jb-acid);
+        background: linear-gradient(180deg, rgba(198, 255, 0, 0.06), var(--jb-ink-2));
+      }
+      .tier.feat:hover {
+        box-shadow: 6px 6px 0 var(--jb-acid);
+      }
+      .tier .tag {
+        font-family: var(--jb-ff-mono);
+        font-size: 10px;
+        letter-spacing: 0.28em;
+        color: var(--jb-fg-muted);
+        text-transform: uppercase;
+      }
+      .tier.feat .tag {
+        color: var(--jb-acid);
+      }
+      .tier .name {
+        font-family: var(--jb-ff-display);
+        font-size: 28px;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+        margin-top: 14px;
+        line-height: 1;
+      }
+      .tier .price {
+        font-family: var(--jb-ff-mono);
+        color: #bfbfbf;
+        font-size: 13px;
+        margin-top: 10px;
+        letter-spacing: 0.04em;
+      }
+      .tier .price b {
+        color: var(--jb-cream);
+        font-weight: 700;
+      }
+      .tier .desc {
+        color: #9a9a9a;
+        font-size: 14px;
+        line-height: 1.55;
+        margin-top: 20px;
+        flex: 1;
+      }
+      .tier .feats {
+        list-style: none;
+        margin-top: 18px;
+        padding: 0;
+      }
+      .tier .feats li {
+        font-family: var(--jb-ff-mono);
+        font-size: 11px;
+        color: #cfcfcf;
+        letter-spacing: 0.1em;
+        padding: 6px 0;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
+        text-transform: uppercase;
+      }
+      .tier .feats li::before {
+        content: '→ ';
+        color: var(--jb-fire);
+      }
+      .tier.feat .feats li::before {
+        color: var(--jb-acid);
+      }
+      .tier .tbtn {
+        margin-top: 22px;
+        background: transparent;
+        border: 1px solid var(--jb-fire);
+        color: var(--jb-fire);
+        padding: 12px 14px;
+        font-family: var(--jb-ff-body);
+        font-weight: 800;
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        cursor: pointer;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .tier .tbtn:hover {
+        background: var(--jb-fire);
+        color: var(--jb-ink);
+      }
+      .tier.feat .tbtn {
+        background: var(--jb-acid);
+        color: var(--jb-ink);
+        border-color: var(--jb-acid);
+      }
+      .tier.feat .tbtn:hover {
+        background: var(--jb-cream);
+        border-color: var(--jb-cream);
+      }
 
-  /* CASES */
-  .cases { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: var(--jb-hair); }
-  .case { background: var(--jb-ink); padding: 40px 28px; position: relative; overflow: hidden; min-height: 340px; display: flex; flex-direction: column; justify-content: space-between; transition: background 220ms; }
-  .case:hover { background: #0F0F0F; }
-  .case .m { font-family: var(--jb-ff-display); font-size: 96px; line-height: 0.88; letter-spacing: -0.05em; color: var(--jb-fire); margin-left: -4px; }
-  .case.feat .m { color: var(--jb-acid); }
-  .case .co { font-family: var(--jb-ff-display); font-size: 18px; letter-spacing: -0.02em; text-transform: uppercase; margin-top: 8px; color: var(--jb-cream); }
-  .case .sector { font-family: var(--jb-ff-mono); font-size: 11px; color: var(--jb-fg-muted); letter-spacing: var(--jb-tr-caps); text-transform: uppercase; margin-top: 4px; }
-  .case .story { margin-top: 24px; font-size: 14px; color: #B5B5B5; line-height: 1.6; }
-  .case .tag { position: absolute; top: 18px; right: 20px; font-family: var(--jb-ff-mono); font-size: 10px; letter-spacing: 0.2em; color: var(--jb-fg-muted); text-transform: uppercase; }
+      /* CASES */
+      .cases {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2px;
+        background: var(--jb-hair);
+      }
+      .case {
+        background: var(--jb-ink);
+        padding: 40px 28px;
+        position: relative;
+        overflow: hidden;
+        min-height: 340px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: background 220ms;
+      }
+      .case:hover {
+        background: #0f0f0f;
+      }
+      .case .m {
+        font-family: var(--jb-ff-display);
+        font-size: 96px;
+        line-height: 0.88;
+        letter-spacing: -0.05em;
+        color: var(--jb-fire);
+        margin-left: -4px;
+      }
+      .case.feat .m {
+        color: var(--jb-acid);
+      }
+      .case .co {
+        font-family: var(--jb-ff-display);
+        font-size: 18px;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        margin-top: 8px;
+        color: var(--jb-cream);
+      }
+      .case .sector {
+        font-family: var(--jb-ff-mono);
+        font-size: 11px;
+        color: var(--jb-fg-muted);
+        letter-spacing: var(--jb-tr-caps);
+        text-transform: uppercase;
+        margin-top: 4px;
+      }
+      .case .story {
+        margin-top: 24px;
+        font-size: 14px;
+        color: #b5b5b5;
+        line-height: 1.6;
+      }
+      .case .tag {
+        position: absolute;
+        top: 18px;
+        right: 20px;
+        font-family: var(--jb-ff-mono);
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        color: var(--jb-fg-muted);
+        text-transform: uppercase;
+      }
 
-  /* QUOTE */
-  .manif { padding: 120px 0; border-top: 1px solid var(--jb-hair); border-bottom: 1px solid var(--jb-hair); position: relative; overflow: hidden; margin-top: 80px; }
-  .manif::before { content: 'SISTEMA > IMPROVISO'; position: absolute; bottom: -60px; left: -40px; font-family: var(--jb-ff-display); font-size: 260px; color: rgba(255,59,15,0.06); letter-spacing: -0.05em; white-space: nowrap; }
-  .manif-q { font-family: var(--jb-ff-display); font-size: clamp(40px, 5vw, 76px); line-height: 1; letter-spacing: var(--jb-tr-tight); text-transform: uppercase; max-width: 1100px; position: relative; }
-  .manif-q .fire { color: var(--jb-fire); } .manif-q .acid { color: var(--jb-acid); } .manif-q .stroke { -webkit-text-stroke: 2px var(--jb-cream); color: transparent; }
-  .manif-attr { margin-top: 36px; font-family: var(--jb-ff-mono); font-size: 13px; color: var(--jb-fg-muted); letter-spacing: 0.25em; text-transform: uppercase; display: flex; align-items: center; gap: 14px; }
-  .manif-attr::before { content: ''; width: 64px; height: 1px; background: var(--jb-acid); }
+      /* QUOTE */
+      .manif {
+        padding: 120px 0;
+        border-top: 1px solid var(--jb-hair);
+        border-bottom: 1px solid var(--jb-hair);
+        position: relative;
+        overflow: hidden;
+        margin-top: 80px;
+      }
+      .manif::before {
+        content: 'SISTEMA > IMPROVISO';
+        position: absolute;
+        bottom: -60px;
+        left: -40px;
+        font-family: var(--jb-ff-display);
+        font-size: 260px;
+        color: rgba(255, 59, 15, 0.06);
+        letter-spacing: -0.05em;
+        white-space: nowrap;
+      }
+      .manif-q {
+        font-family: var(--jb-ff-display);
+        font-size: clamp(40px, 5vw, 76px);
+        line-height: 1;
+        letter-spacing: var(--jb-tr-tight);
+        text-transform: uppercase;
+        max-width: 1100px;
+        position: relative;
+      }
+      .manif-q .fire {
+        color: var(--jb-fire);
+      }
+      .manif-q .acid {
+        color: var(--jb-acid);
+      }
+      .manif-q .stroke {
+        -webkit-text-stroke: 2px var(--jb-cream);
+        color: transparent;
+      }
+      .manif-attr {
+        margin-top: 36px;
+        font-family: var(--jb-ff-mono);
+        font-size: 13px;
+        color: var(--jb-fg-muted);
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .manif-attr::before {
+        content: '';
+        width: 64px;
+        height: 1px;
+        background: var(--jb-acid);
+      }
 
-  /* FINAL */
-  .final { padding: 160px 0; background: var(--jb-ink-2); position: relative; overflow: hidden; border-top: 2px solid var(--jb-acid); }
-  .final-eye { font-family: var(--jb-ff-mono); font-size: 12px; color: var(--jb-acid); letter-spacing: 0.28em; text-transform: uppercase; }
-  .final-h { font-family: var(--jb-ff-display); font-size: clamp(72px, 10vw, 156px); line-height: 0.85; letter-spacing: var(--jb-tr-tighter); text-transform: uppercase; margin-top: 28px; }
-  .final-h .fire { color: var(--jb-fire); } .final-h .acid { color: var(--jb-acid); }
-  .final-p { font-size: 20px; color: #BEBEBE; max-width: 640px; margin-top: 28px; line-height: 1.5; }
-  .final-ctas { margin-top: 56px; display: flex; gap: 16px; flex-wrap: wrap; }
+      /* FINAL */
+      .final {
+        padding: 160px 0;
+        background: var(--jb-ink-2);
+        position: relative;
+        overflow: hidden;
+        border-top: 2px solid var(--jb-acid);
+      }
+      .final-eye {
+        font-family: var(--jb-ff-mono);
+        font-size: 12px;
+        color: var(--jb-acid);
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
+      .final-h {
+        font-family: var(--jb-ff-display);
+        font-size: clamp(72px, 10vw, 156px);
+        line-height: 0.85;
+        letter-spacing: var(--jb-tr-tighter);
+        text-transform: uppercase;
+        margin-top: 28px;
+      }
+      .final-h .fire {
+        color: var(--jb-fire);
+      }
+      .final-h .acid {
+        color: var(--jb-acid);
+      }
+      .final-p {
+        font-size: 20px;
+        color: #bebebe;
+        max-width: 640px;
+        margin-top: 28px;
+        line-height: 1.5;
+      }
+      .final-ctas {
+        margin-top: 56px;
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
 
-  /* FOOTER */
-  .foot { padding: 56px 0 32px; border-top: 1px solid var(--jb-hair); background: #030303; }
-  .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
-  .foot h4 { font-family: var(--jb-ff-mono); font-size: 11px; letter-spacing: 0.25em; color: var(--jb-fg-muted); text-transform: uppercase; margin: 0 0 16px; font-weight: 600; }
-  .foot a { color: var(--jb-cream); font-size: 13px; text-decoration: none; display: block; padding: 6px 0; cursor: pointer; }
-  .foot a:hover { color: var(--jb-acid); }
-  .foot-legal { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--jb-hair); display: flex; justify-content: space-between; font-family: var(--jb-ff-mono); font-size: 10px; color: var(--jb-fg-muted); letter-spacing: var(--jb-tr-caps); text-transform: uppercase; }
-</style>
-</head>
-<body>
+      /* FOOTER */
+      .foot {
+        padding: 56px 0 32px;
+        border-top: 1px solid var(--jb-hair);
+        background: #030303;
+      }
+      .foot-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 48px;
+      }
+      .foot h4 {
+        font-family: var(--jb-ff-mono);
+        font-size: 11px;
+        letter-spacing: 0.25em;
+        color: var(--jb-fg-muted);
+        text-transform: uppercase;
+        margin: 0 0 16px;
+        font-weight: 600;
+      }
+      .foot a {
+        color: var(--jb-cream);
+        font-size: 13px;
+        text-decoration: none;
+        display: block;
+        padding: 6px 0;
+        cursor: pointer;
+      }
+      .foot a:hover {
+        color: var(--jb-acid);
+      }
+      .foot-legal {
+        margin-top: 48px;
+        padding-top: 24px;
+        border-top: 1px solid var(--jb-hair);
+        display: flex;
+        justify-content: space-between;
+        font-family: var(--jb-ff-mono);
+        font-size: 10px;
+        color: var(--jb-fg-muted);
+        letter-spacing: var(--jb-tr-caps);
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-bg"></div>
+    <div class="noise"></div>
 
-<div class="grid-bg"></div>
-<div class="noise"></div>
-
-<div class="topbar">
-  <div class="left">
-    <span><span class="dot"></span> &nbsp;SYS ONLINE</span>
-    <span>// <b>@joelburigo</b></span>
-    <span>// EXP. 2004</span>
-    <span>// GROWTH EST. 2008</span>
-  </div>
-  <div class="right">
-    <span>LAT. -27.59 · LNG. -48.55</span>
-    <span>FLORIANÓPOLIS/SC · <b>BR</b></span>
-    <span id="clk">00:00:00 BRT</span>
-  </div>
-</div>
-
-<div class="ticker">
-  <div class="ticker-inner">
-    <span>★ DIAGNÓSTICO 10MIN</span><span>★ <em>SISTEMA &gt; IMPROVISO</em></span><span>★ 140+ MPES</span><span>★ ~R$1BI GERADO</span><span>★ FRAMEWORK 6PS</span><span>★ 17+ ANOS</span><span>★ <em>LIGAR A MÁQUINA</em></span><span>★ BORA PRA CIMA</span>
-    <span>★ DIAGNÓSTICO 10MIN</span><span>★ <em>SISTEMA &gt; IMPROVISO</em></span><span>★ 140+ MPES</span><span>★ ~R$1BI GERADO</span><span>★ FRAMEWORK 6PS</span><span>★ 17+ ANOS</span><span>★ <em>LIGAR A MÁQUINA</em></span><span>★ BORA PRA CIMA</span>
-  </div>
-</div>
-
-<nav class="nav">
-  <div class="logo"><span class="j">JOEL</span><span class="b">BURIGO</span></div>
-  <div class="nav-links">
-    <a>Framework</a><a>Programas</a><a>Cases</a><a>Máquina</a><a>Blog</a>
-  </div>
-  <button class="btn btn-primary">Diagnóstico <span class="arr">→</span></button>
-</nav>
-
-<section class="hero wrap">
-  <div class="hero-grid">
-    <div>
-      <div class="eyebrow"><span class="dotG"></span> DIAGNÓSTICO AO VIVO · 10 MIN · GRÁTIS</div>
-      <h1 class="h1">
-        VENDER É<br>
-        <span class="stroke">SISTEMA.</span><br>
-        NÃO <span class="fire">SORTE.</span>
-      </h1>
-      <p class="hero-sub">
-        Framework dos <b>6Ps das Vendas Escaláveis</b> — o <span class="hl">método</span> formalizado em 2025 a partir de vendas estruturadas em <b>140+ MPEs</b> e ~R$ 1 bilhão em 17+ anos. Marketing + Vendas + Growth num sistema único, replicável, previsível. <b>Se tua empresa depende de ti, tu não tem empresa — tu tem emprego.</b>
-      </p>
-      <div class="hero-ctas">
-        <button class="btn btn-primary">Quero Ligar a Máquina <span class="arr">→</span></button>
-        <button class="btn btn-ghost">Ver programa VSS</button>
+    <div class="topbar">
+      <div class="left">
+        <span><span class="dot"></span> &nbsp;SYS ONLINE</span>
+        <span>// <b>@joelburigo</b></span>
+        <span>// EXP. 2004</span>
+        <span>// GROWTH EST. 2008</span>
       </div>
-      <div class="stats-strip">
-        <div class="stat"><div class="stat-num">17<span class="unit">+</span></div><div class="stat-label">/ anos em vendas</div></div>
-        <div class="stat"><div class="stat-num">~R$1<span class="unit">BI</span></div><div class="stat-label">/ em 17+ anos</div></div>
-        <div class="stat"><div class="stat-num">140<span class="unit">+</span></div><div class="stat-label">/ mpes estruturadas</div></div>
-        <div class="stat"><div class="stat-num">6<span class="unit">Ps</span></div><div class="stat-label">/ framework core</div></div>
+      <div class="right">
+        <span>LAT. -27.59 · LNG. -48.55</span>
+        <span>FLORIANÓPOLIS/SC · <b>BR</b></span>
+        <span id="clk">00:00:00 BRT</span>
       </div>
     </div>
 
-    <div class="term">
-      <div class="term-head">
-        <div class="lights"><i></i><i></i><i></i></div>
-        <div class="title">// @joelburigo · DIAGNÓSTICO.sh</div>
-        <div class="title" style="color:var(--jb-acid)">● RUNNING</div>
-      </div>
-      <div class="term-body">
-<span class="c">$</span> <span class="w">joel --diagnose --mpe</span><br>
-<span class="c">› analisando posicionamento...</span> <span class="p">ok</span><br>
-<span class="c">› mapeando público (ICP)...</span>   <span class="p">ok</span><br>
-<span class="c">› validando produto/oferta...</span> <span class="y">warn</span><br>
-<span class="c">› checando programas (mkt)...</span> <span class="e">fail</span><br>
-<span class="c">› auditando processos (CRM)...</span>  <span class="e">fail</span><br>
-<span class="c">› avaliando pessoas (time)...</span>   <span class="y">warn</span><br>
-<br>
-<span class="w">RESULTADO:</span> <span class="e">2 dos 6Ps travados.</span><br>
-<span class="w">DIAGNÓSTICO:</span> sem sistema comercial.<br>
-<span class="w">AÇÃO:</span> <span class="p">agendar_call()</span><span class="blink"></span>
-      </div>
-      <div class="term-stats">
-        <div class="term-stat"><span class="k">Pipeline</span><span class="v">R$ 180k <span class="up">▲</span></span></div>
-        <div class="term-stat"><span class="k">Win Rate</span><span class="v">12% <span class="down">▼</span></span></div>
-        <div class="term-stat"><span class="k">Ciclo</span><span class="v">42d <span class="down">▼</span></span></div>
-        <div class="term-stat"><span class="k">LTV/CAC</span><span class="v">1.8× <span class="down">▼</span></span></div>
+    <div class="ticker">
+      <div class="ticker-inner">
+        <span>★ DIAGNÓSTICO 10MIN</span><span>★ <em>SISTEMA &gt; IMPROVISO</em></span
+        ><span>★ 140+ MPES</span><span>★ ~R$1BI GERADO</span><span>★ FRAMEWORK 6PS</span
+        ><span>★ 17+ ANOS</span><span>★ <em>LIGAR A MÁQUINA</em></span
+        ><span>★ BORA PRA CIMA</span> <span>★ DIAGNÓSTICO 10MIN</span
+        ><span>★ <em>SISTEMA &gt; IMPROVISO</em></span
+        ><span>★ 140+ MPES</span><span>★ ~R$1BI GERADO</span><span>★ FRAMEWORK 6PS</span
+        ><span>★ 17+ ANOS</span><span>★ <em>LIGAR A MÁQUINA</em></span
+        ><span>★ BORA PRA CIMA</span>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="sec wrap">
-  <div class="sec-head">
-    <div class="sec-num">// 01_FRAMEWORK</div>
-    <h2 class="sec-t">SEIS <span class="acid">PERGUNTAS.</span> UMA <span class="fire">ORDEM.</span> ZERO IMPROVISO.</h2>
-    <div class="sec-meta">MODULE.6PS<br>STATUS: ACTIVE</div>
-  </div>
-  <div class="ps">
-    <div class="p"><div class="p-tag">MÓDULO <b>01</b></div><div class="p-num">P1</div><div class="p-lbl">// POSICIONAMENTO</div><div class="p-q">Por quê você?</div><p class="p-d">Por que o mercado escolhe você e não o concorrente. Sem clareza, vira commodity e preço vira guerra.</p></div>
-    <div class="p"><div class="p-tag">MÓDULO <b>02</b></div><div class="p-num">P2</div><div class="p-lbl">// PÚBLICO</div><div class="p-q">Pra quem?</div><p class="p-d">ICP, persona e canal. Parar de vender pra todo mundo e focar em quem paga — e volta.</p></div>
-    <div class="p"><div class="p-tag">MÓDULO <b>03</b></div><div class="p-num">P3</div><div class="p-lbl">// PRODUTO</div><div class="p-q">O quê?</div><p class="p-d">Oferta irrecusável, pricing, pacote, margem. Escrito, versionado, testado — não no feeling.</p></div>
-    <div class="p"><div class="p-tag">MÓDULO <b>04</b></div><div class="p-num">P4</div><div class="p-lbl">// PROGRAMAS</div><div class="p-q">Como vender?</div><p class="p-d">Marketing + funil + CRM + automação. A Máquina que gera demanda previsível — não depende de boca-a-boca.</p></div>
-    <div class="p"><div class="p-tag">MÓDULO <b>05</b></div><div class="p-num">P5</div><div class="p-lbl">// PROCESSOS</div><div class="p-q">Como operar?</div><p class="p-d">Pipeline, playbook, rituais, indicadores. O sistema roda sem você apagando incêndio o dia inteiro.</p></div>
-    <div class="p"><div class="p-tag">MÓDULO <b>06</b></div><div class="p-num">P6</div><div class="p-lbl">// PESSOAS</div><div class="p-q">Com quem?</div><p class="p-d">Time, cultura, incentivos, metas. Quem executa, como mede, e por que continua executando.</p></div>
-  </div>
-</section>
-
-<section class="sec wrap">
-  <div class="sec-head">
-    <div class="sec-num">// 02_PROGRAMAS</div>
-    <h2 class="sec-t">ESCOLHE A <span class="acid">INTENSIDADE.</span></h2>
-    <div class="sec-meta">2 CAMINHOS<br>DIY · 1:1</div>
-  </div>
-  <div class="tiers">
-    <div class="tier feat">
-      <div class="tag">// TIER 01 · DIY · FATURA R$ 10-100K/MÊS</div>
-      <div class="name">VSS — Vendas<br>Sem Segredos</div>
-      <div class="price"><b>12× R$ 166,42</b> · ou R$ 1.997 à vista</div>
-      <p class="desc">15 módulos, 66 aulas. Você implementa os 6Ps em 90 dias com Growth CRM + mentorias ao vivo + comunidade. Autonomia total.</p>
-      <ul class="feats">
-        <li>Programa completo · 12 meses</li>
-        <li>Growth CRM incluso (R$ 6.996)</li>
-        <li>48 mentorias ao vivo</li>
-        <li>Comunidade privada 90 dias</li>
-      </ul>
-      <button class="tbtn">Começar agora <span>→</span></button>
-    </div>
-    <div class="tier">
-      <div class="tag">// TIER 02 · 1:1 · FATURA R$ 200K+/MÊS</div>
-      <div class="name">Advisory<br>com Joel</div>
-      <div class="price"><b>R$ 997–15.000/mês</b> · Sessão · Sprint 30d · Conselho</div>
-      <p class="desc">Acesso direto a mim. Pra founder com faturamento e time, destravando estratégia, pricing, M&amp;A, captação. Garantia incondicional.</p>
-      <ul class="feats">
-        <li>Sessão Estratégica · 90min</li>
-        <li>Sprint 30 dias · diagnóstico + plano</li>
-        <li>Conselho Executivo · recorrente</li>
-        <li>WhatsApp direto + board</li>
-      </ul>
-      <button class="tbtn">Aplicar agora <span>→</span></button>
-    </div>
-  </div>
-</section>
-
-<section class="sec wrap">
-  <div class="sec-head">
-    <div class="sec-num">// 03_CASES</div>
-    <h2 class="sec-t">RESULTADO. <span class="fire">NÃO PROMESSA.</span></h2>
-    <div class="sec-meta">REG. 140+ ENTRIES<br>AUDITED</div>
-  </div>
-  <div class="cases">
-    <div class="case feat">
-      <div class="tag">// CASE 001</div>
-      <div>
-        <div class="m">+433%</div>
-        <div class="co">Holding de franquias</div>
-        <div class="sector">Franquias · 2018-2020</div>
+    <nav class="nav">
+      <div class="logo"><span class="j">JOEL</span><span class="b">BURIGO</span></div>
+      <div class="nav-links">
+        <a>Framework</a><a>Programas</a><a>Cases</a><a>Máquina</a><a>Blog</a>
       </div>
-      <div class="story">Operação travada em R$ 160k/mês. Com 6Ps implementados: <b style="color:var(--jb-acid)">R$ 1 milhão/mês</b>, leads ×8,33 e holding com 1.800+ franqueados.</div>
-    </div>
-    <div class="case">
-      <div class="tag">// CASE 002</div>
-      <div>
-        <div class="m">+250%</div>
-        <div class="co">E-commerce B2B</div>
-        <div class="sector">E-commerce · 2016-2020</div>
+      <button class="btn btn-primary">Diagnóstico <span class="arr">→</span></button>
+    </nav>
+
+    <section class="hero wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="dotG"></span> DIAGNÓSTICO AO VIVO · 10 MIN · GRÁTIS
+          </div>
+          <h1 class="h1">
+            VENDER É<br />
+            <span class="stroke">SISTEMA.</span><br />
+            NÃO <span class="fire">SORTE.</span>
+          </h1>
+          <p class="hero-sub">
+            Framework dos <b>6Ps das Vendas Escaláveis</b> — o
+            <span class="hl">método</span> formalizado em 2025 a partir de vendas estruturadas em
+            <b>140+ MPEs</b> e ~R$ 1 bilhão em 17+ anos. Marketing + Vendas + Growth num sistema
+            único, replicável, previsível.
+            <b>Se tua empresa depende de ti, tu não tem empresa — tu tem emprego.</b>
+          </p>
+          <div class="hero-ctas">
+            <button class="btn btn-primary">
+              Quero Ligar a Máquina <span class="arr">→</span>
+            </button>
+            <button class="btn btn-ghost">Ver programa VSS</button>
+          </div>
+          <div class="stats-strip">
+            <div class="stat">
+              <div class="stat-num">17<span class="unit">+</span></div>
+              <div class="stat-label">/ anos em vendas</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">~R$1<span class="unit">BI</span></div>
+              <div class="stat-label">/ em 17+ anos</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">140<span class="unit">+</span></div>
+              <div class="stat-label">/ mpes estruturadas</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">6<span class="unit">Ps</span></div>
+              <div class="stat-label">/ framework core</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="term">
+          <div class="term-head">
+            <div class="lights"><i></i><i></i><i></i></div>
+            <div class="title">// @joelburigo · DIAGNÓSTICO.sh</div>
+            <div class="title" style="color: var(--jb-acid)">● RUNNING</div>
+          </div>
+          <div class="term-body">
+            <span class="c">$</span> <span class="w">joel --diagnose --mpe</span><br />
+            <span class="c">› analisando posicionamento...</span> <span class="p">ok</span><br />
+            <span class="c">› mapeando público (ICP)...</span> <span class="p">ok</span><br />
+            <span class="c">› validando produto/oferta...</span> <span class="y">warn</span><br />
+            <span class="c">› checando programas (mkt)...</span> <span class="e">fail</span><br />
+            <span class="c">› auditando processos (CRM)...</span> <span class="e">fail</span><br />
+            <span class="c">› avaliando pessoas (time)...</span> <span class="y">warn</span><br />
+            <br />
+            <span class="w">RESULTADO:</span> <span class="e">2 dos 6Ps travados.</span><br />
+            <span class="w">DIAGNÓSTICO:</span> sem sistema comercial.<br />
+            <span class="w">AÇÃO:</span> <span class="p">agendar_call()</span
+            ><span class="blink"></span>
+          </div>
+          <div class="term-stats">
+            <div class="term-stat">
+              <span class="k">Pipeline</span
+              ><span class="v">R$ 180k <span class="up">▲</span></span>
+            </div>
+            <div class="term-stat">
+              <span class="k">Win Rate</span><span class="v">12% <span class="down">▼</span></span>
+            </div>
+            <div class="term-stat">
+              <span class="k">Ciclo</span><span class="v">42d <span class="down">▼</span></span>
+            </div>
+            <div class="term-stat">
+              <span class="k">LTV/CAC</span><span class="v">1.8× <span class="down">▼</span></span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="story">E-commerce reestruturado com método e operação comercial. Resultado oficial autorizado: <b style="color:var(--jb-fire)">+250%</b> no e-commerce.</div>
-    </div>
-    <div class="case">
-      <div class="tag">// CASE 003</div>
-      <div>
-        <div class="m">+65%</div>
-        <div class="co">Rede de varejo</div>
-        <div class="sector">Varejo · 2016-2020</div>
+    </section>
+
+    <section class="sec wrap">
+      <div class="sec-head">
+        <div class="sec-num">// 01_FRAMEWORK</div>
+        <h2 class="sec-t">
+          SEIS <span class="acid">PERGUNTAS.</span> UMA <span class="fire">ORDEM.</span> ZERO
+          IMPROVISO.
+        </h2>
+        <div class="sec-meta">MODULE.6PS<br />STATUS: ACTIVE</div>
       </div>
-      <div class="story">Rede de varejo com sistema comercial mais previsível. Resultado oficial autorizado: <b style="color:var(--jb-fire)">+65%</b>.</div>
-    </div>
-  </div>
-</section>
-
-<section class="manif wrap">
-  <div class="manif-q">
-    "SE TUA <span class="stroke">EMPRESA</span> DEPENDE DE <span class="fire">TU,</span> TU NÃO TEM EMPRESA. TU TEM <span class="acid">EMPREGO.</span>"
-  </div>
-  <div class="manif-attr">JOEL BURIGO · FRAMEWORK 6PS · 17 ANOS ESTRUTURANDO MPE</div>
-</section>
-
-<section class="final">
-  <div class="wrap">
-    <div class="final-eye">● DIAGNÓSTICO GRATUITO · <span style="color:var(--jb-cream)">10 MINUTOS</span> · SEM ENROLAÇÃO</div>
-    <h2 class="final-h">LIGA<br>A <span class="fire">MÁQUINA.</span><br>OU VIRA <span class="acid">ESTATÍSTICA.</span></h2>
-    <p class="final-p">10 minutos, grátis, no WhatsApp. Respondo se faz sentido trabalharmos juntos — ou te mostro pra onde ir. Na moral. <b style="color:var(--jb-cream)">Bora pra cima.</b></p>
-    <div class="final-ctas">
-      <button class="btn btn-fire">★ Quero o diagnóstico <span class="arr">→</span></button>
-      <button class="btn btn-ghost" style="padding:18px 24px; font-size:14px;">Ver programa VSS</button>
-    </div>
-  </div>
-</section>
-
-<footer class="foot">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <div class="logo"><span class="j">JOEL</span><span class="b">BURIGO</span></div>
-        <p style="color:var(--jb-fg-muted); font-size:13px; margin-top:16px; max-width:320px; line-height:1.6;">Sistema &gt; Improviso. Framework 6Ps das Vendas Escaláveis · 140+ MPEs · 17+ anos · ~R$ 1 bilhão em vendas estruturadas. Da quebrada ao bilhão.</p>
+      <div class="ps">
+        <div class="p">
+          <div class="p-tag">MÓDULO <b>01</b></div>
+          <div class="p-num">P1</div>
+          <div class="p-lbl">// POSICIONAMENTO</div>
+          <div class="p-q">Por quê você?</div>
+          <p class="p-d">
+            Por que o mercado escolhe você e não o concorrente. Sem clareza, vira commodity e preço
+            vira guerra.
+          </p>
+        </div>
+        <div class="p">
+          <div class="p-tag">MÓDULO <b>02</b></div>
+          <div class="p-num">P2</div>
+          <div class="p-lbl">// PÚBLICO</div>
+          <div class="p-q">Pra quem?</div>
+          <p class="p-d">
+            ICP, persona e canal. Parar de vender pra todo mundo e focar em quem paga — e volta.
+          </p>
+        </div>
+        <div class="p">
+          <div class="p-tag">MÓDULO <b>03</b></div>
+          <div class="p-num">P3</div>
+          <div class="p-lbl">// PRODUTO</div>
+          <div class="p-q">O quê?</div>
+          <p class="p-d">
+            Oferta irrecusável, pricing, pacote, margem. Escrito, versionado, testado — não no
+            feeling.
+          </p>
+        </div>
+        <div class="p">
+          <div class="p-tag">MÓDULO <b>04</b></div>
+          <div class="p-num">P4</div>
+          <div class="p-lbl">// PROGRAMAS</div>
+          <div class="p-q">Como vender?</div>
+          <p class="p-d">
+            Marketing + funil + CRM + automação. A Máquina que gera demanda previsível — não depende
+            de boca-a-boca.
+          </p>
+        </div>
+        <div class="p">
+          <div class="p-tag">MÓDULO <b>05</b></div>
+          <div class="p-num">P5</div>
+          <div class="p-lbl">// PROCESSOS</div>
+          <div class="p-q">Como operar?</div>
+          <p class="p-d">
+            Pipeline, playbook, rituais, indicadores. O sistema roda sem você apagando incêndio o
+            dia inteiro.
+          </p>
+        </div>
+        <div class="p">
+          <div class="p-tag">MÓDULO <b>06</b></div>
+          <div class="p-num">P6</div>
+          <div class="p-lbl">// PESSOAS</div>
+          <div class="p-q">Com quem?</div>
+          <p class="p-d">
+            Time, cultura, incentivos, metas. Quem executa, como mede, e por que continua
+            executando.
+          </p>
+        </div>
       </div>
-      <div><h4>Programas</h4><a>Vendas Sem Segredos</a><a>Advisory 1:1</a></div>
-      <div><h4>Conteúdo</h4><a>Framework 6Ps</a><a>Cases</a><a>Blog</a><a>Máquina de Crescimento</a></div>
-      <div><h4>Contato</h4><a>WhatsApp direto</a><a>LinkedIn</a><a>Instagram</a><a>YouTube</a></div>
-    </div>
-    <div class="foot-legal">
-      <span>© 2026 · JOEL BURIGO</span>
-      <span>@joelburigo · EXP. 2004 · GROWTH EST. 2008</span>
-      <span>BORA PRA CIMA · LET'S GROW</span>
-    </div>
-  </div>
-</footer>
+    </section>
 
-<script>
-  function tick(){
-    const d=new Date();
-    const hh=String(d.getHours()).padStart(2,'0');
-    const mm=String(d.getMinutes()).padStart(2,'0');
-    const ss=String(d.getSeconds()).padStart(2,'0');
-    const el=document.getElementById('clk');
-    if(el) el.textContent = `${hh}:${mm}:${ss} BRT`;
-  }
-  tick();setInterval(tick,1000);
-</script>
+    <section class="sec wrap">
+      <div class="sec-head">
+        <div class="sec-num">// 02_PROGRAMAS</div>
+        <h2 class="sec-t">ESCOLHE A <span class="acid">INTENSIDADE.</span></h2>
+        <div class="sec-meta">2 CAMINHOS<br />DIY · 1:1</div>
+      </div>
+      <div class="tiers">
+        <div class="tier feat">
+          <div class="tag">// TIER 01 · DIY · FATURA R$ 10-100K/MÊS</div>
+          <div class="name">VSS — Vendas<br />Sem Segredos</div>
+          <div class="price"><b>12× R$ 166,42</b> · ou R$ 1.997 à vista</div>
+          <p class="desc">
+            15 módulos, 66 aulas. Você implementa os 6Ps em 90 dias com Growth CRM + mentorias ao
+            vivo + comunidade. Autonomia total.
+          </p>
+          <ul class="feats">
+            <li>Programa completo · 12 meses</li>
+            <li>Growth CRM incluso (R$ 6.996)</li>
+            <li>48 mentorias ao vivo</li>
+            <li>Comunidade privada 90 dias</li>
+          </ul>
+          <button class="tbtn">Começar agora <span>→</span></button>
+        </div>
+        <div class="tier">
+          <div class="tag">// TIER 02 · 1:1 · FATURA R$ 200K+/MÊS</div>
+          <div class="name">Advisory<br />com Joel</div>
+          <div class="price"><b>R$ 997–15.000/mês</b> · Sessão · Sprint 30d · Conselho</div>
+          <p class="desc">
+            Acesso direto a mim. Pra founder com faturamento e time, destravando estratégia,
+            pricing, M&amp;A, captação. Garantia incondicional.
+          </p>
+          <ul class="feats">
+            <li>Sessão Estratégica · 90min</li>
+            <li>Sprint 30 dias · diagnóstico + plano</li>
+            <li>Conselho Executivo · recorrente</li>
+            <li>WhatsApp direto + board</li>
+          </ul>
+          <button class="tbtn">Aplicar agora <span>→</span></button>
+        </div>
+      </div>
+    </section>
 
-</body></html>
+    <section class="sec wrap">
+      <div class="sec-head">
+        <div class="sec-num">// 03_CASES</div>
+        <h2 class="sec-t">RESULTADO. <span class="fire">NÃO PROMESSA.</span></h2>
+        <div class="sec-meta">REG. 140+ ENTRIES<br />AUDITED</div>
+      </div>
+      <div class="cases">
+        <div class="case feat">
+          <div class="tag">// CASE 001</div>
+          <div>
+            <div class="m">+433%</div>
+            <div class="co">Holding de franquias</div>
+            <div class="sector">Franquias · 2018-2020</div>
+          </div>
+          <div class="story">
+            Operação travada em R$ 160k/mês. Com 6Ps implementados:
+            <b style="color: var(--jb-acid)">R$ 1 milhão/mês</b>, leads ×8,33 e holding com 1.800+
+            franqueados.
+          </div>
+        </div>
+        <div class="case">
+          <div class="tag">// CASE 002</div>
+          <div>
+            <div class="m">+250%</div>
+            <div class="co">E-commerce B2B</div>
+            <div class="sector">E-commerce · 2016-2020</div>
+          </div>
+          <div class="story">
+            E-commerce reestruturado com método e operação comercial. Resultado oficial autorizado:
+            <b style="color: var(--jb-fire)">+250%</b> no e-commerce.
+          </div>
+        </div>
+        <div class="case">
+          <div class="tag">// CASE 003</div>
+          <div>
+            <div class="m">+65%</div>
+            <div class="co">Rede de varejo</div>
+            <div class="sector">Varejo · 2016-2020</div>
+          </div>
+          <div class="story">
+            Rede de varejo com sistema comercial mais previsível. Resultado oficial autorizado:
+            <b style="color: var(--jb-fire)">+65%</b>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="manif wrap">
+      <div class="manif-q">
+        "SE TUA <span class="stroke">EMPRESA</span> DEPENDE DE <span class="fire">TU,</span> TU NÃO
+        TEM EMPRESA. TU TEM <span class="acid">EMPREGO.</span>"
+      </div>
+      <div class="manif-attr">JOEL BURIGO · FRAMEWORK 6PS · 17 ANOS ESTRUTURANDO MPE</div>
+    </section>
+
+    <section class="final">
+      <div class="wrap">
+        <div class="final-eye">
+          ● DIAGNÓSTICO GRATUITO · <span style="color: var(--jb-cream)">10 MINUTOS</span> · SEM
+          ENROLAÇÃO
+        </div>
+        <h2 class="final-h">
+          LIGA<br />A <span class="fire">MÁQUINA.</span><br />OU VIRA
+          <span class="acid">ESTATÍSTICA.</span>
+        </h2>
+        <p class="final-p">
+          10 minutos, grátis, no WhatsApp. Respondo se faz sentido trabalharmos juntos — ou te
+          mostro pra onde ir. Na moral. <b style="color: var(--jb-cream)">Bora pra cima.</b>
+        </p>
+        <div class="final-ctas">
+          <button class="btn btn-fire">★ Quero o diagnóstico <span class="arr">→</span></button>
+          <button class="btn btn-ghost" style="padding: 18px 24px; font-size: 14px">
+            Ver programa VSS
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div class="wrap">
+        <div class="foot-grid">
+          <div>
+            <div class="logo"><span class="j">JOEL</span><span class="b">BURIGO</span></div>
+            <p
+              style="
+                color: var(--jb-fg-muted);
+                font-size: 13px;
+                margin-top: 16px;
+                max-width: 320px;
+                line-height: 1.6;
+              "
+            >
+              Sistema &gt; Improviso. Framework 6Ps das Vendas Escaláveis · 140+ MPEs · 17+ anos ·
+              ~R$ 1 bilhão em vendas estruturadas. Da quebrada ao bilhão.
+            </p>
+          </div>
+          <div>
+            <h4>Programas</h4>
+            <a>Vendas Sem Segredos</a><a>Advisory 1:1</a>
+          </div>
+          <div>
+            <h4>Conteúdo</h4>
+            <a>Framework 6Ps</a><a>Cases</a><a>Blog</a><a>Máquina de Crescimento</a>
+          </div>
+          <div>
+            <h4>Contato</h4>
+            <a>WhatsApp direto</a><a>LinkedIn</a><a>Instagram</a><a>YouTube</a>
+          </div>
+        </div>
+        <div class="foot-legal">
+          <span>© 2026 · JOEL BURIGO</span>
+          <span>@joelburigo · EXP. 2004 · GROWTH EST. 2008</span>
+          <span>BORA PRA CIMA · LET'S GROW</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function tick() {
+        const d = new Date();
+        const hh = String(d.getHours()).padStart(2, '0');
+        const mm = String(d.getMinutes()).padStart(2, '0');
+        const ss = String(d.getSeconds()).padStart(2, '0');
+        const el = document.getElementById('clk');
+        if (el) el.textContent = `${hh}:${mm}:${ss} BRT`;
+      }
+      tick();
+      setInterval(tick, 1000);
+    </script>
+  </body>
+</html>

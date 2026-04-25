@@ -33,6 +33,7 @@ clusterKeywords:
 ---
 
 <a name="a-pergunta"></a>
+
 ## A Pergunta Que Todo Empresário Faz
 
 **"Eu invisto em tráfego pago ou faço prospecção ativa?"**
@@ -52,6 +53,7 @@ Vou te mostrar quando usar cada uma, como implementar, e qual funciona melhor pr
 ---
 
 <a name="trafego-pago"></a>
+
 ## Tráfego Pago: O Que É e Quando Funciona
 
 Tráfego pago é quando você paga plataformas (Meta Ads, Google Ads, LinkedIn Ads) para mostrar seus anúncios para pessoas específicas.
@@ -86,16 +88,19 @@ Tráfego pago é quando você paga plataformas (Meta Ads, Google Ads, LinkedIn A
 ### Principais Plataformas
 
 **Meta Ads (Facebook/Instagram):**
+
 - Melhor para B2C e B2B ticket baixo/médio
 - Segmentação por comportamento e interesses
 - Custo por lead típico: R$ 5-50
 
 **Google Ads:**
+
 - Melhor para intenção de compra (pessoa buscando solução)
 - Segmentação por palavra-chave
 - Custo por lead típico: R$ 20-100
 
 **LinkedIn Ads:**
+
 - Melhor para B2B alto ticket
 - Segmentação por cargo, empresa, setor
 - Custo por lead típico: R$ 50-200
@@ -103,6 +108,7 @@ Tráfego pago é quando você paga plataformas (Meta Ads, Google Ads, LinkedIn A
 ---
 
 <a name="prospeccao-ativa"></a>
+
 ## Prospecção Ativa: O Que É e Quando Funciona
 
 Prospecção ativa (outbound) é quando VOCÊ vai atrás dos leads: LinkedIn outbound, email frio, cold calling, networking.
@@ -137,21 +143,25 @@ Prospecção ativa (outbound) é quando VOCÊ vai atrás dos leads: LinkedIn out
 ### Principais Canais de Prospecção
 
 **LinkedIn Outbound:**
+
 - Conexão + mensagem direta
 - Engajamento em posts do ICP
 - InMail (versão paga)
 
 **Email Frio:**
+
 - Sequência de 3-5 emails
 - Ferramenta de automação (Lemlist, Apollo, etc)
 - Personalização é essencial
 
 **Cold Calling:**
+
 - Ligação direta para decisor
 - Funciona bem em alguns setores
 - Script estruturado obrigatório
 
 **Networking:**
+
 - Eventos do setor
 - Grupos de empresários
 - Indicações estruturadas
@@ -159,18 +169,19 @@ Prospecção ativa (outbound) é quando VOCÊ vai atrás dos leads: LinkedIn out
 ---
 
 <a name="comparacao"></a>
+
 ## Comparação Lado a Lado
 
-| Critério | Tráfego Pago | Prospecção Ativa |
-|----------|--------------|------------------|
-| **Investimento** | R$ 1.500+/mês | Tempo (4-8h/semana) |
-| **Tempo para resultado** | Dias/semanas | Semanas/meses |
-| **Escalabilidade** | Alta | Limitada |
-| **Controle sobre lead** | Médio | Total |
-| **Ideal para** | B2C e B2B ticket médio | B2B alto ticket |
-| **Risco principal** | Queimar budget | Desistir cedo |
-| **Curva de aprendizado** | Alta (técnico) | Média (comunicação) |
-| **Previsibilidade** | Alta após otimização | Média |
+| Critério                 | Tráfego Pago           | Prospecção Ativa    |
+| ------------------------ | ---------------------- | ------------------- |
+| **Investimento**         | R$ 1.500+/mês          | Tempo (4-8h/semana) |
+| **Tempo para resultado** | Dias/semanas           | Semanas/meses       |
+| **Escalabilidade**       | Alta                   | Limitada            |
+| **Controle sobre lead**  | Médio                  | Total               |
+| **Ideal para**           | B2C e B2B ticket médio | B2B alto ticket     |
+| **Risco principal**      | Queimar budget         | Desistir cedo       |
+| **Curva de aprendizado** | Alta (técnico)         | Média (comunicação) |
+| **Previsibilidade**      | Alta após otimização   | Média               |
 
 ### Qual Gera Leads Mais Qualificados?
 
@@ -197,6 +208,7 @@ A conversão da prospecção ativa é maior porque você aborda pessoas específ
 ---
 
 <a name="framework-decisao"></a>
+
 ## Framework de Decisão: Qual Usar Quando
 
 ### Use SOMENTE Prospecção Ativa Se:
@@ -225,24 +237,26 @@ A conversão da prospecção ativa é maior porque você aborda pessoas específ
 
 ### Tabela de Decisão Rápida
 
-| Seu Cenário | Rota Recomendada |
-|-------------|------------------|
-| Começando, sem grana | Prospecção Ativa |
-| Começando, com grana | Prospecção para validar → Tráfego para escalar |
-| B2B ticket alto (R$ 10k+) | Prospecção Ativa prioritária |
-| B2C ticket médio | Tráfego Pago |
-| B2B ticket médio (R$ 2-10k) | Híbrido |
-| Nicho ultra-específico | Prospecção Ativa |
-| Mercado amplo | Tráfego Pago |
+| Seu Cenário                 | Rota Recomendada                               |
+| --------------------------- | ---------------------------------------------- |
+| Começando, sem grana        | Prospecção Ativa                               |
+| Começando, com grana        | Prospecção para validar → Tráfego para escalar |
+| B2B ticket alto (R$ 10k+)   | Prospecção Ativa prioritária                   |
+| B2C ticket médio            | Tráfego Pago                                   |
+| B2B ticket médio (R$ 2-10k) | Híbrido                                        |
+| Nicho ultra-específico      | Prospecção Ativa                               |
+| Mercado amplo               | Tráfego Pago                                   |
 
 ---
 
 <a name="erros-comuns"></a>
+
 ## Os 2 Erros Mais Comuns
 
 ### Erro #1: Tráfego Pago Sem Estrutura
 
 O cenário: Empresa investe R$ 5.000/mês em ads. Leads chegam. Mas não tem:
+
 - CRM para acompanhar
 - Processo de follow-up definido
 - Script de qualificação
@@ -254,6 +268,7 @@ O cenário: Empresa investe R$ 5.000/mês em ads. Leads chegam. Mas não tem:
 **A lição:** Tráfego pago só funciona se você tem ESTRUTURA para converter os leads que chegam. Não adianta gerar 100 leads se você não consegue atender 10 em tempo hábil.
 
 **Antes de investir em ads, tenha:**
+
 - CRM configurado
 - Processo de follow-up (cadência de contatos)
 - Script de qualificação
@@ -267,6 +282,7 @@ O cenário: Empresário faz prospecção "quando dá". LinkedIn às vezes. Email
 **Resultado:** Esforço disperso, resultados aleatórios, desistência em 2 meses. "Prospecção não funciona pro meu negócio."
 
 **A lição:** Prospecção ativa exige SISTEMA:
+
 - Cadência definida (X abordagens por dia/semana)
 - Templates testados e refinados
 - CRM para acompanhar cada contato
@@ -274,6 +290,7 @@ O cenário: Empresário faz prospecção "quando dá". LinkedIn às vezes. Email
 - Revisão periódica do que funciona
 
 **Mínimo para prospecção funcionar:**
+
 - 20 abordagens novas por semana
 - Follow-up estruturado (3-5 toques por lead)
 - Registro de todas as interações
@@ -282,6 +299,7 @@ O cenário: Empresário faz prospecção "quando dá". LinkedIn às vezes. Email
 ---
 
 <a name="modelo-hibrido"></a>
+
 ## O Modelo Híbrido (O Que Funciona Melhor)
 
 O modelo ideal para empresas B2B com ticket médio-alto (R$ 2k-10k):
@@ -324,50 +342,54 @@ O resultado: previsibilidade alta. Você sabe que vai ter X leads de inbound + Y
 ---
 
 <a name="metricas"></a>
+
 ## Métricas Para Acompanhar
 
 Se quiser aprofundar, veja o guia de [métricas de vendas essenciais](/blog/metricas-vendas-essenciais).
 
 ### Para Tráfego Pago
 
-| Métrica | Benchmark Saudável |
-|---------|-------------------|
-| Custo por Lead (CPL) | < 10% do ticket médio |
-| Taxa de Conversão (lead → cliente) | > 5% |
-| ROAS (Return on Ad Spend) | > 3x |
-| Custo por Clique (CPC) | Varia por plataforma |
+| Métrica                            | Benchmark Saudável    |
+| ---------------------------------- | --------------------- |
+| Custo por Lead (CPL)               | < 10% do ticket médio |
+| Taxa de Conversão (lead → cliente) | > 5%                  |
+| ROAS (Return on Ad Spend)          | > 3x                  |
+| Custo por Clique (CPC)             | Varia por plataforma  |
 
 ### Para Prospecção Ativa
 
-| Métrica | Benchmark Saudável |
-|---------|-------------------|
-| Taxa de Resposta | > 15% |
-| Taxa de Agendamento | > 5% |
-| Taxa de Conversão (reunião → cliente) | > 20% |
-| Abordagens por semana | 20-50 |
+| Métrica                               | Benchmark Saudável |
+| ------------------------------------- | ------------------ |
+| Taxa de Resposta                      | > 15%              |
+| Taxa de Agendamento                   | > 5%               |
+| Taxa de Conversão (reunião → cliente) | > 20%              |
+| Abordagens por semana                 | 20-50              |
 
 ### Para Modelo Híbrido
 
-| Métrica | Benchmark Saudável |
-|---------|-------------------|
-| CAC total | < 20% do LTV |
-| Mix de leads (inbound/outbound) | 60/40 a 80/20 |
-| Tempo médio de conversão | Varia por ticket |
+| Métrica                         | Benchmark Saudável |
+| ------------------------------- | ------------------ |
+| CAC total                       | < 20% do LTV       |
+| Mix de leads (inbound/outbound) | 60/40 a 80/20      |
+| Tempo médio de conversão        | Varia por ticket   |
 
 ---
 
 <a name="como-comecar"></a>
+
 ## Como Começar Hoje
 
 ### Se Você Vai Começar Por Prospecção Ativa
 
 **Semana 1: Preparação**
+
 - Defina ICP com critérios objetivos (tamanho, setor, cargo) — use o guia de [ICP cliente ideal](/blog/icp-cliente-ideal-perfil)
 - Crie lista de 100 empresas que se encaixam
 - Prepare template de abordagem personalizado
 - Configure CRM básico (pode ser gratuito) — veja [CRM gratuito vs profissional](/blog/crm-gratuito-vs-profissional)
 
 **Semana 2-4: Execução**
+
 - Aborde 20 empresas/semana (mínimo)
 - Registre TUDO no CRM
 - Ajuste mensagem com base no feedback
@@ -378,12 +400,14 @@ Se quiser aprofundar, veja o guia de [métricas de vendas essenciais](/blog/metr
 ### Se Você Vai Começar Por Tráfego Pago
 
 **Semana 1: Preparação**
+
 - Configure CRM para receber leads (veja [CRM gratuito vs profissional](/blog/crm-gratuito-vs-profissional))
 - Crie landing page com oferta clara
 - Defina orçamento inicial (mínimo R$ 50/dia)
 - Prepare processo de follow-up
 
 **Semana 2-4: Execução**
+
 - Comece com 1 campanha simples
 - Foque em 1 público específico
 - Monitore custo por lead diariamente
@@ -400,6 +424,7 @@ Se quiser aprofundar, veja o guia de [métricas de vendas essenciais](/blog/metr
 ---
 
 <a name="checklist"></a>
+
 ## Checklist de Implementação
 
 ### Para Tráfego Pago

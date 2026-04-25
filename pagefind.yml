@@ -1,0 +1,25 @@
+# Pagefind Configuration
+# https://pagefind.app/docs/config-options/
+
+# Language for search indexing
+language: "pt"
+
+# Content extraction
+root_selector: "html"
+exclude_selectors: 
+  - "header"
+  - "footer"
+  - "nav"
+  - ".mobile-menu"
+  - "[data-pagefind-ignore]"
+
+# Index the body attribute for categories
+indexing:
+  bundle_directory: "_pagefind"
+  force_language: "pt"
+  
+# Excerpt settings
+excerpt_length: 200
+
+# Performance
+keep_index_url: false

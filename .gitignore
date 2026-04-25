@@ -16,6 +16,9 @@ dist/
 .next/
 out/
 
+# Next typescript ambient — regenerado a cada build
+next-env.d.ts
+
 # Environment variables
 .env
 .env.local

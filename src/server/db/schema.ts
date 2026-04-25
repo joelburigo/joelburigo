@@ -11,6 +11,7 @@
  *   7. Blog
  *   8. Forms
  *   9. Admin audit
+ *  10. CRM interno (teams, contacts, pipelines, stages, opportunities, activities)
  *
  * Sprint 0 habilita todas as tabelas pra drizzle-kit gerar as migrations.
  * Sprint 1 conecta os serviços que efetivamente persistem.
@@ -29,6 +30,7 @@ import {
   uniqueIndex,
   index,
 } from 'drizzle-orm/pg-core';
+import { sql } from 'drizzle-orm';
 
 // ============ 1. USERS & AUTH ============
 
@@ -634,6 +636,231 @@ export const admin_audit = pgTable('admin_audit', {
   created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
 });
 
+// ============ 10. CRM INTERNO ============
+//
+// Schema completo desde Sprint 1. UI (Kanban, dashboards) em Sprint 5+.
+// Auto-criação no Sprint 1: form_submissions/diagnostico/purchases criam
+// contacts + activities + opportunities automaticamente.
+//
+// Multi-team ready (`teams` + `team_members`) — Joel é admin único hoje,
+// mas estrutura suporta colaboradores futuros sem refactor.
+
+export const teams = pgTable('teams', {
+  id: text('id').primaryKey(),
+  name: text('name').notNull(),
+  slug: text('slug').notNull().unique(),
+  created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+});
+
+export const team_members = pgTable(
+  'team_members',
+  {
+    team_id: text('team_id')
+      .notNull()
+      .references(() => teams.id, { onDelete: 'cascade' }),
+    user_id: text('user_id')
+      .notNull()
+      .references(() => users.id, { onDelete: 'cascade' }),
+    role: text('role').notNull().default('member'), // admin · member
+    joined_at: timestamp('joined_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    pk: primaryKey({ columns: [t.team_id, t.user_id] }),
+    userIdx: index('idx_team_members_user').on(t.user_id),
+  })
+);
+
+export const companies = pgTable(
+  'companies',
+  {
+    id: text('id').primaryKey(),
+    team_id: text('team_id')
+      .notNull()
+      .references(() => teams.id, { onDelete: 'cascade' }),
+    name: text('name').notNull(),
+    segmento: text('segmento'),
+    porte: text('porte'), // micro · pequena · media · grande
+    faturamento_aprox_cents: bigint('faturamento_aprox_cents', { mode: 'bigint' }),
+    website: text('website'),
+    cnpj: text('cnpj'),
+    notes_md: text('notes_md'),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+    updated_at: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    teamIdx: index('idx_companies_team').on(t.team_id),
+    nameIdx: index('idx_companies_name').on(t.name),
+  })
+);
+
+export const contacts = pgTable(
+  'contacts',
+  {
+    id: text('id').primaryKey(),
+    team_id: text('team_id')
+      .notNull()
+      .references(() => teams.id, { onDelete: 'cascade' }),
+    user_id: text('user_id').references(() => users.id), // null se ainda não virou user (lead)
+    company_id: text('company_id').references(() => companies.id),
+    owner_id: text('owner_id').references(() => users.id), // quem cuida (Joel)
+
+    name: text('name').notNull(),
+    email: text('email'),
+    whatsapp: text('whatsapp'),
+    phone: text('phone'),
+    cargo: text('cargo'),
+
+    // Lifecycle simples (não HubSpot-style)
+    lifecycle_stage: text('lifecycle_stage').notNull().default('lead'), // lead · cliente · ex_cliente
+    source: text('source'), // form_diagnostico · form_contato · form_advisory · purchase · manual · import
+    produto_interesse: text('produto_interesse'), // vss · advisory · ambos
+    tags: jsonb('tags').notNull().default([]),
+
+    notes_md: text('notes_md'),
+    first_touch_at: timestamp('first_touch_at', { withTimezone: true }).notNull().defaultNow(),
+    last_touch_at: timestamp('last_touch_at', { withTimezone: true }).notNull().defaultNow(),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+    updated_at: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    teamIdx: index('idx_contacts_team').on(t.team_id),
+    emailIdx: index('idx_contacts_email').on(t.email),
+    whatsappIdx: index('idx_contacts_whatsapp').on(t.whatsapp),
+    lifecycleIdx: index('idx_contacts_lifecycle').on(t.lifecycle_stage),
+    ownerIdx: index('idx_contacts_owner').on(t.owner_id),
+    companyIdx: index('idx_contacts_company').on(t.company_id),
+    // Email único por team (evita duplicado mas permite mesmo email em teams diferentes futuro)
+    teamEmailUnique: uniqueIndex('uniq_contacts_team_email')
+      .on(t.team_id, t.email)
+      .where(sql`${t.email} IS NOT NULL`),
+  })
+);
+
+export const pipelines = pgTable(
+  'pipelines',
+  {
+    id: text('id').primaryKey(),
+    team_id: text('team_id')
+      .notNull()
+      .references(() => teams.id, { onDelete: 'cascade' }),
+    name: text('name').notNull(),
+    slug: text('slug').notNull(), // ex: vss · advisory
+    is_default: boolean('is_default').notNull().default(false),
+    position: integer('position').notNull().default(0),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    teamSlugUnique: uniqueIndex('uniq_pipelines_team_slug').on(t.team_id, t.slug),
+  })
+);
+
+export const stages = pgTable(
+  'stages',
+  {
+    id: text('id').primaryKey(),
+    pipeline_id: text('pipeline_id')
+      .notNull()
+      .references(() => pipelines.id, { onDelete: 'cascade' }),
+    name: text('name').notNull(),
+    slug: text('slug').notNull(),
+    position: integer('position').notNull(),
+    kind: text('kind').notNull().default('open'), // open · won · lost
+    color: text('color'), // hex pra Kanban (ex: #C6FF00)
+    probability: integer('probability'), // 0-100, % default de fechamento nessa stage
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    pipelineIdx: index('idx_stages_pipeline').on(t.pipeline_id, t.position),
+    pipelineSlugUnique: uniqueIndex('uniq_stages_pipeline_slug').on(t.pipeline_id, t.slug),
+  })
+);
+
+export const opportunities = pgTable(
+  'opportunities',
+  {
+    id: text('id').primaryKey(),
+    team_id: text('team_id')
+      .notNull()
+      .references(() => teams.id, { onDelete: 'cascade' }),
+    contact_id: text('contact_id')
+      .notNull()
+      .references(() => contacts.id, { onDelete: 'cascade' }),
+    pipeline_id: text('pipeline_id')
+      .notNull()
+      .references(() => pipelines.id),
+    stage_id: text('stage_id')
+      .notNull()
+      .references(() => stages.id),
+    product_id: text('product_id').references(() => products.id), // qual produto VSS/Advisory
+    owner_id: text('owner_id').references(() => users.id),
+
+    title: text('title').notNull(),
+    value_cents: bigint('value_cents', { mode: 'bigint' }),
+    currency: text('currency').notNull().default('BRL'),
+    status: text('status').notNull().default('open'), // open · won · lost
+
+    // Pra Kanban: ordenação dentro da stage (decimal pra reorder fácil)
+    kanban_position: numeric('kanban_position', { precision: 20, scale: 10 })
+      .notNull()
+      .default('0'),
+
+    expected_close_at: timestamp('expected_close_at', { withTimezone: true }),
+    actual_close_at: timestamp('actual_close_at', { withTimezone: true }),
+    lost_reason: text('lost_reason'),
+
+    // Link com compra real quando ganhar (não-circular: purchase NÃO referencia opportunity)
+    purchase_id: text('purchase_id').references(() => purchases.id),
+
+    notes_md: text('notes_md'),
+    metadata: jsonb('metadata').notNull().default({}),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+    updated_at: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    teamIdx: index('idx_opportunities_team').on(t.team_id),
+    contactIdx: index('idx_opportunities_contact').on(t.contact_id),
+    stageKanbanIdx: index('idx_opportunities_stage_kanban').on(t.stage_id, t.kanban_position),
+    statusIdx: index('idx_opportunities_status').on(t.status),
+    ownerIdx: index('idx_opportunities_owner').on(t.owner_id),
+  })
+);
+
+export const activities = pgTable(
+  'activities',
+  {
+    id: text('id').primaryKey(),
+    team_id: text('team_id')
+      .notNull()
+      .references(() => teams.id, { onDelete: 'cascade' }),
+    contact_id: text('contact_id').references(() => contacts.id, { onDelete: 'cascade' }),
+    opportunity_id: text('opportunity_id').references(() => opportunities.id, {
+      onDelete: 'set null',
+    }),
+    owner_id: text('owner_id').references(() => users.id),
+
+    type: text('type').notNull(), // note · task · call · email · whatsapp · meeting · form · payment · system
+    direction: text('direction'), // inbound · outbound · internal (null pra type=note/task)
+    subject: text('subject'),
+    body_md: text('body_md'),
+
+    // Tasks: scheduled_for + completed_at
+    scheduled_for: timestamp('scheduled_for', { withTimezone: true }),
+    completed_at: timestamp('completed_at', { withTimezone: true }),
+
+    // Vincula a entidades de origem (form_submission, diagnostico, payment, magic_link, etc)
+    metadata: jsonb('metadata').notNull().default({}),
+
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    teamIdx: index('idx_activities_team').on(t.team_id),
+    contactIdx: index('idx_activities_contact').on(t.contact_id, t.created_at),
+    opportunityIdx: index('idx_activities_opportunity').on(t.opportunity_id, t.created_at),
+    typeIdx: index('idx_activities_type').on(t.type),
+    pendingTasksIdx: index('idx_activities_pending_tasks').on(t.owner_id, t.scheduled_for),
+  })
+);
+
 // ============ TYPE EXPORTS ============
 
 export type User = typeof users.$inferSelect;
@@ -647,3 +874,20 @@ export type NewBlogPost = typeof blog_posts.$inferInsert;
 export type BlogTag = typeof blog_tags.$inferSelect;
 export type DiagnosticoSubmission = typeof diagnostico_submissions.$inferSelect;
 export type NewDiagnosticoSubmission = typeof diagnostico_submissions.$inferInsert;
+
+// CRM
+export type Team = typeof teams.$inferSelect;
+export type NewTeam = typeof teams.$inferInsert;
+export type TeamMember = typeof team_members.$inferSelect;
+export type Company = typeof companies.$inferSelect;
+export type NewCompany = typeof companies.$inferInsert;
+export type Contact = typeof contacts.$inferSelect;
+export type NewContact = typeof contacts.$inferInsert;
+export type Pipeline = typeof pipelines.$inferSelect;
+export type NewPipeline = typeof pipelines.$inferInsert;
+export type Stage = typeof stages.$inferSelect;
+export type NewStage = typeof stages.$inferInsert;
+export type Opportunity = typeof opportunities.$inferSelect;
+export type NewOpportunity = typeof opportunities.$inferInsert;
+export type Activity = typeof activities.$inferSelect;
+export type NewActivity = typeof activities.$inferInsert;

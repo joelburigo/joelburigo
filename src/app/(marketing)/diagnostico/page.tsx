@@ -1,22 +1,27 @@
 import type { Metadata } from 'next';
-import { DevStub } from '@/components/patterns/dev-stub';
+import { DiagnosticoPage } from '@/components/sections/diagnostico-page';
 
 export const metadata: Metadata = {
-  title: 'Diagnóstico de Vendas — 7 minutos, resultado imediato',
+  title: 'Diagnóstico 6Ps Gratuito - Checklist de Vendas | Joel Burigo',
   description:
-    'Responda 12 perguntas sobre os 6Ps da sua empresa. Receba um snapshot dos maiores gargalos e o caminho pra destravar.',
+    'Baixe gratuitamente o checklist dos 6Ps e descubra qual está travando o crescimento das suas vendas. Diagnóstico completo em 10 minutos.',
+  keywords: [
+    'diagnóstico vendas',
+    'checklist vendas',
+    'avaliação vendas',
+    'framework 6Ps',
+    'auditoria vendas',
+  ],
   alternates: { canonical: '/diagnostico' },
 };
 
-export default function DiagnosticoPage() {
+export default function DiagnosticoRoute() {
   return (
-    <DevStub
-      sprint={0}
-      route="/diagnostico"
-      title="Diagnóstico 6Ps"
-      description="Próximo passo do Sprint 0 (port byte-fiel): trazer DiagnosticoPage.astro original (98 linhas) + form HighLevel completo. Conteúdo intacto do Astro de produção."
-      backHref="/"
-      backLabel="Voltar pra home"
+    <DiagnosticoPage
+      breadcrumbItems={[
+        { label: 'Home', href: '/' },
+        { label: 'Diagnóstico', href: '/diagnostico' },
+      ]}
     />
   );
 }

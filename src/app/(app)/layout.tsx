@@ -14,7 +14,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
       <header className="sticky top-0 z-50 border-b border-[var(--jb-hair)] bg-ink/95 backdrop-blur-md">
         <div className="mx-auto flex max-w-[var(--jb-container-max)] items-center justify-between px-5 py-4 md:px-10">
           <Link href="/area" aria-label="Minha área">
-            <Logo asLink={false} />
+            <Logo size="md" />
           </Link>
           <nav className="flex items-center gap-6">
             <Link

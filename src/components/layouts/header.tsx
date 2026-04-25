@@ -50,7 +50,7 @@ export function Header({ transparent = false, showStatusBar = true }: HeaderProp
       <Container>
         <div className="relative flex items-center justify-between py-4 md:py-5">
           <Link href="/" aria-label="Joel Burigo · Home" className="z-50 shrink-0">
-            <Logo asLink={false} />
+            <Logo size="lg" />
           </Link>
 
           <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 md:flex">

@@ -31,7 +31,7 @@ export function MobileMenu({ navLinks, secondaryLinks }: MobileMenuProps) {
       >
         <SheetTitle className="sr-only">Menu de navegação</SheetTitle>
         <div className="flex flex-col gap-8 pt-4">
-          <Logo />
+          <Logo size="lg" asLink />
           <nav className="flex flex-col gap-5">
             {navLinks.map((link) => (
               <Link

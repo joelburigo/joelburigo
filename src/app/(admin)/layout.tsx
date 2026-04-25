@@ -13,7 +13,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
         <div className="mx-auto flex max-w-[var(--jb-container-max)] items-center justify-between px-5 py-4 md:px-10">
           <div className="flex items-center gap-4">
             <Link href="/admin" aria-label="Admin">
-              <Logo asLink={false} />
+              <Logo size="md" />
             </Link>
             <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-fire">
               // ADMIN

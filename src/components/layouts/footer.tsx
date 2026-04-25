@@ -24,7 +24,7 @@ export function Footer() {
           {/* Col 1 — Marca */}
           <div className="lg:pr-6">
             <Link href="/" className="inline-block" aria-label="Joel Burigo · Home">
-              <Logo asLink={false} />
+              <Logo size="lg" />
             </Link>
             <p className="mt-7 font-display text-xl uppercase leading-[0.95] tracking-[-0.03em] text-cream">
               Sistema <span className="text-fire">&gt;</span> Improviso

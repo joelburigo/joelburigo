@@ -11,6 +11,9 @@ import {
   logActivity,
 } from '@/server/services/crm';
 import { sendEmail } from '@/server/services/email';
+import { formDiagnosticoConfirmation } from '@/server/services/email-templates';
+import { rateLimit, pickIp } from '@/server/lib/rate-limit';
+import { verifyTurnstile } from '@/server/services/turnstile';
 import { env } from '@/env';
 
 const score04 = z.number().int().min(0).max(4);
@@ -31,6 +34,7 @@ const bodySchema = z.object({
     pessoas: score04,
   }),
   raw_answers: z.record(z.unknown()).default({}),
+  cf_turnstile_token: z.string().optional().nullable(),
 });
 
 type DiagnosticoBody = z.infer<typeof bodySchema>;
@@ -70,21 +74,6 @@ async function forwardToN8n(submissionId: string, payload: unknown): Promise<voi
   }
 }
 
-function confirmHtml(nome: string, total: number, nivel: string, resultadoUrl: string): string {
-  return `<!doctype html><html lang="pt-BR"><body style="margin:0;padding:32px;background:#050505;color:#f5f5f5;font-family:Archivo,Arial,sans-serif;">
-  <div style="max-width:560px;margin:0 auto;background:#0a0a0a;border:1px solid #1a1a1a;padding:32px;">
-    <h1 style="font-family:'Archivo Black',Arial,sans-serif;font-size:22px;text-transform:uppercase;color:#FF3B0F;margin:0 0 12px;">Diagnóstico 6Ps · ${nivel}</h1>
-    <p style="font-size:15px;line-height:1.6;color:#d4d4d4;margin:0 0 8px;">Olá ${nome.split(' ')[0]}, seu score: <strong style="color:#C6FF00;">${total}/24</strong>.</p>
-    <p style="font-size:15px;line-height:1.6;color:#d4d4d4;margin:0 0 24px;">Veja a leitura completa por P:</p>
-    <p style="margin:0 0 24px;">
-      <a href="${resultadoUrl}" style="display:inline-block;background:#FF3B0F;color:#050505;font-family:'Archivo Black',Arial,sans-serif;text-transform:uppercase;letter-spacing:0.05em;font-size:14px;padding:14px 24px;text-decoration:none;border:2px solid #050505;box-shadow:4px 4px 0 #C6FF00;">
-        Ver resultado completo
-      </a>
-    </p>
-    <p style="font-size:12px;color:#525252;margin:24px 0 0;">— Joel</p>
-  </div></body></html>`;
-}
-
 export async function POST(req: NextRequest) {
   let json: unknown;
   try {
@@ -101,6 +90,28 @@ export async function POST(req: NextRequest) {
     );
   }
   const data: DiagnosticoBody = parsed.data;
+  const ip = pickIp(req.headers);
+
+  // Turnstile (dev: bypass)
+  const ts = await verifyTurnstile(data.cf_turnstile_token, ip);
+  if (!ts.valid) {
+    return NextResponse.json({ error: 'turnstile_invalid' }, { status: 403 });
+  }
+
+  // Rate limit: 5/24h por IP+email
+  const emailNorm = data.email.trim().toLowerCase();
+  const rl = await rateLimit({
+    key: `rl:diagnostico:${ip}:${emailNorm}`,
+    max: 5,
+    windowSeconds: 24 * 60 * 60,
+  });
+  if (!rl.ok) {
+    const retryAfter = Math.max(1, Math.ceil((rl.resetAt.getTime() - Date.now()) / 1000));
+    return NextResponse.json(
+      { error: 'rate_limited', retry_after: retryAfter },
+      { status: 429, headers: { 'retry-after': String(retryAfter) } }
+    );
+  }
 
   try {
     const s = data.scores;
@@ -167,15 +178,24 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    void forwardToN8n(submissionId, { ...data, score_total: total, nivel_maturidade: nivel });
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { cf_turnstile_token: _t, ...forwardData } = data;
+    void forwardToN8n(submissionId, { ...forwardData, score_total: total, nivel_maturidade: nivel });
 
-    const resultadoUrl = `${env.PUBLIC_SITE_URL}/diagnostico/resultado?id=${encodeURIComponent(submissionId)}`;
+    const resultadoUrl = `${env.PUBLIC_SITE_URL}/diagnostico-resultado?id=${encodeURIComponent(submissionId)}`;
     void (async () => {
+      const tpl = formDiagnosticoConfirmation({
+        name: data.nome,
+        nivel,
+        total,
+        resultadoUrl,
+      });
       const result = await sendEmail({
         to: data.email,
         toName: data.nome,
-        subject: `Seu diagnóstico 6Ps · ${nivel} (${total}/24)`,
-        html: confirmHtml(data.nome, total, nivel, resultadoUrl),
+        subject: tpl.subject,
+        html: tpl.html,
+        text: tpl.text,
       });
       if (result.ok && !result.skipped) {
         await db

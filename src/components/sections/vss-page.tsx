@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Container } from '@/components/patterns/container';
 import { Breadcrumbs, type BreadcrumbItem } from '@/components/seo/breadcrumbs';
+import { CheckoutButton } from '@/components/features/payments/checkout-button';
 
 interface VssPageProps {
   breadcrumbItems?: BreadcrumbItem[];
@@ -210,13 +211,12 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                       empilhada <span className="text-fg-muted line-through">R$ 17.287</span>
                     </div>
                   </div>
-                  <Link
-                    href="#checkout"
-                    className="btn-primary"
-                    style={{ fontSize: '1rem', padding: '1.25rem 2rem', minHeight: '48px' }}
-                  >
-                    Comprar agora →
-                  </Link>
+                  <CheckoutButton
+                    productSlug="vss"
+                    label="QUERO O VSS · R$ 1.997"
+                    variant="fire"
+                    size="lg"
+                  />
                 </div>
               </div>
 
@@ -840,9 +840,12 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
               data do calendário. Bora pra cima.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Link href="#checkout" className="btn-primary">
-                Entrar no VSS agora →
-              </Link>
+              <CheckoutButton
+                productSlug="vss"
+                label="ENTRAR NO VSS AGORA →"
+                variant="fire"
+                size="lg"
+              />
               <Link href="/diagnostico" className="btn-secondary">
                 Diagnóstico 6Ps grátis
               </Link>

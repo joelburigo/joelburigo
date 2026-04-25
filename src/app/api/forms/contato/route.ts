@@ -10,6 +10,9 @@ import {
   logActivity,
 } from '@/server/services/crm';
 import { sendEmail } from '@/server/services/email';
+import { formContatoConfirmation } from '@/server/services/email-templates';
+import { rateLimit, pickIp } from '@/server/lib/rate-limit';
+import { verifyTurnstile } from '@/server/services/turnstile';
 import { env } from '@/env';
 
 const bodySchema = z.object({
@@ -19,6 +22,7 @@ const bodySchema = z.object({
   empresa: z.string().max(200).optional().nullable(),
   mensagem: z.string().min(1).max(5000),
   origem: z.string().max(100).optional().nullable(),
+  cf_turnstile_token: z.string().optional().nullable(),
 });
 
 type ContatoBody = z.infer<typeof bodySchema>;
@@ -29,7 +33,10 @@ function clientIp(req: NextRequest): string | null {
   return req.headers.get('x-real-ip');
 }
 
-async function forwardToN8n(submissionId: string, payload: ContatoBody): Promise<void> {
+async function forwardToN8n(
+  submissionId: string,
+  payload: Omit<ContatoBody, 'cf_turnstile_token'>
+): Promise<void> {
   if (!env.N8N_WEBHOOK_URL) return;
   try {
     const res = await fetch(env.N8N_WEBHOOK_URL, {
@@ -50,15 +57,6 @@ async function forwardToN8n(submissionId: string, payload: ContatoBody): Promise
   }
 }
 
-function confirmHtml(nome: string): string {
-  return `<!doctype html><html lang="pt-BR"><body style="margin:0;padding:32px;background:#050505;color:#f5f5f5;font-family:Archivo,Arial,sans-serif;">
-  <div style="max-width:520px;margin:0 auto;background:#0a0a0a;border:1px solid #1a1a1a;padding:32px;">
-    <h1 style="font-family:'Archivo Black',Arial,sans-serif;font-size:20px;text-transform:uppercase;color:#FF3B0F;margin:0 0 16px;">Recebi sua mensagem, ${nome.split(' ')[0]}</h1>
-    <p style="font-size:15px;line-height:1.6;color:#d4d4d4;margin:0 0 16px;">Vou responder pessoalmente em até 1 dia útil.</p>
-    <p style="font-size:13px;color:#737373;margin:24px 0 0;">— Joel</p>
-  </div></body></html>`;
-}
-
 export async function POST(req: NextRequest) {
   let json: unknown;
   try {
@@ -75,13 +73,38 @@ export async function POST(req: NextRequest) {
     );
   }
   const data = parsed.data;
+  const ip = pickIp(req.headers);
+
+  // Turnstile (dev: bypass automático)
+  const ts = await verifyTurnstile(data.cf_turnstile_token, ip);
+  if (!ts.valid) {
+    return NextResponse.json({ error: 'turnstile_invalid' }, { status: 403 });
+  }
+
+  // Rate limit: 3/15min por IP+email
+  const emailNorm = data.email.trim().toLowerCase();
+  const rl = await rateLimit({
+    key: `rl:contato:${ip}:${emailNorm}`,
+    max: 3,
+    windowSeconds: 15 * 60,
+  });
+  if (!rl.ok) {
+    const retryAfter = Math.max(1, Math.ceil((rl.resetAt.getTime() - Date.now()) / 1000));
+    return NextResponse.json(
+      { error: 'rate_limited', retry_after: retryAfter },
+      { status: 429, headers: { 'retry-after': String(retryAfter) } }
+    );
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { cf_turnstile_token: _t, ...persistData } = data;
 
   try {
     const submissionId = ulid();
     await db.insert(form_submissions).values({
       id: submissionId,
       type: 'contato',
-      data,
+      data: persistData,
       email: data.email.trim().toLowerCase(),
       ip: clientIp(req),
       user_agent: req.headers.get('user-agent'),
@@ -110,13 +133,15 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    void forwardToN8n(submissionId, data);
+    void forwardToN8n(submissionId, persistData);
 
+    const tpl = formContatoConfirmation({ name: data.nome });
     void sendEmail({
       to: data.email,
       toName: data.nome,
-      subject: 'Recebi sua mensagem · Joel Burigo',
-      html: confirmHtml(data.nome),
+      subject: tpl.subject,
+      html: tpl.html,
+      text: tpl.text,
     });
 
     return NextResponse.json({ ok: true, id: submissionId });

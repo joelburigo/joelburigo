@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from 'next';
+import Script from 'next/script';
+import { Toaster } from 'sonner';
 import { fontsClassName } from '@/lib/fonts';
 import { SITE } from '@/lib/constants';
+import { serializePublicEnv, PUBLIC_ENV_WINDOW_KEY } from '@/lib/public-env';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -51,9 +54,29 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const publicEnvJson = serializePublicEnv();
   return (
     <html lang={SITE.language} className={fontsClassName}>
-      <body className="bg-ink text-cream antialiased">{children}</body>
+      <body className="bg-ink text-cream antialiased">
+        <Script id="__jb_env" strategy="beforeInteractive">
+          {`window.${PUBLIC_ENV_WINDOW_KEY}=${publicEnvJson};`}
+        </Script>
+        {children}
+        <Toaster
+          theme="dark"
+          richColors
+          position="top-center"
+          toastOptions={{
+            style: {
+              background: 'var(--jb-ink-2)',
+              color: 'var(--jb-cream)',
+              border: '1px solid var(--jb-acid-border)',
+              borderRadius: 0,
+              fontFamily: 'var(--font-archivo, Archivo, sans-serif)',
+            },
+          }}
+        />
+      </body>
     </html>
   );
 }

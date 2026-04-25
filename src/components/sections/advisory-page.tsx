@@ -1,14 +1,34 @@
 import { Container } from '@/components/patterns/container';
 import { Breadcrumbs, type BreadcrumbItem } from '@/components/seo/breadcrumbs';
+import {
+  CheckoutButton,
+  type CheckoutProductSlug,
+} from '@/components/features/payments/checkout-button';
 
 interface AdvisoryPageProps {
   breadcrumbItems?: BreadcrumbItem[];
 }
 
-const formatos = [
+const formatos: Array<{
+  nome: string;
+  investimento: string;
+  cadencia: string;
+  cadenciaPrefixo?: string;
+  duracao: string;
+  entrega: string;
+  paraQuem: string;
+  inclusos: string[];
+  usos: string[];
+  destaque?: boolean;
+  precoEspecial?: string;
+  slug: CheckoutProductSlug;
+  ctaLabel: string;
+}> = [
   {
     nome: 'Sessão Estratégica',
     investimento: 'R$ 997',
+    slug: 'advisory-sessao',
+    ctaLabel: 'AGENDAR SESSÃO · R$ 997',
     cadencia: '/sessão · 90 min',
     duracao: '90 minutos',
     entrega: 'Relatório executivo 2–3 pgs',
@@ -29,6 +49,8 @@ const formatos = [
   {
     nome: 'Sprint Estratégico',
     investimento: 'R$ 7.500',
+    slug: 'advisory-sprint',
+    ctaLabel: 'CONTRATAR SPRINT · R$ 7.500',
     cadencia: 'pagamento único · 30 dias',
     duracao: '4 sessões · 30 dias',
     entrega: 'Documento estratégico final 20–40 pgs',
@@ -50,6 +72,8 @@ const formatos = [
   {
     nome: 'Conselho Executivo',
     investimento: 'R$ 15.000',
+    slug: 'advisory-conselho',
+    ctaLabel: 'ASSINAR CONSELHO · R$ 15K/MÊS',
     cadenciaPrefixo: 'a partir de',
     cadencia: '/mês · mín. 3 meses',
     duracao: '3–6 meses',
@@ -468,13 +492,15 @@ export function AdvisoryPage({ breadcrumbItems }: AdvisoryPageProps) {
                     )}
                   </div>
 
-                  <a
-                    href="mailto:joel@joelburigo.com.br?subject=Advisory%20%C2%B7%20"
-                    className={`mt-auto ${f.destaque ? 'btn-primary' : 'btn-secondary'}`}
-                    style={{ width: '100%', justifyContent: 'center' }}
-                  >
-                    Solicitar convite →
-                  </a>
+                  <div className="mt-auto" style={{ width: '100%' }}>
+                    <CheckoutButton
+                      productSlug={f.slug}
+                      label={f.ctaLabel}
+                      variant={f.destaque ? 'fire' : 'primary'}
+                      size="default"
+                      className="block w-full [&>button]:w-full"
+                    />
+                  </div>
                 </article>
               );
             })}

@@ -7,6 +7,8 @@ import { users, magic_links, type User } from '@/server/db/schema';
 import { ulid } from '@/server/lib/ulid';
 import { env } from '@/env';
 import { sendEmail } from './email';
+import { magicLink as magicLinkTemplate } from './email-templates';
+import { sendText as sendWhatsapp } from './whatsapp';
 import { SESSION, signSession, verifySession, type SessionPayload } from '@/lib/jwt';
 
 const MAGIC_LINK_TTL_MIN = 15;
@@ -157,36 +159,37 @@ export async function sendMagicLinkEmail(user: User, url: string): Promise<void>
     return;
   }
 
-  const html = `<!doctype html>
-<html lang="pt-BR">
-  <body style="margin:0;padding:32px;background:#050505;color:#f5f5f5;font-family:Archivo,Arial,sans-serif;">
-    <div style="max-width:520px;margin:0 auto;background:#0a0a0a;border:1px solid #1a1a1a;padding:32px;">
-      <h1 style="font-family:'Archivo Black',Arial,sans-serif;font-size:22px;letter-spacing:0.02em;text-transform:uppercase;color:#FF3B0F;margin:0 0 16px;">
-        Seu link de acesso
-      </h1>
-      <p style="font-size:15px;line-height:1.6;color:#d4d4d4;margin:0 0 24px;">
-        Clique no botão abaixo para entrar. O link expira em ${MAGIC_LINK_TTL_MIN} minutos e só funciona uma vez.
-      </p>
-      <p style="margin:0 0 24px;">
-        <a href="${url}" style="display:inline-block;background:#FF3B0F;color:#050505;font-family:'Archivo Black',Arial,sans-serif;text-transform:uppercase;letter-spacing:0.05em;font-size:14px;padding:14px 24px;text-decoration:none;border:2px solid #050505;box-shadow:4px 4px 0 #C6FF00;">
-          Entrar no sistema
-        </a>
-      </p>
-      <p style="font-size:12px;color:#737373;line-height:1.5;margin:0;font-family:'JetBrains Mono',monospace;word-break:break-all;">
-        Ou copie: ${url}
-      </p>
-      <p style="font-size:12px;color:#525252;margin:24px 0 0;">
-        Se você não pediu este link, ignore este email.
-      </p>
-    </div>
-  </body>
-</html>`;
+  const tpl = magicLinkTemplate({ url, name: user.name, ttlMin: MAGIC_LINK_TTL_MIN });
 
   await sendEmail({
     to: user.email,
     toName: user.name ?? undefined,
-    subject: 'Seu link de acesso · Joel Burigo',
-    html,
-    text: `Seu link de acesso (expira em ${MAGIC_LINK_TTL_MIN} minutos):\n\n${url}\n\nSe você não pediu, ignore.`,
+    subject: tpl.subject,
+    html: tpl.html,
+    text: tpl.text,
   });
+}
+
+/**
+ * Disparo paralelo via WhatsApp do magic link.
+ *
+ * NÃO é chamado pelo fluxo atual (`/api/auth/magic-link` continua só email).
+ * Pronto pra Sprint 2+ chamar em paralelo a `sendMagicLinkEmail` quando
+ * `user.whatsapp` existir e EvolutionAPI estiver configurada.
+ *
+ * Fire-and-forget: erro não propaga (whatsapp.sendText já trata).
+ */
+export async function sendMagicLinkWhatsapp(user: User, url: string): Promise<void> {
+  if (!user.whatsapp) return;
+  if (!env.EVOLUTION_API_URL || !env.EVOLUTION_API_KEY) return;
+
+  const message =
+    `Seu link de acesso ao painel do Joel Burigo (expira em ${MAGIC_LINK_TTL_MIN} min, uso único):\n\n${url}\n\n` +
+    `Se você não pediu, ignore esta mensagem.`;
+
+  try {
+    await sendWhatsapp({ to: user.whatsapp, message });
+  } catch (err) {
+    console.error('[auth] sendMagicLinkWhatsapp falhou', err);
+  }
 }

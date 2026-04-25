@@ -19,6 +19,7 @@ import {
   products,
   pipelines,
   stages,
+  entitlements,
 } from './schema';
 import { ulid } from 'ulid';
 
@@ -309,8 +310,56 @@ async function main(): Promise<void> {
     console.log(`[seed]   ✓ pipeline ${p.slug} (${p.stages.length} stages)`);
   }
 
+  // Demo users em dev — botões de quick-login em /entrar dependem desses
+  if (process.env.NODE_ENV !== 'production') {
+    console.log('[seed] demo users (dev)…');
+    const demoVssId = await ensureDemoUser({
+      email: 'demo-vss@joelburigo.dev',
+      name: 'Demo VSS',
+      role: 'user',
+    });
+    const demoEmptyId = await ensureDemoUser({
+      email: 'demo-lead@joelburigo.dev',
+      name: 'Demo Lead',
+      role: 'user',
+    });
+    console.log(`[seed]   ✓ user demo-vss (${demoVssId})`);
+    console.log(`[seed]   ✓ user demo-lead (${demoEmptyId})`);
+
+    // VSS entitlement pro demo-vss
+    const [vssProduct] = await db.select().from(products).where(eq(products.slug, 'vss')).limit(1);
+    if (vssProduct) {
+      const [existing] = await db
+        .select()
+        .from(entitlements)
+        .where(and(eq(entitlements.user_id, demoVssId), eq(entitlements.product_id, vssProduct.id)))
+        .limit(1);
+      if (!existing) {
+        await db.insert(entitlements).values({
+          id: ulid(),
+          user_id: demoVssId,
+          product_id: vssProduct.id,
+          status: 'active',
+        });
+        console.log('[seed]   ✓ entitlement demo-vss → vss');
+      }
+    }
+  }
+
   console.log('✓ seed completo');
   process.exit(0);
+}
+
+async function ensureDemoUser(opts: {
+  email: string;
+  name: string;
+  role: string;
+}): Promise<string> {
+  const [existing] = await db.select().from(users).where(eq(users.email, opts.email)).limit(1);
+  if (existing) return existing.id;
+  const id = ulid();
+  await db.insert(users).values({ id, email: opts.email, name: opts.name, role: opts.role });
+  return id;
 }
 
 main().catch((err) => {

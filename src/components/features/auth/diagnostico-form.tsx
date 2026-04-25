@@ -56,6 +56,7 @@ export function DiagnosticoForm() {
         <span className="kicker">// diagnóstico 6Ps</span>
         <h2 className="heading-2">Conta sobre sua operação</h2>
       </div>
+      {/* TODO: <Turnstile onVerify={setToken} /> + cf_turnstile_token no payload — wizard final do diagnóstico está sendo entregue em paralelo. Plug no último step antes do submit. */}
       <form onSubmit={onSubmit} className="flex flex-col gap-5">
         <div className="flex flex-col gap-2">
           <Label htmlFor="nome">Nome</Label>

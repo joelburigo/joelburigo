@@ -141,9 +141,12 @@ export async function POST(req: Request) {
     });
   } catch (err) {
     console.error('[payments/checkout] error', err);
-    return NextResponse.json(
-      { ok: false, error: err instanceof Error ? err.message : 'internal_error' },
-      { status: 500 }
-    );
+    const detail =
+      err instanceof Error
+        ? err.message
+        : typeof err === 'object' && err !== null
+          ? JSON.stringify(err)
+          : String(err);
+    return NextResponse.json({ ok: false, error: 'internal_error', detail }, { status: 500 });
   }
 }

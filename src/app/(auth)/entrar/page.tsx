@@ -1,18 +1,34 @@
 import type { Metadata } from 'next';
 import { Container } from '@/components/patterns/container';
-import { MagicLinkForm } from '@/components/features/auth/magic-link-form';
+import { EntrarForm } from '@/components/features/auth/entrar-form';
+import { DevLoginButtons } from '@/components/features/auth/dev-login-buttons';
 
 export const metadata: Metadata = {
   title: 'Entrar',
-  description: 'Acesse sua área Joel Burigo via magic link.',
+  description: 'Acesse sua área Joel Burigo via link de acesso enviado por email.',
   robots: { index: false, follow: false },
 };
 
-export default function EntrarPage({ searchParams }: { searchParams: Promise<{ next?: string }> }) {
+interface SearchParams {
+  next?: string;
+  error?: string;
+}
+
+export default async function EntrarPage({
+  searchParams,
+}: {
+  searchParams: Promise<SearchParams>;
+}) {
+  const params = await searchParams;
+  const next = params.next && params.next.startsWith('/') && !params.next.startsWith('//')
+    ? params.next
+    : '/area';
+
   return (
     <section className="section">
-      <Container size="md">
-        <MagicLinkForm searchParamsPromise={searchParams} />
+      <Container size="sm">
+        <EntrarForm next={next} initialError={params.error} />
+        {process.env.NODE_ENV !== 'production' && <DevLoginButtons />}
       </Container>
     </section>
   );

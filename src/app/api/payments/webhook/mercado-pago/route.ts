@@ -21,6 +21,13 @@ import {
 } from '@/server/services/crm';
 import { sendEmail } from '@/server/services/email';
 import {
+  welcomeVss,
+  welcomeAdvisory,
+  type AdvisoryModalidade,
+} from '@/server/services/email-templates';
+import { sendText as sendWhatsapp } from '@/server/services/whatsapp';
+import { env } from '@/env';
+import {
   fetchPaymentDetails,
   mapMpStatus,
   verifyWebhookSignature,
@@ -55,42 +62,24 @@ function pickEntitlementEnd(productAccessKind: string): Date | null {
   }
 }
 
-function welcomeEmailHtml(productName: string, accessKind: string): {
-  subject: string;
-  html: string;
-} {
-  const isAdvisory = accessKind === 'one_time';
-  const subject = isAdvisory
-    ? `Sessão Advisory confirmada · ${productName}`
-    : `Bem-vindo ao ${productName}`;
+function pickAdvisoryModalidade(slug: string): AdvisoryModalidade {
+  if (slug.includes('sprint')) return 'sprint';
+  if (slug.includes('conselho')) return 'conselho';
+  return 'sessao';
+}
 
-  const headline = isAdvisory ? 'Sessão Advisory confirmada' : `Bem-vindo ao ${productName}`;
-  const cta = isAdvisory ? 'Agendar sessão' : 'Acessar área';
-  const ctaPath = isAdvisory ? '/agendamento-sessao' : '/area';
-
-  const html = `<!doctype html>
-<html lang="pt-BR">
-  <body style="margin:0;padding:32px;background:#050505;color:#f5f5f5;font-family:Archivo,Arial,sans-serif;">
-    <div style="max-width:520px;margin:0 auto;background:#0a0a0a;border:1px solid #1a1a1a;padding:32px;">
-      <h1 style="font-family:'Archivo Black',Arial,sans-serif;font-size:24px;letter-spacing:0.02em;text-transform:uppercase;color:#FF3B0F;margin:0 0 16px;">
-        ${headline}
-      </h1>
-      <p style="font-size:15px;line-height:1.6;color:#d4d4d4;margin:0 0 24px;">
-        Pagamento aprovado. Próximo passo abaixo.
-      </p>
-      <p style="margin:0 0 24px;">
-        <a href="https://joelburigo.com.br${ctaPath}" style="display:inline-block;background:#C6FF00;color:#050505;font-family:'Archivo Black',Arial,sans-serif;text-transform:uppercase;letter-spacing:0.05em;font-size:14px;padding:14px 24px;text-decoration:none;border:2px solid #050505;box-shadow:4px 4px 0 #FF3B0F;">
-          ${cta}
-        </a>
-      </p>
-      <p style="font-size:12px;color:#525252;margin:24px 0 0;">
-        Joel Burigo · Vendas Sem Segredos
-      </p>
-    </div>
-  </body>
-</html>`;
-
-  return { subject, html };
+function buildWelcomeEmail(
+  product: Product,
+  name: string | null
+): { subject: string; html: string; text: string } {
+  const baseUrl = env.PUBLIC_SITE_URL;
+  if (product.access_kind === 'lifetime') {
+    return welcomeVss({ name, areaUrl: `${baseUrl}/area` });
+  }
+  const modalidade = pickAdvisoryModalidade(product.slug);
+  const areaUrl =
+    modalidade === 'sessao' ? `${baseUrl}/agendamento-sessao` : `${baseUrl}/area`;
+  return welcomeAdvisory({ name, modalidade, areaUrl });
 }
 
 async function resolveProduct(payload: MpPaymentPayload): Promise<Product | null> {
@@ -306,12 +295,13 @@ async function processApprovedPayment(
   // Welcome email (uma vez só)
   if (!purchase.welcome_sent_at) {
     try {
-      const { subject, html } = welcomeEmailHtml(product.name, product.access_kind);
+      const tpl = buildWelcomeEmail(product, fullPayerName(payload));
       await sendEmail({
         to: email,
         toName: fullPayerName(payload) ?? undefined,
-        subject,
-        html,
+        subject: tpl.subject,
+        html: tpl.html,
+        text: tpl.text,
       });
       await db
         .update(purchases)
@@ -319,6 +309,22 @@ async function processApprovedPayment(
         .where(eq(purchases.id, purchase.id));
     } catch (mailErr) {
       console.error('[payments/webhook] welcome email error', mailErr);
+    }
+
+    // WhatsApp welcome paralelo (fire-and-forget — falha não bloqueia)
+    if (user.whatsapp) {
+      try {
+        const isAdvisory = product.access_kind === 'one_time';
+        const link = isAdvisory
+          ? `${env.PUBLIC_SITE_URL}/agendamento-sessao`
+          : `${env.PUBLIC_SITE_URL}/area`;
+        const waMsg = isAdvisory
+          ? `Sessão Advisory confirmada: ${product.name}. Agende seu horário: ${link}`
+          : `Bem-vindo ao ${product.name}! Acesse a área de membros: ${link}`;
+        await sendWhatsapp({ to: user.whatsapp, message: waMsg });
+      } catch (waErr) {
+        console.error('[payments/webhook] welcome whatsapp error', waErr);
+      }
     }
   }
 

@@ -106,6 +106,11 @@ export async function createCheckoutPreference(
   const fullName = (payer?.name ?? '').trim();
   const [firstName, ...rest] = fullName.split(/\s+/);
 
+  // MP rejeita back_urls/auto_return/notification_url com hosts não-públicos
+  // (localhost, IP, .local). Em dev sem tunnel, omite essas opções — o
+  // checkout ainda funciona, só não auto-redireciona pra páginas próprias.
+  const isPublicHost = /^https?:\/\/(?!localhost|127\.|0\.0\.0\.0|\[?::1\]?)/i.test(site);
+
   const body = {
     items: [
       {
@@ -116,13 +121,17 @@ export async function createCheckoutPreference(
         currency_id: (product.currency || 'BRL') as 'BRL',
       },
     ],
-    back_urls: {
-      success: `${site}/checkout/sucesso?product=${encodeURIComponent(product.slug)}`,
-      failure: `${site}/checkout/erro`,
-      pending: `${site}/checkout/pendente`,
-    },
-    auto_return: 'approved' as const,
-    notification_url: `${site}/api/payments/webhook/mercado-pago`,
+    ...(isPublicHost
+      ? {
+          back_urls: {
+            success: `${site}/checkout/sucesso?product=${encodeURIComponent(product.slug)}`,
+            failure: `${site}/checkout/erro?product=${encodeURIComponent(product.slug)}`,
+            pending: `${site}/checkout/pendente?product=${encodeURIComponent(product.slug)}`,
+          },
+          auto_return: 'approved' as const,
+          notification_url: `${site}/api/payments/webhook/mercado-pago`,
+        }
+      : {}),
     external_reference: product.id,
     statement_descriptor: 'JOELBURIGO',
     metadata: {

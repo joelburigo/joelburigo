@@ -128,6 +128,6 @@ Detalhe completo em `docs/backend/PROPOSAL.md` (v0.5). Sprints:
 - **Sprint 0** ✅ — Migração Astro → Next + design system + Drizzle + Docker (concluído 2026-04-24, ver `SPRINT-0-DELIVERY.md`)
 - **Sprint 1** — Foundation + checkout Mercado Pago + magic link + forms + migração 12 posts blog
 - **Sprint 2** — Onboarding conversacional + área VSS + workspace com agente (`gpt-5.2`)
-- **Sprint 3** — Advisory (3 modalidades, Cal.com embed)
+- **Sprint 3** — Advisory (3 modalidades) + agenda interna unificada (`/admin/agenda`) com sync 2-vias Google Calendar — consolida advisory, mentorias, aulas, activities, eventos externos
 - **Sprint 4** — Mentorias (CF Stream Live Input via OBS) + admin + blog CMS Tiptap
 - **Sprints 5+** — Resto dos 56 destravamentos VSS (incremental)

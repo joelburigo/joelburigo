@@ -78,7 +78,7 @@
 | Pagamento fallback     | **Stripe US** (LLC)                                                                                                            | Cartão internacional, clientes fora do Brasil                                                                      |
 | Email transacional     | **Brevo API** (growth-infra)                                                                                                   | Magic link, welcome, recuperação, notificações                                                                     |
 | Automação externa      | **n8n** (growth-infra)                                                                                                         | Slack, GA, fluxos cruzados, provisionamento Growth CRM                                                             |
-| Agenda Advisory        | **Cal.com** embed (free tier)                                                                                                  | Reserva de sessão 1:1                                                                                              |
+| Agenda interna         | **Sistema próprio** (`/admin/agenda`) com schema `availability_*` + `calendar_events` unificado · sync 2-vias com **Google Calendar** (OAuth) | Único hub do Joel — Advisory, mentorias, aulas, sessões, eventos externos |
 | Monitoring             | **Sentry** (free tier) + logs Docker                                                                                           | Erros + uptime + traces de agente                                                                                  |
 | Styling                | **Tailwind v4** + design tokens `--jb-*` (Terminal Growth)                                                                     | Mesmos tokens do Astro atual, 100% portáveis                                                                       |
 | UI primitives          | **shadcn/ui** customizado pra Terminal Growth                                                                                  | Radius 0, brutalist shadows, fire/acid overrides                                                                   |
@@ -1074,11 +1074,100 @@ Fontes oficiais:
 
 Fechado v0.4: self-service com Mercado Pago (ticket R$ 7.5k parcelável).
 
-### 7.2 Agendamento Advisory
+### 7.2 Agenda interna unificada (✅ decisão 2026-04-25)
 
-- 📌 **Cal.com embed** (free tier resolve). Economiza 1 semana.
-- 🔄 Alternativa: agenda custom com slots próprios.
-- ❓ Confirma Cal.com?
+**Princípio:** zero terceirização de booking. Tudo dentro do sistema, single source of truth pra todos os tipos de evento.
+
+#### Escopo
+Hub único em `/admin/agenda` consolida:
+- **Advisory sessões** — geradas por self-booking pós-compra (`advisory_sessions`)
+- **Mentorias ao vivo** — agendadas pelo Joel (`mentorias`)
+- **Aulas/eventos VSS** — workshops, lives extras, gravações marcadas
+- **Tarefas com data** (`activities` com `scheduled_for` definido)
+- **Eventos externos do Google Calendar** — qualquer compromisso pessoal/biz que o Joel marcou direto no Google (médico, viagem, reunião externa) bloqueia disponibilidade automaticamente
+
+#### Schema novo
+```ts
+// Disponibilidade base
+availability_windows {
+  id, owner_id (FK users — Joel hoje), team_id,
+  weekday (0-6), start_time, end_time, timezone,
+  active, created_at
+}
+
+// Bloqueios/aberturas pontuais
+availability_overrides {
+  id, owner_id, team_id,
+  starts_at, ends_at,
+  kind ('block' | 'extra'),
+  reason, created_at
+}
+
+// Conta Google conectada (multi-team-ready, hoje só Joel)
+calendar_accounts {
+  id, user_id, provider ('google'),
+  external_account_id, email,
+  access_token (encrypted), refresh_token (encrypted),
+  scope, expires_at,
+  sync_token (pra delta sync), webhook_channel_id, webhook_expires_at,
+  status ('active' | 'reauth_required' | 'revoked'),
+  last_sync_at, created_at
+}
+
+// Tabela unificada de eventos
+calendar_events {
+  id (ulid),
+  team_id, owner_id,
+  source ('advisory_session' | 'mentoria' | 'aula' | 'activity' | 'external_google' | 'manual'),
+  source_id (FK polimórfica — id da advisory_sessions/mentorias/etc),
+
+  google_event_id (sync), google_calendar_id, google_etag,
+  sync_status ('synced' | 'pending_push' | 'pending_pull' | 'conflict' | 'local_only'),
+
+  title, description_md,
+  starts_at, ends_at, timezone,
+  meeting_url (Jitsi/Meet/manual), location,
+  visibility ('public' | 'private' | 'confidential'),
+  attendees jsonb (lista normalizada),
+
+  cancelled_at, cancellation_reason,
+  reminder_offsets jsonb (default [1440, 60] minutos antes),
+
+  created_at, updated_at
+}
+
+session_reschedule_requests {
+  id, advisory_session_id, requested_by_user_id,
+  proposed_slots jsonb (até 3 datetimes),
+  status ('pending' | 'accepted' | 'rejected'),
+  resolution_event_id, created_at, resolved_at
+}
+```
+
+`advisory_sessions` e `mentorias` continuam existindo (têm campos próprios — `joel_notes_r2_key`, `cf_live_input_id`, etc). `calendar_events` é a **camada de view** que unifica pra UI da agenda + sync com Google.
+
+#### Sync Google Calendar (2-vias)
+- **OAuth**: Joel conecta a conta uma vez em `/admin/integrations/google` (scopes `calendar.events` + `calendar.readonly`). Refresh token guardado encriptado.
+- **Push (interno → Google)**: criar/editar `calendar_events` dispara `POST events.insert/patch` na agenda primária do Joel. `google_event_id` salvo pra dedup.
+- **Pull (Google → interno)**: webhook push notifications do Google ([Calendar Push](https://developers.google.com/calendar/api/guides/push)) → `/api/calendar/google/webhook` → cria/atualiza `calendar_events` com `source='external_google'`. Esses bloqueiam slots de disponibilidade pro self-booking de clientes.
+- **Fallback poll**: pg-boss cron 5min faz `events.list` com `syncToken` pra delta — caso webhook falhe.
+- **Reautenticação**: se `refresh_token` expirar (uso esporádico), badge no admin pede reconnect.
+- **Conflitos**: edição simultânea local + Google → marca `sync_status='conflict'` + UI no admin pra resolver manual (rar­íssimo).
+
+#### Vídeo da call
+- **Default**: link Jitsi auto-gerado (`https://meet.jit.si/joelburigo-${ulid}`) — zero infra extra, instância pública. Ou subir Jitsi self-hosted no growth-infra (~1 dia, opcional).
+- **Override manual**: Joel pode colar Google Meet/Zoom no `meeting_url` se preferir pra sessão específica.
+
+#### `.ics` em emails
+Gerado inline (15 linhas, sem dep). Anexado em emails de confirmação/lembrete.
+
+#### Time zone
+Detectado client-side via `Intl.DateTimeFormat().resolvedOptions().timeZone`, persistido em `advisory_sessions.cliente_timezone`. UI sempre mostra hora local do cliente.
+
+#### Decisões pendentes (apenas estas — Cal.com encerrado)
+1. **Jitsi público vs self-hosted?** — sugestão: começa público, migra se UX/branding pedirem.
+2. **Conta Google que vai conectar:** `joel@growthmaster.com.br` ou outra?
+3. **`reminder_offsets` defaults:** 24h + 1h ok? Ou só 24h?
 
 ### 7.3 Emissão de Nota Fiscal
 
@@ -1241,17 +1330,36 @@ Fechado v0.4: self-service com Mercado Pago (ticket R$ 7.5k parcelável).
 
 **Entregável:** aluno paga, loga, onboarding 6P, executa destravamentos-âncora com agente, gera artifacts.
 
-### Sprint 3 — Advisory (5-7 dias)
+### Sprint 3 — Advisory + Agenda interna unificada + Google Sync (10-14 dias)
 
-- [ ] Produtos Advisory em MP + Stripe (2 products self-service)
-- [ ] Checkout Sessão avulsa (R$ 997 · self-service)
-- [ ] Checkout Sprint 30d (R$ 7.5k · self-service)
-- [ ] Fluxo Conselho manual (Joel envia link de pagamento personalizado após qualificar + marca `gateway='manual'`)
-- [ ] `/advisory/dashboard` — cliente vê sessões + histórico + artifacts compartilhados
-- [ ] Cal.com embed na agenda
-- [ ] `/sessao/[id]` — detalhes + preparação do cliente + notas do Joel (se compartilhadas)
+**Schema + sync**
+- [ ] Migrations: `availability_windows`, `availability_overrides`, `calendar_accounts`, `calendar_events`, `session_reschedule_requests`
+- [ ] `services/calendar/availability.ts` — calcula slots livres (windows ∖ events ∖ overrides) por owner em range de datas
+- [ ] `services/calendar/google-oauth.ts` — fluxo OAuth + refresh + storage encriptado (use `R2_ACCESS_KEY_ID`-style ou `JWT_SECRET`-derived AES)
+- [ ] `services/calendar/google-sync.ts` — push (insert/patch/delete) + pull (incremental via syncToken)
+- [ ] `/api/calendar/google/connect` + `/api/calendar/google/callback` (OAuth)
+- [ ] `/api/calendar/google/webhook` (push notifications Google)
+- [ ] pg-boss cron `calendar_full_sync` (5min) — fallback poll + renovação webhook (TTL 7d Google)
+- [ ] Helper unificado `upsertCalendarEvent(source, sourceId, payload)` chamado por advisory/mentoria/aula/activity
 
-**Entregável:** Advisory end-to-end.
+**Advisory checkout + booking**
+- [ ] Produtos Advisory já no seed Sprint 1 — só validar
+- [ ] `/sessao/agendar?token=...` — grid de slots (computa availability live), TZ detect client-side, confirm cria `advisory_sessions` + `calendar_events` (source='advisory_session')
+- [ ] Email confirmação com `.ics` inline anexado + link Jitsi auto-gerado
+- [ ] Lembretes 24h/1h via pg-boss cron lendo `calendar_events.reminder_offsets` (Brevo + WhatsApp)
+- [ ] `/sessao/[id]` — detalhes + preparação + notas (se compartilhadas) + botão "remarcar" → `session_reschedule_requests`
+- [ ] `/advisory/dashboard` — sessões próximas + histórico + reschedule requests pendentes
+
+**Admin agenda**
+- [ ] `/admin/agenda` — calendário visual (mês/semana/dia), eventos coloridos por source (advisory=fire, mentoria=acid, aula=cream, externo=cinza). Click abre detalhe.
+- [ ] `/admin/disponibilidade` — UI pra editar `availability_windows` + `availability_overrides`
+- [ ] `/admin/integrations/google` — status conexão + reconnect + revogar
+- [ ] Badge global no header admin se `sync_status='reauth_required'`
+
+**Conselho manual** (mantém Sprint 1)
+- [ ] Fluxo Conselho: Joel envia link MP personalizado após qualificar (`gateway='manual'`)
+
+**Entregável:** Advisory self-service end-to-end + agenda interna que reflete TODOS os compromissos do Joel (internos + Google externo) numa só tela. Cliente nunca agenda em horário ocupado mesmo que o evento ocupado seja só do Google pessoal do Joel.
 
 ### Sprint 4 — Mentorias + Admin + Blog CMS + Polish (8-10 dias)
 
@@ -1301,6 +1409,7 @@ _Append-only. Toda decisão fechada sobe pra cá com data._
 - **2026-04-23** — ✅ Vídeo mentorias: Cloudflare Stream.
 - **2026-04-23** — ✅ Queue: pg-boss (sem Redis).
 - **2026-04-23** — ✅ KV: tabela Postgres via adapter.
+- **2026-04-25** — ✅ Agenda interna unificada (`/admin/agenda`) substitui Cal.com. Schema: `availability_windows`, `availability_overrides`, `calendar_accounts`, `calendar_events`, `session_reschedule_requests`. Sync 2-vias com Google Calendar (OAuth + push notifications + delta sync via syncToken). Eventos consolidados: advisory, mentorias, aulas, activities com data, eventos externos do Google. Vídeo default Jitsi público auto-gerado. Princípio: zero terceirização de booking.
 - **2026-04-23** — ✅ Afiliados: out-of-scope MVP.
 - **2026-04-24** — ✅ Rota canônica VSS: `/vendas-sem-segredos`.
 - **2026-04-24** — ✅ Growth CRM: sistema separado; backend apenas provisiona acesso privado.
@@ -1744,7 +1853,7 @@ Pra Sprint 0 começar, preciso:
 5. ✅ Design system em 5 camadas
 6. ✅ Blog no DB com CMS admin (Tiptap + MD source-of-truth)
 7. ✅ VSS fluxo: onboarding conversacional + workspace com agente + consolidação de fase
-8. ❓ Confirma Cal.com pra Advisory (§7.2)
+8. ✅ Agenda interna unificada com sync Google Calendar (§7.2 — fechado 2026-04-25)
 9. ❓ Confirma NF manual MVP (§7.3)
 10. ❓ Alunos atuais pra importar? (§7.6)
 11. ❓ Admin MVP escopo ok? (§7.8)

@@ -5,7 +5,15 @@ const config = [
   ...nextCoreWebVitals,
   ...nextTypescript,
   {
-    ignores: ['.next/**', 'node_modules/**', 'scripts/**', 'dist/**', 'docs/**', 'public/**'],
+    ignores: [
+      '.next/**',
+      'node_modules/**',
+      'scripts/**',
+      'dist/**',
+      'docs/**',
+      'public/**',
+      '.claude/**',
+    ],
   },
   {
     rules: {

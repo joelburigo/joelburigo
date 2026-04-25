@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Teste 01 — Post Data A (HTML)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../brand/colors_and_type.css" />
+    <style>
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; background: #000; }
+      .post {
+        width: 1080px; height: 1080px;
+        position: relative; overflow: hidden;
+        background: var(--jb-ink); color: var(--jb-cream);
+      }
+      .grid-bg {
+        position: absolute; inset: 0; z-index: 0; opacity: 0.35; pointer-events: none;
+        background-image:
+          linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+        background-size: 80px 80px;
+      }
+      .pad {
+        position: relative; z-index: 2;
+        padding: 80px; height: 100%;
+        display: flex; flex-direction: column; justify-content: space-between;
+      }
+      .sb {
+        display: flex; justify-content: space-between; align-items: center;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 18px; letter-spacing: 0.25em; text-transform: uppercase;
+        color: var(--jb-fg-muted);
+      }
+      .sb .dot {
+        width: 12px; height: 12px; background: var(--jb-acid); border-radius: 50%;
+        box-shadow: 0 0 14px var(--jb-acid);
+        display: inline-block; margin-right: 12px; vertical-align: middle;
+      }
+      .sb b { color: var(--jb-cream); }
+      .row { display: flex; justify-content: space-between; gap: 48px; margin-top: 24px; }
+      .cell { flex: 1; }
+      .lbl {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 22px; letter-spacing: 0.28em; text-transform: uppercase;
+      }
+      .lbl.neg { color: var(--jb-fire); }
+      .lbl.pos { color: var(--jb-acid); }
+      .txt {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 96px; line-height: 0.95;
+        letter-spacing: -0.03em; text-transform: uppercase;
+        margin-top: 20px;
+      }
+      .txt.neg {
+        color: #555; text-decoration: line-through;
+        text-decoration-color: var(--jb-fire);
+        text-decoration-thickness: 8px;
+      }
+      .txt.pos { color: var(--jb-cream); }
+      .delta {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 18px; letter-spacing: 0.22em;
+        margin-top: 14px; text-transform: uppercase;
+      }
+      .delta.neg { color: var(--jb-fire); }
+      .delta.pos { color: var(--jb-acid); }
+      .headline {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 72px; line-height: 0.96;
+        letter-spacing: -0.04em; text-transform: uppercase;
+        margin-top: 56px; color: var(--jb-cream);
+      }
+      .headline .acid { color: var(--jb-acid); }
+      .cta {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 22px; font-weight: 700;
+        letter-spacing: 0.2em; text-transform: uppercase;
+        color: var(--jb-acid);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="post">
+      <div class="grid-bg"></div>
+      <div class="pad">
+        <div class="sb">
+          <span><span class="dot"></span>CASE · 001 · HOLDING DE FRANQUIAS</span>
+          <span>// AUDITED · 24 MESES</span>
+        </div>
+        <div>
+          <div class="row">
+            <div class="cell">
+              <div class="lbl neg">// ANTES</div>
+              <div class="txt neg">R$ 160K<br />/MÊS</div>
+              <div class="delta neg">▼ SEM SISTEMA</div>
+            </div>
+            <div class="cell">
+              <div class="lbl pos">// DEPOIS</div>
+              <div class="txt pos">R$ 1 MI<br />/MÊS</div>
+              <div class="delta pos">▲ +433% · LEADS ×8,33</div>
+            </div>
+          </div>
+          <div class="headline">
+            VSS EM <span class="acid">24 MESES.</span><br />AGORA COM SISTEMA.
+          </div>
+        </div>
+        <div class="cta">▶ DIAGNÓSTICO NO LINK DA BIO →</div>
+      </div>
+    </div>
+  </body>
+</html>

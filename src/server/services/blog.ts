@@ -41,13 +41,20 @@ export async function getPublishedPosts(): Promise<PostWithTags[]> {
 
     return posts.map((p) => ({ ...p, tags: tagsByPost.get(p.id) ?? [] }));
   } catch (err) {
-    // Em dev sem DB rodando, não quebrar a página inteira.
-    if (process.env.NODE_ENV === 'development') {
-      console.warn('[blog] getPublishedPosts failed, retornando []:', err);
+    // Build time ou dev sem DB rodando: degrada graciosamente em vez de quebrar build.
+    if (isBuildOrDev()) {
+      console.warn('[blog] getPublishedPosts failed, retornando []:', (err as Error).message);
       return [];
     }
     throw err;
   }
+}
+
+function isBuildOrDev() {
+  return (
+    process.env.NEXT_PHASE === 'phase-production-build' ||
+    process.env.NODE_ENV !== 'production'
+  );
 }
 
 export async function getPostBySlug(slug: string): Promise<PostWithTags | null> {
@@ -71,8 +78,8 @@ export async function getPostBySlug(slug: string): Promise<PostWithTags | null> 
       tags: tagRows.map((r) => r.tag).filter((t): t is BlogTag => t !== null),
     };
   } catch (err) {
-    if (process.env.NODE_ENV === 'development') {
-      console.warn('[blog] getPostBySlug failed, retornando null:', err);
+    if (isBuildOrDev()) {
+      console.warn('[blog] getPostBySlug failed, retornando null:', (err as Error).message);
       return null;
     }
     throw err;

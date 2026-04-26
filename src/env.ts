@@ -61,6 +61,14 @@ const envSchema = z.object({
   EVOLUTION_API_KEY: optionalString,
   EVOLUTION_INSTANCE: z.string().default('joelburigo'),
 
+  // Google Calendar OAuth — Sprint 3 (sync 2-vias para /admin/agenda)
+  GOOGLE_OAUTH_CLIENT_ID: optionalString,
+  GOOGLE_OAUTH_CLIENT_SECRET: optionalString,
+  GOOGLE_OAUTH_REDIRECT_URI: optionalUrl,
+  GOOGLE_PRIMARY_CALENDAR_ID: z.string().default('primary'),
+  // Token aleatório validado nos push notifications do Google (X-Goog-Channel-Token)
+  GOOGLE_WEBHOOK_TOKEN: optionalString,
+
   // Sessão (mínimo 16 chars quando preenchido)
   JWT_SECRET: z.string().min(16).optional().or(empty),
 

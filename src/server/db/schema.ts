@@ -416,22 +416,44 @@ export const mentoria_presencas = pgTable(
 
 // ============ 6. ADVISORY ============
 
-export const advisory_sessions = pgTable('advisory_sessions', {
-  id: text('id').primaryKey(),
-  user_id: text('user_id')
-    .notNull()
-    .references(() => users.id),
-  product_id: text('product_id')
-    .notNull()
-    .references(() => products.id),
-  scheduled_at: timestamp('scheduled_at', { withTimezone: true }),
-  duration_min: integer('duration_min'),
-  meeting_url: text('meeting_url'),
-  status: text('status').notNull(),
-  joel_notes_r2_key: text('joel_notes_r2_key'),
-  client_preparation_md: text('client_preparation_md'),
-  created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
-});
+export const advisory_sessions = pgTable(
+  'advisory_sessions',
+  {
+    id: text('id').primaryKey(),
+    user_id: text('user_id')
+      .notNull()
+      .references(() => users.id),
+    product_id: text('product_id')
+      .notNull()
+      .references(() => products.id),
+    purchase_id: text('purchase_id').references(() => purchases.id),
+    // Token público pra acessar `/sessao/agendar?token=...` antes de criar conta
+    booking_token: text('booking_token').unique(),
+    booking_token_expires_at: timestamp('booking_token_expires_at', { withTimezone: true }),
+    booked_at: timestamp('booked_at', { withTimezone: true }),
+    scheduled_at: timestamp('scheduled_at', { withTimezone: true }),
+    duration_min: integer('duration_min').notNull().default(90),
+    cliente_timezone: text('cliente_timezone'),
+    meeting_url: text('meeting_url'),
+    // Linka pro hub unificado calendar_events (declared abaixo — referência via string evita ciclo)
+    calendar_event_id: text('calendar_event_id'),
+    ics_uid: text('ics_uid'),
+    status: text('status').notNull().default('pending_booking'), // pending_booking · scheduled · completed · cancelled · no_show
+    joel_notes_r2_key: text('joel_notes_r2_key'),
+    client_preparation_md: text('client_preparation_md'),
+    completed_at: timestamp('completed_at', { withTimezone: true }),
+    cancelled_at: timestamp('cancelled_at', { withTimezone: true }),
+    cancellation_reason: text('cancellation_reason'),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+    updated_at: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    userIdx: index('idx_advisory_sessions_user').on(t.user_id),
+    statusIdx: index('idx_advisory_sessions_status').on(t.status),
+    bookingTokenIdx: index('idx_advisory_sessions_booking_token').on(t.booking_token),
+    scheduledIdx: index('idx_advisory_sessions_scheduled').on(t.scheduled_at),
+  })
+);
 
 export const external_provisioning = pgTable(
   'external_provisioning',
@@ -457,6 +479,168 @@ export const external_provisioning = pgTable(
   (t) => ({
     userIdx: index('idx_external_provisioning_user').on(t.user_id),
     statusIdx: index('idx_external_provisioning_status').on(t.status),
+  })
+);
+
+// ============ 6.5 AGENDA UNIFICADA + GOOGLE CALENDAR (Sprint 3) ============
+//
+// Modelo:
+//  - `availability_windows`: matriz semanal de slots livres do owner (Joel)
+//  - `availability_overrides`: bloqueios/aberturas pontuais (férias, feriado, slot extra)
+//  - `calendar_accounts`: OAuth tokens criptografados (AES via JWT_SECRET-derived key)
+//  - `calendar_events`: hub unificado (advisory + mentoria + aula + activity + external_google + manual)
+//                       cores no /admin/agenda mapeiam por `source`
+//  - `session_reschedule_requests`: cliente propõe até 3 slots, Joel aceita um
+//
+// Sync 2-vias:
+//  - Push (interno → Google): create/update/delete em calendar_events dispara API call
+//  - Pull (Google → interno): webhook `/api/calendar/google/webhook` + cron `calendar_full_sync` 5min
+//                             usa `sync_token` (delta) em fallback ao webhook
+//  - Eventos Google externos (ex: médico, viagem) bloqueiam slots de self-booking
+
+export const availability_windows = pgTable(
+  'availability_windows',
+  {
+    id: text('id').primaryKey(),
+    owner_id: text('owner_id')
+      .notNull()
+      .references(() => users.id, { onDelete: 'cascade' }),
+    team_id: text('team_id').references(() => teams.id, { onDelete: 'cascade' }),
+    weekday: integer('weekday').notNull(), // 0=domingo ... 6=sábado
+    start_time: text('start_time').notNull(), // 'HH:MM' (24h, no TZ do owner)
+    end_time: text('end_time').notNull(),
+    timezone: text('timezone').notNull().default('America/Sao_Paulo'),
+    active: boolean('active').notNull().default(true),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    ownerIdx: index('idx_availability_windows_owner').on(t.owner_id, t.weekday, t.active),
+  })
+);
+
+export const availability_overrides = pgTable(
+  'availability_overrides',
+  {
+    id: text('id').primaryKey(),
+    owner_id: text('owner_id')
+      .notNull()
+      .references(() => users.id, { onDelete: 'cascade' }),
+    team_id: text('team_id').references(() => teams.id, { onDelete: 'cascade' }),
+    starts_at: timestamp('starts_at', { withTimezone: true }).notNull(),
+    ends_at: timestamp('ends_at', { withTimezone: true }).notNull(),
+    kind: text('kind').notNull(), // 'block' | 'extra'
+    reason: text('reason'),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    ownerIdx: index('idx_availability_overrides_owner').on(t.owner_id, t.starts_at),
+  })
+);
+
+export const calendar_accounts = pgTable(
+  'calendar_accounts',
+  {
+    id: text('id').primaryKey(),
+    user_id: text('user_id')
+      .notNull()
+      .references(() => users.id, { onDelete: 'cascade' }),
+    provider: text('provider').notNull().default('google'),
+    external_account_id: text('external_account_id'),
+    email: text('email'),
+    // Encriptados via AES-GCM com chave derivada de JWT_SECRET (ver src/server/lib/crypto.ts)
+    access_token: text('access_token'),
+    refresh_token: text('refresh_token'),
+    scope: text('scope'),
+    token_type: text('token_type'),
+    expires_at: timestamp('expires_at', { withTimezone: true }),
+    sync_token: text('sync_token'),
+    webhook_channel_id: text('webhook_channel_id'),
+    webhook_resource_id: text('webhook_resource_id'),
+    webhook_expires_at: timestamp('webhook_expires_at', { withTimezone: true }),
+    status: text('status').notNull().default('active'), // active · reauth_required · revoked
+    last_sync_at: timestamp('last_sync_at', { withTimezone: true }),
+    last_error: text('last_error'),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+    updated_at: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    userIdx: index('idx_calendar_accounts_user').on(t.user_id, t.status),
+    providerExternalUnique: uniqueIndex('uniq_calendar_accounts_provider_external').on(
+      t.provider,
+      t.external_account_id
+    ),
+  })
+);
+
+export const calendar_events = pgTable(
+  'calendar_events',
+  {
+    id: text('id').primaryKey(),
+    team_id: text('team_id').references(() => teams.id, { onDelete: 'cascade' }),
+    owner_id: text('owner_id')
+      .notNull()
+      .references(() => users.id, { onDelete: 'cascade' }),
+
+    // Origem polimórfica
+    source: text('source').notNull(), // advisory_session · mentoria · aula · activity · external_google · manual
+    source_id: text('source_id'), // ULID da row de origem (advisory_sessions.id, mentorias.id, etc)
+
+    // Espelho Google
+    google_event_id: text('google_event_id'),
+    google_calendar_id: text('google_calendar_id'),
+    google_etag: text('google_etag'),
+    sync_status: text('sync_status').notNull().default('local_only'),
+    // synced · pending_push · pending_pull · conflict · local_only
+
+    // Conteúdo
+    title: text('title').notNull(),
+    description_md: text('description_md'),
+    starts_at: timestamp('starts_at', { withTimezone: true }).notNull(),
+    ends_at: timestamp('ends_at', { withTimezone: true }).notNull(),
+    timezone: text('timezone').notNull().default('America/Sao_Paulo'),
+    meeting_url: text('meeting_url'),
+    location: text('location'),
+    visibility: text('visibility').notNull().default('private'), // public · private · confidential
+    attendees: jsonb('attendees').notNull().default([]),
+
+    cancelled_at: timestamp('cancelled_at', { withTimezone: true }),
+    cancellation_reason: text('cancellation_reason'),
+    // Minutos antes do evento pra disparar lembrete (Brevo + WhatsApp)
+    reminder_offsets: jsonb('reminder_offsets').notNull().default([1440, 60]),
+    last_reminder_at: timestamp('last_reminder_at', { withTimezone: true }),
+
+    metadata: jsonb('metadata').notNull().default({}),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+    updated_at: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    ownerStartsIdx: index('idx_calendar_events_owner_starts').on(t.owner_id, t.starts_at),
+    sourceIdx: index('idx_calendar_events_source').on(t.source, t.source_id),
+    googleEventIdx: uniqueIndex('uniq_calendar_events_google_event')
+      .on(t.google_event_id)
+      .where(sql`${t.google_event_id} IS NOT NULL`),
+    syncStatusIdx: index('idx_calendar_events_sync_status').on(t.sync_status),
+  })
+);
+
+export const session_reschedule_requests = pgTable(
+  'session_reschedule_requests',
+  {
+    id: text('id').primaryKey(),
+    advisory_session_id: text('advisory_session_id')
+      .notNull()
+      .references(() => advisory_sessions.id, { onDelete: 'cascade' }),
+    requested_by_user_id: text('requested_by_user_id').references(() => users.id),
+    proposed_slots: jsonb('proposed_slots').notNull(), // array de { starts_at, timezone }
+    reason: text('reason'),
+    status: text('status').notNull().default('pending'), // pending · accepted · rejected · cancelled
+    resolution_event_id: text('resolution_event_id'),
+    admin_note: text('admin_note'),
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+    resolved_at: timestamp('resolved_at', { withTimezone: true }),
+  },
+  (t) => ({
+    sessionIdx: index('idx_reschedule_requests_session').on(t.advisory_session_id, t.status),
   })
 );
 
@@ -874,6 +1058,20 @@ export type NewBlogPost = typeof blog_posts.$inferInsert;
 export type BlogTag = typeof blog_tags.$inferSelect;
 export type DiagnosticoSubmission = typeof diagnostico_submissions.$inferSelect;
 export type NewDiagnosticoSubmission = typeof diagnostico_submissions.$inferInsert;
+
+// Advisory + Agenda (Sprint 3)
+export type AdvisorySession = typeof advisory_sessions.$inferSelect;
+export type NewAdvisorySession = typeof advisory_sessions.$inferInsert;
+export type AvailabilityWindow = typeof availability_windows.$inferSelect;
+export type NewAvailabilityWindow = typeof availability_windows.$inferInsert;
+export type AvailabilityOverride = typeof availability_overrides.$inferSelect;
+export type NewAvailabilityOverride = typeof availability_overrides.$inferInsert;
+export type CalendarAccount = typeof calendar_accounts.$inferSelect;
+export type NewCalendarAccount = typeof calendar_accounts.$inferInsert;
+export type CalendarEvent = typeof calendar_events.$inferSelect;
+export type NewCalendarEvent = typeof calendar_events.$inferInsert;
+export type SessionRescheduleRequest = typeof session_reschedule_requests.$inferSelect;
+export type NewSessionRescheduleRequest = typeof session_reschedule_requests.$inferInsert;
 
 // CRM
 export type Team = typeof teams.$inferSelect;

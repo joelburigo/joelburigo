@@ -16,7 +16,15 @@ export type AdvisoryModalidade = 'sessao' | 'sprint' | 'conselho';
 export interface WelcomeAdvisoryProps {
   name?: string | null;
   modalidade: AdvisoryModalidade;
+  /** URL fallback (área logada / dashboard advisory). */
   areaUrl: string;
+  /**
+   * URL única de booking (`/sessao/agendar?token=...`) — opcional.
+   * Quando passada e modalidade=`sessao`: vira o CTA primário.
+   * Quando passada e modalidade=`sprint`: vira CTA secundário (kickoff).
+   * Quando modalidade=`conselho`: ignorada.
+   */
+  bookingUrl?: string;
 }
 
 const MODALIDADE_LABEL: Record<AdvisoryModalidade, string> = {
@@ -42,7 +50,45 @@ export function welcomeAdvisory(props: WelcomeAdvisoryProps): RenderedEmail {
   const first = props.name?.trim().split(' ')[0];
   const greeting = first ? `Oi, ${first}.` : 'Oi.';
 
-  const ctaLabel = props.modalidade === 'sessao' ? 'Agendar sessão' : 'Acessar área';
+  // CTA por modalidade.
+  // sessao + bookingUrl → primário "Agendar minha sessão de 90 minutos" (acid)
+  //                        + nota "acesso único, expira em 30 dias"
+  // sessao s/ bookingUrl → fallback "Agendar sessão" → areaUrl
+  // sprint + bookingUrl → primário "Acessar área" → areaUrl
+  //                        + secundário "Agendar kickoff agora" → bookingUrl (acid)
+  // sprint s/ bookingUrl → "Acessar área"
+  // conselho            → "Acessar área"
+  const isSessao = props.modalidade === 'sessao';
+  const isSprint = props.modalidade === 'sprint';
+  const useBooking = Boolean(props.bookingUrl);
+
+  let primaryCtaHtml = '';
+  let secondaryCtaHtml = '';
+  let bookingCopyHtml = '';
+
+  if (isSessao && useBooking && props.bookingUrl) {
+    primaryCtaHtml = ctaButton({
+      href: props.bookingUrl,
+      label: 'Agendar minha sessão de 90 minutos',
+      variant: 'acid',
+    });
+    bookingCopyHtml = p(
+      `Seu acesso é <strong style="color:${EMAIL_COLORS.acid};">único e expira em 30 dias</strong>. Escolha o melhor horário pra você.`
+    );
+  } else if (isSessao) {
+    primaryCtaHtml = ctaButton({ href: props.areaUrl, label: 'Agendar sessão' });
+  } else if (isSprint) {
+    primaryCtaHtml = ctaButton({ href: props.areaUrl, label: 'Acessar área' });
+    if (useBooking && props.bookingUrl) {
+      secondaryCtaHtml = `<p style="margin:0 0 28px;">${ctaButton({
+        href: props.bookingUrl,
+        label: 'Agendar kickoff agora',
+        variant: 'acid',
+      })}</p>`;
+    }
+  } else {
+    primaryCtaHtml = ctaButton({ href: props.areaUrl, label: 'Acessar área' });
+  }
 
   const body = `
 ${kicker('ADVISORY CONFIRMADA')}
@@ -50,11 +96,24 @@ ${h1(`${label} confirmada`)}
 ${p(greeting)}
 ${p(`Pagamento aprovado pra <strong style="color:${EMAIL_COLORS.cream};">${label}</strong>.`)}
 ${p(MODALIDADE_PROXIMO[props.modalidade])}
-<p style="margin:28px 0;">${ctaButton({ href: props.areaUrl, label: ctaLabel })}</p>
+${bookingCopyHtml}
+<p style="margin:28px 0;">${primaryCtaHtml}</p>
+${secondaryCtaHtml}
 ${divider()}
 ${p('Qualquer dúvida — responde esse email direto.')}
 ${signature()}
 `;
+
+  // Plain text fallback
+  const textCtaPrimary =
+    isSessao && useBooking && props.bookingUrl
+      ? `Agendar sessão (link único, expira em 30 dias):\n${props.bookingUrl}`
+      : isSessao
+        ? `Agendar sessão: ${props.areaUrl}`
+        : `Acessar área: ${props.areaUrl}`;
+
+  const textCtaSecondary =
+    isSprint && useBooking && props.bookingUrl ? `\n\nAgendar kickoff: ${props.bookingUrl}` : '';
 
   const text = `${label} confirmada.
 
@@ -63,14 +122,22 @@ ${greeting}
 Pagamento aprovado.
 
 ${stripHtml(MODALIDADE_PROXIMO[props.modalidade])}
-
-Próximo passo: ${props.areaUrl}
+${
+  isSessao && useBooking
+    ? '\nSeu acesso é único e expira em 30 dias. Escolha o melhor horário pra você.\n'
+    : ''
+}
+${textCtaPrimary}${textCtaSecondary}
 
 — Joel`;
 
   return {
     subject,
-    html: renderLayout({ body, title: subject, preheader: `${label} confirmada — próximos passos.` }),
+    html: renderLayout({
+      body,
+      title: subject,
+      preheader: `${label} confirmada — próximos passos.`,
+    }),
     text,
   };
 }

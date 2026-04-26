@@ -73,6 +73,18 @@ EMAIL_FROM_NAME=Joel Burigo
 N8N_WEBHOOK_URL="op://Infra/n8n/joelburigo_webhook_url"
 
 # ----------------------------------------------------------------------------
+# Google Calendar — Sprint 3 (OAuth + sync 2-vias com /admin/agenda)
+# Console: https://console.cloud.google.com/apis/credentials
+# Scopes: https://www.googleapis.com/auth/calendar + .../calendar.events
+# Webhook token = random validation string (openssl rand -hex 32)
+# ----------------------------------------------------------------------------
+GOOGLE_OAUTH_CLIENT_ID="op://Infra/joelburigo-google/oauth_client_id"
+GOOGLE_OAUTH_CLIENT_SECRET="op://Infra/joelburigo-google/oauth_client_secret"
+GOOGLE_OAUTH_REDIRECT_URI=https://joelburigo.com.br/api/calendar/google/callback
+GOOGLE_PRIMARY_CALENDAR_ID=primary
+GOOGLE_WEBHOOK_TOKEN="op://Infra/joelburigo-google/webhook_token"
+
+# ----------------------------------------------------------------------------
 # Sessão / Auth
 # ----------------------------------------------------------------------------
 # Base64 32 bytes: openssl rand -base64 32

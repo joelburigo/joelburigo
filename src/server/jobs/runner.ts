@@ -3,6 +3,7 @@
  * (serviço `joelburigo-worker`, mesma imagem do Next, CMD=node dist/.../runner.js).
  *
  * Sprint 0: scaffold mínimo. Handlers reais em Sprint 1/2.
+ * Sprint 3: jobs de calendar sync + advisory reminders.
  */
 import { PgBoss } from 'pg-boss';
 import {
@@ -10,6 +11,24 @@ import {
   handleAgentUsageRollup,
   schedule as agentUsageRollupSchedule,
 } from './agent-usage-rollup';
+import {
+  PUSH_CALENDAR_EVENT,
+  PULL_GOOGLE_DELTA,
+  RENEW_GOOGLE_WEBHOOK,
+  PULL_GOOGLE_DELTA_SCHEDULE,
+  RENEW_GOOGLE_WEBHOOK_SCHEDULE,
+  handlePushCalendarEvent,
+  handlePullGoogleDelta,
+  handleRenewGoogleWebhook,
+} from './calendar-sync';
+import {
+  SEND_ADVISORY_BOOKING_CONFIRMATION,
+  SEND_ADVISORY_REMINDER,
+  SCHEDULE_ADVISORY_REMINDERS,
+  handleSendAdvisoryBookingConfirmation,
+  handleSendAdvisoryReminder,
+  handleScheduleAdvisoryReminders,
+} from './advisory-reminders';
 
 const DATABASE_URL = process.env.DATABASE_URL;
 
@@ -35,15 +54,17 @@ async function main() {
   await boss.work(AGENT_USAGE_ROLLUP, handleAgentUsageRollup);
   await boss.schedule(AGENT_USAGE_ROLLUP, agentUsageRollupSchedule);
 
-  // TODO Sprint 1: registrar handlers
-  // await boss.work('welcome_vss', welcomeVss);
-  // await boss.work('welcome_advisory', welcomeAdvisory);
-  // await boss.work('forward_form_n8n', forwardFormN8n);
-  // await boss.work('publish_scheduled_posts', publishScheduledPosts);
-  // await boss.work('process_blog_image', processBlogImage);
-  // await boss.work('classify_blog_posts', classifyBlogPosts);
-  // await boss.work('consolidate_phase', consolidatePhase);
-  // await boss.work('aggregate_agent_usage', aggregateAgentUsage);
+  // Sprint 3: calendar sync (Google Calendar 2-way)
+  await boss.work(PUSH_CALENDAR_EVENT, handlePushCalendarEvent);
+  await boss.work(PULL_GOOGLE_DELTA, handlePullGoogleDelta);
+  await boss.work(RENEW_GOOGLE_WEBHOOK, handleRenewGoogleWebhook);
+  await boss.schedule(PULL_GOOGLE_DELTA, PULL_GOOGLE_DELTA_SCHEDULE);
+  await boss.schedule(RENEW_GOOGLE_WEBHOOK, RENEW_GOOGLE_WEBHOOK_SCHEDULE);
+
+  // Sprint 3: advisory reminders + booking confirmations
+  await boss.work(SEND_ADVISORY_BOOKING_CONFIRMATION, handleSendAdvisoryBookingConfirmation);
+  await boss.work(SEND_ADVISORY_REMINDER, handleSendAdvisoryReminder);
+  await boss.work(SCHEDULE_ADVISORY_REMINDERS, handleScheduleAdvisoryReminders);
 
   // Graceful shutdown — espera jobs em flight terminarem
   const shutdown = async (signal: string) => {

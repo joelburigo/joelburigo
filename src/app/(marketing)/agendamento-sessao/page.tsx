@@ -1,24 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Container } from '@/components/patterns/container';
-import { BookingWidget } from '@/components/features/advisory/booking-widget';
 
 export const metadata: Metadata = {
-  title: 'Agendar Sessão Estratégica — Advisory | Joel Burigo',
+  title: 'Agendamento de Sessão Advisory · Joel Burigo',
   description:
-    'Sessão estratégica 1:1 de 90 min. Diagnóstico 6Ps + plano de ação com 3-5 prioridades. R$ 997.',
-  keywords: ['sessão estratégica', 'advisory', 'Joel Burigo', 'agendamento'],
+    'Página de orientação pós-compra da Sessão Advisory. Confira seu email pelo link único de agendamento.',
   robots: { index: false, follow: false },
 };
-
-const incluido = [
-  '90 minutos de consultoria ao vivo 1:1',
-  'Análise profunda do desafio atual',
-  'Diagnóstico rápido dos 6Ps',
-  'Plano de ação (3-5 ações prioritárias)',
-  'Gravação da sessão',
-  'Relatório executivo 2–3 páginas',
-];
 
 export default function AgendamentoSessaoPage() {
   return (
@@ -27,62 +16,74 @@ export default function AgendamentoSessaoPage() {
 
       <Container className="relative z-10">
         <section className="py-16 md:py-24">
-          <div className="mx-auto max-w-5xl">
+          <div className="mx-auto max-w-3xl">
             <div className="mb-12">
-              <div className="kicker mb-6">// ADVISORY · SESSÃO · 90_MIN · R$ 997</div>
+              <div className="kicker mb-6">// ADVISORY · AGENDAMENTO · LINK_NO_EMAIL</div>
               <h1
                 className="font-display text-cream"
                 style={{
-                  fontSize: 'clamp(2.5rem, 7vw, 4.5rem)',
+                  fontSize: 'clamp(2.25rem, 6vw, 4rem)',
                   fontWeight: 900,
                   letterSpacing: '-0.045em',
-                  lineHeight: '0.92',
+                  lineHeight: '0.96',
                   textTransform: 'uppercase',
                   margin: 0,
                 }}
               >
-                Agendar <span className="text-acid">Sessão.</span>
+                Já comprou sua <span className="text-acid">Sessão Advisory?</span>
               </h1>
-              <p className="text-cream mt-6 max-w-2xl font-sans text-lg">
-                Escolhe o melhor horário pra tua sessão estratégica de 90 minutos. Máximo 4
-                sessões/mês na agenda.
+              <p className="text-cream mt-6 font-sans text-lg">
+                O agendamento agora é via link único enviado pra teu email logo após a confirmação
+                do pagamento.
               </p>
             </div>
 
-            <div className="mb-10 grid gap-6 md:grid-cols-3">
-              <div className="card">
-                <div className="kicker mb-3">// DURAÇÃO</div>
-                <div className="font-display text-cream text-3xl">90 min</div>
-              </div>
-              <div className="card">
-                <div className="kicker mb-3">// DISPONIBILIDADE</div>
-                <div className="font-display text-cream text-3xl">4/mês</div>
-              </div>
-              <div className="card" style={{ borderColor: 'var(--jb-acid-border)' }}>
-                <div className="kicker mb-3" style={{ color: 'var(--jb-acid)' }}>
-                  // INVESTIMENTO
-                </div>
-                <div className="font-display text-acid text-3xl">R$ 997</div>
-              </div>
-            </div>
-
-            <div className="bg-ink-2 mb-10 border border-[var(--jb-acid-border)] p-8">
+            <div
+              className="bg-ink-2 mb-6 border p-8"
+              style={{ borderColor: 'var(--jb-acid-border)' }}
+            >
               <div className="kicker mb-4" style={{ color: 'var(--jb-acid)' }}>
-                // INCLUÍDO
+                // CONFIRA_SEU_EMAIL
               </div>
-              <ul className="grid gap-3 md:grid-cols-2">
-                {incluido.map((item) => (
-                  <li key={item} className="text-fg-2 flex items-start gap-3 font-sans">
-                    <span className="text-acid mt-[3px] shrink-0">▶</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <h2 className="heading-3 text-cream mb-3">Link enviado pra tua caixa de entrada</h2>
+              <p className="text-fg-2 mb-6 font-sans text-base">
+                Enviei o link único de agendamento direto pra tua caixa de entrada — vale por{' '}
+                <strong className="text-acid">30 dias</strong>. Abre lá, escolhe o melhor horário e
+                recebe a confirmação por email.
+              </p>
+              <p className="text-fg-3 mb-6 font-mono text-[12px] tracking-wide uppercase">
+                Se não chegou em poucos minutos, dá uma olhada no spam ou promoções antes de pedir
+                ajuda.
+              </p>
+              <Link
+                href="/contato"
+                className="bg-acid text-ink font-display border-ink hover:bg-fire hover:text-cream inline-block border-2 px-6 py-3 text-sm tracking-wider uppercase shadow-[6px_6px_0_var(--jb-fire)] transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0_var(--jb-fire)]"
+              >
+                Não recebi o email
+              </Link>
             </div>
 
-            <div className="bg-ink-2 border border-[var(--jb-hair)] p-4">
-              <div className="kicker mb-4 px-2 pt-2">// CALENDÁRIO · ESCOLHA_HORÁRIO</div>
-              <BookingWidget />
+            <div
+              className="bg-ink-2 mb-10 border p-8"
+              style={{ borderColor: 'var(--jb-fire-border)' }}
+            >
+              <div className="kicker mb-4" style={{ color: 'var(--jb-fire)' }}>
+                // AINDA_QUER_COMPRAR
+              </div>
+              <h2 className="heading-3 text-cream mb-3">Sessão Advisory — R$ 997</h2>
+              <p className="text-fg-2 mb-2 font-sans text-base">
+                90 minutos comigo · diagnóstico 6Ps · plano de ação com 3-5 prioridades · gravação +
+                relatório executivo.
+              </p>
+              <p className="text-fg-3 mb-6 font-mono text-[12px] tracking-wide uppercase">
+                Máximo 4 sessões/mês na agenda.
+              </p>
+              <Link
+                href="/advisory"
+                className="bg-fire text-ink font-display border-ink hover:bg-acid inline-block border-2 px-6 py-3 text-sm tracking-wider uppercase shadow-[6px_6px_0_var(--jb-acid)] transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0_var(--jb-acid)]"
+              >
+                Ver Sessão Advisory
+              </Link>
             </div>
 
             <div className="mt-10">

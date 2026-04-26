@@ -34,6 +34,10 @@ import {
   type MpPaymentPayload,
   type MpInternalStatus,
 } from '@/server/services/payments/mercado-pago';
+import { ADVISORY_DEFAULTS } from '@/server/services/advisory/config';
+// TODO Frente A: implementar createPendingSession em @/server/services/advisory/sessions
+// Quando estiver disponível, descomenta o import e remove o stub abaixo.
+// import { createPendingSession } from '@/server/services/advisory/sessions';
 
 export const runtime = 'nodejs';
 
@@ -70,16 +74,59 @@ function pickAdvisoryModalidade(slug: string): AdvisoryModalidade {
 
 function buildWelcomeEmail(
   product: Product,
-  name: string | null
+  name: string | null,
+  bookingUrl?: string
 ): { subject: string; html: string; text: string } {
   const baseUrl = env.PUBLIC_SITE_URL;
   if (product.access_kind === 'lifetime') {
     return welcomeVss({ name, areaUrl: `${baseUrl}/app/area` });
   }
   const modalidade = pickAdvisoryModalidade(product.slug);
+  // Pra sessao: areaUrl é a página de orientação (fallback caso não tenha booking).
+  // Pra sprint/conselho: areaUrl é o dashboard advisory.
   const areaUrl =
-    modalidade === 'sessao' ? `${baseUrl}/agendamento-sessao` : `${baseUrl}/app/area`;
-  return welcomeAdvisory({ name, modalidade, areaUrl });
+    modalidade === 'sessao'
+      ? `${baseUrl}/agendamento-sessao`
+      : `${baseUrl}/app/advisory/dashboard`;
+  return welcomeAdvisory({ name, modalidade, areaUrl, bookingUrl });
+}
+
+/**
+ * Cria pending session pra advisory-sessao / advisory-sprint e retorna a bookingUrl.
+ * STUB Frente A: até `createPendingSession` existir em @/server/services/advisory/sessions,
+ * geramos um placeholder que segue o shape esperado (`/sessao/agendar?token=...`).
+ * Substituir pelo serviço real quando disponível.
+ */
+async function generateBookingUrlForAdvisory(opts: {
+  userId: string;
+  productId: string;
+  productSlug: string;
+  purchaseId: string;
+}): Promise<string | undefined> {
+  const baseUrl = env.PUBLIC_SITE_URL;
+  // Conselho NÃO gera booking
+  if (opts.productSlug === ADVISORY_DEFAULTS.PRODUCT_SLUGS.CONSELHO) {
+    return undefined;
+  }
+  if (
+    opts.productSlug !== ADVISORY_DEFAULTS.PRODUCT_SLUGS.SESSAO &&
+    opts.productSlug !== ADVISORY_DEFAULTS.PRODUCT_SLUGS.SPRINT
+  ) {
+    return undefined;
+  }
+
+  // TODO Frente A: trocar pelo serviço real
+  // const { bookingUrl } = await createPendingSession({
+  //   userId: opts.userId,
+  //   productId: opts.productId,
+  //   purchaseId: opts.purchaseId,
+  //   kind: opts.productSlug === ADVISORY_DEFAULTS.PRODUCT_SLUGS.SPRINT ? 'kickoff' : 'session',
+  // });
+  // return bookingUrl;
+
+  // Stub: usa purchaseId como pseudo-token até Frente A. Permite a Frente E
+  // entregar o fluxo de email (UX) sem bloquear na infra.
+  return `${baseUrl}/sessao/agendar?token=${encodeURIComponent(opts.purchaseId)}`;
 }
 
 async function resolveProduct(payload: MpPaymentPayload): Promise<Product | null> {
@@ -292,10 +339,26 @@ async function processApprovedPayment(
     console.error('[payments/webhook] crm error', crmErr);
   }
 
+  // Booking URL pra advisory-sessao (CTA primário) e advisory-sprint (CTA secundário/kickoff).
+  // advisory-conselho NÃO gera booking.
+  let bookingUrl: string | undefined;
+  if (product.access_kind === 'one_time') {
+    try {
+      bookingUrl = await generateBookingUrlForAdvisory({
+        userId: user.id,
+        productId: product.id,
+        productSlug: product.slug,
+        purchaseId: purchase.id,
+      });
+    } catch (bookingErr) {
+      console.error('[payments/webhook] booking url generation error', bookingErr);
+    }
+  }
+
   // Welcome email (uma vez só)
   if (!purchase.welcome_sent_at) {
     try {
-      const tpl = buildWelcomeEmail(product, fullPayerName(payload));
+      const tpl = buildWelcomeEmail(product, fullPayerName(payload), bookingUrl);
       await sendEmail({
         to: email,
         toName: fullPayerName(payload) ?? undefined,
@@ -316,10 +379,10 @@ async function processApprovedPayment(
       try {
         const isAdvisory = product.access_kind === 'one_time';
         const link = isAdvisory
-          ? `${env.PUBLIC_SITE_URL}/agendamento-sessao`
+          ? (bookingUrl ?? `${env.PUBLIC_SITE_URL}/agendamento-sessao`)
           : `${env.PUBLIC_SITE_URL}/app/area`;
         const waMsg = isAdvisory
-          ? `Sessão Advisory confirmada: ${product.name}. Agende seu horário: ${link}`
+          ? `${product.name} confirmada. Agende seu horário (link único, expira em 30 dias): ${link}`
           : `Bem-vindo ao ${product.name}! Acesse a área de membros: ${link}`;
         await sendWhatsapp({ to: user.whatsapp, message: waMsg });
       } catch (waErr) {

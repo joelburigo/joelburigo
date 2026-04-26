@@ -13,8 +13,12 @@ const ADMIN_NAV: SidebarItem[] = [
   { href: '/admin/leads', label: 'Leads', icon: 'inbox' },
   { href: '/admin/users', label: 'Alunos', icon: 'users' },
   { href: '/admin/mentorias', label: 'Mentorias', icon: 'video' },
+  { href: '/admin/agenda', label: 'Agenda', icon: 'calendar' },
+  { href: '/admin/disponibilidade', label: 'Disponibilidade', icon: 'calendar-clock' },
+  { href: '/admin/integrations/google', label: 'Integrações', icon: 'plug' },
   { href: '/admin/blog', label: 'Blog', icon: 'file-text' },
   { href: '/admin/agent-usage', label: 'Uso do Agente', icon: 'activity' },
+  { href: '/admin/refunds', label: 'Reembolsos', icon: 'inbox' },
 ];
 
 export default async function AdminLayout({ children }: { children: ReactNode }) {

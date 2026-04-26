@@ -16,6 +16,8 @@ import {
   Compass,
   Settings,
   Calendar,
+  CalendarClock,
+  Plug,
   type LucideIcon,
 } from 'lucide-react';
 import { Logo } from '@/components/ui/logo';
@@ -39,6 +41,8 @@ const SIDEBAR_ICONS = {
   compass: Compass,
   settings: Settings,
   calendar: Calendar,
+  'calendar-clock': CalendarClock,
+  plug: Plug,
 } as const satisfies Record<string, LucideIcon>;
 
 export type SidebarIconName = keyof typeof SIDEBAR_ICONS;

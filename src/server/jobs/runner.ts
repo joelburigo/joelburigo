@@ -29,6 +29,14 @@ import {
   handleSendAdvisoryReminder,
   handleScheduleAdvisoryReminders,
 } from './advisory-reminders';
+// ===== blog scheduled =====
+import {
+  PUBLISH_SCHEDULED_POST,
+  PUBLISH_DUE_POSTS,
+  PUBLISH_DUE_POSTS_SCHEDULE,
+  handlePublishScheduledPost,
+  handlePublishDuePosts,
+} from './publish-scheduled-posts';
 
 const DATABASE_URL = process.env.DATABASE_URL;
 
@@ -65,6 +73,12 @@ async function main() {
   await boss.work(SEND_ADVISORY_BOOKING_CONFIRMATION, handleSendAdvisoryBookingConfirmation);
   await boss.work(SEND_ADVISORY_REMINDER, handleSendAdvisoryReminder);
   await boss.work(SCHEDULE_ADVISORY_REMINDERS, handleScheduleAdvisoryReminders);
+
+  // ===== blog scheduled =====
+  // Sprint 4: blog scheduled publish (job individual + cron de fallback 5min)
+  await boss.work(PUBLISH_SCHEDULED_POST, handlePublishScheduledPost);
+  await boss.work(PUBLISH_DUE_POSTS, handlePublishDuePosts);
+  await boss.schedule(PUBLISH_DUE_POSTS, PUBLISH_DUE_POSTS_SCHEDULE);
 
   // Graceful shutdown — espera jobs em flight terminarem
   const shutdown = async (signal: string) => {

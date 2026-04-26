@@ -1,20 +1,14 @@
-import type { Metadata } from 'next';
-import { DevStub } from '@/components/patterns/dev-stub';
+import 'server-only';
+import { redirect } from 'next/navigation';
+import { requireAdmin } from '@/server/services/session';
+import { createDraftPost } from '@/server/services/blog-cms';
 
-export const metadata: Metadata = {
-  title: 'Admin · Novo post',
-  robots: { index: false, follow: false },
-};
-
-export default function AdminBlogNewPage() {
-  return (
-    <DevStub
-      sprint={4}
-      route="/admin/blog/new"
-      title="Novo post"
-      description="Sprint 4 entrega: editor Tiptap + extensão tiptap-markdown (MD source-of-truth). Upload cover/inline → R2 com resize sharp multi-variante. Tags multi-select. SEO pane. Status draft/scheduled/published. Auto-save em blog_revisions a cada 30s."
-      backHref="/admin/blog"
-      backLabel="Voltar pra lista"
-    />
-  );
+/**
+ * Cria um draft mínimo e redireciona pro editor `/admin/blog/[id]`.
+ * Server component sem UI — efeito colateral de navegação.
+ */
+export default async function AdminBlogNewPage() {
+  const admin = await requireAdmin();
+  const post = await createDraftPost(admin.id);
+  redirect(`/admin/blog/${post.id}`);
 }

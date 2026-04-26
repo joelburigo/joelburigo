@@ -1,26 +1,20 @@
 import type { ReactNode } from 'react';
-import {
-  Activity,
-  FileText,
-  Inbox,
-  LayoutDashboard,
-  Users,
-  Video,
-} from 'lucide-react';
 import { Sidebar, type SidebarItem } from '@/components/layouts/sidebar';
 import { requireAdmin } from '@/server/services/session';
 
 /**
  * Shell de admin (`/admin/*`).
  * Protegido por `proxy.ts` (Edge JWT check) + validação `role=admin` aqui via DB.
+ *
+ * `icon` usa string-key do registry em sidebar.tsx (server→client safe).
  */
 const ADMIN_NAV: SidebarItem[] = [
-  { href: '/admin', label: 'Dashboard', icon: LayoutDashboard },
-  { href: '/admin/leads', label: 'Leads', icon: Inbox },
-  { href: '/admin/users', label: 'Alunos', icon: Users },
-  { href: '/admin/mentorias', label: 'Mentorias', icon: Video },
-  { href: '/admin/blog', label: 'Blog', icon: FileText },
-  { href: '/admin/agent-usage', label: 'Uso do Agente', icon: Activity },
+  { href: '/admin', label: 'Dashboard', icon: 'dashboard' },
+  { href: '/admin/leads', label: 'Leads', icon: 'inbox' },
+  { href: '/admin/users', label: 'Alunos', icon: 'users' },
+  { href: '/admin/mentorias', label: 'Mentorias', icon: 'video' },
+  { href: '/admin/blog', label: 'Blog', icon: 'file-text' },
+  { href: '/admin/agent-usage', label: 'Uso do Agente', icon: 'activity' },
 ];
 
 export default async function AdminLayout({ children }: { children: ReactNode }) {

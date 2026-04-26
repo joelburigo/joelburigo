@@ -3,15 +3,50 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, type LucideIcon } from 'lucide-react';
+import {
+  Menu,
+  LayoutDashboard,
+  Inbox,
+  Users,
+  Video,
+  FileText,
+  Activity,
+  Sparkles,
+  GraduationCap,
+  Compass,
+  Settings,
+  Calendar,
+  type LucideIcon,
+} from 'lucide-react';
 import { Logo } from '@/components/ui/logo';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 
+/**
+ * Registry de ícones — necessário porque server components não podem passar
+ * componentes React (que são funções com métodos) como prop pra client.
+ * Adiciona novo ícone aqui + reexporta `SidebarIconName` quando precisar.
+ */
+const SIDEBAR_ICONS = {
+  dashboard: LayoutDashboard,
+  inbox: Inbox,
+  users: Users,
+  video: Video,
+  'file-text': FileText,
+  activity: Activity,
+  sparkles: Sparkles,
+  'graduation-cap': GraduationCap,
+  compass: Compass,
+  settings: Settings,
+  calendar: Calendar,
+} as const satisfies Record<string, LucideIcon>;
+
+export type SidebarIconName = keyof typeof SIDEBAR_ICONS;
+
 export interface SidebarItem {
   href: string;
   label: string;
-  icon: LucideIcon;
+  icon: SidebarIconName;
   badge?: string;
 }
 
@@ -52,7 +87,7 @@ function NavList({
   return (
     <nav className="flex flex-col" aria-label="Navegação principal">
       {items.map((item) => {
-        const Icon = item.icon;
+        const Icon = SIDEBAR_ICONS[item.icon];
         const active = isActive(item.href, pathname);
         return (
           <Link

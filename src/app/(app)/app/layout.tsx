@@ -1,11 +1,4 @@
 import type { ReactNode } from 'react';
-import {
-  Compass,
-  GraduationCap,
-  LayoutDashboard,
-  Settings,
-  Sparkles,
-} from 'lucide-react';
 import { Sidebar, type SidebarItem } from '@/components/layouts/sidebar';
 import { requireUser } from '@/server/services/session';
 
@@ -13,14 +6,14 @@ import { requireUser } from '@/server/services/session';
  * Shell de área logada (`/app/*`).
  * Protegido por `proxy.ts` (Edge JWT check) + validação real aqui via DB.
  *
- * Sprint 2 popula header com breadcrumbs/status; Sprint 4 expande sidebar com fases VSS.
+ * `icon` usa string-key do registry em sidebar.tsx (server→client safe).
  */
 const APP_NAV: SidebarItem[] = [
-  { href: '/app/area', label: 'Dashboard', icon: LayoutDashboard },
-  { href: '/app/onboarding', label: 'Onboarding 6P', icon: Sparkles },
-  { href: '/app/area', label: 'Fases VSS', icon: GraduationCap },
-  { href: '/app/advisory/dashboard', label: 'Advisory', icon: Compass },
-  { href: '/app/area', label: 'Configurações', icon: Settings },
+  { href: '/app/area', label: 'Dashboard', icon: 'dashboard' },
+  { href: '/app/onboarding', label: 'Onboarding 6P', icon: 'sparkles' },
+  { href: '/app/area', label: 'Fases VSS', icon: 'graduation-cap' },
+  { href: '/app/advisory/dashboard', label: 'Advisory', icon: 'compass' },
+  { href: '/app/area', label: 'Configurações', icon: 'settings' },
 ];
 
 export default async function AppLayout({ children }: { children: ReactNode }) {

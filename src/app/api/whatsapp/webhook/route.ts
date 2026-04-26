@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { and, eq, sql } from 'drizzle-orm';
+import { eq, sql } from 'drizzle-orm';
 import { db } from '@/server/db/client';
 import { contacts, activities, form_submissions } from '@/server/db/schema';
 import { ulid } from '@/server/lib/ulid';

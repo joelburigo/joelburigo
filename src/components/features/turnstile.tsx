@@ -89,6 +89,10 @@ export function Turnstile(props: TurnstileProps) {
       typeof window !== 'undefined' && /^(localhost|127\.|0\.0\.0\.0)/.test(window.location.hostname);
 
     if (!TURNSTILE_SITE_KEY || isLocal) {
+      // Detecta ambiente sem Turnstile no client (env/local) — setState aqui é
+      // necessário porque o estado depende de runtime (window). Lazy init no
+      // useState não resolve sem causar hydration mismatch.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setState('dev');
       props.onVerify('dev-token');
       return;

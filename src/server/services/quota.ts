@@ -119,6 +119,8 @@ export async function recordUsage(args: {
   input_tokens: number;
   output_tokens: number;
   cost_usd?: number;
+  /** Se for a primeira mensagem da conversa, incrementa conversation_count. */
+  isNewConversation?: boolean;
 }): Promise<void> {
   const period = currentPeriodMonth();
 
@@ -129,6 +131,7 @@ export async function recordUsage(args: {
 
   const inputDelta = Math.max(0, Math.floor(args.input_tokens));
   const outputDelta = Math.max(0, Math.floor(args.output_tokens));
+  const convDelta = args.isNewConversation ? 1 : 0;
 
   // UPSERT incremental: se row do mês existe, soma. Senão, cria.
   // PK natural seria (user_id, period_month) mas schema só tem `id` PRIMARY KEY,
@@ -139,6 +142,7 @@ export async function recordUsage(args: {
       tokens_input: sql`${agent_usage.tokens_input} + ${inputDelta}`,
       tokens_output: sql`${agent_usage.tokens_output} + ${outputDelta}`,
       cost_cents: sql`${agent_usage.cost_cents} + ${costCentsDelta.toFixed(2)}`,
+      conversation_count: sql`${agent_usage.conversation_count} + ${convDelta}`,
     })
     .where(and(eq(agent_usage.user_id, args.userId), eq(agent_usage.period_month, period)))
     .returning({ id: agent_usage.id });
@@ -152,7 +156,7 @@ export async function recordUsage(args: {
       tokens_output: outputDelta,
       tokens_cached: 0,
       cost_cents: costCentsDelta.toFixed(2),
-      conversation_count: 0,
+      conversation_count: convDelta,
     });
   }
 }

@@ -413,6 +413,26 @@ async function ensureModule(
   return id;
 }
 
+/**
+ * Slugs com flow âncora customizado em `src/server/services/agent-flows/`.
+ * Marcamos com `flow_kind = 'agent_anchored_v1'` pra facilitar filtro no admin
+ * e telemetria. Mudar aqui exige criar/registrar o flow em agent-flows/index.ts.
+ */
+const ANCHORED_SLUGS = new Set<string>([
+  'd-1-4-diagnostico',
+  'd-1-6-plano-90-dias',
+  'd-2-1-p1-posicionamento',
+  'd-2-4-personas',
+  'd-3-2-oferta-irresistivel',
+  'd-3-3-precificacao',
+  'd-8-4-cold-email-whatsapp',
+  'd-8-5-cadencias-multicanal',
+]);
+
+function flowKindFor(slug: string): string {
+  return ANCHORED_SLUGS.has(slug) ? 'agent_anchored_v1' : 'agent_guided';
+}
+
 async function ensureDestravamento(
   database: Db,
   dest: DestravamentoSeed,
@@ -434,6 +454,7 @@ async function ensureDestravamento(
         slug: dest.slug,
         title: dest.title,
         estimated_minutes: dest.estimated_minutes,
+        flow_kind: flowKindFor(dest.slug),
         content_version: CONTENT_VERSION,
       })
       .where(eq(vss_destravamentos.id, existing.id));
@@ -448,7 +469,7 @@ async function ensureDestravamento(
     slug: dest.slug,
     title: dest.title,
     estimated_minutes: dest.estimated_minutes,
-    flow_kind: 'agent_guided',
+    flow_kind: flowKindFor(dest.slug),
     content_version: CONTENT_VERSION,
     available_from: null,
     published_at: null,

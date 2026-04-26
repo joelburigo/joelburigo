@@ -202,18 +202,37 @@ function makeRequestHumanReview(ctx: ToolContext) {
 
 // ============ PUBLIC ============
 
+export type AgentToolName =
+  | 'saveArtifact'
+  | 'updateProfile'
+  | 'markComplete'
+  | 'requestHumanReview';
+
 /**
  * Constrói o `tools` object pro `streamText`. Captura `ctx` via closure pra cada
  * tool ter acesso a userId/conversationId/destravamentoId sem o model precisar
  * passar essas IDs (o que não daria, ele não as conhece).
+ *
+ * `allowedTools` (opcional) restringe ao subset declarado pelo flow específico —
+ * útil pra anchored flows (ver `agent-flows/`). Se omitido, todas as 4 tools.
  */
-export function buildAgentTools(ctx: ToolContext) {
-  return {
+export function buildAgentTools(ctx: ToolContext, allowedTools?: AgentToolName[]) {
+  const all = {
     saveArtifact: makeSaveArtifact(ctx),
     updateProfile: makeUpdateProfile(ctx),
     markComplete: makeMarkComplete(ctx),
     requestHumanReview: makeRequestHumanReview(ctx),
   };
+  if (!allowedTools || allowedTools.length === 0) return all;
+  const allow = new Set<AgentToolName>(allowedTools);
+  // Branching explícito — necessário porque cada tool tem tipo Tool<I,O> distinto
+  // e o TS não consegue narrar via index lookup com union.
+  const out: Partial<typeof all> = {};
+  if (allow.has('saveArtifact')) out.saveArtifact = all.saveArtifact;
+  if (allow.has('updateProfile')) out.updateProfile = all.updateProfile;
+  if (allow.has('markComplete')) out.markComplete = all.markComplete;
+  if (allow.has('requestHumanReview')) out.requestHumanReview = all.requestHumanReview;
+  return out as typeof all;
 }
 
 export type AgentToolSet = ReturnType<typeof buildAgentTools>;

@@ -143,8 +143,37 @@ export function AgentChat({
   const [conversationId, setConversationId] = React.useState<string | undefined>(
     initialConversationId
   );
+  const [quota, setQuota] = React.useState<{
+    used: number;
+    limit: number;
+    percent: number;
+    warning: boolean;
+    ok: boolean;
+  } | null>(null);
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const abortRef = React.useRef<AbortController | null>(null);
+
+  // Fetch quota status on mount + after every send
+  const refreshQuota = React.useCallback(async () => {
+    try {
+      const r = await fetch('/api/agent/quota', { cache: 'no-store' });
+      if (!r.ok) return;
+      const j = (await r.json()) as {
+        used: number;
+        limit: number;
+        percent: number;
+        warning: boolean;
+        ok: boolean;
+      };
+      setQuota(j);
+    } catch {
+      // silent
+    }
+  }, []);
+
+  React.useEffect(() => {
+    void refreshQuota();
+  }, [refreshQuota]);
 
   // Autoscroll quando novas mensagens chegam.
   React.useEffect(() => {
@@ -159,6 +188,10 @@ export function AgentChat({
   async function send(text: string) {
     const trimmed = text.trim();
     if (!trimmed || busy) return;
+    if (quota && !quota.ok) {
+      toast.error('Cota mensal de tokens esgotada. Reseta no início do próximo mês.');
+      return;
+    }
 
     const userMsg: ChatMessage = {
       id: `u_${Date.now()}`,
@@ -252,6 +285,7 @@ export function AgentChat({
       }
 
       setBusy(false);
+      void refreshQuota();
     } catch (err) {
       if ((err as { name?: string }).name === 'AbortError') {
         setBusy(false);
@@ -290,6 +324,22 @@ export function AgentChat({
           <h2 className="mt-1 font-display text-xl uppercase tracking-tight text-cream">
             {destravamentoTitle}
           </h2>
+        </div>
+      ) : null}
+
+      {quota && (quota.warning || !quota.ok) ? (
+        <div
+          className={cn(
+            'border-b px-6 py-2 font-mono text-[11px] uppercase tracking-[0.18em]',
+            !quota.ok
+              ? 'border-fire bg-[var(--jb-fire-soft)] text-fire'
+              : 'border-acid bg-[color-mix(in_oklab,var(--jb-acid)_8%,transparent)] text-acid'
+          )}
+          role="status"
+        >
+          {!quota.ok
+            ? `// quota mensal esgotada (${quota.percent}%). reseta próximo mês.`
+            : `// ${quota.percent}% da quota mensal usada (${quota.used.toLocaleString('pt-BR')}/${quota.limit.toLocaleString('pt-BR')} tokens)`}
         </div>
       ) : null}
 

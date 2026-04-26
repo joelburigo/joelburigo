@@ -14,7 +14,7 @@ import 'server-only';
  */
 
 import { eq, asc, and } from 'drizzle-orm';
-import { streamText, simulateReadableStream, type UIMessage, type ModelMessage } from 'ai';
+import { streamText, simulateReadableStream, stepCountIs, type UIMessage, type ModelMessage } from 'ai';
 import { db } from '@/server/db/client';
 import {
   agent_conversations,
@@ -28,6 +28,7 @@ import {
 import { ulid } from '@/server/lib/ulid';
 import { getModel, getModelInfo, estimateCostUsd } from '@/server/lib/llm';
 import { buildAgentTools, type ToolContext } from './agent-tools';
+import { getFlowFor, type AgentFlow } from './agent-flows';
 import { checkQuota, recordUsage } from './quota';
 
 // =====================================================================
@@ -129,7 +130,9 @@ export interface EnsureConversationInput {
   destravamentoId: string;
 }
 
-export async function ensureConversation(input: EnsureConversationInput): Promise<string> {
+export async function ensureConversation(
+  input: EnsureConversationInput
+): Promise<{ id: string; isNew: boolean }> {
   if (input.conversationId) {
     const [existing] = await db
       .select({ id: agent_conversations.id })
@@ -141,7 +144,7 @@ export async function ensureConversation(input: EnsureConversationInput): Promis
         )
       )
       .limit(1);
-    if (existing) return existing.id;
+    if (existing) return { id: existing.id, isNew: false };
     // ID foi enviado mas não pertence a esse user / não existe — cria nova.
   }
 
@@ -153,7 +156,7 @@ export async function ensureConversation(input: EnsureConversationInput): Promis
     status: 'active',
     context_snapshot: {},
   });
-  return id;
+  return { id, isNew: true };
 }
 
 // =====================================================================
@@ -177,6 +180,14 @@ const SYSTEM_BASE = `Você é o agente IA do VSS — Vendas Sem Segredos, do Joe
 5. Quando o aluno confirmar que terminou: chama 'markComplete' (e só então).
 6. Se sair do escopo / ficar travado: chama 'requestHumanReview' explicando.
 
+# Tools disponíveis (USE quando apropriado)
+- **saveArtifact({ title, content_md, kind })** — kinds: icp · oferta · script_vendas · cadencia · precificacao · plano_acao · diagnostico · outro. Salva entregável em markdown. Chama SEMPRE que o aluno e você consolidaram um artefato concreto, mesmo que pequeno.
+- **updateProfile({ field, value })** — fields: empresa_nome · segmento · gargalo_principal · produto_md · pessoas_md · precificacao_md · processos_md · performance_md · propaganda_md.
+- **markComplete({ summary? })** — só depois do aluno confirmar.
+- **requestHumanReview({ reason })** — pra escalar pro Joel.
+
+Se o aluno pedir explicitamente "salva", "registra", "guarda esse artifact", "marca como concluído" — chama a tool imediatamente, sem cerimônia. Depois de chamar uma tool, continua a conversa normalmente confirmando o que rolou.
+
 # Limites
 - Não invente cases ou dados do aluno. Se não souber, pergunta.
 - Não prometa resultado garantido. Use "aumenta a probabilidade", "tipicamente".
@@ -188,12 +199,15 @@ interface PromptInput {
   destravamento: DestravamentoContext;
   profile: Awaited<ReturnType<typeof loadProfile>>;
   user: Pick<User, 'name' | 'email'>;
+  /** Se presente, substitui o systemPrompt base genérico pelo prompt do flow específico. */
+  flow?: AgentFlow | null;
 }
 
-function buildSystemPrompt({ destravamento, profile, user }: PromptInput): string {
-  // Bloco 1: instruções (estável — cacheado pelo OpenAI automaticamente)
+function buildSystemPrompt({ destravamento, profile, user, flow }: PromptInput): string {
+  // Bloco 1: instruções (genérico OU flow âncora — ambos estáveis, cacheáveis)
   // Bloco 2: contexto destravamento (estável dentro de uma conversa)
   // Bloco 3: perfil 6P (muda raramente — também cacheável)
+  const baseInstructions = flow?.systemPrompt ?? SYSTEM_BASE;
   const destBlock = `
 # Destravamento atual
 - Fase: ${destravamento.phase.code} · ${destravamento.phase.title}
@@ -237,7 +251,7 @@ ${profileBits.join('\n')}
 ${sixPBlock}
 `.trim();
 
-  return `${SYSTEM_BASE}\n\n${destBlock}\n\n${profileBlock}`;
+  return `${baseInstructions}\n\n${destBlock}\n\n${profileBlock}`;
 }
 
 // =====================================================================
@@ -369,7 +383,7 @@ export async function runAgent(input: RunAgentInput): Promise<RunAgentResult> {
   const profile = await loadProfile(input.user.id);
 
   // 3. Conversation
-  const conversationId = await ensureConversation({
+  const { id: conversationId, isNew: isNewConversation } = await ensureConversation({
     userId: input.user.id,
     conversationId: input.conversationId,
     destravamentoId: input.destravamentoId,
@@ -383,11 +397,15 @@ export async function runAgent(input: RunAgentInput): Promise<RunAgentResult> {
     await persistUserMessage(conversationId, lastUserText);
   }
 
-  // 5. Build prompt + tools
+  // 5. Resolve flow âncora (null = usa prompt genérico)
+  const flow = getFlowFor(destravamento.slug);
+
+  // 6. Build prompt + tools
   const systemPrompt = buildSystemPrompt({
     destravamento,
     profile,
     user: input.user,
+    flow,
   });
   const history = await loadHistory(conversationId);
 
@@ -437,6 +455,8 @@ export async function runAgent(input: RunAgentInput): Promise<RunAgentResult> {
     userId: input.user.id,
     conversationId,
     toolCtx,
+    isNewConversation,
+    flow,
   });
 }
 
@@ -451,6 +471,9 @@ interface StreamWithLLMInput {
   userId: string;
   conversationId: string;
   toolCtx: ToolContext;
+  isNewConversation: boolean;
+  /** Flow âncora opcional — restringe tool allow-list (e no futuro pode forçar model). */
+  flow?: AgentFlow | null;
 }
 
 async function streamWithLLM(input: StreamWithLLMInput): Promise<RunAgentResult> {
@@ -459,7 +482,11 @@ async function streamWithLLM(input: StreamWithLLMInput): Promise<RunAgentResult>
       model: getModel('chat'),
       system: input.system,
       messages: input.history,
-      tools: buildAgentTools(input.toolCtx),
+      tools: buildAgentTools(input.toolCtx, input.flow?.tools),
+      // Permite multi-step: depois de uma tool call, o model continua e gera
+      // texto pro usuário. Default do AI SDK 6 é stepCountIs(1) — sem isso,
+      // toda tool call termina a resposta sem texto subsequente.
+      stopWhen: stepCountIs(5),
       onFinish: async (event) => {
         try {
           const usage = event.totalUsage;
@@ -487,6 +514,7 @@ async function streamWithLLM(input: StreamWithLLMInput): Promise<RunAgentResult>
             input_tokens: tokensInput,
             output_tokens: tokensOutput,
             cost_usd: costUsd,
+            isNewConversation: input.isNewConversation,
           });
         } catch (err) {
           console.error('[agent.onFinish]', err);

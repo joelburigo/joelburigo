@@ -51,18 +51,10 @@ export default async function SessaoPage({ params }: { params: Promise<{ id: str
 
   const mentoria = await getMentoria(id);
 
-  // Não é mentoria → fallback dev stub (advisory_session ainda não migrado nesta entrega)
+  // Sprint 3: advisory sessions vivem em /sessao/[id] (rota pública/semi-pública).
+  // Esta rota fica reservada pras mentorias VSS — qualquer outro id redireciona.
   if (!mentoria) {
-    return (
-      <DevStub
-        sprint={3}
-        route={`/app/sessao/${id}`}
-        title={`Sessão · ${id}`}
-        description="Detalhes de sessão Advisory virão na entrega Sprint 3 (rodando em paralelo)."
-        backHref="/app/area"
-        backLabel="Voltar"
-      />
-    );
+    redirect(`/sessao/${id}`);
   }
 
   const hasAccess = await userHasVssEntitlement(user.id);

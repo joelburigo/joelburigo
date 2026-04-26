@@ -35,9 +35,7 @@ import {
   type MpInternalStatus,
 } from '@/server/services/payments/mercado-pago';
 import { ADVISORY_DEFAULTS } from '@/server/services/advisory/config';
-// TODO Frente A: implementar createPendingSession em @/server/services/advisory/sessions
-// Quando estiver disponível, descomenta o import e remove o stub abaixo.
-// import { createPendingSession } from '@/server/services/advisory/sessions';
+import { createPendingSession } from '@/server/services/advisory/sessions';
 
 export const runtime = 'nodejs';
 
@@ -93,9 +91,7 @@ function buildWelcomeEmail(
 
 /**
  * Cria pending session pra advisory-sessao / advisory-sprint e retorna a bookingUrl.
- * STUB Frente A: até `createPendingSession` existir em @/server/services/advisory/sessions,
- * geramos um placeholder que segue o shape esperado (`/sessao/agendar?token=...`).
- * Substituir pelo serviço real quando disponível.
+ * Conselho não gera booking — retorna `undefined`.
  */
 async function generateBookingUrlForAdvisory(opts: {
   userId: string;
@@ -103,7 +99,6 @@ async function generateBookingUrlForAdvisory(opts: {
   productSlug: string;
   purchaseId: string;
 }): Promise<string | undefined> {
-  const baseUrl = env.PUBLIC_SITE_URL;
   // Conselho NÃO gera booking
   if (opts.productSlug === ADVISORY_DEFAULTS.PRODUCT_SLUGS.CONSELHO) {
     return undefined;
@@ -115,18 +110,13 @@ async function generateBookingUrlForAdvisory(opts: {
     return undefined;
   }
 
-  // TODO Frente A: trocar pelo serviço real
-  // const { bookingUrl } = await createPendingSession({
-  //   userId: opts.userId,
-  //   productId: opts.productId,
-  //   purchaseId: opts.purchaseId,
-  //   kind: opts.productSlug === ADVISORY_DEFAULTS.PRODUCT_SLUGS.SPRINT ? 'kickoff' : 'session',
-  // });
-  // return bookingUrl;
-
-  // Stub: usa purchaseId como pseudo-token até Frente A. Permite a Frente E
-  // entregar o fluxo de email (UX) sem bloquear na infra.
-  return `${baseUrl}/sessao/agendar?token=${encodeURIComponent(opts.purchaseId)}`;
+  const { bookingUrl } = await createPendingSession({
+    userId: opts.userId,
+    productId: opts.productId,
+    purchaseId: opts.purchaseId,
+    durationMin: ADVISORY_DEFAULTS.SESSION_DURATION_MIN,
+  });
+  return bookingUrl;
 }
 
 async function resolveProduct(payload: MpPaymentPayload): Promise<Product | null> {

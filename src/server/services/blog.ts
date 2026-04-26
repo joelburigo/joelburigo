@@ -63,48 +63,63 @@ function revivePost(p: PostWithTags): PostWithTags {
 // ────────────────────────────────────────────────────────────────────────────
 
 async function fetchPublishedFromDb(): Promise<PostWithTags[]> {
-  const posts = await db
-    .select()
-    .from(blog_posts)
-    .where(and(eq(blog_posts.status, 'published'), lte(blog_posts.published_at, sql`now()`)))
-    .orderBy(desc(blog_posts.published_at));
+  try {
+    const posts = await db
+      .select()
+      .from(blog_posts)
+      .where(and(eq(blog_posts.status, 'published'), lte(blog_posts.published_at, sql`now()`)))
+      .orderBy(desc(blog_posts.published_at));
 
-  if (posts.length === 0) return [];
+    if (posts.length === 0) return [];
 
-  const ids = posts.map((p) => p.id);
-  const tagRows = await db
-    .select({ post_id: blog_post_tags.post_id, tag: blog_tags })
-    .from(blog_post_tags)
-    .leftJoin(blog_tags, eq(blog_post_tags.tag_id, blog_tags.id))
-    .where(inArray(blog_post_tags.post_id, ids));
+    const ids = posts.map((p) => p.id);
+    const tagRows = await db
+      .select({ post_id: blog_post_tags.post_id, tag: blog_tags })
+      .from(blog_post_tags)
+      .leftJoin(blog_tags, eq(blog_post_tags.tag_id, blog_tags.id))
+      .where(inArray(blog_post_tags.post_id, ids));
 
-  const tagsByPost = new Map<string, BlogTag[]>();
-  for (const row of tagRows) {
-    if (!row.tag) continue;
-    const arr = tagsByPost.get(row.post_id) ?? [];
-    arr.push(row.tag);
-    tagsByPost.set(row.post_id, arr);
+    const tagsByPost = new Map<string, BlogTag[]>();
+    for (const row of tagRows) {
+      if (!row.tag) continue;
+      const arr = tagsByPost.get(row.post_id) ?? [];
+      arr.push(row.tag);
+      tagsByPost.set(row.post_id, arr);
+    }
+
+    return posts.map((p) => ({ ...p, tags: tagsByPost.get(p.id) ?? [] }));
+  } catch (err) {
+    // DB indisponível (ex: build com DATABASE_URL=placeholder) — degrade gracefully.
+    // Em runtime real (prod), erro fica visível no log abaixo.
+    console.error('[blog] fetchPublishedFromDb falhou:', err instanceof Error ? err.message : err);
+    return [];
   }
-
-  return posts.map((p) => ({ ...p, tags: tagsByPost.get(p.id) ?? [] }));
 }
 
 async function fetchPostBySlugFromDb(slug: string): Promise<PostWithTags | null> {
-  const [post] = await db
-    .select()
-    .from(blog_posts)
-    .where(and(eq(blog_posts.slug, slug), eq(blog_posts.status, 'published')))
-    .limit(1);
-  if (!post) return null;
+  try {
+    const [post] = await db
+      .select()
+      .from(blog_posts)
+      .where(and(eq(blog_posts.slug, slug), eq(blog_posts.status, 'published')))
+      .limit(1);
+    if (!post) return null;
 
-  const tagRows = await db
-    .select({ tag: blog_tags })
-    .from(blog_post_tags)
-    .leftJoin(blog_tags, eq(blog_post_tags.tag_id, blog_tags.id))
-    .where(eq(blog_post_tags.post_id, post.id));
+    const tagRows = await db
+      .select({ tag: blog_tags })
+      .from(blog_post_tags)
+      .leftJoin(blog_tags, eq(blog_post_tags.tag_id, blog_tags.id))
+      .where(eq(blog_post_tags.post_id, post.id));
 
-  return {
-    ...post,
-    tags: tagRows.map((r) => r.tag).filter((t): t is BlogTag => t !== null),
-  };
+    return {
+      ...post,
+      tags: tagRows.map((r) => r.tag).filter((t): t is BlogTag => t !== null),
+    };
+  } catch (err) {
+    console.error(
+      `[blog] fetchPostBySlugFromDb(${slug}) falhou:`,
+      err instanceof Error ? err.message : err
+    );
+    return null;
+  }
 }

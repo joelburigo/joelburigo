@@ -419,7 +419,7 @@ async function ensureModule(
  * e telemetria. Mudar aqui exige criar/registrar o flow em agent-flows/index.ts.
  */
 const ANCHORED_SLUGS = new Set<string>([
-  // Sprint 2
+  // Sprint 2 (8)
   'd-1-4-diagnostico',
   'd-1-6-plano-90-dias',
   'd-2-1-p1-posicionamento',
@@ -428,7 +428,7 @@ const ANCHORED_SLUGS = new Set<string>([
   'd-3-3-precificacao',
   'd-8-4-cold-email-whatsapp',
   'd-8-5-cadencias-multicanal',
-  // Sprint 5 — Frente C (Fase 1 + Fase 2 D1.x/D2.x completos)
+  // Sprint 5C (7) — Fase 1 + Fase 2 D1.x/D2.x completos
   'd-1-1-bem-vindo-vss',
   'd-1-2-conheca-joel',
   'd-1-3-framework-6ps',
@@ -436,6 +436,62 @@ const ANCHORED_SLUGS = new Set<string>([
   'd-2-2-puv-workshop',
   'd-2-3-p2-publico',
   'd-2-5-big-idea',
+  // Sprint 6A (10) — Produto + Métricas + Pessoas
+  'd-3-1-p3-produto-pmf',
+  'd-3-4-metas-kpis',
+  'd-14-1-metricas-importam',
+  'd-14-2-ab-otimizacao',
+  'd-14-3-coorte-churn',
+  'd-14-4-cultura-data-driven',
+  'd-15-1-p6-pessoas',
+  'd-15-2-contratacao-treinamento',
+  'd-15-3-plano-180-365',
+  'd-15-4-comunidade-networking',
+  // Sprint 6B (9) — CRM + Casa Digital
+  'd-4-1-bem-vindo-crm',
+  'd-4-2-setup-inicial',
+  'd-4-3-contatos-oportunidades',
+  'd-4-4-importacao',
+  'd-4-5-automacoes-iniciais',
+  'd-5-1-casa-digital',
+  'd-5-2-site-landing',
+  'd-5-3-gmn-seo-local',
+  'd-5-4-redes-vitrine',
+  // Sprint 6C (11) — Conteúdo + Tráfego + Prospecção
+  'd-6-1-conteudo-atrai',
+  'd-6-2-seo-pratico',
+  'd-6-3-redes-organicas',
+  'd-6-4-calendario-conteudo',
+  'd-7-1-trafego-pago-fundamentos',
+  'd-7-2-meta-ads',
+  'd-7-3-google-ads',
+  'd-7-4-otimizando-campanhas',
+  'd-8-1-prospeccao-alternativa',
+  'd-8-2-listas-prospects',
+  'd-8-3-linkedin-instagram',
+  // Sprint 6D (9) — Funil + Vendas
+  'd-9-1-anatomia-funil',
+  'd-9-2-landing-alta-conversao',
+  'd-9-3-nutricao-email',
+  'd-9-4-whatsapp-crm',
+  'd-10-1-qualificacao-bant-spin',
+  'd-10-2-scripts-atendimento',
+  'd-10-3-objecoes',
+  'd-10-4-tecnicas-fechamento',
+  'd-10-5-pos-venda-indicacoes',
+  // Sprint 6E (12) — Sistema + Automação + IA
+  'd-11-1-p4-integracao',
+  'd-11-2-p5-processos',
+  'd-11-3-dashboard-executivo',
+  'd-11-4-preparando-escalar',
+  'd-12-1-workflows-complexos',
+  'd-12-2-segmentacao-comportamental',
+  'd-12-3-carrinho-upsell',
+  'd-12-4-reguas-relacionamento',
+  'd-13-1-agentes-ia-fundamentos',
+  'd-13-2-agente-whatsapp',
+  'd-13-3-handoff-ia-humano',
+  'd-13-4-treinando-agente',
 ]);
 
 function flowKindFor(slug: string): string {

@@ -419,6 +419,7 @@ async function ensureModule(
  * e telemetria. Mudar aqui exige criar/registrar o flow em agent-flows/index.ts.
  */
 const ANCHORED_SLUGS = new Set<string>([
+  // Sprint 2
   'd-1-4-diagnostico',
   'd-1-6-plano-90-dias',
   'd-2-1-p1-posicionamento',
@@ -427,6 +428,14 @@ const ANCHORED_SLUGS = new Set<string>([
   'd-3-3-precificacao',
   'd-8-4-cold-email-whatsapp',
   'd-8-5-cadencias-multicanal',
+  // Sprint 5 — Frente C (Fase 1 + Fase 2 D1.x/D2.x completos)
+  'd-1-1-bem-vindo-vss',
+  'd-1-2-conheca-joel',
+  'd-1-3-framework-6ps',
+  'd-1-5-maquina-vendas',
+  'd-2-2-puv-workshop',
+  'd-2-3-p2-publico',
+  'd-2-5-big-idea',
 ]);
 
 function flowKindFor(slug: string): string {

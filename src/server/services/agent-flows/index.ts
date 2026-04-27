@@ -3,7 +3,9 @@ import 'server-only';
 /**
  * Registry de flows específicos por destravamento âncora.
  *
- * 8 destravamentos âncora têm prompt customizado + tool allow-list + artifactKind:
+ * 15 destravamentos âncora têm prompt customizado + tool allow-list + artifactKind:
+ *
+ * Sprint 2 (8):
  *   - D1.4 Diagnóstico 6Ps          → diagnostico.ts
  *   - D1.6 Plano 90 Dias            → plano-90-dias.ts
  *   - D2.1 Posicionamento (P1)      → posicionamento.ts
@@ -13,7 +15,16 @@ import 'server-only';
  *   - D8.4 Cold Email + WhatsApp    → cold-outreach.ts
  *   - D8.5 Cadência Multicanal      → cadencia-multicanal.ts
  *
- * Os outros 58 destravamentos seguem o prompt genérico em `agent.ts` (sem regressão).
+ * Sprint 5 — Frente C (7, completa Fase 1 + Fase 2 do método em D1.x/D2.x):
+ *   - D1.1 Bem-vindo VSS            → bem-vindo-vss.ts
+ *   - D1.2 Conheça Joel & Missão    → conheca-joel.ts
+ *   - D1.3 Framework 6Ps            → framework-6ps.ts
+ *   - D1.5 Máquina de Vendas        → maquina-vendas.ts
+ *   - D2.2 PUV Workshop             → puv-workshop.ts
+ *   - D2.3 P2 Público               → p2-publico.ts
+ *   - D2.5 Big Idea                 → big-idea.ts
+ *
+ * Os outros 51 destravamentos seguem o prompt genérico em `agent.ts` (sem regressão).
  *
  * Pra adicionar um novo flow: crie `<slug>.ts` exportando `AgentFlow`, importe aqui e
  * registre em `FLOWS`. Ver `docs/backend/AGENT_FLOWS.md`.
@@ -27,6 +38,13 @@ import { ofertaNucleoFlow } from './oferta-nucleo';
 import { precificacaoFlow } from './precificacao';
 import { coldOutreachFlow } from './cold-outreach';
 import { cadenciaMulticanalFlow } from './cadencia-multicanal';
+import { bemVindoVssFlow } from './bem-vindo-vss';
+import { conhecaJoelFlow } from './conheca-joel';
+import { framework6psFlow } from './framework-6ps';
+import { maquinaVendasFlow } from './maquina-vendas';
+import { puvWorkshopFlow } from './puv-workshop';
+import { p2PublicoFlow } from './p2-publico';
+import { bigIdeaFlow } from './big-idea';
 
 export type AgentToolName =
   | 'saveArtifact'
@@ -58,6 +76,13 @@ const FLOWS: AgentFlow[] = [
   precificacaoFlow,
   coldOutreachFlow,
   cadenciaMulticanalFlow,
+  bemVindoVssFlow,
+  conhecaJoelFlow,
+  framework6psFlow,
+  maquinaVendasFlow,
+  puvWorkshopFlow,
+  p2PublicoFlow,
+  bigIdeaFlow,
 ];
 
 /** Index slug → flow pra lookup O(1). */

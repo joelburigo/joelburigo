@@ -16,8 +16,7 @@ import { sendEmail } from '@/server/services/email';
 import { buildIcsForSession } from '@/server/services/calendar/ics';
 import { env } from '@/env';
 import { ADVISORY_DEFAULTS } from '@/server/services/advisory/config';
-// TODO Frente E: importar `advisoryBookingConfirmation` de @/server/services/email-templates
-// quando o template existir. Por ora geramos HTML simples inline pra não bloquear.
+import { advisoryBookingConfirmation } from '@/server/services/email-templates';
 
 export const SEND_ADVISORY_BOOKING_CONFIRMATION = 'SEND_ADVISORY_BOOKING_CONFIRMATION';
 export const SEND_ADVISORY_REMINDER = 'SEND_ADVISORY_REMINDER';
@@ -87,7 +86,8 @@ export async function handleSendAdvisoryBookingConfirmation(
     const { session, event, user, product } = ctx;
     if (!user.email) continue;
 
-    const ics = buildIcsForSession({
+    const meetingUrl = session.meeting_url ?? event.meeting_url ?? '';
+    const icsContent = buildIcsForSession({
       uid: session.ics_uid ?? `${session.id}@joelburigo.com.br`,
       title: product?.name ? `${product.name} · Advisory` : 'Sessão Advisory',
       description: session.client_preparation_md ?? undefined,
@@ -96,25 +96,40 @@ export async function handleSendAdvisoryBookingConfirmation(
       organizerEmail: env.EMAIL_FROM_PERSONAL,
       organizerName: env.EMAIL_FROM_NAME,
       attendeeEmail: user.email,
-      meetingUrl: session.meeting_url ?? event.meeting_url ?? undefined,
+      meetingUrl: meetingUrl || undefined,
     });
 
-    const when = event.starts_at.toISOString();
-    const subject = product?.name
-      ? `${product.name} confirmada — ${when}`
-      : 'Sessão Advisory confirmada';
-    const html = fallbackHtml(subject, when, session.meeting_url ?? event.meeting_url ?? null);
+    const startsAtIso = event.starts_at.toLocaleString('pt-BR', {
+      timeZone: session.cliente_timezone ?? 'America/Sao_Paulo',
+      dateStyle: 'medium',
+      timeStyle: 'short',
+    });
 
-    // Brevo aceita anexos via attachment[] no payload, mas sendEmail atual não expõe.
-    // TODO Frente E: estender sendEmail pra suportar attachments e injetar `ics` aqui.
-    void ics;
+    const rendered = advisoryBookingConfirmation({
+      name: user.name ?? user.email,
+      email: user.email,
+      startsAtIso,
+      durationMin: session.duration_min,
+      meetingUrl: meetingUrl || `${env.PUBLIC_SITE_URL}/app/advisory/dashboard`,
+      icsContent,
+      sessionId: session.id,
+      preparationMd: session.client_preparation_md ?? undefined,
+    });
 
     try {
       await sendEmail({
         to: user.email,
         toName: user.name ?? undefined,
-        subject,
-        html,
+        subject: rendered.subject,
+        html: rendered.html,
+        text: rendered.text,
+        attachments: [
+          {
+            filename: 'sessao-advisory.ics',
+            content: icsContent,
+            contentType: 'text/calendar; method=REQUEST',
+          },
+        ],
       });
     } catch (err) {
       console.error('[advisory] envio confirmation falhou', { sessionId, err });

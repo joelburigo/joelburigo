@@ -31,6 +31,7 @@ import {
 } from '@/server/db/schema';
 import { ulid } from '@/server/lib/ulid';
 import { getDefaultTeam } from './crm';
+import { refundPurchase } from './payments/refunds';
 
 // ---------------- AUDIT ----------------
 
@@ -572,6 +573,10 @@ export interface AgentUsageStats {
     userEmail: string;
     tokensTotal: number;
     costCents: number;
+    /** Override em entitlements.metadata.token_quota_override (null = sem). */
+    quotaOverride: number | null;
+    /** Cap default (products.monthly_llm_token_quota do VSS, ou null). */
+    quotaDefault: number | null;
   }>;
   costByDestravamento: Array<{
     destravamentoId: string | null;
@@ -614,6 +619,28 @@ export async function getAgentUsageStats(): Promise<AgentUsageStats> {
     .orderBy(desc(agent_usage.cost_cents))
     .limit(10);
 
+  // Pra cada consumer, busca entitlement VSS ativo pra extrair override + cap default.
+  const consumerIds = consumers.map((c) => c.userId);
+  const quotaInfo =
+    consumerIds.length > 0
+      ? await db
+          .select({
+            userId: entitlements.user_id,
+            metadata: entitlements.metadata,
+            productCap: products.monthly_llm_token_quota,
+            productSlug: products.slug,
+          })
+          .from(entitlements)
+          .innerJoin(products, eq(products.id, entitlements.product_id))
+          .where(
+            and(
+              inArray(entitlements.user_id, consumerIds),
+              eq(entitlements.status, 'active'),
+              eq(products.slug, 'vss')
+            )
+          )
+      : [];
+
   // Custo por destravamento — JOIN agent_messages → conversations → destravamentos
   const byDest = await db
     .select({
@@ -655,13 +682,34 @@ export async function getAgentUsageStats(): Promise<AgentUsageStats> {
     .limit(20);
 
   return {
-    topConsumers: consumers.map((c) => ({
-      userId: c.userId,
-      userName: c.userName,
-      userEmail: c.userEmail ?? '—',
-      tokensTotal: Number(c.tokensInput ?? 0) + Number(c.tokensOutput ?? 0),
-      costCents: Math.round(Number(c.costCents ?? 0)),
-    })),
+    topConsumers: consumers.map((c) => {
+      // Pega o cap mais alto se múltiplos entitlements VSS (raro)
+      const userQuotas = quotaInfo.filter((q) => q.userId === c.userId);
+      let override: number | null = null;
+      let cap: number | null = null;
+      for (const q of userQuotas) {
+        const meta = (q.metadata ?? {}) as { token_quota_override?: number | null };
+        if (typeof meta.token_quota_override === 'number') {
+          override =
+            override == null
+              ? meta.token_quota_override
+              : Math.max(override, meta.token_quota_override);
+        }
+        if (q.productCap != null) {
+          const n = Number(q.productCap);
+          cap = cap == null ? n : Math.max(cap, n);
+        }
+      }
+      return {
+        userId: c.userId,
+        userName: c.userName,
+        userEmail: c.userEmail ?? '—',
+        tokensTotal: Number(c.tokensInput ?? 0) + Number(c.tokensOutput ?? 0),
+        costCents: Math.round(Number(c.costCents ?? 0)),
+        quotaOverride: override,
+        quotaDefault: cap,
+      };
+    }),
     costByDestravamento: byDest.map((b) => ({
       destravamentoId: b.destravamentoId,
       destravamentoTitle: b.destravamentoTitle,
@@ -757,10 +805,45 @@ export async function processRefundAction(
 
   const now = new Date();
   const patch: Partial<typeof refund_requests.$inferInsert> = {};
+  let gatewayRefundId: string | null = null;
+  let gatewayName: string | null = null;
   if (action === 'approve') {
-    patch.status = 'approved';
-    patch.approved_at = now;
-    // TODO Sprint 4 v2: disparar refund real via gateway (Mercado Pago Refund API ou Stripe).
+    // Busca purchase + dispara refund real no gateway antes de marcar approved.
+    const [purchase] = await db
+      .select()
+      .from(purchases)
+      .where(eq(purchases.id, r.purchase_id))
+      .limit(1);
+    if (!purchase) throw new Error('purchase_not_found');
+
+    try {
+      const result = await refundPurchase(purchase, { reason: 'admin_refund' });
+      gatewayRefundId = result.refundId;
+      gatewayName = result.gateway;
+      patch.status = 'approved';
+      patch.approved_at = now;
+      const noteParts = [
+        opts?.adminNote,
+        `Gateway: ${result.gateway} · refund_id=${result.refundId}${result.status ? ` · status=${result.status}` : ''}`,
+      ].filter(Boolean);
+      patch.admin_note = noteParts.join('\n');
+    } catch (err) {
+      // Falha do gateway: registra no admin_note e deixa pendente pra retry manual.
+      const msg = err instanceof Error ? err.message : 'unknown';
+      const failNote = [opts?.adminNote, `Falha gateway: ${msg}`].filter(Boolean).join('\n');
+      await db
+        .update(refund_requests)
+        .set({ admin_note: failNote })
+        .where(eq(refund_requests.id, refundId));
+      await logAudit({
+        adminId,
+        action: 'refund.approve_failed',
+        targetTable: 'refund_requests',
+        targetId: refundId,
+        payload: { error: msg },
+      });
+      throw err;
+    }
   } else if (action === 'deny') {
     patch.status = 'denied';
     patch.denied_at = now;
@@ -768,7 +851,10 @@ export async function processRefundAction(
     patch.status = 'converted';
     patch.converted_at = now;
   }
-  if (opts?.adminNote !== undefined) patch.admin_note = opts.adminNote;
+  // adminNote: pra approve já foi setado acima (com gateway info). Pra deny/convert, sobrescreve.
+  if (action !== 'approve' && opts?.adminNote !== undefined) {
+    patch.admin_note = opts.adminNote;
+  }
   if (action === 'deny' && opts?.deniedReason) {
     patch.admin_note = [patch.admin_note, `Motivo: ${opts.deniedReason}`].filter(Boolean).join('\n');
   }
@@ -780,7 +866,11 @@ export async function processRefundAction(
     action: `refund.${action}`,
     targetTable: 'refund_requests',
     targetId: refundId,
-    payload: { adminNote: opts?.adminNote, deniedReason: opts?.deniedReason },
+    payload: {
+      adminNote: opts?.adminNote,
+      deniedReason: opts?.deniedReason,
+      ...(gatewayRefundId ? { gatewayRefundId, gateway: gatewayName } : {}),
+    },
   });
 }
 

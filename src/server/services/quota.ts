@@ -1,7 +1,7 @@
 import 'server-only';
 import { and, eq, sql } from 'drizzle-orm';
 import { db } from '@/server/db/client';
-import { agent_usage } from '@/server/db/schema';
+import { agent_usage, entitlements, products } from '@/server/db/schema';
 import { ulid } from '@/server/lib/ulid';
 
 /**
@@ -64,12 +64,39 @@ function parseEnvLimit(): number {
 }
 
 /**
- * Limite mensal de tokens pro user. Hoje só env-driven — schema `users` não
- * tem coluna de override por usuário (ver `monthly_llm_token_quota` em
- * `products`, mas é por-produto, não per-user). Quando precisar, adicionar
- * lookup aqui.
+ * Limite mensal de tokens pro user.
+ *
+ * Ordem de prioridade:
+ *   1. `entitlements.metadata.token_quota_override` (per-user override admin)
+ *   2. `products.monthly_llm_token_quota` (cap por-produto, ex: VSS = 500_000)
+ *   3. `OPENAI_QUOTA_MONTHLY_TOKENS_DEFAULT` env (fallback global)
+ *
+ * Sempre considera o MAIOR cap entre entitlements ativos do user (caso ele
+ * tenha múltiplos produtos).
  */
-async function monthlyLimitFor(_userId: string): Promise<number> {
+async function monthlyLimitFor(userId: string): Promise<number> {
+  const rows = await db
+    .select({
+      productCap: products.monthly_llm_token_quota,
+      metadata: entitlements.metadata,
+    })
+    .from(entitlements)
+    .leftJoin(products, eq(products.id, entitlements.product_id))
+    .where(and(eq(entitlements.user_id, userId), eq(entitlements.status, 'active')));
+
+  let bestCap = 0;
+  for (const row of rows) {
+    const meta = (row.metadata ?? {}) as { token_quota_override?: number | null };
+    const override =
+      typeof meta.token_quota_override === 'number' && meta.token_quota_override > 0
+        ? Math.floor(meta.token_quota_override)
+        : null;
+    const productCap = row.productCap != null ? Number(row.productCap) : 0;
+    const effective = override ?? productCap;
+    if (effective > bestCap) bestCap = effective;
+  }
+
+  if (bestCap > 0) return bestCap;
   return parseEnvLimit();
 }
 

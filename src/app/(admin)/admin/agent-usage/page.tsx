@@ -3,6 +3,9 @@ import { Container } from '@/components/patterns/container';
 import { Badge } from '@/components/ui/badge';
 import { getAgentUsageStats } from '@/server/services/admin';
 import { formatCurrency } from '@/lib/utils';
+import { QuotaOverrideForm } from '@/components/features/admin/quota-override-form';
+
+const VSS_DEFAULT_QUOTA = 500_000;
 
 export const metadata: Metadata = {
   title: 'Admin · Uso do agente',
@@ -42,28 +45,27 @@ export default async function AdminAgentUsagePage() {
           {stats.topConsumers.length === 0 ? (
             <Empty />
           ) : (
-            <table className="w-full text-left text-xs">
-              <thead className="text-fg-3 font-mono text-[10px] tracking-[0.22em] uppercase">
-                <tr>
-                  <th className="py-1">Email</th>
-                  <th className="py-1 text-right">Tokens</th>
-                  <th className="py-1 text-right">Custo</th>
-                </tr>
-              </thead>
-              <tbody>
-                {stats.topConsumers.map((c) => (
-                  <tr key={c.userId} className="border-t border-[var(--jb-hair)]">
-                    <td className="text-cream py-1.5 font-mono">{c.userEmail}</td>
-                    <td className="text-fg-2 py-1.5 text-right font-mono">
-                      {c.tokensTotal.toLocaleString('pt-BR')}
-                    </td>
-                    <td className="text-acid py-1.5 text-right font-mono">
-                      {formatCurrency(c.costCents)}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <ul className="flex flex-col gap-3">
+              {stats.topConsumers.map((c) => (
+                <li
+                  key={c.userId}
+                  className="flex flex-col gap-2 border-t border-[var(--jb-hair)] pt-2 first:border-0 first:pt-0"
+                >
+                  <div className="flex items-center gap-3 text-xs">
+                    <span className="text-cream flex-1 truncate font-mono">{c.userEmail}</span>
+                    <span className="text-fg-2 font-mono">
+                      {c.tokensTotal.toLocaleString('pt-BR')} tk
+                    </span>
+                    <span className="text-acid font-mono">{formatCurrency(c.costCents)}</span>
+                  </div>
+                  <QuotaOverrideForm
+                    userId={c.userId}
+                    currentOverride={c.quotaOverride}
+                    defaultCap={c.quotaDefault ?? VSS_DEFAULT_QUOTA}
+                  />
+                </li>
+              ))}
+            </ul>
           )}
         </Card>
 
@@ -122,9 +124,11 @@ export default async function AdminAgentUsagePage() {
       </Card>
 
       <p className="text-fg-muted text-[11px]">
-        TODO Sprint 4 v2: override manual de quota por user (campo ainda usa{' '}
-        <code className="text-acid">entitlements.metadata.token_quota_override</code>; UI por user
-        em /admin/users vai gravar lá).
+        Override mensal por user grava em{' '}
+        <code className="text-acid">entitlements.metadata.token_quota_override</code> (entitlement
+        VSS ativo). Sem override → cap default do produto (
+        {VSS_DEFAULT_QUOTA.toLocaleString('pt-BR')} tokens) ou{' '}
+        <code className="text-acid">OPENAI_QUOTA_MONTHLY_TOKENS_DEFAULT</code> como fallback.
       </p>
     </Container>
   );

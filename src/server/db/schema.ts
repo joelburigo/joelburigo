@@ -657,6 +657,8 @@ export const blog_posts = pgTable(
     content_md: text('content_md').notNull(),
     cover_image_path: text('cover_image_path'),
     cover_image_alt: text('cover_image_alt'),
+    audio_path: text('audio_path'),
+    audio_duration_seconds: integer('audio_duration_seconds'),
     author_id: text('author_id').references(() => users.id),
     status: text('status').notNull().default('draft'),
     published_at: timestamp('published_at', { withTimezone: true }),

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -7,6 +8,7 @@ import rehypeSlug from 'rehype-slug';
 import { Container } from '@/components/patterns/container';
 import { Badge } from '@/components/ui/badge';
 import { getPostBySlug, getPublishedPosts } from '@/server/services/blog';
+import { blogImageUrl, blogAudioUrl } from '@/lib/blog-image';
 import { formatDate } from '@/lib/utils';
 
 export const revalidate = 300;
@@ -33,7 +35,9 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
       description: post.excerpt || undefined,
       type: 'article',
       publishedTime: post.published_at?.toISOString(),
-      images: post.cover_image_path ? [post.cover_image_path] : undefined,
+      images: post.cover_image_path
+        ? [blogImageUrl(post.cover_image_path, { width: 1200 })]
+        : undefined,
     },
   };
 }
@@ -74,6 +78,29 @@ export default async function PostPage({ params }: { params: Promise<Params> }) 
             )}
           </div>
         </div>
+        {post.cover_image_path && (
+          <div className="relative mb-10 aspect-[16/10] overflow-hidden">
+            <Image
+              src={blogImageUrl(post.cover_image_path, { width: 1920 })}
+              alt={post.cover_image_alt || post.title}
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 768px"
+              className="object-cover"
+            />
+          </div>
+        )}
+        {(() => {
+          const audio = blogAudioUrl(post.audio_path, post.slug);
+          return audio ? (
+            <div className="border-fire mb-10 border-l-2 px-4 py-3">
+              <div className="kicker mb-2">// OUVIR ESTE POST</div>
+              <audio controls preload="metadata" className="w-full" src={audio}>
+                Seu navegador não suporta áudio HTML5.
+              </audio>
+            </div>
+          ) : null;
+        })()}
         <div className="prose prose-invert max-w-none">
           <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeSlug]}>
             {post.content_md}

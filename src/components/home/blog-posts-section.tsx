@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Container } from '@/components/patterns/container';
 import { cn, formatDate } from '@/lib/utils';
 import { getPublishedPosts } from '@/server/services/blog';
+import { blogImageUrl } from '@/lib/blog-image';
 import s from './blog-posts-section.module.css';
 
 export async function BlogPostsSection() {
@@ -41,7 +42,7 @@ export async function BlogPostsSection() {
                 {post.cover_image_path && (
                   <div className={s.blogThumb}>
                     <Image
-                      src={post.cover_image_path}
+                      src={blogImageUrl(post.cover_image_path, { width: 640 })}
                       alt={post.cover_image_alt || post.title}
                       width={640}
                       height={400}

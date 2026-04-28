@@ -1,7 +1,6 @@
 import 'server-only';
 import { and, eq, sql } from 'drizzle-orm';
 import { revalidateTag } from 'next/cache';
-import sharp from 'sharp';
 import { db } from '@/server/db/client';
 import {
   blog_posts,
@@ -187,19 +186,37 @@ export async function setPostTags(postId: string, tagIds: string[]): Promise<voi
 }
 
 // ────────────────────────────────────────────────────────────────────────────
-// Images — sharp resize multi-variant + upload R2
+// Images — upload original pro R2; resize/format por Cloudflare Image
+// Transformations no momento de servir (helper em src/lib/blog-image.ts).
 // ────────────────────────────────────────────────────────────────────────────
 
-const IMAGE_VARIANTS = [480, 720, 1080, 1920] as const;
-
 export type ProcessedImage = {
-  path: string; // path do "principal" (1920w webp) — pra inserir no editor
-  url: string; // URL pública absoluta
+  path: string; // chave R2 do original
+  url: string; // URL pública (sem transform — render aplica CIT)
   alt: string;
   width: number;
   height: number;
   size_bytes: number;
 };
+
+function detectImageContentType(filename: string): string {
+  const ext = filename.toLowerCase().split('.').pop() ?? '';
+  switch (ext) {
+    case 'jpg':
+    case 'jpeg':
+      return 'image/jpeg';
+    case 'png':
+      return 'image/png';
+    case 'webp':
+      return 'image/webp';
+    case 'avif':
+      return 'image/avif';
+    case 'gif':
+      return 'image/gif';
+    default:
+      return 'application/octet-stream';
+  }
+}
 
 export async function processBlogImage(opts: {
   postId: string;
@@ -209,77 +226,35 @@ export async function processBlogImage(opts: {
 }): Promise<ProcessedImage> {
   const { postId, buffer, filename, alt = '' } = opts;
   const baseId = ulid();
+  const ext = filename.toLowerCase().match(/\.[a-z0-9]+$/)?.[0] ?? '';
   const safeName = slugify(filename.replace(/\.[^.]+$/, '')) || 'image';
-  const baseKey = `blog/${postId}/${baseId}-${safeName}`;
+  const key = `blog/${postId}/${baseId}-${safeName}${ext}`;
+  const contentType = detectImageContentType(filename);
 
-  const meta = await sharp(buffer).metadata();
-  const origWidth = meta.width ?? 0;
-  const origHeight = meta.height ?? 0;
+  await storage.put(key, buffer, contentType);
 
-  let mainPath = '';
-  let mainBytes = 0;
-  let mainW = 0;
-  let mainH = 0;
+  // Cloudflare Image Transformations infere width/height ao servir;
+  // armazenamos 0 quando o cliente não puder inferir aqui (Workers runtime
+  // sem sharp). O render sabe lidar com width/height ausentes (CSS aspect).
+  const size_bytes = buffer.byteLength;
 
-  for (const w of IMAGE_VARIANTS) {
-    if (origWidth && origWidth < w && w !== IMAGE_VARIANTS[0]) {
-      // skip upscaling beyond original
-      continue;
-    }
-    const resized = await sharp(buffer)
-      .resize({ width: w, withoutEnlargement: true })
-      .webp({ quality: 82 })
-      .toBuffer({ resolveWithObject: true });
-
-    const key = `${baseKey}-${w}w.webp`;
-    await storage.put(key, resized.data, 'image/webp');
-
-    await db.insert(blog_images).values({
-      id: ulid(),
-      post_id: postId,
-      path: key,
-      alt,
-      width: resized.info.width,
-      height: resized.info.height,
-      size_bytes: resized.info.size,
-      variant: `${w}w`,
-    });
-
-    if (w === 1920 || (!mainPath && w === IMAGE_VARIANTS[IMAGE_VARIANTS.length - 1])) {
-      mainPath = key;
-      mainBytes = resized.info.size;
-      mainW = resized.info.width;
-      mainH = resized.info.height;
-    }
-  }
-
-  // Fallback: usa último variant inserido caso loop tenha pulado tudo
-  if (!mainPath) {
-    const fallback = await sharp(buffer).webp({ quality: 82 }).toBuffer({ resolveWithObject: true });
-    const key = `${baseKey}-orig.webp`;
-    await storage.put(key, fallback.data, 'image/webp');
-    await db.insert(blog_images).values({
-      id: ulid(),
-      post_id: postId,
-      path: key,
-      alt,
-      width: fallback.info.width,
-      height: fallback.info.height,
-      size_bytes: fallback.info.size,
-      variant: 'orig',
-    });
-    mainPath = key;
-    mainBytes = fallback.info.size;
-    mainW = fallback.info.width;
-    mainH = fallback.info.height;
-  }
+  await db.insert(blog_images).values({
+    id: ulid(),
+    post_id: postId,
+    path: key,
+    alt,
+    width: 0,
+    height: 0,
+    size_bytes,
+    variant: 'orig',
+  });
 
   return {
-    path: mainPath,
-    url: storage.publicUrl(mainPath),
+    path: key,
+    url: storage.publicUrl(key),
     alt,
-    width: mainW,
-    height: mainH,
-    size_bytes: mainBytes,
+    width: 0,
+    height: 0,
+    size_bytes,
   };
 }

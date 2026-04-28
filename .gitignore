@@ -17,6 +17,7 @@ dist/
 .open-next/
 .wrangler/
 out/
+tsconfig.tsbuildinfo
 
 # Next typescript ambient — regenerado a cada build
 next-env.d.ts

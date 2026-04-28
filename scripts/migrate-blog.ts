@@ -18,7 +18,7 @@
  *   - Admin Joel criado: `pnpm db:seed` (script tenta criar mínimo se ausente).
  */
 import 'dotenv/config';
-import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, basename, extname } from 'node:path';
 import matter from 'gray-matter';
 import { ulid } from 'ulid';
@@ -107,6 +107,16 @@ function normalizeCoverPath(raw: string | undefined): string | null {
   return `/images/blog/${file}`;
 }
 
+/**
+ * Áudio do post segue convenção `public/audio/blog/<slug>.mp3` (gerado pelo
+ * script generate-audio-posts.mjs). Retorna o path do arquivo se existir,
+ * senão null — admin pode gerar/anexar depois.
+ */
+function resolveAudioPath(slug: string): string | null {
+  const file = join(process.cwd(), 'public', 'audio', 'blog', `${slug}.mp3`);
+  return existsSync(file) ? `/audio/blog/${slug}.mp3` : null;
+}
+
 function normalizeTags(fm: Frontmatter): string[] {
   const raw: unknown[] = [];
   if (Array.isArray(fm.tags)) raw.push(...fm.tags);
@@ -190,6 +200,7 @@ async function migrate() {
     const publishedAt = derivePublishedAt(fm, filePath);
     const coverRaw = fm.heroImage ?? fm.coverImage ?? fm.cover ?? fm.image;
     const coverPath = normalizeCoverPath(coverRaw);
+    const audioPath = resolveAudioPath(slug);
     const seoTitle = fm.seoTitle ?? fm.title;
     const seoDescription = fm.seoDescription ?? excerpt ?? null;
 
@@ -212,6 +223,7 @@ async function migrate() {
         content_md: body,
         cover_image_path: coverPath,
         cover_image_alt: fm.coverImageAlt ?? fm.title,
+        audio_path: audioPath,
         author_id: adminId,
         status,
         published_at: publishedAt,

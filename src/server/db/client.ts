@@ -1,34 +1,67 @@
 import 'server-only';
-import { drizzle } from 'drizzle-orm/node-postgres';
-import pg from 'pg';
+import { drizzle } from 'drizzle-orm/postgres-js';
+import postgres from 'postgres';
 import * as schema from './schema';
 
-const DATABASE_URL = process.env.DATABASE_URL;
+type PostgresSql = ReturnType<typeof postgres>;
+type DrizzleDb = ReturnType<typeof drizzle<typeof schema>>;
 
 declare global {
-  var __jbPgPool: pg.Pool | undefined;
+  // eslint-disable-next-line no-var
+  var __jbPgClient: PostgresSql | undefined;
+  // eslint-disable-next-line no-var
+  var __jbDb: DrizzleDb | undefined;
 }
 
-/**
- * Lazy pool — não tenta conectar em build time se DATABASE_URL ausente.
- * Em runtime, se alguém chamar `db` sem DATABASE_URL, o pool falha no primeiro query
- * (erro claro do pg).
- */
-function makePool(): pg.Pool {
-  return new pg.Pool({
-    connectionString: DATABASE_URL || 'postgres://placeholder',
-    max: 10,
-    idleTimeoutMillis: 30_000,
-    connectionTimeoutMillis: 10_000,
+function resolveConnectionString(): string {
+  // Cloudflare Workers (via OpenNext): Hyperdrive binding
+  try {
+    // Dynamic require avoids bundling @opennextjs/cloudflare em runtimes Node
+    // que não tem (tipo `tsx` direto). Falha silenciosa = cai no fallback.
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const cf = require('@opennextjs/cloudflare');
+    const ctx = cf.getCloudflareContext?.({ async: false });
+    const hyperdrive = ctx?.env?.HYPERDRIVE;
+    if (hyperdrive?.connectionString) return hyperdrive.connectionString;
+  } catch {
+    // not in Workers runtime
+  }
+
+  const url = process.env.DATABASE_URL;
+  if (!url) {
+    throw new Error('DATABASE_URL ausente e Hyperdrive não disponível');
+  }
+  return url;
+}
+
+function makeClient(): PostgresSql {
+  return postgres(resolveConnectionString(), {
+    max: 5,
+    idle_timeout: 30,
+    connect_timeout: 10,
+    prepare: false, // Hyperdrive não suporta prepared statements
   });
 }
 
-const pool = globalThis.__jbPgPool ?? makePool();
-
-if (process.env.NODE_ENV !== 'production') {
-  globalThis.__jbPgPool = pool;
+function getDb(): DrizzleDb {
+  if (globalThis.__jbDb) return globalThis.__jbDb;
+  const client = globalThis.__jbPgClient ?? makeClient();
+  const instance = drizzle(client, { schema });
+  if (process.env.NODE_ENV !== 'production') {
+    globalThis.__jbPgClient = client;
+    globalThis.__jbDb = instance;
+  }
+  return instance;
 }
 
-export const db = drizzle(pool, { schema });
+// Proxy mantém a API `import { db }` mas adia a conexão até o primeiro uso.
+// Crítico em build time (Next coleta routes sem rodar handlers) e em
+// Workers (Hyperdrive binding só existe dentro do contexto da request).
+export const db = new Proxy({} as DrizzleDb, {
+  get(_target, prop, receiver) {
+    return Reflect.get(getDb(), prop, receiver);
+  },
+});
+
 export { schema };
-export type Db = typeof db;
+export type Db = DrizzleDb;

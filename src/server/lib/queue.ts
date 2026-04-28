@@ -1,47 +1,29 @@
 import 'server-only';
 
 /**
- * Queue adapter — pg-boss em prod, in-memory stub em dev sem DB.
+ * Queue adapter.
  *
- * Worker consume via src/server/jobs/runner.ts (processo separado no compose).
+ * Cloudflare Workers (prod): vai usar `env.QUEUE` (Cloudflare Queues) — Task #9.
+ * Local Node dev: stub que loga (não enfileira).
+ *
+ * NOTA: esta versão é placeholder pós-migração Hetzner→CF. Na sprint de jobs
+ * (`Reescrever pg-boss → Cron + Queues`), trocar pelo adapter de Queues
+ * acessando o binding via `getCloudflareContext().env.QUEUE`.
  */
 
 export interface QueueAdapter {
   enqueue<T = unknown>(job: string, data: T, opts?: { startAfter?: Date }): Promise<string | null>;
 }
 
-type PgBoss = Awaited<ReturnType<typeof makeBoss>>;
-
-async function makeBoss() {
-  if (!process.env.DATABASE_URL) return null;
-  const { PgBoss } = await import('pg-boss');
-  const boss = new PgBoss({
-    connectionString: process.env.DATABASE_URL,
-    schema: 'pgboss',
-  });
-  await boss.start();
-  return boss;
-}
-
-declare global {
-  var __jbPgBoss: Promise<PgBoss> | undefined;
-}
-
-function getBoss(): Promise<PgBoss> {
-  if (!globalThis.__jbPgBoss) globalThis.__jbPgBoss = makeBoss();
-  return globalThis.__jbPgBoss;
-}
-
 export const queue: QueueAdapter = {
   async enqueue(job, data, opts) {
-    const boss = await getBoss();
-    if (!boss) {
-      // Sem DB, no-op (dev).
-      if (process.env.NODE_ENV !== 'production') {
-        console.info(`[queue] ${job} (dev stub, not enqueued)`, data);
-      }
-      return null;
+    if (process.env.NODE_ENV !== 'production') {
+      console.info(`[queue] ${job} (dev stub)`, { data, startAfter: opts?.startAfter });
+    } else {
+      console.warn(
+        `[queue] ${job} pendente — adapter Cloudflare Queues ainda não plugado (Task #9).`,
+      );
     }
-    return boss.send(job, data as object, { startAfter: opts?.startAfter });
+    return null;
   },
 };

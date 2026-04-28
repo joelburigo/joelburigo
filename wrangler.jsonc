@@ -1,0 +1,79 @@
+/**
+ * Cloudflare Workers config — joelburigo-site
+ *
+ * Environments:
+ *   - dev  → dev.joelburigo.com.br (deploy auto via main branch)
+ *   - prod → joelburigo.com.br (deploy manual via workflow_dispatch)
+ *
+ * Secrets (não vão aqui — setados via `wrangler secret put`):
+ *   - JWT_SECRET, OPENAI_API_KEY, ANTHROPIC_API_KEY,
+ *     MERCADOPAGO_ACCESS_TOKEN, STRIPE_SECRET_KEY, BREVO_API_KEY,
+ *     R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, GOOGLE_CLIENT_SECRET,
+ *     CF_STREAM_API_TOKEN
+ */
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "joelburigo-site",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-04-15",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+
+  "assets": {
+    "binding": "ASSETS",
+    "directory": ".open-next/assets"
+  },
+
+  "observability": {
+    "enabled": true
+  },
+
+  "env": {
+    "dev": {
+      "name": "joelburigo-site-dev",
+      "routes": [
+        { "pattern": "dev.joelburigo.com.br/*", "zone_name": "joelburigo.com.br" }
+      ],
+      "vars": {
+        "NODE_ENV": "production",
+        "PUBLIC_SITE_URL": "https://dev.joelburigo.com.br",
+        "LLM_PROVIDER": "openai"
+      },
+      "hyperdrive": [
+        {
+          "binding": "HYPERDRIVE",
+          "id": "d40fdd1fbbf1477381b8b6f77754c308"
+        }
+      ],
+      "r2_buckets": [
+        {
+          "binding": "NEXT_INC_CACHE_R2_BUCKET",
+          "bucket_name": "joelburigo-next-cache"
+        }
+      ]
+    },
+    "prod": {
+      "name": "joelburigo-site",
+      "routes": [
+        { "pattern": "joelburigo.com.br/*", "zone_name": "joelburigo.com.br" },
+        { "pattern": "www.joelburigo.com.br/*", "zone_name": "joelburigo.com.br" }
+      ],
+      "vars": {
+        "NODE_ENV": "production",
+        "PUBLIC_SITE_URL": "https://joelburigo.com.br",
+        "LLM_PROVIDER": "openai"
+      },
+      "hyperdrive": [
+        {
+          "binding": "HYPERDRIVE",
+          "id": "23a0dcc0a7224b55b0dc8d3912088aa7"
+        }
+      ],
+      "r2_buckets": [
+        {
+          "binding": "NEXT_INC_CACHE_R2_BUCKET",
+          "bucket_name": "joelburigo-next-cache"
+        }
+      ]
+    }
+  }
+}

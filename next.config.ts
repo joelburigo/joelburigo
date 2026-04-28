@@ -1,7 +1,11 @@
 import type { NextConfig } from 'next';
+import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare';
+
+// Habilita Hyperdrive/R2/etc bindings durante `next dev` quando rodando local.
+// Em build/Workers runtime é no-op.
+initOpenNextCloudflareForDev();
 
 const config: NextConfig = {
-  output: 'standalone',
   poweredByHeader: false,
   reactStrictMode: true,
   compress: true,
@@ -11,6 +15,9 @@ const config: NextConfig = {
   env: {},
 
   images: {
+    // sharp não roda em Workers; otimização vai por Cloudflare na frente do CDN.
+    // Pra otimização programática, plugar Cloudflare Images depois (loader custom).
+    unoptimized: true,
     remotePatterns: [
       { protocol: 'https', hostname: 'joelburigo.com.br' },
       { protocol: 'https', hostname: 'dev.joelburigo.com.br' },

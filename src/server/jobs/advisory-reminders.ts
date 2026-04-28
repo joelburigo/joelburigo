@@ -1,7 +1,7 @@
 
 // Jobs pg-boss pra confirmação + lembretes de advisory sessions.
 
-import type { Job } from 'pg-boss';
+import type { Job } from './types';
 import { eq } from 'drizzle-orm';
 import { db } from '@/server/db/client';
 import {

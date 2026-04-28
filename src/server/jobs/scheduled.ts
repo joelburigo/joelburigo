@@ -7,7 +7,7 @@
  * pra cron triggers (eles não recebem payload).
  */
 
-import type { Job } from 'pg-boss';
+import type { Job } from './types';
 import { handleAgentUsageRollup } from './agent-usage-rollup';
 import { handlePullGoogleDelta, handleRenewGoogleWebhook } from './calendar-sync';
 import { handlePublishDuePosts } from './publish-scheduled-posts';

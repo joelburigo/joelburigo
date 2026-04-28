@@ -1,7 +1,7 @@
 
 // Jobs pg-boss pra sync 2-vias com Google Calendar.
 
-import type { Job } from 'pg-boss';
+import type { Job } from './types';
 import {
   listAccountsNeedingWebhookRenewal,
   listActiveAccountIds,

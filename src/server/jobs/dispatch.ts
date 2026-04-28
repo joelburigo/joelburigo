@@ -8,7 +8,7 @@
  * Consumer: custom-worker.ts → POST /api/queue/dispatch → aqui.
  */
 
-import type { Job } from 'pg-boss';
+import type { Job } from './types';
 import {
   handlePushCalendarEvent,
   handlePullGoogleDelta,

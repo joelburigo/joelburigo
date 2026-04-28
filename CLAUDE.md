@@ -4,21 +4,24 @@ Site público + plataforma VSS/Advisory do Joel Burigo. **Next.js 16 App Router*
 
 ## Resumo
 
-| Item                  | Valor                                                                                                                    |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| Cliente               | Joel Burigo (próprio)                                                                                                    |
-| Produção              | https://joelburigo.com.br                                                                                                |
-| Stack                 | Next.js 16 App Router + React 19 + Tailwind v4 + shadcn/ui customizado (`components.json`)                               |
-| Banco                 | Postgres 16 dedicado (`pg-joelburigo-site` no growth-infra compose)                                                      |
-| ORM                   | Drizzle                                                                                                                  |
-| LLM                   | Vercel AI SDK · OpenAI default (`gpt-5.2`, `gpt-image-2`) · adapter pra Anthropic via env                                |
-| Storage               | Cloudflare R2 (artifacts, exports) · `public/` pra blog images                                                           |
-| Vídeo                 | Cloudflare Stream **Live Input** (OBS → RTMP → HLS + replay automático)                                                  |
-| Pagamento             | Mercado Pago BR (default) + Stripe US (fallback cartão internacional)                                                    |
-| Email                 | Brevo API (transacional via Stalwart relay no growth-infra)                                                              |
-| Imagem Docker         | `ghcr.io/joelburigo/joelburigo-site:latest`                                                                              |
-| Containers no compose | `joelburigo-site` (web · 4321) · `joelburigo-worker` (pg-boss · mesma imagem, CMD diferente) · `pg-joelburigo-site` (DB) |
-| Tunnel dev            | `pnpm dev:tunnel` → `dev.joelburigo.com.br` (Cloudflare Tunnel + `.cloudflared.token`)                                   |
+| Item             | Valor                                                                                          |
+| ---------------- | ---------------------------------------------------------------------------------------------- |
+| Cliente          | Joel Burigo (próprio)                                                                          |
+| Produção         | https://joelburigo.com.br · Cloudflare Workers env=prod                                        |
+| Homologação      | https://dev.joelburigo.com.br · Cloudflare Workers env=dev (auto-deploy push main)             |
+| Stack            | Next.js 16 App Router + React 19 + Tailwind v4 + shadcn/ui                                     |
+| Adapter         | `@opennextjs/cloudflare` 1.19+ · custom-worker.ts adiciona scheduled() + queue()                |
+| Banco            | Neon Postgres (branches `dev` + `production`) via Cloudflare Hyperdrive                        |
+| ORM              | Drizzle (`postgres` driver, Workers-safe)                                                      |
+| Jobs             | Cloudflare Cron Triggers (4 crons) + Cloudflare Queues `joelburigo-jobs` (+ DLQ)               |
+| LLM              | Vercel AI SDK · OpenAI default (`gpt-5.2`, `gpt-image-2`) · adapter Anthropic via env          |
+| Storage          | Cloudflare R2 (`joelburigo-artifacts` + `joelburigo-next-cache` p/ ISR)                        |
+| Imagens          | Cloudflare Image Transformations via `/cdn-cgi/image/...` (`src/lib/blog-image.ts`)            |
+| Vídeo            | Cloudflare Stream Live Input (OBS → RTMP → HLS)                                                |
+| Pagamento        | Mercado Pago BR (default) + Stripe US (fallback cartão internacional)                          |
+| Email            | Brevo API (transacional)                                                                       |
+| CI/CD            | GH Actions: ci.yml (PR) · deploy-dev.yml (push main → dev) · deploy-prod.yml (manual + approval) |
+| Tunnel dev local | `pnpm dev:tunnel` → `dev.joelburigo.com.br` opcional pra testar webhooks                       |
 
 ## Estrutura do repo
 
@@ -53,20 +56,24 @@ joelburigo-site/
 │   ├── server/                  backend (`import 'server-only'`)
 │   │   ├── db/{schema,client,seed}.ts
 │   │   ├── services/            blog, payments, auth, vss, agent, ... (incremental por sprint)
-│   │   ├── lib/                 adapters: llm (OpenAI/Anthropic) · storage (R2) · kv (pg) · queue (pg-boss)
-│   │   └── jobs/runner.ts       worker pg-boss (processo separado no compose)
+│   │   ├── lib/                 adapters: llm (OpenAI/Anthropic) · storage (R2) · kv (pg) · queue (CF Queues)
+│   │   └── jobs/                handlers de cron + queue dispatchers
+│   │       ├── scheduled.ts     roteia cron expression → handler
+│   │       ├── dispatch.ts      roteia job name (vindo da CF Queue) → handler
+│   │       ├── types.ts         tipo Job<T> mínimo (legado pg-boss)
+│   │       └── *.ts             handlers individuais (advisory, calendar, blog, agent-usage)
 │   │
-│   ├── lib/                     utils client+server safe (cn, fonts, contact, constants)
+│   ├── lib/                     utils client+server safe (cn, fonts, contact, blog-image, ...)
 │   ├── data/                    data estática versionada (cases.ts)
-│   ├── content/blog/            posts MD (fonte pra migração Sprint 1 → DB)
+│   ├── content/blog/            posts MD (migrados pra DB via pnpm db:migrate-blog)
 │   ├── assets/images/           imagens originais — ver assets/README.md
-│   ├── proxy.ts                 Next 16 proxy (antes middleware) protege /area /admin etc
 │   └── env.ts                   Zod env validator
 │
-├── public/                      assets estáticos servidos pelo Next
-├── infra/compose.joelburigo-site.yml  ← snippet pro growth-infra `/mnt/data/docker-compose.yml`
+├── custom-worker.ts             Worker entry — wrappa OpenNext + scheduled() + queue()
+├── wrangler.jsonc               Config CF (envs dev/prod · Hyperdrive · R2 · Queues · Crons)
+├── open-next.config.ts          Config @opennextjs/cloudflare
+├── public/                      assets estáticos servidos pelo Worker
 ├── .env.tpl                     1Password CLI references
-├── Dockerfile                   Next standalone multi-stage
 └── drizzle.config.ts
 ```
 
@@ -88,38 +95,51 @@ Services foi descontinuado (arquivado em `docs/conteudo/_archive/parte9-services
 ## Stack/comandos
 
 ```bash
-pnpm dev               # http://localhost:4321
-pnpm dev:tunnel        # http://dev.joelburigo.com.br via Cloudflare Tunnel
-pnpm build             # Next standalone
+pnpm dev               # http://localhost:4321 (next dev contra Neon dev)
+pnpm dev:tunnel        # opcional: tunnel pra testar webhooks externos
 pnpm typecheck && pnpm lint
 pnpm db:push           # aplica schema Drizzle no Postgres apontado por DATABASE_URL
-pnpm db:seed           # cria admin Joel + 4 products
+pnpm db:seed           # admin Joel + 4 products + 7 fases VSS + 15 módulos + 66 destravamentos
 pnpm db:studio         # UI Drizzle
-pnpm worker            # roda pg-boss runner (em prod é serviço Docker separado)
+pnpm db:migrate-blog   # importa posts MD de docs/blog/ pra blog_posts (idempotente)
+
+# Cloudflare
+pnpm cf:build          # roda OpenNext build → .open-next/worker.js
+pnpm cf:preview        # wrangler dev (testa scheduled/queue handlers locais)
+pnpm cf:deploy:dev     # deploy em joelburigo-site-dev (dev.joelburigo.com.br)
+pnpm cf:deploy:prod    # deploy em joelburigo-site (joelburigo.com.br) — manual
 ```
 
 ## Deploy
 
-`git push main` → GH Actions: typecheck + lint + Docker build → push `ghcr.io/joelburigo/joelburigo-site:latest` → Watchtower puxa em até 60s. Workflow: `.github/workflows/deploy.yml`.
+`git push main` → GH Actions:
 
-`docs/` fica fora do build Docker via `.dockerignore`.
+1. `ci.yml` — typecheck + lint (também roda em PR)
+2. `deploy-dev.yml` — auto-deploy em `dev.joelburigo.com.br` (Cloudflare Workers)
+3. `deploy-prod.yml` — manual via `workflow_dispatch` + GH environment `production` com required reviewer
 
-## Comandos no servidor
+Cada commit de main vai pra dev automaticamente. Pra prod, abre Actions → Deploy production → digita `PROD` no input → aprova review → deploy.
 
-```bash
-ssh joel@prod-01
-sudo docker compose -f /mnt/data/docker-compose.yml logs -f joelburigo-site
-sudo docker compose -f /mnt/data/docker-compose.yml logs -f joelburigo-worker
-sudo restore-app.sh joelburigo-site latest
-```
+## Secrets
 
-## Contexto da infra completa
+**Locais (.env)**: 1Password CLI references em `.env.tpl`.
 
-Este projeto faz parte do ecossistema Hetzner do Joel. Pra detalhes da infra (compose, backup, traefik, n8n, restrições, padrão de secrets via 1Password CLI), ver:
+**Cloudflare** (subidos via `node scripts/cf-secrets-from-env.mjs <dev|prod>`):
+- App: JWT_SECRET, OPENAI_API_KEY, MP_*, BREVO_*, R2_*, etc
+- Worker-only: CRON_SECRET (separado dev/prod, gerado com `openssl rand -base64 32`)
 
-**`~/Documents/Dev/growth-infra/CLAUDE.md`** e **`~/Documents/Dev/growth-infra/PROJECTS.md`**.
+**GitHub Actions**:
+- `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`
+- `DATABASE_URL_DEV`, `DATABASE_URL_PROD` (Neon connection strings)
 
-Backup off-site já existente: `growth-infra/scripts/backup.sh` (daily/monthly + age encrypt + rclone gdrive + Hetzner snapshots). Adicionar `/mnt/data/pg-joelburigo-site` aos paths validados quando aplicar o compose.
+## Cron Triggers ativos
+
+Definidos em `wrangler.jsonc[env.<env>.triggers.crons]`:
+
+- `0 3 * * *` — agent-usage-rollup (diário 03:00 UTC)
+- `*/15 * * * *` — calendar pull Google
+- `0 4 * * *` — calendar webhook renew
+- `*/5 * * * *` — publish-due-posts blog
 
 ## Roadmap
 

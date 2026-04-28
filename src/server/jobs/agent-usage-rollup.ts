@@ -1,5 +1,5 @@
 import { and, eq, gte, lt, sql } from 'drizzle-orm';
-import type { Job } from 'pg-boss';
+import type { Job } from './types';
 import { db } from '@/server/db/client';
 import { agent_conversations, agent_messages } from '@/server/db/schema';
 import { kv } from '@/server/lib/kv';

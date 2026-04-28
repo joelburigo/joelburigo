@@ -1,5 +1,5 @@
 import { and, eq, lte, sql } from 'drizzle-orm';
-import type { Job } from 'pg-boss';
+import type { Job } from './types';
 import { db } from '@/server/db/client';
 import { blog_posts } from '@/server/db/schema';
 import { publishPost, PUBLISH_SCHEDULED_POST } from '@/server/services/blog-cms';

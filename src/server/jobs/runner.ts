@@ -58,6 +58,22 @@ async function main() {
   await boss.start();
   console.info('[worker] pg-boss started, aguardando jobs...');
 
+  // pg-boss v12 exige criar a queue antes de work/schedule
+  const queues = [
+    AGENT_USAGE_ROLLUP,
+    PUSH_CALENDAR_EVENT,
+    PULL_GOOGLE_DELTA,
+    RENEW_GOOGLE_WEBHOOK,
+    SEND_ADVISORY_BOOKING_CONFIRMATION,
+    SEND_ADVISORY_REMINDER,
+    SCHEDULE_ADVISORY_REMINDERS,
+    PUBLISH_SCHEDULED_POST,
+    PUBLISH_DUE_POSTS,
+  ];
+  for (const name of queues) {
+    await boss.createQueue(name);
+  }
+
   // Sprint 2: agent usage rollup (diário 03:00 UTC)
   await boss.work(AGENT_USAGE_ROLLUP, handleAgentUsageRollup);
   await boss.schedule(AGENT_USAGE_ROLLUP, agentUsageRollupSchedule);

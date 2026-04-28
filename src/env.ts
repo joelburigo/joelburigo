@@ -21,6 +21,8 @@ const envSchema = z.object({
 
   DATABASE_URL: optionalString,
 
+  CRON_SECRET: optionalString,
+
   LLM_PROVIDER: z.enum(['openai', 'anthropic']).default('openai'),
   LLM_MODEL_CHAT: z.string().default('gpt-5.2'),
   LLM_MODEL_PREMIUM: z.string().default('gpt-5.2'),

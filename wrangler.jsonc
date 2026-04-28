@@ -5,16 +5,15 @@
  *   - dev  → dev.joelburigo.com.br (deploy auto via main branch)
  *   - prod → joelburigo.com.br (deploy manual via workflow_dispatch)
  *
- * Secrets (não vão aqui — setados via `wrangler secret put`):
- *   - JWT_SECRET, OPENAI_API_KEY, ANTHROPIC_API_KEY,
- *     MERCADOPAGO_ACCESS_TOKEN, STRIPE_SECRET_KEY, BREVO_API_KEY,
- *     R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, GOOGLE_CLIENT_SECRET,
- *     CF_STREAM_API_TOKEN
+ * Custom worker (custom-worker.ts) wrappa o handler do OpenNext e adiciona
+ * `scheduled()` (cron triggers) + `queue()` (consumer de jobs assíncronos).
+ *
+ * Secrets via `wrangler secret bulk` (script scripts/cf-secrets-from-env.mjs).
  */
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "joelburigo-site",
-  "main": ".open-next/worker.js",
+  "main": "custom-worker.ts",
   "compatibility_date": "2025-04-15",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
 
@@ -49,7 +48,32 @@
           "binding": "NEXT_INC_CACHE_R2_BUCKET",
           "bucket_name": "joelburigo-next-cache"
         }
-      ]
+      ],
+      "queues": {
+        "producers": [
+          {
+            "binding": "JOBS_QUEUE",
+            "queue": "joelburigo-jobs"
+          }
+        ],
+        "consumers": [
+          {
+            "queue": "joelburigo-jobs",
+            "max_batch_size": 10,
+            "max_batch_timeout": 5,
+            "max_retries": 3,
+            "dead_letter_queue": "joelburigo-jobs-dlq"
+          }
+        ]
+      },
+      "triggers": {
+        "crons": [
+          "0 3 * * *",     /* agent-usage-rollup diário 03:00 UTC */
+          "*/15 * * * *",  /* google-calendar pull (15 min) */
+          "0 4 * * *",     /* google-webhook renew diário 04:00 UTC */
+          "*/5 * * * *"    /* publish-due-posts (5 min) */
+        ]
+      }
     },
     "prod": {
       "name": "joelburigo-site",
@@ -73,7 +97,32 @@
           "binding": "NEXT_INC_CACHE_R2_BUCKET",
           "bucket_name": "joelburigo-next-cache"
         }
-      ]
+      ],
+      "queues": {
+        "producers": [
+          {
+            "binding": "JOBS_QUEUE",
+            "queue": "joelburigo-jobs"
+          }
+        ],
+        "consumers": [
+          {
+            "queue": "joelburigo-jobs",
+            "max_batch_size": 10,
+            "max_batch_timeout": 5,
+            "max_retries": 3,
+            "dead_letter_queue": "joelburigo-jobs-dlq"
+          }
+        ]
+      },
+      "triggers": {
+        "crons": [
+          "0 3 * * *",
+          "*/15 * * * *",
+          "0 4 * * *",
+          "*/5 * * * *"
+        ]
+      }
     }
   }
 }

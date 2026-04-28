@@ -1,4 +1,3 @@
-import 'server-only';
 
 // Jobs pg-boss pra sync 2-vias com Google Calendar.
 

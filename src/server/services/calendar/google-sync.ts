@@ -2,7 +2,7 @@ import 'server-only';
 
 // Sync 2-vias com Google Calendar — push de eventos locais e pull via syncToken/webhook.
 
-import { google, type calendar_v3 } from 'googleapis';
+import { calendar as googleCalendar, type calendar_v3 } from '@googleapis/calendar';
 import { eq } from 'drizzle-orm';
 import { db } from '@/server/db/client';
 import { calendar_accounts, calendar_events } from '@/server/db/schema';
@@ -58,7 +58,7 @@ export async function pushEventToGoogle(eventId: string): Promise<void> {
     return;
   }
 
-  const calendar = google.calendar({ version: 'v3', auth: oauth });
+  const calendar = googleCalendar({ version: 'v3', auth: oauth });
   const resource = buildEventResource(event);
 
   try {
@@ -127,7 +127,7 @@ export async function deleteEventFromGoogle(eventId: string): Promise<void> {
   const oauth = await getOAuthClientForUser(event.owner_id);
   if (!oauth) return;
 
-  const calendar = google.calendar({ version: 'v3', auth: oauth });
+  const calendar = googleCalendar({ version: 'v3', auth: oauth });
   try {
     await calendar.events.delete({
       calendarId: GOOGLE_CALENDAR_ID,
@@ -157,7 +157,7 @@ export async function pullDeltaFromGoogle(accountId: string): Promise<PullDeltaR
   const oauth = await getOAuthClientForAccount(accountId);
   if (!oauth) return { added: 0, updated: 0, deleted: 0 };
 
-  const calendar = google.calendar({ version: 'v3', auth: oauth });
+  const calendar = googleCalendar({ version: 'v3', auth: oauth });
   const result: PullDeltaResult = { added: 0, updated: 0, deleted: 0 };
 
   let pageToken: string | undefined;
@@ -338,7 +338,7 @@ export async function registerWebhookChannel(accountId: string): Promise<void> {
     return;
   }
 
-  const calendar = google.calendar({ version: 'v3', auth: oauth });
+  const calendar = googleCalendar({ version: 'v3', auth: oauth });
   const channelId = ulid();
   const callbackUrl = `${env.PUBLIC_SITE_URL}/api/calendar/google/webhook`;
 
@@ -384,7 +384,7 @@ export async function unregisterWebhookChannel(accountId: string): Promise<void>
   const oauth = await getOAuthClientForAccount(accountId);
   if (!oauth) return;
 
-  const calendar = google.calendar({ version: 'v3', auth: oauth });
+  const calendar = googleCalendar({ version: 'v3', auth: oauth });
   try {
     await calendar.channels.stop({
       requestBody: {

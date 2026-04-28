@@ -2,8 +2,8 @@ import 'server-only';
 
 // Google OAuth flow + token persistence (encrypted) pra calendar_accounts.
 
-import { google } from 'googleapis';
-import type { OAuth2Client } from 'google-auth-library';
+import { OAuth2Client } from 'google-auth-library';
+import { oauth2 as googleOauth2 } from '@googleapis/oauth2';
 import { and, eq } from 'drizzle-orm';
 import { db } from '@/server/db/client';
 import { calendar_accounts } from '@/server/db/schema';
@@ -39,7 +39,7 @@ function assertConfigured() {
 
 function makeOAuthClient(): OAuth2Client {
   assertConfigured();
-  return new google.auth.OAuth2({
+  return new OAuth2Client({
     clientId: env.GOOGLE_OAUTH_CLIENT_ID,
     clientSecret: env.GOOGLE_OAUTH_CLIENT_SECRET,
     redirectUri: env.GOOGLE_OAUTH_REDIRECT_URI,
@@ -74,7 +74,7 @@ export async function exchangeCode(code: string): Promise<OAuthExchangeResult> {
   if (!profileEmail || !profileSub) {
     // Fallback: chama userinfo
     client.setCredentials(tokens);
-    const oauth2 = google.oauth2({ version: 'v2', auth: client });
+    const oauth2 = googleOauth2({ version: 'v2', auth: client });
     const { data } = await oauth2.userinfo.get();
     profileEmail = data.email ?? '';
     profileSub = data.id ?? '';

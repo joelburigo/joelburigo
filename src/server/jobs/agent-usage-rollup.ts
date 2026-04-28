@@ -1,4 +1,3 @@
-import 'server-only';
 import { and, eq, gte, lt, sql } from 'drizzle-orm';
 import type { Job } from 'pg-boss';
 import { db } from '@/server/db/client';

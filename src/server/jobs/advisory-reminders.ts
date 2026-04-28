@@ -1,4 +1,3 @@
-import 'server-only';
 
 // Jobs pg-boss pra confirmação + lembretes de advisory sessions.
 

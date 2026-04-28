@@ -1,0 +1,59 @@
+name: Deploy production
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Digite "PROD" pra confirmar o deploy'
+        required: true
+        default: ''
+
+concurrency:
+  group: deploy-prod
+  cancel-in-progress: false
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validar input
+        run: |
+          if [ "${{ github.event.inputs.confirm }}" != "PROD" ]; then
+            echo "❌ Confirmação inválida. Digite PROD pra deployar."
+            exit 1
+          fi
+
+  deploy:
+    needs: guard
+    runs-on: ubuntu-latest
+    # `production` environment no GH (Settings → Environments) deve estar
+    # configurado com required reviewers (você mesmo) → pausa o run pra
+    # aprovação manual antes de seguir.
+    environment:
+      name: production
+      url: https://joelburigo.com.br
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build + Deploy (Cloudflare Workers env=prod)
+        run: pnpm cf:deploy:prod
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL_PROD }}
+          CLOUDFLARE_HYPERDRIVE_LOCAL_CONNECTION_STRING_HYPERDRIVE: ${{ secrets.DATABASE_URL_PROD }}
+          PUBLIC_SITE_URL: https://joelburigo.com.br
+          NODE_ENV: production

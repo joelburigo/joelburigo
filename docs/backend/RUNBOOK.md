@@ -219,26 +219,33 @@ npx wrangler@latest secret list --env prod
 echo "valor" | npx wrangler@latest secret put NOME_DO_SECRET --env dev
 ```
 
-### Bulk upload (helper) — fontes diferentes por env
+### Bulk upload (helper) — merge `.env` + `.env.prod`
 
 ```bash
-# Lê .env (valores DEV)
+# dev: só .env
 node scripts/cf-secrets-from-env.mjs dev
 
-# Lê .env.prod (valores PROD; arquivo gitignored)
+# prod: .env (base) + .env.prod (override)
 node scripts/cf-secrets-from-env.mjs prod
 ```
 
-> Pula auto: `NODE_ENV`, `PORT`, `DATABASE_URL`, `PUBLIC_SITE_URL`, `LLM_PROVIDER`, `CF_ACCOUNT_ID`, `CF_API_TOKEN`. Esses são `vars` em `wrangler.jsonc` ou bindings.
+**Como funciona pra prod**: começa do `.env`, sobrescreve as keys que existem no `.env.prod`. Ou seja, o `.env.prod` só precisa ter **o que MUDA em prod**:
+
+- `JWT_SECRET` — gerar novo (`openssl rand -base64 32`)
+- `MP_*` — credenciais reais Mercado Pago (APP_USR-...)
+- `R2_*` — bucket prod + token novo
+
+Tudo o mais (analytics, Brevo, Evolution, Turnstile compartilhado, LLM models) herda do `.env` automaticamente.
+
+> Pula auto: `NODE_ENV`, `PORT`, `DATABASE_URL`, `PUBLIC_SITE_URL`, `LLM_PROVIDER`, `CF_ACCOUNT_ID`, `CF_API_TOKEN`. Esses são `vars` em `wrangler.jsonc`, bindings, ou setados manual.
 
 ### Setup inicial do .env.prod
 
-1. Copia o template: `cp .env.prod.example .env.prod`
-2. Preenche **só os secrets marcados 🔴 OBRIGATÓRIO** (JWT, MP_*, R2_*)
-3. Os marcados 🟢 podem ser cópia do `.env` dev (mesmo valor)
-4. Roda: `node scripts/cf-secrets-from-env.mjs prod`
+1. `cp .env.prod.example .env.prod`
+2. Preenche os 7 valores obrigatórios (JWT, 3x MP, 4x R2)
+3. `node scripts/cf-secrets-from-env.mjs prod`
 
-⚠️ **Nunca commita `.env.prod`** — está no `.gitignore`.
+⚠️ **`.env.prod` está gitignored** — não commita.
 
 ### Rotacionar JWT_SECRET
 

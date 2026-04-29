@@ -97,15 +97,27 @@ writeFileSync(tmpFile, JSON.stringify(secrets), { mode: 0o600 });
 console.log(`\nSubindo ${count} secrets pro env ${env}...`);
 console.log('Keys:', Object.keys(secrets).sort().join(', '));
 
-// Limpa env auth do wrangler antes de chamar — se shell tem CF_API_TOKEN
-// exportado (ex: do .env), wrangler tenta usar como auth mas pode ser
-// um token escopo restrito (Stream, R2) sem perm pra Workers. Forçamos
-// fallback pra OAuth do `wrangler login`.
+// Wrangler precisa de auth com perm Workers Scripts:Edit. Estratégia:
+//
+// 1. Se WRANGLER_TOKEN estiver setado → usa ele (token deploy do GH Actions)
+// 2. Senão, tenta OAuth do `wrangler login`
+//
+// Limpa CF_API_TOKEN/CF_ACCOUNT_ID do shell — pode ser escopo restrito
+// (Stream/R2) que wrangler tenta usar como auth e quebra.
 const cleanEnv = { ...process.env };
 delete cleanEnv.CF_API_TOKEN;
 delete cleanEnv.CF_ACCOUNT_ID;
 delete cleanEnv.CLOUDFLARE_API_TOKEN;
 delete cleanEnv.CLOUDFLARE_ACCOUNT_ID;
+
+if (process.env.WRANGLER_TOKEN) {
+  cleanEnv.CLOUDFLARE_API_TOKEN = process.env.WRANGLER_TOKEN;
+  cleanEnv.CLOUDFLARE_ACCOUNT_ID = '9a7483a31b88e0985db3ad85c685e223';
+  console.log('Usando WRANGLER_TOKEN pra auth');
+} else {
+  console.log('Sem WRANGLER_TOKEN — vai usar OAuth do `wrangler login`');
+  console.log('  (se falhar com 9106, rode `npx wrangler login` ou export WRANGLER_TOKEN=...)');
+}
 
 try {
   execFileSync(

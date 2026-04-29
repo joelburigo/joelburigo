@@ -97,11 +97,21 @@ writeFileSync(tmpFile, JSON.stringify(secrets), { mode: 0o600 });
 console.log(`\nSubindo ${count} secrets pro env ${env}...`);
 console.log('Keys:', Object.keys(secrets).sort().join(', '));
 
+// Limpa env auth do wrangler antes de chamar — se shell tem CF_API_TOKEN
+// exportado (ex: do .env), wrangler tenta usar como auth mas pode ser
+// um token escopo restrito (Stream, R2) sem perm pra Workers. Forçamos
+// fallback pra OAuth do `wrangler login`.
+const cleanEnv = { ...process.env };
+delete cleanEnv.CF_API_TOKEN;
+delete cleanEnv.CF_ACCOUNT_ID;
+delete cleanEnv.CLOUDFLARE_API_TOKEN;
+delete cleanEnv.CLOUDFLARE_ACCOUNT_ID;
+
 try {
   execFileSync(
     'npx',
     ['-y', 'wrangler@latest', 'secret', 'bulk', tmpFile, '--env', env],
-    { stdio: 'inherit' },
+    { stdio: 'inherit', env: cleanEnv },
   );
 } finally {
   unlinkSync(tmpFile);

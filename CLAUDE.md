@@ -92,6 +92,8 @@ Services foi descontinuado (arquivado em `docs/conteudo/_archive/parte9-services
 - **Migração Astro → Next concluída em 2026-04-24** (Sprint 0). Páginas pendentes (sobre, cases, contato, jornada-90-dias, apresentação, links, advisory-aplicação, advisory-obrigado, agendamento-sessao, diagnostico-obrigado, diagnostico-resultado, vss-analise-credito) serão portadas incrementalmente — referência visual fica no Astro em produção até cutover.
 - **Antes de gerar peça** (post, email, slide, anúncio, landing): ler `docs/conteudo/brand/ANTI_DRIFT.md` + `USAGE.md`. Templates copiáveis em `docs/conteudo/brand/templates/`.
 
+> 📘 **Operação completa**: ver `docs/backend/RUNBOOK.md` (deploy, secrets, jobs, troubleshooting, IDs CF, decisão Secrets Store).
+
 ## Stack/comandos
 
 ```bash

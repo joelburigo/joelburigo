@@ -63,12 +63,13 @@ function parseEnvFile(path, { includeSkipped = false } = {}) {
   return out;
 }
 
-// Lê WRANGLER_TOKEN do .env (precedência: .env.prod > .env > process.env).
+// Precedência: .env.prod > .env.local > .env > process.env.
 function loadWranglerToken() {
-  const fromEnvProd = parseEnvFile('.env.prod', { includeSkipped: true })?.WRANGLER_TOKEN;
-  if (fromEnvProd) return fromEnvProd;
-  const fromEnv = parseEnvFile('.env', { includeSkipped: true })?.WRANGLER_TOKEN;
-  if (fromEnv) return fromEnv;
+  const sources = ['.env.prod', '.env.local', '.env'];
+  for (const src of sources) {
+    const v = parseEnvFile(src, { includeSkipped: true })?.WRANGLER_TOKEN;
+    if (v) return v;
+  }
   return process.env.WRANGLER_TOKEN || null;
 }
 
@@ -77,23 +78,27 @@ if (!existsSync('.env')) {
   process.exit(1);
 }
 
-const baseSecrets = parseEnvFile('.env');
-let secrets = baseSecrets;
-
+// Precedência (último vence): .env → .env.local → .env.prod (só se prod)
+const layers = [
+  ['.env', parseEnvFile('.env')],
+  ['.env.local', parseEnvFile('.env.local')],
+];
 if (env === 'prod') {
   if (!existsSync('.env.prod')) {
     console.error('❌ .env.prod não existe. Use .env.prod.example como base.');
     process.exit(1);
   }
-  const overrides = parseEnvFile('.env.prod');
-  secrets = { ...baseSecrets, ...overrides };
+  layers.push(['.env.prod', parseEnvFile('.env.prod')]);
+}
+
+const secrets = {};
+for (const [name, vars] of layers) {
+  const overlap = Object.keys(vars).filter((k) => k in secrets);
+  Object.assign(secrets, vars);
   console.log(
-    `Merge: ${Object.keys(baseSecrets).length} de .env + ${Object.keys(overrides).length} overrides de .env.prod`,
+    `${name}: +${Object.keys(vars).length}` +
+      (overlap.length ? ` (sobrescreve ${overlap.length}: ${overlap.sort().join(', ')})` : ''),
   );
-  const overriden = Object.keys(overrides).filter((k) => k in baseSecrets);
-  if (overriden.length) console.log('  sobrescritos:', overriden.sort().join(', '));
-} else {
-  console.log(`Lendo ${Object.keys(baseSecrets).length} secrets de .env`);
 }
 
 const count = Object.keys(secrets).length;

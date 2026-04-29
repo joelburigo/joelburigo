@@ -26,14 +26,19 @@ if (!env || !['dev', 'prod'].includes(env)) {
   process.exit(1);
 }
 
+// Vars que NÃO viram secret de Worker:
+// - NODE_ENV/PORT/PUBLIC_SITE_URL/LLM_PROVIDER → wrangler.jsonc[env.vars]
+// - DATABASE_URL → resolvido em runtime pelo Hyperdrive binding
+// - CLOUDFLARE_* → auth do wrangler CLI, irrelevante pro Worker
+//
+// CF_ACCOUNT_ID e CF_API_TOKEN SÃO uploaded — são lidos em runtime pelo
+// service src/server/services/cf-stream.ts pra chamar Stream API.
 const SKIP = new Set([
   'NODE_ENV',
   'PORT',
   'PUBLIC_SITE_URL',
   'LLM_PROVIDER',
   'DATABASE_URL',
-  'CF_ACCOUNT_ID',
-  'CF_API_TOKEN', // é var do código (Stream API), seto manual
   'CLOUDFLARE_API_TOKEN',
   'CLOUDFLARE_ACCOUNT_ID',
 ]);

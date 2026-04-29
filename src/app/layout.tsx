@@ -54,7 +54,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang={SITE.language} className={fontsClassName}>
+    <html lang={SITE.language} className={fontsClassName} data-scroll-behavior="smooth">
       <body className="bg-ink text-cream antialiased">
         {/* window.__JB_ENV servido por /api/public-env.js — external script
             evita warning React 19 de inline <script> dentro do tree. */}

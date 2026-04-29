@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>JB · Iceberg IG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --jb-ink: #050505;
+        --jb-cream: #f5f1e8;
+        --jb-fire: #ff3b0f;
+        --jb-acid: #c6ff00;
+        --jb-fg-muted: #6b7280;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; background: var(--jb-ink); }
+      .canvas {
+        width: 1080px; height: 1080px;
+        position: relative; overflow: hidden;
+        background: var(--jb-ink); color: var(--jb-cream);
+      }
+      .grid-bg {
+        position: absolute; inset: 0; pointer-events: none; z-index: 0; opacity: 0.30;
+        background-image:
+          linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+        background-size: 80px 80px;
+      }
+      .pad {
+        position: relative; z-index: 2;
+        padding: 64px 80px; height: 100%;
+        display: flex; flex-direction: column;
+      }
+      .sb {
+        display: flex; justify-content: space-between; align-items: center;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 18px; letter-spacing: 0.25em; text-transform: uppercase;
+        color: var(--jb-fg-muted);
+      }
+      .sb .dot {
+        width: 12px; height: 12px; background: var(--jb-acid); border-radius: 50%;
+        box-shadow: 0 0 14px var(--jb-acid);
+        display: inline-block; margin-right: 12px; vertical-align: middle;
+      }
+      .sb b { color: var(--jb-cream); }
+      .head {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 52px; line-height: 0.95;
+        letter-spacing: -0.04em; text-transform: uppercase;
+        color: var(--jb-cream);
+        margin-top: 28px;
+      }
+      .head .fire { color: var(--jb-fire); }
+      .stage {
+        position: relative; flex: 1;
+        margin-top: 8px;
+      }
+      .stage svg { width: 100%; height: 100%; display: block; }
+      .attr {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 20px; letter-spacing: 0.25em;
+        color: var(--jb-fg-muted); text-transform: uppercase;
+        display: flex; align-items: center; gap: 20px;
+      }
+      .attr::before { content: ''; width: 80px; height: 1px; background: var(--jb-acid); }
+    </style>
+  </head>
+  <body data-w="1080" data-h="1080">
+    <div class="canvas">
+      <div class="grid-bg"></div>
+      <div class="pad">
+        <div class="sb">
+          <span><span class="dot"></span>ICEBERG · MKT DIGITAL · ED. 10</span>
+          <span>// <b>@joelburigo</b></span>
+        </div>
+
+        <div class="head">
+          O QUE TE PAGA<br />
+          ESTÁ <span class="fire">EMBAIXO</span> DA LINHA D'ÁGUA.
+        </div>
+
+        <div class="stage">
+          <!-- Iceberg unico: SVG base + clip abaixo da linha d'agua + overlay submerso -->
+          <svg viewBox="0 0 920 620" xmlns="http://www.w3.org/2000/svg" font-family="'Archivo Black', sans-serif">
+            <defs>
+              <linearGradient id="iceLight" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#f5f1e8"/>
+              </linearGradient>
+              <linearGradient id="iceShadow" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#bdb7a8"/>
+                <stop offset="100%" stop-color="#7d7766"/>
+              </linearGradient>
+              <path id="icebergShape" d="M 470 48 L 310 220 L 184 350 L 260 500 L 470 600 L 680 500 L 760 350 L 645 220 Z" />
+              <clipPath id="aboveWater"><rect x="0" y="0" width="920" height="220" /></clipPath>
+              <clipPath id="belowWater"><rect x="0" y="220" width="920" height="400" /></clipPath>
+            </defs>
+
+            <!-- ===== ICEBERG SUBMERSO: mesma forma, clipada abaixo da agua ===== -->
+            <g clip-path="url(#belowWater)">
+              <use href="#icebergShape" fill="#f5f1e8" opacity="0.12" />
+              <use href="#icebergShape" fill="#ff3b0f" opacity="0.075" />
+              <use href="#icebergShape" fill="none" stroke="#ff3b0f" stroke-width="3" stroke-linejoin="miter" />
+
+              <polygon points="310,220 470,600 184,350" fill="rgba(245,241,232,0.06)" />
+              <polygon points="645,220 760,350 470,600" fill="rgba(0,0,0,0.20)" />
+              <polygon points="310,220 645,220 470,600" fill="rgba(255,59,15,0.045)" />
+              <polygon points="470,220 645,220 548,356 470,600" fill="rgba(0,0,0,0.14)" />
+              <polygon points="310,220 470,220 390,356 470,600" fill="rgba(255,255,255,0.045)" />
+
+              <path d="M 470 220 L 470 600" stroke="rgba(255,59,15,0.48)" stroke-width="1.6" fill="none" />
+              <path d="M 310 220 L 390 356 L 470 600" stroke="rgba(255,59,15,0.34)" stroke-width="1.4" fill="none" />
+              <path d="M 645 220 L 548 356 L 470 600" stroke="rgba(255,59,15,0.34)" stroke-width="1.4" fill="none" />
+              <path d="M 184 350 L 390 356 L 548 356 L 760 350" stroke="rgba(255,59,15,0.24)" stroke-width="1.2" fill="none" />
+            </g>
+
+            <!-- ===== ICEBERG ACIMA DA AGUA: mesma forma, clipada acima da agua ===== -->
+            <g clip-path="url(#aboveWater)">
+              <use href="#icebergShape" fill="#f5f1e8" />
+              <polygon points="470,48 310,220 470,220" fill="url(#iceLight)" />
+              <polygon points="470,48 470,220 645,220" fill="#d7d0bf" />
+              <polygon points="470,48 645,220 525,118" fill="url(#iceShadow)" opacity="0.86" />
+              <polygon points="470,48 426,132 468,118" fill="#ffffff" opacity="0.9" />
+              <polygon points="470,48 503,145 525,118" fill="rgba(0,0,0,0.12)" />
+              <line x1="470" y1="48" x2="470" y2="220" stroke="rgba(0,0,0,0.32)" stroke-width="1.5" />
+              <line x1="470" y1="48" x2="525" y2="118" stroke="rgba(0,0,0,0.22)" stroke-width="1.5" />
+            </g>
+
+            <!-- ===== LINHA D'AGUA ===== -->
+            <path d="M 0 220 C 170 211 306 225 418 219 C 548 212 670 226 920 216" fill="none" stroke="#ff3b0f" stroke-width="4" />
+            <line x1="0" y1="230" x2="920" y2="230" stroke="#ff3b0f" stroke-width="1" stroke-dasharray="5 9" opacity="0.5" />
+            <text x="918" y="207" text-anchor="end"
+              font-family="'JetBrains Mono', monospace" font-size="13"
+              letter-spacing="3" fill="#ff3b0f">— LINHA D'ÁGUA</text>
+
+            <!-- ===== LABELS COM LEADER LINES (texto sobre o "mar" escuro, ponta na borda do iceberg) ===== -->
+
+            <!-- Topo: O QUE APARECE → leader pro pico -->
+            <text x="610" y="86" font-family="'JetBrains Mono', monospace" font-size="13"
+              letter-spacing="3" fill="#c6ff00">// O QUE APARECE · 10%</text>
+            <text x="610" y="120" font-size="24" fill="#f5f1e8">POSTS · REELS</text>
+            <text x="610" y="150" font-size="24" fill="#f5f1e8">ANÚNCIO</text>
+            <line x1="602" y1="102" x2="528" y2="116" stroke="#c6ff00" stroke-width="1.8" />
+            <circle cx="528" cy="116" r="4.5" fill="#c6ff00" />
+
+            <!-- Tag central abaixo da água -->
+            <text x="460" y="260" text-anchor="middle"
+              font-family="'JetBrains Mono', monospace" font-size="13"
+              letter-spacing="3" fill="#c6ff00">// O QUE SUSTENTA · 90% · OS 6PS</text>
+
+            <!-- 6Ps · 3 LABELS À ESQUERDA (com leader lines apontando pro iceberg) -->
+            <g font-family="'Archivo Black', sans-serif" font-size="18" fill="#f5f1e8">
+              <!-- POSICIONAMENTO -->
+              <text x="20" y="330" text-anchor="start">POSICIONAMENTO</text>
+              <line x1="236" y1="324" x2="330" y2="310" stroke="#c6ff00" stroke-width="1.4" opacity="0.86"/>
+              <circle cx="330" cy="310" r="3.5" fill="#c6ff00"/>
+
+              <!-- PRODUTO -->
+              <text x="20" y="436" text-anchor="start">PRODUTO</text>
+              <line x1="166" y1="430" x2="350" y2="430" stroke="#c6ff00" stroke-width="1.4" opacity="0.86"/>
+              <circle cx="350" cy="430" r="3.5" fill="#c6ff00"/>
+
+              <!-- PROCESSOS -->
+              <text x="20" y="542" text-anchor="start">PROCESSOS</text>
+              <line x1="188" y1="536" x2="420" y2="548" stroke="#c6ff00" stroke-width="1.4" opacity="0.86"/>
+              <circle cx="420" cy="548" r="3.5" fill="#c6ff00"/>
+            </g>
+
+            <!-- 6Ps · 3 LABELS À DIREITA -->
+            <g font-family="'Archivo Black', sans-serif" font-size="18" fill="#f5f1e8">
+              <!-- PÚBLICO -->
+              <text x="900" y="330" text-anchor="end">PÚBLICO</text>
+              <line x1="782" y1="324" x2="590" y2="310" stroke="#c6ff00" stroke-width="1.4" opacity="0.86"/>
+              <circle cx="590" cy="310" r="3.5" fill="#c6ff00"/>
+
+              <!-- PROGRAMAS -->
+              <text x="900" y="436" text-anchor="end">PROGRAMAS</text>
+              <line x1="758" y1="430" x2="570" y2="430" stroke="#c6ff00" stroke-width="1.4" opacity="0.86"/>
+              <circle cx="570" cy="430" r="3.5" fill="#c6ff00"/>
+
+              <!-- PESSOAS -->
+              <text x="900" y="542" text-anchor="end">PESSOAS</text>
+              <line x1="782" y1="536" x2="500" y2="548" stroke="#c6ff00" stroke-width="1.4" opacity="0.86"/>
+              <circle cx="500" cy="548" r="3.5" fill="#c6ff00"/>
+            </g>
+
+            <text x="460" y="606" text-anchor="middle"
+              font-family="'JetBrains Mono', monospace" font-size="11"
+              letter-spacing="4" fill="#f5f1e8" opacity="0.55">FRAMEWORK 6PS · VENDAS ESCALÁVEIS</text>
+          </svg>
+        </div>
+
+        <div class="attr">JOEL BURIGO · SISTEMA &gt; IMPROVISO</div>
+      </div>
+    </div>
+  </body>
+</html>

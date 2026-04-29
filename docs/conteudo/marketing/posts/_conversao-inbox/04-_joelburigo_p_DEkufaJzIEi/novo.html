@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>JB · Mitos vs Fatos IG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --jb-ink: #050505;
+        --jb-cream: #f5f1e8;
+        --jb-fire: #ff3b0f;
+        --jb-acid: #c6ff00;
+        --jb-fg-muted: #6b7280;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; background: var(--jb-ink); }
+      .canvas {
+        width: 1080px; height: 1080px;
+        position: relative; overflow: hidden;
+        background: var(--jb-ink); color: var(--jb-cream);
+      }
+      .grid-bg {
+        position: absolute; inset: 0; pointer-events: none; z-index: 0; opacity: 0.35;
+        background-image:
+          linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+        background-size: 80px 80px;
+      }
+      .pad {
+        position: relative; z-index: 2;
+        padding: 80px; height: 100%;
+        display: flex; flex-direction: column; justify-content: space-between;
+      }
+      .sb {
+        display: flex; justify-content: space-between; align-items: center;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 18px; letter-spacing: 0.25em; text-transform: uppercase;
+        color: var(--jb-fg-muted);
+      }
+      .sb .dot {
+        width: 12px; height: 12px; background: var(--jb-acid); border-radius: 50%;
+        box-shadow: 0 0 14px var(--jb-acid);
+        display: inline-block; margin-right: 12px; vertical-align: middle;
+      }
+      .sb b { color: var(--jb-cream); }
+      .head {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 78px; line-height: 0.95;
+        letter-spacing: -0.04em; text-transform: uppercase;
+        color: var(--jb-cream);
+      }
+      .head .acid { color: var(--jb-acid); }
+      .compare {
+        display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+      }
+      .col {
+        border: 3px solid; padding: 36px 32px;
+        font-family: 'Archivo', sans-serif;
+        position: relative;
+        box-shadow: 12px 12px 0 0 rgba(255,255,255,0.04);
+      }
+      .col.mito { border-color: var(--jb-fire); }
+      .col.fato { border-color: var(--jb-acid); }
+      .col h3 {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 18px; letter-spacing: 0.3em; text-transform: uppercase;
+        margin: 0 0 24px 0;
+      }
+      .col.mito h3 { color: var(--jb-fire); }
+      .col.fato h3 { color: var(--jb-acid); }
+      .col p {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 32px; line-height: 1.1; margin: 0;
+        text-transform: uppercase; letter-spacing: -0.02em;
+        color: var(--jb-cream);
+      }
+      .col.mito p { text-decoration: line-through; text-decoration-color: var(--jb-fire); text-decoration-thickness: 5px; }
+      .attr {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 22px; letter-spacing: 0.25em;
+        color: var(--jb-fg-muted); text-transform: uppercase;
+        display: flex; align-items: center; gap: 20px;
+      }
+      .attr::before { content: ''; width: 80px; height: 1px; background: var(--jb-acid); }
+    </style>
+  </head>
+  <body data-w="1080" data-h="1080">
+    <div class="canvas">
+      <div class="grid-bg"></div>
+      <div class="pad">
+        <div class="sb">
+          <span><span class="dot"></span>MITOS × FATOS · ED. 08</span>
+          <span>// <b>@joelburigo</b></span>
+        </div>
+
+        <div>
+          <div class="head">
+            MAIS GRANA<br />
+            EM ANÚNCIO =<br />
+            MAIS <span class="acid">VENDAS?</span>
+          </div>
+
+          <div class="compare" style="margin-top: 56px;">
+            <div class="col mito">
+              <h3>// MITO</h3>
+              <p>Anúncio garante venda imediata.</p>
+            </div>
+            <div class="col fato">
+              <h3>// FATO</h3>
+              <p>Anúncio gera lead. Sistema fecha venda.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="attr">JOEL BURIGO · SISTEMA &gt; IMPROVISO</div>
+      </div>
+    </div>
+  </body>
+</html>

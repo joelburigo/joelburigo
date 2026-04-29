@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>JB · PUV Venn IG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --jb-ink: #050505;
+        --jb-cream: #f5f1e8;
+        --jb-fire: #ff3b0f;
+        --jb-acid: #c6ff00;
+        --jb-fg-muted: #6b7280;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; background: var(--jb-ink); }
+      .canvas {
+        width: 1080px; height: 1080px;
+        position: relative; overflow: hidden;
+        background: var(--jb-ink); color: var(--jb-cream);
+      }
+      .grid-bg {
+        position: absolute; inset: 0; pointer-events: none; z-index: 0; opacity: 0.30;
+        background-image:
+          linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+        background-size: 80px 80px;
+      }
+      .pad {
+        position: relative; z-index: 2;
+        padding: 64px 80px; height: 100%;
+        display: flex; flex-direction: column;
+      }
+      .sb {
+        display: flex; justify-content: space-between; align-items: center;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 18px; letter-spacing: 0.25em; text-transform: uppercase;
+        color: var(--jb-fg-muted);
+      }
+      .sb .dot {
+        width: 12px; height: 12px; background: var(--jb-acid); border-radius: 50%;
+        box-shadow: 0 0 14px var(--jb-acid);
+        display: inline-block; margin-right: 12px; vertical-align: middle;
+      }
+      .sb b { color: var(--jb-cream); }
+      .head {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 60px; line-height: 0.95;
+        letter-spacing: -0.04em; text-transform: uppercase;
+        color: var(--jb-cream);
+        margin-top: 28px;
+      }
+      .head .fire { color: var(--jb-fire); }
+      .stage {
+        position: relative; flex: 1;
+        margin-top: 24px;
+      }
+      .stage svg { width: 100%; height: 100%; display: block; }
+      .attr {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 20px; letter-spacing: 0.25em;
+        color: var(--jb-fg-muted); text-transform: uppercase;
+        display: flex; align-items: center; gap: 20px;
+      }
+      .attr::before { content: ''; width: 80px; height: 1px; background: var(--jb-acid); }
+    </style>
+  </head>
+  <body data-w="1080" data-h="1080">
+    <div class="canvas">
+      <div class="grid-bg"></div>
+      <div class="pad">
+        <div class="sb">
+          <span><span class="dot"></span>FRAMEWORK · PUV · ED. 09</span>
+          <span>// <b>@joelburigo</b></span>
+        </div>
+
+        <div class="head">
+          ONDE NASCE A<br />
+          <span class="fire">PROPOSTA ÚNICA</span> DE VALOR.
+        </div>
+
+        <div class="stage">
+          <!-- Geometria:
+               Círculos (r=170): A(330,310) acid · B(590,310) fire · C(460,500) cream
+               Pontos de borda externa (45°/135°/270°):
+               A: outer-top-left  = (330-120, 310-120) = (210, 190)
+               B: outer-top-right = (590+120, 310-120) = (710, 190)
+               C: outer-bottom    = (460, 500+170)     = (460, 670)
+               PUV centroide ≈ (460, 373)
+          -->
+          <svg viewBox="0 0 920 720" xmlns="http://www.w3.org/2000/svg" font-family="'Archivo Black', sans-serif">
+            <!-- 3 círculos (C subiu pra deixar espaço pro label embaixo) -->
+            <g style="mix-blend-mode: screen;">
+              <circle cx="330" cy="290" r="160" fill="rgba(198,255,0,0.20)" stroke="#c6ff00" stroke-width="3" />
+              <circle cx="590" cy="290" r="160" fill="rgba(255,59,15,0.20)" stroke="#ff3b0f" stroke-width="3" />
+              <circle cx="460" cy="460" r="160" fill="rgba(245,241,232,0.10)" stroke="#f5f1e8" stroke-width="3" />
+            </g>
+
+            <!-- Borda externa A: 225° → (330-113, 290-113) = (217, 177) -->
+            <line x1="217" y1="177" x2="120" y2="80" stroke="#c6ff00" stroke-width="2" />
+            <circle cx="217" cy="177" r="5" fill="#c6ff00" />
+            <g transform="translate(20, 40)">
+              <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="14" letter-spacing="3" fill="#c6ff00">// VOCÊ</text>
+              <text x="0" y="26" font-size="22" letter-spacing="-0.5" fill="#f5f1e8">O QUE VOCÊ</text>
+              <text x="0" y="50" font-size="22" letter-spacing="-0.5" fill="#f5f1e8">FAZ MELHOR</text>
+            </g>
+
+            <!-- Borda externa B: 315° → (590+113, 290-113) = (703, 177) -->
+            <line x1="703" y1="177" x2="800" y2="80" stroke="#ff3b0f" stroke-width="2" />
+            <circle cx="703" cy="177" r="5" fill="#ff3b0f" />
+            <g transform="translate(900, 40)">
+              <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="14" letter-spacing="3" fill="#ff3b0f" text-anchor="end">// CLIENTE</text>
+              <text x="0" y="26" font-size="22" letter-spacing="-0.5" fill="#f5f1e8" text-anchor="end">O QUE O</text>
+              <text x="0" y="50" font-size="22" letter-spacing="-0.5" fill="#f5f1e8" text-anchor="end">CLIENTE QUER</text>
+            </g>
+
+            <!-- Borda externa C: 90° → (460, 460+160) = (460, 620). Label INSIDE viewBox -->
+            <line x1="460" y1="620" x2="460" y2="650" stroke="#f5f1e8" stroke-width="2" />
+            <circle cx="460" cy="620" r="5" fill="#f5f1e8" />
+            <text x="460" y="672" font-family="'JetBrains Mono', monospace" font-size="14" letter-spacing="3" fill="#f5f1e8" text-anchor="middle">// MERCADO</text>
+            <text x="460" y="700" font-size="22" letter-spacing="-0.5" fill="#f5f1e8" text-anchor="middle">O QUE A CONCORRÊNCIA NÃO FAZ</text>
+
+            <!-- PUV chip no centroide -->
+            <g transform="translate(460, 347)">
+              <rect x="-92" y="-32" width="184" height="64" fill="#c6ff00" />
+              <text x="0" y="14" font-size="36" letter-spacing="-0.5" fill="#050505" text-anchor="middle">★ PUV</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="attr">JOEL BURIGO · SISTEMA &gt; IMPROVISO</div>
+      </div>
+    </div>
+  </body>
+</html>

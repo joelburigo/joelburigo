@@ -219,14 +219,26 @@ npx wrangler@latest secret list --env prod
 echo "valor" | npx wrangler@latest secret put NOME_DO_SECRET --env dev
 ```
 
-### Bulk upload do .env (helper)
+### Bulk upload (helper) — fontes diferentes por env
 
 ```bash
+# Lê .env (valores DEV)
 node scripts/cf-secrets-from-env.mjs dev
+
+# Lê .env.prod (valores PROD; arquivo gitignored)
 node scripts/cf-secrets-from-env.mjs prod
 ```
 
 > Pula auto: `NODE_ENV`, `PORT`, `DATABASE_URL`, `PUBLIC_SITE_URL`, `LLM_PROVIDER`, `CF_ACCOUNT_ID`, `CF_API_TOKEN`. Esses são `vars` em `wrangler.jsonc` ou bindings.
+
+### Setup inicial do .env.prod
+
+1. Copia o template: `cp .env.prod.example .env.prod`
+2. Preenche **só os secrets marcados 🔴 OBRIGATÓRIO** (JWT, MP_*, Turnstile, R2_BUCKET)
+3. Os marcados 🟢 podem ser cópia do `.env` dev (mesmo valor)
+4. Roda: `node scripts/cf-secrets-from-env.mjs prod`
+
+⚠️ **Nunca commita `.env.prod`** — está no `.gitignore`.
 
 ### Rotacionar JWT_SECRET
 

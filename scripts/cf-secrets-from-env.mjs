@@ -1,6 +1,10 @@
 #!/usr/bin/env node
 /**
- * Bulk-upload secrets do .env local pro Cloudflare Workers env (dev ou prod).
+ * Bulk-upload secrets pro Cloudflare Workers env (dev ou prod).
+ *
+ * Lê o .env apropriado:
+ *   - target=dev  → .env (dev é o env padrão local)
+ *   - target=prod → .env.prod (gitignored; valores prod-específicos)
  *
  * Uso:
  *   node scripts/cf-secrets-from-env.mjs dev
@@ -9,7 +13,7 @@
  * Pula vars que já estão em wrangler.jsonc[env.<env>.vars] e vars puramente
  * locais (DATABASE_URL — vai por Hyperdrive — PORT, NODE_ENV, etc).
  */
-import { readFileSync, writeFileSync, unlinkSync } from 'node:fs';
+import { readFileSync, writeFileSync, unlinkSync, existsSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -17,6 +21,16 @@ import { join } from 'node:path';
 const env = process.argv[2];
 if (!env || !['dev', 'prod'].includes(env)) {
   console.error('Uso: node scripts/cf-secrets-from-env.mjs <dev|prod>');
+  process.exit(1);
+}
+
+const ENV_FILE = env === 'prod' ? '.env.prod' : '.env';
+if (!existsSync(ENV_FILE)) {
+  console.error(`❌ ${ENV_FILE} não existe.`);
+  if (env === 'prod') {
+    console.error('   Crie o arquivo (gitignored) com os secrets de produção.');
+    console.error('   Use .env.prod.example como base.');
+  }
   process.exit(1);
 }
 
@@ -32,7 +46,8 @@ const SKIP = new Set([
   'CLOUDFLARE_ACCOUNT_ID',
 ]);
 
-const raw = readFileSync('.env', 'utf-8');
+const raw = readFileSync(ENV_FILE, 'utf-8');
+console.log(`Lendo ${ENV_FILE} → env ${env}`);
 const secrets = {};
 for (const line of raw.split('\n')) {
   const trimmed = line.trim();

@@ -234,7 +234,7 @@ node scripts/cf-secrets-from-env.mjs prod
 ### Setup inicial do .env.prod
 
 1. Copia o template: `cp .env.prod.example .env.prod`
-2. Preenche **só os secrets marcados 🔴 OBRIGATÓRIO** (JWT, MP_*, Turnstile, R2_BUCKET)
+2. Preenche **só os secrets marcados 🔴 OBRIGATÓRIO** (JWT, MP_*, R2_*)
 3. Os marcados 🟢 podem ser cópia do `.env` dev (mesmo valor)
 4. Roda: `node scripts/cf-secrets-from-env.mjs prod`
 

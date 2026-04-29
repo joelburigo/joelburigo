@@ -501,8 +501,8 @@ npx wrangler@latest hyperdrive list
 | Hyperdrive prod          | `23a0dcc0a7224b55b0dc8d3912088aa7`       |
 | R2 bucket cache          | `joelburigo-next-cache`                  |
 | R2 bucket artifacts      | `joelburigo-artifacts`                   |
-| Queue principal          | `joelburigo-jobs`                        |
-| DLQ                      | `joelburigo-jobs-dlq`                    |
+| Queue dev                | `joelburigo-jobs-dev` + `-dlq`           |
+| Queue prod               | `joelburigo-jobs-prod` + `-dlq`          |
 | Worker dev               | `joelburigo-site-dev` → dev.joelburigo.com.br |
 | Worker prod              | `joelburigo-site` → joelburigo.com.br    |
 

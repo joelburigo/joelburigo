@@ -53,16 +53,16 @@
         "producers": [
           {
             "binding": "JOBS_QUEUE",
-            "queue": "joelburigo-jobs"
+            "queue": "joelburigo-jobs-dev"
           }
         ],
         "consumers": [
           {
-            "queue": "joelburigo-jobs",
+            "queue": "joelburigo-jobs-dev",
             "max_batch_size": 10,
             "max_batch_timeout": 5,
             "max_retries": 3,
-            "dead_letter_queue": "joelburigo-jobs-dlq"
+            "dead_letter_queue": "joelburigo-jobs-dev-dlq"
           }
         ]
       },
@@ -102,16 +102,16 @@
         "producers": [
           {
             "binding": "JOBS_QUEUE",
-            "queue": "joelburigo-jobs"
+            "queue": "joelburigo-jobs-prod"
           }
         ],
         "consumers": [
           {
-            "queue": "joelburigo-jobs",
+            "queue": "joelburigo-jobs-prod",
             "max_batch_size": 10,
             "max_batch_timeout": 5,
             "max_retries": 3,
-            "dead_letter_queue": "joelburigo-jobs-dlq"
+            "dead_letter_queue": "joelburigo-jobs-prod-dlq"
           }
         ]
       },

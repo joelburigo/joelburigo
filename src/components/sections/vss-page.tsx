@@ -169,57 +169,6 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                 método. E você vai dominar cada etapa — com ou sem budget de tráfego.
               </p>
 
-              {/* Bloco preço + checkout */}
-              <div
-                className="border-acid border-2 p-6 md:p-8"
-                style={{
-                  background: 'linear-gradient(180deg, rgba(198,255,0,0.1), rgba(198,255,0,0.02))',
-                }}
-              >
-                <div className="grid gap-5 md:grid-cols-[1fr_auto] md:items-center">
-                  <div>
-                    <div className="mono text-acid mb-2">
-                      // INVESTIMENTO ÚNICO · ACESSO VITALÍCIO
-                    </div>
-                    <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                      <span
-                        className="font-display text-acid"
-                        style={{
-                          fontSize: 'clamp(3rem, 6vw, 4.5rem)',
-                          lineHeight: '1',
-                          letterSpacing: '-0.045em',
-                        }}
-                      >
-                        R$ 1.997
-                      </span>
-                      <span
-                        className="font-display"
-                        style={{
-                          fontSize: '1.15rem',
-                          letterSpacing: '-0.02em',
-                          color: 'rgba(245, 241, 232, 0.8)',
-                        }}
-                      >
-                        à vista
-                      </span>
-                    </div>
-                    <div
-                      className="mt-2 font-sans"
-                      style={{ fontSize: '1rem', color: 'rgba(245, 241, 232, 0.85)' }}
-                    >
-                      ou <strong className="text-cream">12× de R$ 166,42</strong> no cartão · stack
-                      empilhada <span className="text-fg-muted line-through">R$ 17.287</span>
-                    </div>
-                  </div>
-                  <CheckoutButton
-                    productSlug="vss"
-                    label="QUERO O VSS · R$ 1.997"
-                    variant="fire"
-                    size="lg"
-                  />
-                </div>
-              </div>
-
               <div className="mono text-fg-muted flex flex-wrap items-center gap-x-6 gap-y-2">
                 <span className="flex items-center gap-2">
                   <span className="text-acid">★</span> GARANTIA 15 DIAS
@@ -233,11 +182,11 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
               </div>
 
               <Link
-                href="/diagnostico"
-                className="btn-secondary self-start"
+                href="#investimento"
+                className="btn-primary self-start"
                 style={{ minHeight: '48px' }}
               >
-                Diagnóstico 6Ps grátis
+                Ver investimento <span className="font-mono">↓</span>
               </Link>
             </div>
 
@@ -477,7 +426,7 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
       </section>
 
       {/* STACK / VALOR */}
-      <section className="bg-ink-2 relative py-24">
+      <section id="investimento" className="bg-ink-2 relative scroll-mt-24 py-24">
         <Container>
           <div className="mx-auto max-w-4xl">
             <div className="mb-12">
@@ -587,12 +536,72 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                 </div>
               </div>
             </div>
-            <p
-              className="mt-4 font-sans"
-              style={{ fontSize: '0.9rem', color: 'rgba(245, 241, 232, 0.7)' }}
+            {/* CTA block — checkout + garantia reforçada */}
+            <div
+              className="border-acid mt-10 border-2 p-6 text-center md:p-10"
+              style={{
+                background: 'linear-gradient(180deg, rgba(198,255,0,0.12), rgba(198,255,0,0.02))',
+              }}
             >
-              ★ Acesso vitalício ao playbook · Growth CRM 12 meses · 48 mentorias ao vivo
-            </p>
+              <div className="mono text-acid mb-4 text-sm">
+                // PRONTO PRA TROCAR IMPROVISO POR SISTEMA?
+              </div>
+              <h3
+                className="font-display text-cream mb-6"
+                style={{
+                  fontSize: 'clamp(1.5rem, 3vw, 2rem)',
+                  lineHeight: '1',
+                  letterSpacing: '-0.03em',
+                  textTransform: 'uppercase',
+                }}
+              >
+                Entra hoje. Primeira mentoria essa semana.
+              </h3>
+
+              <div className="flex justify-center">
+                <CheckoutButton
+                  productSlug="vss"
+                  label="QUERO O VSS · R$ 1.997"
+                  variant="fire"
+                  size="lg"
+                />
+              </div>
+
+              {/* Garantia em destaque */}
+              <div
+                className="mt-6 inline-flex items-center gap-3 border border-[var(--jb-acid-border)] px-4 py-3"
+                style={{ background: 'rgba(198,255,0,0.06)' }}
+              >
+                <span
+                  className="font-display text-acid"
+                  style={{ fontSize: '1.5rem', lineHeight: '1', letterSpacing: '-0.02em' }}
+                >
+                  15 DIAS
+                </span>
+                <span className="text-cream text-left font-sans text-sm">
+                  Garantia <strong className="text-acid">incondicional</strong>
+                  <br />
+                  <span className="text-fg-muted text-xs">
+                    Não funcionou? Reembolso 100%, sem perguntas.
+                  </span>
+                </span>
+              </div>
+
+              <div className="mono text-fg-muted mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs">
+                <span>
+                  <span className="text-acid">★</span> ACESSO VITALÍCIO
+                </span>
+                <span>
+                  <span className="text-acid">★</span> GROWTH CRM 12 MESES
+                </span>
+                <span>
+                  <span className="text-acid">★</span> 48 MENTORIAS AO VIVO
+                </span>
+                <span>
+                  <span className="text-acid">★</span> MERCADO PAGO · CARTÃO/PIX
+                </span>
+              </div>
+            </div>
           </div>
         </Container>
       </section>

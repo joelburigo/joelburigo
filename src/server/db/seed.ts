@@ -249,6 +249,9 @@ async function main(): Promise<void> {
   }
 
   console.log('[seed] pipelines + stages…');
+  // Stages novos (Kanban CRM) + legacy mantidos por compatibilidade com forms existentes.
+  // Não removemos slugs antigos: form_diagnostico usa 'qualificado', form_duvidas usa 'novo'/'aplicacao-recebida',
+  // advisory-aplicacao usa 'aplicacao-recebida'. Limpeza futura é commit separado.
   const pipelineList: PipelineSeed[] = [
     {
       slug: 'vss',
@@ -256,23 +259,42 @@ async function main(): Promise<void> {
       is_default: true,
       position: 0,
       stages: [
-        { slug: 'novo', name: 'Novo', kind: 'open', color: GRAY, probability: 10 },
+        // Novos (CRM Kanban)
+        { slug: 'lead-frio', name: 'Lead frio', kind: 'open', color: '#9CA3AF', probability: 10 },
+        {
+          slug: 'diagnostico-feito',
+          name: 'Diagnóstico feito',
+          kind: 'open',
+          color: '#A3E635',
+          probability: 25,
+        },
+        { slug: 'em-conversa', name: 'Em conversa', kind: 'open', color: '#FACC15', probability: 45 },
+        {
+          slug: 'proposta-enviada',
+          name: 'Proposta enviada',
+          kind: 'open',
+          color: '#FB923C',
+          probability: 70,
+        },
+        { slug: 'comprado', name: 'Comprado', kind: 'won', color: '#22C55E', probability: 100 },
+        { slug: 'perdido', name: 'Perdido', kind: 'lost', color: '#EF4444', probability: 0 },
+        // Legacy (manter — usados por forms existentes)
+        { slug: 'novo', name: 'Novo (legacy)', kind: 'open', color: GRAY, probability: 10 },
         {
           slug: 'qualificado',
-          name: 'Qualificado',
+          name: 'Qualificado (legacy)',
           kind: 'open',
           color: ACID,
           probability: 35,
         },
         {
           slug: 'checkout-iniciado',
-          name: 'Checkout iniciado',
+          name: 'Checkout iniciado (legacy)',
           kind: 'open',
           color: FIRE,
           probability: 65,
         },
-        { slug: 'vendido', name: 'Vendido', kind: 'won', color: ACID, probability: 100 },
-        { slug: 'perdido', name: 'Perdido', kind: 'lost', color: BLACK, probability: 0 },
+        { slug: 'vendido', name: 'Vendido (legacy)', kind: 'won', color: ACID, probability: 100 },
       ],
     },
     {
@@ -281,29 +303,50 @@ async function main(): Promise<void> {
       is_default: false,
       position: 1,
       stages: [
+        // Novos
+        {
+          slug: 'aplicacao-aguardando',
+          name: 'Aplicação aguardando',
+          kind: 'open',
+          color: '#9CA3AF',
+          probability: 20,
+        },
+        { slug: 'em-triagem', name: 'Em triagem', kind: 'open', color: '#FACC15', probability: 40 },
+        { slug: 'aprovado', name: 'Aprovado', kind: 'open', color: '#A3E635', probability: 70 },
+        {
+          slug: 'sessao-marcada',
+          name: 'Sessão marcada',
+          kind: 'open',
+          color: '#FB923C',
+          probability: 85,
+        },
+        { slug: 'em-execucao', name: 'Em execução', kind: 'open', color: '#06B6D4', probability: 95 },
+        { slug: 'concluido', name: 'Concluído', kind: 'won', color: '#22C55E', probability: 100 },
+        { slug: 'lost', name: 'Perdido', kind: 'lost', color: '#EF4444', probability: 0 },
+        // Legacy
         {
           slug: 'aplicacao-recebida',
-          name: 'Aplicação recebida',
+          name: 'Aplicação recebida (legacy)',
           kind: 'open',
           color: GRAY,
           probability: 15,
         },
         {
           slug: 'qualificado',
-          name: 'Qualificado',
+          name: 'Qualificado (legacy)',
           kind: 'open',
           color: ACID,
           probability: 40,
         },
         {
           slug: 'proposta-enviada',
-          name: 'Proposta enviada',
+          name: 'Proposta enviada (legacy)',
           kind: 'open',
           color: FIRE,
           probability: 70,
         },
-        { slug: 'fechado', name: 'Fechado', kind: 'won', color: ACID, probability: 100 },
-        { slug: 'perdido', name: 'Perdido', kind: 'lost', color: BLACK, probability: 0 },
+        { slug: 'fechado', name: 'Fechado (legacy)', kind: 'won', color: ACID, probability: 100 },
+        { slug: 'perdido', name: 'Perdido (legacy)', kind: 'lost', color: BLACK, probability: 0 },
       ],
     },
   ];

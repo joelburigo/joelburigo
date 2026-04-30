@@ -26,8 +26,13 @@ export async function GET(req: NextRequest) {
     const user = await verifyMagicLink(token);
     const jwt = await createSession(user);
 
+    // Admin login default → /admin (não passa pelo onboarding 6Ps).
+    // Se o user explicitou `?next=...`, respeita.
+    const finalPath =
+      user.role === 'admin' && (!nextParam || next === '/app/area') ? '/admin' : next;
+
     const dest = req.nextUrl.clone();
-    dest.pathname = next;
+    dest.pathname = finalPath;
     dest.search = '';
     const res = NextResponse.redirect(dest);
     setSessionCookie(res, jwt);

@@ -101,7 +101,8 @@ export async function requireOnboarded(): Promise<{
     profile = created!;
   }
 
-  if (!isProfileOnboarded(profile)) {
+  // Admins não fazem onboarding 6Ps (é fluxo de aluno VSS) — bypass.
+  if (user.role !== 'admin' && !isProfileOnboarded(profile)) {
     redirect('/app/onboarding');
   }
 

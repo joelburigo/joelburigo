@@ -1,5 +1,6 @@
 export { Badge, badgeVariants } from './badge';
 export { Button, buttonVariants } from './button';
+export { ButtonLink, type ButtonLinkProps } from './button-link';
 export {
   Card,
   CardFeatured,

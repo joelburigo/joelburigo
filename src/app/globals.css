@@ -243,23 +243,6 @@ body {
   color: var(--jb-ink);
 }
 
-/* ════════════════════════════════════════════════════════════════════════
-   Design system safety net — garantia de contraste
-   ════════════════════════════════════════════════════════════════════════
-   body { color: var(--jb-cream) } herda em qualquer filho. Botões/links
-   com fundo lime ou fire SEM text color explícito ficam ilegíveis.
-
-   `:where()` mantém especificidade (0,0,0) — qualquer text-* explícito no
-   elemento sobrescreve facilmente. NÃO substitui o design system —
-   é fallback pra esquecimentos pontuais até consolidação completa.
-
-   Forma canônica: usar <Button variant="primary"> (ui/button.tsx) ou
-   className="btn-primary" (.btn-primary em globals.css mais abaixo).
-   ════════════════════════════════════════════════════════════════════════ */
-:where(.bg-acid, .bg-acid-hot, .bg-acid-deep, .bg-fire, .bg-fire-hot, .bg-fire-deep, .bg-cream, .bg-cream-dim) {
-  color: var(--jb-ink);
-}
-
 h1,
 h2,
 h3,

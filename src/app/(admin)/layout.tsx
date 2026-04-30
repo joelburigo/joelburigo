@@ -19,6 +19,7 @@ const ADMIN_NAV: SidebarItem[] = [
   { href: '/admin/blog', label: 'Blog', icon: 'file-text' },
   { href: '/admin/agent-usage', label: 'Uso do Agente', icon: 'activity' },
   { href: '/admin/refunds', label: 'Reembolsos', icon: 'inbox' },
+  { href: '/admin/config', label: 'Configurações', icon: 'settings' },
 ];
 
 export default async function AdminLayout({ children }: { children: ReactNode }) {

@@ -978,6 +978,49 @@ export const advisory_applications = pgTable(
   })
 );
 
+// ============ 8e. APP CONFIG ============
+
+/**
+ * Config Hub — key-value tipado por namespace.
+ * Source of truth pra preços, copy promocional, email templates, feature toggles.
+ * value é jsonb (suporta string/number/bool/array/object).
+ */
+export const app_config = pgTable(
+  'app_config',
+  {
+    namespace: text('namespace').notNull(), // 'pricing' | 'offer' | 'email' | 'feature' | 'integration'
+    key: text('key').notNull(),
+    value: jsonb('value').notNull(),
+    description: text('description'),
+    updated_by: text('updated_by').references(() => users.id),
+    updated_at: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    pk: primaryKey({ columns: [t.namespace, t.key] }),
+    nsIdx: index('idx_app_config_ns').on(t.namespace),
+  })
+);
+
+/**
+ * Audit log de mudanças no app_config — quem alterou o quê e quando.
+ */
+export const app_config_audit = pgTable(
+  'app_config_audit',
+  {
+    id: text('id').primaryKey(),
+    namespace: text('namespace').notNull(),
+    key: text('key').notNull(),
+    old_value: jsonb('old_value'),
+    new_value: jsonb('new_value'),
+    changed_by: text('changed_by').references(() => users.id),
+    changed_at: timestamp('changed_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    nsKeyIdx: index('idx_app_config_audit_ns_key').on(t.namespace, t.key),
+    changedIdx: index('idx_app_config_audit_changed').on(t.changed_at),
+  })
+);
+
 // ============ 9. ADMIN AUDIT ============
 
 export const admin_audit = pgTable('admin_audit', {
@@ -1261,3 +1304,9 @@ export type Opportunity = typeof opportunities.$inferSelect;
 export type NewOpportunity = typeof opportunities.$inferInsert;
 export type Activity = typeof activities.$inferSelect;
 export type NewActivity = typeof activities.$inferInsert;
+
+// App config
+export type AppConfig = typeof app_config.$inferSelect;
+export type NewAppConfig = typeof app_config.$inferInsert;
+export type AppConfigAudit = typeof app_config_audit.$inferSelect;
+export type NewAppConfigAudit = typeof app_config_audit.$inferInsert;

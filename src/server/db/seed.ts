@@ -20,6 +20,7 @@ import {
   pipelines,
   stages,
   entitlements,
+  app_config,
 } from './schema';
 import { ulid } from 'ulid';
 import { seedVss } from './seed/vss';
@@ -350,8 +351,122 @@ async function main(): Promise<void> {
     }
   }
 
+  console.log('[seed] app_config…');
+  await seedAppConfig();
+
   console.log('✓ seed completo');
   process.exit(0);
+}
+
+async function seedAppConfig(): Promise<void> {
+  const configs: Array<{ ns: string; key: string; value: unknown; desc: string }> = [
+    // pricing
+    { ns: 'pricing', key: 'vss.price_cents', value: 199700, desc: 'Preço VSS em centavos' },
+    {
+      ns: 'pricing',
+      key: 'vss.installments_count',
+      value: 12,
+      desc: 'Parcelas máximas no cartão',
+    },
+    {
+      ns: 'pricing',
+      key: 'vss.installment_cents',
+      value: 16642,
+      desc: 'Valor da parcela em centavos (R$ 166,42)',
+    },
+    {
+      ns: 'pricing',
+      key: 'advisory.session_price_cents',
+      value: 99700,
+      desc: 'Sessão Avulsa Advisory',
+    },
+    {
+      ns: 'pricing',
+      key: 'advisory.sprint_price_cents',
+      value: 750000,
+      desc: 'Sprint 30 dias Advisory',
+    },
+    {
+      ns: 'pricing',
+      key: 'advisory.council_price_min_cents',
+      value: 1250000,
+      desc: 'Conselho min/mês',
+    },
+    {
+      ns: 'pricing',
+      key: 'advisory.council_price_max_cents',
+      value: 1500000,
+      desc: 'Conselho max/mês',
+    },
+    // offer
+    { ns: 'offer', key: 'vss.guarantee_days', value: 15, desc: 'Garantia VSS em dias' },
+    {
+      ns: 'offer',
+      key: 'vss.stack_total_cents',
+      value: 1728700,
+      desc: 'Stack empilhada VSS',
+    },
+    // email
+    {
+      ns: 'email',
+      key: 'from_transactional',
+      value: 'nao-responda@joelburigo.com.br',
+      desc: 'Remetente transacional',
+    },
+    {
+      ns: 'email',
+      key: 'from_personal',
+      value: 'joel@joelburigo.com.br',
+      desc: 'Remetente pessoal',
+    },
+    { ns: 'email', key: 'from_name', value: 'Joel Burigo', desc: 'Nome remetente' },
+    // feature
+    {
+      ns: 'feature',
+      key: 'popup_doubts.enabled',
+      value: true,
+      desc: 'Popup "ainda tem dúvidas?" ativo',
+    },
+    {
+      ns: 'feature',
+      key: 'popup_doubts.scroll_threshold',
+      value: 0.85,
+      desc: 'Trigger por scroll (0-1)',
+    },
+    {
+      ns: 'feature',
+      key: 'auto_email_admin.enabled',
+      value: true,
+      desc: 'Notifica admin a cada novo lead',
+    },
+    // integration
+    { ns: 'integration', key: 'meta_capi.enabled', value: false, desc: 'Meta CAPI ativo' },
+    {
+      ns: 'integration',
+      key: 'google_ads.enabled',
+      value: false,
+      desc: 'Google Ads conversions ativo',
+    },
+  ];
+
+  let inserted = 0;
+  for (const c of configs) {
+    const result = await db
+      .insert(app_config)
+      .values({
+        namespace: c.ns,
+        key: c.key,
+        value: c.value as unknown,
+        description: c.desc,
+      })
+      .onConflictDoNothing({ target: [app_config.namespace, app_config.key] });
+    // postgres-js retorna count via `.count` em alguns drivers; aqui só tentamos se existir
+    const count = (result as unknown as { count?: number }).count;
+    if (typeof count === 'number') inserted += count;
+  }
+  console.log(
+    `[seed] app_config: ${configs.length} entries (novos: ${inserted || 'verificar via studio'})`
+  );
 }
 
 async function ensureDemoUser(opts: {

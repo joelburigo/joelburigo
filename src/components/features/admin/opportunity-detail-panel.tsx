@@ -143,6 +143,8 @@ export function OpportunityDetailPanel({
   }, [opportunityId]);
 
   React.useEffect(() => {
+    // Fetch externo no mount/refresh — setState ocorre apenas após resposta async, não sincronamente.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     void load();
   }, [load]);
 

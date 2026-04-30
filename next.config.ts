@@ -37,6 +37,9 @@ const config: NextConfig = {
       // Compat com URLs antigas da LP VSS (merge b73521b1)
       { source: '/lp/vss', destination: '/vendas-sem-segredos', permanent: true },
       { source: '/lp/vss/:path*', destination: '/vendas-sem-segredos', permanent: true },
+      // Sprint 5 cleanup — páginas migradas pra dentro de outras
+      { source: '/jornada-90-dias', destination: '/vendas-sem-segredos#as-7-fases', permanent: true },
+      { source: '/contato', destination: '/diagnostico', permanent: true },
     ];
   },
 

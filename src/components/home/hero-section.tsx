@@ -38,7 +38,7 @@ export function HeroSection() {
                 <span>Ver VSS completo</span>
                 <span aria-hidden="true">→</span>
               </Link>
-              <Link href="/contato" className="btn-secondary">
+              <Link href="/advisory" className="btn-secondary">
                 <span>Falar com Joel (Advisory)</span>
                 <span aria-hidden="true">→</span>
               </Link>

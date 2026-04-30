@@ -22,7 +22,6 @@ const navLinks = [
 const secondaryLinks = [
   { name: 'Sobre', path: '/sobre' },
   { name: 'Cases', path: '/cases' },
-  { name: 'Contato', path: '/contato' },
 ];
 
 export function Header({ transparent = false, showStatusBar = true }: HeaderProps) {

@@ -105,9 +105,6 @@ export default async function CasesPage() {
                   <span>Aplicar pra Advisory</span>
                   <span aria-hidden="true">→</span>
                 </Link>
-                <Link href="/contato" className="btn-secondary min-h-[48px]">
-                  Falar comigo
-                </Link>
               </div>
               <div className="text-fg-muted mt-8 border-t border-[var(--jb-hair)] pt-6 font-mono text-[11px] tracking-[0.28em] uppercase">
                 <span className="text-acid">★</span>&nbsp;&nbsp;SISTEMA{' '}

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Container } from '@/components/patterns/container';
 import { Breadcrumbs } from '@/components/seo/breadcrumbs';
 import { CasesGrid } from '@/components/features/cases/cases-grid';
+import { listPublishedTestimonials } from '@/server/services/testimonials';
 
 export const metadata: Metadata = {
   title: 'Cases | Joel Burigo',
@@ -11,7 +12,9 @@ export const metadata: Metadata = {
   alternates: { canonical: '/cases' },
 };
 
-export default function CasesPage() {
+export default async function CasesPage() {
+  const items = await listPublishedTestimonials({ limit: 200 });
+  const r2PublicUrl = process.env.R2_PUBLIC_URL ?? '';
   return (
     <main className="bg-ink relative overflow-hidden">
       <div className="grid-overlay" />
@@ -72,7 +75,7 @@ export default function CasesPage() {
           </div>
         </section>
 
-        <CasesGrid />
+        <CasesGrid items={items} r2PublicUrl={r2PublicUrl} />
 
         {/* CTA final */}
         <section className="pb-16 md:pb-24">

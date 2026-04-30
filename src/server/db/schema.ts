@@ -1021,6 +1021,64 @@ export const app_config_audit = pgTable(
   })
 );
 
+// ============ 8f. TESTIMONIALS ============
+
+/**
+ * Source única de depoimentos/cases — alimenta /cases (server component) +
+ * carrosséis de prova social em VSS e Advisory.
+ *
+ * Por que não em arquivo TS:
+ *   - Admin pode adicionar/editar sem deploy
+ *   - Featured/published toggles dinâmicos
+ *   - Per-product filtering (vss vs advisory cases)
+ */
+export const testimonials = pgTable(
+  'testimonials',
+  {
+    id: text('id').primaryKey(),
+
+    // Cliente
+    client_name: text('client_name').notNull(),
+    client_role: text('client_role'),
+    client_company: text('client_company'),
+    client_segment: text('client_segment'),
+    client_revenue_range: text('client_revenue_range'),
+
+    // Conteúdo
+    quote_md: text('quote_md').notNull(),
+    result_metric: text('result_metric'),
+    case_title: text('case_title'),
+    case_md: text('case_md'),
+
+    // Mídia
+    cover_image_path: text('cover_image_path'),
+    cover_image_alt: text('cover_image_alt'),
+    client_photo_path: text('client_photo_path'),
+
+    // Filtros
+    product_used: text('product_used').notNull(), // 'vss' | 'advisory' | 'both'
+
+    // Display
+    featured: boolean('featured').notNull().default(false),
+    published: boolean('published').notNull().default(true),
+    position: integer('position').notNull().default(0),
+
+    created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+    updated_at: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    productPublishedIdx: index('idx_testimonials_product_published').on(
+      t.product_used,
+      t.published
+    ),
+    featuredIdx: index('idx_testimonials_featured').on(t.featured, t.published),
+    positionIdx: index('idx_testimonials_position').on(t.position),
+  })
+);
+
+export type Testimonial = typeof testimonials.$inferSelect;
+export type NewTestimonial = typeof testimonials.$inferInsert;
+
 // ============ 9. ADMIN AUDIT ============
 
 export const admin_audit = pgTable('admin_audit', {

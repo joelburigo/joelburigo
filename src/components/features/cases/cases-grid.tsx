@@ -1,19 +1,41 @@
 'use client';
 
 import { useState } from 'react';
-import { cases, type Case } from '@/data/cases';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import type { Testimonial } from '@/server/db/schema';
 import { cn } from '@/lib/utils';
 
 const filters = [
   { value: 'all', label: 'Todos' },
-  { value: 'Vendas Sem Segredos', label: 'VSS' },
-  { value: 'Advisory', label: 'Advisory' },
-];
+  { value: 'vss', label: 'VSS' },
+  { value: 'advisory', label: 'Advisory' },
+] as const;
 
-export function CasesGrid() {
-  const [filter, setFilter] = useState<string>('all');
+type FilterValue = (typeof filters)[number]['value'];
 
-  const filtered = cases.filter((c) => (filter === 'all' ? true : c.produto.includes(filter)));
+interface Props {
+  items: Testimonial[];
+  r2PublicUrl: string;
+}
+
+function resolveImage(path: string | null, r2PublicUrl: string): string | null {
+  if (!path) return null;
+  if (path.startsWith('http://') || path.startsWith('https://')) return path;
+  if (path.startsWith('/')) return path;
+  if (!r2PublicUrl) return null;
+  return `${r2PublicUrl.replace(/\/$/, '')}/${path}`;
+}
+
+export function CasesGrid({ items, r2PublicUrl }: Props) {
+  const [filter, setFilter] = useState<FilterValue>('all');
+
+  const filtered = items.filter((t) => {
+    if (filter === 'all') return true;
+    if (filter === 'vss') return t.product_used === 'vss' || t.product_used === 'both';
+    if (filter === 'advisory') return t.product_used === 'advisory' || t.product_used === 'both';
+    return true;
+  });
 
   return (
     <>
@@ -40,79 +62,113 @@ export function CasesGrid() {
       <section className="pb-16">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-6 md:grid-cols-2">
-            {filtered.map((caso: Case) => (
-              <article
-                key={caso.empresa}
-                className="bg-ink-2 hover:border-acid border border-[var(--jb-hair)] p-6 transition-all duration-[180ms] hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[6px_6px_0_var(--jb-acid)] md:p-8"
-              >
-                <div className="mb-5 flex flex-wrap items-start justify-between gap-3 border-b border-[var(--jb-hair)] pb-5">
-                  <div
-                    className={cn('kicker', caso.produto.includes('Advisory') && 'text-fire')}
-                    style={
-                      caso.produto.includes('Advisory') ? { color: 'var(--jb-fire)' } : undefined
-                    }
-                  >
-                    // {caso.produto.toUpperCase()}
-                  </div>
-                  {caso.badge && (
-                    <div className="text-acid border border-[var(--jb-acid-border)] bg-[var(--jb-acid-soft)] px-3 py-1 font-mono text-[10px] tracking-[0.2em] uppercase">
-                      ★ {caso.badge}
-                    </div>
-                  )}
-                </div>
-
-                <div className="mb-6">
-                  <h3 className="heading-3 text-cream mb-1">{caso.empresa}</h3>
-                  <p className="text-fg-muted font-mono text-[11px] tracking-[0.22em] uppercase">
-                    {caso.nicho}
-                  </p>
-                </div>
-
-                <div className="mb-5 grid grid-cols-3 gap-px border border-[var(--jb-hair)] bg-[var(--jb-hair)]">
-                  <div className="bg-ink p-4">
-                    <div className="kicker mb-1">// ANTES</div>
-                    <div className="font-display text-cream text-base">{caso.antes}</div>
-                  </div>
-                  <div className="bg-ink p-4">
-                    <div className="kicker mb-1" style={{ color: 'var(--jb-acid)' }}>
-                      // DEPOIS
-                    </div>
-                    <div className="font-display text-acid text-base">{caso.depois}</div>
-                  </div>
-                  <div className="bg-ink p-4">
-                    <div className="kicker mb-1">// TEMPO</div>
-                    <div className="font-display text-cream text-base">{caso.tempo}</div>
-                  </div>
-                </div>
-
-                <div className="border-acid bg-ink mb-6 flex items-baseline gap-3 border-l-2 p-4">
-                  <span className="text-acid font-mono">▲</span>
-                  <span className="font-display text-acid text-3xl">{caso.crescimento}</span>
-                  <span className="text-fg-muted font-mono text-[11px] tracking-[0.22em] uppercase">
-                    crescimento
-                  </span>
-                </div>
-
-                <div className="mb-4">
-                  <div className="kicker mb-2" style={{ color: 'var(--jb-fire)' }}>
-                    // SITUAÇÃO_ANTES
-                  </div>
-                  <p className="text-fg-2 font-sans text-sm leading-relaxed">
-                    {caso.situacaoAntes}
-                  </p>
-                </div>
-
-                <div>
-                  <div className="kicker mb-2" style={{ color: 'var(--jb-acid)' }}>
-                    // O_QUE_FIZEMOS
-                  </div>
-                  <p className="text-fg-2 font-sans text-sm leading-relaxed">{caso.solucao}</p>
-                </div>
-              </article>
+            {filtered.map((t) => (
+              <CaseCard key={t.id} t={t} r2PublicUrl={r2PublicUrl} />
             ))}
           </div>
+          {filtered.length === 0 && (
+            <div className="border border-[var(--jb-hair)] p-12 text-center">
+              <p className="text-fg-3 font-mono text-sm tracking-[0.22em] uppercase">
+                Nenhum case neste filtro.
+              </p>
+            </div>
+          )}
         </div>
       </section>
     </>
+  );
+}
+
+function CaseCard({ t, r2PublicUrl }: { t: Testimonial; r2PublicUrl: string }) {
+  const isAdvisory = t.product_used === 'advisory';
+  const cover = resolveImage(t.cover_image_path, r2PublicUrl);
+  const photo = resolveImage(t.client_photo_path, r2PublicUrl);
+  const productLabel =
+    t.product_used === 'advisory'
+      ? 'ADVISORY'
+      : t.product_used === 'both'
+        ? 'VSS · ADVISORY'
+        : 'VENDAS SEM SEGREDOS';
+
+  return (
+    <article className="bg-ink-2 hover:border-acid border border-[var(--jb-hair)] p-6 transition-all duration-[180ms] hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[6px_6px_0_var(--jb-acid)] md:p-8">
+      <div className="mb-5 flex flex-wrap items-start justify-between gap-3 border-b border-[var(--jb-hair)] pb-5">
+        <div
+          className="kicker"
+          style={isAdvisory ? { color: 'var(--jb-fire)' } : undefined}
+        >
+          // {productLabel}
+        </div>
+        {t.featured && (
+          <div className="text-acid border border-[var(--jb-acid-border)] bg-[var(--jb-acid-soft)] px-3 py-1 font-mono text-[10px] tracking-[0.2em] uppercase">
+            ★ Destaque
+          </div>
+        )}
+      </div>
+
+      {cover && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={cover}
+          alt={t.cover_image_alt ?? t.client_name}
+          className="mb-5 h-40 w-full border border-[var(--jb-hair)] object-cover"
+        />
+      )}
+
+      <div className="mb-6 flex items-center gap-3">
+        {photo ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={photo}
+            alt={t.client_name}
+            className="size-14 border border-[var(--jb-hair)] object-cover"
+          />
+        ) : null}
+        <div className="min-w-0">
+          <h3 className="heading-3 text-cream mb-1">{t.client_name}</h3>
+          <p className="text-fg-muted font-mono text-[11px] tracking-[0.22em] uppercase">
+            {[t.client_role, t.client_company, t.client_segment]
+              .filter(Boolean)
+              .join(' · ') || ''}
+          </p>
+        </div>
+      </div>
+
+      {(t.result_metric || t.client_revenue_range) && (
+        <div className="border-acid bg-ink mb-6 flex flex-wrap items-baseline gap-3 border-l-2 p-4">
+          {t.result_metric && (
+            <>
+              <span className="text-acid font-mono">▲</span>
+              <span className="font-display text-acid text-2xl">{t.result_metric}</span>
+            </>
+          )}
+          {t.client_revenue_range && (
+            <span className="text-fg-muted font-mono text-[11px] tracking-[0.22em] uppercase">
+              · faturamento {t.client_revenue_range}
+            </span>
+          )}
+        </div>
+      )}
+
+      <div className="mb-4">
+        <div className="kicker mb-2" style={{ color: 'var(--jb-acid)' }}>
+          // DEPOIMENTO
+        </div>
+        <div className="text-fg-2 prose-testimonial font-sans text-sm leading-relaxed">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{t.quote_md}</ReactMarkdown>
+        </div>
+      </div>
+
+      {t.case_md && (
+        <div>
+          <div className="kicker mb-2" style={{ color: 'var(--jb-fire)' }}>
+            // ESTUDO_DE_CASO
+          </div>
+          <div className="text-fg-2 prose-testimonial font-sans text-sm leading-relaxed">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{t.case_md}</ReactMarkdown>
+          </div>
+        </div>
+      )}
+    </article>
   );
 }

@@ -17,6 +17,7 @@ const ADMIN_NAV: SidebarItem[] = [
   { href: '/admin/disponibilidade', label: 'Disponibilidade', icon: 'calendar-clock' },
   { href: '/admin/integrations/google', label: 'Integrações', icon: 'plug' },
   { href: '/admin/blog', label: 'Blog', icon: 'file-text' },
+  { href: '/admin/testimonials', label: 'Depoimentos', icon: 'star' },
   { href: '/admin/agent-usage', label: 'Uso do Agente', icon: 'activity' },
   { href: '/admin/refunds', label: 'Reembolsos', icon: 'inbox' },
   { href: '/admin/config', label: 'Configurações', icon: 'settings' },

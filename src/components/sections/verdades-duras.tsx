@@ -19,7 +19,7 @@ const verdades = [
   },
   {
     n: '03',
-    titulo: 'Se tua empresa depende de ti, tu não tem empresa — tu tem emprego',
+    titulo: 'Fatura R$ 200k+ e depende de você? Não é empresa. É emprego.',
     corpo:
       'Consultor engomado entrega PowerPoint de 200 slides e some. Dono fica tudo na cabeça. Não tira férias. Não adoece. Não escala. Empresa com R$ 200k/mês ainda carregada pelo fundador é emprego disfarçado de CNPJ.',
     assinatura: 'Da quebrada ao bilhão',

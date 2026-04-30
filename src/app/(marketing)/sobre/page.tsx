@@ -43,7 +43,7 @@ const inimigos = [
   {
     n: '04',
     titulo: 'DEPENDÊNCIA DO FUNDADOR',
-    descricao: 'Se tua empresa depende de ti, tu não tem empresa — tu tem emprego.',
+    descricao: 'Fatura R$ 200k+ e depende de você? Não é empresa. É emprego.',
   },
   {
     n: '05',

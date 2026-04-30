@@ -69,7 +69,7 @@ const licoes = [
     nome: 'Pessoas',
     acento: 'fire' as const,
     aprendizado:
-      'Se tua empresa depende de ti, tu não tem empresa — tu tem emprego. Empresa que depende 100% do dono não é empresa, é prisão com CNPJ.',
+      'Fatura R$ 200k+ e depende de você? Não é empresa. É emprego. Empresa que depende 100% do dono não é empresa, é prisão com CNPJ.',
     cicatriz:
       'No barraco em Ribeirão das Neves, eu era tudo: vendedor, entregador, suporte. No VSS, criei o sistema pra libertar donos dessa prisão.',
     sinal_forte:

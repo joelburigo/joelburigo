@@ -41,7 +41,7 @@ const STEPS: PStep[] = [
     index: 1,
     nome: 'Posicionamento',
     pergunta:
-      'Como tua empresa se diferencia no mercado? Cliente entende, em uma frase, por que comprar de ti?',
+      'Como sua empresa se diferencia no mercado? Cliente entende, em uma frase, por que comprar de você?',
     niveis: [
       'Caótico — compito 100% por preço, sem diferencial claro',
       'Iniciante — tento me diferenciar, mas a mensagem não fica clara',
@@ -69,7 +69,7 @@ const STEPS: PStep[] = [
     index: 3,
     nome: 'Produto',
     pergunta:
-      'Tua oferta tem proposta de valor clara, prova social e pacote definido — ou cliente fica em dúvida do que tá comprando?',
+      'Sua oferta tem proposta de valor clara, prova social e pacote definido — ou cliente fica em dúvida do que tá comprando?',
     niveis: [
       'Caótico — proposta de valor confusa, muita objeção, descontos pra fechar',
       'Iniciante — produto resolve, mas a apresentação é ruim',
@@ -97,7 +97,7 @@ const STEPS: PStep[] = [
     index: 5,
     nome: 'Processos',
     pergunta:
-      'Tua operação está documentada (SOPs, checklists, métricas) ou tudo depende de você lembrar e executar?',
+      'Sua operação está documentada (SOPs, checklists, métricas) ou tudo depende de você lembrar e executar?',
     niveis: [
       'Caótico — nada documentado, tudo na cabeça, cada venda é única',
       'Iniciante — alguns processos informais, sem padrão',

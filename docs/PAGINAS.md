@@ -1,6 +1,6 @@
 # Mapa de Páginas — joelburigo-site
 
-Inventário completo de todas as rotas do app, categorizadas por acesso. Atualizado: 2026-04-30.
+Inventário completo de todas as rotas do app, categorizadas por acesso. Atualizado: 2026-04-30 (pós Sprint 5 cleanup).
 
 > Nota: rotas em `src/app/api/*` (route handlers) **não estão listadas** aqui — só páginas renderizáveis (`page.tsx`).
 
@@ -14,11 +14,11 @@ Conteúdo institucional + funil de aquisição. Todo mundo vê.
 | ---------------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------------- |
 | `/`                          | `(marketing)/page.tsx`                                         | **Home** — hero, framework 6Ps, prova social, pathways VSS/Advisory     |
 | `/sobre`                     | `(marketing)/sobre/page.tsx`                                   | Sobre Joel Burigo — história + dependência do fundador                  |
-| `/cases`                     | `(marketing)/cases/page.tsx`                                   | Estudos de caso aplicados                                                |
-| `/contato`                   | `(marketing)/contato/page.tsx`                                 | Form de contato genérico                                                 |
-| `/jornada-90-dias`           | `(marketing)/jornada-90-dias/page.tsx`                         | Roadmap dos 90 dias do VSS                                              |
+| `/cases`                     | `(marketing)/cases/page.tsx`                                   | Estudos de caso (consome testimonials do DB)                             |
 | `/privacidade`               | `(marketing)/privacidade/page.tsx`                             | Política de privacidade (LGPD)                                           |
 | `/termos`                    | `(marketing)/termos/page.tsx`                                  | Termos de uso                                                            |
+
+> **Removidas (Sprint 5):** `/jornada-90-dias` → 301 `/vendas-sem-segredos#as-7-fases` · `/contato` → 301 `/diagnostico` (substituído pelo popup "Ainda tem dúvidas?")
 
 ### Blog público
 
@@ -106,8 +106,10 @@ Acesso requer JWT + `role === 'admin'` (`requireAdmin` no layout). Sob `(admin)/
 
 | URL                                  | Arquivo                                                       | Descrição                                                              |
 | ------------------------------------ | ------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `/admin`                             | `(admin)/admin/page.tsx`                                      | **Dashboard admin** — overview geral                                    |
-| `/admin/leads`                       | `(admin)/admin/leads/page.tsx`                                | Inbox de leads (diagnóstico, contato, advisory)                         |
+| `/admin`                             | `(admin)/admin/page.tsx`                                      | **Dashboard** — tiles + funil VSS+Advisory + atividades recentes        |
+| `/admin/leads`                       | `(admin)/admin/leads/page.tsx`                                | **Kanban CRM** — drag-drop, filtros, busca, detail panel timeline       |
+| `/admin/config`                      | `(admin)/admin/config/page.tsx`                               | **Config Hub** — preços, copy, features, integrations + audit log       |
+| `/admin/testimonials`                | `(admin)/admin/testimonials/page.tsx`                         | CRUD de depoimentos (cases) — alimenta /cases + carousels VSS/Advisory  |
 | `/admin/users`                       | `(admin)/admin/users/page.tsx`                                | Gestão de alunos (entitlements, status)                                  |
 
 ### Mentorias / Calendário

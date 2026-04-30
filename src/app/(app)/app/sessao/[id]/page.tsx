@@ -92,6 +92,8 @@ function MentoriaViewer({ mentoria }: { mentoria: Mentoria }) {
     { locale: ptBR }
   );
 
+  // Server Component — renderiza 1x por request, Date.now é determinístico aqui.
+  // eslint-disable-next-line react-hooks/purity
   const now = Date.now();
   const startsAt = mentoria.scheduled_at.getTime();
   const minutesUntil = Math.floor((startsAt - now) / 60_000);

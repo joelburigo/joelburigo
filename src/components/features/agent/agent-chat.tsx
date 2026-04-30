@@ -171,7 +171,9 @@ export function AgentChat({
     }
   }, []);
 
+  // Fetch inicial da cota — efeito intencional pra sincronizar com servidor.
   React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     void refreshQuota();
   }, [refreshQuota]);
 

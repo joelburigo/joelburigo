@@ -64,7 +64,9 @@ export function KanbanBoard({ pipelineId, stages, opportunities }: KanbanBoardPr
   const [lostReason, setLostReason] = React.useState('');
   const [acting, setActing] = React.useState(false);
 
+  // Resync local state quando o server retorna nova lista (após mutate via router.refresh).
   React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setOpps(opportunities);
   }, [opportunities]);
 

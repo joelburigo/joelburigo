@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import NextLink from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEditor, EditorContent, type Editor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
@@ -227,9 +228,10 @@ export function BlogEditor({
   }, [flush]);
 
   // ─── Slug auto-fill from title (only while default-ish) ───
+  // Sync intencional: slug deriva do title até user editar manualmente.
   useEffect(() => {
-    // se slug ainda parece um auto ('novo-post-xxxxxx'), atualiza com base no título
     if (/^novo-post-[a-z0-9]{4,}$/.test(slug) && title && title !== 'Novo post') {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSlug(slugify(title));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -326,12 +328,12 @@ export function BlogEditor({
       <div className="flex flex-col gap-4">
         <header className="flex flex-col gap-3">
           <div className="flex items-center gap-3">
-            <a
+            <NextLink
               href="/admin/blog"
               className="text-fg-3 hover:text-acid font-mono text-[11px] tracking-[0.22em] uppercase"
             >
               ← Posts
-            </a>
+            </NextLink>
             <SaveIndicator state={save} />
             <span className="text-fg-3 ml-auto font-mono text-[11px] tracking-[0.22em] uppercase">
               {revisionsCount} rev · {readingMin}min
@@ -659,6 +661,7 @@ function Toolbar({
         label: 'Link',
         children: <LinkIcon className="size-4" />,
       })}
+      {/* eslint-disable-next-line react-hooks/refs */}
       {btn({
         onClick: () => fileRef.current?.click(),
         label: 'Inserir imagem',

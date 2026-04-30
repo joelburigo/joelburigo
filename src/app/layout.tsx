@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from 'next';
-import Script from 'next/script';
 import { Toaster } from 'sonner';
 import { Agentation } from 'agentation';
 import { fontsClassName } from '@/lib/fonts';
 import { SITE } from '@/lib/constants';
+import { serializePublicEnv, PUBLIC_ENV_WINDOW_KEY } from '@/lib/public-env';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -56,10 +56,16 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang={SITE.language} className={fontsClassName} data-scroll-behavior="smooth">
+      <head>
+        {/* window.__JB_ENV serializado em SSR via dangerouslySetInnerHTML
+            (NÃO children — React 19 só emite warning quando script tem children). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.${PUBLIC_ENV_WINDOW_KEY}=${serializePublicEnv()};`,
+          }}
+        />
+      </head>
       <body className="bg-ink text-cream antialiased">
-        {/* window.__JB_ENV servido por /api/public-env.js — external script
-            evita warning React 19 de inline <script> dentro do tree. */}
-        <Script src="/api/public-env.js" strategy="beforeInteractive" />
         {children}
         <Toaster
           theme="dark"

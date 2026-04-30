@@ -2,102 +2,131 @@ import Link from 'next/link';
 import { Container } from '@/components/patterns/container';
 import { Breadcrumbs, type BreadcrumbItem } from '@/components/seo/breadcrumbs';
 import { CheckoutButton } from '@/components/features/payments/checkout-button';
+import { TestimonialCarousel } from '@/components/features/testimonials/testimonial-carousel';
+import { DoubtsPopup } from '@/components/features/doubts/doubts-popup';
+import { getConfig } from '@/server/services/config';
 
 interface VssPageProps {
   breadcrumbItems?: BreadcrumbItem[];
 }
 
-const stack = [
+function brl(cents: number): string {
+  return (cents / 100).toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  });
+}
+
+function brlDecimal(cents: number): string {
+  return (cents / 100).toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+    minimumFractionDigits: 2,
+  });
+}
+
+const dores = [
   {
-    item: 'Sistema VSS Implementável (playbook + 15 vídeos-âncora · acesso vitalício)',
-    valor: 'R$ 1.997',
+    n: '01',
+    titulo: 'Vendas instáveis',
+    sintoma:
+      'Mês bom · mês ruim. Você não sabe quanto vai faturar nos próximos 30 dias. Cada novo cliente é uma luta diferente, sem padrão replicável.',
   },
-  { item: 'Growth CRM completo (12 meses)', valor: 'R$ 6.996' },
-  { item: '48 mentorias ao vivo com Joel (rolling 12 meses)', valor: 'R$ 7.200' },
-  { item: 'Templates, scripts e recursos', valor: 'R$ 497' },
-  { item: 'Comunidade exclusiva (90 dias)', valor: 'R$ 597' },
+  {
+    n: '02',
+    titulo: 'Refém da operação',
+    sintoma:
+      'Você é vendedor, gerente, suporte e dono. Se parar uma semana, o caixa sente. Marketing sem vendas é hobby caro. Sistema sem você é o que falta.',
+  },
+  {
+    n: '03',
+    titulo: 'Marketing sem ROI',
+    sintoma:
+      'Gasta em ads, indicação e post bonito, mas não sabe medir o que volta. Lead se perde em planilha. Funil é planilha. Crescer virou apostar mais.',
+  },
+];
+
+const formatoCards = [
+  {
+    n: '①',
+    titulo: 'Sistema implementável',
+    desc: 'Portal logado com playbook + 15 vídeos-âncora + 66 destravamentos de 15–20 min cada. Roadmap 90 dias guiado. Não é curso pra maratonar e esquecer.',
+  },
+  {
+    n: '②',
+    titulo: 'Mentorias ao vivo com Joel',
+    desc: '48 mentorias em grupo ao longo dos 12 meses (rolling). Direto comigo. Você implementa, eu reviso, ajustamos juntos. Sem intermediário.',
+  },
+  {
+    n: '③',
+    titulo: 'Comunidade + Growth CRM',
+    desc: 'Growth CRM já configurado (12 meses incluídos). Comunidade ativa de quem está implementando agora. Suporte peer-to-peer + suporte técnico.',
+  },
 ];
 
 const pPilares = [
   {
     p: 'P1',
     nome: 'Posicionamento',
-    resumo: 'Diferenciação + PUV + Big Idea. Cliente entende em 10s.',
+    resumo: 'Diferenciação + PUV + Big Idea. Cliente entende em 10s o que você oferece de único.',
   },
-  { p: 'P2', nome: 'Público', resumo: 'ICP cirúrgico + persona + mapa de dores. Conversão sobe.' },
+  {
+    p: 'P2',
+    nome: 'Público',
+    resumo: 'ICP cirúrgico + persona + mapa de dores. Para de vender pra todo mundo. Conversão sobe.',
+  },
   {
     p: 'P3',
     nome: 'Produto',
-    resumo: 'Oferta irresistível + precificação por valor + prova social.',
+    resumo: 'Oferta irresistível + precificação por valor + stack empilhado. Ticket sobe sem desconto.',
   },
-  { p: 'P4', nome: 'Programas', resumo: 'Growth CRM + funis + automação + tráfego ou prospecção.' },
-  { p: 'P5', nome: 'Processos', resumo: '5 playbooks essenciais + SOPs + dashboard unificado.' },
-  { p: 'P6', nome: 'Pessoas', resumo: 'Estrutura de time por estágio + onboarding 30d + rituais.' },
+  {
+    p: 'P4',
+    nome: 'Programas',
+    resumo: 'Growth CRM + funis + automação + tráfego ou prospecção. Máquina rodando 24/7.',
+  },
+  {
+    p: 'P5',
+    nome: 'Processos',
+    resumo: '5 playbooks essenciais + SOPs + dashboard. O que estava na sua cabeça vira documento.',
+  },
+  {
+    p: 'P6',
+    nome: 'Pessoas',
+    resumo: 'Estrutura de time por estágio + onboarding 30d + rituais. Empresa para de depender de você.',
+  },
 ];
 
 const fases = [
-  {
-    n: '01',
-    nome: 'Fundamentos',
-    janela: '0–30D',
-    desc: 'Canvas 6Ps + P1 + P2 + P3 · 15 destravamentos',
-  },
-  {
-    n: '02',
-    nome: 'Infraestrutura',
-    janela: '30–45D',
-    desc: 'Growth CRM + landing page · 9 destravamentos',
-  },
-  {
-    n: '03',
-    nome: 'Atração',
-    janela: '45–75D',
-    desc: 'Orgânico + pago + prospecção · 13 destravamentos',
-  },
-  {
-    n: '04',
-    nome: 'Conversão',
-    janela: '75–90D',
-    desc: 'Funis + scripts + objeções · 9 destravamentos',
-  },
-  {
-    n: '05',
-    nome: 'Sistema',
-    janela: '90D · MARCO',
-    desc: 'Integração + processos · 4 destravamentos',
-  },
-  {
-    n: '06',
-    nome: 'Automação',
-    janela: 'PÓS-90D',
-    desc: 'Workflows + IA conversacional · 8 destravamentos',
-  },
-  {
-    n: '07',
-    nome: 'Crescimento',
-    janela: 'PÓS-90D',
-    desc: 'Analytics + P6 + Plano 180–365d · 8 destravamentos',
-  },
+  { n: '01', nome: 'Fundamentos', janela: 'SEM 1–4', desc: 'Canvas 6Ps · P1 + P2 + P3 estruturados · 15 destravamentos' },
+  { n: '02', nome: 'Infraestrutura', janela: 'SEM 5–6', desc: 'Growth CRM configurado · landing page no ar · 9 destravamentos' },
+  { n: '03', nome: 'Atração', janela: 'SEM 7–10', desc: 'Orgânico + pago + prospecção ativa · 13 destravamentos' },
+  { n: '04', nome: 'Conversão', janela: 'SEM 11–12', desc: 'Funis + scripts + matriz de objeções · 9 destravamentos' },
+  { n: '05', nome: 'Sistema', janela: 'SEM 13 · MARCO', desc: 'Integração + processos · primeiras vendas validadas · 4 destravamentos' },
+  { n: '06', nome: 'Automação', janela: 'PÓS-90D', desc: 'Workflows + IA conversacional · escala sem trabalhar 3× · 8 destravamentos' },
+  { n: '07', nome: 'Crescimento', janela: 'PÓS-90D', desc: 'Analytics + P6 (time) + plano 180–365d · 8 destravamentos' },
 ];
 
 const paraQuem = [
-  'Empreendedor hands-on que quer autonomia',
-  'MPE com faturamento R$ 10–100k/mês',
-  'Tem 2–3h/semana pra implementar',
-  'Quer o método antes de contratar 1:1',
+  'MPE faturando R$ 10–100k/mês',
+  'Hands-on — não delega tudo',
+  'Tem 6–9h/semana nas primeiras fases',
+  'Aceita feedback duro e revisão',
 ];
 
 const naoEPara = [
-  'Quem quer que alguém faça por você (não é DFY)',
-  'Quem busca milagre em 7 dias',
-  'Quem não tem 6–9h/semana pras primeiras fases',
-  'Quem não aceita feedback direto',
+  'Quem busca DFY (alguém faz por você)',
+  'Quem espera milagre em 7 dias',
+  'Quem não tem nem 6h/semana',
+  'Quem não aceita revisão direta',
 ];
 
 const objecoes = [
   {
     q: 'R$ 1.997 está caro pra mim agora.',
-    a: 'Você não paga R$ 1.997 — você recupera em 1 venda adicional de R$ 500. Stack empilhada: R$ 17.287. E tem 12× R$ 166,42 no cartão. A pergunta real é: quanto custa continuar improvisando mais 12 meses?',
+    a: 'Você não paga R$ 1.997 — você recupera em 1 venda adicional de R$ 500. Stack empilhada: R$ 17.287. E tem 12× no cartão. A pergunta real é: quanto custa continuar improvisando mais 12 meses?',
   },
   {
     q: 'Não tenho tempo. Agenda caótica.',
@@ -113,7 +142,7 @@ const objecoes = [
   },
   {
     q: 'Não tenho budget pra tráfego pago.',
-    a: 'VSS funciona com OU sem tráfego pago. Módulo 8 inteiro é prospecção ativa gratuita (LinkedIn, Instagram, cold email ético). Validado em clientes com R$ 0 de budget.',
+    a: 'VSS funciona com OU sem tráfego pago. Tem rota inteira de prospecção ativa gratuita (LinkedIn, Instagram, cold email ético). Validado em clientes com R$ 0 de budget.',
   },
   {
     q: 'E se não for pra mim?',
@@ -121,20 +150,52 @@ const objecoes = [
   },
 ];
 
-export function VssPage({ breadcrumbItems }: VssPageProps) {
+export const revalidate = 300;
+
+export async function VssPage({ breadcrumbItems }: VssPageProps) {
+  const [vssPriceCents, stackTotalCents, guaranteeDays, installmentCents, installmentsCount, testimonials] =
+    await Promise.all([
+      getConfig<number>('pricing', 'vss.price_cents', 199700),
+      getConfig<number>('offer', 'vss.stack_total_cents', 1728700),
+      getConfig<number>('offer', 'vss.guarantee_days', 15),
+      getConfig<number>('pricing', 'vss.installment_cents', 16642),
+      getConfig<number>('pricing', 'vss.installments_count', 12),
+      // Resolvemos via service direto pra ter contagem antes de renderizar (decisão de mostrar a seção).
+      import('@/server/services/testimonials').then((m) =>
+        m.listPublishedTestimonials({ product: 'vss', featured: true, limit: 6 })
+      ),
+    ]);
+
+  const priceLabel = brl(vssPriceCents);
+  const stackLabel = brl(stackTotalCents);
+  const installmentLabel = brlDecimal(installmentCents);
+
+  const stack = [
+    {
+      item: `Sistema VSS Implementável (playbook + 15 vídeos-âncora · acesso vitalício)`,
+      valor: brl(199700),
+    },
+    { item: 'Growth CRM completo (12 meses)', valor: brl(699600) },
+    { item: '48 mentorias ao vivo com Joel (rolling 12 meses)', valor: brl(720000) },
+    { item: 'Templates, scripts e recursos', valor: brl(49700) },
+    { item: 'Comunidade exclusiva (90 dias)', valor: brl(59700) },
+  ];
+
   return (
     <>
-      {/* HERO TERMINAL */}
-      <section className="bg-ink relative overflow-hidden pt-12 pb-24 md:pt-16">
+      {/* 01 — HERO */}
+      <section
+        id="hero"
+        className="bg-ink relative scroll-mt-24 overflow-hidden pt-12 pb-24 md:pt-16"
+      >
         <div className="grid-overlay" />
 
         <Container>
           {breadcrumbItems && <Breadcrumbs items={breadcrumbItems} className="mb-5" />}
           <div className="grid items-center gap-[clamp(2rem,5vw,4rem)] lg:grid-cols-[1.3fr_1fr] lg:gap-x-[clamp(3rem,6vw,5rem)]">
-            {/* Copy */}
             <div className="flex flex-col gap-[clamp(1.25rem,2.5vw,2rem)]">
               <div className="kicker" style={{ color: 'var(--jb-fg-muted)' }}>
-                // PRODUTO PRINCIPAL · DIY · ACESSO VITALÍCIO
+                // VSS · DIY · ACESSO VITALÍCIO
               </div>
               <h1
                 className="font-display text-cream"
@@ -156,41 +217,39 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                 style={{
                   fontSize: 'clamp(1.05rem, 2vw, 1.25rem)',
                   lineHeight: '1.5',
-                  maxWidth: '40ch',
+                  maxWidth: '46ch',
                   margin: 0,
                   color: 'rgba(245, 241, 232, 0.85)',
                 }}
               >
                 VSS é o sistema implementável que estrutura os{' '}
-                <span className="text-acid">6Ps das Vendas Escaláveis</span> no teu negócio.
-                Framework formalizado em 2025 a partir de uma base aplicada em{' '}
-                <strong className="text-cream">140+ empresas</strong> e{' '}
-                <strong className="text-cream">20+ nichos</strong>. Não há fórmula mágica. Há
-                método. E você vai dominar cada etapa — com ou sem budget de tráfego.
+                <span className="text-acid">6Ps das Vendas Escaláveis</span> no seu negócio —
+                portal logado + roadmap 90 dias + 48 mentorias ao vivo com o Joel + Growth CRM
+                já incluído. Não é app. Não é curso solto.
               </p>
 
               <div className="mono text-fg-muted flex flex-wrap items-center gap-x-6 gap-y-2">
                 <span className="flex items-center gap-2">
-                  <span className="text-acid">★</span> GARANTIA 15 DIAS
+                  <span className="text-acid">★</span> 90 DIAS GUIADOS
                 </span>
                 <span className="flex items-center gap-2">
-                  <span className="text-acid">★</span> GROWTH CRM INCLUÍDO
+                  <span className="text-acid">★</span> ACESSO VITALÍCIO
                 </span>
                 <span className="flex items-center gap-2">
-                  <span className="text-acid">★</span> 48 MENTORIAS AO VIVO
+                  <span className="text-acid">★</span> MENTORIAS COM JOEL
                 </span>
               </div>
 
               <Link
-                href="#investimento"
+                href="#problema"
                 className="btn-primary self-start"
                 style={{ minHeight: '48px' }}
               >
-                Ver investimento <span className="font-mono">↓</span>
+                Como funciona <span className="font-mono">↓</span>
               </Link>
             </div>
 
-            {/* Terminal window */}
+            {/* Terminal window — mantém o diagnóstico 6Ps */}
             <div
               className="bg-ink-2 border border-white/10"
               style={{ boxShadow: 'var(--shadow-terminal)' }}
@@ -199,25 +258,12 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                 className="flex items-center gap-2 border-b border-white/10"
                 style={{ padding: '10px 14px' }}
               >
-                <span
-                  className="bg-fire inline-block rounded-full"
-                  style={{ width: '11px', height: '11px' }}
-                />
-                <span
-                  className="inline-block rounded-full"
-                  style={{ width: '11px', height: '11px', background: '#FFB020' }}
-                />
-                <span
-                  className="bg-acid inline-block rounded-full"
-                  style={{ width: '11px', height: '11px' }}
-                />
+                <span className="bg-fire inline-block rounded-full" style={{ width: '11px', height: '11px' }} />
+                <span className="inline-block rounded-full" style={{ width: '11px', height: '11px', background: '#FFB020' }} />
+                <span className="bg-acid inline-block rounded-full" style={{ width: '11px', height: '11px' }} />
                 <span
                   className="mono text-fg-muted ml-auto"
-                  style={{
-                    fontSize: '11px',
-                    letterSpacing: '0.12em',
-                    textTransform: 'lowercase',
-                  }}
+                  style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'lowercase' }}
                 >
                   vss_diag.run — system=6ps
                 </span>
@@ -252,13 +298,7 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                 </div>
                 <div className="text-acid mt-3">
                   ★ máquina de crescimento:{' '}
-                  <span
-                    style={{
-                      background: 'var(--jb-acid)',
-                      color: 'var(--jb-ink)',
-                      padding: '0 6px',
-                    }}
-                  >
+                  <span style={{ background: 'var(--jb-acid)', color: 'var(--jb-ink)', padding: '0 6px' }}>
                     ONLINE
                   </span>
                 </div>
@@ -271,11 +311,199 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
         </Container>
       </section>
 
-      {/* 6PS PILARES */}
-      <section className="bg-ink-2 relative py-24">
+      {/* 02 — PROBLEMA */}
+      <section id="problema" className="bg-ink-2 relative scroll-mt-24 py-24">
         <Container>
           <div className="mx-auto mb-14 max-w-3xl">
-            <div className="kicker mb-4">// 01_FRAMEWORK</div>
+            <div className="kicker mb-4">// 02_PROBLEMA</div>
+            <h2
+              className="font-display text-cream mb-6"
+              style={{
+                fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+                lineHeight: '0.92',
+                letterSpacing: '-0.04em',
+                textTransform: 'uppercase',
+              }}
+            >
+              Vendendo R$ 10–100k/mês mas <span className="text-fire">refém do improviso</span>?
+            </h2>
+            <p
+              className="font-sans"
+              style={{ fontSize: '1.125rem', lineHeight: '1.55', color: 'rgba(245, 241, 232, 0.7)' }}
+            >
+              MPE que fatura mas não tem método replicável vive os mesmos 3 sintomas. Reconhece
+              algum?
+            </p>
+          </div>
+
+          <div className="grid gap-0 border border-white/10 md:grid-cols-3">
+            {dores.map((d, i) => (
+              <article
+                key={d.n}
+                className="p-8"
+                style={{
+                  borderRight: i < dores.length - 1 ? '1px solid var(--jb-hair)' : '0',
+                }}
+              >
+                <div className="kicker mb-4" style={{ color: 'var(--jb-fire)' }}>
+                  // {d.n}
+                </div>
+                <h3
+                  className="font-display text-cream mb-3"
+                  style={{ fontSize: '1.35rem', letterSpacing: '-0.02em', textTransform: 'uppercase' }}
+                >
+                  {d.titulo}
+                </h3>
+                <p
+                  className="font-sans"
+                  style={{ fontSize: '0.95rem', lineHeight: '1.55', color: 'rgba(245, 241, 232, 0.78)' }}
+                >
+                  {d.sintoma}
+                </p>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* 03 — QUEM É JOEL */}
+      <section id="quem-e-joel" className="bg-ink relative scroll-mt-24 overflow-hidden py-24">
+        <div className="grid-overlay" />
+        <Container>
+          <div className="mx-auto max-w-5xl">
+            <div className="kicker mb-4">// 03_AUTORIDADE</div>
+            <div className="grid gap-10 md:grid-cols-[1fr_1.5fr] md:items-center">
+              <div className="border-acid bg-ink-2 border-l-4 p-8">
+                <div className="grid grid-cols-3 gap-4">
+                  <div>
+                    <div className="font-display text-acid" style={{ fontSize: '2rem', lineHeight: '1' }}>
+                      17+
+                    </div>
+                    <div className="mono text-fg-muted mt-1" style={{ fontSize: '0.65rem' }}>
+                      anos
+                    </div>
+                  </div>
+                  <div>
+                    <div className="font-display text-acid" style={{ fontSize: '2rem', lineHeight: '1' }}>
+                      140+
+                    </div>
+                    <div className="mono text-fg-muted mt-1" style={{ fontSize: '0.65rem' }}>
+                      empresas
+                    </div>
+                  </div>
+                  <div>
+                    <div className="font-display text-acid" style={{ fontSize: '1.4rem', lineHeight: '1' }}>
+                      ~R$ 1BI
+                    </div>
+                    <div className="mono text-fg-muted mt-1" style={{ fontSize: '0.65rem' }}>
+                      estruturado
+                    </div>
+                  </div>
+                </div>
+                <p
+                  className="text-fg-muted mt-6 font-sans"
+                  style={{ fontSize: '0.85rem', lineHeight: '1.5' }}
+                >
+                  Estimativa agregada de vendas estruturadas ao longo de 17+ anos em 140+
+                  operações atendidas. Não é receita própria nem promessa de resultado.
+                </p>
+              </div>
+              <div>
+                <h2
+                  className="font-display text-cream mb-6"
+                  style={{
+                    fontSize: 'clamp(1.75rem, 4vw, 2.75rem)',
+                    lineHeight: '0.95',
+                    letterSpacing: '-0.035em',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  Da quebrada <span className="text-acid">ao bilhão</span>.
+                </h2>
+                <p
+                  className="font-sans"
+                  style={{ fontSize: '1.05rem', lineHeight: '1.6', color: 'rgba(245, 241, 232, 0.85)' }}
+                >
+                  Quebrei aos 25, com calote de sócio. Seis meses em barraco, R$ 300/mês, R$ 1.400
+                  nos Correios pra recomeçar. Em 17+ anos estruturei vendas em 140+ empresas —
+                  consultoria, varejo, B2B, holding com 1.800+ franqueados. Em 2025 dei nome ao
+                  método: <span className="text-acid">6Ps das Vendas Escaláveis</span>. Não sou
+                  consultor de PowerPoint. Não há fórmula mágica. Há método.
+                </p>
+                <p className="mono text-fg-muted mt-6">
+                  ★ Joel Burigo · est. 2008 · Florianópolis/SC
+                </p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* 04 — O QUE É VSS (anti-objeção) */}
+      <section id="o-que-e-vss" className="bg-ink-2 relative scroll-mt-24 py-24">
+        <Container>
+          <div className="mx-auto mb-14 max-w-3xl">
+            <div className="kicker mb-4">// 04_FORMATO</div>
+            <h2
+              className="font-display text-cream mb-6"
+              style={{
+                fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+                lineHeight: '0.92',
+                letterSpacing: '-0.04em',
+                textTransform: 'uppercase',
+              }}
+            >
+              VSS <span className="text-fire">não é app</span>. <span className="text-fire">Não é curso solto</span>.
+            </h2>
+            <p
+              className="font-sans"
+              style={{ fontSize: '1.125rem', lineHeight: '1.55', color: 'rgba(245, 241, 232, 0.75)' }}
+            >
+              É um sistema vivo de implementação. Três peças trabalhando juntas — sem precisar
+              maratonar conteúdo gravado.
+            </p>
+          </div>
+
+          <div className="grid gap-0 border border-white/10 md:grid-cols-3">
+            {formatoCards.map((c, i) => (
+              <article
+                key={c.n}
+                className="p-8"
+                style={{
+                  borderRight: i < formatoCards.length - 1 ? '1px solid var(--jb-hair)' : '0',
+                  background: i === 1 ? 'rgba(198,255,0,0.04)' : 'transparent',
+                }}
+              >
+                <div
+                  className="font-display text-acid mb-4"
+                  style={{ fontSize: '2.5rem', lineHeight: '1' }}
+                >
+                  {c.n}
+                </div>
+                <h3
+                  className="font-display text-cream mb-3"
+                  style={{ fontSize: '1.2rem', letterSpacing: '-0.02em', textTransform: 'uppercase' }}
+                >
+                  {c.titulo}
+                </h3>
+                <p
+                  className="font-sans"
+                  style={{ fontSize: '0.95rem', lineHeight: '1.55', color: 'rgba(245, 241, 232, 0.8)' }}
+                >
+                  {c.desc}
+                </p>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* 05 — OS 6Ps */}
+      <section id="os-6ps" className="bg-ink relative scroll-mt-24 overflow-hidden py-24">
+        <div className="grid-overlay" />
+        <Container>
+          <div className="mx-auto mb-14 max-w-3xl">
+            <div className="kicker mb-4">// 05_FRAMEWORK</div>
             <h2
               className="font-display text-cream mb-6"
               style={{
@@ -289,15 +517,11 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
             </h2>
             <p
               className="font-sans"
-              style={{
-                fontSize: '1.125rem',
-                lineHeight: '1.55',
-                color: 'rgba(245, 241, 232, 0.7)',
-              }}
+              style={{ fontSize: '1.125rem', lineHeight: '1.55', color: 'rgba(245, 241, 232, 0.7)' }}
             >
               Posicionamento → Público → Produto → Programas → Processos → Pessoas. Sequência
-              importa — fraqueza em um compromete todos os seguintes. Não é teoria de MBA. É método
-              formalizado em 2025 a partir de 17+ anos.
+              importa — fraqueza em um compromete todos os seguintes. 17+ anos de prática
+              condensados.
             </p>
           </div>
 
@@ -319,36 +543,33 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                 </div>
                 <h3
                   className="font-display text-cream mt-2 mb-3"
-                  style={{
-                    fontSize: '1.1rem',
-                    letterSpacing: '-0.02em',
-                    textTransform: 'uppercase',
-                  }}
+                  style={{ fontSize: '1.1rem', letterSpacing: '-0.02em', textTransform: 'uppercase' }}
                 >
                   {p.nome}
                 </h3>
                 <p
                   className="font-sans"
-                  style={{
-                    fontSize: '0.9rem',
-                    lineHeight: '1.5',
-                    color: 'rgba(245, 241, 232, 0.75)',
-                  }}
+                  style={{ fontSize: '0.9rem', lineHeight: '1.5', color: 'rgba(245, 241, 232, 0.75)' }}
                 >
                   {p.resumo}
                 </p>
               </article>
             ))}
           </div>
+
+          <div className="mt-10 flex justify-center">
+            <Link href="#investimento" className="btn-secondary" style={{ minHeight: '48px' }}>
+              Ver investimento <span className="font-mono">↓</span>
+            </Link>
+          </div>
         </Container>
       </section>
 
-      {/* 7 FASES */}
-      <section className="bg-ink relative overflow-hidden py-24">
-        <div className="grid-overlay" />
+      {/* 06 — AS 7 FASES (consolida /jornada-90-dias) */}
+      <section id="as-7-fases" className="bg-ink-2 relative scroll-mt-24 py-24">
         <Container>
           <div className="mx-auto mb-14 max-w-3xl">
-            <div className="kicker mb-4">// 02_JORNADA</div>
+            <div className="kicker mb-4">// 06_ROADMAP</div>
             <h2
               className="font-display text-cream mb-6"
               style={{
@@ -358,19 +579,16 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                 textTransform: 'uppercase',
               }}
             >
-              <span className="text-acid">7 fases</span> · 15 módulos ·{' '}
+              <span className="text-acid">7 fases</span> · 90 dias guiados ·{' '}
               <span className="stroke-text">66 destravamentos</span>
             </h2>
             <p
               className="font-sans"
-              style={{
-                fontSize: '1.125rem',
-                lineHeight: '1.55',
-                color: 'rgba(245, 241, 232, 0.7)',
-              }}
+              style={{ fontSize: '1.125rem', lineHeight: '1.55', color: 'rgba(245, 241, 232, 0.7)' }}
             >
-              Cada destravamento é ação de 15–20 min com entregável tangível. Fases 1–5 em 90 dias.
-              Fases 6–7 avançadas pós-fundação. Vitalício: entra qualquer dia, começa essa semana.
+              Cada destravamento é ação de 15–20 min com entregável tangível. Fases 1–5 nos 90
+              dias. Fases 6–7 avançadas pós-fundação. Vitalício: entra qualquer dia, começa essa
+              semana.
             </p>
           </div>
 
@@ -378,7 +596,7 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
             {fases.map((f, i) => (
               <div
                 key={f.n}
-                className="grid gap-0 md:grid-cols-[120px_200px_1fr]"
+                className="grid gap-0 md:grid-cols-[120px_220px_1fr]"
                 style={{ borderTop: i === 0 ? '0' : '1px solid var(--jb-hair)' }}
               >
                 <div
@@ -389,18 +607,14 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                     className="font-display text-acid"
                     style={{ fontSize: '2.25rem', lineHeight: '1', letterSpacing: '-0.04em' }}
                   >
-                    {f.n}
+                    F{f.n}
                   </span>
                 </div>
                 <div className="flex items-center border-white/10 p-5 md:border-r">
                   <div>
                     <div
                       className="font-display text-cream"
-                      style={{
-                        fontSize: '1rem',
-                        textTransform: 'uppercase',
-                        letterSpacing: '-0.02em',
-                      }}
+                      style={{ fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '-0.02em' }}
                     >
                       {f.nome}
                     </div>
@@ -410,11 +624,7 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                 <div className="flex items-center p-5">
                   <p
                     className="font-sans"
-                    style={{
-                      fontSize: '0.95rem',
-                      lineHeight: '1.5',
-                      color: 'rgba(245, 241, 232, 0.85)',
-                    }}
+                    style={{ fontSize: '0.95rem', lineHeight: '1.5', color: 'rgba(245, 241, 232, 0.85)' }}
                   >
                     {f.desc}
                   </p>
@@ -425,12 +635,13 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
         </Container>
       </section>
 
-      {/* STACK / VALOR */}
-      <section id="investimento" className="bg-ink-2 relative scroll-mt-24 py-24">
+      {/* 07 — STACK / INVESTIMENTO */}
+      <section id="investimento" className="bg-ink relative scroll-mt-24 overflow-hidden py-24">
+        <div className="grid-overlay" />
         <Container>
           <div className="mx-auto max-w-4xl">
             <div className="mb-12">
-              <div className="kicker mb-4">// 03_STACK · O QUE VOCÊ LEVA</div>
+              <div className="kicker mb-4">// 07_STACK · O QUE VOCÊ LEVA</div>
               <h2
                 className="font-display text-cream"
                 style={{
@@ -440,8 +651,8 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                   textTransform: 'uppercase',
                 }}
               >
-                Stack empilhada: <span className="stroke-text">R$ 17.287</span>. Investimento:{' '}
-                <span className="text-acid">R$ 1.997</span>.
+                Stack empilhada: <span className="stroke-text">{stackLabel}</span>. Investimento:{' '}
+                <span className="text-acid">{priceLabel}</span>.
               </h2>
             </div>
 
@@ -452,10 +663,7 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                   className="grid grid-cols-[1fr_auto] gap-4 p-5 md:p-6"
                   style={{ borderTop: i === 0 ? '0' : '1px solid var(--jb-hair)' }}
                 >
-                  <div
-                    className="text-cream font-sans"
-                    style={{ fontSize: '0.95rem', lineHeight: '1.4' }}
-                  >
+                  <div className="text-cream font-sans" style={{ fontSize: '0.95rem', lineHeight: '1.4' }}>
                     <span className="mono text-acid mr-2">▶</span>
                     {s.item}
                   </div>
@@ -469,18 +677,11 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
               ))}
               <div
                 className="grid grid-cols-[1fr_auto] gap-4 p-5 md:p-6"
-                style={{
-                  borderTop: '1px solid var(--jb-hair)',
-                  background: 'rgba(198,255,0,0.06)',
-                }}
+                style={{ borderTop: '1px solid var(--jb-hair)', background: 'rgba(198,255,0,0.06)' }}
               >
                 <div
                   className="font-display text-cream"
-                  style={{
-                    fontSize: '1rem',
-                    textTransform: 'uppercase',
-                    letterSpacing: '-0.02em',
-                  }}
+                  style={{ fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '-0.02em' }}
                 >
                   Total empilhado
                 </div>
@@ -488,23 +689,16 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                   className="font-display text-cream"
                   style={{ fontSize: '1.25rem', letterSpacing: '-0.02em' }}
                 >
-                  R$ 17.287
+                  {stackLabel}
                 </div>
               </div>
               <div
                 className="grid grid-cols-[1fr_auto] items-center gap-4 p-5 md:p-6"
-                style={{
-                  borderTop: '2px solid var(--jb-acid)',
-                  background: 'rgba(198,255,0,0.12)',
-                }}
+                style={{ borderTop: '2px solid var(--jb-acid)', background: 'rgba(198,255,0,0.12)' }}
               >
                 <div
                   className="font-display text-cream"
-                  style={{
-                    fontSize: '1.25rem',
-                    textTransform: 'uppercase',
-                    letterSpacing: '-0.02em',
-                  }}
+                  style={{ fontSize: '1.25rem', textTransform: 'uppercase', letterSpacing: '-0.02em' }}
                 >
                   Investimento VSS
                 </div>
@@ -514,7 +708,7 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                       className="mono"
                       style={{ fontSize: '0.85rem', color: 'rgba(245, 241, 232, 0.7)' }}
                     >
-                      12×
+                      {installmentsCount}×
                     </span>
                     <span
                       className="font-display text-acid"
@@ -524,95 +718,57 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                         letterSpacing: '-0.035em',
                       }}
                     >
-                      R$ 166,42
+                      {installmentLabel}
                     </span>
                   </div>
                   <div
                     className="mono mt-1"
                     style={{ fontSize: '0.8rem', color: 'rgba(245, 241, 232, 0.6)' }}
                   >
-                    ou R$ 1.997 à vista
+                    ou {priceLabel} à vista
                   </div>
                 </div>
-              </div>
-            </div>
-            {/* CTA block — checkout + garantia reforçada */}
-            <div
-              className="border-acid mt-10 border-2 p-6 text-center md:p-10"
-              style={{
-                background: 'linear-gradient(180deg, rgba(198,255,0,0.12), rgba(198,255,0,0.02))',
-              }}
-            >
-              <div className="mono text-acid mb-4 text-sm">
-                // PRONTO PRA TROCAR IMPROVISO POR SISTEMA?
-              </div>
-              <h3
-                className="font-display text-cream mb-6"
-                style={{
-                  fontSize: 'clamp(1.5rem, 3vw, 2rem)',
-                  lineHeight: '1',
-                  letterSpacing: '-0.03em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                Entra hoje. Primeira mentoria essa semana.
-              </h3>
-
-              <div className="flex justify-center">
-                <CheckoutButton
-                  productSlug="vss"
-                  label="QUERO O VSS · R$ 1.997"
-                  variant="fire"
-                  size="lg"
-                />
-              </div>
-
-              {/* Garantia em destaque */}
-              <div
-                className="mt-6 inline-flex items-center gap-3 border border-[var(--jb-acid-border)] px-4 py-3"
-                style={{ background: 'rgba(198,255,0,0.06)' }}
-              >
-                <span
-                  className="font-display text-acid"
-                  style={{ fontSize: '1.5rem', lineHeight: '1', letterSpacing: '-0.02em' }}
-                >
-                  15 DIAS
-                </span>
-                <span className="text-cream text-left font-sans text-sm">
-                  Garantia <strong className="text-acid">incondicional</strong>
-                  <br />
-                  <span className="text-fg-muted text-xs">
-                    Não funcionou? Reembolso 100%, sem perguntas.
-                  </span>
-                </span>
-              </div>
-
-              <div className="mono text-fg-muted mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs">
-                <span>
-                  <span className="text-acid">★</span> ACESSO VITALÍCIO
-                </span>
-                <span>
-                  <span className="text-acid">★</span> GROWTH CRM 12 MESES
-                </span>
-                <span>
-                  <span className="text-acid">★</span> 48 MENTORIAS AO VIVO
-                </span>
-                <span>
-                  <span className="text-acid">★</span> MERCADO PAGO · CARTÃO/PIX
-                </span>
               </div>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* É × NÃO É */}
-      <section className="bg-ink relative overflow-hidden py-24">
+      {/* 08 — PROVA SOCIAL */}
+      {testimonials.length > 0 && (
+        <section id="prova-social" className="bg-ink-2 relative scroll-mt-24 py-12">
+          <Container>
+            <div className="mx-auto mb-4 max-w-3xl">
+              <div className="kicker mb-4">// 08_PROVA_SOCIAL</div>
+              <h2
+                className="font-display text-cream mb-2"
+                style={{
+                  fontSize: 'clamp(1.75rem, 4vw, 2.75rem)',
+                  lineHeight: '0.95',
+                  letterSpacing: '-0.035em',
+                  textTransform: 'uppercase',
+                }}
+              >
+                Quem já implementou <span className="text-acid">conta</span>.
+              </h2>
+            </div>
+            <TestimonialCarousel productSlug="vss" featured limit={6} />
+            <div className="mt-6 flex justify-center">
+              <Link href="#investimento" className="btn-secondary" style={{ minHeight: '48px' }}>
+                Ver investimento <span className="font-mono">↓</span>
+              </Link>
+            </div>
+          </Container>
+        </section>
+      )}
+
+      {/* 09 — PRA QUEM É / NÃO É */}
+      <section id="pra-quem-e" className="bg-ink relative scroll-mt-24 overflow-hidden py-24">
         <div className="grid-overlay" />
         <Container>
           <div className="mx-auto max-w-5xl">
             <div className="mb-12">
-              <div className="kicker mb-4">// 04_FIT</div>
+              <div className="kicker mb-4">// 09_FIT</div>
               <h2
                 className="font-display text-cream"
                 style={{
@@ -632,7 +788,7 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                 className="border-b border-white/10 p-8 md:border-r md:border-b-0"
                 style={{ background: 'linear-gradient(180deg, rgba(198,255,0,0.04), transparent)' }}
               >
-                <div className="mono text-acid mb-5">▲ é pra você se</div>
+                <div className="mono text-acid mb-5">▲ É PRA VOCÊ SE</div>
                 <ul className="space-y-4">
                   {paraQuem.map((item) => (
                     <li
@@ -650,7 +806,7 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                 className="p-8"
                 style={{ background: 'linear-gradient(180deg, rgba(255,59,15,0.04), transparent)' }}
               >
-                <div className="mono text-fire mb-5">▼ NÃO é pra você se</div>
+                <div className="mono text-fire mb-5">▼ NÃO É PRA VOCÊ SE</div>
                 <ul className="space-y-4">
                   {naoEPara.map((item) => (
                     <li
@@ -673,12 +829,11 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
         </Container>
       </section>
 
-      {/* OBJEÇÕES */}
-      <section className="bg-ink relative overflow-hidden py-24">
-        <div className="grid-overlay" />
+      {/* 10 — OBJEÇÕES */}
+      <section id="objecoes" className="bg-ink-2 relative scroll-mt-24 py-24">
         <Container>
           <div className="mx-auto mb-14 max-w-3xl">
-            <div className="kicker mb-4">// OBJEÇÕES</div>
+            <div className="kicker mb-4">// 10_OBJEÇÕES</div>
             <h2
               className="font-display text-cream mb-6"
               style={{
@@ -719,11 +874,7 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                 <div className="px-6 pb-6 md:px-8 md:pb-8">
                   <p
                     className="font-sans"
-                    style={{
-                      fontSize: '1rem',
-                      lineHeight: '1.55',
-                      color: 'rgba(245, 241, 232, 0.85)',
-                    }}
+                    style={{ fontSize: '1rem', lineHeight: '1.55', color: 'rgba(245, 241, 232, 0.85)' }}
                   >
                     {o.a}
                   </p>
@@ -734,95 +885,56 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
         </Container>
       </section>
 
-      {/* GARANTIA + PROVAS */}
-      <section className="bg-ink-2 relative py-20">
+      {/* 11 — GARANTIA */}
+      <section id="garantia" className="bg-ink relative scroll-mt-24 overflow-hidden py-24">
+        <div className="grid-overlay" />
         <Container>
-          <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-2">
-            <div className="border-acid bg-ink border-l-4 p-8 md:p-10">
-              <div className="kicker mb-4">// GARANTIA 15 DIAS</div>
-              <p
-                className="font-display text-cream mb-4"
-                style={{
-                  fontSize: 'clamp(1.35rem, 3vw, 1.75rem)',
-                  lineHeight: '1.05',
-                  letterSpacing: '-0.035em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                15 dias <span className="text-acid">incondicional</span>. Reembolso 100%.
-              </p>
-              <p
-                className="font-sans"
-                style={{
-                  fontSize: '0.95rem',
-                  lineHeight: '1.55',
-                  color: 'rgba(245, 241, 232, 0.8)',
-                }}
-              >
-                Testou, não se adaptou — devolvemos tudo. Sem perguntas, sem fricção. Confiança
-                total porque a base do método já foi aplicada em 140+ empresas.
-              </p>
+          <div
+            className="border-acid mx-auto max-w-4xl border-2 p-10 text-center md:p-16"
+            style={{ background: 'linear-gradient(180deg, rgba(198,255,0,0.10), rgba(198,255,0,0.02))' }}
+          >
+            <div className="kicker mb-5">// 11_GARANTIA</div>
+            <div
+              className="font-display text-acid mb-4"
+              style={{ fontSize: 'clamp(3rem, 8vw, 5.5rem)', lineHeight: '0.9', letterSpacing: '-0.045em' }}
+            >
+              {guaranteeDays} DIAS
             </div>
-            <div className="border-fire bg-ink border-l-4 p-8 md:p-10">
-              <div className="kicker mb-4" style={{ color: 'var(--jb-fire)' }}>
-                // PROVAS
-              </div>
-              <div className="grid grid-cols-3 gap-3 border-b border-white/10 pb-4">
-                <div>
-                  <div
-                    className="font-display text-acid"
-                    style={{ fontSize: '1.75rem', lineHeight: '1' }}
-                  >
-                    17+
-                  </div>
-                  <div className="mono text-fg-muted mt-1" style={{ fontSize: '0.6rem' }}>
-                    anos
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="font-display text-acid"
-                    style={{ fontSize: '1.75rem', lineHeight: '1' }}
-                  >
-                    140+
-                  </div>
-                  <div className="mono text-fg-muted mt-1" style={{ fontSize: '0.6rem' }}>
-                    clientes
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="font-display text-acid"
-                    style={{ fontSize: '1.25rem', lineHeight: '1' }}
-                  >
-                    ~R$ 1BI
-                  </div>
-                  <div className="mono text-fg-muted mt-1" style={{ fontSize: '0.6rem' }}>
-                    estruturado
-                  </div>
-                </div>
-              </div>
-              <p
-                className="mt-4 font-sans"
-                style={{ fontSize: '0.9rem', lineHeight: '1.5', color: 'rgba(245, 241, 232, 0.8)' }}
-              >
-                <strong className="text-cream">Framework testado</strong> em 140+ empresas, 20+
-                nichos — base 6Ps aplicada.
-              </p>
+            <h2
+              className="font-display text-cream mb-6"
+              style={{
+                fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)',
+                lineHeight: '0.95',
+                letterSpacing: '-0.035em',
+                textTransform: 'uppercase',
+              }}
+            >
+              Incondicional. <span className="text-acid">Reembolso 100%</span>.
+            </h2>
+            <p
+              className="mx-auto max-w-2xl font-sans"
+              style={{ fontSize: '1.05rem', lineHeight: '1.55', color: 'rgba(245, 241, 232, 0.85)' }}
+            >
+              Não funcionou? Reembolso 100%. Sem perguntas, sem fricção. O risco é nosso —
+              confiança total porque a base do método já foi aplicada em 140+ empresas.
+            </p>
+            <div className="mt-8 flex justify-center">
+              <Link href="#investimento" className="btn-secondary" style={{ minHeight: '48px' }}>
+                Ver investimento <span className="font-mono">↓</span>
+              </Link>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* CTA FINAL */}
-      <section className="bg-ink relative overflow-hidden py-24">
-        <div className="grid-overlay" />
+      {/* 12 — CTA FINAL */}
+      <section id="cta-final" className="bg-ink-2 relative scroll-mt-24 py-24">
         <Container>
           <div
             className="border-acid mx-auto max-w-4xl border-2 p-10 md:p-16"
-            style={{ background: 'linear-gradient(180deg, rgba(198,255,0,0.08), #050505)' }}
+            style={{ background: 'linear-gradient(180deg, rgba(198,255,0,0.10), #050505)' }}
           >
-            <div className="kicker mb-5">// DECISÃO</div>
+            <div className="kicker mb-5">// 12_DECISÃO</div>
             <h2
               className="font-display text-cream mb-6"
               style={{
@@ -832,32 +944,72 @@ export function VssPage({ breadcrumbItems }: VssPageProps) {
                 textTransform: 'uppercase',
               }}
             >
-              Daqui <span className="text-acid">90 dias</span> você estará{' '}
-              <span className="text-acid">90 dias mais perto</span> do sistema.
-              <br />
-              Ou 90 dias mais <span className="text-fire">distante</span>. Escolhe.
+              Entra hoje. <span className="text-acid">Primeira mentoria essa semana</span>.
             </h2>
             <p
               className="mb-8 font-sans"
-              style={{
-                fontSize: '1.125rem',
-                lineHeight: '1.55',
-                color: 'rgba(245, 241, 232, 0.85)',
-              }}
+              style={{ fontSize: '1.125rem', lineHeight: '1.55', color: 'rgba(245, 241, 232, 0.85)' }}
             >
-              R$ 1.997 à vista ou 12× R$ 166,42. Perpétuo — entra hoje, primeira mentoria na próxima
-              data do calendário. Bora pra cima.
+              {priceLabel} à vista ou {installmentsCount}× {installmentLabel}. Perpétuo — entra
+              qualquer dia, primeira mentoria na próxima data do calendário. Sistema &gt;
+              Improviso. Bora pra cima.
             </p>
+
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
               <CheckoutButton
                 productSlug="vss"
-                label="ENTRAR NO VSS AGORA →"
+                label={`ENTRAR NO VSS · ${priceLabel}`}
                 variant="fire"
                 size="lg"
               />
               <Link href="/diagnostico" className="btn-secondary">
                 Diagnóstico 6Ps grátis
               </Link>
+            </div>
+
+            <div className="mono text-fg-muted mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs">
+              <span>
+                <span className="text-acid">★</span> ACESSO VITALÍCIO
+              </span>
+              <span>
+                <span className="text-acid">★</span> GROWTH CRM 12 MESES
+              </span>
+              <span>
+                <span className="text-acid">★</span> 48 MENTORIAS AO VIVO
+              </span>
+              <span>
+                <span className="text-acid">★</span> MERCADO PAGO · CARTÃO/PIX
+              </span>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* 13 — DÚVIDAS */}
+      <section id="duvidas" className="bg-ink relative scroll-mt-24 overflow-hidden py-24">
+        <div className="grid-overlay" />
+        <Container>
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="kicker mb-4">// 13_DÚVIDAS</div>
+            <h2
+              className="font-display text-cream mb-4"
+              style={{
+                fontSize: 'clamp(1.75rem, 4vw, 2.75rem)',
+                lineHeight: '0.95',
+                letterSpacing: '-0.035em',
+                textTransform: 'uppercase',
+              }}
+            >
+              Ainda tem <span className="text-acid">dúvidas</span>?
+            </h2>
+            <p
+              className="mb-8 font-sans"
+              style={{ fontSize: '1.05rem', lineHeight: '1.55', color: 'rgba(245, 241, 232, 0.8)' }}
+            >
+              Joel responde direto. Em até 24h. Sem call obrigatória, sem script.
+            </p>
+            <div className="flex justify-center">
+              <DoubtsPopup productSlug="vss" landingPage="/vendas-sem-segredos" />
             </div>
             <p className="mono text-fg-muted mt-8">
               ★ SISTEMA &gt; IMPROVISO · SEMPRE ABERTO · EST. 2008

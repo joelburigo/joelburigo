@@ -206,7 +206,7 @@ export function DoubtsPopup(props: DoubtsPopupProps) {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className={cn('btn-primary min-h-[48px]', className)}
+        className={cn('btn-primary min-h-[64px] !py-5 md:!py-6', className)}
         aria-haspopup="dialog"
       >
         <span>{triggerLabel}</span>

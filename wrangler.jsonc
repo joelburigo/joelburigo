@@ -40,7 +40,9 @@
       "hyperdrive": [
         {
           "binding": "HYPERDRIVE",
-          "id": "d40fdd1fbbf1477381b8b6f77754c308"
+          "id": "d40fdd1fbbf1477381b8b6f77754c308",
+          /* só usado em dev/build local (getPlatformProxy). Em Worker prod o `id` resolve via CF. */
+          "localConnectionString": "postgres://localhost:5432/joelburigo"
         }
       ],
       "r2_buckets": [
@@ -89,7 +91,8 @@
       "hyperdrive": [
         {
           "binding": "HYPERDRIVE",
-          "id": "23a0dcc0a7224b55b0dc8d3912088aa7"
+          "id": "23a0dcc0a7224b55b0dc8d3912088aa7",
+          "localConnectionString": "postgres://localhost:5432/joelburigo"
         }
       ],
       "r2_buckets": [
